@@ -11,7 +11,7 @@
  * Plugin Name:       CheckoutWC Lite
  * Plugin URI:        https://www.CheckoutWC.com
  * Description:       A beautiful, responsive, conversion optimized checkout template for WooCommerce.
- * Version:           1.1.11
+ * Version:           1.1.12
  * Author:            CheckoutWC
  * Author URI:        https://www.checkoutwc.com
  * License:           GPL-2.0+
@@ -19,8 +19,8 @@
  * Text Domain:       checkout-wc
  * Domain Path:       /languages
  * Requires Plugins: woocommerce
- * Tested up to: 6.4.3
- * WC tested up to: 8.7.0
+ * Tested up to: 6.7.1
+ * WC tested up to: 9.4.1
  * Requires PHP: 7.1
  */
 
@@ -43,7 +43,7 @@ if ( defined( 'CFW_VERSION' ) ) {
 }
 
 define( 'CFW_NAME', 'CheckoutWC Lite' );
-define( 'CFW_VERSION', '1.1.11' );
+define( 'CFW_VERSION', '1.1.12' );
 define( 'CFW_PATH', dirname( __FILE__ ) );
 define( 'CFW_URL', plugins_url( '/', __FILE__ ) );
 define( 'CFW_MAIN_FILE', __FILE__ );

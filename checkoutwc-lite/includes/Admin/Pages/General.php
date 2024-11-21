@@ -86,7 +86,7 @@ class General extends PageAbstract {
 						<li class="w-1/2 text-base flex content-center"><span class="dashicons dashicons-yes text-base text-green-700 pr-2"></span> <?php cfw_esc_html_e( 'Side Cart', 'wpforms-lite' ); ?></li>
 						<li class="w-1/2 text-base flex content-center"><span class="dashicons dashicons-yes text-base text-green-700 pr-2"></span> <?php cfw_esc_html_e( 'Order Bumps', 'wpforms-lite' ); ?></li>
 						<li class="w-1/2 text-base flex content-center"><span class="dashicons dashicons-yes text-base text-green-700 pr-2"></span> <?php cfw_esc_html_e( 'Order Pay Page', 'wpforms-lite' ); ?></li>
-						<li class="w-1/2 text-base flex content-center"><span class="dashicons dashicons-yes text-base text-green-700 pr-2"></span> <?php cfw_esc_html_e( 'Zip / Address Autocomplete', 'wpforms-lite' ); ?></li>
+						<li class="w-1/2 text-base flex content-center"><span class="dashicons dashicons-yes text-base text-green-700 pr-2"></span> <?php cfw_esc_html_e( 'Address Autocomplete', 'wpforms-lite' ); ?></li>
 						<li class="w-1/2 text-base flex content-center"><span class="dashicons dashicons-yes text-base text-green-700 pr-2"></span> <?php cfw_esc_html_e( 'Address Verification', 'wpforms-lite' ); ?></li>
 						<li class="w-1/2 text-base flex content-center"><span class="dashicons dashicons-yes text-base text-green-700 pr-2"></span> <?php cfw_esc_html_e( 'Trust Badges', 'wpforms-lite' ); ?></li>
 						<li class="w-1/2 text-base flex content-center"><span class="dashicons dashicons-yes text-base text-green-700 pr-2"></span> <?php cfw_esc_html_e( 'One Page Checkout Layout', 'wpforms-lite' ); ?></li>
@@ -101,7 +101,7 @@ class General extends PageAbstract {
 						<h2 class="text-white text-2xl py-2 font-bold"><span><?php esc_html_e( 'Starting At', 'checkout-wc' ); ?></span></h2>
 
 						<div class="price py-2">
-							<span class="amount text-white text-5xl">$99</span><br>
+							<span class="amount text-white text-5xl">$149</span><br>
 							<span class="term text-white"><?php esc_html_e( 'per year', 'checkout-wc' ); ?></span>
 						</div>
 					</div>

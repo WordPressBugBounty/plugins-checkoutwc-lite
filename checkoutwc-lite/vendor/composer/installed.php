@@ -1,9 +1,9 @@
 <?php return array(
     'root' => array(
         'name' => 'objectivco/checkout-for-woocommerce',
-        'pretty_version' => '1.1.11',
-        'version' => '1.1.11.0',
-        'reference' => '3b24073db9613d0eb3d73b4dacd983372d0b3183',
+        'pretty_version' => '1.1.12',
+        'version' => '1.1.12.0',
+        'reference' => '27e5a2b6389a26a0942ec361f935cb69ee271114',
         'type' => 'wordpress-plugin',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -11,9 +11,9 @@
     ),
     'versions' => array(
         'objectivco/checkout-for-woocommerce' => array(
-            'pretty_version' => '1.1.11',
-            'version' => '1.1.11.0',
-            'reference' => '3b24073db9613d0eb3d73b4dacd983372d0b3183',
+            'pretty_version' => '1.1.12',
+            'version' => '1.1.12.0',
+            'reference' => '27e5a2b6389a26a0942ec361f935cb69ee271114',
             'type' => 'wordpress-plugin',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
