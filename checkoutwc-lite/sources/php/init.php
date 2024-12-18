@@ -163,7 +163,6 @@ use Objectiv\Plugins\Checkout\Admin\Pages\Appearance;
 use Objectiv\Plugins\Checkout\Admin\Pages\CartSummary;
 use Objectiv\Plugins\Checkout\Admin\Pages\Checkout;
 use Objectiv\Plugins\Checkout\Admin\Pages\General;
-use Objectiv\Plugins\Checkout\Customizer;
 use Objectiv\Plugins\Checkout\FormFieldAugmenter;
 use Objectiv\Plugins\Checkout\Managers\StyleManager;
 use Objectiv\Plugins\Checkout\Model\Template;
@@ -424,11 +423,6 @@ CartFlows::instance()->admin_init();
 
 add_action( 'init', array( new DataUpgrader(), 'init' ) );
 add_action( 'init', array( new CartImageSizeAdder(), 'add_cart_image_size' ) );
-
-/**
- * Customizer Handler
- */
-( new Customizer( $appearance_admin_page->get_theme_color_settings() ) )->init();
 
 /**
  * Custom Styles

@@ -13,6 +13,7 @@ class PageController {
 
 	public function init() {
 		add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_scripts' ), 1000 );
+		add_action( 'admin_head', array( $this, 'custom_css' ) );
 
 		$this->maybe_add_body_class();
 
@@ -32,7 +33,6 @@ class PageController {
 	}
 
 	public function enqueue_scripts() {
-		echo '<style>li a[href*="lite-upgrade"] { background-color: #00a32a !important;    color: #fff !important; font-weight: 600 !important;}</style>';
 		if ( ! $this->is_cfw_admin_page() ) {
 			return;
 		}
@@ -56,6 +56,10 @@ class PageController {
 		);
 
 		wp_localize_script( 'objectiv-cfw-admin', 'objectiv_cfw_admin', $settings_array );
+	}
+
+	public function custom_css() {
+		echo '<style>li a[href*="lite-upgrade"] { background-color: #00a32a !important; color: #fff !important; font-weight: 600 !important;}</style>';
 	}
 
 	protected function maybe_add_body_class() {

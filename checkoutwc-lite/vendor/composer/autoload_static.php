@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit7425914d89e9138d715c8acf451678d9
+class ComposerStaticInitc58e1b08f4bc419cb945ce9c6254c94a
 {
     public static $prefixLengthsPsr4 = array (
         'S' => 
@@ -221,7 +221,6 @@ class ComposerStaticInit7425914d89e9138d715c8acf451678d9
         'Objectiv\\Plugins\\Checkout\\Compatibility\\Themes\\Uncode' => __DIR__ . '/../..' . '/includes/Compatibility/Themes/Uncode.php',
         'Objectiv\\Plugins\\Checkout\\Compatibility\\Themes\\Verso' => __DIR__ . '/../..' . '/includes/Compatibility/Themes/Verso.php',
         'Objectiv\\Plugins\\Checkout\\Compatibility\\Themes\\Zidane' => __DIR__ . '/../..' . '/includes/Compatibility/Themes/Zidane.php',
-        'Objectiv\\Plugins\\Checkout\\Customizer' => __DIR__ . '/../..' . '/includes/Customizer.php',
         'Objectiv\\Plugins\\Checkout\\DefaultSettingsSetter' => __DIR__ . '/../..' . '/includes/DefaultSettingsSetter.php',
         'Objectiv\\Plugins\\Checkout\\FormFieldAugmenter' => __DIR__ . '/../..' . '/includes/FormFieldAugmenter.php',
         'Objectiv\\Plugins\\Checkout\\Interfaces\\ItemInterface' => __DIR__ . '/../..' . '/includes/Interfaces/ItemInterface.php',
@@ -240,7 +239,6 @@ class ComposerStaticInit7425914d89e9138d715c8acf451678d9
         'Objectiv\\Plugins\\Checkout\\Model\\Template' => __DIR__ . '/../..' . '/includes/Model/Template.php',
         'Objectiv\\Plugins\\Checkout\\PhpErrorOutputSuppressor' => __DIR__ . '/../..' . '/includes/PhpErrorOutputSuppressor.php',
         'Objectiv\\Plugins\\Checkout\\SingletonAbstract' => __DIR__ . '/../..' . '/includes/SingletonAbstract.php',
-        'Objectiv\\Plugins\\Checkout\\TrustBadgeImageSizeAdder' => __DIR__ . '/../..' . '/includes/TrustBadgeImageSizeAdder.php',
         'SmartyStreets\\PhpSdk\\ArrayUtil' => __DIR__ . '/..' . '/smartystreets/phpsdk/src/ArrayUtil.php',
         'SmartyStreets\\PhpSdk\\Batch' => __DIR__ . '/..' . '/smartystreets/phpsdk/src/Batch.php',
         'SmartyStreets\\PhpSdk\\ClientBuilder' => __DIR__ . '/..' . '/smartystreets/phpsdk/src/ClientBuilder.php',
@@ -326,9 +324,9 @@ class ComposerStaticInit7425914d89e9138d715c8acf451678d9
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInit7425914d89e9138d715c8acf451678d9::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit7425914d89e9138d715c8acf451678d9::$prefixDirsPsr4;
-            $loader->classMap = ComposerStaticInit7425914d89e9138d715c8acf451678d9::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInitc58e1b08f4bc419cb945ce9c6254c94a::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInitc58e1b08f4bc419cb945ce9c6254c94a::$prefixDirsPsr4;
+            $loader->classMap = ComposerStaticInitc58e1b08f4bc419cb945ce9c6254c94a::$classMap;
 
         }, null, ClassLoader::class);
     }
