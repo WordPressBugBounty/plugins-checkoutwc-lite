@@ -3,8 +3,8 @@ Contributors: clifgriffin
 Donate link: https://www.checkoutwc.com
 Tags: woocommerce checkout, woocommerce checkout template, woocommerce checkout theme, woo checkout, shopify
 Requires at least: 5.2
-Tested up to: 6.7.1
-Stable tag: 1.1.13
+Tested up to: 6.7.2
+Stable tag: 10.1.4
 Requires PHP: 7.3
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
@@ -113,6 +113,9 @@ CheckoutWC works with virtually all payment gateways out of the box. If you have
 6. Design settings let you customize your logo, colors, and CSS.
 
 == Changelog ==
+
+= Version 10.1.4 =
+* New - New unified version to allow more frequent updates and bug fixes going forward.
 
 = Version 1.1.13 =
 * Fix - Fix CSS bug with Customizer

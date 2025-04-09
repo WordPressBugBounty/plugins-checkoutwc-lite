@@ -1,15 +1,14 @@
 <?php
-
-namespace Objectiv\Plugins\Checkout;
-
 /**
- * Enforces a single instance of an object. Useful for mission critical objects that should never be duplicated beyond
+ * Enforces a single instance of an object. Useful for mission-critical objects that should never be duplicated beyond
  * plugin initialization
  *
  * @link objectiv.co
  * @since 1.0.0
  * @package Objectiv\BoosterSeat\Base
  */
+
+namespace Objectiv\Plugins\Checkout;
 
 abstract class SingletonAbstract {
 

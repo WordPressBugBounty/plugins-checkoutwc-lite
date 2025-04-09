@@ -2,6 +2,8 @@
 
 namespace Objectiv\Plugins\Checkout\Admin;
 
+use WC_Data_Exception;
+
 class ShippingPhoneController {
 	public function __construct() {}
 
@@ -53,16 +55,18 @@ class ShippingPhoneController {
 	/**
 	 * Save shipping phone
 	 *
-	 * @throws \WC_Data_Exception
+	 * @param int $order_id The order ID.
+	 *
+	 * @throws WC_Data_Exception If the order cannot be updated.
 	 */
-	public function save_shipping_phone( $order_id ) {
-		if ( isset( $_POST['_cfw_shipping_phone'] ) ) {
+	public function save_shipping_phone( int $order_id ) {
+		if ( isset( $_POST['_cfw_shipping_phone'] ) ) { // phpcs:ignore WordPress.Security.NonceVerification.Missing
 			$order = wc_get_order( $order_id );
 
 			if ( version_compare( WC()->version, '5.6.0', '<' ) ) {
-				$order->update_meta_data( '_shipping_phone', sanitize_text_field( $_POST['_cfw_shipping_phone'] ) );
+				$order->update_meta_data( '_shipping_phone', sanitize_text_field( wp_unslash( $_POST['_cfw_shipping_phone'] ) ) ); // phpcs:ignore WordPress.Security.NonceVerification.Missing
 			} else {
-				$order->set_shipping_phone( sanitize_text_field( $_POST['_cfw_shipping_phone'] ) );
+				$order->set_shipping_phone( sanitize_text_field( wp_unslash( $_POST['_cfw_shipping_phone'] ) ) ); // phpcs:ignore WordPress.Security.NonceVerification.Missing
 			}
 
 			$order->save();

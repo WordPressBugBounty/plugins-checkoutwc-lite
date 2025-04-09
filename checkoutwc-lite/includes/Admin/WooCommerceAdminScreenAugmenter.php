@@ -15,25 +15,16 @@ class WooCommerceAdminScreenAugmenter {
 		<div id="message" class="updated woocommerce-message inline">
 			<p>
 				<strong><?php cfw_e( 'CheckoutWC:' ); ?></strong>
-				<?php cfw_e( 'Settings marked with asterisks (**) may be overridden on the checkout page based on your Login and Registration settings. (CheckoutWC > Checkout)' ); ?>
+				<?php cfw_e( 'Settings marked with asterisks (**) may be overridden on the checkout page based on your Login and Registration settings. (CheckoutWC > Pages)' ); ?>
 			</p>
 		</div>
 		<?php
 	}
 
+
 	public function mark_possibly_overridden_account_settings( array $settings ): array {
 		foreach ( $settings as $key => $setting ) {
 			if ( 'woocommerce_registration_generate_username' === $setting['id'] || 'woocommerce_registration_generate_password' === $setting['id'] ) {
-				$settings[ $key ]['desc'] = "{$setting['desc']} **";
-			}
-		}
-
-		return $settings;
-	}
-
-	public function mark_possibly_overridden_product_settings( array $settings ): array {
-		foreach ( $settings as $key => $setting ) {
-			if ( 'woocommerce_enable_ajax_add_to_cart' === $setting['id'] || 'woocommerce_cart_redirect_after_add' === $setting['id'] ) {
 				$settings[ $key ]['desc'] = "{$setting['desc']} **";
 			}
 		}

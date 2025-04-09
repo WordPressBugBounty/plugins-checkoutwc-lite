@@ -4,6 +4,9 @@ namespace Objectiv\Plugins\Checkout\Compatibility\Gateways;
 
 use Objectiv\Plugins\Checkout\Compatibility\CompatibilityAbstract;
 use Objectiv\Plugins\Checkout\Managers\SettingsManager;
+use Objectiv\Plugins\Checkout\Model\AlternativePlugin;
+use Objectiv\Plugins\Checkout\Model\DetectedPaymentGateway;
+use Objectiv\Plugins\Checkout\Model\GatewaySupport;
 
 class WooCommercePayments extends CompatibilityAbstract {
 	public function is_available(): bool {
@@ -21,6 +24,27 @@ class WooCommercePayments extends CompatibilityAbstract {
 		if ( apply_filters( 'cfw_wcpay_payment_requests_ignore_shipping_phone', true ) ) {
 			add_action( 'wc_ajax_wcpay_create_order', array( $this, 'process_payment_request_ajax_checkout' ), 1 );
 		}
+
+		if ( ! $this->is_available() ) {
+			return;
+		}
+
+		add_filter(
+			'cfw_detected_gateways',
+			function ( $gateways ) {
+				$gateways[] = new DetectedPaymentGateway(
+					'WooPayments',
+					GatewaySupport::FULLY_SUPPORTED,
+					'WooCommerce Payments is a whitelabel Stripe provider. Switch to <a class="text-blue-600 underline" target="_blank" href="https://wordpress.org/plugins/woo-stripe-payment/">Payment Plugins for Stripe WooCommerce</a>',
+					new AlternativePlugin(
+						'woo-stripe-payment',
+						'Payment Plugins for Stripe WooCommerce'
+					)
+				);
+
+				return $gateways;
+			}
+		);
 	}
 
 	public function run() {
@@ -37,39 +61,43 @@ class WooCommercePayments extends CompatibilityAbstract {
 			 *
 			 * @var \WC_Payments_Payment_Request_Button_Handler $wc_payments_payment_request_button_handler
 			 */
-			$wc_payments_payment_request_button_handler = cfw_get_hook_instance_object( 'woocommerce_checkout_before_customer_details', 'display_payment_request_button_html', 1 );
+			$wc_payments_payment_request_button_handler = cfw_get_hook_instance_object( 'woocommerce_checkout_before_customer_details', 'display_express_checkout_buttons', 1 );
 
 			if ( ! $wc_payments_payment_request_button_handler ) {
 				return;
 			}
 
 			// Remove default stripe request placement
-			remove_action( 'woocommerce_checkout_before_customer_details', array( $wc_payments_payment_request_button_handler, 'display_payment_request_button_html' ), 1 );
-			remove_action( 'woocommerce_checkout_before_customer_details', array( $wc_payments_payment_request_button_handler, 'display_payment_request_button_separator_html' ), 2 );
+			remove_action( 'woocommerce_checkout_before_customer_details', array( $wc_payments_payment_request_button_handler, 'display_express_checkout_buttons' ), 1 );
 
 			// Add our own stripe requests
-			add_action( 'cfw_payment_request_buttons', array( $wc_payments_payment_request_button_handler, 'display_payment_request_button_html' ), 1 );
-			add_action( 'cfw_after_payment_request_buttons', array( $this, 'add_payment_request_separator' ), 12 ); // This should be 12, which is after 11, which is the hook other gateways use
+			add_action( 'cfw_payment_request_buttons', array( $wc_payments_payment_request_button_handler, 'display_express_checkout_buttons' ), 1 );
 		}
 	}
 
-	public function add_payment_request_separator() {
-		cfw_add_separator( '', 'wcpay-payment-request-button-separator', 'text-align: center;' );
-	}
-
 	public function process_payment_request_ajax_checkout() {
-		// phpcs:disable WordPress.Security.NonceVerification.Missing
-		$payment_request_type = isset( $_POST['payment_request_type'] ) ? wc_clean( $_POST['payment_request_type'] ) : '';
-		// phpcs:enable WordPress.Security.NonceVerification.Missing
+		$payment_request_type = isset( $_POST['payment_request_type'] ) ? wc_clean( wp_unslash( $_POST['payment_request_type'] ) ) : ''; // phpcs:ignore WordPress.Security.NonceVerification.Missing
 
 		// Disable shipping phone validation when using payment request
 		if ( ! empty( $payment_request_type ) ) {
 			add_filter(
 				'woocommerce_checkout_fields',
-				function( $fields ) {
+				function ( $fields ) {
 					if ( isset( $fields['shipping']['shipping_phone'] ) ) {
 						$fields['shipping']['shipping_phone']['required'] = false;
 						$fields['shipping']['shipping_phone']['validate'] = array();
+					}
+
+					if ( 'yes' === SettingsManager::instance()->get_setting( 'use_fullname_field' ) ) {
+						unset( $fields['shipping']['shipping_full_name'] );
+						unset( $fields['billing']['billing_full_name'] );
+					}
+
+					if ( 'yes' === SettingsManager::instance()->get_setting( 'enable_discreet_address_1_fields' ) ) {
+						unset( $fields['shipping']['shipping_house_number'] );
+						unset( $fields['billing']['billing_house_number'] );
+						unset( $fields['shipping']['shipping_street_name'] );
+						unset( $fields['billing']['billing_street_name'] );
 					}
 
 					return $fields;
@@ -92,16 +120,16 @@ class WooCommercePayments extends CompatibilityAbstract {
 
 		$data = $wp_scripts->registered['WCPAY_PAYMENT_REQUEST']->extra['data'];
 
-		$data = str_replace( '"height":"40"', '"height":"35"', $data );
-		$data = str_replace( '"height":"48"', '"height":"35"', $data );
-		$data = str_replace( '"height":"56"', '"height":"35"', $data );
+		$data = str_replace( '"height":"40"', '"height":"42"', $data );
+		$data = str_replace( '"height":"48"', '"height":"42"', $data );
+		$data = str_replace( '"height":"56"', '"height":"42"', $data );
 
 		$wp_scripts->registered['WCPAY_PAYMENT_REQUEST']->extra['data'] = $data;
 	}
 
 	public function typescript_class_and_params( array $compatibility ): array {
 		$compatibility[] = array(
-			'class'  => 'Stripe',
+			'class'  => 'WooCommercePayments',
 			'params' => array(),
 		);
 

@@ -2,6 +2,7 @@
 
 namespace Objectiv\Plugins\Checkout\Adapters;
 
+use Exception;
 use Objectiv\Plugins\Checkout\Model\CartItem;
 use WC_Cart;
 
@@ -17,18 +18,23 @@ class CartItemFactory {
 			$key = $key ?? '';
 
 			/** @var \WC_Product $product */
-			$product = apply_filters( 'woocommerce_cart_item_product', $item['data'], $item, $key );
+			$product = cfw_apply_filters( 'woocommerce_cart_item_product', $item['data'], $item, $key );
 
 			$exists   = $product && $product->exists();
 			$non_zero = $item['quantity'] > 0;
-			$visible  = apply_filters( 'woocommerce_checkout_cart_item_visible', true, $item, $key );
+			$visible  = cfw_apply_filters( 'woocommerce_checkout_cart_item_visible', true, $item, $key );
 			$include  = $exists && $non_zero && $visible;
 
 			if ( ! $include ) {
 				continue;
 			}
 
-			$items[] = new CartItem( $key, $item );
+			try {
+				$items[] = new CartItem( $key, $item );
+			} catch ( Exception $e ) {
+				cfw_debug_log( 'Error creating cart item: ' . $e->getMessage() );
+				continue;
+			}
 		}
 
 		return $items;

@@ -1,6 +1,8 @@
 <?php
 namespace Objectiv\Plugins\Checkout\Loaders;
 
+use WC_Data_Exception;
+
 /**
  * Class Redirect
  *
@@ -15,8 +17,6 @@ class Redirect extends LoaderAbstract {
 	/**
 	 *
 	 * @since 1.0.0
-	 * @access public
-	 *
 	 */
 	public static function checkout() {
 		/**
@@ -38,7 +38,7 @@ class Redirect extends LoaderAbstract {
 			self::hook_cfw_wp_head();
 			self::hook_cfw_wp_footer();
 
-			$css_classes = apply_filters( 'body_class', array( 'checkout-wc', 'woocommerce', 'woocommerce-checkout', cfw_get_active_template()->get_slug() ), array() );
+			$css_classes = cfw_apply_filters( 'body_class', array( 'checkout-wc', 'woocommerce', 'woocommerce-checkout', cfw_get_active_template()->get_slug() ), array() );
 
 			if ( ! cfw_show_shipping_tab() ) {
 				$css_classes[] = 'cfw-hide-shipping';
@@ -69,9 +69,113 @@ class Redirect extends LoaderAbstract {
 
 	/**
 	 * @since 1.0.0
-	 * @access public
+	 */
+	public static function order_pay() {
+		/**
+		 * Filters whether to load order pay template
+		 *
+		 * @since 3.0.0
+		 *
+		 * @param bool $load Whether to load order pay template
+		 */
+		if ( apply_filters( 'cfw_load_order_pay_template', is_checkout_pay_page() ) ) {
+			$global_template_parameters = self::init_order_pay();
+
+			if ( ! isset( $global_template_parameters['order'] ) ) {
+				return;
+			}
+
+			add_action( 'wp_head', array( '\Objectiv\Plugins\Checkout\Loaders\Redirect', 'custom_styles' ), 5, 5 ); // print styles happens at priority 8
+
+			self::suppress_errors();
+			self::disable_caching();
+			self::suppress_assets();
+			self::hook_cfw_wp_head();
+			self::hook_cfw_wp_footer();
+
+			$css_classes = array( 'checkout-wc', 'woocommerce', 'woocommerce-checkout', cfw_get_active_template()->get_slug() );
+
+			/**
+			 * Filter CheckoutWC specific body classes
+			 *
+			 * @since 3.0.0
+			 *
+			 * @param array $css_classes The body css classes
+			 */
+			$cfw_body_classes = apply_filters( 'cfw_body_classes', $css_classes );
+
+			// Output the contents of the <head></head> section
+			self::head( $cfw_body_classes );
+
+			// Output the contents of the <body></body> section
+			self::display( $global_template_parameters, 'order-pay.php' );
+
+			// Output a closing </body> and closing </html> tag
+			self::footer();
+
+			cfw_do_action( 'after_woocommerce_pay' );
+
+			// Exit out before WordPress can do anything else
+			exit;
+		}
+	}
+
+	/**
+	 * @throws WC_Data_Exception If the order is not found.
+	 * @since 2.39.0
+	 */
+	public static function order_received() {
+		/**
+		 * Filters whether to load order received template
+		 *
+		 * @since 3.0.0
+		 *
+		 * @param bool $load Whether to load order received template
+		 */
+		if ( apply_filters( 'cfw_load_order_received_template', is_order_received_page() ) ) {
+			$global_template_parameters = self::init_thank_you();
+
+			if ( empty( $global_template_parameters['order'] ) ) {
+				return; // prevent PHP warnings
+			}
+
+			add_action( 'wp_head', array( '\Objectiv\Plugins\Checkout\Loaders\Redirect', 'custom_styles' ), 5, 5 ); // print styles happens at priority 8
+
+			self::suppress_errors();
+			self::disable_caching();
+			self::suppress_assets();
+			self::hook_cfw_wp_head();
+			self::hook_cfw_wp_footer();
+
+			$css_classes = array( 'checkout-wc', 'woocommerce', cfw_get_active_template()->get_slug() );
+
+			/**
+			 * Filter CheckoutWC specific body classes
+			 *
+			 * @since 3.0.0
+			 *
+			 * @param array $css_classes The body css classes
+			 */
+			$cfw_body_classes = apply_filters( 'cfw_body_classes', $css_classes );
+
+			// Output the contents of the <head></head> section
+			self::head( $cfw_body_classes );
+
+			// Output the contents of the <body></body> section
+			self::display( $global_template_parameters, 'thank-you.php' );
+
+			// Output a closing </body> and closing </html> tag
+			self::footer();
+
+			// Exit out before WordPress can do anything else
+			exit;
+		}
+	}
+
+	/**
+	 * @since 1.0.0
 	 *
-	 * @param array $classes
+	 * @param array $classes Array of classes to add to the document head.
 	 */
 	public static function head( array $classes ) {
 		/**
@@ -88,6 +192,9 @@ class Redirect extends LoaderAbstract {
 		// Stop initial animations
 		// This gets removed on DOMContentLoaded
 		$classes[] = 'cfw-preload';
+
+		// cfw-grid
+		$classes[] = 'cfw-grid';
 		?>
 		<!DOCTYPE html>
 		<html <?php language_attributes(); ?>>
@@ -122,9 +229,6 @@ class Redirect extends LoaderAbstract {
 		do_action( 'cfw_after_header' );
 	}
 
-	/**
-	 * cfw_wp_head
-	 */
 	public static function cfw_wp_head() {
 		// Make sure gateways load before we call wp_head()
 		WC()->payment_gateways()->get_available_payment_gateways();
@@ -177,11 +281,6 @@ class Redirect extends LoaderAbstract {
 		}
 	}
 
-	/**
-	 * @since 1.0.0
-	 * @access public
-	 *
-	 */
 	public static function footer() {
 		if ( has_action( 'cfw_custom_footer' ) ) {
 			/**
@@ -216,7 +315,7 @@ class Redirect extends LoaderAbstract {
 		 * PHP Warning / Notice Suppression
 		 */
 		if ( ! defined( 'CFW_DEV_MODE' ) || ! CFW_DEV_MODE ) {
-			ini_set( 'display_errors', 'Off' );
+			ini_set( 'display_errors', 'Off' ); // phpcs:ignore WordPress.PHP.IniSet.display_errors_Disallowed
 		}
 	}
 
@@ -256,9 +355,32 @@ class Redirect extends LoaderAbstract {
 		add_action( 'cfw_wp_footer', array( 'Objectiv\Plugins\Checkout\Loaders\Redirect', 'output_custom_footer_scripts' ) );
 	}
 
+	/**
+	 * @throws WC_Data_Exception When the order ID is invalid.
+	 */
 	public static function template_redirect() {
+		global $wp;
+
+		if ( isset( $_GET['order'] ) && isset( $_GET['key'] ) ) { // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+			wc_deprecated_argument( __CLASS__ . '->' . __FUNCTION__, '2.1', '"order" is no longer used to pass an order ID. Use the order-pay or order-received endpoint instead.' );
+
+			// Get the order to work out what we are showing.
+			$order_id = absint( $_GET['order'] ); // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+			$order    = wc_get_order( $order_id );
+
+			if ( $order && $order->has_status( 'pending' ) ) {
+				$wp->query_vars['order-pay'] = absint( $_GET['order'] ); // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+			} else {
+				$wp->query_vars['order-received'] = absint( $_GET['order'] ); // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+			}
+		}
+
 		if ( cfw_is_checkout() ) {
 			self::checkout();
+		} elseif ( is_checkout_pay_page() ) {
+			self::order_pay();
+		} elseif ( is_order_received_page() ) {
+			self::order_received();
 		}
 	}
 }

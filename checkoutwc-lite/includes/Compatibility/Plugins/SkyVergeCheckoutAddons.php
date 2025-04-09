@@ -18,7 +18,7 @@ class SkyVergeCheckoutAddons extends CompatibilityAbstract {
 	/**
 	 * Add custom Checkout Field Addons field types to the list of non-floating label field types
 	 *
-	 * @param array $types
+	 * @param array $types The field types.
 	 * @return array
 	 */
 	public function add_non_floating_label_field_types( array $types ): array {

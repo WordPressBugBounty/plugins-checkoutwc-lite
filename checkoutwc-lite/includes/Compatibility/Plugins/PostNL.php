@@ -17,6 +17,7 @@ class PostNL extends CompatibilityAbstract {
 
 		add_filter( 'woocommerce_default_address_fields', array( $this, 'add_new_fields' ), 100001, 1 ); // run after our normal hook
 		add_filter( 'woocommerce_get_country_locale', array( $this, 'prevent_postcode_sort_change' ), 100 );
+		add_filter( 'cfw_enable_zip_autocomplete', '__return_false' );
 
 		// Fix shipping preview
 		add_filter( 'cfw_get_shipping_details_address', array( $this, 'fix_shipping_preview' ), 10, 2 );

@@ -2,8 +2,6 @@
 
 namespace Objectiv\Plugins\Checkout\Compatibility\Plugins;
 
-use _WP_Dependency;
-use Objectiv\Plugins\Checkout\Admin\Pages\PageAbstract;
 use Objectiv\Plugins\Checkout\Compatibility\CompatibilityAbstract;
 use Objectiv\Plugins\Checkout\Managers\SettingsManager;
 
@@ -13,7 +11,7 @@ class ThemeHighCheckoutFieldEditor extends CompatibilityAbstract {
 	}
 
 	public function pre_init() {
-		add_action( 'cfw_admin_integrations_settings', array( $this, 'admin_integration_settings' ) );
+		add_filter( 'cfw_admin_integrations_checkbox_fields', array( $this, 'admin_integration_settings' ) );
 	}
 
 	public function run() {
@@ -32,19 +30,24 @@ class ThemeHighCheckoutFieldEditor extends CompatibilityAbstract {
 	}
 
 	/**
-	 * Output the integration admin settings
+	 * Add the admin settings
 	 *
-	 * @param PageAbstract $integrations
+	 * @param array $integrations The integrations.
+	 *
+	 * @return array
 	 */
-	public function admin_integration_settings( PageAbstract $integrations ) {
+	public function admin_integration_settings( array $integrations ): array {
 		if ( ! $this->is_available() ) {
-			return;
+			return $integrations;
 		}
 
-		$integrations->output_checkbox_row(
-			'allow_thcfe_address_modification',
-			cfw__( 'Enable ThemeHigh Checkout Field Editor address field overrides.', 'checkout-wc' ),
-			cfw__( 'Allow ThemeHigh Checkout Field Editor to modify billing and shipping address fields. (Not Recommended)', 'checkout-wc' )
+		$integrations[] = array(
+			'name'          => 'allow_thcfe_address_modification',
+			'label'         => cfw_notranslate__( 'Enable ThemeHigh Checkout Field Editor address field overrides.', 'checkout-wc' ),
+			'description'   => cfw_notranslate__( 'Allow ThemeHigh Checkout Field Editor to modify billing and shipping address fields. (Not Recommended)', 'checkout-wc' ),
+			'initial_value' => SettingsManager::instance()->get_setting( 'allow_thcfe_address_modification' ) === 'yes',
 		);
+
+		return $integrations;
 	}
 }

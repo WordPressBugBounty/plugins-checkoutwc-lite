@@ -2,6 +2,10 @@
 
 namespace Objectiv\Plugins\Checkout\Admin\Pages;
 
+use Objectiv\Plugins\Checkout\Managers\PlanManager;
+use Objectiv\Plugins\Checkout\Managers\SettingsManager;
+use Objectiv\Plugins\Checkout\Managers\UpdatesManager;
+
 /**
  * @link checkoutwc.com
  * @since 5.0.0
@@ -9,45 +13,46 @@ namespace Objectiv\Plugins\Checkout\Admin\Pages;
  */
 class Integrations extends PageAbstract {
 	public function __construct() {
-		parent::__construct( cfw__( 'Integrations', 'checkout-wc' ), 'manage_options', 'integrations' );
+		parent::__construct( cfw_notranslate__( 'Integrations', 'checkout-wc' ), 'cfw_manage_integrations', 'integrations' );
+	}
+
+	public function init() {
+		$integrations = cfw_apply_filters( 'cfw_admin_integrations_checkbox_fields', array() );
+
+		if ( ! defined( 'CFW_PREMIUM_PLAN_IDS' ) && count( $integrations ) === 0 ) {
+			return;
+		}
+
+		parent::init();
 	}
 
 	public function output() {
-		$this->output_form_open();
 		?>
-		<div class="space-y-6">
-			<?php
-			cfw_admin_page_section(
-				cfw__( 'Themes and Plugins', 'checkout-wc' ),
-				cfw__( 'Integrations with 3rd party themes and plugins.', 'checkout-wc' ),
-				$this->get_integration_settings()
-			);
-			?>
-		</div>
+		<div id="cfw-admin-pages-integrations"></div>
 		<?php
-		$this->output_form_close();
 	}
 
-	protected function get_integration_settings() {
-		ob_start();
-
-		/**
-		 * Fires at top of WP Admin > CheckoutWC > Advanced > Integrations
-		 *
-		 * Use to add additional integration settings
-		 *
-		 * @since 5.0.0
-		 *
-		 * @param PageAbstract $integrations The integrations admin page class
-		 */
-		do_action( 'cfw_admin_integrations_settings', $this );
-
-		$output = ob_get_clean();
-
-		if ( empty( $output ) ) {
-			return cfw__( 'No integrations available.', 'checkout-wc' );
+	public function maybe_set_script_data() {
+		if ( ! $this->is_current_page() ) {
+			return;
 		}
 
-		return $output;
+		$this->set_script_data(
+			array(
+				'settings'     => array(
+					'google_places_api_key' => SettingsManager::instance()->get_setting( 'google_places_api_key' ),
+				),
+				/**
+				 * Filters third party checkboxes here:  WP Admin > CheckoutWC > Advanced > Integrations
+				 *
+				 * Use to add additional integration settings
+				 *
+				 * @param array $integrations The integrations admin page class
+				 * @since 9.0.0
+				 */
+				'integrations' => apply_filters( 'cfw_admin_integrations_checkbox_fields', array() ),
+				'plan'         => $this->get_plan_data(),
+			)
+		);
 	}
 }

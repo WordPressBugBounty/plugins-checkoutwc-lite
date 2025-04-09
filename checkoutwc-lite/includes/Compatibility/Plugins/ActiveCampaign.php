@@ -10,19 +10,7 @@ class ActiveCampaign extends CompatibilityAbstract {
 	}
 
 	public function run() {
-		global $wp_filter;
-
-		$existing_hooks = $wp_filter['woocommerce_after_checkout_billing_form'];
-
-		if ( $existing_hooks[10] ) {
-			foreach ( $existing_hooks[10] as $key => $callback ) {
-				if ( false !== stripos( $key, 'handle_woocommerce_checkout_form' ) ) {
-					global $ActiveCampaign_Public;
-
-					$ActiveCampaign_Public = $callback['function'][0];
-				}
-			}
-		}
+		$ActiveCampaign_Public = cfw_get_hook_instance_object( 'woocommerce_after_checkout_billing_form', 'handle_woocommerce_checkout_form' );
 
 		if ( ! empty( $ActiveCampaign_Public ) ) {
 			/**

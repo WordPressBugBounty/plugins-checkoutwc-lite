@@ -10,23 +10,12 @@ namespace Objectiv\Plugins\Checkout\Action;
  * @package Objectiv\Plugins\Checkout\Action
  */
 class UpdatePaymentMethodAction extends CFWAction {
-
-	/**
-	 * @since 1.0.0
-	 * @access public
-	 */
 	public function __construct() {
 		parent::__construct( 'update_payment_method' );
 	}
 
-	/**
-	 * Logs in the user based on the information passed. If information is incorrect it returns an error message
-	 *
-	 * @since 1.0.0
-	 * @access public
-	 */
 	public function action() {
-		WC()->session->set( 'chosen_payment_method', empty( $_POST['paymentMethod'] ) ? '' : wc_clean( $_POST['paymentMethod'] ) );
+		WC()->session->set( 'chosen_payment_method', wc_clean( wp_unslash( $_POST['paymentMethod'] ?? '' ) ) ); // phpcs:ignore WordPress.Security.NonceVerification.Missing
 
 		$this->out(
 			array(

@@ -3,7 +3,6 @@
 namespace Objectiv\Plugins\Checkout\Compatibility\Plugins;
 
 use Objectiv\Plugins\Checkout\Compatibility\CompatibilityAbstract;
-use Objectiv\Plugins\Checkout\Admin;
 use Objectiv\Plugins\Checkout\Managers\SettingsManager;
 
 class WooCommerceCheckoutFieldEditor extends CompatibilityAbstract {
@@ -12,7 +11,7 @@ class WooCommerceCheckoutFieldEditor extends CompatibilityAbstract {
 	}
 
 	public function pre_init() {
-		add_action( 'cfw_admin_integrations_settings', array( $this, 'admin_integration_settings' ) );
+		add_filter( 'cfw_admin_integrations_checkbox_fields', array( $this, 'admin_integration_settings' ) );
 		add_filter( 'woocommerce_custom_checkout_position', array( $this, 'add_additional_field_sizes' ) );
 		add_filter( 'cfw_pre_output_fieldset_field_args', array( $this, 'cfw_form_field_args' ), 100000 - 1000, 1 );
 
@@ -33,6 +32,7 @@ class WooCommerceCheckoutFieldEditor extends CompatibilityAbstract {
 		if ( SettingsManager::instance()->get_setting( 'allow_checkout_field_editor_address_modification' ) === 'yes' ) {
 			add_filter( 'option_wc_fields_billing', array( $this, 'cleanup_classes' ) );
 			add_filter( 'option_wc_fields_shipping', array( $this, 'cleanup_classes' ) );
+
 			return;
 		}
 
@@ -47,24 +47,30 @@ class WooCommerceCheckoutFieldEditor extends CompatibilityAbstract {
 
 	public function add_body_class( $classes ) {
 		$classes[] = 'cfw-cfe-active';
+
 		return $classes;
 	}
 
 	/**
-	 * Output the admin settings
+	 * Add the admin settings
 	 *
-	 * @param Admin\Pages\PageAbstract $integrations
+	 * @param array $integrations The integrations.
+	 *
+	 * @return array
 	 */
-	public function admin_integration_settings( Admin\Pages\PageAbstract $integrations ) {
+	public function admin_integration_settings( array $integrations ): array {
 		if ( ! $this->is_available() ) {
-			return;
+			return $integrations;
 		}
 
-		$integrations->output_checkbox_row(
-			'allow_checkout_field_editor_address_modification',
-			cfw__( 'Enable Checkout Field Editor address field overrides. (Not Recommended)', 'checkout-wc' ),
-			cfw__( 'Allow WooCommerce Checkout Field Editor to modify billing and shipping address fields. Not compatible with these features: Discreet House Number and Street Name Address Fields, Full Name Field', 'checkout-wc' )
+		$integrations[] = array(
+			'name'          => 'allow_checkout_field_editor_address_modification',
+			'label'         => cfw_notranslate__( 'Enable Checkout Field Editor address field overrides. (Not Recommended)', 'checkout-wc' ),
+			'description'   => cfw_notranslate__( 'Allow WooCommerce Checkout Field Editor to modify billing and shipping address fields. Not compatible with these features: Separate House Number and Street Name Address Fields, Full Name Field, Fetchify', 'checkout-wc' ),
+			'initial_value' => SettingsManager::instance()->get_setting( 'allow_checkout_field_editor_address_modification' ) === 'yes',
 		);
+
+		return $integrations;
 	}
 
 	public function cleanup_classes( $address_fields ) {
@@ -99,12 +105,12 @@ class WooCommerceCheckoutFieldEditor extends CompatibilityAbstract {
 	}
 
 	public function enable_notes_field(): bool {
-		return  'yes' === get_option( 'woocommerce_enable_order_comments', 'yes' );
+		return 'yes' === get_option( 'woocommerce_enable_order_comments', 'yes' );
 	}
 
 	public function output_custom_styles() {
 		// phpcs:disable WordPress.Security.NonceVerification.Missing
-		if ( empty( $_GET['page'] ) || 'checkout_field_editor' !== $_GET['page'] ) {
+		if ( empty( $_GET['page'] ) || 'checkout_field_editor' !== $_GET['page'] ) { // phpcs:ignore WordPress.Security.NonceVerification.Recommended
 			return;
 		}
 		// phpcs:enable WordPress.Security.NonceVerification.Missing
@@ -120,7 +126,7 @@ class WooCommerceCheckoutFieldEditor extends CompatibilityAbstract {
 
 	public function maybe_redirect_to_additional_fields_tab() {
 		// phpcs:disable WordPress.Security.NonceVerification.Missing
-		if ( ! empty( $_GET['page'] ) && 'checkout_field_editor' === $_GET['page'] && ( empty( $_GET['tab'] ) || 'additional' !== $_GET['tab'] ) ) {
+		if ( ! empty( $_GET['page'] ) && 'checkout_field_editor' === $_GET['page'] && ( empty( $_GET['tab'] ) || 'additional' !== $_GET['tab'] ) ) { // phpcs:ignore WordPress.Security.NonceVerification.Recommended
 			wp_safe_redirect( 'admin.php?page=checkout_field_editor&tab=additional' );
 			exit();
 		}
@@ -130,32 +136,32 @@ class WooCommerceCheckoutFieldEditor extends CompatibilityAbstract {
 	/**
 	 * Legacy field classes that we need to honor for now I guess
 	 *
-	 * @param $args
+	 * @param array $args The field args.
 	 *
-	 * @return mixed
+	 * @return array
 	 */
 	public function cfw_form_field_args( $args ) {
 		if ( ! isset( $args['class'] ) ) {
 			return $args;
 		}
 
-		if ( in_array( 'cfw-col-3', $args['class'], true ) ) {
+		if ( in_array( 'cfw-col-3', (array) $args['class'], true ) ) {
 			$args['columns'] = 3;
 		}
 
-		if ( in_array( 'cfw-col-4', $args['class'], true ) ) {
+		if ( in_array( 'cfw-col-4', (array) $args['class'], true ) ) {
 			$args['columns'] = 4;
 		}
 
-		if ( in_array( 'cfw-col-8', $args['class'], true ) ) {
+		if ( in_array( 'cfw-col-8', (array) $args['class'], true ) ) {
 			$args['columns'] = 8;
 		}
 
-		if ( in_array( 'cfw-col-9', $args['class'], true ) ) {
+		if ( in_array( 'cfw-col-9', (array) $args['class'], true ) ) {
 			$args['columns'] = 9;
 		}
 
-		if ( in_array( 'form-row-wide', $args['class'], true ) ) {
+		if ( in_array( 'form-row-wide', (array) $args['class'], true ) ) {
 			$args['columns'] = 12;
 		}
 

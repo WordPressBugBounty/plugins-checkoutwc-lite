@@ -18,7 +18,7 @@ class Avada extends CompatibilityAbstract {
 
 		add_filter(
 			'avada_setting_get_css_cache_method',
-			function() {
+			function () {
 				return 'off';
 			}
 		);
@@ -27,7 +27,7 @@ class Avada extends CompatibilityAbstract {
 		if ( version_compare( AVADA_VERSION, '7.3.0', '>=' ) ) {
 			add_action(
 				'wp',
-				function() {
+				function () {
 					$this->checkout_page_fixes();
 				},
 				100

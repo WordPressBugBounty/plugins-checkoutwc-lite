@@ -3,6 +3,9 @@
 namespace Objectiv\Plugins\Checkout\Compatibility\Gateways;
 
 use Objectiv\Plugins\Checkout\Compatibility\CompatibilityAbstract;
+use Objectiv\Plugins\Checkout\Model\AlternativePlugin;
+use Objectiv\Plugins\Checkout\Model\DetectedPaymentGateway;
+use Objectiv\Plugins\Checkout\Model\GatewaySupport;
 
 class PayPalForWooCommerce extends CompatibilityAbstract {
 	public function is_available(): bool {
@@ -18,8 +21,69 @@ class PayPalForWooCommerce extends CompatibilityAbstract {
 		return $compatibility;
 	}
 
+	public function pre_init() {
+		add_action( 'cfw_before_process_checkout', array( $this, 'maybe_unrequire_fields' ) );
+
+		if ( ! defined( 'PAYPAL_FOR_WOOCOMMERCE_PLUGIN_DIR' ) ) {
+			return;
+		}
+
+		if ( version_compare( VERSION_PFW, '4.4.28', '<' ) ) {
+			add_filter(
+				'cfw_detected_gateways',
+				function ( $gateways ) {
+					$gateways[] = new DetectedPaymentGateway(
+						'Angelleye PayPal for WooCommerce',
+						GatewaySupport::PARTIALLY_SUPPORTED,
+						cfw_notranslate__( 'Please update to the latest version of PayPal for WooCommerce to get full support.', 'checkout-wc' )
+					);
+
+					return $gateways;
+				}
+			);
+			return;
+		}
+
+		add_filter(
+			'cfw_detected_gateways',
+			function ( $gateways ) {
+			$gateways[] = new DetectedPaymentGateway(
+				'Angelleye PayPal for WooCommerce',
+				GatewaySupport::FULLY_SUPPORTED
+			);
+
+			return $gateways;
+			}
+		);
+	}
+
+	public function maybe_unrequire_fields() {
+		if ( ! defined( 'VERSION_PFW' ) ) {
+			return;
+		}
+
+		if ( version_compare( VERSION_PFW, '1.5.7', '<' ) ) {
+			return;
+		}
+
+		if ( ! class_exists( '\\WC_Gateway_PayPal_Express_Function_AngellEYE' ) ) {
+			return;
+		}
+
+		$function_helper = new \WC_Gateway_PayPal_Express_Function_AngellEYE();
+
+		if ( empty( $function_helper ) ) {
+			return;
+		}
+
+		if ( $function_helper->ec_is_express_checkout() ) {
+			add_filter( 'cfw_enable_separate_address_1_fields', '__return_false' );
+			add_filter( 'cfw_enable_fullname_field', '__return_false' );
+		}
+	}
+
 	public function run() {
-		if ( version_compare( VERSION_PFW, '1.5.7', '>=' ) ) {
+		if ( version_compare( VERSION_PFW, '1.5.7', '>=' ) && version_compare( VERSION_PFW, '4.4.28', '<' ) ) {
 			$angelleye_paypal_express_checkout_helper = \Angelleye_PayPal_Express_Checkout_Helper::instance();
 
 			if ( 'no' === $angelleye_paypal_express_checkout_helper->enabled ) {
@@ -36,7 +100,7 @@ class PayPalForWooCommerce extends CompatibilityAbstract {
 			remove_action( 'woocommerce_before_checkout_form', array( $angelleye_paypal_express_checkout_helper, 'checkout_message' ), 5 );
 
 			if ( $angelleye_paypal_express_checkout_helper->function_helper->ec_is_express_checkout() ) {
-				add_filter( 'cfw_enable_discrete_address_1_fields', '__return_false' );
+				add_filter( 'cfw_enable_separate_address_1_fields', '__return_false' );
 				add_filter( 'cfw_enable_fullname_field', '__return_false' );
 
 				/**
@@ -67,7 +131,6 @@ class PayPalForWooCommerce extends CompatibilityAbstract {
 				// Unhook Customer Information Tab Pieces
 				remove_action( 'cfw_checkout_customer_info_tab', 'cfw_payment_request_buttons', 10 );
 				remove_action( 'cfw_checkout_customer_info_tab', 'cfw_customer_info_tab_heading', 20 );
-				remove_action( 'cfw_checkout_customer_info_tab', 'cfw_customer_info_tab_account', 30 );
 				remove_action( 'cfw_checkout_customer_info_tab', 'cfw_customer_info_tab_account_fields', 40 );
 				remove_action( 'cfw_checkout_customer_info_tab', 'cfw_customer_info_address', 50 );
 				remove_action( 'cfw_checkout_customer_info_tab', 'cfw_customer_info_tab_nav', 60 );
@@ -87,7 +150,7 @@ class PayPalForWooCommerce extends CompatibilityAbstract {
 				// Add heading
 				add_action(
 					'cfw_checkout_payment_method_tab',
-					function() use ( $angelleye_paypal_express_checkout_helper ) {
+					function () use ( $angelleye_paypal_express_checkout_helper ) {
 						echo '<h1>' . esc_html( $angelleye_paypal_express_checkout_helper->review_title_page ) . '</h1>';
 					},
 					5
@@ -104,7 +167,7 @@ class PayPalForWooCommerce extends CompatibilityAbstract {
 					// Shipping methods
 					add_action(
 						'cfw_checkout_payment_method_tab',
-						function() {
+						function () {
 							cfw_shipping_methods();
 						},
 						7
@@ -113,7 +176,7 @@ class PayPalForWooCommerce extends CompatibilityAbstract {
 
 				add_action(
 					'cfw_checkout_payment_method_tab',
-					function() {
+					function () {
 						if ( ! WC()->cart->needs_shipping() ) {
 							return;
 						}
@@ -138,7 +201,7 @@ class PayPalForWooCommerce extends CompatibilityAbstract {
 
 				add_action(
 					'cfw_checkout_payment_method_tab',
-					function() {
+					function () {
 						?>
 						<div id="cfw-billing-fields-container" class="cfw-radio-reveal-content <?php cfw_address_class_wrap( false ); ?>">
 							<div class="cfw-input-wrap-row">
@@ -177,9 +240,12 @@ class PayPalForWooCommerce extends CompatibilityAbstract {
 				// Add style overrides
 				add_action(
 					'cfw_checkout_payment_method_tab',
-					function() {
+					function () {
 						?>
 						<style type="text/css">
+							#cfw-account-details {
+								display: none;
+							}
 							.cfw-add-field {
 								display: none;
 							}
@@ -284,10 +350,10 @@ class PayPalForWooCommerce extends CompatibilityAbstract {
 			}
 
 			if ( ! $Angelleye_PayPal_Express_Checkout_Helper->function_helper->ec_is_express_checkout() ) {
-				add_action( 'cfw_after_payment_request_buttons', 'cfw_add_separator', 11 );
-			} else {
-				add_action( 'cfw_checkout_before_customer_info_tab', array( $this, 'add_notice' ), 10 );
+				return;
 			}
+
+			add_action( 'cfw_checkout_before_customer_info_tab', array( $this, 'add_notice' ), 10 );
 		}
 	}
 

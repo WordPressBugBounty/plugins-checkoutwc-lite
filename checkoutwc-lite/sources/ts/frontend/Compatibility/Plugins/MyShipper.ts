@@ -1,8 +1,8 @@
-import Alert         from '../../Components/Alert';
-import Main          from '../../Main';
-import AlertService  from '../../Services/AlertService';
-import TabService    from '../../Services/TabService';
-import Compatibility from '../Compatibility';
+import Alert                 from '../../Components/Alert';
+import AlertService          from '../../Services/AlertService';
+import TabService            from '../../Services/TabService';
+import Compatibility         from '../Compatibility';
+import UpdateCheckoutService from '../../Services/UpdateCheckoutService';
 
 class MyShipper extends Compatibility {
     constructor() {
@@ -10,15 +10,15 @@ class MyShipper extends Compatibility {
     }
 
     load( params ): void {
-        const easyTabsWrap: any = Main.instance.tabService.tabContainer;
+        const easyTabsWrap: any = TabService.tabContainer;
 
-        easyTabsWrap.bind( 'easytabs:after', () => {
-            if ( Main.instance.tabService.getCurrentTab().attr( 'id' ) === TabService.shippingMethodTabId ) {
-                Main.instance.updateCheckoutService.triggerUpdateCheckout();
+        easyTabsWrap.on( 'easytabs:after', () => {
+            if ( TabService.getCurrentTab().attr( 'id' ) === TabService.shippingMethodTabId ) {
+                UpdateCheckoutService.queueUpdateCheckout();
             }
         } );
 
-        easyTabsWrap.bind( 'easytabs:before', ( event, clicked, target ) => {
+        easyTabsWrap.on( 'easytabs:before', ( event, clicked, target ) => {
             if ( jQuery( target ).attr( 'id' ) === TabService.paymentMethodTabId ) {
                 const selectedShippingMethod = jQuery( "input[name='shipping_method[0]']:checked" );
                 const shippingNumber = jQuery( 'input.shipper_number' ).first();
@@ -28,7 +28,7 @@ class MyShipper extends Compatibility {
                         // Prevent removing alert on next update checkout
                         AlertService.preserveAlerts = true;
 
-                        const alert: Alert = new Alert( 'error', params.notice, 'cfw-alert-error', true );
+                        const alert: Alert = new Alert( 'error', params.notice, null, true );
                         AlertService.queueAlert( alert );
                         AlertService.showAlerts();
 

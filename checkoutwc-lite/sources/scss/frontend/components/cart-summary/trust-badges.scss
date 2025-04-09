@@ -1,6 +1,6 @@
-#cfw_trust_badges {
+#cfw_trust_badges_list {
     position: relative;
-    border-top: 1px solid #e6e6e6;
+    border-top: 1px solid var(--cfw-horizontal-divider-color);
     font-size: 1rem;
 
     h4 {
@@ -30,16 +30,6 @@
 
         @include media-breakpoint-up(lg) {
             padding: 0;
-
-            .cfw-trust-badges {
-                display: flex;
-                flex-direction: row;
-                justify-content: space-between;
-
-                .row {
-                    width: auto;
-                }
-            }
         }
     }
 
@@ -48,20 +38,9 @@
             color: var(--cfw-footer-text-color);
             background: var(--cfw-footer-background-color);
         }
-    }
 
-    .cfw-badge {
-        margin-top: 1.5em;
-
-        h5 {
-            margin-top: 0;
-            margin-bottom: 0.5em;
-            font-size: 1em;
-        }
-
-        img {
-            max-width: 100%;
-            height: auto;
+        p {
+            text-align: left !important;
         }
     }
 }

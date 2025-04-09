@@ -19,5 +19,28 @@ class Flatsome extends CompatibilityAbstract {
 		remove_action( 'woocommerce_checkout_terms_and_conditions', 'flatsome_terms_and_conditions' );
 
 		remove_action( 'wp_head', 'flatsome_custom_css', 100 );
+
+		add_filter( 'cfw_blocked_style_handles', array( $this, 'allow_swatches_style' ), 100, 1 );
+		add_filter( 'cfw_blocked_script_handles', array( $this, 'allow_swatches_script' ), 100, 1 );
+	}
+
+	public function allow_swatches_style( array $styles ): array {
+		// Remove flatsome-swatches-frontend from array of styles to remove
+		return array_filter(
+			$styles,
+			function ( $style ) {
+				return 'flatsome-swatches-frontend' !== $style;
+			}
+		);
+	}
+
+	public function allow_swatches_script( array $scripts ): array {
+		// Remove flatsome-swatches-frontend from array of scripts to remove
+		return array_filter(
+			$scripts,
+			function ( $script ) {
+				return 'flatsome-swatches-frontend' !== $script;
+			}
+		);
 	}
 }

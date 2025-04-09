@@ -18,9 +18,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 				 * @since 3.0.0
 				 */
 				do_action( 'cfw_before_footer' );
-				?>
-				<?php esc_html_e( 'Copyright' ); ?> &copy; <?php echo esc_html( gmdate( 'Y' ) ); ?>, <?php echo esc_html( get_bloginfo( 'name' ) ); ?>. <?php esc_html_e( 'All rights reserved.' ); ?>
-				<?php
+
+				/**
+				 * Hook to output footer content
+				 *
+				 * @since 8.0.0
+				 */
+				do_action( 'cfw_footer_content' );
 
 				/**
 				 * Fires at the bottom of footer

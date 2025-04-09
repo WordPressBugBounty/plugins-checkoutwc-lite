@@ -16,7 +16,7 @@ class MondialRelay extends CompatibilityAbstract {
 	/**
 	 * Add a body class when Mondial Relay is present
 	 *
-	 * @param array $classes The body classes
+	 * @param array $classes The body classes.
 	 * @return array
 	 */
 	public function add_body_class( $classes ): array {

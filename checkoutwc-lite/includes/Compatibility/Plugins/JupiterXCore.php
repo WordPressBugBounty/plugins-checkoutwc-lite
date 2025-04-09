@@ -12,7 +12,7 @@ class JupiterXCore extends CompatibilityAbstract {
 	/**
 	 * Add JupiterX compiled styles to list of blocked style handles.
 	 *
-	 * @param array $styles
+	 * @param array $styles List of style handles.
 	 *
 	 * @return mixed
 	 */

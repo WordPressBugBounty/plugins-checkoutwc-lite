@@ -3,7 +3,10 @@
 namespace Objectiv\Plugins\Checkout\Admin\Pages;
 
 use Objectiv\Plugins\Checkout\Admin\TabNavigation;
+use Objectiv\Plugins\Checkout\Admin\Pages\Traits\TabbedAdminPageTrait;
+use Objectiv\Plugins\Checkout\Managers\NoticesManager;
 use Objectiv\Plugins\Checkout\Managers\SettingsManager;
+use WP_Error;
 
 /**
  * @link checkoutwc.com
@@ -11,103 +14,74 @@ use Objectiv\Plugins\Checkout\Managers\SettingsManager;
  * @package Objectiv\Plugins\Checkout\Admin\Pages
  */
 class Advanced extends PageAbstract {
-	protected $tab_navigation;
+	use TabbedAdminPageTrait;
 
 	public function __construct() {
-		parent::__construct( cfw__( 'Advanced', 'checkout-wc' ), 'manage_options', 'advanced' );
+		parent::__construct( cfw_notranslate__( 'Advanced', 'checkout-wc' ), 'cfw_manage_advanced', 'cfw_manage_advanced' );
 	}
 
 	public function init() {
+		parent::init();
+
+		$this->set_tabbed_navigation( new TabNavigation( 'advanced' ) );
+
+		$this->get_tabbed_navigation()->add_tab( 'Advanced', add_query_arg( array( 'subpage' => 'advanced' ), $this->get_url() ) );
+		$this->get_tabbed_navigation()->add_tab( 'Scripts', add_query_arg( array( 'subpage' => 'scripts' ), $this->get_url() ) );
+		$this->get_tabbed_navigation()->add_tab( 'Tools', add_query_arg( array( 'subpage' => 'tools' ), $this->get_url() ) );
+
 		add_action( 'wp_ajax_cfw_generate_settings', array( $this, 'generate_settings_export' ) );
 		add_action( 'admin_init', array( $this, 'maybe_upload_settings' ), 0 );
-
-		parent::init();
 	}
 
 	public function output() {
-		$this->tab_navigation = new TabNavigation( 'Advanced', 'subpage' );
-
-		$this->tab_navigation->add_tab( 'Advanced', add_query_arg( array( 'subpage' => 'advanced' ), $this->get_url() ) );
-		$this->tab_navigation->add_tab( 'Scripts', add_query_arg( array( 'subpage' => 'scripts' ), $this->get_url() ) );
-
-		if ( $this->get_current_tab() === false ) {
-			$_GET['subpage'] = 'advanced';
-		}
-
-		$current_tab_function = $this->get_current_tab() === false ? 'scripts_tab' : $this->get_current_tab() . '_tab';
+		$current_tab_function = $this->get_tabbed_navigation()->get_current_tab() . '_tab';
 		$callable             = array( $this, $current_tab_function );
 
-		$this->tab_navigation->display_tabs();
+		$this->get_tabbed_navigation()->display_tabs();
 
 		call_user_func( $callable );
 	}
 
 	public function scripts_tab() {
-		$this->output_form_open();
 		?>
-		<div class="space-y-6 mt-4">
-			<?php
-			cfw_admin_page_section(
-				cfw__( 'Checkout', 'checkout-wc' ),
-				'Add custom JavaScript and PHP that runs on the checkout page.',
-				$this->get_checkout_script_settings()
-			);
-			?>
-		</div>
+		<div id="cfw-admin-pages-advanced-scripts"></div>
 		<?php
-		$this->output_form_close();
-	}
-
-	protected function get_checkout_script_settings() {
-		ob_start();
-
-		$this->output_textarea_row(
-			'header_scripts_checkout',
-			cfw__( 'Header Scripts', 'checkout-wc' ),
-			cfw__( 'This code will output immediately before the closing <code>&lt;/head&gt;</code> tag in the document source.', 'checkout-wc' )
-		);
-
-		$this->output_textarea_row(
-			'footer_scripts_checkout',
-			cfw__( 'Footer Scripts', 'checkout-wc' ),
-			cfw__( 'This code will output immediately before the closing <code>&lt;/body&gt;</code> tag in the document source.', 'checkout-wc' )
-		);
-
-		return ob_get_clean();
 	}
 
 	public function advanced_tab() {
-		$this->output_form_open();
 		?>
-		<div class="space-y-6 mt-4">
-			<?php
-			cfw_admin_page_section(
-				cfw__( 'Other', 'checkout-wc' ),
-				cfw__( 'We are great at categorizing things!', 'checkout-wc' ),
-				$this->get_other_settings()
-			);
-			?>
-		</div>
+		<div id="cfw-admin-pages-advanced-options"></div>
 		<?php
-		$this->output_form_close();
 	}
 
-	public function get_other_settings() {
-		ob_start();
-
-		$this->output_checkbox_row(
-			'hide_admin_bar_button',
-			cfw__( 'Hide Admin Menu Bar Button', 'checkout-wc' ),
-			cfw__( 'Hide the CheckoutWC admin menu bar button unless you are on the checkout page, or one of the checkout endpoints such as thank you and order pay.', 'checkout-wc' )
-		);
-
-		return ob_get_clean();
+	public function tools_tab() {
+		?>
+		<form name="settings" action="<?php echo esc_attr( sanitize_url( wp_unslash( $_SERVER['REQUEST_URI'] ?? '' ) ) ); ?>" method="post"
+				enctype="multipart/form-data">
+			<div class="space-y-6 mt-4">
+				<?php
+				cfw_admin_page_section(
+					cfw_notranslate__( 'Export Settings', 'checkout-wc' ),
+					'Download a JSON file containing the current plugin settings.',
+					$this->get_export_settings()
+				);
+				cfw_admin_page_section(
+					cfw_notranslate__( 'Import Settings', 'checkout-wc' ),
+					'Replace your current settings with a previous settings export.',
+					$this->get_import_settings()
+				);
+				?>
+			</div>
+		</form>
+		<?php
 	}
 
 	public function get_export_settings() {
 		ob_start();
 		?>
-		<input id="export_settings_button" type="button" class="button" data-nonce="<?php echo esc_attr( wp_create_nonce( '_cfw__export_settings' ) ); ?>" value="<?php cfw_e( 'Export Settings', 'checkout-wc' ); ?>" />
+		<input id="export_settings_button" type="button" class="button"
+				data-nonce="<?php echo esc_attr( wp_create_nonce( '_cfw__export_settings' ) ); ?>"
+				value="<?php cfw_e( 'Export Settings', 'checkout-wc' ); ?>"/>
 
 		<p id="small-description" class="text-gray-500">
 			<?php cfw_e( 'Download a backup file of your settings.', 'checkout-wc' ); ?>
@@ -119,40 +93,55 @@ class Advanced extends PageAbstract {
 	public function get_import_settings() {
 		ob_start();
 		?>
-		<input name="uploaded_settings" type="file" class="" value="<?php cfw_e( 'Import Settings', 'checkout-wc' ); ?>" />
+		<input name="uploaded_settings" type="file" class=""
+				value="<?php cfw_e( 'Import Settings', 'checkout-wc' ); ?>"/>
 		<?php wp_nonce_field( 'import_cfw_settings_nonce' ); ?>
 		<div>
-			<input id="import_settings_button" type="submit" class="button" name="import_cfw_settings" value="<?php cfw_e( 'Upload File and Import Settings', 'checkout-wc' ); ?>" />
+			<input id="import_settings_button" type="submit" class="button" name="import_cfw_settings"
+					value="<?php cfw_e( 'Upload File and Import Settings', 'checkout-wc' ); ?>"/>
 		</div>
 		<?php
 		return ob_get_clean();
 	}
 
-	public function get_current_tab() {
-		return empty( $_GET['subpage'] ) ? false : wc_clean( $_GET['subpage'] );
-	}
-
 	/**
 	 * Generate Settings JSON file
 	 *
-	 * @since  3.8.0
-	 *
 	 * @return void
+	 * @since  3.8.0
 	 */
 	public static function generate_settings_export() {
+		global $wpdb;
+
 		// Bail if not admin.
-		if ( ! current_user_can( 'manage_options' ) ) {
+		if ( ! current_user_can( 'cfw_export_settings' ) ) {
 			wp_die();
 		}
 
 		// Bail if nonce check fails.
-		if ( ! wp_verify_nonce( sanitize_text_field( $_POST['nonce'] ?? '' ), '_cfw__export_settings' ) ) {
+		if ( ! wp_verify_nonce( sanitize_text_field( wp_unslash( $_POST['nonce'] ?? '' ) ), '_cfw__export_settings' ) ) {
 			wp_die();
 		}
 
-		$settings = get_option( '_cfw__settings' );
+		$settings = array();
 
-		$settings['logo_attachment_url'] = wp_get_attachment_url( $settings['logo_attachment_id'] );
+		// Get all WP options that start with cfw_.
+		$values = $wpdb->get_results( "SELECT option_name, option_value FROM $wpdb->options WHERE option_name LIKE '\_cfw_%' AND option_name <> '_cfw__settings' AND option_name <> '_cfwlite__settings'" );
+
+		foreach ( $values as $value ) {
+			$settings[ $value->option_name ] = $value->option_value;
+		}
+
+		$templates = cfw_get_available_templates();
+
+		foreach ( $templates as $template ) {
+			$key           = '_cfw_logo_attachment_id_' . $template->get_slug();
+			$attachment_id = $settings[ $key ] ?? '';
+
+			if ( ! empty( $attachment_id ) ) {
+				$settings[ '_cfw_logo_attachment_url_' . $template->get_slug() ] = wp_get_attachment_url( $attachment_id );
+			}
+		}
 
 		if ( ! empty( $settings ) ) {
 			echo wp_json_encode( $settings );
@@ -165,90 +154,113 @@ class Advanced extends PageAbstract {
 	/**
 	 * Upload Settings
 	 *
-	 * @since  3.8.0
-	 *
 	 * @return void
+	 * @since  3.8.0
 	 */
 	public function maybe_upload_settings() {
 		// Make sure we're an admin and that we have a valid request
-		if ( ! current_user_can( 'manage_options' ) || empty( $_POST['import_cfw_settings'] ) ) {
+		if ( ! current_user_can( 'cfw_import_settings' ) || empty( $_POST['import_cfw_settings'] ) ) {
 			return;
 		}
 
-		if ( ! current_user_can('upload_files') || ! wp_verify_nonce( sanitize_text_field( $_REQUEST['_wpnonce'] ?? '' ), 'import_cfw_settings_nonce' ) || ( empty( $_FILES['uploaded_settings'] ) || 0 === $_FILES['uploaded_settings']['size'] ?? 0 ) ) {
-			add_action(
-				'admin_notices',
-				function() {
-					$important = '';
-					if ( isset( $_GET['page'] ) && 'cfw-settings' === $_GET['page'] ) {
-						$important = "style='display:block !important'";
-					}
-					?>
-					<div <?php echo esc_html( $important ); ?> class="notice notice-error is-dismissible checkout-wc">
-						<p><?php cfw_e( 'CheckoutWC: Unable to import settings. Did you select a JSON file to upload?', 'checkout-wc' ); ?></p>
-					</div>
-					<?php
-				}
-			);
+		if (
+			! current_user_can( 'upload_files' ) ||
+			! wp_verify_nonce( sanitize_text_field( wp_unslash( $_REQUEST['_wpnonce'] ?? '' ) ), 'import_cfw_settings_nonce' ) ||
+			( empty( $_FILES['uploaded_settings'] ) || 0 === $_FILES['uploaded_settings']['size'] ?? 0 )
+		) {
 
+			NoticesManager::instance()->add(
+				'cfw_import_settings_error',
+				'CheckoutWC Settings Import Failed',
+				'Unable to import settings. Did you select a JSON file to upload?',
+				array(
+					'type'        => 'error',
+					'dismissible' => false,
+				)
+			);
 			return;
 		}
 
 		$upload = ! empty( $_FILES['uploaded_settings'] ) ? $_FILES['uploaded_settings'] : array(); // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
 
-		if ( ! empty( $upload ) ) {
-			$file_tmp_path  = $upload['tmp_name'];
-			$file_name      = $upload['name'];
-			$file_name_cmps = explode( '.', $file_name );
-			$file_extension = strtolower( end( $file_name_cmps ) );
+		if ( empty( $upload ) ) {
+			wp_die( 'Error. Uploaded file appears empty.' );
+		}
 
-			$new_file_name = md5( time() . $file_name ) . '.' . $file_extension;
+		$file_tmp_path  = $upload['tmp_name'];
+		$file_name      = $upload['name'];
+		$file_name_cmps = explode( '.', $file_name );
+		$file_extension = strtolower( end( $file_name_cmps ) );
 
-			if ( 'json' === $file_extension ) {
-				$wp_uploads = wp_upload_dir();
-				$upload_dir = trailingslashit( $wp_uploads['basedir'] );
-				$dest_path  = $upload_dir . $new_file_name;
+		$new_file_name = md5( time() . $file_name ) . '.' . $file_extension;
 
-				if ( move_uploaded_file( $file_tmp_path, $dest_path ) ) {
-					$contents = file_get_contents( $dest_path );
-					$decoded  = json_decode( $contents, JSON_OBJECT_AS_ARRAY );
+		if ( 'json' !== $file_extension ) {
+			wp_die( 'Wrong file extension. Uploaded settings must be a JSON file.' );
+		}
 
-					if ( ! is_null( $decoded ) && isset( $decoded['logo_attachment_id'] ) && ! empty( $decoded['logo_attachment_id'] && false !== $decoded['logo_attachment_url'] ) ) {
-						$image_upload                  = $this->upload_logo( $decoded['logo_attachment_url'] );
-						$decoded['logo_attachment_id'] = $image_upload ? $image_upload : '';
-					} else {
-						wp_die( 'An error occurred while importing settings!' );
-					}
+		$wp_uploads = wp_upload_dir();
+		$upload_dir = trailingslashit( $wp_uploads['basedir'] );
+		$dest_path  = $upload_dir . $new_file_name;
 
-					update_option( '_cfwlite__settings_backup', get_option( '_cfwlite__settings' ) ); // backup settings to be safe
-					update_option( '_cfwlite__settings', $decoded );
+		if ( ! move_uploaded_file( $file_tmp_path, $dest_path ) ) {
+			wp_die( 'Error moving uploaded file - check your permissions.' );
+		}
 
-					unlink( $dest_path );
+		$contents = file_get_contents( $dest_path ); // phpcs:ignore WordPress.WP.AlternativeFunctions.file_get_contents_file_get_contents
+		$decoded  = json_decode( $contents, JSON_OBJECT_AS_ARRAY );
 
-					add_action(
-						'admin_notices',
-						function() {
-							$important = '';
-							if ( isset( $_GET['page'] ) && 'cfw-settings' === $_GET['page'] ) {
-								$important = "style='display:block !important'";
-							}
-							?>
-							<div <?php echo esc_html( $important ); ?> class="notice notice-success is-dismissible checkout-wc">
-								<p><?php cfw_e( 'CheckoutWC: Successfully imported settings.', 'checkout-wc' ); ?></p>
-							</div>
-							<?php
-						}
-					);
-				}
+		if ( ! $decoded ) {
+			wp_die( 'Error decoding JSON file.' );
+		}
+
+		$active_template_slug = cfw_get_active_template()->get_slug();
+
+		// Pre 9.x logo handler
+		if ( ! empty( $decoded['_cfw_logo_attachment_id'] && false !== $decoded['_cfw_logo_attachment_url'] ) && ! isset( $decoded[ '_cfw_logo_attachment_id_' . $active_template_slug ] ) ) {
+			$image_upload = $this->upload_logo( $decoded['_cfw_logo_attachment_url'] );
+			$decoded[ '_cfw_logo_attachment_id_' . $active_template_slug ] = $image_upload ? $image_upload : '';
+		} else {
+			cfw_debug_log( 'Failed to upload pre 9.x logo.' );
+		}
+
+		// Handle logos
+		$templates = cfw_get_available_templates();
+
+		foreach ( $templates as $template ) {
+			$key = '_cfw_logo_attachment_url_' . $template->get_slug();
+			$url = $decoded[ $key ] ?? '';
+
+			if ( ! empty( $url ) ) {
+				$image_upload_attachment_id                                    = $this->upload_logo( $url );
+				$decoded[ '_cfw_logo_attachment_id_' . $template->get_slug() ] = $image_upload_attachment_id ? $image_upload_attachment_id : '';
+
+				unset( $decoded[ $key ] );
 			}
 		}
+
+		foreach ( $decoded as $key => $value ) {
+			update_option( $key, maybe_unserialize( $value ) );
+		}
+
+		wp_delete_file( $dest_path );
+
+		NoticesManager::instance()->add(
+			'cfw_import_settings_success',
+			'CheckoutWC Settings Import Successful',
+			'Successfully imported settings.',
+			array(
+				'type'        => 'success',
+				'dismissible' => false,
+			)
+		);
 	}
 
 	/**
 	 * Upload Logo
 	 *
-	 * @param $file_url
-	 * @return int|\WP_Error
+	 * @param string $file_url The file URL.
+	 *
+	 * @return int|WP_Error
 	 * @since  3.8.0
 	 */
 	public function upload_logo( $file_url ) {
@@ -285,5 +297,49 @@ class Advanced extends PageAbstract {
 		}
 
 		return '';
+	}
+
+	public function maybe_set_script_data() {
+		if ( ! $this->is_current_page() ) {
+			return;
+		}
+
+		if ( 'advanced' === $this->get_tabbed_navigation()->get_current_tab() ) {
+			$this->set_script_data(
+				array(
+					'settings' => array(
+						'template_loader'             => SettingsManager::instance()->get_setting( 'template_loader' ),
+						'enable_beta_version_updates' => SettingsManager::instance()->get_setting( 'enable_beta_version_updates' ) === 'yes',
+						'hide_admin_bar_button'       => SettingsManager::instance()->get_setting( 'hide_admin_bar_button' ) === 'yes',
+						'enable_debug_log'            => SettingsManager::instance()->get_setting( 'enable_debug_log' ) === 'yes',
+						'allow_tracking'              => array( SettingsManager::instance()->get_setting( 'allow_tracking' ) ),
+						'allow_uninstall'             => SettingsManager::instance()->get_setting( 'allow_uninstall' ) === 'yes',
+					),
+					'params'   => array(
+						'allow_tracking_hash' => md5( trailingslashit( home_url() ) ),
+					),
+					'plan'     => $this->get_plan_data(),
+				)
+			);
+		}
+
+		if ( 'scripts' === $this->get_tabbed_navigation()->get_current_tab() ) {
+			$this->set_script_data(
+				array(
+					'settings' => array(
+						'header_scripts'           => cfw_get_setting( 'header_scripts', null, '' ),
+						'footer_scripts'           => cfw_get_setting( 'footer_scripts', null, '' ),
+						'php_snippets'             => cfw_get_setting( 'php_snippets', null, '' ),
+						'header_scripts_checkout'  => cfw_get_setting( 'header_scripts_checkout', null, '' ),
+						'footer_scripts_checkout'  => cfw_get_setting( 'footer_scripts_checkout', null, '' ),
+						'header_scripts_thank_you' => cfw_get_setting( 'header_scripts_thank_you', null, '' ),
+						'footer_scripts_thank_you' => cfw_get_setting( 'footer_scripts_thank_you', null, '' ),
+						'header_scripts_order_pay' => cfw_get_setting( 'header_scripts_order_pay', null, '' ),
+						'footer_scripts_order_pay' => cfw_get_setting( 'footer_scripts_order_pay', null, '' ),
+					),
+					'plan'     => $this->get_plan_data(),
+				)
+			);
+		}
 	}
 }

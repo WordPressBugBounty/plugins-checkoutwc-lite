@@ -9,6 +9,10 @@ class WooCommerceSubscriptions extends CompatibilityAbstract {
 		return class_exists( '\\WC_Subscriptions_Cart' );
 	}
 
+	public function pre_init() {
+		add_filter( 'cfw_is_checkout_pay_page', array( $this, 'disable_cfw_for_change_payment_request' ), 10, 1 );
+	}
+
 	public function run_immediately() {
 		add_filter( 'cfw_show_shipping_tab', array( $this, 'maybe_hide_shipping_tab' ) );
 	}
@@ -37,6 +41,14 @@ class WooCommerceSubscriptions extends CompatibilityAbstract {
 		}
 
 		return $show_shipping_tab;
+	}
+
+	public function disable_cfw_for_change_payment_request( $result ) {
+		if ( ! empty( $_GET['change_payment_method'] ) ) { // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+			return false;
+		}
+
+		return $result;
 	}
 
 	public function override_registration_required( $result ) {

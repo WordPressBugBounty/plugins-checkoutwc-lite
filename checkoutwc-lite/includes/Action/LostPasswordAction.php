@@ -10,20 +10,10 @@ namespace Objectiv\Plugins\Checkout\Action;
  * @package Objectiv\Plugins\Checkout\Action
  */
 class LostPasswordAction extends CFWAction {
-
-	/**
-	 * @since 1.0.0
-	 * @access public
-	 */
 	public function __construct() {
 		parent::__construct( 'cfw_lost_password' );
 	}
 
-	/**
-	 * Logs in the user based on the information passed. If information is incorrect it returns an error message
-	 *
-	 * @since 1.0.0
-	 */
 	public function action() {
 		$nonce_value = wc_get_var( $_POST['woocommerce-lost-password-nonce'] ); // @codingStandardsIgnoreLine.
 		$error       = array(
@@ -66,7 +56,7 @@ class LostPasswordAction extends CFWAction {
 		$this->out(
 			array(
 				'result'  => true,
-				'message' => esc_html( apply_filters( 'woocommerce_lost_password_confirmation_message', cfw_esc_html__( 'A password reset email has been sent to the email address on file for your account, but may take several minutes to show up in your inbox. Please wait at least 10 minutes before attempting another reset.', 'woocommerce' ) ) ),
+				'message' => esc_html( cfw_apply_filters( 'woocommerce_lost_password_confirmation_message', cfw_esc_html__( 'A password reset email has been sent to the email address on file for your account, but may take several minutes to show up in your inbox. Please wait at least 10 minutes before attempting another reset.', 'woocommerce' ) ) ),
 			)
 		);
 	}

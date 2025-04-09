@@ -2,12 +2,14 @@
 
 namespace Objectiv\Plugins\Checkout\Compatibility\Plugins;
 
-class YITHPointsAndRewards {
+use Objectiv\Plugins\Checkout\Compatibility\CompatibilityAbstract;
+
+class YITHPointsAndRewards extends CompatibilityAbstract {
 	public function is_available(): bool {
 		return defined( 'YITH_YWPAR_VERSION' );
 	}
 
-	public function init() {
+	public function pre_init() {
 		add_action( 'cfw_template_redirect_priority', array( $this, 'maybe_change_template_redirect_priority' ) );
 	}
 

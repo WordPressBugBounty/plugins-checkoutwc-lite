@@ -2,12 +2,24 @@
 
 namespace Objectiv\Plugins\Checkout\Admin\Notices;
 
+use Objectiv\Plugins\Checkout\Managers\NoticesManager;
+
 abstract class NoticeAbstract {
 	public function __construct() {}
 
-	public function init() {
-		add_action( 'admin_notices', array( $this, 'maybe_show' ) );
+	public function maybe_add( string $id, string $title, string $message, array $options = array() ) {
+		if ( ! $this->should_add() ) {
+			return;
+		}
+
+		$options['image'] = file_get_contents( CFW_PATH . '/build/images/cfw.svg' ); // phpcs:ignore WordPress.WP.AlternativeFunctions.file_get_contents_file_get_contents
+		$options['mode']  = $options['mode'] ?? 'regular';
+		$options['scope'] = $options['scope'] ?? 'user';
+
+		NoticesManager::instance()->add( $id, $title, $message, $options );
 	}
 
-	abstract public function maybe_show();
+	protected function should_add(): bool {
+		return true;
+	}
 }

@@ -14,7 +14,7 @@ class AstraAddon extends CompatibilityAbstract {
 		// their stuff on wp priority 10 and this runs at 0 we have to put our stuff after to scrub it
 		add_action(
 			'wp',
-			function() {
+			function () {
 				remove_action( 'woocommerce_checkout_before_order_review', 'astra_two_step_checkout_order_review_wrap', 1 );
 			},
 			20

@@ -32,11 +32,38 @@ class WooCommerceGermanized extends CompatibilityAbstract {
 
 		remove_action( 'woocommerce_review_order_after_payment', 'woocommerce_gzd_template_render_checkout_checkboxes', 10 );
 		remove_action( 'woocommerce_review_order_after_payment', 'woocommerce_gzd_template_checkout_set_terms_manually', wc_gzd_get_hook_priority( 'checkout_set_terms' ) );
+
+		// Don't let Germanized add thumbnails
+		add_action(
+			'woocommerce_review_order_before_cart_contents',
+			function () {
+				remove_filter( 'woocommerce_cart_item_name', 'woocommerce_gzd_template_inject_checkout_table_thumbnails', 11 );
+				remove_filter( 'woocommerce_cart_item_class', 'woocommerce_gzd_template_inject_checkout_table_thumbnails_class', 10 );
+			}
+		);
 	}
 
 	public function run_immediately() {
-		add_action( 'cfw_checkout_before_payment_method_tab_nav', 'woocommerce_gzd_template_render_checkout_checkboxes' );
-		add_action( 'cfw_checkout_before_payment_method_tab_nav', 'woocommerce_gzd_template_checkout_set_terms_manually' );
+		/**
+		 * Filter the rendering hook for WooCommerce Germanized compatibility
+		 *
+		 * @param string $hook
+		 * @return string
+		 * @since 10.1.0
+		 */
+		$hook = apply_filters( 'cfw_compatibility_woocommerce_germanized_render_hook', 'cfw_checkout_before_payment_method_tab_nav' );
+
+		/**
+		 * Filter the priority of the render hook for WooCommerce Germanized compatibility
+		 *
+		 * @param int $priority
+		 * @return int
+		 * @since 10.1.0
+		 */
+		$priority = apply_filters( 'cfw_compatibility_woocommerce_germanized_render_priority', 10 );
+
+		add_action( $hook, 'woocommerce_gzd_template_render_checkout_checkboxes', $priority );
+		add_action( $hook, 'woocommerce_gzd_template_checkout_set_terms_manually', $priority );
 	}
 
 	public function override_ppec_compat( $plugins ) {

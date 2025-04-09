@@ -2,9 +2,10 @@
 
 namespace Objectiv\Plugins\Checkout\Compatibility\Plugins;
 
+use ElementorPro\Modules\Woocommerce\Module;
 use Objectiv\Plugins\Checkout\Compatibility\CompatibilityAbstract;
-use Objectiv\Plugins\Checkout\Admin;
 use ElementorPro\Modules\ThemeBuilder\Module as Theme_Builder_Module;
+use Objectiv\Plugins\Checkout\Managers\PlanManager;
 use Objectiv\Plugins\Checkout\Managers\SettingsManager;
 
 class ElementorPro extends CompatibilityAbstract {
@@ -13,7 +14,27 @@ class ElementorPro extends CompatibilityAbstract {
 	}
 
 	public function pre_init() {
-		add_action( 'cfw_admin_integrations_settings', array( $this, 'admin_integration_setting' ) );
+		add_filter( 'cfw_admin_integrations_checkbox_fields', array( $this, 'admin_integration_settings' ) );
+
+		add_action( 'cfw_permissioned_init', array( $this, 'prevent_thank_you_page_override' ) );
+	}
+
+	public function prevent_thank_you_page_override() {
+		if ( ! PlanManager::can_access_feature( 'enable_thank_you_page', 'plus' ) ) {
+			return;
+		}
+
+		if ( ! class_exists( '\ElementorPro\Modules\Woocommerce\Module' ) ) {
+			return;
+		}
+
+		$instance = Module::instance();
+
+		if ( ! $instance ) {
+			return;
+		}
+
+		remove_filter( 'woocommerce_get_endpoint_url', array( $instance, 'get_order_received_endpoint_url' ), 10 );
 	}
 
 	public function run() {
@@ -30,7 +51,7 @@ class ElementorPro extends CompatibilityAbstract {
 			/**
 			 * Theme_Builder_Module instance
 			 *
-			 *  @var Theme_Builder_Module $theme_builder_module
+			 * @var Theme_Builder_Module $theme_builder_module
 			 */
 			$theme_builder_module = Theme_Builder_Module::instance();
 
@@ -40,7 +61,7 @@ class ElementorPro extends CompatibilityAbstract {
 			if ( ! empty( $header_documents_by_conditions ) ) {
 				add_action(
 					'cfw_custom_header',
-					function() {
+					function () {
 						elementor_theme_do_location( 'header' );
 					}
 				);
@@ -49,7 +70,7 @@ class ElementorPro extends CompatibilityAbstract {
 			if ( ! empty( $footer_documents_by_conditions ) ) {
 				add_action(
 					'cfw_custom_footer',
-					function() {
+					function () {
 						elementor_theme_do_location( 'footer' );
 					}
 				);
@@ -58,19 +79,24 @@ class ElementorPro extends CompatibilityAbstract {
 	}
 
 	/**
-	 * Output the integration admin settings
+	 * Add the admin settings
 	 *
-	 * @param Admin\Pages\PageAbstract $integrations
+	 * @param array $integrations The integrations.
+	 *
+	 * @return array
 	 */
-	public function admin_integration_setting( Admin\Pages\PageAbstract $integrations ) {
+	public function admin_integration_settings( array $integrations ): array {
 		if ( ! $this->is_available() ) {
-			return;
+			return $integrations;
 		}
 
-		$integrations->output_checkbox_row(
-			'enable_elementor_pro_support',
-			cfw__( 'Enable Elementor Pro support.', 'checkout-wc' ),
-			cfw__( 'Allow Elementor Pro to replace header and footer.', 'checkout-wc' )
+		$integrations[] = array(
+			'name'          => 'enable_elementor_pro_support',
+			'label'         => cfw_notranslate__( 'Enable Elementor Pro support.', 'checkout-wc' ),
+			'description'   => cfw_notranslate__( 'Allow Elementor Pro to replace header and footer.', 'checkout-wc' ),
+			'initial_value' => SettingsManager::instance()->get_setting( 'enable_elementor_pro_support' ) === 'yes',
 		);
+
+		return $integrations;
 	}
 }

@@ -1,4 +1,4 @@
-.cfw-admin-page:not(.post-type-cfw_order_bumps):not(.post-type-cfw_pickup_location) {
+.cfw-admin-page:not(.post-type-cfw_order_bumps):not(.post-type-cfw_pickup_location):not(.post-type-cfw_acr_emails) {
     #wpbody-content {
         padding-top: 75px;
     }
@@ -8,7 +8,7 @@
 }
 
 #cfw_admin_page_header {
-    top: 32px;
+    top: 32px!important;
     width: calc(100% - 160px);
 
     svg {
@@ -16,7 +16,7 @@
     }
 
     @media (max-width: 782px) {
-        top: 47px;
+        top: 47px!important;
         width: 100%;
     }
 
@@ -60,7 +60,7 @@
     }
 }
 
-body.post-type-cfw_order_bumps, body.post-type-cfw_pickup_location {
+body.post-type-cfw_order_bumps, body.post-type-cfw_pickup_location, body.post-type-cfw_acr_emails {
     .cfw-admin-content-wrap {
         margin-top: 75px;
     }

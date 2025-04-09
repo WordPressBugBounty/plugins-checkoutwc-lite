@@ -1,4 +1,4 @@
-#cfw-totals-list table {
+.cfw-totals-list table {
     padding-top: 1em;
     display: block;
     width: 100%;
@@ -29,6 +29,10 @@
             flex-basis: 66.66%;
         }
 
+        &:not(.order-total.recurring-total) + .order-total.recurring-total {
+            border-top: 2px solid #000;
+        }
+
         &.order-total {
             align-items: baseline;
             border-top: 2px solid #000;
@@ -43,12 +47,10 @@
                 font-weight: 700;
             }
 
-            .includes_tax {
-                display: block;
-                margin-top: 10px;
-                font-weight: normal;
-                color: #666;
+            &.recurring-total {
+                border-top: 0;
             }
+
         }
 
         /**
@@ -67,6 +69,7 @@
 
         &.recurring-total {
             align-items: baseline;
+            justify-content: flex-end;
 
             .first-payment-date {
                 color: #666;
@@ -89,7 +92,7 @@
 }
 
 @include media-breakpoint-down(lg) {
-    #cfw-totals-list {
+    .cfw-totals-list {
         margin-bottom: 0;
     }
 
@@ -102,4 +105,11 @@
             text-align: right;
         }
     }
+}
+
+.includes_tax {
+    display: block;
+    margin-top: 10px;
+    font-weight: normal;
+    color: #666;
 }

@@ -12,7 +12,7 @@ class BeaverBuilder extends CompatibilityAbstract {
 	/**
 	 * Add WP theme styles to list of blocked style handles.
 	 *
-	 * @param array $styles
+	 * @param array $styles List of style handles.
 	 *
 	 * @return array
 	 */

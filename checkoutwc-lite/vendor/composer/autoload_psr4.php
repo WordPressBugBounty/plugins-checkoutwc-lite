@@ -6,6 +6,5 @@ $vendorDir = dirname(__DIR__);
 $baseDir = dirname($vendorDir);
 
 return array(
-    'SmartyStreets\\PhpSdk\\' => array($vendorDir . '/smartystreets/phpsdk/src'),
     'Objectiv\\Plugins\\Checkout\\' => array($baseDir . '/includes'),
 );

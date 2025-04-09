@@ -3,18 +3,52 @@
 namespace Objectiv\Plugins\Checkout\Compatibility\Gateways;
 
 use Objectiv\Plugins\Checkout\Compatibility\CompatibilityAbstract;
+use Objectiv\Plugins\Checkout\Model\DetectedPaymentGateway;
+use Objectiv\Plugins\Checkout\Model\GatewaySupport;
 
 class KlarnaPayment3 extends CompatibilityAbstract {
 	public function is_available(): bool {
 		return class_exists( '\\WC_Klarna_Payments' ) && version_compare( WC_KLARNA_PAYMENTS_VERSION, '3.0.0', '>' );
 	}
 
+	public function pre_init() {
+		if ( ! $this->is_available() ) {
+			return;
+		}
+
+		add_filter(
+			'cfw_detected_gateways',
+			function ( $gateways ) {
+				$gateways[] = new DetectedPaymentGateway(
+					'Klarna Payments',
+					GatewaySupport::NOT_SUPPORTED
+				);
+
+				return $gateways;
+			}
+		);
+	}
+
 	public function run() {
-		add_action( 'cfw_payment_gateway_list_klarna_payments_alternate', array(
-			$this,
-			'klarna_payments_content'
-		), 10, 1 );
+		add_action(
+			'cfw_payment_gateway_list_klarna_payments_alternate',
+			array(
+				$this,
+				'klarna_payments_content',
+			),
+			10,
+			1
+		);
 		add_filter( 'cfw_show_gateway_klarna_payments', '__return_false' );
+
+		if ( kp_is_order_pay_page() ) {
+			$key      = wc_clean( wp_unslash( $_GET['key'] ?? '' ) ); // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+			$order_id = wc_get_order_id_by_order_key( $key );
+			$order    = wc_get_order( $order_id );
+
+			// Create a new session as 'woocommerce_after_calculate_totals' is only triggered on the cart (and checkout) page.
+			KP_WC()->session->get_session( $order );
+		}
 	}
 
 	public function klarna_payments_content( $count ) {
@@ -53,12 +87,12 @@ class KlarnaPayment3 extends CompatibilityAbstract {
 				<li class="wc_payment_method payment_method_<?php echo esc_attr( $kp->id ); ?> cfw-radio-reveal-li">
 					<div class="payment_method_title_wrap cfw-radio-reveal-title-wrap">
 						<input id="payment_method_<?php echo esc_attr( $kp->id ); ?>" type="radio" class="input-radio"
-							   name="payment_method"
-							   value="<?php echo esc_attr( $kp->id ); ?>" <?php echo ( ( empty( $current_gateway ) && 0 === $count ) || stripos( $current_gateway, 'klarna_payments' ) !== false ) ? 'checked' : ''; ?>
-							   data-order_button_text="<?php echo esc_attr( $kp->order_button_text ); ?>"/>
+								name="payment_method"
+								value="<?php echo esc_attr( $kp->id ); ?>" <?php echo ( ( empty( $current_gateway ) && 0 === $count ) || stripos( $current_gateway, 'klarna_payments' ) !== false ) ? 'checked' : ''; ?>
+								data-order_button_text="<?php echo esc_attr( $kp->order_button_text ); ?>"/>
 
 						<label class="payment_method_label cfw-radio-reveal-label"
-							   for="payment_method_<?php echo esc_attr( $kp->id ); ?>">
+								for="payment_method_<?php echo esc_attr( $kp->id ); ?>">
 							<div>
 								<span
 									class="payment_method_title cfw-radio-reveal-title"><?php echo esc_attr( $kp->get_title() ); ?></span>
@@ -80,7 +114,6 @@ class KlarnaPayment3 extends CompatibilityAbstract {
 					 * @param bool $show Whether to show custom payment box HTML
 					 *
 					 * @since 2.0.0
-					 *
 					 */
 					if ( apply_filters( "cfw_payment_gateway_{$kp->id}_content", $kp->has_fields() || $kp->get_description() ) ) :
 						?>
@@ -109,7 +142,6 @@ class KlarnaPayment3 extends CompatibilityAbstract {
 							 * @param string $output The gateway output
 							 *
 							 * @since 2.0.0
-							 *
 							 */
 							echo apply_filters( "cfw_payment_gateway_field_html_{$kp->id}", $field_html );
 							// phpcs:enable WordPress.Security.EscapeOutput.OutputNotEscaped
@@ -121,5 +153,14 @@ class KlarnaPayment3 extends CompatibilityAbstract {
 			}
 			// phpcs:enable WooCommerce.Commenting.CommentHooks.MissingHookComment
 		}
+	}
+
+	public function typescript_class_and_params( array $compatibility ): array {
+		$compatibility[] = array(
+			'class'  => 'KlarnaPayments',
+			'params' => array(),
+		);
+
+		return $compatibility;
 	}
 }

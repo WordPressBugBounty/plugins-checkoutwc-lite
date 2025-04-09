@@ -2,6 +2,8 @@
 
 namespace Objectiv\Plugins\Checkout\Compatibility\Gateways\Helpers;
 
+use WC_Payment_Gateway;
+
 class AmazonPayV1ShippingInfoHelper {
 
 	protected $gateway = null;
@@ -15,7 +17,7 @@ class AmazonPayV1ShippingInfoHelper {
 	/**
 	 * Set the gateway after we find it in woocommerce_payment_gateways
 	 *
-	 * @param $gateway
+	 * @param WC_Payment_Gateway $gateway The gateway.
 	 */
 	public function get_gateway( $gateway ) {
 		$settings = \WC_Amazon_Payments_Advanced_API::get_settings();
@@ -151,7 +153,6 @@ class AmazonPayV1ShippingInfoHelper {
 	 * @param mixed  $value         Value to set.
 	 *
 	 * @since 1.7.0
-	 *
 	 */
 	private function set_customer_info( string $setter_suffix, $value ) {
 		$setter             = array( WC()->customer, 'set_' . $setter_suffix );

@@ -3,12 +3,17 @@
  * @param fn
  */
 function cfwDomReady( fn ): void {
-    // see if DOM is already available
-    if ( document.readyState === 'complete' || document.readyState === 'interactive' ) {
-    // call on next available tick
-        setTimeout( fn, 1 );
+    if ( document.readyState !== 'loading' ) {
+        // Document is already ready, so run the function immediately
+        fn();
     } else {
-        document.addEventListener( 'DOMContentLoaded', fn );
+        // Workaround for our Cloudflare Turnstile fix in this commit: 1a71ad88fd1d4caf35b0a0b2bbae0714cae908fe
+        // One fixed, we can start using @wordpress/dom-ready
+        const listener = () => {
+            fn();
+            document.removeEventListener( 'DOMContentLoaded', listener ); // Remove listener after execution
+        };
+        document.addEventListener( 'DOMContentLoaded', listener );
     }
 }
 

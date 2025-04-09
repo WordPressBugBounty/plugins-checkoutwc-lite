@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Checkout for WooCommerce\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-02 14:15-0400\n"
-"PO-Revision-Date: 2023-05-02 14:31-0400\n"
+"POT-Creation-Date: 2024-03-19 10:50-0400\n"
+"PO-Revision-Date: 2024-03-19 11:06-0400\n"
 "Last-Translator: JS\n"
 "Language-Team: Deutsch\n"
 "Language: de_DE\n"
@@ -11,7 +11,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.2.2\n"
+"X-Generator: Poedit 3.4.2\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-Flags-xgettext: --add-comments=translators:\n"
 "X-Poedit-WPHeader: checkout-for-woocommerce.php\n"
@@ -23,7 +23,48 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.js\n"
 
-#: checkout-for-woocommerce.php:77
+#: sources/ts/blocks/OrderBumpSteps.tsx:21
+#: includes/API/AfterCheckoutBumpProductFormAPI.php:54
+msgid "Order Submitted"
+msgstr "Bestellung abgeschickt"
+
+#: sources/ts/blocks/OrderBumpSteps.tsx:25
+#: includes/API/AfterCheckoutBumpProductFormAPI.php:60
+msgid "Special Offer"
+msgstr "Sonderangebot"
+
+#: sources/ts/blocks/OrderBumpSteps.tsx:29
+#: includes/API/AfterCheckoutBumpProductFormAPI.php:66
+msgid "Order Received"
+msgstr "Bestellung erhalten"
+
+#: sources/ts/frontend/Components/LoginFormModal.tsx:120
+#: sources/php/functions.php:3572
+msgid "Welcome back"
+msgstr "Willkommen zurück"
+
+#: sources/ts/frontend/Components/ReviewPane/OrderReviewStepReviewPane.tsx:14
+#: sources/ts/frontend/Components/ReviewPane/PaymentMethodReviewPane.tsx:14
+#: sources/ts/frontend/Components/ReviewPane/ShippingMethodReviewPane.tsx:14
+msgid "Contact"
+msgstr "Kontakt"
+
+#: sources/ts/frontend/Components/ReviewPane/OrderReviewStepReviewPane.tsx:32
+#: sources/ts/frontend/Components/ReviewPane/PaymentMethodReviewPane.tsx:34
+msgid "Method"
+msgstr "Methode"
+
+#: sources/ts/frontend/Components/ReviewPane/OrderReviewStepReviewPane.tsx:39
+#: sources/php/functions.php:956 sources/php/template-functions.php:1628
+#: sources/php/template-functions.php:1933
+msgid "Payment"
+msgstr "Zahlung"
+
+#: sources/ts/frontend/Components/SideCartComponent.tsx:35
+msgid "Close Cart"
+msgstr "Warenkorb schließen"
+
+#: checkout-for-woocommerce.php:141
 msgid ""
 "Your site is running an <strong>insecure version</strong> of PHP that is no "
 "longer supported. Please contact your web hosting provider to update your "
@@ -34,7 +75,7 @@ msgstr ""
 "Anbieter, um Ihre PHP-Version zu aktualisieren."
 
 #. translators: %s - checkoutwc.com URL for documentation with more details.
-#: checkout-for-woocommerce.php:83
+#: checkout-for-woocommerce.php:147
 #, php-format
 msgid ""
 "<strong>Note:</strong> CheckoutWC is disabled on your site until you fix the "
@@ -46,16 +87,50 @@ msgstr ""
 "rel=\"noopener noreferrer\">Brauchen Sie Hilfe? Klicken Sie hier.</a>"
 
 #. translators: %s - WordPress version.
-#: checkout-for-woocommerce.php:121
+#: checkout-for-woocommerce.php:187
 #, php-format
 msgid "CheckoutWC requires WordPress %s or later."
 msgstr "CheckoutWC erfordert WordPress %s oder höher."
 
 #. translators: %s - WordPress version.
-#: checkout-for-woocommerce.php:156
+#: checkout-for-woocommerce.php:225
 #, php-format
 msgid "CheckoutWC requires WooCommerce %s or later."
 msgstr "CheckoutWC erfordert WooCommerce %s oder höher."
+
+#: includes/API/AfterCheckoutBumpProductFormAPI.php:23
+msgid "No thanks, just complete my order"
+msgstr "Nein danke, schließen Sie einfach meine Bestellung ab"
+
+#: includes/API/AfterCheckoutBumpProductFormAPI.php:40
+msgid "Your order is almost complete..."
+msgstr "Ihre Bestellung ist fast vollständig..."
+
+#: includes/API/AfterCheckoutBumpProductFormAPI.php:44
+msgid "Add this offer to your order and save!"
+msgstr "Fügen Sie dieses Angebot Ihrer Bestellung hinzu und sparen Sie!"
+
+#: includes/API/GetVariationFormAPI.php:26
+#: includes/API/OrderBumpOfferFormPreview.php:39 sources/php/functions.php:3690
+msgid "Product not found"
+msgstr "Artikel nicht gefunden"
+
+#: includes/API/ProductsAndVariationsSearchAPI.php:66
+msgid ""
+"The date the last order for this product was placed, in the site's timezone."
+msgstr ""
+"Das Datum, an dem die letzte Bestellung für dieses Produkt in der Zeitzone "
+"des Standorts aufgegeben wurde."
+
+#: includes/API/ProductsAndVariationsSearchAPI.php:83
+msgid "Limit result set to products that are low or out of stock. (Deprecated)"
+msgstr ""
+"Die Ergebnismenge auf Produkte beschränken, die nur noch wenig oder gar "
+"nicht mehr vorrätig sind. (Veraltet)"
+
+#: includes/API/ProductsAndVariationsSearchAPI.php:89
+msgid "Search by similar product name or sku."
+msgstr "Suche nach ähnlichem Produktnamen oder SKU."
 
 #: includes/Action/LogInAction.php:37
 msgid ""
@@ -63,6 +138,54 @@ msgid ""
 msgstr ""
 "Es ist ein Fehler bei der Anmeldung aufgetreten. Bitte überprüfe deine "
 "Anmeldedaten und versuche es erneut."
+
+#: includes/Action/SmartyStreetsAddressValidationAction.php:81
+msgid "Use Recommended"
+msgstr "Verwendung empfohlen"
+
+#: includes/Action/SmartyStreetsAddressValidationAction.php:82
+msgid "Use Your Address"
+msgstr "Verwenden Sie Ihre Adresse"
+
+#: includes/Action/SmartyStreetsAddressValidationAction.php:99
+msgid "Reenter Address"
+msgstr "Adresse neu eingeben"
+
+#: includes/Action/SmartyStreetsAddressValidationAction.php:100
+msgid "Use Existing Address"
+msgstr "Vorhandene Adresse verwenden"
+
+#: includes/Action/SmartyStreetsAddressValidationAction.php:168
+msgid "Use recommended address instead?"
+msgstr "Stattdessen die empfohlene Adresse verwenden?"
+
+#: includes/Action/SmartyStreetsAddressValidationAction.php:171
+msgid "We're unable to verify your address, but found a close match."
+msgstr ""
+"Wir können Ihre Adresse nicht verifizieren, haben aber eine Übereinstimmung "
+"gefunden."
+
+#: includes/Action/SmartyStreetsAddressValidationAction.php:175
+#: includes/Action/SmartyStreetsAddressValidationAction.php:248
+#: includes/Action/SmartyStreetsAddressValidationAction.php:305
+#: includes/Action/SmartyStreetsAddressValidationAction.php:358
+#: includes/Action/SmartyStreetsAddressValidationAction.php:409
+msgid "We are unable to verify your address."
+msgstr "Wir sind nicht in der Lage, Ihre Adresse zu überprüfen."
+
+#: includes/Action/SmartyStreetsAddressValidationAction.php:179
+msgid "Please confirm you would like to use this address or try again."
+msgstr ""
+"Bitte bestätigen Sie, dass Sie diese Adresse verwenden möchten, oder "
+"versuchen Sie es erneut."
+
+#: includes/Action/SmartyStreetsAddressValidationAction.php:186
+msgid "You Entered"
+msgstr "Du hast eingegeben"
+
+#: includes/Action/SmartyStreetsAddressValidationAction.php:198
+msgid "Recommended"
+msgstr "Empfohlen"
 
 #. translators: %s is the postcode field label
 #: includes/Action/ValidateEmailDomainAction.php:35
@@ -75,56 +198,159 @@ msgstr "Die E-Mail-Adresse enthält einen ungültigen Domänennamen."
 msgid "Please enter a valid %s."
 msgstr "Bitte geben Sie eine gültige %s an."
 
-#: includes/Admin/Notices/CompatibilityNotice.php:34
-msgid "Please deactivate to avoid problems with your checkout page."
-msgstr ""
-"Bitte deaktivieren Sie es, um Probleme mit der Kassenseite zu vermeiden."
+#: includes/AddressFieldsAugmenter.php:124
+msgid "Full name"
+msgstr "Vollständiger Name"
 
-#: includes/Admin/Pages/General.php:101
-msgid "PRO"
-msgstr "PRO"
+#: includes/AddressFieldsAugmenter.php:177
+msgid "House number"
+msgstr "Hausnummer"
 
-#: includes/Admin/Pages/General.php:104
-msgid "per year"
-msgstr "pro Jahr"
+#: includes/AddressFieldsAugmenter.php:189
+msgid "Street name"
+msgstr "Straße"
 
-#: includes/Admin/Pages/General.php:110
-msgid "Upgrade Now"
-msgstr "Jetzt upgraden"
-
-#: includes/Compatibility/Gateways/PayPalForWooCommerce.php:129
-#: sources/php/template-functions.php:608
-#: sources/php/template-functions.php:1173
+#: includes/Compatibility/Gateways/PayPalForWooCommerce.php:178
+#: sources/php/template-functions.php:650
+#: sources/php/template-functions.php:1025
+#: sources/php/template-functions.php:1663
 msgid "Billing address"
 msgstr "Rechnungsadresse"
 
-#: includes/Compatibility/Gateways/PayPalForWooCommerce.php:297
+#: includes/Compatibility/Gateways/PayPalForWooCommerce.php:349
 msgid "Logged in with PayPal. Please continue your order below."
 msgstr "Mit PayPal eingeloggt. Bitte setze deine Bestellung weiter unten fort."
 
-#. Author of the plugin/theme
+#. Plugin Name of the plugin/theme
 #: includes/Compatibility/Plugins/CartFlows.php:62
 msgid "CheckoutWC"
 msgstr "CheckoutWC"
 
-#: includes/Managers/AssetManager.php:429
+#: includes/Features/AbandonedCartRecovery.php:80
+msgid "You have been unsubscribed from our cart reminder emails."
+msgstr "Sie haben sich von unseren Warenkorb-Erinnerungs-E-Mails abgemeldet."
+
+#: includes/Features/AbandonedCartRecovery.php:635
+#: sources/php/functions.php:896
+msgid "Complete Order"
+msgstr "Bestellung abschließen"
+
+#: includes/Features/AbandonedCartRecovery.php:807
+#: includes/Features/AbandonedCartRecovery.php:871
+msgid "This order was abandoned and subsequently recovered."
+msgstr "Dieser Auftrag wurde aufgegeben und später wieder eingezogen."
+
+#: includes/Features/FetchifyAddressAutocomplete.php:79
+msgid "Address Search"
+msgstr "Adresssuche"
+
+#: includes/Features/FetchifyAddressAutocomplete.php:84
+msgid "Search for your address"
+msgstr "Suchen Sie nach Ihrer Adresse"
+
+#: includes/Features/FetchifyAddressAutocomplete.php:85
+msgid "Or enter address manually."
+msgstr "Oder geben Sie die Adresse manuell ein."
+
+#: includes/Features/HideOptionalAddressFields.php:37
+msgid "Add Address Line 2"
+msgstr "Adresse hinzufügen Zeile 2"
+
+#: includes/Features/HideOptionalAddressFields.php:44
+msgid "Add Company"
+msgstr "Unternehmen hinzufügen"
+
+#: includes/Features/LocalPickup.php:95
+msgid "Pick up"
+msgstr "Abholen"
+
+#: includes/Features/LocalPickup.php:110
+msgid "Ship"
+msgstr "Verfrachten"
+
+#: includes/Features/LocalPickup.php:141
+msgid "Delivery method"
+msgstr "Liefermethode"
+
+#: includes/Features/LocalPickup.php:216
+msgid "Pickup locations"
+msgstr "Übergabeart"
+
+#: includes/Features/LocalPickup.php:503
+msgid "Pick up in store"
+msgstr "Abholung vor Ort"
+
+#: includes/Features/LocalPickup.php:520 includes/Managers/AssetManager.php:651
+msgid "Pickup"
+msgstr "Abholung"
+
+#: includes/Features/LocalPickup.php:561
+msgid "Pickup Location"
+msgstr "Ort für die Abholung"
+
+#: includes/Features/LocalPickup.php:621
+msgid "Pickup instructions"
+msgstr "Abhol-Hinweise"
+
+#: includes/Features/LocalPickup.php:741
+msgid "Usually ready in 1 hour."
+msgstr "In der Regel in 1 Stunde fertig."
+
+#: includes/Features/LocalPickup.php:742
+msgid "Usually ready in 2 hours."
+msgstr "Normalerweise in 2 Stunden fertig."
+
+#: includes/Features/LocalPickup.php:743
+msgid "Usually ready in 4 hours."
+msgstr "In der Regel in 4 Stunden fertig."
+
+#: includes/Features/LocalPickup.php:744
+msgid "Usually ready in 24 hours."
+msgstr "In der Regel innerhalb von 24 Stunden verfügbar."
+
+#: includes/Features/LocalPickup.php:745
+msgid "Usually ready in 2-4 days."
+msgstr "Normalerweise in 2-4 Tagen fertig."
+
+#: includes/Features/LocalPickup.php:746
+msgid "Usually ready in 5+ days."
+msgstr "Normalerweise in 5+ Tagen fertig."
+
+#: includes/Features/OrderReviewStep.php:67
+#: sources/php/template-functions.php:1933
+msgid "Review"
+msgstr "Überprüfung"
+
+#: includes/Features/SideCart.php:445 includes/Features/SideCart.php:679
+msgid "Congrats! You get free standard shipping."
+msgstr "Herzlichen Glückwunsch! Du erhältst kostenlosen Standardversand."
+
+#. translators: %s is the amount remaining for free shipping
+#: includes/Features/SideCart.php:459 includes/Features/SideCart.php:693
+#, php-format
+msgid "You're %s away from free shipping!"
+msgstr "Noch %s bis Gratisversand!"
+
+#: includes/Managers/AssetManager.php:633
 msgid "Please enter a valid phone number."
 msgstr "Bitte eine gültige Telefonnummer eingeben."
 
-#: includes/Managers/AssetManager.php:437
+#: includes/Managers/AssetManager.php:642
 msgid "Please enter your first and last name."
 msgstr "Bitte geben Sie Ihren Vor- und Nachnamen ein."
 
-#: includes/Managers/AssetManager.php:438
-#: sources/php/template-functions.php:618
+#: includes/Managers/AssetManager.php:643
+#: sources/php/template-functions.php:660
+#: sources/php/template-functions.php:1647
 msgid "Shipping address"
 msgstr "Lieferanschrift"
 
-#: includes/Managers/AssetManager.php:439
+#: includes/Managers/AssetManager.php:644
+#: includes/Managers/AssetManager.php:807
 msgid "Please enter a new quantity:"
 msgstr "Bitte gib eine neue Menge ein:"
 
-#: includes/Managers/AssetManager.php:440
+#: includes/Managers/AssetManager.php:645
 msgid ""
 "3-digit security code usually found on the back of your card. American "
 "Express cards have a 4-digit code located on the front."
@@ -133,135 +359,136 @@ msgstr ""
 "deiner Karte. American Express-Karten haben einen 4-stelligen Code, der sich "
 "auf der Vorderseite befindet."
 
-#: includes/Managers/AssetManager.php:441
+#: includes/Managers/AssetManager.php:646
+#: includes/Managers/AssetManager.php:808
 msgid "Are you sure you want to remove this item from your cart?"
 msgstr ""
 "Bist du sicher, dass du diesen Artikel aus deinem Warenkorb entfernen "
 "möchtest?"
 
-#: includes/Managers/AssetManager.php:448
+#: includes/Managers/AssetManager.php:650
 msgid "Please enter a valid postcode / ZIP."
 msgstr "Bitte geben Sie eine gültige Postleitzahl ein."
 
-#: includes/Managers/AssetManager.php:449
-msgid "Pickup"
-msgstr "Abholung"
+#: includes/Managers/AssetManager.php:652
+msgid "Continue to pickup"
+msgstr "Weiter zur Abholung"
 
-#: sources/php/functions.php:176
+#: includes/Managers/AssetManager.php:664
+msgid "Start with post/zip code or street"
+msgstr "Beginnen Sie mit Postleitzahl oder Straße"
+
+#: includes/Managers/AssetManager.php:665
+msgid "Shipping method"
+msgstr "Versandart"
+
+#: includes/Managers/AssetManager.php:821
+msgid "Apply"
+msgstr "Anwenden"
+
+#: includes/Managers/AssetManager.php:830
+msgid "Have a promo code? Click here."
+msgstr "Hast du einen Rabatt-Code? Klicke hier."
+
+#: includes/Managers/AssetManager.php:839
+msgid "Promo Code"
+msgstr "Rabatt-Code"
+
+#: includes/Managers/AssetManager.php:848
+msgid "Enter Promo Code"
+msgstr "Rabatt-Code eingeben"
+
+#: includes/Managers/AssetManager.php:849
+msgid "Remove this item"
+msgstr "Diesen Artikel entfernen"
+
+#: includes/Managers/AssetManager.php:850
+msgid "Proceed to checkout"
+msgstr "Zur Kasse"
+
+#: includes/Managers/AssetManager.php:851
+msgid "Continue shopping"
+msgstr "Weiter einkaufen"
+
+#: includes/Managers/AssetManager.php:852
+msgid "Edit"
+msgstr "Bearbeiten"
+
+#: lib/sendwp-sdk/remote-install.php:84
+msgid "Something went wrong. SendWP was not installed correctly."
+msgstr ""
+"Irgendetwas ist schief gelaufen. SendWP wurde nicht ordnungsgemäß "
+"installiert."
+
+#: sources/php/functions.php:201
 msgid "Ship to"
 msgstr "Versand nach"
 
-#: sources/php/functions.php:866
+#: sources/php/functions.php:722
 msgid "No shipping methods available"
 msgstr "Keine Versandarten verfügbar"
 
-#: sources/php/functions.php:964
-msgid "Complete Order"
-msgstr "Bestellung abschließen"
-
-#: sources/php/functions.php:1024 sources/php/template-functions.php:930
-#: sources/php/template-functions.php:1498
-msgid "Payment"
-msgstr "Zahlung"
-
-#: sources/php/functions.php:1049
+#: sources/php/functions.php:982
 msgid "All transactions are secure and encrypted."
 msgstr "Alle Transaktionen sind sicher und verschlüsselt."
 
-#: sources/php/functions.php:1070
+#: sources/php/functions.php:1004
 msgid "Your order is free. No payment is required."
 msgstr "Deine Bestellung ist kostenlos - keine Zahlung erforderlich."
 
-#: sources/php/functions.php:1115
+#: sources/php/functions.php:1047
 msgid "Same as shipping address"
 msgstr "Entspricht Lieferadresse"
 
-#: sources/php/functions.php:1135
+#: sources/php/functions.php:1055
 msgid "Use a different billing address"
 msgstr "Verwende eine andere Rechnungsadresse"
 
-#: sources/php/functions.php:1198
+#: sources/php/functions.php:1289
 msgid "Return to cart"
 msgstr "Zurück zum Warenkorb"
 
-#: sources/php/functions.php:1235
+#: sources/php/functions.php:1328
 msgid "Continue to shipping"
 msgstr "Weiter zum Versand"
 
-#: sources/php/functions.php:1257
+#: sources/php/functions.php:1351
 msgid "Continue to payment"
 msgstr "Weiter zur Zahlung"
 
-#: sources/php/functions.php:1293
+#: sources/php/functions.php:1351 sources/php/functions.php:1390
 msgid "Review order"
 msgstr "Bestellung prüfen"
 
-#: sources/php/functions.php:1313
+#: sources/php/functions.php:1412
 msgid "Return to information"
 msgstr "Zurück zu Informationen"
 
-#: sources/php/functions.php:1333
+#: sources/php/functions.php:1434
 msgid "Return to shipping"
 msgstr "Zurück zu Versand"
 
-#: sources/php/functions.php:1353
+#: sources/php/functions.php:1456
 msgid "Return to payment"
 msgstr "Zurück zu Zahlung"
 
-#: sources/php/functions.php:1736
+#: sources/php/functions.php:1976
 msgid "Or"
 msgstr "Oder"
 
-#: sources/php/template-functions.php:61
-msgid "Show order summary"
-msgstr "Bestellübersicht anzeigen"
+#: sources/php/functions.php:2203
+msgid "Decrement"
+msgstr "Verringern"
 
-#: sources/php/template-functions.php:77
-msgid "Hide order summary"
-msgstr "Zusammenfassung von Bestellungen ausblenden"
+#: sources/php/functions.php:2215
+msgid "Increment"
+msgstr "Inkrement"
 
-#: sources/php/template-functions.php:223
-msgid "Express checkout"
-msgstr "Express-Kasse"
+#: sources/php/functions.php:2890
+msgid "Unsubscribe"
+msgstr "Abmelden"
 
-#: sources/php/template-functions.php:255
-#: sources/php/template-functions.php:1469
-msgid "Information"
-msgstr "Information"
-
-#: sources/php/template-functions.php:326
-msgid "Already have an account with us?"
-msgstr "Bereits registriert bei uns?"
-
-#: sources/php/template-functions.php:338
-msgid "Log in for a faster checkout experience."
-msgstr "Melde dich für ein bequemeres Einkaufserlebnis an."
-
-#. translators: %s: site name
-#: sources/php/template-functions.php:408
-#, php-format
-msgid "Create %s shopping account."
-msgstr "Erstelle ein %s-Einkaufskonto."
-
-#: sources/php/template-functions.php:420
-msgid "If you do not have an account, we will create one for you."
-msgstr "Wenn du kein Konto hast, erstellen wir eins für dich."
-
-#. translators: %1 is the customer's name, %2 is their email address
-#: sources/php/template-functions.php:452
-#, php-format
-msgid "Welcome back, %1$s (%2$s)."
-msgstr "Willkommen zurück, %1$s (%2$s)."
-
-#: sources/php/template-functions.php:470
-msgid "Log out."
-msgstr "Melde dich ab."
-
-#: sources/php/template-functions.php:488
-msgid "Welcome back"
-msgstr "Willkommen zurück"
-
-#: sources/php/template-functions.php:492
+#: sources/php/functions.php:3576
 msgid ""
 "It looks like you already have an account. Please enter your login details "
 "below."
@@ -269,267 +496,142 @@ msgstr ""
 "Es sieht so aus, als hätten Sie bereits ein Konto. Bitte geben Sie unten "
 "Ihre Anmeldedaten ein."
 
-#: sources/php/template-functions.php:495
+#: sources/php/functions.php:3579
 msgid ""
 "If you have shopped with us before, please enter your login details below."
 msgstr ""
 "Wenn Sie schon einmal bei uns eingekauft haben, geben Sie bitte unten Ihre "
 "Anmeldedaten ein."
 
-#: sources/php/template-functions.php:548
+#: sources/php/functions.php:3636
 msgid "Or continue as guest"
 msgstr "Oder fahren Sie als Gast fort"
 
-#: sources/php/template-functions.php:598
+#: sources/php/functions.php:3706 sources/php/functions.php:3843
+msgid "No thanks"
+msgstr "Nein danke"
+
+#: sources/php/template-functions.php:106
+msgid "Show order summary"
+msgstr "Bestellübersicht anzeigen"
+
+#: sources/php/template-functions.php:123
+msgid "Hide order summary"
+msgstr "Zusammenfassung von Bestellungen ausblenden"
+
+#: sources/php/template-functions.php:288
+msgid "Express checkout"
+msgstr "Express-Kasse"
+
+#: sources/php/template-functions.php:320
+#: sources/php/template-functions.php:1610
+#: sources/php/template-functions.php:1904
+msgid "Information"
+msgstr "Information"
+
+#: sources/php/template-functions.php:339
+msgid "Order review"
+msgstr "Bestellüberprüfung"
+
+#: sources/php/template-functions.php:404
+msgid "Already have an account with us?"
+msgstr "Bereits registriert bei uns?"
+
+#: sources/php/template-functions.php:416
+msgid "Log in."
+msgstr "Anmelden."
+
+#. translators: %s: site name
+#: sources/php/template-functions.php:526
+#, php-format
+msgid "Create %s shopping account."
+msgstr "Erstelle ein %s-Einkaufskonto."
+
+#: sources/php/template-functions.php:538
+msgid "If you do not have an account, we will create one for you."
+msgstr "Wenn du kein Konto hast, erstellen wir eins für dich."
+
+#. translators: %1 is the customer's name, %2 is their email address
+#: sources/php/template-functions.php:570
+#, php-format
+msgid "Welcome back, %1$s (%2$s)."
+msgstr "Willkommen zurück, %1$s (%2$s)."
+
+#: sources/php/template-functions.php:588
+msgid "Log out."
+msgstr "Melde dich ab."
+
+#: sources/php/template-functions.php:640
+#: sources/php/template-functions.php:1640
 msgid "Billing and Shipping address"
 msgstr "Rechnungs- und Lieferadresse"
 
-#: sources/php/template-functions.php:784
-#: sources/php/template-functions.php:826
-#: sources/php/template-functions.php:882
-msgid "Contact"
-msgstr "Kontakt"
+#: sources/php/template-functions.php:792 templates/futurist/functions.php:19
+#: templates/glass/functions.php:37
+msgid "Your Cart"
+msgstr "Dein Warenkorb"
 
-#: sources/php/template-functions.php:792
-#: sources/php/template-functions.php:808
-#: sources/php/template-functions.php:834
-#: sources/php/template-functions.php:850
-#: sources/php/template-functions.php:865
-#: sources/php/template-functions.php:890
-#: sources/php/template-functions.php:906
-#: sources/php/template-functions.php:921
-#: sources/php/template-functions.php:937
-msgid "Change"
-msgstr "Ändern"
-
-#: sources/php/template-functions.php:857
-#: sources/php/template-functions.php:913
-msgid "Method"
-msgstr "Methode"
-
-#: sources/php/template-functions.php:1069
-msgid "Shipping method"
-msgstr "Versandart"
-
-#: sources/php/template-functions.php:1194
+#: sources/php/template-functions.php:1046
 msgid "Select the address that matches your card or payment method."
 msgstr ""
 "Wähle die Adresse aus, die deiner Karte oder Zahlungsmethode entspricht."
 
-#: sources/php/template-functions.php:1329
-msgid "Apply"
-msgstr "Anwenden"
+#. translators: %s is the order number
+#: sources/php/template-functions.php:1377
+#, php-format
+msgid "Order %s"
+msgstr "Bestellung %s"
 
-#: sources/php/template-functions.php:1348
-msgid "Promo Code"
-msgstr "Rabatt-Code"
+#. translators: %s is the billing first name
+#: sources/php/template-functions.php:1390
+#, php-format
+msgid "Thank you %s!"
+msgstr "Vielen Dank %s!"
 
-#: sources/php/template-functions.php:1356
-msgid "Enter Promo Code"
-msgstr "Rabatt-Code eingeben"
+#: sources/php/template-functions.php:1494
+msgid "Order status"
+msgstr "Bestellstatus"
 
-#: sources/php/template-functions.php:1484
+#: sources/php/template-functions.php:1525
+msgid "Order updates"
+msgstr "Bestellstatus"
+
+#: sources/php/template-functions.php:1534
+msgid "You’ll get shipping and delivery updates by email."
+msgstr "Du erhältst Versand- und Zustellinformationen per E-Mail."
+
+#: sources/php/template-functions.php:1624
+msgid "Contact information"
+msgstr "Kontaktinformationen"
+
+#: sources/php/template-functions.php:1676
+#: sources/php/template-functions.php:1919
 msgid "Shipping"
 msgstr "Versand"
 
-#: templates/default/footer.php:22
-msgid "Copyright"
-msgstr "Copyright"
+#: sources/php/template-functions.php:1777
+msgid "Login"
+msgstr "Anmeldung"
 
-#: templates/default/footer.php:22
-msgid "All rights reserved."
-msgstr "Alle Rechte vorbehalten."
-
-#. Plugin Name of the plugin/theme
-msgid "CheckoutWC Lite"
-msgstr "CheckoutWC Lite"
+#: sources/php/template-functions.php:1999
+msgid "Your Cart is Empty"
+msgstr "Dein Warenkorb ist leer"
 
 #. Plugin URI of the plugin/theme
-msgid "https://www.CheckoutWC.com"
-msgstr "https://www.CheckoutWC.com"
-
-#. Description of the plugin/theme
-msgid ""
-"A beautiful, responsive, conversion optimized checkout template for "
-"WooCommerce."
-msgstr ""
-"Eine schöne, responsive, konversionsoptimierte Checkout-Vorlage für "
-"WooCommerce."
-
-#. Author URI of the plugin/theme
 msgid "https://www.checkoutwc.com"
 msgstr "https://www.checkoutwc.com"
 
-#~ msgid "Use Recommended"
-#~ msgstr "Verwendung empfohlen"
+#. Description of the plugin/theme
+msgid "Beautiful, conversion optimized checkout templates for WooCommerce."
+msgstr "Schöne, konvertierungsoptimierte Checkout-Vorlagen für WooCommerce."
 
-#~ msgid "Use Your Address"
-#~ msgstr "Verwenden Sie Ihre Adresse"
+#. Author of the plugin/theme
+msgid "Objectiv"
+msgstr "Objectiv"
 
-#~ msgid "Reenter Address"
-#~ msgstr "Adresse neu eingeben"
+#. Author URI of the plugin/theme
+msgid "https://objectiv.co"
+msgstr "https://objectiv.co"
 
-#~ msgid "Use Existing Address"
-#~ msgstr "Vorhandene Adresse verwenden"
-
-#~ msgid "We are unable to verify your address."
-#~ msgstr "Wir sind nicht in der Lage, Ihre Adresse zu überprüfen."
-
-#~ msgid "Full name"
-#~ msgstr "Vollständiger Name"
-
-#~ msgid "House number"
-#~ msgstr "Hausnummer"
-
-#~ msgid "Street name"
-#~ msgstr "Straße"
-
-#~ msgid "Add Address Line 2"
-#~ msgstr "Adresse hinzufügen Zeile 2"
-
-#~ msgid "Add Company"
-#~ msgstr "Unternehmen hinzufügen"
-
-#~ msgid "Review"
-#~ msgstr "Bewertung"
-
-#~ msgid "Pick up"
-#~ msgstr "Abholen"
-
-#~ msgid "Ship"
-#~ msgstr "Verfrachten"
-
-#~ msgid "Delivery method"
-#~ msgstr "Liefermethode"
-
-#~ msgid "Pickup locations"
-#~ msgstr "Übergabeart"
-
-#~ msgid "Pick up in store"
-#~ msgstr "Abholung vor Ort"
-
-#~ msgid "Pickup instructions"
-#~ msgstr "Abhol-Hinweise"
-
-#~ msgid "Usually ready in 1 hour."
-#~ msgstr "In der Regel in 1 Stunde fertig."
-
-#~ msgid "Usually ready in 2 hours."
-#~ msgstr "Normalerweise in 2 Stunden fertig."
-
-#~ msgid "Usually ready in 4 hours."
-#~ msgstr "In der Regel in 4 Stunden fertig."
-
-#~ msgid "Usually ready in 24 hours."
-#~ msgstr "In der Regel innerhalb von 24 Stunden verfügbar."
-
-#~ msgid "Usually ready in 2-4 days."
-#~ msgstr "Normalerweise in 2-4 Tagen fertig."
-
-#~ msgid "Usually ready in 5+ days."
-#~ msgstr "Normalerweise in 5+ Tagen fertig."
-
-#~ msgid "Close Cart"
-#~ msgstr "Warenkorb schließen"
-
-#~ msgid "Have a promo code? Click here."
-#~ msgstr "Hast du einen Rabatt-Code? Klicke hier."
-
-#~ msgid "Congrats! You get free standard shipping."
-#~ msgstr "Herzlichen Glückwunsch! Du erhältst kostenlosen Standardversand."
-
-#, php-format
-#~ msgid "You're %s away from free shipping!"
-#~ msgstr "Noch %s bis Gratisversand!"
-
-#~ msgid "Use This Address"
-#~ msgstr "Diese Adresse verwenden"
-
-#~ msgid "Use recommended address instead?"
-#~ msgstr "Stattdessen die empfohlene Adresse verwenden?"
-
-#~ msgid "We're unable to verify your address, but found a close match."
-#~ msgstr ""
-#~ "Wir können Ihre Adresse nicht verifizieren, haben aber eine "
-#~ "Übereinstimmung gefunden."
-
-#~ msgid "Please confirm you would like to use this address or try again."
-#~ msgstr ""
-#~ "Bitte bestätigen Sie, dass Sie diese Adresse verwenden möchten, oder "
-#~ "versuchen Sie es erneut."
-
-#~ msgid "You Entered"
-#~ msgstr "Du hast eingegeben"
-
-#~ msgid "Recommended"
-#~ msgstr "Empfohlen"
-
-#~ msgid "Decrement"
-#~ msgstr "Verringern"
-
-#~ msgid "Increment"
-#~ msgstr "Inkrement"
-
-#~ msgid "Order review"
-#~ msgstr "Bestellüberprüfung"
-
-#~ msgid "Promo code"
-#~ msgstr "Rabatt-Code"
-
-#, php-format
-#~ msgid "Order %s"
-#~ msgstr "Bestellung %s"
-
-#, php-format
-#~ msgid "Thank you %s!"
-#~ msgstr "Vielen Dank %s!"
-
-#~ msgid "Order status"
-#~ msgstr "Bestellstatus"
-
-#~ msgid "Order updates"
-#~ msgstr "Bestellstatus"
-
-#~ msgid "You’ll get shipping and delivery updates by email."
-#~ msgstr "Du erhältst Versand- und Zustellinformationen per E-Mail."
-
-#~ msgid "Contact information"
-#~ msgstr "Kontaktinformationen"
-
-#~ msgid "Login"
-#~ msgstr "Anmeldung"
-
-#~ msgid "Your Cart is Empty"
-#~ msgstr "Dein Warenkorb ist leer"
-
-#~ msgid "Your Cart"
-#~ msgstr "Dein Warenkorb"
-
-#~ msgid "Objectiv"
-#~ msgstr "Objectiv"
-
-#~ msgid "https://objectiv.co"
-#~ msgstr "https://objectiv.co"
-
-#~ msgid "Address Verification"
-#~ msgstr "Adressen-Verifikation"
-
-#~ msgid ""
-#~ "The shipping address you provided does not match the suggested address "
-#~ "from our verification service. Please verify your address."
-#~ msgstr ""
-#~ "Die von dir angegebene Lieferadresse stimmt nicht mit der von unserem "
-#~ "Verifizierungsdienst vorgeschlagenen Adresse überein. Bitte verifiziere "
-#~ "deine Adresse."
-
-#~ msgid "We Suggest"
-#~ msgstr "Wir schlagen vor"
-
-#~ msgid "Select a country"
-#~ msgstr "Wähle ein Land"
-
-#~ msgid "Password"
-#~ msgstr "Passwort"
-
-#~ msgid "Login is optional. You may continue with your order below."
-#~ msgstr "Anmelden ist optional. Du kannst deine Bestellung unten fortsetzen."
+#~ msgid "Change"
+#~ msgstr "Ändern"

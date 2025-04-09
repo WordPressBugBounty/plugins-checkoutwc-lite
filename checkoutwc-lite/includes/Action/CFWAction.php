@@ -10,37 +10,16 @@ namespace Objectiv\Plugins\Checkout\Action;
  * @package Objectiv\Plugins\Checkout\Action
  */
 abstract class CFWAction {
-	/**
-	 * @since 1.0.0
-	 * @access protected
-	 * @var string $id
-	 */
 	protected $id = '';
 
-	/**
-	 * Action constructor.
-	 *
-	 * @param $id
-	 * @since 1.0.0
-	 * @access public
-	 */
 	public function __construct( $id ) {
 		$this->id = $id;
 	}
 
-	/**
-	 * @since 1.0.0
-	 * @access public
-	 * @return string
-	 */
 	public function get_id(): string {
 		return $this->id;
 	}
 
-	/**
-	 * @since 1.0.0
-	 * @access public
-	 */
 	public function load() {
 		remove_all_actions( "wc_ajax_{$this->get_id()}" );
 		add_action( "wc_ajax_{$this->get_id()}", array( $this, 'execute' ) );
@@ -63,7 +42,7 @@ abstract class CFWAction {
 		 * PHP Warning / Notice Suppression
 		 */
 		if ( ! defined( 'CFW_DEV_MODE' ) || ! CFW_DEV_MODE ) {
-			ini_set( 'display_errors', 'Off' );
+			ini_set( 'display_errors', 'Off' ); // phpcs:ignore
 		}
 
 		if ( ! defined( 'CFW_ACTION_NO_ERROR_SUPPRESSION_BUFFER' ) ) {
@@ -76,14 +55,8 @@ abstract class CFWAction {
 		$this->action();
 	}
 
-	/**
-	 * @param $out
-	 * @param int|null $status_code
-	 * @since 1.0.0
-	 * @access protected
-	 */
-	protected function out( $out, int $status_code = null ) {
-		ini_set( 'display_errors', 'Off' );
+	protected function out( $out, ?int $status_code = null ) {
+		ini_set( 'display_errors', 'Off' ); // phpcs:ignore
 
 		// TODO: Execute and out (in Action) should be final and not overrideable. Action needs to NOT force JSON as an object. Could use a parameter to flip JSON to object
 		if ( ! defined( 'CFW_ACTION_NO_ERROR_SUPPRESSION_BUFFER' ) ) {

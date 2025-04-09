@@ -12,7 +12,7 @@ class Chronopost extends CompatibilityAbstract {
 	public function run() {
 		add_action(
 			'cfw_checkout_payment_method_tab',
-			function() {
+			function () {
 				// phpcs:disable WooCommerce.Commenting.CommentHooks.MissingHookComment
 				do_action( 'woocommerce_review_order_before_payment' );
 				// phpcs:enable WooCommerce.Commenting.CommentHooks.MissingHookComment

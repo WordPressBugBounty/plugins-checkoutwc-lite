@@ -14,21 +14,7 @@ class WCFieldFactory extends CompatibilityAbstract {
 	}
 
 	public function remove_filter() {
-		global $wp_filter;
-
-		$existing_hooks = $wp_filter['woocommerce_checkout_fields'];
-
-		$priority = 9;
-
-		if ( $existing_hooks[ $priority ] ) {
-			foreach ( $existing_hooks[ $priority ] as $key => $callback ) {
-				if ( false !== stripos( $key, 'wcccf_filter_checkout_fields' ) ) {
-					global $Wcff_CheckoutFields;
-
-					$Wcff_CheckoutFields = $callback['function'][0];
-				}
-			}
-		}
+		$Wcff_CheckoutFields = cfw_get_hook_instance_object( 'woocommerce_checkout_fields', 'wcccf_filter_checkout_fields', 9 );
 
 		if ( empty( $Wcff_CheckoutFields ) ) {
 			return;

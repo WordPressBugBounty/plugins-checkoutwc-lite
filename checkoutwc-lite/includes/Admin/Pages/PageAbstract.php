@@ -2,7 +2,10 @@
 
 namespace Objectiv\Plugins\Checkout\Admin\Pages;
 
+use Objectiv\Plugins\Checkout\Managers\PlanManager;
 use Objectiv\Plugins\Checkout\Managers\SettingsManager;
+use Objectiv\Plugins\Checkout\Managers\UpdatesManager;
+use WP_Admin_Bar;
 
 /**
  * Class Admin
@@ -21,11 +24,11 @@ abstract class PageAbstract {
 	/**
 	 * PageAbstract constructor.
 	 *
-	 * @param $title
-	 * @param $capability
-	 * @param string|null $slug
+	 * @param string      $title The title of the page.
+	 * @param string      $capability The capability required to access the page.
+	 * @param string|null $slug The slug of the page.
 	 */
-	public function __construct( $title, $capability, string $slug = null ) {
+	public function __construct( string $title, string $capability, ?string $slug = null ) {
 		$this->title      = $title;
 		$this->capability = $capability;
 		$this->slug       = join( '-', array_filter( array( self::$parent_slug, $slug ) ) );
@@ -34,7 +37,7 @@ abstract class PageAbstract {
 	/**
 	 * Set priority of page in menu
 	 *
-	 * @param int $priority
+	 * @param int $priority The priority of the page.
 	 * @return $this
 	 */
 	public function set_priority( int $priority ): PageAbstract {
@@ -46,6 +49,8 @@ abstract class PageAbstract {
 	public function init() {
 		add_action( 'admin_menu', array( $this, 'setup_menu' ), $this->priority );
 		add_action( 'admin_bar_menu', array( $this, 'add_admin_bar_menu_node' ), 100 + $this->priority );
+		add_action( 'admin_enqueue_scripts', array( $this, 'maybe_set_script_data' ), 1000 );
+		add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_scripts' ), 1001 );
 	}
 
 	public function setup_menu() {
@@ -59,7 +64,7 @@ abstract class PageAbstract {
 	}
 
 	public function is_current_page(): bool {
-		return sanitize_text_field( $_GET['page'] ?? '' ) === $this->slug;
+		return sanitize_text_field( wp_unslash( $_GET['page'] ?? '' ) ) === $this->slug; // phpcs:ignore WordPress.Security.NonceVerification.Recommended
 	}
 
 	abstract public function output();
@@ -70,18 +75,27 @@ abstract class PageAbstract {
 	 * @since 1.0.0
 	 */
 	public function output_with_wrap() {
-		$hide_settings_button = ( isset( $_GET['subpage'] ) && 'templates' === $_GET['subpage'] ) || ( isset( $_GET['page'] ) && 'cfw-settings-support' === $_GET['page'] );
+		$hide_settings_button = ( isset( $_GET['subpage'] ) && 'templates' === $_GET['subpage'] ) || ( isset( $_GET['page'] ) && 'cfw-settings-support' === $_GET['page'] ); // phpcs:ignore WordPress.Security.NonceVerification.Recommended
 		?>
 		<div class="cfw-admin-notices-container">
 			<div class="wp-header-end"></div>
+			<div id="cfw-custom-admin-notices"></div>
 		</div>
 		<div class="cfw-tw">
 			<div id="cfw_admin_page_header" class="fixed top-0 divide-y shadow z-50">
-				<?php do_action( 'cfw_before_admin_page_header', $this ); ?>
+				<?php
+				/**
+				 * Fires before the admin page header.
+				 *
+				 * @param PageAbstract The admin page.
+				 * @since 7.0.0
+				 */
+				do_action( 'cfw_before_admin_page_header', $this );
+				?>
 				<div class="min-h-[64px] bg-white flex items-center pl-8 justify-between">
 					<div class="flex items-center">
 						<span>
-							<?php echo file_get_contents( CFW_PATH . '/assets/admin/images/icon.svg' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+							<?php echo file_get_contents( CFW_PATH . '/build/images/cfw.svg' ); // phpcs:ignore ?>
 						</span>
 						<nav class="flex" aria-label="Breadcrumb">
 							<ol role="list" class="flex items-center space-x-2">
@@ -99,7 +113,7 @@ abstract class PageAbstract {
 											<path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
 										</svg>
 										<span class="ml-2 text-sm font-medium text-gray-500" aria-current="page">
-											<?php echo esc_html( $this->title ); ?>
+											<?php echo esc_html( wp_strip_all_tags( $this->title ) ); ?>
 										</span>
 									</div>
 								</li>
@@ -111,11 +125,38 @@ abstract class PageAbstract {
 						<?php cfw_e( 'Save Changes' ); ?>
 					</button>
 				</div>
-				<?php do_action( 'cfw_after_admin_page_header', $this ); ?>
+				<?php
+				/**
+				 * Fires after the admin page header.
+				 *
+				 * @param PageAbstract The admin page.
+				 * @since 7.0.0
+				 */
+				do_action( 'cfw_after_admin_page_header', $this );
+				?>
 			</div>
 
 			<div class="cfw-admin-content-wrap cfw-admin-screen-<?php echo esc_attr( sanitize_title_with_dashes( $this->title ) ); ?> p-10 z-10">
 				<?php $this->output(); ?>
+			</div>
+		</div>
+		<?php
+	}
+
+	public function premium_lock_html( $required_plan = 'basic' ) {
+		?>
+		<!-- Lock Overlay -->
+		<div class="fixed backdrop-blur-[2px] bg-white/40 inset-0 flex flex-col items-center justify-center z-50">
+			<div class="space-y-4">
+				<p class="flex justify-center">
+					<a href="https://www.checkoutwc.com/lite-upgrade/?utm_campaign=liteplugin&utm_medium=admin-page-<?php echo esc_attr( $this->get_slug() ); ?>&utm_source=WordPress&utm_content=Unlock+with+Premium" class="bg-blue-600 hover:bg-blue-700 text-white hover:text-white font-bold py-4 px-6 rounded">
+						Unlock with Premium
+					</a>
+				</p>
+
+				<div class="text-center italic">
+					<?php echo wp_kses_post( sprintf( cfw_notranslate__( 'A %s plan is required to access this feature.', 'checkout-wc' ), PlanManager::get_english_list_of_required_plans_html( $required_plan ) ) ); ?>
+				</div>
 			</div>
 		</div>
 		<?php
@@ -138,261 +179,33 @@ abstract class PageAbstract {
 		<?php
 	}
 
-	public function output_form_open() {
+	public function output_form_open( $id = null ) {
+		$action = sanitize_text_field( wp_unslash( $_SERVER['REQUEST_URI'] ?? '' ) );
+		$action = remove_query_arg( 'cfw_welcome', $action );
 		?>
-		<form name="settings" action="<?php echo esc_attr( wc_clean( $_SERVER['REQUEST_URI'] ?? '' ) ); ?>" method="post">
+		<form name="settings" id="<?php echo $id ? esc_attr( $id ) : 'cfw_settings_form'; ?>" action="<?php echo esc_attr( sanitize_text_field( $action ) ); ?>" method="post">
 			<?php
 			SettingsManager::instance()->the_nonce();
 	}
 
-	public function output_form_close() {
+	public function output_form_close( $include_button = true ) {
 		?>
-			<input type="submit" name="submit" id="cfw_admin_page_submit" class="hidden" value="submit" />
+			<?php if ( $include_button ) : ?>
+			<input type="submit" name="submit" class="cfw_admin_page_submit hidden" value="submit" />
+			<?php endif; ?>
 		</form>
-		<?php
-	}
-
-	/**
-	 * Output radio group row
-	 *
-	 * @param string $setting
-	 * @param string $label
-	 * @param string $description
-	 * @param mixed $default_value
-	 * @param array $options
-	 * @param array $descriptions
-	 * @param array $args
-	 */
-	public function output_radio_group_row( string $setting, string $label, string $description, $default_value, array $options, array $descriptions, array $args = array() ) {
-		$settings   = SettingsManager::instance();
-		$value      = $settings->get_setting( $setting );
-		$field_name = $settings->get_field_name( $setting );
-		$defaults   = array(
-			'enabled'                => true,
-			'notice'                 => null,
-			'show_overridden_notice' => false,
-			'nested'                 => false,
-		);
-
-		$args = wp_parse_args( $args, $defaults );
-		?>
-		<div class="cfw-admin-field-container cfw-admin-field-radio-group <?php echo $args['nested'] ? 'ml-7 p-4 bg-gray-100' : ''; ?>">
-			<legend class="text-base font-medium text-gray-900">
-				<?php echo esc_html( $label ); ?>
-			</legend>
-			<p class="text-sm leading-5 text-gray-500">
-				<?php echo wp_kses_post( $description ); ?>
-			</p>
-			<div class="space-y-5 mt-4">
-				<?php foreach ( $options as $option_value => $option_label ) : ?>
-					<div class="relative flex items-start">
-						<div class="flex items-center h-5">
-							<input <?php echo ! $args['enabled'] ? 'disabled' : ''; ?> id="<?php echo esc_attr( "{$setting}_{$option_value}" ); ?>" type="radio" name="<?php echo esc_attr( $field_name ); ?>" value="<?php echo esc_attr( $option_value ); ?>" class="focus:ring-blue-800 h-4 w-4 text-blue-500 border-gray-300" <?php echo $option_value === $value || ( empty( $value ) && $option_value === $default_value ) ? 'checked' : ''; ?> />
-						</div>
-						<div class="ml-3 text-sm">
-							<label for="<?php echo esc_attr( "{$setting}_{$option_value}" ); ?>" style="vertical-align: unset;" class="font-medium text-gray-700">
-								<?php echo esc_html( $option_label ); ?>
-							</label>
-
-							<?php if ( isset( $descriptions[ $option_value ] ) ) : ?>
-								<p id="small-description" class="text-gray-500">
-									<?php echo esc_html( $descriptions[ $option_value ] ); ?>
-								</p>
-							<?php endif; ?>
-						</div>
-					</div>
-				<?php endforeach; ?>
-			</div>
-
-			<?php $this->maybe_show_overridden_setting_notice( $args['show_overridden_notice'] ); ?>
-		</div>
-		<?php
-	}
-
-	/**
-	 * Output horizontal icon radio group row
-	 *
-	 * @param string $setting
-	 * @param string $label
-	 * @param string $description
-	 * @param mixed $default_value
-	 * @param array $options
-	 * @param array $descriptions
-	 * @param array $args
-	 */
-	public function output_horizontal_icon_radio_group_row( string $setting, string $label, string $description, $default_value, array $options, array $descriptions, array $args = array() ) {
-		$settings   = SettingsManager::instance();
-		$value      = $settings->get_setting( $setting );
-		$field_name = $settings->get_field_name( $setting );
-		$defaults   = array(
-			'enabled'                => true,
-			'notice'                 => null,
-			'show_overridden_notice' => false,
-			'nested'                 => false,
-		);
-
-		$args = wp_parse_args( $args, $defaults );
-		?>
-		<div class="cfw-admin-field-container cfw-admin-field-horizontal-icon-radio-group <?php echo $args['nested'] ? 'ml-7 p-4 bg-gray-100' : ''; ?>">
-			<?php echo wp_kses_post( $args['notice'] ); ?>
-			<legend class="text-base font-medium text-gray-900">
-				<?php echo esc_html( $label ); ?>
-			</legend>
-			<p class="text-sm leading-5 text-gray-500">
-				<?php echo wp_kses_post( $description ); ?>
-			</p>
-			<div class="mt-4 space-y-4 sm:flex sm:items-center sm:space-y-0 sm:space-x-10">
-				<?php foreach ( $options as $option_value => $option_label ) : ?>
-					<div class="relative flex items-start">
-						<div class="flex items-center h-8">
-							<input <?php echo ! $args['enabled'] ? 'disabled' : ''; ?> type="radio" id="<?php echo esc_attr( "{$setting}_{$option_value}" ); ?>" name="<?php echo esc_attr( $field_name ); ?>" value="<?php echo esc_attr( $option_value ); ?>" class="focus:ring-blue-800 h-4 w-4 text-blue-500 border-gray-300" <?php echo $option_value === $value || ( empty( $value ) && $option_value === $default_value ) ? 'checked' : ''; ?> />
-						</div>
-						<div class="ml-3 text-sm">
-							<label for="<?php echo esc_attr( "{$setting}_{$option_value}" ); ?>" style="vertical-align: unset;" class="font-medium text-gray-700">
-								<?php echo esc_html( $option_label ); ?>
-							</label>
-
-							<?php if ( isset( $descriptions[ $option_value ] ) ) : ?>
-								<p id="small-description" class="text-gray-500">
-									<?php echo esc_html( $descriptions[ $option_value ] ); ?>
-								</p>
-							<?php endif; ?>
-						</div>
-					</div>
-				<?php endforeach; ?>
-			</div>
-
-			<?php $this->maybe_show_overridden_setting_notice( $args['show_overridden_notice'] ); ?>
-		</div>
-		<?php
-	}
-
-	public function output_countries_multiselect( string $setting, string $label, string $description, array $selected_options, array $args = array() ): void {
-		$settings   = SettingsManager::instance();
-		$field_name = $settings->get_field_name( $setting );
-		$countries  = WC()->countries->countries;
-
-		asort( $countries );
-		?>
-		<div class="cfw-admin-field-container <?php echo $args['nested'] ? 'ml-7 p-4 bg-gray-100' : ''; ?>">
-			<label for="<?php echo esc_attr( $setting ); ?>" class="block text-sm font-medium text-gray-700">
-				<?php echo esc_html( $label ); ?>
-			</label>
-			<input type="hidden" name="<?php echo esc_attr( $field_name ); ?>" value="">
-			<select multiple="multiple" name="<?php echo esc_attr( $field_name ); ?>[]" style="width:350px" data-placeholder="<?php cfw_esc_attr_e( 'Choose countries / regions&hellip;', 'woocommerce' ); ?>" aria-label="<?php cfw_esc_attr_e( 'Country / Region', 'woocommerce' ); ?>" class="wc-enhanced-select">
-				<?php
-				if ( ! empty( $countries ) ) {
-					foreach ( $countries as $key => $val ) {
-						echo '<option value="' . esc_attr( $key ) . '"' . wc_selected( $key, $selected_options ) . '>' . esc_html( $val ) . '</option>'; // WPCS: XSS ok.
-					}
-				}
-				?>
-			</select>
-			<p class="mt-2 text-sm text-gray-500">
-				<?php echo wp_kses_post( $description ); ?>
-			</p>
-		</div>
-		<?php
-	}
-
-	public function output_checkbox_group( string $setting, string $label, string $description, array $options, array $selected_options, array $args = array() ) {
-		$settings   = SettingsManager::instance();
-		$field_name = $settings->get_field_name( $setting );
-		$defaults   = array(
-			'enabled'                => true,
-			'notice'                 => null,
-			'show_overridden_notice' => false,
-			'nested'                 => false,
-		);
-
-		$args = wp_parse_args( $args, $defaults );
-		?>
-		<div class="cfw-admin-field-container <?php echo $args['nested'] ? 'ml-7 p-4 bg-gray-100' : ''; ?>">
-			<input type="hidden" name="<?php echo esc_attr( $field_name ); ?>" value="" />
-			<?php echo wp_kses_post( $args['notice'] ); ?>
-			<legend class="text-base font-medium text-gray-900">
-				<?php echo esc_html( $label ); ?>
-			</legend>
-			<p class="text-sm leading-5 text-gray-500">
-				<?php echo wp_kses_post( $description ); ?>
-			</p>
-			<div id="<?php echo esc_attr( $setting ); ?>">
-				<?php foreach ( $options as $option_value => $option_label ) : ?>
-					<?php $checked = in_array( $option_value, $selected_options, true ); ?>
-					<div class="flex items-start mt-3">
-						<div class="h-5 flex items-center">
-							<input <?php echo ! $args['enabled'] ? 'disabled' : ''; ?> type="checkbox" name="<?php echo esc_attr( $field_name ); ?>[]" value="<?php echo esc_attr( $option_value ); ?>" id="<?php echo esc_attr( "{$setting}_{$option_value}" ); ?>" class="focus:ring-blue-800 h-4 w-4 text-blue-500 border-gray-300 rounded" <?php echo $checked ? 'checked' : ''; ?> <?php echo ! $args['enabled'] ? 'disabled="disabled"' : ''; ?> />
-						</div>
-						<div class="ml-3 text-sm">
-							<label for="<?php echo esc_attr( "{$setting}_{$option_value}" ); ?>" style="vertical-align: unset;" class="font-medium text-gray-700">
-								<?php echo esc_html( $option_label ); ?>
-							</label>
-						</div>
-					</div>
-				<?php endforeach; ?>
-			</div>
-
-			<?php $this->maybe_show_overridden_setting_notice( $args['show_overridden_notice'] ); ?>
-		</div>
-		<?php
-	}
-
-	/**
-	 * Output checkbox row
-	 *
-	 * @param string $setting
-	 * @param string $long_label
-	 * @param string $description
-	 * @param array $args
-	 */
-	public function output_checkbox_row( string $setting, string $long_label, string $description = '', array $args = array() ) {
-		$defaults = array(
-			'enabled'                => true,
-			'notice'                 => null,
-			'show_overridden_notice' => false,
-			'overridden_notice'      => '',
-			'nested'                 => false,
-		);
-
-		$args = wp_parse_args( $args, $defaults );
-
-		$settings   = SettingsManager::instance();
-		$field_name = $settings->get_field_name( $setting );
-		$value      = $settings->get_setting( $setting );
-		$checked    = 'yes' === $value && $args['enabled'];
-		?>
-		<div class="cfw-admin-field-container relative flex items-start <?php echo $args['nested'] ? 'ml-7 p-4 bg-gray-100' : ''; ?>">
-			<div class="flex items-center h-5">
-				<input type="hidden" name="<?php echo esc_attr( $field_name ); ?>" value="no" />
-				<input <?php echo ! $args['enabled'] ? 'disabled' : ''; ?> type="checkbox" class="focus:ring-blue-800 h-4 w-4 text-blue-500 border-gray-300 rounded disabled:bg-gray-100 disabled:border cfw-checkbox-<?php echo esc_attr( $setting ); ?>" name="<?php echo esc_attr( $field_name ); ?>" id="<?php echo esc_attr( 'cfw_checkbox_' . $setting ); ?>" value="yes" <?php echo $checked ? 'checked' : ''; ?> />
-			</div>
-
-			<div class="ml-3 text-sm">
-				<label class="font-medium text-gray-700 cfw-checkbox-label-<?php echo esc_attr( $setting ); ?>" style="vertical-align: unset;" for="<?php echo esc_attr( 'cfw_checkbox_' . $setting ); ?>">
-					<?php echo esc_html( $long_label ); ?>
-				</label>
-
-				<?php if ( ! empty( $description ) ) : ?>
-					<p class="text-gray-500">
-						<?php echo wp_kses_post( $description ); ?>
-					</p>
-				<?php endif; ?>
-				<?php echo wp_kses_post( $args['notice'] ); ?>
-			</div>
-		</div>
-		<?php $this->maybe_show_overridden_setting_notice( $args['show_overridden_notice'], $args['overridden_notice'] ); ?>
 		<?php
 	}
 
 	/**
 	 * Output toggle checkbox
 	 *
-	 * @param string $setting
-	 * @param string $label
-	 * @param string $description
-	 * @param bool $enabled
-	 * @param bool $show_overridden_notice
-	 * @param string $overridden_notice
+	 * @param string $setting The setting name.
+	 * @param string $label The label of the checkbox.
+	 * @param string $description The description of the checkbox.
+	 * @param bool   $enabled Whether the checkbox is enabled.
+	 * @param bool   $show_overridden_notice Whether to show the overridden notice.
+	 * @param string $overridden_notice The overridden notice.
 	 */
 	public function output_toggle_checkbox( string $setting, string $label, string $description, bool $enabled = true, bool $show_overridden_notice = false, string $overridden_notice = '' ) {
 		$settings   = SettingsManager::instance();
@@ -414,7 +227,7 @@ abstract class PageAbstract {
 				<label class="cfw-toggle-checkbox-text-label font-medium text-gray-700" for="<?php echo esc_attr( $field_id ); ?>"><?php echo esc_html( $label ); ?></label>
 
 				<p class="text-gray-500">
-					<?php echo wp_kses_post( $description ); ?>
+					<?php echo esc_html( $description ); ?>
 				</p>
 			</div>
 		</div>
@@ -423,153 +236,11 @@ abstract class PageAbstract {
 	}
 
 	/**
-	 * Output text input row
-	 *
-	 * @param string $setting
-	 * @param string $label
-	 * @param string $description
-	 */
-	public function output_text_input_row( string $setting, string $label, string $description, array $args = array() ) {
-		$default = array(
-			'nested' => false,
-		);
-
-		$args = wp_parse_args( $args, $default );
-
-		$settings   = SettingsManager::instance();
-		$field_name = $settings->get_field_name( $setting );
-		$value      = $settings->get_setting( $setting );
-		?>
-		<div class="cfw-admin-field-container <?php echo $args['nested'] ? 'ml-7 p-4 bg-gray-100' : ''; ?>">
-			<label for="<?php echo esc_attr( $setting ); ?>" class="block text-sm font-medium text-gray-700">
-				<?php echo esc_html( $label ); ?>
-			</label>
-			<input type="text" value="<?php echo esc_attr( $value ); ?>" name="<?php echo esc_attr( $field_name ); ?>" id="<?php echo esc_attr( $setting ); ?>" class="shadow-sm focus:ring-blue-500 focus:border-blue-500 block w-full sm:text-sm border border-gray-300 rounded-md" />
-			<p class="mt-2 text-sm text-gray-500">
-				<?php echo wp_kses_post( $description ); ?>
-			</p>
-		</div>
-		<?php
-	}
-
-	public function output_color_picker_input( string $setting, string $label, string $default_value, $args = array() ) {
-		$default = array(
-			'nested'             => false,
-			'setting_seed'       => array(),
-			'additional_classes' => array(),
-		);
-
-		$args = wp_parse_args( $args, $default );
-
-		$settings   = SettingsManager::instance();
-		$field_name = $settings->get_field_name( $setting, $args['setting_seed'] );
-		$value      = $settings->get_setting( $setting, $args['setting_seed'] );
-		?>
-		<div class="cfw-admin-field-container <?php echo esc_attr( join( ' ', $args['additional_classes'] ) ); ?> <?php echo $args['nested'] ? 'ml-7 p-4 bg-gray-100' : ''; ?>">
-			<div class="text-sm mb-2">
-				<label class="font-medium text-gray-700" for="<?php echo esc_attr( $field_name ); ?>">
-					<?php echo esc_html( $label ); ?>
-				</label>
-			</div>
-
-
-			<input class="cfw-admin-color-picker" type="text" id="<?php echo esc_attr( $setting ); ?>" name="<?php echo esc_attr( $field_name ); ?>" value="<?php echo esc_attr( empty( $value ) ? $default_value : $value ); ?>" data-default-color="<?php echo esc_attr( $default_value ); ?>" />
-		</div>
-		<?php
-	}
-
-	/**
-	 * Output number input row
-	 *
-	 * @param string $setting
-	 * @param string $label
-	 * @param string $description
-	 * @param array $args
-	 */
-	public function output_number_input_row( string $setting, string $label, string $description, array $args = array() ) {
-		$default = array(
-			'nested' => false,
-		);
-
-		$args = wp_parse_args( $args, $default );
-
-		$settings   = SettingsManager::instance();
-		$field_name = $settings->get_field_name( $setting );
-		$value      = $settings->get_setting( $setting );
-		?>
-		<div class="cfw-admin-field-container <?php echo $args['nested'] ? 'ml-7 p-4 bg-gray-100' : ''; ?>">
-			<label for="about" class="block text-sm font-medium text-gray-700">
-				<?php echo esc_html( $label ); ?>
-			</label>
-			<input type="number" value="<?php echo esc_attr( $value ); ?>" name="<?php echo esc_attr( $field_name ); ?>" id="<?php echo esc_attr( $setting ); ?>" class="w-64 shadow-sm focus:ring-blue-500 focus:border-blue-500 block w-full sm:text-sm border border-gray-300 rounded-md" />
-			<p class="mt-2 text-sm text-gray-500">
-				<?php echo wp_kses_post( $description ); ?>
-			</p>
-		</div>
-		<?php
-	}
-
-	/**
-	 * Output textarea row
-	 *
-	 * @param string $setting
-	 * @param string $label
-	 * @param string $description
-	 * @param array $args
-	 */
-	public function output_textarea_row( string $setting, string $label, string $description, array $args = array() ) {
-		$defaults = array(
-			'enabled'       => true,
-			'textarea_rows' => 6,
-			'notice'        => null,
-			'nested'        => false,
-			'quicktags'     => false,
-			'tinymce'       => false,
-			'media_buttons' => false,
-			'setting_seed'  => array(),
-		);
-
-		$args       = wp_parse_args( $args, $defaults );
-		$settings   = SettingsManager::instance();
-		$field_name = $settings->get_field_name( $setting, $args['setting_seed'] );
-		$value      = $settings->get_setting( $setting, $args['setting_seed'] );
-		?>
-		<div class="cfw-admin-field-container <?php echo $args['nested'] ? 'ml-7 p-4 bg-gray-100' : ''; ?>">
-			<label for="<?php echo esc_attr( sanitize_title_with_dashes( $field_name ) ); ?>" class="block text-sm font-medium text-gray-700">
-				<?php echo esc_html( $label ); ?>
-			</label>
-			<?php
-			echo wp_kses_post( $args['notice'] );
-
-			if ( ! $args['enabled'] ) {
-				echo '<div class="cfw_textarea_placeholder"></div>';
-			} else {
-				wp_editor(
-					$value,
-					sanitize_title_with_dashes( $field_name ),
-					array(
-						'textarea_rows' => $args['textarea_rows'],
-						'quicktags'     => $args['quicktags'],
-						'media_buttons' => $args['media_buttons'],
-						'textarea_name' => $field_name,
-						'tinymce'       => $args['tinymce'],
-					)
-				);
-			}
-			?>
-			<p class="mt-2 text-sm text-gray-500">
-				<?php echo wp_kses_post( $description ); ?>
-			</p>
-		</div>
-		<?php
-	}
-
-	/**
 	 * Add admin bar menu node
 	 *
-	 * @param \WP_Admin_Bar $admin_bar
+	 * @param WP_Admin_Bar $admin_bar The admin bar object.
 	 */
-	public function add_admin_bar_menu_node( \WP_Admin_Bar $admin_bar ) {
+	public function add_admin_bar_menu_node( WP_Admin_Bar $admin_bar ) {
 		if ( ! $this->can_show_admin_bar_button() ) {
 			return;
 		}
@@ -590,6 +261,12 @@ abstract class PageAbstract {
 	 * @return bool
 	 */
 	public function can_show_admin_bar_button(): bool {
+		/**
+		 * Filters whether to show the admin bar button
+		 *
+		 * @param bool $show Whether to show the admin bar button
+		 * @since 3.0.0
+		 */
 		if ( ! apply_filters( 'cfw_do_admin_bar', current_user_can( 'manage_options' ) && ( SettingsManager::instance()->get_setting( 'hide_admin_bar_button' ) !== 'yes' || is_cfw_page() ) ) ) {
 			return false;
 		}
@@ -613,5 +290,85 @@ abstract class PageAbstract {
 	 */
 	public function get_slug(): string {
 		return $this->slug;
+	}
+
+	/**
+	 * @param string $required_plans The required plans.
+	 * @return string
+	 */
+	public function get_old_style_upgrade_required_notice( string $required_plans ): string {
+		ob_start();
+		?>
+		<div class='cfw-license-upgrade-blocker-og cfw-tw'>
+			<div class="inner text-base">
+				<h3 class="text-xl font-bold mb-4">
+					<?php cfw_e( 'Upgrade Your Plan', 'checkout-wc' ); ?>
+				</h3>
+
+				<?php echo wp_kses_post( sprintf( cfw_notranslate__( 'A %s plan is required to access this feature.', 'checkout-wc' ), $required_plans ) ); ?>
+				<p class="text-base">
+					<?php echo wp_kses_post( sprintf( cfw_notranslate__( 'You can upgrade your license in <a class="text-blue-600 underline" target="_blank" href="%1$s">Account</a>. For help upgrading your license, <a class="text-blue-600 underline" target="_blank" href="%2$s">click here.</a>', 'checkout-wc' ), 'https://www.checkoutwc.com/account/', 'https://kb.checkoutwc.com/article/53-upgrading-your-license' ) ); ?>
+				</p>
+			</div>
+		</div>
+		<?php
+
+		return ob_get_clean();
+	}
+
+	public function enqueue_scripts() {
+		if ( ! $this->is_current_page() ) {
+			return;
+		}
+
+		cfw_register_scripts( array( 'admin-settings' ) );
+
+		wp_localize_script(
+			'cfw-admin-settings',
+			'cfwAdminPagesData',
+			$this->get_script_data()
+		);
+
+		wp_enqueue_script( 'cfw-admin-settings' );
+	}
+
+	public function get_script_data(): array {
+		/**
+		 * Filter the admin page data
+		 *
+		 * @since 9.0.0
+		 * @param array $data
+		 */
+		return apply_filters(
+			'cfw_admin_page_data',
+			array()
+		);
+	}
+
+	public function maybe_set_script_data() {
+		// Silence is golden
+	}
+
+	public function set_script_data( $data ) {
+		add_filter(
+			'cfw_admin_page_data',
+			function () use ( $data ) {
+				return $data;
+			}
+		);
+	}
+
+	public function get_plan_data(): array {
+		$data = array(
+			'plan_id'    => UpdatesManager::instance()->get_license_price_id(),
+			'plan_level' => PlanManager::get_user_plan_level(),
+			'labels'     => array(),
+		);
+
+		foreach ( PlanManager::PLAN_HIERARCHY as $plan => $level ) {
+			$data['labels']['required_list'][ $level ] = PlanManager::get_english_list_of_required_plans_html( $plan );
+		}
+
+		return $data;
 	}
 }

@@ -1,12 +1,29 @@
 @mixin cfw-payment-request-button() {
-    margin-right: 7px !important;
+    margin-right: 8px !important;
     margin-bottom: 0.5em;
     border: none !important;
     max-width: 140px !important;
     min-width: 140px;
     overflow: hidden;
     border-radius: 5px;
-    max-height: 35px;
+    max-height: 42px;
+    min-height: 42px;
+    margin-top: 0;
+}
+
+@mixin apply-cfw-payment-request-button-styles-with-exclusions($base-selectors, $excluded-parents) {
+    @each $base-selector in $base-selectors {
+        $full-selector: $base-selector;
+
+        @each $excluded-parent in $excluded-parents {
+            $full-selector: unquote("#{$full-selector}:not(#{$excluded-parent}, #{$excluded-parent} *)");
+        }
+
+        // Apply the styles to the constructed selector
+        #{$full-selector} {
+            @include cfw-payment-request-button();
+        }
+    }
 }
 
 @mixin clearfix() {

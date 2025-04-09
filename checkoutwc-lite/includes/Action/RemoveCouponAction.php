@@ -10,23 +10,10 @@ namespace Objectiv\Plugins\Checkout\Action;
  * @package Objectiv\Plugins\Checkout\Action
  */
 class RemoveCouponAction extends CFWAction {
-
-	/**
-	 * ApplyCouponAction constructor.
-	 *
-	 * @since 1.0.0
-	 * @access public
-	 */
 	public function __construct() {
 		parent::__construct( 'cfw_remove_coupon' );
 	}
 
-	/**
-	 * Applies the coupon discount and returns the new totals
-	 *
-	 * @since 1.0.0
-	 * @access public
-	 */
 	public function action() {
 		check_ajax_referer( 'remove-coupon', 'security' );
 

@@ -1,4 +1,9 @@
 <?php
+/**
+ * Big Blue Compatibility
+ *
+ * @package Objectiv\Plugins\Checkout\Compatibility
+ */
 
 namespace Objectiv\Plugins\Checkout\Compatibility\Plugins;
 

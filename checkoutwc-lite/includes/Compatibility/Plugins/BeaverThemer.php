@@ -3,7 +3,6 @@
 namespace Objectiv\Plugins\Checkout\Compatibility\Plugins;
 
 use Objectiv\Plugins\Checkout\Compatibility\CompatibilityAbstract;
-use Objectiv\Plugins\Checkout\Admin;
 use Objectiv\Plugins\Checkout\Managers\SettingsManager;
 
 class BeaverThemer extends CompatibilityAbstract {
@@ -12,7 +11,7 @@ class BeaverThemer extends CompatibilityAbstract {
 	}
 
 	public function pre_init() {
-		add_action( 'cfw_admin_integrations_settings', array( $this, 'admin_integration_setting' ) );
+		add_filter( 'cfw_admin_integrations_checkbox_fields', array( $this, 'admin_integration_settings' ) );
 	}
 
 	public function run() {
@@ -23,19 +22,24 @@ class BeaverThemer extends CompatibilityAbstract {
 	}
 
 	/**
-	 * Output the admin integration setting
+	 * Add the admin settings
 	 *
-	 * @param Admin\Pages\PageAbstract $integrations
+	 * @param array $integrations The integrations.
+	 *
+	 * @return array
 	 */
-	public function admin_integration_setting( Admin\Pages\PageAbstract $integrations ) {
+	public function admin_integration_settings( array $integrations ): array {
 		if ( ! $this->is_available() ) {
-			return;
+			return $integrations;
 		}
 
-		$integrations->output_checkbox_row(
-			'enable_beaver_themer_support',
-			cfw__( 'Enable Beaver Themer support.', 'checkout-wc' ),
-			cfw__( 'Allow Beaver Themer to replace header and footer.', 'checkout-wc' )
+		$integrations[] = array(
+			'name'          => 'enable_beaver_themer_support',
+			'label'         => cfw_notranslate__( 'Enable Beaver Themer Support', 'checkout-wc' ),
+			'description'   => cfw_notranslate__( 'Allow Beaver Themer to replace header and footer.', 'checkout-wc' ),
+			'initial_value' => SettingsManager::instance()->get_setting( 'enable_beaver_themer_support' ) === 'yes',
 		);
+
+		return $integrations;
 	}
 }

@@ -12,7 +12,7 @@ class Blaszok extends CompatibilityAbstract {
 	public function pre_init() {
 		add_action(
 			'init',
-			function() {
+			function () {
 				remove_action( 'init', 'mpcth_woo_fix' );
 			},
 			1

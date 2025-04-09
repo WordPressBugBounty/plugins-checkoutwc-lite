@@ -1,6 +1,6 @@
-import Main           from '../../Main';
 import LoggingService from '../../Services/LoggingService';
 import Compatibility  from '../Compatibility';
+import ParsleyService from '../../Services/ParsleyService';
 
 class ExtraCheckoutFieldsBrazil extends Compatibility {
     private _targetNodes = [
@@ -24,7 +24,7 @@ class ExtraCheckoutFieldsBrazil extends Compatibility {
                     return;
                 }
 
-                const group = target.id.split( '_' )[ 0 ];
+                const group = jQuery( target ).parents( '.cfw-panel' ).attr( 'id' );
 
                 if ( target.classList.contains( 'validate-required' ) && target.style.display !== 'none' ) {
                     LoggingService.logNotice( `${target.id} needs to be validated!` );
@@ -41,7 +41,7 @@ class ExtraCheckoutFieldsBrazil extends Compatibility {
                 }
             } );
 
-            Main.instance.parsleyService.queueRefreshParsley();
+            ParsleyService.instance.queueRefreshParsley();
         };
 
         // Create an observer instance linked to the callback function
@@ -54,10 +54,6 @@ class ExtraCheckoutFieldsBrazil extends Compatibility {
             if ( element ) {
                 observer.observe( element, config );
             }
-        } );
-
-        jQuery( '#billing_persontype' ).one( 'select2:select', () => {
-            jQuery( '#billing_cnpj_field, #billing_cpf_field' ).addClass( 'cfw-extra-checkout-fields-force-observe' );
         } );
     }
 }

@@ -1,5 +1,4 @@
 import Alert         from '../../Components/Alert';
-import Main          from '../../Main';
 import AlertService  from '../../Services/AlertService';
 import TabService    from '../../Services/TabService';
 import Compatibility from '../Compatibility';
@@ -22,16 +21,16 @@ class MondialRelay extends Compatibility {
             jQuery( '#cfw-shipping-action' ).show();
         } );
 
-        const easyTabsWrap: any = Main.instance.tabService.tabContainer;
+        const easyTabsWrap: any = TabService.tabContainer;
 
-        easyTabsWrap.bind( 'easytabs:before', ( event, clicked, target ) => {
+        easyTabsWrap.on( 'easytabs:before', ( event, clicked, target ) => {
             if ( jQuery( target ).attr( 'id' ) === TabService.paymentMethodTabId ) {
                 if ( jQuery( '#mrwp_parcel_shop_mandatory' ).val() === 'Yes' ) {
                     if ( jQuery( '#mrwp_parcel_shop_id' ).val() === '' ) {
                         // Prevent removing alert on next update checkout
                         AlertService.preserveAlerts = true;
 
-                        const alert: Alert = new Alert( 'error', 'Vous n\'avez pas encore choisi de Point Relais.', 'cfw-alert-error', true );
+                        const alert: Alert = new Alert( 'error', 'Vous n\'avez pas encore choisi de Point Relais.', null, true );
                         AlertService.queueAlert( alert );
 
                         AlertService.showAlerts();

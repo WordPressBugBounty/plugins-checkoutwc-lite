@@ -4,7 +4,7 @@ namespace Objectiv\Plugins\Checkout\Compatibility\Plugins;
 
 use Objectiv\Plugins\Checkout\Compatibility\CompatibilityAbstract;
 use Objectiv\Plugins\Checkout\Managers\SettingsManager;
-use Objectiv\Plugins\Checkout\Admin;
+use SA_WC_Cashier;
 
 class CashierForWooCommerce extends CompatibilityAbstract {
 	public function is_available(): bool {
@@ -12,13 +12,13 @@ class CashierForWooCommerce extends CompatibilityAbstract {
 	}
 
 	public function pre_init() {
-		add_action( 'cfw_admin_integrations_settings', array( $this, 'admin_integration_settings' ) );
+		add_filter( 'cfw_admin_integrations_checkbox_fields', array( $this, 'admin_integration_settings' ) );
 	}
 
 	public function run_immediately() {
 		add_filter( 'woocommerce_enable_order_notes_field', array( $this, 'enable_notes_field' ) );
 
-		$enabled_modules = \SA_WC_Cashier::get_instance()->get_enabled_modules();
+		$enabled_modules = SA_WC_Cashier::get_instance()->get_enabled_modules();
 
 		if ( ! in_array( 'checkout-field-editor', $enabled_modules, true ) ) {
 			return;
@@ -46,23 +46,28 @@ class CashierForWooCommerce extends CompatibilityAbstract {
 	}
 
 	/**
-	 * Output the admin integration setting
+	 * Add the admin settings
 	 *
-	 * @param Admin\Pages\PageAbstract $integrations
+	 * @param array $integrations The integrations.
+	 *
+	 * @return array
 	 */
-	public function admin_integration_settings( Admin\Pages\PageAbstract $integrations ) {
+	public function admin_integration_settings( array $integrations ): array {
 		if ( ! $this->is_available() ) {
-			return;
+			return $integrations;
 		}
 
-		$integrations->output_checkbox_row(
-			'allow_cashier_for_woocommerce_address_modification',
-			cfw__( 'Enable Cashier for WooCommerce address field overrides. (Not Recommended)', 'checkout-wc' ),
-			cfw__( 'Allow WooCommerce Cashier Checkout Field Editor module to modify billing and shipping address fields. Not compatible with these features: Discreet House Number and Street Name Address Fields, Full Name Field', 'checkout-wc' )
+		$integrations[] = array(
+			'name'          => 'allow_cashier_for_woocommerce_address_modification',
+			'label'         => cfw_notranslate__( 'Enable Cashier for WooCommerce address field overrides. (Not Recommended)', 'checkout-wc' ),
+			'description'   => cfw_notranslate__( 'Allow WooCommerce Cashier Checkout Field Editor module to modify billing and shipping address fields. Not compatible with these features: Separate House Number and Street Name Address Fields, Full Name Field', 'checkout-wc' ),
+			'initial_value' => SettingsManager::instance()->get_setting( 'allow_cashier_for_woocommerce_address_modification' ) === 'yes',
 		);
+
+		return $integrations;
 	}
 
 	public function enable_notes_field(): bool {
-		return  'yes' === get_option( 'woocommerce_enable_order_comments', 'yes' );
+		return 'yes' === get_option( 'woocommerce_enable_order_comments', 'yes' );
 	}
 }

@@ -12,7 +12,7 @@ class Porto extends CompatibilityAbstract {
 	/**
 	 * Add WP theme styles to list of blocked style handles.
 	 *
-	 * @param array $scripts
+	 * @param array $scripts List of script handles.
 	 *
 	 * @return array
 	 */
@@ -31,7 +31,7 @@ class Porto extends CompatibilityAbstract {
 	/**
 	 * Add WP theme styles to list of blocked style handles.
 	 *
-	 * @param array $styles
+	 * @param array $styles List of style handles.
 	 *
 	 * @return array
 	 */

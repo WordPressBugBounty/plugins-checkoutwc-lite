@@ -14,7 +14,7 @@ class WooCommercePakettikauppa extends CompatibilityAbstract {
 		add_filter( 'woocommerce_checkout_fields', array( $this, 'add_shipping_email_field' ) );
 	}
 
-	public function add_shipping_email_field( $fields ) : array {
+	public function add_shipping_email_field( $fields ): array {
 		$new_fields = \Wc_Pakettikauppa::get_instance()->frontend->add_checkout_fields( $fields );
 
 		if ( isset( $new_fields['shipping']['shipping_email'] ) ) {

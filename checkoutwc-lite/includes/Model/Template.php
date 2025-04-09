@@ -12,17 +12,17 @@ use Objectiv\Plugins\Checkout\Managers\SettingsManager;
  * @since 2.0.0
  * @package Objectiv\Plugins\Checkout\Core
  */
-
 class Template {
-	private $stylesheet_file_name = 'style.min.css';
-	private $basepath;
-	private $baseuri;
-	private $name;
-	private $description;
-	private $author;
-	private $version;
-	private $supports = array();
-	private $slug;
+	private $stylesheet_file_name = 'style.css';
+	private $basepath             = '';
+	private $baseuri              = '';
+	private $name                 = '';
+	private $description          = '';
+	private $author               = '';
+	private $authoruri            = '';
+	private $version              = '';
+	private $supports             = array();
+	private $slug                 = '';
 
 	/**
 	 * @since 2.0.0
@@ -41,7 +41,7 @@ class Template {
 	/**
 	 * Template constructor.
 	 *
-	 * @param string $slug
+	 * @param string $slug The template slug.
 	 */
 	public function __construct( string $slug ) {
 		/**
@@ -55,9 +55,6 @@ class Template {
 		} elseif ( is_dir( trailingslashit( CFW_PATH_PLUGIN_TEMPLATE ) . $slug ) ) {
 			$this->basepath = trailingslashit( CFW_PATH_PLUGIN_TEMPLATE ) . $slug;
 			$this->baseuri  = trailingslashit( CFW_PATH_URL_BASE ) . 'templates/' . $slug;
-		} else {
-			// Otherwise, load the default template
-			return new Template( 'default' );
 		}
 
 		$this->slug = $slug;
@@ -67,7 +64,6 @@ class Template {
 
 	/**
 	 * Load template information for given path
-	 *
 	 */
 	private function load() {
 		/**
@@ -92,8 +88,8 @@ class Template {
 	/**
 	 * Load the theme template functions file
 	 *
-	 * @since 2.0.0
 	 * @return void
+	 * @since 2.0.0
 	 */
 	public function load_functions() {
 		$functions_path = trailingslashit( $this->get_basepath() ) . 'functions.php';
@@ -106,8 +102,8 @@ class Template {
 	/**
 	 * Load the template init settings file
 	 *
-	 * @since 2.0.0
 	 * @return void
+	 * @since 2.0.0
 	 */
 	public function init() {
 		$init_path = trailingslashit( $this->get_basepath() ) . 'init.php';
@@ -118,7 +114,7 @@ class Template {
 
 		foreach ( $defaults as $setting => $value ) {
 			if ( defined( 'CFW_FORCE_TEMPLATE_RESET' ) ) {
-				$settings_manager->update_setting( $setting, $value, true, array( $this->get_slug() ) );
+				$settings_manager->update_setting( $setting, $value, array( $this->get_slug() ) );
 			} else {
 				$settings_manager->add_setting( $setting, $value, array( $this->get_slug() ) );
 			}
@@ -147,11 +143,11 @@ class Template {
 	}
 
 	/**
-	 * @param $setting
+	 * @param string $setting The setting name.
 	 *
-	 * @return mixed|string
+	 * @return string
 	 */
-	public function get_default_setting( $setting ) {
+	public function get_default_setting( $setting ): string {
 		$defaults = $this->get_default_settings();
 
 		return ! empty( $defaults[ $setting ] ) ? $defaults[ $setting ] : '';
@@ -206,7 +202,7 @@ class Template {
 			do_action( "cfw_template_load_before_{$template_name}_{$template_piece_name}" );
 
 			// Extract any parameters for use in the template
-			extract( $parameters ); // phpcs:ignore
+			extract( $parameters );
 
 			// Pass the parameters to the view
 			require $filename_with_basepath;
@@ -221,7 +217,7 @@ class Template {
 	}
 
 	/**
-	 * @param $capability
+	 * @param string $capability The capability.
 	 *
 	 * @return bool
 	 */
@@ -248,67 +244,63 @@ class Template {
 	}
 
 	/**
-	 * @return string
+	 * @return string The template stylesheet filename.
 	 */
 	public function get_stylesheet_filename(): string {
-		if ( defined( 'CFW_DEV_MODE' ) && CFW_DEV_MODE ) {
-			return 'style.css';
-		}
-
 		return $this->stylesheet_file_name;
 	}
 
 	/**
-	 * @return string
+	 * @return string The template base path.
 	 */
 	public function get_basepath(): string {
 		return $this->basepath;
 	}
 
 	/**
-	 * @return mixed
+	 * @return string
 	 */
 	public function get_name() {
 		return $this->name;
 	}
 
 	/**
-	 * @param mixed $name
+	 * @param string $name The template name.
 	 */
 	public function set_name( $name ) {
 		$this->name = $name;
 	}
 
 	/**
-	 * @return mixed
+	 * @return string The template description.
 	 */
 	public function get_description() {
 		return $this->description;
 	}
 
 	/**
-	 * @param mixed $description
+	 * @param string $description The template description.
 	 */
 	public function set_description( $description ) {
 		$this->description = $description;
 	}
 
 	/**
-	 * @return mixed
+	 * @return string
 	 */
 	public function get_author() {
 		return $this->author;
 	}
 
 	/**
-	 * @return mixed
+	 * @return string The template version.
 	 */
 	public function get_version() {
 		return $this->version;
 	}
 
 	/**
-	 * @param mixed $version
+	 * @param string $version The template version.
 	 */
 	public function set_version( $version ) {
 		$this->version = $version;
@@ -322,14 +314,14 @@ class Template {
 	}
 
 	/**
-	 * @param mixed $supports
+	 * @param array $supports The template supports.
 	 */
 	public function set_supports( $supports ) {
 		$this->supports = $supports;
 	}
 
 	/**
-	 * @return string
+	 * @return string The template slug.
 	 */
 	public function get_slug(): string {
 		return $this->slug;
@@ -341,34 +333,67 @@ class Template {
 	}
 
 	public static function get_all_available(): array {
-		$templates       = array();
-		$active_template = cfw_get_active_template();
+		$templates = array();
 
 		foreach ( glob( trailingslashit( cfw_get_plugin_template_path() ) . '*', GLOB_ONLYDIR ) as $template ) {
-			$templates[ basename($template) ] = new self( basename( $template ) );
+			$templates[ basename( $template ) ] = new self( basename( $template ) );
 		}
 
 		if ( is_dir( CFW_PATH_THEME_TEMPLATE ) ) {
 			foreach ( glob( trailingslashit( CFW_PATH_THEME_TEMPLATE ) . '*', GLOB_ONLYDIR ) as $template ) {
-				$templates[ basename($template) ] = new self( basename( $template ) );
+				$templates[ basename( $template ) ] = new self( basename( $template ) );
 			}
 		}
 
 		ksort( $templates );
 
-		return array( $active_template->get_slug() => $templates[ $active_template->get_slug() ] ) + $templates;
+		return $templates;
 	}
 
 	public static function init_active_template( self $template ) {
+		$template->load_functions();
+
+		if ( defined( 'CFW_BUILD_PROCESS' ) && CFW_BUILD_PROCESS === 2 ) {
+			add_action(
+				'cfw_load_template_assets',
+				function () use ( $template ) {
+					$asset_file_path = trailingslashit( $template->get_basepath() ) . 'build/index.asset.php';
+
+					if ( is_readable( $asset_file_path ) ) {
+						$asset_file = include $asset_file_path;
+					} else {
+						$asset_file = array(
+							'version'      => '1.0.0',
+							'dependencies' => array( 'jquery' ),
+						);
+					}
+
+					$url = $template->get_template_uri() . '/build/style-index.css';
+
+					if ( is_rtl() ) {
+						$url = str_replace( '.css', '-rtl.css', $url );
+					}
+
+					// Register styles & scripts.
+					wp_enqueue_style( 'cfw_front_template_css', $url, array(), $asset_file['version'] );
+					wp_enqueue_script( 'wc-checkout', $template->get_template_uri() . '/build/index.js', $asset_file['dependencies'], $asset_file['version'], true );
+				}
+			);
+
+			return;
+		}
+
+		/**
+		 * Legacy template asset loader
+		 */
 		add_action(
 			'cfw_load_template_assets',
-			function() use ( $template ) {
+			function () use ( $template ) {
 				$min = ( ! CFW_DEV_MODE ) ? '.min' : '';
 
 				wp_enqueue_style( 'cfw_front_template_css', $template->get_template_uri() . "/style{$min}.css", array(), CFW_VERSION );
 				wp_enqueue_script( 'wc-checkout', $template->get_template_uri() . "/theme{$min}.js", array( 'jquery' ), CFW_VERSION, true );
 			}
 		);
-		$template->load_functions();
 	}
 }

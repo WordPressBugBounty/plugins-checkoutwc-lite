@@ -3,18 +3,36 @@
 namespace Objectiv\Plugins\Checkout\Compatibility\Gateways;
 
 use Objectiv\Plugins\Checkout\Compatibility\CompatibilityAbstract;
+use Objectiv\Plugins\Checkout\Model\DetectedPaymentGateway;
+use Objectiv\Plugins\Checkout\Model\GatewaySupport;
+use stdClass;
 
 class KlarnaPayment extends CompatibilityAbstract {
-
-	protected $klarna_payments = null;
-
 	public function is_available(): bool {
-		return class_exists( '\\WC_Klarna_Payments' );
+		return class_exists( '\\WC_Klarna_Payments' ) && version_compare( WC_KLARNA_PAYMENTS_VERSION, '3.0.0', '<' );
+	}
+
+	public function run() {
+		add_action( 'cfw_payment_gateway_list_klarna_payments_alternate', array( $this, 'klarna_payments_content' ), 10, 1 );
+		add_filter( 'cfw_show_gateway_klarna_payments', '__return_false' );
 	}
 
 	public function pre_init() {
-		add_action( 'cfw_payment_gateway_list_klarna_payments_alternate', array( $this, 'klarna_payments_content' ), 10, 1 );
-		add_filter( 'cfw_show_gateway_klarna_payments', '__return_false' );
+		if ( ! $this->is_available() ) {
+			return;
+		}
+
+		add_filter(
+			'cfw_detected_gateways',
+			function ( $gateways ) {
+				$gateways[] = new DetectedPaymentGateway(
+					'Klarna Payments',
+					GatewaySupport::NOT_SUPPORTED
+				);
+
+				return $gateways;
+			}
+		);
 	}
 
 	public function klarna_payments_content( $count ) {
@@ -23,7 +41,7 @@ class KlarnaPayment extends CompatibilityAbstract {
 		// phpcs:enable WooCommerce.Commenting.CommentHooks.MissingHookComment
 
 		if ( is_wc_endpoint_url( 'order-pay' ) ) {
-			$key                = filter_input( INPUT_GET, 'key', FILTER_SANITIZE_STRING );
+			$key                = wc_clean( wp_unslash( $_GET['key'] ?? '' ) ); // phpcs:ignore WordPress.Security.NonceVerification.Recommended
 			$order_id           = wc_get_order_id_by_order_key( $key );
 			$payment_categories = get_post_meta( $order_id, '_klarna_payments_categories', true );
 		} else {
@@ -69,8 +87,9 @@ class KlarnaPayment extends CompatibilityAbstract {
 
 								<span class="payment_method_icons">
 									<?php
-									// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+									// phpcs:disable WordPress.Security.EscapeOutput.OutputNotEscaped
 									echo $kp->get_icon();
+									// phpcs:enable WordPress.Security.EscapeOutput.OutputNotEscaped
 									?>
 								</span>
 							</div>
@@ -104,6 +123,7 @@ class KlarnaPayment extends CompatibilityAbstract {
 							$field_html = str_ireplace( '•••• •••• •••• ••••', 'Card Number', $field_html );
 							$field_html = str_ireplace( '&bull;&bull;&bull;&bull; &bull;&bull;&bull;&bull; &bull;&bull;&bull;&bull; &bull;&bull;&bull;&bull;', 'Card Number', $field_html );
 
+							// phpcs:disable WordPress.Security.EscapeOutput.OutputNotEscaped
 							/**
 							 * Filters klarna payment gateway output
 							 *
@@ -111,7 +131,8 @@ class KlarnaPayment extends CompatibilityAbstract {
 							 *
 							 * @param string $output The gateway output
 							 */
-							echo apply_filters( "cfw_payment_gateway_field_html_{$kp->id}", $field_html ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+							echo apply_filters( "cfw_payment_gateway_field_html_{$kp->id}", $field_html );
+							// phpcs:enable WordPress.Security.EscapeOutput.OutputNotEscaped
 							?>
 						</div>
 					<?php endif; ?>
@@ -131,10 +152,10 @@ class KlarnaPayment extends CompatibilityAbstract {
 		return $compatibility;
 	}
 
-	public function toObject( $array ) {
-		$obj = new \stdClass();
+	public function toObject( $theArray ) {
+		$obj = new stdClass();
 
-		foreach ( $array as $key => $val ) {
+		foreach ( $theArray as $key => $val ) {
 			$obj->$key = is_array( $val ) ? $this->toObject( $val ) : $val;
 		}
 

@@ -10,4 +10,3 @@ if ( ! defined( 'ABSPATH' ) ) {
  *
  * Default settings are initted in Template
  */
-

@@ -16,13 +16,13 @@ class WooFinvoicer extends CompatibilityAbstract {
 	/**
 	 * Add the business ID field
 	 *
-	 * @param array $fields
+	 * @param array $fields The fields.
 	 * @return array
 	 */
 	public function add_business_id_field( array $fields ) {
 		if ( isset( $fields['billing']['billing_woo_finvoicer_business_id'] ) ) {
 			$fields['billing']['billing_woo_finvoicer_business_id']['priority'] = 51; // after company field
-			$fields['shipping']['shipping_woo_finvoicer_business_id'] = $fields['billing']['billing_woo_finvoicer_business_id'];
+			$fields['shipping']['shipping_woo_finvoicer_business_id']           = $fields['billing']['billing_woo_finvoicer_business_id'];
 		}
 
 		return $fields;

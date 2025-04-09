@@ -15,26 +15,17 @@ class OneClickUpsells extends CompatibilityAbstract {
 
 	public function add_ocu_checkout_buttons() {
 		$gateways = WC()->payment_gateways()->get_available_payment_gateways();
-		$add_sep  = false;
 
 		if ( ! empty( $gateways['ocustripe'] ) ) {
 			if ( 'no' !== $gateways['ocustripe']->apple_pay_enabled ) {
 				add_action( 'cfw_checkout_before_customer_info_tab', 'gb_ocu_stripe_apple_pay_display_button', 5 );
-
-				$add_sep = true;
 			}
 		}
 
 		if ( ! empty( $gateways['ocupaypal'] ) ) {
 			if ( 'top' === $gateways['ocupaypal']->checkout_page || 'both' === $gateways['ocupaypal']->checkout_page ) {
 				add_action( 'cfw_checkout_before_customer_info_tab', array( $this, 'gb_ocu_paypal_display_button' ), 5 );
-
-				$add_sep = true;
 			}
-		}
-
-		if ( $add_sep ) {
-			add_action( 'cfw_after_payment_request_buttons', 'cfw_add_separator', 11 );
 		}
 	}
 

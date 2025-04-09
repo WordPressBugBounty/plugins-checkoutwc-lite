@@ -26,27 +26,13 @@
 
     // Small includes everything between small and medium until medium
     @include media-breakpoint-down(lg) {
-        order: 0;
+        order: -1;
         overflow: hidden;
         width: 100%;
         border-left: none;
         background: var(--cfw-cart-summary-mobile-background-color);
         margin-bottom: 20px;
         padding: 0;
-    }
-}
-
-.cfw-one-page-checkout #cfw-cart-summary-content {
-    @media (min-width: map-get($grid-breakpoints, "lg")) {
-        position: sticky !important;
-        top: 2em;
-    }
-}
-
-.admin-bar.cfw-one-page-checkout #cfw-cart-summary-content {
-    @media (min-width: map-get($grid-breakpoints, "lg")) {
-        position: sticky !important;
-        top: 4em;
     }
 }
 

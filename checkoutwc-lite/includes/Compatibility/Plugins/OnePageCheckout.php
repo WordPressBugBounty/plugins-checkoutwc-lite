@@ -10,6 +10,14 @@ class OnePageCheckout extends CompatibilityAbstract {
 	}
 
 	public function run() {
-		add_filter( 'cfw_disable_templates', 'is_wcopc_checkout', 10, 1 );
+		add_filter( 'cfw_is_checkout', array( $this, 'maybe_disable_checkout_template' ), 10, 1 );
+	}
+
+	public function maybe_disable_checkout_template( $is_checkout ) {
+		if ( is_wcopc_checkout() ) {
+			$is_checkout = false;
+		}
+
+		return $is_checkout;
 	}
 }

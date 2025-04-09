@@ -12,16 +12,16 @@ use Objectiv\Plugins\Checkout\Interfaces\SettingsGetterInterface;
  */
 class SettingsManager extends SettingsManagerAbstract implements SettingsGetterInterface {
 
-	public $prefix = '_cfwlite_';
+	public $prefix = '_cfw_';
 
 	/**
 	 * Add suffix
 	 *
-	 * @param string $setting_name
-	 * @param array $keys
+	 * @param string $setting_name The name of the setting.
+	 * @param array  $keys The keys to add to the setting name.
 	 * @return string
 	 */
-	private function add_suffix( string $setting_name, array $keys = array() ): string {
+	public function add_suffix( string $setting_name, array $keys = array() ): string {
 		if ( empty( $keys ) ) {
 			return $setting_name;
 		}
@@ -34,9 +34,9 @@ class SettingsManager extends SettingsManagerAbstract implements SettingsGetterI
 	/**
 	 * Add setting
 	 *
-	 * @param string $setting
-	 * @param mixed $value
-	 * @param array $keys
+	 * @param string $setting The name of the new option.
+	 * @param mixed  $value The value of the new option.
+	 * @param array  $keys The keys to add to the setting name.
 	 * @return bool
 	 */
 	public function add_setting( string $setting, $value, array $keys = array() ): bool {
@@ -46,21 +46,21 @@ class SettingsManager extends SettingsManagerAbstract implements SettingsGetterI
 	/**
 	 * Update setting
 	 *
-	 * @param string $setting
-	 * @param array|string $value
-	 * @param bool $save_to_db
-	 * @param array $keys
+	 * @param string       $setting The name of the option.
+	 * @param array|string $value The new value of the option.
+	 * @param array        $keys The keys to add to the setting name.
+	 *
 	 * @return bool
 	 */
-	public function update_setting( string $setting, $value, bool $save_to_db = true, array $keys = array() ): bool {
-		return parent::update_setting( $this->add_suffix( $setting, $keys ), $value, $save_to_db );
+	public function update_setting( string $setting, $value, array $keys = array() ): bool {
+		return parent::update_setting( $this->add_suffix( $setting, $keys ), $value );
 	}
 
 	/**
 	 * Delete setting
 	 *
-	 * @param string $setting
-	 * @param array $keys
+	 * @param string $setting The name of the option.
+	 * @param array  $keys The keys to add to the setting name.
 	 * @return bool
 	 */
 	public function delete_setting( string $setting, array $keys = array() ): bool {
@@ -70,8 +70,8 @@ class SettingsManager extends SettingsManagerAbstract implements SettingsGetterI
 	/**
 	 * Get setting
 	 *
-	 * @param string $setting
-	 * @param array $keys
+	 * @param string $setting The name of the option.
+	 * @param array  $keys The keys to add to the setting name.
 	 * @return false|mixed
 	 */
 	public function get_setting( string $setting, array $keys = array() ) {
@@ -81,8 +81,8 @@ class SettingsManager extends SettingsManagerAbstract implements SettingsGetterI
 	/**
 	 * Get field name
 	 *
-	 * @param string $setting
-	 * @param array $keys
+	 * @param string $setting The name of the setting.
+	 * @param array  $keys The keys to add to the setting name.
 	 * @return string
 	 */
 	public function get_field_name( string $setting, array $keys = array() ): string {

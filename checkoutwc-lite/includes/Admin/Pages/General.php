@@ -2,7 +2,10 @@
 
 namespace Objectiv\Plugins\Checkout\Admin\Pages;
 
+use Objectiv\Plugins\Checkout\Admin\Pages\Traits\TabbedAdminPageTrait;
+use Objectiv\Plugins\Checkout\Managers\PlanManager;
 use Objectiv\Plugins\Checkout\Managers\SettingsManager;
+use Objectiv\Plugins\Checkout\Managers\UpdatesManager;
 use WP_Admin_Bar;
 
 /**
@@ -13,11 +16,13 @@ use WP_Admin_Bar;
  * @package Objectiv\Plugins\Checkout\Admin\Pages
  */
 class General extends PageAbstract {
+	use TabbedAdminPageTrait;
+
 	protected $appearance_page;
 
 	public function __construct( Appearance $appearance_page ) {
 		$this->appearance_page = $appearance_page;
-		parent::__construct( cfw__( 'Start Here', 'checkout-wc' ), 'manage_options' );
+		parent::__construct( cfw_notranslate__( 'Start Here', 'checkout-wc' ), 'cfw_manage_general' );
 	}
 
 	public function init() {
@@ -32,102 +37,206 @@ class General extends PageAbstract {
 	}
 
 	public function setup_main_menu_page() {
-		add_menu_page( 'CheckoutWC', 'CheckoutWC', 'manage_options', self::$parent_slug, array( $this, 'output_with_wrap' ), 'data:image/svg+xml;base64,' . base64_encode( file_get_contents( CFW_PATH . '/assets/admin/images/icon.svg' ) ) );
+		add_menu_page( 'CheckoutWC', 'CheckoutWC', 'cfw_manage_general', self::$parent_slug, array( $this, 'output_with_wrap' ), 'data:image/svg+xml;base64,' . base64_encode( file_get_contents( CFW_PATH . '/build/images/cfw.svg' ) ) ); // phpcs:ignore
 	}
 
 	public function output() {
-		$this->output_form_open();
+		if ( isset( $_GET['upgrade'] ) && '10' === $_GET['upgrade'] ) { // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+			$this->output_upgrade_notice();
+			return;
+		}
+
 		?>
 		<div class="max-w-3xl pb-8">
 			<div>
 				<p class="text-5xl font-bold text-gray-900">
-					<?php cfw_e( 'Welcome to the new standard for WooCommerce checkouts.', 'checkout-wc' ); ?>
+					<?php cfw_e( 'Welcome to the new standard for WooCommerce stores.', 'checkout-wc' ); ?>
 				</p>
 				<p class="max-w-xl mt-5 text-2xl text-gray-500">
-					<?php cfw_e( 'Higher conversions start here.', 'checkout-wc' ); ?>
+					<?php cfw_e( 'We hate complex configurations too. Get up and running with CheckoutWC in 5 minutes or less. ⚡️', 'checkout-wc' ); ?>
+				</p>
+				<p class="mt-6">
+					<a href="https://kb.checkoutwc.com" target="_blank" class="inline-flex items-center px-6 py-3 border border-transparent text-lg shadow font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+						<?php cfw_e( 'Read Our Documentation', 'checkout-wc' ); ?>
+					</a>
 				</p>
 			</div>
 		</div>
-		<div class="hidden sm:block" aria-hidden="true">
-			<div class="py-8">
-				<div class="border-t border-gray-300"></div>
+		<?php
+
+		$this->getting_started_tab();
+	}
+
+	public function output_upgrade_notice() {
+		?>
+		<div class="max-w-5xl pb-8">
+			<div>
+				<p class="text-5xl font-bold text-gray-900">
+					<?php cfw_e( 'Welcome to CheckoutWC 10.0', 'checkout-wc' ); ?>
+				</p>
+				<p class="max-w-xl mt-5 text-2xl text-gray-500">
+					<?php cfw_e( 'CheckoutWC 10.0 is a major update with new features and optimizations to make your WooCommerce store run better.', 'checkout-wc' ); ?>
+				</p>
+
+				<div class="grid grid-cols-2 gap-8 mt-12">
+					<div>
+						<p class="text-4xl font-bold text-gray-900">
+							<?php cfw_e( 'Just Say When', 'checkout-wc' ); ?>
+						</p>
+						<p class="max-w-xl mt-5 text-2xl text-gray-500">
+							<?php cfw_e( 'Our new rules engine puts you in charge. Want to show an Order Bump only to first time customers who use a specific coupon code? You can do that. Want to show specific trust badges based on what is in the cart? You can do that too!', 'checkout-wc' ); ?>
+						</p>
+					</div>
+					<div>
+						<img src="https://www.checkoutwc.com/wp-content/uploads/2024/12/Xnapper-2024-12-12-11.10.38.png" alt="Rules Engine" />
+					</div>
+				</div>
+
+				<div class="grid grid-cols-2 gap-8 mt-12">
+					<div>
+						<img src="https://www.checkoutwc.com/wp-content/uploads/2024/12/Xnapper-2024-12-11-11.04.35-2048x1270.png.avif" alt="Order Bumps Quick Start" />
+					</div>
+					<div>
+						<p class="text-4xl font-bold text-gray-900">
+							<?php cfw_e( 'Get Started Faster', 'checkout-wc' ); ?>
+						</p>
+						<p class="max-w-xl mt-5 text-2xl text-gray-500">
+							<?php cfw_e( 'Creating Order Bumps has lots of options. Our new Quick Start will help you get started faster.', 'checkout-wc' ); ?>
+						</p>
+						<p class="mt-5">
+							<a href="<?php echo esc_attr( add_query_arg( array( 'page' => 'cfw-settings-order_bumps' ), admin_url( 'admin.php' ) ) ); ?>" target="_blank" class="inline-flex items-center px-6 py-3 border border-transparent text-lg shadow font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+								<?php cfw_e( 'Configure Order Bumps', 'checkout-wc' ); ?>
+							</a>
+						</p>
+					</div>
+				</div>
+
+				<div class="grid grid-cols-2 gap-8 mt-12">
+					<div>
+						<p class="text-4xl font-bold text-gray-900">
+							<?php cfw_e( 'And a lot more', 'checkout-wc' ); ?>
+						</p>
+						<p class="max-w-xl mt-5 text-2xl text-gray-500">
+							<?php cfw_e( 'To view the full list of changes, checkout our change log.', 'checkout-wc' ); ?>
+						</p>
+						<p class="mt-5">
+							<a href="https://www.checkoutwc.com/documentation/change-log/" target="_blank" class="inline-flex items-center px-6 py-3 border border-transparent text-lg shadow font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+								<?php cfw_e( 'Read Our Change Log', 'checkout-wc' ); ?>
+							</a>
+						</p>
+					</div>
+				</div>
 			</div>
 		</div>
+		<?php
+	}
+
+	public function getting_started_tab() {
+		$this->output_form_open();
+		?>
 		<div class="space-y-8 mt-4">
 			<?php
 			cfw_admin_page_section(
-				cfw__( '1. Customize Logo and Colors', 'checkout-wc' ),
-				cfw__( 'Review your logo and set your brand colors.', 'checkout-wc' ),
+				PlanManager::has_premium_plan_or_higher() ? cfw_notranslate__( 'Step 1: Activate Your License', 'checkout-wc' ) : cfw_notranslate__( 'Step 1: Try CheckoutWC Premium Free For 7 Days', 'checkout-wc' ),
+				PlanManager::has_premium_plan_or_higher() ? cfw_notranslate__( 'Enter your license key. An active license is required for all functionality.', 'checkout-wc' ) : cfw_notranslate__( 'Supercharge your WooCommerce store.', 'checkout-wc' ),
+				defined( 'CFW_PREMIUM_PLAN_IDS' ) ? $this->get_licensing_settings() : $this->trial_offer()
+			);
+
+			cfw_admin_page_section(
+				cfw_notranslate__( 'Step 2: Pick a Template', 'checkout-wc' ),
+				cfw_notranslate__( 'Choose which design to use for your checkout and thank you page.', 'checkout-wc' ),
+				$this->get_pick_template_content()
+			);
+
+			cfw_admin_page_section(
+				cfw_notranslate__( 'Step 3: Customize Logo and Colors', 'checkout-wc' ),
+				cfw_notranslate__( 'Review your logo and set your brand colors.', 'checkout-wc' ),
 				$this->get_design_content()
 			);
 
 			cfw_admin_page_section(
-				cfw__( '2. Review Your Checkout Page', 'checkout-wc' ),
-				cfw__( 'Test your checkout page and make sure everything is working correctly.', 'checkout-wc' ),
+				cfw_notranslate__( 'Step 4: Review Your Checkout Page', 'checkout-wc' ),
+				cfw_notranslate__( 'Test your checkout page and make sure everything is working correctly.', 'checkout-wc' ),
 				$this->get_preview_content()
 			);
 
 			cfw_admin_page_section(
-				cfw__( '3. Go Live', 'checkout-wc' ),
-				cfw__( 'Enable templates for all visitors.', 'checkout-wc' ),
+				cfw_notranslate__( 'Step 5: Go Live', 'checkout-wc' ),
+				cfw_notranslate__( 'Enable templates for all visitors.', 'checkout-wc' ),
 				$this->get_activation_settings()
 			);
 			?>
 		</div>
-		<div class="mt-8 rounded" style="background: #122b42">
-
-			<div class="p-8 flex">
-
-				<div class="left text-white space-y-4 w-2/3">
-					<h2 class="text-2xl text-white font-bold"><?php cfw_esc_html_e( 'Upgrade to PRO', 'checkout-wc' ); ?></h2>
-					<ul class="flex flex-wrap">
-						<li class="w-1/2 text-base flex content-center"><span class="dashicons dashicons-yes text-base text-green-700 pr-2"></span> <?php cfw_esc_html_e( '5 Modern Templates', 'wpforms-lite' ); ?></li>
-						<li class="w-1/2 text-base flex content-center"><span class="dashicons dashicons-yes text-base text-green-700 pr-2"></span> <?php cfw_esc_html_e( 'Thank You Page', 'wpforms-lite' ); ?></li>
-						<li class="w-1/2 text-base flex content-center"><span class="dashicons dashicons-yes text-base text-green-700 pr-2"></span> <?php cfw_esc_html_e( 'Side Cart', 'wpforms-lite' ); ?></li>
-						<li class="w-1/2 text-base flex content-center"><span class="dashicons dashicons-yes text-base text-green-700 pr-2"></span> <?php cfw_esc_html_e( 'Order Bumps', 'wpforms-lite' ); ?></li>
-						<li class="w-1/2 text-base flex content-center"><span class="dashicons dashicons-yes text-base text-green-700 pr-2"></span> <?php cfw_esc_html_e( 'Order Pay Page', 'wpforms-lite' ); ?></li>
-						<li class="w-1/2 text-base flex content-center"><span class="dashicons dashicons-yes text-base text-green-700 pr-2"></span> <?php cfw_esc_html_e( 'Address Autocomplete', 'wpforms-lite' ); ?></li>
-						<li class="w-1/2 text-base flex content-center"><span class="dashicons dashicons-yes text-base text-green-700 pr-2"></span> <?php cfw_esc_html_e( 'Address Verification', 'wpforms-lite' ); ?></li>
-						<li class="w-1/2 text-base flex content-center"><span class="dashicons dashicons-yes text-base text-green-700 pr-2"></span> <?php cfw_esc_html_e( 'Trust Badges', 'wpforms-lite' ); ?></li>
-						<li class="w-1/2 text-base flex content-center"><span class="dashicons dashicons-yes text-base text-green-700 pr-2"></span> <?php cfw_esc_html_e( 'One Page Checkout Layout', 'wpforms-lite' ); ?></li>
-						<li class="w-1/2 text-base flex content-center"><span class="dashicons dashicons-yes text-base text-green-700 pr-2"></span> <?php cfw_esc_html_e( 'Order Review Step', 'wpforms-lite' ); ?></li>
-						<li class="w-1/2 text-base flex content-center"><span class="dashicons dashicons-yes text-base text-green-700 pr-2"></span> <?php cfw_esc_html_e( 'User Matching', 'wpforms-lite' ); ?></li>
-						<li class="w-1/2 text-base flex content-center"><span class="dashicons dashicons-yes text-base text-green-700 pr-2"></span> <?php cfw_esc_html_e( 'Full Name Field', 'wpforms-lite' ); ?></li>
-					</ul>
-				</div>
-
-				<div class="w-1/3 text-center">
-					<div class="divide-y divide-slate-600 mb-4">
-						<h2 class="text-white text-2xl py-2 font-bold"><span><?php esc_html_e( 'Starting At', 'checkout-wc' ); ?></span></h2>
-
-						<div class="price py-2">
-							<span class="amount text-white text-5xl">$149</span><br>
-							<span class="term text-white"><?php esc_html_e( 'per year', 'checkout-wc' ); ?></span>
-						</div>
-					</div>
-
-					<a href="https://www.checkoutwc.com/lite-upgrade/?utm_campaign=liteplugin&utm_medium=admin-menu&utm_source=WordPress&utm_content=Upgrade+to+Pro" rel="noopener noreferrer" target="_blank"
-					   class="inline-flex items-center rounded-md border border-transparent bg-blue-600 px-6 py-3 text-lg font-medium text-white shadow-sm hover:bg-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-all">
-						<?php esc_html_e( 'Upgrade Now - Save 25%', 'checkout-wc' ); ?>
-					</a>
-				</div>
-
-			</div>
-
-		</div>
 		<?php
 		$this->output_form_close();
+
+		if ( isset( $_GET['cfw_debug_settings'] ) ) { // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+			$all_settings = SettingsManager::instance()->get_settings_obj();
+
+			echo '<div class="max-w-lg">';
+			foreach ( $all_settings as $key => $value ) {
+				echo '<h3 class="text-base font-bold mb-4">' . $key . '</h3>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+				echo '<pre class="shadow-sm bg-white p-6 focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md mb-6">' . $value . '</pre>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+			}
+			echo '</div>';
+		}
 	}
 
 	public function get_activation_settings() {
 		ob_start();
 
+		$free_plan = ! defined( 'CFW_PREMIUM_PLAN_IDS' );
+
+		$prefix = '';
+
+		if ( ! $free_plan ) {
+			$prefix = cfw_notranslate__( 'Requires a valid and active license key.' );
+		}
+
 		$this->output_toggle_checkbox(
 			'enable',
-			cfw__( 'Activate CheckoutWC Template', 'checkout-wc' ),
-			cfw__( 'Requires a valid and active license key. Checkout template is always activated for admin users.', 'checkout-wc' )
+			cfw_notranslate__( 'Activate CheckoutWC Templates', 'checkout-wc' ),
+			$prefix . cfw_notranslate__( 'CheckoutWC Templates are always activated for admin users.', 'checkout-wc' )
 		);
 
+		return ob_get_clean();
+	}
+
+	public function get_licensing_settings() {
+		ob_start();
+
+		UpdatesManager::instance()->admin_page_fields();
+
+		return ob_get_clean();
+	}
+
+	public function trial_offer() {
+		ob_start();
+		?>
+		<div class="flex flex-row items-center">
+			<a href="https://www.checkoutwc.com/lite-upgrade/?utm_campaign=liteplugin&utm_medium=start-here-step1&utm_source=WordPress&utm_content=Upgrade%20to%20CheckoutWC%20Premium%20Now%20-%20Save%2025" target="_blank" class="inline-flex items-center px-4 py-2 border border-gray-300 shadow-sm text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+				<?php cfw_e( 'Upgrade to CheckoutWC Premium Now - Save 25%', 'checkout-wc' ); ?>
+			</a>
+			<svg xmlns="http://www.w3.org/2000/svg" class="ml-2 h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-label="<?php cfw_e( 'Opens in new tab' ); ?>">
+				<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+			</svg>
+		</div>
+		<?php
+		return ob_get_clean();
+	}
+
+	public function get_pick_template_content() {
+		ob_start();
+		?>
+		<div class="flex flex-row items-center">
+			<a href="<?php echo esc_attr( add_query_arg( array( 'subpage' => 'templates' ), $this->appearance_page->get_url() ) ); ?>" target="_blank" class="inline-flex items-center px-4 py-2 border border-gray-300 shadow-sm text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+				<?php cfw_e( 'Choose a Template', 'checkout-wc' ); ?>
+			</a>
+			<svg xmlns="http://www.w3.org/2000/svg" class="ml-2 h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-label="<?php cfw_e( 'Opens in new tab' ); ?>">
+				<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+			</svg>
+		</div>
+		<?php
 		return ob_get_clean();
 	}
 
@@ -151,9 +260,10 @@ class General extends PageAbstract {
 
 		$products = wc_get_products(
 			array(
-				'limit'  => 1,
-				'status' => 'publish',
-				'type'   => array( 'simple' ),
+				'limit'        => 1,
+				'status'       => 'publish',
+				'type'         => array( 'simple' ),
+				'stock_status' => 'instock',
 			)
 		);
 
@@ -164,6 +274,7 @@ class General extends PageAbstract {
 					'limit'          => 1,
 					'status'         => 'publish',
 					'type'           => array( 'variable' ),
+					'stock_status'   => 'instock',
 				)
 			);
 		}
@@ -192,7 +303,7 @@ class General extends PageAbstract {
 	/**
 	 * Add parent node
 	 *
-	 * @param WP_Admin_Bar $admin_bar
+	 * @param WP_Admin_Bar $admin_bar The admin bar object.
 	 */
 	public function add_parent_node( WP_Admin_Bar $admin_bar ) {
 		if ( ! $this->can_show_admin_bar_button() ) {
@@ -212,9 +323,25 @@ class General extends PageAbstract {
 		$admin_bar->add_node(
 			array(
 				'id'     => self::$parent_slug,
-				'title'  => '<span class="ab-icon dashicons dashicons-cart"></span>' . cfw__( 'CheckoutWC', 'checkout-wc' ),
+				'title'  => '<span class="ab-icon dashicons dashicons-cart"></span>' . cfw_notranslate__( 'CheckoutWC', 'checkout-wc' ),
 				'href'   => $url,
 				'parent' => false,
+			)
+		);
+
+		if ( ! is_cfw_page() ) {
+			return;
+		}
+
+		$admin_bar->add_node(
+			array(
+				'id'     => self::$parent_slug . '-bypass',
+				'title'  => isset( $_GET['bypass-cfw'] ) ? '<span class="ab-icon dashicons dashicons-controls-play"></span>' . cfw_notranslate__( 'Unbypass CheckoutWC Template', 'checkout-wc' ) : '<span class="ab-icon dashicons dashicons-controls-pause"></span>' . cfw_notranslate__( 'Bypass CheckoutWC Template', 'checkout-wc' ), // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+				'href'   => isset( $_GET['bypass-cfw'] ) ? remove_query_arg( 'bypass-cfw' ) : add_query_arg( 'bypass-cfw', 'true' ), // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+				'parent' => false,
+				'meta'   => array(
+					'onclick' => ! isset( $_GET['bypass-cfw'] ) ? 'alert("' . esc_js( cfw_notranslate__( 'CheckoutWC template and functionality will be temporarily bypassed (just for you!). This is helpful for testing and debugging. You can click Unbypass CheckoutWC Template once you are done.', 'checkout-wc' ) ) . '")' : '', // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+				),
 			)
 		);
 	}
@@ -222,10 +349,10 @@ class General extends PageAbstract {
 	/**
 	 * Add admin bar menu node
 	 *
-	 * @param WP_Admin_Bar $admin_bar
+	 * @param WP_Admin_Bar $admin_bar The admin bar object.
 	 */
 	public function add_admin_bar_menu_node( WP_Admin_Bar $admin_bar ) {
-		if ( ! apply_filters( 'cfw_do_admin_bar', true ) ) {
+		if ( ! $this->can_show_admin_bar_button() ) {
 			return;
 		}
 

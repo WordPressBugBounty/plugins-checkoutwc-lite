@@ -28,21 +28,15 @@ class WooCommerceGiftCards extends CompatibilityAbstract {
 	}
 
 	public function run_on_wp_loaded() {
-		add_filter( 'woocommerce_update_order_review_fragments', array( $this, 'add_fragment' ), 10, 1 );
+		add_filter( 'woocommerce_update_order_review_fragments', array( $this, 'add_fragment' ), 10 );
 	}
 
 	/**
 	 * Display form to add gift card.
 	 *
-	 * @param bool $mobile
-	 *
 	 * @return void
 	 */
-	public function display_form( bool $mobile = false ) {
-		if ( $mobile ) {
-			return;
-		}
-
+	public function display_form() {
 		$woocommerce_gift_cards = WC_GC();
 
 		if ( ! wc_gc_is_ui_disabled() ) {
@@ -53,7 +47,7 @@ class WooCommerceGiftCards extends CompatibilityAbstract {
 			return;
 		}
 
-		$get_private_notices_callback = function() {
+		$get_private_notices_callback = function () {
 			return $this->notices;
 		};
 
@@ -67,7 +61,7 @@ class WooCommerceGiftCards extends CompatibilityAbstract {
 		 * @since 6.0.7
 		 * @var string $label Field label
 		 */
-		$woocommerce_gift_cards_field_label       = apply_filters( 'cfw_compatibility_woocommerce_gift_cards_field_label', cfw_esc_attr__( 'Enter your code&hellip;', 'woocommerce-gift-cards' ) );
+		$woocommerce_gift_cards_field_label = apply_filters( 'cfw_compatibility_woocommerce_gift_cards_field_label', cfw_esc_attr__( 'Enter your code&hellip;', 'woocommerce-gift-cards' ) );
 
 		/**
 		 * Filter CheckoutWC WooCommerce Gift Cards field placeholder
@@ -88,6 +82,7 @@ class WooCommerceGiftCards extends CompatibilityAbstract {
 				}
 			}
 			?>
+			<div class="wc_gc_add_gift_card_form__notices"></div>
 			<h4>
 				<?php
 				/**
@@ -100,7 +95,7 @@ class WooCommerceGiftCards extends CompatibilityAbstract {
 				?>
 			</h4>
 			<div id="wc_gc_cart_redeem_form" class="row cfw-input-wrap-row">
-				<div class="col-lg-8 no-gutters">
+				<div class="col-8 no-gutters">
 					<div class="col-lg-12" id="wc_gc_cart_code_field" data-priority="10">
 						<?php
 						woocommerce_form_field(
@@ -112,18 +107,18 @@ class WooCommerceGiftCards extends CompatibilityAbstract {
 								'label'                    => $woocommerce_gift_cards_field_label,
 								'placeholder'              => $woocommerce_gift_cards_field_placeholder,
 								'suppress_optional_suffix' => true,
-									'custom_attributes'    => array(
-									'data-storage'          => 'false',
-									'autocomplete'          => 'off',
+								'custom_attributes'        => array(
+									'data-storage' => 'false',
+									'autocomplete' => 'off',
 									'data-parsley-required' => 'false',
-									'style'                 => 'width: 100%',
-								)
+									'style'        => 'width: 100%',
+								),
 							)
 						);
 						?>
 					</div>
 				</div>
-				<div class="col-lg-4">
+				<div class="col-4">
 					<div class="cfw-input-wrap form-row cfw-button-input">
 						<button type="button" class="cfw-secondary-btn" name="wc_gc_cart_redeem_send" id="wc_gc_cart_redeem_send"><?php cfw_esc_html_e( 'Apply', 'woocommerce-gift-cards' ); ?></button>
 					</div>

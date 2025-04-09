@@ -17,14 +17,13 @@ class NLPostcodeChecker extends CompatibilityAbstract {
 
 		add_filter( 'woocommerce_default_address_fields', array( $this, 'modify_fields' ), 100001, 1 ); // run after our normal hook
 		add_filter( 'woocommerce_get_country_locale', array( $this, 'prevent_postcode_sort_change' ), 100 );
+		add_filter( 'cfw_enable_zip_autocomplete', '__return_false' );
 
 		// Fix shipping preview
 		add_filter( 'cfw_get_shipping_details_address', array( $this, 'fix_shipping_preview' ), 10, 2 );
 	}
 
 	public function disable_nl_hooks() {
-		global $wp_filter;
-
 		// phpcs:disable WooCommerce.Commenting.CommentHooks.MissingHookComment
 		$priority = apply_filters( 'nl_checkout_fields_priority', 9 );
 		// phpcs:enable WooCommerce.Commenting.CommentHooks.MissingHookComment

@@ -21,6 +21,8 @@ class PostNL4 extends CompatibilityAbstract {
 			add_filter( 'cfw_get_shipping_details_address', array( $this, 'fix_shipping_preview' ), 10, 2 );
 		}
 
+		add_filter( 'cfw_enable_zip_autocomplete', '__return_false' );
+
 		// Move delivery options
 		add_filter( 'wc_wcpn_delivery_options_location', array( $this, 'move_delivery_options' ), 20 );
 	}
@@ -128,10 +130,9 @@ class PostNL4 extends CompatibilityAbstract {
 	/**
 	 * Change delivery options output hook
 	 *
-	 * @param $hook
 	 * @return string
 	 */
-	public function move_delivery_options( $hook ): string {
+	public function move_delivery_options(): string {
 		return 'cfw_checkout_after_shipping_methods';
 	}
 

@@ -24,7 +24,7 @@ class Fattureincloud extends CompatibilityAbstract {
 
 	public function output_fields() {
 		// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-		echo $this->get_fields_wrapped(); // output is already sanitized/escaped through woocommerce_form_field
+		echo $this->get_fields_wrapped(); // output is already sanitized through woocommerce_form_field
 	}
 
 	public function get_fields() {

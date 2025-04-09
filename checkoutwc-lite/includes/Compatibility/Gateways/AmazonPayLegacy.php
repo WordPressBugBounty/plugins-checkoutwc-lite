@@ -3,6 +3,8 @@
 namespace Objectiv\Plugins\Checkout\Compatibility\Gateways;
 
 use Objectiv\Plugins\Checkout\Compatibility\CompatibilityAbstract;
+use Objectiv\Plugins\Checkout\Model\DetectedPaymentGateway;
+use Objectiv\Plugins\Checkout\Model\GatewaySupport;
 
 class AmazonPayLegacy extends CompatibilityAbstract {
 	/**
@@ -45,6 +47,19 @@ class AmazonPayLegacy extends CompatibilityAbstract {
 			add_action( 'woocommerce_checkout_init', array( $this, 'checkout_init' ), 11 );
 			add_action( 'woocommerce_checkout_init', array( $this, 'remove_banners' ), 100 );
 			add_action( 'wp_loaded', array( $this, 'start' ), 0 );
+
+			add_filter(
+				'cfw_detected_gateways',
+				function ( $gateways ) {
+					$gateways[] = new DetectedPaymentGateway(
+						'Amazon Pay',
+						GatewaySupport::FULLY_SUPPORTED,
+						'Update Amazon Pay to use V2 API.'
+					);
+
+					return $gateways;
+				}
+			);
 		}
 	}
 
@@ -52,6 +67,7 @@ class AmazonPayLegacy extends CompatibilityAbstract {
 		if ( $this->get_gateway()->is_available() ) {
 			if ( $this->is_logged_in() ) {
 				add_filter( 'cfw_enable_enhanced_login', '__return_false' ); // disable our login UX
+				add_filter( 'cfw_enable_fullname_field', '__return_false' ); // disable full name field
 				remove_action( 'woocommerce_before_checkout_form', 'woocommerce_checkout_login_form', 10 ); // disable default WooCommerce login UX
 				add_action( 'cfw_checkout_customer_info_tab', array( $this, 'shim_email_field' ), 30 );
 				add_action( 'cfw_wp_head', array( $this, 'runtime_styles' ) );
@@ -73,7 +89,6 @@ class AmazonPayLegacy extends CompatibilityAbstract {
 	public function checkout_init() {
 		if ( ! $this->is_logged_in() ) {
 			add_action( 'cfw_payment_request_buttons', array( $this->get_gateway(), 'checkout_message' ) );
-			add_action( 'cfw_after_payment_request_buttons', 'cfw_add_separator', 11 );
 			add_action( 'cfw_wp_head', array( $this, 'protect_shipping_fields' ) );
 		} else {
 			// Remove shipping address preview if a subscription is in the cart
@@ -91,7 +106,7 @@ class AmazonPayLegacy extends CompatibilityAbstract {
 			add_filter( 'cfw_validate_required_registration', '__return_false' );
 
 			// phpcs:disable WooCommerce.Commenting.CommentHooks.MissingHookComment
-			if ( ! apply_filters( 'woocommerce_amazon_show_address_widget', WC()->cart->needs_shipping() ) ) {
+			if ( ! cfw_apply_filters( 'woocommerce_amazon_show_address_widget', WC()->cart->needs_shipping() ) ) {
 				add_filter( 'cfw_show_customer_information_tab', '__return_false' );
 			}
 			// phpcs:enable WooCommerce.Commenting.CommentHooks.MissingHookComment
@@ -121,7 +136,7 @@ class AmazonPayLegacy extends CompatibilityAbstract {
 	}
 
 	public function runtime_styles() {
-		if ( is_checkout_pay_page() ) {
+		if ( cfw_is_checkout_pay_page() ) {
 			return;
 		}
 		?>
@@ -141,7 +156,7 @@ class AmazonPayLegacy extends CompatibilityAbstract {
 		add_action( 'cfw_checkout_before_customer_info_address', array( $this, 'address_widget' ), 10 );
 		add_action( 'cfw_checkout_before_customer_info_address', array( $this, 'output_shim_divs_close' ), 11 );
 
-		if ( is_checkout_pay_page() ) {
+		if ( cfw_is_checkout_pay_page() ) {
 			return;
 		}
 
@@ -158,22 +173,9 @@ class AmazonPayLegacy extends CompatibilityAbstract {
 
 		$output = str_replace( 'col-1', '', $output );
 
-		echo wp_kses( $output, array(
-			'div' => array(
-				'id'    => true,
-				'class' => true,
-				'style' => true,
-			),
-			'h3' => array(
-				'class' => true,
-			),
-			'input' => array(
-				'type'  => true,
-				'id'    => true,
-				'name'  => true,
-				'value' => true,
-			),
-		) );
+		// phpcs:disable WordPress.Security.EscapeOutput.OutputNotEscaped
+		echo $output;
+		// phpcs:enable WordPress.Security.EscapeOutput.OutputNotEscaped
 	}
 
 	public function payment_widget() {
@@ -185,34 +187,9 @@ class AmazonPayLegacy extends CompatibilityAbstract {
 
 		$output = str_replace( 'col-2', '', $output );
 
-		echo wp_kses( $output, array(
-			'div' => array(
-				'id'    => true,
-				'class' => true,
-				'style' => true,
-			),
-			'h3' => array(
-				'class' => true,
-			),
-			'input' => array(
-				'class' => true,
-				'type'  => true,
-				'id'    => true,
-				'name'  => true,
-				'value' => true,
-				'checked' => true,
-			),
-			'label' => array(
-				'id'   => true,
-				'style' => true,
-				'data-*' => true,
-				'for' => true,
-				'class' => true,
-			),
-			'p' => array(
-				'class' => true,
-			),
-		) );
+		// phpcs:disable WordPress.Security.EscapeOutput.OutputNotEscaped
+		echo $output;
+		// phpcs:enable WordPress.Security.EscapeOutput.OutputNotEscaped
 	}
 
 	public function output_shim_divs_open() {
@@ -228,7 +205,7 @@ class AmazonPayLegacy extends CompatibilityAbstract {
 		$access_token = \WC_Amazon_Payments_Advanced_API_Legacy::get_access_token();
 
 		if ( isset( $_SESSION['first_checkout_post_array']['amazon_reference_id'] ) ) {
-			$reference_id = $_SESSION['first_checkout_post_array']['amazon_reference_id'];
+			$reference_id = $_SESSION['first_checkout_post_array']['amazon_reference_id']; // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
 		}
 
 		if ( empty( $reference_id ) && empty( $access_token ) ) {
@@ -333,9 +310,8 @@ class AmazonPayLegacy extends CompatibilityAbstract {
 	 * @param array $address Address.
 	 *
 	 * @return array Address.
-	 *@since 1.8.0
+	 * @since 1.8.0
 	 * @version 1.8.0
-	 *
 	 */
 	private function normalize_address( array $address ) {
 		/**
@@ -382,8 +358,7 @@ class AmazonPayLegacy extends CompatibilityAbstract {
 	 *
 	 * @param string $setter_suffix Setter suffix.
 	 * @param mixed  $value         Value to set.
-	 *@since 1.7.0
-	 *
+	 * @since 1.7.0
 	 */
 	private function set_customer_info( string $setter_suffix, $value ) {
 		$setter             = array( WC()->customer, 'set_' . $setter_suffix );

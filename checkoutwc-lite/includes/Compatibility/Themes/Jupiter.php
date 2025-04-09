@@ -24,7 +24,6 @@ class Jupiter extends CompatibilityAbstract {
 
 		add_action( 'woocommerce_checkout_shipping', array( \WC_Checkout::instance(), 'checkout_form_shipping' ) );
 		remove_action( 'woocommerce_checkout_billing', array( \WC_Checkout::instance(), 'checkout_form_shipping' ) );
-
 	}
 
 	public function unset_theme_callbacks( $hook, $priority = 10 ) {

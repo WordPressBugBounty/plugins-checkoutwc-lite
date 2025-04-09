@@ -12,10 +12,15 @@ class ExtraCheckoutFieldsBrazil extends CompatibilityAbstract {
 	public function run() {
 		add_filter( 'wcbcf_billing_fields', array( $this, 'checkout_billing_fields' ) );
 		add_filter( 'wcbcf_shipping_fields', array( $this, 'checkout_shipping_fields' ) );
-		add_filter( 'cfw_form_field_append_optional_to_placeholder', array(
-			$this,
-			'suppress_optional_in_placeholder'
-		), 10, 2 );
+		add_filter(
+			'cfw_form_field_append_optional_to_placeholder',
+			array(
+				$this,
+				'suppress_optional_in_placeholder',
+			),
+			10,
+			2
+		);
 
 		// Otherwise fields won't be filled in that need to be filled in
 		add_filter( 'cfw_force_display_billing_address', '__return_true' );
@@ -43,7 +48,6 @@ class ExtraCheckoutFieldsBrazil extends CompatibilityAbstract {
 		$fields['billing_postcode'] = $unmodified_fields['postcode'];
 		$fields['billing_state']    = $unmodified_fields['state'];
 		$fields['billing_city']     = $unmodified_fields['city'];
-
 
 		$fields['billing_persontype']['columns']     = 12;
 		$fields['billing_persontype']['input_class'] = array( 'billing_persontype' );
@@ -120,7 +124,7 @@ class ExtraCheckoutFieldsBrazil extends CompatibilityAbstract {
 		);
 
 		if ( in_array( $field_key, $blocked_fields, true ) ) {
-			return false;
+			return true;
 		}
 
 		return $append;

@@ -13,5 +13,8 @@ class WooCommerceSmartCoupons extends CompatibilityAbstract {
 		$wc_sc_purchase_credit = \WC_SC_Purchase_Credit::get_instance();
 		add_action( 'cfw_checkout_before_payment_method_terms_checkbox', array( $wc_sc_purchase_credit, 'gift_certificate_receiver_detail_form' ) );
 		remove_action( 'woocommerce_checkout_after_customer_details', array( $wc_sc_purchase_credit, 'gift_certificate_receiver_detail_form' ) );
+
+		$class_auto_apply = \WC_SC_Auto_Apply_Coupon::get_instance();
+		add_action( 'cfw_after_update_checkout_calculated', array( $class_auto_apply, 'auto_apply_coupons' ), 100 );
 	}
 }

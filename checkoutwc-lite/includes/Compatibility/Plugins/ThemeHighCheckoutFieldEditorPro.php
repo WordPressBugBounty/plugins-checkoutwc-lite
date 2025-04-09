@@ -2,8 +2,6 @@
 
 namespace Objectiv\Plugins\Checkout\Compatibility\Plugins;
 
-use _WP_Dependency;
-use Objectiv\Plugins\Checkout\Admin\Pages\PageAbstract;
 use Objectiv\Plugins\Checkout\Compatibility\CompatibilityAbstract;
 use Objectiv\Plugins\Checkout\Managers\SettingsManager;
 
@@ -13,8 +11,22 @@ class ThemeHighCheckoutFieldEditorPro extends CompatibilityAbstract {
 	}
 
 	public function pre_init() {
-		add_action( 'cfw_admin_integrations_settings', array( $this, 'admin_integration_settings' ) );
-		add_filter( 'thwcfe_hidden_fields_display_position', array( $this, 'thwcfe_hidden_fields_display_position' ), 1000 );
+		add_filter( 'cfw_admin_integrations_checkbox_fields', array( $this, 'admin_integration_settings' ) );
+		add_filter(
+			'thwcfe_hidden_fields_display_position',
+			array(
+				$this,
+				'thwcfe_hidden_fields_display_position',
+			),
+			1000
+		);
+
+		// Use both of these filters - the first one isn't sufficient by itself and seems to be a legacy holdover
+		// But it's the only way to modify the display position select in settings
+		add_filter( 'thwcfe_custom_section_positions', array( $this, 'custom_section_display_positions' ) );
+
+		// This one is required to actually render the custom section
+		add_filter( 'thwcfe_custom_section_display_positions', array( $this, 'custom_section_display_positions' ) );
 	}
 
 	public function run() {
@@ -41,20 +53,25 @@ class ThemeHighCheckoutFieldEditorPro extends CompatibilityAbstract {
 	}
 
 	/**
-	 * Output the integration admin settings
+	 * Add the admin settings
 	 *
-	 * @param PageAbstract $integrations
+	 * @param array $integrations The integrations.
+	 *
+	 * @return array
 	 */
-	public function admin_integration_settings( PageAbstract $integrations ) {
+	public function admin_integration_settings( array $integrations ): array {
 		if ( ! $this->is_available() ) {
-			return;
+			return $integrations;
 		}
 
-		$integrations->output_checkbox_row(
-			'allow_thcfe_address_modification',
-			cfw__( 'Enable ThemeHigh Checkout Field Editor address field overrides.', 'checkout-wc' ),
-			cfw__( 'Allow ThemeHigh Checkout Field Editor to modify billing and shipping address fields. (Not Recommended)', 'checkout-wc' )
+		$integrations[] = array(
+			'name'          => 'allow_thcfe_address_modification',
+			'label'         => cfw_notranslate__( 'Enable ThemeHigh Checkout Field Editor address field overrides', 'checkout-wc' ),
+			'description'   => cfw_notranslate__( 'Allow ThemeHigh Checkout Field Editor to modify billing and shipping address fields. (Not Recommended)', 'checkout-wc' ),
+			'initial_value' => SettingsManager::instance()->get_setting( 'allow_thcfe_address_modification' ) === 'yes',
 		);
+
+		return $integrations;
 	}
 
 	public function thwcfe_hidden_fields_display_position(): string {
@@ -62,5 +79,13 @@ class ThemeHighCheckoutFieldEditorPro extends CompatibilityAbstract {
 			return 'cfw_checkout_customer_info_tab';
 		}
 	}
-}
 
+	public function custom_section_display_positions( $positions ) {
+		unset( $positions['before_customer_details'] );
+		unset( $positions['after_customer_details'] );
+
+		$positions['cfw_checkout_after_customer_info_address'] = 'CheckoutWC: After customer information step address';
+
+		return $positions;
+	}
+}

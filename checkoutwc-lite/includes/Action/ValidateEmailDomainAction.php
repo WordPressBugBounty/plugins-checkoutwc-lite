@@ -13,7 +13,7 @@ class ValidateEmailDomainAction extends CFWAction {
 	}
 
 	public function action() {
-		if ( empty( $_POST['email'] ) ) {
+		if ( empty( $_POST['email'] ) ) { // phpcs:ignore WordPress.Security.NonceVerification.Missing
 			$this->out(
 				array(
 					'message' => 'Invalid email validation request. Must include email.',
@@ -22,11 +22,20 @@ class ValidateEmailDomainAction extends CFWAction {
 			);
 		}
 
-		$email_address = sanitize_email( $_POST['email'] );
+		$email_address = sanitize_email( wp_unslash( $_POST['email'] ) ); // phpcs:ignore WordPress.Security.NonceVerification.Missing
 		$email_domain  = substr( $email_address, strpos( $email_address, '@' ) + 1 );
 
-		// If you don't append dot to the domain, every domain will validate because
-		// it will fetch your local MX handler
+		/**
+		 * Filters whether to validate email domain
+		 *
+		 * If you don't append dot to the domain, every domain will validate because
+		 * it will fetch your local MX handler
+		 *
+		 * @since 7.2.3
+		 * @param bool $valid Whether the email domain is valid
+		 * @param string $email_domain The email domain
+		 * @param string $email_address The email address
+		 */
 		$valid = apply_filters( 'cfw_email_domain_valid', checkdnsrr( $email_domain . '.', 'MX' ), $email_domain, $email_address );
 
 		$this->out(

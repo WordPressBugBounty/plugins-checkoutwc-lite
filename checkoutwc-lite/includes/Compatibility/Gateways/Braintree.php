@@ -3,37 +3,36 @@
 namespace Objectiv\Plugins\Checkout\Compatibility\Gateways;
 
 use Objectiv\Plugins\Checkout\Compatibility\CompatibilityAbstract;
+use Objectiv\Plugins\Checkout\Model\AlternativePlugin;
+use Objectiv\Plugins\Checkout\Model\DetectedPaymentGateway;
+use Objectiv\Plugins\Checkout\Model\GatewaySupport;
 
 class Braintree extends CompatibilityAbstract {
-
-	/**
-	 * The braintree gateways available
-	 *
-	 * @var array
-	 * @private
-	 */
-	private $braintree_gateways_available;
-
 	public function is_available(): bool {
-		$available = false;
-		if ( function_exists( 'wc_braintree' ) ) {
-			$braintree      = wc_braintree();
-			$cc_gateway     = $braintree->get_gateway( \WC_Braintree::CREDIT_CARD_GATEWAY_ID );
-			$paypal_gateway = $braintree->get_gateway( \WC_Braintree::PAYPAL_GATEWAY_ID );
+		return defined( 'WC_PAYPAL_BRAINTREE_FILE' );
+	}
 
-			$this->set_braintree_gateways_available(
-				array(
-					'cc'     => $cc_gateway->is_available(),
-					'paypal' => $paypal_gateway->is_available(),
-				)
-			);
-
-			if ( $cc_gateway->is_available() || $paypal_gateway->is_available() ) {
-				$available = true;
-			}
+	public function pre_init() {
+		if ( ! $this->is_available() ) {
+			return;
 		}
 
-		return $available;
+		add_filter(
+			'cfw_detected_gateways',
+			function ( $gateways ) {
+				$gateways[] = new DetectedPaymentGateway(
+					'Braintree for WooCommerce Payment Gateway',
+					GatewaySupport::NOT_SUPPORTED,
+					'Gateway does not support Express Checkout at checkout. Switch to <a class="text-blue-600 underline" target="_blank" href="https://wordpress.org/plugins/woo-payment-gateway/">Payment Plugins Braintree.</a>',
+					new AlternativePlugin(
+						'woo-payment-gateway',
+						'Payment Plugins Braintree For WooCommerce'
+					)
+				);
+
+				return $gateways;
+			}
+		);
 	}
 
 	public function run() {
@@ -42,34 +41,16 @@ class Braintree extends CompatibilityAbstract {
 	}
 
 	public function typescript_class_and_params( array $compatibility ): array {
-		$braintree_gateways_available = $this->get_braintree_gateways_available();
+		$braintree = wc_braintree();
 
 		$compatibility[] = array(
 			'class'  => 'Braintree',
 			'params' => array(
-				'cc_gateway_available'     => $braintree_gateways_available['cc'],
-				'paypal_gateway_available' => $braintree_gateways_available['paypal'],
+				'cc_gateway_available'     => $braintree->get_gateway( \WC_Braintree::CREDIT_CARD_GATEWAY_ID )->is_available(),
+				'paypal_gateway_available' => $braintree->get_gateway( \WC_Braintree::PAYPAL_GATEWAY_ID )->is_available(),
 			),
 		);
 
 		return $compatibility;
-	}
-
-	/**
-	 * The Braintree gateways available
-	 *
-	 * @return array
-	 */
-	public function get_braintree_gateways_available(): array {
-		return $this->braintree_gateways_available;
-	}
-
-	/**
-	 * Set the Braintree gateways available
-	 *
-	 * @param array $braintree_gateways_available
-	 */
-	public function set_braintree_gateways_available( array $braintree_gateways_available ) {
-		$this->braintree_gateways_available = $braintree_gateways_available;
 	}
 }

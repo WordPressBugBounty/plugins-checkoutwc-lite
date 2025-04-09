@@ -12,8 +12,8 @@ class NextGenGallery extends CompatibilityAbstract {
 	public function pre_init() {
 		add_filter(
 			'run_ngg_resource_manager',
-			function( $valid_request ) {
-				if ( ! empty( $_GET['wc-ajax'] ) ) {
+			function ( $valid_request ) {
+				if ( ! empty( $_GET['wc-ajax'] ) ) { // phpcs:ignore WordPress.Security.NonceVerification.Recommended
 					return false;
 				}
 

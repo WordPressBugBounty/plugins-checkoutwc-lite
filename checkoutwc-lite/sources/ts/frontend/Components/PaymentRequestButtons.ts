@@ -1,3 +1,6 @@
+import { select }            from '@wordpress/data';
+import DataStores            from '../DataStores';
+
 class PaymentRequestButtons {
     private expressButtonContainer: any;
 
@@ -29,20 +32,16 @@ class PaymentRequestButtons {
         } );
     }
 
-    hideExpressButtons(): void {
-        this.expressButtonContainer.css( 'position', 'absolute' ).css( 'visibility', 'hidden' );
-        this.expressButtonSeparator.hide();
-    }
-
     showExpressButtons(): void {
-        this.expressButtonContainer.css( 'position', 'relative' ).css( 'visibility', 'visible' );
+        this.expressButtonContainer.css( 'position', 'relative' ).css( 'opacity', '100' ).css( 'pointer-events', 'auto' );
         this.expressButtonSeparator.show();
     }
 
     maybeShowExpressButtons(): boolean {
+        const needsPayment = select( DataStores.cart_store_key ).getCartNeedsPayment( null ) as boolean;
         const hasButtons = this.hasButtons();
 
-        if ( hasButtons ) {
+        if ( hasButtons && needsPayment ) {
             this.showExpressButtons();
         }
 
@@ -51,9 +50,16 @@ class PaymentRequestButtons {
 
     hasButtons(): boolean {
         let hasButtons = false;
-        const potentialButtons = this.expressButtonContainer.children().not( 'h2, .blockUI' );
+        const potentialButtons = this.expressButtonContainer.children().not( 'h2, .blockUI, #wc-stripe-payment-request-button-separator, #wc-stripe-express-checkout-button-separator' );
 
         potentialButtons.each( ( index, element ) => {
+            const elementId = jQuery( element ).attr( 'id' );
+
+            // If element ID contains stripe but no children, skip it
+            if ( elementId && elementId.includes( 'stripe' ) && !jQuery( element ).children().length ) {
+                return;
+            }
+
             if ( jQuery( element ).get( 0 ).getBoundingClientRect().height > 0 ) {
                 hasButtons = true;
             }

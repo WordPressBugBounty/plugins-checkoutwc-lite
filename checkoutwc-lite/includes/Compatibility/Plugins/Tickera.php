@@ -14,6 +14,6 @@ class Tickera extends CompatibilityAbstract {
 	public function run() {
 		global $tc_woocommerce_bridge;
 
-		add_action( 'cfw_checkout_before_payment_method_terms_checkbox', array( $tc_woocommerce_bridge, 'add_standard_tc_fields_to_checkout' ) );
+		add_action( 'cfw_checkout_before_payment_method_terms_checkbox', array( $tc_woocommerce_bridge, 'render_tc_owner_fields' ) );
 	}
 }

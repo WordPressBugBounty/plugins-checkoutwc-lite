@@ -10,22 +10,7 @@ class WooCommerceServices extends CompatibilityAbstract {
 	}
 
 	public function run() {
-
-		global $wp_filter;
-
-		if ( ! isset( $wp_filter['woocommerce_shipping_fields'] ) ) {
-			return;
-		}
-
-		$existing_hooks = $wp_filter['woocommerce_shipping_fields'];
-
-		if ( $existing_hooks[10] ) {
-			foreach ( $existing_hooks[10] as $key => $callback ) {
-				if ( false !== stripos( $key, 'add_shipping_phone_to_checkout' ) ) {
-					$woocommerce_services = $callback['function'][0];
-				}
-			}
-		}
+		$woocommerce_services = cfw_get_hook_instance_object( 'woocommerce_shipping_fields', 'add_shipping_phone_to_checkout' );
 
 		if ( ! empty( $woocommerce_services ) ) {
 			remove_filter( 'woocommerce_shipping_fields', array( $woocommerce_services, 'add_shipping_phone_to_checkout' ) );

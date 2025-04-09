@@ -20,6 +20,8 @@ class MyParcel extends CompatibilityAbstract {
 			add_filter( 'cfw_get_shipping_details_address', array( $this, 'fix_shipping_preview' ), 10, 2 );
 		}
 
+		add_filter( 'cfw_enable_zip_autocomplete', '__return_false' );
+
 		// Move delivery options
 		add_filter( 'wc_wcmp_delivery_options_location', array( $this, 'move_delivery_options' ), 20 );
 	}
@@ -40,9 +42,6 @@ class MyParcel extends CompatibilityAbstract {
 	}
 
 	public function add_new_fields( $fields ) {
-		// Adjust postcode field
-		$fields['postcode']['priority'] = 22;
-
 		// Add street name
 		$fields['street_name'] = array(
 			'label'             => cfw__( 'street_name', 'woocommerce-myparcel' ),
@@ -51,7 +50,7 @@ class MyParcel extends CompatibilityAbstract {
 			'class'             => array(),
 			'autocomplete'      => '',
 			'input_class'       => array(),
-			'priority'          => 25,
+			'priority'          => 31, // after company
 			'columns'           => 6,
 			'custom_attributes' => array(
 				'data-parsley-trigger' => 'change focusout',
@@ -66,7 +65,7 @@ class MyParcel extends CompatibilityAbstract {
 			'class'             => array(),
 			'autocomplete'      => '',
 			'input_class'       => array(),
-			'priority'          => 26,
+			'priority'          => 32,
 			'custom_attributes' => array(
 				'data-parsley-trigger' => 'change focusout',
 			),
@@ -81,16 +80,21 @@ class MyParcel extends CompatibilityAbstract {
 			'class'             => array(),
 			'autocomplete'      => '',
 			'input_class'       => array(),
-			'priority'          => 27,
+			'priority'          => 33,
 			'columns'           => 3,
 			'custom_attributes' => array(
 				'data-parsley-trigger' => 'change focusout',
 			),
 		);
 
-		$fields['postcode']['columns'] = 6;
-		$fields['city']['columns']     = 6;
-		$fields['state']['columns']    = 12;
+		// Adjust postcode field
+		$fields['postcode']['priority'] = 85; // defaults to 70
+		$fields['postcode']['columns']  = 6;
+		$fields['city']['columns']      = 6; // priority 90
+		$fields['state']['priority']    = 91;
+		$fields['state']['columns']     = 12;
+		$fields['country']['columns']   = 12;
+		$fields['country']['priority']  = 95;
 
 		// Set address 1 / address 2 to hidden
 		$fields['address_1']['type']  = 'hidden';
@@ -110,7 +114,7 @@ class MyParcel extends CompatibilityAbstract {
 	public function prevent_postcode_sort_change( array $locales ): array {
 		foreach ( $locales as $key => $value ) {
 			if ( ! empty( $value['postcode'] ) && ! empty( $value['postcode']['priority'] ) ) {
-				$locales[ $key ]['postcode']['priority'] = 22;
+				$locales[ $key ]['postcode']['priority'] = 85;
 			}
 		}
 

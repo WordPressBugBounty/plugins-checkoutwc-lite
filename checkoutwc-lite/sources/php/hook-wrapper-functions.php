@@ -1,4 +1,7 @@
 <?php
+if ( ! defined( 'WPINC' ) ) {
+	die;
+}
 
 function cfw_apply_filters( $hook_name, $value, ...$args ) {
 	/**

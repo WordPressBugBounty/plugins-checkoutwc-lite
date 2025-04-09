@@ -2,8 +2,14 @@
 
 namespace Objectiv\Plugins\Checkout\Compatibility\Plugins;
 
-class WooCommerceMemberships {
-	public function init() {
+use Objectiv\Plugins\Checkout\Compatibility\CompatibilityAbstract;
+
+class WooCommerceMemberships extends CompatibilityAbstract {
+	public function is_available(): bool {
+		return function_exists( 'wc_memberships' );
+	}
+
+	public function pre_init() {
 		add_action( 'wc_memberships_discounts_enable_price_html_adjustments', array( $this, 'queue_removal' ) );
 	}
 
@@ -12,7 +18,7 @@ class WooCommerceMemberships {
 	}
 
 	public function remove( $value ) {
-		if ( ! function_exists( 'wc_memberships' ) ) {
+		if ( ! $this->is_available() ) {
 			return $value;
 		}
 

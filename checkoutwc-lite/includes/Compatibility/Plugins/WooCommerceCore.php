@@ -3,6 +3,7 @@
 namespace Objectiv\Plugins\Checkout\Compatibility\Plugins;
 
 use Objectiv\Plugins\Checkout\Compatibility\CompatibilityAbstract;
+use Objectiv\Plugins\Checkout\Managers\PlanManager;
 use Objectiv\Plugins\Checkout\Managers\SettingsManager;
 
 class WooCommerceCore extends CompatibilityAbstract {
@@ -14,7 +15,7 @@ class WooCommerceCore extends CompatibilityAbstract {
 		// Using this instead of is_ajax() in case is_ajax() is not available
 		// phpcs:disable WooCommerce.Commenting.CommentHooks.MissingHookComment
 		// phpcs:disable WordPress.Security.NonceVerification.Missing
-		if ( apply_filters( 'wp_doing_ajax', defined( 'DOING_AJAX' ) && DOING_AJAX ) && ! isset( $_GET['wc-ajax'] ) ) {
+		if ( cfw_apply_filters( 'wp_doing_ajax', defined( 'DOING_AJAX' ) && DOING_AJAX ) && ! isset( $_GET['wc-ajax'] ) ) { // phpcs:ignore WordPress.Security.NonceVerification.Recommended
 			return;
 		}
 		// phpcs:enable WooCommerce.Commenting.CommentHooks.MissingHookComment
@@ -29,62 +30,62 @@ class WooCommerceCore extends CompatibilityAbstract {
 		//phpcs:disable WooCommerce.Commenting.CommentHooks.MissingHookComment
 		add_action(
 			'cfw_checkout_before_billing_address',
-			function() {
+			function () {
 				do_action( 'woocommerce_before_checkout_billing_form', WC()->checkout() );
 			}
 		);
 
 		add_action(
 			'cfw_checkout_after_billing_address',
-			function() {
+			function () {
 				do_action( 'woocommerce_after_checkout_billing_form', WC()->checkout() );
 			}
 		);
 
 		add_action(
 			'cfw_checkout_before_shipping_address',
-			function() {
+			function () {
 				do_action( 'woocommerce_before_checkout_shipping_form', WC()->checkout() );
 			}
 		);
 
 		add_action(
 			'cfw_checkout_after_shipping_address',
-			function() {
+			function () {
 				do_action( 'woocommerce_after_checkout_shipping_form', WC()->checkout() );
 			}
 		);
 
 		add_action(
 			'cfw_checkout_customer_info_tab',
-			function() {
+			function () {
 				/**
-				 * This action is generally used to output HTML that breaks our layout,
-				 * so we run it but discard the output. This allows plugins that
-				 * initialize their stuff on this hook to still function
+				 * This action is generally used to output HTML that breaks our layout
+				 *
+				 * It's also used to output express payment sections so we really can't show it
 				 */
 				ob_start();
 
 				do_action( 'woocommerce_checkout_before_customer_details' );
 
-				echo '<div class="cfw-force-hidden">' . cfw_clean_html( ob_get_clean() ) . '</div>';
+				ob_clean();
 			},
 			5
 		);
 
 		add_action(
 			'cfw_checkout_customer_info_tab',
-			function() {
+			function () {
 				/**
-				 * This action is generally used to output HTML that breaks our layout,
-				 * so we run it but discard the output. This allows plugins that
+				 * This action is generally used to output HTML that breaks our layout
+				 * so we run it but hide the output. This allows plugins that
 				 * initialize their stuff on this hook to still function
 				 */
 				ob_start();
 
 				do_action( 'woocommerce_checkout_after_customer_details' );
 
-				echo '<div class="cfw-force-hidden">' . cfw_clean_html( ob_get_clean() ) . '</div>';
+				echo '<div class="cfw-force-hidden">' . cfw_clean_html( ob_get_clean() ) . '</div>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 			},
 			55
 		);
@@ -94,13 +95,41 @@ class WooCommerceCore extends CompatibilityAbstract {
 		remove_action( 'woocommerce_before_checkout_form', 'woocommerce_checkout_coupon_form', 10 );
 		remove_action( 'woocommerce_before_checkout_form', 'woocommerce_output_all_notices', 10 );
 
-		if ( SettingsManager::instance()->get_setting( 'enable_order_pay' ) === 'yes' ) {
+		if ( PlanManager::can_access_feature( 'enable_order_pay' ) ) {
 			remove_action( 'before_woocommerce_pay', 'woocommerce_output_all_notices', 10 );
+		}
+
+		// Highlighted Countries
+		if ( SettingsManager::instance()->get_setting( 'enable_highlighted_countries' ) === 'yes' ) {
+			add_filter( 'woocommerce_countries_shipping_countries', array( $this, 'highlight_countries' ) );
+			add_filter( 'woocommerce_countries_allowed_countries', array( $this, 'highlight_countries' ) );
 		}
 
 		add_filter( 'woocommerce_countries_shipping_countries', array( $this, 'fool_woo_into_handling_one_country_the_way_we_prefer' ) );
 		add_filter( 'woocommerce_countries_allowed_countries', array( $this, 'fool_woo_into_handling_one_country_the_way_we_prefer' ) );
 		add_filter( 'woocommerce_form_field', array( $this, 'removed_shim_country_so_woo_handles_one_country_the_way_we_prefer' ), 200000, 3 );
+	}
+
+	public function run_on_thankyou() {
+		if ( SettingsManager::instance()->get_setting( 'enable_thank_you_page' ) === 'yes' ) {
+			remove_action( 'woocommerce_thankyou', 'woocommerce_order_details_table', 10 );
+
+			add_action(
+				'cfw_thank_you_main_container_start',
+				function ( $order ) {
+					if ( $order ) {
+						//phpcs:disable WooCommerce.Commenting.CommentHooks.MissingHookComment
+						do_action( 'woocommerce_before_thankyou', $order->get_id() );
+						//phpcs:enable WooCommerce.Commenting.CommentHooks.MissingHookComment
+					}
+				}
+			);
+		}
+
+		// Remove default view order stuff
+		if ( SettingsManager::instance()->get_setting( 'override_view_order_template' ) === 'yes' ) {
+			remove_action( 'woocommerce_view_order', 'woocommerce_order_details_table', 10 );
+		}
 	}
 
 	public function sync_billing_fields_on_process_checkout() {
@@ -138,20 +167,22 @@ class WooCommerceCore extends CompatibilityAbstract {
 		}
 
 		$checkout_url = wc_get_checkout_url();
+		$redirect_url = cfw_apply_filters( 'woocommerce_add_to_cart_redirect', wc_get_cart_url(), null );
 
-		// phpcs:disable WooCommerce.Commenting.CommentHooks.MissingHookComment
-		$redirect_url = apply_filters( 'woocommerce_add_to_cart_redirect', wc_get_cart_url(), null );
-		// phpcs:enable WooCommerce.Commenting.CommentHooks.MissingHookComment
+		// If not redirecting to checkout, bail
+		if ( $redirect_url !== $checkout_url ) {
+			return $fragments;
+		}
 
 		// If we are going to redirect to checkout, don't show message
-		// phpcs:disable WordPress.Security.NonceVerification.Missing
-		if ( ! empty( $_REQUEST['product_id'] ) && ! empty( $_REQUEST['wc-ajax'] ) && 'add_to_cart' === $_REQUEST['wc-ajax'] && $redirect_url === $checkout_url ) {
-			$quantity   = wc_clean( $_REQUEST['quantity'] ?? 1 );
-			$product_id = wc_clean( $_REQUEST['product_id'] );
+		// phpcs:disable WordPress.Security.NonceVerification.Recommended
+		if ( ! empty( $_REQUEST['product_id'] ) && ! empty( $_REQUEST['wc-ajax'] ) && 'add_to_cart' === $_REQUEST['wc-ajax'] ) {
+			$quantity   = wc_clean( wp_unslash( $_REQUEST['quantity'] ?? 1 ) );
+			$product_id = wc_clean( wp_unslash( $_REQUEST['product_id'] ) );
 
 			cfw_remove_add_to_cart_notice( $product_id, $quantity );
 		}
-		// phpcs:enable WordPress.Security.NonceVerification.Missing
+		// phpcs:enable WordPress.Security.NonceVerification.Recommended
 
 		// Continue on your way
 		return $fragments;
@@ -172,24 +203,40 @@ class WooCommerceCore extends CompatibilityAbstract {
 		$checkout_url = wc_get_checkout_url();
 
 		// If we are going to redirect to checkout, don't show message
-		// phpcs:disable WordPress.Security.NonceVerification.Missing
+		// phpcs:disable WordPress.Security.NonceVerification.Recommended
 		if ( ! empty( $_REQUEST['add-to-cart'] ) && ( $url === $checkout_url || is_checkout() ) ) {
-			$quantity   = wc_clean( $_REQUEST['quantity'] ?? 1 );
+			$quantity   = wc_clean( wp_unslash( $_REQUEST['quantity'] ?? 1 ) );
 			$quantity   = is_numeric( $quantity ) ? intval( $quantity ) : 1;
-			$product_id = wc_clean( $_REQUEST['add-to-cart'] );
+			$product_id = wc_clean( wp_unslash( $_REQUEST['add-to-cart'] ) );
 
 			cfw_remove_add_to_cart_notice( $product_id, $quantity );
 		}
-		// phpcs:enable WordPress.Security.NonceVerification.Missing
+		// phpcs:enable WordPress.Security.NonceVerification.Recommended
 
 		// Continue on your way
 		return $url;
 	}
 
-	public function remove_scripts( array $scripts ): array {
-		$scripts['wc-cart-fragments'] = 'wc-cart-fragments';
+	public function highlight_countries( array $countries ): array {
+		/**
+		 * The list of highlighted countries
+		 *
+		 * @since 6.0.0
+		 * @var array The highlighted countries
+		 */
+		$highlighted_countries = array_flip( (array) apply_filters( 'cfw_highlighted_countries', SettingsManager::instance()->get_setting( 'highlighted_countries' ) ) );
 
-		return $scripts;
+		if ( empty( $highlighted_countries ) ) {
+			return $countries;
+		}
+
+		foreach ( $highlighted_countries as $key => $value ) {
+			if ( ! isset( $countries[ $key ] ) ) {
+				unset( $highlighted_countries[ $key ] );
+			}
+		}
+
+		return array_merge( $highlighted_countries, array( '--' => '---' ), $countries );
 	}
 
 	public function fool_woo_into_handling_one_country_the_way_we_prefer( array $countries ): array {

@@ -10,7 +10,7 @@ class OrderItemFactory {
 		$items = array();
 
 		foreach ( $order->get_items() as $item ) {
-			if ( ! apply_filters( 'woocommerce_order_item_visible', true, $item ) ) {
+			if ( ! cfw_apply_filters( 'woocommerce_order_item_visible', true, $item ) ) {
 				continue;
 			}
 

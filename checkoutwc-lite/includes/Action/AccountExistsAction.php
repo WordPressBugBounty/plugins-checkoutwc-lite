@@ -10,30 +10,17 @@ namespace Objectiv\Plugins\Checkout\Action;
  * @package Objectiv\Plugins\Checkout\Action
  */
 class AccountExistsAction extends CFWAction {
-
-	/**
-	 * AccountExistsAction constructor.
-	 *
-	 * @since 1.0.0
-	 * @access public
-	 */
 	public function __construct() {
 		parent::__construct( 'account_exists' );
 	}
 
-	/**
-	 * Checks whether the account exists on the website or not
-	 *
-	 * @since 1.0.0
-	 * @access public
-	 */
 	public function action() {
-		$email = sanitize_email( $_POST['email'] ?? '' );
+		$email = sanitize_email( wp_unslash( $_POST['email'] ?? '' ) ); // phpcs:ignore WordPress.Security.NonceVerification.Missing
 
 		$this->out(
 			array(
 				/**
-				 * Filters whether or not an email address has an account
+				 * Filters whether an email address has an account
 				 *
 				 * @since 1.0.0
 				 *

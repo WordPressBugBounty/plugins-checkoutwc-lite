@@ -2,6 +2,10 @@
 
 namespace Objectiv\Plugins\Checkout;
 
+use Objectiv\Plugins\Checkout\Managers\SettingsManager;
+use WC_Data_Exception;
+use WC_Order;
+
 /**
  * The class responsible for controlling the address fields
  *
@@ -63,7 +67,7 @@ class AddressFieldsAugmenter extends SingletonAbstract {
 	 * Add the billing phone to the address fields
 	 *
 	 * @since 1.1.5
-	 * @param $address_fields
+	 * @param array $address_fields The address fields.
 	 *
 	 * @return mixed
 	 */
@@ -80,13 +84,15 @@ class AddressFieldsAugmenter extends SingletonAbstract {
 	/**
 	 * Update the shipping phone on order create
 	 *
+	 * @param WC_Order $order The new order.
+	 *
+	 * @throws WC_Data_Exception If the order cannot be updated.
 	 * @since 1.1.5
-	 * @param $order
 	 */
 	public function update_shipping_phone_on_order_create( $order ) {
 		// phpcs:disable WordPress.Security.NonceVerification.Missing
 		if ( ! empty( $_POST['shipping_phone'] ) ) {
-			$order->set_shipping_phone( sanitize_text_field( $_POST['shipping_phone'] ) );
+			$order->set_shipping_phone( sanitize_text_field( wp_unslash( $_POST['shipping_phone'] ) ) );
 		}
 		// phpcs:enable WordPress.Security.NonceVerification.Missing
 	}
@@ -94,10 +100,45 @@ class AddressFieldsAugmenter extends SingletonAbstract {
 	/**
 	 * Get custom default address fields
 	 *
-	 * @param $fields
+	 * @param array $fields The address fields.
 	 * @return array
 	 */
 	public function get_custom_default_address_fields( $fields ): array {
+		/**
+		 * Filter whether to enable full name field
+		 *
+		 * @since 7.1.0
+		 *
+		 * @param array $enable_fullname_field Whether to enable full name field
+		 */
+		$use_fullname_field = apply_filters( 'cfw_enable_fullname_field', 'yes' === SettingsManager::instance()->get_setting( 'use_fullname_field' ) && is_cfw_page() );
+
+		/**
+		 * Filter whether to enable separate address 1 fields
+		 *
+		 * @since 7.1.0
+		 *
+		 * @param array $enable_separate_address_1_fields Whether to enable separate address 1 fields
+		 */
+		$enable_separate_address_1_fields = apply_filters( 'cfw_enable_separate_address_1_fields', 'yes' === SettingsManager::instance()->get_setting( 'enable_discreet_address_1_fields' ) ) && is_cfw_page();
+		$enable_separate_address_1_fields = apply_filters_deprecated( 'cfw_enable_discrete_address_1_fields', array( $enable_separate_address_1_fields ), '10.0.0', 'cfw_enable_separate_address_1_fields' );
+		$separate_address_1_fields_order  = SettingsManager::instance()->get_setting( 'discreet_address_1_fields_order' );
+
+		if ( $use_fullname_field ) {
+			$fields['full_name'] = array(
+				'label'             => __( 'Full name', 'checkout-wc' ),
+				'required'          => true,
+				'input_class'       => array(),
+				'priority'          => $this->priorities['first_name'] - 1,
+				'autocomplete'      => 'name',
+				'columns'           => 12,
+				'custom_attributes' => array(
+					'data-parsley-trigger'  => 'change focusout',
+					'data-parsley-fullname' => 'true',
+				),
+			);
+		}
+
 		// First Name
 		$fields['first_name']['placeholder']       = $fields['first_name']['label'];
 		$fields['first_name']['class']             = array();
@@ -120,6 +161,11 @@ class AddressFieldsAugmenter extends SingletonAbstract {
 			'data-parsley-trigger' => 'change focusout',
 		);
 
+		if ( $use_fullname_field ) {
+			$fields['first_name']['class'][] = 'cfw-hidden';
+			$fields['last_name']['class'][]  = 'cfw-hidden';
+		}
+
 		// Address 1
 		$fields['address_1']['placeholder']       = $fields['address_1']['label'];
 		$fields['address_1']['class']             = array( 'address-field' );
@@ -130,6 +176,33 @@ class AddressFieldsAugmenter extends SingletonAbstract {
 		$fields['address_1']['custom_attributes'] = array(
 			'data-parsley-trigger' => 'change focusout',
 		);
+
+		if ( $enable_separate_address_1_fields ) {
+			$fields['house_number'] = array(
+				'label'             => __( 'House number', 'checkout-wc' ),
+				'required'          => true,
+				'input_class'       => array(),
+				'priority'          => $this->priorities['address_1'] - 2,
+				'columns'           => 4,
+				'custom_attributes' => array(
+					'data-parsley-trigger' => 'change focusout',
+				),
+			);
+
+			// If alternate, move street_name field before house_number field
+			$fields['street_name'] = array(
+				'label'             => __( 'Street name', 'checkout-wc' ),
+				'required'          => true,
+				'input_class'       => array(),
+				'priority'          => $this->priorities['address_1'] - ( 'alternate' === $separate_address_1_fields_order ? 3 : 1 ),
+				'columns'           => 8,
+				'custom_attributes' => array(
+					'data-parsley-trigger' => 'change focusout',
+				),
+			);
+
+			$fields['address_1']['class'][] = 'cfw-hidden';
+		}
 
 		// Address 2
 		if ( isset( $fields['address_2'] ) ) {
@@ -237,6 +310,7 @@ class AddressFieldsAugmenter extends SingletonAbstract {
 			$billing_fields['billing_email']['custom_attributes']['data-parsley-trigger']      = 'change focusout';
 			$billing_fields['billing_email']['custom_attributes']['data-parsley-debounce']     = '200';
 			$billing_fields['billing_email']['autocomplete']                                   = 'email';
+			$billing_fields['billing_email']['type'] = 'text';
 		}
 
 		return $billing_fields;
@@ -245,7 +319,7 @@ class AddressFieldsAugmenter extends SingletonAbstract {
 	/**
 	 * Enforce field priorities
 	 *
-	 * @param array $locales
+	 * @param array $locales The locales.
 	 * @return array
 	 */
 	public function enforce_field_priorities( array $locales ): array {
@@ -272,7 +346,7 @@ class AddressFieldsAugmenter extends SingletonAbstract {
 		return $locales;
 	}
 
-	public function add_default_value_to_full_name_fields( $fields ) : array {
+	public function add_default_value_to_full_name_fields( $fields ): array {
 		if ( $fields['billing']['full_name'] ?? false ) {
 			$fields['billing']['full_name']['default'] = WC()->checkout()->get_value( 'billing_first_name' ) . ' ' . WC()->checkout()->get_value( 'billing_last_name' );
 		}

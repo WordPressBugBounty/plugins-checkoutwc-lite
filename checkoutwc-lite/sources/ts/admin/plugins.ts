@@ -3,10 +3,11 @@ import { cfwDomReady }         from '../_functions';
 declare let cfwAdminPluginsScreenData: any;
 
 cfwDomReady( () => {
-    const deactivationAnchor = jQuery( 'tr[data-slug="checkoutwc-lite"] .deactivate a' );
-    const deactivateUrl = deactivationAnchor.attr( 'href' );
+    const deactivationAnchor = jQuery( 'a#deactivate-checkout-for-woocommerce' );
     deactivationAnchor.addClass( 'cfw-deactivate-link' ); // Fix bug with modaal.js that manifested on WP Engine sites. Ticket: https://secure.helpscout.net/conversation/2326209718/16702?folderId=2454654
-    
+
+    const deactivateUrl = deactivationAnchor.attr( 'href' );
+
     const modal = deactivationAnchor.modaal( {
         content_source: '#cfw-deactivation-survey',
         hide_close: true,

@@ -9,6 +9,12 @@ class JupiterX extends CompatibilityAbstract {
 		return function_exists( 'jupiterx_define_constants' );
 	}
 
+	public function remove_styles( array $styles ): array {
+		$styles['jupiterx-core-raven-frontend'] = 'jupiterx-core-raven-frontend';
+
+		return $styles;
+	}
+
 	public function run_immediately() {
 		add_action( 'woocommerce_review_order_after_submit', array( $this, 'remove_actions' ), 0 );
 	}

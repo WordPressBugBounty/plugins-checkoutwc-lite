@@ -11,7 +11,7 @@ class Minimog extends CompatibilityAbstract {
 
 	public function run() {
 		$instance = cfw_get_hook_instance_object( 'woocommerce_checkout_after_order_review', 'template_checkout_payment_title' );
-		remove_action( 'woocommerce_checkout_after_order_review', array( $instance, 'template_checkout_payment_title', ), 10 );
+		remove_action( 'woocommerce_checkout_after_order_review', array( $instance, 'template_checkout_payment_title' ), 10 );
 		remove_action( 'woocommerce_checkout_after_order_review', 'woocommerce_checkout_payment', 20 );
 	}
 }

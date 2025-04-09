@@ -13,15 +13,16 @@ class WelcomeScreenActivationRedirector {
 		delete_transient( '_cfw_welcome_screen_activation_redirect' );
 
 		// Bail if activating from network, or bulk
-		if ( is_network_admin() || isset( $_GET['activate-multi'] ) ) {
+		if ( is_network_admin() || isset( $_GET['activate-multi'] ) ) { // phpcs:ignore WordPress.Security.NonceVerification.Recommended
 			return;
 		}
 
-		// Redirect to bbPress about page
+		// Redirect to settings general
 		wp_safe_redirect(
 			add_query_arg(
 				array(
-					'page' => 'cfw-settings',
+					'page'        => 'cfw-settings',
+					'cfw_welcome' => 'true',
 				),
 				admin_url( 'admin.php' )
 			)

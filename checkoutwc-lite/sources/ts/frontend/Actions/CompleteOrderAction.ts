@@ -1,9 +1,9 @@
 import Alert                 from '../Components/Alert';
-import Main                  from '../Main';
 import AlertService          from '../Services/AlertService';
 import DataService           from '../Services/DataService';
 import LoggingService        from '../Services/LoggingService';
 import Action                from './Action';
+import ParsleyService        from '../Services/ParsleyService';
 
 class CompleteOrderAction extends Action {
     /**
@@ -12,6 +12,62 @@ class CompleteOrderAction extends Action {
         super( 'checkout' );
 
         DataService.checkoutForm.off( 'form:validate' );
+    }
+
+    /**
+     * Fire the ajax request
+     *
+     * Duplicate of Action.ts without the noncache parameter - necessary for PostFinance compatibility
+     *
+     * @param data
+     */
+    load( data: any ): void {
+        const currentTime = new Date();
+        const n = currentTime.getTime();
+        const url = DataService.getCheckoutParam( 'wc_ajax_url' ).toString().replace( '%%endpoint%%', this.id );
+
+        // ajaxSetup is global, but we use it to ensure JSON is valid once returned.
+        jQuery.ajaxSetup( {
+            dataFilter( rawResponse, dataType ) {
+                let response = rawResponse;
+
+                // We only want to work with JSON
+                if ( dataType !== 'json' ) {
+                    return rawResponse;
+                }
+
+                if ( Action.isValidJSON( response ) ) {
+                    return response;
+                }
+                // Attempt to fix the malformed JSON
+                const maybeValidJSON = response.match( /{".*}/ );
+
+                if ( maybeValidJSON === null ) {
+                    LoggingService.logError( 'Unable to fix malformed JSON' );
+                    LoggingService.logError( 'Response:', response );
+                } else if ( Action.isValidJSON( maybeValidJSON[ 0 ] ) ) {
+                    LoggingService.logNotice( 'Fixed malformed JSON. Original:', response );
+                    // eslint-disable-next-line prefer-destructuring
+                    response = maybeValidJSON[ 0 ];
+                } else {
+                    LoggingService.logError( 'Unable to fix malformed JSON' );
+                    LoggingService.logError( 'Response:', response );
+                }
+
+                return response;
+            },
+        } );
+
+        jQuery.ajax( {
+            type: 'POST',
+            url: `${url}`,
+            data,
+            success: this.response.bind( this ),
+            error: this.error.bind( this ),
+            complete: this.complete.bind( this ),
+            dataType: 'json',
+            cache: false,
+        } );
     }
 
     /**
@@ -24,7 +80,12 @@ class CompleteOrderAction extends Action {
                 jQuery( document.body ).trigger( 'cfw-order-complete-before-redirect', [ DataService.checkoutForm, resp ] );
                 LoggingService.logEvent( 'Fired cfw-order-complete-before-redirect event.' );
 
-                Main.instance.parsleyService.destroy();
+                ParsleyService.instance.destroy();
+
+                if ( typeof resp.redirect === 'undefined' ) {
+                    // In the unlikely event this happens, assume someone else is handling the redirect for us
+                    return;
+                }
 
                 if ( resp.redirect.indexOf( 'https://' ) === -1 || resp.redirect.indexOf( 'http://' ) === -1 ) {
                     ( <any>window ).location = resp.redirect;
@@ -32,12 +93,17 @@ class CompleteOrderAction extends Action {
                     ( <any>window ).location = decodeURI( resp.redirect );
                 }
             } else if ( resp.result === 'failure' ) {
+                // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+                // @ts-ignore
                 throw new Error( 'Result failure' );
             } else {
+                // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+                // @ts-ignore
                 throw new Error( 'Invalid response' );
             }
         } catch ( err ) {
             jQuery( document.body ).trigger( 'cfw_complete_order_failure' );
+            LoggingService.logEvent( 'Fired cfw_complete_order_failure event.' );
 
             // Reload page
             if ( resp.reload === true ) {
@@ -56,7 +122,6 @@ class CompleteOrderAction extends Action {
                 const alert: Alert = new Alert(
                     'error',
                     message,
-                    'cfw-alert-error',
                 );
                 AlertService.queueAlert( alert );
 
@@ -94,6 +159,7 @@ class CompleteOrderAction extends Action {
 
         if ( maybeValidJSON === null ) {
             LoggingService.logError( 'Unable to fix malformed JSON' );
+            LoggingService.logError( 'Response:', rawResponse );
         } else if ( this.isValidJSON( maybeValidJSON[ 0 ] ) ) {
             LoggingService.logError( 'Fixed malformed JSON. Original:' );
             LoggingService.logError( rawResponse );
@@ -101,6 +167,7 @@ class CompleteOrderAction extends Action {
             rawResponse = maybeValidJSON[ 0 ];
         } else {
             LoggingService.logError( 'Unable to fix malformed JSON' );
+            LoggingService.logError( 'Response:', rawResponse );
         }
 
         return rawResponse;
@@ -150,7 +217,7 @@ class CompleteOrderAction extends Action {
             message += `<br/>Response text:<pre>${xhr.responseText}</pre>`;
         }
 
-        const alert: Alert = new Alert( 'error', message, 'cfw-alert-error' );
+        const alert: Alert = new Alert( 'error', message );
         AlertService.queueAlert( alert );
 
         this.submitError();

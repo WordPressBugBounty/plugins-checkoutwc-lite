@@ -17,13 +17,27 @@ class GermanMarket extends CompatibilityAbstract {
 		if ( remove_action( 'woocommerce_checkout_order_review', array( 'WGM_Template', 'add_review_order' ), 15 ) ) {
 			add_action( 'woocommerce_review_order_before_submit', array( 'WGM_Template', 'add_review_order' ), 15 );
 		}
+
+		if ( remove_action( 'woocommerce_de_checkout_payment', array( 'WGM_Template', 'add_review_order' ) ) ) {
+			add_action( 'woocommerce_review_order_before_submit', array( 'WGM_Template', 'add_review_order' ) );
+		}
+	}
+
+	public function run() {
+		if ( remove_action( 'woocommerce_checkout_order_review', array( 'WGM_Template', 'add_review_order' ), 15 ) ) {
+			add_action( 'woocommerce_review_order_before_submit', array( 'WGM_Template', 'add_review_order' ), 15 );
+		}
+
+		if ( remove_action( 'woocommerce_de_checkout_payment', array( 'WGM_Template', 'add_review_order' ) ) ) {
+			add_action( 'woocommerce_review_order_before_submit', array( 'WGM_Template', 'add_review_order' ) );
+		}
 	}
 
 	public function override_gateway_order_button_text( $button_text, $gateway ) {
 		$button_text = \WGM_Template::change_order_button_text( $button_text );
 
 		// phpcs:ignore
-		$button_text = apply_filters( 'woocommerce_de_buy_button_text_gateway_' . $gateway->id, $button_text, $gateway->order_button_text );
+		$button_text = cfw_apply_filters( 'woocommerce_de_buy_button_text_gateway_' . $gateway->id, $button_text, $gateway->order_button_text );
 
 		return $button_text;
 	}

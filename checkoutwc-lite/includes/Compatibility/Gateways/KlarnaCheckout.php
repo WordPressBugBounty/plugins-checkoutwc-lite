@@ -4,6 +4,9 @@ namespace Objectiv\Plugins\Checkout\Compatibility\Gateways;
 
 use Objectiv\Plugins\Checkout\Compatibility\CompatibilityAbstract;
 use Objectiv\Plugins\Checkout\Managers\SettingsManager;
+use Objectiv\Plugins\Checkout\Model\AlternativePlugin;
+use Objectiv\Plugins\Checkout\Model\DetectedPaymentGateway;
+use Objectiv\Plugins\Checkout\Model\GatewaySupport;
 
 class KlarnaCheckout extends CompatibilityAbstract {
 
@@ -15,6 +18,29 @@ class KlarnaCheckout extends CompatibilityAbstract {
 
 	public function is_available(): bool {
 		return defined( 'KCO_WC_VERSION' );
+	}
+
+	public function pre_init() {
+		if ( ! $this->is_available() ) {
+			return;
+		}
+
+		add_filter(
+			'cfw_detected_gateways',
+			function ( $gateways ) {
+				$gateways[] = new DetectedPaymentGateway(
+					'Klarna Checkout',
+					GatewaySupport::PARTIALLY_SUPPORTED,
+					'Klarna Checkout is no longer recommended by Klarna. Please use <a class="text-blue-600 underline" target="_blank" href="https://wordpress.org/plugins/klarna-payments-for-woocommerce/">Klarna Payments</a> instead.',
+					new AlternativePlugin(
+						'klarna-payments-for-woocommerce',
+						'Klarna Payments for WooCommerce'
+					)
+				);
+
+				return $gateways;
+			}
+		);
 	}
 
 	public function typescript_class_and_params( array $compatibility ): array {
@@ -44,6 +70,10 @@ class KlarnaCheckout extends CompatibilityAbstract {
 			$this->klarna_gateway = $klarna_gateway;
 		}
 
+		if ( $this->is_klarna_payment_selected() ) {
+			add_filter( 'cfw_load_tabs', '__return_false' );
+		}
+
 		add_filter( 'cfw_load_checkout_template', array( $this, 'detect_confirmation_page' ), 10, 1 );
 		add_action( 'cfw_checkout_loaded_pre_head', array( $this, 'klarna_template_hooks' ), 10 );
 	}
@@ -69,7 +99,6 @@ class KlarnaCheckout extends CompatibilityAbstract {
 			add_filter( 'cfw_replace_form', '__return_true' );
 			add_action( 'cfw_checkout_form', array( $this, 'klarna_checkout_form' ) );
 		} elseif ( $show_button ) {
-			add_action( 'cfw_after_payment_request_buttons', 'cfw_add_separator', 11 );
 			add_action( 'cfw_payment_request_buttons', array( $this, 'add_klarna_pay_button' ) );
 		}
 	}
@@ -110,7 +139,7 @@ class KlarnaCheckout extends CompatibilityAbstract {
 
 	public function detect_confirmation_page( $load ): bool {
 		// phpcs:disable WordPress.Security.NonceVerification.Missing
-		if ( ! empty( $_GET['confirm'] ) && ! empty( $_GET['kco_wc_order_id'] ) ) {
+		if ( ! empty( $_GET['confirm'] ) && ! empty( $_GET['kco_wc_order_id'] ) ) { // phpcs:ignore WordPress.Security.NonceVerification.Recommended
 			return false;
 		}
 		// phpcs:enable WordPress.Security.NonceVerification.Missing
@@ -121,7 +150,7 @@ class KlarnaCheckout extends CompatibilityAbstract {
 	/**
 	 * Unrequire the shipping phone field
 	 *
-	 * @param array $fields
+	 * @param array $fields The fields.
 	 *
 	 * @return array
 	 */
@@ -129,6 +158,18 @@ class KlarnaCheckout extends CompatibilityAbstract {
 		if ( isset( $fields['shipping']['shipping_phone'] ) ) {
 			$fields['shipping']['shipping_phone']['required'] = false;
 			$fields['shipping']['shipping_phone']['validate'] = array();
+		}
+
+		if ( 'yes' === SettingsManager::instance()->get_setting( 'use_fullname_field' ) ) {
+			unset( $fields['shipping']['shipping_full_name'] );
+			unset( $fields['billing']['billing_full_name'] );
+		}
+
+		if ( 'yes' === SettingsManager::instance()->get_setting( 'enable_discreet_address_1_fields' ) ) {
+			unset( $fields['shipping']['shipping_house_number'] );
+			unset( $fields['billing']['billing_house_number'] );
+			unset( $fields['shipping']['shipping_street_name'] );
+			unset( $fields['billing']['billing_street_name'] );
 		}
 
 		return $fields;

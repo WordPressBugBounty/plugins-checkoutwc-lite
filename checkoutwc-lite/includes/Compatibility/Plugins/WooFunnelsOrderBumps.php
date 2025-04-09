@@ -33,7 +33,7 @@ class WooFunnelsOrderBumps extends CompatibilityAbstract {
 	public function run() {
 		add_action(
 			'wp_head',
-			function() {
+			function () {
 				remove_all_actions( 'wfob_below_payment_gateway' );
 			},
 			1000

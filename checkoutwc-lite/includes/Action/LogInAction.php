@@ -10,27 +10,14 @@ namespace Objectiv\Plugins\Checkout\Action;
  * @package Objectiv\Plugins\Checkout\Action
  */
 class LogInAction extends CFWAction {
-
-	/**
-	 * LogInAction constructor.
-	 *
-	 * @since 1.0.0
-	 * @access public
-	 */
 	public function __construct() {
 		parent::__construct( 'login' );
 	}
 
-	/**
-	 * Logs in the user based on the information passed. If information is incorrect it returns an error message
-	 *
-	 * @since 1.0.0
-	 * @access public
-	 */
 	public function action() {
 		$info                  = array();
-		$info['user_login']    = trim( wp_unslash( $_POST['email'] ) ); // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
-		$info['user_password'] = $_POST['password'] ?? ''; // phpcs:disable WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
+		$info['user_login']    = trim( sanitize_email( wp_unslash( $_POST['email'] ?? '' ) ) ); // phpcs:ignore WordPress.Security.NonceVerification.Missing
+		$info['user_password'] = sanitize_text_field( wp_unslash( $_POST['password'] ?? '' ) ); // phpcs:ignore WordPress.Security.NonceVerification.Missing
 		$info['remember']      = true;
 
 		$user        = wp_signon( $info, is_ssl() );
@@ -47,7 +34,7 @@ class LogInAction extends CFWAction {
 		 * @param string $user_login User login
 		 * @param string $user_password User password
 		 */
-		$validation_error = apply_filters( 'woocommerce_process_login_errors', $validation_error, $info['user_login'], $info['user_password'] );
+		$validation_error = cfw_apply_filters( 'woocommerce_process_login_errors', $validation_error, $info['user_login'], $info['user_password'] );
 
 		$out = array();
 

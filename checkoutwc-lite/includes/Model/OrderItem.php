@@ -21,18 +21,32 @@ class OrderItem implements ItemInterface {
 	protected $formatted_data;
 
 	/**
-	 * @param array|WC_Order_Item $item
+	 * @param array|WC_Order_Item $item The order item.
 	 */
 	public function __construct( WC_Order_Item $item ) {
 		$order         = wc_get_order( $item->get_order_id() );
 		$item_product  = $item->get_product();
 		$item_subtotal = $order->get_formatted_line_subtotal( $item );
 
-		$this->thumbnail      = apply_filters( 'cfw_order_item_thumbnail', $item_product ? $item_product->get_image( 'cfw_cart_thumb' ) : '', $item );
-		$this->quantity       = $item->get_quantity();
-		$this->title          = $item->get_name();
-		$this->url            = $item_product ? get_permalink( $item->get_product_id() ) : '';
-		$this->subtotal       = ! empty( $item_subtotal ) ? $item_subtotal : wc_price( $item->get_subtotal() );
+		/**
+		 * Filter the order item thumbnail
+		 *
+		 * @param string $thumbnail The order item thumbnail
+		 * @param WC_Order_Item $item The order item
+		 * @since 7.2.1
+		 */
+		$this->thumbnail = apply_filters( 'cfw_order_item_thumbnail', $item_product ? $item_product->get_image( 'cfw_cart_thumb' ) : '', $item );
+		$this->quantity  = $item->get_quantity();
+		$this->title     = $item->get_name();
+		$this->url       = $item_product ? get_permalink( $item->get_product_id() ) : '';
+		$this->subtotal  = ! empty( $item_subtotal ) ? $item_subtotal : wc_price( $item->get_subtotal() );
+		/**
+		 * Filter the order item row class
+		 *
+		 * @param string $row_class The order item row class
+		 * @param WC_Order_Item $item The order item
+		 * @since 7.2.1
+		 */
 		$this->row_class      = apply_filters( 'cfw_order_item_row_class', '', $item );
 		$this->item_key       = $item->get_id();
 		$this->raw_item       = $item;
@@ -100,6 +114,13 @@ class OrderItem implements ItemInterface {
 	}
 
 	protected function get_formatted_order_item_data() {
+		/**
+		 * Filter the order item data
+		 *
+		 * @param array $item_data The order item data
+		 * @param WC_Order_Item $item The order item
+		 * @since 7.2.1
+		 */
 		if ( apply_filters( 'cfw_cart_item_data_expanded', SettingsManager::instance()->get_setting( 'cart_item_data_display' ) === 'woocommerce' ) ) {
 			return wc_display_item_meta( $this->get_raw_item(), array( 'echo' => false ) );
 		}
