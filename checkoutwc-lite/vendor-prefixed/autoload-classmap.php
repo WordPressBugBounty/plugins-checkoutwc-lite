@@ -21,6 +21,7 @@ return array(
    'CheckoutWC\Pelago\Emogrifier\HtmlProcessor\CssVariableEvaluator' => $strauss_src . '/pelago/emogrifier/src/HtmlProcessor/CssVariableEvaluator.php',
    'CheckoutWC\Pelago\Emogrifier\HtmlProcessor\CssToAttributeConverter' => $strauss_src . '/pelago/emogrifier/src/HtmlProcessor/CssToAttributeConverter.php',
    'CheckoutWC\Pelago\Emogrifier\HtmlProcessor\AbstractHtmlProcessor' => $strauss_src . '/pelago/emogrifier/src/HtmlProcessor/AbstractHtmlProcessor.php',
+   'CheckoutWC_Mixpanel' => $strauss_src . '/mixpanel/mixpanel-php/lib/Mixpanel.php',
    'CheckoutWC\SmartyStreets\PhpSdk\Sleeper' => $strauss_src . '/smartystreets/phpsdk/src/Sleeper.php',
    'CheckoutWC\SmartyStreets\PhpSdk\Serializer' => $strauss_src . '/smartystreets/phpsdk/src/Serializer.php',
    'CheckoutWC\SmartyStreets\PhpSdk\Batch' => $strauss_src . '/smartystreets/phpsdk/src/Batch.php',

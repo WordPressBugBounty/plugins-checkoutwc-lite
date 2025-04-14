@@ -368,6 +368,8 @@ class AssetManager {
 		$allowed_countries = WC()->countries->get_allowed_countries();
 		unset( $allowed_countries['shim'] );
 
+		$max_bumps = SettingsManager::instance()->get_setting( 'max_bumps' );
+
 		return array(
 			'settings' => array(
 				'user_logged_in'                   => is_user_logged_in(),
@@ -399,6 +401,8 @@ class AssetManager {
 				 * @since 2.0.0
 				 */
 				'show_item_discount'               => apply_filters( 'cfw_show_cart_item_discount', SettingsManager::instance()->get_setting( 'show_side_cart_item_discount' ) === 'yes' ),
+				'max_bumps'                        => $max_bumps < 0 ? 999 : $max_bumps,
+				'coupons_enabled'                  => wc_coupons_enabled(),
 			),
 			'messages' => array(
 				/**
@@ -554,7 +558,6 @@ class AssetManager {
 					'enable_map_embed'                  => PlanManager::can_access_feature( 'enable_map_embed' ),
 					'disable_auto_open_login_modal'     => SettingsManager::instance()->get_setting( 'disable_auto_open_login_modal' ) === 'yes',
 					'disable_domain_autocomplete'       => SettingsManager::instance()->get_setting( 'disable_domain_autocomplete' ) === 'yes',
-					'coupons_enabled'                   => wc_coupons_enabled() && is_checkout(),
 					/**
 					 * Filter whether to load tabs
 					 *
@@ -755,8 +758,6 @@ class AssetManager {
 			$suggested_products_heading = cfw__( 'You may also like&hellip;', 'woocommerce' );
 		}
 
-		$max_bumps = SettingsManager::instance()->get_setting( 'max_bumps' );
-
 		return array_merge_recursive(
 			self::get_default_event_data(),
 			/**
@@ -793,7 +794,7 @@ class AssetManager {
 						 */
 						'additional_side_cart_trigger_selectors' => apply_filters( 'cfw_additional_side_cart_trigger_selectors', false ),
 						'cart_icon_contents'               => SideCart::get_cart_icon_file_contents(),
-						'coupons_enabled'                  => wc_coupons_enabled() && ( is_checkout() || SettingsManager::instance()->get_setting( 'enable_promo_codes_on_side_cart' ) === 'yes' ),
+						'coupons_enabled_side_cart'        => wc_coupons_enabled() && SettingsManager::instance()->get_setting( 'enable_promo_codes_on_side_cart' ) === 'yes',
 						/**
 						 * Filters whether to enable continue shopping button in side cart
 						 *
@@ -815,7 +816,6 @@ class AssetManager {
 						'wc_get_pay_buttons'               => cfw_get_function_output( 'wc_get_pay_buttons' ),
 						'enable_free_shipping_progress_bar' => SettingsManager::instance()->get_setting( 'enable_free_shipping_progress_bar' ) === 'yes',
 						'suggested_products_heading'       => $suggested_products_heading,
-						'max_bumps'                        => $max_bumps < 0 ? 999 : $max_bumps,
 						'enable_ajax_add_to_cart'          => SettingsManager::instance()->get_setting( 'enable_ajax_add_to_cart' ) === 'yes',
 						'checkout_page_url'                => wc_get_checkout_url(),
 						'enable_free_shipping_progress_bar_at_checkout' => SettingsManager::instance()->get_setting( 'enable_free_shipping_progress_bar_at_checkout' ) === 'yes',

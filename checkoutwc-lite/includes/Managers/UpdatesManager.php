@@ -59,7 +59,12 @@ class UpdatesManager extends SingletonAbstract {
 	 *
 	 * @var array
 	 */
-	public $bad_key_statuses;
+	public $bad_key_statuses = array(
+		'expired',
+		'disabled',
+		'invalid',
+		'nolicensekey', // we made up this status
+	);
 
 	/**
 	 * List of key statuses that indicate the license is a real license

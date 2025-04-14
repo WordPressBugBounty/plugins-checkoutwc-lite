@@ -106,6 +106,15 @@ class DatabaseUpdatesManager extends SingletonAbstract {
 				// And don't proceed with the rest of updates
 				return;
 			}
+
+			// Scenario: User downgrades to free when their last version was < 10.1.0
+			if ( $this->db_version && version_compare( $this->db_version, '10.1.0', '<' ) && ! defined( 'CFW_PREMIUM_PLAN_IDS' ) ) {
+				// Update the db version here
+				$this->update_db_version();
+
+				// And don't proceed with the rest of updates
+				return;
+			}
 		}
 
 		// Don't run upgrades for first time activators
@@ -329,6 +338,10 @@ class DatabaseUpdatesManager extends SingletonAbstract {
 	}
 
 	public function update_614() {
+		if ( ! class_exists( '\Objectiv\Plugins\Checkout\Factories\BumpFactory' ) ) {
+			return;
+		}
+
 		SettingsManager::instance()->add_setting( 'hide_floating_cart_button_empty_cart', 'no' );
 		SettingsManager::instance()->add_setting( 'enable_astra_support', 'no' );
 
@@ -389,6 +402,10 @@ class DatabaseUpdatesManager extends SingletonAbstract {
 	}
 
 	public function update_731() {
+		if ( ! class_exists( '\Objectiv\Plugins\Checkout\Features\LocalPickup' ) ) {
+			return;
+		}
+
 		$pickup_times     = LocalPickup::get_pickup_times();
 		$pickup_locations = get_posts(
 			array(
@@ -565,6 +582,10 @@ class DatabaseUpdatesManager extends SingletonAbstract {
 	 * @throws Exception If the bump cannot be updated.
 	 */
 	public function update_8297() {
+		if ( ! class_exists( '\Objectiv\Plugins\Checkout\Factories\BumpFactory' ) ) {
+			return;
+		}
+
 		$bumps = BumpFactory::get_all();
 
 		foreach ( $bumps as $bump ) {
@@ -742,6 +763,10 @@ class DatabaseUpdatesManager extends SingletonAbstract {
 	 * @throws Exception If the bump cannot be updated.
 	 */
 	public function update_909() {
+		if ( ! class_exists( '\Objectiv\Plugins\Checkout\Factories\BumpFactory' ) ) {
+			return;
+		}
+
 		$data_ported = get_option( 'cfw_ob_data_ported_v9_keys', false );
 
 		if ( $data_ported ) {
@@ -802,6 +827,10 @@ class DatabaseUpdatesManager extends SingletonAbstract {
 	}
 
 	public function update_9018() {
+		if ( ! class_exists( '\Objectiv\Plugins\Checkout\Factories\BumpFactory' ) ) {
+			return;
+		}
+
 		$bumps     = BumpFactory::get_all();
 		$meta_keys = array(
 			'cfw_ob_products_v9',
@@ -935,6 +964,10 @@ class DatabaseUpdatesManager extends SingletonAbstract {
 	 * @return void
 	 */
 	public function update_91700() {
+		if ( ! class_exists( '\Objectiv\Plugins\Checkout\Factories\BumpFactory' ) ) {
+			return;
+		}
+
 		// Get all order bumps
 		$bumps = BumpFactory::get_all();
 

@@ -2917,7 +2917,7 @@ function cfw_get_email_template( $subject, $preheader, $content ) {
 		<title><?php echo esc_html( $subject ); ?></title>
 	</head>
 	<body>
-	<?php echo cfw_get_email_body( $preheader, $content ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped?>
+	<?php echo cfw_get_email_body( $preheader, $content ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
 	</body>
 	</html>
 	<?php
@@ -3145,29 +3145,30 @@ function cfw_get_cart_items_data(): array {
 		}
 
 		$items[] = array(
-			'item_key'                         => $key,
-			'thumbnail'                        => $item->get_thumbnail(),
-			'quantity'                         => $item->get_quantity(),
-			'title'                            => $item->get_title(),
-			'url'                              => $item->get_url(),
-			'subtotal'                         => $item->get_subtotal(),
-			'hide_remove_item'                 => $item->get_hide_remove_item(),
-			'row_class'                        => $item->get_row_class(),
-			'data'                             => $item->get_data(),
-			'formatted_data'                   => $item->get_formatted_data(),
-			'disable_cart_editing_at_checkout' => $item->get_disable_cart_editing_at_checkout(),
-			'disable_cart_editing'             => $item->get_disable_cart_editing(),
-			'disable_cart_variation_editing'   => $item->get_disable_cart_variation_editing(),
-			'max_quantity'                     => $item->get_max_quantity(),
-			'min_quantity'                     => $item->get_min_quantity(),
-			'step'                             => $item->get_step(),
-			'product_title'                    => $item->get_product()->get_title(),
-			'product_sku'                      => $item->get_product()->get_sku(),
-			'product_id'                       => $item->get_product()->get_id(),
-			'product_parent_id'                => $item->get_product()->get_parent_id(),
-			'has_quantity_override'            => cfw_cart_quantity_input_has_override( $raw_item, $key, $product ),
-			'discount_html'                    => cfw_get_item_discount_html( $item ),
-			'actions'                          => array(
+			'item_key'                                => $key,
+			'thumbnail'                               => $item->get_thumbnail(),
+			'quantity'                                => $item->get_quantity(),
+			'title'                                   => $item->get_title(),
+			'url'                                     => $item->get_url(),
+			'subtotal'                                => $item->get_subtotal(),
+			'hide_remove_item'                        => $item->get_hide_remove_item(),
+			'row_class'                               => $item->get_row_class(),
+			'data'                                    => $item->get_data(),
+			'formatted_data'                          => $item->get_formatted_data(),
+			'disable_cart_editing_at_checkout'        => $item->get_disable_cart_editing_at_checkout(),
+			'disable_cart_editing'                    => $item->get_disable_cart_editing(),
+			'disable_cart_variation_editing'          => $item->get_disable_cart_variation_editing(),
+			'disable_cart_variation_editing_checkout' => $item->get_disable_cart_variation_editing_checkout(),
+			'max_quantity'                            => $item->get_max_quantity(),
+			'min_quantity'                            => $item->get_min_quantity(),
+			'step'                                    => $item->get_step(),
+			'product_title'                           => $item->get_product()->get_title(),
+			'product_sku'                             => $item->get_product()->get_sku(),
+			'product_id'                              => $item->get_product()->get_id(),
+			'product_parent_id'                       => $item->get_product()->get_parent_id(),
+			'has_quantity_override'                   => cfw_cart_quantity_input_has_override( $raw_item, $key, $product ),
+			'discount_html'                           => cfw_get_item_discount_html( $item ),
+			'actions'                                 => array(
 				/**
 				 * Fires after cart item data output
 				 *

@@ -24,6 +24,7 @@ class CartItem implements ItemInterface {
 	protected $disable_cart_editing_at_checkout;
 	protected $disable_cart_editing;
 	protected $disable_cart_variation_editing;
+	protected $disable_cart_variation_editing_checkout;
 	protected $max_quantity;
 	protected $min_quantity;
 	protected $step;
@@ -102,7 +103,33 @@ class CartItem implements ItemInterface {
 		 *
 		 * @since 8.0.0
 		 */
-		$this->disable_cart_variation_editing = apply_filters( 'cfw_disable_cart_variation_editing', ! PlanManager::can_access_feature( 'enable_cart_editing' ) || SettingsManager::instance()->get_setting( 'allow_checkout_cart_item_variation_changes' ) !== 'yes' || empty( $item['variation_id'] ), $item, $key );
+		$this->disable_cart_variation_editing = apply_filters(
+			'cfw_disable_cart_variation_editing',
+			! PlanManager::can_access_feature( 'enable_side_cart' )
+			|| SettingsManager::instance()->get_setting( 'allow_side_cart_item_variation_changes' ) !== 'yes'
+			|| empty( $item['variation_id'] ),
+			$item,
+			$key
+		);
+
+		/**
+		 * Filters whether to disable cart variation editing
+		 *
+		 * @param bool $disable_cart_variation_editing_checkout Whether to disable cart editing
+		 * @param array $cart_item The cart item
+		 * @param string $cart_item_key The cart item key
+		 * @param string $context The calling context
+		 *
+		 * @since 10.1.6
+		 */
+		$this->disable_cart_variation_editing_checkout = apply_filters(
+			'cfw_disable_cart_variation_editing_checkout',
+			! PlanManager::can_access_feature( 'enable_cart_editing' )
+			|| SettingsManager::instance()->get_setting( 'allow_checkout_cart_item_variation_changes' ) !== 'yes'
+			|| empty( $item['variation_id'] ),
+			$item,
+			$key
+		);
 
 		$this->max_quantity = (float) $quantity_args['max_value'];
 		$this->min_quantity = (float) $quantity_args['min_value'];
@@ -325,6 +352,13 @@ class CartItem implements ItemInterface {
 	 */
 	public function get_disable_cart_variation_editing() {
 		return $this->disable_cart_variation_editing;
+	}
+
+	/**
+	 * @return mixed|null
+	 */
+	public function get_disable_cart_variation_editing_checkout() {
+		return $this->disable_cart_variation_editing_checkout;
 	}
 
 	public function get_hide_remove_item(): bool {
