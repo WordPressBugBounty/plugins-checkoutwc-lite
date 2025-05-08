@@ -16,7 +16,7 @@ class LogInAction extends CFWAction {
 
 	public function action() {
 		$info                  = array();
-		$info['user_login']    = trim( sanitize_email( wp_unslash( $_POST['email'] ?? '' ) ) ); // phpcs:ignore WordPress.Security.NonceVerification.Missing
+		$info['user_login']    = trim( sanitize_text_field( wp_unslash( $_POST['email'] ?? '' ) ) ); // phpcs:ignore WordPress.Security.NonceVerification.Missing
 		$info['user_password'] = sanitize_text_field( wp_unslash( $_POST['password'] ?? '' ) ); // phpcs:ignore WordPress.Security.NonceVerification.Missing
 		$info['remember']      = true;
 

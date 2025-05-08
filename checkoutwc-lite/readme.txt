@@ -4,7 +4,7 @@ Donate link: https://www.checkoutwc.com
 Tags: woocommerce checkout, woocommerce checkout template, woocommerce checkout theme, woo checkout, shopify
 Requires at least: 5.2
 Tested up to: 6.7.2
-Stable tag: 10.1.6
+Stable tag: 10.1.7
 Requires PHP: 7.3
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
@@ -115,6 +115,19 @@ CheckoutWC works with virtually all payment gateways out of the box. If you have
 == Changelog ==
 
 Free version updates are non-sequential due to the unified development branch we use with the premium versions.
+
+= Version 10.1.7 =
+ * Improved - Handle forced billing address as shipping address scenario with ship-to-different-address-checkbox
+ * Fix - Fix issue with YITH Delivery Dates pickup times select refresh
+ * Fix - Fix issue that prevented usernames for login
+ * Fix - Fix potential JS error with totals on the side cart and checkout
+ * Fix - Fix hide coupon behind link setting for checkout.
+ * Fix - Disable conflicting tailwind container class
+ * Fix - Exclude terms and conditions checkbox from field persistence
+ * Fix - Refactor payment request / express checkout button styling to fix multiple issues
+ * Fix - Fix design link in Start Here
+ * Fix - Fix potential JS error on trust badges settings page
+ * Dev - Allow itemized shipping costs with cfw_totals_itemize_shipping_costs filter
 
 = Version 10.1.6 =
 * Fix - Fix fatal error for users who downgrade from CheckoutWC premium to Lite from an older version of premium.

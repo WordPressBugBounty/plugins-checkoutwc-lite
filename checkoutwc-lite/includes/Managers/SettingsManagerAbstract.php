@@ -42,7 +42,31 @@ abstract class SettingsManagerAbstract extends SingletonAbstract {
 	public function update_setting( string $setting, $value ): bool {
 		$setting = $this->maybe_add_prefix( $setting );
 
-		return update_option( $setting, $value );
+		$old_value = $this->get_setting( $setting );
+
+		$result = update_option( $setting, $value );
+
+		/**
+		 * Fires when setting updates
+		 *
+		 * @since 10.1.7
+		 *
+		 * @param string $setting The setting key
+		 * @param mixed $value The new value.
+		 * @param mixed $old_value The old value.
+		 */
+		do_action_ref_array( 'cfw_updated_setting', array( $setting, $value, $old_value ) );
+
+		/**
+		 * Fires when setting updates
+		 *
+		 * @since 10.1.7
+		 * @param mixed $value The new value.
+		 * @param mixed $old_value The old value.
+		 */
+		do_action_ref_array( 'cfw_updated_setting_' . $setting, array( $value, $old_value ) );
+
+		return $result;
 	}
 
 	/**
@@ -117,7 +141,7 @@ abstract class SettingsManagerAbstract extends SingletonAbstract {
 		// not actually save but should do other stuff
 		if ( isset( $_REQUEST['submit'] ) ) {
 			// We can't sanitize this because it could be anything, including code snippets
-			$new_settings = wp_unslash( $_REQUEST[ "{$this->prefix}_setting" ] ?? null ); // phpcs:disable WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
+			$new_settings = wp_unslash( $_REQUEST[ "{$this->prefix}_setting" ] ); // phpcs:disable WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
 
 			if ( ! $new_settings ) {
 				return;

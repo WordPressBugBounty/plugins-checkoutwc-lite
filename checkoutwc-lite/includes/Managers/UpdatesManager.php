@@ -652,6 +652,8 @@ class UpdatesManager extends SingletonAbstract {
 			return 'nolicensekey';
 		}
 
+		$current_data = get_option( 'cfw_license_data', null );
+
 		$api_params = array(
 			'edd_action' => 'check_license',
 			'license'    => $license,
@@ -679,6 +681,15 @@ class UpdatesManager extends SingletonAbstract {
 		update_option( 'cfw_license_activation_limit', $license_data->license_limit ?? 0 );
 		update_option( 'cfw_license_price_id', $license_data->price_id ?? 0 );
 		update_option( 'cfw_license_data', $license_data, false );
+
+		$changes = array_intersect_key(
+			array_diff_assoc( (array) $current_data, (array) $license_data ),
+			array_flip( array( 'price_id', 'license_limit', 'license', 'license_limit', 'site_count', 'activations_left' ) )
+		);
+
+		if ( ! empty( $changes ) ) {
+			cfw_do_action( 'cfw_license_data_changed', $changes );
+		}
 
 		return $license_data;
 	}

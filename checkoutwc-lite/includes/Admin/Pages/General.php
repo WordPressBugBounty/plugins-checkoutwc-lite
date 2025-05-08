@@ -244,7 +244,7 @@ class General extends PageAbstract {
 		ob_start();
 		?>
 		<div class="flex flex-row items-center">
-			<a href="<?php echo esc_attr( $this->appearance_page->get_url() ); ?>" target="_blank" class="inline-flex items-center px-4 py-2 border border-gray-300 shadow-sm text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+			<a href="<?php echo esc_attr( add_query_arg( 'subpage', 'design', $this->appearance_page->get_url() ) ); ?>" target="_blank" class="inline-flex items-center px-4 py-2 border border-gray-300 shadow-sm text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
 				<?php cfw_e( 'Customize Logo and Colors', 'checkout-wc' ); ?>
 			</a>
 			<svg xmlns="http://www.w3.org/2000/svg" class="ml-2 h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-label="<?php cfw_e( 'Opens in new tab' ); ?>">

@@ -1,9 +1,4 @@
-<?php
-/**
- * @license GPL-3.0-or-later
- *
- * Modified by Clifton Griffin on 14-April-2025 using {@see https://github.com/BrianHenryIE/strauss}.
- */ /** @noinspection ALL */ // phpcs:ignore WordPress.Files.FileName
+<?php /** @noinspection ALL */ // phpcs:ignore WordPress.Files.FileName
 /**
  * Handles dismissing admin notices.
  *

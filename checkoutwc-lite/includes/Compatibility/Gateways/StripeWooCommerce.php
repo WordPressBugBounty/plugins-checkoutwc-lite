@@ -34,6 +34,20 @@ class StripeWooCommerce extends CompatibilityAbstract {
 			return;
 		}
 
+		$payment_gateways = WC()->payment_gateways()->get_available_payment_gateways();
+
+		foreach ( $payment_gateways as $payment_gateway ) {
+			if ( ! in_array( $payment_gateway->id, array( 'stripe_applepay', 'stripe_payment_request', 'stripe_googlepay', 'stripe_amazonpay' ), true ) ) {
+				continue;
+			}
+
+			if ( ! isset( $payment_gateway->settings ) ) {
+				continue;
+			}
+
+			$payment_gateway->settings = $this->adjust_button_height( $payment_gateway->settings );
+		}
+
 		// Remove theirs
 		remove_action( 'woocommerce_checkout_before_customer_details', array( \WC_Stripe_Field_Manager::class, 'output_banner_checkout_fields' ) );
 

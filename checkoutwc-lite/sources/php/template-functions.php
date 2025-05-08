@@ -1013,7 +1013,7 @@ function cfw_payment_tab_content_billing_address() {
 	<!-- wrapper required for compatibility with Pont shipping for Woocommerce -->
 	<div class="cfw-force-hidden">
 		<div id="ship-to-different-address">
-			<input id="ship-to-different-address-checkbox" type="checkbox" name="ship_to_different_address" value="<?php echo WC()->cart->needs_shipping_address() ? 1 : 0; ?>" checked="checked" />
+			<input id="ship-to-different-address-checkbox" type="checkbox" name="ship_to_different_address" value="1" <?php checked( cfw_apply_filters( 'woocommerce_ship_to_different_address_checked', WC()->cart->needs_shipping_address() && ! wc_ship_to_billing_address_only() ) ); ?> />
 		</div>
 	</div>
 	<?php

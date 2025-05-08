@@ -7,8 +7,6 @@
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
- *
- * Modified by Clifton Griffin on 14-April-2025 using {@see https://github.com/BrianHenryIE/strauss}.
  */
 
 namespace CheckoutWC\Symfony\Component\Lock\Store;
@@ -22,7 +20,7 @@ use CheckoutWC\Symfony\Component\Lock\Key;
 use CheckoutWC\Symfony\Component\Lock\Lock;
 use CheckoutWC\Symfony\Component\Lock\PersistingStoreInterface;
 
-trigger_deprecation('symfony/lock', '5.2', '%s is deprecated, the "%s" class provides the logic when store is not blocking.', RetryTillSaveStore::class, Lock::class);
+checkoutwc_trigger_deprecation('symfony/lock', '5.2', '%s is deprecated, the "%s" class provides the logic when store is not blocking.', RetryTillSaveStore::class, Lock::class);
 
 /**
  * RetryTillSaveStore is a PersistingStoreInterface implementation which decorate a non blocking PersistingStoreInterface to provide a

@@ -49,6 +49,13 @@ class Install {
 	}
 
 	public static function add_settings() {
+		$version = get_option( 'cfw_db_version', false );
+
+		// For fresh installations only
+		if ( ! $version ) {
+			SettingsManager::instance()->add_setting( 'installed', gmdate( 'Y-m-d H:i:s' ) );
+		}
+
 		SettingsManager::instance()->add_setting( 'enable', 'no' );
 		SettingsManager::instance()->add_setting( 'allow_tracking', '' );
 		SettingsManager::instance()->add_setting( 'allow_uninstall', 'no' );

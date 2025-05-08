@@ -558,6 +558,7 @@ class AssetManager {
 					'enable_map_embed'                  => PlanManager::can_access_feature( 'enable_map_embed' ),
 					'disable_auto_open_login_modal'     => SettingsManager::instance()->get_setting( 'disable_auto_open_login_modal' ) === 'yes',
 					'disable_domain_autocomplete'       => SettingsManager::instance()->get_setting( 'disable_domain_autocomplete' ) === 'yes',
+					'enable_coupon_code_link'           => SettingsManager::instance()->get_setting( 'enable_coupon_code_link' ) === 'yes',
 					/**
 					 * Filter whether to load tabs
 					 *
@@ -665,6 +666,8 @@ class AssetManager {
 							'.cfw_order_bump_check',
 							'#shipping_fetchify_search',
 							'#billing_fetchify_search',
+							'#terms',
+							'#ship-to-different-address',
 							'[data-persist="false"]', // catch-all, used in cfw_form_field() for non-empty values
 						)
 					),
@@ -820,7 +823,6 @@ class AssetManager {
 						'checkout_page_url'                => wc_get_checkout_url(),
 						'enable_free_shipping_progress_bar_at_checkout' => SettingsManager::instance()->get_setting( 'enable_free_shipping_progress_bar_at_checkout' ) === 'yes',
 						'enable_promo_codes_on_side_cart'  => SettingsManager::instance()->get_setting( 'enable_promo_codes_on_side_cart' ) === 'yes',
-						'enable_coupon_code_link'          => SettingsManager::instance()->get_setting( 'enable_coupon_code_link' ) === 'yes',
 						'hide_floating_cart_button_empty_cart' => SettingsManager::instance()->get_setting( 'hide_floating_cart_button_empty_cart' ) === 'yes',
 						'enable_side_cart_coupon_code_link' => SettingsManager::instance()->get_setting( 'enable_side_cart_coupon_code_link' ) === 'yes',
 						'enable_order_bumps'               => SettingsManager::instance()->get_setting( 'enable_order_bumps' ) === 'yes',

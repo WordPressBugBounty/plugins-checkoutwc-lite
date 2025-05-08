@@ -7,8 +7,6 @@
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
- *
- * Modified by Clifton Griffin on 14-April-2025 using {@see https://github.com/BrianHenryIE/strauss}.
  */
 
 namespace CheckoutWC\Symfony\Polyfill\Php80;
@@ -18,7 +16,7 @@ namespace CheckoutWC\Symfony\Polyfill\Php80;
  *
  * @internal
  */
-class PhpToken implements \CheckoutWC_Stringable
+class PhpToken implements \Stringable
 {
     /**
      * @var int

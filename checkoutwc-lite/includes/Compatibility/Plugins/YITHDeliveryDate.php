@@ -14,4 +14,13 @@ class YITHDeliveryDate extends CompatibilityAbstract {
 
 		add_action( 'cfw_checkout_after_shipping_methods', array( $YITH_Delivery_Date_Shipping_Manager, 'print_delivery_from' ), 16 );
 	}
+
+	public function typescript_class_and_params( array $compatibility ): array {
+		$compatibility[] = array(
+			'class'  => 'YITHDeliveryDate',
+			'params' => array(),
+		);
+
+		return $compatibility;
+	}
 }

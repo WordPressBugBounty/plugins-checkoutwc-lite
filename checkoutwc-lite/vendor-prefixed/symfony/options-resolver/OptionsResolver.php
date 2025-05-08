@@ -7,8 +7,6 @@
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
- *
- * Modified by Clifton Griffin on 14-April-2025 using {@see https://github.com/BrianHenryIE/strauss}.
  */
 
 namespace CheckoutWC\Symfony\Component\OptionsResolver;
@@ -452,7 +450,7 @@ class OptionsResolver implements Options
         $args = \func_get_args();
 
         if (\func_num_args() < 3) {
-            trigger_deprecation('symfony/options-resolver', '5.1', 'The signature of method "%s()" requires 2 new arguments: "string $package, string $version", not defining them is deprecated.', __METHOD__);
+            checkoutwc_trigger_deprecation('symfony/options-resolver', '5.1', 'The signature of method "%s()" requires 2 new arguments: "string $package, string $version", not defining them is deprecated.', __METHOD__);
 
             $message = $args[1] ?? 'The option "%name%" is deprecated.';
             $package = $version = '';
@@ -954,7 +952,7 @@ class OptionsResolver implements Options
         // Shortcut for resolved options
         if (isset($this->resolved[$option]) || \array_key_exists($option, $this->resolved)) {
             if ($triggerDeprecation && isset($this->deprecated[$option]) && (isset($this->given[$option]) || $this->calling) && \is_string($this->deprecated[$option]['message'])) {
-                trigger_deprecation($this->deprecated[$option]['package'], $this->deprecated[$option]['version'], strtr($this->deprecated[$option]['message'], ['%name%' => $option]));
+                checkoutwc_trigger_deprecation($this->deprecated[$option]['package'], $this->deprecated[$option]['version'], strtr($this->deprecated[$option]['message'], ['%name%' => $option]));
             }
 
             return $this->resolved[$option];
@@ -1132,7 +1130,7 @@ class OptionsResolver implements Options
             }
 
             if ('' !== $message) {
-                trigger_deprecation($deprecation['package'], $deprecation['version'], strtr($message, ['%name%' => $option]));
+                checkoutwc_trigger_deprecation($deprecation['package'], $deprecation['version'], strtr($message, ['%name%' => $option]));
             }
         }
 

@@ -320,6 +320,8 @@ return array(
     'Objectiv\\Plugins\\Checkout\\PhpErrorOutputSuppressor' => $baseDir . '/includes/PhpErrorOutputSuppressor.php',
     'Objectiv\\Plugins\\Checkout\\RateLimiterWooCommerceSessionStorage' => $baseDir . '/includes/RateLimiterWooCommerceSessionStorage.php',
     'Objectiv\\Plugins\\Checkout\\SingletonAbstract' => $baseDir . '/includes/SingletonAbstract.php',
+    'Objectiv\\Plugins\\Checkout\\Stats\\Consumers\\WPMixPanelConsumer' => $baseDir . '/includes/Stats/Consumers/WPMixPanelConsumer.php',
     'Objectiv\\Plugins\\Checkout\\Stats\\StatCollection' => $baseDir . '/includes/Stats/StatCollection.php',
+    'Objectiv\\Plugins\\Checkout\\Stats\\TelemetryCollection' => $baseDir . '/includes/Stats/TelemetryCollection.php',
     'Objectiv\\Plugins\\Checkout\\TrustBadgeImageSizeAdder' => $baseDir . '/includes/TrustBadgeImageSizeAdder.php',
 );

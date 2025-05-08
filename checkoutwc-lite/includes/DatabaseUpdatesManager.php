@@ -71,6 +71,7 @@ class DatabaseUpdatesManager extends SingletonAbstract {
 			'9.1.2'   => array( $this, 'update_912' ),
 			'9.1.700' => array( $this, 'update_91700' ), // 10.0.0-alpha
 			'10.0.0'  => array( $this, 'update_1000' ), // 10.0.0
+			'10.1.7'  => array( $this, 'update_1017' ),
 			// TODO: For future updates, bifurcate pro and lite versions
 		);
 	}
@@ -1094,5 +1095,15 @@ class DatabaseUpdatesManager extends SingletonAbstract {
 		if ( version_compare( CFW_VERSION, '11.0.0', '<' ) ) {
 			set_transient( '_cfw_100_upgrade_welcome_redirect', true, 30 );
 		}
+	}
+
+	public function update_1017() {
+		/**
+		 * Action hook fired after the 10.1.5 database update routine runs.
+		 * Used to trigger actions like initial telemetry sync.
+		 *
+		 * @since 10.1.5
+		 */
+		do_action( 'cfw_updated_to_1017' ); // Fire the action
 	}
 }

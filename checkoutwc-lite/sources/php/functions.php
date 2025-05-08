@@ -3202,9 +3202,10 @@ function cfw_get_cart_items_data(): array {
 }
 
 function cfw_get_cart_totals_data(): array {
-	$coupons = array();
-	$fees    = array();
-	$taxes   = array();
+	$coupons  = array();
+	$fees     = array();
+	$taxes    = array();
+	$shipping = array();
 
 	foreach ( WC()->cart->get_coupons() as $code => $coupon ) {
 		$coupons[] = array(
@@ -3242,6 +3243,57 @@ function cfw_get_cart_totals_data(): array {
 		}
 	}
 
+	if ( cfw_show_shipping_total() ) {
+		/**
+		 * Whether to itemize shipping costs
+		 *
+		 * @since 10.1.7
+		 * @param array $itemize_shipping_costs Whether to itemize shipping costs in totals (default: false)
+		 */
+		if ( apply_filters( 'cfw_totals_itemize_shipping_costs', false ) ) {
+			$packages = WC()->shipping()->get_packages();
+
+			foreach ( $packages as $i => $package ) {
+				$chosen_method     =  WC()->session->chosen_shipping_methods[ $i ] ?? '';
+				$available_methods = empty( $package['rates'] ) ? array() : $package['rates'];
+
+				foreach ( $available_methods as $method ) {
+					if ( (string) $method->id !== (string) $chosen_method ) { // WC_Shipping_Method::id is defined as a string type, so we need to make sure we're comparing it as a string
+						continue;
+					}
+
+					if ( 0 >= $method->cost ) {
+						continue;
+					}
+
+					$shipping[] = array(
+						/**
+						 * Filters cart totals shipping label
+						 *
+						 * @param string $cart_totals_shipping_label Cart totals shipping label
+						 *
+						 * @since 2.0.0
+						 */
+						'label' => cfw_apply_filters( 'woocommerce_shipping_package_name', sprintf( cfw_nx( 'Shipping', 'Shipping %d', ( $i + 1 ), 'shipping packages', 'woocommerce' ), ( $i + 1 ) ), $i, $package ),
+						'value' => WC()->cart->display_prices_including_tax() ? $method->cost + $method->get_shipping_tax() : $method->cost,
+					);
+				}
+			}
+		} else {
+			$shipping[] = array(
+				/**
+				 * Filters cart totals shipping label
+				 *
+				 * @param string $cart_totals_shipping_label Cart totals shipping label
+				 *
+				 * @since 2.0.0
+				 */
+				'label' => apply_filters( 'cfw_cart_totals_shipping_label', cfw_esc_html__( 'Shipping', 'woocommerce' ) ),
+				'value' => cfw_get_shipping_total(),
+			);
+		}
+	}
+
 	$data = array(
 		'actions'  => array(
 			/**
@@ -3273,21 +3325,8 @@ function cfw_get_cart_totals_data(): array {
 		'fees'     => $fees,
 		'taxes'    => $taxes,
 		'quantity' => WC()->cart ? WC()->cart->get_cart_contents_count() : 0,
+		'shipping' => $shipping,
 	);
-
-	if ( cfw_show_shipping_total() ) {
-		$data['shipping'] = array(
-			/**
-			 * Filters cart totals shipping label
-			 *
-			 * @param string $cart_totals_shipping_label Cart totals shipping label
-			 *
-			 * @since 2.0.0
-			 */
-			'label' => apply_filters( 'cfw_cart_totals_shipping_label', cfw_esc_html__( 'Shipping', 'woocommerce' ) ),
-			'value' => cfw_get_shipping_total(),
-		);
-	}
 
 	/**
 	 * Filters the cart totals data

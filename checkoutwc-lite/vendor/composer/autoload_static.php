@@ -6,6 +6,10 @@ namespace Composer\Autoload;
 
 class ComposerStaticInitd94306d1256c492f50e19769af153ed4
 {
+    public static $files = array (
+        '1f155afceeab454b94183cdd8d5248a6' => __DIR__ . '/..' . '/mixpanel/mixpanel-php/lib/Mixpanel.php',
+    );
+
     public static $prefixLengthsPsr4 = array (
         'O' => 
         array (
@@ -335,7 +339,9 @@ class ComposerStaticInitd94306d1256c492f50e19769af153ed4
         'Objectiv\\Plugins\\Checkout\\PhpErrorOutputSuppressor' => __DIR__ . '/../..' . '/includes/PhpErrorOutputSuppressor.php',
         'Objectiv\\Plugins\\Checkout\\RateLimiterWooCommerceSessionStorage' => __DIR__ . '/../..' . '/includes/RateLimiterWooCommerceSessionStorage.php',
         'Objectiv\\Plugins\\Checkout\\SingletonAbstract' => __DIR__ . '/../..' . '/includes/SingletonAbstract.php',
+        'Objectiv\\Plugins\\Checkout\\Stats\\Consumers\\WPMixPanelConsumer' => __DIR__ . '/../..' . '/includes/Stats/Consumers/WPMixPanelConsumer.php',
         'Objectiv\\Plugins\\Checkout\\Stats\\StatCollection' => __DIR__ . '/../..' . '/includes/Stats/StatCollection.php',
+        'Objectiv\\Plugins\\Checkout\\Stats\\TelemetryCollection' => __DIR__ . '/../..' . '/includes/Stats/TelemetryCollection.php',
         'Objectiv\\Plugins\\Checkout\\TrustBadgeImageSizeAdder' => __DIR__ . '/../..' . '/includes/TrustBadgeImageSizeAdder.php',
     );
 

@@ -115,4 +115,17 @@ abstract class CompatibilityAbstract extends SingletonAbstract {
 	public function remove_scripts( array $scripts ): array {
 		return $scripts;
 	}
+
+	/**
+	 * Assumes an array of gateway settings
+	 *
+	 * @param array $settings The settings array.
+	 */
+	public function adjust_button_height( $settings ): array {
+		if ( ! empty( $settings['button_height'] ) ) {
+			$settings['button_height'] = '42';
+		}
+
+		return $settings;
+	}
 }

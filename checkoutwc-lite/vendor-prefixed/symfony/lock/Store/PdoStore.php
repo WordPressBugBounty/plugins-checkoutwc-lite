@@ -7,8 +7,6 @@
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
- *
- * Modified by Clifton Griffin on 14-April-2025 using {@see https://github.com/BrianHenryIE/strauss}.
  */
 
 namespace CheckoutWC\Symfony\Component\Lock\Store;
@@ -74,7 +72,7 @@ class PdoStore implements PersistingStoreInterface
     public function __construct($connOrDsn, array $options = [], float $gcProbability = 0.01, int $initialTtl = 300)
     {
         if ($connOrDsn instanceof Connection || (\is_string($connOrDsn) && str_contains($connOrDsn, '://'))) {
-            trigger_deprecation('symfony/lock', '5.4', 'Usage of a DBAL Connection with "%s" is deprecated and will be removed in symfony 6.0. Use "%s" instead.', __CLASS__, DoctrineDbalStore::class);
+            checkoutwc_trigger_deprecation('symfony/lock', '5.4', 'Usage of a DBAL Connection with "%s" is deprecated and will be removed in symfony 6.0. Use "%s" instead.', __CLASS__, DoctrineDbalStore::class);
             $this->dbalStore = new DoctrineDbalStore($connOrDsn, $options, $gcProbability, $initialTtl);
 
             return;
