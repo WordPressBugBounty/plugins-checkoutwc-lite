@@ -862,6 +862,10 @@ add_action(
 add_action(
 	'init',
 	function () use ( $active_template, $compatibility_modules, $settings_manager ) {
+		if ( SettingsManager::instance()->get_setting( 'add_capabilities' ) === false ) {
+			Install::add_capabilities();
+		}
+
 		if ( ! cfw_is_enabled() ) {
 			return;
 		}

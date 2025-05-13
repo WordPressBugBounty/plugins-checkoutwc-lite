@@ -75,6 +75,7 @@ abstract class PageAbstract {
 	 * @since 1.0.0
 	 */
 	public function output_with_wrap() {
+		cfw_do_action( 'cfw_admin_output_page', $this->get_slug() );
 		$hide_settings_button = ( isset( $_GET['subpage'] ) && 'templates' === $_GET['subpage'] ) || ( isset( $_GET['page'] ) && 'cfw-settings-support' === $_GET['page'] ); // phpcs:ignore WordPress.Security.NonceVerification.Recommended
 		?>
 		<div class="cfw-admin-notices-container">

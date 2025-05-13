@@ -10,7 +10,7 @@
  * Plugin Name:       CheckoutWC Lite
  * Plugin URI:        https://www.checkoutwc.com
  * Description:       Beautiful, conversion optimized checkout templates for WooCommerce.
- * Version:           10.1.7
+ * Version:           10.1.8
  * Author:            Kestrel
  * Author URI:        https://kestrelwp.com/
  * License:           GPL-2.0+
@@ -49,7 +49,7 @@ if ( defined( 'CFW_VERSION' ) ) {
 
 define( 'CFW_NAME', 'Checkout for WooCommerce' );
 define( 'CFW_UPDATE_URL', 'https://www.checkoutwc.com' );
-define( 'CFW_VERSION', '10.1.7' );
+define( 'CFW_VERSION', '10.1.8' );
 define( 'CFW_PATH', __DIR__ );
 define( 'CFW_URL', plugins_url( '/', __FILE__ ) );
 define( 'CFW_MAIN_FILE', __FILE__ );

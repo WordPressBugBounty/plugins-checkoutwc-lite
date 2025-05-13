@@ -46,6 +46,8 @@ class Install {
 		foreach ( $capabilities as $capability ) {
 			$wp_roles->add_cap( 'administrator', $capability );
 		}
+
+		SettingsManager::instance()->add_setting( 'capabilities_loaded', true );
 	}
 
 	public static function add_settings() {
