@@ -4,7 +4,7 @@ Donate link: https://www.checkoutwc.com
 Tags: woocommerce checkout, woocommerce checkout template, woocommerce checkout theme, woo checkout, shopify
 Requires at least: 5.2
 Tested up to: 6.7.2
-Stable tag: 10.1.8
+Stable tag: 10.1.10
 Requires PHP: 7.3
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
@@ -115,6 +115,10 @@ CheckoutWC works with virtually all payment gateways out of the box. If you have
 == Changelog ==
 
 Free version updates are non-sequential due to the unified development branch we use with the premium versions.
+
+= Version 10.1.10 =
+* Fix - Fix issue with ship-to-different-address checkbox that caused issues with shippig/billing address.
+* Dev - Fix PHP warnings.
 
 = Version 10.1.8 =
  * Fix - Fix missing capabilities for migrated installations.

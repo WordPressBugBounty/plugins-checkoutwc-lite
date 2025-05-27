@@ -12,7 +12,7 @@ class YITHDeliveryDate extends CompatibilityAbstract {
 	public function run() {
 		$YITH_Delivery_Date_Shipping_Manager = \YITH_Delivery_Date_Shipping_Manager::get_instance();
 
-		add_action( 'cfw_checkout_after_shipping_methods', array( $YITH_Delivery_Date_Shipping_Manager, 'print_delivery_from' ), 16 );
+		add_action( 'cfw_after_shipping_packages', array( $YITH_Delivery_Date_Shipping_Manager, 'print_delivery_from' ), 16 );
 	}
 
 	public function typescript_class_and_params( array $compatibility ): array {

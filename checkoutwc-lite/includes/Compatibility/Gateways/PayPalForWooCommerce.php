@@ -226,10 +226,10 @@ class PayPalForWooCommerce extends CompatibilityAbstract {
 							}
 							?>
 
-							<div class="cfw-force-hidden">
-								<div id="ship-to-different-address">
-									<input id="ship-to-different-address-checkbox" type="checkbox" name="ship_to_different_address" value="1" <?php checked( cfw_apply_filters( 'woocommerce_ship_to_different_address_checked', WC()->cart->needs_shipping_address() && ! wc_ship_to_billing_address_only() ) ); ?> />
-								</div>
+							<div id="ship-to-different-address" class="cfw-force-hidden">
+								<label>
+									<input id="ship-to-different-address-checkbox" type="checkbox" name="ship_to_different_address" value="1" <?php checked( WC()->cart->needs_shipping_address() ); ?> />
+								</label>
 							</div>
 						</div>
 						<?php

@@ -667,7 +667,7 @@ class AssetManager {
 							'#shipping_fetchify_search',
 							'#billing_fetchify_search',
 							'#terms',
-							'#ship-to-different-address',
+							'#ship-to-different-address-checkbox',
 							'[data-persist="false"]', // catch-all, used in cfw_form_field() for non-empty values
 						)
 					),

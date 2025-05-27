@@ -3706,12 +3706,13 @@ function cfw_is_free_shipping_available(): bool {
 	}
 
 	WC()->cart->calculate_shipping();
+	$packages = WC()->shipping()->get_packages();
 
-	$available_methods = WC()->shipping()->get_packages()[0]['rates'];
-
-	if ( ! is_array( $available_methods ) ) {
+	if ( ! is_array( $packages ) || ! is_array( $packages[0]['rates'] ) ) {
 		return false;
 	}
+
+	$available_methods = $packages[0]['rates'];
 
 	$free_shipping_available = false;
 	foreach ( $available_methods as $method ) {

@@ -42,11 +42,15 @@ class OrderBumpsAdminFree extends PageAbstract {
 	public function output_post_type_editor_header() {
 		global $post;
 
-		if ( isset( $_GET['post_type'] ) && $this->post_type_slug !== $_GET['post_type'] ) { // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+		if ( isset( $_GET['post_type'] ) && isset( $this['post_type_slug'] ) && $this->post_type_slug !== $_GET['post_type'] ) { // phpcs:ignore WordPress.Security.NonceVerification.Recommended
 			return;
-		} elseif ( isset( $post ) && $this->post_type_slug !== $post->post_type ) {
+		}
+
+		if ( isset( $post ) && isset( $this['post_type_slug'] ) && $this->post_type_slug !== $post->post_type ) {
 			return;
-		} elseif ( ! isset( $_GET['post_type'] ) && ! isset( $post ) ) { // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+		}
+
+		if ( ! isset( $_GET['post_type'] ) && ! isset( $post ) ) { // phpcs:ignore WordPress.Security.NonceVerification.Recommended
 			return;
 		}
 		?>
