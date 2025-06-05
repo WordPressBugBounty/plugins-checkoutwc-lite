@@ -218,7 +218,10 @@ class Advanced extends PageAbstract {
 		// Pre 9.x logo handler
 		if ( ! empty( $decoded['_cfw_logo_attachment_id'] && false !== $decoded['_cfw_logo_attachment_url'] ) && ! isset( $decoded[ '_cfw_logo_attachment_id_' . $active_template_slug ] ) ) {
 			$image_upload = $this->upload_logo( $decoded['_cfw_logo_attachment_url'] );
-			$decoded[ '_cfw_logo_attachment_id_' . $active_template_slug ] = $image_upload ? $image_upload : '';
+
+			if ( $image_upload ) {
+				$decoded[ '_cfw_logo_attachment_id_' . $active_template_slug ] = $image_upload ? $image_upload : '';
+			}
 		} else {
 			cfw_debug_log( 'Failed to upload pre 9.x logo.' );
 		}
@@ -231,8 +234,11 @@ class Advanced extends PageAbstract {
 			$url = $decoded[ $key ] ?? '';
 
 			if ( ! empty( $url ) ) {
-				$image_upload_attachment_id                                    = $this->upload_logo( $url );
-				$decoded[ '_cfw_logo_attachment_id_' . $template->get_slug() ] = $image_upload_attachment_id ? $image_upload_attachment_id : '';
+				$image_upload_attachment_id = $this->upload_logo( $url );
+
+				if ( $image_upload_attachment_id ) {
+					$decoded[ '_cfw_logo_attachment_id_' . $template->get_slug() ] = $image_upload_attachment_id ? $image_upload_attachment_id : '';
+				}
 
 				unset( $decoded[ $key ] );
 			}
@@ -260,7 +266,7 @@ class Advanced extends PageAbstract {
 	 *
 	 * @param string $file_url The file URL.
 	 *
-	 * @return int|WP_Error
+	 * @return int|WP_Error|bool
 	 * @since  3.8.0
 	 */
 	public function upload_logo( $file_url ) {
@@ -270,7 +276,8 @@ class Advanced extends PageAbstract {
 		$logo = wp_remote_get( $file_url );
 
 		if ( is_wp_error( $logo ) ) {
-			wp_die( 'An error occurred retrieving logo.' );
+			wc_get_logger()->error( 'Error fetching logo during settings import: ' . $logo->get_error_message(), array( 'source' => 'checkout-wc' ) );
+			return false;
 		}
 
 		$upload_file = wp_upload_bits( $filename, null, wp_remote_retrieve_body( $logo ) );

@@ -4,7 +4,7 @@ Donate link: https://www.checkoutwc.com
 Tags: woocommerce checkout, woocommerce checkout template, woocommerce checkout theme, woo checkout, shopify
 Requires at least: 5.2
 Tested up to: 6.7.2
-Stable tag: 10.1.10
+Stable tag: 10.1.11
 Requires PHP: 7.3
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
@@ -115,6 +115,14 @@ CheckoutWC works with virtually all payment gateways out of the box. If you have
 == Changelog ==
 
 Free version updates are non-sequential due to the unified development branch we use with the premium versions.
+
+= Version 10.1.11 =
+* Fix - Handle failed logo import errors more gracefully during settings import.
+* Fix - Fix field style label CSS issue
+* Fix - Fix caching issues by setting cfw_cart_hash less frequently
+* Fix - Fix issue where gateway detected the block checkout when CheckoutWC was active
+* Fix - Fix missing container class for billing fields when forced to different billing address
+* Fix - Fix issue with toggling accordions programmatically
 
 = Version 10.1.10 =
 * Fix - Fix issue with ship-to-different-address checkbox that caused issues with shippig/billing address.

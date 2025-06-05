@@ -317,6 +317,7 @@ return array(
     'Objectiv\\Plugins\\Checkout\\Model\\Rule' => $baseDir . '/includes/Model/Rule.php',
     'Objectiv\\Plugins\\Checkout\\Model\\RulesProcessor' => $baseDir . '/includes/Model/RulesProcessor.php',
     'Objectiv\\Plugins\\Checkout\\Model\\Template' => $baseDir . '/includes/Model/Template.php',
+    'Objectiv\\Plugins\\Checkout\\NonCheckoutBlockParser' => $baseDir . '/includes/NonCheckoutBlockParser.php',
     'Objectiv\\Plugins\\Checkout\\PhpErrorOutputSuppressor' => $baseDir . '/includes/PhpErrorOutputSuppressor.php',
     'Objectiv\\Plugins\\Checkout\\RateLimiterWooCommerceSessionStorage' => $baseDir . '/includes/RateLimiterWooCommerceSessionStorage.php',
     'Objectiv\\Plugins\\Checkout\\SingletonAbstract' => $baseDir . '/includes/SingletonAbstract.php',

@@ -33,6 +33,14 @@ abstract class LoaderAbstract {
 			$GLOBALS['post']->post_content = '[woocommerce_checkout]';
 		}
 
+		// A secondary way of catching these
+		add_filter(
+			'block_parser_class',
+			function ( $theClass ) {
+				return 'WP_Block_Parser' === $theClass ? 'Objectiv\Plugins\Checkout\NonCheckoutBlockParser' : $theClass;
+			}
+		);
+
 		/**
 		 * Set Checkout Constant
 		 */

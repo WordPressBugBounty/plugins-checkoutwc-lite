@@ -1147,7 +1147,7 @@ function cfw_billing_address_radio_group() {
 	<?php else : ?>
 		<input type="hidden" name="bill_to_different_address" id="billing_same_as_shipping_radio"
 				value="different_from_shipping"/>
-		<div class="cfw-module">
+		<div class="cfw-module <?php cfw_address_class_wrap( false ); ?>">
 			<?php
 			/**
 			 * Fires before billing address inside billing address container
@@ -1610,7 +1610,8 @@ function cfw_main_container_classes( $context = 'checkout' ) {
 		$classes[] = 'admin-bar';
 	}
 
-	if ( SettingsManager::instance()->get_setting( 'label_style' ) === 'normal' ) {
+	$active_template = cfw_get_active_template();
+	if ( $active_template && SettingsManager::instance()->get_setting( 'label_style', array( $active_template->get_slug() ) ) === 'normal' ) {
 		$classes[] = 'cfw-label-style-normal';
 	}
 

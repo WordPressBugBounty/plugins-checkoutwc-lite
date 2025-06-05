@@ -336,6 +336,7 @@ class ComposerStaticInitd94306d1256c492f50e19769af153ed4
         'Objectiv\\Plugins\\Checkout\\Model\\Rule' => __DIR__ . '/../..' . '/includes/Model/Rule.php',
         'Objectiv\\Plugins\\Checkout\\Model\\RulesProcessor' => __DIR__ . '/../..' . '/includes/Model/RulesProcessor.php',
         'Objectiv\\Plugins\\Checkout\\Model\\Template' => __DIR__ . '/../..' . '/includes/Model/Template.php',
+        'Objectiv\\Plugins\\Checkout\\NonCheckoutBlockParser' => __DIR__ . '/../..' . '/includes/NonCheckoutBlockParser.php',
         'Objectiv\\Plugins\\Checkout\\PhpErrorOutputSuppressor' => __DIR__ . '/../..' . '/includes/PhpErrorOutputSuppressor.php',
         'Objectiv\\Plugins\\Checkout\\RateLimiterWooCommerceSessionStorage' => __DIR__ . '/../..' . '/includes/RateLimiterWooCommerceSessionStorage.php',
         'Objectiv\\Plugins\\Checkout\\SingletonAbstract' => __DIR__ . '/../..' . '/includes/SingletonAbstract.php',
