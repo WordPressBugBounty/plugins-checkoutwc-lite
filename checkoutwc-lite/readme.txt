@@ -4,7 +4,7 @@ Donate link: https://www.checkoutwc.com
 Tags: woocommerce checkout, woocommerce checkout template, woocommerce checkout theme, woo checkout, shopify
 Requires at least: 5.2
 Tested up to: 6.7.2
-Stable tag: 10.1.11
+Stable tag: 10.1.12
 Requires PHP: 7.3
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
@@ -115,6 +115,10 @@ CheckoutWC works with virtually all payment gateways out of the box. If you have
 == Changelog ==
 
 Free version updates are non-sequential due to the unified development branch we use with the premium versions.
+
+= Version 10.1.12 =
+* Fix - Fix race condition with React rendered action hooks and scripts listening to updated_checkout event
+* Fix - Fix issue with remove item button appearing when it should not
 
 = Version 10.1.11 =
 * Fix - Handle failed logo import errors more gracefully during settings import.

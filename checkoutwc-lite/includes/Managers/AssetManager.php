@@ -392,7 +392,7 @@ class AssetManager {
 				 */
 				'link_items'                       => apply_filters( 'cfw_link_cart_items', SettingsManager::instance()->get_setting( 'cart_item_link' ) === 'enabled' ),
 				'cart_item_link_target_new_window' => SettingsManager::instance()->get_setting( 'cart_item_link_target_new_window' ) === 'yes',
-				'show_item_remove_button'          => SettingsManager::instance()->get_setting( 'show_item_remove_button' ) === 'yes',
+				'show_item_remove_button'          => PlanManager::can_access_feature( 'show_item_remove_button' ),
 				/**
 				 * Filters whether to show cart item discount on cart item
 				 *
