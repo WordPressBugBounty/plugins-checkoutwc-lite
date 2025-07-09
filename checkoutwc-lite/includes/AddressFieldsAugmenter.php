@@ -206,7 +206,7 @@ class AddressFieldsAugmenter extends SingletonAbstract {
 
 		// Address 2
 		if ( isset( $fields['address_2'] ) ) {
-			$fields['address_2']['label']        = cfw__( 'Apartment, suite, unit, etc.', 'woocommerce' );
+			$fields['address_2']['label']        = __( 'Apartment, suite, unit, etc.', 'woocommerce' );
 			$fields['address_2']['label_class']  = '';
 			$fields['address_2']['placeholder']  = $fields['address_2']['label'];
 			$fields['address_2']['class']        = array( 'address-field' );
@@ -277,8 +277,8 @@ class AddressFieldsAugmenter extends SingletonAbstract {
 		if ( $this->phone_enabled ) {
 			$fields['phone'] = array(
 				'type'              => 'tel',
-				'label'             => cfw__( 'Phone', 'woocommerce' ),
-				'placeholder'       => cfw__( 'Phone', 'woocommerce' ),
+				'label'             => __( 'Phone', 'woocommerce' ),
+				'placeholder'       => __( 'Phone', 'woocommerce' ),
 				'required'          => 'required' === get_option( 'woocommerce_checkout_phone_field', 'required' ),
 				'autocomplete'      => 'tel',
 				'input_class'       => array(),
@@ -296,7 +296,7 @@ class AddressFieldsAugmenter extends SingletonAbstract {
 
 			if ( isset( $field['placeholder'] ) && ! $field['required'] && 'hidden' !== $type ) {
 				// Add optional to placeholder
-				$fields[ $key ]['placeholder'] = sprintf( '%s (%s)', $field['placeholder'], cfw__( 'optional', 'woocommerce' ) );
+				$fields[ $key ]['placeholder'] = sprintf( '%s (%s)', $field['placeholder'], __( 'optional', 'woocommerce' ) );
 			}
 		}
 

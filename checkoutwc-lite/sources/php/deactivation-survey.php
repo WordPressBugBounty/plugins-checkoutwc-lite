@@ -16,7 +16,7 @@ $form_fields = cfw_apply_filters( 'cfw_deactivation_form_fields', array() );
 			<div class="flex flex-wrap items-center justify-between sm:flex-nowrap px-6">
 				<div class="mt-2">
 					<h3 class="text-base font-semibold leading-6 text-gray-900">
-						<?php cfw_e( 'CheckoutWC Feedback', 'checkout-wc' ); ?>
+						<?php _e( 'CheckoutWC Feedback', 'checkout-wc' ); ?>
 					</h3>
 				</div>
 				<div class="ml-4 mt-2 flex-shrink-0">
@@ -30,7 +30,7 @@ $form_fields = cfw_apply_filters( 'cfw_deactivation_form_fields', array() );
 		</div>
 		<div class="px-6">
 			<h3 class="text-base mt-4 font-semibold leading-6 text-gray-900">
-				<?php cfw_esc_html_e( 'May we have a little info about why you are deactivating?', 'checkout-wc' ); ?>
+				<?php esc_html_e( 'May we have a little info about why you are deactivating?', 'checkout-wc' ); ?>
 			</h3>
 			<?php foreach ( $form_fields as $key => $field_attr ) : ?>
 				<?php AdminPluginsPageManager::render_field_html( $field_attr, 'deactivating' ); ?>
@@ -41,7 +41,7 @@ $form_fields = cfw_apply_filters( 'cfw_deactivation_form_fields', array() );
 				<input type="submit" id="cfw_deactivate_submit" class="hidden cursor-pointer rounded-md bg-blue-600 hover:bg-blue-500 px-3 py-2 text-sm font-semibold text-white shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-500" value="Send and Deactivate">
 			</div>
 			<div>
-				<a href="#" id="cfw_skip_deactivate" class="rounded-md bg-white px-3 py-2.5 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50"><?php cfw_esc_html_e( 'Skip and Deactivate Now', 'checkout-wc' ); ?></a>
+				<a href="#" id="cfw_skip_deactivate" class="rounded-md bg-white px-3 py-2.5 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50"><?php esc_html_e( 'Skip and Deactivate Now', 'checkout-wc' ); ?></a>
 			</div>
 		</div>
 	</form>

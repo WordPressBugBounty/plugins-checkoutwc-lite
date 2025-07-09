@@ -61,7 +61,7 @@ class WooCommerceGiftCards extends CompatibilityAbstract {
 		 * @since 6.0.7
 		 * @var string $label Field label
 		 */
-		$woocommerce_gift_cards_field_label = apply_filters( 'cfw_compatibility_woocommerce_gift_cards_field_label', cfw_esc_attr__( 'Enter your code&hellip;', 'woocommerce-gift-cards' ) );
+		$woocommerce_gift_cards_field_label = apply_filters( 'cfw_compatibility_woocommerce_gift_cards_field_label', esc_attr__( 'Enter your code&hellip;', 'woocommerce-gift-cards' ) );
 
 		/**
 		 * Filter CheckoutWC WooCommerce Gift Cards field placeholder
@@ -69,7 +69,7 @@ class WooCommerceGiftCards extends CompatibilityAbstract {
 		 * @since 6.0.7
 		 * @var string $label Field placeholder
 		 */
-		$woocommerce_gift_cards_field_placeholder = apply_filters( 'cfw_compatibility_woocommerce_gift_cards_field_placeholder', cfw_esc_attr__( 'Enter your code&hellip;', 'woocommerce-gift-cards' ) );
+		$woocommerce_gift_cards_field_placeholder = apply_filters( 'cfw_compatibility_woocommerce_gift_cards_field_placeholder', esc_attr__( 'Enter your code&hellip;', 'woocommerce-gift-cards' ) );
 		?>
 		<div class="add_gift_card_form">
 			<?php
@@ -91,7 +91,7 @@ class WooCommerceGiftCards extends CompatibilityAbstract {
 				 * @since 6.0.7
 				 * @var string $heading_text Heading text
 				 */
-				echo wp_kses_post( apply_filters( 'cfw_compatibility_woocommerce_gift_cards_heading_text', cfw_esc_html__( 'Have a gift card?', 'woocommerce-gift-cards' ) ) );
+				echo wp_kses_post( apply_filters( 'cfw_compatibility_woocommerce_gift_cards_heading_text', esc_html__( 'Have a gift card?', 'woocommerce-gift-cards' ) ) );
 				?>
 			</h4>
 			<div id="wc_gc_cart_redeem_form" class="row cfw-input-wrap-row">
@@ -120,7 +120,7 @@ class WooCommerceGiftCards extends CompatibilityAbstract {
 				</div>
 				<div class="col-4">
 					<div class="cfw-input-wrap form-row cfw-button-input">
-						<button type="button" class="cfw-secondary-btn" name="wc_gc_cart_redeem_send" id="wc_gc_cart_redeem_send"><?php cfw_esc_html_e( 'Apply', 'woocommerce-gift-cards' ); ?></button>
+						<button type="button" class="cfw-secondary-btn" name="wc_gc_cart_redeem_send" id="wc_gc_cart_redeem_send"><?php esc_html_e( 'Apply', 'woocommerce-gift-cards' ); ?></button>
 					</div>
 				</div>
 			</div>

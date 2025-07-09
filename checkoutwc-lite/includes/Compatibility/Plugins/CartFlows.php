@@ -59,7 +59,7 @@ class CartFlows extends CompatibilityAbstract {
 		// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 		echo wcf()->meta->get_checkbox_field(
 			array(
-				'label' => cfw_esc_attr__( 'CheckoutWC', 'cartflows' ),
+				'label' => esc_attr__( 'CheckoutWC', 'cartflows' ),
 				'name'  => 'wcf-cfw-use-template',
 				'value' => sanitize_html_class( $options['wcf-cfw-use-template'] ),
 				'after' => 'Use CheckoutWC template?',

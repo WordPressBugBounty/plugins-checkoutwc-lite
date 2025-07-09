@@ -4,12 +4,8 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInitd94306d1256c492f50e19769af153ed4
+class ComposerStaticInitc56ceb931c89a18596cffbfbdd2f9685
 {
-    public static $files = array (
-        '1f155afceeab454b94183cdd8d5248a6' => __DIR__ . '/..' . '/mixpanel/mixpanel-php/lib/Mixpanel.php',
-    );
-
     public static $prefixLengthsPsr4 = array (
         'O' => 
         array (
@@ -349,9 +345,9 @@ class ComposerStaticInitd94306d1256c492f50e19769af153ed4
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInitd94306d1256c492f50e19769af153ed4::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInitd94306d1256c492f50e19769af153ed4::$prefixDirsPsr4;
-            $loader->classMap = ComposerStaticInitd94306d1256c492f50e19769af153ed4::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInitc56ceb931c89a18596cffbfbdd2f9685::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInitc56ceb931c89a18596cffbfbdd2f9685::$prefixDirsPsr4;
+            $loader->classMap = ComposerStaticInitc56ceb931c89a18596cffbfbdd2f9685::$classMap;
 
         }, null, ClassLoader::class);
     }

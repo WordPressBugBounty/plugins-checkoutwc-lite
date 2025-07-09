@@ -11,11 +11,11 @@ class InvalidLicenseKeyNotice extends NoticeAbstract {
 
 		if ( 'expired' === $key_status ) {
 			$message = sprintf(
-				cfw_notranslate__( 'Your license key appears to have expired. Please <a href="%s" target="_blank">%s</a> to restore functionality. If you believe this is in error, <a href="%s">%s</a>.', 'checkout-wc' ),
+				__( 'Your license key appears to have expired. Please <a href="%s" target="_blank">%s</a> to restore functionality. If you believe this is in error, <a href="%s">%s</a>.', 'checkout-wc' ),
 				'https://www.checkoutwc.com/pricing',
-				cfw_notranslate__( 'purchase a new license', 'checkout-wc' ),
+				__( 'purchase a new license', 'checkout-wc' ),
 				'mailto:support@checkoutwc.com?subject=Problem%20With%20License%20Expiration&body=License%20Key%3A%20' . $license_key,
-				cfw_notranslate__( 'please contact support', 'checkout-wc' )
+				__( 'please contact support', 'checkout-wc' )
 			);
 		}
 

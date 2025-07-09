@@ -49,8 +49,8 @@ class NLPostcodeChecker extends CompatibilityAbstract {
 
 		// Add street name
 		$fields['street_name'] = array(
-			'label'             => cfw__( 'Street name', 'wpo_wcnlpc' ),
-			'placeholder'       => cfw_esc_attr__( 'Street name', 'wpo_wcnlpc' ),
+			'label'             => __( 'Street name', 'wpo_wcnlpc' ),
+			'placeholder'       => esc_attr__( 'Street name', 'wpo_wcnlpc' ),
 			'required'          => true,
 			'class'             => array(),
 			'autocomplete'      => '',
@@ -64,8 +64,8 @@ class NLPostcodeChecker extends CompatibilityAbstract {
 
 		// Then add house number
 		$fields['house_number'] = array(
-			'label'             => cfw__( 'Nr.', 'wpo_wcnlpc' ),
-			'placeholder'       => cfw_esc_attr__( 'Nr.', 'wpo_wcnlpc' ),
+			'label'             => __( 'Nr.', 'wpo_wcnlpc' ),
+			'placeholder'       => esc_attr__( 'Nr.', 'wpo_wcnlpc' ),
 			'required'          => true,
 			'class'             => array(),
 			'autocomplete'      => '',
@@ -79,8 +79,8 @@ class NLPostcodeChecker extends CompatibilityAbstract {
 
 		// Then house number suffix
 		$fields['house_number_suffix'] = array(
-			'label'             => cfw_x( 'Suffix', 'full string', 'wpo_wcnlpc' ),
-			'placeholder'       => cfw_esc_attr_x( 'Suffix', 'full string', 'wpo_wcnlpc' ),
+			'label'             => _x( 'Suffix', 'full string', 'wpo_wcnlpc' ),
+			'placeholder'       => esc_attr_x( 'Suffix', 'full string', 'wpo_wcnlpc' ),
 			'required'          => false,
 			'class'             => array(),
 			'autocomplete'      => '',

@@ -35,7 +35,7 @@ class PayPalForWooCommerce extends CompatibilityAbstract {
 					$gateways[] = new DetectedPaymentGateway(
 						'Angelleye PayPal for WooCommerce',
 						GatewaySupport::PARTIALLY_SUPPORTED,
-						cfw_notranslate__( 'Please update to the latest version of PayPal for WooCommerce to get full support.', 'checkout-wc' )
+						__( 'Please update to the latest version of PayPal for WooCommerce to get full support.', 'checkout-wc' )
 					);
 
 					return $gateways;

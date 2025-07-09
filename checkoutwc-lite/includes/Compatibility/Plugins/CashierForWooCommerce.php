@@ -59,8 +59,8 @@ class CashierForWooCommerce extends CompatibilityAbstract {
 
 		$integrations[] = array(
 			'name'          => 'allow_cashier_for_woocommerce_address_modification',
-			'label'         => cfw_notranslate__( 'Enable Cashier for WooCommerce address field overrides. (Not Recommended)', 'checkout-wc' ),
-			'description'   => cfw_notranslate__( 'Allow WooCommerce Cashier Checkout Field Editor module to modify billing and shipping address fields. Not compatible with these features: Separate House Number and Street Name Address Fields, Full Name Field', 'checkout-wc' ),
+			'label'         => __( 'Enable Cashier for WooCommerce address field overrides. (Not Recommended)', 'checkout-wc' ),
+			'description'   => __( 'Allow WooCommerce Cashier Checkout Field Editor module to modify billing and shipping address fields. Not compatible with these features: Separate House Number and Street Name Address Fields, Full Name Field', 'checkout-wc' ),
 			'initial_value' => SettingsManager::instance()->get_setting( 'allow_cashier_for_woocommerce_address_modification' ) === 'yes',
 		);
 

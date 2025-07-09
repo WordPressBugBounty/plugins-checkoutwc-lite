@@ -13,7 +13,7 @@ class AbandonedCartRecoveryAdminFree extends PageAbstract {
 	use TabbedAdminPageTrait;
 
 	public function __construct() {
-		parent::__construct( cfw_notranslate__( 'Cart Recovery', 'checkout-wc' ) . ' <span class="cfw-badge cfw-premium-badge"></span>', 'cfw_manage_acr', 'acr' );
+		parent::__construct( __( 'Cart Recovery', 'checkout-wc' ) . ' <span class="cfw-badge cfw-premium-badge"></span>', 'cfw_manage_acr', 'acr' );
 	}
 
 	public function output() {

@@ -78,8 +78,8 @@ class Astra extends CompatibilityAbstract {
 
 		$integrations[] = array(
 			'name'          => 'enable_astra_support',
-			'label'         => cfw_notranslate__( 'Enable Astra Support (Beta)', 'checkout-wc' ),
-			'description'   => cfw_notranslate__( 'Allow Astra to replace header and footer. Allows Astra / Astra Addon to load its styles and scripts on the checkout page.', 'checkout-wc' ),
+			'label'         => __( 'Enable Astra Support (Beta)', 'checkout-wc' ),
+			'description'   => __( 'Allow Astra to replace header and footer. Allows Astra / Astra Addon to load its styles and scripts on the checkout page.', 'checkout-wc' ),
 			'initial_value' => SettingsManager::instance()->get_setting( 'enable_astra_support' ) === 'yes',
 		);
 

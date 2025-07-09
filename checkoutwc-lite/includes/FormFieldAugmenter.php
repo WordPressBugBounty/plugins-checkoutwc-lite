@@ -140,15 +140,25 @@ class FormFieldAugmenter extends SingletonAbstract {
 		 * Whether to append optional to field placeholder
 		 *
 		 * @since 6.2.3
+		 * @deprecated 10.1.13
 		 * @param bool $append Whether to append optional to field placeholder
 		 */
-		if ( ! $args['required'] && ! isset( $args['custom_attributes']['readonly'] ) && false === stripos( $args['placeholder'], cfw__( 'optional', 'woocommerce' ) ) && ! apply_filters( 'cfw_form_field_append_optional_to_placeholder', isset( $args['suppress_optional_suffix'] ), $key ) ) {
-			$args['placeholder'] .= ' (' . cfw__( 'optional', 'woocommerce' ) . ')';
+		$suppress_placeholder = apply_filters_deprecated( 'cfw_form_field_append_optional_to_placeholder', array( isset( $args['suppress_optional_suffix'], $key ) ), 'CheckoutWC 10.1.13', 'cfw_form_field_suppress_optional_in_placeholder' );
+
+		/**
+		 * Whether to suppress 'optional' from field placeholder
+		 *
+		 * @since 10.1.13
+		 * @param bool $append Whether to suppress optional from field placeholder
+		 */
+		$suppress_placeholder = apply_filters( 'cfw_form_field_suppress_optional_in_placeholder', $suppress_placeholder );
+		if ( ! $args['required'] && ! isset( $args['custom_attributes']['readonly'] ) && false === stripos( $args['placeholder'], __( 'optional', 'woocommerce' ) ) && ! $suppress_placeholder ) {
+			$args['placeholder'] .= ' (' . __( 'optional', 'woocommerce' ) . ')';
 		}
 
 		if ( ! $args['required'] ) {
 			// Prevent doubled optional in labels - woocommerce_form_field() adds it
-			$args['label'] = str_ireplace( '(' . cfw__( 'optional', 'woocommerce' ) . ')', '', $args['label'] );
+			$args['label'] = str_ireplace( '(' . __( 'optional', 'woocommerce' ) . ')', '', $args['label'] );
 		}
 
 		// Make sure we have a default option
@@ -157,7 +167,7 @@ class FormFieldAugmenter extends SingletonAbstract {
 			reset( $args['options'] );
 
 			if ( key( $args['options'] ) !== '' ) {
-				$args['options'] = array( '' => cfw__( 'Choose an option', 'woocommerce' ) ) + $args['options'];
+				$args['options'] = array( '' => __( 'Choose an option', 'woocommerce' ) ) + $args['options'];
 			}
 
 			/**

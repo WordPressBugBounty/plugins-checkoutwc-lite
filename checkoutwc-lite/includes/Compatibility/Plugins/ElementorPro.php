@@ -92,8 +92,8 @@ class ElementorPro extends CompatibilityAbstract {
 
 		$integrations[] = array(
 			'name'          => 'enable_elementor_pro_support',
-			'label'         => cfw_notranslate__( 'Enable Elementor Pro support.', 'checkout-wc' ),
-			'description'   => cfw_notranslate__( 'Allow Elementor Pro to replace header and footer.', 'checkout-wc' ),
+			'label'         => __( 'Enable Elementor Pro support.', 'checkout-wc' ),
+			'description'   => __( 'Allow Elementor Pro to replace header and footer.', 'checkout-wc' ),
 			'initial_value' => SettingsManager::instance()->get_setting( 'enable_elementor_pro_support' ) === 'yes',
 		);
 

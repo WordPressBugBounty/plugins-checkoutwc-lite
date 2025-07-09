@@ -10,16 +10,17 @@
  * Plugin Name:       CheckoutWC Lite
  * Plugin URI:        https://www.checkoutwc.com
  * Description:       Beautiful, conversion optimized checkout templates for WooCommerce.
- * Version:           10.1.12
+ * Version:           10.1.15
  * Author:            Kestrel
  * Author URI:        https://kestrelwp.com/
- * License:           GPL-2.0+
+ * License:           GPLv3 or later
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
  * Text Domain:       checkout-wc
  * Domain Path:       /languages
  * Requires Plugins: woocommerce
+ * Requires at least: 5.2
  * Tested up to: 6.8.1
- * WC tested up to: 9.8.5
+ * WC tested up to: 9.9.5
  * Requires PHP: 7.3
  * Build: <build_hash>
  */
@@ -49,7 +50,7 @@ if ( defined( 'CFW_VERSION' ) ) {
 
 define( 'CFW_NAME', 'Checkout for WooCommerce' );
 define( 'CFW_UPDATE_URL', 'https://www.checkoutwc.com' );
-define( 'CFW_VERSION', '10.1.12' );
+define( 'CFW_VERSION', '10.1.15' );
 define( 'CFW_PATH', __DIR__ );
 define( 'CFW_URL', plugins_url( '/', __FILE__ ) );
 define( 'CFW_MAIN_FILE', __FILE__ );
@@ -59,14 +60,6 @@ define( 'CFW_PATH_MAIN_FILE', CFW_PATH_BASE . __FILE__ );
 define( 'CFW_PATH_ASSETS', CFW_PATH_URL_BASE . 'build' );
 define( 'CFW_PATH_PLUGIN_TEMPLATE', CFW_PATH_BASE . 'templates' );
 define( 'CFW_PATH_THEME_TEMPLATE', get_stylesheet_directory() . '/checkout-wc' );
-
-/**
- * Our language function wrappers that we only use for
- * external translation domains
- *
- * This has to run here or we can't use these functions in the PHP warning which short circuits everything else.
- */
-require_once CFW_PATH . '/sources/php/language-wrapper-functions.php';
 
 /**
  * Our hook function wrappers that we only use for external hooks
@@ -250,7 +243,6 @@ if (
  */
 require_once CFW_PATH . '/vendor-prefixed/autoload.php';
 require_once CFW_PATH . '/vendor/autoload.php';
-require_once CFW_PATH . '/vendor/woocommerce/action-scheduler/action-scheduler.php';
 require_once CFW_PATH . '/lib/sendwp-sdk/sendwp-init.php';
 
 // ensure CFW_DEV_MODE is defined

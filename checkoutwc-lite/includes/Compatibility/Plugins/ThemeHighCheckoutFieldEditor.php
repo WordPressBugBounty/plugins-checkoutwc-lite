@@ -43,8 +43,8 @@ class ThemeHighCheckoutFieldEditor extends CompatibilityAbstract {
 
 		$integrations[] = array(
 			'name'          => 'allow_thcfe_address_modification',
-			'label'         => cfw_notranslate__( 'Enable ThemeHigh Checkout Field Editor address field overrides.', 'checkout-wc' ),
-			'description'   => cfw_notranslate__( 'Allow ThemeHigh Checkout Field Editor to modify billing and shipping address fields. (Not Recommended)', 'checkout-wc' ),
+			'label'         => __( 'Enable ThemeHigh Checkout Field Editor address field overrides.', 'checkout-wc' ),
+			'description'   => __( 'Allow ThemeHigh Checkout Field Editor to modify billing and shipping address fields. (Not Recommended)', 'checkout-wc' ),
 			'initial_value' => SettingsManager::instance()->get_setting( 'allow_thcfe_address_modification' ) === 'yes',
 		);
 

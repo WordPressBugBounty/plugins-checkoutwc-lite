@@ -29,8 +29,8 @@ class ShippingPhoneController {
 			 */
 			if ( apply_filters( 'cfw_enable_editable_admin_shipping_phone_field', true ) ) {
 				$field                = array();
-				$field['placeholder'] = cfw__( 'Phone', 'woocommerce' );
-				$field['label']       = cfw__( 'Phone', 'woocommerce' );
+				$field['placeholder'] = __( 'Phone', 'woocommerce' );
+				$field['label']       = __( 'Phone', 'woocommerce' );
 				$field['value']       = $shipping_phone;
 				$field['name']        = '_cfw_shipping_phone';
 				$field['id']          = 'cfw_shipping_phone';
@@ -40,7 +40,7 @@ class ShippingPhoneController {
 				?>
 				<p>
 					<strong>
-						<?php cfw_esc_html_e( 'Phone' ); ?>
+						<?php esc_html_e( 'Phone' ); ?>
 					</strong>
 					<br />
 					<a href="tel:<?php echo esc_attr( $shipping_phone ); ?>">

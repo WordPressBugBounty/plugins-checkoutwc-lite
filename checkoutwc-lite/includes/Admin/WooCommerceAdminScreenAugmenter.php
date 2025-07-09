@@ -14,8 +14,8 @@ class WooCommerceAdminScreenAugmenter {
 		?>
 		<div id="message" class="updated woocommerce-message inline">
 			<p>
-				<strong><?php cfw_e( 'CheckoutWC:' ); ?></strong>
-				<?php cfw_e( 'Settings marked with asterisks (**) may be overridden on the checkout page based on your Login and Registration settings. (CheckoutWC > Pages)' ); ?>
+				<strong><?php _e( 'CheckoutWC:' ); ?></strong>
+				<?php _e( 'Settings marked with asterisks (**) may be overridden on the checkout page based on your Login and Registration settings. (CheckoutWC > Pages)' ); ?>
 			</p>
 		</div>
 		<?php

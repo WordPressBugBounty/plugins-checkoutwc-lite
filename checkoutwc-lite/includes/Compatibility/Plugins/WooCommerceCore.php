@@ -111,7 +111,7 @@ class WooCommerceCore extends CompatibilityAbstract {
 	}
 
 	public function run_on_thankyou() {
-		if ( SettingsManager::instance()->get_setting( 'enable_thank_you_page' ) === 'yes' ) {
+		if ( PlanManager::can_access_feature( 'enable_thank_you_page', 'plus' ) ) {
 			remove_action( 'woocommerce_thankyou', 'woocommerce_order_details_table', 10 );
 
 			add_action(
@@ -127,7 +127,7 @@ class WooCommerceCore extends CompatibilityAbstract {
 		}
 
 		// Remove default view order stuff
-		if ( SettingsManager::instance()->get_setting( 'override_view_order_template' ) === 'yes' ) {
+		if ( PlanManager::can_access_feature( 'override_view_order_template' ) ) {
 			remove_action( 'woocommerce_view_order', 'woocommerce_order_details_table', 10 );
 		}
 	}

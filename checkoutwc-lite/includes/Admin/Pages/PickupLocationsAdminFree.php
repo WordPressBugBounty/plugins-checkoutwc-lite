@@ -18,7 +18,7 @@ class PickupLocationsAdminFree extends PageAbstract {
 	protected $is_available;
 
 	public function __construct( string $post_type_slug, bool $is_available ) {
-		parent::__construct( cfw_notranslate__( 'Pickup Locations', 'checkout-wc' ), 'cfw_manage_local_pickup', null );
+		parent::__construct( __( 'Pickup Locations', 'checkout-wc' ), 'cfw_manage_local_pickup', null );
 
 		$this->post_type_slug = $post_type_slug;
 		$this->slug           = 'edit.php?post_type=' . $this->post_type_slug;
@@ -70,7 +70,7 @@ class PickupLocationsAdminFree extends PageAbstract {
 	}
 
 	public function register_meta_boxes() {
-		add_meta_box( 'cfw_order_bump_products_mb', cfw_notranslate__( 'Pickup Location Details', 'checkout-wc' ), array( $this, 'render_meta_box' ), $this->post_type_slug );
+		add_meta_box( 'cfw_order_bump_products_mb', __( 'Pickup Location Details', 'checkout-wc' ), array( $this, 'render_meta_box' ), $this->post_type_slug );
 	}
 
 	/**
@@ -90,7 +90,7 @@ class PickupLocationsAdminFree extends PageAbstract {
 				<tr>
 					<th scope="row" valign="top">
 						<label for="cfw_pl_address">
-							<?php cfw_e( 'Address', 'checkout-wc' ); ?>
+							<?php _e( 'Address', 'checkout-wc' ); ?>
 						</label>
 					</th>
 					<td>
@@ -112,7 +112,7 @@ class PickupLocationsAdminFree extends PageAbstract {
 				<tr>
 					<th scope="row" valign="top">
 						<label for="cfw_pl_estimated_time">
-							<?php cfw_e( 'Estimated Pickup Time', 'checkout-wc' ); ?>
+							<?php _e( 'Estimated Pickup Time', 'checkout-wc' ); ?>
 						</label>
 					</th>
 					<td>
@@ -128,7 +128,7 @@ class PickupLocationsAdminFree extends PageAbstract {
 				<tr>
 					<th scope="row" valign="top">
 						<label for="cfw_pl_instructions">
-							<?php cfw_e( 'Pickup Instructions', 'checkout-wc' ); ?>
+							<?php _e( 'Pickup Instructions', 'checkout-wc' ); ?>
 						</label>
 					</th>
 					<td>
@@ -215,7 +215,7 @@ class PickupLocationsAdminFree extends PageAbstract {
 							<li class="m-0">
 								<div class="flex items-center">
 									<span class="ml-2 text-sm font-medium text-gray-800">
-										<?php cfw_e( 'CheckoutWC', 'checkout-wc' ); ?>
+										<?php _e( 'CheckoutWC', 'checkout-wc' ); ?>
 									</span>
 								</div>
 							</li>

@@ -11,7 +11,7 @@ use Objectiv\Plugins\Checkout\Managers\SettingsManager;
  */
 class TrustBadgesAdminFree extends PageAbstract {
 	public function __construct() {
-		parent::__construct( cfw_notranslate__( 'Trust Badges', 'checkout-wc' ) . ' <span class="cfw-badge cfw-premium-badge"></span>', 'cfw_manage_trust_badges', 'trust-badges' );
+		parent::__construct( __( 'Trust Badges', 'checkout-wc' ) . ' <span class="cfw-badge cfw-premium-badge"></span>', 'cfw_manage_trust_badges', 'trust-badges' );
 	}
 
 	public function output() {
@@ -155,7 +155,7 @@ class TrustBadgesAdminFree extends PageAbstract {
 																<div class="max-w-xl w-full shadow rounded-lg p-4">
 																	<div class="flex items-center grow mb-6 max-w-lg">
 																		<div class="mr-4 flex-shrink-0">
-																			<img src="https://demo.checkoutwc.com/wp-content/uploads/2022/08/30day.png" class="w-full max-w-28 h-auto" alt="30 Day Money Back Guarantee!">
+																			<img src="<?php echo trailingslashit( CFW_PATH_URL_BASE ); ?>/build/images/30day.png" class="w-full max-w-28 h-auto" alt="30 Day Money Back Guarantee!">
 																		</div>
 																		<div>
 																			<h3 class="text-base font-semibold mb-2 text-left text-[--cfw-tb-guarantee-title]">30 Day Money Back Guarantee!</h3>

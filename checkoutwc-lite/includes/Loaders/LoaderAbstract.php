@@ -68,7 +68,7 @@ abstract class LoaderAbstract {
 		// When on the checkout with an empty cart, redirect to cart page
 		// Check cart has contents.
 		if ( WC()->cart->is_empty() && ! is_customize_preview() && cfw_apply_filters( 'woocommerce_checkout_redirect_empty_cart', true ) ) {
-			wc_add_notice( cfw__( 'Checkout is not available whilst your cart is empty.', 'woocommerce' ), 'notice' );
+			wc_add_notice( __( 'Checkout is not available whilst your cart is empty.', 'woocommerce' ), 'notice' );
 			wp_safe_redirect( wc_get_cart_url() );
 			exit;
 		}
@@ -109,7 +109,7 @@ abstract class LoaderAbstract {
 			'cfw_template_global_params',
 			array(
 				'call_receipt_hook'  => false,
-				'order_button_text'  => cfw_apply_filters( 'woocommerce_pay_order_button_text', cfw__( 'Pay for order', 'woocommerce' ) ),
+				'order_button_text'  => cfw_apply_filters( 'woocommerce_pay_order_button_text', __( 'Pay for order', 'woocommerce' ) ),
 				'available_gateways' => array(),
 			)
 		);
@@ -132,30 +132,30 @@ abstract class LoaderAbstract {
 
 				// Order or payment link is invalid.
 				if ( ! $order || $order->get_id() !== $order_id || ! hash_equals( $order->get_order_key(), $order_key ) ) {
-					throw new Exception( cfw__( 'Sorry, this order is invalid and cannot be paid for.', 'woocommerce' ) );
+					throw new Exception( __( 'Sorry, this order is invalid and cannot be paid for.', 'woocommerce' ) );
 				}
 
 				if ( ! current_user_can( 'pay_for_order', $order->get_id() ) && ! is_user_logged_in() ) { // phpcs:ignore WordPress.WP.Capabilities.Unknown
-					wc_add_notice( cfw__( 'Please log in to your account below to continue to the payment form.', 'woocommerce' ), 'error' );
+					wc_add_notice( __( 'Please log in to your account below to continue to the payment form.', 'woocommerce' ), 'error' );
 				}
 
 				// Add notice if logged in customer is trying to pay for guest order.
 				if ( ! $order->get_user_id() && is_user_logged_in() ) {
 					// If order has does not have same billing email then current logged in user then show warning.
 					if ( $order->get_billing_email() !== wp_get_current_user()->user_email ) {
-						wc_add_notice( cfw__( 'You are paying for a guest order. Please continue with payment only if you recognize this order.', 'woocommerce' ), 'notice' );
+						wc_add_notice( __( 'You are paying for a guest order. Please continue with payment only if you recognize this order.', 'woocommerce' ), 'notice' );
 					}
 				}
 
 				// Logged in customer trying to pay for someone else's order.
 				if ( ! current_user_can( 'pay_for_order', $order_id ) && is_user_logged_in() ) { // phpcs:ignore WordPress.WP.Capabilities.Unknown
-					throw new Exception( cfw__( 'This order cannot be paid for. Please contact us if you need assistance.', 'woocommerce' ) );
+					throw new Exception( __( 'This order cannot be paid for. Please contact us if you need assistance.', 'woocommerce' ) );
 				}
 
 				// Does not need payment.
 				if ( ! $order->needs_payment() ) {
 					/* translators: %s: order status */
-					throw new Exception( sprintf( cfw__( 'This order&rsquo;s status is &ldquo;%s&rdquo;&mdash;it cannot be paid for. Please contact us if you need assistance.', 'woocommerce' ), wc_get_order_status_name( $order->get_status() ) ) );
+					throw new Exception( sprintf( __( 'This order&rsquo;s status is &ldquo;%s&rdquo;&mdash;it cannot be paid for. Please contact us if you need assistance.', 'woocommerce' ), wc_get_order_status_name( $order->get_status() ) ) );
 				}
 
 				// Ensure order items are still stocked if paying for a failed order. Pending orders do not need this check because stock is held.
@@ -184,7 +184,7 @@ abstract class LoaderAbstract {
 
 							if ( ! cfw_apply_filters( 'woocommerce_pay_order_product_in_stock', $product->is_in_stock(), $product, $order ) ) {
 								/* translators: %s: product name */
-								throw new Exception( sprintf( cfw__( 'Sorry, "%s" is no longer in stock so this order cannot be paid for. We apologize for any inconvenience caused.', 'woocommerce' ), $product->get_name() ) );
+								throw new Exception( sprintf( __( 'Sorry, "%s" is no longer in stock so this order cannot be paid for. We apologize for any inconvenience caused.', 'woocommerce' ), $product->get_name() ) );
 							}
 
 							// We only need to check products managing stock, with a limited stock qty.
@@ -198,7 +198,7 @@ abstract class LoaderAbstract {
 
 							if ( $product->get_stock_quantity() < ( $held_stock + $required_stock ) ) {
 								/* translators: 1: product name 2: quantity in stock */
-								throw new Exception( sprintf( cfw__( 'Sorry, we do not have enough "%1$s" in stock to fulfill your order (%2$s available). We apologize for any inconvenience caused.', 'woocommerce' ), $product->get_name(), wc_format_stock_quantity_for_display( $product->get_stock_quantity() - $held_stock, $product ) ) );
+								throw new Exception( sprintf( __( 'Sorry, we do not have enough "%1$s" in stock to fulfill your order (%2$s available). We apologize for any inconvenience caused.', 'woocommerce' ), $product->get_name(), wc_format_stock_quantity_for_display( $product->get_stock_quantity() - $held_stock, $product ) ) );
 							}
 						}
 					}
@@ -239,13 +239,13 @@ abstract class LoaderAbstract {
 
 				} else {
 					/* translators: %s: order status */
-					wc_add_notice( sprintf( cfw__( 'This order&rsquo;s status is &ldquo;%s&rdquo;&mdash;it cannot be paid for. Please contact us if you need assistance.', 'woocommerce' ), wc_get_order_status_name( $order->get_status() ) ), 'error' );
+					wc_add_notice( sprintf( __( 'This order&rsquo;s status is &ldquo;%s&rdquo;&mdash;it cannot be paid for. Please contact us if you need assistance.', 'woocommerce' ), wc_get_order_status_name( $order->get_status() ) ), 'error' );
 				}
 			} else {
-				wc_add_notice( cfw__( 'Sorry, this order is invalid and cannot be paid for.', 'woocommerce' ), 'error' );
+				wc_add_notice( __( 'Sorry, this order is invalid and cannot be paid for.', 'woocommerce' ), 'error' );
 			}
 		} else {
-			wc_add_notice( cfw__( 'Invalid order.', 'woocommerce' ), 'error' );
+			wc_add_notice( __( 'Invalid order.', 'woocommerce' ), 'error' );
 		}
 
 		/**

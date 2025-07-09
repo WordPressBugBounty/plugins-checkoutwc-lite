@@ -23,10 +23,10 @@ class RemoveCouponAction extends CFWAction {
 		ob_start();
 
 		if ( empty( $coupon ) ) {
-			wc_add_notice( cfw__( 'Sorry there was a problem removing this coupon.', 'woocommerce' ), 'error' );
+			wc_add_notice( __( 'Sorry there was a problem removing this coupon.', 'woocommerce' ), 'error' );
 		} else {
 			WC()->cart->remove_coupon( $coupon );
-			wc_add_notice( cfw__( 'Coupon has been removed.', 'woocommerce' ) );
+			wc_add_notice( __( 'Coupon has been removed.', 'woocommerce' ) );
 			$result = true;
 		}
 

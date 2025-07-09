@@ -327,8 +327,8 @@ if ( ! PlanManager::has_premium_plan_or_higher() ) {
 		function () use ( $general_admin_page ) {
 		add_submenu_page(
 			$general_admin_page::get_parent_slug(),
-			cfw_esc_html__( 'Upgrade to Premium', 'checkout-wc' ),
-			cfw_esc_html__( 'Upgrade to Premium', 'checkout-wc' ),
+			esc_html__( 'Upgrade to Premium', 'checkout-wc' ),
+			esc_html__( 'Upgrade to Premium', 'checkout-wc' ),
 			'manage_options',
 			esc_url( 'https://www.checkoutwc.com/lite-upgrade/?utm_campaign=liteplugin&utm_medium=admin-menu&utm_source=WordPress&utm_content=Upgrade+to+Pro' )
 		);
@@ -615,7 +615,7 @@ add_action(
 	'after_setup_theme',
 	function () {
 		// Menu location for template footer
-		register_nav_menu( 'cfw-footer-menu', cfw_notranslate__( 'CheckoutWC: Footer', 'checkout-wc' ) );
+		register_nav_menu( 'cfw-footer-menu', __( 'CheckoutWC: Footer', 'checkout-wc' ) );
 	}
 );
 
@@ -657,28 +657,28 @@ add_action(
 
 		( new AvadaWarning() )->maybe_add(
 			'cfw_avada_warning',
-			cfw_notranslate__( 'Configure Avada to Work With CheckoutWC', 'checkout-wc' ),
+			__( 'Configure Avada to Work With CheckoutWC', 'checkout-wc' ),
 			sprintf(
-				cfw_notranslate__(
+				__(
 					'CheckoutWC and Avada work great together, but you will need to adjust a couple of theme settings. Please see our guide here: <a target="_blank" href="%s">%s</a>',
 					'checkout-wc'
 				),
 				'https://www.checkoutwc.com/documentation/avada-template-layout-problems/',
-				cfw_notranslate__( 'Configure Avada to Work With CheckoutWC', 'checkout-wc' )
+				__( 'Configure Avada to Work With CheckoutWC', 'checkout-wc' )
 			),
 			array( 'type' => 'warning' )
 		);
 
 		( new BluehostPluginNotice() )->maybe_add(
 			'cfw_bluehost_warning',
-			cfw_notranslate__( 'Incompatible Plugin: Please Deactivate The Bluehost Plugin', 'checkout-wc' ),
+			__( 'Incompatible Plugin: Please Deactivate The Bluehost Plugin', 'checkout-wc' ),
 			sprintf(
-				cfw_notranslate__(
+				__(
 					'CheckoutWC and Bluehost work great together, but you must deactivate The Bluehost Plugin to prevent problems. More info here: <a target="_blank" href="%s">%s</a>',
 					'checkout-wc'
 				),
 				'https://www.checkoutwc.com/documentation/how-to-fix-problems-with-the-bluehost-plugin/',
-				cfw_notranslate__( 'How To Fix Problems With The Bluehost Plugin', 'checkout-wc' )
+				__( 'How To Fix Problems With The Bluehost Plugin', 'checkout-wc' )
 			),
 			array(
 				'type'        => 'error',
@@ -688,56 +688,56 @@ add_action(
 
 		( new DiviWarning() )->maybe_add(
 			'cfw_divi_warning',
-			cfw_notranslate__( 'Configure Divi to Work With CheckoutWC', 'checkout-wc' ),
+			__( 'Configure Divi to Work With CheckoutWC', 'checkout-wc' ),
 			sprintf(
-				cfw_notranslate__(
+				__(
 					'CheckoutWC and Divi work great together, but you will need to adjust a couple of settings. Please see our guide here: <a target="_blank" href="%s">%s</a>',
 					'checkout-wc'
 				),
 				'https://www.checkoutwc.com/documentation/how-to-fix-styling-issues-with-divi-theme/',
-				cfw_notranslate__( 'How To Fix Styling Issues With Divi Theme', 'checkout-wc' )
+				__( 'How To Fix Styling Issues With Divi Theme', 'checkout-wc' )
 			),
 			array( 'type' => 'warning' )
 		);
 
 		( new PortoWarning() )->maybe_add(
 			'cfw_porto_warning',
-			cfw_notranslate__( 'Configure Porto to Work With CheckoutWC', 'checkout-wc' ),
+			__( 'Configure Porto to Work With CheckoutWC', 'checkout-wc' ),
 			sprintf(
-				cfw_notranslate__(
+				__(
 					'CheckoutWC and Porto work great together, but you will need to adjust a couple of settings. Please see our guide here: <a target="_blank" href="%s">%s</a>',
 					'checkout-wc'
 				),
 				'https://www.checkoutwc.com/documentation/fix-problems-with-porto-theme/',
-				cfw_notranslate__( 'Fix Problems With Porto Theme', 'checkout-wc' )
+				__( 'Fix Problems With Porto Theme', 'checkout-wc' )
 			),
 			array( 'type' => 'warning' )
 		);
 
 		( new AstraProWarning() )->maybe_add(
 			'cfw_astrapro_warning',
-			cfw_notranslate__( 'Configure Astra Pro to Work With CheckoutWC', 'checkout-wc' ),
+			__( 'Configure Astra Pro to Work With CheckoutWC', 'checkout-wc' ),
 			sprintf(
-				cfw_notranslate__(
+				__(
 					'CheckoutWC and Astra Pro work great together, but there is one setting you should check. More info here: <a target="_blank" href="%s">%s</a>',
 					'checkout-wc'
 				),
 				'https://checkoutwc.com/documentation/fix-layout-issues-with-astra-pro/',
-				cfw_notranslate__( 'Fix Layout Issues with Astra Pro', 'checkout-wc' )
+				__( 'Fix Layout Issues with Astra Pro', 'checkout-wc' )
 			),
 			array( 'type' => 'warning' )
 		);
 
 		( new WoostifyWarning() )->maybe_add(
 			'cfw_woostify_warning',
-			cfw_notranslate__( 'Configure Woostify to Work With CheckoutWC', 'checkout-wc' ),
+			__( 'Configure Woostify to Work With CheckoutWC', 'checkout-wc' ),
 			sprintf(
-				cfw_notranslate__(
+				__(
 					'CheckoutWC and Woostify work great together, but there is one setting you should check. More info here: <a target="_blank" href="%s">%s</a>',
 					'checkout-wc'
 				),
 				'https://www.checkoutwc.com/documentation/fix-ajax-add-to-cart-with-woostify-and-checkoutwc/',
-				cfw_notranslate__( 'Fix AJAX Add To Cart with Woostify and CheckoutWC Side Cart', 'checkout-wc' )
+				__( 'Fix AJAX Add To Cart with Woostify and CheckoutWC Side Cart', 'checkout-wc' )
 			),
 			array( 'type' => 'warning' )
 		);
@@ -812,6 +812,12 @@ if ( SettingsManager::instance()->get_setting( 'skip_cart_step' ) === 'yes' ) {
 			return wc_get_checkout_url();
 		}
 	);
+
+	add_filter( 'cfw_breadcrumbs', function ( $breadcrumbs ) {
+		unset( $breadcrumbs['cart'] );
+
+		return $breadcrumbs;
+	} );
 }
 
 add_action( 'admin_init', array( new WelcomeScreenActivationRedirector(), 'welcome_screen_do_activation_redirect' ) );
@@ -874,7 +880,7 @@ add_action(
 		load_plugin_textdomain(
 			'checkout-wc',
 			false,
-			dirname( plugin_basename( CFW_MAIN_FILE ) ) . '/languages'
+			dirname( plugin_basename( CFW_MAIN_FILE ) ) . '/i18n/languages'
 		);
 
 		// Some gateways detect whether the checkout page is using the block

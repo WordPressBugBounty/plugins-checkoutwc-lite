@@ -56,7 +56,7 @@ class LostPasswordAction extends CFWAction {
 		$this->out(
 			array(
 				'result'  => true,
-				'message' => esc_html( cfw_apply_filters( 'woocommerce_lost_password_confirmation_message', cfw_esc_html__( 'A password reset email has been sent to the email address on file for your account, but may take several minutes to show up in your inbox. Please wait at least 10 minutes before attempting another reset.', 'woocommerce' ) ) ),
+				'message' => esc_html( cfw_apply_filters( 'woocommerce_lost_password_confirmation_message', esc_html__( 'A password reset email has been sent to the email address on file for your account, but may take several minutes to show up in your inbox. Please wait at least 10 minutes before attempting another reset.', 'woocommerce' ) ) ),
 			)
 		);
 	}

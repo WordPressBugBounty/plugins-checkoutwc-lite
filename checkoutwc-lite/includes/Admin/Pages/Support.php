@@ -9,7 +9,7 @@ namespace Objectiv\Plugins\Checkout\Admin\Pages;
  */
 class Support extends PageAbstract {
 	public function __construct() {
-		parent::__construct( cfw_notranslate__( 'Support', 'checkout-wc' ), 'manage_woocommerce', 'support' );
+		parent::__construct( __( 'Support', 'checkout-wc' ), 'manage_woocommerce', 'support' );
 	}
 
 	public function output() {
@@ -17,14 +17,14 @@ class Support extends PageAbstract {
 		<div class="max-w-3xl pb-8">
 			<div>
 				<p class="text-5xl font-bold text-gray-900">
-					<?php cfw_e( 'Awesome support is in our DNA.', 'checkout-wc' ); ?>
+					<?php _e( 'Awesome support is in our DNA.', 'checkout-wc' ); ?>
 				</p>
 				<p class="max-w-xl mt-5 text-2xl text-gray-500">
-					<?php cfw_e( 'Our Knowledge Base is packed with tips, tricks, and common troubleshooting steps.', 'checkout-wc' ); ?>
+					<?php _e( 'Our Knowledge Base is packed with tips, tricks, and common troubleshooting steps.', 'checkout-wc' ); ?>
 				</p>
 				<p class="mt-6">
 					<a href="https://www.checkoutwc.com/documentation/" target="_blank" class="inline-flex items-center px-6 py-3 border border-transparent text-lg shadow font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
-						<?php cfw_e( 'Read Our Documentation', 'checkout-wc' ); ?>
+						<?php _e( 'Read Our Documentation', 'checkout-wc' ); ?>
 					</a>
 				</p>
 			</div>
@@ -36,7 +36,7 @@ class Support extends PageAbstract {
 		</div>
 
 		<p class="text-2xl text-gray-900">
-			<?php cfw_e( 'Some Popular Knowledge Base Articles', 'checkout-wc' ); ?>
+			<?php _e( 'Some Popular Knowledge Base Articles', 'checkout-wc' ); ?>
 		</p>
 
 		<?php if ( defined( 'CFW_PREMIUM_PLAN_IDS' ) ) : ?>
@@ -59,7 +59,7 @@ class Support extends PageAbstract {
 		<?php endif; ?>
 
 		<p class="text-2xl text-gray-900 mt-6">
-			<?php cfw_e( 'Still Need Help?', 'checkout-wc' ); ?>
+			<?php _e( 'Still Need Help?', 'checkout-wc' ); ?>
 		</p>
 
 		<input type="submit" id="checkoutwc-support-button" class="mt-4 cursor-pointer inline-flex items-center px-6 py-3 border border-transparent text-base shadow font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500" value="Contact Support">

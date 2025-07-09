@@ -65,8 +65,8 @@ class WooCommerceCheckoutFieldEditor extends CompatibilityAbstract {
 
 		$integrations[] = array(
 			'name'          => 'allow_checkout_field_editor_address_modification',
-			'label'         => cfw_notranslate__( 'Enable Checkout Field Editor address field overrides. (Not Recommended)', 'checkout-wc' ),
-			'description'   => cfw_notranslate__( 'Allow WooCommerce Checkout Field Editor to modify billing and shipping address fields. Not compatible with these features: Separate House Number and Street Name Address Fields, Full Name Field, Fetchify', 'checkout-wc' ),
+			'label'         => __( 'Enable Checkout Field Editor address field overrides. (Not Recommended)', 'checkout-wc' ),
+			'description'   => __( 'Allow WooCommerce Checkout Field Editor to modify billing and shipping address fields. Not compatible with these features: Separate House Number and Street Name Address Fields, Full Name Field, Fetchify', 'checkout-wc' ),
 			'initial_value' => SettingsManager::instance()->get_setting( 'allow_checkout_field_editor_address_modification' ) === 'yes',
 		);
 
@@ -100,7 +100,7 @@ class WooCommerceCheckoutFieldEditor extends CompatibilityAbstract {
 			'form-row-first' => '50% Width',
 			'cfw-col-8'      => '67% Width',
 			'cfw-col-9'      => '75% Width',
-			'form-row-wide'  => cfw__( 'Full-width', 'woocommerce-checkout-field-editor' ),
+			'form-row-wide'  => __( 'Full-width', 'woocommerce-checkout-field-editor' ),
 		);
 	}
 

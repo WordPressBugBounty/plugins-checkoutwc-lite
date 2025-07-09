@@ -9,7 +9,7 @@ class WelcomeNotice extends NoticeAbstract {
 		$updates_manager = UpdatesManager::instance();
 
 		$id    = 'cfw_welcome';
-		$title = cfw_notranslate__( 'Welcome to CheckoutWC', 'checkout-wc' );
+		$title = __( 'Welcome to CheckoutWC', 'checkout-wc' );
 
 		// If valid and not auto activated, don't show.
 		if ( $updates_manager->get_field_value( 'key_status' ) === 'valid' && ! get_transient( 'cfw_auto_activated' ) ) {
@@ -17,13 +17,13 @@ class WelcomeNotice extends NoticeAbstract {
 		}
 
 		if ( $updates_manager->get_field_value( 'key_status' ) === 'valid' && get_transient( 'cfw_auto_activated' ) ) {
-			$message = cfw_notranslate__( 'Thank you for installing CheckoutWC! We automatically activated your license. You are all set!', 'checkout-wc' );
+			$message = __( 'Thank you for installing CheckoutWC! We automatically activated your license. You are all set!', 'checkout-wc' );
 
 			delete_transient( 'cfw_auto_activated' );
 		}
 
 		if ( $updates_manager->get_field_value( 'key_status' ) !== 'valid' ) {
-			$message = cfw_notranslate__( 'Thank you for installing CheckoutWC! To get started, enter your <strong>License Key</strong> below, save, and click <strong>Activate Site</strong>.', 'checkout-wc' );
+			$message = __( 'Thank you for installing CheckoutWC! To get started, enter your <strong>License Key</strong> below, save, and click <strong>Activate Site</strong>.', 'checkout-wc' );
 		}
 
 		parent::maybe_add( $id, $title, $message, array( 'type' => 'success' ) );

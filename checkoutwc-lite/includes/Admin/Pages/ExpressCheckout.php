@@ -13,7 +13,7 @@ use Objectiv\Plugins\Checkout\Managers\SettingsManager;
  */
 class ExpressCheckout extends PageAbstract {
 	public function __construct() {
-		parent::__construct( cfw_notranslate__( 'Express Checkout', 'checkout-wc' ), 'cfw_manage_express_checkout', 'express-checkout' );
+		parent::__construct( __( 'Express Checkout', 'checkout-wc' ), 'cfw_manage_express_checkout', 'express-checkout' );
 	}
 
 	public function output() {

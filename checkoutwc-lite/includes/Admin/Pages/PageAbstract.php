@@ -103,7 +103,7 @@ abstract class PageAbstract {
 								<li class="m-0">
 									<div class="flex items-center">
 										<span class="ml-2 text-sm font-medium text-gray-800">
-											<?php cfw_e( 'CheckoutWC', 'checkout-wc' ); ?>
+											<?php _e( 'CheckoutWC', 'checkout-wc' ); ?>
 										</span>
 									</div>
 								</li>
@@ -123,7 +123,7 @@ abstract class PageAbstract {
 					</div>
 
 					<button type="button" id="cfw_admin_header_save_button" class="cfw-save-inactive cfw-shake-animation <?php echo $hide_settings_button ? 'invisible' : ''; ?> mr-10 inline-flex items-center px-3.5 py-2 border border-transparent text-sm leading-4 font-medium rounded-full shadow-sm text-white bg-blue-600 hover:bg-blue-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
-						<?php cfw_e( 'Save Changes' ); ?>
+						<?php _e( 'Save Changes' ); ?>
 					</button>
 				</div>
 				<?php
@@ -156,7 +156,7 @@ abstract class PageAbstract {
 				</p>
 
 				<div class="text-center italic">
-					<?php echo wp_kses_post( sprintf( cfw_notranslate__( 'A %s plan is required to access this feature.', 'checkout-wc' ), PlanManager::get_english_list_of_required_plans_html( $required_plan ) ) ); ?>
+					<?php echo wp_kses_post( sprintf( __( 'A %s plan is required to access this feature.', 'checkout-wc' ), PlanManager::get_english_list_of_required_plans_html( $required_plan ) ) ); ?>
 				</div>
 			</div>
 		</div>
@@ -169,10 +169,10 @@ abstract class PageAbstract {
 		}
 		?>
 		<div class='cfw-notification-message'>
-			<strong><?php cfw_e( 'Setting Overridden', 'checkout-wc' ); ?></strong> &mdash;
+			<strong><?php _e( 'Setting Overridden', 'checkout-wc' ); ?></strong> &mdash;
 
 			<?php if ( empty( $replacement_text ) ) : ?>
-				<?php cfw_e( 'This setting is currently programmatically overridden. To enable it remove your custom code.', 'checkout-wc' ); ?>
+				<?php _e( 'This setting is currently programmatically overridden. To enable it remove your custom code.', 'checkout-wc' ); ?>
 			<?php else : ?>
 				<?php echo esc_html( $replacement_text ); ?>
 			<?php endif; ?>
@@ -303,12 +303,12 @@ abstract class PageAbstract {
 		<div class='cfw-license-upgrade-blocker-og cfw-tw'>
 			<div class="inner text-base">
 				<h3 class="text-xl font-bold mb-4">
-					<?php cfw_e( 'Upgrade Your Plan', 'checkout-wc' ); ?>
+					<?php _e( 'Upgrade Your Plan', 'checkout-wc' ); ?>
 				</h3>
 
-				<?php echo wp_kses_post( sprintf( cfw_notranslate__( 'A %s plan is required to access this feature.', 'checkout-wc' ), $required_plans ) ); ?>
+				<?php echo wp_kses_post( sprintf( __( 'A %s plan is required to access this feature.', 'checkout-wc' ), $required_plans ) ); ?>
 				<p class="text-base">
-					<?php echo wp_kses_post( sprintf( cfw_notranslate__( 'You can upgrade your license in <a class="text-blue-600 underline" target="_blank" href="%1$s">Account</a>. For help upgrading your license, <a class="text-blue-600 underline" target="_blank" href="%2$s">click here.</a>', 'checkout-wc' ), 'https://www.checkoutwc.com/account/', 'https://kb.checkoutwc.com/article/53-upgrading-your-license' ) ); ?>
+					<?php echo wp_kses_post( sprintf( __( 'You can upgrade your license in <a class="text-blue-600 underline" target="_blank" href="%1$s">Account</a>. For help upgrading your license, <a class="text-blue-600 underline" target="_blank" href="%2$s">click here.</a>', 'checkout-wc' ), 'https://www.checkoutwc.com/account/', 'https://kb.checkoutwc.com/article/53-upgrading-your-license' ) ); ?>
 				</p>
 			</div>
 		</div>

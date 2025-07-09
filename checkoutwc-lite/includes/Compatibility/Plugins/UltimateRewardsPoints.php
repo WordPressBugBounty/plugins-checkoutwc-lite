@@ -25,10 +25,10 @@ class UltimateRewardsPoints extends CompatibilityAbstract {
 			$mwb_wpr_cart_price_rate  = get_option( 'mwb_wpr_cart_price_rate', 1 );
 			$conversion               = ( $get_points * $mwb_wpr_cart_price_rate / $mwb_wpr_cart_points_rate ); ?>
 			<div class="custom_point_checkout woocommerce-info">
-				<input type="number" name="mwb_cart_points" class="input-text" id="mwb_cart_points" value="" placeholder="<?php cfw_esc_attr_e( 'Points', 'woocommerce-ultimate-points-and-rewards' ); ?>"/>
-				<input type="button" name="mwb_cart_points_apply" data-point="<?php echo esc_attr( $get_points ); ?>" data-id="<?php echo esc_attr( $user_id ); ?>"" class="button mwb_cart_points_apply" id="mwb_cart_points_apply" value="<?php cfw_e( 'Apply Points', 'woocommerce-ultimate-points-and-rewards' ); ?>"/>
+				<input type="number" name="mwb_cart_points" class="input-text" id="mwb_cart_points" value="" placeholder="<?php esc_attr_e( 'Points', 'woocommerce-ultimate-points-and-rewards' ); ?>"/>
+				<input type="button" name="mwb_cart_points_apply" data-point="<?php echo esc_attr( $get_points ); ?>" data-id="<?php echo esc_attr( $user_id ); ?>"" class="button mwb_cart_points_apply" id="mwb_cart_points_apply" value="<?php _e( 'Apply Points', 'woocommerce-ultimate-points-and-rewards' ); ?>"/>
 				<p>
-					<?php echo esc_html( $get_points . cfw__( ' Points', 'woocommerce-ultimate-points-and-rewards' ) . ' = ' . wc_price( $conversion ) ); ?>
+					<?php echo esc_html( $get_points . __( ' Points', 'woocommerce-ultimate-points-and-rewards' ) . ' = ' . wc_price( $conversion ) ); ?>
 				</p>
 			</div>
 

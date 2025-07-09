@@ -14,7 +14,7 @@ class OrderBumpsAdminFree extends PageAbstract {
 	use TabbedAdminPageTrait;
 
 	public function __construct() {
-		parent::__construct( cfw_notranslate__( 'Order Bumps', 'checkout-wc' ) . ' <span class="cfw-badge cfw-premium-badge"></span>', 'cfw_manage_order_bumps', 'order_bumps' );
+		parent::__construct( __( 'Order Bumps', 'checkout-wc' ) . ' <span class="cfw-badge cfw-premium-badge"></span>', 'cfw_manage_order_bumps', 'order_bumps' );
 	}
 
 	public function init() {

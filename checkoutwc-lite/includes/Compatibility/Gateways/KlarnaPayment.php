@@ -62,20 +62,6 @@ class KlarnaPayment extends CompatibilityAbstract {
 				$kp->id                = $payment_category_id;
 				$kp->title             = $payment_category_name;
 				$kp->icon              = $payment_category_icon;
-				$headers               = empty( $kp->icon ) ? false : get_headers( $kp->icon );
-				if ( $headers && 'HTTP/1.1 404 Not Found' === $headers[0] ) {
-					switch ( $kp->id ) {
-						case 'klarna_payments_pay_later':
-							$kp->icon = 'https://cdn.klarna.com/1.0/shared/image/generic/badge/sv_se/pay_later/standard/pink.svg';
-							break;
-						case 'klarna_payments_pay_over_time':
-							$kp->icon = 'https://cdn.klarna.com/1.0/shared/image/generic/badge/sv_se/slice_it/standard/pink.svg';
-							break;
-						case 'klarna_payments_pay_now':
-							$kp->icon = 'https://cdn.klarna.com/1.0/shared/image/generic/badge/sv_se/pay_now/standard/pink.svg';
-							break;
-					}
-				}
 				?>
 				<li class="wc_payment_method payment_method_<?php echo esc_attr( $kp->id ); ?> cfw-radio-reveal-li">
 					<div class="payment_method_title_wrap cfw-radio-reveal-title-wrap">

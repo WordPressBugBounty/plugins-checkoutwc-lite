@@ -13,7 +13,7 @@ class SendCloud extends CompatibilityAbstract {
 		$compatibility[] = array(
 			'class'  => 'SendCloud',
 			'params' => array(
-				'notice' => cfw__( 'Please choose a service point.', 'sendcloud-shipping' ),
+				'notice' => __( 'Please choose a service point.', 'sendcloud-shipping' ),
 			),
 		);
 

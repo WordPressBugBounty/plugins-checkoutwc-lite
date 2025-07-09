@@ -44,8 +44,8 @@ class MyParcel extends CompatibilityAbstract {
 	public function add_new_fields( $fields ) {
 		// Add street name
 		$fields['street_name'] = array(
-			'label'             => cfw__( 'street_name', 'woocommerce-myparcel' ),
-			'placeholder'       => cfw_esc_attr__( 'Street name', 'woocommerce-postnl' ),
+			'label'             => __( 'street_name', 'woocommerce-myparcel' ),
+			'placeholder'       => esc_attr__( 'Street name', 'woocommerce-postnl' ),
 			'required'          => true,
 			'class'             => array(),
 			'autocomplete'      => '',
@@ -59,8 +59,8 @@ class MyParcel extends CompatibilityAbstract {
 
 		// Then add house number
 		$fields['house_number'] = array(
-			'label'             => cfw__( 'abbreviation_house_number', 'woocommerce-myparcel' ),
-			'placeholder'       => cfw_esc_attr__( 'Nr.', 'woocommerce-postnl' ),
+			'label'             => __( 'abbreviation_house_number', 'woocommerce-myparcel' ),
+			'placeholder'       => esc_attr__( 'Nr.', 'woocommerce-postnl' ),
 			'required'          => true,
 			'class'             => array(),
 			'autocomplete'      => '',
@@ -74,8 +74,8 @@ class MyParcel extends CompatibilityAbstract {
 
 		// Then house number suffix
 		$fields['house_number_suffix'] = array(
-			'label'             => cfw__( 'suffix', 'woocommerce-myparcel' ),
-			'placeholder'       => cfw_esc_attr__( 'Suffix', 'woocommerce-postnl' ),
+			'label'             => __( 'suffix', 'woocommerce-myparcel' ),
+			'placeholder'       => esc_attr__( 'Suffix', 'woocommerce-postnl' ),
 			'required'          => false,
 			'class'             => array(),
 			'autocomplete'      => '',

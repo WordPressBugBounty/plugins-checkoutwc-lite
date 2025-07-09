@@ -13,7 +13,7 @@ class ShipMondo extends CompatibilityAbstract {
 		$compatibility[] = array(
 			'class'  => 'ShipMondo',
 			'params' => array(
-				'notice' => cfw__( 'Please select a pickup point before placing your order.', 'pakkelabels-for-woocommerce' ),
+				'notice' => __( 'Please select a pickup point before placing your order.', 'pakkelabels-for-woocommerce' ),
 			),
 		);
 

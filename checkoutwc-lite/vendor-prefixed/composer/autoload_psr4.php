@@ -6,8 +6,6 @@ $vendorDir = dirname(__DIR__);
 $baseDir = dirname($vendorDir);
 
 return array(
-    'StellarWP\\Installer\\Assets_JS\\' => array($vendorDir . '/stellarwp/installer/src/assets/js'),
-    'StellarWP\\Installer\\Admin_Views\\' => array($vendorDir . '/stellarwp/installer/src/admin-views'),
     'Objectiv\\Plugins\\Checkout\\' => array($baseDir . '/includes'),
     'CheckoutWC\\Symfony\\Polyfill\\Php80\\' => array($vendorDir . '/symfony/polyfill-php80'),
     'CheckoutWC\\Symfony\\Polyfill\\Php73\\' => array($vendorDir . '/symfony/polyfill-php73'),
@@ -15,8 +13,9 @@ return array(
     'CheckoutWC\\Symfony\\Component\\OptionsResolver\\' => array($vendorDir . '/symfony/options-resolver'),
     'CheckoutWC\\Symfony\\Component\\Lock\\' => array($vendorDir . '/symfony/lock'),
     'CheckoutWC\\Symfony\\Component\\CssSelector\\' => array($vendorDir . '/symfony/css-selector'),
+    'CheckoutWC\\StellarWP\\Installer\\Assets_JS\\' => array($vendorDir . '/stellarwp/installer/src/assets/js'),
+    'CheckoutWC\\StellarWP\\Installer\\Admin_Views\\' => array($vendorDir . '/stellarwp/installer/src/admin-views'),
     'CheckoutWC\\StellarWP\\Installer\\' => array($vendorDir . '/stellarwp/installer/src/Installer'),
-    'CheckoutWC\\SmartyStreets\\PhpSdk\\' => array($vendorDir . '/smartystreets/phpsdk/src'),
     'CheckoutWC\\Sabberworm\\CSS\\' => array($vendorDir . '/sabberworm/php-css-parser/src'),
     'CheckoutWC\\Psr\\Log\\' => array($vendorDir . '/psr/log/Psr/Log'),
     'CheckoutWC\\Pressmodo\\AdminNotices\\' => array($vendorDir . '/pressmodo/wp-admin-notices/src'),

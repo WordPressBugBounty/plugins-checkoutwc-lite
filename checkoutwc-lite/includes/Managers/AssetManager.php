@@ -167,8 +167,8 @@ class AssetManager {
 			if ( isset( $this->manifest['chunks']['thank-you-styles']['file'] ) ) {
 				self::enqueue_style( 'thank-you-styles', 'cfw_front' );
 			}
-
-			wp_enqueue_style( 'cfw-fontawesome', 'https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css', array(), '4.7.0' );
+			
+			self::enqueue_style( 'fontawesome' );
 		}
 
 		/**
@@ -240,8 +240,8 @@ class AssetManager {
 			array(
 				'locale'             => wp_json_encode( WC()->countries->get_country_locale() ),
 				'locale_fields'      => wp_json_encode( WC()->countries->get_country_locale_field_selectors() ),
-				'i18n_required_text' => cfw_esc_attr__( 'required', 'woocommerce' ),
-				'i18n_optional_text' => cfw_esc_html__( 'optional', 'woocommerce' ),
+				'i18n_required_text' => esc_attr__( 'required', 'woocommerce' ),
+				'i18n_optional_text' => esc_html__( 'optional', 'woocommerce' ),
 			)
 		);
 
@@ -372,9 +372,9 @@ class AssetManager {
 
 		return array(
 			'settings' => array(
-				'user_logged_in'                   => is_user_logged_in(),
-				'shipping_countries'               => $shipping_countries,
-				'allowed_countries'                => $allowed_countries,
+				'user_logged_in'                                                => is_user_logged_in(),
+				'shipping_countries'                                            => $shipping_countries,
+				'allowed_countries'                                             => $allowed_countries,
 				/**
 				 * Filter whether to disable cart quantity prompt
 				 *
@@ -382,7 +382,7 @@ class AssetManager {
 				 *
 				 * @since 8.2.19
 				 */
-				'disable_cart_quantity_prompt'     => apply_filters( 'cfw_disable_cart_quantity_prompt', false ),
+				'disable_cart_quantity_prompt'                                  => apply_filters( 'cfw_disable_cart_quantity_prompt', false ),
 				/**
 				 * Filters whether to link cart items to products
 				 *
@@ -390,9 +390,9 @@ class AssetManager {
 				 *
 				 * @since 1.0.0
 				 */
-				'link_items'                       => apply_filters( 'cfw_link_cart_items', SettingsManager::instance()->get_setting( 'cart_item_link' ) === 'enabled' ),
-				'cart_item_link_target_new_window' => SettingsManager::instance()->get_setting( 'cart_item_link_target_new_window' ) === 'yes',
-				'show_item_remove_button'          => PlanManager::can_access_feature( 'show_item_remove_button' ),
+				'link_items'                                                    => apply_filters( 'cfw_link_cart_items', SettingsManager::instance()->get_setting( 'cart_item_link' ) === 'enabled' ),
+				'cart_item_link_target_new_window'                              => SettingsManager::instance()->get_setting( 'cart_item_link_target_new_window' ) === 'yes',
+				'show_item_remove_button'                                       => PlanManager::can_access_feature( 'show_item_remove_button' ),
 				/**
 				 * Filters whether to show cart item discount on cart item
 				 *
@@ -400,9 +400,10 @@ class AssetManager {
 				 *
 				 * @since 2.0.0
 				 */
-				'show_item_discount'               => apply_filters( 'cfw_show_cart_item_discount', SettingsManager::instance()->get_setting( 'show_side_cart_item_discount' ) === 'yes' ),
-				'max_bumps'                        => $max_bumps < 0 ? 999 : $max_bumps,
-				'coupons_enabled'                  => wc_coupons_enabled(),
+				'show_item_discount'                                            => apply_filters( 'cfw_show_cart_item_discount', SettingsManager::instance()->get_setting( 'show_side_cart_item_discount' ) === 'yes' ),
+				'max_bumps'                                                     => $max_bumps < 0 ? 999 : $max_bumps,
+				'coupons_enabled'                                               => wc_coupons_enabled(),
+				'show_free_shipping_progress_bar_without_calculated_packages'   => apply_filters( 'cfw_show_free_shipping_progress_bar_without_calculated_packages', false ),
 			),
 			'messages' => array(
 				/**
@@ -694,15 +695,15 @@ class AssetManager {
 					'quantity_prompt_message'           => __( 'Please enter a new quantity:', 'checkout-wc' ),
 					'cvv_tooltip_message'               => __( '3-digit security code usually found on the back of your card. American Express cards have a 4-digit code located on the front.', 'checkout-wc' ),
 					'delete_confirm_message'            => __( 'Are you sure you want to remove this item from your cart?', 'checkout-wc' ),
-					'account_already_registered_notice' => cfw_apply_filters( 'woocommerce_registration_error_email_exists', cfw__( 'An account is already registered with your email address. <a href="#" class="showlogin">Please log in.</a>', 'woocommerce' ), '' ),
-					'generic_field_validation_error_message' => cfw__( '%s is a required field.', 'woocommerce' ),
-					'update_checkout_error'             => cfw__( 'There was a problem checking out. Please try again. If the problem persists, please get in touch with us so we can assist.', 'woocommerce' ),
+					'account_already_registered_notice' => cfw_apply_filters( 'woocommerce_registration_error_email_exists', __( 'An account is already registered with your email address. <a href="#" class="showlogin">Please log in.</a>', 'woocommerce' ), '' ),
+					'generic_field_validation_error_message' => __( '%s is a required field.', 'woocommerce' ),
+					'update_checkout_error'             => __( 'There was a problem checking out. Please try again. If the problem persists, please get in touch with us so we can assist.', 'woocommerce' ),
 					'invalid_postcode'                  => __( 'Please enter a valid postcode / ZIP.', 'checkout-wc' ),
 					'pickup_label'                      => __( 'Pickup', 'checkout-wc' ),
 					'pickup_btn_label'                  => __( 'Continue to pickup', 'checkout-wc' ),
-					'update_cart_item_variation_button' => cfw__( 'Update', 'woocommerce' ),
-					'ok_button_label'                   => cfw__( 'Add to cart', 'woocommerce' ),
-					'cancel_button_label'               => cfw__( 'Cancel', 'woocommerce' ),
+					'update_cart_item_variation_button' => __( 'Update', 'woocommerce' ),
+					'ok_button_label'                   => __( 'Add to cart', 'woocommerce' ),
+					'cancel_button_label'               => __( 'Cancel', 'woocommerce' ),
 					/**
 					 * Filter the fetchify search placeholder
 					 *
@@ -732,7 +733,7 @@ class AssetManager {
 					'is_checkout'               => is_checkout() && empty( $wp->query_vars['order-pay'] ) && ! isset( $wp->query_vars['order-received'] ) ? 1 : 0,
 					'debug_mode'                => defined( 'WP_DEBUG' ) && WP_DEBUG,
 					'cfw_debug_mode'            => isset( $_GET['cfw-debug'] ), // phpcs:ignore WordPress.Security.NonceVerification.Recommended
-					'i18n_checkout_error'       => cfw_esc_attr__( 'Error processing checkout. Please try again.', 'woocommerce' ),
+					'i18n_checkout_error'       => esc_attr__( 'Error processing checkout. Please try again.', 'woocommerce' ),
 					'dist_path'                 => CFW_PATH_ASSETS,
 					'is_rtl'                    => is_rtl(),
 					'cart_hash_key'             => cfw_apply_filters( 'woocommerce_cart_hash_key', 'wc_cart_hash_' . md5( get_current_blog_id() . '_' . get_site_url( get_current_blog_id(), '/' ) . get_template() ) ),
@@ -758,7 +759,7 @@ class AssetManager {
 		$suggested_products_heading = SettingsManager::instance()->get_setting( 'side_cart_suggested_products_heading' );
 
 		if ( empty( $suggested_products_heading ) ) {
-			$suggested_products_heading = cfw__( 'You may also like&hellip;', 'woocommerce' );
+			$suggested_products_heading = __( 'You may also like&hellip;', 'woocommerce' );
 		}
 
 		return array_merge_recursive(
@@ -831,10 +832,10 @@ class AssetManager {
 					'messages'        => array(
 						'quantity_prompt_message'   => __( 'Please enter a new quantity:', 'checkout-wc' ),
 						'delete_confirm_message'    => __( 'Are you sure you want to remove this item from your cart?', 'checkout-wc' ),
-						'view_cart'                 => cfw__( 'View cart', 'woocommerce' ),
-						'update_cart_item_variation_button' => cfw__( 'Update', 'woocommerce' ),
-						'ok_button_label'           => cfw__( 'Add to cart', 'woocommerce' ),
-						'cancel_button_label'       => cfw__( 'Cancel', 'woocommerce' ),
+						'view_cart'                 => __( 'View cart', 'woocommerce' ),
+						'update_cart_item_variation_button' => __( 'Update', 'woocommerce' ),
+						'ok_button_label'           => __( 'Add to cart', 'woocommerce' ),
+						'cancel_button_label'       => __( 'Cancel', 'woocommerce' ),
 						'remove_item_label'         => __( 'Remove this item', 'woocommerce' ),
 						'proceed_to_checkout_label' => __( 'Proceed to checkout', 'woocommerce' ),
 						'continue_shopping_label'   => __( 'Continue shopping', 'woocommerce' ),

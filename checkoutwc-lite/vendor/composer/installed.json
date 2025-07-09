@@ -1,58 +1,6 @@
 {
     "packages": [
         {
-            "name": "mixpanel/mixpanel-php",
-            "version": "2.11.0",
-            "version_normalized": "2.11.0.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/mixpanel/mixpanel-php.git",
-                "reference": "4b0fafacf2129eff5d50721e129b07f0c32687e7"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/mixpanel/mixpanel-php/zipball/4b0fafacf2129eff5d50721e129b07f0c32687e7",
-                "reference": "4b0fafacf2129eff5d50721e129b07f0c32687e7",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.0"
-            },
-            "require-dev": {
-                "phpdocumentor/phpdocumentor": "2.9.*",
-                "phpunit/phpunit": "5.6.*"
-            },
-            "time": "2023-04-11T23:03:57+00:00",
-            "type": "library",
-            "installation-source": "dist",
-            "autoload": {
-                "files": [
-                    "lib/Mixpanel.php"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "Apache-2.0"
-            ],
-            "authors": [
-                {
-                    "name": "Mixpanel <dev@mixpanel.com>",
-                    "homepage": "https://mixpanel.com/"
-                }
-            ],
-            "description": "The Official PHP library for Mixpanel",
-            "homepage": "https://mixpanel.com/help/reference/php",
-            "keywords": [
-                "mixpanel",
-                "mixpanel php"
-            ],
-            "support": {
-                "issues": "https://github.com/mixpanel/mixpanel-php/issues",
-                "source": "https://github.com/mixpanel/mixpanel-php/tree/2.11.0"
-            },
-            "install-path": "../mixpanel/mixpanel-php"
-        },
-        {
             "name": "pelago/emogrifier",
             "version": "v7.3.0",
             "version_normalized": "7.3.0.0",
@@ -259,17 +207,17 @@
         },
         {
             "name": "sabberworm/php-css-parser",
-            "version": "v8.7.0",
-            "version_normalized": "8.7.0.0",
+            "version": "v8.8.0",
+            "version_normalized": "8.8.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/MyIntervals/PHP-CSS-Parser.git",
-                "reference": "f414ff953002a9b18e3a116f5e462c56f21237cf"
+                "reference": "3de493bdddfd1f051249af725c7e0d2c38fed740"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/MyIntervals/PHP-CSS-Parser/zipball/f414ff953002a9b18e3a116f5e462c56f21237cf",
-                "reference": "f414ff953002a9b18e3a116f5e462c56f21237cf",
+                "url": "https://api.github.com/repos/MyIntervals/PHP-CSS-Parser/zipball/3de493bdddfd1f051249af725c7e0d2c38fed740",
+                "reference": "3de493bdddfd1f051249af725c7e0d2c38fed740",
                 "shasum": ""
             },
             "require": {
@@ -277,12 +225,12 @@
                 "php": "^5.6.20 || ^7.0.0 || ~8.0.0 || ~8.1.0 || ~8.2.0 || ~8.3.0 || ~8.4.0"
             },
             "require-dev": {
-                "phpunit/phpunit": "5.7.27 || 6.5.14 || 7.5.20 || 8.5.40"
+                "phpunit/phpunit": "5.7.27 || 6.5.14 || 7.5.20 || 8.5.41"
             },
             "suggest": {
                 "ext-mbstring": "for parsing UTF-8 CSS"
             },
-            "time": "2024-10-27T17:38:32+00:00",
+            "time": "2025-03-23T17:59:05+00:00",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -321,60 +269,9 @@
             ],
             "support": {
                 "issues": "https://github.com/MyIntervals/PHP-CSS-Parser/issues",
-                "source": "https://github.com/MyIntervals/PHP-CSS-Parser/tree/v8.7.0"
+                "source": "https://github.com/MyIntervals/PHP-CSS-Parser/tree/v8.8.0"
             },
             "install-path": "../../vendor-prefixed/sabberworm/php-css-parser/"
-        },
-        {
-            "name": "smartystreets/phpsdk",
-            "version": "5.3.0",
-            "version_normalized": "5.3.0.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/smartystreets/smartystreets-php-sdk.git",
-                "reference": "3b7aa3f8490d36cce43322ed660798400fab5423"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/smartystreets/smartystreets-php-sdk/zipball/3b7aa3f8490d36cce43322ed660798400fab5423",
-                "reference": "3b7aa3f8490d36cce43322ed660798400fab5423",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.6"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "^9",
-                "psr/log": "^1.0.1"
-            },
-            "suggest": {
-                "psr/log": "^1.0.1"
-            },
-            "time": "2025-02-18T16:33:18+00:00",
-            "type": "library",
-            "installation-source": "dist",
-            "autoload": {
-                "psr-4": {
-                    "CheckoutWC\\SmartyStreets\\PhpSdk\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "Apache-2.0"
-            ],
-            "authors": [
-                {
-                    "name": "SmartyStreets SDK Team",
-                    "email": "support@smarty.com"
-                }
-            ],
-            "description": "The official PHP client library from SmartyStreets.",
-            "homepage": "https://github.com/smartystreets/smartystreets-php-sdk",
-            "support": {
-                "issues": "https://github.com/smartystreets/smartystreets-php-sdk/issues",
-                "source": "https://github.com/smartystreets/smartystreets-php-sdk/tree/5.3.0"
-            },
-            "install-path": "../../vendor-prefixed/smartystreets/phpsdk/"
         },
         {
             "name": "stellarwp/installer",
@@ -416,9 +313,9 @@
             "installation-source": "dist",
             "autoload": {
                 "psr-4": {
-                    "StellarWP\\Installer\\Admin_Views\\": "src/admin-views",
-                    "StellarWP\\Installer\\Assets_JS\\": "src/assets/js",
-                    "CheckoutWC\\StellarWP\\Installer\\": "src/Installer"
+                    "CheckoutWC\\StellarWP\\Installer\\": "src/Installer",
+                    "CheckoutWC\\StellarWP\\Installer\\Admin_Views\\": "src/admin-views",
+                    "CheckoutWC\\StellarWP\\Installer\\Assets_JS\\": "src/assets/js"
                 }
             },
             "autoload-dev": {
@@ -765,8 +662,8 @@
         },
         {
             "name": "symfony/polyfill-php73",
-            "version": "v1.31.0",
-            "version_normalized": "1.31.0.0",
+            "version": "v1.32.0",
+            "version_normalized": "1.32.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-php73.git",
@@ -824,7 +721,7 @@
                 "shim"
             ],
             "support": {
-                "source": "https://github.com/symfony/polyfill-php73/tree/v1.31.0"
+                "source": "https://github.com/symfony/polyfill-php73/tree/v1.32.0"
             },
             "funding": [
                 {
@@ -844,23 +741,23 @@
         },
         {
             "name": "symfony/polyfill-php80",
-            "version": "v1.31.0",
-            "version_normalized": "1.31.0.0",
+            "version": "v1.32.0",
+            "version_normalized": "1.32.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-php80.git",
-                "reference": "60328e362d4c2c802a54fcbf04f9d3fb892b4cf8"
+                "reference": "0cc9dd0f17f61d8131e7df6b84bd344899fe2608"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-php80/zipball/60328e362d4c2c802a54fcbf04f9d3fb892b4cf8",
-                "reference": "60328e362d4c2c802a54fcbf04f9d3fb892b4cf8",
+                "url": "https://api.github.com/repos/symfony/polyfill-php80/zipball/0cc9dd0f17f61d8131e7df6b84bd344899fe2608",
+                "reference": "0cc9dd0f17f61d8131e7df6b84bd344899fe2608",
                 "shasum": ""
             },
             "require": {
                 "php": ">=7.2"
             },
-            "time": "2024-09-09T11:45:10+00:00",
+            "time": "2025-01-02T08:10:11+00:00",
             "type": "library",
             "extra": {
                 "thanks": {
@@ -907,7 +804,7 @@
                 "shim"
             ],
             "support": {
-                "source": "https://github.com/symfony/polyfill-php80/tree/v1.31.0"
+                "source": "https://github.com/symfony/polyfill-php80/tree/v1.32.0"
             },
             "funding": [
                 {
@@ -997,52 +894,6 @@
                 }
             ],
             "install-path": "../../vendor-prefixed/symfony/rate-limiter/"
-        },
-        {
-            "name": "woocommerce/action-scheduler",
-            "version": "3.9.2",
-            "version_normalized": "3.9.2.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/woocommerce/action-scheduler.git",
-                "reference": "efbb7953f72a433086335b249292f280dd43ddfe"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/woocommerce/action-scheduler/zipball/efbb7953f72a433086335b249292f280dd43ddfe",
-                "reference": "efbb7953f72a433086335b249292f280dd43ddfe",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=7.1"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "^7.5",
-                "woocommerce/woocommerce-sniffs": "0.1.0",
-                "wp-cli/wp-cli": "~2.5.0",
-                "yoast/phpunit-polyfills": "^2.0"
-            },
-            "time": "2025-02-03T09:09:30+00:00",
-            "type": "wordpress-plugin",
-            "extra": {
-                "scripts-description": {
-                    "test": "Run unit tests",
-                    "phpcs": "Analyze code against the WordPress coding standards with PHP_CodeSniffer",
-                    "phpcbf": "Fix coding standards warnings/errors automatically with PHP Code Beautifier"
-                }
-            },
-            "installation-source": "dist",
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "GPL-3.0-or-later"
-            ],
-            "description": "Action Scheduler for WordPress and WooCommerce",
-            "homepage": "https://actionscheduler.org/",
-            "support": {
-                "issues": "https://github.com/woocommerce/action-scheduler/issues",
-                "source": "https://github.com/woocommerce/action-scheduler/tree/3.9.2"
-            },
-            "install-path": "../woocommerce/action-scheduler"
         }
     ],
     "dev": false,

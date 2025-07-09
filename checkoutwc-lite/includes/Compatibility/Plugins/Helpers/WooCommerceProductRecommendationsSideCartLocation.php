@@ -9,7 +9,7 @@ class WooCommerceProductRecommendationsSideCartLocation extends \WC_PRL_Location
 	public function __construct() {
 
 		$this->id        = 'cfw_side_cart';
-		$this->title     = cfw__( 'CheckoutWC Side Cart', 'woocommerce-product-recommendations' );
+		$this->title     = __( 'CheckoutWC Side Cart', 'woocommerce-product-recommendations' );
 		$this->cacheable = false;
 
 		$this->defaults = array(
@@ -40,31 +40,31 @@ class WooCommerceProductRecommendationsSideCartLocation extends \WC_PRL_Location
 
 		$this->hooks['cfw_after_side_cart_items_table'] = array(
 			'id'       => 'cfw_after_side_cart_items_table',
-			'label'    => cfw_notranslate__( 'CheckoutWC: After Side Cart Items', 'checkout-wc' ),
+			'label'    => __( 'CheckoutWC: After Side Cart Items', 'checkout-wc' ),
 			'priority' => 10,
 		);
 
 		$this->hooks['cfw_side_cart_footer_start'] = array(
 			'id'       => 'cfw_side_cart_footer_start',
-			'label'    => cfw_notranslate__( 'CheckoutWC: Before Side Cart Footer Above Promo Code', 'checkout-wc' ),
+			'label'    => __( 'CheckoutWC: Before Side Cart Footer Above Promo Code', 'checkout-wc' ),
 			'priority' => 10,
 		);
 
 		$this->hooks['cfw_before_side_cart_totals'] = array(
 			'id'       => 'cfw_before_side_cart_totals',
-			'label'    => cfw_notranslate__( 'CheckoutWC: Before Side Cart Totals', 'checkout-wc' ),
+			'label'    => __( 'CheckoutWC: Before Side Cart Totals', 'checkout-wc' ),
 			'priority' => 10,
 		);
 
 		$this->hooks['cfw_after_side_cart_totals'] = array(
 			'id'       => 'cfw_after_side_cart_totals',
-			'label'    => cfw_notranslate__( 'CheckoutWC: After Side Cart Totals', 'checkout-wc' ),
+			'label'    => __( 'CheckoutWC: After Side Cart Totals', 'checkout-wc' ),
 			'priority' => 10,
 		);
 
 		$this->hooks['cfw_after_side_cart_proceed_to_checkout_button'] = array(
 			'id'       => 'cfw_after_side_cart_proceed_to_checkout_button',
-			'label'    => cfw_notranslate__( 'CheckoutWC: After Side Cart Buttons', 'checkout-wc' ),
+			'label'    => __( 'CheckoutWC: After Side Cart Buttons', 'checkout-wc' ),
 			'priority' => 10,
 		);
 	}

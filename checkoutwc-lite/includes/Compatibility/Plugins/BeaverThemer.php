@@ -35,8 +35,8 @@ class BeaverThemer extends CompatibilityAbstract {
 
 		$integrations[] = array(
 			'name'          => 'enable_beaver_themer_support',
-			'label'         => cfw_notranslate__( 'Enable Beaver Themer Support', 'checkout-wc' ),
-			'description'   => cfw_notranslate__( 'Allow Beaver Themer to replace header and footer.', 'checkout-wc' ),
+			'label'         => __( 'Enable Beaver Themer Support', 'checkout-wc' ),
+			'description'   => __( 'Allow Beaver Themer to replace header and footer.', 'checkout-wc' ),
 			'initial_value' => SettingsManager::instance()->get_setting( 'enable_beaver_themer_support' ) === 'yes',
 		);
 

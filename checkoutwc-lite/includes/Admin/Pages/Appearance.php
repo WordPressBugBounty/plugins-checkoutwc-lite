@@ -21,7 +21,7 @@ class Appearance extends PageAbstract {
 	public function __construct() {
 		$this->settings_manager = SettingsManager::instance();
 
-		parent::__construct( cfw_notranslate__( 'Appearance', 'checkout-wc' ), 'cfw_manage_appearance', 'appearance' );
+		parent::__construct( __( 'Appearance', 'checkout-wc' ), 'cfw_manage_appearance', 'appearance' );
 	}
 
 	public function init() {
@@ -49,11 +49,7 @@ class Appearance extends PageAbstract {
 	}
 
 	public function enqueue_assets() {
-		wp_enqueue_style( 'wp-color-picker' );
-
 		wp_enqueue_media();
-
-		wp_enqueue_script( 'cfw-webfont-loader', 'https://cdnjs.cloudflare.com/ajax/libs/webfont/1.6.28/webfontloader.js', array(), CFW_VERSION, array( 'in_footer' => false ) );
 	}
 
 	public function output() {
@@ -72,7 +68,6 @@ class Appearance extends PageAbstract {
 		$settings        = SettingsManager::instance();
 		$templates       = Template::get_all_available();
 		$active_template = cfw_get_active_template()->get_slug();
-		$upgrade_url     = 'https://www.checkoutwc.com/lite-upgrade/?utm_campaign=liteplugin&utm_medium=appearance-templates&utm_source=WordPress&utm_content=Upgrade+to+Premium+to+Unlock';
 
 		// Move active template to the top
 		if ( isset( $templates[ $active_template ] ) ) {
@@ -125,7 +120,7 @@ class Appearance extends PageAbstract {
 
 							<div class="text-base" id="<?php echo esc_attr( $template->get_slug() ); ?>-name">
 								<strong>
-									<?php echo $active ? esc_html( cfw__( 'Active: ' ) ) : ''; ?>
+									<?php echo $active ? esc_html( __( 'Active: ' ) ) : ''; ?>
 								</strong>
 								<?php echo esc_html( $template->get_name() ); ?>
 								<a class="<?php echo $active || $locked ? 'invisible' : ''; ?> block text-sm text-blue-600"
@@ -134,8 +129,8 @@ class Appearance extends PageAbstract {
 
 							<?php if ( $locked ) : ?>
 								<div class="flex items-center">
-									<a href="<?php echo esc_url( $upgrade_url ); ?>" target="_blank" class="button button-primary">
-										<?php echo esc_html( cfw__( 'Upgrade to Premium to Unlock' ) ); ?>
+									<a href="https://www.checkoutwc.com/lite-upgrade/?utm_campaign=liteplugin&utm_medium=appearance-templates&utm_source=WordPress&utm_content=Upgrade+to+Premium+to+Unlock" target="_blank" class="button button-primary">
+										<?php echo esc_html( __( 'Upgrade to Premium to Unlock' ) ); ?>
 									</a>
 								</div>
 							<?php else : ?>
@@ -144,7 +139,7 @@ class Appearance extends PageAbstract {
 											name="<?php echo esc_attr( $settings->get_field_name( 'active_template' ) ); ?>"
 											value="<?php echo esc_attr( $template->get_slug() ); ?>"/>
 									<?php $settings->the_nonce(); ?>
-									<?php submit_button( cfw_notranslate__( 'Activate', 'checkout-wc' ), 'button-secondary', $name = 'submit', $wrap = false ); ?>
+									<?php submit_button( __( 'Activate', 'checkout-wc' ), 'button-secondary', $name = 'submit', $wrap = false ); ?>
 								</form>
 							<?php endif; ?>
 						</div>
@@ -206,9 +201,9 @@ class Appearance extends PageAbstract {
 			'settings' => array(),
 		);
 
-		$color_settings['body']['settings']['body_background_color'] = cfw_notranslate__( 'Background', 'checkout-wc' );
-		$color_settings['body']['settings']['body_text_color']       = cfw_notranslate__( 'Text', 'checkout-wc' );
-		$color_settings['body']['settings']['link_color']            = cfw_notranslate__( 'Link', 'checkout-wc' );
+		$color_settings['body']['settings']['body_background_color'] = __( 'Background', 'checkout-wc' );
+		$color_settings['body']['settings']['body_text_color']       = __( 'Text', 'checkout-wc' );
+		$color_settings['body']['settings']['link_color']            = __( 'Link', 'checkout-wc' );
 
 		// Header
 		$color_settings['header'] = array(
@@ -217,10 +212,10 @@ class Appearance extends PageAbstract {
 		);
 
 		if ( $active_template->supports( 'header-background' ) ) {
-			$color_settings['header']['settings']['header_background_color'] = cfw_notranslate__( 'Background', 'checkout-wc' );
+			$color_settings['header']['settings']['header_background_color'] = __( 'Background', 'checkout-wc' );
 		}
 
-		$color_settings['header']['settings']['header_text_color'] = cfw_notranslate__( 'Text', 'checkout-wc' );
+		$color_settings['header']['settings']['header_text_color'] = __( 'Text', 'checkout-wc' );
 
 		// Footer
 		$color_settings['footer'] = array(
@@ -229,10 +224,10 @@ class Appearance extends PageAbstract {
 		);
 
 		if ( $active_template->supports( 'footer-background' ) ) {
-			$color_settings['footer']['settings']['footer_background_color'] = cfw_notranslate__( 'Background', 'checkout-wc' );
+			$color_settings['footer']['settings']['footer_background_color'] = __( 'Background', 'checkout-wc' );
 		}
 
-		$color_settings['footer']['settings']['footer_color'] = cfw_notranslate__( 'Text', 'checkout-wc' );
+		$color_settings['footer']['settings']['footer_color'] = __( 'Text', 'checkout-wc' );
 
 		// Cart Summary
 		$color_settings['cart_summary'] = array(
@@ -241,16 +236,16 @@ class Appearance extends PageAbstract {
 		);
 
 		if ( $active_template->supports( 'summary-background' ) ) {
-			$color_settings['cart_summary']['settings']['summary_background_color'] = cfw_notranslate__( 'Background', 'checkout-wc' );
-			$color_settings['cart_summary']['settings']['summary_text_color']       = cfw_notranslate__( 'Text', 'checkout-wc' );
+			$color_settings['cart_summary']['settings']['summary_background_color'] = __( 'Background', 'checkout-wc' );
+			$color_settings['cart_summary']['settings']['summary_text_color']       = __( 'Text', 'checkout-wc' );
 		}
 
-		$color_settings['cart_summary']['settings']['summary_link_color'] = cfw_notranslate__( 'Link', 'checkout-wc' );
+		$color_settings['cart_summary']['settings']['summary_link_color'] = __( 'Link', 'checkout-wc' );
 
-		$color_settings['cart_summary']['settings']['summary_mobile_background_color'] = cfw_notranslate__( 'Mobile Background', 'checkout-wc' );
+		$color_settings['cart_summary']['settings']['summary_mobile_background_color'] = __( 'Mobile Background', 'checkout-wc' );
 
-		$color_settings['cart_summary']['settings']['cart_item_quantity_color']      = cfw_notranslate__( 'Quantity Bubble Background', 'checkout-wc' );
-		$color_settings['cart_summary']['settings']['cart_item_quantity_text_color'] = cfw_notranslate__( 'Quantity Bubble Text', 'checkout-wc' );
+		$color_settings['cart_summary']['settings']['cart_item_quantity_color']      = __( 'Quantity Bubble Background', 'checkout-wc' );
+		$color_settings['cart_summary']['settings']['cart_item_quantity_text_color'] = __( 'Quantity Bubble Text', 'checkout-wc' );
 
 		// Breadcrumbs
 		$color_settings['breadcrumbs'] = array(
@@ -259,12 +254,12 @@ class Appearance extends PageAbstract {
 		);
 
 		if ( $active_template->supports( 'breadcrumb-colors' ) ) {
-			$color_settings['breadcrumbs']['settings']['breadcrumb_completed_text_color']   = cfw_notranslate__( 'Completed Text', 'checkout-wc' );
-			$color_settings['breadcrumbs']['settings']['breadcrumb_current_text_color']     = cfw_notranslate__( 'Current Text', 'checkout-wc' );
-			$color_settings['breadcrumbs']['settings']['breadcrumb_next_text_color']        = cfw_notranslate__( 'Next Text', 'checkout-wc' );
-			$color_settings['breadcrumbs']['settings']['breadcrumb_completed_accent_color'] = cfw_notranslate__( 'Completed Accent', 'checkout-wc' );
-			$color_settings['breadcrumbs']['settings']['breadcrumb_current_accent_color']   = cfw_notranslate__( 'Current Accent', 'checkout-wc' );
-			$color_settings['breadcrumbs']['settings']['breadcrumb_next_accent_color']      = cfw_notranslate__( 'Next Accent', 'checkout-wc' );
+			$color_settings['breadcrumbs']['settings']['breadcrumb_completed_text_color']   = __( 'Completed Text', 'checkout-wc' );
+			$color_settings['breadcrumbs']['settings']['breadcrumb_current_text_color']     = __( 'Current Text', 'checkout-wc' );
+			$color_settings['breadcrumbs']['settings']['breadcrumb_next_text_color']        = __( 'Next Text', 'checkout-wc' );
+			$color_settings['breadcrumbs']['settings']['breadcrumb_completed_accent_color'] = __( 'Completed Accent', 'checkout-wc' );
+			$color_settings['breadcrumbs']['settings']['breadcrumb_current_accent_color']   = __( 'Current Accent', 'checkout-wc' );
+			$color_settings['breadcrumbs']['settings']['breadcrumb_next_accent_color']      = __( 'Next Accent', 'checkout-wc' );
 		}
 
 		$color_settings['buttons'] = array(
@@ -273,14 +268,14 @@ class Appearance extends PageAbstract {
 		);
 
 		// Buttons
-		$color_settings['buttons']['settings']['button_color']                      = cfw_notranslate__( 'Primary Background', 'checkout-wc' );
-		$color_settings['buttons']['settings']['button_text_color']                 = cfw_notranslate__( 'Primary Text', 'checkout-wc' );
-		$color_settings['buttons']['settings']['button_hover_color']                = cfw_notranslate__( 'Primary Background Hover', 'checkout-wc' );
-		$color_settings['buttons']['settings']['button_text_hover_color']           = cfw_notranslate__( 'Primary Text Hover', 'checkout-wc' );
-		$color_settings['buttons']['settings']['secondary_button_color']            = cfw_notranslate__( 'Secondary Background', 'checkout-wc' );
-		$color_settings['buttons']['settings']['secondary_button_text_color']       = cfw_notranslate__( 'Secondary Text', 'checkout-wc' );
-		$color_settings['buttons']['settings']['secondary_button_hover_color']      = cfw_notranslate__( 'Secondary Background Hover', 'checkout-wc' );
-		$color_settings['buttons']['settings']['secondary_button_text_hover_color'] = cfw_notranslate__( 'Secondary Text Hover', 'checkout-wc' );
+		$color_settings['buttons']['settings']['button_color']                      = __( 'Primary Background', 'checkout-wc' );
+		$color_settings['buttons']['settings']['button_text_color']                 = __( 'Primary Text', 'checkout-wc' );
+		$color_settings['buttons']['settings']['button_hover_color']                = __( 'Primary Background Hover', 'checkout-wc' );
+		$color_settings['buttons']['settings']['button_text_hover_color']           = __( 'Primary Text Hover', 'checkout-wc' );
+		$color_settings['buttons']['settings']['secondary_button_color']            = __( 'Secondary Background', 'checkout-wc' );
+		$color_settings['buttons']['settings']['secondary_button_text_color']       = __( 'Secondary Text', 'checkout-wc' );
+		$color_settings['buttons']['settings']['secondary_button_hover_color']      = __( 'Secondary Background Hover', 'checkout-wc' );
+		$color_settings['buttons']['settings']['secondary_button_text_hover_color'] = __( 'Secondary Text Hover', 'checkout-wc' );
 
 		// Theme Specific Colors
 		$color_settings['active_theme_colors'] = array(

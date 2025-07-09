@@ -17,7 +17,7 @@ class Advanced extends PageAbstract {
 	use TabbedAdminPageTrait;
 
 	public function __construct() {
-		parent::__construct( cfw_notranslate__( 'Advanced', 'checkout-wc' ), 'cfw_manage_advanced', 'cfw_manage_advanced' );
+		parent::__construct( __( 'Advanced', 'checkout-wc' ), 'cfw_manage_advanced', 'cfw_manage_advanced' );
 	}
 
 	public function init() {
@@ -61,12 +61,12 @@ class Advanced extends PageAbstract {
 			<div class="space-y-6 mt-4">
 				<?php
 				cfw_admin_page_section(
-					cfw_notranslate__( 'Export Settings', 'checkout-wc' ),
+					__( 'Export Settings', 'checkout-wc' ),
 					'Download a JSON file containing the current plugin settings.',
 					$this->get_export_settings()
 				);
 				cfw_admin_page_section(
-					cfw_notranslate__( 'Import Settings', 'checkout-wc' ),
+					__( 'Import Settings', 'checkout-wc' ),
 					'Replace your current settings with a previous settings export.',
 					$this->get_import_settings()
 				);
@@ -81,10 +81,10 @@ class Advanced extends PageAbstract {
 		?>
 		<input id="export_settings_button" type="button" class="button"
 				data-nonce="<?php echo esc_attr( wp_create_nonce( '_cfw__export_settings' ) ); ?>"
-				value="<?php cfw_e( 'Export Settings', 'checkout-wc' ); ?>"/>
+				value="<?php _e( 'Export Settings', 'checkout-wc' ); ?>"/>
 
 		<p id="small-description" class="text-gray-500">
-			<?php cfw_e( 'Download a backup file of your settings.', 'checkout-wc' ); ?>
+			<?php _e( 'Download a backup file of your settings.', 'checkout-wc' ); ?>
 		</p>
 		<?php
 		return ob_get_clean();
@@ -94,11 +94,11 @@ class Advanced extends PageAbstract {
 		ob_start();
 		?>
 		<input name="uploaded_settings" type="file" class=""
-				value="<?php cfw_e( 'Import Settings', 'checkout-wc' ); ?>"/>
+				value="<?php _e( 'Import Settings', 'checkout-wc' ); ?>"/>
 		<?php wp_nonce_field( 'import_cfw_settings_nonce' ); ?>
 		<div>
 			<input id="import_settings_button" type="submit" class="button" name="import_cfw_settings"
-					value="<?php cfw_e( 'Upload File and Import Settings', 'checkout-wc' ); ?>"/>
+					value="<?php _e( 'Upload File and Import Settings', 'checkout-wc' ); ?>"/>
 		</div>
 		<?php
 		return ob_get_clean();

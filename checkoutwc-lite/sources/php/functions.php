@@ -4,7 +4,6 @@ if ( ! defined( 'WPINC' ) ) {
 }
 
 use Objectiv\Plugins\Checkout\Adapters\OrderItemFactory;
-use Objectiv\Plugins\Checkout\AddressFieldsAugmenter;
 use Objectiv\Plugins\Checkout\Factories\BumpFactory;
 use Objectiv\Plugins\Checkout\FormFieldAugmenter;
 use Objectiv\Plugins\Checkout\Interfaces\BumpInterface;
@@ -213,7 +212,7 @@ function cfw_get_review_pane_shipping_address_label(): string {
 	if ( ! wc_ship_to_billing_address_only() ) {
 		$ship_to_label = __( 'Ship to', 'checkout-wc' );
 	} else {
-		$ship_to_label = cfw__( 'Address', 'woocommerce' );
+		$ship_to_label = __( 'Address', 'woocommerce' );
 	}
 
 	/**
@@ -362,7 +361,7 @@ function cfw_get_cart_shipping_data(): array {
 		}
 
 		$package_details = implode( ', ', $product_names );
-		$package_name    = cfw_apply_filters( 'woocommerce_shipping_package_name', sprintf( cfw_nx( 'Shipping', 'Shipping %d', ( $i + 1 ), 'shipping packages', 'woocommerce' ), ( $i + 1 ) ), $i, $package );
+		$package_name    = cfw_apply_filters( 'woocommerce_shipping_package_name', sprintf( _nx( 'Shipping', 'Shipping %d', ( $i + 1 ), 'shipping packages', 'woocommerce' ), ( $i + 1 ) ), $i, $package );
 
 		$formatted_methods = array();
 
@@ -568,7 +567,7 @@ function cfw_get_payment_methods_html() {
 				++$count;
 			}
 		} else {
-			echo '<li class="woocommerce-notice woocommerce-notice--info woocommerce-info">' . cfw_apply_filters( 'woocommerce_no_available_payment_methods_message', cfw__( 'Sorry, it seems that there are no available payment methods for your location. Please contact us if you require assistance or wish to make alternate arrangements.', 'woocommerce' ) ) . '</li>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+			echo '<li class="woocommerce-notice woocommerce-notice--info woocommerce-info">' . cfw_apply_filters( 'woocommerce_no_available_payment_methods_message', __( 'Sorry, it seems that there are no available payment methods for your location. Please contact us if you require assistance or wish to make alternate arrangements.', 'woocommerce' ) ) . '</li>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 		}
 
 		/**
@@ -708,7 +707,7 @@ function cfw_cart_totals_shipping_html() {
 			 *
 			 * @since 2.0.0
 			 */
-			echo apply_filters( 'cfw_cart_totals_shipping_label', cfw_esc_html__( 'Shipping', 'woocommerce' ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+			echo apply_filters( 'cfw_cart_totals_shipping_label', esc_html__( 'Shipping', 'woocommerce' ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 			?>
 		</th>
 		<td>
@@ -746,7 +745,7 @@ function cfw_get_shipping_total(): string {
 		 *
 		 * @since 2.0.0
 		 */
-		return sprintf( $small_format, apply_filters( 'cfw_shipping_total_address_required_text', cfw_esc_html__( 'Enter your address to view shipping options.', 'woocommerce' ) ) );
+		return sprintf( $small_format, apply_filters( 'cfw_shipping_total_address_required_text', esc_html__( 'Enter your address to view shipping options.', 'woocommerce' ) ) );
 	}
 
 	$packages = WC()->shipping()->get_packages();
@@ -786,7 +785,7 @@ function cfw_get_shipping_total(): string {
 	 * @param string $text The text to display.
 	 * @return string
 	 */
-	return apply_filters( 'cfw_shipping_free_text', cfw__( 'Free!', 'woocommerce' ) );
+	return apply_filters( 'cfw_shipping_free_text', __( 'Free!', 'woocommerce' ) );
 }
 
 function cfw_all_packages_have_selected_shipping_methods( $packages ): bool {
@@ -1200,7 +1199,7 @@ function cfw_order_status_date( $order_id, string $status_search ) {
 
 	add_filter( 'comments_clauses', array( 'WC_Comments', 'exclude_order_comments' ) );
 
-	$pattern = sprintf( cfw__( 'Order status changed from %1$s to %2$s.', 'woocommerce' ), 'X', $status_search );
+	$pattern = sprintf( __( 'Order status changed from %1$s to %2$s.', 'woocommerce' ), 'X', $status_search );
 
 	$pieces         = explode( ' ', $pattern );
 	$last_two_words = implode( ' ', array_splice( $pieces, - 2 ) );
@@ -1222,7 +1221,7 @@ function cfw_maybe_output_tracking_numbers( $order ) {
 
 	if ( defined( 'WC_SHIPMENT_TRACKING_VERSION' ) ) {
 		$tracking_items = \WC_Shipment_Tracking_Actions::get_instance()->get_tracking_items( $order->get_id(), true );
-		$label_suffix   = cfw__( 'Tracking Number:', 'woocommerce-shipment-tracking' );
+		$label_suffix   = __( 'Tracking Number:', 'woocommerce-shipment-tracking' );
 
 		foreach ( $tracking_items as $tracking_item ) {
 			/**
@@ -1510,7 +1509,7 @@ function cfw_get_breadcrumbs(): array {
 			 *
 			 * @since 3.0.0
 			 */
-			'label'    => apply_filters( 'cfw_breadcrumb_cart_label', cfw_esc_html__( 'Cart', 'woocommerce' ) ),
+			'label'    => apply_filters( 'cfw_breadcrumb_cart_label', esc_html__( 'Cart', 'woocommerce' ) ),
 			'priority' => 10,
 			'classes'  => array(),
 		),
@@ -2070,7 +2069,7 @@ function cfw_update_cart( array $cart_data, bool $refresh_totals = true, $contex
 			// is_sold_individually.
 			if ( $_product->is_sold_individually() && $quantity > 1 ) {
 				/* Translators: %s Product title. */
-				wc_add_notice( sprintf( cfw__( 'You can only have 1 %s in your cart.', 'woocommerce' ), $_product->get_name() ), 'error' );
+				wc_add_notice( sprintf( __( 'You can only have 1 %s in your cart.', 'woocommerce' ), $_product->get_name() ), 'error' );
 				$passed_validation = false;
 			}
 
@@ -2230,7 +2229,7 @@ function cfw_get_cart_item_quantity_control( array $cart_item, string $cart_item
 			</button>
 			<a data-quantity="<?php echo esc_attr( $cart_item['quantity'] ); ?>"
 				class="cfw-quantity-stepper-value-label <?php echo $at_max ? '' : 'cfw-quantity-bulk-edit'; ?>"
-				aria-label="<?php cfw_e( 'Edit', 'woocommerce' ); ?>">
+				aria-label="<?php _e( 'Edit', 'woocommerce' ); ?>">
 				<?php echo esc_html( $cart_item['quantity'] ); ?>
 			</a>
 			<button aria-label="<?php esc_attr_e( 'Increment', 'checkout-wc' ); ?>"
@@ -3255,7 +3254,7 @@ function cfw_get_cart_totals_data(): array {
 			$packages = WC()->shipping()->get_packages();
 
 			foreach ( $packages as $i => $package ) {
-				$chosen_method     =  WC()->session->chosen_shipping_methods[ $i ] ?? '';
+				$chosen_method     = WC()->session->chosen_shipping_methods[ $i ] ?? '';
 				$available_methods = empty( $package['rates'] ) ? array() : $package['rates'];
 
 				foreach ( $available_methods as $method ) {
@@ -3275,7 +3274,7 @@ function cfw_get_cart_totals_data(): array {
 						 *
 						 * @since 2.0.0
 						 */
-						'label' => cfw_apply_filters( 'woocommerce_shipping_package_name', sprintf( cfw_nx( 'Shipping', 'Shipping %d', ( $i + 1 ), 'shipping packages', 'woocommerce' ), ( $i + 1 ) ), $i, $package ),
+						'label' => cfw_apply_filters( 'woocommerce_shipping_package_name', sprintf( _nx( 'Shipping', 'Shipping %d', ( $i + 1 ), 'shipping packages', 'woocommerce' ), ( $i + 1 ) ), $i, $package ),
 						'value' => WC()->cart->display_prices_including_tax() ? $method->cost + $method->get_shipping_tax() : $method->cost,
 					);
 				}
@@ -3289,7 +3288,7 @@ function cfw_get_cart_totals_data(): array {
 				 *
 				 * @since 2.0.0
 				 */
-				'label' => apply_filters( 'cfw_cart_totals_shipping_label', cfw_esc_html__( 'Shipping', 'woocommerce' ) ),
+				'label' => apply_filters( 'cfw_cart_totals_shipping_label', esc_html__( 'Shipping', 'woocommerce' ) ),
 				'value' => cfw_get_shipping_total(),
 			);
 		}
@@ -3315,11 +3314,11 @@ function cfw_get_cart_totals_data(): array {
 			'cfw_after_cart_summary_totals'               => cfw_get_action_output( 'cfw_after_cart_summary_totals' ),
 		),
 		'subtotal' => array(
-			'label' => cfw__( 'Subtotal', 'woocommerce' ),
+			'label' => __( 'Subtotal', 'woocommerce' ),
 			'value' => WC()->cart->get_cart_subtotal(),
 		),
 		'total'    => array(
-			'label' => cfw__( 'Total', 'woocommerce' ),
+			'label' => __( 'Total', 'woocommerce' ),
 			'value' => cfw_get_function_output( 'wc_cart_totals_order_total_html' ),
 		),
 		'coupons'  => $coupons,
@@ -3371,7 +3370,7 @@ function cfw_get_cart_actions_data(): array {
 			 * @param bool $enable_side_cart_woocommerce_after_cart_totals_hook Whether to enable woocommerce_after_cart_totals hook for side cart
 			 */
 			'woocommerce_after_cart_totals'            => apply_filters( 'cfw_enable_side_cart_woocommerce_after_cart_totals_hook', false ) ? cfw_get_action_output( 'woocommerce_after_cart_totals' ) : '',
-			'woocommerce_no_shipping_available_html'   => cfw_apply_filters( 'woocommerce_no_shipping_available_html', '<div class="cfw-alert cfw-alert-error"><div class="message">' . wpautop( cfw_esc_html__( 'There are no shipping options available. Please ensure that your address has been entered correctly, or contact us if you need any help.', 'woocommerce' ) ) . '</div></div>' ),
+			'woocommerce_no_shipping_available_html'   => cfw_apply_filters( 'woocommerce_no_shipping_available_html', '<div class="cfw-alert cfw-alert-error"><div class="message">' . wpautop( esc_html__( 'There are no shipping options available. Please ensure that your address has been entered correctly, or contact us if you need any help.', 'woocommerce' ) ) . '</div></div>' ),
 		)
 	);
 }
@@ -3590,15 +3589,15 @@ function cfw_get_sendwp_admin_banner( $include_wrap = true ) {
 	<div class="<?php echo $include_wrap ? 'bg-white shadow sm:rounded-lg mb-6' : ''; ?>">
 		<div class="<?php echo $include_wrap ? 'px-4 py-5 sm:p-6' : ''; ?>">
 			<h3 class="text-base font-semibold leading-6 text-gray-900">
-				<?php cfw_e( 'SendWP - Transactional Email', 'checkout-wc' ); ?>
+				<?php _e( 'SendWP - Transactional Email', 'checkout-wc' ); ?>
 			</h3>
 			<div class="mt-2 sm:flex sm:items-start sm:justify-between">
 				<div class="max-w-xl text-sm text-gray-500">
 					<p class="mb-2">
-						<?php cfw_e( 'SendWP makes getting emails delivered as simple as a few clicks. So you can relax know those important emails are being delivered on time.', 'checkout-wc' ); ?>
+						<?php _e( 'SendWP makes getting emails delivered as simple as a few clicks. So you can relax know those important emails are being delivered on time.', 'checkout-wc' ); ?>
 					</p>
 					<p class="mb-2">
-						<?php cfw_e( 'Try SendWP now and <strong>get your first month for just $1.</strong>', 'checkout-wc' ); ?>
+						<?php _e( 'Try SendWP now and <strong>get your first month for just $1.</strong>', 'checkout-wc' ); ?>
 					</p>
 					<p>
 						<a href="https://www.checkoutwc.com/documentation/abandoned-cart-recovery/" target="_blank"
@@ -3608,7 +3607,7 @@ function cfw_get_sendwp_admin_banner( $include_wrap = true ) {
 					</p>
 					<p class="mt-2">
 						<em>
-							<?php cfw_e( 'Note: SendWP is optional. You can use any transactional email service you prefer.' ); ?>
+							<?php _e( 'Note: SendWP is optional. You can use any transactional email service you prefer.' ); ?>
 						</em>
 					</p>
 				</div>
@@ -3617,7 +3616,7 @@ function cfw_get_sendwp_admin_banner( $include_wrap = true ) {
 						<div>
 							<button type="button" id="cfw_sendwp_install_button"
 									class="inline-flex items-center mb-2 px-6 py-3 border border-transparent text-lg shadow font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
-								<?php cfw_e( 'Connect to SendWP', 'checkout-wc' ); ?>
+								<?php _e( 'Connect to SendWP', 'checkout-wc' ); ?>
 							</button>
 						</div>
 					</div>
@@ -3689,8 +3688,14 @@ function cfw_maybe_select_free_shipping_method( $cart_updated = false, $context 
 		return;
 	}
 
+	// Guard against invalid rates array
+	$rates = $packages[0]['rates'] ?? array();
+	if ( ! is_array( $rates ) ) {
+		return;
+	}
+
 	// Loop through shipping methods and select free shipping
-	foreach ( $packages[0]['rates'] as $rate ) {
+	foreach ( $rates as $rate ) {
 		if ( 'free_shipping' === $rate->method_id ) {
 			// Set "Free shipping" method
 			$chosen_shipping_methods[0] = $rate->id;
@@ -3795,8 +3800,8 @@ function cfw_get_login_form_html() {
 			'username',
 			array(
 				'id'                => 'cfw_login_username',
-				'label'             => cfw__( 'Username or email address', 'woocommerce' ),
-				'placeholder'       => cfw__( 'Username or email address', 'woocommerce' ),
+				'label'             => __( 'Username or email address', 'woocommerce' ),
+				'placeholder'       => __( 'Username or email address', 'woocommerce' ),
 				'type'              => 'text',
 				'autocomplete'      => 'username',
 				'required'          => true,
@@ -3809,8 +3814,8 @@ function cfw_get_login_form_html() {
 			'password',
 			array(
 				'id'                => 'cfw_login_password',
-				'label'             => cfw__( 'Password', 'woocommerce' ),
-				'placeholder'       => cfw__( 'Password', 'woocommerce' ),
+				'label'             => __( 'Password', 'woocommerce' ),
+				'placeholder'       => __( 'Password', 'woocommerce' ),
 				'type'              => 'password',
 				'autocomplete'      => 'current-password',
 				'required'          => true,
@@ -3830,7 +3835,7 @@ function cfw_get_login_form_html() {
 					class="woocommerce-form__label woocommerce-form__label-for-checkbox woocommerce-form-login__rememberme">
 					<input class="woocommerce-form__input woocommerce-form__input-checkbox" name="rememberme"
 							type="checkbox" id="rememberme" value="forever"/>
-					<span><?php cfw_esc_html_e( 'Remember me', 'woocommerce' ); ?></span>
+					<span><?php esc_html_e( 'Remember me', 'woocommerce' ); ?></span>
 				</label>
 			</p>
 			<p class="lost_password">
@@ -3841,14 +3846,14 @@ function cfw_get_login_form_html() {
 				 * @since 9.0.34
 				 * @param string $link The link to the Lost Password page.
 				 */
-				echo apply_filters( 'cfw_login_modal_last_password_link', sprintf( '<a id="cfw_lost_password_trigger" href="#cfw_lost_password_form_wrap" class="cfw-small">%s</a>', cfw_esc_html__( 'Lost your password?', 'woocommerce' ) ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+				echo apply_filters( 'cfw_login_modal_last_password_link', sprintf( '<a id="cfw_lost_password_trigger" href="#cfw_lost_password_form_wrap" class="cfw-small">%s</a>', esc_html__( 'Lost your password?', 'woocommerce' ) ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 				?>
 			</p>
 		</div>
 
 		<div class="cfw-login-modal-navigation">
 			<button type="submit" id="cfw-login-btn" class="cfw-primary-btn" name="login"
-					value="<?php cfw_esc_attr_e( 'Login', 'woocommerce' ); ?>"><?php cfw_esc_html_e( 'Login', 'woocommerce' ); ?></button>
+					value="<?php esc_attr_e( 'Login', 'woocommerce' ); ?>"><?php esc_html_e( 'Login', 'woocommerce' ); ?></button>
 
 			<?php if ( ! WC()->checkout()->is_registration_required() ) : ?>
 				<a id="cfw_login_modal_close" href="#">
@@ -3877,7 +3882,7 @@ function cfw_get_lost_password_form_html() {
 	<form method="post" target="_blank" id="cfw_lost_password_form" class="checkoutwc">
 		<div id="cfw-lp-alert-placeholder"></div>
 		<p style="margin-bottom: 1em">
-			<?php echo cfw_apply_filters( 'woocommerce_lost_password_message', cfw_esc_html__( 'Lost your password? Please enter your username or email address. You will receive a link to create a new password via email.', 'woocommerce' ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+			<?php echo cfw_apply_filters( 'woocommerce_lost_password_message', esc_html__( 'Lost your password? Please enter your username or email address. You will receive a link to create a new password via email.', 'woocommerce' ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
 		</p>
 
 		<?php
@@ -3887,8 +3892,8 @@ function cfw_get_lost_password_form_html() {
 				'type'         => 'email',
 				'required'     => true,
 				'autocomplete' => 'email',
-				'label'        => cfw__( 'Email address', 'woocommerce' ),
-				'placeholder'  => cfw__( 'Email address', 'woocommerce' ),
+				'label'        => __( 'Email address', 'woocommerce' ),
+				'placeholder'  => __( 'Email address', 'woocommerce' ),
 			)
 		);
 		?>
@@ -3900,7 +3905,7 @@ function cfw_get_lost_password_form_html() {
 		<p class="woocommerce-form-row form-row">
 			<input type="hidden" name="wc_reset_password" value="true"/>
 			<button type="submit" class="cfw-primary-btn"
-					value="<?php cfw_esc_attr_e( 'Reset password', 'woocommerce' ); ?>"><?php cfw_esc_html_e( 'Reset password', 'woocommerce' ); ?></button>
+					value="<?php esc_attr_e( 'Reset password', 'woocommerce' ); ?>"><?php esc_html_e( 'Reset password', 'woocommerce' ); ?></button>
 		</p>
 
 		<?php wp_nonce_field( 'lost_password', 'woocommerce-lost-password-nonce' ); ?>

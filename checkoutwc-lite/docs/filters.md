@@ -16,7 +16,7 @@ Version | Description
 ------- | -----------
 `6.0.0` | 
 
-Source: ./includes/Compatibility/Gateways/PayPalForWooCommerce.php, line 92
+Source: ./includes/Compatibility/Gateways/PayPalForWooCommerce.php, line 106
 
 ### `cfw_amazon_payment_gateway_found`
 
@@ -34,7 +34,43 @@ Version | Description
 ------- | -----------
 `2.0.0` | 
 
-Source: ./includes/Compatibility/Gateways/AmazonPayV1.php, line 83
+Source: ./includes/Compatibility/Gateways/AmazonPayV1.php, line 84
+
+### `cfw_updated_setting`
+
+*Fires when setting updates*
+
+**Arguments**
+
+Argument | Type | Description
+-------- | ---- | -----------
+`array($setting, $value, $old_value)` |  | 
+
+**Changelog**
+
+Version | Description
+------- | -----------
+`10.1.7` | 
+
+Source: ./includes/Managers/SettingsManagerAbstract.php, line 49
+
+### `cfw_updated_setting_{$setting}`
+
+*Fires when setting updates*
+
+**Arguments**
+
+Argument | Type | Description
+-------- | ---- | -----------
+`array($value, $old_value)` |  | 
+
+**Changelog**
+
+Version | Description
+------- | -----------
+`10.1.7` | 
+
+Source: ./includes/Managers/SettingsManagerAbstract.php, line 60
 
 ### `cfw_enqueue_scripts`
 
@@ -47,7 +83,7 @@ Version | Description
 ------- | -----------
 `5.0.0` | 
 
-Source: ./includes/Managers/AssetManager.php, line 172
+Source: ./includes/Managers/AssetManager.php, line 174
 
 ### `cfw_load_template_assets`
 
@@ -60,7 +96,20 @@ Version | Description
 ------- | -----------
 `3.0.0` | 
 
-Source: ./includes/Managers/AssetManager.php, line 179
+Source: ./includes/Managers/AssetManager.php, line 181
+
+### `cfw_before_get_data`
+
+*Fires before gathering data*
+
+
+**Changelog**
+
+Version | Description
+------- | -----------
+`9.0.38` | 
+
+Source: ./includes/Managers/AssetManager.php, line 866
 
 ### `cfw_acr_handle_meta`
 
@@ -70,7 +119,7 @@ Argument | Type | Description
 -------- | ---- | -----------
 `$fields['cfw_meta_fields']` |  | 
 
-Source: ./includes/Features/AbandonedCartRecovery.php, line 865
+Source: ./includes/Features/AbandonedCartRecovery.php, line 921
 
 ### `cfw_checkout_order_review_tab`
 
@@ -83,7 +132,7 @@ Version | Description
 ------- | -----------
 `4.0.0` | 
 
-Source: ./includes/Features/OrderReviewStep.php, line 72
+Source: ./includes/Features/OrderReviewStep.php, line 79
 
 ### `cfw_order_bump_added_to_cart`
 
@@ -101,7 +150,7 @@ Version | Description
 ------- | -----------
 `8.0.0` | 
 
-Source: ./includes/Features/OrderBumps.php, line 261
+Source: ./includes/Features/OrderBumps.php, line 314
 
 ### `cfw_after_delivery_method`
 
@@ -114,7 +163,7 @@ Version | Description
 ------- | -----------
 `7.3.0` | 
 
-Source: ./includes/Features/LocalPickup.php, line 191
+Source: ./includes/Features/LocalPickup.php, line 118
 
 ### `cfw_delivery_method_changed`
 
@@ -132,7 +181,43 @@ Version | Description
 ------- | -----------
 `7.3.2` | 
 
-Source: ./includes/Features/LocalPickup.php, line 285
+Source: ./includes/Features/LocalPickup.php, line 319
+
+### `cfw_before_admin_page_header`
+
+*Fires before the admin page header.*
+
+**Arguments**
+
+Argument | Type | Description
+-------- | ---- | -----------
+`$this` |  | 
+
+**Changelog**
+
+Version | Description
+------- | -----------
+`7.0.0` | 
+
+Source: ./includes/Admin/Pages/PageAbstract.php, line 88
+
+### `cfw_after_admin_page_header`
+
+*Fires after the admin page header.*
+
+**Arguments**
+
+Argument | Type | Description
+-------- | ---- | -----------
+`$this` |  | 
+
+**Changelog**
+
+Version | Description
+------- | -----------
+`7.0.0` | 
+
+Source: ./includes/Admin/Pages/PageAbstract.php, line 130
 
 ### `cfw_before_admin_page_header`
 
@@ -142,7 +227,7 @@ Source: ./includes/Features/LocalPickup.php, line 285
 
 Argument | Type | Description
 -------- | ---- | -----------
-`$this` | `\Objectiv\Plugins\Checkout\Admin\Pages\AbandonedCartRecovery` | The AbandonedCartRecovery instance.
+`$this` | `\Objectiv\Plugins\Checkout\Admin\Pages\Premium\AbandonedCartRecovery` | The AbandonedCartRecovery instance.
 
 **Changelog**
 
@@ -150,7 +235,7 @@ Version | Description
 ------- | -----------
 `7.0.0` | 
 
-Source: ./includes/Admin/Pages/AbandonedCartRecovery.php, line 212
+Source: ./includes/Admin/Pages/Premium/AbandonedCartRecovery.php, line 220
 
 ### `cfw_after_admin_page_header`
 
@@ -160,7 +245,7 @@ Source: ./includes/Admin/Pages/AbandonedCartRecovery.php, line 212
 
 Argument | Type | Description
 -------- | ---- | -----------
-`$this` | `\Objectiv\Plugins\Checkout\Admin\Pages\AbandonedCartRecovery` | The AbandonedCartRecovery instance.
+`$this` | `\Objectiv\Plugins\Checkout\Admin\Pages\Premium\AbandonedCartRecovery` | The AbandonedCartRecovery instance.
 
 **Changelog**
 
@@ -168,43 +253,7 @@ Version | Description
 ------- | -----------
 `7.0.0` | 
 
-Source: ./includes/Admin/Pages/AbandonedCartRecovery.php, line 252
-
-### `cfw_before_admin_page_header`
-
-*The admin page wrap*
-
-**Arguments**
-
-Argument | Type | Description
--------- | ---- | -----------
-`$this` |  | 
-
-**Changelog**
-
-Version | Description
-------- | -----------
-`1.0.0` | 
-
-Source: ./includes/Admin/Pages/PickupLocations.php, line 194
-
-### `cfw_after_admin_page_header`
-
-*The admin page wrap*
-
-**Arguments**
-
-Argument | Type | Description
--------- | ---- | -----------
-`$this` |  | 
-
-**Changelog**
-
-Version | Description
-------- | -----------
-`1.0.0` | 
-
-Source: ./includes/Admin/Pages/PickupLocations.php, line 194
+Source: ./includes/Admin/Pages/Premium/AbandonedCartRecovery.php, line 260
 
 ### `cfw_before_admin_page_header`
 
@@ -214,7 +263,7 @@ Source: ./includes/Admin/Pages/PickupLocations.php, line 194
 
 Argument | Type | Description
 -------- | ---- | -----------
-`$this` | `\Objectiv\Plugins\Checkout\Admin\Pages\OrderBumps` | The OrderBumps instance.
+`$this` | `\Objectiv\Plugins\Checkout\Admin\Pages\Premium\OrderBumps` | The OrderBumps instance.
 
 **Changelog**
 
@@ -222,7 +271,7 @@ Version | Description
 ------- | -----------
 `7.0.0` | 
 
-Source: ./includes/Admin/Pages/OrderBumps.php, line 160
+Source: ./includes/Admin/Pages/Premium/OrderBumps.php, line 188
 
 ### `cfw_after_admin_page_header`
 
@@ -232,7 +281,7 @@ Source: ./includes/Admin/Pages/OrderBumps.php, line 160
 
 Argument | Type | Description
 -------- | ---- | -----------
-`$this` | `\Objectiv\Plugins\Checkout\Admin\Pages\AbandonedCartRecovery` | The AbandonedCartRecovery instance.
+`$this` | `\Objectiv\Plugins\Checkout\Admin\Pages\Premium\AbandonedCartRecovery` | The AbandonedCartRecovery instance.
 
 **Changelog**
 
@@ -240,7 +289,7 @@ Version | Description
 ------- | -----------
 `7.0.0` | 
 
-Source: ./includes/Admin/Pages/OrderBumps.php, line 200
+Source: ./includes/Admin/Pages/Premium/OrderBumps.php, line 228
 
 ### `cfw_before_admin_page_header`
 
@@ -250,7 +299,7 @@ Source: ./includes/Admin/Pages/OrderBumps.php, line 200
 
 Argument | Type | Description
 -------- | ---- | -----------
-`$this` | `\Objectiv\Plugins\Checkout\Admin\Pages\LocalPickupAdmin` | The LocalPickupAdmin instance.
+`$this` | `\Objectiv\Plugins\Checkout\Admin\Pages\Premium\LocalPickupAdmin` | The LocalPickupAdmin instance.
 
 **Changelog**
 
@@ -258,7 +307,7 @@ Version | Description
 ------- | -----------
 `7.0.0` | 
 
-Source: ./includes/Admin/Pages/LocalPickupAdmin.php, line 115
+Source: ./includes/Admin/Pages/Premium/LocalPickupAdmin.php, line 147
 
 ### `cfw_after_admin_page_header`
 
@@ -268,7 +317,7 @@ Source: ./includes/Admin/Pages/LocalPickupAdmin.php, line 115
 
 Argument | Type | Description
 -------- | ---- | -----------
-`$this` | `\Objectiv\Plugins\Checkout\Admin\Pages\AbandonedCartRecovery` | The AbandonedCartRecovery instance.
+`$this` | `\Objectiv\Plugins\Checkout\Admin\Pages\Premium\LocalPickupAdmin` | The AbandonedCartRecovery instance.
 
 **Changelog**
 
@@ -276,43 +325,7 @@ Version | Description
 ------- | -----------
 `7.0.0` | 
 
-Source: ./includes/Admin/Pages/LocalPickupAdmin.php, line 155
-
-### `cfw_before_admin_page_header`
-
-*The admin page wrap*
-
-**Arguments**
-
-Argument | Type | Description
--------- | ---- | -----------
-`$this` |  | 
-
-**Changelog**
-
-Version | Description
-------- | -----------
-`1.0.0` | 
-
-Source: ./includes/Admin/Pages/PageAbstract.php, line 69
-
-### `cfw_after_admin_page_header`
-
-*The admin page wrap*
-
-**Arguments**
-
-Argument | Type | Description
--------- | ---- | -----------
-`$this` |  | 
-
-**Changelog**
-
-Version | Description
-------- | -----------
-`1.0.0` | 
-
-Source: ./includes/Admin/Pages/PageAbstract.php, line 69
+Source: ./includes/Admin/Pages/Premium/LocalPickupAdmin.php, line 187
 
 ### `cfw_checkout_update_order_review`
 
@@ -330,7 +343,7 @@ Version | Description
 ------- | -----------
 `2.0.0` | 
 
-Source: ./includes/Action/UpdateCheckoutAction.php, line 72
+Source: ./includes/Action/UpdateCheckoutAction.php, line 81
 
 ### `cfw_update_checkout_after_customer_save`
 
@@ -348,7 +361,7 @@ Version | Description
 ------- | -----------
 `7.0.0` | 
 
-Source: ./includes/Action/UpdateCheckoutAction.php, line 152
+Source: ./includes/Action/UpdateCheckoutAction.php, line 160
 
 ### `cfw_after_update_checkout_calculated`
 
@@ -367,7 +380,7 @@ Version | Description
 ------- | -----------
 `9.0.0` | 
 
-Source: ./includes/Action/UpdateCheckoutAction.php, line 189
+Source: ./includes/Action/UpdateCheckoutAction.php, line 207
 
 ### `cfw_before_process_checkout`
 
@@ -380,7 +393,7 @@ Version | Description
 ------- | -----------
 `3.0.0` | 
 
-Source: ./includes/Action/CompleteOrderAction.php, line 56
+Source: ./includes/Action/CompleteOrderAction.php, line 54
 
 ### `cfw_before_update_side_cart_action`
 
@@ -398,11 +411,11 @@ Version | Description
 ------- | -----------
 `6.0.6` | 
 
-Source: ./includes/Action/UpdateSideCart.php, line 38
+Source: ./includes/Action/UpdateSideCart.php, line 30
 
 ### `cfw_before_order_bump_add_to_cart`
 
-*Add to cart*
+*Fires before order bump is added to the cart*
 
 **Arguments**
 
@@ -410,7 +423,13 @@ Argument | Type | Description
 -------- | ---- | -----------
 `$this` |  | 
 
-Source: ./includes/Model/Bumps/BumpAbstract.php, line 154
+**Changelog**
+
+Version | Description
+------- | -----------
+`9.0.0` | 
+
+Source: ./includes/Model/Bumps/BumpAbstract.php, line 386
 
 ### `cfw_order_bump_add_to_cart_product_type_{$product_type}`
 
@@ -425,7 +444,7 @@ Argument | Type | Description
 `$variation_id` | `int` | The variation ID
 `$variation_data` | `array` | The variation data
 `$metadata` | `array` | The metadata
-`$product` | `\WC_Product` | The product
+`$offer_product` | `\WC_Product` | The product
 
 **Changelog**
 
@@ -433,40 +452,7 @@ Version | Description
 ------- | -----------
 `9.0.0` | 
 
-Source: ./includes/Model/Bumps/BumpAbstract.php, line 185
-
-### `cfw_before_order_bump_add_to_cart`
-
-**Arguments**
-
-Argument | Type | Description
--------- | ---- | -----------
-`$this` |  | 
-
-Source: ./includes/Model/Bumps/SpecificProductsBump.php, line 128
-
-### `cfw_order_bump_add_to_cart_product_type_{$product_type}`
-
-*Fires before order bump is added to the cart*
-
-**Arguments**
-
-Argument | Type | Description
--------- | ---- | -----------
-`$product_id` | `int` | The product ID
-`$quantity` | `int` | The quantity
-`$variation_id` | `int` | The variation ID
-`$variation_data` | `array` | The variation data
-`$metadata` | `array` | The metadata
-`$product` | `\WC_Product` | The product
-
-**Changelog**
-
-Version | Description
-------- | -----------
-`9.0.0` | 
-
-Source: ./includes/Model/Bumps/SpecificProductsBump.php, line 191
+Source: ./includes/Model/Bumps/BumpAbstract.php, line 397
 
 ### `cfw_template_load_before_{$template_name}_{$template_piece_name}`
 
@@ -479,7 +465,7 @@ Version | Description
 ------- | -----------
 `3.0.0` | 
 
-Source: ./includes/Model/Template.php, line 201
+Source: ./includes/Model/Template.php, line 197
 
 ### `cfw_template_load_after_{$template_name}_{$template_piece_name}`
 
@@ -492,7 +478,7 @@ Version | Description
 ------- | -----------
 `3.0.0` | 
 
-Source: ./includes/Model/Template.php, line 214
+Source: ./includes/Model/Template.php, line 210
 
 ### `cfw_after_modal_variable_product_form`
 
@@ -510,11 +496,11 @@ Version | Description
 ------- | -----------
 `8.2.18` | 
 
-Source: ./includes/API/GetVariationFormAPI.php, line 140
+Source: ./includes/API/GetVariationFormAPI.php, line 147
 
 ### `cfw_before_plugin_data_upgrades`
 
-*Init*
+*Fires before plugin data upgrades.*
 
 **Arguments**
 
@@ -522,7 +508,13 @@ Argument | Type | Description
 -------- | ---- | -----------
 `$this->db_version` |  | 
 
-Source: ./includes/DatabaseUpdatesManager.php, line 70
+**Changelog**
+
+Version | Description
+------- | -----------
+`9.0.0` | 
+
+Source: ./includes/DatabaseUpdatesManager.php, line 133
 
 ### `cfw_after_plugin_data_upgrades`
 
@@ -540,7 +532,7 @@ Version | Description
 ------- | -----------
 `5.0.0` | 
 
-Source: ./includes/DatabaseUpdatesManager.php, line 98
+Source: ./includes/DatabaseUpdatesManager.php, line 164
 
 ### `cfw_acr_activate`
 
@@ -555,7 +547,37 @@ Version | Description
 ------- | -----------
 `8.0.0` | 
 
-Source: ./includes/DatabaseUpdatesManager.php, line 428
+Source: ./includes/DatabaseUpdatesManager.php, line 512
+
+### `cfw_updated_to_1017`
+
+*Action hook fired after the 10.1.7 database update routine runs.*
+
+Used to trigger actions like initial telemetry sync.
+
+
+**Changelog**
+
+Version | Description
+------- | -----------
+`10.1.7` | 
+
+Source: ./includes/DatabaseUpdatesManager.php, line 1102
+
+### `cfw_updated_to_1018`
+
+*Action hook fired after the 10.1.8 database update routine runs.*
+
+Used to trigger actions like initial telemetry sync.
+
+
+**Changelog**
+
+Version | Description
+------- | -----------
+`10.1.8` | 
+
+Source: ./includes/DatabaseUpdatesManager.php, line 1112
 
 ### `cfw_checkout_loaded_pre_head`
 
@@ -568,7 +590,7 @@ Version | Description
 ------- | -----------
 `3.0.0` | 
 
-Source: ./includes/Loaders/Redirect.php, line 180
+Source: ./includes/Loaders/Redirect.php, line 181
 
 ### `cfw_before_header`
 
@@ -581,7 +603,7 @@ Version | Description
 ------- | -----------
 `3.0.0` | 
 
-Source: ./includes/Loaders/Redirect.php, line 205
+Source: ./includes/Loaders/Redirect.php, line 206
 
 ### `cfw_custom_header`
 
@@ -594,7 +616,7 @@ Version | Description
 ------- | -----------
 `3.0.0` | 
 
-Source: ./includes/Loaders/Redirect.php, line 213
+Source: ./includes/Loaders/Redirect.php, line 214
 
 ### `cfw_after_header`
 
@@ -607,7 +629,7 @@ Version | Description
 ------- | -----------
 `3.0.0` | 
 
-Source: ./includes/Loaders/Redirect.php, line 223
+Source: ./includes/Loaders/Redirect.php, line 224
 
 ### `cfw_wp_head`
 
@@ -620,7 +642,7 @@ Version | Description
 ------- | -----------
 `3.0.0` | 
 
-Source: ./includes/Loaders/Redirect.php, line 240
+Source: ./includes/Loaders/Redirect.php, line 238
 
 ### `cfw_custom_footer`
 
@@ -633,7 +655,7 @@ Version | Description
 ------- | -----------
 `3.0.0` | 
 
-Source: ./includes/Loaders/Redirect.php, line 293
+Source: ./includes/Loaders/Redirect.php, line 286
 
 ### `cfw_wp_footer`
 
@@ -646,7 +668,7 @@ Version | Description
 ------- | -----------
 `3.0.0` | 
 
-Source: ./includes/Loaders/Redirect.php, line 308
+Source: ./includes/Loaders/Redirect.php, line 301
 
 ### `cfw_template_after_init_order_pay`
 
@@ -664,7 +686,7 @@ Version | Description
 ------- | -----------
 `8.1.6` | 
 
-Source: ./includes/Loaders/LoaderAbstract.php, line 234
+Source: ./includes/Loaders/LoaderAbstract.php, line 251
 
 ### `cfw_checkout_loaded_pre_head`
 
@@ -677,7 +699,7 @@ Version | Description
 ------- | -----------
 `3.0.0` | 
 
-Source: ./includes/Loaders/LoaderAbstract.php, line 290
+Source: ./includes/Loaders/LoaderAbstract.php, line 307
 
 ### `cfw_template_before_load`
 
@@ -695,7 +717,7 @@ Version | Description
 ------- | -----------
 `3.0.0` | 
 
-Source: ./includes/Loaders/LoaderAbstract.php, line 313
+Source: ./includes/Loaders/LoaderAbstract.php, line 330
 
 ### `cfw_template_after_load`
 
@@ -713,9 +735,11 @@ Version | Description
 ------- | -----------
 `3.0.0` | 
 
-Source: ./includes/Loaders/LoaderAbstract.php, line 325
+Source: ./includes/Loaders/LoaderAbstract.php, line 342
 
 ### `cfw_output_fieldset`
+
+*Filter the account checkout fields.*
 
 **Arguments**
 
@@ -724,9 +748,17 @@ Argument | Type | Description
 `$account_checkout_fields` |  | 
 `'account'` |  | 
 
-Source: ./sources/php/functions.php, line 62
+**Changelog**
+
+Version | Description
+------- | -----------
+`7.2.1` | 
+
+Source: ./sources/php/functions.php, line 82
 
 ### `cfw_output_fieldset`
+
+*This action is documented earlier in this file*
 
 **Arguments**
 
@@ -735,9 +767,11 @@ Argument | Type | Description
 `cfw_get_shipping_checkout_fields()` |  | 
 `'shipping'` |  | 
 
-Source: ./sources/php/functions.php, line 104
+Source: ./sources/php/functions.php, line 111
 
 ### `cfw_output_fieldset`
+
+*This action is documented earlier in this file*
 
 **Arguments**
 
@@ -746,9 +780,11 @@ Argument | Type | Description
 `$billing_checkout_fields` |  | 
 `'billing'` |  | 
 
-Source: ./sources/php/functions.php, line 132
+Source: ./sources/php/functions.php, line 141
 
 ### `cfw_output_fieldset`
+
+*This action is documented earlier in this file*
 
 **Arguments**
 
@@ -757,9 +793,11 @@ Argument | Type | Description
 `$billing_fields_in_common` |  | 
 `'billing'` |  | 
 
-Source: ./sources/php/functions.php, line 132
+Source: ./sources/php/functions.php, line 150
 
 ### `cfw_output_fieldset`
+
+*This action is documented earlier in this file*
 
 **Arguments**
 
@@ -768,20 +806,7 @@ Argument | Type | Description
 `$unique_fields` |  | 
 `'billing_unique'` |  | 
 
-Source: ./sources/php/functions.php, line 195
-
-### `cfw_after_shipping_methods`
-
-*Fires after shipping methods in table*
-
-
-**Changelog**
-
-Version | Description
-------- | -----------
-`2.0.0` | 
-
-Source: ./sources/php/functions.php, line 503
+Source: ./sources/php/functions.php, line 207
 
 ### `cfw_get_payment_methods_html`
 
@@ -794,7 +819,7 @@ Version | Description
 ------- | -----------
 `2.0.0` | 
 
-Source: ./sources/php/functions.php, line 517
+Source: ./sources/php/functions.php, line 397
 
 ### `cfw_payment_methods_ul_start`
 
@@ -807,7 +832,7 @@ Version | Description
 ------- | -----------
 `2.0.0` | 
 
-Source: ./sources/php/functions.php, line 548
+Source: ./sources/php/functions.php, line 436
 
 ### `cfw_payment_gateway_list_{$gateway->id}_alternate`
 
@@ -825,7 +850,7 @@ Version | Description
 ------- | -----------
 `2.0.0` | 
 
-Source: ./sources/php/functions.php, line 669
+Source: ./sources/php/functions.php, line 560
 
 ### `cfw_payment_methods_ul_end`
 
@@ -838,69 +863,7 @@ Version | Description
 ------- | -----------
 `2.0.0` | 
 
-Source: ./sources/php/functions.php, line 683
-
-### `cfw_cart_html_table_start`
-
-*Fires at start of cart table*
-
-
-**Changelog**
-
-Version | Description
-------- | -----------
-`2.0.0` | 
-
-Source: ./sources/php/functions.php, line 751
-
-### `cfw_cart_item_after_data`
-
-*Fires after cart item data output*
-
-**Arguments**
-
-Argument | Type | Description
--------- | ---- | -----------
-`$item->get_raw_item()` |  | 
-`$item->get_item_key()` |  | 
-`$item` |  | 
-
-**Changelog**
-
-Version | Description
-------- | -----------
-`2.0.0` | 
-
-Source: ./sources/php/functions.php, line 825
-
-### `cfw_before_cart_item_subtotal`
-
-**Arguments**
-
-Argument | Type | Description
--------- | ---- | -----------
-`$item` |  | 
-
-Source: ./sources/php/functions.php, line 758
-
-### `cfw_after_cart_item_row`
-
-*Fires after cart item row <tr/> is outputted*
-
-**Arguments**
-
-Argument | Type | Description
--------- | ---- | -----------
-`$item->get_raw_item()` |  | 
-`$item->get_item_key()` |  | 
-
-**Changelog**
-
-Version | Description
-------- | -----------
-`2.0.0` | 
-
-Source: ./sources/php/functions.php, line 846
+Source: ./sources/php/functions.php, line 574
 
 ### `cfw_order_item_after_data`
 
@@ -912,7 +875,7 @@ Argument | Type | Description
 -------- | ---- | -----------
 `$item->get_raw_item()` |  | 
 `$item->get_item_key()` |  | 
-`$item` | `\Objectiv\Plugins\Checkout\Model\OrderItem` | Order item object
+`$item` | `array` | ->get_raw_item() Raw item data
 
 **Changelog**
 
@@ -920,39 +883,11 @@ Version | Description
 ------- | -----------
 `7.1.3` | 
 
-Source: ./sources/php/functions.php, line 907
+Source: ./sources/php/functions.php, line 643
 
 ### `cfw_before_cart_item_subtotal`
 
-**Arguments**
-
-Argument | Type | Description
--------- | ---- | -----------
-`$item` |  | 
-
-Source: ./sources/php/functions.php, line 867
-
-### `cfw_side_cart_item_after_data`
-
-*Fires after cart item data output*
-
-**Arguments**
-
-Argument | Type | Description
--------- | ---- | -----------
-`$item->get_raw_item()` |  | 
-`$item->get_item_key()` |  | 
-`$item` |  | 
-
-**Changelog**
-
-Version | Description
-------- | -----------
-`2.0.0` | 
-
-Source: ./sources/php/functions.php, line 1011
-
-### `cfw_before_cart_item_subtotal`
+*This filter documented in elsewhere in this file*
 
 **Arguments**
 
@@ -960,25 +895,7 @@ Argument | Type | Description
 -------- | ---- | -----------
 `$item` |  | 
 
-Source: ./sources/php/functions.php, line 955
-
-### `cfw_side_cart_item_after_columns`
-
-*Fires after cart item columns*
-
-**Arguments**
-
-Argument | Type | Description
--------- | ---- | -----------
-`$item` | `\Objectiv\Plugins\Checkout\Model\CartItem` | Cart item
-
-**Changelog**
-
-Version | Description
-------- | -----------
-`7.9.3` | 
-
-Source: ./sources/php/functions.php, line 1030
+Source: ./sources/php/functions.php, line 662
 
 ### `cfw_before_cart_summary_totals`
 
@@ -991,7 +908,7 @@ Version | Description
 ------- | -----------
 `2.0.0` | 
 
-Source: ./sources/php/functions.php, line 1265
+Source: ./sources/php/functions.php, line 861
 
 ### `cfw_after_cart_summary_totals`
 
@@ -1004,7 +921,7 @@ Version | Description
 ------- | -----------
 `2.0.0` | 
 
-Source: ./sources/php/functions.php, line 1288
+Source: ./sources/php/functions.php, line 884
 
 ### `cfw_before_payment_method_heading`
 
@@ -1017,7 +934,7 @@ Version | Description
 ------- | -----------
 `5.1.1` | 
 
-Source: ./sources/php/functions.php, line 1365
+Source: ./sources/php/functions.php, line 959
 
 ### `cfw_checkout_before_payment_methods`
 
@@ -1030,7 +947,7 @@ Version | Description
 ------- | -----------
 `2.0.0` | 
 
-Source: ./sources/php/functions.php, line 1390
+Source: ./sources/php/functions.php, line 983
 
 ### `cfw_checkout_after_payment_methods`
 
@@ -1043,7 +960,7 @@ Version | Description
 ------- | -----------
 `2.0.0` | 
 
-Source: ./sources/php/functions.php, line 1439
+Source: ./sources/php/functions.php, line 1030
 
 ### `cfw_checkout_before_billing_address`
 
@@ -1056,7 +973,7 @@ Version | Description
 ------- | -----------
 `2.0.0` | 
 
-Source: ./sources/php/functions.php, line 1453
+Source: ./sources/php/functions.php, line 1044
 
 ### `cfw_after_same_as_shipping_address_label`
 
@@ -1069,7 +986,7 @@ Version | Description
 ------- | -----------
 `2.0.0` | 
 
-Source: ./sources/php/functions.php, line 1509
+Source: ./sources/php/functions.php, line 1102
 
 ### `cfw_start_billing_address_container`
 
@@ -1082,7 +999,7 @@ Version | Description
 ------- | -----------
 `2.0.0` | 
 
-Source: ./sources/php/functions.php, line 1533
+Source: ./sources/php/functions.php, line 1127
 
 ### `cfw_end_billing_address_container`
 
@@ -1095,7 +1012,7 @@ Version | Description
 ------- | -----------
 `2.0.0` | 
 
-Source: ./sources/php/functions.php, line 1542
+Source: ./sources/php/functions.php, line 1136
 
 ### `cfw_start_billing_address_container`
 
@@ -1108,7 +1025,7 @@ Version | Description
 ------- | -----------
 `2.0.0` | 
 
-Source: ./sources/php/functions.php, line 1558
+Source: ./sources/php/functions.php, line 1152
 
 ### `cfw_end_billing_address_container`
 
@@ -1121,7 +1038,7 @@ Version | Description
 ------- | -----------
 `2.0.0` | 
 
-Source: ./sources/php/functions.php, line 1567
+Source: ./sources/php/functions.php, line 1161
 
 ### `cfw_checkout_after_billing_address`
 
@@ -1134,7 +1051,7 @@ Version | Description
 ------- | -----------
 `2.0.0` | 
 
-Source: ./sources/php/functions.php, line 1578
+Source: ./sources/php/functions.php, line 1172
 
 ### `cfw_before_breadcrumb_navigation`
 
@@ -1147,7 +1064,7 @@ Version | Description
 ------- | -----------
 `2.0.0` | 
 
-Source: ./sources/php/functions.php, line 1975
+Source: ./sources/php/functions.php, line 1552
 
 ### `cfw_after_breadcrumb_navigation`
 
@@ -1160,7 +1077,7 @@ Version | Description
 ------- | -----------
 `2.0.0` | 
 
-Source: ./sources/php/functions.php, line 1995
+Source: ./sources/php/functions.php, line 1572
 
 ### `cfw_cart_updated`
 
@@ -1179,7 +1096,7 @@ Version | Description
 ------- | -----------
 `6.1.7` | 
 
-Source: ./sources/php/functions.php, line 2522
+Source: ./sources/php/functions.php, line 2115
 
 ### `cfw_after_modal_order_bump_variable_product_form`
 
@@ -1198,7 +1115,7 @@ Version | Description
 ------- | -----------
 `8.2.18` | 
 
-Source: ./sources/php/functions.php, line 4226
+Source: ./sources/php/functions.php, line 4058
 
 ### `cfw_after_modal_order_bump_regular_product_form`
 
@@ -1217,7 +1134,48 @@ Version | Description
 ------- | -----------
 `8.2.18` | 
 
-Source: ./sources/php/functions.php, line 4301
+Source: ./sources/php/functions.php, line 4133
+
+### `cfw_do_plugin_activation`
+
+*Fires after plugin activation.*
+
+
+**Changelog**
+
+Version | Description
+------- | -----------
+`1.0.0` | 
+
+Source: ./sources/php/init.php, line 780
+
+### `cfw_do_plugin_deactivation`
+
+*Fires after plugin deactivation.*
+
+
+**Changelog**
+
+Version | Description
+------- | -----------
+`1.0.0` | 
+
+Source: ./sources/php/init.php, line 792
+
+### `cfw_permissioned_init`
+
+*Permissioned Init*
+
+This hook runs on init if CheckoutWC is enabled and the license is valid or free, or the current user is an admin
+
+
+**Changelog**
+
+Version | Description
+------- | -----------
+`8.2.11` | 
+
+Source: ./sources/php/init.php, line 904
 
 ### `cfw_init_ab_tests`
 
@@ -1230,32 +1188,7 @@ Version | Description
 ------- | -----------
 `8.2.8` | 
 
-Source: ./sources/php/init.php, line 270
-
-### `cfw_do_plugin_activation`
-
-
-Source: ./sources/php/init.php, line 1054
-
-### `cfw_do_plugin_deactivation`
-
-
-Source: ./sources/php/init.php, line 1061
-
-### `cfw_permissioned_init`
-
-*Permissioned Init*
-
-This hook runs on init if CheckoutWC is enabled and the license is valid, or the current user is an admin
-
-
-**Changelog**
-
-Version | Description
-------- | -----------
-`8.2.11` | 
-
-Source: ./sources/php/init.php, line 1123
+Source: ./sources/php/premium-init.php, line 55
 
 ### `cfw_after_cart_summary`
 
@@ -1268,7 +1201,7 @@ Version | Description
 ------- | -----------
 `3.0.0` | 
 
-Source: ./sources/php/template-functions.php, line 143
+Source: ./sources/php/template-functions.php, line 133
 
 ### `cfw_before_print_notices`
 
@@ -1281,7 +1214,7 @@ Version | Description
 ------- | -----------
 `9.0.0` | 
 
-Source: ./sources/php/template-functions.php, line 265
+Source: ./sources/php/template-functions.php, line 257
 
 ### `cfw_payment_request_buttons`
 
@@ -1294,20 +1227,7 @@ Version | Description
 ------- | -----------
 `3.0.0` | 
 
-Source: ./sources/php/template-functions.php, line 290
-
-### `cfw_after_payment_request_buttons`
-
-*Hook for adding payment request buttons separator*
-
-
-**Changelog**
-
-Version | Description
-------- | -----------
-`7.0.0` | 
-
-Source: ./sources/php/template-functions.php, line 299
+Source: ./sources/php/template-functions.php, line 282
 
 ### `cfw_before_customer_info_account_details`
 
@@ -1320,7 +1240,7 @@ Version | Description
 ------- | -----------
 `7.0.0` | 
 
-Source: ./sources/php/template-functions.php, line 349
+Source: ./sources/php/template-functions.php, line 336
 
 ### `cfw_after_customer_info_account_details`
 
@@ -1333,7 +1253,7 @@ Version | Description
 ------- | -----------
 `7.0.0` | 
 
-Source: ./sources/php/template-functions.php, line 362
+Source: ./sources/php/template-functions.php, line 349
 
 ### `cfw_before_enhanced_login_prompt`
 
@@ -1346,7 +1266,7 @@ Version | Description
 ------- | -----------
 `3.0.0` | 
 
-Source: ./sources/php/template-functions.php, line 388
+Source: ./sources/php/template-functions.php, line 375
 
 ### `cfw_after_enhanced_login_prompt`
 
@@ -1359,7 +1279,7 @@ Version | Description
 ------- | -----------
 `2.0.0` | 
 
-Source: ./sources/php/template-functions.php, line 421
+Source: ./sources/php/template-functions.php, line 408
 
 ### `cfw_checkout_after_email`
 
@@ -1372,7 +1292,7 @@ Version | Description
 ------- | -----------
 `3.0.0` | 
 
-Source: ./sources/php/template-functions.php, line 453
+Source: ./sources/php/template-functions.php, line 448
 
 ### `cfw_checkout_before_customer_info_address`
 
@@ -1385,7 +1305,7 @@ Version | Description
 ------- | -----------
 `2.0.0` | 
 
-Source: ./sources/php/template-functions.php, line 604
+Source: ./sources/php/template-functions.php, line 616
 
 ### `cfw_checkout_before_shipping_address`
 
@@ -1398,7 +1318,7 @@ Version | Description
 ------- | -----------
 `2.0.0` | 
 
-Source: ./sources/php/template-functions.php, line 615
+Source: ./sources/php/template-functions.php, line 627
 
 ### `cfw_checkout_before_billing_address`
 
@@ -1411,7 +1331,7 @@ Version | Description
 ------- | -----------
 `2.0.0` | 
 
-Source: ./sources/php/template-functions.php, line 622
+Source: ./sources/php/template-functions.php, line 634
 
 ### `cfw_after_customer_info_address_heading`
 
@@ -1424,7 +1344,7 @@ Version | Description
 ------- | -----------
 `2.0.0` | 
 
-Source: ./sources/php/template-functions.php, line 666
+Source: ./sources/php/template-functions.php, line 678
 
 ### `cfw_after_customer_info_shipping_address_heading`
 
@@ -1437,7 +1357,7 @@ Version | Description
 ------- | -----------
 `4.0.4` | 
 
-Source: ./sources/php/template-functions.php, line 674
+Source: ./sources/php/template-functions.php, line 686
 
 ### `cfw_after_customer_info_billing_address_heading`
 
@@ -1450,7 +1370,7 @@ Version | Description
 ------- | -----------
 `4.0.4` | 
 
-Source: ./sources/php/template-functions.php, line 681
+Source: ./sources/php/template-functions.php, line 693
 
 ### `cfw_start_billing_address_container`
 
@@ -1463,7 +1383,7 @@ Version | Description
 ------- | -----------
 `4.0.4` | 
 
-Source: ./sources/php/template-functions.php, line 693
+Source: ./sources/php/template-functions.php, line 705
 
 ### `cfw_end_billing_address_container`
 
@@ -1476,7 +1396,7 @@ Version | Description
 ------- | -----------
 `4.0.4` | 
 
-Source: ./sources/php/template-functions.php, line 702
+Source: ./sources/php/template-functions.php, line 714
 
 ### `cfw_start_shipping_address_container`
 
@@ -1489,7 +1409,7 @@ Version | Description
 ------- | -----------
 `4.0.4` | 
 
-Source: ./sources/php/template-functions.php, line 711
+Source: ./sources/php/template-functions.php, line 723
 
 ### `cfw_end_shipping_address_container`
 
@@ -1502,7 +1422,7 @@ Version | Description
 ------- | -----------
 `4.0.4` | 
 
-Source: ./sources/php/template-functions.php, line 720
+Source: ./sources/php/template-functions.php, line 732
 
 ### `cfw_checkout_after_shipping_address`
 
@@ -1515,7 +1435,7 @@ Version | Description
 ------- | -----------
 `2.0.0` | 
 
-Source: ./sources/php/template-functions.php, line 732
+Source: ./sources/php/template-functions.php, line 744
 
 ### `cfw_checkout_after_billing_address`
 
@@ -1528,7 +1448,7 @@ Version | Description
 ------- | -----------
 `2.0.0` | 
 
-Source: ./sources/php/template-functions.php, line 739
+Source: ./sources/php/template-functions.php, line 751
 
 ### `cfw_checkout_after_customer_info_address`
 
@@ -1541,7 +1461,7 @@ Version | Description
 ------- | -----------
 `2.0.0` | 
 
-Source: ./sources/php/template-functions.php, line 750
+Source: ./sources/php/template-functions.php, line 762
 
 ### `cfw_checkout_before_customer_info_tab_nav`
 
@@ -1554,7 +1474,7 @@ Version | Description
 ------- | -----------
 `2.0.0` | 
 
-Source: ./sources/php/template-functions.php, line 809
+Source: ./sources/php/template-functions.php, line 821
 
 ### `cfw_checkout_after_customer_info_tab_nav`
 
@@ -1567,7 +1487,7 @@ Version | Description
 ------- | -----------
 `2.0.0` | 
 
-Source: ./sources/php/template-functions.php, line 827
+Source: ./sources/php/template-functions.php, line 839
 
 ### `cfw_checkout_before_payment_method_tab_nav`
 
@@ -1580,7 +1500,7 @@ Version | Description
 ------- | -----------
 `2.0.0` | 
 
-Source: ./sources/php/template-functions.php, line 843
+Source: ./sources/php/template-functions.php, line 855
 
 ### `cfw_checkout_after_payment_method_tab_nav`
 
@@ -1593,7 +1513,20 @@ Version | Description
 ------- | -----------
 `2.0.0` | 
 
-Source: ./sources/php/template-functions.php, line 868
+Source: ./sources/php/template-functions.php, line 880
+
+### `cfw_after_shipping_packages`
+
+*Fires after shipping packages component*
+
+
+**Changelog**
+
+Version | Description
+------- | -----------
+`9.0.8` | 
+
+Source: ./sources/php/template-functions.php, line 943
 
 ### `cfw_checkout_before_shipping_method_tab_nav`
 
@@ -1606,7 +1539,7 @@ Version | Description
 ------- | -----------
 `2.0.0` | 
 
-Source: ./sources/php/template-functions.php, line 939
+Source: ./sources/php/template-functions.php, line 957
 
 ### `cfw_checkout_after_shipping_method_tab_nav`
 
@@ -1619,7 +1552,7 @@ Version | Description
 ------- | -----------
 `2.0.0` | 
 
-Source: ./sources/php/template-functions.php, line 956
+Source: ./sources/php/template-functions.php, line 974
 
 ### `cfw_before_payment_methods_block`
 
@@ -1629,7 +1562,7 @@ Source: ./sources/php/template-functions.php, line 956
 
 Argument | Type | Description
 -------- | ---- | -----------
-`$object` |  | 
+`$checkout_object` |  | 
 `$show_title` |  | 
 
 **Changelog**
@@ -1638,7 +1571,7 @@ Version | Description
 ------- | -----------
 `7.2.7` | 
 
-Source: ./sources/php/template-functions.php, line 973
+Source: ./sources/php/template-functions.php, line 991
 
 ### `cfw_after_payment_methods_block`
 
@@ -1648,7 +1581,7 @@ Source: ./sources/php/template-functions.php, line 973
 
 Argument | Type | Description
 -------- | ---- | -----------
-`$object` |  | 
+`$checkout_object` |  | 
 `$show_title` |  | 
 
 **Changelog**
@@ -1657,7 +1590,7 @@ Version | Description
 ------- | -----------
 `7.2.7` | 
 
-Source: ./sources/php/template-functions.php, line 982
+Source: ./sources/php/template-functions.php, line 1000
 
 ### `cfw_after_payment_information_address_heading`
 
@@ -1670,7 +1603,7 @@ Version | Description
 ------- | -----------
 `5.3.2` | 
 
-Source: ./sources/php/template-functions.php, line 1023
+Source: ./sources/php/template-functions.php, line 1041
 
 ### `cfw_checkout_after_payment_tab_billing_address`
 
@@ -1683,13 +1616,11 @@ Version | Description
 ------- | -----------
 `2.0.0` | 
 
-Source: ./sources/php/template-functions.php, line 1047
+Source: ./sources/php/template-functions.php, line 1065
 
 ### `cfw_output_fieldset`
 
-*Payment method tab order notes*
-
-This also handles any custom fields attached to order notes area
+*Documented in functions.php*
 
 **Arguments**
 
@@ -1697,7 +1628,7 @@ Argument | Type | Description
 -------- | ---- | -----------
 `WC()->checkout()->get_checkout_fields('order')` |  | 
 
-Source: ./sources/php/template-functions.php, line 1055
+Source: ./sources/php/template-functions.php, line 1087
 
 ### `cfw_checkout_before_payment_method_terms_checkbox`
 
@@ -1710,7 +1641,7 @@ Version | Description
 ------- | -----------
 `2.0.0` | 
 
-Source: ./sources/php/template-functions.php, line 1084
+Source: ./sources/php/template-functions.php, line 1105
 
 ### `cfw_checkout_before_payment_method_tab_nav`
 
@@ -1723,16 +1654,20 @@ Version | Description
 ------- | -----------
 `2.0.0` | 
 
-Source: ./sources/php/template-functions.php, line 1102
+Source: ./sources/php/template-functions.php, line 1123
 
 ### `cfw_payment_nav_place_order_button`
 
-*Payment method tab nav*
-
-Includes previous tab and place order buttons
+*Fires after payment method tab navigation container*
 
 
-Source: ./sources/php/template-functions.php, line 1094
+**Changelog**
+
+Version | Description
+------- | -----------
+`3.8.0` | 
+
+Source: ./sources/php/template-functions.php, line 1147
 
 ### `cfw_checkout_after_payment_method_tab_nav`
 
@@ -1745,16 +1680,20 @@ Version | Description
 ------- | -----------
 `2.0.0` | 
 
-Source: ./sources/php/template-functions.php, line 1130
+Source: ./sources/php/template-functions.php, line 1158
 
 ### `cfw_payment_nav_place_order_button`
 
-*Order review tab nav*
-
-Includes previous tab and place order buttons
+*Fires in the order review tab place order button container.*
 
 
-Source: ./sources/php/template-functions.php, line 1138
+**Changelog**
+
+Version | Description
+------- | -----------
+`4.0.0` | 
+
+Source: ./sources/php/template-functions.php, line 1187
 
 ### `cfw_checkout_after_payment_method_tab_nav`
 
@@ -1767,20 +1706,20 @@ Version | Description
 ------- | -----------
 `2.0.0` | 
 
-Source: ./sources/php/template-functions.php, line 1163
+Source: ./sources/php/template-functions.php, line 1198
 
-### `cfw_after_cart_html`
+### `cfw_cart_html_before_cart_container`
 
-*After cart html table output*
+*Before cart html table output*
 
 
 **Changelog**
 
 Version | Description
 ------- | -----------
-`4.3.4` | 
+`9.0.39` | 
 
-Source: ./sources/php/template-functions.php, line 1186
+Source: ./sources/php/template-functions.php, line 1236
 
 ### `cfw_before_coupon_module`
 
@@ -1798,7 +1737,7 @@ Version | Description
 ------- | -----------
 `2.0.0` | 
 
-Source: ./sources/php/template-functions.php, line 1200
+Source: ./sources/php/template-functions.php, line 1252
 
 ### `cfw_after_coupon_module`
 
@@ -1811,7 +1750,7 @@ Version | Description
 ------- | -----------
 `2.0.0` | 
 
-Source: ./sources/php/template-functions.php, line 1211
+Source: ./sources/php/template-functions.php, line 1263
 
 ### `cfw_after_thank_you_order_updates_text`
 
@@ -1829,7 +1768,7 @@ Version | Description
 ------- | -----------
 `7.2.7` | 
 
-Source: ./sources/php/template-functions.php, line 1511
+Source: ./sources/php/template-functions.php, line 1560
 
 ### `cfw_before_thank_you_customer_information`
 
@@ -1847,7 +1786,7 @@ Version | Description
 ------- | -----------
 `2.0.0` | 
 
-Source: ./sources/php/template-functions.php, line 1588
+Source: ./sources/php/template-functions.php, line 1638
 
 ### `cfw_checkout_customer_info_tab`
 
@@ -1860,7 +1799,7 @@ Version | Description
 ------- | -----------
 `2.0.0` | 
 
-Source: ./sources/php/template-functions.php, line 1885
+Source: ./sources/php/template-functions.php, line 1946
 
 ### `cfw_checkout_shipping_method_tab`
 
@@ -1873,7 +1812,7 @@ Version | Description
 ------- | -----------
 `2.0.0` | 
 
-Source: ./sources/php/template-functions.php, line 1899
+Source: ./sources/php/template-functions.php, line 1966
 
 ### `cfw_checkout_payment_method_tab`
 
@@ -1886,7 +1825,7 @@ Version | Description
 ------- | -----------
 `2.0.0` | 
 
-Source: ./sources/php/template-functions.php, line 1913
+Source: ./sources/php/template-functions.php, line 1986
 
 ### `cfw_thank_you_before_main_container`
 
@@ -1969,7 +1908,7 @@ Version | Description
 ------- | -----------
 `3.0.0` | 
 
-Source: ./templates/futurist/thank-you.php, line 63
+Source: ./templates/futurist/thank-you.php, line 62
 
 ### `cfw_thank_you_cart_summary`
 
@@ -1987,7 +1926,7 @@ Version | Description
 ------- | -----------
 `3.0.0` | 
 
-Source: ./templates/futurist/thank-you.php, line 75
+Source: ./templates/futurist/thank-you.php, line 74
 
 ### `cfw_thank_you_main_container_end`
 
@@ -2005,7 +1944,7 @@ Version | Description
 ------- | -----------
 `3.0.0` | 
 
-Source: ./templates/futurist/thank-you.php, line 89
+Source: ./templates/futurist/thank-you.php, line 88
 
 ### `cfw_thank_you_after_main_container`
 
@@ -2023,7 +1962,7 @@ Version | Description
 ------- | -----------
 `3.0.0` | 
 
-Source: ./templates/futurist/thank-you.php, line 100
+Source: ./templates/futurist/thank-you.php, line 99
 
 ### `cfw_checkout_before_main_container`
 
@@ -2385,7 +2324,7 @@ Version | Description
 ------- | -----------
 `3.0.0` | 
 
-Source: ./templates/copify/functions.php, line 45
+Source: ./templates/copify/functions.php, line 42
 
 ### `cfw_footer_content`
 
@@ -2398,7 +2337,7 @@ Version | Description
 ------- | -----------
 `8.0.0` | 
 
-Source: ./templates/copify/functions.php, line 52
+Source: ./templates/copify/functions.php, line 49
 
 ### `cfw_after_footer`
 
@@ -2411,7 +2350,7 @@ Version | Description
 ------- | -----------
 `3.0.0` | 
 
-Source: ./templates/copify/functions.php, line 59
+Source: ./templates/copify/functions.php, line 56
 
 ### `cfw_thank_you_before_main_container`
 
@@ -2494,7 +2433,7 @@ Version | Description
 ------- | -----------
 `3.0.0` | 
 
-Source: ./templates/copify/thank-you.php, line 63
+Source: ./templates/copify/thank-you.php, line 62
 
 ### `cfw_thank_you_cart_summary`
 
@@ -2512,7 +2451,7 @@ Version | Description
 ------- | -----------
 `3.0.0` | 
 
-Source: ./templates/copify/thank-you.php, line 75
+Source: ./templates/copify/thank-you.php, line 74
 
 ### `cfw_thank_you_main_container_end`
 
@@ -2530,7 +2469,7 @@ Version | Description
 ------- | -----------
 `3.0.0` | 
 
-Source: ./templates/copify/thank-you.php, line 89
+Source: ./templates/copify/thank-you.php, line 88
 
 ### `cfw_thank_you_after_main_container`
 
@@ -2548,7 +2487,7 @@ Version | Description
 ------- | -----------
 `3.0.0` | 
 
-Source: ./templates/copify/thank-you.php, line 100
+Source: ./templates/copify/thank-you.php, line 99
 
 ### `cfw_checkout_before_main_container`
 
@@ -3427,7 +3366,7 @@ Version | Description
 ------- | -----------
 `3.0.0` | 
 
-Source: ./templates/glass/thank-you.php, line 63
+Source: ./templates/glass/thank-you.php, line 62
 
 ### `cfw_thank_you_cart_summary`
 
@@ -3445,7 +3384,7 @@ Version | Description
 ------- | -----------
 `3.0.0` | 
 
-Source: ./templates/glass/thank-you.php, line 75
+Source: ./templates/glass/thank-you.php, line 74
 
 ### `cfw_thank_you_main_container_end`
 
@@ -3463,7 +3402,7 @@ Version | Description
 ------- | -----------
 `3.0.0` | 
 
-Source: ./templates/glass/thank-you.php, line 89
+Source: ./templates/glass/thank-you.php, line 88
 
 ### `cfw_thank_you_after_main_container`
 
@@ -3481,7 +3420,7 @@ Version | Description
 ------- | -----------
 `3.0.0` | 
 
-Source: ./templates/glass/thank-you.php, line 100
+Source: ./templates/glass/thank-you.php, line 99
 
 ### `cfw_checkout_before_main_container`
 
@@ -3952,7 +3891,7 @@ Version | Description
 ------- | -----------
 `3.0.0` | 
 
-Source: ./templates/groove/thank-you.php, line 63
+Source: ./templates/groove/thank-you.php, line 62
 
 ### `cfw_thank_you_cart_summary`
 
@@ -3970,7 +3909,7 @@ Version | Description
 ------- | -----------
 `3.0.0` | 
 
-Source: ./templates/groove/thank-you.php, line 75
+Source: ./templates/groove/thank-you.php, line 83
 
 ### `cfw_thank_you_main_container_end`
 
@@ -3988,7 +3927,7 @@ Version | Description
 ------- | -----------
 `3.0.0` | 
 
-Source: ./templates/groove/thank-you.php, line 89
+Source: ./templates/groove/thank-you.php, line 97
 
 ### `cfw_thank_you_after_main_container`
 
@@ -4006,7 +3945,7 @@ Version | Description
 ------- | -----------
 `3.0.0` | 
 
-Source: ./templates/groove/thank-you.php, line 100
+Source: ./templates/groove/thank-you.php, line 108
 
 ### `cfw_checkout_before_main_container`
 
@@ -4115,7 +4054,7 @@ Version | Description
 ------- | -----------
 `3.0.0` | 
 
-Source: ./templates/groove/content.php, line 90
+Source: ./templates/groove/content.php, line 99
 
 ### `cfw_checkout_after_cart_summary_container`
 
@@ -4128,7 +4067,7 @@ Version | Description
 ------- | -----------
 `3.0.0` | 
 
-Source: ./templates/groove/content.php, line 100
+Source: ./templates/groove/content.php, line 109
 
 ### `cfw_checkout_form`
 
@@ -4143,7 +4082,7 @@ Version | Description
 ------- | -----------
 `3.0.0` | 
 
-Source: ./templates/groove/content.php, line 110
+Source: ./templates/groove/content.php, line 119
 
 ### `cfw_checkout_main_container_end`
 
@@ -4161,7 +4100,7 @@ Version | Description
 ------- | -----------
 `3.0.0` | 
 
-Source: ./templates/groove/content.php, line 122
+Source: ./templates/groove/content.php, line 131
 
 ### `cfw_checkout_after_main_container`
 
@@ -4179,7 +4118,7 @@ Version | Description
 ------- | -----------
 `3.0.0` | 
 
-Source: ./templates/groove/content.php, line 132
+Source: ./templates/groove/content.php, line 141
 
 ### `cfw_order_pay_before_main_container`
 
@@ -4280,7 +4219,7 @@ Version | Description
 ------- | -----------
 `3.0.0` | 
 
-Source: ./templates/groove/order-pay.php, line 62
+Source: ./templates/groove/order-pay.php, line 71
 
 ### `cfw_order_pay_main_container_end`
 
@@ -4298,7 +4237,7 @@ Version | Description
 ------- | -----------
 `3.0.0` | 
 
-Source: ./templates/groove/order-pay.php, line 76
+Source: ./templates/groove/order-pay.php, line 85
 
 ### `cfw_order_pay_after_main_container`
 
@@ -4316,9 +4255,27 @@ Version | Description
 ------- | -----------
 `3.0.0` | 
 
-Source: ./templates/groove/order-pay.php, line 87
+Source: ./templates/groove/order-pay.php, line 96
 
 ## Filters
+
+### `cfw_compatibility_free_gifts_for_woocommerce_prevent_redirect`
+
+*Whether to prevent redirecting during add to cart when Free Gifts for WooComemrce is active*
+
+**Arguments**
+
+Argument | Type | Description
+-------- | ---- | -----------
+`false` |  | 
+
+**Changelog**
+
+Version | Description
+------- | -----------
+`10.1.0` | 
+
+Source: ./includes/Compatibility/Plugins/FreeGiftsforWooCommerce.php, line 19
 
 ### `cfw_disable_woocommerce_gift_cards_compatibility`
 
@@ -4354,7 +4311,7 @@ Version | Description
 ------- | -----------
 `6.0.7` | 
 
-Source: ./includes/Compatibility/Plugins/WooCommerceGiftCards.php, line 60
+Source: ./includes/Compatibility/Plugins/WooCommerceGiftCards.php, line 58
 
 ### `cfw_compatibility_woocommerce_gift_cards_field_placeholder`
 
@@ -4372,7 +4329,7 @@ Version | Description
 ------- | -----------
 `6.0.7` | 
 
-Source: ./includes/Compatibility/Plugins/WooCommerceGiftCards.php, line 68
+Source: ./includes/Compatibility/Plugins/WooCommerceGiftCards.php, line 66
 
 ### `cfw_compatibility_woocommerce_gift_cards_heading_text`
 
@@ -4382,7 +4339,7 @@ Argument | Type | Description
 -------- | ---- | -----------
 `cfw_esc_html__('Have a gift card?', 'woocommerce-gift-cards')` |  | 
 
-Source: ./includes/Compatibility/Plugins/WooCommerceGiftCards.php, line 96
+Source: ./includes/Compatibility/Plugins/WooCommerceGiftCards.php, line 94
 
 ### `cfw_hide_optional_fiscal_code`
 
@@ -4438,7 +4395,7 @@ Argument | Type | Description
 -------- | ---- | -----------
 `true` |  | 
 
-Source: ./includes/Compatibility/Plugins/WooCommerceCore.php, line 164
+Source: ./includes/Compatibility/Plugins/WooCommerceCore.php, line 165
 
 ### `cfw_suppress_add_to_cart_notices`
 
@@ -4448,7 +4405,7 @@ Argument | Type | Description
 -------- | ---- | -----------
 `true` |  | 
 
-Source: ./includes/Compatibility/Plugins/WooCommerceCore.php, line 196
+Source: ./includes/Compatibility/Plugins/WooCommerceCore.php, line 199
 
 ### `cfw_highlighted_countries`
 
@@ -4458,7 +4415,7 @@ Argument | Type | Description
 -------- | ---- | -----------
 `SettingsManager::instance()->get_setting('highlighted_countries')` |  | 
 
-Source: ./includes/Compatibility/Plugins/WooCommerceCore.php, line 224
+Source: ./includes/Compatibility/Plugins/WooCommerceCore.php, line 227
 
 ### `cfw_template_tab_container_el`
 
@@ -4480,6 +4437,70 @@ Argument | Type | Description
 
 Source: ./includes/Compatibility/Plugins/MixPanel.php, line 37
 
+### `cfw_compatibility_all_products_for_subscriptions_run_on_side_cart`
+
+**Arguments**
+
+Argument | Type | Description
+-------- | ---- | -----------
+`false` |  | 
+
+Source: ./includes/Compatibility/Plugins/AllProductsForSubscriptions.php, line 23
+
+### `cfw_compatibility_nexcessmu_prevent_disable_fragments`
+
+*Prevent disabling fragments when Nexcess MU is active*
+
+**Arguments**
+
+Argument | Type | Description
+-------- | ---- | -----------
+`false` |  | 
+
+**Changelog**
+
+Version | Description
+------- | -----------
+`10.1.0` | 
+
+Source: ./includes/Compatibility/Plugins/NexcessMU.php, line 17
+
+### `cfw_compatibility_woocommerce_germanized_render_hook`
+
+*Filter the rendering hook for WooCommerce Germanized compatibility*
+
+**Arguments**
+
+Argument | Type | Description
+-------- | ---- | -----------
+`'cfw_checkout_before_payment_method_tab_nav'` |  | 
+
+**Changelog**
+
+Version | Description
+------- | -----------
+`10.1.0` | 
+
+Source: ./includes/Compatibility/Plugins/WooCommerceGermanized.php, line 47
+
+### `cfw_compatibility_woocommerce_germanized_render_priority`
+
+*Filter the priority of the render hook for WooCommerce Germanized compatibility*
+
+**Arguments**
+
+Argument | Type | Description
+-------- | ---- | -----------
+`10` |  | 
+
+**Changelog**
+
+Version | Description
+------- | -----------
+`10.1.0` | 
+
+Source: ./includes/Compatibility/Plugins/WooCommerceGermanized.php, line 56
+
 ### `cfw_payment_gateway_{$kp->id}_content`
 
 *Filters whether to show custom klarna payment box HTML*
@@ -4496,7 +4517,7 @@ Version | Description
 ------- | -----------
 `2.0.0` | 
 
-Source: ./includes/Compatibility/Gateways/KlarnaPayment.php, line 95
+Source: ./includes/Compatibility/Gateways/KlarnaPayment.php, line 99
 
 ### `cfw_payment_gateway_field_html_{$kp->id}`
 
@@ -4514,7 +4535,7 @@ Version | Description
 ------- | -----------
 `2.0.0` | 
 
-Source: ./includes/Compatibility/Gateways/KlarnaPayment.php, line 123
+Source: ./includes/Compatibility/Gateways/KlarnaPayment.php, line 127
 
 ### `cfw_wcpay_payment_requests_ignore_shipping_phone`
 
@@ -4550,7 +4571,7 @@ Version | Description
 ------- | -----------
 `2.0.0` | 
 
-Source: ./includes/Compatibility/Gateways/KlarnaPayment3.php, line 103
+Source: ./includes/Compatibility/Gateways/KlarnaPayment3.php, line 111
 
 ### `cfw_payment_gateway_field_html_{$kp->id}`
 
@@ -4568,7 +4589,7 @@ Version | Description
 ------- | -----------
 `2.0.0` | 
 
-Source: ./includes/Compatibility/Gateways/KlarnaPayment3.php, line 132
+Source: ./includes/Compatibility/Gateways/KlarnaPayment3.php, line 139
 
 ### `cfw_billing_address_heading`
 
@@ -4578,7 +4599,7 @@ Argument | Type | Description
 -------- | ---- | -----------
 `__('Billing address', 'checkout-wc')` |  | 
 
-Source: ./includes/Compatibility/Gateways/PayPalForWooCommerce.php, line 178
+Source: ./includes/Compatibility/Gateways/PayPalForWooCommerce.php, line 192
 
 ### `cfw_amazon_suppress_shipping_field_validation`
 
@@ -4598,7 +4619,7 @@ Argument | Type | Description
 -------- | ---- | -----------
 `true` |  | 
 
-Source: ./includes/Compatibility/Gateways/AmazonPayLegacy.php, line 247
+Source: ./includes/Compatibility/Gateways/AmazonPayLegacy.php, line 249
 
 ### `cfw_show_klarna_checkout_express_button`
 
@@ -4616,7 +4637,7 @@ Version | Description
 ------- | -----------
 `7.1.7` | 
 
-Source: ./includes/Compatibility/Gateways/KlarnaCheckout.php, line 83
+Source: ./includes/Compatibility/Gateways/KlarnaCheckout.php, line 86
 
 ### `cfw_stripe_payment_requests_ignore_shipping_phone`
 
@@ -4636,6 +4657,26 @@ Version | Description
 
 Source: ./includes/Compatibility/Gateways/Stripe.php, line 20
 
+### `cfw_disable_woocommerce_stripe_gateway_ece`
+
+*Disable ECE express buttons for WooCommerce Stripe Gateway*
+
+The non-ECE buttons are preferred because they can be styled to fit with other gateways express buttons.
+
+**Arguments**
+
+Argument | Type | Description
+-------- | ---- | -----------
+`true` |  | 
+
+**Changelog**
+
+Version | Description
+------- | -----------
+`9.1.9` | 
+
+Source: ./includes/Compatibility/Gateways/Stripe.php, line 35
+
 ### `cfw_stripe_compat_override_request_btn_height`
 
 **Arguments**
@@ -4644,7 +4685,7 @@ Argument | Type | Description
 -------- | ---- | -----------
 `true` |  | 
 
-Source: ./includes/Compatibility/Gateways/Stripe.php, line 81
+Source: ./includes/Compatibility/Gateways/Stripe.php, line 126
 
 ### `cfw_square_payment_requests_ignore_shipping_phone`
 
@@ -4680,7 +4721,7 @@ Version | Description
 ------- | -----------
 `2.0.0` | 
 
-Source: ./includes/AddressFieldsAugmenter.php, line 54
+Source: ./includes/AddressFieldsAugmenter.php, line 56
 
 ### `cfw_enable_fullname_field`
 
@@ -4698,25 +4739,31 @@ Version | Description
 ------- | -----------
 `7.1.0` | 
 
-Source: ./includes/AddressFieldsAugmenter.php, line 103
+Source: ./includes/AddressFieldsAugmenter.php, line 107
 
-### `cfw_enable_discrete_address_1_fields`
-
-*Filter whether to enable discreet address 1 fields*
+### `cfw_enable_separate_address_1_fields`
 
 **Arguments**
 
 Argument | Type | Description
 -------- | ---- | -----------
-`'yes' === SettingsManager::instance()->get_setting('enable_discreet_address_1_fields') && is_cfw_page()` |  | 
+`'yes' === SettingsManager::instance()->get_setting('enable_discreet_address_1_fields')` |  | 
 
-**Changelog**
+Source: ./includes/AddressFieldsAugmenter.php, line 123
 
-Version | Description
-------- | -----------
-`7.1.0` | 
+### `cfw_enable_discrete_address_1_fields`
 
-Source: ./includes/AddressFieldsAugmenter.php, line 112
+*Get custom default address fields*
+
+**Arguments**
+
+Argument | Type | Description
+-------- | ---- | -----------
+`array($enable_separate_address_1_fields)` |  | 
+`'10.0.0'` |  | 
+`'cfw_enable_separate_address_1_fields'` |  | 
+
+Source: ./includes/AddressFieldsAugmenter.php, line 100
 
 ### `cfw_non_floating_label_field_types`
 
@@ -4730,14 +4777,41 @@ Source: ./includes/FormFieldAugmenter.php, line 121
 
 ### `cfw_form_field_append_optional_to_placeholder`
 
+*Whether to append optional to field placeholder*
+
 **Arguments**
 
 Argument | Type | Description
 -------- | ---- | -----------
-`isset($args['suppress_optional_suffix'])` |  | 
-`$key` |  | 
+`array(isset($args['suppress_optional_suffix'], $key))` |  | 
+`'CheckoutWC 10.1.13'` |  | 
+`'cfw_form_field_suppress_optional_in_placeholder'` |  | 
 
-Source: ./includes/FormFieldAugmenter.php, line 145
+**Changelog**
+
+Version | Description
+------- | -----------
+`6.2.3` | 
+
+Source: ./includes/FormFieldAugmenter.php, line 139
+
+### `cfw_form_field_suppress_optional_in_placeholder`
+
+*Whether to suppress 'optional' from field placeholder*
+
+**Arguments**
+
+Argument | Type | Description
+-------- | ---- | -----------
+`$suppress_placeholder` |  | 
+
+**Changelog**
+
+Version | Description
+------- | -----------
+`10.1.13` | 
+
+Source: ./includes/FormFieldAugmenter.php, line 148
 
 ### `cfw_select_field_options`
 
@@ -4757,7 +4831,7 @@ Version | Description
 ------- | -----------
 `7.4.0` | 
 
-Source: ./includes/FormFieldAugmenter.php, line 163
+Source: ./includes/FormFieldAugmenter.php, line 173
 
 ### `cfw_checkbox_like_field_types`
 
@@ -4775,7 +4849,7 @@ Version | Description
 ------- | -----------
 `7.0.10` | 
 
-Source: ./includes/FormFieldAugmenter.php, line 276
+Source: ./includes/FormFieldAugmenter.php, line 286
 
 ### `cfw_replace_form`
 
@@ -4785,7 +4859,7 @@ Argument | Type | Description
 -------- | ---- | -----------
 `false` |  | 
 
-Source: ./includes/Managers/AssetManager.php, line 117
+Source: ./includes/Managers/AssetManager.php, line 124
 
 ### `cfw_thank_you_page_map_address`
 
@@ -4804,7 +4878,25 @@ Version | Description
 ------- | -----------
 `5.3.9` | 
 
-Source: ./includes/Managers/AssetManager.php, line 192
+Source: ./includes/Managers/AssetManager.php, line 194
+
+### `cfw_locale_prefix`
+
+*Filter locale prefix*
+
+**Arguments**
+
+Argument | Type | Description
+-------- | ---- | -----------
+`$locale` | `string` | Locale prefix
+
+**Changelog**
+
+Version | Description
+------- | -----------
+`9.1.5` | 
+
+Source: ./includes/Managers/AssetManager.php, line 312
 
 ### `cfw_parsley_locale`
 
@@ -4822,7 +4914,111 @@ Version | Description
 ------- | -----------
 `3.0.0` | 
 
-Source: ./includes/Managers/AssetManager.php, line 333
+Source: ./includes/Managers/AssetManager.php, line 350
+
+### `cfw_disable_cart_quantity_prompt`
+
+**Arguments**
+
+Argument | Type | Description
+-------- | ---- | -----------
+`false` |  | 
+
+Source: ./includes/Managers/AssetManager.php, line 385
+
+### `cfw_link_cart_items`
+
+**Arguments**
+
+Argument | Type | Description
+-------- | ---- | -----------
+`SettingsManager::instance()->get_setting('cart_item_link') === 'enabled'` |  | 
+
+Source: ./includes/Managers/AssetManager.php, line 393
+
+### `cfw_show_cart_item_discount`
+
+**Arguments**
+
+Argument | Type | Description
+-------- | ---- | -----------
+`SettingsManager::instance()->get_setting('show_side_cart_item_discount') === 'yes'` |  | 
+
+Source: ./includes/Managers/AssetManager.php, line 403
+
+### `cfw_show_free_shipping_progress_bar_without_calculated_packages`
+
+**Arguments**
+
+Argument | Type | Description
+-------- | ---- | -----------
+`false` |  | 
+
+Source: ./includes/Managers/AssetManager.php, line 406
+
+### `cfw_promo_code_apply_button_label`
+
+**Arguments**
+
+Argument | Type | Description
+-------- | ---- | -----------
+`esc_attr__('Apply', 'checkout-wc')` |  | 
+
+Source: ./includes/Managers/AssetManager.php, line 416
+
+### `cfw_promo_code_toggle_link_text`
+
+**Arguments**
+
+Argument | Type | Description
+-------- | ---- | -----------
+`__('Have a promo code? Click here.', 'checkout-wc')` |  | 
+
+Source: ./includes/Managers/AssetManager.php, line 425
+
+### `cfw_promo_code_label`
+
+**Arguments**
+
+Argument | Type | Description
+-------- | ---- | -----------
+`__('Promo Code', 'checkout-wc')` |  | 
+
+Source: ./includes/Managers/AssetManager.php, line 434
+
+### `cfw_promo_code_placeholder`
+
+**Arguments**
+
+Argument | Type | Description
+-------- | ---- | -----------
+`__('Enter Promo Code', 'checkout-wc')` |  | 
+
+Source: ./includes/Managers/AssetManager.php, line 443
+
+### `cfw_enable_separate_address_1_fields`
+
+*This filter is documented in includes/AddressFieldsAugmenter.php*
+
+**Arguments**
+
+Argument | Type | Description
+-------- | ---- | -----------
+`'yes' === SettingsManager::instance()->get_setting('enable_discreet_address_1_fields')` |  | 
+
+Source: ./includes/Managers/AssetManager.php, line 472
+
+### `cfw_enable_discrete_address_1_fields`
+
+**Arguments**
+
+Argument | Type | Description
+-------- | ---- | -----------
+`array($enable_separate_address_1_fields)` |  | 
+`'10.0.0'` |  | 
+`'cfw_enable_separate_address_1_fields'` |  | 
+
+Source: ./includes/Managers/AssetManager.php, line 448
 
 ### `cfw_event_object`
 
@@ -4835,21 +5031,19 @@ Localized data available via DataService
 Argument | Type | Description
 -------- | ---- | -----------
 `array(
-    'data' => array_merge_recursive(AssetManager::get_data(), array('login_form' => cfw_get_login_form_html(), 'lost_password_form' => cfw_get_lost_password_form_html())),
+    'data' => array_merge_recursive(self::get_data(), array('login_form' => cfw_get_login_form_html(), 'lost_password_form' => cfw_get_lost_password_form_html())),
     /**
      * Filter TypeScript compatibility classes and params
      *
      * @param array $compatibility TypeScript compatibility classes and params
      *
      * @since 3.0.0
-     *
      */
     'compatibility' => apply_filters(array()),
     'settings' => array(
         'base_country' => WC()->countries->get_base_country(),
+        'locale_prefix' => $this->get_locale_prefix(),
         'parsley_locale' => $this->get_parsley_locale(),
-        // required for parsley localization
-        'user_logged_in' => is_user_logged_in(),
         'login_allowed_at_checkout' => cfw_is_login_at_checkout_allowed(),
         /**
          * Filter whether to validate required registration
@@ -4857,7 +5051,6 @@ Argument | Type | Description
          * @param bool $validate_required_registration Validate required registration
          *
          * @since 3.0.0
-         *
          */
         'validate_required_registration' => apply_filters(true),
         'default_address_fields' => array_keys(WC()->countries->get_default_address_fields()),
@@ -4867,9 +5060,8 @@ Argument | Type | Description
          * @param bool $enable_zip_autocomplete Enable zip autocomplete
          *
          * @since 2.0.0
-         *
          */
-        'enable_zip_autocomplete' => (bool) apply_filters(true),
+        'enable_zip_autocomplete' => apply_filters(true) && defined('CFW_PREMIUM_PLAN_IDS'),
         /**
          * Filter whether to disable email domain validation
          *
@@ -4884,24 +5076,14 @@ Argument | Type | Description
          * @param bool $cfw_enable_field_persistence Enable field persistence
          *
          * @since 7.1.10
-         *
          */
         'enable_field_persistence' => (bool) apply_filters(true),
-        /**
-         * Filter whether to disable cart quantity prompt
-         *
-         * @param bool $disable_cart_quantity_prompt Disable cart quantity prompt
-         *
-         * @since 8.2.19
-         */
-        'disable_cart_quantity_prompt' => apply_filters(false),
         /**
          * Filter whether to check create account by default
          *
          * @param bool $check_create_account_by_default Check create account by default
          *
          * @since 3.0.0
-         *
          */
         'check_create_account_by_default' => (bool) apply_filters(true),
         /**
@@ -4910,7 +5092,6 @@ Argument | Type | Description
          * @param bool $enable_account_exists_check Enable account exists check when billing email field changed
          *
          * @since 5.3.7
-         *
          */
         'enable_account_exists_check' => apply_filters(!is_user_logged_in()),
         'needs_shipping_address' => WC()->cart && WC()->cart->needs_shipping_address(),
@@ -4918,13 +5099,13 @@ Argument | Type | Description
         'enable_map_embed' => PlanManager::can_access_feature('enable_map_embed'),
         'disable_auto_open_login_modal' => SettingsManager::instance()->get_setting('disable_auto_open_login_modal') === 'yes',
         'disable_domain_autocomplete' => SettingsManager::instance()->get_setting('disable_domain_autocomplete') === 'yes',
+        'enable_coupon_code_link' => SettingsManager::instance()->get_setting('enable_coupon_code_link') === 'yes',
         /**
          * Filter whether to load tabs
          *
          * @param bool $load_tabs Load tabs
          *
          * @since 3.0.0
-         *
          */
         'load_tabs' => apply_filters(cfw_is_checkout()),
         'is_checkout_pay_page' => is_checkout_pay_page(),
@@ -4935,7 +5116,6 @@ Argument | Type | Description
          * @param array $address_autocomplete_billing_countries List of country restrictions for Google Maps address autocomplete
          *
          * @since 3.0.0
-         *
          */
         'address_autocomplete_billing_countries' => apply_filters(array()),
         'is_registration_required' => WC()->checkout()->is_registration_required(),
@@ -4945,51 +5125,21 @@ Argument | Type | Description
          * @param bool $registration_generate_password Automatically generate password for new accounts
          *
          * @since 3.0.0
-         *
          */
         'registration_generate_password' => SettingsManager::instance()->get_setting('registration_style') !== 'woocommerce',
         'thank_you_shipping_address' => false,
-        'shipping_countries' => $shipping_countries,
-        'allowed_countries' => $allowed_countries,
+        'enable_separate_address_1_fields' => $enable_separate_address_1_fields,
         /**
-         * Filter whether to enable discrete address 1 fields
-         *
-         * @param boolean $discrete_address_1_fields Whether to enable discrete address 1 fields
-         *
-         * @since 7.0.17
-         */
-        'enable_discreet_address_1_fields' => apply_filters('yes' === SettingsManager::instance()->get_setting('enable_discreet_address_1_fields')),
-        /**
-         * Filter whether to enable fullname field
+         * Filters whether to enable fullname field
          *
          * @param boolean $enable_fullname_field Whether to enable fullname field
          *
          * @since 7.0.17
          */
         'use_fullname_field' => apply_filters('yes' === SettingsManager::instance()->get_setting('use_fullname_field')),
-        'trust_badges' => SettingsManager::instance()->get_setting('new_trust_badges'),
+        'trust_badges' => $trust_badges,
         'trust_badges_display' => SettingsManager::instance()->get_setting('trust_badge_position'),
-        /**
-         * Filters whether to link cart items to products
-         *
-         * @param bool $link_cart_items Link cart items to products
-         *
-         * @since 1.0.0
-         *
-         */
-        'link_items' => apply_filters(SettingsManager::instance()->get_setting('cart_item_link') === 'enabled'),
-        'enable_cart_editing' => SettingsManager::instance()->get_setting('enable_cart_editing') === 'yes',
-        'show_item_remove_button' => SettingsManager::instance()->get_setting('show_item_remove_button') === 'yes',
         'enable_one_page_checkout' => SettingsManager::instance()->get_setting('enable_one_page_checkout') === 'yes',
-        /**
-         * Filters whether to show cart item discount on cart item
-         *
-         * @param bool $show_cart_item_discount Show cart item discount on cart item
-         *
-         * @since 2.0.0
-         *
-         */
-        'show_item_discount' => apply_filters(SettingsManager::instance()->get_setting('show_side_cart_item_discount') === 'yes'),
         /**
          * Filter intl-tel-input preferred countries
          *
@@ -4997,17 +5147,27 @@ Argument | Type | Description
          *
          * @since 8.2.22
          */
-        'phone_field_highlighted_countries' => (array) apply_filters(SettingsManager::instance()->get_setting('highlighted_countries')),
+        'phone_field_highlighted_countries' => (array) apply_filters(SettingsManager::instance()->get_setting('enable_highlighted_countries') === 'yes' ? SettingsManager::instance()->get_setting('highlighted_countries') : array()),
         'store_policies' => $store_policies,
         'ship_to_billing_address_only' => wc_ship_to_billing_address_only(),
         'max_after_checkout_bumps' => $max_after_checkout_bumps < 0 ? 999 : $max_after_checkout_bumps,
+        'enable_acr' => PlanManager::can_access_feature('enable_acr'),
+        /**
+         * Bypass cookie for automatically showing login modal
+         *
+         * @param bool $bypass_login_modal_shown_cookie Bypass cookie for automatically showing login modal (default: false, do not bypass)
+         *
+         * @since 9.0.16
+         */
+        'bypass_login_modal_shown_cookie' => apply_filters(false),
+        'is_login_at_checkout_allowed' => cfw_is_login_at_checkout_allowed(),
+        'google_maps_api_key' => SettingsManager::instance()->get_setting('google_places_api_key'),
         /**
          * Filter list of field persistence service excludes
          *
          * @param array $field_persistence_excludes List of field persistence service excludes
          *
          * @since 3.0.0
-         *
          */
         'field_persistence_excludes' => apply_filters(array(
             'input[type="button"]',
@@ -5046,6 +5206,8 @@ Argument | Type | Description
             '.cfw_order_bump_check',
             '#shipping_fetchify_search',
             '#billing_fetchify_search',
+            '#terms',
+            '#ship-to-different-address-checkbox',
             '[data-persist="false"]',
         )),
     ),
@@ -5070,14 +5232,15 @@ Argument | Type | Description
         'quantity_prompt_message' => __('Please enter a new quantity:', 'checkout-wc'),
         'cvv_tooltip_message' => __('3-digit security code usually found on the back of your card. American Express cards have a 4-digit code located on the front.', 'checkout-wc'),
         'delete_confirm_message' => __('Are you sure you want to remove this item from your cart?', 'checkout-wc'),
-        'account_already_registered_notice' => cfw_apply_filters('woocommerce_registration_error_email_exists', cfw__('An account is already registered with your email address. <a href="#" class="showlogin">Please log in.</a>', 'woocommerce'), ''),
-        'generic_field_validation_error_message' => cfw__('%s is a required field.', 'woocommerce'),
-        'update_checkout_error' => cfw__('There was a problem checking out. Please try again. If the problem persists, please get in touch with us so we can assist.', 'woocommerce'),
+        'account_already_registered_notice' => cfw_apply_filters('woocommerce_registration_error_email_exists', __('An account is already registered with your email address. <a href="#" class="showlogin">Please log in.</a>', 'woocommerce'), ''),
+        'generic_field_validation_error_message' => __('%s is a required field.', 'woocommerce'),
+        'update_checkout_error' => __('There was a problem checking out. Please try again. If the problem persists, please get in touch with us so we can assist.', 'woocommerce'),
         'invalid_postcode' => __('Please enter a valid postcode / ZIP.', 'checkout-wc'),
         'pickup_label' => __('Pickup', 'checkout-wc'),
-        'update_cart_item_variation_button' => cfw__('Update', 'woocommerce'),
-        'ok_button_label' => cfw__('Add to cart', 'woocommerce'),
-        'cancel_button_label' => cfw__('Cancel', 'woocommerce'),
+        'pickup_btn_label' => __('Continue to pickup', 'checkout-wc'),
+        'update_cart_item_variation_button' => __('Update', 'woocommerce'),
+        'ok_button_label' => __('Add to cart', 'woocommerce'),
+        'cancel_button_label' => __('Cancel', 'woocommerce'),
         /**
          * Filter the fetchify search placeholder
          *
@@ -5086,8 +5249,15 @@ Argument | Type | Description
          * @since 8.2.3
          */
         'fetchify_default_placeholder' => apply_filters(__('Start with post/zip code or street', 'checkout-wc')),
+        /**
+         * Filter the shipping methods heading
+         *
+         * @param string $shipping_methods_heading Shipping methods heading
+         *
+         * @since 9.0.0
+         */
         'shipping_methods_heading' => apply_filters(esc_html__('Shipping method', 'checkout-wc')),
-        'no_shipping_methods_notice' => apply_filters('<div class="cfw-alert cfw-alert-error"><div class="message">' . wpautop(cfw_esc_html__('There are no shipping options available. Please ensure that your address has been entered correctly, or contact us if you need any help.', 'woocommerce')) . '</div></div>'),
+        'edit_cart_variation_label' => __('Edit', 'woocommerce'),
     ),
     'checkout_params' => array(
         'ajax_url' => WC()->ajax_url(),
@@ -5099,12 +5269,12 @@ Argument | Type | Description
         'checkout_url' => \WC_AJAX::get_endpoint('checkout'),
         'is_checkout' => is_checkout() && empty($wp->query_vars['order-pay']) && !isset($wp->query_vars['order-received']) ? 1 : 0,
         'debug_mode' => defined('WP_DEBUG') && WP_DEBUG,
-        // phpcs:disable WordPress.Security.NonceVerification.Missing
         'cfw_debug_mode' => isset($_GET['cfw-debug']),
-        // phpcs:enable WordPress.Security.NonceVerification.Missing
+        // phpcs:ignore WordPress.Security.NonceVerification.Recommended
         'i18n_checkout_error' => cfw_esc_attr__('Error processing checkout. Please try again.', 'woocommerce'),
         'dist_path' => CFW_PATH_ASSETS,
         'is_rtl' => is_rtl(),
+        'cart_hash_key' => cfw_apply_filters('woocommerce_cart_hash_key', 'wc_cart_hash_' . md5(get_current_blog_id() . '_' . get_site_url(get_current_blog_id(), '/') . get_template())),
     ),
     'runtime_params' => array('runtime_email_matched_user' => false),
 )` |  | 
@@ -5115,7 +5285,7 @@ Version | Description
 ------- | -----------
 `1.0.0` | 
 
-Source: ./includes/Managers/AssetManager.php, line 360
+Source: ./includes/Managers/AssetManager.php, line 476
 
 ### `cfw_typescript_compatibility_classes_and_params`
 
@@ -5125,7 +5295,7 @@ Argument | Type | Description
 -------- | ---- | -----------
 `array()` |  | 
 
-Source: ./includes/Managers/AssetManager.php, line 389
+Source: ./includes/Managers/AssetManager.php, line 502
 
 ### `cfw_validate_required_registration`
 
@@ -5135,7 +5305,7 @@ Argument | Type | Description
 -------- | ---- | -----------
 `true` |  | 
 
-Source: ./includes/Managers/AssetManager.php, line 405
+Source: ./includes/Managers/AssetManager.php, line 515
 
 ### `cfw_enable_zip_autocomplete`
 
@@ -5145,7 +5315,7 @@ Argument | Type | Description
 -------- | ---- | -----------
 `true` |  | 
 
-Source: ./includes/Managers/AssetManager.php, line 416
+Source: ./includes/Managers/AssetManager.php, line 524
 
 ### `cfw_disable_email_domain_validation`
 
@@ -5155,7 +5325,7 @@ Argument | Type | Description
 -------- | ---- | -----------
 `false` |  | 
 
-Source: ./includes/Managers/AssetManager.php, line 424
+Source: ./includes/Managers/AssetManager.php, line 532
 
 ### `cfw_enable_field_persistence`
 
@@ -5165,17 +5335,7 @@ Argument | Type | Description
 -------- | ---- | -----------
 `true` |  | 
 
-Source: ./includes/Managers/AssetManager.php, line 434
-
-### `cfw_disable_cart_quantity_prompt`
-
-**Arguments**
-
-Argument | Type | Description
--------- | ---- | -----------
-`false` |  | 
-
-Source: ./includes/Managers/AssetManager.php, line 443
+Source: ./includes/Managers/AssetManager.php, line 540
 
 ### `cfw_check_create_account_by_default`
 
@@ -5185,7 +5345,7 @@ Argument | Type | Description
 -------- | ---- | -----------
 `true` |  | 
 
-Source: ./includes/Managers/AssetManager.php, line 453
+Source: ./includes/Managers/AssetManager.php, line 548
 
 ### `cfw_enable_account_exists_check`
 
@@ -5195,7 +5355,7 @@ Argument | Type | Description
 -------- | ---- | -----------
 `!is_user_logged_in()` |  | 
 
-Source: ./includes/Managers/AssetManager.php, line 463
+Source: ./includes/Managers/AssetManager.php, line 556
 
 ### `cfw_load_tabs`
 
@@ -5205,7 +5365,7 @@ Argument | Type | Description
 -------- | ---- | -----------
 `cfw_is_checkout()` |  | 
 
-Source: ./includes/Managers/AssetManager.php, line 478
+Source: ./includes/Managers/AssetManager.php, line 570
 
 ### `cfw_address_autocomplete_billing_countries`
 
@@ -5215,17 +5375,7 @@ Argument | Type | Description
 -------- | ---- | -----------
 `array()` |  | 
 
-Source: ./includes/Managers/AssetManager.php, line 490
-
-### `cfw_enable_discrete_address_1_fields`
-
-**Arguments**
-
-Argument | Type | Description
--------- | ---- | -----------
-`'yes' === SettingsManager::instance()->get_setting('enable_discreet_address_1_fields')` |  | 
-
-Source: ./includes/Managers/AssetManager.php, line 513
+Source: ./includes/Managers/AssetManager.php, line 580
 
 ### `cfw_enable_fullname_field`
 
@@ -5235,27 +5385,7 @@ Argument | Type | Description
 -------- | ---- | -----------
 `'yes' === SettingsManager::instance()->get_setting('use_fullname_field')` |  | 
 
-Source: ./includes/Managers/AssetManager.php, line 522
-
-### `cfw_link_cart_items`
-
-**Arguments**
-
-Argument | Type | Description
--------- | ---- | -----------
-`SettingsManager::instance()->get_setting('cart_item_link') === 'enabled'` |  | 
-
-Source: ./includes/Managers/AssetManager.php, line 535
-
-### `cfw_show_cart_item_discount`
-
-**Arguments**
-
-Argument | Type | Description
--------- | ---- | -----------
-`SettingsManager::instance()->get_setting('show_side_cart_item_discount') === 'yes'` |  | 
-
-Source: ./includes/Managers/AssetManager.php, line 548
+Source: ./includes/Managers/AssetManager.php, line 599
 
 ### `cfw_phone_field_highlighted_countries`
 
@@ -5263,9 +5393,19 @@ Source: ./includes/Managers/AssetManager.php, line 548
 
 Argument | Type | Description
 -------- | ---- | -----------
-`SettingsManager::instance()->get_setting('highlighted_countries')` |  | 
+`SettingsManager::instance()->get_setting('enable_highlighted_countries') === 'yes' ? SettingsManager::instance()->get_setting('highlighted_countries') : array()` |  | 
 
-Source: ./includes/Managers/AssetManager.php, line 557
+Source: ./includes/Managers/AssetManager.php, line 610
+
+### `cfw_bypass_login_modal_shown_cookie`
+
+**Arguments**
+
+Argument | Type | Description
+-------- | ---- | -----------
+`false` |  | 
+
+Source: ./includes/Managers/AssetManager.php, line 622
 
 ### `cfw_field_data_persistence_excludes`
 
@@ -5310,10 +5450,12 @@ Argument | Type | Description
     '.cfw_order_bump_check',
     '#shipping_fetchify_search',
     '#billing_fetchify_search',
+    '#terms',
+    '#ship-to-different-address-checkbox',
     '[data-persist="false"]',
 )` |  | 
 
-Source: ./includes/Managers/AssetManager.php, line 570
+Source: ./includes/Managers/AssetManager.php, line 632
 
 ### `cfw_invalid_phone_validation_error_message`
 
@@ -5323,7 +5465,7 @@ Argument | Type | Description
 -------- | ---- | -----------
 `__('Please enter a valid phone number.', 'checkout-wc')` |  | 
 
-Source: ./includes/Managers/AssetManager.php, line 620
+Source: ./includes/Managers/AssetManager.php, line 684
 
 ### `cfw_invalid_full_name_validation_error_message`
 
@@ -5333,7 +5475,7 @@ Argument | Type | Description
 -------- | ---- | -----------
 `__('Please enter your first and last name.', 'checkout-wc')` |  | 
 
-Source: ./includes/Managers/AssetManager.php, line 629
+Source: ./includes/Managers/AssetManager.php, line 693
 
 ### `cfw_fetchify_search_placeholder`
 
@@ -5343,7 +5485,7 @@ Argument | Type | Description
 -------- | ---- | -----------
 `__('Start with post/zip code or street', 'checkout-wc')` |  | 
 
-Source: ./includes/Managers/AssetManager.php, line 650
+Source: ./includes/Managers/AssetManager.php, line 714
 
 ### `cfw_shipping_method_heading`
 
@@ -5353,7 +5495,7 @@ Argument | Type | Description
 -------- | ---- | -----------
 `esc_html__('Shipping method', 'checkout-wc')` |  | 
 
-Source: ./includes/Managers/AssetManager.php, line 651
+Source: ./includes/Managers/AssetManager.php, line 722
 
 ### `cfw_side_cart_event_object`
 
@@ -5365,27 +5507,16 @@ Localized data available via DataService
 
 Argument | Type | Description
 -------- | ---- | -----------
-`array('data' => AssetManager::get_data(), 'settings' => array(
-    // required for parsley localization
-    'user_logged_in' => is_user_logged_in(),
+`array('data' => self::get_default_data(), 'settings' => array(
     /**
      * Filter whether to auto open the side cart on add to cart
      *
      * @param bool $disable_side_cart_auto_open Disable side cart auto open
      *
      * @since 7.1.5
-     *
      */
     'disable_side_cart_auto_open' => (bool) apply_filters(SettingsManager::instance()->get_setting('shake_floating_cart_button') === 'yes'),
     'enable_floating_cart_button' => SettingsManager::instance()->get_setting('enable_floating_cart_button') === 'yes',
-    /**
-     * Filter whether to disable cart quantity prompt
-     *
-     * @param bool $disable_cart_quantity_prompt Disable cart quantity prompt
-     *
-     * @since 8.2.19
-     */
-    'disable_cart_quantity_prompt' => apply_filters(false),
     'enable_side_cart_suggested_products' => SettingsManager::instance()->get_setting('enable_side_cart_suggested_products') === 'yes',
     /**
      * Filter whether to automatically generate password for new accounts
@@ -5393,30 +5524,17 @@ Argument | Type | Description
      * @param string $additional_side_cart_trigger_selectors CSS selector for additional side cart open buttons / links
      *
      * @since 5.4.0
-     *
      */
     'additional_side_cart_trigger_selectors' => apply_filters(false),
+    'cart_icon_contents' => SideCart::get_cart_icon_file_contents(),
+    'coupons_enabled_side_cart' => wc_coupons_enabled() && SettingsManager::instance()->get_setting('enable_promo_codes_on_side_cart') === 'yes',
     /**
-     * Filters whether to link cart items to products
+     * Filters whether to enable continue shopping button in side cart
      *
-     * @param bool $link_cart_items Link cart items to products
+     * @param bool $enable_continue_shopping_btn Whether to enable continue shopping button in side cart
      *
-     * @since 1.0.0
-     *
+     * @since 7.7.0
      */
-    'link_items' => apply_filters(SettingsManager::instance()->get_setting('cart_item_link') === 'enabled'),
-    'show_item_remove_button' => SettingsManager::instance()->get_setting('show_item_remove_button') === 'yes',
-    /**
-     * Filters whether to show cart item discount on cart item
-     *
-     * @param bool $show_cart_item_discount Show cart item discount on cart item
-     *
-     * @since 2.0.0
-     *
-     */
-    'show_item_discount' => apply_filters(SettingsManager::instance()->get_setting('show_side_cart_item_discount') === 'yes'),
-    'cart_icon_url' => SideCart::get_cart_icon_file_url(),
-    'coupons_enabled' => wc_coupons_enabled() && SettingsManager::instance()->get_setting('enable_promo_codes_on_side_cart') === 'yes',
     'enable_continue_shopping_btn' => apply_filters(SettingsManager::instance()->get_setting('enable_side_cart_continue_shopping_button') === 'yes'),
     'enable_side_cart_payment_buttons' => SettingsManager::instance()->get_setting('enable_side_cart_payment_buttons') === 'yes',
     /**
@@ -5430,65 +5548,23 @@ Argument | Type | Description
     'wc_get_pay_buttons' => cfw_get_function_output('wc_get_pay_buttons'),
     'enable_free_shipping_progress_bar' => SettingsManager::instance()->get_setting('enable_free_shipping_progress_bar') === 'yes',
     'suggested_products_heading' => $suggested_products_heading,
-    'max_bumps' => $max_bumps < 0 ? 999 : $max_bumps,
     'enable_ajax_add_to_cart' => SettingsManager::instance()->get_setting('enable_ajax_add_to_cart') === 'yes',
     'checkout_page_url' => wc_get_checkout_url(),
     'enable_free_shipping_progress_bar_at_checkout' => SettingsManager::instance()->get_setting('enable_free_shipping_progress_bar_at_checkout') === 'yes',
-), 'messages' => array(
-    'quantity_prompt_message' => __('Please enter a new quantity:', 'checkout-wc'),
-    'delete_confirm_message' => __('Are you sure you want to remove this item from your cart?', 'checkout-wc'),
-    'view_cart' => cfw__('View cart', 'woocommerce'),
-    'update_cart_item_variation_button' => cfw__('Update', 'woocommerce'),
-    'ok_button_label' => cfw__('Add to cart', 'woocommerce'),
-    'cancel_button_label' => cfw__('Cancel', 'woocommerce'),
-    /**
-     * Filters promo code button label
-     *
-     * @param string $promo_code_button_label Promo code button label
-     *
-     * @since 3.0.0
-     */
-    'promo_code_button_label' => apply_filters(esc_attr__('Apply', 'checkout-wc')),
-    /**
-     * Filters promo code toggle link text
-     *
-     * @param string $promo_code_toggle_link_text Filters promo code toggle link text
-     *
-     * @since 3.0.0
-     */
-    'promo_code_toggle_link_text' => apply_filters(__('Have a promo code? Click here.', 'checkout-wc')),
-    /**
-     * Filters promo code label
-     *
-     * @param string $promo_code_label Promo code label
-     *
-     * @since 3.0.0
-     */
-    'promo_code_label' => apply_filters(__('Promo Code', 'checkout-wc')),
-    /**
-     * Filters promo code placeholder
-     *
-     * @param string $promo_code_placeholder Promo code placeholder
-     *
-     * @since 3.0.0
-     */
-    'promo_code_placeholder' => apply_filters(__('Enter Promo Code', 'checkout-wc')),
-    'remove_item_label' => __('Remove this item', 'woocommerce'),
-    'proceed_to_checkout_label' => __('Proceed to checkout', 'woocommerce'),
-    'continue_shopping_label' => __('Continue shopping', 'woocommerce'),
-    'edit_cart_variation_label' => __('Edit', 'woocommerce'),
-), 'checkout_params' => array(
+    'enable_promo_codes_on_side_cart' => SettingsManager::instance()->get_setting('enable_promo_codes_on_side_cart') === 'yes',
+    'hide_floating_cart_button_empty_cart' => SettingsManager::instance()->get_setting('hide_floating_cart_button_empty_cart') === 'yes',
+    'enable_side_cart_coupon_code_link' => SettingsManager::instance()->get_setting('enable_side_cart_coupon_code_link') === 'yes',
+    'enable_order_bumps' => SettingsManager::instance()->get_setting('enable_order_bumps') === 'yes',
+    'enable_order_bumps_on_side_cart' => SettingsManager::instance()->get_setting('enable_order_bumps_on_side_cart') === 'yes',
+), 'messages' => array('quantity_prompt_message' => __('Please enter a new quantity:', 'checkout-wc'), 'delete_confirm_message' => __('Are you sure you want to remove this item from your cart?', 'checkout-wc'), 'view_cart' => __('View cart', 'woocommerce'), 'update_cart_item_variation_button' => __('Update', 'woocommerce'), 'ok_button_label' => __('Add to cart', 'woocommerce'), 'cancel_button_label' => __('Cancel', 'woocommerce'), 'remove_item_label' => __('Remove this item', 'woocommerce'), 'proceed_to_checkout_label' => __('Proceed to checkout', 'woocommerce'), 'continue_shopping_label' => __('Continue shopping', 'woocommerce'), 'edit_cart_variation_label' => __('Edit', 'woocommerce')), 'checkout_params' => array(
     'ajax_url' => WC()->ajax_url(),
     'wc_ajax_url' => \WC_AJAX::get_endpoint('%%endpoint%%'),
-    'update_side_cart_nonce' => wp_create_nonce('cfw-update-side-cart'),
-    'apply_coupon_nonce' => wp_create_nonce('apply-coupon'),
     'remove_coupon_nonce' => wp_create_nonce('remove-coupon'),
     'checkout_url' => \WC_AJAX::get_endpoint('checkout'),
     'is_checkout' => is_checkout() && empty($wp->query_vars['order-pay']) && !isset($wp->query_vars['order-received']) ? 1 : 0,
     'debug_mode' => defined('WP_DEBUG') && WP_DEBUG,
-    // phpcs:disable WordPress.Security.NonceVerification.Missing
     'cfw_debug_mode' => isset($_GET['cfw-debug']),
-    // phpcs:enable WordPress.Security.NonceVerification.Missing
+    // phpcs:ignore WordPress.Security.NonceVerification.Recommended
     'dist_path' => CFW_PATH_ASSETS,
     'is_rtl' => is_rtl(),
 ), 'runtime_params' => array())` |  | 
@@ -5499,7 +5575,7 @@ Version | Description
 ------- | -----------
 `1.0.0` | 
 
-Source: ./includes/Managers/AssetManager.php, line 699
+Source: ./includes/Managers/AssetManager.php, line 767
 
 ### `cfw_disable_side_cart_auto_open`
 
@@ -5509,17 +5585,7 @@ Argument | Type | Description
 -------- | ---- | -----------
 `SettingsManager::instance()->get_setting('shake_floating_cart_button') === 'yes'` |  | 
 
-Source: ./includes/Managers/AssetManager.php, line 725
-
-### `cfw_disable_cart_quantity_prompt`
-
-**Arguments**
-
-Argument | Type | Description
--------- | ---- | -----------
-`false` |  | 
-
-Source: ./includes/Managers/AssetManager.php, line 735
+Source: ./includes/Managers/AssetManager.php, line 788
 
 ### `cfw_additional_side_cart_trigger_selectors`
 
@@ -5529,27 +5595,7 @@ Argument | Type | Description
 -------- | ---- | -----------
 `false` |  | 
 
-Source: ./includes/Managers/AssetManager.php, line 746
-
-### `cfw_link_cart_items`
-
-**Arguments**
-
-Argument | Type | Description
--------- | ---- | -----------
-`SettingsManager::instance()->get_setting('cart_item_link') === 'enabled'` |  | 
-
-Source: ./includes/Managers/AssetManager.php, line 756
-
-### `cfw_show_cart_item_discount`
-
-**Arguments**
-
-Argument | Type | Description
--------- | ---- | -----------
-`SettingsManager::instance()->get_setting('show_side_cart_item_discount') === 'yes'` |  | 
-
-Source: ./includes/Managers/AssetManager.php, line 767
+Source: ./includes/Managers/AssetManager.php, line 799
 
 ### `cfw_side_cart_enable_continue_shopping_button`
 
@@ -5559,7 +5605,7 @@ Argument | Type | Description
 -------- | ---- | -----------
 `SettingsManager::instance()->get_setting('enable_side_cart_continue_shopping_button') === 'yes'` |  | 
 
-Source: ./includes/Managers/AssetManager.php, line 770
+Source: ./includes/Managers/AssetManager.php, line 809
 
 ### `cfw_side_cart_show_total`
 
@@ -5569,65 +5615,27 @@ Argument | Type | Description
 -------- | ---- | -----------
 `SettingsManager::instance()->get_setting('enable_side_cart_totals') === 'yes'` |  | 
 
-Source: ./includes/Managers/AssetManager.php, line 780
+Source: ./includes/Managers/AssetManager.php, line 819
 
-### `cfw_promo_code_apply_button_label`
-
-**Arguments**
-
-Argument | Type | Description
--------- | ---- | -----------
-`esc_attr__('Apply', 'checkout-wc')` |  | 
-
-Source: ./includes/Managers/AssetManager.php, line 804
-
-### `cfw_promo_code_toggle_link_text`
+### `cfw_get_data_clear_notices`
 
 **Arguments**
 
 Argument | Type | Description
 -------- | ---- | -----------
-`__('Have a promo code? Click here.', 'checkout-wc')` |  | 
+`!is_checkout()` |  | 
 
-Source: ./includes/Managers/AssetManager.php, line 813
-
-### `cfw_promo_code_label`
-
-**Arguments**
-
-Argument | Type | Description
--------- | ---- | -----------
-`__('Promo Code', 'checkout-wc')` |  | 
-
-Source: ./includes/Managers/AssetManager.php, line 822
-
-### `cfw_promo_code_placeholder`
-
-**Arguments**
-
-Argument | Type | Description
--------- | ---- | -----------
-`__('Enter Promo Code', 'checkout-wc')` |  | 
-
-Source: ./includes/Managers/AssetManager.php, line 831
+Source: ./includes/Managers/AssetManager.php, line 886
 
 ### `cfw_checkout_data`
 
-*Filter extra data available to JavaScript*
-
 **Arguments**
 
 Argument | Type | Description
 -------- | ---- | -----------
-`array('cart' => array('needsPayment' => WC()->cart->needs_payment(), 'items' => cfw_get_cart_items_data(), 'totals' => cfw_get_cart_totals_data(), 'actions' => cfw_get_cart_actions_data(), 'notices' => cfw_get_function_output('cfw_wc_print_notices', !is_checkout()), 'shipping' => cfw_get_cart_shipping_data()), 'bumps' => cfw_get_order_bumps_data())` |  | 
+`$data` |  | 
 
-**Changelog**
-
-Version | Description
-------- | -----------
-`8.0.0` | 
-
-Source: ./includes/Managers/AssetManager.php, line 863
+Source: ./includes/Managers/AssetManager.php, line 911
 
 ### `cfw_updates_manager_home_url`
 
@@ -5648,7 +5656,7 @@ Version | Description
 ------- | -----------
 `3.0.0` | 
 
-Source: ./includes/Managers/UpdatesManager.php, line 165
+Source: ./includes/Managers/UpdatesManager.php, line 254
 
 ### `cfw_custom_css_properties`
 
@@ -5666,7 +5674,7 @@ Version | Description
 ------- | -----------
 `5.0.0` | 
 
-Source: ./includes/Managers/StyleManager.php, line 97
+Source: ./includes/Managers/StyleManager.php, line 96
 
 ### `cfw_enable_smartystreets_integration`
 
@@ -5684,7 +5692,7 @@ Version | Description
 ------- | -----------
 `5.2.1` | 
 
-Source: ./includes/Features/SmartyStreets.php, line 29
+Source: ./includes/Features/SmartyStreets.php, line 23
 
 ### `cfw_unsubscribe_successful_message`
 
@@ -5702,7 +5710,32 @@ Version | Description
 ------- | -----------
 `9.0.0` | 
 
-Source: ./includes/Features/AbandonedCartRecovery.php, line 72
+Source: ./includes/Features/AbandonedCartRecovery.php, line 76
+
+### `cfw_acr_exclude_cart`
+
+*Filter whether to exclude tracking the cart*
+
+**Arguments**
+
+Argument | Type | Description
+-------- | ---- | -----------
+`false` |  | 
+`$email` |  | 
+`$cart_contents` |  | 
+`$subtotal` |  | 
+`$first_name` |  | 
+`$last_name` |  | 
+`$fields` |  | 
+`$meta` |  | 
+
+**Changelog**
+
+Version | Description
+------- | -----------
+`9.0.37` | 
+
+Source: ./includes/Features/AbandonedCartRecovery.php, line 200
 
 ### `cfw_acr_track_cart_without_emails`
 
@@ -5712,7 +5745,7 @@ Argument | Type | Description
 -------- | ---- | -----------
 `SettingsManager::instance()->get_setting('acr_simulate_only') === 'yes'` |  | 
 
-Source: ./includes/Features/AbandonedCartRecovery.php, line 213
+Source: ./includes/Features/AbandonedCartRecovery.php, line 224
 
 ### `cfw_acr_cart_meta`
 
@@ -5730,7 +5763,45 @@ Version | Description
 ------- | -----------
 `8.2.7` | 
 
-Source: ./includes/Features/AbandonedCartRecovery.php, line 335
+Source: ./includes/Features/AbandonedCartRecovery.php, line 353
+
+### `cfw_acr_send_to_email`
+
+*Filter the email send to address*
+
+**Arguments**
+
+Argument | Type | Description
+-------- | ---- | -----------
+`$cart->email` |  | 
+`$cart` |  | 
+`$email_id` |  | 
+
+**Changelog**
+
+Version | Description
+------- | -----------
+`9.0.37` | 
+
+Source: ./includes/Features/AbandonedCartRecovery.php, line 465
+
+### `cfw_acr_email_headers`
+
+*Filter the email headers*
+
+**Arguments**
+
+Argument | Type | Description
+-------- | ---- | -----------
+`$headers` |  | 
+
+**Changelog**
+
+Version | Description
+------- | -----------
+`9.0.9` | 
+
+Source: ./includes/Features/AbandonedCartRecovery.php, line 485
 
 ### `cfw_cart_table_styles`
 
@@ -5746,9 +5817,10 @@ Argument | Type | Description
 
 Version | Description
 ------- | -----------
+`10.1.0` | Style attribute is deprecated.
 `8.0.0` | 
 
-Source: ./includes/Features/AbandonedCartRecovery.php, line 653
+Source: ./includes/Features/AbandonedCartRecovery.php, line 706
 
 ### `cfw_fetchify_address_autocomplete_countries`
 
@@ -5784,7 +5856,7 @@ Version | Description
 ------- | -----------
 `5.3.2` | 
 
-Source: ./includes/Features/FetchifyAddressAutocomplete.php, line 50
+Source: ./includes/Features/FetchifyAddressAutocomplete.php, line 49
 
 ### `cfw_fetchify_address_autocomplete_default_country`
 
@@ -5802,7 +5874,7 @@ Version | Description
 ------- | -----------
 `5.3.2` | 
 
-Source: ./includes/Features/FetchifyAddressAutocomplete.php, line 59
+Source: ./includes/Features/FetchifyAddressAutocomplete.php, line 58
 
 ### `cfw_breadcrumb_review_step_label`
 
@@ -5812,7 +5884,7 @@ Argument | Type | Description
 -------- | ---- | -----------
 `esc_html__('Review', 'checkout-wc')` |  | 
 
-Source: ./includes/Features/OrderReviewStep.php, line 67
+Source: ./includes/Features/OrderReviewStep.php, line 74
 
 ### `cfw_google_maps_compatibility_mode`
 
@@ -5830,7 +5902,7 @@ Version | Description
 ------- | -----------
 `4.3.7` | 
 
-Source: ./includes/Features/GoogleAddressAutocomplete.php, line 34
+Source: ./includes/Features/GoogleAddressAutocomplete.php, line 24
 
 ### `cfw_google_maps_language_code`
 
@@ -5848,7 +5920,7 @@ Version | Description
 ------- | -----------
 `4.3.7` | 
 
-Source: ./includes/Features/GoogleAddressAutocomplete.php, line 49
+Source: ./includes/Features/GoogleAddressAutocomplete.php, line 38
 
 ### `cfw_address_autocomplete_shipping_countries`
 
@@ -5866,7 +5938,7 @@ Version | Description
 ------- | -----------
 `3.0.0` | 
 
-Source: ./includes/Features/GoogleAddressAutocomplete.php, line 86
+Source: ./includes/Features/GoogleAddressAutocomplete.php, line 68
 
 ### `cfw_google_address_autocomplete_type`
 
@@ -5884,7 +5956,7 @@ Version | Description
 ------- | -----------
 `7.3.0` | 
 
-Source: ./includes/Features/GoogleAddressAutocomplete.php, line 95
+Source: ./includes/Features/GoogleAddressAutocomplete.php, line 77
 
 ### `cfw_order_bump_get_price_context`
 
@@ -5904,7 +5976,7 @@ Version | Description
 ------- | -----------
 `8.1.6` | 
 
-Source: ./includes/Features/OrderBumps.php, line 402
+Source: ./includes/Features/OrderBumps.php, line 465
 
 ### `cfw_order_bump_get_price_context`
 
@@ -5924,7 +5996,7 @@ Version | Description
 ------- | -----------
 `8.1.6` | 
 
-Source: ./includes/Features/OrderBumps.php, line 583
+Source: ./includes/Features/OrderBumps.php, line 646
 
 ### `cfw_display_bump`
 
@@ -5944,7 +6016,7 @@ Version | Description
 ------- | -----------
 `8.0.0` | 
 
-Source: ./includes/Features/OrderBumps.php, line 620
+Source: ./includes/Features/OrderBumps.php, line 688
 
 ### `cfw_allow_order_bump_coupons`
 
@@ -5963,7 +6035,7 @@ Version | Description
 ------- | -----------
 `8.2.14` | 
 
-Source: ./includes/Features/OrderBumps.php, line 679
+Source: ./includes/Features/OrderBumps.php, line 747
 
 ### `cfw_allow_international_phone_field_country_dropdown`
 
@@ -6010,7 +6082,25 @@ Argument | Type | Description
 `true` |  | 
 `'address_2'` |  | 
 
-Source: ./includes/Features/HideOptionalAddressFields.php, line 33
+Source: ./includes/Features/HideOptionalAddressFields.php, line 40
+
+### `cfw_optional_address_2_link_text`
+
+*Filters the link text for adding the optional address line 2 field.*
+
+**Arguments**
+
+Argument | Type | Description
+-------- | ---- | -----------
+`sprintf('%s (%s)', __('Add Address Line 2', 'checkout-wc'), __('optional', 'woocommerce'))` |  | 
+
+**Changelog**
+
+Version | Description
+------- | -----------
+`9.0.17` | 
+
+Source: ./includes/Features/HideOptionalAddressFields.php, line 42
 
 ### `cfw_hide_optional_fields_behind_links`
 
@@ -6021,7 +6111,25 @@ Argument | Type | Description
 `true` |  | 
 `'company'` |  | 
 
-Source: ./includes/Features/HideOptionalAddressFields.php, line 40
+Source: ./includes/Features/HideOptionalAddressFields.php, line 61
+
+### `cfw_optional_company_link_text`
+
+*Filters the link text for adding the optional address line 2 field.*
+
+**Arguments**
+
+Argument | Type | Description
+-------- | ---- | -----------
+`sprintf('%s (%s)', __('Add Company', 'checkout-wc'), __('optional', 'woocommerce'))` |  | 
+
+**Changelog**
+
+Version | Description
+------- | -----------
+`9.0.17` | 
+
+Source: ./includes/Features/HideOptionalAddressFields.php, line 64
 
 ### `cfw_local_pickup_option_label`
 
@@ -6039,7 +6147,7 @@ Version | Description
 ------- | -----------
 `7.3.1` | 
 
-Source: ./includes/Features/LocalPickup.php, line 98
+Source: ./includes/Features/LocalPickup.php, line 139
 
 ### `cfw_local_pickup_shipping_option_label`
 
@@ -6057,7 +6165,7 @@ Version | Description
 ------- | -----------
 `7.3.1` | 
 
-Source: ./includes/Features/LocalPickup.php, line 113
+Source: ./includes/Features/LocalPickup.php, line 154
 
 ### `cfw_local_pickup_disable_shipping_option`
 
@@ -6075,7 +6183,7 @@ Version | Description
 ------- | -----------
 `8.1.6` | 
 
-Source: ./includes/Features/LocalPickup.php, line 122
+Source: ./includes/Features/LocalPickup.php, line 163
 
 ### `cfw_local_pickup_disable_pickup_option`
 
@@ -6093,7 +6201,7 @@ Version | Description
 ------- | -----------
 `8.1.6` | 
 
-Source: ./includes/Features/LocalPickup.php, line 131
+Source: ./includes/Features/LocalPickup.php, line 172
 
 ### `cfw_estimated_pickup_time`
 
@@ -6114,7 +6222,7 @@ Version | Description
 ------- | -----------
 `7.5.0` | 
 
-Source: ./includes/Features/LocalPickup.php, line 224
+Source: ./includes/Features/LocalPickup.php, line 258
 
 ### `cfw_copy_pickup_details_to_order_notes`
 
@@ -6124,7 +6232,7 @@ Argument | Type | Description
 -------- | ---- | -----------
 `false` |  | 
 
-Source: ./includes/Features/LocalPickup.php, line 548
+Source: ./includes/Features/LocalPickup.php, line 588
 
 ### `cfw_local_pickup_use_google_address_link`
 
@@ -6142,7 +6250,7 @@ Version | Description
 ------- | -----------
 `7.3.2` | 
 
-Source: ./includes/Features/LocalPickup.php, line 589
+Source: ./includes/Features/LocalPickup.php, line 629
 
 ### `cfw_local_pickup_thank_you_address`
 
@@ -6162,7 +6270,7 @@ Version | Description
 ------- | -----------
 `7.3.2` | 
 
-Source: ./includes/Features/LocalPickup.php, line 602
+Source: ./includes/Features/LocalPickup.php, line 642
 
 ### `cfw_order_updates_heading`
 
@@ -6173,7 +6281,7 @@ Argument | Type | Description
 `__('Pickup instructions', 'checkout-wc')` |  | 
 `$order` |  | 
 
-Source: ./includes/Features/LocalPickup.php, line 621
+Source: ./includes/Features/LocalPickup.php, line 661
 
 ### `cfw_pickup_instructions_text`
 
@@ -6184,7 +6292,17 @@ Argument | Type | Description
 `get_post_meta($location, 'cfw_pl_instructions', true)` |  | 
 `$order` |  | 
 
-Source: ./includes/Features/LocalPickup.php, line 633
+Source: ./includes/Features/LocalPickup.php, line 672
+
+### `cfw_local_pickup_use_default_billing_address_as_default_shipping_address`
+
+**Arguments**
+
+Argument | Type | Description
+-------- | ---- | -----------
+`false` |  | 
+
+Source: ./includes/Features/LocalPickup.php, line 746
 
 ### `cfw_pickup_times`
 
@@ -6202,7 +6320,25 @@ Version | Description
 ------- | -----------
 `7.3.0` | 
 
-Source: ./includes/Features/LocalPickup.php, line 731
+Source: ./includes/Features/LocalPickup.php, line 816
+
+### `cfw_disable_automatic_local_pickup_method`
+
+*Filters whether to disable automatic local pickup method addition*
+
+**Arguments**
+
+Argument | Type | Description
+-------- | ---- | -----------
+`false` |  | 
+
+**Changelog**
+
+Version | Description
+------- | -----------
+`9.1.1` | 
+
+Source: ./includes/Features/LocalPickup.php, line 923
 
 ### `cfw_trust_badges_output_action`
 
@@ -6221,7 +6357,7 @@ Version | Description
 ------- | -----------
 `9.0.0` | 
 
-Source: ./includes/Features/TrustBadges.php, line 44
+Source: ./includes/Features/TrustBadges.php, line 50
 
 ### `cfw_cart_edit_redirect_suppress_notice`
 
@@ -6231,7 +6367,7 @@ Argument | Type | Description
 -------- | ---- | -----------
 `false` |  | 
 
-Source: ./includes/Features/CartEditingAtCheckout.php, line 50
+Source: ./includes/Features/CartEditingAtCheckout.php, line 44
 
 ### `cfw_disable_side_cart`
 
@@ -6249,7 +6385,7 @@ Version | Description
 ------- | -----------
 `7.2.0` | 
 
-Source: ./includes/Features/SideCart.php, line 32
+Source: ./includes/Features/SideCart.php, line 26
 
 ### `cfw_side_cart_free_shipping_threshold`
 
@@ -6267,7 +6403,7 @@ Version | Description
 ------- | -----------
 `8.1.12` | 
 
-Source: ./includes/Features/SideCart.php, line 282
+Source: ./includes/Features/SideCart.php, line 275
 
 ### `cfw_side_cart_shipping_bar_data_exclude_discounts`
 
@@ -6285,7 +6421,7 @@ Version | Description
 ------- | -----------
 `7.10.2` | 
 
-Source: ./includes/Features/SideCart.php, line 296
+Source: ./includes/Features/SideCart.php, line 289
 
 ### `cfw_shipping_bar_data`
 
@@ -6303,7 +6439,7 @@ Version | Description
 ------- | -----------
 `7.0.5` | 
 
-Source: ./includes/Features/SideCart.php, line 331
+Source: ./includes/Features/SideCart.php, line 324
 
 ### `cfw_shipping_bar_data`
 
@@ -6321,7 +6457,7 @@ Version | Description
 ------- | -----------
 `7.0.5` | 
 
-Source: ./includes/Features/SideCart.php, line 349
+Source: ./includes/Features/SideCart.php, line 342
 
 ### `cfw_shipping_bar_data`
 
@@ -6339,7 +6475,7 @@ Version | Description
 ------- | -----------
 `7.0.5` | 
 
-Source: ./includes/Features/SideCart.php, line 364
+Source: ./includes/Features/SideCart.php, line 357
 
 ### `cfw_shipping_bar_data`
 
@@ -6357,7 +6493,7 @@ Version | Description
 ------- | -----------
 `7.0.5` | 
 
-Source: ./includes/Features/SideCart.php, line 417
+Source: ./includes/Features/SideCart.php, line 415
 
 ### `cfw_shipping_bar_data`
 
@@ -6375,43 +6511,7 @@ Version | Description
 ------- | -----------
 `7.0.5` | 
 
-Source: ./includes/Features/SideCart.php, line 433
-
-### `cfw_side_cart_free_shipping_progress_bar_free_shipping_message`
-
-*Filter the message displayed when the cart qualifies for free shipping.*
-
-**Arguments**
-
-Argument | Type | Description
--------- | ---- | -----------
-`$free_shipping_message` | `string` | 
-
-**Changelog**
-
-Version | Description
-------- | -----------
-`7.3.0` | 
-
-Source: ./includes/Features/SideCart.php, line 461
-
-### `cfw_side_cart_free_shipping_progress_bar_amount_remaining_message_format`
-
-*Filter the message format for the amount remaining for free shipping*
-
-**Arguments**
-
-Argument | Type | Description
--------- | ---- | -----------
-`$amount_remaining_message` | `string` | 
-
-**Changelog**
-
-Version | Description
-------- | -----------
-`7.3.0` | 
-
-Source: ./includes/Features/SideCart.php, line 475
+Source: ./includes/Features/SideCart.php, line 431
 
 ### `checkoutwc_cart_shortcode_additional_classes`
 
@@ -6429,27 +6529,7 @@ Version | Description
 ------- | -----------
 `8.2.18` | 
 
-Source: ./includes/Features/SideCart.php, line 560
-
-### `cfw_side_cart_icon`
-
-*Filters the side cart icon*
-
-**Arguments**
-
-Argument | Type | Description
--------- | ---- | -----------
-`ob_get_clean()` |  | 
-`$context` | `string` | The calling context
-`$additional_class` | `string` | Additional classes for the cart icon
-
-**Changelog**
-
-Version | Description
-------- | -----------
-`8.2.19` | 
-
-Source: ./includes/Features/SideCart.php, line 622
+Source: ./includes/Features/SideCart.php, line 486
 
 ### `cfw_side_cart_icon_file_path`
 
@@ -6467,9 +6547,9 @@ Version | Description
 ------- | -----------
 `8.2.7` | 
 
-Source: ./includes/Features/SideCart.php, line 666
+Source: ./includes/Features/SideCart.php, line 519
 
-### `cfw_side_cart_icon_file_contents`
+### `cfw_side_cart_icon`
 
 *The contents of the side cart icon file*
 
@@ -6485,46 +6565,7 @@ Version | Description
 ------- | -----------
 `8.2.7` | 
 
-Source: ./includes/Features/SideCart.php, line 684
-
-### `cfw_side_cart_icon_file_url`
-
-*The path to the side cart icon file*
-
-**Arguments**
-
-Argument | Type | Description
--------- | ---- | -----------
-`(string) $url` |  | 
-
-**Changelog**
-
-Version | Description
-------- | -----------
-`8.2.7` | 
-
-Source: ./includes/Features/SideCart.php, line 704
-
-### `cfw_disable_cart_variation_editing`
-
-*Filters whether to disable cart variation editing*
-
-**Arguments**
-
-Argument | Type | Description
--------- | ---- | -----------
-`false` |  | 
-`$cart_item` | `array` | The cart item
-`$cart_item_key` | `string` | The cart item key
-`'side_cart'` |  | 
-
-**Changelog**
-
-Version | Description
-------- | -----------
-`8.0.0` | 
-
-Source: ./includes/Features/SideCart.php, line 728
+Source: ./includes/Features/SideCart.php, line 536
 
 ### `cfw_run_woocommerce_cart_actions`
 
@@ -6542,7 +6583,7 @@ Version | Description
 ------- | -----------
 `8.0.0` | 
 
-Source: ./includes/Features/SideCart.php, line 771
+Source: ./includes/Features/SideCart.php, line 569
 
 ### `cfw_side_cart_free_shipping_progress_bar_free_shipping_message`
 
@@ -6560,7 +6601,7 @@ Version | Description
 ------- | -----------
 `7.3.0` | 
 
-Source: ./includes/Features/SideCart.php, line 809
+Source: ./includes/Features/SideCart.php, line 609
 
 ### `cfw_side_cart_free_shipping_progress_bar_amount_remaining_message_format`
 
@@ -6578,7 +6619,27 @@ Version | Description
 ------- | -----------
 `7.3.0` | 
 
-Source: ./includes/Features/SideCart.php, line 823
+Source: ./includes/Features/SideCart.php, line 623
+
+### `cfw_disable_side_cart_item_quantity_control`
+
+*Filters whether to disable cart item quantity control on the Side Cart*
+
+**Arguments**
+
+Argument | Type | Description
+-------- | ---- | -----------
+`$disable` | `bool` | Whether to disable cart item quantity control on the Side Cart
+`$cart_item` | `array` | The cart item
+`$cart_item_key` | `string` | The cart item key
+
+**Changelog**
+
+Version | Description
+------- | -----------
+`9.0.0` | 
+
+Source: ./includes/Features/SideCart.php, line 694
 
 ### `cfw_selected_tab`
 
@@ -6590,7 +6651,7 @@ Represents the currently selected tab in a user interface.
 
 Argument | Type | Description
 -------- | ---- | -----------
-`empty($_GET[$this->_selected_tab_query_arg]) ? $this->_default_tab : sanitize_text_field($_GET[$this->_selected_tab_query_arg])` |  | 
+`empty($_GET[$this->selected_tab_query_arg]) ? $this->default_tab : sanitize_text_field(wp_unslash($_GET[$this->selected_tab_query_arg]))` |  | 
 
 **Changelog**
 
@@ -6598,39 +6659,7 @@ Version | Description
 ------- | -----------
 `9.0.0` | 
 
-Source: ./includes/Admin/TabNavigation.php, line 135
-
-### `cfw_restricted_post_types_count_args`
-
-**Arguments**
-
-Argument | Type | Description
--------- | ---- | -----------
-`$args` |  | 
-
-**Changelog**
-
-Version | Description
-------- | -----------
-`5.0.0` | 
-
-Source: ./includes/Admin/Pages/AbandonedCartRecovery.php, line 12
-
-### `cfw_restricted_post_types_count_args`
-
-**Arguments**
-
-Argument | Type | Description
--------- | ---- | -----------
-`$args` |  | 
-
-**Changelog**
-
-Version | Description
-------- | -----------
-`5.0.0` | 
-
-Source: ./includes/Admin/Pages/OrderBumps.php, line 13
+Source: ./includes/Admin/TabNavigation.php, line 121
 
 ### `cfw_detected_gateways`
 
@@ -6640,7 +6669,7 @@ Argument | Type | Description
 -------- | ---- | -----------
 `array()` |  | 
 
-Source: ./includes/Admin/Pages/ExpressCheckout.php, line 51
+Source: ./includes/Admin/Pages/ExpressCheckout.php, line 48
 
 ### `cfw_do_admin_bar`
 
@@ -6650,7 +6679,7 @@ Argument | Type | Description
 -------- | ---- | -----------
 `current_user_can('manage_options') && (SettingsManager::instance()->get_setting('hide_admin_bar_button') !== 'yes' || is_cfw_page())` |  | 
 
-Source: ./includes/Admin/Pages/PageAbstract.php, line 258
+Source: ./includes/Admin/Pages/PageAbstract.php, line 271
 
 ### `cfw_admin_page_data`
 
@@ -6668,7 +6697,7 @@ Version | Description
 ------- | -----------
 `9.0.0` | 
 
-Source: ./includes/Admin/Pages/PageAbstract.php, line 324
+Source: ./includes/Admin/Pages/PageAbstract.php, line 337
 
 ### `cfw_admin_integrations_checkbox_fields`
 
@@ -6678,7 +6707,43 @@ Argument | Type | Description
 -------- | ---- | -----------
 `array()` |  | 
 
-Source: ./includes/Admin/Pages/Integrations.php, line 44
+Source: ./includes/Admin/Pages/Integrations.php, line 53
+
+### `cfw_restricted_post_types_count_args`
+
+*Filters the arguments used to count emails*
+
+**Arguments**
+
+Argument | Type | Description
+-------- | ---- | -----------
+`$args` | `array` | The arguments.
+
+**Changelog**
+
+Version | Description
+------- | -----------
+`9.0.0` | 
+
+Source: ./includes/Admin/Pages/Premium/AbandonedCartRecovery.php, line 795
+
+### `cfw_restricted_post_types_count_args`
+
+*Filters the arguments for the bumps count query*
+
+**Arguments**
+
+Argument | Type | Description
+-------- | ---- | -----------
+`$args` | `array` | The arguments for the bumps count query
+
+**Changelog**
+
+Version | Description
+------- | -----------
+`8.0.0` | 
+
+Source: ./includes/Admin/Pages/Premium/OrderBumps.php, line 526
 
 ### `cfw_active_theme_color_settings`
 
@@ -6688,17 +6753,25 @@ Argument | Type | Description
 -------- | ---- | -----------
 `array()` |  | 
 
-Source: ./includes/Admin/Pages/Appearance.php, line 280
+Source: ./includes/Admin/Pages/Appearance.php, line 294
 
 ### `cfw_theme_color_settings`
+
+*Filters the theme color settings.*
 
 **Arguments**
 
 Argument | Type | Description
 -------- | ---- | -----------
-`$color_settings` |  | 
+`$color_settings` | `array` | The theme color settings.
 
-Source: ./includes/Admin/Pages/Appearance.php, line 188
+**Changelog**
+
+Version | Description
+------- | -----------
+`5.1.0` | 
+
+Source: ./includes/Admin/Pages/Appearance.php, line 297
 
 ### `cfw_enable_editable_admin_shipping_phone_field`
 
@@ -6716,7 +6789,25 @@ Version | Description
 ------- | -----------
 `3.0.0` | 
 
-Source: ./includes/Admin/ShippingPhoneController.php, line 21
+Source: ./includes/Admin/ShippingPhoneController.php, line 23
+
+### `cfw_validate_update_order_review_nonce`
+
+*Filters whether to validate nonce for update order review*
+
+**Arguments**
+
+Argument | Type | Description
+-------- | ---- | -----------
+`true` |  | 
+
+**Changelog**
+
+Version | Description
+------- | -----------
+`10.0.2` | 
+
+Source: ./includes/Action/UpdateCheckoutAction.php, line 41
 
 ### `cfw_session_expired_target_element`
 
@@ -6734,7 +6825,7 @@ Version | Description
 ------- | -----------
 `5.2.0` | 
 
-Source: ./includes/Action/UpdateCheckoutAction.php, line 47
+Source: ./includes/Action/UpdateCheckoutAction.php, line 56
 
 ### `cfw_update_checkout_redirect`
 
@@ -6752,7 +6843,7 @@ Version | Description
 ------- | -----------
 `2.0.0` | 
 
-Source: ./includes/Action/UpdateCheckoutAction.php, line 169
+Source: ./includes/Action/UpdateCheckoutAction.php, line 177
 
 ### `cfw_update_payment_methods`
 
@@ -6770,7 +6861,7 @@ Version | Description
 ------- | -----------
 `4.0.2` | 
 
-Source: ./includes/Action/UpdateCheckoutAction.php, line 198
+Source: ./includes/Action/UpdateCheckoutAction.php, line 216
 
 ### `cfw_email_exists`
 
@@ -6781,7 +6872,7 @@ Argument | Type | Description
 `email_exists($email)` |  | 
 `$email` |  | 
 
-Source: ./includes/Action/AccountExistsAction.php, line 43
+Source: ./includes/Action/AccountExistsAction.php, line 30
 
 ### `cfw_failed_login_error_message`
 
@@ -6799,7 +6890,7 @@ Version | Description
 ------- | -----------
 `3.0.0` | 
 
-Source: ./includes/Action/LogInAction.php, line 57
+Source: ./includes/Action/LogInAction.php, line 44
 
 ### `cfw_failed_login_error_message`
 
@@ -6817,7 +6908,7 @@ Version | Description
 ------- | -----------
 `3.0.0` | 
 
-Source: ./includes/Action/LogInAction.php, line 68
+Source: ./includes/Action/LogInAction.php, line 55
 
 ### `cfw_add_to_cart_redirect`
 
@@ -6828,7 +6919,7 @@ Argument | Type | Description
 `$redirect` |  | 
 `$product_id` |  | 
 
-Source: ./includes/Action/AddToCartAction.php, line 54
+Source: ./includes/Action/AddToCartAction.php, line 49
 
 ### `cfw_remove_coupon_response`
 
@@ -6846,25 +6937,30 @@ Version | Description
 ------- | -----------
 `3.14.0` | 
 
-Source: ./includes/Action/RemoveCouponAction.php, line 49
+Source: ./includes/Action/RemoveCouponAction.php, line 36
 
 ### `cfw_email_domain_valid`
+
+*Filters whether to validate email domain*
+
+If you don't append dot to the domain, every domain will validate because
+it will fetch your local MX handler
 
 **Arguments**
 
 Argument | Type | Description
 -------- | ---- | -----------
 `checkdnsrr($email_domain . '.', 'MX')` |  | 
-`$email_domain` |  | 
-`$email_address` |  | 
+`$email_domain` | `string` | The email domain
+`$email_address` | `string` | The email address
 
 **Changelog**
 
 Version | Description
 ------- | -----------
-`5.4.0` | 
+`7.2.3` | 
 
-Source: ./includes/Action/ValidateEmailDomainAction.php, line 5
+Source: ./includes/Action/ValidateEmailDomainAction.php, line 28
 
 ### `cfw_smarty_address_validation_address`
 
@@ -6958,57 +7054,6 @@ Version | Description
 
 Source: ./includes/CartImageSizeAdder.php, line 30
 
-### `cfw_display_bump`
-
-*Filter whether to display the bump*
-
-**Arguments**
-
-Argument | Type | Description
--------- | ---- | -----------
-`$display_bump` | `bool` | Whether to display the bump
-`$this` |  | 
-`$location` |  | 
-
-**Changelog**
-
-Version | Description
-------- | -----------
-`8.0.0` | 
-
-Source: ./includes/Model/Bumps/BumpAbstract.php, line 413
-
-### `cfw_order_bump_get_price`
-
-*Filter the order bump price.*
-
-**Arguments**
-
-Argument | Type | Description
--------- | ---- | -----------
-`$price - $discount_value` |  | 
-`$context` | `string` | The context of the price.
-`$this` |  | 
-
-**Changelog**
-
-Version | Description
-------- | -----------
-`5.0.0` | 
-
-Source: ./includes/Model/Bumps/BumpAbstract.php, line 546
-
-### `cfw_order_bump_captured_revenue`
-
-**Arguments**
-
-Argument | Type | Description
--------- | ---- | -----------
-`$new_revenue` |  | 
-`$this` |  | 
-
-Source: ./includes/Model/Bumps/BumpAbstract.php, line 600
-
 ### `cfw_hide_bump_if_offer_product_in_cart`
 
 **Arguments**
@@ -7017,65 +7062,7 @@ Argument | Type | Description
 -------- | ---- | -----------
 `true` |  | 
 
-Source: ./includes/Model/Bumps/AllProductsBump.php, line 18
-
-### `cfw_is_cart_bump_valid`
-
-*Filters whether bump is valid in the cart*
-
-**Arguments**
-
-Argument | Type | Description
--------- | ---- | -----------
-`WC()->cart->get_cart_contents_count() > $this->quantity_of_product_in_cart($this->offer_product)` |  | 
-`$this` |  | 
-
-**Changelog**
-
-Version | Description
-------- | -----------
-`7.5.0` | 
-
-Source: ./includes/Model/Bumps/AllProductsBump.php, line 32
-
-### `cfw_hide_bump_if_offer_product_in_cart`
-
-**Arguments**
-
-Argument | Type | Description
--------- | ---- | -----------
-`true` |  | 
-
-Source: ./includes/Model/Bumps/CategoriesBump.php, line 18
-
-### `cfw_is_cart_bump_valid`
-
-*Filters whether the bump is valid*
-
-**Arguments**
-
-Argument | Type | Description
--------- | ---- | -----------
-`$this->cart_contains_normal_product_of_categories()` |  | 
-`$this` |  | 
-
-**Changelog**
-
-Version | Description
-------- | -----------
-`7.5.0` | 
-
-Source: ./includes/Model/Bumps/CategoriesBump.php, line 38
-
-### `cfw_hide_bump_if_offer_product_in_cart`
-
-**Arguments**
-
-Argument | Type | Description
--------- | ---- | -----------
-`true` |  | 
-
-Source: ./includes/Model/Bumps/SpecificProductsBump.php, line 25
+Source: ./includes/Model/Bumps/BumpAbstract.php, line 135
 
 ### `cfw_is_cart_bump_valid`
 
@@ -7094,7 +7081,7 @@ Version | Description
 ------- | -----------
 `6.3.0` | 
 
-Source: ./includes/Model/Bumps/SpecificProductsBump.php, line 119
+Source: ./includes/Model/Bumps/BumpAbstract.php, line 265
 
 ### `cfw_order_bump_upsell_quantity_to_replace`
 
@@ -7113,7 +7100,66 @@ Version | Description
 ------- | -----------
 `7.6.1` | 
 
-Source: ./includes/Model/Bumps/SpecificProductsBump.php, line 162
+Source: ./includes/Model/Bumps/BumpAbstract.php, line 365
+
+### `cfw_display_bump`
+
+*Filter whether to display the bump*
+
+**Arguments**
+
+Argument | Type | Description
+-------- | ---- | -----------
+`$display_bump` | `bool` | Whether to display the bump
+`$this` |  | 
+`$location` |  | 
+
+**Changelog**
+
+Version | Description
+------- | -----------
+`8.0.0` | 
+
+Source: ./includes/Model/Bumps/BumpAbstract.php, line 604
+
+### `cfw_order_bump_get_price`
+
+*Filter the order bump price.*
+
+**Arguments**
+
+Argument | Type | Description
+-------- | ---- | -----------
+`(float) $price - (float) $discount_value` |  | 
+`$context` | `string` | The context of the price.
+`$this` |  | 
+
+**Changelog**
+
+Version | Description
+------- | -----------
+`5.0.0` | 
+
+Source: ./includes/Model/Bumps/BumpAbstract.php, line 745
+
+### `cfw_order_bump_captured_revenue`
+
+*Filter the captured revenue*
+
+**Arguments**
+
+Argument | Type | Description
+-------- | ---- | -----------
+`$new_revenue` | `float` | The new captured revenue
+`$this` |  | 
+
+**Changelog**
+
+Version | Description
+------- | -----------
+`9.0.0` | 
+
+Source: ./includes/Model/Bumps/BumpAbstract.php, line 799
 
 ### `cfw_cart_item_row_class`
 
@@ -7132,7 +7178,7 @@ Version | Description
 ------- | -----------
 `8.0.0` | 
 
-Source: ./includes/Model/CartItem.php, line 46
+Source: ./includes/Model/CartItem.php, line 61
 
 ### `cfw_disable_cart_editing`
 
@@ -7142,8 +7188,8 @@ Source: ./includes/Model/CartItem.php, line 46
 
 Argument | Type | Description
 -------- | ---- | -----------
-`SettingsManager::instance()->get_setting('enable_cart_editing') !== 'yes' || $quantity_args['readonly'] === true` |  | 
-`$item` |  | 
+`!PlanManager::can_access_feature('enable_cart_editing') || true === $quantity_args['readonly']` |  | 
+`$this->raw_item` |  | 
 `$key` |  | 
 
 **Changelog**
@@ -7152,7 +7198,27 @@ Version | Description
 ------- | -----------
 `7.1.7` | 
 
-Source: ./includes/Model/CartItem.php, line 59
+Source: ./includes/Model/CartItem.php, line 74
+
+### `cfw_disable_side_cart_item_quantity_control`
+
+*Filters whether to disable cart editing in the side cart*
+
+**Arguments**
+
+Argument | Type | Description
+-------- | ---- | -----------
+`true === $quantity_args['readonly']` |  | 
+`$this->raw_item` |  | 
+`$key` |  | 
+
+**Changelog**
+
+Version | Description
+------- | -----------
+`9.0.0` | 
+
+Source: ./includes/Model/CartItem.php, line 85
 
 ### `cfw_disable_cart_variation_editing`
 
@@ -7162,10 +7228,9 @@ Source: ./includes/Model/CartItem.php, line 59
 
 Argument | Type | Description
 -------- | ---- | -----------
-`SettingsManager::instance()->get_setting('allow_checkout_cart_item_variation_changes') !== 'yes' || empty($item['variation_id'])` |  | 
+`!PlanManager::can_access_feature('enable_side_cart') || SettingsManager::instance()->get_setting('allow_side_cart_item_variation_changes') !== 'yes' || empty($item['variation_id'])` |  | 
 `$item` |  | 
 `$key` |  | 
-`is_checkout() ? 'checkout' : 'side_cart'` |  | 
 
 **Changelog**
 
@@ -7173,7 +7238,27 @@ Version | Description
 ------- | -----------
 `8.0.0` | 
 
-Source: ./includes/Model/CartItem.php, line 71
+Source: ./includes/Model/CartItem.php, line 96
+
+### `cfw_disable_cart_variation_editing_checkout`
+
+*Filters whether to disable cart variation editing*
+
+**Arguments**
+
+Argument | Type | Description
+-------- | ---- | -----------
+`!PlanManager::can_access_feature('enable_cart_editing') || SettingsManager::instance()->get_setting('allow_checkout_cart_item_variation_changes') !== 'yes' || empty($item['variation_id'])` |  | 
+`$item` |  | 
+`$key` |  | 
+
+**Changelog**
+
+Version | Description
+------- | -----------
+`10.1.6` | 
+
+Source: ./includes/Model/CartItem.php, line 115
 
 ### `cfw_cart_item_data_expanded`
 
@@ -7191,31 +7276,59 @@ Version | Description
 ------- | -----------
 `5.0.0` | 
 
-Source: ./includes/Model/CartItem.php, line 144
+Source: ./includes/Model/CartItem.php, line 195
+
+### `cfw_allow_html_in_formatted_item_data_value`
+
+**Arguments**
+
+Argument | Type | Description
+-------- | ---- | -----------
+`false` |  | 
+
+Source: ./includes/Model/CartItem.php, line 229
 
 ### `cfw_order_item_thumbnail`
+
+*Filter the order item thumbnail*
 
 **Arguments**
 
 Argument | Type | Description
 -------- | ---- | -----------
 `$item_product ? $item_product->get_image('cfw_cart_thumb') : ''` |  | 
-`$item` | `array\|\WC_Order_Item` | 
+`$item` | `\WC_Order_Item` | The order item
 
-Source: ./includes/Model/OrderItem.php, line 23
+**Changelog**
+
+Version | Description
+------- | -----------
+`7.2.1` | 
+
+Source: ./includes/Model/OrderItem.php, line 31
 
 ### `cfw_order_item_row_class`
+
+*Filter the order item row class*
 
 **Arguments**
 
 Argument | Type | Description
 -------- | ---- | -----------
 `''` |  | 
-`$item` | `array\|\WC_Order_Item` | 
+`$item` | `\WC_Order_Item` | The order item
 
-Source: ./includes/Model/OrderItem.php, line 23
+**Changelog**
+
+Version | Description
+------- | -----------
+`7.2.1` | 
+
+Source: ./includes/Model/OrderItem.php, line 43
 
 ### `cfw_cart_item_data_expanded`
+
+*Filter the order item data*
 
 **Arguments**
 
@@ -7223,7 +7336,13 @@ Argument | Type | Description
 -------- | ---- | -----------
 `SettingsManager::instance()->get_setting('cart_item_data_display') === 'woocommerce'` |  | 
 
-Source: ./includes/Model/OrderItem.php, line 103
+**Changelog**
+
+Version | Description
+------- | -----------
+`7.2.1` | 
+
+Source: ./includes/Model/OrderItem.php, line 117
 
 ### `cfw_acr_carts`
 
@@ -7242,7 +7361,7 @@ Version | Description
 ------- | -----------
 `8.2.28` | 
 
-Source: ./includes/API/AbandonedCartsAPI.php, line 48
+Source: ./includes/API/AbandonedCartsAPI.php, line 59
 
 ### `cfw_acr_carts`
 
@@ -7261,7 +7380,7 @@ Version | Description
 ------- | -----------
 `8.2.28` | 
 
-Source: ./includes/API/AbandonedCartRecoveryReportAPI.php, line 54
+Source: ./includes/API/AbandonedCartRecoveryReportAPI.php, line 65
 
 ### `cfw_load_checkout_template`
 
@@ -7271,7 +7390,7 @@ Argument | Type | Description
 -------- | ---- | -----------
 `cfw_is_checkout()` |  | 
 
-Source: ./includes/Loaders/Content.php, line 33
+Source: ./includes/Loaders/Content.php, line 26
 
 ### `cfw_load_order_pay_template`
 
@@ -7281,7 +7400,7 @@ Argument | Type | Description
 -------- | ---- | -----------
 `is_checkout_pay_page()` |  | 
 
-Source: ./includes/Loaders/Content.php, line 75
+Source: ./includes/Loaders/Content.php, line 62
 
 ### `cfw_load_order_received_template`
 
@@ -7291,7 +7410,7 @@ Argument | Type | Description
 -------- | ---- | -----------
 `is_order_received_page()` |  | 
 
-Source: ./includes/Loaders/Content.php, line 111
+Source: ./includes/Loaders/Content.php, line 105
 
 ### `cfw_load_checkout_template`
 
@@ -7345,7 +7464,7 @@ Version | Description
 ------- | -----------
 `3.0.0` | 
 
-Source: ./includes/Loaders/Redirect.php, line 75
+Source: ./includes/Loaders/Redirect.php, line 74
 
 ### `cfw_body_classes`
 
@@ -7363,7 +7482,7 @@ Version | Description
 ------- | -----------
 `3.0.0` | 
 
-Source: ./includes/Loaders/Redirect.php, line 95
+Source: ./includes/Loaders/Redirect.php, line 98
 
 ### `cfw_load_order_received_template`
 
@@ -7381,7 +7500,7 @@ Version | Description
 ------- | -----------
 `3.0.0` | 
 
-Source: ./includes/Loaders/Redirect.php, line 126
+Source: ./includes/Loaders/Redirect.php, line 128
 
 ### `cfw_body_classes`
 
@@ -7399,7 +7518,7 @@ Version | Description
 ------- | -----------
 `3.0.0` | 
 
-Source: ./includes/Loaders/Redirect.php, line 150
+Source: ./includes/Loaders/Redirect.php, line 152
 
 ### `cfw_blocked_style_handles`
 
@@ -7417,7 +7536,7 @@ Version | Description
 ------- | -----------
 `3.0.0` | 
 
-Source: ./includes/Loaders/Redirect.php, line 252
+Source: ./includes/Loaders/Redirect.php, line 250
 
 ### `cfw_blocked_script_handles`
 
@@ -7435,7 +7554,7 @@ Version | Description
 ------- | -----------
 `3.0.0` | 
 
-Source: ./includes/Loaders/Redirect.php, line 271
+Source: ./includes/Loaders/Redirect.php, line 269
 
 ### `cfw_template_global_params`
 
@@ -7453,7 +7572,7 @@ Version | Description
 ------- | -----------
 `3.0.0` | 
 
-Source: ./includes/Loaders/LoaderAbstract.php, line 66
+Source: ./includes/Loaders/LoaderAbstract.php, line 82
 
 ### `cfw_template_global_params`
 
@@ -7463,7 +7582,7 @@ Source: ./includes/Loaders/LoaderAbstract.php, line 66
 
 Argument | Type | Description
 -------- | ---- | -----------
-`array('call_receipt_hook' => false, 'order_button_text' => cfw_apply_filters('woocommerce_pay_order_button_text', cfw__('Pay for order', 'woocommerce')), 'available_gateways' => array())` |  | 
+`array('call_receipt_hook' => false, 'order_button_text' => cfw_apply_filters('woocommerce_pay_order_button_text', __('Pay for order', 'woocommerce')), 'available_gateways' => array())` |  | 
 
 **Changelog**
 
@@ -7471,7 +7590,7 @@ Version | Description
 ------- | -----------
 `3.0.0` | 
 
-Source: ./includes/Loaders/LoaderAbstract.php, line 84
+Source: ./includes/Loaders/LoaderAbstract.php, line 101
 
 ### `cfw_template_global_params`
 
@@ -7489,7 +7608,7 @@ Version | Description
 ------- | -----------
 `3.0.0` | 
 
-Source: ./includes/Loaders/LoaderAbstract.php, line 255
+Source: ./includes/Loaders/LoaderAbstract.php, line 272
 
 ### `cfw_trust_badge_thumb_width`
 
@@ -7556,15 +7675,11 @@ Argument | Type | Description
 `false` |  | 
 `$home_url` |  | 
 
-Source: ./includes/Stats/StatCollection.php, line 246
+Source: ./includes/Stats/StatCollection.php, line 236
 
 ### `cfw_legacy_suppress_php_errors_output`
 
-*Legacy Error Suppression*
-
-In CheckoutWC 4.x and prior, we accidentally turned off display errors for all sites
-
-In order to avoid issues with warnings now showing up after update, we are keeping this behavior but putting it behind a filter
+*Filters whether to suppress PHP errors output.*
 
 **Arguments**
 
@@ -7572,7 +7687,13 @@ Argument | Type | Description
 -------- | ---- | -----------
 `!defined('WP_DEBUG') || !WP_DEBUG` |  | 
 
-Source: ./includes/PhpErrorOutputSuppressor.php, line 13
+**Changelog**
+
+Version | Description
+------- | -----------
+`5.0.0` | 
+
+Source: ./includes/PhpErrorOutputSuppressor.php, line 20
 
 ### `cfw_pre_output_fieldset_field_args`
 
@@ -7591,11 +7712,11 @@ Version | Description
 ------- | -----------
 `7.0.0` | 
 
-Source: ./sources/php/functions.php, line 37
+Source: ./sources/php/functions.php, line 36
 
 ### `cfw_get_account_checkout_fields`
 
-*Filters shipping address checkout fields*
+*Filters account address checkout fields*
 
 **Arguments**
 
@@ -7609,7 +7730,7 @@ Version | Description
 ------- | -----------
 `2.0.0` | 
 
-Source: ./sources/php/functions.php, line 70
+Source: ./sources/php/functions.php, line 69
 
 ### `cfw_get_shipping_checkout_fields`
 
@@ -7627,7 +7748,7 @@ Version | Description
 ------- | -----------
 `2.0.0` | 
 
-Source: ./sources/php/functions.php, line 93
+Source: ./sources/php/functions.php, line 100
 
 ### `cfw_get_billing_checkout_fields`
 
@@ -7645,19 +7766,35 @@ Version | Description
 ------- | -----------
 `2.0.0` | 
 
-Source: ./sources/php/functions.php, line 116
+Source: ./sources/php/functions.php, line 121
 
-### `cfw_unique_billing_fields`
-
-*Filter billing fields down to only unique fields that aren't also shipping fields*
+### `cfw_force_display_billing_address`
 
 **Arguments**
 
 Argument | Type | Description
 -------- | ---- | -----------
-`$unique_fields` |  | 
+`false` |  | 
 
-Source: ./sources/php/functions.php, line 167
+Source: ./sources/php/functions.php, line 140
+
+### `cfw_unique_billing_fields`
+
+*Filters the unique billing fields.*
+
+**Arguments**
+
+Argument | Type | Description
+-------- | ---- | -----------
+`$unique_fields` | `array` | The unique billing fields.
+
+**Changelog**
+
+Version | Description
+------- | -----------
+`7.2.1` | 
+
+Source: ./sources/php/functions.php, line 189
 
 ### `cfw_ship_to_label`
 
@@ -7675,7 +7812,7 @@ Version | Description
 ------- | -----------
 `3.0.0` | 
 
-Source: ./sources/php/functions.php, line 206
+Source: ./sources/php/functions.php, line 219
 
 ### `cfw_get_shipping_details_address`
 
@@ -7694,7 +7831,7 @@ Version | Description
 ------- | -----------
 `2.0.0` | 
 
-Source: ./sources/php/functions.php, line 223
+Source: ./sources/php/functions.php, line 236
 
 ### `cfw_get_review_pane_shipping_address`
 
@@ -7712,7 +7849,7 @@ Version | Description
 ------- | -----------
 `7.3.0` | 
 
-Source: ./sources/php/functions.php, line 239
+Source: ./sources/php/functions.php, line 251
 
 ### `cfw_get_review_pane_billing_address`
 
@@ -7731,19 +7868,19 @@ Version | Description
 ------- | -----------
 `2.0.0` | 
 
-Source: ./sources/php/functions.php, line 260
+Source: ./sources/php/functions.php, line 271
 
 ### `cfw_available_shipping_methods`
 
-*Filters available shipping methods*
+*Filter the available shipping methods displayed on checkout page*
 
 **Arguments**
 
 Argument | Type | Description
 -------- | ---- | -----------
 `$package['rates']` |  | 
-`$package` | `array` | Package data
-`$i` |  | 
+`$package` | `array` | The shipping package
+`$i` | `int` | The package index
 
 **Changelog**
 
@@ -7751,19 +7888,7 @@ Version | Description
 ------- | -----------
 `8.0.0` | 
 
-Source: ./sources/php/functions.php, line 329
-
-### `cfw_available_shipping_methods`
-
-**Arguments**
-
-Argument | Type | Description
--------- | ---- | -----------
-`$package['rates']` |  | 
-`$package` |  | 
-`$i` |  | 
-
-Source: ./sources/php/functions.php, line 433
+Source: ./sources/php/functions.php, line 332
 
 ### `cfw_ensure_selected_payment_method`
 
@@ -7773,7 +7898,7 @@ Argument | Type | Description
 -------- | ---- | -----------
 `true` |  | 
 
-Source: ./sources/php/functions.php, line 533
+Source: ./sources/php/functions.php, line 413
 
 ### `cfw_show_gateway_{$gateway->id}`
 
@@ -7791,7 +7916,7 @@ Version | Description
 ------- | -----------
 `2.0.0` | 
 
-Source: ./sources/php/functions.php, line 564
+Source: ./sources/php/functions.php, line 452
 
 ### `cfw_gateway_order_button_text`
 
@@ -7810,7 +7935,7 @@ Version | Description
 ------- | -----------
 `2.0.0` | 
 
-Source: ./sources/php/functions.php, line 573
+Source: ./sources/php/functions.php, line 460
 
 ### `cfw_get_gateway_icons`
 
@@ -7829,25 +7954,27 @@ Version | Description
 ------- | -----------
 `2.0.0` | 
 
-Source: ./sources/php/functions.php, line 583
+Source: ./sources/php/functions.php, line 469
 
 ### `cfw_payment_method_li_class`
 
-*Filters whether to show gateway in list of gateways*
+*Filters the class attribute of the payment method list item.*
 
 **Arguments**
 
 Argument | Type | Description
 -------- | ---- | -----------
 `"wc_payment_method cfw-radio-reveal-li {$is_active_class} payment_method_{$gateway->id}"` |  | 
+`$gateway` | `\WC_Payment_Gateway` | The payment gateway object.
 
 **Changelog**
 
 Version | Description
 ------- | -----------
+`10.1.0` | Added $gateway argument.
 `2.0.0` | 
 
-Source: ./sources/php/functions.php, line 564
+Source: ./sources/php/functions.php, line 481
 
 ### `cfw_payment_gateway_{$gateway->id}_content`
 
@@ -7865,7 +7992,7 @@ Version | Description
 ------- | -----------
 `2.0.0` | 
 
-Source: ./sources/php/functions.php, line 623
+Source: ./sources/php/functions.php, line 517
 
 ### `cfw_payment_gateway_field_html_{$gateway->id}`
 
@@ -7883,17 +8010,7 @@ Version | Description
 ------- | -----------
 `2.0.0` | 
 
-Source: ./sources/php/functions.php, line 653
-
-### `cfw_show_review_order_before_cart_contents_hook`
-
-**Arguments**
-
-Argument | Type | Description
--------- | ---- | -----------
-`false` |  | 
-
-Source: ./sources/php/functions.php, line 722
+Source: ./sources/php/functions.php, line 545
 
 ### `cfw_link_cart_items`
 
@@ -7911,92 +8028,7 @@ Version | Description
 ------- | -----------
 `1.0.0` | 
 
-Source: ./sources/php/functions.php, line 726
-
-### `cfw_get_checkout_item_summary_table_container_classes`
-
-*Filters the classes that are added to the checkout cart summary container*
-
-**Arguments**
-
-Argument | Type | Description
--------- | ---- | -----------
-`array('cfw-cart-table', 'cfw-module')` |  | 
-
-**Changelog**
-
-Version | Description
-------- | -----------
-`6.3.0` | 
-
-Source: ./sources/php/functions.php, line 735
-
-### `cfw_show_cart_item_discount`
-
-*Filters whether to show cart item discount on cart item*
-
-**Arguments**
-
-Argument | Type | Description
--------- | ---- | -----------
-`SettingsManager::instance()->get_setting('show_cart_item_discount') === 'yes'` |  | 
-
-**Changelog**
-
-Version | Description
-------- | -----------
-`2.0.0` | 
-
-Source: ./sources/php/functions.php, line 795
-
-### `cfw_cart_item_discount`
-
-*Filters whether to show cart item discount on cart item*
-
-**Arguments**
-
-Argument | Type | Description
--------- | ---- | -----------
-`$price` |  | 
-`$item->get_raw_item()` |  | 
-`$item->get_product()` |  | 
-
-**Changelog**
-
-Version | Description
-------- | -----------
-`2.0.0` | 
-
-Source: ./sources/php/functions.php, line 795
-
-### `cfw_items_summary_table_html`
-
-**Arguments**
-
-Argument | Type | Description
--------- | ---- | -----------
-`$return` |  | 
-`'checkout'` |  | 
-
-Source: ./sources/php/functions.php, line 702
-
-### `cfw_link_cart_items`
-
-*Filters whether to link cart items to products*
-
-**Arguments**
-
-Argument | Type | Description
--------- | ---- | -----------
-`SettingsManager::instance()->get_setting('cart_item_link') === 'enabled'` |  | 
-
-**Changelog**
-
-Version | Description
-------- | -----------
-`1.0.0` | 
-
-Source: ./sources/php/functions.php, line 887
+Source: ./sources/php/functions.php, line 624
 
 ### `cfw_order_cart_html`
 
@@ -8016,9 +8048,11 @@ Version | Description
 ------- | -----------
 `1.0.0` | 
 
-Source: ./sources/php/functions.php, line 933
+Source: ./sources/php/functions.php, line 673
 
 ### `cfw_items_summary_table_html`
+
+*This filter is documented elsewhere in this file*
 
 **Arguments**
 
@@ -8027,77 +8061,7 @@ Argument | Type | Description
 `$return` |  | 
 `'order'` |  | 
 
-Source: ./sources/php/functions.php, line 943
-
-### `cfw_side_cart_link_item`
-
-**Arguments**
-
-Argument | Type | Description
--------- | ---- | -----------
-`true` |  | 
-`$item` |  | 
-
-Source: ./sources/php/functions.php, line 955
-
-### `cfw_show_cart_item_discount`
-
-*Filters whether to show cart item discount on cart item*
-
-**Arguments**
-
-Argument | Type | Description
--------- | ---- | -----------
-`SettingsManager::instance()->get_setting('show_side_cart_item_discount') === 'yes'` |  | 
-
-**Changelog**
-
-Version | Description
-------- | -----------
-`2.0.0` | 
-
-Source: ./sources/php/functions.php, line 981
-
-### `cfw_cart_item_discount`
-
-*Filters whether to show cart item discount on cart item*
-
-**Arguments**
-
-Argument | Type | Description
--------- | ---- | -----------
-`$price` |  | 
-`$item->get_raw_item()` |  | 
-`$item->get_product()` |  | 
-
-**Changelog**
-
-Version | Description
-------- | -----------
-`2.0.0` | 
-
-Source: ./sources/php/functions.php, line 981
-
-### `cfw_items_summary_table_html`
-
-**Arguments**
-
-Argument | Type | Description
--------- | ---- | -----------
-`$return` |  | 
-`'side_cart'` |  | 
-
-Source: ./sources/php/functions.php, line 946
-
-### `cfw_cart_item_data_expanded`
-
-**Arguments**
-
-Argument | Type | Description
--------- | ---- | -----------
-`SettingsManager::instance()->get_setting('cart_item_data_display') === 'woocommerce'` |  | 
-
-Source: ./sources/php/functions.php, line 1049
+Source: ./sources/php/functions.php, line 682
 
 ### `cfw_cart_totals_shipping_label`
 
@@ -8115,7 +8079,21 @@ Version | Description
 ------- | -----------
 `2.0.0` | 
 
-Source: ./sources/php/functions.php, line 1094
+Source: ./sources/php/functions.php, line 704
+
+### `cfw_available_shipping_methods`
+
+*Documented in cfw_get_cart_shipping_data()*
+
+**Arguments**
+
+Argument | Type | Description
+-------- | ---- | -----------
+`$package['rates']` |  | 
+`$package` |  | 
+`$i` |  | 
+
+Source: ./sources/php/functions.php, line 723
 
 ### `cfw_shipping_total_address_required_text`
 
@@ -8125,7 +8103,7 @@ Argument | Type | Description
 -------- | ---- | -----------
 `cfw_esc_html__('Enter your address to view shipping options.', 'woocommerce')` |  | 
 
-Source: ./sources/php/functions.php, line 1137
+Source: ./sources/php/functions.php, line 749
 
 ### `cfw_shipping_total_not_available_text`
 
@@ -8135,9 +8113,11 @@ Argument | Type | Description
 -------- | ---- | -----------
 `__('No shipping methods available', 'checkout-wc')` |  | 
 
-Source: ./sources/php/functions.php, line 1150
+Source: ./sources/php/functions.php, line 762
 
 ### `cfw_no_shipping_method_selected_message`
+
+*Filters shipping total text when no shipping methods are available*
 
 **Arguments**
 
@@ -8145,35 +8125,31 @@ Argument | Type | Description
 -------- | ---- | -----------
 `''` |  | 
 
-Source: ./sources/php/functions.php, line 1154
+**Changelog**
+
+Version | Description
+------- | -----------
+`2.0.0` | 
+
+Source: ./sources/php/functions.php, line 766
 
 ### `cfw_shipping_free_text`
 
-**Arguments**
-
-Argument | Type | Description
--------- | ---- | -----------
-`cfw__('Free!', 'woocommerce')` |  | 
-
-Source: ./sources/php/functions.php, line 1163
-
-### `cfw_cart_totals_shipping_label`
-
-*Filters cart totals shipping label*
+*Filters the text displayed when free shipping is available.*
 
 **Arguments**
 
 Argument | Type | Description
 -------- | ---- | -----------
-`cfw_esc_html__('Shipping', 'woocommerce')` |  | 
+`__('Free!', 'woocommerce')` |  | 
 
 **Changelog**
 
 Version | Description
 ------- | -----------
-`3.0.0` | 
+`5.0.0` | 
 
-Source: ./sources/php/functions.php, line 1217
+Source: ./sources/php/functions.php, line 782
 
 ### `cfw_template_cart_el`
 
@@ -8191,7 +8167,7 @@ Version | Description
 ------- | -----------
 `2.0.0` | 
 
-Source: ./sources/php/functions.php, line 1252
+Source: ./sources/php/functions.php, line 849
 
 ### `cfw_order_totals_html`
 
@@ -8209,7 +8185,7 @@ Version | Description
 ------- | -----------
 `2.0.0` | 
 
-Source: ./sources/php/functions.php, line 1299
+Source: ./sources/php/functions.php, line 895
 
 ### `cfw_place_order_button_container_classes`
 
@@ -8219,7 +8195,7 @@ Argument | Type | Description
 -------- | ---- | -----------
 `array('place-order')` |  | 
 
-Source: ./sources/php/functions.php, line 1334
+Source: ./sources/php/functions.php, line 928
 
 ### `cfw_payment_method_heading`
 
@@ -8237,7 +8213,7 @@ Version | Description
 ------- | -----------
 `2.0.0` | 
 
-Source: ./sources/php/functions.php, line 1376
+Source: ./sources/php/functions.php, line 970
 
 ### `cfw_transactions_encrypted_statement`
 
@@ -8255,7 +8231,7 @@ Version | Description
 ------- | -----------
 `2.0.0` | 
 
-Source: ./sources/php/functions.php, line 1402
+Source: ./sources/php/functions.php, line 995
 
 ### `cfw_no_payment_required_text`
 
@@ -8273,7 +8249,7 @@ Version | Description
 ------- | -----------
 `2.0.0` | 
 
-Source: ./sources/php/functions.php, line 1424
+Source: ./sources/php/functions.php, line 1016
 
 ### `cfw_default_billing_address_radio_selection`
 
@@ -8291,7 +8267,7 @@ Version | Description
 ------- | -----------
 `8.2.28` | 
 
-Source: ./sources/php/functions.php, line 1460
+Source: ./sources/php/functions.php, line 1051
 
 ### `cfw_billing_address_same_as_shipping_label`
 
@@ -8309,7 +8285,7 @@ Version | Description
 ------- | -----------
 `9.0.0` | 
 
-Source: ./sources/php/functions.php, line 1469
+Source: ./sources/php/functions.php, line 1060
 
 ### `cfw_billing_address_different_address_label`
 
@@ -8327,7 +8303,7 @@ Version | Description
 ------- | -----------
 `9.0.0` | 
 
-Source: ./sources/php/functions.php, line 1477
+Source: ./sources/php/functions.php, line 1069
 
 ### `cfw_force_display_billing_address`
 
@@ -8337,7 +8313,7 @@ Argument | Type | Description
 -------- | ---- | -----------
 `SettingsManager::instance()->get_setting('force_different_billing_address') === 'yes'` |  | 
 
-Source: ./sources/php/functions.php, line 1493
+Source: ./sources/php/functions.php, line 1085
 
 ### `cfw_thank_you_shipment_tracking_header`
 
@@ -8348,7 +8324,7 @@ Argument | Type | Description
 `"<h4>{$tracking_item['formatted_tracking_provider']} {$label_suffix}</h4>"` |  | 
 `$tracking_item['formatted_tracking_provider']` |  | 
 
-Source: ./sources/php/functions.php, line 1643
+Source: ./sources/php/functions.php, line 1236
 
 ### `cfw_thank_you_shipment_tracking_link`
 
@@ -8360,7 +8336,7 @@ Argument | Type | Description
 `$tracking_item['formatted_tracking_link']` |  | 
 `$tracking_item['tracking_number']` |  | 
 
-Source: ./sources/php/functions.php, line 1655
+Source: ./sources/php/functions.php, line 1247
 
 ### `cfw_thank_you_tracking_numbers`
 
@@ -8379,26 +8355,18 @@ Version | Description
 ------- | -----------
 `3.0.0` | 
 
-Source: ./sources/php/functions.php, line 1664
+Source: ./sources/php/functions.php, line 1256
 
 ### `cfw_maybe_output_tracking_numbers`
-
-*Filter tracking numbers output on thank you page*
 
 **Arguments**
 
 Argument | Type | Description
 -------- | ---- | -----------
 `$output` |  | 
-`$order` | `\WC_Order` | The order object
+`$order` |  | 
 
-**Changelog**
-
-Version | Description
-------- | -----------
-`3.0.0` | 
-
-Source: ./sources/php/functions.php, line 1679
+Source: ./sources/php/functions.php, line 1278
 
 ### `cfw_show_return_to_cart_link`
 
@@ -8408,7 +8376,7 @@ Argument | Type | Description
 -------- | ---- | -----------
 `true` |  | 
 
-Source: ./sources/php/functions.php, line 1695
+Source: ./sources/php/functions.php, line 1291
 
 ### `cfw_return_to_cart_link_url`
 
@@ -8426,7 +8394,7 @@ Version | Description
 ------- | -----------
 `2.0.0` | 
 
-Source: ./sources/php/functions.php, line 1699
+Source: ./sources/php/functions.php, line 1295
 
 ### `cfw_return_to_cart_link_text`
 
@@ -8444,7 +8412,7 @@ Version | Description
 ------- | -----------
 `2.0.0` | 
 
-Source: ./sources/php/functions.php, line 1709
+Source: ./sources/php/functions.php, line 1304
 
 ### `cfw_return_to_cart_link`
 
@@ -8462,7 +8430,7 @@ Version | Description
 ------- | -----------
 `2.0.0` | 
 
-Source: ./sources/php/functions.php, line 1719
+Source: ./sources/php/functions.php, line 1313
 
 ### `cfw_continue_to_shipping_method_label`
 
@@ -8472,7 +8440,7 @@ Argument | Type | Description
 -------- | ---- | -----------
 `esc_html__('Continue to shipping', 'checkout-wc')` |  | 
 
-Source: ./sources/php/functions.php, line 1756
+Source: ./sources/php/functions.php, line 1348
 
 ### `cfw_continue_to_shipping_button`
 
@@ -8490,7 +8458,7 @@ Version | Description
 ------- | -----------
 `3.0.0` | 
 
-Source: ./sources/php/functions.php, line 1758
+Source: ./sources/php/functions.php, line 1350
 
 ### `cfw_continue_to_payment_method_label`
 
@@ -8508,7 +8476,7 @@ Version | Description
 ------- | -----------
 `3.0.0` | 
 
-Source: ./sources/php/functions.php, line 1788
+Source: ./sources/php/functions.php, line 1379
 
 ### `cfw_continue_to_payment_button`
 
@@ -8526,7 +8494,7 @@ Version | Description
 ------- | -----------
 `3.0.0` | 
 
-Source: ./sources/php/functions.php, line 1798
+Source: ./sources/php/functions.php, line 1388
 
 ### `cfw_continue_to_order_review_label`
 
@@ -8544,7 +8512,7 @@ Version | Description
 ------- | -----------
 `3.0.0` | 
 
-Source: ./sources/php/functions.php, line 1810
+Source: ./sources/php/functions.php, line 1399
 
 ### `cfw_continue_to_order_review_button`
 
@@ -8562,7 +8530,7 @@ Version | Description
 ------- | -----------
 `3.0.0` | 
 
-Source: ./sources/php/functions.php, line 1820
+Source: ./sources/php/functions.php, line 1408
 
 ### `cfw_return_to_customer_info_label`
 
@@ -8580,7 +8548,7 @@ Version | Description
 ------- | -----------
 `3.0.0` | 
 
-Source: ./sources/php/functions.php, line 1832
+Source: ./sources/php/functions.php, line 1419
 
 ### `cfw_return_to_customer_information_link`
 
@@ -8598,7 +8566,7 @@ Version | Description
 ------- | -----------
 `3.0.0` | 
 
-Source: ./sources/php/functions.php, line 1842
+Source: ./sources/php/functions.php, line 1428
 
 ### `cfw_return_to_shipping_method_label`
 
@@ -8616,7 +8584,7 @@ Version | Description
 ------- | -----------
 `3.0.0` | 
 
-Source: ./sources/php/functions.php, line 1854
+Source: ./sources/php/functions.php, line 1439
 
 ### `cfw_return_to_shipping_method_link`
 
@@ -8634,7 +8602,7 @@ Version | Description
 ------- | -----------
 `3.0.0` | 
 
-Source: ./sources/php/functions.php, line 1864
+Source: ./sources/php/functions.php, line 1448
 
 ### `cfw_return_to_payment_method_label`
 
@@ -8652,7 +8620,7 @@ Version | Description
 ------- | -----------
 `3.0.0` | 
 
-Source: ./sources/php/functions.php, line 1876
+Source: ./sources/php/functions.php, line 1459
 
 ### `cfw_return_to_payment_method_link`
 
@@ -8670,7 +8638,7 @@ Version | Description
 ------- | -----------
 `3.0.0` | 
 
-Source: ./sources/php/functions.php, line 1886
+Source: ./sources/php/functions.php, line 1468
 
 ### `cfw_show_customer_information_tab`
 
@@ -8688,7 +8656,7 @@ Version | Description
 ------- | -----------
 `3.0.0` | 
 
-Source: ./sources/php/functions.php, line 1901
+Source: ./sources/php/functions.php, line 1482
 
 ### `cfw_breadcrumb_cart_url`
 
@@ -8698,7 +8666,7 @@ Argument | Type | Description
 -------- | ---- | -----------
 `wc_get_cart_url()` |  | 
 
-Source: ./sources/php/functions.php, line 1925
+Source: ./sources/php/functions.php, line 1504
 
 ### `cfw_breadcrumb_cart_label`
 
@@ -8708,7 +8676,7 @@ Argument | Type | Description
 -------- | ---- | -----------
 `cfw_esc_html__('Cart', 'woocommerce')` |  | 
 
-Source: ./sources/php/functions.php, line 1935
+Source: ./sources/php/functions.php, line 1513
 
 ### `cfw_breadcrumbs`
 
@@ -8726,7 +8694,7 @@ Version | Description
 ------- | -----------
 `3.0.0` | 
 
-Source: ./sources/php/functions.php, line 1958
+Source: ./sources/php/functions.php, line 1536
 
 ### `cfw_{$context}_main_container_classes`
 
@@ -8744,7 +8712,7 @@ Version | Description
 ------- | -----------
 `3.0.0` | 
 
-Source: ./sources/php/functions.php, line 2040
+Source: ./sources/php/functions.php, line 1618
 
 ### `cfw_is_checkout`
 
@@ -8762,7 +8730,7 @@ Version | Description
 ------- | -----------
 `3.0.0` | 
 
-Source: ./sources/php/functions.php, line 2068
+Source: ./sources/php/functions.php, line 1645
 
 ### `cfw_is_checkout_pay_page`
 
@@ -8780,7 +8748,7 @@ Version | Description
 ------- | -----------
 `3.0.0` | 
 
-Source: ./sources/php/functions.php, line 2088
+Source: ./sources/php/functions.php, line 1664
 
 ### `cfw_is_order_received_page`
 
@@ -8790,7 +8758,7 @@ Source: ./sources/php/functions.php, line 2088
 
 Argument | Type | Description
 -------- | ---- | -----------
-`function_exists('is_order_received_page') && is_order_received_page() && cfw_get_active_template()->supports('order-received') && PlanManager::can_access_feature('enable_thank_you_page')` |  | 
+`function_exists('is_order_received_page') && is_order_received_page() && cfw_get_active_template()->supports('order-received') && PlanManager::can_access_feature('enable_thank_you_page', 'plus')` |  | 
 
 **Changelog**
 
@@ -8798,9 +8766,11 @@ Version | Description
 ------- | -----------
 `3.0.0` | 
 
-Source: ./sources/php/functions.php, line 2109
+Source: ./sources/php/functions.php, line 1684
 
 ### `cfw_template_redirect_priority`
+
+*Filters CheckoutWC template redirect priority*
 
 **Arguments**
 
@@ -8808,7 +8778,13 @@ Argument | Type | Description
 -------- | ---- | -----------
 `11` |  | 
 
-Source: ./sources/php/functions.php, line 2236
+**Changelog**
+
+Version | Description
+------- | -----------
+`2.0.0` | 
+
+Source: ./sources/php/functions.php, line 1821
 
 ### `cfw_get_logo_attachment_id`
 
@@ -8826,7 +8802,7 @@ Version | Description
 ------- | -----------
 `8.2.23` | 
 
-Source: ./sources/php/functions.php, line 2280
+Source: ./sources/php/functions.php, line 1865
 
 ### `cfw_header_home_url`
 
@@ -8844,7 +8820,7 @@ Version | Description
 ------- | -----------
 `3.0.0` | 
 
-Source: ./sources/php/functions.php, line 2293
+Source: ./sources/php/functions.php, line 1878
 
 ### `cfw_header_blog_name`
 
@@ -8862,7 +8838,7 @@ Version | Description
 ------- | -----------
 `5.3.0` | 
 
-Source: ./sources/php/functions.php, line 2303
+Source: ./sources/php/functions.php, line 1887
 
 ### `cfw_express_pay_separator_text`
 
@@ -8872,7 +8848,7 @@ Argument | Type | Description
 -------- | ---- | -----------
 `__('Or', 'checkout-wc')` |  | 
 
-Source: ./sources/php/functions.php, line 2404
+Source: ./sources/php/functions.php, line 1993
 
 ### `cfw_cart_item_quantity_min_value`
 
@@ -8892,7 +8868,7 @@ Version | Description
 ------- | -----------
 `2.0.0` | 
 
-Source: ./sources/php/functions.php, line 2574
+Source: ./sources/php/functions.php, line 2169
 
 ### `cfw_cart_item_quantity_step`
 
@@ -8914,7 +8890,7 @@ Version | Description
 ------- | -----------
 `2.0.0` | 
 
-Source: ./sources/php/functions.php, line 2586
+Source: ./sources/php/functions.php, line 2180
 
 ### `cfw_disable_side_cart_item_quantity_control`
 
@@ -8934,7 +8910,7 @@ Version | Description
 ------- | -----------
 `8.0.0` | 
 
-Source: ./sources/php/functions.php, line 2611
+Source: ./sources/php/functions.php, line 2204
 
 ### `cfw_cart_item_quantity_max_value`
 
@@ -8946,7 +8922,7 @@ Argument | Type | Description
 `$cart_item` |  | 
 `$cart_item_key` |  | 
 
-Source: ./sources/php/functions.php, line 2676
+Source: ./sources/php/functions.php, line 2268
 
 ### `cfw_cart_quantity_input_has_override`
 
@@ -8965,7 +8941,7 @@ Version | Description
 ------- | -----------
 `8.2.18` | 
 
-Source: ./sources/php/functions.php, line 2694
+Source: ./sources/php/functions.php, line 2286
 
 ### `cfw_get_woocommerce_notices`
 
@@ -8983,7 +8959,7 @@ Version | Description
 ------- | -----------
 `8.2.23` | 
 
-Source: ./sources/php/functions.php, line 2705
+Source: ./sources/php/functions.php, line 2297
 
 ### `cfw_get_suggested_products`
 
@@ -9001,7 +8977,7 @@ Version | Description
 ------- | -----------
 `9.0.0` | 
 
-Source: ./sources/php/functions.php, line 2900
+Source: ./sources/php/functions.php, line 2504
 
 ### `cfw_get_suggested_products`
 
@@ -9021,7 +8997,44 @@ Version | Description
 ------- | -----------
 `8.0.0` | 
 
-Source: ./sources/php/functions.php, line 2913
+Source: ./sources/php/functions.php, line 2517
+
+### `cfw_cart_table_styles`
+
+*Filter the cart table styles*
+
+**Arguments**
+
+Argument | Type | Description
+-------- | ---- | -----------
+`$styles` | `array` | 
+
+**Changelog**
+
+Version | Description
+------- | -----------
+`10.1.0` | Style attribute is deprecated.
+`8.0.0` | 
+
+Source: ./sources/php/functions.php, line 2881
+
+### `cfw_acr_email_custom_css`
+
+*Filter the cart table custom styles*
+
+**Arguments**
+
+Argument | Type | Description
+-------- | ---- | -----------
+`''` |  | 
+
+**Changelog**
+
+Version | Description
+------- | -----------
+`10.0.2` | 
+
+Source: ./sources/php/functions.php, line 2897
 
 ### `cfw_cart_item_discount`
 
@@ -9041,7 +9054,25 @@ Version | Description
 ------- | -----------
 `4.0.0` | 
 
-Source: ./sources/php/functions.php, line 3473
+Source: ./sources/php/functions.php, line 3108
+
+### `cfw_totals_itemize_shipping_costs`
+
+*Whether to itemize shipping costs*
+
+**Arguments**
+
+Argument | Type | Description
+-------- | ---- | -----------
+`false` |  | 
+
+**Changelog**
+
+Version | Description
+------- | -----------
+`10.1.7` | 
+
+Source: ./sources/php/functions.php, line 3248
 
 ### `cfw_cart_totals_shipping_label`
 
@@ -9051,9 +9082,78 @@ Argument | Type | Description
 -------- | ---- | -----------
 `cfw_esc_html__('Shipping', 'woocommerce')` |  | 
 
-Source: ./sources/php/functions.php, line 3637
+Source: ./sources/php/functions.php, line 3292
+
+### `cfw_get_cart_totals_data`
+
+*Filters the cart totals data*
+
+**Arguments**
+
+Argument | Type | Description
+-------- | ---- | -----------
+`$data` | `array` | The cart totals data
+
+**Changelog**
+
+Version | Description
+------- | -----------
+`10.1.0` | 
+
+Source: ./sources/php/functions.php, line 3332
 
 ### `cfw_get_cart_actions_data`
+
+*Filters the cart actions data*
+
+**Arguments**
+
+Argument | Type | Description
+-------- | ---- | -----------
+`array(
+    /**
+     * After cart html table output
+     *
+     * @since 4.3.4
+     */
+    'cfw_after_cart_html' => cfw_get_action_output('cfw_after_cart_html'),
+    'woocommerce_review_order_before_shipping' => cfw_get_action_output('woocommerce_review_order_before_shipping'),
+    /**
+     * After shipping methods
+     *
+     * @since 4.3.4
+     */
+    'cfw_after_shipping_methods' => cfw_get_action_output('cfw_after_shipping_methods'),
+    'woocommerce_review_order_after_shipping' => cfw_get_action_output('woocommerce_review_order_after_shipping'),
+    /**
+     * Whether to enable woocommerce_after_cart_totals hook for side cart
+     *
+     * @since 9.0.37
+     * @param bool $enable_side_cart_woocommerce_after_cart_totals_hook Whether to enable woocommerce_after_cart_totals hook for side cart
+     */
+    'woocommerce_after_cart_totals' => apply_filters(false) ? cfw_get_action_output('woocommerce_after_cart_totals') : '',
+    'woocommerce_no_shipping_available_html' => cfw_apply_filters('woocommerce_no_shipping_available_html', '<div class="cfw-alert cfw-alert-error"><div class="message">' . wpautop(cfw_esc_html__('There are no shipping options available. Please ensure that your address has been entered correctly, or contact us if you need any help.', 'woocommerce')) . '</div></div>'),
+)` |  | 
+
+**Changelog**
+
+Version | Description
+------- | -----------
+`9.0.0` | 
+
+Source: ./sources/php/functions.php, line 3343
+
+### `cfw_enable_side_cart_woocommerce_after_cart_totals_hook`
+
+**Arguments**
+
+Argument | Type | Description
+-------- | ---- | -----------
+`false` |  | 
+
+Source: ./sources/php/functions.php, line 3373
+
+### `cfw_get_cart_static_actions_data`
 
 *Filters the cart actions data*
 
@@ -9069,11 +9169,11 @@ Argument | Type | Description
      */
     'cfw_cart_html_table_start' => cfw_get_action_output('cfw_cart_html_table_start'),
     /**
-     * After cart html table output
+     * Fires at start of cart table
      *
-     * @since 4.3.4
+     * @since 9.0.19
      */
-    'cfw_after_cart_html' => cfw_get_action_output('cfw_after_cart_html'),
+    'cfw_checkout_cart_html_table_start' => cfw_get_action_output('cfw_checkout_cart_html_table_start'),
     /**
      * Fires at end of coupon module before closing </div> tag
      *
@@ -9087,19 +9187,23 @@ Argument | Type | Description
      */
     'cfw_checkout_before_shipping_methods' => cfw_get_action_output('cfw_checkout_before_shipping_methods'),
     /**
+     * Fires before shipping method heading
+     *
+     * @since 10.1.0
+     */
+    'cfw_before_shipping_method_heading' => cfw_get_action_output('cfw_before_shipping_method_heading'),
+    /**
      * Fires after shipping method heading
      *
      * @since 2.0.0
      */
     'cfw_after_shipping_method_heading' => cfw_get_action_output('cfw_after_shipping_method_heading'),
     /**
-     * Fires after shipping methods
+     * Fires after shipping methods html
      *
      * @since 2.0.0
      */
     'cfw_checkout_after_shipping_methods' => cfw_get_action_output('cfw_checkout_after_shipping_methods'),
-    'woocommerce_review_order_before_shipping' => has_action('woocommerce_review_order_before_shipping') ? '<table id="cfw-before-shipping">' . cfw_get_action_output('woocommerce_review_order_before_shipping') . '</table>' : '',
-    'woocommerce_review_order_after_shipping' => has_action('woocommerce_review_order_after_shipping') ? '<table id="cfw-after-shipping">' . cfw_get_action_output('woocommerce_review_order_after_shipping') . '</table>' : '',
 )` |  | 
 
 **Changelog**
@@ -9108,7 +9212,7 @@ Version | Description
 ------- | -----------
 `9.0.0` | 
 
-Source: ./sources/php/functions.php, line 3646
+Source: ./sources/php/functions.php, line 3380
 
 ### `cfw_review_pane_contact_value`
 
@@ -9118,7 +9222,17 @@ Argument | Type | Description
 -------- | ---- | -----------
 `WC()->checkout()->get_value('billing_email')` |  | 
 
-Source: ./sources/php/functions.php, line 3718
+Source: ./sources/php/functions.php, line 3459
+
+### `cfw_review_pane_show_shipping_method`
+
+**Arguments**
+
+Argument | Type | Description
+-------- | ---- | -----------
+`WC()->cart->needs_shipping()` |  | 
+
+Source: ./sources/php/functions.php, line 3475
 
 ### `cfw_payment_method_address_review_shipping_method`
 
@@ -9136,9 +9250,51 @@ Version | Description
 ------- | -----------
 `2.0.0` | 
 
-Source: ./sources/php/functions.php, line 3881
+Source: ./sources/php/functions.php, line 3648
+
+### `cfw_login_form_account_exists_text`
+
+*Filters the text for users who already have an account*
+
+Default: It looks like you already have an account. Please enter your login details below.
+
+**Arguments**
+
+Argument | Type | Description
+-------- | ---- | -----------
+`esc_html__('It looks like you already have an account. Please enter your login details below.', 'checkout-wc')` |  | 
+
+**Changelog**
+
+Version | Description
+------- | -----------
+`9.0.34` | 
+
+Source: ./sources/php/functions.php, line 3773
+
+### `cfw_login_form_account_does_not_exist_text`
+
+*Filters the text before the login form for users who have shopped with us before*
+
+Default: If you have shopped with us before, please enter your login details below.
+
+**Arguments**
+
+Argument | Type | Description
+-------- | ---- | -----------
+`esc_html__('If you have shopped with us before, please enter your login details below.', 'checkout-wc')` |  | 
+
+**Changelog**
+
+Version | Description
+------- | -----------
+`9.0.34` | 
+
+Source: ./sources/php/functions.php, line 3786
 
 ### `cfw_login_modal_last_password_link`
+
+*Filters the link to the Lost Password page.*
 
 **Arguments**
 
@@ -9146,17 +9302,67 @@ Argument | Type | Description
 -------- | ---- | -----------
 `sprintf('<a id="cfw_lost_password_trigger" href="#cfw_lost_password_form_wrap" class="cfw-small">%s</a>', cfw_esc_html__('Lost your password?', 'woocommerce'))` |  | 
 
-Source: ./sources/php/functions.php, line 4029
+**Changelog**
 
-### `cfw_deactivation_form_fields`
+Version | Description
+------- | -----------
+`9.0.34` | 
+
+Source: ./sources/php/functions.php, line 3844
+
+### `cfw_login_form_continue_as_guest_button_text`
+
+*Filters the text for the continue as guest button*
 
 **Arguments**
 
 Argument | Type | Description
 -------- | ---- | -----------
-`array()` |  | 
+`esc_html__('Or continue as guest', 'checkout-wc')` |  | 
 
-Source: ./sources/php/deactivation-survey.php, line 7
+**Changelog**
+
+Version | Description
+------- | -----------
+`9.0.34` | 
+
+Source: ./sources/php/functions.php, line 3862
+
+### `cfw_admin_pages`
+
+*Filters the admin pages.*
+
+**Arguments**
+
+Argument | Type | Description
+-------- | ---- | -----------
+`$admin_pages` | `array` | The admin pages.
+
+**Changelog**
+
+Version | Description
+------- | -----------
+`10.1.0` | 
+
+Source: ./sources/php/init.php, line 306
+
+### `cfw_admin_preview_message`
+
+*Filter the admin preview message.*
+
+**Arguments**
+
+Argument | Type | Description
+-------- | ---- | -----------
+`$admin_message` | `string` | The admin preview message.
+
+**Changelog**
+
+Version | Description
+------- | -----------
+`10.1.0` | 
+
+Source: ./sources/php/init.php, line 843
 
 ### `cfw_ab_test_url_parameter`
 
@@ -9184,7 +9390,7 @@ Argument | Type | Description
 -------- | ---- | -----------
 `false` |  | 
 
-Source: ./sources/php/template-hooks.php, line 40
+Source: ./sources/php/template-hooks.php, line 42
 
 ### `cfw_replace_form`
 
@@ -9194,11 +9400,9 @@ Argument | Type | Description
 -------- | ---- | -----------
 `false` |  | 
 
-Source: ./sources/php/template-hooks.php, line 49
+Source: ./sources/php/template-hooks.php, line 52
 
 ### `cfw_show_order_summary_link_text`
-
-*Filters show order summary link label*
 
 **Arguments**
 
@@ -9206,17 +9410,9 @@ Argument | Type | Description
 -------- | ---- | -----------
 `esc_html__('Show order summary', 'checkout-wc')` |  | 
 
-**Changelog**
-
-Version | Description
-------- | -----------
-`2.0.0` | 
-
-Source: ./sources/php/template-functions.php, line 100
+Source: ./sources/php/template-functions.php, line 96
 
 ### `cfw_show_order_summary_hide_link_text`
-
-*Filters hide order summary link label*
 
 **Arguments**
 
@@ -9224,13 +9420,7 @@ Argument | Type | Description
 -------- | ---- | -----------
 `esc_html__('Hide order summary', 'checkout-wc')` |  | 
 
-**Changelog**
-
-Version | Description
-------- | -----------
-`3.0.0` | 
-
-Source: ./sources/php/template-functions.php, line 117
+Source: ./sources/php/template-functions.php, line 113
 
 ### `cfw_wc_print_notices`
 
@@ -9248,29 +9438,19 @@ Version | Description
 ------- | -----------
 `8.2.19` | 
 
-Source: ./sources/php/template-functions.php, line 195
+Source: ./sources/php/template-functions.php, line 187
 
 ### `cfw_customer_information_heading`
-
-*Filters customer info tab heading*
 
 **Arguments**
 
 Argument | Type | Description
 -------- | ---- | -----------
-`esc_html__('Information', 'checkout-wc')` |  | 
+`__('Information', 'checkout-wc')` |  | 
 
-**Changelog**
-
-Version | Description
-------- | -----------
-`2.0.0` | 
-
-Source: ./sources/php/template-functions.php, line 314
+Source: ./sources/php/template-functions.php, line 307
 
 ### `cfw_order_review_tab_heading`
-
-*Filters order review tab heading*
 
 **Arguments**
 
@@ -9278,35 +9458,19 @@ Argument | Type | Description
 -------- | ---- | -----------
 `__('Order review', 'checkout-wc')` |  | 
 
-**Changelog**
-
-Version | Description
-------- | -----------
-`2.0.0` | 
-
-Source: ./sources/php/template-functions.php, line 333
+Source: ./sources/php/template-functions.php, line 326
 
 ### `cfw_already_have_account_text`
-
-*Filters already have account text*
 
 **Arguments**
 
 Argument | Type | Description
 -------- | ---- | -----------
-`esc_html__('Already have an account with us?', 'checkout-wc')` |  | 
+`__('Already have an account with us?', 'checkout-wc')` |  | 
 
-**Changelog**
-
-Version | Description
-------- | -----------
-`2.0.0` | 
-
-Source: ./sources/php/template-functions.php, line 398
+Source: ./sources/php/template-functions.php, line 391
 
 ### `cfw_login_faster_text`
-
-*Filters login faster text*
 
 **Arguments**
 
@@ -9314,13 +9478,7 @@ Argument | Type | Description
 -------- | ---- | -----------
 `esc_html__('Log in.', 'checkout-wc')` |  | 
 
-**Changelog**
-
-Version | Description
-------- | -----------
-`2.0.0` | 
-
-Source: ./sources/php/template-functions.php, line 410
+Source: ./sources/php/template-functions.php, line 403
 
 ### `cfw_hide_email_field_for_logged_in_users`
 
@@ -9330,7 +9488,7 @@ Argument | Type | Description
 -------- | ---- | -----------
 `true` |  | 
 
-Source: ./sources/php/template-functions.php, line 441
+Source: ./sources/php/template-functions.php, line 434
 
 ### `cfw_create_account_site_name`
 
@@ -9348,27 +9506,18 @@ Version | Description
 ------- | -----------
 `2.0.0` | 
 
-Source: ./sources/php/template-functions.php, line 511
+Source: ./sources/php/template-functions.php, line 509
 
 ### `cfw_create_account_checkbox_label`
 
-**Arguments**
-
-Argument | Type | Description
--------- | ---- | -----------
-`esc_html__('Create %s shopping account.', 'checkout-wc')` |  | 
-
-Source: ./sources/php/template-functions.php, line 526
-
-### `cfw_account_creation_statement`
-
-*Filters create account statement*
+*Filters create account checkbox label*
 
 **Arguments**
 
 Argument | Type | Description
 -------- | ---- | -----------
-`esc_html__('If you do not have an account, we will create one for you.', 'checkout-wc')` |  | 
+`// translators: %s: site name
+esc_html__('Create %s shopping account.', 'checkout-wc')` |  | 
 
 **Changelog**
 
@@ -9376,7 +9525,17 @@ Version | Description
 ------- | -----------
 `2.0.0` | 
 
-Source: ./sources/php/template-functions.php, line 532
+Source: ./sources/php/template-functions.php, line 518
+
+### `cfw_account_creation_statement`
+
+**Arguments**
+
+Argument | Type | Description
+-------- | ---- | -----------
+`__('If you do not have an account, we will create one for you.', 'checkout-wc')` |  | 
+
+Source: ./sources/php/template-functions.php, line 542
 
 ### `cfw_welcome_back_name`
 
@@ -9386,7 +9545,7 @@ Source: ./sources/php/template-functions.php, line 532
 
 Argument | Type | Description
 -------- | ---- | -----------
-`wp_get_current_user()->display_name` |  | 
+`$welcome_back_name` | `string` | Welcome back statement customer name
 
 **Changelog**
 
@@ -9394,7 +9553,7 @@ Version | Description
 ------- | -----------
 `2.0.0` | 
 
-Source: ./sources/php/template-functions.php, line 553
+Source: ./sources/php/template-functions.php, line 565
 
 ### `cfw_welcome_back_email`
 
@@ -9412,27 +9571,19 @@ Version | Description
 ------- | -----------
 `2.0.0` | 
 
-Source: ./sources/php/template-functions.php, line 561
+Source: ./sources/php/template-functions.php, line 573
 
 ### `cfw_welcome_back_text`
-
-*Filters welcome back statement*
 
 **Arguments**
 
 Argument | Type | Description
 -------- | ---- | -----------
-`$welcome_back_text` | `string` | Welcome back statement
+`$welcome_back_text` |  | 
 `$welcome_back_name` |  | 
 `$welcome_back_email` |  | 
 
-**Changelog**
-
-Version | Description
-------- | -----------
-`7.1.10` | 
-
-Source: ./sources/php/template-functions.php, line 572
+Source: ./sources/php/template-functions.php, line 590
 
 ### `cfw_show_logout_link`
 
@@ -9450,11 +9601,9 @@ Version | Description
 ------- | -----------
 `2.0.0` | 
 
-Source: ./sources/php/template-functions.php, line 580
+Source: ./sources/php/template-functions.php, line 592
 
 ### `cfw_billing_shipping_address_heading`
-
-*Filters billing and shipping address heading*
 
 **Arguments**
 
@@ -9462,17 +9611,9 @@ Argument | Type | Description
 -------- | ---- | -----------
 `esc_html__('Billing and Shipping address', 'checkout-wc')` |  | 
 
-**Changelog**
-
-Version | Description
-------- | -----------
-`2.0.0` | 
-
-Source: ./sources/php/template-functions.php, line 634
+Source: ./sources/php/template-functions.php, line 652
 
 ### `cfw_billing_address_heading`
-
-*Filters billing address heading*
 
 **Arguments**
 
@@ -9480,17 +9621,9 @@ Argument | Type | Description
 -------- | ---- | -----------
 `esc_html__('Billing address', 'checkout-wc')` |  | 
 
-**Changelog**
-
-Version | Description
-------- | -----------
-`2.0.0` | 
-
-Source: ./sources/php/template-functions.php, line 644
+Source: ./sources/php/template-functions.php, line 662
 
 ### `cfw_shipping_address_heading`
-
-*Filters shipping address heading*
 
 **Arguments**
 
@@ -9498,13 +9631,7 @@ Argument | Type | Description
 -------- | ---- | -----------
 `esc_html__('Shipping address', 'checkout-wc')` |  | 
 
-**Changelog**
-
-Version | Description
-------- | -----------
-`2.0.0` | 
-
-Source: ./sources/php/template-functions.php, line 654
+Source: ./sources/php/template-functions.php, line 672
 
 ### `cfw_show_shipping_tab`
 
@@ -9514,7 +9641,7 @@ Argument | Type | Description
 -------- | ---- | -----------
 `WC()->cart && WC()->cart->needs_shipping() && SettingsManager::instance()->get_setting('skip_shipping_step') !== 'yes'` |  | 
 
-Source: ./sources/php/template-functions.php, line 768
+Source: ./sources/php/template-functions.php, line 780
 
 ### `cfw_show_shipping_total`
 
@@ -9524,11 +9651,9 @@ Argument | Type | Description
 -------- | ---- | -----------
 `WC()->cart->needs_shipping() && wc_shipping_enabled() && WC()->cart->get_cart_contents() && count(WC()->shipping()->get_packages()) > 0` |  | 
 
-Source: ./sources/php/template-functions.php, line 781
+Source: ./sources/php/template-functions.php, line 793
 
 ### `cfw_billing_address_heading`
-
-*Filters billing address heading on payment method tab*
 
 **Arguments**
 
@@ -9536,17 +9661,9 @@ Argument | Type | Description
 -------- | ---- | -----------
 `esc_html__('Billing address', 'checkout-wc')` |  | 
 
-**Changelog**
-
-Version | Description
-------- | -----------
-`3.0.0` | 
-
-Source: ./sources/php/template-functions.php, line 1012
+Source: ./sources/php/template-functions.php, line 1036
 
 ### `cfw_billing_address_description`
-
-*Filters billing address description*
 
 **Arguments**
 
@@ -9554,26 +9671,36 @@ Argument | Type | Description
 -------- | ---- | -----------
 `esc_html__('Select the address that matches your card or payment method.', 'checkout-wc')` |  | 
 
-**Changelog**
+Source: ./sources/php/template-functions.php, line 1057
 
-Version | Description
-------- | -----------
-`3.0.0` | 
-
-Source: ./sources/php/template-functions.php, line 1033
-
-### `cfw_form_attributes`
-
-*The form attributes*
+### `cfw_show_review_order_before_cart_contents_hook`
 
 **Arguments**
 
 Argument | Type | Description
 -------- | ---- | -----------
-`$attributes` |  | 
-`$id` | `bool\|mixed` | 
+`false` |  | 
 
-Source: ./sources/php/template-functions.php, line 1251
+Source: ./sources/php/template-functions.php, line 1234
+
+### `cfw_form_attributes`
+
+*Filters the form attributes*
+
+**Arguments**
+
+Argument | Type | Description
+-------- | ---- | -----------
+`$attributes` | `array` | The form attributes
+`$id` | `string` | The form ID
+
+**Changelog**
+
+Version | Description
+------- | -----------
+`6.1.7` | 
+
+Source: ./sources/php/template-functions.php, line 1339
 
 ### `cfw_thank_you_heading_icon`
 
@@ -9592,7 +9719,7 @@ Version | Description
 ------- | -----------
 `5.4.0` | 
 
-Source: ./sources/php/template-functions.php, line 1333
+Source: ./sources/php/template-functions.php, line 1379
 
 ### `cfw_thank_you_title`
 
@@ -9600,9 +9727,9 @@ Source: ./sources/php/template-functions.php, line 1333
 
 Argument | Type | Description
 -------- | ---- | -----------
-`__('Order %s', 'checkout-wc')` |  | 
+`$title` |  | 
 
-Source: ./sources/php/template-functions.php, line 1352
+Source: ./sources/php/template-functions.php, line 1399
 
 ### `cfw_thank_you_subtitle`
 
@@ -9610,9 +9737,9 @@ Source: ./sources/php/template-functions.php, line 1352
 
 Argument | Type | Description
 -------- | ---- | -----------
-`__('Thank you %s!', 'checkout-wc')` |  | 
+`$subtitle` |  | 
 
-Source: ./sources/php/template-functions.php, line 1365
+Source: ./sources/php/template-functions.php, line 1414
 
 ### `cfw_thank_you_status_icon_{$order_status}`
 
@@ -9630,20 +9757,18 @@ Version | Description
 ------- | -----------
 `3.0.0` | 
 
-Source: ./sources/php/template-functions.php, line 1437
+Source: ./sources/php/template-functions.php, line 1475
 
 ### `cfw_order_updates_heading`
-
-*Thank you page order updates section*
 
 **Arguments**
 
 Argument | Type | Description
 -------- | ---- | -----------
 `__('Order updates', 'checkout-wc')` |  | 
-`$order` | `\WC_Order` | 
+`$order` |  | 
 
-Source: ./sources/php/template-functions.php, line 1493
+Source: ./sources/php/template-functions.php, line 1547
 
 ### `cfw_order_updates_text`
 
@@ -9654,11 +9779,9 @@ Argument | Type | Description
 `__('You’ll get shipping and delivery updates by email.', 'checkout-wc')` |  | 
 `$order` |  | 
 
-Source: ./sources/php/template-functions.php, line 1509
+Source: ./sources/php/template-functions.php, line 1558
 
 ### `cfw_billing_shipping_address_heading`
-
-*This action is documented earlier in this file*
 
 **Arguments**
 
@@ -9666,11 +9789,9 @@ Argument | Type | Description
 -------- | ---- | -----------
 `__('Billing and Shipping address', 'checkout-wc')` |  | 
 
-Source: ./sources/php/template-functions.php, line 1614
+Source: ./sources/php/template-functions.php, line 1667
 
 ### `cfw_shipping_address_heading`
-
-*This action is documented earlier in this file*
 
 **Arguments**
 
@@ -9678,11 +9799,9 @@ Argument | Type | Description
 -------- | ---- | -----------
 `esc_html__('Shipping address', 'checkout-wc')` |  | 
 
-Source: ./sources/php/template-functions.php, line 1621
+Source: ./sources/php/template-functions.php, line 1677
 
 ### `cfw_billing_address_heading`
-
-*This action is documented earlier in this file*
 
 **Arguments**
 
@@ -9690,7 +9809,7 @@ Argument | Type | Description
 -------- | ---- | -----------
 `esc_html__('Billing address', 'checkout-wc')` |  | 
 
-Source: ./sources/php/template-functions.php, line 1637
+Source: ./sources/php/template-functions.php, line 1693
 
 ### `cfw_thank_you_continue_shopping_text`
 
@@ -9708,7 +9827,7 @@ Version | Description
 ------- | -----------
 `3.0.0` | 
 
-Source: ./sources/php/template-functions.php, line 1671
+Source: ./sources/php/template-functions.php, line 1726
 
 ### `cfw_get_checkout_tabs`
 
@@ -9718,28 +9837,64 @@ Source: ./sources/php/template-functions.php, line 1671
 
 Argument | Type | Description
 -------- | ---- | -----------
-`array('cfw-customer-info' => array('label' => apply_filters(esc_html__('Information', 'checkout-wc')), 'classes' => array(), 'priority' => 20, 'enabled' => cfw_show_customer_information_tab(), 'display_callback' => function () {
+`array('cfw-customer-info' => array(
     /**
-     * Outputs customer info tab content
+     * Filters the breadcrumb customer info label.
      *
-     * @since 2.0.0
+     * @since 7.0.0
+     * @param string $label The breadcrumb customer info label.
      */
-    do_action();
-}), 'cfw-shipping-method' => array('label' => apply_filters(esc_html__('Shipping', 'checkout-wc')), 'classes' => array(), 'priority' => 30, 'enabled' => true, 'display_callback' => function () {
+    'label' => apply_filters(esc_html__('Information', 'checkout-wc')),
+    'classes' => array(),
+    'priority' => 20,
+    'enabled' => cfw_show_customer_information_tab(),
+    'display_callback' => function () {
+        /**
+         * Outputs customer info tab content
+         *
+         * @since 2.0.0
+         */
+        do_action();
+    },
+), 'cfw-shipping-method' => array(
     /**
-     * Outputs customer info tab content
+     * Filters the breadcrumb shipping label.
      *
-     * @since 2.0.0
+     * @since 7.0.0
+     * @param string $label The breadcrumb shipping label.
      */
-    do_action();
-}), 'cfw-payment-method' => array('label' => apply_filters(WC()->cart->needs_payment() ? esc_html__('Payment', 'checkout-wc') : esc_html__('Review', 'checkout-wc')), 'classes' => array('woocommerce-checkout-payment'), 'priority' => 40, 'enabled' => true, 'display_callback' => function () {
+    'label' => apply_filters(esc_html__('Shipping', 'checkout-wc')),
+    'classes' => array(),
+    'priority' => 30,
+    'enabled' => true,
+    'display_callback' => function () {
+        /**
+         * Outputs customer info tab content
+         *
+         * @since 2.0.0
+         */
+        do_action();
+    },
+), 'cfw-payment-method' => array(
     /**
-     * Outputs customer info tab content
+     * Filters the breadcrumb payment label.
      *
-     * @since 2.0.0
+     * @since 7.0.0
+     * @param string $label The breadcrumb payment label.
      */
-    do_action();
-}))` |  | 
+    'label' => apply_filters(WC()->cart->needs_payment() ? esc_html__('Payment', 'checkout-wc') : esc_html__('Review', 'checkout-wc')),
+    'classes' => array('woocommerce-checkout-payment'),
+    'priority' => 40,
+    'enabled' => true,
+    'display_callback' => function () {
+        /**
+         * Outputs customer info tab content
+         *
+         * @since 2.0.0
+         */
+        do_action();
+    },
+))` |  | 
 
 **Changelog**
 
@@ -9747,7 +9902,7 @@ Version | Description
 ------- | -----------
 `7.0.0` | 
 
-Source: ./sources/php/template-functions.php, line 1868
+Source: ./sources/php/template-functions.php, line 1923
 
 ### `cfw_breadcrumb_customer_info_label`
 
@@ -9757,7 +9912,7 @@ Argument | Type | Description
 -------- | ---- | -----------
 `esc_html__('Information', 'checkout-wc')` |  | 
 
-Source: ./sources/php/template-functions.php, line 1879
+Source: ./sources/php/template-functions.php, line 1940
 
 ### `cfw_breadcrumb_shipping_label`
 
@@ -9767,7 +9922,7 @@ Argument | Type | Description
 -------- | ---- | -----------
 `esc_html__('Shipping', 'checkout-wc')` |  | 
 
-Source: ./sources/php/template-functions.php, line 1894
+Source: ./sources/php/template-functions.php, line 1961
 
 ### `cfw_breadcrumb_payment_label`
 
@@ -9777,9 +9932,11 @@ Argument | Type | Description
 -------- | ---- | -----------
 `WC()->cart->needs_payment() ? esc_html__('Payment', 'checkout-wc') : esc_html__('Review', 'checkout-wc')` |  | 
 
-Source: ./sources/php/template-functions.php, line 1908
+Source: ./sources/php/template-functions.php, line 1981
 
 ### `cfw_empty_side_cart_heading`
+
+*Fires before the empty cart message is output.*
 
 **Arguments**
 
@@ -9787,7 +9944,13 @@ Argument | Type | Description
 -------- | ---- | -----------
 `__('Your Cart is Empty', 'checkout-wc')` |  | 
 
-Source: ./sources/php/template-functions.php, line 1974
+**Changelog**
+
+Version | Description
+------- | -----------
+`6.2.0` | 
+
+Source: ./sources/php/template-functions.php, line 2047
 
 ### `cfw_replace_form`
 
@@ -9831,11 +9994,19 @@ Source: ./templates/glass/content.php, line 35
 
 ### `cfw_groove_cart_summary_classes`
 
+*Filters the classes for the cart summary*
+
 **Arguments**
 
 Argument | Type | Description
 -------- | ---- | -----------
 `array('col-lg-5')` |  | 
+
+**Changelog**
+
+Version | Description
+------- | -----------
+`8.0.0` | 
 
 Source: ./templates/groove/thank-you.php, line 73
 
@@ -9851,23 +10022,39 @@ Source: ./templates/groove/content.php, line 36
 
 ### `cfw_groove_cart_summary_classes`
 
+*Filters the classes for the cart summary*
+
 **Arguments**
 
 Argument | Type | Description
 -------- | ---- | -----------
 `array('col-lg-5')` |  | 
 
-Source: ./templates/groove/content.php, line 88
+**Changelog**
+
+Version | Description
+------- | -----------
+`8.0.0` | 
+
+Source: ./templates/groove/content.php, line 89
 
 ### `cfw_groove_cart_summary_classes`
 
+*Filters the classes for the cart summary*
+
 **Arguments**
 
 Argument | Type | Description
 -------- | ---- | -----------
 `array('col-lg-5')` |  | 
 
-Source: ./templates/groove/order-pay.php, line 60
+**Changelog**
+
+Version | Description
+------- | -----------
+`8.0.0` | 
+
+Source: ./templates/groove/order-pay.php, line 61
 
 
 <p align="center"><a href="https://github.com/pronamic/wp-documentor"><img src="https://cdn.jsdelivr.net/gh/pronamic/wp-documentor@main/logos/pronamic-wp-documentor.svgo-min.svg" alt="Pronamic WordPress Documentor" width="32" height="32"></a><br><em>Generated by <a href="https://github.com/pronamic/wp-documentor">Pronamic WordPress Documentor</a> <code>1.2.0</code></em><p>

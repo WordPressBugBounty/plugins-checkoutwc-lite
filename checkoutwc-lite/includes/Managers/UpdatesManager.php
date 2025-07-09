@@ -401,12 +401,12 @@ class UpdatesManager extends SingletonAbstract {
 		?>
 		<div class="cfw-admin-field-container" id="cfw-admin-license-info">
 			<label for="<?php echo esc_attr( $this->get_field_name( 'license_key' ) ); ?>" class="block text-sm font-medium text-gray-700 mb-2">
-				<?php cfw_e( 'CheckoutWC License Key', 'checkout-wc' ); ?>
+				<?php _e( 'CheckoutWC License Key', 'checkout-wc' ); ?>
 			</label>
 			<?php if ( ! defined( 'CFW_LICENSE_KEY' ) ) : ?>
 				<input type="password" autocomplete="off" name="<?php echo esc_attr( $this->get_field_name( 'license_key' ) ); ?>" value="<?php echo esc_attr( $this->get_field_value( 'license_key' ) ); ?>" id="cfw_license_key" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border border-gray-300 rounded-md" />
 			<?php else : ?>
-				<?php cfw_e( 'Your license key is set with the constant <code>CFW_LICENSE_KEY</code>.', 'checkout-wc' ); ?>
+				<?php _e( 'Your license key is set with the constant <code>CFW_LICENSE_KEY</code>.', 'checkout-wc' ); ?>
 			<?php endif; ?>
 
 			<div class="mt-2 max-w-xl">
@@ -489,7 +489,7 @@ class UpdatesManager extends SingletonAbstract {
 		<div id="cfw-activation-control" class="cfw-admin-field-container">
 			<?php if ( empty( $license ) ) : ?>
 				<p class="text-sm leading-6 text-gray-700 col-span-2">
-					<?php cfw_e( 'Please enter your license key.', 'checkout-wc' ); ?>
+					<?php _e( 'Please enter your license key.', 'checkout-wc' ); ?>
 				</p>
 			<?php elseif ( 'inactive' === $key_status || 'site_inactive' === $key_status ) : ?>
 				<input type="submit" name="activate_key" class="button-secondary" value="Activate Site" />

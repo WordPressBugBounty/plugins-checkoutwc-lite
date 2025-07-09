@@ -7,9 +7,9 @@ use Objectiv\Plugins\Checkout\Managers\UpdatesManager;
 class InactiveLicenseNotice extends NoticeAbstract {
 	public function add( string $url ) {
 		$message = sprintf(
-			cfw_notranslate__( 'Your license key is not active for this site. Please visit <a href="%s">%s</a> to activate your license and restore functionality.', 'checkout-wc' ),
+			__( 'Your license key is not active for this site. Please visit <a href="%s">%s</a> to activate your license and restore functionality.', 'checkout-wc' ),
 			$url,
-			cfw_notranslate__( 'Start Here', 'checkout-wc' )
+			__( 'Start Here', 'checkout-wc' )
 		);
 
 		parent::maybe_add(

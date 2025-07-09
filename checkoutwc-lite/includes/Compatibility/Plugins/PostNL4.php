@@ -47,8 +47,8 @@ class PostNL4 extends CompatibilityAbstract {
 
 		// Add street name
 		$fields['street_name'] = array(
-			'label'             => cfw__( 'Street name', 'woocommerce-postnl' ),
-			'placeholder'       => cfw_esc_attr__( 'Street name', 'woocommerce-postnl' ),
+			'label'             => __( 'Street name', 'woocommerce-postnl' ),
+			'placeholder'       => esc_attr__( 'Street name', 'woocommerce-postnl' ),
 			'required'          => true,
 			'class'             => array(),
 			'autocomplete'      => '',
@@ -62,8 +62,8 @@ class PostNL4 extends CompatibilityAbstract {
 
 		// Then add house number
 		$fields['house_number'] = array(
-			'label'             => cfw__( 'Nr.', 'woocommerce-postnl' ),
-			'placeholder'       => cfw_esc_attr__( 'Nr.', 'woocommerce-postnl' ),
+			'label'             => __( 'Nr.', 'woocommerce-postnl' ),
+			'placeholder'       => esc_attr__( 'Nr.', 'woocommerce-postnl' ),
 			'required'          => true,
 			'class'             => array(),
 			'autocomplete'      => '',
@@ -77,8 +77,8 @@ class PostNL4 extends CompatibilityAbstract {
 
 		// Then house number suffix
 		$fields['house_number_suffix'] = array(
-			'label'             => cfw__( 'Suffix', 'woocommerce-postnl' ),
-			'placeholder'       => cfw_esc_attr__( 'Suffix', 'woocommerce-postnl' ),
+			'label'             => __( 'Suffix', 'woocommerce-postnl' ),
+			'placeholder'       => esc_attr__( 'Suffix', 'woocommerce-postnl' ),
 			'required'          => false,
 			'class'             => array(),
 			'autocomplete'      => '',

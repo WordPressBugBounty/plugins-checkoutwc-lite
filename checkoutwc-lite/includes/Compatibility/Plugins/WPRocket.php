@@ -113,8 +113,8 @@ class WPRocket extends CompatibilityAbstract {
 
 		$integrations[] = array(
 			'name'          => 'enable_wp_rocket_delay_js_compatibility_mode',
-			'label'         => cfw_notranslate__( 'Enable WP Rocket Delay JS Execution compatibility mode', 'checkout-wc' ),
-			'description'   => cfw_notranslate__( 'By default, we exclude our scripts and script dependencies to prevent compatibility problems. Uncheck to allow CheckoutWC scripts to be delayed for maximum performance.', 'checkout-wc' ),
+			'label'         => __( 'Enable WP Rocket Delay JS Execution compatibility mode', 'checkout-wc' ),
+			'description'   => __( 'By default, we exclude our scripts and script dependencies to prevent compatibility problems. Uncheck to allow CheckoutWC scripts to be delayed for maximum performance.', 'checkout-wc' ),
 			'initial_value' => SettingsManager::instance()->get_setting( 'enable_wp_rocket_delay_js_compatibility_mode' ) === 'yes',
 		);
 

@@ -24,7 +24,7 @@ class PageController {
 	}
 
 	public function custom_css() {
-		$custom_css  = 'ul.wp-submenu span.cfw-premium-badge::after, #wpadminbar span.cfw-premium-badge::after { content:"' . cfw__( 'Premium', 'checkout-wc' ) . '"}';
+		$custom_css  = 'ul.wp-submenu span.cfw-premium-badge::after, #wpadminbar span.cfw-premium-badge::after { content:"' . __( 'Premium', 'checkout-wc' ) . '"}';
 		$custom_css .= 'li a[href*="lite-upgrade"] { background-color: #00a32a !important; color: #fff !important; font-weight: 600 !important;}';
 
 		echo "<style>$custom_css</style>"; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
@@ -81,7 +81,7 @@ class PageController {
 		wp_enqueue_script( 'cfw-admin' );
 
 		$settings_array = array(
-			'i18n_nav_warning' => cfw__( 'The changes you made will be lost if you navigate away from this page.', 'woocommerce' ),
+			'i18n_nav_warning' => __( 'The changes you made will be lost if you navigate away from this page.', 'woocommerce' ),
 			'ajax_url'         => admin_url( 'admin-ajax.php' ),
 			'nonce'            => wp_create_nonce( 'objectiv-cfw-admin-save' ),
 			'deferred_notices' => $this->get_deferred_notices(),

@@ -24,9 +24,9 @@ function cfw_enqueue_sendwp_installer() {
 		'sendwp_vars',
 		array(
 			'nonce'                    => wp_create_nonce( 'sendwp_install_nonce' ),
-			'security_failed_message'  => cfw_esc_html__( 'Security failed to check sendwp_install_nonce', 'checkout-wc' ),
-			'user_capability_message'  => cfw_esc_html__( 'Ask an administrator for install_plugins capability', 'checkout-wc' ),
-			'sendwp_connected_message' => cfw_esc_html__( 'SendWP is already connected.', 'checkout-wc' ),
+			'security_failed_message'  => esc_html__( 'Security failed to check sendwp_install_nonce', 'checkout-wc' ),
+			'user_capability_message'  => esc_html__( 'Ask an administrator for install_plugins capability', 'checkout-wc' ),
+			'sendwp_connected_message' => esc_html__( 'SendWP is already connected.', 'checkout-wc' ),
 		)
 	);
 }

@@ -13,7 +13,7 @@ use Objectiv\Plugins\Checkout\Managers\UpdatesManager;
  */
 class Integrations extends PageAbstract {
 	public function __construct() {
-		parent::__construct( cfw_notranslate__( 'Integrations', 'checkout-wc' ), 'cfw_manage_integrations', 'integrations' );
+		parent::__construct( __( 'Integrations', 'checkout-wc' ), 'cfw_manage_integrations', 'integrations' );
 	}
 
 	public function init() {

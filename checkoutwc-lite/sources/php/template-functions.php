@@ -417,7 +417,7 @@ function cfw_maybe_show_already_have_an_account_text() {
 	<?php if ( WC()->checkout()->is_registration_required() ) : ?>
 	<div class="cfw-have-acc-text cfw-small account-exists-text">
 		<span>
-			<?php echo cfw_apply_filters( 'woocommerce_registration_error_email_exists', wp_kses_post( cfw__( 'An account is already registered with your email address. <a href="#" class="showlogin">Please log in.</a>', 'woocommerce' ) ), '' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+			<?php echo cfw_apply_filters( 'woocommerce_registration_error_email_exists', wp_kses_post( __( 'An account is already registered with your email address. <a href="#" class="showlogin">Please log in.</a>', 'woocommerce' ) ), '' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
 		</span>
 	</div>
 	<?php endif; ?>
@@ -466,9 +466,9 @@ function cfw_account_password_field_slide() {
 					'account_username',
 					array(
 						'type'              => 'text',
-						'label'             => cfw__( 'Account username', 'woocommerce' ),
+						'label'             => __( 'Account username', 'woocommerce' ),
 						'required'          => true,
-						'placeholder'       => cfw_esc_attr__( 'Username', 'woocommerce' ),
+						'placeholder'       => esc_attr__( 'Username', 'woocommerce' ),
 						'custom_attributes' => array(
 							'data-parsley-trigger' => 'keyup change focusout',
 						),
@@ -481,9 +481,9 @@ function cfw_account_password_field_slide() {
 				'account_password',
 				array(
 					'type'              => 'password',
-					'label'             => cfw__( 'Create account password', 'woocommerce' ),
+					'label'             => __( 'Create account password', 'woocommerce' ),
 					'required'          => true,
-					'placeholder'       => cfw__( 'Create account password', 'woocommerce' ),
+					'placeholder'       => __( 'Create account password', 'woocommerce' ),
 					'custom_attributes' => array(
 						'data-parsley-trigger' => 'keyup change focusout',
 					),
@@ -918,7 +918,7 @@ function cfw_get_review_pane_payment_method(): string {
 
 		$title = $available_payment_methods[ WC()->session->get( 'chosen_payment_method' ) ]->title ?? '';
 	} else {
-		$title = cfw__( 'Free', 'woocommerce' );
+		$title = __( 'Free', 'woocommerce' );
 	}
 
 	if ( $title ) {
@@ -1368,10 +1368,10 @@ function cfw_thank_you_title( WC_Order $order ) {
 		?>
 		<div class="cfw-mb">
 			<?php
-			wc_add_notice( cfw__( 'Unfortunately your order cannot be processed as the originating bank/merchant has declined your transaction. Please attempt your purchase again.', 'woocommerce' ), 'error' );
+			wc_add_notice( __( 'Unfortunately your order cannot be processed as the originating bank/merchant has declined your transaction. Please attempt your purchase again.', 'woocommerce' ), 'error' );
 			cfw_wc_print_notices_with_wrap();
 			?>
-			<a href="<?php echo esc_url( $order->get_checkout_payment_url() ); ?>" class="cfw-secondary-btn"><?php cfw_esc_html_e( 'Pay', 'woocommerce' ); ?></a>
+			<a href="<?php echo esc_url( $order->get_checkout_payment_url() ); ?>" class="cfw-secondary-btn"><?php esc_html_e( 'Pay', 'woocommerce' ); ?></a>
 		</div>
 	<?php endif; ?>
 	<div class="title">
@@ -1573,7 +1573,7 @@ function cfw_thank_you_order_updates( WC_Order $order ) {
  */
 function cfw_thank_you_downloads( $order, $order_statues, $show_downloads, $downloads ) {
 	?>
-	<h3 class="woocommerce-order-downloads__title"><?php cfw_esc_html_e( 'Downloads', 'woocommerce' ); ?></h3>
+	<h3 class="woocommerce-order-downloads__title"><?php esc_html_e( 'Downloads', 'woocommerce' ); ?></h3>
 
 	<table class="woocommerce-table woocommerce-table--order-downloads shop_table shop_table_responsive order_details">
 		<thead>
@@ -1604,13 +1604,13 @@ function cfw_thank_you_downloads( $order, $order_statues, $show_downloads, $down
 									echo '<a href="' . esc_url( $download['download_url'] ) . '" class="woocommerce-MyAccount-downloads-file alt">' . esc_html( $download['download_name'] ) . '</a>';
 									break;
 								case 'download-remaining':
-									echo is_numeric( $download['downloads_remaining'] ) ? esc_html( $download['downloads_remaining'] ) : cfw_esc_html__( '&infin;', 'woocommerce' );
+									echo is_numeric( $download['downloads_remaining'] ) ? esc_html( $download['downloads_remaining'] ) : esc_html__( '&infin;', 'woocommerce' );
 									break;
 								case 'download-expires':
 									if ( ! empty( $download['access_expires'] ) ) {
 										echo '<time datetime="' . esc_attr( date( 'Y-m-d', strtotime( $download['access_expires'] ) ) ) . '" title="' . esc_attr( strtotime( $download['access_expires'] ) ) . '">' . esc_html( date_i18n( get_option( 'date_format' ), strtotime( $download['access_expires'] ) ) ) . '</time>'; // phpcs:ignore
 									} else {
-										cfw_esc_html_e( 'Never', 'woocommerce' );
+										esc_html_e( 'Never', 'woocommerce' );
 									}
 									break;
 							}
@@ -1667,7 +1667,7 @@ function cfw_thank_you_customer_information( WC_Order $order ) {
 						echo wp_kses_post( apply_filters( 'cfw_billing_shipping_address_heading', __( 'Billing and Shipping address', 'checkout-wc' ) ) ); // phpcs:ignore WooCommerce.Commenting.CommentHooks.MissingSinceComment
 						?>
 						<address>
-							<?php echo wp_kses_post( $order->get_formatted_billing_address( cfw_esc_html__( 'N/A', 'woocommerce' ) ) ); ?>
+							<?php echo wp_kses_post( $order->get_formatted_billing_address( esc_html__( 'N/A', 'woocommerce' ) ) ); ?>
 						</address>
 					</h6>
 				<?php else : ?>
@@ -1679,7 +1679,7 @@ function cfw_thank_you_customer_information( WC_Order $order ) {
 					</h6>
 
 					<address>
-						<?php echo wp_kses_post( $order->get_formatted_shipping_address( cfw_esc_html__( 'N/A', 'woocommerce' ) ) ); ?>
+						<?php echo wp_kses_post( $order->get_formatted_shipping_address( esc_html__( 'N/A', 'woocommerce' ) ) ); ?>
 					</address>
 				<?php endif; ?>
 			</div>
@@ -1694,7 +1694,7 @@ function cfw_thank_you_customer_information( WC_Order $order ) {
 					?>
 				</h6>
 				<address>
-					<?php echo wp_kses_post( $order->get_formatted_billing_address( cfw_esc_html__( 'N/A', 'woocommerce' ) ) ); ?>
+					<?php echo wp_kses_post( $order->get_formatted_billing_address( esc_html__( 'N/A', 'woocommerce' ) ) ); ?>
 				</address>
 			</div>
 		<?php endif; ?>
@@ -1730,7 +1730,7 @@ function cfw_thank_you_bottom_controls() {
 	 *
 	 * @param string $cfw_thank_you_continue_shopping_text Thank you page continue shopping button text
 	 */
-	$cfw_thank_you_continue_shopping_text = apply_filters( 'cfw_thank_you_continue_shopping_text', cfw_esc_html__( 'Continue shopping', 'woocommerce' ) );
+	$cfw_thank_you_continue_shopping_text = apply_filters( 'cfw_thank_you_continue_shopping_text', esc_html__( 'Continue shopping', 'woocommerce' ) );
 	?>
 	<div id="cfw-thank-you-action" class="cfw-bottom-controls">
 		<?php
@@ -1760,7 +1760,7 @@ function cfw_thank_you_cart_summary_content( WC_Order $order ) {
  */
 function cfw_order_pay_heading() {
 	?>
-	<h3><?php echo cfw_esc_html__( 'Pay for order', 'woocommerce' ); ?></h3>
+	<h3><?php echo esc_html__( 'Pay for order', 'woocommerce' ); ?></h3>
 	<?php
 }
 
@@ -1804,10 +1804,10 @@ function cfw_order_pay_login_form( WC_Order $order ) {
 			<?php wp_nonce_field( 'woocommerce-login', 'woocommerce-login-nonce' ); ?>
 			<input type="hidden" name="redirect" value="<?php echo esc_url( $order->get_checkout_payment_url() ); ?>" />
 
-			<button type="submit" class="woocommerce-button button woocommerce-form-login__submit" name="login" value="<?php cfw_esc_attr_e( 'Login', 'woocommerce' ); ?>"><?php esc_html_e( 'Login', 'woocommerce' ); ?></button>
+			<button type="submit" class="woocommerce-button button woocommerce-form-login__submit" name="login" value="<?php esc_attr_e( 'Login', 'woocommerce' ); ?>"><?php esc_html_e( 'Login', 'woocommerce' ); ?></button>
 
 			<span class="login-optional cfw-small">
-				<a href="<?php echo esc_url( wp_lostpassword_url() ); ?>"><?php cfw_esc_html_e( 'Lost your password?', 'woocommerce' ); ?></a>
+				<a href="<?php echo esc_url( wp_lostpassword_url() ); ?>"><?php esc_html_e( 'Lost your password?', 'woocommerce' ); ?></a>
 			</span>
 		</p>
 

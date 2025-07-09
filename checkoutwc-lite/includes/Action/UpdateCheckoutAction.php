@@ -68,7 +68,7 @@ class UpdateCheckoutAction extends CFWAction {
 					'fragments' => cfw_apply_filters(
 						'woocommerce_update_order_review_fragments',
 						array(
-							$target_selector => '<div class="woocommerce-error">' . cfw__( 'Sorry, your session has expired.', 'woocommerce' ) . ' <a href="' . esc_url( wc_get_page_permalink( 'shop' ) ) . '" class="wc-backward">' . cfw__( 'Return to shop', 'woocommerce' ) . '</a></div>',
+							$target_selector => '<div class="woocommerce-error">' . __( 'Sorry, your session has expired.', 'woocommerce' ) . ' <a href="' . esc_url( wc_get_page_permalink( 'shop' ) ) . '" class="wc-backward">' . __( 'Return to shop', 'woocommerce' ) . '</a></div>',
 						)
 					),
 				)

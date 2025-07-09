@@ -16,7 +16,7 @@ class LocalPickupAdminFree extends PageAbstract {
 	use TabbedAdminPageTrait;
 
 	public function __construct() {
-		parent::__construct( cfw_notranslate__( 'Local Pickup', 'checkout-wc' ) . ' <span class="cfw-badge cfw-premium-badge"></span>', 'cfw_manage_local_pickup', 'local-pickup' );
+		parent::__construct( __( 'Local Pickup', 'checkout-wc' ) . ' <span class="cfw-badge cfw-premium-badge"></span>', 'cfw_manage_local_pickup', 'local-pickup' );
 	}
 
 	public function init() {
@@ -212,7 +212,7 @@ class LocalPickupAdminFree extends PageAbstract {
 			}
 		}
 
-		$methods['other'] = cfw_notranslate__( 'Other', 'checkout-wc' );
+		$methods['other'] = __( 'Other', 'checkout-wc' );
 
 		return $methods;
 	}

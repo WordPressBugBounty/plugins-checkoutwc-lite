@@ -18,7 +18,7 @@ class WooCommercePages extends PageAbstract {
 
 	public function __construct() {
 
-		parent::__construct( cfw_notranslate__( 'Pages', 'checkout-wc' ), 'cfw_manage_pages', 'checkout' );
+		parent::__construct( __( 'Pages', 'checkout-wc' ), 'cfw_manage_pages', 'checkout' );
 	}
 
 	public function init() {

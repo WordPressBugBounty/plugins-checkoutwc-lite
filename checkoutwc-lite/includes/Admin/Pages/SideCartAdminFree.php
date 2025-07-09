@@ -13,7 +13,7 @@ use Objectiv\Plugins\Checkout\Managers\SettingsManager;
  */
 class SideCartAdminFree extends PageAbstract {
 	public function __construct() {
-		parent::__construct( cfw_notranslate__( 'Side Cart', 'checkout-wc' ) . ' <span class="cfw-badge cfw-premium-badge"></span>', 'cfw_manage_side_cart', 'side-cart' );
+		parent::__construct( __( 'Side Cart', 'checkout-wc' ) . ' <span class="cfw-badge cfw-premium-badge"></span>', 'cfw_manage_side_cart', 'side-cart' );
 	}
 
 	public function output() {
