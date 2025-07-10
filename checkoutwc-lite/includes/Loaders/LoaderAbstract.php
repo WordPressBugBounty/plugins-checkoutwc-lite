@@ -407,5 +407,6 @@ abstract class LoaderAbstract {
 	 */
 	public static function custom_styles() {
 		StyleManager::add_styles();
+		StyleManager::queue_custom_font_includes();
 	}
 }

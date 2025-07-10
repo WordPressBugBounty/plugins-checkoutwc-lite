@@ -4,7 +4,7 @@
 
 namespace CheckoutWC\Composer\Autoload;
 
-class ComposerStaticInit3764749b8c9efb3bf2a060fa81912adb
+class ComposerStaticInit8988a0050ef5bc9e354fc95cae3d87e7
 {
     public static $files = array (
         '4d15ce8043e5aa85d61f351094a7d0ea' => __DIR__ . '/..' . '/symfony/polyfill-php80/bootstrap.php',
@@ -581,6 +581,7 @@ class ComposerStaticInit3764749b8c9efb3bf2a060fa81912adb
         'Objectiv\\Plugins\\Checkout\\Features\\SmartyStreets' => __DIR__ . '/../..' . '/includes/Features/SmartyStreets.php',
         'Objectiv\\Plugins\\Checkout\\Features\\TrustBadges' => __DIR__ . '/../..' . '/includes/Features/TrustBadges.php',
         'Objectiv\\Plugins\\Checkout\\FormFieldAugmenter' => __DIR__ . '/../..' . '/includes/FormFieldAugmenter.php',
+        'Objectiv\\Plugins\\Checkout\\GoogleFontsURLGenerator' => __DIR__ . '/../..' . '/includes/GoogleFontsURLGenerator.php',
         'Objectiv\\Plugins\\Checkout\\Install' => __DIR__ . '/../..' . '/includes/Install.php',
         'Objectiv\\Plugins\\Checkout\\Interfaces\\BumpInterface' => __DIR__ . '/../..' . '/includes/Interfaces/BumpInterface.php',
         'Objectiv\\Plugins\\Checkout\\Interfaces\\ItemInterface' => __DIR__ . '/../..' . '/includes/Interfaces/ItemInterface.php',
@@ -625,9 +626,9 @@ class ComposerStaticInit3764749b8c9efb3bf2a060fa81912adb
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInit3764749b8c9efb3bf2a060fa81912adb::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit3764749b8c9efb3bf2a060fa81912adb::$prefixDirsPsr4;
-            $loader->classMap = ComposerStaticInit3764749b8c9efb3bf2a060fa81912adb::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit8988a0050ef5bc9e354fc95cae3d87e7::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit8988a0050ef5bc9e354fc95cae3d87e7::$prefixDirsPsr4;
+            $loader->classMap = ComposerStaticInit8988a0050ef5bc9e354fc95cae3d87e7::$classMap;
 
         }, null, ClassLoader::class);
     }

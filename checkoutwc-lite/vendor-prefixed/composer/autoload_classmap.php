@@ -492,6 +492,7 @@ return array(
     'Objectiv\\Plugins\\Checkout\\Features\\SmartyStreets' => $baseDir . '/includes/Features/SmartyStreets.php',
     'Objectiv\\Plugins\\Checkout\\Features\\TrustBadges' => $baseDir . '/includes/Features/TrustBadges.php',
     'Objectiv\\Plugins\\Checkout\\FormFieldAugmenter' => $baseDir . '/includes/FormFieldAugmenter.php',
+    'Objectiv\\Plugins\\Checkout\\GoogleFontsURLGenerator' => $baseDir . '/includes/GoogleFontsURLGenerator.php',
     'Objectiv\\Plugins\\Checkout\\Install' => $baseDir . '/includes/Install.php',
     'Objectiv\\Plugins\\Checkout\\Interfaces\\BumpInterface' => $baseDir . '/includes/Interfaces/BumpInterface.php',
     'Objectiv\\Plugins\\Checkout\\Interfaces\\ItemInterface' => $baseDir . '/includes/Interfaces/ItemInterface.php',

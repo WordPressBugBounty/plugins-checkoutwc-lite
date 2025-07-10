@@ -2,6 +2,8 @@
 
 namespace Objectiv\Plugins\Checkout\Managers;
 
+use Objectiv\Plugins\Checkout\GoogleFontsURLGenerator;
+
 /**
  * Handle CSS custom properties and custom styles
  *
@@ -12,28 +14,90 @@ namespace Objectiv\Plugins\Checkout\Managers;
 class StyleManager {
 	public static $excluded_fonts = array( 'System Font Stack', 'inter-cfw' );
 
+	/**
+	 * Enqueues Google Fonts using the GoogleFontsURLGenerator class.
+	 *
+	 * This function identifies the body and heading fonts from settings,
+	 * creates a filterable configuration array, and then uses the
+	 * GoogleFontsURLGenerator to build a single, optimized URL for
+	 * enqueuing.
+	 *
+	 * @uses GoogleFontsURLGenerator To build the font URL.
+	 */
 	public static function queue_custom_font_includes() {
 		$template         = cfw_get_active_template();
 		$settings_manager = SettingsManager::instance();
 		$body_font        = $settings_manager->get_setting( 'body_font', array( $template->get_slug() ) );
 		$heading_font     = $settings_manager->get_setting( 'heading_font', array( $template->get_slug() ) );
-		$fonts_to_load    = array();
 
-		if ( ! empty( $body_font ) ) {
-			$fonts_to_load[ $body_font ] = $body_font;
-		}
+		$font_configs = array();
 
-		if ( ! empty( $heading_font ) ) {
-			$fonts_to_load[ $heading_font ] = $heading_font;
-		}
+		$unique_fonts = array_unique( array_filter( array( $body_font, $heading_font ) ) );
 
-		foreach ( $fonts_to_load as $font ) {
+		foreach ( $unique_fonts as $font ) {
 			if ( in_array( $font, self::$excluded_fonts, true ) ) {
 				continue;
 			}
 
-			wp_enqueue_style( 'cfw-fonts-' . $font, 'https://fonts.googleapis.com/css?family=' . rawurlencode( $font ) . '&display=swap', array(), CFW_VERSION );
+			// Use the font family name as the key. This provides a predictable
+			// key for the filter and prevents duplicate configurations.
+			$font_configs[ $font ] = array(
+				'family'  => $font,
+				'weights' => array( '400', '700' ),
+				'italic'  => true,
+			);
 		}
+
+		/**
+		 * Filter the Google Font configurations before generating the URL.
+		 *
+		 * This is the primary filter for customizing font loading. You can add,
+		 * remove, or modify font configurations.
+		 *
+		 * @param array $font_configs An associative array of font configurations,
+		 * keyed by the font family name (e.g., 'Open Sans').
+		 *
+		 * Example:
+		 * $font_configs[ $font_name ] = array(
+		 *    'family'  => $font_name,
+		 *    'weights' => array( '400', '700' ),
+		 *    'italic'  => true,
+		 * );
+		 *
+		 * @since 10.1.16
+		 */
+		$font_configs = apply_filters( 'cfw_google_font_configurations', $font_configs );
+
+		// If there are no fonts to load after filtering, exit.
+		if ( empty( $font_configs ) ) {
+			return;
+		}
+
+		$font_generator = new GoogleFontsURLGenerator();
+
+		// The generator processes the configuration. The array keys are discarded
+		// by array_values() as the generator organizes fonts by the 'family' property internally.
+		$font_generator->addFonts( array_values( $font_configs ) );
+
+		/**
+		 * Filter the font-display property for the Google Fonts URL.
+		 *
+		 * @since 10.1.16
+		 *
+		 * @param string $display The CSS font-display property.
+		 * Accepts 'auto', 'block', 'swap', 'fallback', 'optional'.
+		 */
+		$display = apply_filters( 'cfw_google_font_display', 'swap' );
+		$font_generator->setDisplay( $display );
+
+		$font_url = $font_generator->getUrl();
+
+		if ( empty( $font_url ) ) {
+			return;
+		}
+
+		// Version must be null or WP will clobber duplicate GET keys for multiple fonts (i.e., family=foo&family=bar)
+		wp_enqueue_style( 'cfw-google-fonts', $font_url, array(), null ); // phpcs:ignore WordPress.WP.EnqueuedResourceParameters.MissingVersion
 	}
 
 	public static function get_css_custom_property_overrides(): string {
@@ -176,7 +240,6 @@ class StyleManager {
 			$handle = $handle . '_rtl';
 		}
 
-		self::queue_custom_font_includes();
 		wp_add_inline_style( $handle, self::get_css_custom_property_overrides() . self::get_custom_css() );
 	}
 }

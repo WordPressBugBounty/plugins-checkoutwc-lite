@@ -305,6 +305,7 @@ class ComposerStaticInitc56ceb931c89a18596cffbfbdd2f9685
         'Objectiv\\Plugins\\Checkout\\Features\\SmartyStreets' => __DIR__ . '/../..' . '/includes/Features/SmartyStreets.php',
         'Objectiv\\Plugins\\Checkout\\Features\\TrustBadges' => __DIR__ . '/../..' . '/includes/Features/TrustBadges.php',
         'Objectiv\\Plugins\\Checkout\\FormFieldAugmenter' => __DIR__ . '/../..' . '/includes/FormFieldAugmenter.php',
+        'Objectiv\\Plugins\\Checkout\\GoogleFontsURLGenerator' => __DIR__ . '/../..' . '/includes/GoogleFontsURLGenerator.php',
         'Objectiv\\Plugins\\Checkout\\Install' => __DIR__ . '/../..' . '/includes/Install.php',
         'Objectiv\\Plugins\\Checkout\\Interfaces\\BumpInterface' => __DIR__ . '/../..' . '/includes/Interfaces/BumpInterface.php',
         'Objectiv\\Plugins\\Checkout\\Interfaces\\ItemInterface' => __DIR__ . '/../..' . '/includes/Interfaces/ItemInterface.php',
