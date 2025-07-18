@@ -142,16 +142,19 @@ class FormFieldAugmenter extends SingletonAbstract {
 		 * @since 6.2.3
 		 * @deprecated 10.1.13
 		 * @param bool $append Whether to append optional to field placeholder
+		 * @param mixed $key  The key.
+		 *
 		 */
-		$suppress_placeholder = apply_filters_deprecated( 'cfw_form_field_append_optional_to_placeholder', array( isset( $args['suppress_optional_suffix'], $key ) ), 'CheckoutWC 10.1.13', 'cfw_form_field_suppress_optional_in_placeholder' );
+		$suppress_placeholder = apply_filters_deprecated( 'cfw_form_field_append_optional_to_placeholder', array( isset( $args['suppress_optional_suffix'] ), $key  ), 'CheckoutWC 10.1.13', 'cfw_form_field_suppress_optional_in_placeholder' );
 
 		/**
 		 * Whether to suppress 'optional' from field placeholder
 		 *
 		 * @since 10.1.13
 		 * @param bool $append Whether to suppress optional from field placeholder
+		 * @param mixed $key  The key.
 		 */
-		$suppress_placeholder = apply_filters( 'cfw_form_field_suppress_optional_in_placeholder', $suppress_placeholder );
+		$suppress_placeholder = apply_filters( 'cfw_form_field_suppress_optional_in_placeholder', $suppress_placeholder, $key );
 		if ( ! $args['required'] && ! isset( $args['custom_attributes']['readonly'] ) && false === stripos( $args['placeholder'], __( 'optional', 'woocommerce' ) ) && ! $suppress_placeholder ) {
 			$args['placeholder'] .= ' (' . __( 'optional', 'woocommerce' ) . ')';
 		}

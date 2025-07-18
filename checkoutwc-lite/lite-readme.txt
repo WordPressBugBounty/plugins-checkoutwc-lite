@@ -4,7 +4,7 @@ Donate link: https://www.checkoutwc.com
 Tags: woocommerce checkout, woocommerce checkout template, woocommerce checkout theme, woo checkout, shopify
 Requires at least: 5.2
 Tested up to: 6.8
-Stable tag: 10.1.16
+Stable tag: 10.1.17
 Requires PHP: 7.3
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
@@ -125,6 +125,14 @@ CheckoutWC works with virtually all payment gateways out of the box. If you have
 == Changelog ==
 
 Free version updates are non-sequential due to the unified development branch we use with the premium versions.
+
+= Version 10.1.17 =
+* Fix - Enable enter key on login modal
+* Fix - Add missing Parsley field validation locales
+* Fix - Fix filter callback that broke Brazilian Market integration
+* Fix - Fix fatal error with Braintree integration and new version
+* Fix - Fix PHP warnings from incompletely configured Order Bump rules
+* Fix - Update outdated dependencies
 
 = Version 10.1.16 =
 * Fix - Fix translations path that prevented translations loading in WordPress 6.8

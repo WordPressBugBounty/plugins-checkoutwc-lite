@@ -13,7 +13,7 @@ class ExtraCheckoutFieldsBrazil extends CompatibilityAbstract {
 		add_filter( 'wcbcf_billing_fields', array( $this, 'checkout_billing_fields' ) );
 		add_filter( 'wcbcf_shipping_fields', array( $this, 'checkout_shipping_fields' ) );
 		add_filter(
-			'cfw_form_field_append_optional_to_placeholder',
+			'cfw_form_field_suppress_optional_in_placeholder',
 			array(
 				$this,
 				'suppress_optional_in_placeholder',

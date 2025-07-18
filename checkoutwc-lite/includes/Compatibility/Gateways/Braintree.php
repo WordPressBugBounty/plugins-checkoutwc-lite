@@ -41,13 +41,16 @@ class Braintree extends CompatibilityAbstract {
 	}
 
 	public function typescript_class_and_params( array $compatibility ): array {
-		$braintree = wc_braintree();
+		$payment_gateways = WC()->payment_gateways->payment_gateways();
+
+		$cc_gateway_available     = isset( $payment_gateways[ \WC_Braintree::CREDIT_CARD_GATEWAY_ID ] ) ? $payment_gateways[ \WC_Braintree::CREDIT_CARD_GATEWAY_ID ]->is_available() : false;
+		$paypal_gateway_available = isset( $payment_gateways[ \WC_Braintree::PAYPAL_GATEWAY_ID ] ) ? $payment_gateways[ \WC_Braintree::PAYPAL_GATEWAY_ID ]->is_available() : false;
 
 		$compatibility[] = array(
 			'class'  => 'Braintree',
 			'params' => array(
-				'cc_gateway_available'     => $braintree->get_gateway( \WC_Braintree::CREDIT_CARD_GATEWAY_ID )->is_available(),
-				'paypal_gateway_available' => $braintree->get_gateway( \WC_Braintree::PAYPAL_GATEWAY_ID )->is_available(),
+				'cc_gateway_available'     => $cc_gateway_available,
+				'paypal_gateway_available' => $paypal_gateway_available,
 			),
 		);
 
