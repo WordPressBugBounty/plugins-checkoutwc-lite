@@ -6,7 +6,6 @@ $vendorDir = dirname(__DIR__);
 $baseDir = dirname($vendorDir);
 
 return array(
-    'Objectiv\\Plugins\\Checkout\\' => array($baseDir . '/includes'),
     'CheckoutWC\\Symfony\\Polyfill\\Php80\\' => array($vendorDir . '/symfony/polyfill-php80'),
     'CheckoutWC\\Symfony\\Polyfill\\Php73\\' => array($vendorDir . '/symfony/polyfill-php73'),
     'CheckoutWC\\Symfony\\Component\\RateLimiter\\' => array($vendorDir . '/symfony/rate-limiter'),

@@ -4,7 +4,7 @@ Donate link: https://www.checkoutwc.com
 Tags: woocommerce checkout, woocommerce checkout template, woocommerce checkout theme, woo checkout, shopify
 Requires at least: 5.2
 Tested up to: 6.8
-Stable tag: 10.1.17
+Stable tag: 10.2.3
 Requires PHP: 7.3
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
@@ -125,6 +125,30 @@ CheckoutWC works with virtually all payment gateways out of the box. If you have
 == Changelog ==
 
 Free version updates are non-sequential due to the unified development branch we use with the premium versions.
+
+= Version 10.2.3 =
+* Fix - Fix translation too early warnings.
+* Fix - Fix missing translations for a couple of admin buttons
+
+= Version 10.2.2 =
+* Fix - Fix incompatibility with block add to cart button / interactivity API.
+* Fix - Fix issue with Advanced Coupons not applying on add to cart
+
+= Version 10.2.1 =
+* Fix - Fix how turnstile feature appears for free users.
+
+= Version 10.2.0 =
+* New - Terms and conditions now open in a modal for better user experience
+* New - Added unsaved changes notice on settings pages
+* New - Added footer save button to settings pages for easier access
+* New - Admin settings pages now have translations
+* Improved - Hide admin bar setting now refreshes the page when changed for immediate effect
+* Fix - Fix incorrect Norwegian translation of promo code text
+* Fix - Fixed shipping calculation issue with WooCommerce 9.8.2+ that caused the wrong message to be displayed for some carts
+* Fix - Fixed bundle product display issues with WP Clever Product Bundles
+* Fix - Fixed client side logger bugs
+* Fix - Fixed Advanced Coupons compatibility issue
+* Dev - Updated dependencies
 
 = Version 10.1.17 =
 * Fix - Enable enter key on login modal

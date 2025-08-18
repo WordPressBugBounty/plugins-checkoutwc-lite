@@ -167,7 +167,7 @@ class AssetManager {
 			if ( isset( $this->manifest['chunks']['thank-you-styles']['file'] ) ) {
 				self::enqueue_style( 'thank-you-styles', 'cfw_front' );
 			}
-			
+
 			self::enqueue_style( 'fontawesome' );
 		}
 
@@ -372,9 +372,9 @@ class AssetManager {
 
 		return array(
 			'settings' => array(
-				'user_logged_in'                                                => is_user_logged_in(),
-				'shipping_countries'                                            => $shipping_countries,
-				'allowed_countries'                                             => $allowed_countries,
+				'user_logged_in'                   => is_user_logged_in(),
+				'shipping_countries'               => $shipping_countries,
+				'allowed_countries'                => $allowed_countries,
 				/**
 				 * Filter whether to disable cart quantity prompt
 				 *
@@ -382,7 +382,7 @@ class AssetManager {
 				 *
 				 * @since 8.2.19
 				 */
-				'disable_cart_quantity_prompt'                                  => apply_filters( 'cfw_disable_cart_quantity_prompt', false ),
+				'disable_cart_quantity_prompt'     => apply_filters( 'cfw_disable_cart_quantity_prompt', false ),
 				/**
 				 * Filters whether to link cart items to products
 				 *
@@ -390,9 +390,9 @@ class AssetManager {
 				 *
 				 * @since 1.0.0
 				 */
-				'link_items'                                                    => apply_filters( 'cfw_link_cart_items', SettingsManager::instance()->get_setting( 'cart_item_link' ) === 'enabled' ),
-				'cart_item_link_target_new_window'                              => SettingsManager::instance()->get_setting( 'cart_item_link_target_new_window' ) === 'yes',
-				'show_item_remove_button'                                       => PlanManager::can_access_feature( 'show_item_remove_button' ),
+				'link_items'                       => apply_filters( 'cfw_link_cart_items', SettingsManager::instance()->get_setting( 'cart_item_link' ) === 'enabled' ),
+				'cart_item_link_target_new_window' => SettingsManager::instance()->get_setting( 'cart_item_link_target_new_window' ) === 'yes',
+				'show_item_remove_button'          => PlanManager::can_access_feature( 'show_item_remove_button' ),
 				/**
 				 * Filters whether to show cart item discount on cart item
 				 *
@@ -400,10 +400,10 @@ class AssetManager {
 				 *
 				 * @since 2.0.0
 				 */
-				'show_item_discount'                                            => apply_filters( 'cfw_show_cart_item_discount', SettingsManager::instance()->get_setting( 'show_side_cart_item_discount' ) === 'yes' ),
-				'max_bumps'                                                     => $max_bumps < 0 ? 999 : $max_bumps,
-				'coupons_enabled'                                               => wc_coupons_enabled(),
-				'show_free_shipping_progress_bar_without_calculated_packages'   => apply_filters( 'cfw_show_free_shipping_progress_bar_without_calculated_packages', false ),
+				'show_item_discount'               => apply_filters( 'cfw_show_cart_item_discount', SettingsManager::instance()->get_setting( 'show_side_cart_item_discount' ) === 'yes' ),
+				'max_bumps'                        => $max_bumps < 0 ? 999 : $max_bumps,
+				'coupons_enabled'                  => wc_coupons_enabled(),
+				'show_free_shipping_progress_bar_without_calculated_packages' => apply_filters( 'cfw_show_free_shipping_progress_bar_without_calculated_packages', false ),
 			),
 			'messages' => array(
 				/**
@@ -465,9 +465,6 @@ class AssetManager {
 			}
 		);
 		$store_policies = array_values( $store_policies );
-
-		// Only the values to avoid JS objects when arrays are expected
-		$trust_badges = PlanManager::can_access_feature( 'enable_trust_badges' ) ? array_values( cfw_get_trust_badges() ) : array();
 
 		/** This filter is documented in includes/AddressFieldsAugmenter.php */
 		$enable_separate_address_1_fields = apply_filters( 'cfw_enable_separate_address_1_fields', 'yes' === SettingsManager::instance()->get_setting( 'enable_discreet_address_1_fields' ) );  // phpcs:ignore WooCommerce.Commenting.CommentHooks.MissingSinceComment
@@ -597,7 +594,6 @@ class AssetManager {
 					 * @since 7.0.17
 					 */
 					'use_fullname_field'                => apply_filters( 'cfw_enable_fullname_field', 'yes' === SettingsManager::instance()->get_setting( 'use_fullname_field' ) ),
-					'trust_badges'                      => $trust_badges,
 					'trust_badges_display'              => SettingsManager::instance()->get_setting( 'trust_badge_position' ),
 					'enable_one_page_checkout'          => SettingsManager::instance()->get_setting( 'enable_one_page_checkout' ) === 'yes',
 					/**
@@ -696,6 +692,7 @@ class AssetManager {
 					'cvv_tooltip_message'               => __( '3-digit security code usually found on the back of your card. American Express cards have a 4-digit code located on the front.', 'checkout-wc' ),
 					'delete_confirm_message'            => __( 'Are you sure you want to remove this item from your cart?', 'checkout-wc' ),
 					'account_already_registered_notice' => cfw_apply_filters( 'woocommerce_registration_error_email_exists', __( 'An account is already registered with your email address. <a href="#" class="showlogin">Please log in.</a>', 'woocommerce' ), '' ),
+					/* translators: %s: Field name */
 					'generic_field_validation_error_message' => __( '%s is a required field.', 'woocommerce' ),
 					'update_checkout_error'             => __( 'There was a problem checking out. Please try again. If the problem persists, please get in touch with us so we can assist.', 'woocommerce' ),
 					'invalid_postcode'                  => __( 'Please enter a valid postcode / ZIP.', 'checkout-wc' ),
@@ -870,8 +867,13 @@ class AssetManager {
 		 */
 		do_action( 'cfw_before_get_data' );
 
+		// required to work with Advanced Coupons
+		// Ticket: https://secure.helpscout.net/conversation/3002667039/22184?viewId=8492330
+		WC()->cart->calculate_totals();
+		cfw_do_action( 'woocommerce_check_cart_items' );
+
 		$data = array(
-			'cart'   => array(
+			'cart'         => array(
 				'isEmpty'       => WC()->cart && WC()->cart->is_empty(),
 				'needsPayment'  => WC()->cart && WC()->cart->needs_payment(),
 				'items'         => cfw_get_cart_items_data(),
@@ -886,8 +888,9 @@ class AssetManager {
 				'notices'       => cfw_get_function_output( 'cfw_wc_print_notices', apply_filters( 'cfw_get_data_clear_notices', ! is_checkout() ) ),
 				'shipping'      => cfw_get_cart_shipping_data(),
 			),
-			'bumps'  => array(), // placeholder to prevent errors
-			'review' => cfw_get_review_data(),
+			'bumps'        => array(), // placeholder to prevent errors
+			'trust_badges' => PlanManager::can_access_feature( 'enable_trust_badges' ) ? array_values( cfw_get_trust_badges() ) : array(),
+			'review'       => cfw_get_review_data(),
 		);
 
 		/**
@@ -913,7 +916,7 @@ class AssetManager {
 
 	public static function get_default_data(): array {
 		return array(
-			'cart'      => array(
+			'cart'         => array(
 				'isEmpty'       => WC()->cart && WC()->cart->is_empty(),
 				'needsPayment'  => false,
 				'items'         => array(),
@@ -946,8 +949,9 @@ class AssetManager {
 					'quantity' => 0,
 				),
 			),
-			'bumps'     => array(),
-			'side_cart' => array(
+			'bumps'        => array(),
+			'trust_badges' => array(),
+			'side_cart'    => array(
 				'free_shipping_progress_bar' => array(
 					'has_free_shipping'        => false,
 					'amount_remaining'         => 0,
