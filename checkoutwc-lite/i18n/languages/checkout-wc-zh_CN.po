@@ -58,9 +58,9 @@ msgstr "CheckoutWC 需要 WooCommerce %s 或更高版本。"
 #: includes/FormFieldAugmenter.php:159
 #: includes/FormFieldAugmenter.php:164
 #: includes/AddressFieldsAugmenter.php:299
+#: includes/Managers/AssetManager.php:244
 #: includes/Features/HideOptionalAddressFields.php:48
 #: includes/Features/HideOptionalAddressFields.php:70
-#: includes/Managers/AssetManager.php:244
 msgid "optional"
 msgstr "可选"
 
@@ -254,7 +254,7 @@ msgstr "联系信息"
 
 #: sources/php/template-functions.php:1665
 #: sources/php/template-functions.php:2001
-#: sources/php/functions.php:951
+#: sources/php/functions.php:958
 #: sources/ts/frontend/Components/ReviewPane/OrderReviewStepReviewPane.tsx:40
 msgid "Payment"
 msgstr "付款"
@@ -267,7 +267,7 @@ msgstr "不适用"
 
 #: sources/php/template-functions.php:1717
 #: sources/php/template-functions.php:1981
-#: sources/php/functions.php:3268
+#: sources/php/functions.php:3281
 msgid "Shipping"
 msgid_plural "Shipping %d"
 msgstr[0] "运输"
@@ -278,17 +278,17 @@ msgid "Continue shopping"
 msgstr "继续购物"
 
 #: sources/php/template-functions.php:1774
-#: includes/Loaders/LoaderAbstract.php:112
+#: includes/Loaders/LoaderAbstract.php:111
 msgid "Pay for order"
 msgstr "支付订单"
 
 #: sources/php/template-functions.php:1818
-#: sources/php/functions.php:3833
+#: sources/php/functions.php:3846
 msgid "Login"
 msgstr "登录"
 
 #: sources/php/template-functions.php:1821
-#: sources/php/functions.php:3826
+#: sources/php/functions.php:3839
 msgid "Lost your password?"
 msgstr "忘记密码？"
 
@@ -483,212 +483,212 @@ msgstr "寄送到"
 msgid "Address"
 msgstr "地址"
 
-#: sources/php/functions.php:572
+#: sources/php/functions.php:579
 msgid "Sorry, it seems that there are no available payment methods for your location. Please contact us if you require assistance or wish to make alternate arrangements."
 msgstr "抱歉，似乎您所在地区没有可用的支付方式。如需帮助或希望安排其他支付方式，请联系我们。"
 
-#: sources/php/functions.php:723
-msgid "Enter your address to view shipping options."
-msgstr "请输入您的地址以查看运输选项。"
+#: sources/php/functions.php:732
+msgid "Shipping costs are calculated during checkout."
+msgstr "运费将在结账时计算。"
 
-#: sources/php/functions.php:736
+#: sources/php/functions.php:743
 msgid "No shipping methods available"
 msgstr "没有可用的运输方法"
 
-#: sources/php/functions.php:763
+#: sources/php/functions.php:770
 #: includes/Model/Bumps/BumpAbstract.php:704
 msgid "Free!"
 msgstr "免费！"
 
-#: sources/php/functions.php:893
+#: sources/php/functions.php:900
 #: includes/Features/AbandonedCartRecovery.php:676
 msgid "Complete Order"
 msgstr "已完成的订单"
 
-#: sources/php/functions.php:976
+#: sources/php/functions.php:983
 msgid "All transactions are secure and encrypted."
 msgstr "所有的交易都是安全和加密的。"
 
-#: sources/php/functions.php:997
+#: sources/php/functions.php:1004
 msgid "Your order is free. No payment is required."
 msgstr "您的订单是免费的。不需要付款。"
 
-#: sources/php/functions.php:1041
+#: sources/php/functions.php:1048
 msgid "Same as shipping address"
 msgstr "跟邮寄地址一样"
 
-#: sources/php/functions.php:1050
+#: sources/php/functions.php:1057
 msgid "Use a different billing address"
 msgstr "使用不同的帐单地址"
 
 # %1$s: Old order status, %2$s: New order status
-#: sources/php/functions.php:1179
+#: sources/php/functions.php:1186
 msgid "Order status changed from %1$s to %2$s."
 msgstr "订单状态已从 %1$s 更改为 %2$s。"
 
-#: sources/php/functions.php:1201
+#: sources/php/functions.php:1211
 msgid "Tracking Number:"
 msgstr "追踪号码："
 
-#: sources/php/functions.php:1287
+#: sources/php/functions.php:1297
 msgid "Return to cart"
 msgstr "返回到购物车"
 
-#: sources/php/functions.php:1324
+#: sources/php/functions.php:1334
 msgid "Continue to shipping"
 msgstr "继续发货"
 
-#: sources/php/functions.php:1346
+#: sources/php/functions.php:1356
 msgid "Continue to payment"
 msgstr "继续付款"
 
-#: sources/php/functions.php:1346
-#: sources/php/functions.php:1382
+#: sources/php/functions.php:1356
+#: sources/php/functions.php:1392
 msgid "Review order"
 msgstr "检查订单"
 
-#: sources/php/functions.php:1402
+#: sources/php/functions.php:1412
 msgid "Return to information"
 msgstr "返回信息"
 
-#: sources/php/functions.php:1422
+#: sources/php/functions.php:1432
 msgid "Return to shipping"
 msgstr "返回运输"
 
-#: sources/php/functions.php:1442
+#: sources/php/functions.php:1452
 msgid "Return to payment"
 msgstr "返回付款"
 
-#: sources/php/functions.php:1489
+#: sources/php/functions.php:1499
 #: includes/Features/SideCart.php:210
 msgid "Cart"
 msgstr "购物车"
 
-#: sources/php/functions.php:1724
-msgid "CheckoutWC: Error matching %d to customer %d"
-msgstr "CheckoutWC：将 %d 匹配到客户 %d 时出错"
+#: sources/php/functions.php:1734
+msgid "CheckoutWC: Error matching %1$d to customer %2$d"
+msgstr "CheckoutWC：匹配 %1$d 到客户 %2$d 时出错"
 
-#: sources/php/functions.php:1970
+#: sources/php/functions.php:1980
 msgid "Or"
 msgstr "或"
 
-#: sources/php/functions.php:2050
+#: sources/php/functions.php:2060
 msgid "You can only have 1 %s in your cart."
 msgstr "您的购物车中只能有 1 个 %s。"
 
-#: sources/php/functions.php:2200
+#: sources/php/functions.php:2210
 #: sources/ts/frontend/Components/CartItemQuantityControl.tsx:55
 msgid "Decrement"
 msgstr "递减"
 
-#: sources/php/functions.php:2209
-#: includes/Features/LocalPickup.php:439
-#: includes/Features/AbandonedCartRecovery.php:114
+#: sources/php/functions.php:2219
 #: includes/Managers/AssetManager.php:720
 #: includes/Managers/AssetManager.php:839
+#: includes/Features/LocalPickup.php:439
+#: includes/Features/AbandonedCartRecovery.php:114
 #: sources/ts/frontend/Components/CartItemQuantityControl.tsx:63
 msgid "Edit"
 msgstr "编辑"
 
-#: sources/php/functions.php:2212
+#: sources/php/functions.php:2222
 #: sources/ts/frontend/Components/CartItemQuantityControl.tsx:70
 msgid "Increment"
 msgstr "增量"
 
-#: sources/php/functions.php:2932
+#: sources/php/functions.php:2945
 msgid "Unsubscribe"
 msgstr "退订"
 
-#: sources/php/functions.php:3294
+#: sources/php/functions.php:3307
 #: includes/Features/AbandonedCartRecovery.php:731
 #: sources/ts/admin/Components/acr/carts.tsx:69
 msgid "Subtotal"
 msgstr "小计"
 
-#: sources/php/functions.php:3298
+#: sources/php/functions.php:3311
 msgid "Total"
 msgstr "总计"
 
-#: sources/php/functions.php:3350
+#: sources/php/functions.php:3363
 msgid "There are no shipping options available. Please ensure that your address has been entered correctly, or contact us if you need any help."
 msgstr "没有可用的运输选项。请确保您的地址输入正确，或如需帮助请联系我们。"
 
-#: sources/php/functions.php:3569
+#: sources/php/functions.php:3582
 #: includes/Admin/Pages/AbandonedCartRecoveryAdminFree.php:73
 msgid "SendWP - Transactional Email"
 msgstr "SendWP - 事务性电子邮件"
 
-#: sources/php/functions.php:3574
+#: sources/php/functions.php:3587
 #: includes/Admin/Pages/AbandonedCartRecoveryAdminFree.php:77
 msgid "SendWP makes getting emails delivered as simple as a few clicks. So you can relax know those important emails are being delivered on time."
 msgstr "SendWP让发送电子邮件变得简单，只需几次点击。这样您可以放心，重要邮件会准时送达。"
 
-#: sources/php/functions.php:3577
+#: sources/php/functions.php:3590
 #: includes/Admin/Pages/AbandonedCartRecoveryAdminFree.php:79
 msgid "Try SendWP now and <strong>get your first month for just $1.</strong>"
 msgstr "立即试用SendWP，<strong>首月仅需1美元。</strong>"
 
-#: sources/php/functions.php:3587
+#: sources/php/functions.php:3600
 #: includes/Admin/Pages/AbandonedCartRecoveryAdminFree.php:87
 msgid "Note: SendWP is optional. You can use any transactional email service you prefer."
 msgstr "注意：SendWP是可选的。您可以使用任何您喜欢的事务性电子邮件服务。"
 
-#: sources/php/functions.php:3596
+#: sources/php/functions.php:3609
 #: includes/Admin/Pages/AbandonedCartRecoveryAdminFree.php:94
 msgid "Connect to SendWP"
 msgstr "连接到 SendWP"
 
-#: sources/php/functions.php:3744
+#: sources/php/functions.php:3757
 msgid "Welcome back"
 msgstr "欢迎您回来"
 
-#: sources/php/functions.php:3757
+#: sources/php/functions.php:3770
 msgid "It looks like you already have an account. Please enter your login details below."
 msgstr "看起来你已经有了一个账户。请在下面输入你的登录信息。"
 
-#: sources/php/functions.php:3770
+#: sources/php/functions.php:3783
 msgid "If you have shopped with us before, please enter your login details below."
 msgstr "如果你以前在我们这里购物过，请在下面输入你的登录信息。"
 
-#: sources/php/functions.php:3780
-#: sources/php/functions.php:3781
+#: sources/php/functions.php:3793
+#: sources/php/functions.php:3794
 msgid "Username or email address"
 msgstr "用户名或电子邮件地址"
 
-#: sources/php/functions.php:3794
-#: sources/php/functions.php:3795
+#: sources/php/functions.php:3807
+#: sources/php/functions.php:3808
 msgid "Password"
 msgstr "密码"
 
-#: sources/php/functions.php:3815
+#: sources/php/functions.php:3828
 msgid "Remember me"
 msgstr "记住我"
 
-#: sources/php/functions.php:3844
+#: sources/php/functions.php:3857
 msgid "Or continue as guest"
 msgstr "或继续做客"
 
-#: sources/php/functions.php:3862
+#: sources/php/functions.php:3875
 msgid "Lost your password? Please enter your username or email address. You will receive a link to create a new password via email."
 msgstr "忘记密码？请输入您的用户名或电子邮件地址。您将通过电子邮件收到创建新密码的链接。"
 
-#: sources/php/functions.php:3872
-#: sources/php/functions.php:3873
+#: sources/php/functions.php:3885
+#: sources/php/functions.php:3886
 msgid "Email address"
 msgstr "电子邮件地址"
 
-#: sources/php/functions.php:3885
+#: sources/php/functions.php:3898
 msgid "Reset password"
 msgstr "重置密码"
 
-#: sources/php/functions.php:3900
+#: sources/php/functions.php:3913
 #: includes/API/OrderBumpOfferFormPreviewAPI.php:46
 #: includes/API/GetVariationFormAPI.php:33
 msgid "Product not found"
 msgstr "找不到产品"
 
-#: sources/php/functions.php:3916
-#: sources/php/functions.php:4053
+#: sources/php/functions.php:3929
+#: sources/php/functions.php:4066
 msgid "No thanks"
 msgstr "不用了，谢谢"
 
@@ -851,8 +851,8 @@ msgstr "结账时出现问题。请重试。如果问题持续存在，请联系
 msgid "Please enter a valid postcode / ZIP."
 msgstr "请输入有效的邮政编码。"
 
-#: includes/Features/LocalPickup.php:559
 #: includes/Managers/AssetManager.php:699
+#: includes/Features/LocalPickup.php:559
 msgid "Pickup"
 msgstr "自取"
 
@@ -905,60 +905,56 @@ msgstr "删除此项目"
 msgid "Proceed to checkout"
 msgstr "进行结算"
 
-#: includes/Loaders/LoaderAbstract.php:71
-#: includes/Features/CartEditingAtCheckout.php:45
-msgid "Checkout is not available whilst your cart is empty."
-msgstr "购物车为空时无法结账。"
-
-#: includes/Loaders/LoaderAbstract.php:135
-#: includes/Loaders/LoaderAbstract.php:245
+#: includes/Loaders/LoaderAbstract.php:134
+#: includes/Loaders/LoaderAbstract.php:244
 msgid "Sorry, this order is invalid and cannot be paid for."
 msgstr "抱歉，此订单无效，无法付款。"
 
-#: includes/Loaders/LoaderAbstract.php:139
+#: includes/Loaders/LoaderAbstract.php:138
 msgid "Please log in to your account below to continue to the payment form."
 msgstr "请登录您的账户以继续付款表单。"
 
-#: includes/Loaders/LoaderAbstract.php:146
+#: includes/Loaders/LoaderAbstract.php:145
 msgid "You are paying for a guest order. Please continue with payment only if you recognize this order."
 msgstr "您正在为访客订单付款。仅当您确认此订单时才继续付款。"
 
-#: includes/Loaders/LoaderAbstract.php:152
+#: includes/Loaders/LoaderAbstract.php:151
 msgid "This order cannot be paid for. Please contact us if you need assistance."
 msgstr "此订单无法付款。如需帮助，请联系我们。"
 
-#: includes/Loaders/LoaderAbstract.php:158
-#: includes/Loaders/LoaderAbstract.php:242
+#: includes/Loaders/LoaderAbstract.php:157
+#: includes/Loaders/LoaderAbstract.php:241
 msgid "This order&rsquo;s status is &ldquo;%s&rdquo;&mdash;it cannot be paid for. Please contact us if you need assistance."
 msgstr "此订单状态为“%s”——无法付款。如需帮助，请联系我们。"
 
-#: includes/Loaders/LoaderAbstract.php:187
+#: includes/Loaders/LoaderAbstract.php:186
 msgid "Sorry, \"%s\" is no longer in stock so this order cannot be paid for. We apologize for any inconvenience caused."
 msgstr "抱歉，“%s”已无库存，无法付款。对此造成的不便，我们深表歉意。"
 
-#: includes/Loaders/LoaderAbstract.php:201
+#: includes/Loaders/LoaderAbstract.php:200
 msgid "Sorry, we do not have enough \"%1$s\" in stock to fulfill your order (%2$s available). We apologize for any inconvenience caused."
 msgstr "抱歉，我们没有足够的“%1$s”库存来完成您的订单（仅有 %2$s 可用）。对此造成的不便，我们深表歉意。"
 
-#: includes/Loaders/LoaderAbstract.php:248
+#: includes/Loaders/LoaderAbstract.php:247
 msgid "Invalid order."
 msgstr "无效订单。"
 
-#: includes/Features/Turnstile.php:133
-#: includes/Features/Turnstile.php:187
-#: includes/Features/Turnstile.php:316
+#: includes/Features/Turnstile.php:134
+#: includes/Features/Turnstile.php:188
+#: includes/Features/Turnstile.php:362
 msgid "Please complete the verification challenge."
 msgstr "请完成验证挑战。"
 
-#: includes/Features/Turnstile.php:335
+#: includes/Features/Turnstile.php:382
 msgid "Verification service unavailable. Please try again."
 msgstr "验证服务不可用。请重试。"
 
-#: includes/Features/Turnstile.php:351
+#: includes/Features/Turnstile.php:394
+#: includes/Features/Turnstile.php:413
 msgid "Verification failed. Please try again."
 msgstr "验证失败。请重试。"
 
-#: includes/Features/Turnstile.php:378
+#: includes/Features/Turnstile.php:448
 msgid "We have detected that Simple Cloudflare Turnstile is active. To enable CheckoutWC Turnstile functionality, please deactivate Simple Cloudflare Turnstile."
 msgstr "我们检测到 Simple Cloudflare Turnstile 正在启用。要启用 CheckoutWC Turnstile 功能，请停用 Simple Cloudflare Turnstile。"
 
@@ -1120,6 +1116,10 @@ msgstr "搜索你的地址"
 #: includes/Features/FetchifyAddressAutocomplete.php:78
 msgid "Or enter address manually."
 msgstr "或者手动输入地址。"
+
+#: includes/Features/CartEditingAtCheckout.php:45
+msgid "Checkout is not available whilst your cart is empty."
+msgstr "购物车为空时无法结账。"
 
 #: includes/Features/AbandonedCartRecovery.php:84
 msgid "You have been unsubscribed from our cart reminder emails."
@@ -1412,34 +1412,6 @@ msgstr "订单附加优惠表单"
 msgid "The form to accept or reject the bump offer."
 msgstr "接受或拒绝附加优惠的表单。"
 
-#: sources/ts/blocks/OrderBumpSteps.tsx:55
-msgid "Order Bump Steps Stettings"
-msgstr "订单附加步骤设置"
-
-#: sources/ts/blocks/OrderBumpSteps.tsx:58
-msgid "Step 1 Title"
-msgstr "步骤1标题"
-
-#: sources/ts/blocks/OrderBumpSteps.tsx:59
-msgid "The title of Step 1. Example: Order Submitted"
-msgstr "步骤1的标题。例如：订单已提交"
-
-#: sources/ts/blocks/OrderBumpSteps.tsx:64
-msgid "Step 2 Title"
-msgstr "步骤2标题"
-
-#: sources/ts/blocks/OrderBumpSteps.tsx:65
-msgid "The title of Step 2. Example: Special Offer"
-msgstr "步骤2的标题。例如：特别优惠"
-
-#: sources/ts/blocks/OrderBumpSteps.tsx:70
-msgid "Step 3 Title"
-msgstr "步骤3标题"
-
-#: sources/ts/blocks/OrderBumpSteps.tsx:71
-msgid "The title of Step 3. Example: Order Received"
-msgstr "步骤3的标题。例如：订单已接收"
-
 #: sources/ts/functions/cfwFormatDate.ts:38
 msgid "Sunday"
 msgstr "星期日"
@@ -1597,6 +1569,34 @@ msgstr "上午"
 msgid "pm"
 msgstr "下午"
 
+#: sources/ts/blocks/OrderBumpSteps.tsx:55
+msgid "Order Bump Steps Stettings"
+msgstr "订单附加步骤设置"
+
+#: sources/ts/blocks/OrderBumpSteps.tsx:58
+msgid "Step 1 Title"
+msgstr "步骤1标题"
+
+#: sources/ts/blocks/OrderBumpSteps.tsx:59
+msgid "The title of Step 1. Example: Order Submitted"
+msgstr "步骤1的标题。例如：订单已提交"
+
+#: sources/ts/blocks/OrderBumpSteps.tsx:64
+msgid "Step 2 Title"
+msgstr "步骤2标题"
+
+#: sources/ts/blocks/OrderBumpSteps.tsx:65
+msgid "The title of Step 2. Example: Special Offer"
+msgstr "步骤2的标题。例如：特别优惠"
+
+#: sources/ts/blocks/OrderBumpSteps.tsx:70
+msgid "Step 3 Title"
+msgstr "步骤3标题"
+
+#: sources/ts/blocks/OrderBumpSteps.tsx:71
+msgid "The title of Step 3. Example: Order Received"
+msgstr "步骤3的标题。例如：订单已接收"
+
 #: sources/ts/admin/order-bumps-editor.tsx:59
 msgid "Order Bump Preview"
 msgstr "订单附加预览"
@@ -1633,24 +1633,6 @@ msgstr "您确定要清除所有跟踪的购物车并重置所有恢复统计数
 #: sources/ts/admin/admin.ts:178
 msgid "Are you sure you want to discard all unsaved changes?"
 msgstr "您确定要放弃所有未保存的更改吗？"
-
-# %1$s: Plugin name, %2$s: Link opening tag, %3$s: Version number, %4$s: Link closing tag
-#: includes/Managers/Helpers/EDD_SL_Plugin_Updater.php:280
-msgid "There is a new version of %1$s available. %2$sView version %3$s details%4$s."
-msgstr "%1$s 有新版本可用。%2$s查看版本 %3$s 详情%4$s。"
-
-# %1$s: Plugin name, %2$s: Link opening tag, %3$s: Version number, %4$s: Link closing tag, %5$s: Update link opening tag, %6$s: Update link closing tag
-#: includes/Managers/Helpers/EDD_SL_Plugin_Updater.php:289
-msgid "There is a new version of %1$s available. %2$sView version %3$s details%4$s or %5$supdate now%6$s."
-msgstr "%1$s 有新版本可用。%2$s查看版本 %3$s 详情%4$s 或 %5$s立即更新%6$s。"
-
-#: includes/Managers/Helpers/EDD_SL_Plugin_Updater.php:533
-msgid "You do not have permission to install plugin updates"
-msgstr "您没有权限安装插件更新"
-
-#: includes/Managers/Helpers/EDD_SL_Plugin_Updater.php:533
-msgid "Error"
-msgstr "错误"
 
 #: includes/Model/Bumps/BumpAbstract.php:903
 #: includes/Model/Bumps/BumpAbstract.php:913
@@ -1698,18 +1680,23 @@ msgstr "未找到订单附加。"
 msgid "Not found in trash"
 msgstr "回收站中未找到"
 
-# Error message logged when Jupiter theme callback removal fails
-#: includes/Compatibility/Themes/Jupiter.php:49
-msgid "CheckoutWC: Failed to unset Jupiter theme callbacks."
-msgstr "CheckoutWC：取消 Jupiter 主题回调失败。"
+# %1$s: Plugin name, %2$s: Link opening tag, %3$s: Version number, %4$s: Link closing tag
+#: includes/Managers/Helpers/EDD_SL_Plugin_Updater.php:280
+msgid "There is a new version of %1$s available. %2$sView version %3$s details%4$s."
+msgstr "%1$s 有新版本可用。%2$s查看版本 %3$s 详情%4$s。"
 
-#: includes/Compatibility/Themes/Astra.php:81
-msgid "Enable Astra Support (Beta)"
-msgstr "启用 Astra 支持（测试版）"
+# %1$s: Plugin name, %2$s: Link opening tag, %3$s: Version number, %4$s: Link closing tag, %5$s: Update link opening tag, %6$s: Update link closing tag
+#: includes/Managers/Helpers/EDD_SL_Plugin_Updater.php:289
+msgid "There is a new version of %1$s available. %2$sView version %3$s details%4$s or %5$supdate now%6$s."
+msgstr "%1$s 有新版本可用。%2$s查看版本 %3$s 详情%4$s 或 %5$s立即更新%6$s。"
 
-#: includes/Compatibility/Themes/Astra.php:82
-msgid "Allow Astra to replace header and footer. Allows Astra / Astra Addon to load its styles and scripts on the checkout page."
-msgstr "允许 Astra 替换页眉和页脚。允许 Astra / Astra 插件在结账页面加载其样式和脚本。"
+#: includes/Managers/Helpers/EDD_SL_Plugin_Updater.php:533
+msgid "You do not have permission to install plugin updates"
+msgstr "您没有权限安装插件更新"
+
+#: includes/Managers/Helpers/EDD_SL_Plugin_Updater.php:533
+msgid "Error"
+msgstr "错误"
 
 #: includes/Admin/Pages/WooCommercePages.php:21
 msgid "Pages"
@@ -2084,10 +2071,10 @@ msgstr "预计取货时间"
 msgid "Pickup Instructions"
 msgstr "自提说明"
 
+#: includes/Compatibility/Plugins/CartFlows.php:62
 #: includes/Admin/Pages/PickupLocationsAdminFree.php:218
 #: includes/Admin/Pages/PageAbstract.php:106
 #: includes/Admin/Pages/General.php:326
-#: includes/Compatibility/Plugins/CartFlows.php:62
 #: includes/Admin/Pages/Premium/PickupLocations.php:217
 #: includes/Admin/Pages/Premium/OrderBumps.php:206
 #: includes/Admin/Pages/Premium/LocalPickupAdmin.php:165
@@ -2830,14 +2817,6 @@ msgstr "删除所有跟踪的购物车"
 msgid "Note: This resets ALL abandoned cart recovery statistics!"
 msgstr "注意：这将重置所有废弃购物车恢复统计数据！"
 
-#: includes/Compatibility/Gateways/PayPalForWooCommerce.php:38
-msgid "Please update to the latest version of PayPal for WooCommerce to get full support."
-msgstr "请更新到最新版本的 PayPal for WooCommerce 以获得完整支持。"
-
-#: includes/Compatibility/Gateways/PayPalForWooCommerce.php:363
-msgid "Logged in with PayPal. Please continue your order below."
-msgstr "与PayPal签约。 请继续下面的订单。"
-
 #: includes/Admin/Notices/WelcomeNotice.php:12
 msgid "Welcome to CheckoutWC"
 msgstr "欢迎使用 CheckoutWC"
@@ -2867,6 +2846,27 @@ msgstr "请联系支持"
 #: includes/Admin/Notices/InactiveLicenseNotice.php:11
 msgid "Your license key is not active for this site. Please visit <a href=\"%1$s\">%2$s</a> to activate your license and restore functionality."
 msgstr "您的许可证密钥未在此站点激活。请访问<a href=\"%1$s\">%2$s</a>以激活您的许可证并恢复功能。"
+
+#: includes/Compatibility/Gateways/PayPalForWooCommerce.php:38
+msgid "Please update to the latest version of PayPal for WooCommerce to get full support."
+msgstr "请更新到最新版本的 PayPal for WooCommerce 以获得完整支持。"
+
+#: includes/Compatibility/Gateways/PayPalForWooCommerce.php:363
+msgid "Logged in with PayPal. Please continue your order below."
+msgstr "与PayPal签约。 请继续下面的订单。"
+
+# Error message logged when Jupiter theme callback removal fails
+#: includes/Compatibility/Themes/Jupiter.php:49
+msgid "CheckoutWC: Failed to unset Jupiter theme callbacks."
+msgstr "CheckoutWC：取消 Jupiter 主题回调失败。"
+
+#: includes/Compatibility/Themes/Astra.php:81
+msgid "Enable Astra Support (Beta)"
+msgstr "启用 Astra 支持（测试版）"
+
+#: includes/Compatibility/Themes/Astra.php:82
+msgid "Allow Astra to replace header and footer. Allows Astra / Astra Addon to load its styles and scripts on the checkout page."
+msgstr "允许 Astra 替换页眉和页脚。允许 Astra / Astra 插件在结账页面加载其样式和脚本。"
 
 #: includes/Compatibility/Plugins/WooCommerceGiftCards.php:64
 #: includes/Compatibility/Plugins/WooCommerceGiftCards.php:72
@@ -5283,8 +5283,8 @@ msgid "Delete Rule"
 msgstr "删除规则"
 
 # %d: shipping package number
-#: sources/php/functions.php:366
-#: sources/php/functions.php:3254
+#: sources/php/functions.php:368
+#: sources/php/functions.php:3267
 msgctxt "woocommerce"
 msgid "Shipping"
 msgid_plural "Shipping %d"

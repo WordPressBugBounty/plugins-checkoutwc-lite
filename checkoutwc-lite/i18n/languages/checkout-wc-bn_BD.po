@@ -60,9 +60,9 @@ msgstr "CheckoutWC এর জন্য WooCommerce %s বা তার পরব
 #: includes/FormFieldAugmenter.php:159
 #: includes/FormFieldAugmenter.php:164
 #: includes/AddressFieldsAugmenter.php:299
+#: includes/Managers/AssetManager.php:244
 #: includes/Features/HideOptionalAddressFields.php:48
 #: includes/Features/HideOptionalAddressFields.php:70
-#: includes/Managers/AssetManager.php:244
 msgid "optional"
 msgstr "ঐচ্ছিক"
 
@@ -256,7 +256,7 @@ msgstr "যোগাযোগের তথ্য"
 
 #: sources/php/template-functions.php:1665
 #: sources/php/template-functions.php:2001
-#: sources/php/functions.php:951
+#: sources/php/functions.php:958
 #: sources/ts/frontend/Components/ReviewPane/OrderReviewStepReviewPane.tsx:40
 msgid "Payment"
 msgstr "পেমেন্ট"
@@ -269,7 +269,7 @@ msgstr "প্রযোজ্য নয়"
 
 #: sources/php/template-functions.php:1717
 #: sources/php/template-functions.php:1981
-#: sources/php/functions.php:3268
+#: sources/php/functions.php:3281
 msgid "Shipping"
 msgid_plural "Shipping %d"
 msgstr[0] "ডেলিভারি"
@@ -281,17 +281,17 @@ msgid "Continue shopping"
 msgstr "আরো কেনাকাটা করুন"
 
 #: sources/php/template-functions.php:1774
-#: includes/Loaders/LoaderAbstract.php:112
+#: includes/Loaders/LoaderAbstract.php:111
 msgid "Pay for order"
 msgstr "অর্ডারের জন্য অর্থ প্রদান করুন"
 
 #: sources/php/template-functions.php:1818
-#: sources/php/functions.php:3833
+#: sources/php/functions.php:3846
 msgid "Login"
 msgstr "লগইন"
 
 #: sources/php/template-functions.php:1821
-#: sources/php/functions.php:3826
+#: sources/php/functions.php:3839
 msgid "Lost your password?"
 msgstr "আপনার পাসওয়ার্ড হারিয়েছেন?"
 
@@ -486,212 +486,212 @@ msgstr "প্রেরণ"
 msgid "Address"
 msgstr "ঠিকানা"
 
-#: sources/php/functions.php:572
+#: sources/php/functions.php:579
 msgid "Sorry, it seems that there are no available payment methods for your location. Please contact us if you require assistance or wish to make alternate arrangements."
 msgstr "দুঃখিত, আপনার অবস্থানের জন্য কোনো উপলব্ধ পেমেন্ট পদ্ধতি নেই বলে মনে হচ্ছে। সাহায্যের জন্য আমাদের সাথে যোগাযোগ করুন অথবা বিকল্প ব্যবস্থা করতে চান।"
 
-#: sources/php/functions.php:723
-msgid "Enter your address to view shipping options."
-msgstr "শিপিং অপশন দেখতে আপনার ঠিকানা লিখুন।"
+#: sources/php/functions.php:732
+msgid "Shipping costs are calculated during checkout."
+msgstr "শিপিং খরচ চেকআউটের সময় হিসাব করা হয়।"
 
-#: sources/php/functions.php:736
+#: sources/php/functions.php:743
 msgid "No shipping methods available"
 msgstr "কোন শিপিং পদ্ধতি উপলব্ধ"
 
-#: sources/php/functions.php:763
+#: sources/php/functions.php:770
 #: includes/Model/Bumps/BumpAbstract.php:704
 msgid "Free!"
 msgstr "বিনামূল্যে!"
 
-#: sources/php/functions.php:893
+#: sources/php/functions.php:900
 #: includes/Features/AbandonedCartRecovery.php:676
 msgid "Complete Order"
 msgstr "সম্পূর্ণ আদেশ"
 
-#: sources/php/functions.php:976
+#: sources/php/functions.php:983
 msgid "All transactions are secure and encrypted."
 msgstr "সমস্ত লেনদেন নিরাপদ এবং এনক্রিপ্ট করা হয়।"
 
-#: sources/php/functions.php:997
+#: sources/php/functions.php:1004
 msgid "Your order is free. No payment is required."
 msgstr "আপনার অর্ডার বিনামূল্যে। কোনও অর্থ প্রদানের প্রয়োজন নেই।"
 
-#: sources/php/functions.php:1041
+#: sources/php/functions.php:1048
 msgid "Same as shipping address"
 msgstr "যথোপযুক্ত সৃষ্টিকর্তা"
 
-#: sources/php/functions.php:1050
+#: sources/php/functions.php:1057
 msgid "Use a different billing address"
 msgstr "একটি ভিন্ন বিলিং ঠিকানা ব্যবহার করুন"
 
 # %1$s: Old order status, %2$s: New order status
-#: sources/php/functions.php:1179
+#: sources/php/functions.php:1186
 msgid "Order status changed from %1$s to %2$s."
 msgstr "অর্ডারের অবস্থা %1$s থেকে %2$s এ পরিবর্তিত হয়েছে।"
 
-#: sources/php/functions.php:1201
+#: sources/php/functions.php:1211
 msgid "Tracking Number:"
 msgstr "ট্র্যাকিং নম্বর:"
 
-#: sources/php/functions.php:1287
+#: sources/php/functions.php:1297
 msgid "Return to cart"
 msgstr "গাড়িতে ফিরুন"
 
-#: sources/php/functions.php:1324
+#: sources/php/functions.php:1334
 msgid "Continue to shipping"
 msgstr "শিপিং পদ্ধতিতে চালিয়ে যান"
 
-#: sources/php/functions.php:1346
+#: sources/php/functions.php:1356
 msgid "Continue to payment"
 msgstr "প্রদান পদ্ধতিতে চালিয়ে যান"
 
-#: sources/php/functions.php:1346
-#: sources/php/functions.php:1382
+#: sources/php/functions.php:1356
+#: sources/php/functions.php:1392
 msgid "Review order"
 msgstr "পর্যালোচনা আদেশ"
 
-#: sources/php/functions.php:1402
+#: sources/php/functions.php:1412
 msgid "Return to information"
 msgstr "গ্রাহকের তথ্য ফিরে"
 
-#: sources/php/functions.php:1422
+#: sources/php/functions.php:1432
 msgid "Return to shipping"
 msgstr "শিপিং তথ্য ফিরে"
 
-#: sources/php/functions.php:1442
+#: sources/php/functions.php:1452
 msgid "Return to payment"
 msgstr "পেমেন্টে ফিরুন"
 
-#: sources/php/functions.php:1489
+#: sources/php/functions.php:1499
 #: includes/Features/SideCart.php:210
 msgid "Cart"
 msgstr "কার্ট"
 
-#: sources/php/functions.php:1724
-msgid "CheckoutWC: Error matching %d to customer %d"
-msgstr "CheckoutWC: %d নম্বর গ্রাহকের সাথে %d মিলাতে ত্রুটি হয়েছে"
+#: sources/php/functions.php:1734
+msgid "CheckoutWC: Error matching %1$d to customer %2$d"
+msgstr "CheckoutWC: গ্রাহক %2$d এর সাথে %1$d মিলাতে ত্রুটি"
 
-#: sources/php/functions.php:1970
+#: sources/php/functions.php:1980
 msgid "Or"
 msgstr "অথবা"
 
-#: sources/php/functions.php:2050
+#: sources/php/functions.php:2060
 msgid "You can only have 1 %s in your cart."
 msgstr "আপনার কার্টে শুধুমাত্র 1টি %s থাকতে পারে।"
 
-#: sources/php/functions.php:2200
+#: sources/php/functions.php:2210
 #: sources/ts/frontend/Components/CartItemQuantityControl.tsx:55
 msgid "Decrement"
 msgstr "হ্রাস"
 
-#: sources/php/functions.php:2209
-#: includes/Features/LocalPickup.php:439
-#: includes/Features/AbandonedCartRecovery.php:114
+#: sources/php/functions.php:2219
 #: includes/Managers/AssetManager.php:720
 #: includes/Managers/AssetManager.php:839
+#: includes/Features/LocalPickup.php:439
+#: includes/Features/AbandonedCartRecovery.php:114
 #: sources/ts/frontend/Components/CartItemQuantityControl.tsx:63
 msgid "Edit"
 msgstr "সম্পাদনা"
 
-#: sources/php/functions.php:2212
+#: sources/php/functions.php:2222
 #: sources/ts/frontend/Components/CartItemQuantityControl.tsx:70
 msgid "Increment"
 msgstr "বৃদ্ধি"
 
-#: sources/php/functions.php:2932
+#: sources/php/functions.php:2945
 msgid "Unsubscribe"
 msgstr "সদস্যতা ত্যাগ করুন"
 
-#: sources/php/functions.php:3294
+#: sources/php/functions.php:3307
 #: includes/Features/AbandonedCartRecovery.php:731
 #: sources/ts/admin/Components/acr/carts.tsx:69
 msgid "Subtotal"
 msgstr "সাবটোটাল"
 
-#: sources/php/functions.php:3298
+#: sources/php/functions.php:3311
 msgid "Total"
 msgstr "মোট"
 
-#: sources/php/functions.php:3350
+#: sources/php/functions.php:3363
 msgid "There are no shipping options available. Please ensure that your address has been entered correctly, or contact us if you need any help."
 msgstr "কোনো শিপিং অপশন উপলব্ধ নেই। অনুগ্রহ করে নিশ্চিত করুন যে আপনার ঠিকানা সঠিকভাবে প্রবেশ করানো হয়েছে, অথবা সাহায্যের জন্য আমাদের সাথে যোগাযোগ করুন।"
 
-#: sources/php/functions.php:3569
+#: sources/php/functions.php:3582
 #: includes/Admin/Pages/AbandonedCartRecoveryAdminFree.php:73
 msgid "SendWP - Transactional Email"
 msgstr "SendWP - লেনদেনমূলক ইমেইল"
 
-#: sources/php/functions.php:3574
+#: sources/php/functions.php:3587
 #: includes/Admin/Pages/AbandonedCartRecoveryAdminFree.php:77
 msgid "SendWP makes getting emails delivered as simple as a few clicks. So you can relax know those important emails are being delivered on time."
 msgstr "SendWP ইমেইল ডেলিভারি সহজ করে কয়েকটি ক্লিকে। তাই আপনি নিশ্চিন্ত থাকতে পারেন যে গুরুত্বপূর্ণ ইমেইলগুলি সময়মতো পৌঁছাচ্ছে।"
 
-#: sources/php/functions.php:3577
+#: sources/php/functions.php:3590
 #: includes/Admin/Pages/AbandonedCartRecoveryAdminFree.php:79
 msgid "Try SendWP now and <strong>get your first month for just $1.</strong>"
 msgstr "এখনই SendWP চেষ্টা করুন এবং <strong>আপনার প্রথম মাস মাত্র $1 এ পান।</strong>"
 
-#: sources/php/functions.php:3587
+#: sources/php/functions.php:3600
 #: includes/Admin/Pages/AbandonedCartRecoveryAdminFree.php:87
 msgid "Note: SendWP is optional. You can use any transactional email service you prefer."
 msgstr "দ্রষ্টব্য: SendWP ঐচ্ছিক। আপনি আপনার পছন্দের যেকোনো লেনদেনমূলক ইমেইল সার্ভিস ব্যবহার করতে পারেন।"
 
-#: sources/php/functions.php:3596
+#: sources/php/functions.php:3609
 #: includes/Admin/Pages/AbandonedCartRecoveryAdminFree.php:94
 msgid "Connect to SendWP"
 msgstr "SendWP এর সাথে সংযোগ করুন"
 
-#: sources/php/functions.php:3744
+#: sources/php/functions.php:3757
 msgid "Welcome back"
 msgstr "ফিরে আসার জন্য স্বাগতম"
 
-#: sources/php/functions.php:3757
+#: sources/php/functions.php:3770
 msgid "It looks like you already have an account. Please enter your login details below."
 msgstr "দেখে মনে হচ্ছে আপনার ইতিমধ্যেই একটি অ্যাকাউন্ট আছে৷ নিচে আপনার লগইন বিবরণ এখানে ক্লিক করুন।"
 
-#: sources/php/functions.php:3770
+#: sources/php/functions.php:3783
 msgid "If you have shopped with us before, please enter your login details below."
 msgstr "আপনি যদি আগে আমাদের সাথে কেনাকাটা করে থাকেন, অনুগ্রহ করে নিচে আপনার লগইন বিশদ লিখুন।"
 
-#: sources/php/functions.php:3780
-#: sources/php/functions.php:3781
+#: sources/php/functions.php:3793
+#: sources/php/functions.php:3794
 msgid "Username or email address"
 msgstr "ব্যবহারকারীর নাম বা ইমেইল ঠিকানা"
 
-#: sources/php/functions.php:3794
-#: sources/php/functions.php:3795
+#: sources/php/functions.php:3807
+#: sources/php/functions.php:3808
 msgid "Password"
 msgstr "পাসওয়ার্ড"
 
-#: sources/php/functions.php:3815
+#: sources/php/functions.php:3828
 msgid "Remember me"
 msgstr "আমাকে মনে রাখুন"
 
-#: sources/php/functions.php:3844
+#: sources/php/functions.php:3857
 msgid "Or continue as guest"
 msgstr "অথবা অতিথি হিসাবে চালিয়ে যান"
 
-#: sources/php/functions.php:3862
+#: sources/php/functions.php:3875
 msgid "Lost your password? Please enter your username or email address. You will receive a link to create a new password via email."
 msgstr "পাসওয়ার্ড ভুলে গেছেন? অনুগ্রহ করে আপনার ব্যবহারকারীর নাম বা ইমেইল ঠিকানা লিখুন। আপনি ইমেইলের মাধ্যমে নতুন পাসওয়ার্ড তৈরির লিঙ্ক পাবেন।"
 
-#: sources/php/functions.php:3872
-#: sources/php/functions.php:3873
+#: sources/php/functions.php:3885
+#: sources/php/functions.php:3886
 msgid "Email address"
 msgstr "ইমেইল ঠিকানা"
 
-#: sources/php/functions.php:3885
+#: sources/php/functions.php:3898
 msgid "Reset password"
 msgstr "পাসওয়ার্ড রিসেট করুন"
 
-#: sources/php/functions.php:3900
+#: sources/php/functions.php:3913
 #: includes/API/OrderBumpOfferFormPreviewAPI.php:46
 #: includes/API/GetVariationFormAPI.php:33
 msgid "Product not found"
 msgstr "পণ্য পাওয়া যায়নি"
 
-#: sources/php/functions.php:3916
-#: sources/php/functions.php:4053
+#: sources/php/functions.php:3929
+#: sources/php/functions.php:4066
 msgid "No thanks"
 msgstr "না ধন্যবাদ"
 
@@ -854,8 +854,8 @@ msgstr "চেকআউট করার সময় সমস্যা হয�
 msgid "Please enter a valid postcode / ZIP."
 msgstr "একটি বৈধ ফোন নম্বর লিখুন দয়া করে।"
 
-#: includes/Features/LocalPickup.php:559
 #: includes/Managers/AssetManager.php:699
+#: includes/Features/LocalPickup.php:559
 msgid "Pickup"
 msgstr "পিকআপ"
 
@@ -908,60 +908,56 @@ msgstr "এটি  অপসারণ করুন"
 msgid "Proceed to checkout"
 msgstr "কেনাকাটা শেষ করুন"
 
-#: includes/Loaders/LoaderAbstract.php:71
-#: includes/Features/CartEditingAtCheckout.php:45
-msgid "Checkout is not available whilst your cart is empty."
-msgstr "আপনার কার্ট খালি থাকলে চেকআউট উপলব্ধ নয়।"
-
-#: includes/Loaders/LoaderAbstract.php:135
-#: includes/Loaders/LoaderAbstract.php:245
+#: includes/Loaders/LoaderAbstract.php:134
+#: includes/Loaders/LoaderAbstract.php:244
 msgid "Sorry, this order is invalid and cannot be paid for."
 msgstr "দুঃখিত, এই অর্ডারটি অবৈধ এবং এর জন্য অর্থ প্রদান করা যাবে না।"
 
-#: includes/Loaders/LoaderAbstract.php:139
+#: includes/Loaders/LoaderAbstract.php:138
 msgid "Please log in to your account below to continue to the payment form."
 msgstr "পেমেন্ট ফর্ম চালিয়ে যেতে নিচে আপনার অ্যাকাউন্টে লগইন করুন।"
 
-#: includes/Loaders/LoaderAbstract.php:146
+#: includes/Loaders/LoaderAbstract.php:145
 msgid "You are paying for a guest order. Please continue with payment only if you recognize this order."
 msgstr "আপনি একটি অতিথি অর্ডারের জন্য অর্থ প্রদান করছেন। শুধুমাত্র যদি আপনি এই অর্ডারটি চিনেন তবে পেমেন্ট চালিয়ে যান।"
 
-#: includes/Loaders/LoaderAbstract.php:152
+#: includes/Loaders/LoaderAbstract.php:151
 msgid "This order cannot be paid for. Please contact us if you need assistance."
 msgstr "এই অর্ডারের জন্য অর্থ প্রদান করা যাবে না। সাহায্যের জন্য আমাদের সাথে যোগাযোগ করুন।"
 
-#: includes/Loaders/LoaderAbstract.php:158
-#: includes/Loaders/LoaderAbstract.php:242
+#: includes/Loaders/LoaderAbstract.php:157
+#: includes/Loaders/LoaderAbstract.php:241
 msgid "This order&rsquo;s status is &ldquo;%s&rdquo;&mdash;it cannot be paid for. Please contact us if you need assistance."
 msgstr "এই অর্ডারের অবস্থা &ldquo;%s&rdquo;—এর জন্য অর্থ প্রদান করা যাবে না। সাহায্যের জন্য আমাদের সাথে যোগাযোগ করুন।"
 
-#: includes/Loaders/LoaderAbstract.php:187
+#: includes/Loaders/LoaderAbstract.php:186
 msgid "Sorry, \"%s\" is no longer in stock so this order cannot be paid for. We apologize for any inconvenience caused."
 msgstr "দুঃখিত, \"%s\" আর স্টকে নেই তাই এই অর্ডারের জন্য অর্থ প্রদান করা যাবে না। অস্বস্তির জন্য আমরা ক্ষমাপ্রার্থী।"
 
-#: includes/Loaders/LoaderAbstract.php:201
+#: includes/Loaders/LoaderAbstract.php:200
 msgid "Sorry, we do not have enough \"%1$s\" in stock to fulfill your order (%2$s available). We apologize for any inconvenience caused."
 msgstr "দুঃখিত, আপনার অর্ডার পূরণের জন্য পর্যাপ্ত \"%1$s\" স্টকে নেই (%2$s উপলব্ধ)। অস্বস্তির জন্য আমরা ক্ষমাপ্রার্থী।"
 
-#: includes/Loaders/LoaderAbstract.php:248
+#: includes/Loaders/LoaderAbstract.php:247
 msgid "Invalid order."
 msgstr "অবৈধ অর্ডার।"
 
-#: includes/Features/Turnstile.php:133
-#: includes/Features/Turnstile.php:187
-#: includes/Features/Turnstile.php:316
+#: includes/Features/Turnstile.php:134
+#: includes/Features/Turnstile.php:188
+#: includes/Features/Turnstile.php:362
 msgid "Please complete the verification challenge."
 msgstr "অনুগ্রহ করে যাচাইকরণ চ্যালেঞ্জ সম্পন্ন করুন।"
 
-#: includes/Features/Turnstile.php:335
+#: includes/Features/Turnstile.php:382
 msgid "Verification service unavailable. Please try again."
 msgstr "যাচাইকরণ সেবা উপলব্ধ নয়। অনুগ্রহ করে আবার চেষ্টা করুন।"
 
-#: includes/Features/Turnstile.php:351
+#: includes/Features/Turnstile.php:394
+#: includes/Features/Turnstile.php:413
 msgid "Verification failed. Please try again."
 msgstr "যাচাইকরণ ব্যর্থ হয়েছে। অনুগ্রহ করে আবার চেষ্টা করুন।"
 
-#: includes/Features/Turnstile.php:378
+#: includes/Features/Turnstile.php:448
 msgid "We have detected that Simple Cloudflare Turnstile is active. To enable CheckoutWC Turnstile functionality, please deactivate Simple Cloudflare Turnstile."
 msgstr "আমরা সনাক্ত করেছি যে Simple Cloudflare Turnstile সক্রিয় আছে। CheckoutWC Turnstile কার্যকারিতা সক্ষম করতে, অনুগ্রহ করে Simple Cloudflare Turnstile নিষ্ক্রিয় করুন।"
 
@@ -1123,6 +1119,10 @@ msgstr "আপনার ঠিকানা অনুসন্ধান করু
 #: includes/Features/FetchifyAddressAutocomplete.php:78
 msgid "Or enter address manually."
 msgstr "অথবা ম্যানুয়ালি ঠিকানা লিখুন।"
+
+#: includes/Features/CartEditingAtCheckout.php:45
+msgid "Checkout is not available whilst your cart is empty."
+msgstr "আপনার কার্ট খালি থাকলে চেকআউট উপলব্ধ নয়।"
 
 #: includes/Features/AbandonedCartRecovery.php:84
 msgid "You have been unsubscribed from our cart reminder emails."
@@ -1415,34 +1415,6 @@ msgstr "অর্ডার বাম্প অফার ফর্ম"
 msgid "The form to accept or reject the bump offer."
 msgstr "বাম্প অফার গ্রহণ বা প্রত্যাখ্যান করার ফর্ম।"
 
-#: sources/ts/blocks/OrderBumpSteps.tsx:55
-msgid "Order Bump Steps Stettings"
-msgstr "অর্ডার বাম্প ধাপ সেটিংস"
-
-#: sources/ts/blocks/OrderBumpSteps.tsx:58
-msgid "Step 1 Title"
-msgstr "ধাপ ১ শিরোনাম"
-
-#: sources/ts/blocks/OrderBumpSteps.tsx:59
-msgid "The title of Step 1. Example: Order Submitted"
-msgstr "ধাপ ১ এর শিরোনাম। উদাহরণ: অর্ডার জমা দেওয়া হয়েছে"
-
-#: sources/ts/blocks/OrderBumpSteps.tsx:64
-msgid "Step 2 Title"
-msgstr "ধাপ ২ শিরোনাম"
-
-#: sources/ts/blocks/OrderBumpSteps.tsx:65
-msgid "The title of Step 2. Example: Special Offer"
-msgstr "ধাপ ২ এর শিরোনাম। উদাহরণ: বিশেষ অফার"
-
-#: sources/ts/blocks/OrderBumpSteps.tsx:70
-msgid "Step 3 Title"
-msgstr "ধাপ ৩ শিরোনাম"
-
-#: sources/ts/blocks/OrderBumpSteps.tsx:71
-msgid "The title of Step 3. Example: Order Received"
-msgstr "ধাপ ৩ এর শিরোনাম। উদাহরণ: অর্ডার গ্রহণ করা হয়েছে"
-
 #: sources/ts/functions/cfwFormatDate.ts:38
 msgid "Sunday"
 msgstr "রবিবার"
@@ -1600,6 +1572,34 @@ msgstr "এএম"
 msgid "pm"
 msgstr "পিএম"
 
+#: sources/ts/blocks/OrderBumpSteps.tsx:55
+msgid "Order Bump Steps Stettings"
+msgstr "অর্ডার বাম্প ধাপ সেটিংস"
+
+#: sources/ts/blocks/OrderBumpSteps.tsx:58
+msgid "Step 1 Title"
+msgstr "ধাপ ১ শিরোনাম"
+
+#: sources/ts/blocks/OrderBumpSteps.tsx:59
+msgid "The title of Step 1. Example: Order Submitted"
+msgstr "ধাপ ১ এর শিরোনাম। উদাহরণ: অর্ডার জমা দেওয়া হয়েছে"
+
+#: sources/ts/blocks/OrderBumpSteps.tsx:64
+msgid "Step 2 Title"
+msgstr "ধাপ ২ শিরোনাম"
+
+#: sources/ts/blocks/OrderBumpSteps.tsx:65
+msgid "The title of Step 2. Example: Special Offer"
+msgstr "ধাপ ২ এর শিরোনাম। উদাহরণ: বিশেষ অফার"
+
+#: sources/ts/blocks/OrderBumpSteps.tsx:70
+msgid "Step 3 Title"
+msgstr "ধাপ ৩ শিরোনাম"
+
+#: sources/ts/blocks/OrderBumpSteps.tsx:71
+msgid "The title of Step 3. Example: Order Received"
+msgstr "ধাপ ৩ এর শিরোনাম। উদাহরণ: অর্ডার গ্রহণ করা হয়েছে"
+
 #: sources/ts/admin/order-bumps-editor.tsx:59
 msgid "Order Bump Preview"
 msgstr "অর্ডার বাম্প প্রিভিউ"
@@ -1636,24 +1636,6 @@ msgstr "আপনি কি নিশ্চিত যে আপনি সমস�
 #: sources/ts/admin/admin.ts:178
 msgid "Are you sure you want to discard all unsaved changes?"
 msgstr "আপনি কি নিশ্চিত যে আপনি সমস্ত সংরক্ষিত নয় এমন পরিবর্তন বাতিল করতে চান?"
-
-# %1$s: Plugin name, %2$s: Link opening tag, %3$s: Version number, %4$s: Link closing tag
-#: includes/Managers/Helpers/EDD_SL_Plugin_Updater.php:280
-msgid "There is a new version of %1$s available. %2$sView version %3$s details%4$s."
-msgstr "%1$s এর একটি নতুন সংস্করণ উপলব্ধ। %2$sসংস্করণ %3$s বিবরণ দেখুন%4$s।"
-
-# %1$s: Plugin name, %2$s: Link opening tag, %3$s: Version number, %4$s: Link closing tag, %5$s: Update link opening tag, %6$s: Update link closing tag
-#: includes/Managers/Helpers/EDD_SL_Plugin_Updater.php:289
-msgid "There is a new version of %1$s available. %2$sView version %3$s details%4$s or %5$supdate now%6$s."
-msgstr "%1$s এর একটি নতুন সংস্করণ উপলব্ধ। %2$sসংস্করণ %3$s বিবরণ দেখুন%4$s অথবা %5$sএখনই আপডেট করুন%6$s।"
-
-#: includes/Managers/Helpers/EDD_SL_Plugin_Updater.php:533
-msgid "You do not have permission to install plugin updates"
-msgstr "আপনার প্লাগইন আপডেট ইনস্টল করার অনুমতি নেই"
-
-#: includes/Managers/Helpers/EDD_SL_Plugin_Updater.php:533
-msgid "Error"
-msgstr "ত্রুটি"
 
 #: includes/Model/Bumps/BumpAbstract.php:903
 #: includes/Model/Bumps/BumpAbstract.php:913
@@ -1701,18 +1683,23 @@ msgstr "কোন অর্ডার বাম্প পাওয়া যা�
 msgid "Not found in trash"
 msgstr "ট্র্যাশে পাওয়া যায়নি"
 
-# Error message logged when Jupiter theme callback removal fails
-#: includes/Compatibility/Themes/Jupiter.php:49
-msgid "CheckoutWC: Failed to unset Jupiter theme callbacks."
-msgstr "CheckoutWC: জুপিটার থিম কলব্যাক আনসেট করতে ব্যর্থ হয়েছে।"
+# %1$s: Plugin name, %2$s: Link opening tag, %3$s: Version number, %4$s: Link closing tag
+#: includes/Managers/Helpers/EDD_SL_Plugin_Updater.php:280
+msgid "There is a new version of %1$s available. %2$sView version %3$s details%4$s."
+msgstr "%1$s এর একটি নতুন সংস্করণ উপলব্ধ। %2$sসংস্করণ %3$s বিবরণ দেখুন%4$s।"
 
-#: includes/Compatibility/Themes/Astra.php:81
-msgid "Enable Astra Support (Beta)"
-msgstr "অ্যাস্ট্রা সাপোর্ট সক্রিয় করুন (বেটা)"
+# %1$s: Plugin name, %2$s: Link opening tag, %3$s: Version number, %4$s: Link closing tag, %5$s: Update link opening tag, %6$s: Update link closing tag
+#: includes/Managers/Helpers/EDD_SL_Plugin_Updater.php:289
+msgid "There is a new version of %1$s available. %2$sView version %3$s details%4$s or %5$supdate now%6$s."
+msgstr "%1$s এর একটি নতুন সংস্করণ উপলব্ধ। %2$sসংস্করণ %3$s বিবরণ দেখুন%4$s অথবা %5$sএখনই আপডেট করুন%6$s।"
 
-#: includes/Compatibility/Themes/Astra.php:82
-msgid "Allow Astra to replace header and footer. Allows Astra / Astra Addon to load its styles and scripts on the checkout page."
-msgstr "অ্যাস্ট্রাকে হেডার এবং ফুটার প্রতিস্থাপন করতে দিন। অ্যাস্ট্রা / অ্যাস্ট্রা অ্যাডঅনকে চেকআউট পৃষ্ঠায় তার স্টাইল এবং স্ক্রিপ্ট লোড করতে দেয়।"
+#: includes/Managers/Helpers/EDD_SL_Plugin_Updater.php:533
+msgid "You do not have permission to install plugin updates"
+msgstr "আপনার প্লাগইন আপডেট ইনস্টল করার অনুমতি নেই"
+
+#: includes/Managers/Helpers/EDD_SL_Plugin_Updater.php:533
+msgid "Error"
+msgstr "ত্রুটি"
 
 #: includes/Admin/Pages/WooCommercePages.php:21
 msgid "Pages"
@@ -2087,10 +2074,10 @@ msgstr "আনুমানিক পিকআপ সময়"
 msgid "Pickup Instructions"
 msgstr "পিকআপ নির্দেশাবলী"
 
+#: includes/Compatibility/Plugins/CartFlows.php:62
 #: includes/Admin/Pages/PickupLocationsAdminFree.php:218
 #: includes/Admin/Pages/PageAbstract.php:106
 #: includes/Admin/Pages/General.php:326
-#: includes/Compatibility/Plugins/CartFlows.php:62
 #: includes/Admin/Pages/Premium/PickupLocations.php:217
 #: includes/Admin/Pages/Premium/OrderBumps.php:206
 #: includes/Admin/Pages/Premium/LocalPickupAdmin.php:165
@@ -2833,14 +2820,6 @@ msgstr "সমস্ত ট্র্যাক করা কার্ট মু�
 msgid "Note: This resets ALL abandoned cart recovery statistics!"
 msgstr "দ্রষ্টব্য: এটি সমস্ত পরিত্যক্ত কার্ট পুনরুদ্ধার পরিসংখ্যান রিসেট করে!"
 
-#: includes/Compatibility/Gateways/PayPalForWooCommerce.php:38
-msgid "Please update to the latest version of PayPal for WooCommerce to get full support."
-msgstr "সম্পূর্ণ সাপোর্ট পেতে দয়া করে WooCommerce এর জন্য PayPal এর সর্বশেষ সংস্করণে আপডেট করুন।"
-
-#: includes/Compatibility/Gateways/PayPalForWooCommerce.php:363
-msgid "Logged in with PayPal. Please continue your order below."
-msgstr "পেপাল দিয়ে লগ ইন। নীচে আপনার ক্রম চালিয়ে যান।"
-
 #: includes/Admin/Notices/WelcomeNotice.php:12
 msgid "Welcome to CheckoutWC"
 msgstr "CheckoutWC এ স্বাগতম"
@@ -2870,6 +2849,27 @@ msgstr "অনুগ্রহ করে সহায়তার সাথে �
 #: includes/Admin/Notices/InactiveLicenseNotice.php:11
 msgid "Your license key is not active for this site. Please visit <a href=\"%1$s\">%2$s</a> to activate your license and restore functionality."
 msgstr "এই সাইটের জন্য আপনার লাইসেন্স কী সক্রিয় নয়। আপনার লাইসেন্স সক্রিয় করতে এবং কার্যকারিতা পুনরুদ্ধার করতে <a href=\"%1$s\">%2$s</a> পরিদর্শন করুন।"
+
+#: includes/Compatibility/Gateways/PayPalForWooCommerce.php:38
+msgid "Please update to the latest version of PayPal for WooCommerce to get full support."
+msgstr "সম্পূর্ণ সাপোর্ট পেতে দয়া করে WooCommerce এর জন্য PayPal এর সর্বশেষ সংস্করণে আপডেট করুন।"
+
+#: includes/Compatibility/Gateways/PayPalForWooCommerce.php:363
+msgid "Logged in with PayPal. Please continue your order below."
+msgstr "পেপাল দিয়ে লগ ইন। নীচে আপনার ক্রম চালিয়ে যান।"
+
+# Error message logged when Jupiter theme callback removal fails
+#: includes/Compatibility/Themes/Jupiter.php:49
+msgid "CheckoutWC: Failed to unset Jupiter theme callbacks."
+msgstr "CheckoutWC: জুপিটার থিম কলব্যাক আনসেট করতে ব্যর্থ হয়েছে।"
+
+#: includes/Compatibility/Themes/Astra.php:81
+msgid "Enable Astra Support (Beta)"
+msgstr "অ্যাস্ট্রা সাপোর্ট সক্রিয় করুন (বেটা)"
+
+#: includes/Compatibility/Themes/Astra.php:82
+msgid "Allow Astra to replace header and footer. Allows Astra / Astra Addon to load its styles and scripts on the checkout page."
+msgstr "অ্যাস্ট্রাকে হেডার এবং ফুটার প্রতিস্থাপন করতে দিন। অ্যাস্ট্রা / অ্যাস্ট্রা অ্যাডঅনকে চেকআউট পৃষ্ঠায় তার স্টাইল এবং স্ক্রিপ্ট লোড করতে দেয়।"
 
 #: includes/Compatibility/Plugins/WooCommerceGiftCards.php:64
 #: includes/Compatibility/Plugins/WooCommerceGiftCards.php:72
@@ -5286,8 +5286,8 @@ msgid "Delete Rule"
 msgstr "নিয়ম মুছে ফেলুন"
 
 # %d: shipping package number
-#: sources/php/functions.php:366
-#: sources/php/functions.php:3254
+#: sources/php/functions.php:368
+#: sources/php/functions.php:3267
 msgctxt "woocommerce"
 msgid "Shipping"
 msgid_plural "Shipping %d"

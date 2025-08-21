@@ -60,9 +60,9 @@ msgstr "CheckoutWC требует WooCommerce версии %s или выше."
 #: includes/FormFieldAugmenter.php:159
 #: includes/FormFieldAugmenter.php:164
 #: includes/AddressFieldsAugmenter.php:299
+#: includes/Managers/AssetManager.php:244
 #: includes/Features/HideOptionalAddressFields.php:48
 #: includes/Features/HideOptionalAddressFields.php:70
-#: includes/Managers/AssetManager.php:244
 msgid "optional"
 msgstr "необязательно"
 
@@ -256,7 +256,7 @@ msgstr "Контактная информация"
 
 #: sources/php/template-functions.php:1665
 #: sources/php/template-functions.php:2001
-#: sources/php/functions.php:951
+#: sources/php/functions.php:958
 #: sources/ts/frontend/Components/ReviewPane/OrderReviewStepReviewPane.tsx:40
 msgid "Payment"
 msgstr "Оплата"
@@ -269,7 +269,7 @@ msgstr "Н/Д"
 
 #: sources/php/template-functions.php:1717
 #: sources/php/template-functions.php:1981
-#: sources/php/functions.php:3268
+#: sources/php/functions.php:3281
 msgid "Shipping"
 msgid_plural "Shipping %d"
 msgstr[0] "Доставка"
@@ -282,17 +282,17 @@ msgid "Continue shopping"
 msgstr "Продолжить покупки"
 
 #: sources/php/template-functions.php:1774
-#: includes/Loaders/LoaderAbstract.php:112
+#: includes/Loaders/LoaderAbstract.php:111
 msgid "Pay for order"
 msgstr "Оплатить заказ"
 
 #: sources/php/template-functions.php:1818
-#: sources/php/functions.php:3833
+#: sources/php/functions.php:3846
 msgid "Login"
 msgstr "Войти"
 
 #: sources/php/template-functions.php:1821
-#: sources/php/functions.php:3826
+#: sources/php/functions.php:3839
 msgid "Lost your password?"
 msgstr "Забыли пароль?"
 
@@ -487,212 +487,212 @@ msgstr "Доставка в"
 msgid "Address"
 msgstr "Адрес"
 
-#: sources/php/functions.php:572
+#: sources/php/functions.php:579
 msgid "Sorry, it seems that there are no available payment methods for your location. Please contact us if you require assistance or wish to make alternate arrangements."
 msgstr "Извините, похоже, что для вашего региона нет доступных способов оплаты. Пожалуйста, свяжитесь с нами, если вам нужна помощь или вы хотите договориться об альтернативных вариантах."
 
-#: sources/php/functions.php:723
-msgid "Enter your address to view shipping options."
-msgstr "Введите ваш адрес, чтобы увидеть варианты доставки."
+#: sources/php/functions.php:732
+msgid "Shipping costs are calculated during checkout."
+msgstr "Стоимость доставки рассчитывается при оформлении заказа."
 
-#: sources/php/functions.php:736
+#: sources/php/functions.php:743
 msgid "No shipping methods available"
 msgstr "Методы доставки отсутствуют"
 
-#: sources/php/functions.php:763
+#: sources/php/functions.php:770
 #: includes/Model/Bumps/BumpAbstract.php:704
 msgid "Free!"
 msgstr "Бесплатно!"
 
-#: sources/php/functions.php:893
+#: sources/php/functions.php:900
 #: includes/Features/AbandonedCartRecovery.php:676
 msgid "Complete Order"
 msgstr "Завершить заказ"
 
-#: sources/php/functions.php:976
+#: sources/php/functions.php:983
 msgid "All transactions are secure and encrypted."
 msgstr "Все операции защищены и зашифрованы."
 
-#: sources/php/functions.php:997
+#: sources/php/functions.php:1004
 msgid "Your order is free. No payment is required."
 msgstr "Ваш заказ бесплатный. Оплата не требуется."
 
-#: sources/php/functions.php:1041
+#: sources/php/functions.php:1048
 msgid "Same as shipping address"
 msgstr "Тот же, что адрес доставки"
 
-#: sources/php/functions.php:1050
+#: sources/php/functions.php:1057
 msgid "Use a different billing address"
 msgstr "Использовать другой адрес для выставления счетов"
 
 # %1$s: Old order status, %2$s: New order status
-#: sources/php/functions.php:1179
+#: sources/php/functions.php:1186
 msgid "Order status changed from %1$s to %2$s."
 msgstr "Статус заказа изменён с %1$s на %2$s."
 
-#: sources/php/functions.php:1201
+#: sources/php/functions.php:1211
 msgid "Tracking Number:"
 msgstr "Номер для отслеживания:"
 
-#: sources/php/functions.php:1287
+#: sources/php/functions.php:1297
 msgid "Return to cart"
 msgstr "Вернуться в корзину"
 
-#: sources/php/functions.php:1324
+#: sources/php/functions.php:1334
 msgid "Continue to shipping"
 msgstr "Продолжить отгрузку"
 
-#: sources/php/functions.php:1346
+#: sources/php/functions.php:1356
 msgid "Continue to payment"
 msgstr "Перейти к оплате"
 
-#: sources/php/functions.php:1346
-#: sources/php/functions.php:1382
+#: sources/php/functions.php:1356
+#: sources/php/functions.php:1392
 msgid "Review order"
 msgstr "Просмотр заказа"
 
-#: sources/php/functions.php:1402
+#: sources/php/functions.php:1412
 msgid "Return to information"
 msgstr "Вернуться к информации"
 
-#: sources/php/functions.php:1422
+#: sources/php/functions.php:1432
 msgid "Return to shipping"
 msgstr "Возврат к отгрузке"
 
-#: sources/php/functions.php:1442
+#: sources/php/functions.php:1452
 msgid "Return to payment"
 msgstr "Возврат к оплате"
 
-#: sources/php/functions.php:1489
+#: sources/php/functions.php:1499
 #: includes/Features/SideCart.php:210
 msgid "Cart"
 msgstr "Корзина"
 
-#: sources/php/functions.php:1724
-msgid "CheckoutWC: Error matching %d to customer %d"
-msgstr "CheckoutWC: Ошибка сопоставления %d с клиентом %d"
+#: sources/php/functions.php:1734
+msgid "CheckoutWC: Error matching %1$d to customer %2$d"
+msgstr "CheckoutWC: Ошибка сопоставления %1$d с клиентом %2$d"
 
-#: sources/php/functions.php:1970
+#: sources/php/functions.php:1980
 msgid "Or"
 msgstr "Или"
 
-#: sources/php/functions.php:2050
+#: sources/php/functions.php:2060
 msgid "You can only have 1 %s in your cart."
 msgstr "В вашей корзине может быть только 1 %s."
 
-#: sources/php/functions.php:2200
+#: sources/php/functions.php:2210
 #: sources/ts/frontend/Components/CartItemQuantityControl.tsx:55
 msgid "Decrement"
 msgstr "Уменьшение"
 
-#: sources/php/functions.php:2209
-#: includes/Features/LocalPickup.php:439
-#: includes/Features/AbandonedCartRecovery.php:114
+#: sources/php/functions.php:2219
 #: includes/Managers/AssetManager.php:720
 #: includes/Managers/AssetManager.php:839
+#: includes/Features/LocalPickup.php:439
+#: includes/Features/AbandonedCartRecovery.php:114
 #: sources/ts/frontend/Components/CartItemQuantityControl.tsx:63
 msgid "Edit"
 msgstr "Редактировать"
 
-#: sources/php/functions.php:2212
+#: sources/php/functions.php:2222
 #: sources/ts/frontend/Components/CartItemQuantityControl.tsx:70
 msgid "Increment"
 msgstr "Шаг"
 
-#: sources/php/functions.php:2932
+#: sources/php/functions.php:2945
 msgid "Unsubscribe"
 msgstr "Отказаться от подписки"
 
-#: sources/php/functions.php:3294
+#: sources/php/functions.php:3307
 #: includes/Features/AbandonedCartRecovery.php:731
 #: sources/ts/admin/Components/acr/carts.tsx:69
 msgid "Subtotal"
 msgstr "Промежуточный итог"
 
-#: sources/php/functions.php:3298
+#: sources/php/functions.php:3311
 msgid "Total"
 msgstr "Итого"
 
-#: sources/php/functions.php:3350
+#: sources/php/functions.php:3363
 msgid "There are no shipping options available. Please ensure that your address has been entered correctly, or contact us if you need any help."
 msgstr "Нет доступных вариантов доставки. Пожалуйста, убедитесь, что ваш адрес введён правильно, или свяжитесь с нами, если вам нужна помощь."
 
-#: sources/php/functions.php:3569
+#: sources/php/functions.php:3582
 #: includes/Admin/Pages/AbandonedCartRecoveryAdminFree.php:73
 msgid "SendWP - Transactional Email"
 msgstr "SendWP - транзакционные письма"
 
-#: sources/php/functions.php:3574
+#: sources/php/functions.php:3587
 #: includes/Admin/Pages/AbandonedCartRecoveryAdminFree.php:77
 msgid "SendWP makes getting emails delivered as simple as a few clicks. So you can relax know those important emails are being delivered on time."
 msgstr "SendWP упрощает доставку писем до нескольких кликов. Так что вы можете быть спокойны, зная, что важные письма доставляются вовремя."
 
-#: sources/php/functions.php:3577
+#: sources/php/functions.php:3590
 #: includes/Admin/Pages/AbandonedCartRecoveryAdminFree.php:79
 msgid "Try SendWP now and <strong>get your first month for just $1.</strong>"
 msgstr "Попробуйте SendWP сейчас и <strong>получите первый месяц всего за $1.</strong>"
 
-#: sources/php/functions.php:3587
+#: sources/php/functions.php:3600
 #: includes/Admin/Pages/AbandonedCartRecoveryAdminFree.php:87
 msgid "Note: SendWP is optional. You can use any transactional email service you prefer."
 msgstr "Примечание: SendWP является необязательным. Вы можете использовать любой предпочитаемый вами сервис транзакционных писем."
 
-#: sources/php/functions.php:3596
+#: sources/php/functions.php:3609
 #: includes/Admin/Pages/AbandonedCartRecoveryAdminFree.php:94
 msgid "Connect to SendWP"
 msgstr "Подключиться к SendWP"
 
-#: sources/php/functions.php:3744
+#: sources/php/functions.php:3757
 msgid "Welcome back"
 msgstr "С возвращением"
 
-#: sources/php/functions.php:3757
+#: sources/php/functions.php:3770
 msgid "It looks like you already have an account. Please enter your login details below."
 msgstr "Похоже, что у вас уже есть учетная запись. Пожалуйста, введите свои данные для входа в систему ниже."
 
-#: sources/php/functions.php:3770
+#: sources/php/functions.php:3783
 msgid "If you have shopped with us before, please enter your login details below."
 msgstr "Если вы уже делали у нас покупки, введите свои данные для входа в систему ниже."
 
-#: sources/php/functions.php:3780
-#: sources/php/functions.php:3781
+#: sources/php/functions.php:3793
+#: sources/php/functions.php:3794
 msgid "Username or email address"
 msgstr "Имя пользователя или адрес электронной почты"
 
-#: sources/php/functions.php:3794
-#: sources/php/functions.php:3795
+#: sources/php/functions.php:3807
+#: sources/php/functions.php:3808
 msgid "Password"
 msgstr "Пароль"
 
-#: sources/php/functions.php:3815
+#: sources/php/functions.php:3828
 msgid "Remember me"
 msgstr "Запомнить меня"
 
-#: sources/php/functions.php:3844
+#: sources/php/functions.php:3857
 msgid "Or continue as guest"
 msgstr "Или продолжить в качестве гостя"
 
-#: sources/php/functions.php:3862
+#: sources/php/functions.php:3875
 msgid "Lost your password? Please enter your username or email address. You will receive a link to create a new password via email."
 msgstr "Забыли пароль? Пожалуйста, введите ваше имя пользователя или адрес электронной почты. Вы получите ссылку для создания нового пароля по электронной почте."
 
-#: sources/php/functions.php:3872
-#: sources/php/functions.php:3873
+#: sources/php/functions.php:3885
+#: sources/php/functions.php:3886
 msgid "Email address"
 msgstr "Адрес электронной почты"
 
-#: sources/php/functions.php:3885
+#: sources/php/functions.php:3898
 msgid "Reset password"
 msgstr "Сбросить пароль"
 
-#: sources/php/functions.php:3900
+#: sources/php/functions.php:3913
 #: includes/API/OrderBumpOfferFormPreviewAPI.php:46
 #: includes/API/GetVariationFormAPI.php:33
 msgid "Product not found"
 msgstr "Товар не найден"
 
-#: sources/php/functions.php:3916
-#: sources/php/functions.php:4053
+#: sources/php/functions.php:3929
+#: sources/php/functions.php:4066
 msgid "No thanks"
 msgstr "Нет, спасибо"
 
@@ -855,8 +855,8 @@ msgstr "Возникла проблема при оформлении заказ
 msgid "Please enter a valid postcode / ZIP."
 msgstr "Пожалуйста, введите действительный почтовый индекс / Индекс."
 
-#: includes/Features/LocalPickup.php:559
 #: includes/Managers/AssetManager.php:699
+#: includes/Features/LocalPickup.php:559
 msgid "Pickup"
 msgstr "Самовывоз"
 
@@ -909,60 +909,56 @@ msgstr "Удалить этот элемент"
 msgid "Proceed to checkout"
 msgstr "Перейти к оформлению заказа"
 
-#: includes/Loaders/LoaderAbstract.php:71
-#: includes/Features/CartEditingAtCheckout.php:45
-msgid "Checkout is not available whilst your cart is empty."
-msgstr "Оформление заказа недоступно, пока ваша корзина пуста."
-
-#: includes/Loaders/LoaderAbstract.php:135
-#: includes/Loaders/LoaderAbstract.php:245
+#: includes/Loaders/LoaderAbstract.php:134
+#: includes/Loaders/LoaderAbstract.php:244
 msgid "Sorry, this order is invalid and cannot be paid for."
 msgstr "Извините, этот заказ недействителен и не может быть оплачен."
 
-#: includes/Loaders/LoaderAbstract.php:139
+#: includes/Loaders/LoaderAbstract.php:138
 msgid "Please log in to your account below to continue to the payment form."
 msgstr "Пожалуйста, войдите в свой аккаунт ниже, чтобы продолжить к форме оплаты."
 
-#: includes/Loaders/LoaderAbstract.php:146
+#: includes/Loaders/LoaderAbstract.php:145
 msgid "You are paying for a guest order. Please continue with payment only if you recognize this order."
 msgstr "Вы оплачиваете заказ гостя. Пожалуйста, продолжайте оплату только если вы узнаёте этот заказ."
 
-#: includes/Loaders/LoaderAbstract.php:152
+#: includes/Loaders/LoaderAbstract.php:151
 msgid "This order cannot be paid for. Please contact us if you need assistance."
 msgstr "Этот заказ не может быть оплачен. Пожалуйста, свяжитесь с нами, если нужна помощь."
 
-#: includes/Loaders/LoaderAbstract.php:158
-#: includes/Loaders/LoaderAbstract.php:242
+#: includes/Loaders/LoaderAbstract.php:157
+#: includes/Loaders/LoaderAbstract.php:241
 msgid "This order&rsquo;s status is &ldquo;%s&rdquo;&mdash;it cannot be paid for. Please contact us if you need assistance."
 msgstr "Статус этого заказа — «%s» — он не может быть оплачен. Пожалуйста, свяжитесь с нами, если нужна помощь."
 
-#: includes/Loaders/LoaderAbstract.php:187
+#: includes/Loaders/LoaderAbstract.php:186
 msgid "Sorry, \"%s\" is no longer in stock so this order cannot be paid for. We apologize for any inconvenience caused."
 msgstr "Извините, \"%s\" больше нет в наличии, поэтому этот заказ не может быть оплачен. Приносим извинения за неудобства."
 
-#: includes/Loaders/LoaderAbstract.php:201
+#: includes/Loaders/LoaderAbstract.php:200
 msgid "Sorry, we do not have enough \"%1$s\" in stock to fulfill your order (%2$s available). We apologize for any inconvenience caused."
 msgstr "Извините, у нас недостаточно \"%1$s\" на складе для выполнения вашего заказа (доступно %2$s). Приносим извинения за неудобства."
 
-#: includes/Loaders/LoaderAbstract.php:248
+#: includes/Loaders/LoaderAbstract.php:247
 msgid "Invalid order."
 msgstr "Неверный заказ."
 
-#: includes/Features/Turnstile.php:133
-#: includes/Features/Turnstile.php:187
-#: includes/Features/Turnstile.php:316
+#: includes/Features/Turnstile.php:134
+#: includes/Features/Turnstile.php:188
+#: includes/Features/Turnstile.php:362
 msgid "Please complete the verification challenge."
 msgstr "Пожалуйста, пройдите проверку."
 
-#: includes/Features/Turnstile.php:335
+#: includes/Features/Turnstile.php:382
 msgid "Verification service unavailable. Please try again."
 msgstr "Служба проверки недоступна. Пожалуйста, попробуйте снова."
 
-#: includes/Features/Turnstile.php:351
+#: includes/Features/Turnstile.php:394
+#: includes/Features/Turnstile.php:413
 msgid "Verification failed. Please try again."
 msgstr "Проверка не прошла. Пожалуйста, попробуйте снова."
 
-#: includes/Features/Turnstile.php:378
+#: includes/Features/Turnstile.php:448
 msgid "We have detected that Simple Cloudflare Turnstile is active. To enable CheckoutWC Turnstile functionality, please deactivate Simple Cloudflare Turnstile."
 msgstr "Мы обнаружили, что Simple Cloudflare Turnstile активен. Чтобы включить функциональность CheckoutWC Turnstile, пожалуйста, деактивируйте Simple Cloudflare Turnstile."
 
@@ -1124,6 +1120,10 @@ msgstr "Поиск вашего адреса"
 #: includes/Features/FetchifyAddressAutocomplete.php:78
 msgid "Or enter address manually."
 msgstr "Или введите адрес вручную."
+
+#: includes/Features/CartEditingAtCheckout.php:45
+msgid "Checkout is not available whilst your cart is empty."
+msgstr "Оформление заказа недоступно, пока ваша корзина пуста."
 
 #: includes/Features/AbandonedCartRecovery.php:84
 msgid "You have been unsubscribed from our cart reminder emails."
@@ -1416,34 +1416,6 @@ msgstr "Форма предложения Order Bump"
 msgid "The form to accept or reject the bump offer."
 msgstr "Форма для принятия или отклонения предложения bump."
 
-#: sources/ts/blocks/OrderBumpSteps.tsx:55
-msgid "Order Bump Steps Stettings"
-msgstr "Настройки шагов Order Bump"
-
-#: sources/ts/blocks/OrderBumpSteps.tsx:58
-msgid "Step 1 Title"
-msgstr "Заголовок шага 1"
-
-#: sources/ts/blocks/OrderBumpSteps.tsx:59
-msgid "The title of Step 1. Example: Order Submitted"
-msgstr "Заголовок шага 1. Пример: Заказ отправлен"
-
-#: sources/ts/blocks/OrderBumpSteps.tsx:64
-msgid "Step 2 Title"
-msgstr "Заголовок шага 2"
-
-#: sources/ts/blocks/OrderBumpSteps.tsx:65
-msgid "The title of Step 2. Example: Special Offer"
-msgstr "Заголовок шага 2. Пример: Специальное предложение"
-
-#: sources/ts/blocks/OrderBumpSteps.tsx:70
-msgid "Step 3 Title"
-msgstr "Заголовок шага 3"
-
-#: sources/ts/blocks/OrderBumpSteps.tsx:71
-msgid "The title of Step 3. Example: Order Received"
-msgstr "Заголовок шага 3. Пример: Заказ получен"
-
 #: sources/ts/functions/cfwFormatDate.ts:38
 msgid "Sunday"
 msgstr "Воскресенье"
@@ -1601,6 +1573,34 @@ msgstr "я"
 msgid "pm"
 msgstr "pm"
 
+#: sources/ts/blocks/OrderBumpSteps.tsx:55
+msgid "Order Bump Steps Stettings"
+msgstr "Настройки шагов Order Bump"
+
+#: sources/ts/blocks/OrderBumpSteps.tsx:58
+msgid "Step 1 Title"
+msgstr "Заголовок шага 1"
+
+#: sources/ts/blocks/OrderBumpSteps.tsx:59
+msgid "The title of Step 1. Example: Order Submitted"
+msgstr "Заголовок шага 1. Пример: Заказ отправлен"
+
+#: sources/ts/blocks/OrderBumpSteps.tsx:64
+msgid "Step 2 Title"
+msgstr "Заголовок шага 2"
+
+#: sources/ts/blocks/OrderBumpSteps.tsx:65
+msgid "The title of Step 2. Example: Special Offer"
+msgstr "Заголовок шага 2. Пример: Специальное предложение"
+
+#: sources/ts/blocks/OrderBumpSteps.tsx:70
+msgid "Step 3 Title"
+msgstr "Заголовок шага 3"
+
+#: sources/ts/blocks/OrderBumpSteps.tsx:71
+msgid "The title of Step 3. Example: Order Received"
+msgstr "Заголовок шага 3. Пример: Заказ получен"
+
 #: sources/ts/admin/order-bumps-editor.tsx:59
 msgid "Order Bump Preview"
 msgstr "Предпросмотр Order Bump"
@@ -1637,24 +1637,6 @@ msgstr "Вы уверены, что хотите очистить все отс�
 #: sources/ts/admin/admin.ts:178
 msgid "Are you sure you want to discard all unsaved changes?"
 msgstr "Вы уверены, что хотите отказаться от всех несохранённых изменений?"
-
-# %1$s: Plugin name, %2$s: Link opening tag, %3$s: Version number, %4$s: Link closing tag
-#: includes/Managers/Helpers/EDD_SL_Plugin_Updater.php:280
-msgid "There is a new version of %1$s available. %2$sView version %3$s details%4$s."
-msgstr "Доступна новая версия %1$s. %2$sПросмотреть детали версии %3$s%4$s."
-
-# %1$s: Plugin name, %2$s: Link opening tag, %3$s: Version number, %4$s: Link closing tag, %5$s: Update link opening tag, %6$s: Update link closing tag
-#: includes/Managers/Helpers/EDD_SL_Plugin_Updater.php:289
-msgid "There is a new version of %1$s available. %2$sView version %3$s details%4$s or %5$supdate now%6$s."
-msgstr "Доступна новая версия %1$s. %2$sПросмотреть детали версии %3$s%4$s или %5$sобновить сейчас%6$s."
-
-#: includes/Managers/Helpers/EDD_SL_Plugin_Updater.php:533
-msgid "You do not have permission to install plugin updates"
-msgstr "У вас нет прав для установки обновлений плагина"
-
-#: includes/Managers/Helpers/EDD_SL_Plugin_Updater.php:533
-msgid "Error"
-msgstr "Ошибка"
 
 #: includes/Model/Bumps/BumpAbstract.php:903
 #: includes/Model/Bumps/BumpAbstract.php:913
@@ -1702,18 +1684,23 @@ msgstr "Order Bumps не найдены."
 msgid "Not found in trash"
 msgstr "Не найдено в корзине"
 
-# Error message logged when Jupiter theme callback removal fails
-#: includes/Compatibility/Themes/Jupiter.php:49
-msgid "CheckoutWC: Failed to unset Jupiter theme callbacks."
-msgstr "CheckoutWC: Не удалось отменить обратные вызовы темы Jupiter."
+# %1$s: Plugin name, %2$s: Link opening tag, %3$s: Version number, %4$s: Link closing tag
+#: includes/Managers/Helpers/EDD_SL_Plugin_Updater.php:280
+msgid "There is a new version of %1$s available. %2$sView version %3$s details%4$s."
+msgstr "Доступна новая версия %1$s. %2$sПросмотреть детали версии %3$s%4$s."
 
-#: includes/Compatibility/Themes/Astra.php:81
-msgid "Enable Astra Support (Beta)"
-msgstr "Включить поддержку Astra (бета)"
+# %1$s: Plugin name, %2$s: Link opening tag, %3$s: Version number, %4$s: Link closing tag, %5$s: Update link opening tag, %6$s: Update link closing tag
+#: includes/Managers/Helpers/EDD_SL_Plugin_Updater.php:289
+msgid "There is a new version of %1$s available. %2$sView version %3$s details%4$s or %5$supdate now%6$s."
+msgstr "Доступна новая версия %1$s. %2$sПросмотреть детали версии %3$s%4$s или %5$sобновить сейчас%6$s."
 
-#: includes/Compatibility/Themes/Astra.php:82
-msgid "Allow Astra to replace header and footer. Allows Astra / Astra Addon to load its styles and scripts on the checkout page."
-msgstr "Разрешить Astra заменить шапку и подвал. Позволяет Astra / Astra Addon загружать свои стили и скрипты на странице оформления заказа."
+#: includes/Managers/Helpers/EDD_SL_Plugin_Updater.php:533
+msgid "You do not have permission to install plugin updates"
+msgstr "У вас нет прав для установки обновлений плагина"
+
+#: includes/Managers/Helpers/EDD_SL_Plugin_Updater.php:533
+msgid "Error"
+msgstr "Ошибка"
 
 #: includes/Admin/Pages/WooCommercePages.php:21
 msgid "Pages"
@@ -2088,10 +2075,10 @@ msgstr "Оценочное время самовывоза"
 msgid "Pickup Instructions"
 msgstr "Инструкции по самовывозу"
 
+#: includes/Compatibility/Plugins/CartFlows.php:62
 #: includes/Admin/Pages/PickupLocationsAdminFree.php:218
 #: includes/Admin/Pages/PageAbstract.php:106
 #: includes/Admin/Pages/General.php:326
-#: includes/Compatibility/Plugins/CartFlows.php:62
 #: includes/Admin/Pages/Premium/PickupLocations.php:217
 #: includes/Admin/Pages/Premium/OrderBumps.php:206
 #: includes/Admin/Pages/Premium/LocalPickupAdmin.php:165
@@ -2834,14 +2821,6 @@ msgstr "Удалить все отслеживаемые корзины"
 msgid "Note: This resets ALL abandoned cart recovery statistics!"
 msgstr "Примечание: Это сбросит ВСЮ статистику восстановления брошенной корзины!"
 
-#: includes/Compatibility/Gateways/PayPalForWooCommerce.php:38
-msgid "Please update to the latest version of PayPal for WooCommerce to get full support."
-msgstr "Пожалуйста, обновите PayPal для WooCommerce до последней версии для полной поддержки."
-
-#: includes/Compatibility/Gateways/PayPalForWooCommerce.php:363
-msgid "Logged in with PayPal. Please continue your order below."
-msgstr "Вход в систему PayPal. Пожалуйста, продолжайте Ваш заказ ниже."
-
 #: includes/Admin/Notices/WelcomeNotice.php:12
 msgid "Welcome to CheckoutWC"
 msgstr "Добро пожаловать в CheckoutWC"
@@ -2871,6 +2850,27 @@ msgstr "пожалуйста, свяжитесь с поддержкой"
 #: includes/Admin/Notices/InactiveLicenseNotice.php:11
 msgid "Your license key is not active for this site. Please visit <a href=\"%1$s\">%2$s</a> to activate your license and restore functionality."
 msgstr "Ваш лицензионный ключ не активен для этого сайта. Пожалуйста, посетите <a href=\"%1$s\">%2$s</a>, чтобы активировать лицензию и восстановить функциональность."
+
+#: includes/Compatibility/Gateways/PayPalForWooCommerce.php:38
+msgid "Please update to the latest version of PayPal for WooCommerce to get full support."
+msgstr "Пожалуйста, обновите PayPal для WooCommerce до последней версии для полной поддержки."
+
+#: includes/Compatibility/Gateways/PayPalForWooCommerce.php:363
+msgid "Logged in with PayPal. Please continue your order below."
+msgstr "Вход в систему PayPal. Пожалуйста, продолжайте Ваш заказ ниже."
+
+# Error message logged when Jupiter theme callback removal fails
+#: includes/Compatibility/Themes/Jupiter.php:49
+msgid "CheckoutWC: Failed to unset Jupiter theme callbacks."
+msgstr "CheckoutWC: Не удалось отменить обратные вызовы темы Jupiter."
+
+#: includes/Compatibility/Themes/Astra.php:81
+msgid "Enable Astra Support (Beta)"
+msgstr "Включить поддержку Astra (бета)"
+
+#: includes/Compatibility/Themes/Astra.php:82
+msgid "Allow Astra to replace header and footer. Allows Astra / Astra Addon to load its styles and scripts on the checkout page."
+msgstr "Разрешить Astra заменить шапку и подвал. Позволяет Astra / Astra Addon загружать свои стили и скрипты на странице оформления заказа."
 
 #: includes/Compatibility/Plugins/WooCommerceGiftCards.php:64
 #: includes/Compatibility/Plugins/WooCommerceGiftCards.php:72
@@ -5287,8 +5287,8 @@ msgid "Delete Rule"
 msgstr "Удалить правило"
 
 # %d: shipping package number
-#: sources/php/functions.php:366
-#: sources/php/functions.php:3254
+#: sources/php/functions.php:368
+#: sources/php/functions.php:3267
 msgctxt "woocommerce"
 msgid "Shipping"
 msgid_plural "Shipping %d"
