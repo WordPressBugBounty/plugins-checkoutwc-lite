@@ -40,11 +40,45 @@ class Braintree extends CompatibilityAbstract {
 		add_action( 'cfw_checkout_payment_method_tab', 'cfw_payment_methods', 25 );
 	}
 
+	/**
+	 * Safely get Braintree gateway ID constant from either WC_Braintree or WC_Braintree\WC_Braintree class
+	 *
+	 * @param string $constant_name The constant name to retrieve (without class prefix)
+	 * @return string|false The constant value or false if not found
+	 */
+	private function get_braintree_gateway_id( string $constant_name ) {
+		// Try the older class structure first: \WC_Braintree::CONSTANT
+		if ( class_exists( '\WC_Braintree' ) && defined( '\WC_Braintree::' . $constant_name ) ) {
+			return constant( '\WC_Braintree::' . $constant_name );
+		}
+
+		// Try the newer namespaced class structure: \WC_Braintree\WC_Braintree::CONSTANT
+		if ( class_exists( '\WC_Braintree\WC_Braintree' ) && defined( '\WC_Braintree\WC_Braintree::' . $constant_name ) ) {
+			return constant( '\WC_Braintree\WC_Braintree::' . $constant_name );
+		}
+
+		return false;
+	}
+
 	public function typescript_class_and_params( array $compatibility ): array {
 		$payment_gateways = WC()->payment_gateways->payment_gateways();
 
-		$cc_gateway_available     = isset( $payment_gateways[ \WC_Braintree::CREDIT_CARD_GATEWAY_ID ] ) ? $payment_gateways[ \WC_Braintree::CREDIT_CARD_GATEWAY_ID ]->is_available() : false;
-		$paypal_gateway_available = isset( $payment_gateways[ \WC_Braintree::PAYPAL_GATEWAY_ID ] ) ? $payment_gateways[ \WC_Braintree::PAYPAL_GATEWAY_ID ]->is_available() : false;
+		// Safely get credit card gateway ID
+		$cc_gateway_id = $this->get_braintree_gateway_id( 'CREDIT_CARD_GATEWAY_ID' );
+		if ( false === $cc_gateway_id ) {
+			cfw_debug_log( 'Braintree compatibility: Unable to load credit card gateway ID constants' );
+			return $compatibility;
+		}
+
+		// Safely get PayPal gateway ID
+		$paypal_gateway_id = $this->get_braintree_gateway_id( 'PAYPAL_GATEWAY_ID' );
+		if ( false === $paypal_gateway_id ) {
+			cfw_debug_log( 'Braintree compatibility: Unable to load PayPal gateway ID constants' );
+			return $compatibility;
+		}
+
+		$cc_gateway_available     = isset( $payment_gateways[ $cc_gateway_id ] ) ? $payment_gateways[ $cc_gateway_id ]->is_available() : false;
+		$paypal_gateway_available = isset( $payment_gateways[ $paypal_gateway_id ] ) ? $payment_gateways[ $paypal_gateway_id ]->is_available() : false;
 
 		$compatibility[] = array(
 			'class'  => 'Braintree',

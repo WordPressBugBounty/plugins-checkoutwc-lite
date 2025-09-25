@@ -157,6 +157,10 @@ class Install {
 		SettingsManager::instance()->add_setting( 'show_cart_item_discounts', 'no' );
 		SettingsManager::instance()->add_setting( 'side_cart_free_shipping_progress_bg_color', '#f5f5f5' );
 		SettingsManager::instance()->add_setting( 'trust_badge_position', 'below_cart_summary' );
+		SettingsManager::instance()->add_setting( 'enable_wc_review_badges', 'no' );
+		SettingsManager::instance()->add_setting( 'wc_review_source', 'cart_first' );
+		SettingsManager::instance()->add_setting( 'wc_review_min_rating', '4' );
+		SettingsManager::instance()->add_setting( 'wc_review_limit', '3' );
 		SettingsManager::instance()->add_setting( 'use_fullname_field', 'no' );
 		SettingsManager::instance()->add_setting( 'enable_smartystreets_integration', 'no' );
 		SettingsManager::instance()->add_setting( 'enable_acr', 'no' );

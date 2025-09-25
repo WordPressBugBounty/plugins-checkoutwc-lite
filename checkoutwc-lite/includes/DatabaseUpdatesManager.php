@@ -76,6 +76,7 @@ class DatabaseUpdatesManager extends SingletonAbstract {
 			'10.1.8'  => array( $this, 'update_1018' ),
 			'10.2.0'  => array( $this, 'update_1020' ),
 			'10.2.6'  => array( $this, 'update_1026' ),
+			'10.2.9'  => array( $this, 'update_1029' ),
 			// TODO: For future updates, bifurcate pro and lite versions
 		);
 	}
@@ -1149,5 +1150,13 @@ class DatabaseUpdatesManager extends SingletonAbstract {
 		$wpdb->query( 
 			"UPDATE {$table_name} SET cart_hash = SHA2(CONCAT(email, '|', cart), 256) WHERE status != 'abandoned' AND (cart_hash = '' OR cart_hash IS NULL)" // phpcs:ignore WordPress.DB.PreparedSQL.InterpolatedNotPrepared
 		);
+	}
+
+	public function update_1029() {
+		// Add WooCommerce review trust badge settings
+		SettingsManager::instance()->add_setting( 'enable_wc_review_badges', 'no' );
+		SettingsManager::instance()->add_setting( 'wc_review_source', 'cart_first' );
+		SettingsManager::instance()->add_setting( 'wc_review_min_rating', '4' );
+		SettingsManager::instance()->add_setting( 'wc_review_limit', '3' );
 	}
 }

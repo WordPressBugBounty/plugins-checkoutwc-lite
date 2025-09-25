@@ -2072,9 +2072,9 @@ function cfw_output_empty_cart_message() {
 	 */
 	$message = apply_filters( 'cfw_empty_side_cart_heading', __( 'Your Cart is Empty', 'checkout-wc' ) );
 	?>
-	<h2 id="cfw_empty_side_cart_message">
+	<p id="cfw_empty_side_cart_message">
 		<?php echo wp_kses_post( $message ); ?>
-	</h2>
+	</p>
 	<?php
 }
 

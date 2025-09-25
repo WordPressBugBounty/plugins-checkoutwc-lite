@@ -464,15 +464,18 @@ class UpdatesManager extends SingletonAbstract {
 		$price_id = get_option( 'cfw_license_price_id', 0 );
 
 		$plans = array(
+			1  => 'Basic',
 			2  => 'Plus',
 			3  => 'Agency',
 			4  => 'Agency Monthly',
+			5  => 'Basic Monthly',
 			6  => 'Plus Monthly',
 			7  => 'Pro',
 			8  => 'Pro',
 			9  => 'Plus',
 			10 => 'Agency',
 			12 => 'Pro',
+			13 => 'Basic',
 		);
 
 		$plan = $plans[ $price_id ] ?? 'None';

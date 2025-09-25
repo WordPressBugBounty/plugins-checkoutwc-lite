@@ -4,7 +4,7 @@ Donate link: https://www.checkoutwc.com
 Tags: woocommerce checkout, woocommerce checkout template, woocommerce checkout theme, woo checkout, shopify
 Requires at least: 5.2
 Tested up to: 6.8
-Stable tag: 10.2.6
+Stable tag: 10.3.0
 Requires PHP: 7.4
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
@@ -125,6 +125,19 @@ CheckoutWC works with virtually all payment gateways out of the box. If you have
 == Changelog ==
 
 Free version updates are non-sequential due to the unified development branch we use with the premium versions.
+
+= Version 10.3.0 =
+* Fix - Fixed fatal error in Braintree compatibility class with wrong namespace
+* Fix - Fixed Order Bumps pricing problem with hardcoded prices with WooCommerce Multi-Currency compatibility
+* Dev - Updated dependencies for security and compatibility
+
+= Version 10.2.7 =
+* Fix - Fix for broken shipping method selection for subscriptions
+* Fix - Fixed bug that caused "Free!" to show up when hide shipping costs until address entered was enabled
+* Fix - Fixed bug with order pay and login message for Groove, Glass, and Copify themes
+* Fix - Fixed incorrect array offset access warnings
+* Improved - Added compatibility with Quantity Discounts & Pricing for WooCommerce plugin
+* Improved - Updated wording of enter address shipping message depending on context (checkout vs side cart)
 
 = Version 10.2.6 =
 * Fix - Get rid of superfluous error messages that aren't real error messages.

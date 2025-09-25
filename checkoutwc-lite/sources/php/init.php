@@ -114,6 +114,7 @@ use Objectiv\Plugins\Checkout\Compatibility\Plugins\PhoneOrdersForWooCommercePro
 use Objectiv\Plugins\Checkout\Compatibility\Plugins\PimwickGiftCardsPro;
 use Objectiv\Plugins\Checkout\Compatibility\Plugins\PixelCaffeine;
 use Objectiv\Plugins\Checkout\Compatibility\Plugins\Polylang;
+use Objectiv\Plugins\Checkout\Compatibility\Plugins\QuantityDiscountsPricingForWoocommerce;
 use Objectiv\Plugins\Checkout\Compatibility\Plugins\PortugalDPDPickup;
 use Objectiv\Plugins\Checkout\Compatibility\Plugins\PortugalVaspKios;
 use Objectiv\Plugins\Checkout\Compatibility\Plugins\PostNL;
@@ -143,6 +144,7 @@ use Objectiv\Plugins\Checkout\Compatibility\Plugins\WooCommerceCarrierAgents;
 use Objectiv\Plugins\Checkout\Compatibility\Plugins\WooCommerceCheckoutFieldEditor;
 use Objectiv\Plugins\Checkout\Compatibility\Plugins\WooCommerceCore;
 use Objectiv\Plugins\Checkout\Compatibility\Plugins\WooCommerceEUUKVATCompliancePremium;
+use Objectiv\Plugins\Checkout\Compatibility\Plugins\WOOMCMultiCurrency;
 use Objectiv\Plugins\Checkout\Compatibility\Plugins\WooCommerceExtendedCouponFeaturesPro;
 use Objectiv\Plugins\Checkout\Compatibility\Plugins\WooCommerceGermanized;
 use Objectiv\Plugins\Checkout\Compatibility\Plugins\WooCommerceGermanMarket;
@@ -435,6 +437,7 @@ $compatibility_modules = array(
 	MyParcel::instance(),
 	CoderockzWooDelivery::instance(),
 	CURCYWooCommerceMultiCurrency::instance(),
+	WOOMCMultiCurrency::instance(),
 	WooCommerceProductRecommendations::instance(),
 	CashierForWooCommerce::instance(),
 	BigBlue::instance(),
@@ -445,6 +448,7 @@ $compatibility_modules = array(
 	WoolentorAddons::instance(),
 	AdvancedCouponsForWooCommerce::instance(),
 	Polylang::instance(),
+	QuantityDiscountsPricingForWoocommerce::instance(),
 	RouteApp::instance(),
 	PortugalDPDPickup::instance(),
 	OwnID::instance(),

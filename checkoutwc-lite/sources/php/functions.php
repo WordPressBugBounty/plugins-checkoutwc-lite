@@ -721,7 +721,8 @@ function cfw_get_shipping_total(): string {
 	$address_required                             = get_option( 'woocommerce_shipping_cost_requires_address' ) === 'yes';
 	$missing_address                              = $address_required && ! $has_calculated_shipping;
 
-	if ( ! $all_packages_have_available_shipping_methods && ( $missing_address || ! $has_calculated_shipping ) ) {
+	// When address is required but not provided, show appropriate message regardless of method availability
+	if ( $missing_address || ( ! $all_packages_have_available_shipping_methods && ! $has_calculated_shipping ) ) {
 		/**
 		 * Filters shipping total address required text
 		 *
@@ -729,7 +730,7 @@ function cfw_get_shipping_total(): string {
 		 *
 		 * @since 2.0.0
 		 */
-		return sprintf( $small_format, apply_filters( 'cfw_shipping_total_address_required_text', esc_html__( 'Shipping costs are calculated during checkout.', 'woocommerce' ) ) );
+		return sprintf( $small_format, ! is_checkout() ? apply_filters( 'cfw_shipping_total_address_required_text', esc_html__( 'Shipping costs are calculated during checkout.', 'woocommerce' ) ) : __( 'Enter your address to view shipping options.', 'woocommerce' ) );
 	}
 
 	if ( ! $all_packages_have_available_shipping_methods ) {
@@ -3704,7 +3705,7 @@ function cfw_is_free_shipping_available(): bool {
 	WC()->cart->calculate_shipping();
 	$packages = WC()->shipping()->get_packages();
 
-	if ( ! is_array( $packages ) || ! is_array( $packages[0]['rates'] ) ) {
+	if ( ! is_array( $packages ) || count( $packages ) === 0 || ! is_array( $packages[0]['rates'] ) ) {
 		return false;
 	}
 
@@ -4213,6 +4214,15 @@ function cfw_get_trust_badges( bool $apply_rules = true ): array {
 
 		$badges[] = $sanitized_badge;
 	}
+
+	/**
+	 * Filter to add additional trust badges (like WooCommerce reviews)
+	 *
+	 * @since 10.2.9
+	 * @param array $badges Existing trust badges
+	 * @param bool $apply_rules Whether to apply rules
+	 */
+	$badges = apply_filters( 'cfw_trust_badges', $badges, $apply_rules );
 
 	return $badges;
 }
