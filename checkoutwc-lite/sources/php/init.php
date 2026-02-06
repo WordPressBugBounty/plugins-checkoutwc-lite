@@ -14,12 +14,16 @@ use Objectiv\Plugins\Checkout\Action\ValidateEmailDomainAction;
 use Objectiv\Plugins\Checkout\Action\ValidatePostcodeAction;
 use Objectiv\Plugins\Checkout\Admin\Notices\AstraProWarning;
 use Objectiv\Plugins\Checkout\Admin\Notices\AvadaWarning;
+use Objectiv\Plugins\Checkout\Admin\Notices\BFNotice;
 use Objectiv\Plugins\Checkout\Admin\Notices\BluehostPluginNotice;
 use Objectiv\Plugins\Checkout\Admin\Notices\DiviWarning;
+use Objectiv\Plugins\Checkout\Admin\Notices\LiteEmailOptIn;
 use Objectiv\Plugins\Checkout\Admin\Notices\GatewayProblemsNotice;
 use Objectiv\Plugins\Checkout\Admin\Notices\PortoWarning;
 use Objectiv\Plugins\Checkout\Admin\Notices\WoostifyWarning;
 use Objectiv\Plugins\Checkout\Admin\Pages\AbandonedCartRecoveryAdminFree;
+use Objectiv\Plugins\Checkout\Admin\AdminPluginsPageManager;
+use Objectiv\Plugins\Checkout\Admin\DeactivationSurvey;
 use Objectiv\Plugins\Checkout\Admin\Pages\AdminPagesRegistry;
 use Objectiv\Plugins\Checkout\Admin\Pages\ExpressCheckout;
 use Objectiv\Plugins\Checkout\Admin\Pages\Integrations;
@@ -52,6 +56,7 @@ use Objectiv\Plugins\Checkout\Compatibility\Gateways\PostFinance;
 use Objectiv\Plugins\Checkout\Compatibility\Gateways\Square;
 use Objectiv\Plugins\Checkout\Compatibility\Gateways\Stripe;
 use Objectiv\Plugins\Checkout\Compatibility\Gateways\StripeWooCommerce;
+use Objectiv\Plugins\Checkout\Compatibility\Gateways\Timewise;
 use Objectiv\Plugins\Checkout\Compatibility\Gateways\Vipps;
 use Objectiv\Plugins\Checkout\Compatibility\Gateways\WebToffeeStripe;
 use Objectiv\Plugins\Checkout\Compatibility\Gateways\WooCommercePayPalPayments;
@@ -502,6 +507,7 @@ $compatibility_modules = array(
 	Mollie::instance(),
 	WebToffeeStripe::instance(),
 	ResursBank::instance(),
+	Timewise::instance(),
 
 	// Themes
 	Avada::instance(),
@@ -596,6 +602,39 @@ add_action(
 		echo 'div[id^="pressmodo-notice-cfw"].notice { display: flex; align-items: center; }';
 		echo 'div[id^="pressmodo-notice-cfw"].notice .pressmodo-notice-image { flex: 0 0 90px; margin: 0.5em; }';
 		echo '</style>';
+	}
+);
+
+/**
+ * Hide screen options for specific post types
+ */
+add_filter(
+	'screen_options_show_screen',
+	function ( $show ) {
+		global $post, $typenow;
+
+		$post_types_to_hide = array(
+			'cfw_order_bumps',
+			'cfw_pickup_location',
+			'cfw_acr_emails',
+			'cfw_ab_test',
+		);
+
+		$current_post_type = $typenow;
+
+		if ( ! $current_post_type && $post ) {
+			$current_post_type = $post->post_type;
+		}
+
+		if ( isset( $_GET['post_type'] ) ) { // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+			$current_post_type = sanitize_text_field( wp_unslash( $_GET['post_type'] ) ); // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+		}
+
+		if ( in_array( $current_post_type, $post_types_to_hide, true ) ) {
+			return false;
+		}
+
+		return $show;
 	}
 );
 
@@ -759,6 +798,11 @@ add_action(
 				( new GatewayProblemsNotice() )->build( $gateway );
 			}
 		}
+
+		( new BFNotice() )->maybe_add();
+
+		// Lite email opt-in notice
+		( new LiteEmailOptIn() )->add();
 	},
 	10
 );
@@ -805,14 +849,112 @@ if ( SettingsManager::instance()->get_setting( 'skip_cart_step' ) === 'yes' ) {
 		}
 	);
 
-	add_filter( 'cfw_breadcrumbs', function ( $breadcrumbs ) {
+	add_filter(
+		'cfw_breadcrumbs',
+		function ( $breadcrumbs ) {
 		unset( $breadcrumbs['cart'] );
 
 		return $breadcrumbs;
-	} );
+		}
+	);
 }
 
+add_filter(
+	'cfw_get_billing_checkout_fields',
+	function ( $fields ) {
+		if ( is_null( WC()->cart ) ) {
+			return $fields;
+		}
+
+		$original_fields = array(
+			'billing_first_name',
+			'billing_last_name',
+			'billing_address_1',
+			'billing_address_2',
+			'billing_company',
+			'billing_country',
+			'billing_postcode',
+			'billing_state',
+			'billing_city',
+			'billing_phone',
+		);
+
+		$enabled_fields = cfw_get_setting( 'enabled_billing_address_fields', null, array() );
+
+		if ( SettingsManager::instance()->get_setting( 'hide_billing_address_for_free_orders' ) === 'yes' && ! WC()->cart->needs_payment() && WC()->cart->needs_shipping_address() ) {
+			$enabled_fields = array();
+		}
+
+		if ( SettingsManager::instance()->get_setting( 'hide_billing_address_for_free_orders' ) === 'yes' && ! WC()->cart->needs_payment() && ! WC()->cart->needs_shipping_address() ) {
+			$enabled_fields = array( 'billing_first_name', 'billing_last_name' );
+		}
+
+		foreach ( $original_fields as $field_key ) {
+			if ( ! in_array( $field_key, $enabled_fields, true ) ) {
+				unset( $fields[ $field_key ] );
+			}
+		}
+
+		return $fields;
+	},
+	100
+);
+
+add_filter(
+	'woocommerce_checkout_fields',
+	function ( $fields ) {
+		if ( is_null( WC()->cart ) ) {
+			return $fields;
+		}
+
+		$original_fields = array(
+			'billing_first_name',
+			'billing_last_name',
+			'billing_address_1',
+			'billing_address_2',
+			'billing_company',
+			'billing_country',
+			'billing_postcode',
+			'billing_state',
+			'billing_city',
+			'billing_phone',
+		);
+
+		$enabled_fields = cfw_get_setting( 'enabled_billing_address_fields', null, array() );
+
+		if ( SettingsManager::instance()->get_setting( 'hide_billing_address_for_free_orders' ) === 'yes' && ! WC()->cart->needs_payment() && WC()->cart->needs_shipping_address() ) {
+			$enabled_fields = array();
+		}
+
+		if ( SettingsManager::instance()->get_setting( 'hide_billing_address_for_free_orders' ) === 'yes' && ! WC()->cart->needs_payment() && ! WC()->cart->needs_shipping_address() ) {
+			$enabled_fields = array( 'billing_first_name', 'billing_last_name' );
+		}
+
+		foreach ( $original_fields as $field_key ) {
+			if ( ! in_array( $field_key, $enabled_fields, true ) ) {
+				if ( isset( $fields['billing'][ $field_key ] ) ) {
+					unset( $fields['billing'][ $field_key ] );
+				}
+			}
+		}
+
+		return $fields;
+	}
+);
+
 add_action( 'admin_init', array( new WelcomeScreenActivationRedirector(), 'welcome_screen_do_activation_redirect' ) );
+
+/**
+ * Initialize deactivation survey for both Pro and Lite versions.
+ *
+ * @since 11.0.1
+ */
+add_action(
+	'admin_init',
+	function () {
+		( new DeactivationSurvey() )->init();
+	}
+);
 
 /**
  * Warning to admins about disabled templates
@@ -1023,6 +1165,17 @@ add_action(
 							'update_shipping_phone_on_order_create',
 						),
 						10
+					);
+
+					// Hook for saving shipping phone to customer meta
+					add_action(
+						'woocommerce_checkout_update_customer',
+						array(
+							AddressFieldsAugmenter::instance(),
+							'save_shipping_phone_to_customer',
+						),
+						10,
+						2
 					);
 				}
 			},

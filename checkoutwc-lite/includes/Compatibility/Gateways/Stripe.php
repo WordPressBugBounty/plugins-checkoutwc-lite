@@ -51,10 +51,8 @@ class Stripe extends CompatibilityAbstract {
 	}
 
 	public function run() {
-		$stripe_settings = WC_Stripe_Helper::get_stripe_settings();
-		$prb_locations   = $stripe_settings['payment_request_button_locations'] ?? array();
-
-		if ( ! in_array( 'checkout', $prb_locations, true ) ) {
+		// Check if express checkout should be shown
+		if ( ! $this->should_show_express_checkout() ) {
 			return;
 		}
 
@@ -112,4 +110,60 @@ class Stripe extends CompatibilityAbstract {
 
 		return $compatibility;
 	}
+
+	/**
+	 * Determine if express checkout should be shown on checkout page
+	 *
+	 * This method includes fallback logic for when Stripe's settings are empty or misconfigured
+	 *
+	 * @since 10.3.10
+	 * @return bool
+	 */
+	private function should_show_express_checkout(): bool {
+		$stripe_settings = WC_Stripe_Helper::get_stripe_settings();
+
+		// Check the legacy payment_request_button_locations setting
+		$prb_locations = $stripe_settings['payment_request_button_locations'] ?? array();
+
+		// Check the new express_checkout_button_locations setting
+		$ece_locations = $stripe_settings['express_checkout_button_locations'] ?? array();
+
+		// If checkout is explicitly in either location array, respect that
+		if ( in_array( 'checkout', $prb_locations, true ) || in_array( 'checkout', $ece_locations, true ) ) {
+			return true;
+		}
+
+		/**
+		 * Filter to force enable express checkout on checkout page
+		 *
+		 * Useful when Stripe settings are misconfigured or empty
+		 *
+		 * @since 10.3.10
+		 * @param bool $force_enable Whether to force enable express checkout
+		 */
+		if ( apply_filters( 'cfw_stripe_force_checkout_express_checkout', false ) ) {
+			return true;
+		}
+
+		// If either location array is not empty, settings have been configured - respect them
+		if ( ! empty( $prb_locations ) || ! empty( $ece_locations ) ) {
+			return false;
+		}
+
+		// Both arrays are empty - likely a new installation with default settings
+		// Check if Express Checkout Element is available
+		if ( ! class_exists( '\\WC_Stripe_Express_Checkout_Element' ) ) {
+			return false;
+		}
+
+		// Check if ECE/UCE is enabled via feature flags
+		if ( class_exists( 'WC_Stripe_Feature_Flags' ) && ! WC_Stripe_Feature_Flags::is_uce_enabled() ) {
+			return false;
+		}
+
+		// ECE class exists and is enabled (or we can't check flags) with empty locations
+		// Apply fallback to show on checkout (matching Stripe's intended defaults)
+		return true;
+	}
+
 }

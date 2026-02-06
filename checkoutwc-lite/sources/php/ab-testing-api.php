@@ -1,5 +1,9 @@
 <?php
 
+/**
+ * These functions were introduced prior to the A/B Testing feature being added to the plugin.
+ * They are kept here for backwards compatibility.
+ */
 function cfw_register_ab_test( $name, callable $callback ) {
 	add_action( 'cfw_ab_test_' . $name, $callback );
 }

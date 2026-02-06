@@ -2,6 +2,8 @@
 
 namespace Objectiv\Plugins\Checkout\Shipping;
 
+use Automattic\WooCommerce\Enums\ProductTaxStatus;
+use Objectiv\Plugins\Checkout\Managers\PlanManager;
 use WC_Shipping_Local_Pickup;
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -42,18 +44,11 @@ class CFW_Shipping_Local_Pickup extends \WC_Shipping_Local_Pickup {
 	 * Initialize local pickup.
 	 */
 	public function init() {
-		// Load the settings.
-		$this->init_form_fields();
-		$this->init_settings();
-
 		// Define user set variables.
-		$this->title      = $this->get_option( 'title' );
-		$this->tax_status = $this->get_option( 'tax_status' );
-		$this->cost       = $this->get_option( 'cost' );
-		$this->enabled    = $this->get_option( 'enabled' );
-
-		// Actions for non-zone shipping methods
-		add_action( 'woocommerce_update_options_shipping_' . $this->id, array( $this, 'process_admin_options' ) );
+		$this->title      = __( 'Local Pickup', 'checkout-wc' );
+		$this->tax_status = ProductTaxStatus::NONE;
+		$this->cost       = '';
+		$this->enabled    = $this->is_enabled();
 	}
 
 	/**
@@ -87,6 +82,10 @@ class CFW_Shipping_Local_Pickup extends \WC_Shipping_Local_Pickup {
 	 * @return bool
 	 */
 	public function is_available( $package ): bool {
-		return 'yes' === $this->enabled;
+		return wc_shipping_enabled() && $this->is_enabled();
+	}
+
+	public function is_enabled(): bool {
+		return PlanManager::can_access_feature( 'enable_pickup', 'plus' );
 	}
 }

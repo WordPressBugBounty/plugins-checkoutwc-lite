@@ -175,6 +175,14 @@ class UpdateCheckoutAction extends CFWAction {
 		}
 
 		/**
+		 * Filters whether to reload checkout
+		 *
+		 * @param bool $reload_checkout Whether to reload checkout
+		 * @since 10.3.9
+		 */
+		$reload_checkout = apply_filters( 'cfw_reload_checkout', $reload_checkout );
+
+		/**
 		 * Filters whether to redirect the checkout page during refresh
 		 *
 		 * @param bool|string Boolean false means don't redirect, string means redirect to URL

@@ -236,10 +236,6 @@ class StyleManager {
 	}
 
 	public static function add_styles( $handle = 'cfw_front' ) {
-		if ( is_rtl() ) {
-			$handle = $handle . '_rtl';
-		}
-
 		wp_add_inline_style( $handle, self::get_css_custom_property_overrides() . self::get_custom_css() );
 	}
 }

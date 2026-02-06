@@ -755,7 +755,7 @@ function cfw_get_shipping_total(): string {
 		return apply_filters( 'cfw_no_shipping_method_selected_message', '' );
 	}
 
-	$total = cfw_calculate_packages_shipping( $packages, WC()->session, WC()->cart );
+	$total = cfw_sum_packages_shipping_total( $packages, WC()->session, WC()->cart );
 
 	if ( 0 < $total ) {
 		return wc_price( $total );
@@ -785,6 +785,12 @@ function cfw_all_packages_have_selected_shipping_methods( $packages ): bool {
 }
 
 function cfw_calculate_packages_shipping( array $packages, $wc_session, $wc_cart ) {
+	_deprecated_function( __METHOD__, '10.3.7', 'cfw_sum_packages_shipping_total' );
+
+	return cfw_sum_packages_shipping_total( $packages, $wc_session, $wc_cart );
+}
+
+function cfw_sum_packages_shipping_total( array $packages, $wc_session, $wc_cart ) {
 	$total = 0;
 
 	foreach ( $packages as $i => $package ) {
@@ -1721,7 +1727,20 @@ function cfw_is_phone_fields_enabled(): bool {
  */
 function cfw_maybe_match_new_order_to_user_account( $order_id ) {
 	$order = wc_get_order( $order_id );
-	$user  = $order->get_user();
+
+	if ( ! $order || ! is_a( $order, 'WC_Order' ) ) {
+		wc_get_logger()->debug( "CheckoutWC: Invalid order ID {$order_id} passed to cfw_maybe_match_new_order_to_user_account", array( 'source' => 'checkout-wc' ) );
+
+		return;
+	}
+
+	if ( ! is_object( $order ) || ! method_exists( $order, 'get_user' ) ) {
+		wc_get_logger()->debug( "CheckoutWC: Order object for ID {$order_id} does not support get_user()", array( 'source' => 'checkout-wc' ) );
+
+		return;
+	}
+
+	$user = $order->get_user();
 
 	if ( ! $user ) {
 		$user_data = get_user_by( 'email', $order->get_billing_email() );
@@ -1730,10 +1749,13 @@ function cfw_maybe_match_new_order_to_user_account( $order_id ) {
 			try {
 				$order->set_customer_id( $user_data->ID );
 				$order->save();
+				wc_get_logger()->info( "CheckoutWC: Matched guest order {$order_id} to existing user {$user_data->ID}", array( 'source' => 'checkout-wc' ) );
 			} catch ( \WC_Data_Exception $e ) {
 				/* translators: 1: order ID, 2: customer ID - Error message logged when order matching to customer fails */
 				wc_get_logger()->error( sprintf( __( 'CheckoutWC: Error matching %1$d to customer %2$d', 'checkout-wc' ), $order_id, $user_data->ID ), array( 'source' => 'checkout-wc' ) );
 			}
+		} else {
+			wc_get_logger()->info( "CheckoutWC: No existing user found for guest order {$order_id} with email {$order->get_billing_email()}", array( 'source' => 'checkout-wc' ) );
 		}
 	}
 }
@@ -1744,8 +1766,39 @@ function cfw_maybe_match_new_order_to_user_account( $order_id ) {
  * @param int $user_id The user ID.
  */
 function cfw_maybe_link_orders_at_registration( $user_id ) {
-	cfw_debug_log( 'Linking previous orders for new customer ' . $user_id . '. Doing Cron: ' . var_export( wp_doing_cron(), true ) ); // phpcs:ignore WordPress.PHP.DevelopmentFunctions.error_log_var_export
+	$user = get_userdata( $user_id );
+
+	if ( ! $user ) {
+		wc_get_logger()->error( "CheckoutWC: Invalid user ID {$user_id} in cfw_maybe_link_orders_at_registration", array( 'source' => 'checkout-wc' ) );
+		return;
+	}
+
+	wc_get_logger()->info( "CheckoutWC: Linking past guest orders for user {$user_id} ({$user->user_email})", array( 'source' => 'checkout-wc' ) );
+
+	// Count orders before linking
+	$orders_before = wc_get_orders(
+		array(
+			'billing_email' => $user->user_email,
+			'customer_id'   => 0,
+			'limit'         => -1,
+			'return'        => 'ids',
+		)
+	);
+
 	wc_update_new_customer_past_orders( $user_id );
+
+	// Count orders after linking to see how many were linked
+	$orders_after = wc_get_orders(
+		array(
+			'billing_email' => $user->user_email,
+			'customer_id'   => 0,
+			'limit'         => -1,
+			'return'        => 'ids',
+		)
+	);
+
+	$linked_count = count( $orders_before ) - count( $orders_after );
+	wc_get_logger()->info( "CheckoutWC: Linked {$linked_count} past guest orders to user {$user_id}", array( 'source' => 'checkout-wc' ) );
 }
 
 function cfw_get_plugin_template_path(): string {
@@ -1818,13 +1871,20 @@ function cfw_frontend() {
 }
 
 /**
- * @return bool|WC_Order|\WC_Order_Refund
+ * @return bool|WC_Order|WC_Order_Refund
  */
 function cfw_get_order_received_order() {
 	global $wp;
 
-	$order_id = $wp->query_vars['order-received'];
+	$order_id = $wp->query_vars['order-received'] ?? null;
 	$order    = false;
+
+	if ( ! $order_id ) {
+		$session_data = WC()->session->get( 'cfw_post_purchase_data', null );
+		$order_id     = cfw_apply_filters( 'woocommerce_thankyou_order_id', absint( $session_data['order_id'] ) );
+
+		return wc_get_order( $order_id );
+	}
 
 	$order_id  = cfw_apply_filters( 'woocommerce_thankyou_order_id', absint( $order_id ) );
 	$order_key = cfw_apply_filters( 'woocommerce_thankyou_order_key', empty( $_GET['key'] ) ? '' : wc_clean( wp_unslash( $_GET['key'] ) ) ); // phpcs:ignore WordPress.Security.NonceVerification.Recommended
@@ -1968,7 +2028,7 @@ function cfw_add_separator( string $separator_class = '', string $id = '', strin
 	?>
 	<div id="payment-info-separator-wrap" class="<?php echo esc_attr( $separator_class ); ?>">
 		<p <?php echo ( $id ) ? 'id="' . esc_attr( $id ) . '"' : ''; ?>
-			style="<?php echo empty( $style ) ? esc_attr( "{$style};" ) : ''; ?>display: none" class="pay-button-separator">
+			style="<?php echo ! empty( $style ) ? esc_attr( "{$style};" ) : ''; ?>display: none" class="pay-button-separator">
 			<span>
 				<?php
 				/**
@@ -2001,10 +2061,15 @@ function cfw_get_hook_instance_object( string $hook, string $function_name, int 
 		return false;
 	}
 
-	if ( $existing_hooks[ $priority ] ) {
+	if ( isset( $existing_hooks[ $priority ] ) ) {
 		foreach ( $existing_hooks[ $priority ] as $key => $callback ) {
 			if ( false !== stripos( $key, $function_name ) ) {
-				return $callback['function'][0];
+				// Check if it's an array before accessing index (fixes Closure compatibility)
+				if ( is_array( $callback['function'] ) ) {
+					return $callback['function'][0];
+				}
+				// If it's a Closure or other callable, there's no object instance to return
+				return false;
 			}
 		}
 	}
@@ -2322,22 +2387,6 @@ function cfw_get_woocommerce_notices( $clear_notices = true ): array {
 	}
 
 	return $notices;
-}
-
-function cfw_remove_add_to_cart_notice( $product_id, $quantity ) {
-	if ( 0 === $product_id ) {
-		return;
-	}
-
-	$add_to_cart_notice = wc_add_to_cart_message( array( $product_id => (float) $quantity ), true, true );
-
-	if ( wc_has_notice( $add_to_cart_notice ) ) {
-		$notices                  = wc_get_notices();
-		$add_to_cart_notice_index = array_search( $add_to_cart_notice, $notices['success'], true );
-
-		unset( $notices['success'][ $add_to_cart_notice_index ] );
-		wc_set_notices( $notices );
-	}
 }
 
 function cfw_get_variation_id_from_attributes( $product, $default_attributes ): ?int {
@@ -3511,9 +3560,19 @@ function cfw_get_order_bumps_data(): array {
 		'bottom_shipping_tab',
 		'below_complete_order_button',
 		'complete_order',
+		'post_purchase_one_click',
 	);
 
-	$bumps            = BumpFactory::get_all( 'publish' );
+	$bumps = BumpFactory::get_all( 'publish' );
+
+	/**
+	 * Filter order bumps before processing
+	 *
+	 * @param array $bumps Array of bump objects
+	 * @since 11.0.0
+	 */
+	$bumps = apply_filters( 'cfw_get_order_bumps', $bumps );
+
 	$count            = 0;
 	$max_bumps        = (int) SettingsManager::instance()->get_setting( 'max_bumps' );
 	$link_wrap        = '<div class="cfw-order-bump-image"><a target="_blank" href="%s">%s</a></div>';
@@ -3534,7 +3593,7 @@ function cfw_get_order_bumps_data(): array {
 			}
 
 			$offer_product    = $bump->get_offer_product();
-			$thumb            = $offer_product->get_image( 'cfw_cart_thumb' );
+			$thumb            = $offer_product->get_image( 'cfw_order_bump_thumb' );
 			$wrapped_thumb    = $offer_product->is_visible() ? sprintf( $link_wrap, $offer_product->get_permalink(), $thumb ) : $thumb;
 			$variation_parent = $offer_product->is_type( 'variable' ) && 0 === $offer_product->get_parent_id() && 'no' === get_post_meta( $bump->get_id(), 'cfw_ob_enable_auto_match', true );
 
@@ -3560,7 +3619,13 @@ function cfw_get_order_bumps_data(): array {
 		}
 	}
 
-	return $data;
+	/**
+	 * Filter order bumps data before returning
+	 *
+	 * @param array $data The order bumps data array
+	 * @since 11.0.0
+	 */
+	return apply_filters( 'cfw_get_order_bumps_data', $data );
 }
 
 function cfw_get_action_output( string $action, ...$arg ): string {
@@ -3924,7 +3989,7 @@ function cfw_get_order_bump_product_form( $bump_id ) {
 function cfw_get_order_bump_variable_product_form( \WC_Product_Variable $variable_product, BumpInterface $bump ) {
 	$selected_variation              = array();
 	$cart_item                       = array();
-	$cfw_ob_offer_cancel_button_text = get_post_meta( $bump->get_id(), 'cfw_ob_offer_cancel_button_text', true );
+	$cfw_ob_offer_cancel_button_text = $bump->get_offer_cancel_button_text();
 
 	if ( empty( $cfw_ob_offer_cancel_button_text ) ) {
 		$cfw_ob_offer_cancel_button_text = __( 'No thanks', 'checkout-wc' );
@@ -4061,7 +4126,7 @@ function cfw_get_order_bump_variable_product_form( \WC_Product_Variable $variabl
 function cfw_get_order_bump_regular_product_form( WC_Product $product, BumpInterface $bump ) {
 	ob_start();
 	$image                           = $product->get_image();
-	$cfw_ob_offer_cancel_button_text = get_post_meta( $bump->get_id(), 'cfw_ob_offer_cancel_button_text', true );
+	$cfw_ob_offer_cancel_button_text = $bump->get_offer_cancel_button_text();
 
 	if ( empty( $cfw_ob_offer_cancel_button_text ) ) {
 		$cfw_ob_offer_cancel_button_text = __( 'No thanks', 'checkout-wc' );

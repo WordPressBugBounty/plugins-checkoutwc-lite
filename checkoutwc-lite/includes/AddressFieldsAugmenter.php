@@ -98,6 +98,25 @@ class AddressFieldsAugmenter extends SingletonAbstract {
 	}
 
 	/**
+	 * Save shipping phone to customer meta during checkout
+	 *
+	 * This ensures the shipping phone is saved to user meta for logged-in customers
+	 * so it can be pre-filled on subsequent checkouts.
+	 *
+	 * @param WC_Customer $customer The customer object
+	 * @param array       $data     The checkout data
+	 * @since 10.3.9
+	 */
+	public function save_shipping_phone_to_customer( $customer, $data ) {
+		// Get shipping_phone directly from POST data since it's not in WooCommerce's default shipping fields
+		// phpcs:disable WordPress.Security.NonceVerification.Missing
+		if ( ! empty( $_POST['shipping_phone'] ) ) {
+			$customer->set_shipping_phone( sanitize_text_field( wp_unslash( $_POST['shipping_phone'] ) ) );
+		}
+		// phpcs:enable WordPress.Security.NonceVerification.Missing
+	}
+
+	/**
 	 * Get custom default address fields
 	 *
 	 * @param array $fields The address fields.

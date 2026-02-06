@@ -54,9 +54,9 @@ class AssetManager {
 			$replacement_handle = "cfw-{$replacement_handle}";
 		}
 
-		if ( is_rtl() ) {
-			$src                = str_replace( '.css', '-rtl.css', $src );
-			$replacement_handle = "{$replacement_handle}_rtl";
+		// Load RTL CSS for side cart styles when in RTL mode
+		if ( is_rtl() && $handle === 'side-cart-styles' ) {
+			$src = str_replace( '.css', '-rtl.css', $src );
 		}
 
 		wp_enqueue_style( $replacement_handle, $src, array(), $manifest['chunks'][ $handle ]['hash'] ?? CFW_VERSION );
@@ -817,6 +817,7 @@ class AssetManager {
 						'wc_get_pay_buttons'               => cfw_get_function_output( 'wc_get_pay_buttons' ),
 						'enable_free_shipping_progress_bar' => SettingsManager::instance()->get_setting( 'enable_free_shipping_progress_bar' ) === 'yes',
 						'suggested_products_heading'       => $suggested_products_heading,
+						'side_cart_suggested_products_link_to_product' => SettingsManager::instance()->get_setting( 'side_cart_suggested_products_link_to_product' ) === 'yes',
 						'enable_ajax_add_to_cart'          => SettingsManager::instance()->get_setting( 'enable_ajax_add_to_cart' ) === 'yes',
 						'checkout_page_url'                => wc_get_checkout_url(),
 						'enable_free_shipping_progress_bar_at_checkout' => SettingsManager::instance()->get_setting( 'enable_free_shipping_progress_bar_at_checkout' ) === 'yes',

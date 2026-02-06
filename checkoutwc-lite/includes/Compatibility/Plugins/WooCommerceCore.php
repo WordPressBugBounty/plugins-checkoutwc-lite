@@ -21,9 +21,8 @@ class WooCommerceCore extends CompatibilityAbstract {
 		// phpcs:enable WooCommerce.Commenting.CommentHooks.MissingHookComment
 		// phpcs:enable WordPress.Security.NonceVerification.Missing
 
-		add_filter( 'woocommerce_add_to_cart_redirect', array( $this, 'suppress_add_to_cart_notices_during_checkout_redirect' ), 100000000 ); // run this late
-		add_filter( 'woocommerce_add_to_cart_fragments', array( $this, 'suppress_add_to_cart_notices_during_ajax_add_to_cart' ), 100000000 ); // run this late
 		add_action( 'woocommerce_before_checkout_process', array( $this, 'sync_billing_fields_on_process_checkout' ) );
+		add_filter( 'wc_add_to_cart_message_html', array( $this, 'maybe_suppress_add_to_cart_notice' ) );
 	}
 
 	public function run() {
@@ -154,7 +153,7 @@ class WooCommerceCore extends CompatibilityAbstract {
 		// phpcs:enable WordPress.Security.NonceVerification.Missing
 	}
 
-	public function suppress_add_to_cart_notices_during_ajax_add_to_cart( $fragments ) {
+	public function maybe_suppress_add_to_cart_notice( $message ) {
 		/**
 		 * Filters whether to suppress add to cart notices at checkout
 		 *
@@ -163,58 +162,29 @@ class WooCommerceCore extends CompatibilityAbstract {
 		 * @param bool $supress_notices True suppress, false allow
 		 */
 		if ( ! apply_filters( 'cfw_suppress_add_to_cart_notices', true ) ) {
-			return $fragments;
+			return $message;
 		}
 
+		if ( empty( $_REQUEST['wc-ajax'] ) ) { // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+			return $message;
+		}
+
+		$wc_ajax = sanitize_text_field( wp_unslash( $_REQUEST['wc-ajax'] ) ); // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+
+		// Only suppress here for checkout redirected add to carts
 		$checkout_url = wc_get_checkout_url();
 		$redirect_url = cfw_apply_filters( 'woocommerce_add_to_cart_redirect', wc_get_cart_url(), null );
 
 		// If not redirecting to checkout, bail
 		if ( $redirect_url !== $checkout_url ) {
-			return $fragments;
+			return $message;
 		}
 
-		// If we are going to redirect to checkout, don't show message
-		// phpcs:disable WordPress.Security.NonceVerification.Recommended
-		if ( ! empty( $_REQUEST['product_id'] ) && ! empty( $_REQUEST['wc-ajax'] ) && 'add_to_cart' === $_REQUEST['wc-ajax'] ) {
-			$quantity   = wc_clean( wp_unslash( $_REQUEST['quantity'] ?? 1 ) );
-			$product_id = wc_clean( wp_unslash( $_REQUEST['product_id'] ) );
-
-			cfw_remove_add_to_cart_notice( $product_id, $quantity );
-		}
-		// phpcs:enable WordPress.Security.NonceVerification.Recommended
-
-		// Continue on your way
-		return $fragments;
-	}
-
-	public function suppress_add_to_cart_notices_during_checkout_redirect( $url ) {
-		/**
-		 * Filters whether to suppress add to cart notices at checkout
-		 *
-		 * @since 2.0.0
-		 *
-		 * @param bool $suppress_notices True suppress, false allow
-		 */
-		if ( ! apply_filters( 'cfw_suppress_add_to_cart_notices', true ) ) {
-			return $url;
+		if ( in_array( $wc_ajax, array( 'add_to_cart', 'cfw_add_to_cart' ), true ) ) {
+			return '';
 		}
 
-		$checkout_url = wc_get_checkout_url();
-
-		// If we are going to redirect to checkout, don't show message
-		// phpcs:disable WordPress.Security.NonceVerification.Recommended
-		if ( ! empty( $_REQUEST['add-to-cart'] ) && ( $url === $checkout_url || is_checkout() ) ) {
-			$quantity   = wc_clean( wp_unslash( $_REQUEST['quantity'] ?? 1 ) );
-			$quantity   = is_numeric( $quantity ) ? intval( $quantity ) : 1;
-			$product_id = wc_clean( wp_unslash( $_REQUEST['add-to-cart'] ) );
-
-			cfw_remove_add_to_cart_notice( $product_id, $quantity );
-		}
-		// phpcs:enable WordPress.Security.NonceVerification.Recommended
-
-		// Continue on your way
-		return $url;
+		return $message;
 	}
 
 	public function highlight_countries( array $countries ): array {

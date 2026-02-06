@@ -1,7 +1,7 @@
 <?php
 global $pagenow;
 
-use Objectiv\Plugins\Checkout\Admin\AdminPluginsPageManager;
+use Objectiv\Plugins\Checkout\Admin\DeactivationSurvey;
 
 if ( empty( $pagenow ) || 'plugins.php' !== $pagenow ) {
 	return false;
@@ -33,7 +33,7 @@ $form_fields = cfw_apply_filters( 'cfw_deactivation_form_fields', array() );
 				<?php esc_html_e( 'May we have a little info about why you are deactivating?', 'checkout-wc' ); ?>
 			</h3>
 			<?php foreach ( $form_fields as $key => $field_attr ) : ?>
-				<?php AdminPluginsPageManager::render_field_html( $field_attr, 'deactivating' ); ?>
+				<?php DeactivationSurvey::render_field_html( $field_attr, 'deactivating' ); ?>
 			<?php endforeach; ?>
 		</div>
 		<div class="px-6 py-6 bg-gray-100 mt-6 flex items-center justify-end gap-x-6">

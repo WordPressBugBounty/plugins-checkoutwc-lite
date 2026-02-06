@@ -76,7 +76,7 @@ class OrderBumpsAdminFree extends PageAbstract {
 								<p class="mt-2 text-sm text-gray-500"><?php esc_html_e( 'The maximum number of bumps that can be displayed per output location. Use -1 for unlimited.', 'checkout-wc' ); ?></p>
 							</div>
 							<div class="cfw-admin-field-container ">
-								<label for="max_after_checkout_bumps" class="block text-sm font-medium text-gray-700"><?php esc_html_e( 'Maximum After Checkout Submit Modal Bumps', 'checkout-wc' ); ?></label><input name="max_after_checkout_bumps" type="number" id="max_after_checkout_bumps" class="w-64 shadow-sm focus:ring-blue-500 focus:border-blue-500 block sm:text-sm border border-gray-300 rounded-md" value="1">
+								<label for="max_after_checkout_bumps" class="block text-sm font-medium text-gray-700"><?php esc_html_e( 'Maximum Place Order Bumps', 'checkout-wc' ); ?></label><input name="max_after_checkout_bumps" type="number" id="max_after_checkout_bumps" class="w-64 shadow-sm focus:ring-blue-500 focus:border-blue-500 block sm:text-sm border border-gray-300 rounded-md" value="1">
 								<p class="mt-2 text-sm text-gray-500"><?php esc_html_e( 'The maximum number of modal bumps that can be displayed after submitting checkout. Use -1 for unlimited.', 'checkout-wc' ); ?></p>
 							</div>
 						</div>

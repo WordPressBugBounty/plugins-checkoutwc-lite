@@ -31,9 +31,9 @@ class Install {
 			'cfw_manage_trust_badges',
 			'cfw_manage_side_cart',
 			'cfw_manage_local_pickup',
-			'cfw_manage_order_bumps',
+			'cfw_manage_ab_tests',
 			'cfw_manage_integrations',
-			'cfw_manage_general', // start here
+			'cfw_manage_general',
 			'cfw_manage_express_checkout',
 			'cfw_manage_appearance',
 			'cfw_manage_advanced',
@@ -94,9 +94,11 @@ class Install {
 		SettingsManager::instance()->add_setting( 'enable_order_bumps', 'yes' );
 		SettingsManager::instance()->add_setting( 'max_bumps', '10' );
 		SettingsManager::instance()->add_setting( 'max_after_checkout_bumps', '1' );
+		SettingsManager::instance()->add_setting( 'enable_ab_testing', 'no' );
 		SettingsManager::instance()->add_setting( 'shake_floating_cart_button', 'no' );
 		SettingsManager::instance()->add_setting( 'enable_side_cart_suggested_products', 'no' );
 		SettingsManager::instance()->add_setting( 'enable_side_cart_suggested_products_random_fallback', 'no' );
+		SettingsManager::instance()->add_setting( 'side_cart_suggested_products_link_to_product', 'no' );
 		SettingsManager::instance()->add_setting( 'fetchify_access_token', '' );
 
 		// Turnstile settings

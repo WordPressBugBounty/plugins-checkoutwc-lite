@@ -77,7 +77,11 @@ class DatabaseUpdatesManager extends SingletonAbstract {
 			'10.2.0'  => array( $this, 'update_1020' ),
 			'10.2.6'  => array( $this, 'update_1026' ),
 			'10.2.9'  => array( $this, 'update_1029' ),
-			// TODO: For future updates, bifurcate pro and lite versions
+			'10.3.2'  => array( $this, 'update_1032' ),
+			'10.3.6'  => array( $this, 'update_1036' ),
+			'11.0.0'  => array( $this, 'update_1100' ),
+			'11.0.1'  => array( $this, 'update_1101' ),
+			// TODO: For future updates, bifurcate pro and lite versions?
 		);
 	}
 
@@ -1147,7 +1151,7 @@ class DatabaseUpdatesManager extends SingletonAbstract {
 		$table_name = AbandonedCartRecovery::get_table_name();
 
 		// Use MySQL to generate hashes in bulk for better performance on large stores
-		$wpdb->query( 
+		$wpdb->query(
 			"UPDATE {$table_name} SET cart_hash = SHA2(CONCAT(email, '|', cart), 256) WHERE status != 'abandoned' AND (cart_hash = '' OR cart_hash IS NULL)" // phpcs:ignore WordPress.DB.PreparedSQL.InterpolatedNotPrepared
 		);
 	}
@@ -1158,5 +1162,105 @@ class DatabaseUpdatesManager extends SingletonAbstract {
 		SettingsManager::instance()->add_setting( 'wc_review_source', 'cart_first' );
 		SettingsManager::instance()->add_setting( 'wc_review_min_rating', '4' );
 		SettingsManager::instance()->add_setting( 'wc_review_limit', '3' );
+	}
+
+	public function update_1032() {
+		/**
+		 * Action hook fired after the 10.3.2 database update routine runs.
+		 *
+		 * @since 10.3.2
+		 */
+		do_action( 'cfw_updated_to_1032' );
+	}
+
+	public function update_1036() {
+		/**
+		 * Action hook fired after the 10.3.2 database update routine runs.
+		 *
+		 * @since 10.3.6
+		 */
+		do_action( 'cfw_updated_to_1036' );
+	}
+
+	public function update_1100() {
+		// Add A/B testing setting
+		SettingsManager::instance()->add_setting( 'enable_ab_testing', 'no' );
+
+		// Add A/B testing capabilities
+		Install::add_capabilities();
+	}
+
+	public function update_1101() {
+		SettingsManager::instance()->add_setting( 'side_cart_suggested_products_link_to_product', 'no' );
+
+		// Regenerate Order Bump thumbnails for new cfw_order_bump_thumb size
+		if ( ! class_exists( '\\Objectiv\\Plugins\\Checkout\\Factories\\BumpFactory' ) ) {
+			return;
+		}
+
+		$bumps                 = BumpFactory::get_all(); // 'any' status by default
+		$processed_attachments = array();
+
+		foreach ( $bumps as $bump ) {
+			$offer_product = $bump->get_offer_product();
+
+			if ( ! $offer_product ) {
+				continue;
+			}
+
+			$attachment_id = $offer_product->get_image_id();
+
+			if ( ! $attachment_id || in_array( $attachment_id, $processed_attachments, true ) ) {
+				continue;
+			}
+
+			$this->regenerate_order_bump_thumbnail( $attachment_id );
+			$processed_attachments[] = $attachment_id;
+		}
+	}
+
+	private function regenerate_order_bump_thumbnail( int $attachment_id ) {
+		$metadata = wp_get_attachment_metadata( $attachment_id );
+
+		if ( ! $metadata ) {
+			return;
+		}
+
+		// Skip if size already exists
+		if ( isset( $metadata['sizes']['cfw_order_bump_thumb'] ) ) {
+			return;
+		}
+
+		$file_path = get_attached_file( $attachment_id );
+
+		if ( ! $file_path || ! file_exists( $file_path ) ) {
+			return;
+		}
+
+		// Get the registered size dimensions
+		$size_data = wp_get_registered_image_subsizes();
+
+		if ( ! isset( $size_data['cfw_order_bump_thumb'] ) ) {
+			return;
+		}
+
+		$width  = $size_data['cfw_order_bump_thumb']['width'];
+		$height = $size_data['cfw_order_bump_thumb']['height'];
+		$crop   = $size_data['cfw_order_bump_thumb']['crop'];
+
+		// Use WordPress's built-in function to create the intermediate size
+		$resized = image_make_intermediate_size( $file_path, $width, $height, $crop );
+
+		if ( ! $resized ) {
+			wc_get_logger()->warning(
+				sprintf( 'CheckoutWC: Failed to regenerate Order Bump thumbnail for attachment %d', $attachment_id ),
+				array( 'source' => 'checkout-wc' )
+			);
+			return;
+		}
+
+		// Update metadata with new size
+		$metadata['sizes']['cfw_order_bump_thumb'] = $resized;
+		wp_update_attachment_metadata( $attachment_id, $metadata );
 	}
 }

@@ -3,6 +3,7 @@
 namespace Objectiv\Plugins\Checkout\Action;
 
 use Objectiv\Plugins\Checkout\Managers\AssetManager;
+use Exception;
 
 /**
  * @link checkoutwc.com
@@ -15,7 +16,17 @@ class AddToCartAction extends CFWAction {
 		parent::__construct( 'cfw_add_to_cart' );
 	}
 
+	/**
+	 * @throws Exception The exception.
+	 */
 	public function action() {
+		/**
+		 * How does all of this work?
+		 *
+		 * WC_Form_Handler::add_to_cart_action detects all requests with add-to-cart=X and processes the add to cart
+		 * The below actions we perform are to 1. clean things up and return updated data
+		 * and 2. make sure Woo treats it like their native AJAX add to cart handler
+		 */
 		$result     = false;
 		$redirect   = false;
 		$product_id = cfw_apply_filters( 'woocommerce_add_to_cart_product_id', absint( $_POST['add-to-cart'] ?? 0 ) ); // phpcs:ignore WordPress.Security.NonceVerification.Missing
@@ -25,15 +36,12 @@ class AddToCartAction extends CFWAction {
 			$result = true;
 		}
 
-		$quantity   = sanitize_text_field( wp_unslash( $_REQUEST['quantity'] ?? 1 ) ); // phpcs:ignore WordPress.Security.NonceVerification.Recommended
 		$product_id = sanitize_text_field( wp_unslash( $_REQUEST['add-to-cart'] ?? '' ) ); // phpcs:ignore WordPress.Security.NonceVerification.Recommended
 
 		if ( ! $result ) {
 			add_filter( 'cfw_get_data_clear_notices', '__return_false' );
 			$redirect = cfw_apply_filters( 'woocommerce_cart_redirect_after_error', get_permalink( $product_id ), $product_id );
 		}
-
-		cfw_remove_add_to_cart_notice( $product_id, $quantity );
 
 		$this->out(
 			array(

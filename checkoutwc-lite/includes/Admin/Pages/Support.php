@@ -41,19 +41,19 @@ class Support extends PageAbstract {
 
 		<?php if ( defined( 'CFW_PREMIUM_PLAN_IDS' ) ) : ?>
 			<ul class="mt-4 text-base">
-				<li><a class="text-blue-600 underline" target="_blank" href="https://kb.checkoutwc.com/article/35-getting-started"><?php esc_html_e( 'Getting Started', 'checkout-wc' ); ?></a></li>
-				<li><a class="text-blue-600 underline" target="_blank" href="https://kb.checkoutwc.com/article/36-troubleshooting"><?php esc_html_e( 'Troubleshooting', 'checkout-wc' ); ?></a></li>
-				<li><a class="text-blue-600 underline" target="_blank" href="https://kb.checkoutwc.com/article/53-upgrading-your-license"><?php esc_html_e( 'Upgrading Your License', 'checkout-wc' ); ?></a></li>
-				<li><a class="text-blue-600 underline" target="_blank" href="https://kb.checkoutwc.com/article/69-how-to-enable-billing-and-shipping-phone-fields"><?php esc_html_e( 'How To Enable Billing and Shipping Phone Fields', 'checkout-wc' ); ?></a></li>
-				<li><a class="text-blue-600 underline" target="_blank" href="https://kb.checkoutwc.com/article/70-how-to-enable-cart-editing"><?php esc_html_e( 'How To Enable Cart Editing', 'checkout-wc' ); ?></a></li>
-				<li><a class="text-blue-600 underline" target="_blank" href="https://kb.checkoutwc.com/article/86-how-to-get-and-configure-your-google-api-key"><?php esc_html_e( 'How To Register and Configure Your Google API Key', 'checkout-wc' ); ?></a></li>
-				<li><a class="text-blue-600 underline" target="_blank" href="https://kb.checkoutwc.com/article/49-how-to-add-a-custom-field"><?php esc_html_e( 'How To Add a Custom Field to Checkout for WooCommerce', 'checkout-wc' ); ?></a></li>
-				<li><a class="text-blue-600 underline" target="_blank" href="https://kb.checkoutwc.com/article/34-how-to-enable-the-woocommerce-notes-field"><?php esc_html_e( 'How to Enable The WooCommerce Notes Field', 'checkout-wc' ); ?></a></li>
+				<li><a class="text-blue-600 underline" target="_blank" href="https://www.checkoutwc.com/documentation/getting-started/"><?php esc_html_e( 'Getting Started', 'checkout-wc' ); ?></a></li>
+				<li><a class="text-blue-600 underline" target="_blank" href="https://www.checkoutwc.com/documentation/troubleshooting/"><?php esc_html_e( 'Troubleshooting', 'checkout-wc' ); ?></a></li>
+				<li><a class="text-blue-600 underline" target="_blank" href="https://www.checkoutwc.com/documentation/upgrading-your-license/"><?php esc_html_e( 'Upgrading Your License', 'checkout-wc' ); ?></a></li>
+				<li><a class="text-blue-600 underline" target="_blank" href="https://www.checkoutwc.com/documentation/how-to-enable-billing-and-shipping-phone-fields/"><?php esc_html_e( 'How To Enable Billing and Shipping Phone Fields', 'checkout-wc' ); ?></a></li>
+				<li><a class="text-blue-600 underline" target="_blank" href="https://www.checkoutwc.com/documentation/how-to-enable-cart-editing/"><?php esc_html_e( 'How To Enable Cart Editing', 'checkout-wc' ); ?></a></li>
+				<li><a class="text-blue-600 underline" target="_blank" href="https://www.checkoutwc.com/documentation/how-to-get-and-configure-your-google-api-key/"><?php esc_html_e( 'How To Register and Configure Your Google API Key', 'checkout-wc' ); ?></a></li>
+				<li><a class="text-blue-600 underline" target="_blank" href="https://www.checkoutwc.com/documentation/how-to-add-a-custom-field/"><?php esc_html_e( 'How To Add a Custom Field to Checkout for WooCommerce', 'checkout-wc' ); ?></a></li>
+				<li><a class="text-blue-600 underline" target="_blank" href="https://www.checkoutwc.com/documentation/how-to-enable-the-woocommerce-notes-field/"><?php esc_html_e( 'How to Enable The WooCommerce Notes Field', 'checkout-wc' ); ?></a></li>
 			</ul>
 		<?php else : ?>
 			<ul class="mt-4 text-base">
-				<li><a class="text-blue-600 underline" target="_blank" href="https://kb.checkoutwc.com/article/35-getting-started"><?php esc_html_e( 'Getting Started', 'checkout-wc' ); ?></a></li>
-				<li><a class="text-blue-600 underline" target="_blank" href="https://kb.checkoutwc.com/article/36-troubleshooting"><?php esc_html_e( 'Troubleshooting', 'checkout-wc' ); ?></a></li>
+				<li><a class="text-blue-600 underline" target="_blank" href="https://www.checkoutwc.com/documentation/getting-started/"><?php esc_html_e( 'Getting Started', 'checkout-wc' ); ?></a></li>
+				<li><a class="text-blue-600 underline" target="_blank" href="https://www.checkoutwc.com/documentation/troubleshooting/"><?php esc_html_e( 'Troubleshooting', 'checkout-wc' ); ?></a></li>
 				<li><a class="text-blue-600 underline" target="_blank" href="https://www.checkoutwc.com/pricing"><?php esc_html_e( 'Buy a License', 'checkout-wc' ); ?></a></li>
 			</ul>
 		<?php endif; ?>

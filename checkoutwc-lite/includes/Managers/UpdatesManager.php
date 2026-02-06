@@ -67,6 +67,28 @@ class UpdatesManager extends SingletonAbstract {
 	);
 
 	/**
+	 * Maximum number of consecutive failures before invalidating license
+	 *
+	 * @var int
+	 */
+	const MAX_CONSECUTIVE_FAILURES = 3;
+
+	/**
+	 * Minimum time between failures to count (24 hours)
+	 * This ensures 3 failures = minimum 3 days of problems
+	 *
+	 * @var int
+	 */
+	const MIN_TIME_BETWEEN_FAILURES = 86400; // 24 hours in seconds
+
+	/**
+	 * Cache expiration time in seconds (14 days)
+	 *
+	 * @var int
+	 */
+	const CACHE_EXPIRATION = 1209600; // 14 days
+
+	/**
 	 * List of key statuses that indicate the license is a real license
 	 *
 	 * @var array
@@ -195,6 +217,9 @@ class UpdatesManager extends SingletonAbstract {
 		);
 
 		add_action( 'wp_ajax_cfw_license_save', array( $this, 'ajax_save_license' ) );
+
+		// Show persistent warning notice if license checks are failing
+		add_action( 'admin_notices', array( $this, 'show_persistent_license_warning' ) );
 	}
 
 	public function run_on_plugin_activation() {
@@ -371,30 +396,6 @@ class UpdatesManager extends SingletonAbstract {
 		);
 	}
 
-	/**
-	 * Generates license page form.
-	 *
-	 * @return void
-	 */
-	public function admin_page() {
-		?>
-		<div class="wrap">
-			<form method="post" action="<?php echo esc_attr( wc_clean( wp_unslash( $_SERVER['REQUEST_URI'] ?? '' ) ) ); ?>">
-				<?php $this->the_nonce(); ?>
-
-				<table class="form-table">
-					<tbody>
-						<?php $this->admin_page_fields(); ?>
-					</tbody>
-				</table>
-
-				<?php submit_button(); ?>
-			</form>
-		</div>
-
-		<?php
-	}
-
 	public function admin_page_fields() {
 		$license_data = get_option( 'cfw_license_data', false );
 		$this->the_nonce();
@@ -519,7 +520,7 @@ class UpdatesManager extends SingletonAbstract {
 		return ( 'inactive' === $key_status || 'site_inactive' === $key_status );
 	}
 
-	public function auto_activate_license() {
+	public function auto_activate_license(): bool {
 		// data to send in our API request
 		$api_params = array(
 			'edd_action' => 'activate_license',
@@ -596,7 +597,35 @@ class UpdatesManager extends SingletonAbstract {
 
 		// make sure the response came back okay
 		if ( is_wp_error( $response ) ) {
-			cfw_debug_log( 'License Activation Error (manage_license_activation): ' . $response->get_error_message() );
+			$error_message = $response->get_error_message();
+
+			wc_get_logger()->warning(
+				sprintf( 'License %s error: %s', $action, $error_message ),
+				array( 'source' => 'checkout-wc-license' )
+			);
+
+			// For deactivation, allow local deactivation even if server is unreachable
+			// This is important for testing and for users who want to deactivate when server is down
+			if ( 'deactivate_license' === $action ) {
+				// Set status to inactive locally
+				$this->set_field_value( 'key_status', 'site_inactive' );
+
+				// Clear cache to force re-check on next activation
+				delete_option( 'cfw_license_cache' );
+				delete_option( 'cfw_license_cache_time' );
+
+				add_action( 'admin_notices', array( $this, 'notice_license_deactivate_local' ) );
+
+				wc_get_logger()->info(
+					'License deactivated locally (server unreachable)',
+					array( 'source' => 'checkout-wc-license' )
+				);
+
+				return;
+			}
+
+			// For activation, we need server confirmation - show error
+			add_action( 'admin_notices', array( $this, 'notice_license_network_error' ) );
 			return;
 		}
 
@@ -630,7 +659,7 @@ class UpdatesManager extends SingletonAbstract {
 	}
 
 	/**
-	 * Retrieve status of license key for current site.
+	 * Retrieve the status of the license key for the current site.
 	 *
 	 * @return string|bool The license status|false on error
 	 */
@@ -678,11 +707,31 @@ class UpdatesManager extends SingletonAbstract {
 		);
 
 		if ( is_wp_error( $response ) ) {
-			cfw_debug_log( 'License Activation Error (get_license_data): ' . $response->get_error_message() );
-			return false;
+			$error_message = $response->get_error_message();
+			wc_get_logger()->warning(
+				'License check network error: ' . $error_message,
+				array( 'source' => 'checkout-wc-license' )
+			);
+
+			// Handle network failure with cache fallback
+			return $this->handle_license_check_failure( 'network_error', $error_message );
 		}
 
 		$license_data = json_decode( wp_remote_retrieve_body( $response ) );
+
+		// Check if we got valid data
+		if ( empty( $license_data ) || ! isset( $license_data->license ) ) {
+			wc_get_logger()->warning(
+				'License check returned invalid data',
+				array( 'source' => 'checkout-wc-license' )
+			);
+
+			return $this->handle_license_check_failure( 'invalid_response', 'Empty or invalid response from license server' );
+		}
+
+		// Success! Reset failure counter and update cache
+		$this->reset_license_check_failures();
+		$this->update_license_cache( $license_data );
 
 		update_option( 'cfw_license_activation_limit', $license_data->license_limit ?? 0 );
 		update_option( 'cfw_license_price_id', $license_data->price_id ?? 0 );
@@ -697,7 +746,200 @@ class UpdatesManager extends SingletonAbstract {
 			cfw_do_action( 'cfw_license_data_changed', $changes );
 		}
 
+		wc_get_logger()->info(
+			'License check successful - Status: ' . $license_data->license,
+			array( 'source' => 'checkout-wc-license' )
+		);
+
 		return $license_data;
+	}
+
+	/**
+	 * Handle license check failures with smart caching and failure counting
+	 *
+	 * @param string $failure_type Type of failure (network_error, invalid_response, etc.).
+	 * @param string $error_message Detailed error message.
+	 *
+	 * @return bool|object License data from cache or false.
+	 */
+	protected function handle_license_check_failure( string $failure_type, string $error_message ) {
+		// Increment failure counter
+		$failure_count = $this->increment_license_check_failures();
+
+		wc_get_logger()->warning(
+			sprintf(
+				'License check failure #%d - Type: %s - Error: %s',
+				$failure_count,
+				$failure_type,
+				$error_message
+			),
+			array( 'source' => 'checkout-wc-license' )
+		);
+
+		// Get cached license data
+		$cached_data = $this->get_cached_license_data();
+
+		// If we have valid cached data and haven't exceeded max failures, use cache
+		if ( $cached_data && $failure_count < self::MAX_CONSECUTIVE_FAILURES ) {
+			wc_get_logger()->info(
+				sprintf(
+					'Using cached license data (failure %d/%d) - Status: %s',
+					$failure_count,
+					self::MAX_CONSECUTIVE_FAILURES,
+					$cached_data->license ?? 'unknown'
+				),
+				array( 'source' => 'checkout-wc-license' )
+			);
+
+			// Add admin notice if cached data is being used
+			if ( is_admin() ) {
+				add_action( 'admin_notices', array( $this, 'notice_license_check_using_cache' ) );
+			}
+
+			return $cached_data;
+		}
+
+		// Too many failures or no cache available
+		if ( $failure_count >= self::MAX_CONSECUTIVE_FAILURES ) {
+			wc_get_logger()->error(
+				sprintf(
+					'License check failed %d consecutive times - Maximum reached. License will be marked as invalid.',
+					$failure_count
+				),
+				array( 'source' => 'checkout-wc-license' )
+			);
+		}
+
+		return false;
+	}
+
+	/**
+	 * Increment the license check failure counter
+	 * Only increments if enough time has passed since last failure (24h minimum)
+	 * This ensures 3 failures = minimum 3 days of problems, not 3 attempts in same hour
+	 *
+	 * @return int Current failure count
+	 */
+	protected function increment_license_check_failures(): int {
+		$count        = (int) get_option( 'cfw_license_check_failures', 0 );
+		$last_failure = (int) get_option( 'cfw_license_last_failure', 0 );
+		$current_time = time();
+
+		// If this is the first failure, or if enough time has passed since last failure
+		if ( 0 === $last_failure || ( $current_time - $last_failure ) >= self::MIN_TIME_BETWEEN_FAILURES ) {
+			++$count;
+			update_option( 'cfw_license_check_failures', $count );
+			update_option( 'cfw_license_last_failure', $current_time );
+
+			wc_get_logger()->info(
+				sprintf(
+					'License failure counter incremented to %d (last failure was %s ago)',
+					$count,
+					$last_failure > 0 ? human_time_diff( $last_failure ) : 'never'
+				),
+				array( 'source' => 'checkout-wc-license' )
+			);
+		} else {
+			// Too soon since last failure, don't increment
+			$time_since_last = $current_time - $last_failure;
+			$time_remaining  = self::MIN_TIME_BETWEEN_FAILURES - $time_since_last;
+
+			wc_get_logger()->info(
+				sprintf(
+					'License check failed but counter NOT incremented (still at %d). Time since last failure: %s. Minimum wait: %s. Time remaining: %s',
+					$count,
+					human_time_diff( $last_failure ),
+					human_time_diff( $current_time, $current_time + self::MIN_TIME_BETWEEN_FAILURES ),
+					human_time_diff( $current_time, $current_time + $time_remaining )
+				),
+				array( 'source' => 'checkout-wc-license' )
+			);
+		}
+
+		return $count;
+	}
+
+	/**
+	 * Reset the license check failure counter
+	 *
+	 * @return void
+	 */
+	protected function reset_license_check_failures() {
+		delete_option( 'cfw_license_check_failures' );
+		delete_option( 'cfw_license_last_failure' );
+
+		wc_get_logger()->info(
+			'License check failure counter reset',
+			array( 'source' => 'checkout-wc-license' )
+		);
+	}
+
+	/**
+	 * Update the license data cache
+	 *
+	 * @param object $license_data License data to cache.
+	 * @return void
+	 */
+	protected function update_license_cache( $license_data ) {
+		update_option( 'cfw_license_cache', $license_data, false );
+		update_option( 'cfw_license_cache_time', time() );
+	}
+
+	/**
+	 * Get cached license data if valid
+	 *
+	 * @return object|bool License data or false if cache is invalid
+	 */
+	protected function get_cached_license_data() {
+		$cache_time = (int) get_option( 'cfw_license_cache_time', 0 );
+		$cache_data = get_option( 'cfw_license_cache', false );
+
+		// Check if cache exists and is not expired
+		if ( $cache_data && $cache_time > 0 ) {
+			$age = time() - $cache_time;
+
+			if ( $age < self::CACHE_EXPIRATION ) {
+				return $cache_data;
+			}
+
+			wc_get_logger()->info(
+				sprintf( 'License cache expired (age: %d seconds)', $age ),
+				array( 'source' => 'checkout-wc-license' )
+			);
+		}
+
+		return false;
+	}
+
+	/**
+	 * Admin notice when using cached license data
+	 * Shows persistent warning when license verification fails
+	 *
+	 * @return void
+	 */
+	public function notice_license_check_using_cache() {
+		// Check if we should show the notice
+		$failure_count = (int) get_option( 'cfw_license_check_failures', 0 );
+		$last_failure  = (int) get_option( 'cfw_license_last_failure', 0 );
+
+		if ( $failure_count > 0 ) {
+			?>
+			<div class="notice notice-warning is-dismissible" data-cfw-license-notice="cache-warning">
+				<p>
+					<strong><?php echo esc_html( $this->name ); ?>:</strong>
+					<?php
+					printf(
+						/* translators: %1$d: failure count, %2$d: max failures, %3$s: time since last failure */
+						esc_html__( 'Unable to verify CheckoutWC license (%1$d/%2$d attempts failed). Using cached license data. Last attempt: %3$s ago.', 'checkout-wc' ),
+						esc_html( $failure_count ),
+						esc_html( self::MAX_CONSECUTIVE_FAILURES ),
+						esc_html( human_time_diff( $last_failure ) )
+					);
+					?>
+				</p>
+			</div>
+			<?php
+		}
 	}
 
 	/**
@@ -708,7 +950,12 @@ class UpdatesManager extends SingletonAbstract {
 	public function notice_license_invalid() {
 		?>
 		<div class="error">
-			<p><?php echo esc_html( $this->name ); ?> license activation was not successful. Please check your key status below for more information.</p>
+			<p>
+				<?php
+				// translators: %s the plugin name
+				printf( esc_html__( '%s license activation was not successful. Please check your key status below for more information.', 'checkout-wc' ), esc_html( $this->name ) );
+				?>
+			</p>
 		</div>
 		<?php
 	}
@@ -721,7 +968,12 @@ class UpdatesManager extends SingletonAbstract {
 	public function notice_license_valid() {
 		?>
 		<div class="updated">
-			<p><?php echo esc_html( $this->name ); ?> license successfully activated.</p>
+			<p>
+				<?php
+				// translators: %s the plugin name
+				printf( esc_html__( '%s license successfully activated.', 'checkout-wc' ), esc_html( $this->name ) );
+				?>
+			</p>
 		</div>
 		<?php
 	}
@@ -734,7 +986,12 @@ class UpdatesManager extends SingletonAbstract {
 	public function notice_license_deactivate_failed() {
 		?>
 		<div class="error">
-			<p><?php echo esc_html( $this->name ); ?> license deactivation failed. Please try again, or contact support.</p>
+			<p>
+				<?php
+				// translators: %s the plugin name
+				printf( esc_html__( '%s license deactivation failed. Please try again, or contact support.', 'checkout-wc' ), esc_html( $this->name ) );
+				?>
+			</p>
 		</div>
 		<?php
 	}
@@ -747,7 +1004,12 @@ class UpdatesManager extends SingletonAbstract {
 	public function notice_license_deactivate_success() {
 		?>
 		<div class="updated">
-			<p><?php echo esc_html( $this->name ); ?> license deactivated successfully.</p>
+			<p>
+				<?php
+				// translators: %s the plugin name
+				printf( esc_html__( '%s license deactivated successfully.', 'checkout-wc' ), esc_html( $this->name ) );
+				?>
+			</p>
 		</div>
 		<?php
 	}
@@ -760,7 +1022,12 @@ class UpdatesManager extends SingletonAbstract {
 	public function notice_settings_saved_success() {
 		?>
 		<div class="updated">
-			<p><?php echo esc_html( $this->name ); ?> license settings saved successfully.</p>
+			<p>
+				<?php
+				// translators: %s the plugin name
+				printf( esc_html__( '%s license settings saved successfully.', 'checkout-wc' ), esc_html( $this->name ) );
+				?>
+			</p>
 		</div>
 		<?php
 	}
@@ -773,7 +1040,48 @@ class UpdatesManager extends SingletonAbstract {
 	public function notice_license_activate_error() {
 		?>
 		<div class="error">
-			<p><?php echo esc_html( $this->name ); ?> license activation failed: <?php echo esc_html( $this->activate_errors[ $this->last_activation_error ] ); ?></p>
+			<p>
+				<?php
+				// translators: %1$s the plugin name, %2$s the error
+				printf( esc_html__( '%1$s license activation failed: %2$s', 'checkout-wc' ), esc_html( $this->name ), esc_html( $this->activate_errors[ $this->last_activation_error ] ) );
+				?>
+			</p>
+		</div>
+		<?php
+	}
+
+	/**
+	 * License network error notice
+	 *
+	 * @return void
+	 */
+	public function notice_license_network_error() {
+		?>
+		<div class="error">
+			<p>
+				<?php
+				// translators: %s the plugin name
+				printf( esc_html__( '%s license activation failed: Unable to connect to license server. Please check your internet connection or try again later.', 'checkout-wc' ), esc_html( $this->name ) );
+				?>
+			</p>
+		</div>
+		<?php
+	}
+
+	/**
+	 * Local license deactivation notice
+	 *
+	 * @return void
+	 */
+	public function notice_license_deactivate_local() {
+		?>
+		<div class="notice notice-warning">
+			<p>
+				<?php
+				// translators: %s the plugin name
+				printf( esc_html__( '%s: License deactivated locally. The license server could not be reached, but the license has been deactivated on this site.', 'checkout-wc' ), esc_html( $this->name ) );
+				?>
+			</p>
 		</div>
 		<?php
 	}
@@ -889,6 +1197,41 @@ class UpdatesManager extends SingletonAbstract {
 		return in_array( $key_status, $this->good_key_statuses, true ) && ! empty( $license_key );
 	}
 
+	/**
+	 * Show persistent license warning in admin
+	 * This displays on all admin pages when there are license check failures
+	 *
+	 * @return void
+	 */
+	public function show_persistent_license_warning() {
+		// Only show in admin dashboard
+		if ( ! is_admin() ) {
+			return;
+		}
+
+		$failure_count = (int) get_option( 'cfw_license_check_failures', 0 );
+		$last_failure  = (int) get_option( 'cfw_license_last_failure', 0 );
+
+		if ( $failure_count > 0 && $last_failure > 0 ) {
+			?>
+			<div class="notice notice-warning">
+				<p>
+					<strong><?php echo esc_html( $this->name ); ?>:</strong>
+					<?php
+					printf(
+						/* translators: %1$d: failure count, %2$d: max failures, %3$s: time since last failure */
+						esc_html__( 'Unable to verify CheckoutWC license (%1$d/%2$d attempts failed). Last attempt: %3$s ago. The plugin will continue to work but please check your connection to the license server.', 'checkout-wc' ),
+						esc_html( $failure_count ),
+						esc_html( self::MAX_CONSECUTIVE_FAILURES ),
+						esc_html( human_time_diff( $last_failure ) ),
+					);
+					?>
+				</p>
+			</div>
+			<?php
+		}
+	}
+
 	public function ajax_save_license() {
 		if ( ! check_ajax_referer( 'objectiv-cfw-admin-save', 'nonce', false ) ) {
 			wp_send_json_error( 'Invalid security token sent.' );
@@ -901,21 +1244,44 @@ class UpdatesManager extends SingletonAbstract {
 			$this->auto_activate_license();
 		}
 
-		$this->get_license_data(); // required to actually update info from the server
+		$license_data = $this->get_license_data(); // required to actually update info from the server
+
+		// Check if we're using cached data due to failures
+		$failure_count = (int) get_option( 'cfw_license_check_failures', 0 );
+		$using_cache   = false;
+
+		if ( $failure_count > 0 ) {
+			$using_cache = true;
+		}
 
 		ob_start();
 		$this->admin_page_fields();
 
 		$cfw_activation_control_content = ob_get_clean();
 
-		wp_send_json(
-			array(
-				'success'   => true,
-				'fragments' => array(
-					'#cfw-admin-license-info' => $cfw_activation_control_content,
-				),
-			)
+		// Build response with a warning message if using cache
+		$response = array(
+			'success'   => true,
+			'fragments' => array(
+				'#cfw-admin-license-info' => $cfw_activation_control_content,
+			),
 		);
+
+		// Add a warning message to response if using cached data
+		if ( $using_cache ) {
+			$last_failure        = (int) get_option( 'cfw_license_last_failure', 0 );
+			$response['warning'] = sprintf(
+				/* translators: %1$d: failure count, %2$d: max failures, %3$s: time since last failure */
+				'⚠️ ' . __( 'Unable to verify license online (%1$d/%2$d attempts failed). Using cached license data. Last attempt: %3$s ago.', 'checkout-wc' ),
+				$failure_count,
+				self::MAX_CONSECUTIVE_FAILURES,
+				human_time_diff( $last_failure )
+			);
+		} elseif ( $license_data && isset( $license_data->license ) && 'valid' === $license_data->license ) {
+			$response['success_message'] = '✅ ' . __( 'License verified successfully.', 'checkout-wc' );
+		}
+
+		wp_send_json( $response );
 	}
 
 	public function get_license_price_id(): int {
