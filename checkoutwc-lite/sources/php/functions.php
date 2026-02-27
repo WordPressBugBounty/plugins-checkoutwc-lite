@@ -373,20 +373,39 @@ function cfw_get_cart_shipping_data(): array {
 		);
 
 		$formatted_methods = array();
+		$chosen_method_obj = null;
 
 		foreach ( $available_methods as $method ) {
 			$label = wc_cart_totals_shipping_method_label( $method );
 			$label = str_replace( ': <span', '<span', $label ); // Adjust label formatting
 
+			if ( $method->id === $chosen_method ) {
+				$chosen_method_obj = $method;
+			}
+
+			// Label without price: use everything before the first <span (method name only).
+			$span_pos = stripos( $label, '<span' );
+			$label_raw = $span_pos !== false
+				? trim( wp_strip_all_tags( substr( $label, 0, $span_pos ) ) )
+				: trim( wp_strip_all_tags( $label ) );
+
 			$formatted_methods[] = array(
 				'id'          => $method->id,
 				'sanitizedId' => sanitize_title( $method->id ),
 				'label'       => $label,
+				'label_raw'   => $label_raw,
 				'checked'     => $method->id === $chosen_method,
 				'actions'     => array(
 					'woocommerce_after_shipping_rate' => cfw_get_action_output( 'woocommerce_after_shipping_rate', $method, $i ),
 				),
 			);
+		}
+
+		$chosen_total = null;
+		if ( $chosen_method_obj ) {
+			$chosen_total = WC()->cart->display_prices_including_tax()
+				? (float) $chosen_method_obj->cost + (float) $chosen_method_obj->get_shipping_tax()
+				: (float) $chosen_method_obj->cost;
 		}
 
 		$shipping_data[] = array(
@@ -395,6 +414,7 @@ function cfw_get_cart_shipping_data(): array {
 			'packageDetails'   => $package_details,
 			'availableMethods' => $formatted_methods,
 			'chosenMethod'     => $chosen_method,
+			'total'            => $chosen_total,
 		);
 	}
 
@@ -3191,6 +3211,7 @@ function cfw_get_cart_items_data(): array {
 			'title'                                   => $item->get_title(),
 			'url'                                     => $item->get_url(),
 			'subtotal'                                => $item->get_subtotal(),
+			'subtotal_raw'                            => $item->get_subtotal_raw(),
 			'hide_remove_item'                        => $item->get_hide_remove_item(),
 			'row_class'                               => $item->get_row_class(),
 			'data'                                    => $item->get_data(),
@@ -4221,7 +4242,7 @@ function cfw_clean_html( $html ) {
 	libxml_use_internal_errors( true );
 
 	// Load HTML, specifying UTF-8 encoding
-	$doc->loadHTML( mb_convert_encoding( $html, 'HTML-ENTITIES', 'UTF-8' ), LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD );
+	$doc->loadHTML( mb_encode_numericentity( $html, array( 0x80, 0x10FFFF, 0, ~0 ), 'UTF-8' ), LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD );
 	libxml_clear_errors();
 
 	// Save the cleaned HTML, removing the doctype and other unwanted tags

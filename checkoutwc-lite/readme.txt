@@ -4,7 +4,7 @@ Donate link: https://www.checkoutwc.com
 Tags: woocommerce-checkout, checkout-optimization, cart-abandonment, one-page-checkout, express-checkout
 Requires at least: 5.2
 Tested up to: 6.9
-Stable tag: 11.0.2
+Stable tag: 11.0.5
 Requires PHP: 7.4
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
@@ -250,6 +250,22 @@ Enable WordPress debugging (add define('WP_DEBUG', true); to wp-config.php) and 
 == Changelog ==
 
 Free version updates are non-sequential due to the unified development branch we use with the premium versions.
+
+= Version 11.0.5 =
+- Improved - Reduced debounce delay for AJAX updates on checkout
+- Improved - Add support for Order Delivery for WooCommerce v4
+- Improved - Add cart data support for Conversion Bridge tracking
+- Fix - Fix compatibility issue with BeTheme editor causing fatal error
+- Fix - Fix TWINT payment modal being hidden on checkout
+- Fix - Fix mobile menu not opening with Astra theme in some configurations
+- Fix - Fix various Astra theme styling issues with checkout
+- Fix - Fix incorrect Swedish translations
+- Fix - Fix express buttons gap with Payment Plugins for PayPal
+- Fix - Fix translation loading triggered too early warning in WordPress 6.7+
+- Fix - Fix deprecation notice
+- Fix - Fix styling issue with express button spacing
+- Dev - Remove superfluous debug logging
+- Dev - Updated dependencies for security and performance
 
 = Version 11.0.2 =
 - Fix - Fix issue with Divi 5 breaking when Side Cart is enabled

@@ -924,7 +924,7 @@ class UpdatesManager extends SingletonAbstract {
 
 		if ( $failure_count > 0 ) {
 			?>
-			<div class="notice notice-warning is-dismissible" data-cfw-license-notice="cache-warning">
+			<div class="notice notice-warning is-dismissible cfw-license-notice" data-cfw-license-notice="cache-warning">
 				<p>
 					<strong><?php echo esc_html( $this->name ); ?>:</strong>
 					<?php
@@ -949,7 +949,7 @@ class UpdatesManager extends SingletonAbstract {
 	 */
 	public function notice_license_invalid() {
 		?>
-		<div class="error">
+		<div class="error cfw-license-notice">
 			<p>
 				<?php
 				// translators: %s the plugin name
@@ -967,7 +967,7 @@ class UpdatesManager extends SingletonAbstract {
 	 */
 	public function notice_license_valid() {
 		?>
-		<div class="updated">
+		<div class="updated cfw-license-notice">
 			<p>
 				<?php
 				// translators: %s the plugin name
@@ -985,7 +985,7 @@ class UpdatesManager extends SingletonAbstract {
 	 */
 	public function notice_license_deactivate_failed() {
 		?>
-		<div class="error">
+		<div class="error cfw-license-notice">
 			<p>
 				<?php
 				// translators: %s the plugin name
@@ -1003,7 +1003,7 @@ class UpdatesManager extends SingletonAbstract {
 	 */
 	public function notice_license_deactivate_success() {
 		?>
-		<div class="updated">
+		<div class="updated cfw-license-notice">
 			<p>
 				<?php
 				// translators: %s the plugin name
@@ -1021,7 +1021,7 @@ class UpdatesManager extends SingletonAbstract {
 	 */
 	public function notice_settings_saved_success() {
 		?>
-		<div class="updated">
+		<div class="updated cfw-license-notice">
 			<p>
 				<?php
 				// translators: %s the plugin name
@@ -1039,7 +1039,7 @@ class UpdatesManager extends SingletonAbstract {
 	 */
 	public function notice_license_activate_error() {
 		?>
-		<div class="error">
+		<div class="error cfw-license-notice">
 			<p>
 				<?php
 				// translators: %1$s the plugin name, %2$s the error
@@ -1057,7 +1057,7 @@ class UpdatesManager extends SingletonAbstract {
 	 */
 	public function notice_license_network_error() {
 		?>
-		<div class="error">
+		<div class="error cfw-license-notice">
 			<p>
 				<?php
 				// translators: %s the plugin name
@@ -1075,7 +1075,7 @@ class UpdatesManager extends SingletonAbstract {
 	 */
 	public function notice_license_deactivate_local() {
 		?>
-		<div class="notice notice-warning">
+		<div class="notice notice-warning cfw-license-notice">
 			<p>
 				<?php
 				// translators: %s the plugin name

@@ -14,6 +14,7 @@ class CartItem implements ItemInterface {
 	protected $title;
 	protected $url;
 	protected $subtotal;
+	protected $subtotal_raw;
 	protected $hide_remove_item = false;
 	protected $row_class;
 	protected $item_key;
@@ -56,6 +57,7 @@ class CartItem implements ItemInterface {
 		$this->title                              = cfw_apply_filters( 'woocommerce_cart_item_name', $product->get_name(), $item, $key );
 		$this->url                                = get_permalink( $item['product_id'] );
 		$this->subtotal                           = cfw_apply_filters( 'woocommerce_cart_item_subtotal', WC()->cart->get_product_subtotal( $product, $item['quantity'] ), $item, $key );
+		$this->subtotal_raw                       = (float) ( $item['line_subtotal'] ?? 0 );
 		$this->hide_remove_item                   = cfw_apply_filters( 'woocommerce_cart_item_remove_link', 'PLACEHOLDER', $key ) === '';
 
 		/**
@@ -252,6 +254,10 @@ class CartItem implements ItemInterface {
 
 	public function get_subtotal(): string {
 		return strval( $this->subtotal );
+	}
+
+	public function get_subtotal_raw(): float {
+		return (float) $this->subtotal_raw;
 	}
 
 	public function get_row_class(): string {

@@ -10,6 +10,7 @@ interface ItemInterface {
 	public function get_title(): string;
 	public function get_url(): string;
 	public function get_subtotal(): string;
+	public function get_subtotal_raw(): float;
 	public function get_row_class(): string;
 	public function get_item_key(): string;
 	public function get_raw_item();

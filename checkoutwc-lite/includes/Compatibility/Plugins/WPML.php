@@ -32,12 +32,19 @@ class WPML extends CompatibilityAbstract {
 		global $sitepress;
 
 		if ( ! isset( $meta['wpml_site_language'] ) ) {
+			cfw_debug_log( 'CheckoutWC WPML: Cannot set language (no wpml_site_language meta)' );
 			return;
 		}
 
 		$language = $meta['wpml_site_language'];
 
-		if ( empty( $language ) || ! method_exists( $sitepress, 'switch_lang' ) ) {
+		if ( empty( $language ) ) {
+			cfw_debug_log( 'CheckoutWC WPML: Cannot set language (empty language)' );
+			return;
+		}
+
+		if ( ! method_exists( $sitepress, 'switch_lang' ) ) {
+			cfw_debug_log( 'CheckoutWC WPML: Cannot set language (no switch_lang function)' );
 			return;
 		}
 

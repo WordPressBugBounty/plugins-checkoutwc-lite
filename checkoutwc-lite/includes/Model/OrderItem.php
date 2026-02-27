@@ -13,6 +13,7 @@ class OrderItem implements ItemInterface {
 	protected $title;
 	protected $url;
 	protected $subtotal;
+	protected $subtotal_raw;
 	protected $row_class;
 	protected $item_key;
 	protected $raw_item;
@@ -39,7 +40,8 @@ class OrderItem implements ItemInterface {
 		$this->quantity  = $item->get_quantity();
 		$this->title     = $item->get_name();
 		$this->url       = $item_product ? get_permalink( $item->get_product_id() ) : '';
-		$this->subtotal  = ! empty( $item_subtotal ) ? $item_subtotal : wc_price( $item->get_subtotal() );
+		$this->subtotal     = ! empty( $item_subtotal ) ? $item_subtotal : wc_price( $item->get_subtotal() );
+		$this->subtotal_raw = (float) $item->get_subtotal();
 		/**
 		 * Filter the order item row class
 		 *
@@ -73,6 +75,10 @@ class OrderItem implements ItemInterface {
 
 	public function get_subtotal(): string {
 		return strval( $this->subtotal );
+	}
+
+	public function get_subtotal_raw(): float {
+		return (float) $this->subtotal_raw;
 	}
 
 	public function get_row_class(): string {

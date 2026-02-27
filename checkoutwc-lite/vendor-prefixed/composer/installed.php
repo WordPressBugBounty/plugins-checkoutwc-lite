@@ -4,7 +4,7 @@
     'name' => 'objectivco/checkout-for-woocommerce',
     'pretty_version' => 'dev-master',
     'version' => 'dev-master',
-    'reference' => '35f9722bc4f4b00d74a3d0d78ebc4d6f1f5849d6',
+    'reference' => '669fd701998ad665141baf87c0bc154360c00e49',
     'type' => 'wordpress-plugin',
     'install_path' => __DIR__ . '/../',
     'aliases' => 

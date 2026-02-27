@@ -176,6 +176,7 @@ use Objectiv\Plugins\Checkout\Compatibility\Plugins\YITHCompositeProducts;
 use Objectiv\Plugins\Checkout\Compatibility\Plugins\YITHDeliveryDate;
 use Objectiv\Plugins\Checkout\Compatibility\Plugins\ThemeHighCheckoutFieldEditor;
 use Objectiv\Plugins\Checkout\Compatibility\Plugins\YITHPointsAndRewards;
+use Objectiv\Plugins\Checkout\Compatibility\Plugins\Reviewbird;
 use Objectiv\Plugins\Checkout\Compatibility\Plugins\RouteApp;
 use Objectiv\Plugins\Checkout\Compatibility\Themes\Acuva;
 use Objectiv\Plugins\Checkout\Compatibility\Themes\Astra;
@@ -454,6 +455,7 @@ $compatibility_modules = array(
 	AdvancedCouponsForWooCommerce::instance(),
 	Polylang::instance(),
 	QuantityDiscountsPricingForWoocommerce::instance(),
+	Reviewbird::instance(),
 	RouteApp::instance(),
 	PortugalDPDPickup::instance(),
 	OwnID::instance(),
@@ -783,7 +785,13 @@ add_action(
 			}
 		);
 
-		Config::set_hook_prefix( 'cfw' );
+		try {
+			Config::set_hook_prefix( 'cfw' );
+		} catch ( \Exception $e ) {
+			cfw_debug_log(
+				'Admin init ran multiple times in this request; config already set. Potential causes: theme builders (BeTheme, Divi, etc.), page editors that re-run admin_init, or plugins that re-bootstrap the admin. Exception: ' . $e->getMessage()
+			);
+		}
 		Installer::init();
 
 		$detected_gateways = cfw_apply_filters( 'cfw_detected_gateways', array() );

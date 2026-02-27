@@ -918,7 +918,7 @@ function cfw_order_review_step_review_pane() {
  */
 function cfw_get_review_pane_payment_method(): string {
 	if ( WC()->cart->needs_payment() ) {
-		$available_payment_methods = WC()->payment_gateways()->get_available_payment_gateways();
+		$available_payment_methods = WC()->payment_gateways()->payment_gateways();
 
 		$title = $available_payment_methods[ WC()->session->get( 'chosen_payment_method' ) ]->title ?? '';
 	} else {

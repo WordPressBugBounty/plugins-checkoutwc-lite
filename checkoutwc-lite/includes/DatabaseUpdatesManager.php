@@ -4,6 +4,7 @@ namespace Objectiv\Plugins\Checkout;
 
 use Objectiv\Plugins\Checkout\Factories\BumpFactory;
 use Objectiv\Plugins\Checkout\Features\AbandonedCartRecovery;
+use Objectiv\Plugins\Checkout\Features\ABTesting;
 use Objectiv\Plugins\Checkout\Features\LocalPickup;
 use Objectiv\Plugins\Checkout\Managers\SettingsManager;
 use Objectiv\Plugins\Checkout\Managers\UpdatesManager;
@@ -81,6 +82,7 @@ class DatabaseUpdatesManager extends SingletonAbstract {
 			'10.3.6'  => array( $this, 'update_1036' ),
 			'11.0.0'  => array( $this, 'update_1100' ),
 			'11.0.1'  => array( $this, 'update_1101' ),
+			'11.0.3'  => array( $this, 'update_1103' ),
 			// TODO: For future updates, bifurcate pro and lite versions?
 		);
 	}
@@ -1217,6 +1219,14 @@ class DatabaseUpdatesManager extends SingletonAbstract {
 			$this->regenerate_order_bump_thumbnail( $attachment_id );
 			$processed_attachments[] = $attachment_id;
 		}
+	}
+
+	public function update_1103() {
+		if ( ! class_exists( '\\Objectiv\\Plugins\\Checkout\\Features\\ABTesting' ) ) {
+			return;
+		}
+
+		ABTesting::map_capabilities();
 	}
 
 	private function regenerate_order_bump_thumbnail( int $attachment_id ) {
