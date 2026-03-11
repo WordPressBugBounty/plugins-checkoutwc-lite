@@ -151,6 +151,22 @@ function cfw_cart_summary_content_open_wrap() {
 }
 
 /**
+ * Output a visually hidden h1 for the checkout page so screen readers can identify the page.
+ */
+function cfw_checkout_page_heading() {
+	if ( ! cfw_is_checkout() ) {
+		return;
+	}
+	?>
+	<h1 class="visually-hidden">
+		<?php
+		echo esc_html( apply_filters( 'cfw_checkout_page_heading', __( 'Checkout', 'checkout-wc' ) ) );
+		?>
+	</h1>
+	<?php
+}
+
+/**
  * Handles WooCommerce before order review hooks
  *
  * This hook is in a different place on our checkout so
@@ -221,7 +237,7 @@ function cfw_wc_print_notices( bool $clear_notices = true ) {
 		</div>
 	</div>
 
-	<div id="cfw-alert-container" class="woocommerce-notices-wrapper">
+	<div id="cfw-alert-container" class="woocommerce-notices-wrapper" aria-live="polite">
 		<?php if ( ! empty( $notices ) ) : ?>
 			<?php foreach ( $notices as $type => $messages ) : ?>
 				<?php
@@ -296,7 +312,7 @@ function cfw_payment_request_buttons() {
  */
 function cfw_customer_info_tab_heading() {
 	?>
-	<h3>
+	<h3 id="cfw-customer-info-heading" class="cfw-panel-heading" tabindex="-1">
 		<?php
 		/**
 		 * Filters customer info tab heading
@@ -311,11 +327,11 @@ function cfw_customer_info_tab_heading() {
 }
 
 /**
- * Customer information tab heading
+ * Order review tab heading
  */
 function cfw_order_review_tab_heading() {
 	?>
-	<h3>
+	<h3 id="cfw-order-review-heading" class="cfw-panel-heading" tabindex="-1">
 		<?php
 		/**
 		 * Filters order review tab heading
@@ -899,11 +915,29 @@ function cfw_shipping_method_address_review_pane() {
 }
 
 /**
+ * Shipping method tab heading (hidden heading for screen readers/focus management)
+ */
+function cfw_shipping_method_tab_heading() {
+	?>
+	<h2 id="cfw-shipping-method-heading" class="cfw-panel-heading visually-hidden" tabindex="-1"><?php echo wp_kses_post( apply_filters( 'cfw_breadcrumb_shipping_label', esc_html__( 'Shipping', 'checkout-wc' ) ) ); ?></h2>
+	<?php
+}
+
+/**
  * Payment method tab address review section
  */
 function cfw_payment_method_address_review_pane() {
 	?>
 	<div id="cfw-payment-method-review-pane"></div>
+	<?php
+}
+
+/**
+ * Payment method tab heading (hidden heading for screen readers/focus management)
+ */
+function cfw_payment_method_tab_heading() {
+	?>
+	<h2 id="cfw-payment-method-heading" class="cfw-panel-heading visually-hidden" tabindex="-1"><?php echo wp_kses_post( apply_filters( 'cfw_breadcrumb_payment_label', WC()->cart->needs_payment() ? esc_html__( 'Payment', 'checkout-wc' ) : esc_html__( 'Review', 'checkout-wc' ) ) ); ?></h2>
 	<?php
 }
 

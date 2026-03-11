@@ -32,7 +32,9 @@ if ( ! defined( 'WPINC' ) ) {
  * @see cfw_cart_summary_after_order_review()
  * @see cfw_close_cart_summary_div()
  * @see cfw_maybe_output_login_modal_container()
+ * @see cfw_checkout_page_heading()
  */
+add_action( 'cfw_checkout_main_container_start', 'cfw_checkout_page_heading', 0 );
 add_action( 'cfw_checkout_main_container_start', 'cfw_wc_print_notices_with_wrap', 10 );
 add_action( 'cfw_checkout_main_container_start', 'cfw_maybe_output_login_modal_container', 10 );
 add_action(
@@ -77,12 +79,14 @@ if ( SettingsManager::instance()->get_setting( 'enable_one_page_checkout' ) !== 
 add_action( 'cfw_checkout_customer_info_tab', 'cfw_customer_info_tab_nav', 60 );
 
 // Shipping Method Tab
+add_action( 'cfw_checkout_shipping_method_tab', 'cfw_shipping_method_tab_heading', 5 );
 add_action( 'cfw_checkout_shipping_method_tab', 'cfw_shipping_method_address_review_pane', 10 );
 add_action( 'cfw_checkout_shipping_method_tab', 'cfw_shipping_methods', 20 );
 add_action( 'cfw_checkout_shipping_method_tab', 'cfw_shipping_method_tab_nav', 30 );
 
 // Payment Method Tab
-add_action( 'cfw_checkout_payment_method_tab', 'cfw_payment_method_address_review_pane', 0 );
+add_action( 'cfw_checkout_payment_method_tab', 'cfw_payment_method_tab_heading', 0 );
+add_action( 'cfw_checkout_payment_method_tab', 'cfw_payment_method_address_review_pane', 1 );
 add_action( 'cfw_checkout_payment_method_tab', 'cfw_maybe_show_coupon_module', 5 );
 add_action( 'cfw_checkout_payment_method_tab', 'cfw_payment_methods', 10 );
 add_action( 'cfw_checkout_payment_method_tab', 'cfw_payment_tab_content_billing_address', 20 );

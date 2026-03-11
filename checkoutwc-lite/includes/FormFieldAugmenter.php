@@ -2,6 +2,8 @@
 
 namespace Objectiv\Plugins\Checkout;
 
+use Objectiv\Plugins\Checkout\Managers\SettingsManager;
+
 class FormFieldAugmenter extends SingletonAbstract {
 	protected $checkbox_like_field_types = array( 'checkbox', 'radio' );
 	protected $filters_added             = false;
@@ -112,13 +114,15 @@ class FormFieldAugmenter extends SingletonAbstract {
 			$args['class'][] = 'cfw-check-input';
 		}
 
+		$label_style = $this->get_label_style();
+
 		/**
 		 * The non-floating label field types
 		 *
 		 * @since 6.2.3
 		 * @param array $field_types The nonfloating label field types
 		 */
-		if ( ! in_array( $args['type'], apply_filters( 'cfw_non_floating_label_field_types', array( 'checkbox', 'radio' ) ), true ) ) {
+		if ( 'floating' === $label_style && ! in_array( $args['type'], apply_filters( 'cfw_non_floating_label_field_types', array( 'checkbox', 'radio' ) ), true ) ) {
 			$args['label_class'][] = 'cfw-floatable-label';
 		}
 
@@ -134,7 +138,8 @@ class FormFieldAugmenter extends SingletonAbstract {
 		// Set saved value
 		$args['custom_attributes']['data-saved-value'] = $value ?? 'CFW_EMPTY';
 
-		$args['placeholder'] = ! empty( $args['placeholder'] ) ? $args['placeholder'] : wp_strip_all_tags( $args['label'] );
+		$label_for_placeholder = wp_strip_all_tags( $args['label'] );
+		$args['placeholder']   = ! empty( $args['placeholder'] ) ? $args['placeholder'] : trim( preg_replace( '/\s*\*+$/', '', $label_for_placeholder ) );
 
 		/**
 		 * Whether to append optional to field placeholder
@@ -184,7 +189,7 @@ class FormFieldAugmenter extends SingletonAbstract {
 			$args['options'] = apply_filters( 'cfw_select_field_options', $args['options'], $args, $key );
 		}
 
-		if ( 'select' === $args['type'] || ! empty( $args['value'] ) ) {
+		if ( 'floating' === $label_style && ( 'select' === $args['type'] || ! empty( $args['value'] ) ) ) {
 			$args['class'][] = 'cfw-label-is-floated';
 		}
 
@@ -241,6 +246,26 @@ class FormFieldAugmenter extends SingletonAbstract {
 		$field = preg_replace( '@(<input.+type="checkbox".+/>)\s@', '$1', $field );
 
 		return preg_replace( '@(</span>)\s@', '$1', $field );
+	}
+
+	/**
+	 * Get the current field label style (floating or normal) for the active template.
+	 *
+	 * @return string 'floating' or 'normal'
+	 */
+	private function get_label_style(): string {
+		if ( ! function_exists( 'cfw_get_active_template' ) ) {
+			return 'floating';
+		}
+
+		$active_template = cfw_get_active_template();
+		if ( ! $active_template ) {
+			return 'floating';
+		}
+
+		$style = SettingsManager::instance()->get_setting( 'label_style', array( $active_template->get_slug() ) );
+
+		return ( $style === 'normal' ) ? 'normal' : 'floating';
 	}
 
 	public function add_before_html( $field, $key = null, $args = array() ) {

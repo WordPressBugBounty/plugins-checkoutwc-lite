@@ -56,7 +56,6 @@ class ComposerStaticInitc56ceb931c89a18596cffbfbdd2f9685
         'Objectiv\\Plugins\\Checkout\\Admin\\Notices\\InvalidLicenseKeyNotice' => __DIR__ . '/../..' . '/includes/Admin/Notices/InvalidLicenseKeyNotice.php',
         'Objectiv\\Plugins\\Checkout\\Admin\\Notices\\LiteEmailOptIn' => __DIR__ . '/../..' . '/includes/Admin/Notices/LiteEmailOptIn.php',
         'Objectiv\\Plugins\\Checkout\\Admin\\Notices\\NoticeAbstract' => __DIR__ . '/../..' . '/includes/Admin/Notices/NoticeAbstract.php',
-        'Objectiv\\Plugins\\Checkout\\Admin\\Notices\\PendingOfferOrdersNotice' => __DIR__ . '/../..' . '/includes/Admin/Notices/PendingOfferOrdersNotice.php',
         'Objectiv\\Plugins\\Checkout\\Admin\\Notices\\PortoWarning' => __DIR__ . '/../..' . '/includes/Admin/Notices/PortoWarning.php',
         'Objectiv\\Plugins\\Checkout\\Admin\\Notices\\TemplateDisabledNotice' => __DIR__ . '/../..' . '/includes/Admin/Notices/TemplateDisabledNotice.php',
         'Objectiv\\Plugins\\Checkout\\Admin\\Notices\\TurnstileFeatureNotice' => __DIR__ . '/../..' . '/includes/Admin/Notices/TurnstileFeatureNotice.php',

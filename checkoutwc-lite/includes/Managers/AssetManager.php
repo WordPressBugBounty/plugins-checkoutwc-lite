@@ -834,7 +834,7 @@ class AssetManager {
 						'update_cart_item_variation_button' => __( 'Update', 'woocommerce' ),
 						'ok_button_label'           => __( 'Add to cart', 'woocommerce' ),
 						'cancel_button_label'       => __( 'Cancel', 'woocommerce' ),
-						'remove_item_label'         => __( 'Remove this item', 'woocommerce' ),
+						'remove_item_label'         => __( 'Remove %s from cart', 'checkout-wc' ),
 						'proceed_to_checkout_label' => __( 'Proceed to checkout', 'woocommerce' ),
 						'continue_shopping_label'   => __( 'Continue shopping', 'woocommerce' ),
 						'edit_cart_variation_label' => __( 'Edit', 'woocommerce' ),

@@ -41,7 +41,6 @@ return array(
     'Objectiv\\Plugins\\Checkout\\Admin\\Notices\\InvalidLicenseKeyNotice' => $baseDir . '/includes/Admin/Notices/InvalidLicenseKeyNotice.php',
     'Objectiv\\Plugins\\Checkout\\Admin\\Notices\\LiteEmailOptIn' => $baseDir . '/includes/Admin/Notices/LiteEmailOptIn.php',
     'Objectiv\\Plugins\\Checkout\\Admin\\Notices\\NoticeAbstract' => $baseDir . '/includes/Admin/Notices/NoticeAbstract.php',
-    'Objectiv\\Plugins\\Checkout\\Admin\\Notices\\PendingOfferOrdersNotice' => $baseDir . '/includes/Admin/Notices/PendingOfferOrdersNotice.php',
     'Objectiv\\Plugins\\Checkout\\Admin\\Notices\\PortoWarning' => $baseDir . '/includes/Admin/Notices/PortoWarning.php',
     'Objectiv\\Plugins\\Checkout\\Admin\\Notices\\TemplateDisabledNotice' => $baseDir . '/includes/Admin/Notices/TemplateDisabledNotice.php',
     'Objectiv\\Plugins\\Checkout\\Admin\\Notices\\TurnstileFeatureNotice' => $baseDir . '/includes/Admin/Notices/TurnstileFeatureNotice.php',

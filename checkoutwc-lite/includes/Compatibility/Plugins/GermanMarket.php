@@ -21,6 +21,8 @@ class GermanMarket extends CompatibilityAbstract {
 		if ( remove_action( 'woocommerce_de_checkout_payment', array( 'WGM_Template', 'add_review_order' ) ) ) {
 			add_action( 'woocommerce_review_order_before_submit', array( 'WGM_Template', 'add_review_order' ) );
 		}
+
+		add_action( 'woocommerce_pay_order_before_submit', array( $this, 'move_digital_items_notice_inline' ), 11 );
 	}
 
 	public function run() {
@@ -30,6 +32,12 @@ class GermanMarket extends CompatibilityAbstract {
 
 		if ( remove_action( 'woocommerce_de_checkout_payment', array( 'WGM_Template', 'add_review_order' ) ) ) {
 			add_action( 'woocommerce_review_order_before_submit', array( 'WGM_Template', 'add_review_order' ) );
+		}
+	}
+
+	public function move_digital_items_notice_inline() {
+		if ( remove_action( 'after_woocommerce_pay', array( 'WGM_Template', 'digital_items_notice' ) ) ) {
+			\WGM_Template::digital_items_notice();
 		}
 	}
 
