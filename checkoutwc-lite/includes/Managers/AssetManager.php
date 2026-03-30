@@ -687,6 +687,7 @@ class AssetManager {
 					 * @since 6.2.4
 					 */
 					'invalid_full_name_message'         => apply_filters( 'cfw_invalid_full_name_validation_error_message', __( 'Please enter your first and last name.', 'checkout-wc' ) ),
+					'invalid_name_email_message'        => apply_filters( 'cfw_invalid_name_email_validation_error_message', __( 'Please enter a name, not an email address.', 'checkout-wc' ) ),
 					'shipping_address_label'            => __( 'Shipping address', 'checkout-wc' ),
 					'quantity_prompt_message'           => __( 'Please enter a new quantity:', 'checkout-wc' ),
 					'cvv_tooltip_message'               => __( '3-digit security code usually found on the back of your card. American Express cards have a 4-digit code located on the front.', 'checkout-wc' ),
@@ -823,6 +824,7 @@ class AssetManager {
 						'enable_free_shipping_progress_bar_at_checkout' => SettingsManager::instance()->get_setting( 'enable_free_shipping_progress_bar_at_checkout' ) === 'yes',
 						'enable_promo_codes_on_side_cart'  => SettingsManager::instance()->get_setting( 'enable_promo_codes_on_side_cart' ) === 'yes',
 						'hide_floating_cart_button_empty_cart' => SettingsManager::instance()->get_setting( 'hide_floating_cart_button_empty_cart' ) === 'yes',
+						'enable_accessibility_improvements' => function_exists( 'cfw_enable_accessibility_improvements' ) ? \cfw_enable_accessibility_improvements() : (bool) apply_filters( 'cfw_enable_accessibility_improvements', false ),
 						'enable_side_cart_coupon_code_link' => SettingsManager::instance()->get_setting( 'enable_side_cart_coupon_code_link' ) === 'yes',
 						'enable_order_bumps'               => SettingsManager::instance()->get_setting( 'enable_order_bumps' ) === 'yes',
 						'enable_order_bumps_on_side_cart'  => SettingsManager::instance()->get_setting( 'enable_order_bumps_on_side_cart' ) === 'yes',

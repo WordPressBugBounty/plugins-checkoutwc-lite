@@ -4,7 +4,7 @@ Donate link: https://www.checkoutwc.com
 Tags: woocommerce-checkout, checkout-optimization, cart-abandonment, one-page-checkout, express-checkout
 Requires at least: 5.2
 Tested up to: 6.9
-Stable tag: 11.0.5
+Stable tag: 11.0.7
 Requires PHP: 7.4
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
@@ -250,6 +250,23 @@ Enable WordPress debugging (add define('WP_DEBUG', true); to wp-config.php) and 
 == Changelog ==
 
 Free version updates are non-sequential due to the unified development branch we use with the premium versions.
+
+= Version 11.0.7 =
+- Add - Add cfw_enable_accessibility_improvements filter hook: In an upcoming release, we are updating the HTML output of CheckoutWC to improve screen reader support, keyboard navigation, and semantic correctness. You can opt in early by enabling the new filter. We recommend testing with your current theme or customizations so the transition is seamless.
+- Improved - Add href and aria-label fallbacks to order review change links to improve accessibility
+- Fix - Prevent email addresses from being entered in first name, last name, and full name fields to ensure payment gateway compatibility
+
+= Version 11.0.6 =
+- Improved - Accessibility: Screen reader support with semantic headings and step announcements when navigating checkout tabs
+- Improved - Accessibility: "Change" links in order review pane now have descriptive aria-labels (e.g., "Change shipping method")
+- Improved - Accessibility: Remove item button now includes product name in aria-label
+- Improved - Accessibility: Required field asterisk display is now consistent across label styles
+- Fix - Fix express payment buttons not appearing in some configurations
+- Fix - Fix shipping methods heading showing when no methods are available
+- Fix - Fix select field arrow position with normal label style
+- Fix - Fix Astra compatibility CSS for non-floated label checkouts
+- Fix - Add compatibility for German Market plugin on order pay page
+- Dev - Updated dependencies for security and performance
 
 = Version 11.0.5 =
 - Improved - Reduced debounce delay for AJAX updates on checkout

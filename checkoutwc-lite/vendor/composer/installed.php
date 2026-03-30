@@ -3,7 +3,7 @@
         'name' => 'objectivco/checkout-for-woocommerce',
         'pretty_version' => 'dev-master',
         'version' => 'dev-master',
-        'reference' => 'e3ec7f3c92fd1a513574c6700d53e538fab57c44',
+        'reference' => '1aac01b69a3a722877f6d6224bfe52b1c7841f97',
         'type' => 'wordpress-plugin',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -13,7 +13,7 @@
         'objectivco/checkout-for-woocommerce' => array(
             'pretty_version' => 'dev-master',
             'version' => 'dev-master',
-            'reference' => 'e3ec7f3c92fd1a513574c6700d53e538fab57c44',
+            'reference' => '1aac01b69a3a722877f6d6224bfe52b1c7841f97',
             'type' => 'wordpress-plugin',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),

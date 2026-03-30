@@ -166,7 +166,8 @@ class AddressFieldsAugmenter extends SingletonAbstract {
 		$fields['first_name']['priority']          = $this->priorities['first_name'];
 		$fields['first_name']['columns']           = 6;
 		$fields['first_name']['custom_attributes'] = array(
-			'data-parsley-trigger' => 'change focusout',
+			'data-parsley-trigger'       => 'change focusout',
+			'data-parsley-name-not-email' => 'true',
 		);
 
 		// Last Name
@@ -177,7 +178,8 @@ class AddressFieldsAugmenter extends SingletonAbstract {
 		$fields['last_name']['priority']          = $this->priorities['last_name'];
 		$fields['last_name']['columns']           = 6;
 		$fields['last_name']['custom_attributes'] = array(
-			'data-parsley-trigger' => 'change focusout',
+			'data-parsley-trigger'       => 'change focusout',
+			'data-parsley-name-not-email' => 'true',
 		);
 
 		if ( $use_fullname_field ) {

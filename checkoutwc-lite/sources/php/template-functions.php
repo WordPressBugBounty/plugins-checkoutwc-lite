@@ -312,6 +312,19 @@ function cfw_payment_request_buttons() {
  */
 function cfw_customer_info_tab_heading() {
 	?>
+	<?php if ( cfw_enable_accessibility_improvements() ) : ?>
+	<h2 id="cfw-customer-info-heading" class="cfw-panel-heading" tabindex="-1">
+		<?php
+		/**
+		 * Filters customer info tab heading
+		 *
+		 * @param string $customer_info_heading Customer info tab heading
+		 * @since 2.0.0
+		 */
+		echo wp_kses_post( apply_filters( 'cfw_customer_information_heading', __( 'Information', 'checkout-wc' ) ) );
+		?>
+	</h2>
+	<?php else : ?>
 	<h3 id="cfw-customer-info-heading" class="cfw-panel-heading" tabindex="-1">
 		<?php
 		/**
@@ -323,6 +336,7 @@ function cfw_customer_info_tab_heading() {
 		echo wp_kses_post( apply_filters( 'cfw_customer_information_heading', __( 'Information', 'checkout-wc' ) ) );
 		?>
 	</h3>
+	<?php endif; ?>
 	<?php
 }
 
@@ -331,6 +345,19 @@ function cfw_customer_info_tab_heading() {
  */
 function cfw_order_review_tab_heading() {
 	?>
+	<?php if ( cfw_enable_accessibility_improvements() ) : ?>
+	<h2 id="cfw-order-review-heading" class="cfw-panel-heading" tabindex="-1">
+		<?php
+		/**
+		 * Filters order review tab heading
+		 *
+		 * @param string $order_review_tab_heading Order review tab heading
+		 * @since 2.0.0
+		 */
+		echo wp_kses_post( apply_filters( 'cfw_order_review_tab_heading', __( 'Order review', 'checkout-wc' ) ) );
+		?>
+	</h2>
+	<?php else : ?>
 	<h3 id="cfw-order-review-heading" class="cfw-panel-heading" tabindex="-1">
 		<?php
 		/**
@@ -342,6 +369,7 @@ function cfw_order_review_tab_heading() {
 		echo wp_kses_post( apply_filters( 'cfw_order_review_tab_heading', __( 'Order review', 'checkout-wc' ) ) );
 		?>
 	</h3>
+	<?php endif; ?>
 	<?php
 }
 
@@ -660,6 +688,41 @@ function cfw_customer_info_address() {
 		}
 		?>
 
+		<?php if ( cfw_enable_accessibility_improvements() ) : ?>
+		<h2>
+			<?php if ( wc_ship_to_billing_address_only() && WC()->cart->needs_shipping() ) : ?>
+				<?php
+				/**
+				 * Filters billing and shipping address heading
+				 *
+				 * @param string $billing_and_shipping_address_heading Billing and shipping address heading
+				 * @since 2.0.0
+				 */
+				echo wp_kses_post( apply_filters( 'cfw_billing_shipping_address_heading', esc_html__( 'Billing and Shipping address', 'checkout-wc' ) ) );
+				?>
+			<?php elseif ( ! WC()->cart->needs_shipping() ) : ?>
+				<?php
+				/**
+				 * Filters billing address heading
+				 *
+				 * @param string $billing_address_heading Billing address heading
+				 * @since 2.0.0
+				 */
+				echo wp_kses_post( apply_filters( 'cfw_billing_address_heading', esc_html__( 'Billing address', 'checkout-wc' ) ) );
+				?>
+			<?php else : ?>
+				<?php
+				/**
+				 * Filters shipping address heading
+				 *
+				 * @param string $shipping_address_heading Shipping address heading
+				 * @since 2.0.0
+				 */
+				echo wp_kses_post( apply_filters( 'cfw_shipping_address_heading', esc_html__( 'Shipping address', 'checkout-wc' ) ) );
+				?>
+			<?php endif; ?>
+		</h2>
+		<?php else : ?>
 		<h3>
 			<?php if ( wc_ship_to_billing_address_only() && WC()->cart->needs_shipping() ) : ?>
 				<?php
@@ -693,6 +756,7 @@ function cfw_customer_info_address() {
 				?>
 			<?php endif; ?>
 		</h3>
+		<?php endif; ?>
 
 		<?php
 		/**
@@ -1063,6 +1127,19 @@ function cfw_payment_tab_content_billing_address() {
 
 	if ( WC()->cart->needs_shipping_address() ) :
 		?>
+		<?php if ( cfw_enable_accessibility_improvements() ) : ?>
+		<h2 class="cfw-billing-address-heading">
+			<?php
+			/**
+			 * Filters billing address heading on payment method tab
+			 *
+			 * @param string $billing_address_heading Billing address heading on payment method tab
+			 * @since 3.0.0
+			 */
+			echo wp_kses_post( apply_filters( 'cfw_billing_address_heading', esc_html__( 'Billing address', 'checkout-wc' ) ) );
+			?>
+		</h2>
+		<?php else : ?>
 		<h3 class="cfw-billing-address-heading">
 			<?php
 			/**
@@ -1074,6 +1151,7 @@ function cfw_payment_tab_content_billing_address() {
 			echo wp_kses_post( apply_filters( 'cfw_billing_address_heading', esc_html__( 'Billing address', 'checkout-wc' ) ) );
 			?>
 		</h3>
+		<?php endif; ?>
 
 		<?php
 		/**

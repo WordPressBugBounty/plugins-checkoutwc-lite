@@ -4,7 +4,7 @@ Donate link: https://www.checkoutwc.com
 Tags: woocommerce-checkout, checkout-optimization, cart-abandonment, one-page-checkout, express-checkout
 Requires at least: 5.2
 Tested up to: 6.9
-Stable tag: 11.0.6
+Stable tag: 11.0.7
 Requires PHP: 7.4
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
@@ -250,6 +250,11 @@ Enable WordPress debugging (add define('WP_DEBUG', true); to wp-config.php) and 
 == Changelog ==
 
 Free version updates are non-sequential due to the unified development branch we use with the premium versions.
+
+= Version 11.0.7 =
+- Add - Add cfw_enable_accessibility_improvements filter hook: In an upcoming release, we are updating the HTML output of CheckoutWC to improve screen reader support, keyboard navigation, and semantic correctness. You can opt in early by enabling the new filter. We recommend testing with your current theme or customizations so the transition is seamless.
+- Improved - Add href and aria-label fallbacks to order review change links to improve accessibility
+- Fix - Prevent email addresses from being entered in first name, last name, and full name fields to ensure payment gateway compatibility
 
 = Version 11.0.6 =
 - Improved - Accessibility: Screen reader support with semantic headings and step announcements when navigating checkout tabs

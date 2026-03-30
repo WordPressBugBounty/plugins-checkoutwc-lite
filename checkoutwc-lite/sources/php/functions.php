@@ -955,6 +955,10 @@ function cfw_place_order( $order_button_text = false ) {
 	echo cfw_get_place_order( $order_button_text ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 }
 
+function cfw_enable_accessibility_improvements(): bool {
+	return (bool) apply_filters( 'cfw_enable_accessibility_improvements', false );
+}
+
 function cfw_get_payment_methods( $the_object = false, $show_title = true ) {
 	$payment_methods_html = cfw_get_payment_methods_html();
 
@@ -973,6 +977,20 @@ function cfw_get_payment_methods( $the_object = false, $show_title = true ) {
 
 		if ( $show_title ) :
 			?>
+			<?php if ( cfw_enable_accessibility_improvements() ) : ?>
+			<h2>
+				<?php
+				/**
+				 * Filters payment methods heading
+				 *
+				 * @param string $payment_methods_heading Payment methods heading
+				 *
+				 * @since 2.0.0
+				 */
+				echo apply_filters( 'cfw_payment_method_heading', esc_html__( 'Payment', 'checkout-wc' ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+				?>
+			</h2>
+			<?php else : ?>
 			<h3>
 				<?php
 				/**
@@ -985,6 +1003,7 @@ function cfw_get_payment_methods( $the_object = false, $show_title = true ) {
 				echo apply_filters( 'cfw_payment_method_heading', esc_html__( 'Payment', 'checkout-wc' ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 				?>
 			</h3>
+			<?php endif; ?>
 		<?php endif; ?>
 
 		<?php
@@ -1367,7 +1386,11 @@ function cfw_continue_to_shipping_button( string $label = '', array $classes = a
 	 *
 	 * @since 3.0.0
 	 */
-	echo apply_filters( 'cfw_continue_to_shipping_button', sprintf( '<a href="javascript:" data-tab="#cfw-shipping-method" class="%s"><span class="cfw-button-text">%s</span></a>', esc_attr( join( ' ', $new_classes ) ), $continue_to_shipping_method_label ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+	if ( cfw_enable_accessibility_improvements() ) {
+		echo apply_filters( 'cfw_continue_to_shipping_button', sprintf( '<button type="button" data-tab="#cfw-shipping-method" class="%s"><span class="cfw-button-text">%s</span></button>', esc_attr( join( ' ', $new_classes ) ), $continue_to_shipping_method_label ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+	} else {
+		echo apply_filters( 'cfw_continue_to_shipping_button', sprintf( '<a href="javascript:" data-tab="#cfw-shipping-method" class="%s"><span class="cfw-button-text">%s</span></a>', esc_attr( join( ' ', $new_classes ) ), $continue_to_shipping_method_label ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+	}
 }
 
 /**
@@ -1405,7 +1428,11 @@ function cfw_continue_to_payment_button( array $args = array() ) {
 	 *
 	 * @since 3.0.0
 	 */
-	echo apply_filters( 'cfw_continue_to_payment_button', sprintf( '<a href="javascript:" data-tab="#cfw-payment-method" class="%s"><span class="cfw-button-text">%s</span></a>', esc_attr( join( ' ', $args['classes'] ) ), $continue_to_payment_method_label ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+	if ( cfw_enable_accessibility_improvements() ) {
+		echo apply_filters( 'cfw_continue_to_payment_button', sprintf( '<button type="button" data-tab="#cfw-payment-method" class="%s"><span class="cfw-button-text">%s</span></button>', esc_attr( join( ' ', $args['classes'] ) ), $continue_to_payment_method_label ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+	} else {
+		echo apply_filters( 'cfw_continue_to_payment_button', sprintf( '<a href="javascript:" data-tab="#cfw-payment-method" class="%s"><span class="cfw-button-text">%s</span></a>', esc_attr( join( ' ', $args['classes'] ) ), $continue_to_payment_method_label ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+	}
 }
 
 function cfw_continue_to_order_review_button() {
@@ -1425,7 +1452,11 @@ function cfw_continue_to_order_review_button() {
 	 *
 	 * @since 3.0.0
 	 */
-	echo apply_filters( 'cfw_continue_to_order_review_button', sprintf( '<a href="javascript:" data-tab="#cfw-order-review" class="cfw-primary-btn cfw-next-tab cfw-continue-to-order-review-btn">%s</a>', $continue_to_order_review_label ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+	if ( cfw_enable_accessibility_improvements() ) {
+		echo apply_filters( 'cfw_continue_to_order_review_button', sprintf( '<button type="button" data-tab="#cfw-order-review" class="cfw-primary-btn cfw-next-tab cfw-continue-to-order-review-btn">%s</button>', $continue_to_order_review_label ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+	} else {
+		echo apply_filters( 'cfw_continue_to_order_review_button', sprintf( '<a href="javascript:" data-tab="#cfw-order-review" class="cfw-primary-btn cfw-next-tab cfw-continue-to-order-review-btn">%s</a>', $continue_to_order_review_label ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+	}
 }
 
 function cfw_return_to_customer_information_link() {

@@ -2254,27 +2254,6 @@ function rectToClientRect(rect) {
 
 /***/ }),
 
-/***/ "./node_modules/.pnpm/@monaco-editor+react@4.7.0_monaco-editor@0.50.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@monaco-editor/react/dist/index.mjs":
-/*!*************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/.pnpm/@monaco-editor+react@4.7.0_monaco-editor@0.50.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@monaco-editor/react/dist/index.mjs ***!
-  \*************************************************************************************************************************************************************************/
-/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   DiffEditor: () => (/* binding */ we),
-/* harmony export */   Editor: () => (/* binding */ de),
-/* harmony export */   "default": () => (/* binding */ Ft),
-/* harmony export */   loader: () => (/* reexport safe */ _monaco_editor_loader__WEBPACK_IMPORTED_MODULE_0__["default"]),
-/* harmony export */   useMonaco: () => (/* binding */ Le)
-/* harmony export */ });
-/* harmony import */ var _monaco_editor_loader__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @monaco-editor/loader */ "./node_modules/.pnpm/@monaco-editor+loader@1.7.0/node_modules/@monaco-editor/loader/lib/es/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "react");
-var le={wrapper:{display:"flex",position:"relative",textAlign:"initial"},fullWidth:{width:"100%"},hide:{display:"none"}},v=le;var ae={container:{display:"flex",height:"100%",width:"100%",justifyContent:"center",alignItems:"center"}},Y=ae;function Me({children:e}){return react__WEBPACK_IMPORTED_MODULE_1__.createElement("div",{style:Y.container},e)}var Z=Me;var $=Z;function Ee({width:e,height:r,isEditorReady:n,loading:t,_ref:a,className:m,wrapperProps:E}){return react__WEBPACK_IMPORTED_MODULE_1__.createElement("section",{style:{...v.wrapper,width:e,height:r},...E},!n&&react__WEBPACK_IMPORTED_MODULE_1__.createElement($,null,t),react__WEBPACK_IMPORTED_MODULE_1__.createElement("div",{ref:a,style:{...v.fullWidth,...!n&&v.hide},className:m}))}var ee=Ee;var H=(0,react__WEBPACK_IMPORTED_MODULE_1__.memo)(ee);function Ce(e){(0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(e,[])}var k=Ce;function he(e,r,n=!0){let t=(0,react__WEBPACK_IMPORTED_MODULE_1__.useRef)(!0);(0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(t.current||!n?()=>{t.current=!1}:e,r)}var l=he;function D(){}function h(e,r,n,t){return De(e,t)||be(e,r,n,t)}function De(e,r){return e.editor.getModel(te(e,r))}function be(e,r,n,t){return e.editor.createModel(r,n,t?te(e,t):void 0)}function te(e,r){return e.Uri.parse(r)}function Oe({original:e,modified:r,language:n,originalLanguage:t,modifiedLanguage:a,originalModelPath:m,modifiedModelPath:E,keepCurrentOriginalModel:g=!1,keepCurrentModifiedModel:N=!1,theme:x="light",loading:P="Loading...",options:y={},height:V="100%",width:z="100%",className:F,wrapperProps:j={},beforeMount:A=D,onMount:q=D}){let[M,O]=(0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(!1),[T,s]=(0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(!0),u=(0,react__WEBPACK_IMPORTED_MODULE_1__.useRef)(null),c=(0,react__WEBPACK_IMPORTED_MODULE_1__.useRef)(null),w=(0,react__WEBPACK_IMPORTED_MODULE_1__.useRef)(null),d=(0,react__WEBPACK_IMPORTED_MODULE_1__.useRef)(q),o=(0,react__WEBPACK_IMPORTED_MODULE_1__.useRef)(A),b=(0,react__WEBPACK_IMPORTED_MODULE_1__.useRef)(!1);k(()=>{let i=_monaco_editor_loader__WEBPACK_IMPORTED_MODULE_0__["default"].init();return i.then(f=>(c.current=f)&&s(!1)).catch(f=>f?.type!=="cancelation"&&console.error("Monaco initialization: error:",f)),()=>u.current?I():i.cancel()}),l(()=>{if(u.current&&c.current){let i=u.current.getOriginalEditor(),f=h(c.current,e||"",t||n||"text",m||"");f!==i.getModel()&&i.setModel(f)}},[m],M),l(()=>{if(u.current&&c.current){let i=u.current.getModifiedEditor(),f=h(c.current,r||"",a||n||"text",E||"");f!==i.getModel()&&i.setModel(f)}},[E],M),l(()=>{let i=u.current.getModifiedEditor();i.getOption(c.current.editor.EditorOption.readOnly)?i.setValue(r||""):r!==i.getValue()&&(i.executeEdits("",[{range:i.getModel().getFullModelRange(),text:r||"",forceMoveMarkers:!0}]),i.pushUndoStop())},[r],M),l(()=>{u.current?.getModel()?.original.setValue(e||"")},[e],M),l(()=>{let{original:i,modified:f}=u.current.getModel();c.current.editor.setModelLanguage(i,t||n||"text"),c.current.editor.setModelLanguage(f,a||n||"text")},[n,t,a],M),l(()=>{c.current?.editor.setTheme(x)},[x],M),l(()=>{u.current?.updateOptions(y)},[y],M);let L=(0,react__WEBPACK_IMPORTED_MODULE_1__.useCallback)(()=>{if(!c.current)return;o.current(c.current);let i=h(c.current,e||"",t||n||"text",m||""),f=h(c.current,r||"",a||n||"text",E||"");u.current?.setModel({original:i,modified:f})},[n,r,a,e,t,m,E]),U=(0,react__WEBPACK_IMPORTED_MODULE_1__.useCallback)(()=>{!b.current&&w.current&&(u.current=c.current.editor.createDiffEditor(w.current,{automaticLayout:!0,...y}),L(),c.current?.editor.setTheme(x),O(!0),b.current=!0)},[y,x,L]);(0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(()=>{M&&d.current(u.current,c.current)},[M]),(0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(()=>{!T&&!M&&U()},[T,M,U]);function I(){let i=u.current?.getModel();g||i?.original?.dispose(),N||i?.modified?.dispose(),u.current?.dispose()}return react__WEBPACK_IMPORTED_MODULE_1__.createElement(H,{width:z,height:V,isEditorReady:M,loading:P,_ref:w,className:F,wrapperProps:j})}var ie=Oe;var we=(0,react__WEBPACK_IMPORTED_MODULE_1__.memo)(ie);function Pe(){let[e,r]=(0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(_monaco_editor_loader__WEBPACK_IMPORTED_MODULE_0__["default"].__getMonacoInstance());return k(()=>{let n;return e||(n=_monaco_editor_loader__WEBPACK_IMPORTED_MODULE_0__["default"].init(),n.then(t=>{r(t)})),()=>n?.cancel()}),e}var Le=Pe;function He(e){let r=(0,react__WEBPACK_IMPORTED_MODULE_1__.useRef)();return (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(()=>{r.current=e},[e]),r.current}var se=He;var _=new Map;function Ve({defaultValue:e,defaultLanguage:r,defaultPath:n,value:t,language:a,path:m,theme:E="light",line:g,loading:N="Loading...",options:x={},overrideServices:P={},saveViewState:y=!0,keepCurrentModel:V=!1,width:z="100%",height:F="100%",className:j,wrapperProps:A={},beforeMount:q=D,onMount:M=D,onChange:O,onValidate:T=D}){let[s,u]=(0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(!1),[c,w]=(0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(!0),d=(0,react__WEBPACK_IMPORTED_MODULE_1__.useRef)(null),o=(0,react__WEBPACK_IMPORTED_MODULE_1__.useRef)(null),b=(0,react__WEBPACK_IMPORTED_MODULE_1__.useRef)(null),L=(0,react__WEBPACK_IMPORTED_MODULE_1__.useRef)(M),U=(0,react__WEBPACK_IMPORTED_MODULE_1__.useRef)(q),I=(0,react__WEBPACK_IMPORTED_MODULE_1__.useRef)(),i=(0,react__WEBPACK_IMPORTED_MODULE_1__.useRef)(t),f=se(m),Q=(0,react__WEBPACK_IMPORTED_MODULE_1__.useRef)(!1),B=(0,react__WEBPACK_IMPORTED_MODULE_1__.useRef)(!1);k(()=>{let p=_monaco_editor_loader__WEBPACK_IMPORTED_MODULE_0__["default"].init();return p.then(R=>(d.current=R)&&w(!1)).catch(R=>R?.type!=="cancelation"&&console.error("Monaco initialization: error:",R)),()=>o.current?pe():p.cancel()}),l(()=>{let p=h(d.current,e||t||"",r||a||"",m||n||"");p!==o.current?.getModel()&&(y&&_.set(f,o.current?.saveViewState()),o.current?.setModel(p),y&&o.current?.restoreViewState(_.get(m)))},[m],s),l(()=>{o.current?.updateOptions(x)},[x],s),l(()=>{!o.current||t===void 0||(o.current.getOption(d.current.editor.EditorOption.readOnly)?o.current.setValue(t):t!==o.current.getValue()&&(B.current=!0,o.current.executeEdits("",[{range:o.current.getModel().getFullModelRange(),text:t,forceMoveMarkers:!0}]),o.current.pushUndoStop(),B.current=!1))},[t],s),l(()=>{let p=o.current?.getModel();p&&a&&d.current?.editor.setModelLanguage(p,a)},[a],s),l(()=>{g!==void 0&&o.current?.revealLine(g)},[g],s),l(()=>{d.current?.editor.setTheme(E)},[E],s);let X=(0,react__WEBPACK_IMPORTED_MODULE_1__.useCallback)(()=>{if(!(!b.current||!d.current)&&!Q.current){U.current(d.current);let p=m||n,R=h(d.current,t||e||"",r||a||"",p||"");o.current=d.current?.editor.create(b.current,{model:R,automaticLayout:!0,...x},P),y&&o.current.restoreViewState(_.get(p)),d.current.editor.setTheme(E),g!==void 0&&o.current.revealLine(g),u(!0),Q.current=!0}},[e,r,n,t,a,m,x,P,y,E,g]);(0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(()=>{s&&L.current(o.current,d.current)},[s]),(0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(()=>{!c&&!s&&X()},[c,s,X]),i.current=t,(0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(()=>{s&&O&&(I.current?.dispose(),I.current=o.current?.onDidChangeModelContent(p=>{B.current||O(o.current.getValue(),p)}))},[s,O]),(0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(()=>{if(s){let p=d.current.editor.onDidChangeMarkers(R=>{let G=o.current.getModel()?.uri;if(G&&R.find(J=>J.path===G.path)){let J=d.current.editor.getModelMarkers({resource:G});T?.(J)}});return()=>{p?.dispose()}}return()=>{}},[s,T]);function pe(){I.current?.dispose(),V?y&&_.set(m,o.current.saveViewState()):o.current.getModel()?.dispose(),o.current.dispose()}return react__WEBPACK_IMPORTED_MODULE_1__.createElement(H,{width:z,height:F,isEditorReady:s,loading:N,_ref:b,className:j,wrapperProps:A})}var fe=Ve;var de=(0,react__WEBPACK_IMPORTED_MODULE_1__.memo)(fe);var Ft=de;
-//# sourceMappingURL=index.mjs.map
-
-/***/ }),
-
 /***/ "./sources/scss/admin/checkout-editor.scss":
 /*!*************************************************!*\
   !*** ./sources/scss/admin/checkout-editor.scss ***!
@@ -2351,20 +2330,27 @@ const FormObserver_1 = __importDefault(__webpack_require__(/*! ./FormObserver */
 const cfwFormatFormValuesForSave_1 = __importDefault(__webpack_require__(/*! ../../../functions/cfwFormatFormValuesForSave */ "./sources/ts/functions/cfwFormatFormValuesForSave.ts"));
 const LoggingService_1 = __importDefault(__webpack_require__(/*! ../../../frontend/Services/LoggingService */ "./sources/ts/frontend/Services/LoggingService.ts"));
 const EditorApp = () => {
-    var _a, _b, _c, _d;
+    var _a, _b, _c, _d, _e;
     const [isSaving, setIsSaving] = (0, react_1.useState)(false);
     const [previewKey, setPreviewKey] = (0, react_1.useState)(Date.now());
-    const [activeTab, setActiveTab] = (0, react_1.useState)('checkout');
+    const [previewPending, setPreviewPending] = (0, react_1.useState)(false);
     const [device, setDevice] = (0, react_1.useState)('desktop');
-    const checkoutSettings = ((_a = cfwAdminPagesData.checkout_settings) === null || _a === void 0 ? void 0 : _a.settings) || {};
-    const appearanceSettings = ((_b = cfwAdminPagesData.appearance_settings) === null || _b === void 0 ? void 0 : _b.settings) || {};
-    const colorSettingsDefaults = ((_d = (_c = cfwAdminPagesData.appearance_settings) === null || _c === void 0 ? void 0 : _c.params) === null || _d === void 0 ? void 0 : _d.color_settings_defaults) || {};
-    const initialValues = Object.assign(Object.assign(Object.assign({}, checkoutSettings), appearanceSettings), colorSettingsDefaults);
+    const [savedTemplateSlug, setSavedTemplateSlug] = (0, react_1.useState)(() => { var _a, _b; return cfwAdminPagesData.saved_active_template || ((_b = (_a = cfwAdminPagesData.editor_settings) === null || _a === void 0 ? void 0 : _a.params) === null || _b === void 0 ? void 0 : _b.template_path) || ''; });
+    const editorSettingsData = ((_a = cfwAdminPagesData.editor_settings) === null || _a === void 0 ? void 0 : _a.settings) || {};
+    const colorSettingsDefaults = ((_c = (_b = cfwAdminPagesData.editor_settings) === null || _b === void 0 ? void 0 : _b.params) === null || _c === void 0 ? void 0 : _c.color_settings_defaults) || {};
+    const initialValues = Object.assign(Object.assign({}, editorSettingsData), colorSettingsDefaults);
     const previewUrl = cfwAdminPagesData.preview_url || '';
     const hasProducts = cfwAdminPagesData.has_products || false;
     const closeUrl = cfwAdminPagesData.close_url || '';
+    const editorUrl = cfwAdminPagesData.editor_url || '';
+    const initialTemplateSlug = ((_e = (_d = cfwAdminPagesData.editor_settings) === null || _d === void 0 ? void 0 : _d.params) === null || _e === void 0 ? void 0 : _e.template_path) || '';
+    const templates = cfwAdminPagesData.templates || [];
     const handlePreviewUpdate = (0, react_1.useCallback)(() => {
+        setPreviewPending(false);
         setPreviewKey(Date.now());
+    }, []);
+    const handlePreviewRequest = (0, react_1.useCallback)(() => {
+        setPreviewPending(true);
     }, []);
     const handleClose = (0, react_1.useCallback)((dirty) => {
         const cleanup = () => __awaiter(void 0, void 0, void 0, function* () {
@@ -2389,13 +2375,17 @@ const EditorApp = () => {
         });
     }, [closeUrl]);
     const handleSave = (0, react_1.useCallback)((values, resetForm) => __awaiter(void 0, void 0, void 0, function* () {
+        var _a, _b;
         setIsSaving(true);
         try {
+            const templatePath = ((_b = (_a = cfwAdminPagesData.editor_settings) === null || _a === void 0 ? void 0 : _a.params) === null || _b === void 0 ? void 0 : _b.template_path) || '';
+            const valuesToSave = templatePath
+                ? Object.assign(Object.assign({}, values), { active_template: templatePath }) : values;
             yield (0, api_fetch_1.default)({
                 path: '/checkoutwc/v1/settings',
                 method: 'POST',
                 data: {
-                    settings: (0, cfwFormatFormValuesForSave_1.default)(values),
+                    settings: (0, cfwFormatFormValuesForSave_1.default)(valuesToSave),
                 },
             });
             // Clear preview transient.
@@ -2405,6 +2395,10 @@ const EditorApp = () => {
             });
             // Reset dirty state.
             resetForm({ values });
+            // Treat the current template as saved so the "unsaved" indicator clears.
+            if (templatePath) {
+                setSavedTemplateSlug(templatePath);
+            }
             // Reload preview to reflect saved settings.
             setPreviewKey(Date.now());
         }
@@ -2417,6 +2411,41 @@ const EditorApp = () => {
             setIsSaving(false);
         }
     }), []);
+    const handleDiscard = (0, react_1.useCallback)(() => __awaiter(void 0, void 0, void 0, function* () {
+        // eslint-disable-next-line no-alert
+        if (!window.confirm((0, i18n_1.__)('Are you sure you want to discard all unsaved changes?', 'checkout-wc'))) {
+            return;
+        }
+        try {
+            yield (0, api_fetch_1.default)({
+                path: '/checkoutwc/v1/preview-settings',
+                method: 'DELETE',
+            });
+        }
+        catch (_a) {
+            // Silently fail.
+        }
+        // If the only change was switching template, go back to the saved template editor.
+        if (initialTemplateSlug !== savedTemplateSlug) {
+            window.location.href = editorUrl;
+        }
+        else {
+            window.location.reload();
+        }
+    }), [initialTemplateSlug, savedTemplateSlug, editorUrl]);
+    const handleTemplateChange = (0, react_1.useCallback)((slug) => {
+        if (!slug || slug === initialTemplateSlug || !editorUrl) {
+            return;
+        }
+        // eslint-disable-next-line no-alert
+        const confirmSwitch = window.confirm((0, i18n_1.__)('Changing templates will update the logo, typography, colors, field label style, and footer text to those defined by the selected template. Are you sure you want to continue?', 'checkout-wc'));
+        if (!confirmSwitch) {
+            return;
+        }
+        const url = new URL(editorUrl);
+        url.searchParams.set('cfw_editor_template', slug);
+        window.location.href = url.toString();
+    }, [initialTemplateSlug, editorUrl]);
     // beforeunload handler
     (0, react_1.useEffect)(() => {
         // We'll track dirty state via a ref that the Formik render prop updates.
@@ -2424,27 +2453,190 @@ const EditorApp = () => {
     }, []);
     return (react_1.default.createElement(formik_1.Formik, { initialValues: initialValues, enableReinitialize: false, onSubmit: () => {
             // Submit handled by save button.
-        } }, ({ values, dirty, resetForm }) => {
+        } }, ({ values, dirty, resetForm, setFieldValue }) => {
+        var _a, _b;
         // beforeunload handler for unsaved changes.
         // eslint-disable-next-line react-hooks/rules-of-hooks
         (0, react_1.useEffect)(() => {
             const handler = (e) => {
-                if (dirty) {
+                if (dirty || initialTemplateSlug !== savedTemplateSlug) {
                     e.preventDefault();
                 }
             };
             window.addEventListener('beforeunload', handler);
             return () => window.removeEventListener('beforeunload', handler);
-        }, [dirty]);
+        }, [dirty, initialTemplateSlug, savedTemplateSlug]);
         return (react_1.default.createElement("div", { className: "cfw-tw cfw-editor" },
-            react_1.default.createElement(EditorHeader_1.default, { isDirty: dirty, isSaving: isSaving, device: device, onDeviceChange: setDevice, onSave: () => handleSave(values, resetForm), onClose: () => handleClose(dirty) }),
+            react_1.default.createElement(EditorHeader_1.default, { isDirty: dirty || initialTemplateSlug !== savedTemplateSlug, isSaving: isSaving, device: device, onDeviceChange: setDevice, liveEnabled: !!values.enable, requiresLicense: !!((_b = (_a = cfwAdminPagesData.editor_settings) === null || _a === void 0 ? void 0 : _a.params) === null || _b === void 0 ? void 0 : _b.requires_license), onSetLiveEnabled: (next) => {
+                    setFieldValue('enable', next);
+                }, onSave: () => handleSave(values, resetForm), onDiscard: handleDiscard, onClose: () => handleClose(dirty || initialTemplateSlug !== savedTemplateSlug) }),
             react_1.default.createElement("div", { className: "cfw-editor__body" },
-                react_1.default.createElement(EditorSidebar_1.default, { activeTab: activeTab, onTabChange: setActiveTab }),
-                react_1.default.createElement(EditorPreview_1.default, { previewUrl: previewUrl, previewKey: previewKey, device: device, hasProducts: hasProducts })),
-            react_1.default.createElement(FormObserver_1.default, { onPreviewUpdate: handlePreviewUpdate })));
+                react_1.default.createElement(EditorSidebar_1.default, { templates: templates, activeTemplateSlug: initialTemplateSlug, onTemplateChange: (slug) => handleTemplateChange(slug) }),
+                react_1.default.createElement(EditorPreview_1.default, { previewUrl: previewUrl, previewKey: previewKey, device: device, hasProducts: hasProducts, previewPending: previewPending })),
+            react_1.default.createElement(FormObserver_1.default, { onPreviewUpdate: handlePreviewUpdate, onPreviewRequest: handlePreviewRequest })));
     }));
 };
 exports["default"] = EditorApp;
+
+
+/***/ }),
+
+/***/ "./sources/ts/admin/Components/CheckoutEditor/EditorCheckboxField.tsx":
+/*!****************************************************************************!*\
+  !*** ./sources/ts/admin/Components/CheckoutEditor/EditorCheckboxField.tsx ***!
+  \****************************************************************************/
+/***/ (function(__unused_webpack_module, exports, __webpack_require__) {
+
+
+var __rest = (this && this.__rest) || function (s, e) {
+    var t = {};
+    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
+        t[p] = s[p];
+    if (s != null && typeof Object.getOwnPropertySymbols === "function")
+        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
+            if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i]))
+                t[p[i]] = s[p[i]];
+        }
+    return t;
+};
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", ({ value: true }));
+const react_1 = __importDefault(__webpack_require__(/*! react */ "react"));
+const formik_1 = __webpack_require__(/*! formik */ "./node_modules/.pnpm/formik@2.4.9_@types+react@18.3.27_react@18.3.1/node_modules/formik/dist/formik.esm.js");
+const i18n_1 = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+const EyeIcon_1 = __importDefault(__webpack_require__(/*! @heroicons/react/24/outline/EyeIcon */ "./node_modules/.pnpm/@heroicons+react@2.2.0_react@18.3.1/node_modules/@heroicons/react/24/outline/EyeIcon.js"));
+const EyeSlashIcon_1 = __importDefault(__webpack_require__(/*! @heroicons/react/24/outline/EyeSlashIcon */ "./node_modules/.pnpm/@heroicons+react@2.2.0_react@18.3.1/node_modules/@heroicons/react/24/outline/EyeSlashIcon.js"));
+const pickValidCheckboxProps_1 = __webpack_require__(/*! ../../functions/pickValidCheckboxProps */ "./sources/ts/admin/functions/pickValidCheckboxProps.ts");
+const CheckboxField_1 = __importDefault(__webpack_require__(/*! ../Fields/CheckboxField */ "./sources/ts/admin/Components/Fields/CheckboxField.tsx"));
+/**
+ * Checkbox for the checkout editor: normal checkbox by default.
+ * Pass useEyeToggle={true} for fields that should show the eye on/off style.
+ * Editor use only; does not affect other settings pages.
+ */
+const EditorCheckboxField = (_a) => {
+    var { name, label, description = '', nested = false, enabled = true, disabled = false, useEyeToggle = false, invertValue = false } = _a, props = __rest(_a, ["name", "label", "description", "nested", "enabled", "disabled", "useEyeToggle", "invertValue"]);
+    const { values, setFieldValue } = (0, formik_1.useFormikContext)();
+    const storedValue = !!values[name];
+    const checked = invertValue ? !storedValue : storedValue;
+    if (!useEyeToggle) {
+        return (react_1.default.createElement(CheckboxField_1.default, Object.assign({ name: name, label: label, description: description, nested: nested, enabled: enabled, disabled: disabled }, props)));
+    }
+    const handleToggle = () => {
+        if (disabled || !enabled) {
+            return;
+        }
+        const newChecked = !checked;
+        const newStoredValue = invertValue ? !newChecked : newChecked;
+        setFieldValue(name, newStoredValue);
+    };
+    return (react_1.default.createElement("div", { className: `cfw-admin-field-container relative flex items-start cfw-editor-checkbox-toggle ${nested ? 'ms-7 p-4 bg-gray-100' : ''}` },
+        react_1.default.createElement(formik_1.Field, Object.assign({ type: "checkbox", id: `cfw_checkbox_${name}`, name: name, className: "sr-only", disabled: disabled }, (0, pickValidCheckboxProps_1.pickValidCheckboxProps)(props))),
+        react_1.default.createElement("button", { type: "button", onClick: handleToggle, disabled: disabled || !enabled, className: `flex items-center justify-center h-5 w-5 rounded focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-0 disabled:opacity-50 disabled:pointer-events-none ${checked ? 'text-green-600 hover:text-green-700' : 'text-gray-500 hover:text-gray-700'}`, "aria-label": checked ? (0, i18n_1.__)('On', 'checkout-wc') : (0, i18n_1.__)('Off', 'checkout-wc'), "aria-pressed": checked }, checked ? (react_1.default.createElement(EyeIcon_1.default, { className: "h-5 w-5", "aria-hidden": true })) : (react_1.default.createElement(EyeSlashIcon_1.default, { className: "h-5 w-5", "aria-hidden": true }))),
+        react_1.default.createElement("div", { className: "ms-3 text-sm flex items-center min-h-[1.25rem]" },
+            react_1.default.createElement("label", { htmlFor: `cfw_checkbox_${name}`, className: "font-medium text-gray-700 cursor-pointer", style: { verticalAlign: 'unset' } }, label))));
+};
+exports["default"] = EditorCheckboxField;
+
+
+/***/ }),
+
+/***/ "./sources/ts/admin/Components/CheckoutEditor/EditorCheckboxGroupField.tsx":
+/*!*********************************************************************************!*\
+  !*** ./sources/ts/admin/Components/CheckoutEditor/EditorCheckboxGroupField.tsx ***!
+  \*********************************************************************************/
+/***/ (function(__unused_webpack_module, exports, __webpack_require__) {
+
+
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", ({ value: true }));
+const react_1 = __importDefault(__webpack_require__(/*! react */ "react"));
+const formik_1 = __webpack_require__(/*! formik */ "./node_modules/.pnpm/formik@2.4.9_@types+react@18.3.27_react@18.3.1/node_modules/formik/dist/formik.esm.js");
+const i18n_1 = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+const EyeIcon_1 = __importDefault(__webpack_require__(/*! @heroicons/react/24/outline/EyeIcon */ "./node_modules/.pnpm/@heroicons+react@2.2.0_react@18.3.1/node_modules/@heroicons/react/24/outline/EyeIcon.js"));
+const EyeSlashIcon_1 = __importDefault(__webpack_require__(/*! @heroicons/react/24/outline/EyeSlashIcon */ "./node_modules/.pnpm/@heroicons+react@2.2.0_react@18.3.1/node_modules/@heroicons/react/24/outline/EyeSlashIcon.js"));
+/**
+ * Checkbox group for the checkout editor. When useEyeToggle is true,
+ * each option is rendered as an eye (on) / eye-slash (off) toggle.
+ * Editor use only.
+ */
+const EditorCheckboxGroupField = ({ name, label, description = '', nested = false, enabled = true, options, useEyeToggle = false, }) => {
+    const [field, , helpers] = (0, formik_1.useField)({ name });
+    const rawValue = field.value;
+    const valueArray = Array.isArray(rawValue) ? rawValue : [];
+    const valueSet = new Set(valueArray);
+    const handleToggle = (optionValue) => {
+        const set = new Set(valueArray);
+        if (set.has(optionValue)) {
+            set.delete(optionValue);
+        }
+        else {
+            set.add(optionValue);
+        }
+        helpers.setValue(Array.from(set));
+    };
+    if (!useEyeToggle) {
+        // Use standard checkboxes via a simple inline implementation to avoid importing CheckboxGroupField
+        return (react_1.default.createElement("div", { className: `cfw-admin-field-container cfw-editor-checkbox-group ${nested ? 'ms-7 p-4 bg-gray-100' : ''}` },
+            label && react_1.default.createElement("legend", { className: "text-sm font-medium text-gray-700" }, label),
+            description && react_1.default.createElement("p", { className: "mt-1 text-sm text-gray-500" }, description),
+            react_1.default.createElement("div", { className: "cfw-editor-checkbox-group__options" }, options.map(({ value, label: optionLabel }) => (react_1.default.createElement("div", { key: value, className: "flex items-start mt-3" },
+                react_1.default.createElement("div", { className: "h-5 flex items-center" },
+                    react_1.default.createElement("input", { type: "checkbox", name: name, value: value, id: `${name}_${value}`, checked: valueSet.has(value), onChange: (e) => handleToggle(value), disabled: !enabled, className: "focus:ring-blue-800 h-4 w-4 text-blue-500 border-gray-300 rounded" })),
+                react_1.default.createElement("div", { className: "ms-3 text-sm" },
+                    react_1.default.createElement("label", { htmlFor: `${name}_${value}`, className: "font-medium text-gray-700" }, optionLabel))))))));
+    }
+    return (react_1.default.createElement("div", { className: `cfw-admin-field-container cfw-editor-checkbox-group cfw-editor-checkbox-group--eye ${nested ? 'ms-7 p-4 bg-gray-100' : ''}` },
+        label && react_1.default.createElement("legend", { className: "text-sm font-medium text-gray-700" }, label),
+        description && react_1.default.createElement("p", { className: "mt-1 text-sm text-gray-500" }, description),
+        react_1.default.createElement("div", { className: "cfw-editor-checkbox-group__options" }, options.map(({ value, label: optionLabel }) => {
+            const checked = valueSet.has(value);
+            return (react_1.default.createElement("button", { key: value, type: "button", onClick: () => handleToggle(value), disabled: !enabled, className: "cfw-editor-checkbox-group__row flex items-center text-left rounded py-0.5 w-fit focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-0 disabled:opacity-50 disabled:pointer-events-none", "aria-label": `${optionLabel}: ${checked ? (0, i18n_1.__)('On', 'checkout-wc') : (0, i18n_1.__)('Off', 'checkout-wc')}`, "aria-pressed": checked },
+                react_1.default.createElement("span", { className: `flex items-center justify-center h-5 w-5 rounded flex-shrink-0 ${checked ? 'text-green-600 hover:text-green-700' : 'text-gray-500 hover:text-gray-700'}`, "aria-hidden": true }, checked ? (react_1.default.createElement(EyeIcon_1.default, { className: "h-5 w-5", "aria-hidden": true })) : (react_1.default.createElement(EyeSlashIcon_1.default, { className: "h-5 w-5", "aria-hidden": true }))),
+                react_1.default.createElement("span", { className: "ms-3 text-sm font-medium text-gray-700" }, optionLabel)));
+        }))));
+};
+exports["default"] = EditorCheckboxGroupField;
+
+
+/***/ }),
+
+/***/ "./sources/ts/admin/Components/CheckoutEditor/EditorFieldGroup.tsx":
+/*!*************************************************************************!*\
+  !*** ./sources/ts/admin/Components/CheckoutEditor/EditorFieldGroup.tsx ***!
+  \*************************************************************************/
+/***/ (function(__unused_webpack_module, exports, __webpack_require__) {
+
+
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", ({ value: true }));
+const react_1 = __importDefault(__webpack_require__(/*! react */ "react"));
+/**
+ * Groups a main setting with its sub-settings so that border/margin is applied
+ * after the whole group, and sub-settings appear in one indented gray block.
+ */
+const EditorFieldGroup = ({ children, nestedFields }) => {
+    const hasNestedFields = nestedFields != null;
+    let nestedFieldCount = 0;
+    if (hasNestedFields) {
+        if (react_1.default.isValidElement(nestedFields) && nestedFields.type === react_1.default.Fragment) {
+            nestedFieldCount = react_1.default.Children.count(nestedFields.props.children);
+        }
+        else {
+            nestedFieldCount = react_1.default.Children.count(nestedFields);
+        }
+    }
+    const hasSingleNestedField = nestedFieldCount === 1;
+    return (react_1.default.createElement("div", { className: "cfw-editor-field-group" },
+        children,
+        hasNestedFields && (react_1.default.createElement("div", { className: "cfw-editor-nested-fields", "data-single-field": hasSingleNestedField ? 'true' : undefined }, nestedFields))));
+};
+exports["default"] = EditorFieldGroup;
 
 
 /***/ }),
@@ -2456,34 +2648,102 @@ exports["default"] = EditorApp;
 /***/ (function(__unused_webpack_module, exports, __webpack_require__) {
 
 
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
+var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    var desc = Object.getOwnPropertyDescriptor(m, k);
+    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+      desc = { enumerable: true, get: function() { return m[k]; } };
+    }
+    Object.defineProperty(o, k2, desc);
+}) : (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    o[k2] = m[k];
+}));
+var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
+    Object.defineProperty(o, "default", { enumerable: true, value: v });
+}) : function(o, v) {
+    o["default"] = v;
+});
+var __importStar = (this && this.__importStar) || (function () {
+    var ownKeys = function(o) {
+        ownKeys = Object.getOwnPropertyNames || function (o) {
+            var ar = [];
+            for (var k in o) if (Object.prototype.hasOwnProperty.call(o, k)) ar[ar.length] = k;
+            return ar;
+        };
+        return ownKeys(o);
+    };
+    return function (mod) {
+        if (mod && mod.__esModule) return mod;
+        var result = {};
+        if (mod != null) for (var k = ownKeys(mod), i = 0; i < k.length; i++) if (k[i] !== "default") __createBinding(result, mod, k[i]);
+        __setModuleDefault(result, mod);
+        return result;
+    };
+})();
 Object.defineProperty(exports, "__esModule", ({ value: true }));
-const react_1 = __importDefault(__webpack_require__(/*! react */ "react"));
+const react_1 = __importStar(__webpack_require__(/*! react */ "react"));
 const i18n_1 = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
-const EditorHeader = ({ isDirty, isSaving, device, onDeviceChange, onSave, onClose }) => (react_1.default.createElement("div", { className: "cfw-editor__header" },
-    react_1.default.createElement("div", { className: "cfw-editor__header-left" },
-        react_1.default.createElement("button", { type: "button", className: "cfw-editor__close-btn", onClick: onClose, title: (0, i18n_1.__)('Close', 'checkout-wc') },
-            react_1.default.createElement("svg", { fill: "none", viewBox: "0 0 24 24", stroke: "currentColor" },
-                react_1.default.createElement("path", { strokeLinecap: "round", strokeLinejoin: "round", strokeWidth: 2, d: "M6 18L18 6M6 6l12 12" }))),
-        react_1.default.createElement("h1", { className: "cfw-editor__title" }, (0, i18n_1.__)('Checkout Editor', 'checkout-wc'))),
-    react_1.default.createElement("div", { className: "cfw-editor__header-center" },
-        isDirty && (react_1.default.createElement("div", { className: "cfw-editor__unsaved" },
-            react_1.default.createElement("span", { className: "cfw-editor__unsaved-dot" }),
-            react_1.default.createElement("span", null, (0, i18n_1.__)('Unsaved changes', 'checkout-wc')))),
-        react_1.default.createElement("div", { className: "cfw-editor__device-toggle" },
-            react_1.default.createElement("button", { type: "button", className: device === 'desktop' ? 'active' : '', onClick: () => onDeviceChange('desktop'), title: (0, i18n_1.__)('Desktop', 'checkout-wc') },
+const EditorHeader = ({ isDirty, isSaving, device, onDeviceChange, onSave, onDiscard, onClose, liveEnabled, requiresLicense, onSetLiveEnabled, }) => {
+    const [isLiveMenuOpen, setIsLiveMenuOpen] = (0, react_1.useState)(false);
+    const liveMenuRef = (0, react_1.useRef)(null);
+    const liveButtonRef = (0, react_1.useRef)(null);
+    const liveStatusLabel = liveEnabled ? (0, i18n_1.__)('Live', 'checkout-wc') : (0, i18n_1.__)('Preview', 'checkout-wc');
+    (0, react_1.useEffect)(() => {
+        const handleDocumentPointerDown = (e) => {
+            const target = e.target;
+            if (isLiveMenuOpen) {
+                const liveMenu = liveMenuRef.current;
+                const liveButton = liveButtonRef.current;
+                if (liveMenu && !liveMenu.contains(target) && liveButton && !liveButton.contains(target)) {
+                    setIsLiveMenuOpen(false);
+                }
+            }
+        };
+        document.addEventListener('mousedown', handleDocumentPointerDown);
+        return () => document.removeEventListener('mousedown', handleDocumentPointerDown);
+    }, [isLiveMenuOpen]);
+    return (react_1.default.createElement("div", { className: "cfw-editor__header" },
+        react_1.default.createElement("div", { className: "cfw-editor__header-left" },
+            react_1.default.createElement("button", { type: "button", className: "cfw-editor__close-btn", onClick: onClose, title: (0, i18n_1.__)('Close', 'checkout-wc') },
                 react_1.default.createElement("svg", { fill: "none", viewBox: "0 0 24 24", stroke: "currentColor" },
-                    react_1.default.createElement("path", { strokeLinecap: "round", strokeLinejoin: "round", strokeWidth: 2, d: "M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" }))),
-            react_1.default.createElement("button", { type: "button", className: device === 'tablet' ? 'active' : '', onClick: () => onDeviceChange('tablet'), title: (0, i18n_1.__)('Tablet', 'checkout-wc') },
-                react_1.default.createElement("svg", { fill: "none", viewBox: "0 0 24 24", stroke: "currentColor" },
-                    react_1.default.createElement("path", { strokeLinecap: "round", strokeLinejoin: "round", strokeWidth: 2, d: "M12 18h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" }))),
-            react_1.default.createElement("button", { type: "button", className: device === 'mobile' ? 'active' : '', onClick: () => onDeviceChange('mobile'), title: (0, i18n_1.__)('Mobile', 'checkout-wc') },
-                react_1.default.createElement("svg", { fill: "none", viewBox: "0 0 24 24", stroke: "currentColor" },
-                    react_1.default.createElement("path", { strokeLinecap: "round", strokeLinejoin: "round", strokeWidth: 2, d: "M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" }))))),
-    react_1.default.createElement("div", { className: "cfw-editor__header-right" },
-        react_1.default.createElement("button", { type: "button", className: "cfw-editor__save-btn", onClick: onSave, disabled: !isDirty || isSaving }, isSaving ? (0, i18n_1.__)('Saving...', 'checkout-wc') : (0, i18n_1.__)('Save', 'checkout-wc')))));
+                    react_1.default.createElement("path", { strokeLinecap: "round", strokeLinejoin: "round", strokeWidth: 2, d: "M6 18L18 6M6 6l12 12" }))),
+            (cfwAdminPagesData === null || cfwAdminPagesData === void 0 ? void 0 : cfwAdminPagesData.editor_logo_url) && (react_1.default.createElement("img", { src: cfwAdminPagesData.editor_logo_url, alt: "CheckoutWC", className: "cfw-editor__header-logo" })),
+            react_1.default.createElement("h1", { className: "cfw-editor__title" }, (0, i18n_1.__)('Checkout Editor', 'checkout-wc')),
+            react_1.default.createElement("div", { className: "cfw-editor__live-indicator-wrap" },
+                react_1.default.createElement("button", { ref: liveButtonRef, type: "button", className: `cfw-editor__live-indicator ${liveEnabled ? 'cfw-editor__live-indicator--on' : 'cfw-editor__live-indicator--off'}`, "aria-label": liveStatusLabel, "aria-haspopup": "menu", "aria-expanded": isLiveMenuOpen, onClick: () => setIsLiveMenuOpen((prev) => !prev), disabled: isSaving, title: liveStatusLabel },
+                    react_1.default.createElement("span", { className: "cfw-editor__live-indicator-dot", "aria-hidden": true }),
+                    react_1.default.createElement("span", { className: "cfw-editor__live-indicator-text", "aria-hidden": true }, liveStatusLabel),
+                    react_1.default.createElement("svg", { className: `cfw-editor__live-indicator-caret ${isLiveMenuOpen ? 'cfw-editor__live-indicator-caret--open' : ''}`, viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", "aria-hidden": true },
+                        react_1.default.createElement("path", { strokeLinecap: "round", strokeLinejoin: "round", strokeWidth: 2, d: "M19 9l-7 7-7-7" }))),
+                isLiveMenuOpen && (react_1.default.createElement("div", { ref: liveMenuRef, className: "cfw-editor__dropdown-menu", role: "menu" },
+                    react_1.default.createElement("button", { type: "button", className: "cfw-editor__dropdown-menu-item", role: "menuitem", onClick: () => {
+                            onSetLiveEnabled(true);
+                            setIsLiveMenuOpen(false);
+                        }, disabled: isSaving }, (0, i18n_1.__)('Live', 'checkout-wc')),
+                    react_1.default.createElement("button", { type: "button", className: "cfw-editor__dropdown-menu-item", role: "menuitem", onClick: () => {
+                            onSetLiveEnabled(false);
+                            setIsLiveMenuOpen(false);
+                        }, disabled: isSaving }, (0, i18n_1.__)('Preview', 'checkout-wc')),
+                    requiresLicense && (react_1.default.createElement("div", { className: "cfw-editor__dropdown-menu-helper", role: "note" }, (0, i18n_1.__)('Set the checkout to live and save your changes to make it available to customers. Please note that a valid, active license key is required to go live.', 'checkout-wc'))))))),
+        react_1.default.createElement("div", { className: "cfw-editor__header-center" },
+            isDirty && (react_1.default.createElement("div", { className: "cfw-editor__unsaved" },
+                react_1.default.createElement("span", { className: "cfw-editor__unsaved-dot" }),
+                react_1.default.createElement("span", null, (0, i18n_1.__)('Unsaved changes', 'checkout-wc')))),
+            react_1.default.createElement("div", { className: "cfw-editor__device-toggle" },
+                react_1.default.createElement("button", { type: "button", className: device === 'desktop' ? 'active' : '', onClick: () => onDeviceChange('desktop'), title: (0, i18n_1.__)('Desktop', 'checkout-wc') },
+                    react_1.default.createElement("svg", { fill: "none", viewBox: "0 0 24 24", stroke: "currentColor" },
+                        react_1.default.createElement("path", { strokeLinecap: "round", strokeLinejoin: "round", strokeWidth: 2, d: "M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" }))),
+                react_1.default.createElement("button", { type: "button", className: device === 'tablet' ? 'active' : '', onClick: () => onDeviceChange('tablet'), title: (0, i18n_1.__)('Tablet', 'checkout-wc') },
+                    react_1.default.createElement("svg", { fill: "none", viewBox: "0 0 24 24", stroke: "currentColor" },
+                        react_1.default.createElement("path", { strokeLinecap: "round", strokeLinejoin: "round", strokeWidth: 2, d: "M12 18h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" }))),
+                react_1.default.createElement("button", { type: "button", className: device === 'mobile' ? 'active' : '', onClick: () => onDeviceChange('mobile'), title: (0, i18n_1.__)('Mobile', 'checkout-wc') },
+                    react_1.default.createElement("svg", { fill: "none", viewBox: "0 0 24 24", stroke: "currentColor" },
+                        react_1.default.createElement("path", { strokeLinecap: "round", strokeLinejoin: "round", strokeWidth: 2, d: "M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" }))))),
+        react_1.default.createElement("div", { className: "cfw-editor__header-right" },
+            isDirty && (react_1.default.createElement("button", { type: "button", className: "cfw-editor__discard-changes-btn", onClick: onDiscard, disabled: isSaving }, (0, i18n_1.__)('Discard Changes', 'checkout-wc'))),
+            react_1.default.createElement("button", { type: "button", className: "cfw-editor__save-changes-btn", onClick: onSave, disabled: !isDirty || isSaving }, isSaving ? (0, i18n_1.__)('Saving...', 'checkout-wc') : (0, i18n_1.__)('Save Changes', 'checkout-wc')))));
+};
 exports["default"] = EditorHeader;
 
 
@@ -2532,26 +2792,72 @@ var __importStar = (this && this.__importStar) || (function () {
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 const react_1 = __importStar(__webpack_require__(/*! react */ "react"));
 const i18n_1 = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+const CFW_EDITOR_PREVIEW_HASH_MESSAGE = 'cfw-editor-preview-hash';
 const deviceWidths = {
     desktop: '100%',
     tablet: '768px',
     mobile: '375px',
 };
-const EditorPreview = ({ previewUrl, previewKey, device, hasProducts }) => {
+const EditorPreview = ({ previewUrl, previewKey, device, hasProducts, previewPending = false }) => {
     const [isLoading, setIsLoading] = (0, react_1.useState)(true);
+    const preservedHashRef = (0, react_1.useRef)('');
+    const preservedScrollYRef = (0, react_1.useRef)(null);
+    const iframeRef = (0, react_1.useRef)(null);
+    (0, react_1.useEffect)(() => {
+        const handleMessage = (event) => {
+            var _a, _b, _c;
+            if (((_a = event.data) === null || _a === void 0 ? void 0 : _a.type) === CFW_EDITOR_PREVIEW_HASH_MESSAGE) {
+                if (typeof ((_b = event.data) === null || _b === void 0 ? void 0 : _b.hash) === 'string') {
+                    preservedHashRef.current = event.data.hash;
+                }
+                if (typeof ((_c = event.data) === null || _c === void 0 ? void 0 : _c.scrollY) === 'number' && !Number.isNaN(event.data.scrollY)) {
+                    preservedScrollYRef.current = event.data.scrollY;
+                }
+            }
+        };
+        window.addEventListener('message', handleMessage);
+        return () => window.removeEventListener('message', handleMessage);
+    }, []);
+    // Blur out when preview is reloading (previewKey changed)
+    (0, react_1.useEffect)(() => {
+        if (hasProducts) {
+            setIsLoading(true);
+        }
+    }, [previewKey, hasProducts]);
     if (!hasProducts) {
         return (react_1.default.createElement("div", { className: "cfw-editor__preview" },
-            react_1.default.createElement("div", { className: "cfw-editor__preview-no-products" },
-                react_1.default.createElement("svg", { fill: "none", viewBox: "0 0 24 24", stroke: "currentColor" },
-                    react_1.default.createElement("path", { strokeLinecap: "round", strokeLinejoin: "round", strokeWidth: 1.5, d: "M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" })),
-                react_1.default.createElement("p", null, (0, i18n_1.__)('Add a published product to your store to preview the checkout.', 'checkout-wc')))));
+            react_1.default.createElement("div", { className: "cfw-editor__preview-no-products cfw-editor__alert" },
+                react_1.default.createElement("svg", { fill: "none", viewBox: "0 0 24 24", stroke: "currentColor", className: "cfw-editor__alert-icon", "aria-hidden": true },
+                    react_1.default.createElement("path", { strokeLinecap: "round", strokeLinejoin: "round", strokeWidth: 1.5, d: "M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" })),
+                react_1.default.createElement("p", null, (0, i18n_1.__)('No products can be found to show in the editor. Ensure you have products which are published and in stock.', 'checkout-wc')))));
     }
-    const iframeSrc = `${previewUrl}&t=${previewKey}`;
+    const hash = preservedHashRef.current;
+    const iframeSrc = `${previewUrl}&t=${previewKey}${hash ? hash : ''}`;
+    const handleIframeLoad = () => {
+        var _a, _b;
+        try {
+            const win = (_a = iframeRef.current) === null || _a === void 0 ? void 0 : _a.contentWindow;
+            if ((_b = win === null || win === void 0 ? void 0 : win.location) === null || _b === void 0 ? void 0 : _b.hash) {
+                preservedHashRef.current = win.location.hash;
+            }
+            if (win && typeof preservedScrollYRef.current === 'number' && !Number.isNaN(preservedScrollYRef.current)) {
+                win.scrollTo({
+                    top: preservedScrollYRef.current,
+                });
+            }
+        }
+        catch (_c) {
+            // Cross-origin or not yet available; rely on postMessage from iframe
+        }
+        setIsLoading(false);
+    };
+    const showLoading = isLoading || previewPending;
     return (react_1.default.createElement("div", { className: "cfw-editor__preview" },
-        react_1.default.createElement("div", { className: "cfw-editor__preview-frame", style: { width: deviceWidths[device] } },
-            isLoading && (react_1.default.createElement("div", { className: "cfw-editor__preview-loading" },
-                react_1.default.createElement("div", { className: "cfw-editor-spinner" }))),
-            react_1.default.createElement("iframe", { src: iframeSrc, onLoad: () => setIsLoading(false), key: previewKey, title: (0, i18n_1.__)('Checkout Preview', 'checkout-wc') }))));
+        react_1.default.createElement("div", { className: `cfw-editor__preview-frame${showLoading ? ' cfw-editor__preview-frame--loading' : ''}`, style: { width: deviceWidths[device] } },
+            showLoading && (react_1.default.createElement("div", { className: "cfw-editor__preview-loading" },
+                react_1.default.createElement("div", { className: "cfw-editor-spinner" }),
+                react_1.default.createElement("span", { className: "cfw-editor__preview-loading-text" }, (0, i18n_1.__)('Updating preview…', 'checkout-wc')))),
+            react_1.default.createElement("iframe", { ref: iframeRef, src: iframeSrc, onLoad: handleIframeLoad, key: previewKey, title: (0, i18n_1.__)('Checkout Preview', 'checkout-wc') }))));
 };
 exports["default"] = EditorPreview;
 
@@ -2600,11 +2906,28 @@ var __importStar = (this && this.__importStar) || (function () {
 })();
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 const react_1 = __importStar(__webpack_require__(/*! react */ "react"));
-const EditorSection = ({ title, children, defaultOpen = false }) => {
-    const [isOpen, setIsOpen] = (0, react_1.useState)(defaultOpen);
-    return (react_1.default.createElement("div", { className: "cfw-editor-section" },
-        react_1.default.createElement("div", { className: `cfw-editor-section__header ${isOpen ? 'open' : ''}`, onClick: () => setIsOpen(!isOpen) },
-            react_1.default.createElement("h3", null, title),
+const EditorSection = ({ id, title, children, defaultOpen = false, isOpen: controlledOpen, onToggle, statusColor, }) => {
+    const [internalOpen, setInternalOpen] = (0, react_1.useState)(defaultOpen);
+    const isControlled = controlledOpen !== undefined && onToggle !== undefined;
+    const isOpen = isControlled ? controlledOpen : internalOpen;
+    const handleClick = () => {
+        if (isControlled) {
+            onToggle === null || onToggle === void 0 ? void 0 : onToggle();
+        }
+        else {
+            setInternalOpen(!internalOpen);
+        }
+    };
+    const statusDotClass = statusColor === 'green'
+        ? 'bg-green-500'
+        : statusColor === 'red'
+            ? 'bg-red-500'
+            : '';
+    return (react_1.default.createElement("div", { className: "cfw-editor-section", "data-section-id": id },
+        react_1.default.createElement("div", { className: `cfw-editor-section__header ${isOpen ? 'open' : ''}`, onClick: handleClick },
+            react_1.default.createElement("h3", { className: "flex items-center gap-2" },
+                react_1.default.createElement("span", null, title),
+                statusColor && (react_1.default.createElement("span", { className: `inline-block h-2 w-2 rounded-full ${statusDotClass}`, "aria-hidden": "true" }))),
             react_1.default.createElement("svg", { fill: "none", viewBox: "0 0 24 24", stroke: "currentColor" },
                 react_1.default.createElement("path", { strokeLinecap: "round", strokeLinejoin: "round", strokeWidth: 2, d: "M19 9l-7 7-7-7" }))),
         isOpen && (react_1.default.createElement("div", { className: "cfw-editor-section__body" }, children))));
@@ -2618,6 +2941,27 @@ exports["default"] = EditorSection;
 /*!**********************************************************************!*\
   !*** ./sources/ts/admin/Components/CheckoutEditor/EditorSidebar.tsx ***!
   \**********************************************************************/
+/***/ (function(__unused_webpack_module, exports, __webpack_require__) {
+
+
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", ({ value: true }));
+const react_1 = __importDefault(__webpack_require__(/*! react */ "react"));
+const EditorSettingsPanel_1 = __importDefault(__webpack_require__(/*! ./panels/EditorSettingsPanel */ "./sources/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx"));
+const EditorSidebar = ({ templates, activeTemplateSlug, onTemplateChange, }) => (react_1.default.createElement("div", { className: "cfw-editor__sidebar" },
+    react_1.default.createElement("div", { className: "cfw-editor__sidebar-content" },
+        react_1.default.createElement(EditorSettingsPanel_1.default, { templates: templates, activeTemplateSlug: activeTemplateSlug, onTemplateChange: onTemplateChange }))));
+exports["default"] = EditorSidebar;
+
+
+/***/ }),
+
+/***/ "./sources/ts/admin/Components/CheckoutEditor/EditorSubSection.tsx":
+/*!*************************************************************************!*\
+  !*** ./sources/ts/admin/Components/CheckoutEditor/EditorSubSection.tsx ***!
+  \*************************************************************************/
 /***/ (function(__unused_webpack_module, exports, __webpack_require__) {
 
 
@@ -2654,29 +2998,28 @@ var __importStar = (this && this.__importStar) || (function () {
         return result;
     };
 })();
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 const react_1 = __importStar(__webpack_require__(/*! react */ "react"));
-const i18n_1 = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
-const CheckoutSettingsPanel_1 = __importDefault(__webpack_require__(/*! ./panels/CheckoutSettingsPanel */ "./sources/ts/admin/Components/CheckoutEditor/panels/CheckoutSettingsPanel.tsx"));
-const DesignSettingsPanel_1 = __importDefault(__webpack_require__(/*! ./panels/DesignSettingsPanel */ "./sources/ts/admin/Components/CheckoutEditor/panels/DesignSettingsPanel.tsx"));
-const EditorSidebar = ({ activeTab, onTabChange }) => {
-    const [searchTerm, setSearchTerm] = (0, react_1.useState)('');
-    return (react_1.default.createElement("div", { className: "cfw-editor__sidebar" },
-        react_1.default.createElement("div", { className: "cfw-editor__sidebar-tabs" },
-            react_1.default.createElement("button", { type: "button", className: activeTab === 'checkout' ? 'active' : '', onClick: () => onTabChange('checkout') }, (0, i18n_1.__)('Checkout', 'checkout-wc')),
-            react_1.default.createElement("button", { type: "button", className: activeTab === 'design' ? 'active' : '', onClick: () => onTabChange('design') }, (0, i18n_1.__)('Design', 'checkout-wc'))),
-        react_1.default.createElement("div", { className: "cfw-editor__sidebar-search", style: { position: 'relative' } },
-            react_1.default.createElement("svg", { className: "search-icon", fill: "none", viewBox: "0 0 24 24", stroke: "currentColor" },
-                react_1.default.createElement("path", { strokeLinecap: "round", strokeLinejoin: "round", strokeWidth: 2, d: "M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" })),
-            react_1.default.createElement("input", { type: "search", value: searchTerm, onChange: (e) => setSearchTerm(e.target.value), placeholder: (0, i18n_1.__)('Search settings...', 'checkout-wc') })),
-        react_1.default.createElement("div", { className: "cfw-editor__sidebar-content" },
-            activeTab === 'checkout' && react_1.default.createElement(CheckoutSettingsPanel_1.default, { searchTerm: searchTerm }),
-            activeTab === 'design' && react_1.default.createElement(DesignSettingsPanel_1.default, { searchTerm: searchTerm }))));
+const EditorSubSection = ({ id, title, children, defaultOpen = false, isOpen: controlledOpen, onToggle }) => {
+    const [internalOpen, setInternalOpen] = (0, react_1.useState)(defaultOpen);
+    const isControlled = controlledOpen !== undefined && onToggle !== undefined;
+    const isOpen = isControlled ? controlledOpen : internalOpen;
+    const handleClick = () => {
+        if (isControlled) {
+            onToggle === null || onToggle === void 0 ? void 0 : onToggle();
+        }
+        else {
+            setInternalOpen(!internalOpen);
+        }
+    };
+    return (react_1.default.createElement("div", { className: "cfw-editor-subsection", "data-subsection-id": id },
+        react_1.default.createElement("button", { type: "button", className: `cfw-editor-subsection__header ${isOpen ? 'open' : ''}`, onClick: handleClick },
+            react_1.default.createElement("span", { className: "cfw-editor-subsection__title" }, title),
+            react_1.default.createElement("svg", { fill: "none", viewBox: "0 0 24 24", stroke: "currentColor", "aria-hidden": "true" },
+                react_1.default.createElement("path", { strokeLinecap: "round", strokeLinejoin: "round", strokeWidth: 2, d: "M19 9l-7 7-7-7" }))),
+        isOpen && (react_1.default.createElement("div", { className: "cfw-editor-subsection__body" }, children))));
 };
-exports["default"] = EditorSidebar;
+exports["default"] = EditorSubSection;
 
 
 /***/ }),
@@ -2704,24 +3047,49 @@ Object.defineProperty(exports, "__esModule", ({ value: true }));
 const react_1 = __webpack_require__(/*! react */ "react");
 const formik_1 = __webpack_require__(/*! formik */ "./node_modules/.pnpm/formik@2.4.9_@types+react@18.3.27_react@18.3.1/node_modules/formik/dist/formik.esm.js");
 const api_fetch_1 = __importDefault(__webpack_require__(/*! @wordpress/api-fetch */ "@wordpress/api-fetch"));
-const FormObserver = ({ onPreviewUpdate }) => {
+const PREVIEW_OMIT_KEYS = new Set(['cart_edit_empty_cart_redirect', 'enable']);
+/** Build a stable string of only preview-relevant values so we can skip refresh when only omitted keys change. */
+function getPreviewSignature(values) {
+    const previewRelevant = {};
+    Object.keys(values).forEach((key) => {
+        if (PREVIEW_OMIT_KEYS.has(key)) {
+            return;
+        }
+        const val = values[key];
+        previewRelevant[key] = typeof val === 'boolean' ? (val ? 'yes' : 'no') : val;
+    });
+    return JSON.stringify(previewRelevant);
+}
+const FormObserver = ({ onPreviewUpdate, onPreviewRequest }) => {
     const { values } = (0, formik_1.useFormikContext)();
     const timerRef = (0, react_1.useRef)(null);
     const isFirstRender = (0, react_1.useRef)(true);
+    const lastPreviewSignatureRef = (0, react_1.useRef)('');
     (0, react_1.useEffect)(() => {
+        const signature = getPreviewSignature(values);
         // Skip the initial render.
         if (isFirstRender.current) {
             isFirstRender.current = false;
+            lastPreviewSignatureRef.current = signature;
             return;
         }
+        // Only refresh preview when preview-relevant values changed (e.g. not when only "enable" is toggled).
+        if (signature === lastPreviewSignatureRef.current) {
+            return;
+        }
+        lastPreviewSignatureRef.current = signature;
+        // Show loading state right away so the user sees feedback instead of waiting for the debounce.
+        onPreviewRequest === null || onPreviewRequest === void 0 ? void 0 : onPreviewRequest();
         if (timerRef.current) {
             clearTimeout(timerRef.current);
         }
         timerRef.current = setTimeout(() => __awaiter(void 0, void 0, void 0, function* () {
             try {
-                // Convert boolean values to yes/no for preview settings.
                 const previewValues = {};
                 Object.keys(values).forEach((key) => {
+                    if (PREVIEW_OMIT_KEYS.has(key)) {
+                        return;
+                    }
                     const val = values[key];
                     if (typeof val === 'boolean') {
                         previewValues[key] = val ? 'yes' : 'no';
@@ -2754,137 +3122,9 @@ exports["default"] = FormObserver;
 
 /***/ }),
 
-/***/ "./sources/ts/admin/Components/CheckoutEditor/panels/CheckoutSettingsPanel.tsx":
-/*!*************************************************************************************!*\
-  !*** ./sources/ts/admin/Components/CheckoutEditor/panels/CheckoutSettingsPanel.tsx ***!
-  \*************************************************************************************/
-/***/ (function(__unused_webpack_module, exports, __webpack_require__) {
-
-
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", ({ value: true }));
-const react_1 = __importDefault(__webpack_require__(/*! react */ "react"));
-const formik_1 = __webpack_require__(/*! formik */ "./node_modules/.pnpm/formik@2.4.9_@types+react@18.3.27_react@18.3.1/node_modules/formik/dist/formik.esm.js");
-const i18n_1 = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
-const EditorSection_1 = __importDefault(__webpack_require__(/*! ../EditorSection */ "./sources/ts/admin/Components/CheckoutEditor/EditorSection.tsx"));
-const CheckboxField_1 = __importDefault(__webpack_require__(/*! ../../Fields/CheckboxField */ "./sources/ts/admin/Components/Fields/CheckboxField.tsx"));
-const CheckboxGroupField_1 = __importDefault(__webpack_require__(/*! ../../Fields/CheckboxGroupField */ "./sources/ts/admin/Components/Fields/CheckboxGroupField.tsx"));
-const CountriesMultiselectField_1 = __importDefault(__webpack_require__(/*! ../../Fields/CountriesMultiselectField */ "./sources/ts/admin/Components/Fields/CountriesMultiselectField.tsx"));
-const RadioGroupField_1 = __importDefault(__webpack_require__(/*! ../../Fields/RadioGroupField */ "./sources/ts/admin/Components/Fields/RadioGroupField.tsx"));
-const TextField_1 = __importDefault(__webpack_require__(/*! ../../Fields/TextField */ "./sources/ts/admin/Components/Fields/TextField.tsx"));
-const SelectField_1 = __importDefault(__webpack_require__(/*! ../../Fields/SelectField */ "./sources/ts/admin/Components/Fields/SelectField.tsx"));
-const LockedFieldWrapper_1 = __importDefault(__webpack_require__(/*! ../../LockedFieldWrapper */ "./sources/ts/admin/Components/LockedFieldWrapper.tsx"));
-const MediumAlert_1 = __importDefault(__webpack_require__(/*! ../../MediumAlert */ "./sources/ts/admin/Components/MediumAlert.tsx"));
-const SevereAlert_1 = __importDefault(__webpack_require__(/*! ../../SevereAlert */ "./sources/ts/admin/Components/SevereAlert.tsx"));
-const CheckoutSettingsPanel = ({ searchTerm }) => {
-    var _a, _b;
-    const { values } = (0, formik_1.useFormikContext)();
-    const plan = cfwAdminPagesData.plan;
-    const conditionalSettings = ((_a = cfwAdminPagesData.checkout_settings) === null || _a === void 0 ? void 0 : _a.conditional_settings) || {};
-    const woocommerceSettings = ((_b = cfwAdminPagesData.checkout_settings) === null || _b === void 0 ? void 0 : _b.woocommerce_settings) || {};
-    return (react_1.default.createElement(react_1.default.Fragment, null,
-        react_1.default.createElement(EditorSection_1.default, { title: (0, i18n_1.__)('Steps', 'checkout-wc'), defaultOpen: true },
-            react_1.default.createElement(CheckboxField_1.default, { name: "skip_cart_step", label: (0, i18n_1.__)('Disable Cart Step', 'checkout-wc'), description: (0, i18n_1.__)('Disable to skip the cart and redirect customers directly to checkout after adding a product to the cart. (Incompatible with Side Cart)', 'checkout-wc'), searchTerm: searchTerm }),
-            react_1.default.createElement(CheckboxField_1.default, { name: "skip_shipping_step", label: (0, i18n_1.__)('Disable Shipping Step', 'checkout-wc'), description: (0, i18n_1.__)('Disable to hide the shipping method step. Useful if you only have one shipping option for all orders.', 'checkout-wc'), searchTerm: searchTerm }),
-            react_1.default.createElement(LockedFieldWrapper_1.default, { plan: plan, slug: 'enable-order-review-step', locked: plan.plan_level < 1, requiredPlans: plan.labels.required_list[1] },
-                react_1.default.createElement(CheckboxField_1.default, { name: "enable_order_review_step", label: (0, i18n_1.__)('Enable Order Review Step', 'checkout-wc'), description: (0, i18n_1.__)('Adds a review step after payment information before finalizing order.', 'checkout-wc'), searchTerm: searchTerm, disabled: plan.plan_level < 1 }),
-                react_1.default.createElement(CheckboxField_1.default, { name: "enable_one_page_checkout", label: (0, i18n_1.__)('Enable One Page Checkout', 'checkout-wc'), description: (0, i18n_1.__)('Show all checkout steps on one page. Useful for digital stores.', 'checkout-wc'), searchTerm: searchTerm, disabled: plan.plan_level < 1 }))),
-        react_1.default.createElement(EditorSection_1.default, { title: (0, i18n_1.__)('Shipping Options', 'checkout-wc') },
-            react_1.default.createElement(LockedFieldWrapper_1.default, { plan: plan, slug: 'auto-select-free-shipping', locked: plan.plan_level < 1, requiredPlans: plan.labels.required_list[1] },
-                react_1.default.createElement(CheckboxField_1.default, { name: "auto_select_free_shipping_method", label: (0, i18n_1.__)('Auto Select Free Shipping Method (if available)', 'checkout-wc'), description: (0, i18n_1.__)('WooCommerce has a habit of not selecting the free shipping method if it is setup to be conditionally enabled.', 'checkout-wc'), searchTerm: searchTerm, disabled: plan.plan_level < 1 }))),
-        react_1.default.createElement(EditorSection_1.default, { title: (0, i18n_1.__)('Login and Registration', 'checkout-wc') },
-            react_1.default.createElement(CheckboxField_1.default, { name: "disable_auto_open_login_modal", label: (0, i18n_1.__)('Disable Automatic Login Modal', 'checkout-wc'), description: (0, i18n_1.__)('Normally the login modal automatically opens if the entered email address matches an existing account.', 'checkout-wc'), searchTerm: searchTerm }),
-            react_1.default.createElement(RadioGroupField_1.default, { name: "registration_style", label: (0, i18n_1.__)('Registration', 'checkout-wc'), description: (0, i18n_1.__)('Choose how customers obtain a password when registering an account.', 'checkout-wc'), options: [
-                    { value: 'enhanced', label: (0, i18n_1.__)('Enhanced (Recommended)', 'checkout-wc'), description: (0, i18n_1.__)('Automatically generate a username and password.', 'checkout-wc') },
-                    { value: 'woocommerce', label: (0, i18n_1.__)('WooCommerce Default', 'checkout-wc'), description: (0, i18n_1.__)('A password field is provided for the customer.', 'checkout-wc') },
-                ], searchTerm: searchTerm }),
-            react_1.default.createElement(LockedFieldWrapper_1.default, { plan: plan, slug: 'user-matching', locked: plan.plan_level < 1, requiredPlans: plan.labels.required_list[1] },
-                react_1.default.createElement(RadioGroupField_1.default, { name: "user_matching", label: (0, i18n_1.__)('User Matching', 'checkout-wc'), description: (0, i18n_1.__)('Choose how to handle guest orders and accounts.', 'checkout-wc'), disabled: plan.plan_level < 1, options: [
-                        { value: 'enabled', label: (0, i18n_1.__)('Enabled (Recommended)', 'checkout-wc'), description: (0, i18n_1.__)('Automatically matches guest orders to user accounts.', 'checkout-wc') },
-                        { value: 'woocommerce', label: (0, i18n_1.__)('WooCommerce Default', 'checkout-wc'), description: (0, i18n_1.__)('Guest orders will not be linked to matching accounts.', 'checkout-wc') },
-                    ], searchTerm: searchTerm }))),
-        react_1.default.createElement(EditorSection_1.default, { title: (0, i18n_1.__)('Field Options', 'checkout-wc') },
-            react_1.default.createElement(SelectField_1.default, { name: 'wp_option/woocommerce_checkout_phone_field', label: (0, i18n_1.__)('Phone Field', 'checkout-wc'), description: (0, i18n_1.__)('Determines whether the WooCommerce native phone field is enabled.', 'checkout-wc'), options: [
-                    { value: 'hidden', label: (0, i18n_1.__)('Hidden', 'checkout-wc') },
-                    { value: 'optional', label: (0, i18n_1.__)('Optional', 'checkout-wc') },
-                    { value: 'required', label: (0, i18n_1.__)('Required', 'checkout-wc') },
-                ], searchTerm: searchTerm }),
-            react_1.default.createElement(CheckboxField_1.default, { name: "enable_order_notes", label: (0, i18n_1.__)('Enable Order Notes Field', 'checkout-wc'), description: (0, i18n_1.__)('Enable or disable WooCommerce Order Notes field.', 'checkout-wc'), enabled: conditionalSettings.order_notes_enable, searchTerm: searchTerm }),
-            !conditionalSettings.order_notes_enable && (react_1.default.createElement(MediumAlert_1.default, { description: (0, i18n_1.__)('Order Notes field is being controlled by a filter or a plugin.', 'checkout-wc') })),
-            react_1.default.createElement(CheckboxField_1.default, { name: "enable_coupon_code_link", label: (0, i18n_1.__)('Hide Coupon Code Field Behind Link', 'checkout-wc'), description: (0, i18n_1.__)('Initially hide coupon field until "Have a coupon code?" link is clicked.', 'checkout-wc'), searchTerm: searchTerm }),
-            react_1.default.createElement(CheckboxField_1.default, { name: "hide_optional_address_fields_behind_link", label: (0, i18n_1.__)('Hide Optional Address Fields Behind Links', 'checkout-wc'), description: (0, i18n_1.__)('Recommended to increase conversions.', 'checkout-wc'), searchTerm: searchTerm }),
-            react_1.default.createElement(CheckboxField_1.default, { name: "disable_domain_autocomplete", label: (0, i18n_1.__)('Disable Email Domain Autocomplete', 'checkout-wc'), description: (0, i18n_1.__)('Disable email domain autocomplete.', 'checkout-wc'), searchTerm: searchTerm }),
-            react_1.default.createElement(LockedFieldWrapper_1.default, { plan: plan, slug: 'field-options', locked: plan.plan_level < 1, requiredPlans: plan.labels.required_list[1] },
-                react_1.default.createElement(CheckboxField_1.default, { name: "enable_discreet_address_1_fields", label: (0, i18n_1.__)('Enable Separate House Number and Street Name Address Fields', 'checkout-wc'), description: (0, i18n_1.__)('Values are combined into a single address_1 field based on country.', 'checkout-wc'), searchTerm: searchTerm, disabled: plan.plan_level < 1 }),
-                plan.plan_level >= 1 && values.enable_discreet_address_1_fields && (react_1.default.createElement(RadioGroupField_1.default, { name: "discreet_address_1_fields_order", label: (0, i18n_1.__)('Separate Address Fields Display Order', 'checkout-wc'), description: (0, i18n_1.__)('Choose how to display separate address 1 fields.', 'checkout-wc'), nested: true, options: [
-                        { value: 'default', label: (0, i18n_1.__)('[House Number] [Street Name]', 'checkout-wc') },
-                        { value: 'alternate', label: (0, i18n_1.__)('[Street Name] [House Number]', 'checkout-wc') },
-                    ], searchTerm: searchTerm })),
-                values.enable_discreet_address_1_fields && values.enable_address_autocomplete && (react_1.default.createElement(SevereAlert_1.default, { description: (0, i18n_1.__)('Separate Address Fields is incompatible with Google Address Autocomplete.', 'checkout-wc') })),
-                react_1.default.createElement(CheckboxField_1.default, { name: "use_fullname_field", label: (0, i18n_1.__)('Enable Full Name Field', 'checkout-wc'), description: (0, i18n_1.__)('Replace first and last name fields with a single full name field.', 'checkout-wc'), searchTerm: searchTerm, disabled: plan.plan_level < 1 }),
-                react_1.default.createElement(CheckboxField_1.default, { name: "enable_highlighted_countries", label: (0, i18n_1.__)('Enable Highlighted Countries', 'checkout-wc'), description: (0, i18n_1.__)('Promote selected countries to the top of the countries list.', 'checkout-wc'), searchTerm: searchTerm, disabled: plan.plan_level < 1 }),
-                plan.plan_level >= 1 && values.enable_highlighted_countries && (react_1.default.createElement(CountriesMultiselectField_1.default, { name: "highlighted_countries", label: (0, i18n_1.__)('Highlighted Countries', 'checkout-wc'), description: (0, i18n_1.__)('The countries to show first in country dropdowns.', 'checkout-wc'), nested: true, hide: !values.enable_highlighted_countries, countries: woocommerceSettings.countries, searchTerm: searchTerm })),
-                react_1.default.createElement(CheckboxField_1.default, { name: "enable_international_phone_field", label: (0, i18n_1.__)('Enable International Phone Field', 'checkout-wc'), description: (0, i18n_1.__)('Validate phone number entry based on selected country.', 'checkout-wc'), searchTerm: searchTerm, disabled: plan.plan_level < 1 }),
-                plan.plan_level >= 1 && values.enable_international_phone_field && (react_1.default.createElement(RadioGroupField_1.default, { name: "international_phone_field_standard", label: (0, i18n_1.__)('International Phone Format', 'checkout-wc'), description: (0, i18n_1.__)('Choose how to store phone numbers.', 'checkout-wc'), nested: true, options: [
-                        { value: 'raw', label: (0, i18n_1.__)('Raw Value (No Formatting)', 'checkout-wc') },
-                        { value: 'E164', label: (0, i18n_1.__)('E164', 'checkout-wc') },
-                        { value: 'INTERNATIONAL', label: (0, i18n_1.__)('International', 'checkout-wc') },
-                        { value: 'NATIONAL', label: (0, i18n_1.__)('National', 'checkout-wc') },
-                        { value: 'RFC3966', label: (0, i18n_1.__)('RFC3966', 'checkout-wc') },
-                    ], searchTerm: searchTerm })))),
-        react_1.default.createElement(EditorSection_1.default, { title: (0, i18n_1.__)('Address Options', 'checkout-wc') },
-            react_1.default.createElement(CheckboxField_1.default, { name: "force_different_billing_address", label: (0, i18n_1.__)('Force Different Billing Address', 'checkout-wc'), description: (0, i18n_1.__)('Remove option to use shipping address as billing address.', 'checkout-wc'), searchTerm: searchTerm }),
-            react_1.default.createElement(CheckboxField_1.default, { name: "hide_billing_address_for_free_orders", label: (0, i18n_1.__)('Hide Billing Address For Free Orders', 'checkout-wc'), description: (0, i18n_1.__)('Remove the billing address fields from checkout for free orders.', 'checkout-wc'), searchTerm: searchTerm }),
-            react_1.default.createElement(CheckboxGroupField_1.default, { name: "enabled_billing_address_fields", label: (0, i18n_1.__)('Enabled Billing Address Fields', 'checkout-wc'), description: (0, i18n_1.__)('Choose which billing address fields are visible.', 'checkout-wc'), options: [
-                    { value: 'billing_first_name', label: (0, i18n_1.__)('First Name', 'checkout-wc') },
-                    { value: 'billing_last_name', label: (0, i18n_1.__)('Last Name', 'checkout-wc') },
-                    { value: 'billing_address_1', label: (0, i18n_1.__)('Address 1', 'checkout-wc') },
-                    { value: 'billing_address_2', label: (0, i18n_1.__)('Address 2', 'checkout-wc') },
-                    { value: 'billing_company', label: (0, i18n_1.__)('Company', 'checkout-wc') },
-                    { value: 'billing_country', label: (0, i18n_1.__)('Country', 'checkout-wc') },
-                    { value: 'billing_postcode', label: (0, i18n_1.__)('Postcode', 'checkout-wc') },
-                    { value: 'billing_state', label: (0, i18n_1.__)('State', 'checkout-wc') },
-                    { value: 'billing_city', label: (0, i18n_1.__)('City', 'checkout-wc') },
-                    { value: 'billing_phone', label: (0, i18n_1.__)('Phone', 'checkout-wc') },
-                ], searchTerm: searchTerm })),
-        react_1.default.createElement(EditorSection_1.default, { title: (0, i18n_1.__)('Address Completion and Validation', 'checkout-wc') },
-            react_1.default.createElement(LockedFieldWrapper_1.default, { plan: plan, slug: 'address-complete-and-validation', locked: plan.plan_level < 1, requiredPlans: plan.labels.required_list[1] },
-                react_1.default.createElement(CheckboxField_1.default, { name: "enable_address_autocomplete", label: (0, i18n_1.__)('Enable Google Address Autocomplete', 'checkout-wc'), description: (0, i18n_1.__)('Enable or disable Google Address Autocomplete feature.', 'checkout-wc'), searchTerm: searchTerm, disabled: plan.plan_level < 1 }),
-                react_1.default.createElement(CheckboxField_1.default, { name: "enable_fetchify_address_autocomplete", label: (0, i18n_1.__)('Enable Fetchify Address Autocomplete', 'checkout-wc'), description: (0, i18n_1.__)('Enable or disable Fetchify address autocomplete feature.', 'checkout-wc'), searchTerm: searchTerm, disabled: plan.plan_level < 1 }),
-                plan.plan_level >= 1 && values.enable_fetchify_address_autocomplete && (react_1.default.createElement(TextField_1.default, { name: "fetchify_access_token", label: (0, i18n_1.__)('Fetchify Access Token', 'checkout-wc'), description: (0, i18n_1.__)('Your Fetchify access token.', 'checkout-wc'), nested: true, searchTerm: searchTerm })),
-                react_1.default.createElement(CheckboxField_1.default, { name: "enable_smartystreets_integration", label: (0, i18n_1.__)('Enable Smarty Address Validation', 'checkout-wc'), description: (0, i18n_1.__)('Validates shipping address with Smarty.com.', 'checkout-wc'), searchTerm: searchTerm, disabled: plan.plan_level < 1 }),
-                plan.plan_level >= 1 && values.enable_smartystreets_integration && (react_1.default.createElement(react_1.default.Fragment, null,
-                    react_1.default.createElement(TextField_1.default, { name: "smartystreets_auth_id", label: (0, i18n_1.__)('Smarty Auth ID', 'checkout-wc'), description: (0, i18n_1.__)('Smarty Auth ID.', 'checkout-wc'), searchTerm: searchTerm, nested: true }),
-                    react_1.default.createElement(TextField_1.default, { name: "smartystreets_auth_token", label: (0, i18n_1.__)('Smarty Auth Token', 'checkout-wc'), description: (0, i18n_1.__)('Smarty Auth Token.', 'checkout-wc'), searchTerm: searchTerm, nested: true }))))),
-        react_1.default.createElement(EditorSection_1.default, { title: (0, i18n_1.__)('Cart Summary', 'checkout-wc') },
-            react_1.default.createElement(LockedFieldWrapper_1.default, { plan: plan, slug: 'cart-editing-at-checkout', locked: plan.plan_level < 1, requiredPlans: plan.labels.required_list[1] },
-                react_1.default.createElement(CheckboxField_1.default, { name: "enable_cart_editing", label: (0, i18n_1.__)('Enable Cart Editing At Checkout', 'checkout-wc'), description: (0, i18n_1.__)('Allows customer to remove or adjust quantity of cart items at checkout.', 'checkout-wc'), searchTerm: searchTerm, disabled: plan.plan_level < 1 }),
-                plan.plan_level >= 1 && values.enable_cart_editing && (react_1.default.createElement(react_1.default.Fragment, null,
-                    react_1.default.createElement(CheckboxField_1.default, { name: "allow_checkout_cart_item_variation_changes", label: (0, i18n_1.__)('Allow Variation Changes', 'checkout-wc'), description: (0, i18n_1.__)('Displays an edit link under cart items.', 'checkout-wc'), nested: true, searchTerm: searchTerm }),
-                    react_1.default.createElement(CheckboxField_1.default, { name: "show_item_remove_button", label: (0, i18n_1.__)('Show Item Remove Button', 'checkout-wc'), description: (0, i18n_1.__)('When hovering over an item, show a button (X) to remove it.', 'checkout-wc'), nested: true, searchTerm: searchTerm }),
-                    react_1.default.createElement(TextField_1.default, { name: "cart_edit_empty_cart_redirect", label: (0, i18n_1.__)('Cart Editing Empty Cart Redirect', 'checkout-wc'), description: (0, i18n_1.__)('URL to redirect to when customer empties cart from checkout page.', 'checkout-wc'), nested: true, searchTerm: searchTerm })))),
-            react_1.default.createElement(CheckboxField_1.default, { name: "enable_sticky_cart_summary", label: (0, i18n_1.__)('Enable Sticky Cart Summary', 'checkout-wc'), description: (0, i18n_1.__)('Cart summary sticks to the top when scrolling.', 'checkout-wc'), searchTerm: searchTerm })),
-        react_1.default.createElement(EditorSection_1.default, { title: (0, i18n_1.__)('Mobile Options', 'checkout-wc') },
-            react_1.default.createElement(CheckboxField_1.default, { name: "enable_mobile_cart_summary", label: (0, i18n_1.__)('Enable Mobile Cart Summary', 'checkout-wc'), description: (0, i18n_1.__)('Shows the cart, promo field, and totals at the bottom of the first checkout step.', 'checkout-wc'), searchTerm: searchTerm }),
-            react_1.default.createElement(CheckboxField_1.default, { name: "enable_mobile_totals", label: (0, i18n_1.__)('Enable Mobile Totals', 'checkout-wc'), description: (0, i18n_1.__)('Shows cart totals right above the place order button on mobile.', 'checkout-wc'), searchTerm: searchTerm }),
-            react_1.default.createElement(CheckboxField_1.default, { name: "show_mobile_coupon_field", label: (0, i18n_1.__)('Enable Mobile Coupon Field', 'checkout-wc'), description: (0, i18n_1.__)('Show coupon field above payment gateways on mobile devices.', 'checkout-wc'), searchTerm: searchTerm }),
-            values.enable_mobile_cart_summary && values.show_mobile_coupon_field && (react_1.default.createElement(SevereAlert_1.default, { description: (0, i18n_1.__)('Enable Mobile Cart Summary is not compatible with Enable Mobile Coupon Field.', 'checkout-wc') })),
-            react_1.default.createElement(CheckboxField_1.default, { name: "show_logos_mobile", label: (0, i18n_1.__)('Enable Mobile Credit Card Logos', 'checkout-wc'), description: (0, i18n_1.__)('Show the credit card logos on mobile.', 'checkout-wc'), searchTerm: searchTerm }),
-            react_1.default.createElement(TextField_1.default, { name: "cart_summary_mobile_label", label: (0, i18n_1.__)('Cart Summary Mobile Label', 'checkout-wc'), description: (0, i18n_1.__)('Example: Show order summary and coupons.', 'checkout-wc'), searchTerm: searchTerm })),
-        react_1.default.createElement(EditorSection_1.default, { title: (0, i18n_1.__)('Order Pay', 'checkout-wc') },
-            react_1.default.createElement(LockedFieldWrapper_1.default, { plan: plan, slug: 'order-pay', locked: plan.plan_level < 1, requiredPlans: plan.labels.required_list[1] },
-                react_1.default.createElement(CheckboxField_1.default, { name: "enable_order_pay", label: (0, i18n_1.__)('Enable Order Pay Page', 'checkout-wc'), description: (0, i18n_1.__)('Use CheckoutWC templates for Order Pay page.', 'checkout-wc'), searchTerm: searchTerm, disabled: plan.plan_level < 1 })))));
-};
-exports["default"] = CheckoutSettingsPanel;
-
-
-/***/ }),
-
-/***/ "./sources/ts/admin/Components/CheckoutEditor/panels/DesignSettingsPanel.tsx":
+/***/ "./sources/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx":
 /*!***********************************************************************************!*\
-  !*** ./sources/ts/admin/Components/CheckoutEditor/panels/DesignSettingsPanel.tsx ***!
+  !*** ./sources/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx ***!
   \***********************************************************************************/
 /***/ (function(__unused_webpack_module, exports, __webpack_require__) {
 
@@ -2929,51 +3169,214 @@ Object.defineProperty(exports, "__esModule", ({ value: true }));
 const react_1 = __importStar(__webpack_require__(/*! react */ "react"));
 const formik_1 = __webpack_require__(/*! formik */ "./node_modules/.pnpm/formik@2.4.9_@types+react@18.3.27_react@18.3.1/node_modules/formik/dist/formik.esm.js");
 const i18n_1 = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+const react_select_1 = __importDefault(__webpack_require__(/*! react-select */ "./node_modules/.pnpm/react-select@5.10.2_@types+react@18.3.27_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/react-select/dist/react-select.esm.js"));
 const EditorSection_1 = __importDefault(__webpack_require__(/*! ../EditorSection */ "./sources/ts/admin/Components/CheckoutEditor/EditorSection.tsx"));
+const EditorSubSection_1 = __importDefault(__webpack_require__(/*! ../EditorSubSection */ "./sources/ts/admin/Components/CheckoutEditor/EditorSubSection.tsx"));
+const EditorFieldGroup_1 = __importDefault(__webpack_require__(/*! ../EditorFieldGroup */ "./sources/ts/admin/Components/CheckoutEditor/EditorFieldGroup.tsx"));
 const WPMediaUploadButton_1 = __importDefault(__webpack_require__(/*! ../../Fields/WPMediaUploadButton */ "./sources/ts/admin/Components/Fields/WPMediaUploadButton.tsx"));
 const RadioGroupField_1 = __importDefault(__webpack_require__(/*! ../../Fields/RadioGroupField */ "./sources/ts/admin/Components/Fields/RadioGroupField.tsx"));
 const WYSIWYGField_1 = __importDefault(__webpack_require__(/*! ../../Fields/WYSIWYGField */ "./sources/ts/admin/Components/Fields/WYSIWYGField.tsx"));
 const SelectField_1 = __importDefault(__webpack_require__(/*! ../../Fields/SelectField */ "./sources/ts/admin/Components/Fields/SelectField.tsx"));
-const CodeEditorField_1 = __importDefault(__webpack_require__(/*! ../../Fields/CodeEditorField */ "./sources/ts/admin/Components/Fields/CodeEditorField.tsx"));
+const EditorCheckboxField_1 = __importDefault(__webpack_require__(/*! ../EditorCheckboxField */ "./sources/ts/admin/Components/CheckoutEditor/EditorCheckboxField.tsx"));
+const EditorCheckboxGroupField_1 = __importDefault(__webpack_require__(/*! ../EditorCheckboxGroupField */ "./sources/ts/admin/Components/CheckoutEditor/EditorCheckboxGroupField.tsx"));
+const CountriesMultiselectField_1 = __importDefault(__webpack_require__(/*! ../../Fields/CountriesMultiselectField */ "./sources/ts/admin/Components/Fields/CountriesMultiselectField.tsx"));
 const ColorPickerField_1 = __importDefault(__webpack_require__(/*! ../../Fields/ColorPickerField */ "./sources/ts/admin/Components/Fields/ColorPickerField.tsx"));
+const LockedFieldWrapper_1 = __importDefault(__webpack_require__(/*! ../../LockedFieldWrapper */ "./sources/ts/admin/Components/LockedFieldWrapper.tsx"));
+const MediumAlert_1 = __importDefault(__webpack_require__(/*! ../../MediumAlert */ "./sources/ts/admin/Components/MediumAlert.tsx"));
+const TextField_1 = __importDefault(__webpack_require__(/*! ../../Fields/TextField */ "./sources/ts/admin/Components/Fields/TextField.tsx"));
+const NumberField_1 = __importDefault(__webpack_require__(/*! ../../Fields/NumberField */ "./sources/ts/admin/Components/Fields/NumberField.tsx"));
 const cfwConvertOptionsObjectToArray_1 = __importDefault(__webpack_require__(/*! ../../../../functions/cfwConvertOptionsObjectToArray */ "./sources/ts/functions/cfwConvertOptionsObjectToArray.ts"));
-const DesignSettingsPanel = ({ searchTerm }) => {
-    var _a, _b, _c;
+const EDITOR_COLOR_SECTIONS = ['body', 'buttons', 'breadcrumbs', 'cart_summary', 'header', 'footer'];
+const SECTION_IDS = {
+    template: 'template',
+    logo: 'logo',
+    typography: 'typography',
+    colors: 'colors',
+    steps: 'steps',
+    fields: 'fields',
+    addresses: 'addresses',
+    express_checkout: 'express_checkout',
+    cart_summary: 'cart_summary',
+    badges: 'badges',
+    footer: 'footer',
+    advanced: 'advanced',
+};
+const EditorSettingsPanel = ({ templates, activeTemplateSlug, onTemplateChange, }) => {
+    var _a, _b, _c, _d, _e, _f;
     const { values, setFieldValue, initialValues } = (0, formik_1.useFormikContext)();
-    const params = ((_a = cfwAdminPagesData.appearance_settings) === null || _a === void 0 ? void 0 : _a.params) || {};
+    const params = ((_a = cfwAdminPagesData.editor_settings) === null || _a === void 0 ? void 0 : _a.params) || {};
     const templatePath = params.template_path || '';
     const colorSettings = params.color_settings || {};
     const fontOptions = params.font_options || {};
     const logoPreviewUrl = params.logo_preview_url || '';
-    const [footerTextEditorMode, setFooterTextEditorMode] = (0, react_1.useState)(((_c = (_b = cfwAdminPagesData.appearance_settings) === null || _b === void 0 ? void 0 : _b.settings) === null || _c === void 0 ? void 0 : _c.footer_text_editor_mode) || 'WYSIWYG');
+    const countries = params.countries || {};
+    const conditionalSettings = params.conditional_settings || {};
+    const plan = cfwAdminPagesData.plan;
+    const onePageCheckoutEnabled = !!values.enable_one_page_checkout;
+    const stepSuffix = onePageCheckoutEnabled ? '' : ` ${(0, i18n_1.__)('Step', 'checkout-wc')}`;
+    const [openSectionId, setOpenSectionId] = (0, react_1.useState)(SECTION_IDS.template);
+    const [openColorSubSectionId, setOpenColorSubSectionId] = (0, react_1.useState)(null);
+    const [footerTextEditorMode, setFooterTextEditorMode] = (0, react_1.useState)(((_c = (_b = cfwAdminPagesData.editor_settings) === null || _b === void 0 ? void 0 : _b.settings) === null || _c === void 0 ? void 0 : _c.footer_text_editor_mode) || 'WYSIWYG');
+    // One Page Checkout and Order Review Step are mutually exclusive.
+    // Enforce this on load and whenever One Page Checkout is enabled so preview updates immediately.
+    (0, react_1.useEffect)(() => {
+        if (onePageCheckoutEnabled && values.enable_order_review_step) {
+            setFieldValue('enable_order_review_step', false);
+        }
+    }, [onePageCheckoutEnabled, values.enable_order_review_step, setFieldValue]);
     return (react_1.default.createElement(react_1.default.Fragment, null,
-        react_1.default.createElement(EditorSection_1.default, { title: (0, i18n_1.__)('General Template Settings', 'checkout-wc'), defaultOpen: true },
+        react_1.default.createElement(EditorSection_1.default, { id: SECTION_IDS.template, title: (0, i18n_1.__)('Template', 'checkout-wc'), isOpen: openSectionId === SECTION_IDS.template, onToggle: () => setOpenSectionId((prev) => (prev === SECTION_IDS.template ? null : SECTION_IDS.template)) },
             react_1.default.createElement(formik_1.Field, { type: "hidden", name: "footer_text_editor_mode", value: footerTextEditorMode }),
-            react_1.default.createElement(WPMediaUploadButton_1.default, { name: `logo_attachment_id_${templatePath}`, label: (0, i18n_1.__)('Logo', 'checkout-wc'), description: (0, i18n_1.__)('Choose the logo you wish to display in the header.', 'checkout-wc'), defaultUrl: logoPreviewUrl, searchTerm: searchTerm }),
-            react_1.default.createElement(RadioGroupField_1.default, { name: `label_style_${templatePath}`, label: (0, i18n_1.__)('Field Label Style', 'checkout-wc'), description: (0, i18n_1.__)('Choose how you want form labels styled.', 'checkout-wc'), options: [
-                    { value: 'floating', label: (0, i18n_1.__)('Floating (Recommended)', 'checkout-wc'), description: (0, i18n_1.__)('Automatically show and hide labels.', 'checkout-wc') },
-                    { value: 'normal', label: (0, i18n_1.__)('Normal', 'checkout-wc'), description: (0, i18n_1.__)('Labels appear above each field at all times.', 'checkout-wc') },
-                ], searchTerm: searchTerm }),
-            react_1.default.createElement(WYSIWYGField_1.default, { name: `footer_text_${templatePath}`, label: "Footer Text", description: "If left blank, a standard copyright notice will be displayed.", initialMode: footerTextEditorMode, onModeChange: (mode) => {
+            !!(templates === null || templates === void 0 ? void 0 : templates.length) && (react_1.default.createElement("div", { className: "cfw-admin-field-container cfw-admin-select-field" },
+                react_1.default.createElement("label", { htmlFor: "cfw-template-select", className: "sr-only" }, (0, i18n_1.__)('Template', 'checkout-wc')),
+                react_1.default.createElement(react_select_1.default, { inputId: "cfw-template-select", "aria-label": (0, i18n_1.__)('Template', 'checkout-wc'), isMulti: false, options: templates.map((template) => {
+                        const isLocked = !!template.locked && template.slug !== activeTemplateSlug;
+                        const labelParts = [template.name];
+                        if (isLocked) {
+                            labelParts.push((0, i18n_1.__)('Premium', 'checkout-wc'));
+                        }
+                        return {
+                            value: template.slug,
+                            label: labelParts.join(' – '),
+                            isDisabled: isLocked,
+                        };
+                    }), value: (_d = templates
+                        .filter((t) => t.slug === activeTemplateSlug)
+                        .map((t) => {
+                        const isLocked = !!t.locked && t.slug !== activeTemplateSlug;
+                        return {
+                            value: t.slug,
+                            label: [t.name, isLocked ? (0, i18n_1.__)('Premium', 'checkout-wc') : ''].filter(Boolean).join(' – '),
+                        };
+                    })[0]) !== null && _d !== void 0 ? _d : null, onChange: (option) => {
+                        if (!option || option.value === activeTemplateSlug) {
+                            return;
+                        }
+                        const selected = templates.find((t) => t.slug === option.value);
+                        if (selected === null || selected === void 0 ? void 0 : selected.locked) {
+                            return;
+                        }
+                        onTemplateChange(option.value);
+                    } })))),
+        react_1.default.createElement(EditorSection_1.default, { id: SECTION_IDS.logo, title: (0, i18n_1.__)('Logo', 'checkout-wc'), isOpen: openSectionId === SECTION_IDS.logo, onToggle: () => setOpenSectionId((prev) => (prev === SECTION_IDS.logo ? null : SECTION_IDS.logo)) },
+            react_1.default.createElement(WPMediaUploadButton_1.default, { name: `logo_attachment_id_${templatePath}`, label: (0, i18n_1.__)('Logo', 'checkout-wc'), description: "", defaultUrl: logoPreviewUrl, hideLabel: true })),
+        react_1.default.createElement(EditorSection_1.default, { id: SECTION_IDS.typography, title: (0, i18n_1.__)('Typography', 'checkout-wc'), isOpen: openSectionId === SECTION_IDS.typography, onToggle: () => setOpenSectionId((prev) => (prev === SECTION_IDS.typography ? null : SECTION_IDS.typography)) },
+            react_1.default.createElement(SelectField_1.default, { name: `body_font_${templatePath}`, label: (0, i18n_1.__)('Body Font', 'checkout-wc'), description: "", options: (0, cfwConvertOptionsObjectToArray_1.default)(fontOptions) }),
+            react_1.default.createElement(SelectField_1.default, { name: `heading_font_${templatePath}`, label: (0, i18n_1.__)('Heading Font', 'checkout-wc'), description: "", options: (0, cfwConvertOptionsObjectToArray_1.default)(fontOptions) })),
+        react_1.default.createElement(EditorSection_1.default, { id: SECTION_IDS.colors, title: (0, i18n_1.__)('Colors', 'checkout-wc'), isOpen: openSectionId === SECTION_IDS.colors, onToggle: () => setOpenSectionId((prev) => (prev === SECTION_IDS.colors ? null : SECTION_IDS.colors)) }, EDITOR_COLOR_SECTIONS.map((sectionId) => {
+            const section = colorSettings[sectionId];
+            if (!section || Object.keys(section.settings || {}).length === 0) {
+                return null;
+            }
+            const sectionTitles = {
+                body: (0, i18n_1.__)('Body', 'checkout-wc'),
+                buttons: (0, i18n_1.__)('Buttons', 'checkout-wc'),
+                breadcrumbs: (0, i18n_1.__)('Breadcrumbs', 'checkout-wc'),
+                cart_summary: (0, i18n_1.__)('Cart Summary', 'checkout-wc'),
+                header: (0, i18n_1.__)('Header', 'checkout-wc'),
+                footer: (0, i18n_1.__)('Footer', 'checkout-wc'),
+            };
+            return (react_1.default.createElement(EditorSubSection_1.default, { key: sectionId, id: sectionId, title: sectionTitles[sectionId] || section.title, isOpen: openColorSubSectionId === sectionId, onToggle: () => setOpenColorSubSectionId((prev) => (prev === sectionId ? null : sectionId)) },
+                react_1.default.createElement("div", { className: "flex flex-wrap flex-row gap-2" }, Object.entries(section.settings).map(([settingName, settingLabel]) => (react_1.default.createElement(ColorPickerField_1.default, { key: settingName, name: `${settingName}_${templatePath}`, label: settingLabel, value: values[`${settingName}_${templatePath}`], defaultValue: initialValues[settingName] }))))));
+        })),
+        react_1.default.createElement(EditorSection_1.default, { id: SECTION_IDS.steps, title: (0, i18n_1.__)('Steps', 'checkout-wc'), isOpen: openSectionId === SECTION_IDS.steps, onToggle: () => setOpenSectionId((prev) => (prev === SECTION_IDS.steps ? null : SECTION_IDS.steps)) },
+            react_1.default.createElement(EditorCheckboxField_1.default, { name: "skip_shipping_step", label: `${(0, i18n_1.__)('Shipping Methods', 'checkout-wc')}${stepSuffix}`, description: "", useEyeToggle: true, invertValue: true }),
+            react_1.default.createElement(LockedFieldWrapper_1.default, { plan: plan, slug: 'enable-order-review-step', locked: plan.plan_level < 1, requiredPlans: plan.labels.required_list[1] },
+                !onePageCheckoutEnabled && (react_1.default.createElement(EditorCheckboxField_1.default, { name: "enable_order_review_step", label: `${(0, i18n_1.__)('Order Review', 'checkout-wc')}${stepSuffix}`, description: "", disabled: plan.plan_level < 1, useEyeToggle: true })),
+                react_1.default.createElement(EditorCheckboxField_1.default, { name: "enable_one_page_checkout", label: (0, i18n_1.__)('One Page Checkout', 'checkout-wc'), description: "", disabled: plan.plan_level < 1, useEyeToggle: true }))),
+        react_1.default.createElement(EditorSection_1.default, { id: SECTION_IDS.fields, title: (0, i18n_1.__)('Fields', 'checkout-wc'), isOpen: openSectionId === SECTION_IDS.fields, onToggle: () => setOpenSectionId((prev) => (prev === SECTION_IDS.fields ? null : SECTION_IDS.fields)) },
+            react_1.default.createElement(EditorCheckboxField_1.default, { name: "hide_optional_address_fields_behind_link", label: (0, i18n_1.__)('Address Fields Link', 'checkout-wc'), description: "" }),
+            react_1.default.createElement(EditorCheckboxField_1.default, { name: "enable_coupon_code_link", label: (0, i18n_1.__)('Coupon Code Link', 'checkout-wc'), description: "" }),
+            react_1.default.createElement(LockedFieldWrapper_1.default, { plan: plan, slug: 'field-options', locked: plan.plan_level < 1, requiredPlans: plan.labels.required_list[1] },
+                react_1.default.createElement(EditorCheckboxField_1.default, { name: "use_fullname_field", label: (0, i18n_1.__)('Full Name Field', 'checkout-wc'), description: "", disabled: plan.plan_level < 1 }),
+                react_1.default.createElement(EditorFieldGroup_1.default, { nestedFields: values.enable_discreet_address_1_fields ? (react_1.default.createElement(RadioGroupField_1.default, { name: "discreet_address_1_fields_order", label: (0, i18n_1.__)('Separate Address Fields Display Order', 'checkout-wc'), description: "", nested: false, options: [
+                            { value: 'default', label: (0, i18n_1.__)('[House Number] [Street Name]', 'checkout-wc') },
+                            { value: 'alternate', label: (0, i18n_1.__)('[Street Name] [House Number]', 'checkout-wc') },
+                        ] })) : undefined },
+                    react_1.default.createElement(EditorCheckboxField_1.default, { name: "enable_discreet_address_1_fields", label: (0, i18n_1.__)('Separate House Number/Street Name', 'checkout-wc'), description: "", disabled: plan.plan_level < 1 })),
+                react_1.default.createElement(EditorFieldGroup_1.default, { nestedFields: values.enable_highlighted_countries ? (react_1.default.createElement(CountriesMultiselectField_1.default, { name: "highlighted_countries", label: (0, i18n_1.__)('Highlighted Countries', 'checkout-wc'), description: "", nested: false, countries: countries })) : undefined },
+                    react_1.default.createElement(EditorCheckboxField_1.default, { name: "enable_highlighted_countries", label: (0, i18n_1.__)('Highlighted Countries', 'checkout-wc'), description: "", disabled: plan.plan_level < 1 }))),
+            react_1.default.createElement(EditorCheckboxField_1.default, { name: "enable_order_notes", label: (0, i18n_1.__)('Order Notes', 'checkout-wc'), description: "", enabled: conditionalSettings.order_notes_enable }),
+            !conditionalSettings.order_notes_enable && (react_1.default.createElement(MediumAlert_1.default, { description: (0, i18n_1.__)('Order Notes field is being controlled by a filter or a plugin.', 'checkout-wc') })),
+            react_1.default.createElement(RadioGroupField_1.default, { name: `label_style_${templatePath}`, label: (0, i18n_1.__)('Field Label Style', 'checkout-wc'), description: "", options: [
+                    { value: 'floating', label: (0, i18n_1.__)('Floating (Recommended)', 'checkout-wc') },
+                    { value: 'normal', label: (0, i18n_1.__)('Normal', 'checkout-wc') },
+                ] }),
+            react_1.default.createElement(SelectField_1.default, { name: "wp_option/woocommerce_checkout_phone_field", label: (0, i18n_1.__)('Phone Field', 'checkout-wc'), description: "", options: [
+                    { value: 'hidden', label: (0, i18n_1.__)('Hidden', 'checkout-wc') },
+                    { value: 'optional', label: (0, i18n_1.__)('Optional', 'checkout-wc') },
+                    { value: 'required', label: (0, i18n_1.__)('Required', 'checkout-wc') },
+                ] })),
+        react_1.default.createElement(EditorSection_1.default, { id: SECTION_IDS.addresses, title: (0, i18n_1.__)('Addresses', 'checkout-wc'), isOpen: openSectionId === SECTION_IDS.addresses, onToggle: () => setOpenSectionId((prev) => (prev === SECTION_IDS.addresses ? null : SECTION_IDS.addresses)) },
+            react_1.default.createElement(EditorCheckboxField_1.default, { name: "force_different_billing_address", label: (0, i18n_1.__)('Force Different Billing Address', 'checkout-wc'), description: "" }),
+            react_1.default.createElement(EditorCheckboxGroupField_1.default, { name: "enabled_billing_address_fields", label: (0, i18n_1.__)('Billing Address Fields', 'checkout-wc'), description: "", useEyeToggle: true, options: [
+                    { value: 'billing_first_name', label: (0, i18n_1.__)('First Name', 'checkout-wc') },
+                    { value: 'billing_last_name', label: (0, i18n_1.__)('Last Name', 'checkout-wc') },
+                    { value: 'billing_address_1', label: (0, i18n_1.__)('Address 1', 'checkout-wc') },
+                    { value: 'billing_address_2', label: (0, i18n_1.__)('Address 2', 'checkout-wc') },
+                    { value: 'billing_company', label: (0, i18n_1.__)('Company', 'checkout-wc') },
+                    { value: 'billing_country', label: (0, i18n_1.__)('Country', 'checkout-wc') },
+                    { value: 'billing_postcode', label: (0, i18n_1.__)('Postcode', 'checkout-wc') },
+                    { value: 'billing_state', label: (0, i18n_1.__)('State', 'checkout-wc') },
+                    { value: 'billing_city', label: (0, i18n_1.__)('City', 'checkout-wc') },
+                    { value: 'billing_phone', label: (0, i18n_1.__)('Phone', 'checkout-wc') },
+                ] })),
+        react_1.default.createElement(EditorSection_1.default, { id: SECTION_IDS.express_checkout, title: (0, i18n_1.__)('Express Checkout', 'checkout-wc'), isOpen: openSectionId === SECTION_IDS.express_checkout, onToggle: () => setOpenSectionId((prev) => (prev === SECTION_IDS.express_checkout ? null : SECTION_IDS.express_checkout)) },
+            react_1.default.createElement(EditorCheckboxField_1.default, { name: "disable_express_checkout", label: (0, i18n_1.__)('Express Checkout', 'checkout-wc'), description: "", useEyeToggle: true, invertValue: true }),
+            ((_f = (_e = params.express_checkout_gateways) === null || _e === void 0 ? void 0 : _e.length) !== null && _f !== void 0 ? _f : 0) === 0 && (react_1.default.createElement(MediumAlert_1.default, { description: (0, i18n_1.__)('No supported gateways detected.<br><a class="text-blue-600 hover:text-blue-800" target="_blank" href="https://www.checkoutwc.com/documentation/supported-express-payment-gateways/">See our recommendations.</a>', 'checkout-wc'), variant: "setting" }))),
+        react_1.default.createElement(EditorSection_1.default, { id: SECTION_IDS.cart_summary, title: (0, i18n_1.__)('Cart Summary', 'checkout-wc'), isOpen: openSectionId === SECTION_IDS.cart_summary, onToggle: () => setOpenSectionId((prev) => (prev === SECTION_IDS.cart_summary ? null : SECTION_IDS.cart_summary)) },
+            react_1.default.createElement(LockedFieldWrapper_1.default, { plan: plan, slug: 'cart-editing-at-checkout', locked: plan.plan_level < 1, requiredPlans: plan.labels.required_list[1] },
+                react_1.default.createElement(EditorFieldGroup_1.default, { nestedFields: plan.plan_level >= 1 && values.enable_cart_editing ? (react_1.default.createElement(react_1.default.Fragment, null,
+                        react_1.default.createElement(EditorCheckboxField_1.default, { name: "allow_checkout_cart_item_variation_changes", label: (0, i18n_1.__)('Variation Edits', 'checkout-wc'), description: "", nested: false }),
+                        react_1.default.createElement(EditorCheckboxField_1.default, { name: "show_item_remove_button", label: (0, i18n_1.__)('Item Remove', 'checkout-wc'), description: "", nested: false }))) : undefined },
+                    react_1.default.createElement(EditorCheckboxField_1.default, { name: "enable_cart_editing", label: (0, i18n_1.__)('Cart Editing', 'checkout-wc'), description: "", disabled: plan.plan_level < 1 }))),
+            react_1.default.createElement(EditorCheckboxField_1.default, { name: "show_cart_item_discount", label: (0, i18n_1.__)('Sale Prices', 'checkout-wc'), description: "" }),
+            react_1.default.createElement(EditorCheckboxField_1.default, { name: "enable_sticky_cart_summary", label: (0, i18n_1.__)('Sticky Cart on Scroll', 'checkout-wc'), description: "" }),
+            react_1.default.createElement(SelectField_1.default, { name: "cart_item_link", label: (0, i18n_1.__)('Cart Item Links', 'checkout-wc'), description: "", options: [
+                    { value: 'disabled', label: (0, i18n_1.__)('Disabled', 'checkout-wc') },
+                    { value: 'enabled', label: (0, i18n_1.__)('Enabled', 'checkout-wc') },
+                ] }),
+            react_1.default.createElement(SelectField_1.default, { name: "cart_item_data_display", label: (0, i18n_1.__)('Cart Item Data Display', 'checkout-wc'), description: "", options: [
+                    { value: 'short', label: (0, i18n_1.__)('Short', 'checkout-wc') },
+                    { value: 'woocommerce', label: (0, i18n_1.__)('WooCommerce Default', 'checkout-wc') },
+                ] })),
+        react_1.default.createElement(EditorSection_1.default, { id: SECTION_IDS.badges, title: (0, i18n_1.__)('Badges', 'checkout-wc'), isOpen: openSectionId === SECTION_IDS.badges, onToggle: () => setOpenSectionId((prev) => (prev === SECTION_IDS.badges ? null : SECTION_IDS.badges)) },
+            react_1.default.createElement(LockedFieldWrapper_1.default, { plan: plan, slug: 'trust-badges', locked: plan.plan_level < 1, requiredPlans: plan.labels.required_list[1] },
+                react_1.default.createElement(EditorFieldGroup_1.default, { nestedFields: plan.plan_level >= 1 && values.enable_trust_badges ? (react_1.default.createElement(react_1.default.Fragment, null,
+                        react_1.default.createElement(TextField_1.default, { name: "trust_badges_title", label: (0, i18n_1.__)('Heading', 'checkout-wc'), description: "", nested: false, placeholder: (0, i18n_1.__)('Example: Why choose us?', 'checkout-wc') }),
+                        react_1.default.createElement(RadioGroupField_1.default, { name: "trust_badge_position", label: (0, i18n_1.__)('Location', 'checkout-wc'), description: "", nested: false, options: [
+                                { value: 'below_cart_summary', label: (0, i18n_1.__)('Below the checkout cart summary', 'checkout-wc') },
+                                { value: 'below_checkout_form', label: (0, i18n_1.__)('After the checkout form', 'checkout-wc') },
+                                { value: 'in_footer', label: (0, i18n_1.__)('Top of the footer', 'checkout-wc') },
+                            ] }),
+                        react_1.default.createElement("p", { className: "mt-3 text-gray-500" },
+                            (0, i18n_1.__)('To add trust badges, you can manage them in', 'checkout-wc'),
+                            ' ',
+                            react_1.default.createElement("a", { href: `${cfwAdminPagesData.admin_url}?page=cfw-settings-trust-badges`, className: "text-blue-600 hover:text-blue-800" }, (0, i18n_1.__)('trust badges settings', 'checkout-wc')),
+                            "."))) : undefined },
+                    react_1.default.createElement(EditorCheckboxField_1.default, { name: "enable_trust_badges", label: (0, i18n_1.__)('Trust Badges', 'checkout-wc'), description: "", disabled: plan.plan_level < 1, useEyeToggle: true })),
+                react_1.default.createElement(EditorFieldGroup_1.default, { nestedFields: values.enable_wc_review_badges ? (react_1.default.createElement(react_1.default.Fragment, null,
+                        react_1.default.createElement(SelectField_1.default, { name: "wc_review_source", label: (0, i18n_1.__)('Priority', 'checkout-wc'), description: "", nested: false, options: [
+                                { value: 'cart_only', label: (0, i18n_1.__)('Cart products only', 'checkout-wc') },
+                                { value: 'cart_first', label: (0, i18n_1.__)('Cart products first, then site-wide', 'checkout-wc') },
+                                { value: 'sitewide', label: (0, i18n_1.__)('Any product reviews', 'checkout-wc') },
+                            ] }),
+                        react_1.default.createElement(SelectField_1.default, { name: "wc_review_min_rating", label: (0, i18n_1.__)('Minimum Star Rating', 'checkout-wc'), description: "", nested: false, options: [
+                                { value: '3', label: (0, i18n_1.__)('3+ stars', 'checkout-wc') },
+                                { value: '4', label: (0, i18n_1.__)('4+ stars', 'checkout-wc') },
+                                { value: '5', label: (0, i18n_1.__)('5 stars only', 'checkout-wc') },
+                            ] }),
+                        react_1.default.createElement(NumberField_1.default, { name: "wc_review_limit", label: (0, i18n_1.__)('Maximum Reviews to Show', 'checkout-wc'), description: "", nested: false, min: 1, max: 5 }))) : undefined },
+                    react_1.default.createElement(EditorCheckboxField_1.default, { name: "enable_wc_review_badges", label: (0, i18n_1.__)('Review Badges', 'checkout-wc'), description: "", useEyeToggle: true })))),
+        react_1.default.createElement(EditorSection_1.default, { id: SECTION_IDS.footer, title: (0, i18n_1.__)('Footer', 'checkout-wc'), isOpen: openSectionId === SECTION_IDS.footer, onToggle: () => setOpenSectionId((prev) => (prev === SECTION_IDS.footer ? null : SECTION_IDS.footer)) },
+            react_1.default.createElement(WYSIWYGField_1.default, { name: `footer_text_${templatePath}`, label: (0, i18n_1.__)('Footer Text', 'checkout-wc'), description: "", initialMode: footerTextEditorMode, onModeChange: (mode) => {
                     setFooterTextEditorMode(mode);
                     setFieldValue('footer_text_editor_mode', mode);
-                }, searchTerm: searchTerm })),
-        react_1.default.createElement(EditorSection_1.default, { title: (0, i18n_1.__)('Typography', 'checkout-wc') },
-            react_1.default.createElement(SelectField_1.default, { name: `body_font_${templatePath}`, label: (0, i18n_1.__)('Body Font', 'checkout-wc'), description: (0, i18n_1.__)('Choose the font for the body text.', 'checkout-wc'), options: (0, cfwConvertOptionsObjectToArray_1.default)(fontOptions), searchTerm: searchTerm }),
-            react_1.default.createElement(SelectField_1.default, { name: `heading_font_${templatePath}`, label: (0, i18n_1.__)('Heading Font', 'checkout-wc'), description: (0, i18n_1.__)('Choose the font for the headings.', 'checkout-wc'), options: (0, cfwConvertOptionsObjectToArray_1.default)(fontOptions), searchTerm: searchTerm })),
-        react_1.default.createElement(EditorSection_1.default, { title: (0, i18n_1.__)('Colors', 'checkout-wc') },
-            react_1.default.createElement("div", { className: "flex flex-col space-y-4" }, Object.entries(colorSettings).map(([sectionName, sectionDetails]) => {
-                if (Object.keys(sectionDetails.settings).length > 0) {
-                    return (react_1.default.createElement("div", { key: sectionName },
-                        react_1.default.createElement("h2", { className: "mb-2 text-sm font-semibold text-gray-700" }, sectionDetails.title),
-                        react_1.default.createElement("div", { className: "flex flex-wrap flex-row gap-4" }, Object.entries(sectionDetails.settings).map(([settingName, settingLabel]) => (react_1.default.createElement(ColorPickerField_1.default, { key: settingName, name: `${settingName}_${templatePath}`, label: settingLabel, value: values[settingName], defaultValue: initialValues[settingName], searchTerm: searchTerm }))))));
-                }
-                return null;
-            }))),
-        react_1.default.createElement(EditorSection_1.default, { title: (0, i18n_1.__)('CSS', 'checkout-wc') },
-            react_1.default.createElement(formik_1.Field, { name: `custom_css_${templatePath}`, label: (0, i18n_1.__)('Custom CSS', 'checkout-wc'), language: "css", component: CodeEditorField_1.default, description: (0, i18n_1.__)('Add Custom CSS rules to control the appearance of the checkout template.', 'checkout-wc'), searchTerm: searchTerm }))));
+                } })),
+        react_1.default.createElement(EditorSection_1.default, { id: SECTION_IDS.advanced, title: (0, i18n_1.__)('Advanced', 'checkout-wc'), isOpen: openSectionId === SECTION_IDS.advanced, onToggle: () => setOpenSectionId((prev) => (prev === SECTION_IDS.advanced ? null : SECTION_IDS.advanced)) },
+            react_1.default.createElement("p", { className: "text-gray-500" }, (0, i18n_1.__)('The settings in this editor cover the most commonly used options for most stores. However, many additional settings are available. Once you\'ve saved any changes, head over to the CheckoutWC menu in your WordPress dashboard to explore more options.', 'checkout-wc')))));
 };
-exports["default"] = DesignSettingsPanel;
+exports["default"] = EditorSettingsPanel;
 
 
 /***/ }),
@@ -3011,107 +3414,9 @@ const CheckboxField = (_a) => {
             react_1.default.createElement(formik_1.Field, Object.assign({ type: "checkbox", id: `cfw_checkbox_${name}`, name: name, className: "focus:ring-blue-800 h-4 w-4 text-blue-500 border-gray-300 rounded disabled:bg-gray-100 disabled:border", disabled: disabled }, (0, pickValidCheckboxProps_1.pickValidCheckboxProps)(Object.assign({}, props))))),
         react_1.default.createElement("div", { className: "ms-3 text-sm" },
             react_1.default.createElement("label", { htmlFor: `cfw_checkbox_${name}`, className: "font-medium text-gray-700", style: { verticalAlign: 'unset' } }, label),
-            description && (react_1.default.createElement("p", { className: "text-gray-500", dangerouslySetInnerHTML: { __html: description } })))));
+            description && (react_1.default.createElement("p", { className: "mt-1 text-sm text-gray-500", dangerouslySetInnerHTML: { __html: description } })))));
 };
 exports["default"] = (0, withVisibilityControl_1.default)(CheckboxField);
-
-
-/***/ }),
-
-/***/ "./sources/ts/admin/Components/Fields/CheckboxGroupField.tsx":
-/*!*******************************************************************!*\
-  !*** ./sources/ts/admin/Components/Fields/CheckboxGroupField.tsx ***!
-  \*******************************************************************/
-/***/ (function(__unused_webpack_module, exports, __webpack_require__) {
-
-
-var __rest = (this && this.__rest) || function (s, e) {
-    var t = {};
-    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
-        t[p] = s[p];
-    if (s != null && typeof Object.getOwnPropertySymbols === "function")
-        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
-            if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i]))
-                t[p[i]] = s[p[i]];
-        }
-    return t;
-};
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", ({ value: true }));
-const formik_1 = __webpack_require__(/*! formik */ "./node_modules/.pnpm/formik@2.4.9_@types+react@18.3.27_react@18.3.1/node_modules/formik/dist/formik.esm.js");
-const react_1 = __importDefault(__webpack_require__(/*! react */ "react"));
-const withVisibilityControl_1 = __importDefault(__webpack_require__(/*! ../withVisibilityControl */ "./sources/ts/admin/Components/withVisibilityControl.tsx"));
-const CheckboxGroupField = (_a) => {
-    var { label, name, description, nested = false, notice = null, enabled = true, options } = _a, props = __rest(_a, ["label", "name", "description", "nested", "notice", "enabled", "options"]);
-    const [field] = (0, formik_1.useField)({ name });
-    const handleChange = (value, checked) => {
-        const set = new Set(field.value);
-        if (checked) {
-            set.add(value);
-        }
-        else {
-            set.delete(value);
-        }
-        field.onChange({ target: { name, value: Array.from(set) } });
-    };
-    return (react_1.default.createElement("div", { className: `cfw-admin-field-container ${nested ? 'ms-7 p-4 bg-gray-100' : ''}` },
-        react_1.default.createElement("input", { type: "hidden", name: name }),
-        react_1.default.createElement("div", { dangerouslySetInnerHTML: { __html: notice } }),
-        react_1.default.createElement("legend", { className: "text-base font-medium text-gray-900" }, label),
-        react_1.default.createElement("p", { className: "text-sm leading-5 text-gray-500" }, description),
-        react_1.default.createElement("div", null, options.map(({ value, label }) => (react_1.default.createElement("div", { key: value, className: "flex items-start mt-3" },
-            react_1.default.createElement("div", { className: "h-5 flex items-center" },
-                react_1.default.createElement(formik_1.Field, { type: "checkbox", name: name, value: value, id: `${name}_${value}`, checked: field.value.includes(value), onChange: (e) => handleChange(value, e.target.checked), disabled: !enabled, className: "focus:ring-blue-800 h-4 w-4 text-blue-500 border-gray-300 rounded" })),
-            react_1.default.createElement("div", { className: "ms-3 text-sm" },
-                react_1.default.createElement("label", { htmlFor: `${name}_${value}`, style: { verticalAlign: 'unset' }, className: "font-medium text-gray-700" }, label))))))));
-};
-exports["default"] = (0, withVisibilityControl_1.default)(CheckboxGroupField);
-
-
-/***/ }),
-
-/***/ "./sources/ts/admin/Components/Fields/CodeEditorField.tsx":
-/*!****************************************************************!*\
-  !*** ./sources/ts/admin/Components/Fields/CodeEditorField.tsx ***!
-  \****************************************************************/
-/***/ (function(__unused_webpack_module, exports, __webpack_require__) {
-
-
-var __rest = (this && this.__rest) || function (s, e) {
-    var t = {};
-    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
-        t[p] = s[p];
-    if (s != null && typeof Object.getOwnPropertySymbols === "function")
-        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
-            if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i]))
-                t[p[i]] = s[p[i]];
-        }
-    return t;
-};
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", ({ value: true }));
-const react_1 = __importDefault(__webpack_require__(/*! react */ "react"));
-const react_2 = __importDefault(__webpack_require__(/*! @monaco-editor/react */ "./node_modules/.pnpm/@monaco-editor+react@4.7.0_monaco-editor@0.50.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@monaco-editor/react/dist/index.mjs"));
-const withVisibilityControl_1 = __importDefault(__webpack_require__(/*! ../withVisibilityControl */ "./sources/ts/admin/Components/withVisibilityControl.tsx")); // Adjusted import
-const CodeEditorField = (_a) => {
-    var { field, form, label, description, language } = _a, props = __rest(_a, ["field", "form", "label", "description", "language"]);
-    return (react_1.default.createElement("div", { className: `cfw-admin-field-container ${props.nested ? 'ms-7 p-4 bg-gray-100' : ''}` },
-        react_1.default.createElement("label", { htmlFor: field.name, className: "block text-sm font-medium text-gray-700" }, label),
-        react_1.default.createElement(react_2.default, { height: "400px", width: "100%", language: language, value: field.value, theme: "vs-dark", onChange: (newValue) => {
-                form.setFieldValue(field.name, newValue);
-            }, options: {
-                selectOnLineNumbers: true,
-                scrollbar: {
-                    alwaysConsumeMouseWheel: false,
-                },
-            } }),
-        react_1.default.createElement("p", { className: "mt-2 text-sm text-gray-500", dangerouslySetInnerHTML: { __html: description } })));
-};
-exports["default"] = (0, withVisibilityControl_1.default)(CodeEditorField);
 
 
 /***/ }),
@@ -3123,6 +3428,39 @@ exports["default"] = (0, withVisibilityControl_1.default)(CodeEditorField);
 /***/ (function(__unused_webpack_module, exports, __webpack_require__) {
 
 
+var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    var desc = Object.getOwnPropertyDescriptor(m, k);
+    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+      desc = { enumerable: true, get: function() { return m[k]; } };
+    }
+    Object.defineProperty(o, k2, desc);
+}) : (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    o[k2] = m[k];
+}));
+var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
+    Object.defineProperty(o, "default", { enumerable: true, value: v });
+}) : function(o, v) {
+    o["default"] = v;
+});
+var __importStar = (this && this.__importStar) || (function () {
+    var ownKeys = function(o) {
+        ownKeys = Object.getOwnPropertyNames || function (o) {
+            var ar = [];
+            for (var k in o) if (Object.prototype.hasOwnProperty.call(o, k)) ar[ar.length] = k;
+            return ar;
+        };
+        return ownKeys(o);
+    };
+    return function (mod) {
+        if (mod && mod.__esModule) return mod;
+        var result = {};
+        if (mod != null) for (var k = ownKeys(mod), i = 0; i < k.length; i++) if (k[i] !== "default") __createBinding(result, mod, k[i]);
+        __setModuleDefault(result, mod);
+        return result;
+    };
+})();
 var __rest = (this && this.__rest) || function (s, e) {
     var t = {};
     for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
@@ -3140,25 +3478,81 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 const components_1 = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
 const formik_1 = __webpack_require__(/*! formik */ "./node_modules/.pnpm/formik@2.4.9_@types+react@18.3.27_react@18.3.1/node_modules/formik/dist/formik.esm.js");
-const react_1 = __importDefault(__webpack_require__(/*! react */ "react"));
+const react_1 = __importStar(__webpack_require__(/*! react */ "react"));
 const withVisibilityControl_1 = __importDefault(__webpack_require__(/*! ../withVisibilityControl */ "./sources/ts/admin/Components/withVisibilityControl.tsx"));
 const ColorPickerField = (_a) => {
     var { label, name, nested = false, additionalClasses = [], defaultValue = '#FFFFFF' } = _a, props = __rest(_a, ["label", "name", "nested", "additionalClasses", "defaultValue"]);
     const [field, , helpers] = (0, formik_1.useField)(name);
+    const [isOpen, setIsOpen] = (0, react_1.useState)(false);
+    const buttonRef = (0, react_1.useRef)(null);
+    const markChanged = () => {
+        var _a;
+        // Non-editor admin pages use this event to enable "Save Changes" + show the unsaved notice.
+        (_a = document.body) === null || _a === void 0 ? void 0 : _a.dispatchEvent(new Event('cfw_admin_field_changed'));
+    };
     const handleChangeComplete = (color) => {
         helpers.setValue(color.hex);
+        markChanged();
+    };
+    const normalizedDefaultValue = (0, react_1.useMemo)(() => {
+        if (typeof defaultValue !== 'string') {
+            return '#FFFFFF';
+        }
+        return defaultValue.startsWith('#') ? defaultValue : `#${defaultValue}`;
+    }, [defaultValue]);
+    const normalizedValue = (0, react_1.useMemo)(() => {
+        const v = typeof field.value === 'string' ? field.value : '';
+        if (!v) {
+            return normalizedDefaultValue;
+        }
+        return v.startsWith('#') ? v : `#${v}`;
+    }, [field.value, normalizedDefaultValue]);
+    const isValidHex = (value) => /^#(?:[0-9a-fA-F]{3}|[0-9a-fA-F]{6})$/.test(value);
+    const handleHexInputChange = (value) => {
+        const raw = (value || '').trim();
+        if (raw === '') {
+            return;
+        }
+        const maybe = raw.startsWith('#') ? raw : `#${raw}`;
+        if (isValidHex(maybe)) {
+            helpers.setValue(maybe.toUpperCase());
+            markChanged();
+        }
     };
     const resetColor = () => {
-        helpers.setValue(defaultValue);
+        helpers.setValue(normalizedDefaultValue);
+        markChanged();
         return false;
     };
     return (react_1.default.createElement("div", { className: `cfw-admin-field-container mb-4 w-min ${additionalClasses.join(' ')} ${nested ? 'ms-7 p-4 bg-gray-100' : ''}` },
         react_1.default.createElement("div", { className: "text-sm mb-2" },
             react_1.default.createElement("label", { className: "font-medium text-gray-700 flex justify-between", htmlFor: name }, label)),
-        react_1.default.createElement(components_1.ColorPicker, { color: field.value, onChangeComplete: handleChangeComplete, defaultValue: defaultValue }),
-        react_1.default.createElement("a", { onClick: resetColor, className: 'rounded bg-white w-full block text-center px-2 py-1 text-xs font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 cursor-pointer' }, "Reset to Default")));
+        react_1.default.createElement("div", { className: "flex items-center gap-2" },
+            react_1.default.createElement(components_1.Button, { ref: buttonRef, variant: "secondary", onClick: () => setIsOpen((prev) => !prev), "aria-expanded": isOpen, "aria-label": label, style: {
+                    padding: 0,
+                    width: 32,
+                    minWidth: 32,
+                    height: 32,
+                    borderRadius: 6,
+                } },
+                react_1.default.createElement("span", { "aria-hidden": "true", style: {
+                        display: 'block',
+                        width: '100%',
+                        height: '100%',
+                        borderRadius: 6,
+                        background: normalizedValue,
+                        boxShadow: 'inset 0 0 0 1px rgba(0,0,0,0.2)',
+                    } })),
+            react_1.default.createElement("div", { className: "min-w-[120px]" },
+                react_1.default.createElement(components_1.TextControl, { id: name, value: normalizedValue, onChange: handleHexInputChange, onBlur: (e) => { var _a; return handleHexInputChange((_a = e === null || e === void 0 ? void 0 : e.target) === null || _a === void 0 ? void 0 : _a.value); }, placeholder: normalizedDefaultValue, help: undefined })),
+            react_1.default.createElement("button", { type: "button", onClick: resetColor, className: "rounded bg-white px-2 py-1 text-xs font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50" }, "Reset")),
+        isOpen && (react_1.default.createElement(components_1.Popover, { anchor: buttonRef.current, placement: "bottom-start", onClose: () => setIsOpen(false), focusOnMount: false },
+            react_1.default.createElement("div", { style: { padding: 12 } },
+                react_1.default.createElement(components_1.ColorPicker, { color: normalizedValue, onChangeComplete: handleChangeComplete, defaultValue: normalizedDefaultValue, enableAlpha: false }))))));
 };
-exports["default"] = (0, withVisibilityControl_1.default)(ColorPickerField);
+// Avoid leaking HOC private prop types into generated declarations.
+const WrappedColorPickerField = (0, withVisibilityControl_1.default)(ColorPickerField);
+exports["default"] = WrappedColorPickerField;
 
 
 /***/ }),
@@ -3206,9 +3600,47 @@ const CountriesMultiselectField = (_a) => {
     return (react_1.default.createElement("div", { className: `cfw-admin-field-container cfw-admin-select-field ${nested ? 'ms-7 p-4 bg-gray-100' : ''}` },
         react_1.default.createElement("label", { htmlFor: name, className: "block text-sm font-medium text-gray-700" }, label),
         react_1.default.createElement(formik_1.Field, { name: name, isMulti: true, component: react_select_1.default, "data-placeholder": placeholder, "aria-label": ariaLabel, options: formattedCountries, value: formattedCountries.filter((option) => field.value.includes(option.value)), onChange: handleChange }),
-        react_1.default.createElement("p", { className: "mt-2 text-sm text-gray-500" }, description)));
+        description && (react_1.default.createElement("p", { className: "mt-2 text-sm text-gray-500" }, description))));
 };
 exports["default"] = (0, withVisibilityControl_1.default)(CountriesMultiselectField);
+
+
+/***/ }),
+
+/***/ "./sources/ts/admin/Components/Fields/NumberField.tsx":
+/*!************************************************************!*\
+  !*** ./sources/ts/admin/Components/Fields/NumberField.tsx ***!
+  \************************************************************/
+/***/ (function(__unused_webpack_module, exports, __webpack_require__) {
+
+
+var __rest = (this && this.__rest) || function (s, e) {
+    var t = {};
+    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
+        t[p] = s[p];
+    if (s != null && typeof Object.getOwnPropertySymbols === "function")
+        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
+            if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i]))
+                t[p[i]] = s[p[i]];
+        }
+    return t;
+};
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", ({ value: true }));
+const formik_1 = __webpack_require__(/*! formik */ "./node_modules/.pnpm/formik@2.4.9_@types+react@18.3.27_react@18.3.1/node_modules/formik/dist/formik.esm.js");
+const react_1 = __importDefault(__webpack_require__(/*! react */ "react"));
+const withVisibilityControl_1 = __importDefault(__webpack_require__(/*! ../withVisibilityControl */ "./sources/ts/admin/Components/withVisibilityControl.tsx"));
+const NumberField = (_a) => {
+    var { label, name, description, nested = false } = _a, props = __rest(_a, ["label", "name", "description", "nested"]);
+    return (react_1.default.createElement("div", { className: `cfw-admin-field-container ${nested ? 'ms-7 p-4 bg-gray-100' : ''}` },
+        react_1.default.createElement("label", { htmlFor: name, className: "block text-sm font-medium text-gray-700" }, label),
+        react_1.default.createElement(formik_1.Field, { type: "number", name: name, id: name, className: "w-64 shadow-sm focus:ring-blue-500 focus:border-blue-500 block sm:text-sm border border-gray-300 rounded-md" }),
+        react_1.default.createElement(formik_1.ErrorMessage, { name: name, component: "div", className: "error" }),
+        description && (react_1.default.createElement("p", { className: "mt-2 text-sm text-gray-500" }, description))));
+};
+exports["default"] = (0, withVisibilityControl_1.default)(NumberField);
 
 
 /***/ }),
@@ -3239,10 +3671,10 @@ const formik_1 = __webpack_require__(/*! formik */ "./node_modules/.pnpm/formik@
 const react_1 = __importDefault(__webpack_require__(/*! react */ "react"));
 const withVisibilityControl_1 = __importDefault(__webpack_require__(/*! ../withVisibilityControl */ "./sources/ts/admin/Components/withVisibilityControl.tsx"));
 const RadioGroupField = (_a) => {
-    var { label, name, description, nested = false, options, enabled = true } = _a, props = __rest(_a, ["label", "name", "description", "nested", "options", "enabled"]);
+    var { label, name, description, nested = false, options, enabled = true, hideLabel = false } = _a, props = __rest(_a, ["label", "name", "description", "nested", "options", "enabled", "hideLabel"]);
     return (react_1.default.createElement("div", { className: `cfw-admin-field-container cfw-admin-field-radio-group ${nested ? 'ms-7 p-4 bg-gray-100' : ''}` },
-        react_1.default.createElement("legend", { className: "text-base font-medium text-gray-900" }, label),
-        react_1.default.createElement("p", { className: "text-sm leading-5 text-gray-500" }, description),
+        !hideLabel && react_1.default.createElement("legend", { className: "text-sm font-medium text-gray-700" }, label),
+        description && react_1.default.createElement("p", { className: "mt-1 text-sm text-gray-500" }, description),
         react_1.default.createElement("div", { className: "space-y-5 mt-4" }, options.map(({ value, label: optionLabel, description: optionDescription }) => (react_1.default.createElement("div", { key: value, className: "relative flex items-start" },
             react_1.default.createElement("div", { className: "flex items-center h-5" },
                 react_1.default.createElement(formik_1.Field, { type: "radio", name: name, value: value, id: `${name}_${value}`, className: "focus:ring-blue-800 h-4 w-4 text-blue-500 border-gray-300", disabled: !enabled })),
@@ -3292,7 +3724,7 @@ const SelectField = (_a) => {
     return (react_1.default.createElement("div", { className: `cfw-admin-field-container cfw-admin-select-field ${nested ? 'ms-7 p-4 bg-gray-100' : ''}` },
         react_1.default.createElement("label", { htmlFor: name, className: "block text-sm font-medium text-gray-700" }, label),
         react_1.default.createElement(formik_1.Field, { name: name, isMulti: false, component: react_select_1.default, "data-placeholder": placeholder, "aria-label": ariaLabel, options: options, value: options.find((option) => option.value === field.value), onChange: handleChange }),
-        react_1.default.createElement("p", { className: "mt-2 text-sm text-gray-500" }, description)));
+        description && (react_1.default.createElement("p", { className: "mt-2 text-sm text-gray-500" }, description))));
 };
 exports["default"] = (0, withVisibilityControl_1.default)(SelectField);
 
@@ -3396,17 +3828,57 @@ const react_1 = __importStar(__webpack_require__(/*! react */ "react"));
 const withVisibilityControl_1 = __importDefault(__webpack_require__(/*! ../withVisibilityControl */ "./sources/ts/admin/Components/withVisibilityControl.tsx"));
 const i18n_1 = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
 const WPMediaUploadButton = (_a) => {
-    var { name, label, description, defaultUrl = null, nested = false } = _a, props = __rest(_a, ["name", "label", "description", "defaultUrl", "nested"]);
+    var { name, label, description, defaultUrl = null, nested = false, hideLabel = false } = _a, props = __rest(_a, ["name", "label", "description", "defaultUrl", "nested", "hideLabel"]);
     const [frame, setFrame] = (0, react_1.useState)(null);
     const [currentAttachment, setAttachment] = (0, react_1.useState)(null);
     const [showPreview, setShowPreview] = (0, react_1.useState)(false);
-    const [field, , helpers] = (0, formik_1.useField)(name);
+    const [field, meta, helpers] = (0, formik_1.useField)(name);
     (0, react_1.useEffect)(() => {
-        setAttachment(field.value);
-        if (field.value || defaultUrl) {
-            setShowPreview(true);
+        var _a;
+        // If the value has been cleared, hide the preview.
+        if (!field.value) {
+            setAttachment(null);
+            setShowPreview(false);
+            return;
         }
-    }, []);
+        // If we're still on the initial value and have a default URL, show that.
+        if (defaultUrl && field.value === meta.initialValue) {
+            setAttachment(null);
+            setShowPreview(true);
+            return;
+        }
+        // Otherwise, attempt to hydrate the attachment from the stored ID so the preview
+        // persists when switching sections in the editor.
+        try {
+            const attachment = ((_a = wp === null || wp === void 0 ? void 0 : wp.media) === null || _a === void 0 ? void 0 : _a.attachment) ? wp.media.attachment(field.value) : null;
+            if (!attachment) {
+                setAttachment(null);
+                setShowPreview(false);
+                return;
+            }
+            // attachment.fetch() returns a promise and populates the model.
+            Promise.resolve(attachment.fetch ? attachment.fetch() : attachment)
+                .then(() => {
+                const data = attachment.toJSON ? attachment.toJSON() : attachment;
+                if (data === null || data === void 0 ? void 0 : data.url) {
+                    setAttachment(data);
+                    setShowPreview(true);
+                }
+                else {
+                    setAttachment(null);
+                    setShowPreview(false);
+                }
+            })
+                .catch(() => {
+                setAttachment(null);
+                setShowPreview(false);
+            });
+        }
+        catch (e) {
+            setAttachment(null);
+            setShowPreview(false);
+        }
+    }, [field.value, meta.initialValue, defaultUrl]);
     const clearButtonClicked = () => {
         // eslint-disable-next-line no-param-reassign
         setShowPreview(false);
@@ -3434,13 +3906,13 @@ const WPMediaUploadButton = (_a) => {
         currentFrame.open();
     };
     return (react_1.default.createElement("div", { className: `cfw-admin-field-container cfw-admin-upload-control-parent ${nested ? 'ms-7 p-4 bg-gray-100' : ''}` },
-        react_1.default.createElement("legend", { className: "text-base font-medium text-gray-900" }, label),
-        react_1.default.createElement("p", { className: "text-sm leading-5 text-gray-500", dangerouslySetInnerHTML: { __html: description } }),
-        react_1.default.createElement("div", { className: "cfw-admin-image-preview-wrapper mb-4 mt-4" }, showPreview
-            && (react_1.default.createElement(react_1.default.Fragment, null, ((currentAttachment === null || currentAttachment === void 0 ? void 0 : currentAttachment.url) || defaultUrl) && (react_1.default.createElement("img", { className: "cfw-admin-image-preview max-h-28 w-28", src: (currentAttachment === null || currentAttachment === void 0 ? void 0 : currentAttachment.url) ? currentAttachment.url : defaultUrl, alt: `${label} preview` }))))),
-        react_1.default.createElement("div", { className: "block" },
-            react_1.default.createElement("button", { type: "button", onClick: openMediaLibrary, className: "mt-2 inline-flex items-center px-4 py-2 border border-gray-300 shadow-sm text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500" }, (0, i18n_1.__)('Upload Image', 'checkout-wc')),
-            react_1.default.createElement("button", { type: "button", onClick: clearButtonClicked, className: "mt-2 inline-flex items-center px-4 py-2 border border-gray-300 shadow-sm text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500" }, (0, i18n_1.__)('Clear', 'checkout-wc')))));
+        !hideLabel && (react_1.default.createElement("legend", { className: "text-sm font-medium text-gray-700" }, label)),
+        description && (react_1.default.createElement("p", { className: "mt-1 text-sm text-gray-500", dangerouslySetInnerHTML: { __html: description } })),
+        showPreview && ((currentAttachment === null || currentAttachment === void 0 ? void 0 : currentAttachment.url) || (defaultUrl && field.value === meta.initialValue)) && (react_1.default.createElement("div", { className: "cfw-admin-image-preview-wrapper mb-4 mt-2" },
+            react_1.default.createElement("img", { className: "cfw-admin-image-preview max-h-28 w-28", src: (currentAttachment === null || currentAttachment === void 0 ? void 0 : currentAttachment.url) ? currentAttachment.url : defaultUrl, alt: `${label} preview` }))),
+        react_1.default.createElement("div", { className: "mt-2 flex flex-wrap gap-2" },
+            react_1.default.createElement("button", { type: "button", onClick: openMediaLibrary, className: "inline-flex items-center px-4 py-2 border border-gray-300 shadow-sm text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500" }, (0, i18n_1.__)('Upload Image', 'checkout-wc')),
+            showPreview && ((currentAttachment === null || currentAttachment === void 0 ? void 0 : currentAttachment.url) || defaultUrl) && (react_1.default.createElement("button", { type: "button", onClick: clearButtonClicked, className: "inline-flex items-center px-4 py-2 border border-gray-300 shadow-sm text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500" }, (0, i18n_1.__)('Clear', 'checkout-wc'))))));
 };
 exports["default"] = (0, withVisibilityControl_1.default)(WPMediaUploadButton);
 
@@ -3535,7 +4007,7 @@ const WYSIWYGField = (_a) => {
         react_1.default.createElement("div", { className: "space-y-4 sm:flex sm:items-center sm:space-x-10 sm:space-y-0 mt-2" }, editorModes.map((editorMode) => (react_1.default.createElement("div", { key: editorMode.id, className: "flex items-center" },
             react_1.default.createElement("input", { id: editorMode.id, name: `editor-mode-${name}`, type: "radio", defaultChecked: editorMode.id === mode, className: "h-4 w-4 border-gray-300 text-blue-600 focus:ring-blue-600", onChange: () => handleModeChange(editorMode.id) }),
             react_1.default.createElement("label", { htmlFor: editorMode.id, className: "ms-3 block text-sm font-medium leading-6 text-gray-900" }, editorMode.title))))),
-        react_1.default.createElement("p", { className: "mt-2 text-sm text-gray-500", dangerouslySetInnerHTML: { __html: description } })));
+        description && (react_1.default.createElement("p", { className: "mt-2 text-sm text-gray-500", dangerouslySetInnerHTML: { __html: description } }))));
 };
 exports["default"] = (0, withVisibilityControl_1.default)(WYSIWYGField);
 
@@ -3589,41 +4061,13 @@ exports["default"] = MediumAlert;
 const ExclamationTriangleIcon_1 = __importDefault(__webpack_require__(/*! @heroicons/react/20/solid/ExclamationTriangleIcon */ "./node_modules/.pnpm/@heroicons+react@2.2.0_react@18.3.1/node_modules/@heroicons/react/20/solid/ExclamationTriangleIcon.js"));
 const react_1 = __importDefault(__webpack_require__(/*! react */ "react"));
 const interweave_1 = __webpack_require__(/*! interweave */ "./node_modules/.pnpm/interweave@13.1.1_react@18.3.1/node_modules/interweave/esm/index.js");
-function MediumAlert({ description }) {
-    return (react_1.default.createElement("div", { className: "border-l-4 border-yellow-400 bg-yellow-50 p-4" },
+function MediumAlert({ description, variant = 'default' }) {
+    return (react_1.default.createElement("div", { className: `border-l-4 border-yellow-400 bg-yellow-50 p-4 ${variant === 'setting' ? 'cfw-editor-setting-notice' : ''}` },
         react_1.default.createElement("div", { className: "flex" },
             react_1.default.createElement("div", { className: "flex-shrink-0" },
                 react_1.default.createElement(ExclamationTriangleIcon_1.default, { className: "h-5 w-5 text-yellow-400", "aria-hidden": "true" })),
             react_1.default.createElement("div", { className: "ms-3" },
                 react_1.default.createElement("div", { className: "text-sm text-yellow-700" }, typeof description === 'string' ? react_1.default.createElement(interweave_1.Markup, { content: description }) : description)))));
-}
-
-
-/***/ }),
-
-/***/ "./sources/ts/admin/Components/SevereAlert.tsx":
-/*!*****************************************************!*\
-  !*** ./sources/ts/admin/Components/SevereAlert.tsx ***!
-  \*****************************************************/
-/***/ (function(__unused_webpack_module, exports, __webpack_require__) {
-
-
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", ({ value: true }));
-exports["default"] = SevereAlert;
-const XCircleIcon_1 = __importDefault(__webpack_require__(/*! @heroicons/react/20/solid/XCircleIcon */ "./node_modules/.pnpm/@heroicons+react@2.2.0_react@18.3.1/node_modules/@heroicons/react/20/solid/XCircleIcon.js"));
-const react_1 = __importDefault(__webpack_require__(/*! react */ "react"));
-const interweave_1 = __webpack_require__(/*! interweave */ "./node_modules/.pnpm/interweave@13.1.1_react@18.3.1/node_modules/interweave/esm/index.js");
-function SevereAlert({ description }) {
-    return (react_1.default.createElement("div", { className: "border-l-4 border-red-600 bg-red-50 p-4" },
-        react_1.default.createElement("div", { className: "flex" },
-            react_1.default.createElement("div", { className: "flex-shrink-0" },
-                react_1.default.createElement(XCircleIcon_1.default, { className: "h-5 w-5 text-red-400", "aria-hidden": "true" })),
-            react_1.default.createElement("div", { className: "ms-3" },
-                react_1.default.createElement("p", { className: "text-sm text-red-800" },
-                    react_1.default.createElement(interweave_1.Markup, { content: description, noWrap: true }))))));
 }
 
 
@@ -4190,8 +4634,8 @@ module.exports = window["ReactDOM"];
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
-/******/ 	__webpack_require__.O(undefined, ["vendors-admin-settings-admin-order-bumps-editor-admin-checkout-editor-node_modules_pnpm_b","vendors-admin-settings-admin-order-bumps-editor-admin-checkout-editor-node_modules_pnpm_react-select-f14d8ac4","vendors-admin-settings-admin-order-bumps-editor-admin-checkout-editor-node_modules_pnpm_s","vendors-admin-settings-admin-checkout-editor-node_modules_pnpm_d","vendors-admin-settings-admin-checkout-editor-node_modules_pnpm_quill_1_3_7_node_modules_quill_dist_q-ca3e6a97","admin-checkout-editor-styles"], () => (__webpack_require__("./sources/ts/admin/checkout-editor.tsx")))
-/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["vendors-admin-settings-admin-order-bumps-editor-admin-checkout-editor-node_modules_pnpm_b","vendors-admin-settings-admin-order-bumps-editor-admin-checkout-editor-node_modules_pnpm_react-select-f14d8ac4","vendors-admin-settings-admin-order-bumps-editor-admin-checkout-editor-node_modules_pnpm_s","vendors-admin-settings-admin-checkout-editor-node_modules_pnpm_d","vendors-admin-settings-admin-checkout-editor-node_modules_pnpm_quill_1_3_7_node_modules_quill_dist_q-ca3e6a97","admin-checkout-editor-styles"], () => (__webpack_require__("./sources/scss/admin/checkout-editor.scss")))
+/******/ 	__webpack_require__.O(undefined, ["vendors-admin-settings-admin-order-bumps-editor-admin-checkout-editor-node_modules_pnpm_b","vendors-admin-settings-admin-order-bumps-editor-admin-checkout-editor-node_modules_pnpm_react-select-f14d8ac4","vendors-admin-settings-admin-order-bumps-editor-admin-checkout-editor-node_modules_pnpm_s","vendors-admin-settings-admin-checkout-editor-node_modules_pnpm_d","vendors-admin-settings-admin-checkout-editor-node_modules_pnpm_quill_1_3_7_node_modules_quill_dist_q-ca3e6a97","vendors-admin-checkout-editor","admin-checkout-editor-styles"], () => (__webpack_require__("./sources/ts/admin/checkout-editor.tsx")))
+/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["vendors-admin-settings-admin-order-bumps-editor-admin-checkout-editor-node_modules_pnpm_b","vendors-admin-settings-admin-order-bumps-editor-admin-checkout-editor-node_modules_pnpm_react-select-f14d8ac4","vendors-admin-settings-admin-order-bumps-editor-admin-checkout-editor-node_modules_pnpm_s","vendors-admin-settings-admin-checkout-editor-node_modules_pnpm_d","vendors-admin-settings-admin-checkout-editor-node_modules_pnpm_quill_1_3_7_node_modules_quill_dist_q-ca3e6a97","vendors-admin-checkout-editor","admin-checkout-editor-styles"], () => (__webpack_require__("./sources/scss/admin/checkout-editor.scss")))
 /******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 /******/ 	
 /******/ })()

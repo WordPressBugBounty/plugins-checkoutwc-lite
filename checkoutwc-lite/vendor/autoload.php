@@ -21,4 +21,4 @@ if (file_exists(__DIR__ . '/../vendor-prefixed/autoload.php')) {
 }
 
 require_once __DIR__ . '/composer/autoload_real.php';
-return ComposerAutoloaderInitc56ceb931c89a18596cffbfbdd2f9685::getLoader();
+return ComposerAutoloaderInit581245619d3d9aad712de22cacc05741::getLoader();

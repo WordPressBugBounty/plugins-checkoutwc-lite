@@ -1,3 +1,8 @@
+2026-03-27 - version 11.0.7
+- Add - Add cfw_enable_accessibility_improvements filter hook: In an upcoming release, we are updating the HTML output of CheckoutWC to improve screen reader support, keyboard navigation, and semantic correctness. You can opt in early by enabling the new filter. We recommend testing with your current theme or customizations so the transition is seamless.
+- Improved - Add href and aria-label fallbacks to order review change links to improve accessibility
+- Fix - Prevent email addresses from being entered in first name, last name, and full name fields to ensure payment gateway compatibility
+
 2026-03-11 - version 11.0.6
 - Improved - Accessibility: Screen reader support with semantic headings and step announcements when navigating checkout tabs
 - Improved - Accessibility: "Change" links in order review pane now have descriptive aria-labels (e.g., "Change shipping method")
