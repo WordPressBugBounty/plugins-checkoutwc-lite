@@ -1103,6 +1103,19 @@ add_action(
 		( new ClientSideLogger() )->load();
 		( new ValidateEmailDomainAction() )->load();
 
+		/**
+		 * Override the hide shipping costs until an address is entered to no
+		 * It doesn't just hide shipping costs, it fundamentally changes the underlying packages in the WC session
+		 * The setting shows a notice that it will be overridden by CheckoutWC.
+		 */
+		add_filter(
+			'pre_option_woocommerce_shipping_cost_requires_address',
+			function () {
+				return 'no';
+			},
+			0
+		);
+
 		if ( SettingsManager::instance()->get_setting( 'registration_style' ) !== 'woocommerce' ) {
 			// Override some WooCommerce Options
 			add_filter(

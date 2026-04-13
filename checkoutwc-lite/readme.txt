@@ -4,7 +4,7 @@ Donate link: https://www.checkoutwc.com
 Tags: woocommerce-checkout, checkout-optimization, cart-abandonment, one-page-checkout, express-checkout
 Requires at least: 5.2
 Tested up to: 6.9
-Stable tag: 11.0.7
+Stable tag: 11.0.8
 Requires PHP: 7.4
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
@@ -250,6 +250,16 @@ Enable WordPress debugging (add define('WP_DEBUG', true); to wp-config.php) and 
 == Changelog ==
 
 Free version updates are non-sequential due to the unified development branch we use with the premium versions.
+
+= Version 11.0.8 =
+
+- New - Added ca (Catalan) translations
+- Add - Add cfw_update_billing_email_field filter to allow customization of the modified billing email field config
+- Improved - Improve checkout accessibility by adding visible focus-visible rings to buttons, checkboxes, and radios, and prevent the Complete - Order button focus ring from being clippe
+- Improved - Limit "Hide shipping costs until an address is entered" to recommended configuration, as it alters session packages which can impact checkout stability
+- Improved - Updated wc_get_orders calls to prevent deprecation warnings in WooCommerce 9.2.0+ on non-HPOS (CPT) stores by conditionally adjusting query arguments based on HPOS availability
+- Fix - Fix email and password labels on the order payment form to ensure they are translatable
+- Fix - Fix Klaviyo for WooCommerce may display duplicate newsletter and SMS consent checkboxes during checkout
 
 = Version 11.0.7 =
 - Add - Add cfw_enable_accessibility_improvements filter hook: In an upcoming release, we are updating the HTML output of CheckoutWC to improve screen reader support, keyboard navigation, and semantic correctness. You can opt in early by enabling the new filter. We recommend testing with your current theme or customizations so the transition is seamless.

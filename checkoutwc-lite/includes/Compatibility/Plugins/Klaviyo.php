@@ -16,6 +16,18 @@ class Klaviyo extends CompatibilityAbstract {
 		remove_filter( 'woocommerce_checkout_fields', 'kl_checkbox_custom_checkout_field', 10 );
 		remove_filter( 'woocommerce_after_checkout_billing_form', 'kl_sms_compliance_text' );
 
+		add_filter(
+			'cfw_unique_billing_fields',
+			function ( array $fields ): array {
+				// Klaviyo may have already injected these into checkout fields before our remove_filter() runs,
+				// so they can remain in WooCommerce's fieldset cache and render a duplicate copy.
+				unset( $fields['kl_newsletter_checkbox'] );
+				unset( $fields['kl_sms_consent_checkbox'] );
+
+				return $fields;
+			}
+		);
+
 		/**
 		 * Where to output Klaviyo checkboxes
 		 *

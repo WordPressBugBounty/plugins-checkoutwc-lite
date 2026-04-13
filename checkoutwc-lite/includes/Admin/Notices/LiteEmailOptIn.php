@@ -197,17 +197,25 @@ class LiteEmailOptIn extends NoticeAbstract {
 		}
 
 		// Get orders up to the threshold + 1 (to check if we have at least threshold)
-		$orders = wc_get_orders( array(
+		$order_query_args = array(
 			'limit'        => $threshold + 1,
 			'return'       => 'ids',
 			'date_created' => '>' . $install_timestamp,
-			'meta_query'   => array(
+		);
+
+		if ( cfw_is_hpos_enabled() ) {
+			$order_query_args['meta_query'] = array(
 				array(
 					'key'   => '_cfw',
 					'value' => 'true',
 				),
-			),
-		) );
+			);
+		} else {
+			$order_query_args['meta_key']   = '_cfw';
+			$order_query_args['meta_value'] = 'true';
+		}
+
+		$orders = wc_get_orders( $order_query_args );
 
 		$result = count( $orders ) >= $threshold;
 

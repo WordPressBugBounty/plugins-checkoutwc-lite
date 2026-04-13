@@ -58,6 +58,21 @@ function cfw_output_fieldset( array $fieldset ) {
 }
 
 /**
+ * Check whether WooCommerce HPOS is enabled.
+ *
+ * @return bool
+ */
+function cfw_is_hpos_enabled(): bool {
+	$order_util_class = 'Automattic\\WooCommerce\\Utilities\\OrderUtil';
+
+	if ( ! is_callable( array( $order_util_class, 'custom_orders_table_usage_is_enabled' ) ) ) {
+		return false;
+	}
+
+	return (bool) call_user_func( array( $order_util_class, 'custom_orders_table_usage_is_enabled' ) );
+}
+
+/**
  * @param WC_Checkout $checkout The checkout object.
  */
 function cfw_output_account_checkout_fields( WC_Checkout $checkout ) {

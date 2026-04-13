@@ -331,10 +331,12 @@ class AddressFieldsAugmenter extends SingletonAbstract {
 			$billing_fields['billing_email']['custom_attributes']['data-parsley-trigger']      = 'change focusout';
 			$billing_fields['billing_email']['custom_attributes']['data-parsley-debounce']     = '200';
 			$billing_fields['billing_email']['autocomplete']                                   = 'email';
+			// Changing type from email to text ensures EmailAutocompleteInput works, but it can cause the email to need 2 taps for autofill to work on some browsers (Chrome Android observed)
 			$billing_fields['billing_email']['type'] = 'text';
 		}
 
-		return $billing_fields;
+		// If changing $billing_fields['billing_email']['type'] to email (e.g., to stop double tap issue, see above) it is strongly recommended to disable email domain autocomplete
+		return apply_filters( 'cfw_update_billing_email_field', $billing_fields );
 	}
 
 	/**

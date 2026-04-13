@@ -1901,7 +1901,7 @@ function cfw_order_pay_login_form( WC_Order $order ) {
 		woocommerce_form_field(
 			'username',
 			array(
-				'label'        => 'Email',
+				'label'        => esc_html__( 'Email', 'woocommerce' ),
 				'type'         => 'text',
 				'required'     => true,
 				'autocomplete' => 'username',
@@ -1911,7 +1911,7 @@ function cfw_order_pay_login_form( WC_Order $order ) {
 		woocommerce_form_field(
 			'password',
 			array(
-				'label'        => 'Password',
+				'label'        => esc_html__( 'Password', 'woocommerce' ),
 				'type'         => 'password',
 				'required'     => true,
 				'autocomplete' => 'current-password',
