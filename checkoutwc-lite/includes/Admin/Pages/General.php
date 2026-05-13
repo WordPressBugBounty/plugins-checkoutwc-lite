@@ -34,6 +34,15 @@ class General extends PageAbstract {
 
 	public function setup_menu() {
 		add_submenu_page( self::$parent_slug, $this->title, $this->title, $this->capability, $this->slug, null, $this->priority );
+
+		add_submenu_page(
+			self::$parent_slug,
+			__( 'Checkout Editor', 'checkout-wc' ),
+			__( 'Checkout Editor', 'checkout-wc' ),
+			'cfw_manage_pages',
+			'admin.php?page=cfw-settings-checkout-editor',
+			null
+		);
 	}
 
 	public function setup_main_menu_page() {
@@ -143,25 +152,13 @@ class General extends PageAbstract {
 			);
 
 			cfw_admin_page_section(
-				__( 'Step 2: Pick a Template', 'checkout-wc' ),
-				__( 'Choose which design to use for your checkout and thank you page.', 'checkout-wc' ),
-				$this->get_pick_template_content()
+				__( 'Step 2: Customize Checkout', 'checkout-wc' ),
+				__( 'Use the Checkout Editor to customize your checkout layout, fields, and content.', 'checkout-wc' ),
+				$this->get_checkout_editor_content()
 			);
 
 			cfw_admin_page_section(
-				__( 'Step 3: Customize Logo and Colors', 'checkout-wc' ),
-				__( 'Review your logo and set your brand colors.', 'checkout-wc' ),
-				$this->get_design_content()
-			);
-
-			cfw_admin_page_section(
-				__( 'Step 4: Review Your Checkout Page', 'checkout-wc' ),
-				__( 'Test your checkout page and make sure everything is working correctly.', 'checkout-wc' ),
-				$this->get_preview_content()
-			);
-
-			cfw_admin_page_section(
-				__( 'Step 5: Go Live', 'checkout-wc' ),
+				__( 'Step 3: Go Live', 'checkout-wc' ),
 				__( 'Enable templates for all visitors.', 'checkout-wc' ),
 				$this->get_activation_settings()
 			);
@@ -190,7 +187,7 @@ class General extends PageAbstract {
 		$prefix = '';
 
 		if ( ! $free_plan ) {
-			$prefix = __( 'Requires a valid and active license key.' );
+			$prefix = __( 'Requires a valid and active license key.', 'checkout-wc' ) . ' ';
 		}
 
 		$this->output_toggle_checkbox(
@@ -198,6 +195,12 @@ class General extends PageAbstract {
 			__( 'Activate CheckoutWC Templates', 'checkout-wc' ),
 			$prefix . __( 'CheckoutWC Templates are always activated for admin users.', 'checkout-wc' )
 		);
+
+		?>
+		<p class="mt-1 text-sm text-gray-500 font-bold">
+			<?php echo esc_html__( 'This step can also be completed directly from the Checkout Editor!', 'checkout-wc' ); ?>
+		</p>
+		<?php
 
 		return ob_get_clean();
 	}
@@ -220,6 +223,18 @@ class General extends PageAbstract {
 			<svg xmlns="http://www.w3.org/2000/svg" class="ml-2 h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-label="<?php _e( 'Opens in new tab' ); ?>">
 				<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
 			</svg>
+		</div>
+		<?php
+		return ob_get_clean();
+	}
+
+	public function get_checkout_editor_content() {
+		ob_start();
+		?>
+		<div class="flex flex-row items-center">
+			<a href="<?php echo esc_attr( admin_url( 'admin.php?page=cfw-settings-checkout-editor' ) ); ?>" class="inline-flex items-center px-4 py-2 border border-gray-300 shadow-sm text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+				<?php _e( 'Customize Your Checkout', 'checkout-wc' ); ?>
+			</a>
 		</div>
 		<?php
 		return ob_get_clean();

@@ -1757,6 +1757,26 @@ function cfw_is_order_received_page(): bool {
 }
 
 /**
+ * Whether the current request is the checkout page loaded in the Checkout Editor preview iframe.
+ *
+ * @return bool
+ */
+function cfw_is_editor_preview(): bool {
+	if ( is_admin() ) {
+		return false;
+	}
+	// phpcs:ignore WordPress.Security.NonceVerification.Recommended
+	if ( ! isset( $_GET['cfw-editor-preview'] ) || $_GET['cfw-editor-preview'] !== '1' ) {
+		return false;
+	}
+	// phpcs:ignore WordPress.Security.NonceVerification.Recommended
+	if ( ! isset( $_GET['_cfw_preview_nonce'] ) || ! wp_verify_nonce( sanitize_text_field( wp_unslash( $_GET['_cfw_preview_nonce'] ) ), 'cfw-editor-preview' ) ) {
+		return false;
+	}
+	return current_user_can( 'cfw_manage_pages' );
+}
+
+/**
  * @return bool
  */
 function is_cfw_page(): bool {

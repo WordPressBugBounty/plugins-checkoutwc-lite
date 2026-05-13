@@ -4,7 +4,7 @@ Donate link: https://www.checkoutwc.com
 Tags: woocommerce-checkout, checkout-optimization, cart-abandonment, one-page-checkout, express-checkout
 Requires at least: 5.2
 Tested up to: 6.9
-Stable tag: 11.0.8
+Stable tag: 11.1.0
 Requires PHP: 7.4
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
@@ -250,6 +250,13 @@ Enable WordPress debugging (add define('WP_DEBUG', true); to wp-config.php) and 
 == Changelog ==
 
 Free version updates are non-sequential due to the unified development branch we use with the premium versions.
+
+= Version 11.1.0 =
+
+- New - Checkout Editor — New full-screen visual editor accessible from the WordPress admin menu, with a live preview, sidebar settings panels, save/publish indicator, template switching, and discard changes support
+- Improved - Color pickers — Replaced the always-expanded color picker throughout CheckoutWC admin with a compact swatch button that opens a popover with the full picker + a hex input field
+- Improved - Start Here page — Streamlined setup wizard: collapsed the 5-step flow into 3 steps by replacing "Pick a Template" + "Customize Logo and Colors" + "Review Checkout" with a single "Customize Checkout" step that links to the Checkout Editor
+- Fix - Admin Media Upload Button — Fixed image preview not persisting when switching sections inside the editor, added hideLabel prop, improved handling of cleared values and default URLs
 
 = Version 11.0.8 =
 

@@ -189,10 +189,11 @@ class Appearance extends PageAbstract {
 	}
 
 	/**
+	 * @param string|null $template_slug Optional template slug; when provided, use this template for supports/defaults instead of the active one.
 	 * @return array
 	 */
-	public static function get_theme_color_settings(): array {
-		$active_template = cfw_get_active_template();
+	public static function get_theme_color_settings( $template_slug = null ): array {
+		$active_template = null !== $template_slug ? new Template( $template_slug ) : cfw_get_active_template();
 		$color_settings  = array();
 
 		// Body
@@ -298,13 +299,18 @@ class Appearance extends PageAbstract {
 		return apply_filters( 'cfw_theme_color_settings', $color_settings );
 	}
 
-	public static function get_theme_color_settings_defaults(): array {
-		$color_settings = self::get_theme_color_settings();
-		$defaults       = array();
+	/**
+	 * @param string|null $template_slug Optional template slug; when provided, use this template for defaults instead of the active one.
+	 * @return array
+	 */
+	public static function get_theme_color_settings_defaults( $template_slug = null ): array {
+		$template        = null !== $template_slug ? new Template( $template_slug ) : cfw_get_active_template();
+		$color_settings  = self::get_theme_color_settings( $template_slug );
+		$defaults        = array();
 
 		foreach ( $color_settings as $color_setting_section ) {
 			foreach ( $color_setting_section['settings'] as $key => $label ) {
-				$defaults[ $key ] = cfw_get_active_template()->get_default_setting( $key );
+				$defaults[ $key ] = $template->get_default_setting( $key );
 			}
 		}
 

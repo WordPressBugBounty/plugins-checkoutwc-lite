@@ -67,7 +67,7 @@ abstract class LoaderAbstract {
 
 		// When on the checkout with an empty cart, redirect to cart page
 		// Check cart has contents.
-		if ( WC()->cart->is_empty() && ! is_customize_preview() && cfw_apply_filters( 'woocommerce_checkout_redirect_empty_cart', true ) ) {
+		if ( WC()->cart->is_empty() && ! is_customize_preview() && ! isset( $_GET['cfw-editor-preview'] ) && cfw_apply_filters( 'woocommerce_checkout_redirect_empty_cart', true ) ) { // phpcs:ignore WordPress.Security.NonceVerification.Recommended
 			wp_safe_redirect( wc_get_cart_url() );
 			exit;
 		}

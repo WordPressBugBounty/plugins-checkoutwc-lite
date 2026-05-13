@@ -106,7 +106,16 @@ class Template {
 	 * @since 2.0.0
 	 */
 	public function init() {
-		$init_path = trailingslashit( $this->get_basepath() ) . 'init.php';
+		$init_path    = trailingslashit( $this->get_basepath() ) . 'init.php';
+		$default_path = trailingslashit( $this->get_basepath() ) . 'defaults.php';
+
+		// Skip writing settings for templates that don't have their own defaults.php.
+		// This prevents a partial plugin install (e.g. Lite) from writing standard fallback
+		// defaults for Pro templates whose defaults.php doesn't exist yet, which would block
+		// the correct values from being written later by add_option().
+		if ( ! file_exists( $default_path ) ) {
+			return;
+		}
 
 		$defaults = $this->get_default_settings();
 

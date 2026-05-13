@@ -32,6 +32,7 @@ use Objectiv\Plugins\Checkout\Admin\Pages\OrderBumpsAdminFree;
 use Objectiv\Plugins\Checkout\Admin\Pages\SideCartAdminFree;
 use Objectiv\Plugins\Checkout\Admin\Pages\TrustBadgesAdminFree;
 use Objectiv\Plugins\Checkout\Admin\WelcomeScreenActivationRedirector;
+use Objectiv\Plugins\Checkout\API\PreviewSettingsAPI;
 use Objectiv\Plugins\Checkout\API\SettingsAPI;
 use Objectiv\Plugins\Checkout\API\UserRolesAPI;
 use Objectiv\Plugins\Checkout\CartImageSizeAdder;
@@ -233,8 +234,10 @@ use Objectiv\Plugins\Checkout\Compatibility\Plugins\EUVATAssistant;
 use Objectiv\Plugins\Checkout\Compatibility\Plugins\WooCommerceMemberships;
 use Objectiv\Plugins\Checkout\Compatibility\Plugins\BigBlue;
 use Objectiv\Plugins\Checkout\DatabaseUpdatesManager;
+use Objectiv\Plugins\Checkout\EditorPreviewSettingsOverride;
 use Objectiv\Plugins\Checkout\Admin\Pages\Advanced;
 use Objectiv\Plugins\Checkout\Admin\Pages\Appearance;
+use Objectiv\Plugins\Checkout\Admin\Pages\CheckoutEditor;
 use Objectiv\Plugins\Checkout\Admin\Pages\WooCommercePages;
 use Objectiv\Plugins\Checkout\Admin\Pages\General;
 use Objectiv\Plugins\Checkout\FormFieldAugmenter;
@@ -286,6 +289,7 @@ add_filter(
 // Rest APIs
 ( new SettingsAPI() );
 ( new UserRolesAPI() );
+( new PreviewSettingsAPI() );
 
 /**
  * Admin Settings Pages
@@ -303,6 +307,7 @@ add_action(
 			'general'                 => $general_admin_page->set_priority( 70 ),
 			'appearance'              => $appearance_admin_page->set_priority( 72 ),
 			'woocommerce_pages'       => ( new WooCommercePages() )->set_priority( 75 ),
+			'checkout_editor'         => ( new CheckoutEditor() )->set_priority( 76 ),
 			'express_checkout'        => ( new ExpressCheckout() )->set_priority( 77 ),
 			'side_cart'               => ( new SideCartAdminFree() )->set_priority( 80 ),
 			'trust_badges'            => ( new TrustBadgesAdminFree() )->set_priority( 90 ),
@@ -344,6 +349,70 @@ if ( ! PlanManager::has_premium_plan_or_higher() ) {
 		125
 	);
 }
+
+// Editor preview settings override — must run on init so filters are in place before wc-ajax (template_redirect priority 0) runs and exits.
+add_action(
+	'init',
+	function () {
+		( new EditorPreviewSettingsOverride() )->init();
+	},
+	999
+);
+
+/**
+ * Prevent duplicate add-to-cart actions in the Checkout Editor preview.
+ *
+ * This lives in global bootstrap (`init.php`) because it must run on frontend preview/`wc-ajax` requests, not only admin page hooks.
+ * When the editor preview URL includes an add-to-cart parameter, refreshing the page
+ * would normally keep re-adding the same product to the cart on every load.
+ * In the special context of the editor preview iframe we instead detect if the
+ * product is already present in the cart and, if so, skip the add-to-cart.
+ */
+add_action(
+	'init',
+	function () {
+		if ( ! function_exists( 'cfw_is_editor_preview' ) || ! cfw_is_editor_preview() ) {
+			return;
+		}
+
+		add_filter(
+			'woocommerce_add_to_cart_validation',
+			function ( $passed, $product_id, $quantity ) { // phpcs:ignore VariableAnalysis.CodeAnalysis.VariableAnalysis.UnusedVariable
+				if ( null === WC()->cart ) {
+					return $passed;
+				}
+
+				foreach ( WC()->cart->get_cart() as $cart_item ) {
+					$cart_product_id   = isset( $cart_item['product_id'] ) ? (int) $cart_item['product_id'] : 0;
+					$cart_variation_id = isset( $cart_item['variation_id'] ) ? (int) $cart_item['variation_id'] : 0;
+
+					if ( $cart_product_id === (int) $product_id || $cart_variation_id === (int) $product_id ) {
+						return false;
+					}
+				}
+
+				return $passed;
+			},
+			10,
+			3
+		);
+	},
+	1
+);
+
+/**
+ * Add body class in Checkout Editor preview iframe so notices can be hidden with CSS.
+ * Kept in global bootstrap so it applies to frontend preview rendering, not just admin page hooks.
+ */
+add_filter(
+	'cfw_body_classes',
+	function ( $classes ) {
+		if ( cfw_is_editor_preview() ) {
+			$classes[] = 'cfw-editor-preview';
+		}
+		return $classes;
+	}
+);
 
 // Note: The active template has to be setup early because admin pages use it to store active theme specific settings
 // The fact that a "get" function is causing outside changes in the ether is an indication this should be refactored.
@@ -655,13 +724,25 @@ add_action(
 add_action( 'cfw_do_plugin_activation', array( new Install(), 'init' ) );
 add_action( 'init', array( DatabaseUpdatesManager::instance(), 'init' ) );
 add_action( 'init', array( new CartImageSizeAdder(), 'add_cart_image_size' ) );
+add_action(
+	'init',
+	function () {
+		load_plugin_textdomain(
+			'checkout-wc',
+			false,
+			dirname( plugin_basename( CFW_MAIN_FILE ) ) . '/i18n/languages'
+		);
+	},
+	0
+);
 
 add_action(
-	'after_setup_theme',
+	'init',
 	function () {
 		// Menu location for template footer
 		register_nav_menu( 'cfw-footer-menu', __( 'CheckoutWC: Footer', 'checkout-wc' ) );
-	}
+	},
+	1
 );
 
 add_action(
@@ -674,16 +755,17 @@ add_action(
 		/**
 		 * Compatibility Pre-init
 		 *
-		 * Turns out running this on init causes problems, and plugins_loaded is also too late
-		 * Obviously this is something we need to cleanup in the future, but doing this
-		 * here eliminates some edge case bugs.
+		 * Priority 1 (rather than -1000) because init.php is now loaded inside a plugins_loaded@0
+		 * callback. WordPress does not re-run past priorities, so -1000 would never fire.
+		 * Priority 1 is still within plugins_loaded (all plugin constants are available) and
+		 * is early enough for everything pre_init() needs to register.
 		 */
 		/** @var CompatibilityAbstract $module */
 		foreach ( $compatibility_modules as $module ) {
 			$module->pre_init();
 		}
 	},
-	- 1000
+	1
 );
 
 /**
@@ -813,21 +895,6 @@ add_action(
 		( new LiteEmailOptIn() )->add();
 	},
 	10
-);
-
-register_activation_hook(
-	CFW_MAIN_FILE,
-	function () {
-		// Welcome screen transient
-		set_transient( '_cfw_welcome_screen_activation_redirect', true, 30 );
-
-		/**
-		 * Fires after plugin activation.
-		 *
-		 * @since 1.0.0
-		 */
-		do_action( 'cfw_do_plugin_activation' );
-	}
 );
 
 register_deactivation_hook(
@@ -1017,13 +1084,6 @@ add_action(
 		if ( ! cfw_is_enabled() ) {
 			return;
 		}
-
-		// Load Translations
-		load_plugin_textdomain(
-			'checkout-wc',
-			false,
-			dirname( plugin_basename( CFW_MAIN_FILE ) ) . '/i18n/languages'
-		);
 
 		// Some gateways detect whether the checkout page is using the block
 		// This code makes sure they will always think it's the shortcode when our templates are active

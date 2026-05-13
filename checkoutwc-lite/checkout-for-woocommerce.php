@@ -10,7 +10,7 @@
  * Plugin Name:       CheckoutWC Lite
  * Plugin URI:        https://www.checkoutwc.com
  * Description:       Beautiful conversion optimized checkout templates for WooCommerce.
- * Version:           11.0.8
+ * Version:           11.1.0
  * Author:            Kestrel
  * Author URI:        https://kestrelwp.com/
  * License:           GPLv3 or later
@@ -19,8 +19,8 @@
  * Domain Path:       /i18n/languages
  * Requires Plugins: woocommerce
  * Requires at least: 5.2
- * Tested up to: 6.9.3
- * WC tested up to: 10.6.0
+ * Tested up to: 6.9.4
+ * WC tested up to: 10.7.0
  * Requires PHP: 7.4
  * Build: <build_hash>
  */
@@ -50,7 +50,7 @@ if ( defined( 'CFW_VERSION' ) ) {
 
 define( 'CFW_NAME', 'Checkout for WooCommerce' );
 define( 'CFW_UPDATE_URL', 'https://www.checkoutwc.com' );
-define( 'CFW_VERSION', '11.0.8' );
+define( 'CFW_VERSION', '11.1.0' );
 define( 'CFW_PATH', __DIR__ );
 define( 'CFW_URL', plugins_url( '/', __FILE__ ) );
 define( 'CFW_MAIN_FILE', __FILE__ );
@@ -274,8 +274,50 @@ add_action(
 	}
 );
 
-if ( file_exists( CFW_PATH . '/sources/php/premium-init.php' ) && ! defined( 'CFW_FORCE_FREE_VERSION' ) ) {
-	require CFW_PATH . '/sources/php/premium-init.php';
-}
+/**
+ * Activation hook must run from the main plugin file so it fires on first install
+ * (init.php is only loaded on plugins_loaded, which does not run during activation).
+ * Load init (and premium-init) here so cfw_do_plugin_activation listeners are registered.
+ */
+register_activation_hook(
+	CFW_MAIN_FILE,
+	function () {
+		set_transient( '_cfw_welcome_screen_activation_redirect', true, 30 );
 
-require CFW_PATH . '/sources/php/init.php';
+		if ( file_exists( CFW_PATH . '/sources/php/premium-init.php' ) && ! defined( 'CFW_FORCE_FREE_VERSION' ) ) {
+			require CFW_PATH . '/sources/php/premium-init.php';
+		}
+		require CFW_PATH . '/sources/php/init.php';
+
+		/**
+		 * Fires after plugin activation.
+		 *
+		 * @since 1.0.0
+		 */
+		do_action( 'cfw_do_plugin_activation' );
+	}
+);
+
+// Load premium-init and init on plugins_loaded so we can apply editor preview overrides first (pluggable.php is loaded after plugins, so we need this hook).
+add_action(
+	'plugins_loaded',
+	function () {
+		// Apply editor preview setting overrides before premium-init so features that read settings at construction get preview values.
+		if ( ! is_admin() && isset( $_GET['cfw-editor-preview'] ) && $_GET['cfw-editor-preview'] === '1' ) { // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+			if ( isset( $_GET['_cfw_preview_nonce'] ) && wp_verify_nonce( sanitize_text_field( wp_unslash( $_GET['_cfw_preview_nonce'] ) ), 'cfw-editor-preview' ) && current_user_can( 'cfw_manage_pages' ) ) { // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+				$user_id  = get_current_user_id();
+				$settings = get_transient( '_cfw_editor_preview_' . $user_id );
+				if ( is_array( $settings ) && ! empty( $settings ) ) {
+					( new \Objectiv\Plugins\Checkout\EditorPreviewSettingsOverride() )->apply_preview_overrides_early( $settings );
+				}
+			}
+		}
+
+		if ( file_exists( CFW_PATH . '/sources/php/premium-init.php' ) && ! defined( 'CFW_FORCE_FREE_VERSION' ) ) {
+			require CFW_PATH . '/sources/php/premium-init.php';
+		}
+
+		require CFW_PATH . '/sources/php/init.php';
+	},
+	0
+);
