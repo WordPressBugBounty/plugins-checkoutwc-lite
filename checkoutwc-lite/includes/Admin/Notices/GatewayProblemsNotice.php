@@ -30,11 +30,11 @@ class GatewayProblemsNotice extends NoticeAbstract {
 			}
 		}
 
-		$options = array(
+		$options = [
 			'type'  => 'error',
-			'image' => file_get_contents( CFW_PATH . '/build/images/cfw.svg' ), // phpcs:ignore WordPress.WP.AlternativeFunctions.file_get_contents_file_get_contents
+			'image' => file_get_contents( CFW_PATH . '/assets/images/cfw.svg' ), // phpcs:ignore WordPress.WP.AlternativeFunctions.file_get_contents_file_get_contents
 			'mode'  => 'deferred',
-		);
+		];
 
 		$this->maybe_add( 'cfw_gateway_problem_' . $gateway->id, 'CheckoutWC Gateway Problem Detected', $message, $options );
 	}

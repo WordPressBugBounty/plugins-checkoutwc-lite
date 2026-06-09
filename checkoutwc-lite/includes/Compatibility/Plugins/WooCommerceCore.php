@@ -21,8 +21,8 @@ class WooCommerceCore extends CompatibilityAbstract {
 		// phpcs:enable WooCommerce.Commenting.CommentHooks.MissingHookComment
 		// phpcs:enable WordPress.Security.NonceVerification.Missing
 
-		add_action( 'woocommerce_before_checkout_process', array( $this, 'sync_billing_fields_on_process_checkout' ) );
-		add_filter( 'wc_add_to_cart_message_html', array( $this, 'maybe_suppress_add_to_cart_notice' ) );
+		add_action( 'woocommerce_before_checkout_process', [ $this, 'sync_billing_fields_on_process_checkout' ] );
+		add_filter( 'wc_add_to_cart_message_html', [ $this, 'maybe_suppress_add_to_cart_notice' ] );
 	}
 
 	public function run() {
@@ -100,13 +100,13 @@ class WooCommerceCore extends CompatibilityAbstract {
 
 		// Highlighted Countries
 		if ( SettingsManager::instance()->get_setting( 'enable_highlighted_countries' ) === 'yes' ) {
-			add_filter( 'woocommerce_countries_shipping_countries', array( $this, 'highlight_countries' ) );
-			add_filter( 'woocommerce_countries_allowed_countries', array( $this, 'highlight_countries' ) );
+			add_filter( 'woocommerce_countries_shipping_countries', [ $this, 'highlight_countries' ] );
+			add_filter( 'woocommerce_countries_allowed_countries', [ $this, 'highlight_countries' ] );
 		}
 
-		add_filter( 'woocommerce_countries_shipping_countries', array( $this, 'fool_woo_into_handling_one_country_the_way_we_prefer' ) );
-		add_filter( 'woocommerce_countries_allowed_countries', array( $this, 'fool_woo_into_handling_one_country_the_way_we_prefer' ) );
-		add_filter( 'woocommerce_form_field', array( $this, 'removed_shim_country_so_woo_handles_one_country_the_way_we_prefer' ), 200000, 3 );
+		add_filter( 'woocommerce_countries_shipping_countries', [ $this, 'fool_woo_into_handling_one_country_the_way_we_prefer' ] );
+		add_filter( 'woocommerce_countries_allowed_countries', [ $this, 'fool_woo_into_handling_one_country_the_way_we_prefer' ] );
+		add_filter( 'woocommerce_form_field', [ $this, 'removed_shim_country_so_woo_handles_one_country_the_way_we_prefer' ], 200000, 3 );
 	}
 
 	public function run_on_thankyou() {
@@ -154,6 +154,14 @@ class WooCommerceCore extends CompatibilityAbstract {
 	}
 
 	public function maybe_suppress_add_to_cart_notice( $message ) {
+		// Guard against re-entrant calls: Example: WC Subscriptions' woocommerce_add_to_cart_redirect
+		// callback can invoke wc_add_to_cart_message(), which re-fires this filter, causing infinite recursion.
+		static $is_running = false;
+
+		if ( $is_running ) {
+			return $message;
+		}
+
 		/**
 		 * Filters whether to suppress add to cart notices at checkout
 		 *
@@ -171,16 +179,23 @@ class WooCommerceCore extends CompatibilityAbstract {
 
 		$wc_ajax = sanitize_text_field( wp_unslash( $_REQUEST['wc-ajax'] ) ); // phpcs:ignore WordPress.Security.NonceVerification.Recommended
 
-		// Only suppress here for checkout redirected add to carts
+		// Only suppress here for checkout redirected add to carts.
+		// The try/finally ensures $is_running is reset even if a callback throws and the exception
+		// is caught higher up, which would otherwise leave the guard stuck at true for the request.
 		$checkout_url = wc_get_checkout_url();
-		$redirect_url = cfw_apply_filters( 'woocommerce_add_to_cart_redirect', wc_get_cart_url(), null );
+		$is_running   = true;
+		try {
+			$redirect_url = cfw_apply_filters( 'woocommerce_add_to_cart_redirect', wc_get_cart_url(), null );
+		} finally {
+			$is_running = false;
+		}
 
 		// If not redirecting to checkout, bail
 		if ( $redirect_url !== $checkout_url ) {
 			return $message;
 		}
 
-		if ( in_array( $wc_ajax, array( 'add_to_cart', 'cfw_add_to_cart' ), true ) ) {
+		if ( in_array( $wc_ajax, [ 'add_to_cart', 'cfw_add_to_cart' ], true ) ) {
 			return '';
 		}
 
@@ -192,7 +207,7 @@ class WooCommerceCore extends CompatibilityAbstract {
 		 * The list of highlighted countries
 		 *
 		 * @since 6.0.0
-		 * @var array The highlighted countries
+		 * @param array $highlighted_countries The highlighted countries
 		 */
 		$highlighted_countries = array_flip( (array) apply_filters( 'cfw_highlighted_countries', SettingsManager::instance()->get_setting( 'highlighted_countries' ) ) );
 
@@ -206,7 +221,7 @@ class WooCommerceCore extends CompatibilityAbstract {
 			}
 		}
 
-		return array_merge( $highlighted_countries, array( '--' => '---' ), $countries );
+		return array_merge( $highlighted_countries, [ '--' => '---' ], $countries );
 	}
 
 	public function fool_woo_into_handling_one_country_the_way_we_prefer( array $countries ): array {

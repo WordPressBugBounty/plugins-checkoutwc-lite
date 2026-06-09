@@ -28,8 +28,8 @@ class General extends PageAbstract {
 	public function init() {
 		parent::init();
 
-		add_action( 'admin_bar_menu', array( $this, 'add_parent_node' ), 100 );
-		add_action( 'admin_menu', array( $this, 'setup_main_menu_page' ), $this->priority - 5 );
+		add_action( 'admin_bar_menu', [ $this, 'add_parent_node' ], 100 );
+		add_action( 'admin_menu', [ $this, 'setup_main_menu_page' ], $this->priority - 5 );
 	}
 
 	public function setup_menu() {
@@ -46,7 +46,7 @@ class General extends PageAbstract {
 	}
 
 	public function setup_main_menu_page() {
-		add_menu_page( 'CheckoutWC', 'CheckoutWC', 'cfw_manage_general', self::$parent_slug, array( $this, 'output_with_wrap' ), 'data:image/svg+xml;base64,' . base64_encode( file_get_contents( CFW_PATH . '/build/images/cfw.svg' ) ) ); // phpcs:ignore
+		add_menu_page( 'CheckoutWC', 'CheckoutWC', 'cfw_manage_general', self::$parent_slug, array( $this, 'output_with_wrap' ), 'data:image/svg+xml;base64,' . base64_encode( file_get_contents( CFW_PATH . '/assets/images/cfw.svg' ) ) ); // phpcs:ignore
 	}
 
 	public function output() {
@@ -97,13 +97,13 @@ class General extends PageAbstract {
 						</p>
 					</div>
 					<div>
-						<img src="<?php echo trailingslashit( CFW_PATH_URL_BASE ); ?>/build/images/rules.png" alt="Rules Engine" />
+						<img src="<?php echo trailingslashit( CFW_PATH_URL_BASE ); ?>assets/images/rules.png" alt="Rules Engine" />
 					</div>
 				</div>
 
 				<div class="grid grid-cols-2 gap-8 mt-12">
 					<div>
-						<img src="<?php echo trailingslashit( CFW_PATH_URL_BASE ); ?>/build/images/quick-start.avif" alt="Order Bumps Quick Start" />
+						<img src="<?php echo trailingslashit( CFW_PATH_URL_BASE ); ?>assets/images/quick-start.avif" alt="Order Bumps Quick Start" />
 					</div>
 					<div>
 						<p class="text-4xl font-bold text-gray-900">
@@ -113,7 +113,7 @@ class General extends PageAbstract {
 							<?php _e( 'Creating Order Bumps has lots of options. Our new Quick Start will help you get started faster.', 'checkout-wc' ); ?>
 						</p>
 						<p class="mt-5">
-							<a href="<?php echo esc_attr( add_query_arg( array( 'page' => 'cfw-settings-order_bumps' ), admin_url( 'admin.php' ) ) ); ?>" target="_blank" class="inline-flex items-center px-6 py-3 border border-transparent text-lg shadow font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+							<a href="<?php echo esc_attr( add_query_arg( [ 'page' => 'cfw-settings-order_bumps' ], admin_url( 'admin.php' ) ) ); ?>" target="_blank" class="inline-flex items-center px-6 py-3 border border-transparent text-lg shadow font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
 								<?php _e( 'Configure Order Bumps', 'checkout-wc' ); ?>
 							</a>
 						</p>
@@ -244,7 +244,7 @@ class General extends PageAbstract {
 		ob_start();
 		?>
 		<div class="flex flex-row items-center">
-			<a href="<?php echo esc_attr( add_query_arg( array( 'subpage' => 'templates' ), $this->appearance_page->get_url() ) ); ?>" target="_blank" class="inline-flex items-center px-4 py-2 border border-gray-300 shadow-sm text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+			<a href="<?php echo esc_attr( add_query_arg( [ 'subpage' => 'templates' ], $this->appearance_page->get_url() ) ); ?>" target="_blank" class="inline-flex items-center px-4 py-2 border border-gray-300 shadow-sm text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
 				<?php _e( 'Choose a Template', 'checkout-wc' ); ?>
 			</a>
 			<svg xmlns="http://www.w3.org/2000/svg" class="ml-2 h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-label="<?php _e( 'Opens in new tab' ); ?>">
@@ -274,23 +274,23 @@ class General extends PageAbstract {
 		$url = wc_get_checkout_url();
 
 		$products = wc_get_products(
-			array(
+			[
 				'limit'        => 1,
 				'status'       => 'publish',
-				'type'         => array( 'simple' ),
+				'type'         => [ 'simple' ],
 				'stock_status' => 'instock',
-			)
+			]
 		);
 
 		if ( empty( $products ) ) {
 			$products = wc_get_products(
-				array(
+				[
 					'parent_exclude' => 0,
 					'limit'          => 1,
 					'status'         => 'publish',
-					'type'           => array( 'variable' ),
+					'type'           => [ 'variable' ],
 					'stock_status'   => 'instock',
-				)
+				]
 			);
 		}
 
@@ -298,7 +298,7 @@ class General extends PageAbstract {
 		if ( ! empty( $products ) ) {
 			$product = $products[0];
 
-			$url = add_query_arg( array( 'add-to-cart' => $product->get_id() ), $url );
+			$url = add_query_arg( [ 'add-to-cart' => $product->get_id() ], $url );
 		}
 
 		ob_start();
@@ -336,12 +336,12 @@ class General extends PageAbstract {
 		$url = $this->get_url();
 
 		$admin_bar->add_node(
-			array(
+			[
 				'id'     => self::$parent_slug,
 				'title'  => '<span class="ab-icon dashicons dashicons-cart"></span>' . __( 'CheckoutWC', 'checkout-wc' ),
 				'href'   => $url,
 				'parent' => false,
-			)
+			]
 		);
 
 		if ( ! is_cfw_page() ) {
@@ -349,15 +349,15 @@ class General extends PageAbstract {
 		}
 
 		$admin_bar->add_node(
-			array(
+			[
 				'id'     => self::$parent_slug . '-bypass',
 				'title'  => isset( $_GET['bypass-cfw'] ) ? '<span class="ab-icon dashicons dashicons-controls-play"></span>' . __( 'Unbypass CheckoutWC Template', 'checkout-wc' ) : '<span class="ab-icon dashicons dashicons-controls-pause"></span>' . __( 'Bypass CheckoutWC Template', 'checkout-wc' ), // phpcs:ignore WordPress.Security.NonceVerification.Recommended
 				'href'   => isset( $_GET['bypass-cfw'] ) ? remove_query_arg( 'bypass-cfw' ) : add_query_arg( 'bypass-cfw', 'true' ), // phpcs:ignore WordPress.Security.NonceVerification.Recommended
 				'parent' => false,
-				'meta'   => array(
+				'meta'   => [
 					'onclick' => ! isset( $_GET['bypass-cfw'] ) ? 'alert("' . esc_js( __( 'CheckoutWC template and functionality will be temporarily bypassed (just for you!). This is helpful for testing and debugging. You can click Unbypass CheckoutWC Template once you are done.', 'checkout-wc' ) ) . '")' : '', // phpcs:ignore WordPress.Security.NonceVerification.Recommended
-				),
-			)
+				],
+			]
 		);
 	}
 
@@ -372,12 +372,12 @@ class General extends PageAbstract {
 		}
 
 		$admin_bar->add_node(
-			array(
+			[
 				'id'     => $this->slug . '-general',
 				'title'  => $this->title,
 				'href'   => $this->get_url(),
 				'parent' => self::$parent_slug,
-			)
+			]
 		);
 	}
 }

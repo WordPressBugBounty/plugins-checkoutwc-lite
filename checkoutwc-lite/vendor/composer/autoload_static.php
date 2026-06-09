@@ -4,17 +4,17 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit581245619d3d9aad712de22cacc05741
+class ComposerStaticInitCheckoutForWooCommerce
 {
     public static $prefixLengthsPsr4 = array (
-        'O' => 
+        'O' =>
         array (
             'Objectiv\\Plugins\\Checkout\\' => 26,
         ),
     );
 
     public static $prefixDirsPsr4 = array (
-        'Objectiv\\Plugins\\Checkout\\' => 
+        'Objectiv\\Plugins\\Checkout\\' =>
         array (
             0 => __DIR__ . '/../..' . '/includes',
         ),
@@ -323,9 +323,9 @@ class ComposerStaticInit581245619d3d9aad712de22cacc05741
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInit581245619d3d9aad712de22cacc05741::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit581245619d3d9aad712de22cacc05741::$prefixDirsPsr4;
-            $loader->classMap = ComposerStaticInit581245619d3d9aad712de22cacc05741::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInitCheckoutForWooCommerce::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInitCheckoutForWooCommerce::$prefixDirsPsr4;
+            $loader->classMap = ComposerStaticInitCheckoutForWooCommerce::$classMap;
 
         }, null, ClassLoader::class);
     }

@@ -124,7 +124,7 @@ class TabNavigation {
 		 * Represents the currently selected tab in a user interface.
 		 *
 		 * @since 9.0.0
-		 * @var string
+		 * @param string $selected_tab The currently selected settings tab.
 		 */
 		return apply_filters( 'cfw_selected_tab', empty( $_GET[ $this->selected_tab_query_arg ] ) ? $this->default_tab : sanitize_text_field( wp_unslash( $_GET[ $this->selected_tab_query_arg ] ) ) ); // phpcs:ignore WordPress.Security.NonceVerification.Recommended
 	}

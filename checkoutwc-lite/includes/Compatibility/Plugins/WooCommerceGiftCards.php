@@ -14,7 +14,7 @@ class WooCommerceGiftCards extends CompatibilityAbstract {
 		 * Filter whether to disable CheckoutWC WooCommerce Gift Cards compatibility class
 		 *
 		 * @since 5.3.5
-		 * @var bool $disable Whether to disable compatibility class
+		 * @param bool $disable Whether to disable compatibility class
 		 */
 		if ( apply_filters( 'cfw_disable_woocommerce_gift_cards_compatibility', false ) ) {
 			return;
@@ -59,7 +59,7 @@ class WooCommerceGiftCards extends CompatibilityAbstract {
 		 * Filter CheckoutWC WooCommerce Gift Cards field label
 		 *
 		 * @since 6.0.7
-		 * @var string $label Field label
+		 * @param string $label Field label
 		 */
 		$woocommerce_gift_cards_field_label = apply_filters( 'cfw_compatibility_woocommerce_gift_cards_field_label', esc_attr__( 'Enter your code&hellip;', 'woocommerce-gift-cards' ) );
 
@@ -67,7 +67,7 @@ class WooCommerceGiftCards extends CompatibilityAbstract {
 		 * Filter CheckoutWC WooCommerce Gift Cards field placeholder
 		 *
 		 * @since 6.0.7
-		 * @var string $label Field placeholder
+		 * @param string $label Field placeholder
 		 */
 		$woocommerce_gift_cards_field_placeholder = apply_filters( 'cfw_compatibility_woocommerce_gift_cards_field_placeholder', esc_attr__( 'Enter your code&hellip;', 'woocommerce-gift-cards' ) );
 		?>
@@ -89,7 +89,7 @@ class WooCommerceGiftCards extends CompatibilityAbstract {
 				 * Filter CheckoutWC WooCommerce Gift Cards Heading Text
 				 *
 				 * @since 6.0.7
-				 * @var string $heading_text Heading text
+				 * @param string $heading_text Heading text
 				 */
 				echo wp_kses_post( apply_filters( 'cfw_compatibility_woocommerce_gift_cards_heading_text', esc_html__( 'Have a gift card?', 'woocommerce-gift-cards' ) ) );
 				?>

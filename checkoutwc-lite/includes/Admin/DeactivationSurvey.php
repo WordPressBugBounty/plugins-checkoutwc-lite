@@ -16,15 +16,24 @@ class DeactivationSurvey {
 	private $remote_url     = 'https://stats.checkoutwc.com/api/v1/deactivation_survey';
 
 	public function init(): void {
-		add_action( 'admin_footer', array( $this, 'output_survey_html' ) );
-		add_filter( 'cfw_deactivation_form_fields', array( $this, 'get_form_fields' ) );
-		add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_scripts' ), 1000 );
+		add_action( 'admin_footer', [ $this, 'output_survey_html' ] );
+		add_filter( 'cfw_deactivation_form_fields', [ $this, 'get_form_fields' ] );
+		add_action( 'admin_enqueue_scripts', [ $this, 'enqueue_scripts' ], 1000 );
 	}
 
 	public function output_survey_html(): void {
 		global $pagenow;
 
-		require_once CFW_PATH_BASE . 'sources/php/deactivation-survey.php';
+		foreach ( [
+			'functions/deactivation-survey.php',
+			'sources/php/deactivation-survey.php', // Legacy shim; remove with sources/php/ tree.
+		] as $relative_path ) {
+			$path = CFW_PATH_BASE . $relative_path;
+			if ( is_readable( $path ) ) {
+				require_once $path;
+				return;
+			}
+		}
 	}
 
 	/**
@@ -44,8 +53,8 @@ class DeactivationSurvey {
 		$store_name = get_bloginfo( 'name ' );
 		$store_url  = get_home_url();
 
-		return array(
-			array(
+		return [
+			[
 				'id'          => 'deactivation_reason',
 				'label'       => '',
 				'type'        => 'radio',
@@ -54,15 +63,15 @@ class DeactivationSurvey {
 				'multiple'    => 'no',
 				'required'    => 'yes',
 				'extra-class' => '',
-				'options'     => array(
+				'options'     => [
 					'temporary_deactivation_for_debug' => __( '<strong>It is a temporary deactivation.</strong> I am just debugging an issue.', 'checkout-wc' ),
 					'site-layout_broke'                => __( 'The plugin <strong>broke my layout</strong> or some functionality.', 'checkout-wc' ),
 					'complicated_configuration'        => __( 'The plugin is <strong>too complicated to configure.</strong>', 'checkout-wc' ),
 					'other'                            => __( 'Other', 'checkout-wc' ),
-				),
-			),
+				],
+			],
 
-			array(
+			[
 				'id'          => 'reason_other',
 				'label'       => __( 'Let us know why you are deactivating CheckoutWC so we can improve the plugin', 'checkout-wc' ),
 				'type'        => 'textarea',
@@ -70,9 +79,9 @@ class DeactivationSurvey {
 				'value'       => '',
 				'required'    => 'yes',
 				'extra-class' => 'hidden',
-			),
+			],
 
-			array(
+			[
 				'id'          => 'admin_email',
 				'label'       => '',
 				'type'        => 'hidden',
@@ -80,9 +89,9 @@ class DeactivationSurvey {
 				'value'       => $current_user_email ?? '',
 				'required'    => '',
 				'extra-class' => '',
-			),
+			],
 
-			array(
+			[
 				'id'          => 'store_name',
 				'label'       => '',
 				'type'        => 'hidden',
@@ -90,9 +99,9 @@ class DeactivationSurvey {
 				'value'       => $store_name,
 				'required'    => '',
 				'extra-class' => '',
-			),
+			],
 
-			array(
+			[
 				'id'          => 'url',
 				'label'       => '',
 				'type'        => 'hidden',
@@ -100,9 +109,9 @@ class DeactivationSurvey {
 				'value'       => $store_url,
 				'required'    => '',
 				'extra-class' => '',
-			),
+			],
 
-			array(
+			[
 				'id'          => 'version',
 				'label'       => '',
 				'type'        => 'hidden',
@@ -110,8 +119,8 @@ class DeactivationSurvey {
 				'value'       => CFW_VERSION,
 				'required'    => '',
 				'extra-class' => '',
-			),
-		);
+			],
+		];
 	}
 
 	public function enqueue_scripts(): void {
@@ -140,19 +149,19 @@ class DeactivationSurvey {
 			);
 		}
 
-		cfw_register_scripts( array( 'admin-plugins' ) );
+		cfw_register_scripts( [ 'admin-plugins' ] );
 		wp_enqueue_script( 'cfw-admin-plugins' );
 
 		if ( isset( $manifest['chunks']['admin-plugins-styles']['file'] ) ) {
-			wp_enqueue_style( 'objectiv-cfw-admin-plugins-styles', "{$front}/{$manifest['chunks']['admin-plugins-styles']['file']}", array(), $manifest['chunks']['admin-plugins-styles']['hash'] );
+			wp_enqueue_style( 'objectiv-cfw-admin-plugins-styles', "{$front}/{$manifest['chunks']['admin-plugins-styles']['file']}", [], $manifest['chunks']['admin-plugins-styles']['hash'] );
 		}
 
 		wp_localize_script(
 			'cfw-admin-plugins',
 			'cfwAdminPluginsScreenData',
-			array(
+			[
 				'remote_url' => CFW_DEV_MODE ? $this->dev_remote_url : $this->remote_url,
-			)
+			]
 		);
 	}
 
@@ -163,7 +172,7 @@ class DeactivationSurvey {
 	 * @param       array  $attr               The attributes of this field.
 	 * @param       string $base_class         The basic class for the label.
 	 */
-	public static function render_field_html( $attr = array(), $base_class = 'on-boarding' ) {
+	public static function render_field_html( $attr = [], $base_class = 'on-boarding' ) {
 
 		$id       = ! empty( $attr['id'] ) ? 'cfw_' . $attr['id'] : '';
 		$name     = ! empty( $attr['name'] ) ? $attr['name'] : '';
@@ -171,7 +180,7 @@ class DeactivationSurvey {
 		$type     = ! empty( $attr['type'] ) ? $attr['type'] : '';
 		$class    = ! empty( $attr['extra-class'] ) ? $attr['extra-class'] : '';
 		$value    = ! empty( $attr['value'] ) ? $attr['value'] : '';
-		$options  = ! empty( $attr['options'] ) ? $attr['options'] : array();
+		$options  = ! empty( $attr['options'] ) ? $attr['options'] : [];
 		$multiple = ! empty( $attr['multiple'] ) && 'yes' === $attr['multiple'] ? 'yes' : 'no';
 		$required = ! empty( $attr['required'] ) ? 'required="required"' : '';
 
@@ -179,7 +188,7 @@ class DeactivationSurvey {
 
 		if ( 'hidden' !== $type ) : ?>
 			<div class ="mt-6 space-y-6">
-		<?php
+			<?php
 		endif;
 
 		switch ( $type ) {
@@ -202,7 +211,7 @@ class DeactivationSurvey {
 						</div>
 					<?php endforeach; ?>
 
-				<?php
+					<?php
 				endif;
 
 				break;
@@ -221,7 +230,7 @@ class DeactivationSurvey {
 					</div>
 
 				<?php endforeach; ?>
-				<?php
+					<?php
 				endif;
 
 				break;
@@ -281,13 +290,13 @@ class DeactivationSurvey {
 				<label for="<?php echo( esc_attr( $id ) ); ?>"><?php echo( esc_html( $label ) ); ?></label>
 				<input type="<?php echo( esc_attr( $type ) ); ?>" class="on-boarding-<?php echo( esc_attr( $type ) ); ?>-field <?php echo( esc_attr( $class ) ); ?>" value="<?php echo( esc_attr( $value ) ); ?>"  name="<?php echo( esc_attr( $name ) ); ?>" id="<?php echo( esc_attr( $id ) ); ?>" <?php echo( esc_html( $required ) ); ?>>
 
-			<?php
+				<?php
 		}
 
 		if ( 'hidden' !== $type ) :
 			?>
 			</div>
-		<?php
+			<?php
 		endif;
 	}
 }

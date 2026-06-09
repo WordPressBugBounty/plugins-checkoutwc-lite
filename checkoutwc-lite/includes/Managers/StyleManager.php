@@ -161,7 +161,7 @@ class StyleManager {
 		 * Filter the CSS custom property overrides
 		 *
 		 * @since 5.0.0
-		 * @var array $overrides The CSS custom properties
+		 * @param array $overrides The CSS custom properties
 		 */
 		$custom_properties = apply_filters(
 			'cfw_custom_css_properties',

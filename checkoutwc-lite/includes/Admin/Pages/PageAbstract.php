@@ -31,7 +31,7 @@ abstract class PageAbstract {
 	public function __construct( string $title, string $capability, ?string $slug = null ) {
 		$this->title      = $title;
 		$this->capability = $capability;
-		$this->slug       = join( '-', array_filter( array( self::$parent_slug, $slug ) ) );
+		$this->slug       = join( '-', array_filter( [ self::$parent_slug, $slug ] ) );
 	}
 
 	/**
@@ -47,14 +47,14 @@ abstract class PageAbstract {
 	}
 
 	public function init() {
-		add_action( 'admin_menu', array( $this, 'setup_menu' ), $this->priority );
-		add_action( 'admin_bar_menu', array( $this, 'add_admin_bar_menu_node' ), 100 + $this->priority );
-		add_action( 'admin_enqueue_scripts', array( $this, 'maybe_set_script_data' ), 1000 );
-		add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_scripts' ), 1001 );
+		add_action( 'admin_menu', [ $this, 'setup_menu' ], $this->priority );
+		add_action( 'admin_bar_menu', [ $this, 'add_admin_bar_menu_node' ], 100 + $this->priority );
+		add_action( 'admin_enqueue_scripts', [ $this, 'maybe_set_script_data' ], 1000 );
+		add_action( 'admin_enqueue_scripts', [ $this, 'enqueue_scripts' ], 1001 );
 	}
 
 	public function setup_menu() {
-		add_submenu_page( self::$parent_slug, $this->title, $this->title, $this->capability, $this->slug, array( $this, 'output_with_wrap' ), $this->priority );
+		add_submenu_page( self::$parent_slug, $this->title, $this->title, $this->capability, $this->slug, [ $this, 'output_with_wrap' ], $this->priority );
 	}
 
 	public function get_url(): string {
@@ -96,7 +96,7 @@ abstract class PageAbstract {
 				<div class="min-h-[64px] bg-white flex items-center pl-8 justify-between">
 					<div class="flex items-center">
 						<span>
-							<?php echo file_get_contents( CFW_PATH . '/build/images/cfw.svg' ); // phpcs:ignore ?>
+							<?php echo file_get_contents( CFW_PATH . '/assets/images/cfw.svg' ); // phpcs:ignore ?>
 						</span>
 						<nav class="flex" aria-label="Breadcrumb">
 							<ol role="list" class="flex items-center space-x-2">
@@ -176,12 +176,12 @@ abstract class PageAbstract {
 
 				<div class="text-center italic">
 					<?php
-					echo wp_kses_post( 
-						sprintf( 
+					echo wp_kses_post(
+						sprintf(
 							/* translators: %s: Required plan name(s) */
-							__( 'A %s plan is required to access this feature.', 'checkout-wc' ), 
-							PlanManager::get_english_list_of_required_plans_html( $required_plan ) 
-						) 
+							__( 'A %s plan is required to access this feature.', 'checkout-wc' ),
+							PlanManager::get_english_list_of_required_plans_html( $required_plan )
+						)
 					);
 					?>
 				</div>
@@ -274,12 +274,12 @@ abstract class PageAbstract {
 		}
 
 		$admin_bar->add_node(
-			array(
+			[
 				'id'     => $this->slug,
 				'title'  => $this->title,
 				'href'   => $this->get_url(),
 				'parent' => self::$parent_slug,
-			)
+			]
 		);
 	}
 
@@ -334,25 +334,25 @@ abstract class PageAbstract {
 				</h3>
 
 				<?php
-			echo wp_kses_post( 
-				sprintf( 
+				echo wp_kses_post(
+				sprintf(
 					/* translators: %s: Required plan name(s) */
-					__( 'A %s plan is required to access this feature.', 'checkout-wc' ), 
-					$required_plans 
-				) 
-			);
-			?>
-				<p class="text-base">
-					<?php
-				echo wp_kses_post( 
-					sprintf( 
-						/* translators: %1$s: Account URL, %2$s: Help URL */
-						__( 'You can upgrade your license in <a class="text-blue-600 underline" target="_blank" href="%1$s">Account</a>. For help upgrading your license, <a class="text-blue-600 underline" target="_blank" href="%2$s">click here.</a>', 'checkout-wc' ), 
-						'https://www.checkoutwc.com/account/', 
-						'https://kb.checkoutwc.com/article/53-upgrading-your-license' 
-					) 
+					__( 'A %s plan is required to access this feature.', 'checkout-wc' ),
+					$required_plans
+				)
 				);
 				?>
+				<p class="text-base">
+					<?php
+					echo wp_kses_post(
+					sprintf(
+						/* translators: %1$s: Account URL, %2$s: Help URL */
+						__( 'You can upgrade your license in <a class="text-blue-600 underline" target="_blank" href="%1$s">Account</a>. For help upgrading your license, <a class="text-blue-600 underline" target="_blank" href="%2$s">click here.</a>', 'checkout-wc' ),
+						'https://www.checkoutwc.com/account/',
+						'https://kb.checkoutwc.com/article/53-upgrading-your-license'
+					)
+					);
+					?>
 				</p>
 			</div>
 		</div>
@@ -366,7 +366,7 @@ abstract class PageAbstract {
 			return;
 		}
 
-		cfw_register_scripts( array( 'admin-settings' ) );
+		cfw_register_scripts( [ 'admin-settings' ] );
 
 		wp_localize_script(
 			'cfw-admin-settings',
@@ -386,7 +386,7 @@ abstract class PageAbstract {
 		 */
 		return apply_filters(
 			'cfw_admin_page_data',
-			array()
+			[]
 		);
 	}
 
@@ -404,11 +404,11 @@ abstract class PageAbstract {
 	}
 
 	public function get_plan_data(): array {
-		$data = array(
+		$data = [
 			'plan_id'    => UpdatesManager::instance()->get_license_price_id(),
 			'plan_level' => PlanManager::get_user_plan_level(),
-			'labels'     => array(),
-		);
+			'labels'     => [],
+		];
 
 		foreach ( PlanManager::PLAN_HIERARCHY as $plan => $level ) {
 			$data['labels']['required_list'][ $level ] = PlanManager::get_english_list_of_required_plans_html( $plan );

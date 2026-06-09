@@ -1,28 +1,27 @@
 <?php
 /**
- * The plugin bootstrap file
- *
- * @link              https://www.checkoutwc.com
- * @since             1.0.0
- * @package           Objectiv\Plugins\Checkout
- *
- * @wordpress-plugin
- * Plugin Name:       CheckoutWC Lite
- * Plugin URI:        https://www.checkoutwc.com
- * Description:       Beautiful conversion optimized checkout templates for WooCommerce.
- * Version:           11.1.0
- * Author:            Kestrel
- * Author URI:        https://kestrelwp.com/
- * License:           GPLv3 or later
- * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
- * Text Domain:       checkout-wc
- * Domain Path:       /i18n/languages
+ * Plugin Name: CheckoutWC Lite
+ * Plugin URI:  https://www.checkoutwc.com
+ * Description: Beautiful conversion optimized checkout templates for WooCommerce.
+ * Author: Kestrel
+ * Author URI: https://kestrelwp.com/
+ * Text Domain: checkout-wc
+ * Domain Path: /i18n/languages
+ * Version: 11.1.1
  * Requires Plugins: woocommerce
  * Requires at least: 5.2
- * Tested up to: 6.9.4
- * WC tested up to: 10.7.0
  * Requires PHP: 7.4
+ * Tested up to: 7.0
+ * WC requires at least: 8.2
+ * WC tested up to: 10.8.1
  * Build: <build_hash>
+ * Copyright: (c) 2018-2026 Kestrel Commerce LLC [support@kestrelwp.com]
+ * License: GNU General Public License v3.0
+ * License URI: http://www.gnu.org/licenses/gpl-3.0.html
+ *
+ * @author    Kestrel
+ * @copyright Copyright (c) 2018-2026 Kestrel Commerce LLC [support@kestrelwp.com]
+ * @license   http://www.gnu.org/licenses/gpl-3.0.html GNU General Public License v3.0
  */
 
 use Automattic\WooCommerce\Utilities\FeaturesUtil;
@@ -50,27 +49,27 @@ if ( defined( 'CFW_VERSION' ) ) {
 
 define( 'CFW_NAME', 'Checkout for WooCommerce' );
 define( 'CFW_UPDATE_URL', 'https://www.checkoutwc.com' );
-define( 'CFW_VERSION', '11.1.0' );
+define( 'CFW_VERSION', '11.1.1' );
 define( 'CFW_PATH', __DIR__ );
 define( 'CFW_URL', plugins_url( '/', __FILE__ ) );
 define( 'CFW_MAIN_FILE', __FILE__ );
 define( 'CFW_PATH_BASE', plugin_dir_path( __FILE__ ) );
 define( 'CFW_PATH_URL_BASE', plugin_dir_url( __FILE__ ) );
 define( 'CFW_PATH_MAIN_FILE', CFW_PATH_BASE . __FILE__ );
-define( 'CFW_PATH_ASSETS', CFW_PATH_URL_BASE . 'build' );
+define( 'CFW_PATH_ASSETS', CFW_PATH_URL_BASE . 'assets/dist' );
 define( 'CFW_PATH_PLUGIN_TEMPLATE', CFW_PATH_BASE . 'templates' );
 define( 'CFW_PATH_THEME_TEMPLATE', get_stylesheet_directory() . '/checkout-wc' );
 
 /**
  * Our hook function wrappers that we only use for external hooks
  */
-require_once CFW_PATH . '/sources/php/hook-wrapper-functions.php';
+require_once CFW_PATH . '/functions/hook-wrapper-functions.php';
 
 
 /**
  * Handle chunk loading
  */
-require_once CFW_PATH . '/sources/php/wordpressEnqueueChunksPlugin.php';
+require_once CFW_PATH . '/assets/dist/wordpressEnqueueChunksPlugin.php';
 
 // Preprocess wordpressEnqueueChunksPlugin dependencies and marry them to @wordpress/scripts dependencies
 // Also handles some edge cases for the main pages
@@ -104,7 +103,7 @@ add_filter(
 		);
 
 		// Load Dependency Extraction Webpack Plugin files
-		$deps_file = CFW_PATH . '/build/js/' . str_replace( '.js', '.asset.php', $filename );
+		$deps_file = CFW_PATH . '/assets/dist/js/' . str_replace( '.js', '.asset.php', $filename );
 
 		// If the file can be found, use it to set the dependencies array.
 		if ( file_exists( $deps_file ) ) {
@@ -240,9 +239,12 @@ if (
 
 /**
  * Auto-loader (composer)
+ *
+ * Aviary emits scoped dependencies to vendor-scoped/ and generates
+ * aviary-autoload.php, which loads the main Composer autoloader
+ * (vendor/autoload.php) and the scoped autoloader together.
  */
-require_once CFW_PATH . '/vendor-prefixed/autoload.php';
-require_once CFW_PATH . '/vendor/autoload.php';
+require_once CFW_PATH . '/vendor-scoped/aviary-autoload.php';
 require_once CFW_PATH . '/lib/sendwp-sdk/sendwp-init.php';
 
 // ensure CFW_DEV_MODE is defined
@@ -250,12 +252,12 @@ if ( ! defined( 'CFW_DEV_MODE' ) ) {
 	define( 'CFW_DEV_MODE', getenv( 'CFW_DEV_MODE' ) === 'true' );
 }
 
-require_once CFW_PATH . '/sources/php/api.php';
-require_once CFW_PATH . '/sources/php/ab-testing-api.php';
-require_once CFW_PATH . '/sources/php/functions.php';
-require_once CFW_PATH . '/sources/php/admin-template-functions.php';
-require_once CFW_PATH . '/sources/php/template-functions.php';
-require_once CFW_PATH . '/sources/php/template-hooks.php';
+require_once CFW_PATH . '/functions/api.php';
+require_once CFW_PATH . '/functions/ab-testing-api.php';
+require_once CFW_PATH . '/functions/functions.php';
+require_once CFW_PATH . '/functions/admin-template-functions.php';
+require_once CFW_PATH . '/functions/template-functions.php';
+require_once CFW_PATH . '/functions/template-hooks.php';
 
 /**
  * Debugging - Kint disabled by default. Enable by enabling developer mode (see docs)
@@ -284,10 +286,10 @@ register_activation_hook(
 	function () {
 		set_transient( '_cfw_welcome_screen_activation_redirect', true, 30 );
 
-		if ( file_exists( CFW_PATH . '/sources/php/premium-init.php' ) && ! defined( 'CFW_FORCE_FREE_VERSION' ) ) {
-			require CFW_PATH . '/sources/php/premium-init.php';
+		if ( file_exists( CFW_PATH . '/functions/premium-init.php' ) && ! defined( 'CFW_FORCE_FREE_VERSION' ) ) {
+			require CFW_PATH . '/functions/premium-init.php';
 		}
-		require CFW_PATH . '/sources/php/init.php';
+		require CFW_PATH . '/functions/init.php';
 
 		/**
 		 * Fires after plugin activation.
@@ -313,11 +315,11 @@ add_action(
 			}
 		}
 
-		if ( file_exists( CFW_PATH . '/sources/php/premium-init.php' ) && ! defined( 'CFW_FORCE_FREE_VERSION' ) ) {
-			require CFW_PATH . '/sources/php/premium-init.php';
+		if ( file_exists( CFW_PATH . '/functions/premium-init.php' ) && ! defined( 'CFW_FORCE_FREE_VERSION' ) ) {
+			require CFW_PATH . '/functions/premium-init.php';
 		}
 
-		require CFW_PATH . '/sources/php/init.php';
+		require CFW_PATH . '/functions/init.php';
 	},
 	0
 );

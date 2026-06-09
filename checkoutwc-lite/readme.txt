@@ -3,8 +3,8 @@ Contributors: kestrelwp, clifgriffin
 Donate link: https://www.checkoutwc.com
 Tags: woocommerce-checkout, checkout-optimization, cart-abandonment, one-page-checkout, express-checkout
 Requires at least: 5.2
-Tested up to: 6.9
-Stable tag: 11.1.0
+Tested up to: 7.0
+Stable tag: 11.1.1
 Requires PHP: 7.4
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
@@ -250,6 +250,13 @@ Enable WordPress debugging (add define('WP_DEBUG', true); to wp-config.php) and 
 == Changelog ==
 
 Free version updates are non-sequential due to the unified development branch we use with the premium versions.
+
+= Version 11.1.1 =
+
+- Fix - Klaviyo checkout compatibility for recent releases that renamed mobile consent field hooks
+- Fix - Local pickup orders could trigger shipping field validation errors during PayPal Checkout and other AJAX-based payment flows
+- Fix - Fatal error that could occur when WooCommerce Subscriptions mixed cart feature was disabled, preventing infinite recursion during add-to-cart processing
+- Fix - iOS Safari/Chrome issue where checkout validation errors may not scroll into view
 
 = Version 11.1.0 =
 

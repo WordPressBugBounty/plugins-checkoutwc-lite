@@ -87,7 +87,7 @@ class KlarnaCheckout extends CompatibilityAbstract {
 		 * Whether to show the Klarna Checkout button
 		 *
 		 * @since 7.1.7
-		 * @var bool Whether to show the Klarna Checkout button
+		 * @param bool $show_button Whether to show the Klarna Checkout button
 		 */
 		$show_button = apply_filters( 'cfw_show_klarna_checkout_express_button', true );
 

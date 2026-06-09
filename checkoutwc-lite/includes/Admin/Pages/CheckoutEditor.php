@@ -16,9 +16,9 @@ class CheckoutEditor extends PageAbstract {
 	public function init() {
 		parent::init();
 
-		add_filter( 'admin_body_class', array( $this, 'add_body_class' ) );
-		add_filter( 'show_admin_bar', array( $this, 'hide_admin_bar' ) );
-		add_filter( 'admin_title', array( $this, 'filter_admin_title' ), 10, 2 );
+		add_filter( 'admin_body_class', [ $this, 'add_body_class' ] );
+		add_filter( 'show_admin_bar', [ $this, 'hide_admin_bar' ] );
+		add_filter( 'admin_title', [ $this, 'filter_admin_title' ], 10, 2 );
 	}
 
 	public function add_body_class( $classes ) {
@@ -53,7 +53,7 @@ class CheckoutEditor extends PageAbstract {
 	}
 
 	public function setup_menu() {
-		add_submenu_page( '', $this->title, $this->title, $this->capability, $this->slug, array( $this, 'output_with_wrap' ), $this->priority );
+		add_submenu_page( '', $this->title, $this->title, $this->capability, $this->slug, [ $this, 'output_with_wrap' ], $this->priority );
 	}
 
 	public function add_admin_bar_menu_node( \WP_Admin_Bar $admin_bar ) {
@@ -78,7 +78,7 @@ class CheckoutEditor extends PageAbstract {
 
 		wp_enqueue_media();
 
-		cfw_register_scripts( array( 'admin-checkout-editor' ) );
+		cfw_register_scripts( [ 'admin-checkout-editor' ] );
 
 		wp_localize_script(
 			'cfw-admin-checkout-editor',
@@ -95,7 +95,7 @@ class CheckoutEditor extends PageAbstract {
 			wp_enqueue_style(
 				'objectiv-cfw-admin-checkout-editor-styles',
 				"{$front}/{$manifest['chunks']['admin-checkout-editor-styles']['file']}",
-				array(),
+				[],
 				$manifest['chunks']['admin-checkout-editor-styles']['hash']
 			);
 		}
@@ -115,7 +115,7 @@ class CheckoutEditor extends PageAbstract {
 		$template_slug = ( $requested_slug && in_array( $requested_slug, $all_slugs, true ) ) ? $requested_slug : $saved_slug;
 
 		// Editor-only settings: only the keys used by the editor sections (Template, Logo, Typography, Colors, Steps, Fields, Addresses, Cart Summary, Footer).
-		$editor_settings = array();
+		$editor_settings = [];
 
 		// When the editor is previewing a template other than the saved active one, always show that
 		// template's defined defaults (consistent with the "Changing templates will update colors..." dialog).
@@ -126,32 +126,32 @@ class CheckoutEditor extends PageAbstract {
 		$is_active_template = ( $template_slug === $saved_slug );
 
 		// Logo (template-scoped).
-		$editor_settings[ $settings_manager->add_suffix( 'logo_attachment_id', array( $template_slug ) ) ] = $settings_manager->get_setting( 'logo_attachment_id', array( $template_slug ) );
+		$editor_settings[ $settings_manager->add_suffix( 'logo_attachment_id', [ $template_slug ] ) ] = $settings_manager->get_setting( 'logo_attachment_id', [ $template_slug ] );
 
 		// Typography (template-scoped).
 		if ( $is_active_template ) {
-			$body_font_saved    = $settings_manager->get_setting( 'body_font', array( $template_slug ) );
-			$heading_font_saved = $settings_manager->get_setting( 'heading_font', array( $template_slug ) );
-			$editor_settings[ $settings_manager->add_suffix( 'body_font', array( $template_slug ) ) ]    = false !== $body_font_saved ? $body_font_saved : ( $template_defaults['body_font'] ?? '' );
-			$editor_settings[ $settings_manager->add_suffix( 'heading_font', array( $template_slug ) ) ] = false !== $heading_font_saved ? $heading_font_saved : ( $template_defaults['heading_font'] ?? '' );
+			$body_font_saved    = $settings_manager->get_setting( 'body_font', [ $template_slug ] );
+			$heading_font_saved = $settings_manager->get_setting( 'heading_font', [ $template_slug ] );
+			$editor_settings[ $settings_manager->add_suffix( 'body_font', [ $template_slug ] ) ]    = false !== $body_font_saved ? $body_font_saved : ( $template_defaults['body_font'] ?? '' );
+			$editor_settings[ $settings_manager->add_suffix( 'heading_font', [ $template_slug ] ) ] = false !== $heading_font_saved ? $heading_font_saved : ( $template_defaults['heading_font'] ?? '' );
 		} else {
-			$editor_settings[ $settings_manager->add_suffix( 'body_font', array( $template_slug ) ) ]    = $template_defaults['body_font'] ?? '';
-			$editor_settings[ $settings_manager->add_suffix( 'heading_font', array( $template_slug ) ) ] = $template_defaults['heading_font'] ?? '';
+			$editor_settings[ $settings_manager->add_suffix( 'body_font', [ $template_slug ] ) ]    = $template_defaults['body_font'] ?? '';
+			$editor_settings[ $settings_manager->add_suffix( 'heading_font', [ $template_slug ] ) ] = $template_defaults['heading_font'] ?? '';
 		}
 
 		// Colors: body, buttons, breadcrumbs, cart_summary, header, footer (template-scoped).
-		$color_section_ids  = array( 'body', 'buttons', 'breadcrumbs', 'cart_summary', 'header', 'footer' );
+		$color_section_ids  = [ 'body', 'buttons', 'breadcrumbs', 'cart_summary', 'header', 'footer' ];
 		$raw_color_settings = Appearance::get_theme_color_settings( $template_slug );
 		foreach ( $color_section_ids as $section_id ) {
 			if ( isset( $raw_color_settings[ $section_id ]['settings'] ) ) {
 				foreach ( array_keys( $raw_color_settings[ $section_id ]['settings'] ) as $key ) {
 					if ( $is_active_template ) {
-						$saved  = $settings_manager->get_setting( $key, array( $template_slug ) );
+						$saved  = $settings_manager->get_setting( $key, [ $template_slug ] );
 						$value  = false !== $saved ? $saved : ( $template_defaults[ $key ] ?? '' );
 					} else {
 						$value = $template_defaults[ $key ] ?? '';
 					}
-					$editor_settings[ $settings_manager->add_suffix( $key, array( $template_slug ) ) ] = $value;
+					$editor_settings[ $settings_manager->add_suffix( $key, [ $template_slug ] ) ] = $value;
 				}
 			}
 		}
@@ -162,7 +162,7 @@ class CheckoutEditor extends PageAbstract {
 		$editor_settings['enable_one_page_checkout'] = $settings_manager->get_setting( 'enable_one_page_checkout' ) === 'yes';
 
 		// Fields (template-scoped: label_style; rest global).
-		$editor_settings[ $settings_manager->add_suffix( 'label_style', array( $template_slug ) ) ] = $settings_manager->get_setting( 'label_style', array( $template_slug ) );
+		$editor_settings[ $settings_manager->add_suffix( 'label_style', [ $template_slug ] ) ] = $settings_manager->get_setting( 'label_style', [ $template_slug ] );
 		$editor_settings['wp_option/woocommerce_checkout_phone_field'] = get_option( 'woocommerce_checkout_phone_field', 'required' );
 		$editor_settings['enable_order_notes']                         = $settings_manager->get_setting( 'enable_order_notes' ) === 'yes';
 		$editor_settings['enable_coupon_code_link']                    = $settings_manager->get_setting( 'enable_coupon_code_link' ) === 'yes';
@@ -197,7 +197,7 @@ class CheckoutEditor extends PageAbstract {
 		$editor_settings['wc_review_limit']         = (int) $settings_manager->get_setting( 'wc_review_limit' );
 
 		// Footer (template-scoped + mode).
-		$editor_settings[ $settings_manager->add_suffix( 'footer_text', array( $template_slug ) ) ] = $settings_manager->get_setting( 'footer_text', array( $template_slug ) );
+		$editor_settings[ $settings_manager->add_suffix( 'footer_text', [ $template_slug ] ) ] = $settings_manager->get_setting( 'footer_text', [ $template_slug ] );
 		$editor_settings['footer_text_editor_mode'] = $settings_manager->get_setting( 'footer_text_editor_mode' );
 
 		// Go Live (activation toggle, same setting as CheckoutWC > Start Here).
@@ -208,7 +208,7 @@ class CheckoutEditor extends PageAbstract {
 
 		// Color defaults for reset/preview (only for body, buttons, breadcrumbs, cart_summary, header, footer).
 		$all_color_defaults = Appearance::get_theme_color_settings_defaults( $template_slug );
-		$color_settings_defaults = array();
+		$color_settings_defaults = [];
 		foreach ( $color_section_ids as $section_id ) {
 			if ( isset( $raw_color_settings[ $section_id ]['settings'] ) ) {
 				foreach ( array_keys( $raw_color_settings[ $section_id ]['settings'] ) as $key ) {
@@ -223,16 +223,16 @@ class CheckoutEditor extends PageAbstract {
 		// template's correct defaults so the preview iframe shows the right colors on first load
 		// (before FormObserver fires). Without this the iframe falls back to stale DB values.
 		if ( ! $is_active_template ) {
-			$preview_transient = array();
+			$preview_transient = [];
 			foreach ( $color_section_ids as $section_id ) {
 				if ( isset( $raw_color_settings[ $section_id ]['settings'] ) ) {
 					foreach ( array_keys( $raw_color_settings[ $section_id ]['settings'] ) as $key ) {
-						$preview_transient[ $settings_manager->add_suffix( $key, array( $template_slug ) ) ] = $template_defaults[ $key ] ?? '';
+						$preview_transient[ $settings_manager->add_suffix( $key, [ $template_slug ] ) ] = $template_defaults[ $key ] ?? '';
 					}
 				}
 			}
-			$preview_transient[ $settings_manager->add_suffix( 'body_font', array( $template_slug ) ) ]    = $template_defaults['body_font'] ?? '';
-			$preview_transient[ $settings_manager->add_suffix( 'heading_font', array( $template_slug ) ) ] = $template_defaults['heading_font'] ?? '';
+			$preview_transient[ $settings_manager->add_suffix( 'body_font', [ $template_slug ] ) ]    = $template_defaults['body_font'] ?? '';
+			$preview_transient[ $settings_manager->add_suffix( 'heading_font', [ $template_slug ] ) ] = $template_defaults['heading_font'] ?? '';
 			set_transient( '_cfw_editor_preview_' . get_current_user_id(), $preview_transient, 30 * MINUTE_IN_SECONDS );
 		}
 
@@ -240,17 +240,17 @@ class CheckoutEditor extends PageAbstract {
 
 		// Determine where the Close button should send the user.
 		$default_close_url = add_query_arg(
-			array(
+			[
 				'page'    => 'cfw-settings-checkout',
 				'subpage' => 'checkout',
-			),
+			],
 			admin_url( 'admin.php' )
 		);
 
 		$editor_base_url = add_query_arg(
-			array(
+			[
 				'page' => $this->get_slug(),
-			),
+			],
 			admin_url( 'admin.php' )
 		);
 
@@ -278,12 +278,12 @@ class CheckoutEditor extends PageAbstract {
 		$product     = null;
 
 		$simple_query = new \WC_Product_Query(
-			array(
+			[
 				'limit'        => 10,
 				'status'       => 'publish',
 				'stock_status' => 'instock',
-				'type'         => array( 'simple' ),
-			)
+				'type'         => [ 'simple' ],
+			]
 		);
 		$candidates = $simple_query->get_products();
 		foreach ( $candidates as $p ) {
@@ -295,12 +295,12 @@ class CheckoutEditor extends PageAbstract {
 
 		if ( ! $product ) {
 			$variation_query = new \WC_Product_Query(
-				array(
+				[
 					'limit'        => 10,
 					'status'       => 'publish',
 					'stock_status' => 'instock',
-					'type'         => array( 'variation' ),
-				)
+					'type'         => [ 'variation' ],
+				]
 			);
 			$candidates = $variation_query->get_products();
 			foreach ( $candidates as $p ) {
@@ -314,16 +314,16 @@ class CheckoutEditor extends PageAbstract {
 		$has_products = $product !== null;
 
 		if ( $has_products ) {
-			$preview_url = add_query_arg( array( 'add-to-cart' => $product->get_id() ), $preview_url );
+			$preview_url = add_query_arg( [ 'add-to-cart' => $product->get_id() ], $preview_url );
 		}
 
 		$preview_nonce = wp_create_nonce( 'cfw-editor-preview' );
 		$preview_url   = add_query_arg(
-			array(
+			[
 				'cfw-editor-preview'  => '1',
 				'_cfw_preview_nonce'  => $preview_nonce,
 				'cfw-preview'         => $template_slug,
-			),
+			],
 			$preview_url
 		);
 
@@ -332,57 +332,57 @@ class CheckoutEditor extends PageAbstract {
 
 		// Templates data for the editor (for switching templates from the Design tab).
 		$templates        = Template::get_all_available();
-		$editor_templates = array();
+		$editor_templates = [];
 		$has_premium_plan = PlanManager::has_premium_plan_or_higher();
 
 		foreach ( $templates as $template ) {
 			$slug = $template->get_slug();
 
-			$editor_templates[] = array(
+			$editor_templates[] = [
 				'slug'   => $slug,
 				'name'   => $template->get_name(),
 				'active' => $slug === $template_slug,
 				'locked' => ! $has_premium_plan && $slug !== $template_slug,
-			);
+			];
 		}
 
 		// Ensure template switches keep sending the user back to the same place.
 		$editor_url = add_query_arg(
-			array(
+			[
 				'page'             => $this->get_slug(),
 				$return_param_key  => rawurlencode( $close_url ),
-			),
+			],
 			admin_url( 'admin.php' )
 		);
 
 		$this->set_script_data(
-			array(
-				'editor_settings' => array(
+			[
+				'editor_settings' => [
 					'settings' => $editor_settings,
-					'params'   => array(
+					'params'   => [
 						'font_options'              => $appearance_instance->get_font_settings(),
 						'template_path'             => $template_slug,
 						'color_settings'            => Appearance::get_theme_color_settings( $template_slug ),
 						'color_settings_defaults'   => $color_settings_defaults,
-						'logo_preview_url'          => wp_get_attachment_url( $settings_manager->get_setting( 'logo_attachment_id', array( $template_slug ) ) ),
+						'logo_preview_url'          => wp_get_attachment_url( $settings_manager->get_setting( 'logo_attachment_id', [ $template_slug ] ) ),
 						'countries'                => $countries,
-						'conditional_settings'      => array(
+						'conditional_settings'      => [
 							'order_notes_enable' => ! has_filter( 'woocommerce_enable_order_notes_field' ) || ( $settings_manager->get_setting( 'enable_order_notes' ) === 'yes' && 1 === cfw_count_filters( 'woocommerce_enable_order_notes_field' ) ),
-						),
-						'express_checkout_gateways' => apply_filters( 'cfw_detected_gateways', array() ),
+						],
+						'express_checkout_gateways' => apply_filters( 'cfw_detected_gateways', [] ),
 						'requires_license'          => defined( 'CFW_PREMIUM_PLAN_IDS' ),
-					),
-				),
+					],
+				],
 				'preview_url'          => $preview_url,
 				'has_products'         => $has_products,
 				'close_url'            => $close_url,
 				'editor_url'           => $editor_url,
 				'saved_active_template' => $saved_slug,
 				'admin_url'            => admin_url( 'admin.php' ),
-				'editor_logo_url' => CFW_PATH_ASSETS . '/images/cfw.svg',
+				'editor_logo_url' => CFW_PATH_URL_BASE . 'assets/images/cfw.svg',
 				'plan'            => $this->get_plan_data(),
 				'templates'       => $editor_templates,
-			)
+			]
 		);
 	}
 }

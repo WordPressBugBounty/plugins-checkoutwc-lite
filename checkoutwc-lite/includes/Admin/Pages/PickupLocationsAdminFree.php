@@ -28,16 +28,16 @@ class PickupLocationsAdminFree extends PageAbstract {
 	public function init() {
 		parent::init();
 
-		add_action( 'add_meta_boxes', array( $this, 'register_meta_boxes' ) );
-		add_action( 'save_post', array( $this, 'save_metaboxes' ) );
-		add_action( 'all_admin_notices', array( $this, 'output_with_wrap' ) );
-		add_action( 'all_admin_notices', array( $this, 'maybe_show_license_upgrade_splash' ) );
+		add_action( 'add_meta_boxes', [ $this, 'register_meta_boxes' ] );
+		add_action( 'save_post', [ $this, 'save_metaboxes' ] );
+		add_action( 'all_admin_notices', [ $this, 'output_with_wrap' ] );
+		add_action( 'all_admin_notices', [ $this, 'maybe_show_license_upgrade_splash' ] );
 
 		/**
 		 * Highlights Pickup Locations submenu item when
 		 * on the New Pickup Locations admin page
 		 */
-		add_filter( 'submenu_file', array( $this, 'maybe_highlight_pickup_locations_submenu_item' ) );
+		add_filter( 'submenu_file', [ $this, 'maybe_highlight_pickup_locations_submenu_item' ] );
 	}
 
 	public function get_url(): string {
@@ -70,7 +70,7 @@ class PickupLocationsAdminFree extends PageAbstract {
 	}
 
 	public function register_meta_boxes() {
-		add_meta_box( 'cfw_order_bump_products_mb', __( 'Pickup Location Details', 'checkout-wc' ), array( $this, 'render_meta_box' ), $this->post_type_slug );
+		add_meta_box( 'cfw_order_bump_products_mb', __( 'Pickup Location Details', 'checkout-wc' ), [ $this, 'render_meta_box' ], $this->post_type_slug );
 	}
 
 	/**
@@ -98,13 +98,13 @@ class PickupLocationsAdminFree extends PageAbstract {
 						wp_editor(
 							$cfw_pl_address,
 							sanitize_title_with_dashes( 'cfw_pl_address' ),
-							array(
+							[
 								'textarea_rows' => 4,
 								'quicktags'     => false,
 								'media_buttons' => false,
 								'textarea_name' => 'cfw_pl_address',
 								'tinymce'       => false,
-							)
+							]
 						);
 						?>
 					</td>
@@ -136,13 +136,13 @@ class PickupLocationsAdminFree extends PageAbstract {
 						wp_editor(
 							$cfw_pl_instructions,
 							sanitize_title_with_dashes( 'cfw_pl_instructions' ),
-							array(
+							[
 								'textarea_rows' => 4,
 								'quicktags'     => false,
 								'media_buttons' => false,
 								'textarea_name' => 'cfw_pl_instructions',
 								'tinymce'       => false,
-							)
+							]
 						);
 						?>
 					</td>
@@ -208,7 +208,7 @@ class PickupLocationsAdminFree extends PageAbstract {
 				<?php cfw_do_action( 'cfw_before_admin_page_header', $this ); ?>
 				<div class="min-h-[64px] bg-white flex items-center pl-8">
 					<span>
-						<?php echo file_get_contents( CFW_PATH . '/build/images/cfw.svg' ); // phpcs:ignore  ?>
+						<?php echo file_get_contents( CFW_PATH . '/assets/images/cfw.svg' ); // phpcs:ignore  ?>
 					</span>
 					<nav class="flex" aria-label="Breadcrumb">
 						<ol role="list" class="flex items-center space-x-2">
