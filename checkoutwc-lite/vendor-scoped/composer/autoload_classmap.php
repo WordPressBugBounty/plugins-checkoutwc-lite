@@ -6,8 +6,7 @@ $vendorDir = dirname(__DIR__);
 $baseDir = dirname($vendorDir);
 
 return array(
-    'CheckoutWC\\Attribute' => $vendorDir . '/symfony/polyfill-php80/Resources/stubs/Attribute.php',
-    'CheckoutWC\\JsonException' => $vendorDir . '/symfony/polyfill-php73/Resources/stubs/JsonException.php',
+    'Attribute' => $vendorDir . '/symfony/polyfill-php80/Resources/stubs/Attribute.php',
     'CheckoutWC\\Pelago\\Emogrifier\\Caching\\SimpleStringCache' => $vendorDir . '/pelago/emogrifier/src/Caching/SimpleStringCache.php',
     'CheckoutWC\\Pelago\\Emogrifier\\CssInliner' => $vendorDir . '/pelago/emogrifier/src/CssInliner.php',
     'CheckoutWC\\Pelago\\Emogrifier\\Css\\CssDocument' => $vendorDir . '/pelago/emogrifier/src/Css/CssDocument.php',
@@ -21,7 +20,6 @@ return array(
     'CheckoutWC\\Pelago\\Emogrifier\\Utilities\\CssConcatenator' => $vendorDir . '/pelago/emogrifier/src/Utilities/CssConcatenator.php',
     'CheckoutWC\\Pelago\\Emogrifier\\Utilities\\DeclarationBlockParser' => $vendorDir . '/pelago/emogrifier/src/Utilities/DeclarationBlockParser.php',
     'CheckoutWC\\Pelago\\Emogrifier\\Utilities\\Preg' => $vendorDir . '/pelago/emogrifier/src/Utilities/Preg.php',
-    'CheckoutWC\\PhpToken' => $vendorDir . '/symfony/polyfill-php80/Resources/stubs/PhpToken.php',
     'CheckoutWC\\Pressmodo\\AdminNotices\\Dismiss' => $vendorDir . '/pressmodo/wp-admin-notices/src/Dismiss.php',
     'CheckoutWC\\Pressmodo\\AdminNotices\\Notice' => $vendorDir . '/pressmodo/wp-admin-notices/src/Notice.php',
     'CheckoutWC\\Pressmodo\\AdminNotices\\Notices' => $vendorDir . '/pressmodo/wp-admin-notices/src/Notices.php',
@@ -191,7 +189,6 @@ return array(
     'CheckoutWC\\StellarWP\\Installer\\Handler\\Plugin' => $vendorDir . '/stellarwp/installer/src/Installer/Handler/Plugin.php',
     'CheckoutWC\\StellarWP\\Installer\\Installer' => $vendorDir . '/stellarwp/installer/src/Installer/Installer.php',
     'CheckoutWC\\StellarWP\\Installer\\Utils\\Array_Utils' => $vendorDir . '/stellarwp/installer/src/Installer/Utils/Array_Utils.php',
-    'CheckoutWC\\Stringable' => $vendorDir . '/symfony/polyfill-php80/Resources/stubs/Stringable.php',
     'CheckoutWC\\Symfony\\Component\\CssSelector\\CssSelectorConverter' => $vendorDir . '/symfony/css-selector/CssSelectorConverter.php',
     'CheckoutWC\\Symfony\\Component\\CssSelector\\Exception\\ExceptionInterface' => $vendorDir . '/symfony/css-selector/Exception/ExceptionInterface.php',
     'CheckoutWC\\Symfony\\Component\\CssSelector\\Exception\\ExpressionErrorException' => $vendorDir . '/symfony/css-selector/Exception/ExpressionErrorException.php',
@@ -318,7 +315,10 @@ return array(
     'CheckoutWC\\Symfony\\Polyfill\\Php73\\Php73' => $vendorDir . '/symfony/polyfill-php73/Php73.php',
     'CheckoutWC\\Symfony\\Polyfill\\Php80\\Php80' => $vendorDir . '/symfony/polyfill-php80/Php80.php',
     'CheckoutWC\\Symfony\\Polyfill\\Php80\\PhpToken' => $vendorDir . '/symfony/polyfill-php80/PhpToken.php',
-    'CheckoutWC\\UnhandledMatchError' => $vendorDir . '/symfony/polyfill-php80/Resources/stubs/UnhandledMatchError.php',
-    'CheckoutWC\\ValueError' => $vendorDir . '/symfony/polyfill-php80/Resources/stubs/ValueError.php',
     'Composer\\InstalledVersions' => $vendorDir . '/composer/InstalledVersions.php',
+    'JsonException' => $vendorDir . '/symfony/polyfill-php73/Resources/stubs/JsonException.php',
+    'PhpToken' => $vendorDir . '/symfony/polyfill-php80/Resources/stubs/PhpToken.php',
+    'Stringable' => $vendorDir . '/symfony/polyfill-php80/Resources/stubs/Stringable.php',
+    'UnhandledMatchError' => $vendorDir . '/symfony/polyfill-php80/Resources/stubs/UnhandledMatchError.php',
+    'ValueError' => $vendorDir . '/symfony/polyfill-php80/Resources/stubs/ValueError.php',
 );

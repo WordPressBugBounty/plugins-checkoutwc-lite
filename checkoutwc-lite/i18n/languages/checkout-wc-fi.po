@@ -8,7 +8,7 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "POT-Creation-Date: 2025-07-25 09:22-0400\n"
-"PO-Revision-Date: 2026-06-08 09:44+0000\n"
+"PO-Revision-Date: 2026-06-12 11:59+0000\n"
 "Language: fi\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 3.6\n"
@@ -75,54 +75,6 @@ msgstr "CheckoutWC vaatii WordPressin version %s tai uudemman."
 #: checkout-for-woocommerce.php:219
 msgid "CheckoutWC requires WooCommerce %s or later."
 msgstr "CheckoutWC vaatii WooCommercen version %s tai uudemman."
-
-#: includes/FormFieldAugmenter.php:163
-#: includes/FormFieldAugmenter.php:164
-#: includes/FormFieldAugmenter.php:169
-#: includes/AddressFieldsAugmenter.php:320
-#: includes/Managers/AssetManager.php:244
-#: includes/Features/HideOptionalAddressFields.php:48
-#: includes/Features/HideOptionalAddressFields.php:70
-msgid "optional"
-msgstr "valinnainen"
-
-#: includes/FormFieldAugmenter.php:178
-msgid "Choose an option"
-msgstr "Valitse vaihtoehto"
-
-#: includes/AddressFieldsAugmenter.php:148
-msgid "Full name"
-msgstr "Koko nimi"
-
-#: includes/AddressFieldsAugmenter.php:203
-msgid "House number"
-msgstr "Talon numero"
-
-#: includes/AddressFieldsAugmenter.php:215
-#: includes/Compatibility/Plugins/PostNL4.php:50
-#: includes/Compatibility/Plugins/PostNL4.php:51
-#: includes/Compatibility/Plugins/PostNL.php:52
-#: includes/Compatibility/Plugins/PostNL.php:53
-#: includes/Compatibility/Plugins/NLPostcodeChecker.php:52
-#: includes/Compatibility/Plugins/NLPostcodeChecker.php:53
-#: includes/Compatibility/Plugins/MyParcel.php:48
-msgid "Street name"
-msgstr "Kadun nimi"
-
-#: includes/AddressFieldsAugmenter.php:230
-msgid "Apartment, suite, unit, etc."
-msgstr "Asunto, huoneisto, yksikkö jne."
-
-#: includes/AddressFieldsAugmenter.php:301
-#: includes/AddressFieldsAugmenter.php:302
-#: includes/Admin/ShippingPhoneController.php:32
-#: includes/Admin/ShippingPhoneController.php:33
-#: includes/Admin/ShippingPhoneController.php:43
-#: client/ts/admin/Components/Forms/CheckoutSettingsForm.tsx:467
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:381
-#: client/ts/admin/Components/CheckoutEditor/panels/CheckoutSettingsPanel.tsx:246
-msgid "Phone"
-msgstr "Puhelin"
 
 #: functions/template-functions.php:95
 msgid "Show order summary"
@@ -758,6 +710,54 @@ msgstr "Ohita ja poista käytöstä nyt"
 msgid "CheckoutWC: You cannot activate an AB test that is not registered."
 msgstr "CheckoutWC: Et voi aktivoida rekisteröimätöntä AB-testiä."
 
+#: includes/FormFieldAugmenter.php:163
+#: includes/FormFieldAugmenter.php:164
+#: includes/FormFieldAugmenter.php:169
+#: includes/AddressFieldsAugmenter.php:320
+#: includes/Managers/AssetManager.php:244
+#: includes/Features/HideOptionalAddressFields.php:48
+#: includes/Features/HideOptionalAddressFields.php:70
+msgid "optional"
+msgstr "valinnainen"
+
+#: includes/FormFieldAugmenter.php:178
+msgid "Choose an option"
+msgstr "Valitse vaihtoehto"
+
+#: includes/AddressFieldsAugmenter.php:148
+msgid "Full name"
+msgstr "Koko nimi"
+
+#: includes/AddressFieldsAugmenter.php:203
+msgid "House number"
+msgstr "Talon numero"
+
+#: includes/AddressFieldsAugmenter.php:215
+#: includes/Compatibility/Plugins/PostNL4.php:50
+#: includes/Compatibility/Plugins/PostNL4.php:51
+#: includes/Compatibility/Plugins/PostNL.php:52
+#: includes/Compatibility/Plugins/PostNL.php:53
+#: includes/Compatibility/Plugins/NLPostcodeChecker.php:52
+#: includes/Compatibility/Plugins/NLPostcodeChecker.php:53
+#: includes/Compatibility/Plugins/MyParcel.php:48
+msgid "Street name"
+msgstr "Kadun nimi"
+
+#: includes/AddressFieldsAugmenter.php:230
+msgid "Apartment, suite, unit, etc."
+msgstr "Asunto, huoneisto, yksikkö jne."
+
+#: includes/AddressFieldsAugmenter.php:301
+#: includes/AddressFieldsAugmenter.php:302
+#: includes/Admin/ShippingPhoneController.php:32
+#: includes/Admin/ShippingPhoneController.php:33
+#: includes/Admin/ShippingPhoneController.php:43
+#: client/ts/admin/Components/Forms/CheckoutSettingsForm.tsx:467
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:381
+#: client/ts/admin/Components/CheckoutEditor/panels/CheckoutSettingsPanel.tsx:246
+msgid "Phone"
+msgstr "Puhelin"
+
 #: templates/glass/functions.php:68
 msgid "Accent Color"
 msgstr "Korostusväri"
@@ -777,6 +777,30 @@ msgstr "SendWP on jo yhdistetty."
 #: lib/sendwp-sdk/remote-install.php:84
 msgid "Something went wrong. SendWP was not installed correctly."
 msgstr "Jokin meni pieleen. SendWP:tä ei asennettu oikein."
+
+#: includes/Stats/StatCollection.php:193
+msgid "Once Weekly"
+msgstr "Kerran viikossa"
+
+#: includes/Stats/StatCollection.php:713
+msgid "Help us improve CheckoutWC."
+msgstr "Auta meitä parantamaan CheckoutWC:tä."
+
+#: includes/Stats/StatCollection.php:716
+msgid "Gathering usage data helps us to improve CheckoutWC. Opt-out at anytime."
+msgstr "Käyttötietojen kerääminen auttaa meitä parantamaan CheckoutWC:tä. Voit kieltäytyä milloin tahansa."
+
+#: includes/Stats/StatCollection.php:717
+msgid "Read more about what we collect."
+msgstr "Lue lisää siitä, mitä keräämme."
+
+#: includes/Stats/StatCollection.php:721
+msgid "Allow"
+msgstr "Salli"
+
+#: includes/Stats/StatCollection.php:725
+msgid "Do not allow"
+msgstr "Älä salli"
 
 #: includes/Shipping/CFW_Shipping_Local_Pickup.php:35
 #: includes/Shipping/CFW_Shipping_Local_Pickup.php:48
@@ -1004,30 +1028,6 @@ msgstr "Poista %s ostoskorista"
 #: includes/Managers/AssetManager.php:840
 msgid "Proceed to checkout"
 msgstr "Siirry kassalle"
-
-#: includes/Stats/StatCollection.php:193
-msgid "Once Weekly"
-msgstr "Kerran viikossa"
-
-#: includes/Stats/StatCollection.php:713
-msgid "Help us improve CheckoutWC."
-msgstr "Auta meitä parantamaan CheckoutWC:tä."
-
-#: includes/Stats/StatCollection.php:716
-msgid "Gathering usage data helps us to improve CheckoutWC. Opt-out at anytime."
-msgstr "Käyttötietojen kerääminen auttaa meitä parantamaan CheckoutWC:tä. Voit kieltäytyä milloin tahansa."
-
-#: includes/Stats/StatCollection.php:717
-msgid "Read more about what we collect."
-msgstr "Lue lisää siitä, mitä keräämme."
-
-#: includes/Stats/StatCollection.php:721
-msgid "Allow"
-msgstr "Salli"
-
-#: includes/Stats/StatCollection.php:725
-msgid "Do not allow"
-msgstr "Älä salli"
 
 #: includes/Loaders/LoaderAbstract.php:134
 #: includes/Loaders/LoaderAbstract.php:244
@@ -1698,24 +1698,6 @@ msgstr "Tilauksen lisämyyntitarjouslomake"
 msgid "The form to accept or reject the bump offer."
 msgstr "Lomake lisämyyntitarjouksen hyväksymiseen tai hylkäämiseen."
 
-# %1$s: Plugin name, %2$s: Link opening tag, %3$s: Version number, %4$s: Link closing tag
-#: includes/Managers/Helpers/EDD_SL_Plugin_Updater.php:278
-msgid "There is a new version of %1$s available. %2$sView version %3$s details%4$s."
-msgstr "Saatavilla on uusi versio %1$s. %2$sNäytä version %3$s tiedot%4$s."
-
-# %1$s: Plugin name, %2$s: Link opening tag, %3$s: Version number, %4$s: Link closing tag, %5$s: Update link opening tag, %6$s: Update link closing tag
-#: includes/Managers/Helpers/EDD_SL_Plugin_Updater.php:287
-msgid "There is a new version of %1$s available. %2$sView version %3$s details%4$s or %5$supdate now%6$s."
-msgstr "Saatavilla on uusi versio %1$s. %2$sNäytä version %3$s tiedot%4$s tai %5$späivitä nyt%6$s."
-
-#: includes/Managers/Helpers/EDD_SL_Plugin_Updater.php:531
-msgid "You do not have permission to install plugin updates"
-msgstr "Sinulla ei ole oikeuksia asentaa lisäosan päivityksiä"
-
-#: includes/Managers/Helpers/EDD_SL_Plugin_Updater.php:531
-msgid "Error"
-msgstr "Virhe"
-
 #: includes/Model/Bumps/BumpAbstract.php:1013
 #: includes/Model/Bumps/BumpAbstract.php:1023
 #: includes/Model/ABTests/OrderBumpsABTest.php:30
@@ -1770,6 +1752,24 @@ msgstr "Ei löytynyt roskakorista"
 #: includes/Features/ABTesting/ABTestTypeRegistry.php:124
 msgid "Test different variations of order bumps to see which performs better."
 msgstr "Testaa erilaisia tilauslisäyksiä nähdäksesi, mikä toimii parhaiten."
+
+# %1$s: Plugin name, %2$s: Link opening tag, %3$s: Version number, %4$s: Link closing tag
+#: includes/Managers/Helpers/EDD_SL_Plugin_Updater.php:278
+msgid "There is a new version of %1$s available. %2$sView version %3$s details%4$s."
+msgstr "Saatavilla on uusi versio %1$s. %2$sNäytä version %3$s tiedot%4$s."
+
+# %1$s: Plugin name, %2$s: Link opening tag, %3$s: Version number, %4$s: Link closing tag, %5$s: Update link opening tag, %6$s: Update link closing tag
+#: includes/Managers/Helpers/EDD_SL_Plugin_Updater.php:287
+msgid "There is a new version of %1$s available. %2$sView version %3$s details%4$s or %5$supdate now%6$s."
+msgstr "Saatavilla on uusi versio %1$s. %2$sNäytä version %3$s tiedot%4$s tai %5$späivitä nyt%6$s."
+
+#: includes/Managers/Helpers/EDD_SL_Plugin_Updater.php:531
+msgid "You do not have permission to install plugin updates"
+msgstr "Sinulla ei ole oikeuksia asentaa lisäosan päivityksiä"
+
+#: includes/Managers/Helpers/EDD_SL_Plugin_Updater.php:531
+msgid "Error"
+msgstr "Virhe"
 
 #: includes/Features/OneClick/OrderStatusManager.php:52
 msgid "Pending Offer <span class=\"count\">(%s)</span>"
@@ -1866,6 +1866,14 @@ msgstr "Ota Astra-tuki käyttöön (Beta)"
 #: includes/Compatibility/Themes/Astra.php:92
 msgid "If enabled with Advanced > Template Loader > Distraction Free Portal, Astra\\'s header and footer are displayed and Astra styles and scripts load on checkout. If disabled with Distraction Free Portal, Astra styles and scripts are excluded for a minimal layout. With WordPress Theme loader, the full theme loads regardless of this setting."
 msgstr "Jos Advanced > Template Loader > Distraction Free Portal on käytössä, Astran ylä- ja alatunniste näytetään ja Astra-tyylit sekä -skriptit latautuvat kassalla. Jos Distraction Free Portal on pois päältä, Astra-tyylit ja -skriptit jätetään pois minimaalisen ulkoasun vuoksi. WordPress-teeman lataajan kanssa koko teema ladataan riippumatta tästä asetuksesta."
+
+#: includes/Compatibility/Gateways/PayPalForWooCommerce.php:38
+msgid "Please update to the latest version of PayPal for WooCommerce to get full support."
+msgstr "Päivitä uusin PayPal for WooCommerce -versio saadaksesi täyden tuen."
+
+#: includes/Compatibility/Gateways/PayPalForWooCommerce.php:363
+msgid "Logged in with PayPal. Please continue your order below."
+msgstr "Kirjautunut sisään PayPalilla. Jatka tilaustasi alla."
 
 #: includes/Compatibility/Plugins/WooCommerceGiftCards.php:64
 #: includes/Compatibility/Plugins/WooCommerceGiftCards.php:72
@@ -1987,14 +1995,6 @@ msgstr "Ota käyttöön Beaver Themer -tuki"
 msgid "Allow Beaver Themer to replace header and footer."
 msgstr "Salli Beaver Themerin korvata ylä- ja alatunniste."
 
-#: includes/Compatibility/Gateways/PayPalForWooCommerce.php:38
-msgid "Please update to the latest version of PayPal for WooCommerce to get full support."
-msgstr "Päivitä uusin PayPal for WooCommerce -versio saadaksesi täyden tuen."
-
-#: includes/Compatibility/Gateways/PayPalForWooCommerce.php:363
-msgid "Logged in with PayPal. Please continue your order below."
-msgstr "Kirjautunut sisään PayPalilla. Jatka tilaustasi alla."
-
 #: includes/Admin/Views/html-refund-offer.php:22
 msgid "Product"
 msgstr "Tuote"
@@ -2022,6 +2022,116 @@ msgstr "Huomautus:"
 #: includes/Admin/Views/html-refund-offer.php:114
 msgid "Refunding an offer will process the refund with the payment gateway and create a WooCommerce refund record."
 msgstr "Tarjouksen palauttaminen käsittelee palautuksen maksuyhdyskäytävän kautta ja luo WooCommerce-palautustietueen."
+
+#: includes/Admin/Notices/WelcomeNotice.php:12
+msgid "Welcome to CheckoutWC"
+msgstr "Tervetuloa CheckoutWC:hen"
+
+#: includes/Admin/Notices/WelcomeNotice.php:20
+msgid "Thank you for installing CheckoutWC! We automatically activated your license. You are all set!"
+msgstr "Kiitos, että asensit CheckoutWC:n! Aktivoiimme lisenssisi automaattisesti. Olet valmis!"
+
+#: includes/Admin/Notices/WelcomeNotice.php:26
+msgid "Thank you for installing CheckoutWC! To get started, enter your <strong>License Key</strong> below, save, and click <strong>Activate Site</strong>."
+msgstr "Kiitos, että asensit CheckoutWC:n! Aloittaaksesi syötä alla <strong>lisenssiavain</strong>, tallenna ja klikkaa <strong>Aktivoi sivusto</strong>."
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:20
+msgid "your email"
+msgstr "sähköpostiosoitteesi"
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:88
+msgid "privacy policy"
+msgstr "tietosuojakäytäntö"
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:93
+msgid "By joining, %1$s will be added to our mailing list. Read our %2$s."
+msgstr "Liittymällä %1$s lisätään postituslistallemme. Lue %2$s."
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:99
+msgid "Join Newsletter & Save 25%"
+msgstr "Liity uutiskirjeeseen ja säästä 25 %"
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:102
+msgid "Join Newsletter"
+msgstr "Liity uutiskirjeeseen"
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:113
+msgid "Sign up to our newsletter and get proven conversion tips and checkout optimization strategies from the CheckoutWC team."
+msgstr "Tilaa uutiskirjeemme ja saat todistettuja konversiovinkkejä sekä kassaprosessin optimointistrategioita CheckoutWC-tiimiltä."
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:116
+msgid "Boost Your Conversions with Proven Strategies."
+msgstr "Lisää konversioitasi todistetuilla strategioilla."
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:123
+msgid "We're so glad that you've chosen CheckoutWC to handle your checkouts. Unlock more sales with premium features like order bumps, abandoned cart recovery, and much more."
+msgstr "Olemme iloisia, että valitsit CheckoutWC:n hoitamaan kassasi. Avaa lisää myyntiä premium-ominaisuuksilla, kuten tilauslisäyksillä, hylättyjen ostoskorien palautuksella ja paljon muulla."
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:126
+msgid "Unlock more sales with CheckoutWC Premium"
+msgstr "Avaa lisää myyntiä CheckoutWC Premiumilla"
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:144
+msgid "Sorry, there was an error joining our newsletter. Please refresh the page and try again."
+msgstr "Valitettavasti uutiskirjeen liittymisessä tapahtui virhe. Päivitä sivu ja yritä uudelleen."
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:243
+msgid "Please wait..."
+msgstr "Odota..."
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:320
+msgid "Sorry, your account has insufficient permissions to join our newsletter."
+msgstr "Valitettavasti tililläsi ei ole riittäviä oikeuksia liittyä uutiskirjeeseen."
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:354
+msgid "You have already joined our newsletter!"
+msgstr "Olet jo liittynyt uutiskirjeeseemme!"
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:396
+msgid "Thank you for joining our newsletter!"
+msgstr "Kiitos, että liityit uutiskirjeeseemme!"
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:410
+msgid "Security check failed."
+msgstr "Turvatarkistus epäonnistui."
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:414
+msgid "Insufficient permissions."
+msgstr "Riittämättömät oikeudet."
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:422
+msgid "Notice dismissed."
+msgstr "Ilmoitus suljettu."
+
+# %1$s: URL to pricing page, %2$s: "purchase a new license" link text, %3$s: Support email URL, %4$s: "please contact support" link text
+#: includes/Admin/Notices/InvalidLicenseKeyNotice.php:15
+msgid "Your license key appears to have expired. Please <a href=\"%1$s\" target=\"_blank\">%2$s</a> to restore functionality. If you believe this is in error, <a href=\"%3$s\">%4$s</a>."
+msgstr "Lisenssiavaimesi näyttää vanhentuneen. Ole hyvä ja <a href=\"%1$s\" target=\"_blank\">%2$s</a> palauttaaksesi toiminnallisuuden. Jos uskot tämän olevan virhe, <a href=\"%3$s\">%4$s</a>."
+
+#: includes/Admin/Notices/InvalidLicenseKeyNotice.php:17
+msgid "purchase a new license"
+msgstr "osta uusi lisenssi"
+
+#: includes/Admin/Notices/InvalidLicenseKeyNotice.php:19
+msgid "please contact support"
+msgstr "ota yhteyttä tukeen"
+
+# %1$s: URL to activation page, %2$s: "Start Here" link text
+#: includes/Admin/Notices/InactiveLicenseNotice.php:11
+msgid "Your license key is not active for this site. Please visit <a href=\"%1$s\">%2$s</a> to activate your license and restore functionality."
+msgstr "Lisenssiavaimesi ei ole aktiivinen tälle sivustolle. Käy osoitteessa <a href=\"%1$s\">%2$s</a> aktivoidaksesi lisenssisi ja palauttaaksesi toiminnallisuuden."
+
+#: includes/Admin/Notices/BFNotice.php:13
+msgid "Black Friday Sale - 40% Off"
+msgstr "Black Friday -ale - 40 % alennusta"
+
+#: includes/Admin/Notices/BFNotice.php:14
+msgid "You're missing out on revenue growth tools like Order Bumps, Upsells, Abandoned Cart Recovery and more! Save 40% on CheckoutWC pro plans for Black Friday, ends December 4th"
+msgstr "Jäät paitsi tulonkasvun työkaluista, kuten Order Bumps, Upsells, Abandoned Cart Recovery ja muista! Säästä 40 % CheckoutWC Pro -suunnitelmista Black Fridayn aikana, tarjous päättyy 4. joulukuuta"
+
+#: includes/Admin/Notices/BFNotice.php:27
+msgid "Get CheckoutWC Pro Now!"
+msgstr "Hanki CheckoutWC Pro nyt!"
 
 #: includes/Admin/Pages/WooCommercePages.php:21
 msgid "Pages"
@@ -3145,116 +3255,6 @@ msgstr "Poista kaikki seuratut ostoskorit"
 msgid "Note: This resets ALL abandoned cart recovery statistics!"
 msgstr "Huomautus: Tämä nollaa KAIKKI hylättyjen ostoskorien palautuksen tilastot!"
 
-#: includes/Admin/Notices/WelcomeNotice.php:12
-msgid "Welcome to CheckoutWC"
-msgstr "Tervetuloa CheckoutWC:hen"
-
-#: includes/Admin/Notices/WelcomeNotice.php:20
-msgid "Thank you for installing CheckoutWC! We automatically activated your license. You are all set!"
-msgstr "Kiitos, että asensit CheckoutWC:n! Aktivoiimme lisenssisi automaattisesti. Olet valmis!"
-
-#: includes/Admin/Notices/WelcomeNotice.php:26
-msgid "Thank you for installing CheckoutWC! To get started, enter your <strong>License Key</strong> below, save, and click <strong>Activate Site</strong>."
-msgstr "Kiitos, että asensit CheckoutWC:n! Aloittaaksesi syötä alla <strong>lisenssiavain</strong>, tallenna ja klikkaa <strong>Aktivoi sivusto</strong>."
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:20
-msgid "your email"
-msgstr "sähköpostiosoitteesi"
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:88
-msgid "privacy policy"
-msgstr "tietosuojakäytäntö"
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:93
-msgid "By joining, %1$s will be added to our mailing list. Read our %2$s."
-msgstr "Liittymällä %1$s lisätään postituslistallemme. Lue %2$s."
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:99
-msgid "Join Newsletter & Save 25%"
-msgstr "Liity uutiskirjeeseen ja säästä 25 %"
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:102
-msgid "Join Newsletter"
-msgstr "Liity uutiskirjeeseen"
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:113
-msgid "Sign up to our newsletter and get proven conversion tips and checkout optimization strategies from the CheckoutWC team."
-msgstr "Tilaa uutiskirjeemme ja saat todistettuja konversiovinkkejä sekä kassaprosessin optimointistrategioita CheckoutWC-tiimiltä."
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:116
-msgid "Boost Your Conversions with Proven Strategies."
-msgstr "Lisää konversioitasi todistetuilla strategioilla."
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:123
-msgid "We're so glad that you've chosen CheckoutWC to handle your checkouts. Unlock more sales with premium features like order bumps, abandoned cart recovery, and much more."
-msgstr "Olemme iloisia, että valitsit CheckoutWC:n hoitamaan kassasi. Avaa lisää myyntiä premium-ominaisuuksilla, kuten tilauslisäyksillä, hylättyjen ostoskorien palautuksella ja paljon muulla."
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:126
-msgid "Unlock more sales with CheckoutWC Premium"
-msgstr "Avaa lisää myyntiä CheckoutWC Premiumilla"
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:144
-msgid "Sorry, there was an error joining our newsletter. Please refresh the page and try again."
-msgstr "Valitettavasti uutiskirjeen liittymisessä tapahtui virhe. Päivitä sivu ja yritä uudelleen."
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:243
-msgid "Please wait..."
-msgstr "Odota..."
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:320
-msgid "Sorry, your account has insufficient permissions to join our newsletter."
-msgstr "Valitettavasti tililläsi ei ole riittäviä oikeuksia liittyä uutiskirjeeseen."
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:354
-msgid "You have already joined our newsletter!"
-msgstr "Olet jo liittynyt uutiskirjeeseemme!"
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:396
-msgid "Thank you for joining our newsletter!"
-msgstr "Kiitos, että liityit uutiskirjeeseemme!"
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:410
-msgid "Security check failed."
-msgstr "Turvatarkistus epäonnistui."
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:414
-msgid "Insufficient permissions."
-msgstr "Riittämättömät oikeudet."
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:422
-msgid "Notice dismissed."
-msgstr "Ilmoitus suljettu."
-
-# %1$s: URL to pricing page, %2$s: "purchase a new license" link text, %3$s: Support email URL, %4$s: "please contact support" link text
-#: includes/Admin/Notices/InvalidLicenseKeyNotice.php:15
-msgid "Your license key appears to have expired. Please <a href=\"%1$s\" target=\"_blank\">%2$s</a> to restore functionality. If you believe this is in error, <a href=\"%3$s\">%4$s</a>."
-msgstr "Lisenssiavaimesi näyttää vanhentuneen. Ole hyvä ja <a href=\"%1$s\" target=\"_blank\">%2$s</a> palauttaaksesi toiminnallisuuden. Jos uskot tämän olevan virhe, <a href=\"%3$s\">%4$s</a>."
-
-#: includes/Admin/Notices/InvalidLicenseKeyNotice.php:17
-msgid "purchase a new license"
-msgstr "osta uusi lisenssi"
-
-#: includes/Admin/Notices/InvalidLicenseKeyNotice.php:19
-msgid "please contact support"
-msgstr "ota yhteyttä tukeen"
-
-# %1$s: URL to activation page, %2$s: "Start Here" link text
-#: includes/Admin/Notices/InactiveLicenseNotice.php:11
-msgid "Your license key is not active for this site. Please visit <a href=\"%1$s\">%2$s</a> to activate your license and restore functionality."
-msgstr "Lisenssiavaimesi ei ole aktiivinen tälle sivustolle. Käy osoitteessa <a href=\"%1$s\">%2$s</a> aktivoidaksesi lisenssisi ja palauttaaksesi toiminnallisuuden."
-
-#: includes/Admin/Notices/BFNotice.php:13
-msgid "Black Friday Sale - 40% Off"
-msgstr "Black Friday -ale - 40 % alennusta"
-
-#: includes/Admin/Notices/BFNotice.php:14
-msgid "You're missing out on revenue growth tools like Order Bumps, Upsells, Abandoned Cart Recovery and more! Save 40% on CheckoutWC pro plans for Black Friday, ends December 4th"
-msgstr "Jäät paitsi tulonkasvun työkaluista, kuten Order Bumps, Upsells, Abandoned Cart Recovery ja muista! Säästä 40 % CheckoutWC Pro -suunnitelmista Black Fridayn aikana, tarjous päättyy 4. joulukuuta"
-
-#: includes/Admin/Notices/BFNotice.php:27
-msgid "Get CheckoutWC Pro Now!"
-msgstr "Hanki CheckoutWC Pro nyt!"
-
 #: client/ts/functions/cfwFormatDate.ts:38
 msgid "Sunday"
 msgstr "Sunnuntai"
@@ -4096,6 +4096,18 @@ msgstr "Päivämäärä, jolloin A/B-testi päättyy. Tämän jälkeen näytetä
 msgid "Traffic split percentages must total 100%. Please adjust your percentages."
 msgstr "Liikenteen jako prosentteina on oltava yhteensä 100 %. Säädä prosenttiosuuksia."
 
+#: client/ts/frontend/Components/TermsAndConditionsModal.tsx:15
+msgid "Terms and Conditions"
+msgstr "Käyttöehdot"
+
+#: client/ts/frontend/Components/SuggestedProductsCarousel.tsx:84
+msgid "View Product"
+msgstr "Näytä tuote"
+
+#: client/ts/frontend/Components/SideCartComponent.tsx:38
+msgid "Close Cart"
+msgstr "Sulje ostoskori"
+
 #: client/ts/frontend/Actions/CompleteOrderAction.ts:196
 msgid "Could not connect to server. Please refresh and try again or contact site administrator."
 msgstr "Yhteyttä palvelimeen ei voitu muodostaa. Päivitä sivu ja yritä uudelleen tai ota yhteyttä sivuston ylläpitäjään."
@@ -4119,18 +4131,6 @@ msgstr "Palvelin aikakatkaisi pyynnön käsittelyn aikana. Päivitä sivu ja yri
 #: client/ts/frontend/Actions/CompleteOrderAction.ts:206
 msgid "Request was aborted. Please contact site administrator."
 msgstr "Pyyntö keskeytettiin. Ota yhteyttä sivuston ylläpitäjään."
-
-#: client/ts/frontend/Components/TermsAndConditionsModal.tsx:15
-msgid "Terms and Conditions"
-msgstr "Käyttöehdot"
-
-#: client/ts/frontend/Components/SuggestedProductsCarousel.tsx:84
-msgid "View Product"
-msgstr "Näytä tuote"
-
-#: client/ts/frontend/Components/SideCartComponent.tsx:38
-msgid "Close Cart"
-msgstr "Sulje ostoskori"
 
 #: client/ts/admin/Components/TrustBadgeRow.tsx:172
 msgid "Determine when this Trust Badge should be displayed."
@@ -4300,6 +4300,363 @@ msgstr "Ladataan..."
 #: client/ts/admin/Components/acr/carts.tsx:234
 msgid "Tracked Carts"
 msgstr "Seuratut ostoskorit"
+
+#: client/ts/admin/Components/Metaboxes/ProductsAndVariationsCompleter.tsx:44
+msgid "All products with titles that include {{query /}}"
+msgstr "Kaikki tuotteet, joiden otsikot sisältävät {{query /}}"
+
+#: client/ts/admin/Components/Metaboxes/ProductTagCompleter.tsx:44
+msgid "All product tags that include {{query /}}"
+msgstr "Kaikki tuotetunnisteet, jotka sisältävät {{query /}}"
+
+#: client/ts/admin/Components/Metaboxes/ProductAttributeTermsCompleter.tsx:99
+msgid "All attribute terms that include {{query /}}"
+msgstr "Kaikki ominaisuusehdot, jotka sisältävät {{query /}}"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsSetupModal.tsx:62
+msgid "Let\\'s configure a few things to get you started quickly."
+msgstr "Määritellään muutama asia, jotta pääset nopeasti alkuun."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsSetupModal.tsx:66
+msgid "Give your new Order Bump a name. This is just for admins - it won\\'t be displayed to customers."
+msgstr "Anna uudelle tilauslisäyksellesi nimi. Tämä on vain ylläpitäjille - sitä ei näytetä asiakkaille."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsSetupModal.tsx:78
+msgid "Which product should be added to the cart when this Order Bump is accepted?"
+msgstr "Mikä tuote lisätään ostoskoriin, kun tämä tilauslisäys hyväksytään?"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsSetupModal.tsx:80
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:33
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:92
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:130
+#: client/ts/admin/Components/Metaboxes/OrderBumpsGeneralPanel.tsx:44
+msgid "Search for product"
+msgstr "Etsi tuotetta"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsSetupModal.tsx:91
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferDiscountPanel.tsx:19
+msgid "Discount Type"
+msgstr "Alennustyyppi"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsSetupModal.tsx:94
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferDiscountPanel.tsx:23
+msgid "Percent Off"
+msgstr "Prosenttialennus"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsSetupModal.tsx:95
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferDiscountPanel.tsx:24
+msgid "Amount Off"
+msgstr "Summa-alennus"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsSetupModal.tsx:105
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferDiscountPanel.tsx:34
+msgid "Discount"
+msgstr "Alennus"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsSetupModal.tsx:106
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferDiscountPanel.tsx:35
+msgid "The amount or percentage applied as a discount to the Offer Product. Leave blank or enter 0 to charge full price."
+msgstr "Tarjottavaan tuotteeseen sovellettava alennusmäärä tai prosenttiosuus. Jätä tyhjäksi tai kirjoita 0 veloittaaksesi täyden hinnan."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsSetupModal.tsx:117
+msgid "Continue"
+msgstr "Jatka"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsSetupModal.tsx:122
+msgid "Continue to review your order bump, optionally add display conditions, and publish."
+msgstr "Jatka tarkistamaan tilauslisäyksesi, lisää tarvittaessa näyttöehdot ja julkaise."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:19
+msgid "You must select an offer product."
+msgstr "Sinun on valittava tarjous-tuote."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:26
+msgid "Offer"
+msgstr "Tarjous"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:44
+msgid "Auto Add Order Bump to Cart"
+msgstr "Lisää tilauksen lisäys automaattisesti ostoskoriin"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:45
+msgid "If conditions are satisfied, automatically add this order bump to the cart. Useful for free gifts or other offers that don\\'t require customer action."
+msgstr "Jos ehdot täyttyvät, lisää tämä tilauksen lisäys automaattisesti ostoskoriin. Hyödyllinen ilmaisille lahjoille tai muille tarjouksille, jotka eivät vaadi asiakkaan toimenpiteitä."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:56
+msgid "Auto Match Variations Between Search and Offer Product"
+msgstr "Vertaile automaattisesti muunnelmia haun ja tarjous-tuotteen välillä"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:61
+msgid "Add offer product to the cart with the same variable configuration as the product below."
+msgstr "Lisää tarjous-tuote ostoskoriin samalla muuttuvalla kokoonpanolla kuin alla oleva tuote."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:65
+msgid "Only applies when Auto Match Cart Product and Offer Product are variable products with matching variation attributes (Size, Color, etc)"
+msgstr "Soveltuu vain, kun automaattinen vertailu ostoskorin tuotteen ja tarjous-tuotteen välillä koskee muuttuvia tuotteita, joilla on vastaavat muunnelma-ominaisuudet (koko, väri jne.)"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:69
+msgid "Leave unchecked to have customers to select variation options in a modal window."
+msgstr "Jätä valitsematta, jos haluat asiakkaiden valitsevan muunnelmavaihtoehdot modaalissa ikkunassa."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:73
+msgid "If offer product is not variable, this option is ignored."
+msgstr "Jos tarjous-tuote ei ole muuttuva, tätä vaihtoehtoa ei huomioida."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:90
+msgid "Auto Match Variations Cart Product"
+msgstr "Vertaile automaattisesti ostoskorin tuotteen muunnelmia"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:98
+msgid "The product in the cart to match the Order Bump variations to."
+msgstr "Ostoskorissa oleva tuote, johon tilauksen lisäyksen muunnelmat sovitetaan."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:113
+msgid "Match Quantity of Offer Product to Display Condition Product"
+msgstr "Sovita tarjous-tuotteen määrä näyttöehdon tuotteeseen"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:114
+msgid "If customer has two of the display condition product in the cart, two of the offer product will be added to the cart."
+msgstr "Jos asiakkaalla on kaksi näyttöehdon tuotetta ostoskorissa, kaksi tarjous-tuotetta lisätään ostoskoriin."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:128
+msgid "Match Quantity Cart Product"
+msgstr "Sovita ostoskorin tuotteen määrä"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:136
+msgid "The product in the cart to match the Order Bump quantity to."
+msgstr "Ostoskorissa oleva tuote, johon tilauksen lisäyksen määrä sovitetaan."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:151
+msgid "Quantity of Offer Product To Add"
+msgstr "Lisättävän tarjous-tuotteen määrä"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:152
+msgid "The quantity to add to the cart when offer is accepted."
+msgstr "Määrä, joka lisätään ostoskoriin, kun tarjous hyväksytään."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:161
+msgid "Allow Customer To Change Quantity In Cart"
+msgstr "Salli asiakkaan muuttaa määrää ostoskorissa"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:162
+msgid "Allow customer to change the quantity of this order bump in the cart."
+msgstr "Salli asiakkaan muuttaa tämän tilauksen lisäyksen määrää ostoskorissa."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:22
+msgid "Offer Language"
+msgstr "Tarjouksen kieli"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:29
+msgid "Place Order Modal Heading"
+msgstr "Tilauksen tekemisen modaalin otsikko"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:30
+msgid "Default if blank: Your order is almost complete..."
+msgstr "Oletus, jos tyhjä: Tilauksesi on melkein valmis..."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:30
+msgid "Wait %s! Here\\'s an exclusive offer to compliment your order!"
+msgstr "Odota %s! Tässä on eksklusiivinen tarjous tilauksesi täydentämiseksi!"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:39
+msgid "Place Order Modal Subheading"
+msgstr "Tilauksen tekemisen modaalin alaotsikko"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:40
+msgid "Default if blank: Add this offer to your order and save!"
+msgstr "Oletus, jos tyhjä: Lisää tämä tarjous tilaukseesi ja säästä!"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:52
+msgid "Offer Acceptance Checkbox Label"
+msgstr "Tarjouksen hyväksymisen valintaruudun teksti"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:52
+msgid "Offer Acceptance Button Label"
+msgstr "Tarjouksen hyväksymispainikkeen teksti"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:53
+msgid "Example: Yes! Please add this offer to my order"
+msgstr "Esimerkki: Kyllä! Lisää tämä tarjous tilaukseeni"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:63
+msgid "Offer Description"
+msgstr "Tarjouksen kuvaus"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:64
+msgid "Example: Limited time offer! Get an EXCLUSIVE discount right now! Click the checkbox above to add this product to your order now."
+msgstr "Esimerkki: Rajoitettu tarjous! Saat NYT EXKLUUSIIVISEN alennuksen! Klikkaa yllä olevaa valintaruutua lisätäksesi tämän tuotteen tilaukseesi nyt."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:74
+msgid "Modal Offer Rejection Link Text"
+msgstr "Modaalin tarjouksen hylkäyslinkin teksti"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:78
+msgid "Displays in modal version of Order Bump, such as Place Order bumps or when the Offer Product is a variable product (as opposed to a specific variation)."
+msgstr "Näkyy tilauksen lisämyynnin modaaliversiossa, kuten Tilauksen tekemisen lisämyynneissä tai kun Tarjoustuote on muuttuva tuote (ei tietty variaatio)."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:83
+msgid "Default if blank: No thanks, just complete my order"
+msgstr "Oletus, jos tyhjä: Ei kiitos, suorita tilaukseni loppuun"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:85
+msgid "Default if blank: No thanks"
+msgstr "Oletus, jos tyhjä: Ei kiitos"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferDiscountPanel.tsx:15
+msgid "Offer Discount"
+msgstr "Tarjousalennus"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferDiscountPanel.tsx:20
+msgid "Amount Off: Remove fixed amount from the product price. Percent Off: Discount product by specified percentage."
+msgstr "Summa-alennus: Poista kiinteä summa tuotteen hinnasta. Prosenttialennus: Alenna tuotetta määritetyllä prosenttiosuudella."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferDiscountPanel.tsx:46
+msgid "Item Removal Behavior"
+msgstr "Tuotteen poistokäyttäytyminen"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferDiscountPanel.tsx:47
+msgid "What happens when the display for product is removed from the cart. Default: Order Bump remains in the cart but bump specific discounts are removed."
+msgstr "Mitä tapahtuu, kun tuotteen näyttö poistetaan ostoskorista. Oletus: Tilauslisäys pysyy ostoskorissa, mutta lisäyksen alennukset poistetaan."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferDiscountPanel.tsx:50
+msgid "Leave In Cart With Normal Price"
+msgstr "Jätä ostoskoriin normaalihinnalla"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferDiscountPanel.tsx:51
+msgid "Remove Order Bump From Cart"
+msgstr "Poista tilauslisäys ostoskorista"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsGeneralPanel.tsx:13
+msgid "You must set an upsell replacement product."
+msgstr "Sinun on asetettava lisämyynnin korvaava tuote."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsGeneralPanel.tsx:20
+msgid "Offer Type"
+msgstr "Tarjouksen tyyppi"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsGeneralPanel.tsx:24
+msgid "Use Order Bump As Upsell"
+msgstr "Käytä tilauksen lisäystä lisämyyntinä"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsGeneralPanel.tsx:28
+msgid "Replace a cart item with offer product when this Order Bump is taken."
+msgstr "Korvaa ostoskorin tuote tarjous-tuotteella, kun tämä tilauksen lisäys valitaan."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsGeneralPanel.tsx:42
+msgid "Which product does this upsell replace in the cart?"
+msgstr "Mikä tuote tämä lisämyynti korvaa ostoskorissa?"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsGeneralPanel.tsx:50
+msgid "This product must be in the cart for this order bump to be shown."
+msgstr "Tämän tuotteen on oltava ostoskorissa, jotta tämä tilauksen lisäys näytetään."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:32
+msgid "Block Editor is only used for Full Screen Order Bumps (Configurable for Place Order and Post Purchase One-Click bumps). Blocks are ignored for other configurations."
+msgstr "Lohkoeditoria käytetään vain koko näytön tilauksen lisämyynneissä (määräytyy Tilauksen tekemisen ja Oston jälkeisen yhden klikkauksen lisämyynneissä). Lohkoja ei huomioida muissa asetuksissa."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:48
+msgid "Post Purchase One-Click bumps require a compatible payment gateway. We recommend using Place Order bumps when using non-compatible gateways."
+msgstr "Oston jälkeiset yhden klikkauksen lisämyynnit vaativat yhteensopivan maksutavan. Suosittelemme käyttämään Tilauksen tekemisen lisämyyntejä, jos maksutapa ei ole yhteensopiva."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:54
+msgid "Learn more about supported gateways"
+msgstr "Lisätietoja tuetuista maksutavoista"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:61
+msgid "Read our Order Bumps documentation"
+msgstr "Lue tilauslisäysten dokumentaatiomme"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:82
+msgid "Display Location"
+msgstr "Näyttöpaikka"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:91
+msgid "Below Cart Items"
+msgstr "Ostoskorin alapuolella"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:92
+msgid "Below Cart Items (Side Cart Only)"
+msgstr "Ostoskorin alapuolella (vain sivukori)"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:93
+msgid "Below Cart Items (Checkout Only)"
+msgstr "Ostoskorin alapuolella (vain kassalla)"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:94
+msgid "Above Terms and Conditions"
+msgstr "Ehtojen yläpuolella"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:95
+msgid "Above Express Checkout"
+msgstr "Express-kassan yläpuolella"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:96
+msgid "Bottom of Information Step"
+msgstr "Tietovaiheen alareunassa"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:97
+msgid "Bottom of Shipping Step"
+msgstr "Toimitusvaiheen alareunassa"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:98
+msgid "Below Complete Order Button"
+msgstr "Tilauksen vahvistuspainikkeen alapuolella"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:109
+msgid "Note: Displays above the terms and conditions on mobile devices."
+msgstr "Huomautus: Näytetään ehtojen yläpuolella mobiililaitteissa."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:112
+msgid "Displays in a popup when Place Order is clicked, before the order is submitted"
+msgstr "Näytetään ponnahdusikkunassa, kun Tilaa-painiketta klikataan, ennen tilauksen lähettämistä"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:115
+msgid "Displays in a popup on the Thank You page."
+msgstr "Näytetään ponnahdusikkunassa Kiitos-sivulla."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:119
+msgid "Full Screen Landing Page (Use Block Editor To Design)"
+msgstr "Koko näytön aloitussivu (käytä lohkoeditoria suunnitteluun)"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:120
+msgid "If checked, the bump offer will be displayed full screen. Use Order Bump Offer Form block to design the offer."
+msgstr "Jos valittu, lisäystarjous näytetään koko näytöllä. Käytä Tilauksen lisäystarjouslomakkeen lohkoa tarjouksen suunnitteluun."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayConditions.tsx:26
+msgid "Show Bump When These Conditions Are True:"
+msgstr "Näytä lisäys, kun nämä ehdot täyttyvät:"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayConditions.tsx:29
+msgid "This bump will be shown when the correct upsell product is in the cart and the Offer Product is not in the cart. To further limit when this bump is shown, add a rule below."
+msgstr "Tämä lisäys näytetään, kun oikea lisämyyntituote on ostoskorissa eikä tarjoustuotetta ole ostoskorissa. Rajoittaaksesi lisäyksen näyttämistä lisää alla sääntö."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayConditions.tsx:31
+msgid "This bump will always be shown when the Offer Product is not in the cart. To limit when this bump is shown, add a rule below."
+msgstr "Tämä lisäys näytetään aina, kun tarjoustuotetta ei ole ostoskorissa. Rajoittaaksesi lisäyksen näyttämistä lisää alla sääntö."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsActionsPanel.tsx:15
+msgid "Actions"
+msgstr "Toiminnot"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsActionsPanel.tsx:21
+msgid "Remove These Products From The Cart"
+msgstr "Poista nämä tuotteet ostoskorista"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsActionsPanel.tsx:23
+msgid "If any of these products are in the cart, remove them when this bump is added to the cart."
+msgstr "Jos jokin näistä tuotteista on ostoskorissa, poista ne, kun tämä lisäys lisätään ostoskoriin."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsActionsPanel.tsx:24
+msgid "Search for products"
+msgstr "Etsi tuotteita"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsActionsPanel.tsx:35
+msgid "Apply Free Shipping"
+msgstr "Ota käyttöön ilmainen toimitus"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsActionsPanel.tsx:36
+msgid "When this bump is added to the cart, apply free shipping to the cart."
+msgstr "Kun tämä lisäys lisätään ostoskoriin, ota ostoskorille ilmainen toimitus käyttöön."
 
 #: client/ts/admin/Components/Forms/WooCommercePagesGlobalOptionsSettingsForm.tsx:49
 #: client/ts/admin/Components/Forms/CheckoutSettingsForm.tsx:570
@@ -5936,363 +6293,6 @@ msgstr "Sinulla on tallentamattomia muutoksia. Haluatko varmasti poistua?"
 #: client/ts/admin/Components/CheckoutEditor/EditorApp.tsx:150
 msgid "Changing templates will update the logo, typography, colors, field label style, and footer text to those defined by the selected template. Are you sure you want to continue?"
 msgstr "Mallin vaihtaminen päivittää logon, typografian, värit, kenttien otsikkotyylin ja alatunnisteen tekstin valitun mallin mukaisiksi. Haluatko varmasti jatkaa?"
-
-#: client/ts/admin/Components/Metaboxes/ProductsAndVariationsCompleter.tsx:44
-msgid "All products with titles that include {{query /}}"
-msgstr "Kaikki tuotteet, joiden otsikot sisältävät {{query /}}"
-
-#: client/ts/admin/Components/Metaboxes/ProductTagCompleter.tsx:44
-msgid "All product tags that include {{query /}}"
-msgstr "Kaikki tuotetunnisteet, jotka sisältävät {{query /}}"
-
-#: client/ts/admin/Components/Metaboxes/ProductAttributeTermsCompleter.tsx:99
-msgid "All attribute terms that include {{query /}}"
-msgstr "Kaikki ominaisuusehdot, jotka sisältävät {{query /}}"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsSetupModal.tsx:62
-msgid "Let\\'s configure a few things to get you started quickly."
-msgstr "Määritellään muutama asia, jotta pääset nopeasti alkuun."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsSetupModal.tsx:66
-msgid "Give your new Order Bump a name. This is just for admins - it won\\'t be displayed to customers."
-msgstr "Anna uudelle tilauslisäyksellesi nimi. Tämä on vain ylläpitäjille - sitä ei näytetä asiakkaille."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsSetupModal.tsx:78
-msgid "Which product should be added to the cart when this Order Bump is accepted?"
-msgstr "Mikä tuote lisätään ostoskoriin, kun tämä tilauslisäys hyväksytään?"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsSetupModal.tsx:80
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:33
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:92
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:130
-#: client/ts/admin/Components/Metaboxes/OrderBumpsGeneralPanel.tsx:44
-msgid "Search for product"
-msgstr "Etsi tuotetta"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsSetupModal.tsx:91
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferDiscountPanel.tsx:19
-msgid "Discount Type"
-msgstr "Alennustyyppi"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsSetupModal.tsx:94
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferDiscountPanel.tsx:23
-msgid "Percent Off"
-msgstr "Prosenttialennus"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsSetupModal.tsx:95
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferDiscountPanel.tsx:24
-msgid "Amount Off"
-msgstr "Summa-alennus"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsSetupModal.tsx:105
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferDiscountPanel.tsx:34
-msgid "Discount"
-msgstr "Alennus"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsSetupModal.tsx:106
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferDiscountPanel.tsx:35
-msgid "The amount or percentage applied as a discount to the Offer Product. Leave blank or enter 0 to charge full price."
-msgstr "Tarjottavaan tuotteeseen sovellettava alennusmäärä tai prosenttiosuus. Jätä tyhjäksi tai kirjoita 0 veloittaaksesi täyden hinnan."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsSetupModal.tsx:117
-msgid "Continue"
-msgstr "Jatka"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsSetupModal.tsx:122
-msgid "Continue to review your order bump, optionally add display conditions, and publish."
-msgstr "Jatka tarkistamaan tilauslisäyksesi, lisää tarvittaessa näyttöehdot ja julkaise."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:19
-msgid "You must select an offer product."
-msgstr "Sinun on valittava tarjous-tuote."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:26
-msgid "Offer"
-msgstr "Tarjous"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:44
-msgid "Auto Add Order Bump to Cart"
-msgstr "Lisää tilauksen lisäys automaattisesti ostoskoriin"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:45
-msgid "If conditions are satisfied, automatically add this order bump to the cart. Useful for free gifts or other offers that don\\'t require customer action."
-msgstr "Jos ehdot täyttyvät, lisää tämä tilauksen lisäys automaattisesti ostoskoriin. Hyödyllinen ilmaisille lahjoille tai muille tarjouksille, jotka eivät vaadi asiakkaan toimenpiteitä."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:56
-msgid "Auto Match Variations Between Search and Offer Product"
-msgstr "Vertaile automaattisesti muunnelmia haun ja tarjous-tuotteen välillä"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:61
-msgid "Add offer product to the cart with the same variable configuration as the product below."
-msgstr "Lisää tarjous-tuote ostoskoriin samalla muuttuvalla kokoonpanolla kuin alla oleva tuote."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:65
-msgid "Only applies when Auto Match Cart Product and Offer Product are variable products with matching variation attributes (Size, Color, etc)"
-msgstr "Soveltuu vain, kun automaattinen vertailu ostoskorin tuotteen ja tarjous-tuotteen välillä koskee muuttuvia tuotteita, joilla on vastaavat muunnelma-ominaisuudet (koko, väri jne.)"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:69
-msgid "Leave unchecked to have customers to select variation options in a modal window."
-msgstr "Jätä valitsematta, jos haluat asiakkaiden valitsevan muunnelmavaihtoehdot modaalissa ikkunassa."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:73
-msgid "If offer product is not variable, this option is ignored."
-msgstr "Jos tarjous-tuote ei ole muuttuva, tätä vaihtoehtoa ei huomioida."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:90
-msgid "Auto Match Variations Cart Product"
-msgstr "Vertaile automaattisesti ostoskorin tuotteen muunnelmia"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:98
-msgid "The product in the cart to match the Order Bump variations to."
-msgstr "Ostoskorissa oleva tuote, johon tilauksen lisäyksen muunnelmat sovitetaan."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:113
-msgid "Match Quantity of Offer Product to Display Condition Product"
-msgstr "Sovita tarjous-tuotteen määrä näyttöehdon tuotteeseen"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:114
-msgid "If customer has two of the display condition product in the cart, two of the offer product will be added to the cart."
-msgstr "Jos asiakkaalla on kaksi näyttöehdon tuotetta ostoskorissa, kaksi tarjous-tuotetta lisätään ostoskoriin."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:128
-msgid "Match Quantity Cart Product"
-msgstr "Sovita ostoskorin tuotteen määrä"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:136
-msgid "The product in the cart to match the Order Bump quantity to."
-msgstr "Ostoskorissa oleva tuote, johon tilauksen lisäyksen määrä sovitetaan."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:151
-msgid "Quantity of Offer Product To Add"
-msgstr "Lisättävän tarjous-tuotteen määrä"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:152
-msgid "The quantity to add to the cart when offer is accepted."
-msgstr "Määrä, joka lisätään ostoskoriin, kun tarjous hyväksytään."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:161
-msgid "Allow Customer To Change Quantity In Cart"
-msgstr "Salli asiakkaan muuttaa määrää ostoskorissa"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:162
-msgid "Allow customer to change the quantity of this order bump in the cart."
-msgstr "Salli asiakkaan muuttaa tämän tilauksen lisäyksen määrää ostoskorissa."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:22
-msgid "Offer Language"
-msgstr "Tarjouksen kieli"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:29
-msgid "Place Order Modal Heading"
-msgstr "Tilauksen tekemisen modaalin otsikko"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:30
-msgid "Default if blank: Your order is almost complete..."
-msgstr "Oletus, jos tyhjä: Tilauksesi on melkein valmis..."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:30
-msgid "Wait %s! Here\\'s an exclusive offer to compliment your order!"
-msgstr "Odota %s! Tässä on eksklusiivinen tarjous tilauksesi täydentämiseksi!"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:39
-msgid "Place Order Modal Subheading"
-msgstr "Tilauksen tekemisen modaalin alaotsikko"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:40
-msgid "Default if blank: Add this offer to your order and save!"
-msgstr "Oletus, jos tyhjä: Lisää tämä tarjous tilaukseesi ja säästä!"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:52
-msgid "Offer Acceptance Checkbox Label"
-msgstr "Tarjouksen hyväksymisen valintaruudun teksti"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:52
-msgid "Offer Acceptance Button Label"
-msgstr "Tarjouksen hyväksymispainikkeen teksti"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:53
-msgid "Example: Yes! Please add this offer to my order"
-msgstr "Esimerkki: Kyllä! Lisää tämä tarjous tilaukseeni"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:63
-msgid "Offer Description"
-msgstr "Tarjouksen kuvaus"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:64
-msgid "Example: Limited time offer! Get an EXCLUSIVE discount right now! Click the checkbox above to add this product to your order now."
-msgstr "Esimerkki: Rajoitettu tarjous! Saat NYT EXKLUUSIIVISEN alennuksen! Klikkaa yllä olevaa valintaruutua lisätäksesi tämän tuotteen tilaukseesi nyt."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:74
-msgid "Modal Offer Rejection Link Text"
-msgstr "Modaalin tarjouksen hylkäyslinkin teksti"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:78
-msgid "Displays in modal version of Order Bump, such as Place Order bumps or when the Offer Product is a variable product (as opposed to a specific variation)."
-msgstr "Näkyy tilauksen lisämyynnin modaaliversiossa, kuten Tilauksen tekemisen lisämyynneissä tai kun Tarjoustuote on muuttuva tuote (ei tietty variaatio)."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:83
-msgid "Default if blank: No thanks, just complete my order"
-msgstr "Oletus, jos tyhjä: Ei kiitos, suorita tilaukseni loppuun"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:85
-msgid "Default if blank: No thanks"
-msgstr "Oletus, jos tyhjä: Ei kiitos"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferDiscountPanel.tsx:15
-msgid "Offer Discount"
-msgstr "Tarjousalennus"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferDiscountPanel.tsx:20
-msgid "Amount Off: Remove fixed amount from the product price. Percent Off: Discount product by specified percentage."
-msgstr "Summa-alennus: Poista kiinteä summa tuotteen hinnasta. Prosenttialennus: Alenna tuotetta määritetyllä prosenttiosuudella."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferDiscountPanel.tsx:46
-msgid "Item Removal Behavior"
-msgstr "Tuotteen poistokäyttäytyminen"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferDiscountPanel.tsx:47
-msgid "What happens when the display for product is removed from the cart. Default: Order Bump remains in the cart but bump specific discounts are removed."
-msgstr "Mitä tapahtuu, kun tuotteen näyttö poistetaan ostoskorista. Oletus: Tilauslisäys pysyy ostoskorissa, mutta lisäyksen alennukset poistetaan."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferDiscountPanel.tsx:50
-msgid "Leave In Cart With Normal Price"
-msgstr "Jätä ostoskoriin normaalihinnalla"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferDiscountPanel.tsx:51
-msgid "Remove Order Bump From Cart"
-msgstr "Poista tilauslisäys ostoskorista"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsGeneralPanel.tsx:13
-msgid "You must set an upsell replacement product."
-msgstr "Sinun on asetettava lisämyynnin korvaava tuote."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsGeneralPanel.tsx:20
-msgid "Offer Type"
-msgstr "Tarjouksen tyyppi"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsGeneralPanel.tsx:24
-msgid "Use Order Bump As Upsell"
-msgstr "Käytä tilauksen lisäystä lisämyyntinä"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsGeneralPanel.tsx:28
-msgid "Replace a cart item with offer product when this Order Bump is taken."
-msgstr "Korvaa ostoskorin tuote tarjous-tuotteella, kun tämä tilauksen lisäys valitaan."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsGeneralPanel.tsx:42
-msgid "Which product does this upsell replace in the cart?"
-msgstr "Mikä tuote tämä lisämyynti korvaa ostoskorissa?"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsGeneralPanel.tsx:50
-msgid "This product must be in the cart for this order bump to be shown."
-msgstr "Tämän tuotteen on oltava ostoskorissa, jotta tämä tilauksen lisäys näytetään."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:32
-msgid "Block Editor is only used for Full Screen Order Bumps (Configurable for Place Order and Post Purchase One-Click bumps). Blocks are ignored for other configurations."
-msgstr "Lohkoeditoria käytetään vain koko näytön tilauksen lisämyynneissä (määräytyy Tilauksen tekemisen ja Oston jälkeisen yhden klikkauksen lisämyynneissä). Lohkoja ei huomioida muissa asetuksissa."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:48
-msgid "Post Purchase One-Click bumps require a compatible payment gateway. We recommend using Place Order bumps when using non-compatible gateways."
-msgstr "Oston jälkeiset yhden klikkauksen lisämyynnit vaativat yhteensopivan maksutavan. Suosittelemme käyttämään Tilauksen tekemisen lisämyyntejä, jos maksutapa ei ole yhteensopiva."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:54
-msgid "Learn more about supported gateways"
-msgstr "Lisätietoja tuetuista maksutavoista"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:61
-msgid "Read our Order Bumps documentation"
-msgstr "Lue tilauslisäysten dokumentaatiomme"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:82
-msgid "Display Location"
-msgstr "Näyttöpaikka"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:91
-msgid "Below Cart Items"
-msgstr "Ostoskorin alapuolella"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:92
-msgid "Below Cart Items (Side Cart Only)"
-msgstr "Ostoskorin alapuolella (vain sivukori)"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:93
-msgid "Below Cart Items (Checkout Only)"
-msgstr "Ostoskorin alapuolella (vain kassalla)"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:94
-msgid "Above Terms and Conditions"
-msgstr "Ehtojen yläpuolella"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:95
-msgid "Above Express Checkout"
-msgstr "Express-kassan yläpuolella"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:96
-msgid "Bottom of Information Step"
-msgstr "Tietovaiheen alareunassa"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:97
-msgid "Bottom of Shipping Step"
-msgstr "Toimitusvaiheen alareunassa"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:98
-msgid "Below Complete Order Button"
-msgstr "Tilauksen vahvistuspainikkeen alapuolella"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:109
-msgid "Note: Displays above the terms and conditions on mobile devices."
-msgstr "Huomautus: Näytetään ehtojen yläpuolella mobiililaitteissa."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:112
-msgid "Displays in a popup when Place Order is clicked, before the order is submitted"
-msgstr "Näytetään ponnahdusikkunassa, kun Tilaa-painiketta klikataan, ennen tilauksen lähettämistä"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:115
-msgid "Displays in a popup on the Thank You page."
-msgstr "Näytetään ponnahdusikkunassa Kiitos-sivulla."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:119
-msgid "Full Screen Landing Page (Use Block Editor To Design)"
-msgstr "Koko näytön aloitussivu (käytä lohkoeditoria suunnitteluun)"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:120
-msgid "If checked, the bump offer will be displayed full screen. Use Order Bump Offer Form block to design the offer."
-msgstr "Jos valittu, lisäystarjous näytetään koko näytöllä. Käytä Tilauksen lisäystarjouslomakkeen lohkoa tarjouksen suunnitteluun."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayConditions.tsx:26
-msgid "Show Bump When These Conditions Are True:"
-msgstr "Näytä lisäys, kun nämä ehdot täyttyvät:"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayConditions.tsx:29
-msgid "This bump will be shown when the correct upsell product is in the cart and the Offer Product is not in the cart. To further limit when this bump is shown, add a rule below."
-msgstr "Tämä lisäys näytetään, kun oikea lisämyyntituote on ostoskorissa eikä tarjoustuotetta ole ostoskorissa. Rajoittaaksesi lisäyksen näyttämistä lisää alla sääntö."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayConditions.tsx:31
-msgid "This bump will always be shown when the Offer Product is not in the cart. To limit when this bump is shown, add a rule below."
-msgstr "Tämä lisäys näytetään aina, kun tarjoustuotetta ei ole ostoskorissa. Rajoittaaksesi lisäyksen näyttämistä lisää alla sääntö."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsActionsPanel.tsx:15
-msgid "Actions"
-msgstr "Toiminnot"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsActionsPanel.tsx:21
-msgid "Remove These Products From The Cart"
-msgstr "Poista nämä tuotteet ostoskorista"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsActionsPanel.tsx:23
-msgid "If any of these products are in the cart, remove them when this bump is added to the cart."
-msgstr "Jos jokin näistä tuotteista on ostoskorissa, poista ne, kun tämä lisäys lisätään ostoskoriin."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsActionsPanel.tsx:24
-msgid "Search for products"
-msgstr "Etsi tuotteita"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsActionsPanel.tsx:35
-msgid "Apply Free Shipping"
-msgstr "Ota käyttöön ilmainen toimitus"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsActionsPanel.tsx:36
-msgid "When this bump is added to the cart, apply free shipping to the cart."
-msgstr "Kun tämä lisäys lisätään ostoskoriin, ota ostoskorille ilmainen toimitus käyttöön."
 
 #: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:66
 msgid "Step"

@@ -92,8 +92,7 @@ class ComposerStaticInitScopedCheckoutForWooCommerce
     );
 
     public static $classMap = array (
-        'CheckoutWC\\Attribute' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/Attribute.php',
-        'CheckoutWC\\JsonException' => __DIR__ . '/..' . '/symfony/polyfill-php73/Resources/stubs/JsonException.php',
+        'checkoutwcAttribute' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/Attribute.php',
         'CheckoutWC\\Pelago\\Emogrifier\\Caching\\SimpleStringCache' => __DIR__ . '/..' . '/pelago/emogrifier/src/Caching/SimpleStringCache.php',
         'CheckoutWC\\Pelago\\Emogrifier\\CssInliner' => __DIR__ . '/..' . '/pelago/emogrifier/src/CssInliner.php',
         'CheckoutWC\\Pelago\\Emogrifier\\Css\\CssDocument' => __DIR__ . '/..' . '/pelago/emogrifier/src/Css/CssDocument.php',
@@ -107,7 +106,6 @@ class ComposerStaticInitScopedCheckoutForWooCommerce
         'CheckoutWC\\Pelago\\Emogrifier\\Utilities\\CssConcatenator' => __DIR__ . '/..' . '/pelago/emogrifier/src/Utilities/CssConcatenator.php',
         'CheckoutWC\\Pelago\\Emogrifier\\Utilities\\DeclarationBlockParser' => __DIR__ . '/..' . '/pelago/emogrifier/src/Utilities/DeclarationBlockParser.php',
         'CheckoutWC\\Pelago\\Emogrifier\\Utilities\\Preg' => __DIR__ . '/..' . '/pelago/emogrifier/src/Utilities/Preg.php',
-        'CheckoutWC\\PhpToken' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/PhpToken.php',
         'CheckoutWC\\Pressmodo\\AdminNotices\\Dismiss' => __DIR__ . '/..' . '/pressmodo/wp-admin-notices/src/Dismiss.php',
         'CheckoutWC\\Pressmodo\\AdminNotices\\Notice' => __DIR__ . '/..' . '/pressmodo/wp-admin-notices/src/Notice.php',
         'CheckoutWC\\Pressmodo\\AdminNotices\\Notices' => __DIR__ . '/..' . '/pressmodo/wp-admin-notices/src/Notices.php',
@@ -277,7 +275,6 @@ class ComposerStaticInitScopedCheckoutForWooCommerce
         'CheckoutWC\\StellarWP\\Installer\\Handler\\Plugin' => __DIR__ . '/..' . '/stellarwp/installer/src/Installer/Handler/Plugin.php',
         'CheckoutWC\\StellarWP\\Installer\\Installer' => __DIR__ . '/..' . '/stellarwp/installer/src/Installer/Installer.php',
         'CheckoutWC\\StellarWP\\Installer\\Utils\\Array_Utils' => __DIR__ . '/..' . '/stellarwp/installer/src/Installer/Utils/Array_Utils.php',
-        'CheckoutWC\\Stringable' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/Stringable.php',
         'CheckoutWC\\Symfony\\Component\\CssSelector\\CssSelectorConverter' => __DIR__ . '/..' . '/symfony/css-selector/CssSelectorConverter.php',
         'CheckoutWC\\Symfony\\Component\\CssSelector\\Exception\\ExceptionInterface' => __DIR__ . '/..' . '/symfony/css-selector/Exception/ExceptionInterface.php',
         'CheckoutWC\\Symfony\\Component\\CssSelector\\Exception\\ExpressionErrorException' => __DIR__ . '/..' . '/symfony/css-selector/Exception/ExpressionErrorException.php',
@@ -404,9 +401,12 @@ class ComposerStaticInitScopedCheckoutForWooCommerce
         'CheckoutWC\\Symfony\\Polyfill\\Php73\\Php73' => __DIR__ . '/..' . '/symfony/polyfill-php73/Php73.php',
         'CheckoutWC\\Symfony\\Polyfill\\Php80\\Php80' => __DIR__ . '/..' . '/symfony/polyfill-php80/Php80.php',
         'CheckoutWC\\Symfony\\Polyfill\\Php80\\PhpToken' => __DIR__ . '/..' . '/symfony/polyfill-php80/PhpToken.php',
-        'CheckoutWC\\UnhandledMatchError' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/UnhandledMatchError.php',
-        'CheckoutWC\\ValueError' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/ValueError.php',
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
+        'checkoutwcJsonException' => __DIR__ . '/..' . '/symfony/polyfill-php73/Resources/stubs/JsonException.php',
+        'checkoutwcPhpToken' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/PhpToken.php',
+        'checkoutwcStringable' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/Stringable.php',
+        'checkoutwcUnhandledMatchError' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/UnhandledMatchError.php',
+        'checkoutwcValueError' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/ValueError.php',
     );
 
     public static function getInitializer(ClassLoader $loader)

@@ -8,7 +8,7 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "POT-Creation-Date: 2025-07-25 09:22-0400\n"
-"PO-Revision-Date: 2026-06-08 09:44+0000\n"
+"PO-Revision-Date: 2026-06-12 11:59+0000\n"
 "Language: lt-LT\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && (n%100<11 || n%100>19) ? 0 : n%10>=2 && n%10<=9 && (n%100<11 || n%100>19) ? 1 : 2);\n"
 "X-Generator: Poedit 3.6\n"
@@ -75,54 +75,6 @@ msgstr "CheckoutWC reikalauja WordPress %s arba naujesnės versijos."
 #: checkout-for-woocommerce.php:219
 msgid "CheckoutWC requires WooCommerce %s or later."
 msgstr "CheckoutWC reikalauja WooCommerce %s arba naujesnės versijos."
-
-#: includes/FormFieldAugmenter.php:163
-#: includes/FormFieldAugmenter.php:164
-#: includes/FormFieldAugmenter.php:169
-#: includes/AddressFieldsAugmenter.php:320
-#: includes/Managers/AssetManager.php:244
-#: includes/Features/HideOptionalAddressFields.php:48
-#: includes/Features/HideOptionalAddressFields.php:70
-msgid "optional"
-msgstr "pasirinktinai"
-
-#: includes/FormFieldAugmenter.php:178
-msgid "Choose an option"
-msgstr "Pasirinkite parinktį"
-
-#: includes/AddressFieldsAugmenter.php:148
-msgid "Full name"
-msgstr "Pilnas vardas"
-
-#: includes/AddressFieldsAugmenter.php:203
-msgid "House number"
-msgstr "Namo numeris"
-
-#: includes/AddressFieldsAugmenter.php:215
-#: includes/Compatibility/Plugins/PostNL4.php:50
-#: includes/Compatibility/Plugins/PostNL4.php:51
-#: includes/Compatibility/Plugins/PostNL.php:52
-#: includes/Compatibility/Plugins/PostNL.php:53
-#: includes/Compatibility/Plugins/NLPostcodeChecker.php:52
-#: includes/Compatibility/Plugins/NLPostcodeChecker.php:53
-#: includes/Compatibility/Plugins/MyParcel.php:48
-msgid "Street name"
-msgstr "Gatvės pavadinimas"
-
-#: includes/AddressFieldsAugmenter.php:230
-msgid "Apartment, suite, unit, etc."
-msgstr "Butas, apartamentai, vienetas ir kt."
-
-#: includes/AddressFieldsAugmenter.php:301
-#: includes/AddressFieldsAugmenter.php:302
-#: includes/Admin/ShippingPhoneController.php:32
-#: includes/Admin/ShippingPhoneController.php:33
-#: includes/Admin/ShippingPhoneController.php:43
-#: client/ts/admin/Components/Forms/CheckoutSettingsForm.tsx:467
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:381
-#: client/ts/admin/Components/CheckoutEditor/panels/CheckoutSettingsPanel.tsx:246
-msgid "Phone"
-msgstr "Telefonas"
 
 #: functions/template-functions.php:95
 msgid "Show order summary"
@@ -758,6 +710,54 @@ msgstr "Praleisti ir deaktyvuoti dabar"
 msgid "CheckoutWC: You cannot activate an AB test that is not registered."
 msgstr "CheckoutWC: Negalite aktyvuoti neįregistruoto AB testo."
 
+#: includes/FormFieldAugmenter.php:163
+#: includes/FormFieldAugmenter.php:164
+#: includes/FormFieldAugmenter.php:169
+#: includes/AddressFieldsAugmenter.php:320
+#: includes/Managers/AssetManager.php:244
+#: includes/Features/HideOptionalAddressFields.php:48
+#: includes/Features/HideOptionalAddressFields.php:70
+msgid "optional"
+msgstr "pasirinktinai"
+
+#: includes/FormFieldAugmenter.php:178
+msgid "Choose an option"
+msgstr "Pasirinkite parinktį"
+
+#: includes/AddressFieldsAugmenter.php:148
+msgid "Full name"
+msgstr "Pilnas vardas"
+
+#: includes/AddressFieldsAugmenter.php:203
+msgid "House number"
+msgstr "Namo numeris"
+
+#: includes/AddressFieldsAugmenter.php:215
+#: includes/Compatibility/Plugins/PostNL4.php:50
+#: includes/Compatibility/Plugins/PostNL4.php:51
+#: includes/Compatibility/Plugins/PostNL.php:52
+#: includes/Compatibility/Plugins/PostNL.php:53
+#: includes/Compatibility/Plugins/NLPostcodeChecker.php:52
+#: includes/Compatibility/Plugins/NLPostcodeChecker.php:53
+#: includes/Compatibility/Plugins/MyParcel.php:48
+msgid "Street name"
+msgstr "Gatvės pavadinimas"
+
+#: includes/AddressFieldsAugmenter.php:230
+msgid "Apartment, suite, unit, etc."
+msgstr "Butas, apartamentai, vienetas ir kt."
+
+#: includes/AddressFieldsAugmenter.php:301
+#: includes/AddressFieldsAugmenter.php:302
+#: includes/Admin/ShippingPhoneController.php:32
+#: includes/Admin/ShippingPhoneController.php:33
+#: includes/Admin/ShippingPhoneController.php:43
+#: client/ts/admin/Components/Forms/CheckoutSettingsForm.tsx:467
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:381
+#: client/ts/admin/Components/CheckoutEditor/panels/CheckoutSettingsPanel.tsx:246
+msgid "Phone"
+msgstr "Telefonas"
+
 #: templates/glass/functions.php:68
 msgid "Accent Color"
 msgstr "Akcento spalva"
@@ -777,6 +777,30 @@ msgstr "SendWP jau yra prijungtas."
 #: lib/sendwp-sdk/remote-install.php:84
 msgid "Something went wrong. SendWP was not installed correctly."
 msgstr "Įvyko klaida. SendWP nebuvo tinkamai įdiegtas."
+
+#: includes/Stats/StatCollection.php:193
+msgid "Once Weekly"
+msgstr "Kartą per savaitę"
+
+#: includes/Stats/StatCollection.php:713
+msgid "Help us improve CheckoutWC."
+msgstr "Padėkite mums tobulinti CheckoutWC."
+
+#: includes/Stats/StatCollection.php:716
+msgid "Gathering usage data helps us to improve CheckoutWC. Opt-out at anytime."
+msgstr "Naudojimo duomenų rinkimas padeda mums tobulinti CheckoutWC. Bet kada galite atsisakyti."
+
+#: includes/Stats/StatCollection.php:717
+msgid "Read more about what we collect."
+msgstr "Skaitykite daugiau apie tai, ką mes renkame."
+
+#: includes/Stats/StatCollection.php:721
+msgid "Allow"
+msgstr "Leisti"
+
+#: includes/Stats/StatCollection.php:725
+msgid "Do not allow"
+msgstr "Neleisti"
 
 #: includes/Shipping/CFW_Shipping_Local_Pickup.php:35
 #: includes/Shipping/CFW_Shipping_Local_Pickup.php:48
@@ -1004,30 +1028,6 @@ msgstr "Pašalinti %s iš krepšelio"
 #: includes/Managers/AssetManager.php:840
 msgid "Proceed to checkout"
 msgstr "Pereikite prie apmokėjimo"
-
-#: includes/Stats/StatCollection.php:193
-msgid "Once Weekly"
-msgstr "Kartą per savaitę"
-
-#: includes/Stats/StatCollection.php:713
-msgid "Help us improve CheckoutWC."
-msgstr "Padėkite mums tobulinti CheckoutWC."
-
-#: includes/Stats/StatCollection.php:716
-msgid "Gathering usage data helps us to improve CheckoutWC. Opt-out at anytime."
-msgstr "Naudojimo duomenų rinkimas padeda mums tobulinti CheckoutWC. Bet kada galite atsisakyti."
-
-#: includes/Stats/StatCollection.php:717
-msgid "Read more about what we collect."
-msgstr "Skaitykite daugiau apie tai, ką mes renkame."
-
-#: includes/Stats/StatCollection.php:721
-msgid "Allow"
-msgstr "Leisti"
-
-#: includes/Stats/StatCollection.php:725
-msgid "Do not allow"
-msgstr "Neleisti"
 
 #: includes/Loaders/LoaderAbstract.php:134
 #: includes/Loaders/LoaderAbstract.php:244
@@ -1698,24 +1698,6 @@ msgstr "Užsakymo papildymo pasiūlymo forma"
 msgid "The form to accept or reject the bump offer."
 msgstr "Forma, skirta priimti arba atmesti papildymo pasiūlymą."
 
-# %1$s: Plugin name, %2$s: Link opening tag, %3$s: Version number, %4$s: Link closing tag
-#: includes/Managers/Helpers/EDD_SL_Plugin_Updater.php:278
-msgid "There is a new version of %1$s available. %2$sView version %3$s details%4$s."
-msgstr "Yra nauja %1$s versija. %2$sPeržiūrėti %3$s versijos informaciją%4$s."
-
-# %1$s: Plugin name, %2$s: Link opening tag, %3$s: Version number, %4$s: Link closing tag, %5$s: Update link opening tag, %6$s: Update link closing tag
-#: includes/Managers/Helpers/EDD_SL_Plugin_Updater.php:287
-msgid "There is a new version of %1$s available. %2$sView version %3$s details%4$s or %5$supdate now%6$s."
-msgstr "Yra nauja %1$s versija. %2$sPeržiūrėti %3$s versijos informaciją%4$s arba %5$satnaujinti dabar%6$s."
-
-#: includes/Managers/Helpers/EDD_SL_Plugin_Updater.php:531
-msgid "You do not have permission to install plugin updates"
-msgstr "Jūs neturite leidimo įdiegti papildinių atnaujinimus"
-
-#: includes/Managers/Helpers/EDD_SL_Plugin_Updater.php:531
-msgid "Error"
-msgstr "Klaida"
-
 #: includes/Model/Bumps/BumpAbstract.php:1013
 #: includes/Model/Bumps/BumpAbstract.php:1023
 #: includes/Model/ABTests/OrderBumpsABTest.php:30
@@ -1770,6 +1752,24 @@ msgstr "Nerasta šiukšliadėžėje"
 #: includes/Features/ABTesting/ABTestTypeRegistry.php:124
 msgid "Test different variations of order bumps to see which performs better."
 msgstr "Išbandykite skirtingus užsakymų priedų variantus, kad sužinotumėte, kuris veikia geriau."
+
+# %1$s: Plugin name, %2$s: Link opening tag, %3$s: Version number, %4$s: Link closing tag
+#: includes/Managers/Helpers/EDD_SL_Plugin_Updater.php:278
+msgid "There is a new version of %1$s available. %2$sView version %3$s details%4$s."
+msgstr "Yra nauja %1$s versija. %2$sPeržiūrėti %3$s versijos informaciją%4$s."
+
+# %1$s: Plugin name, %2$s: Link opening tag, %3$s: Version number, %4$s: Link closing tag, %5$s: Update link opening tag, %6$s: Update link closing tag
+#: includes/Managers/Helpers/EDD_SL_Plugin_Updater.php:287
+msgid "There is a new version of %1$s available. %2$sView version %3$s details%4$s or %5$supdate now%6$s."
+msgstr "Yra nauja %1$s versija. %2$sPeržiūrėti %3$s versijos informaciją%4$s arba %5$satnaujinti dabar%6$s."
+
+#: includes/Managers/Helpers/EDD_SL_Plugin_Updater.php:531
+msgid "You do not have permission to install plugin updates"
+msgstr "Jūs neturite leidimo įdiegti papildinių atnaujinimus"
+
+#: includes/Managers/Helpers/EDD_SL_Plugin_Updater.php:531
+msgid "Error"
+msgstr "Klaida"
 
 #: includes/Features/OneClick/OrderStatusManager.php:52
 msgid "Pending Offer <span class=\"count\">(%s)</span>"
@@ -1867,6 +1867,14 @@ msgstr "Įgalinti Astra palaikymą (Beta)"
 #: includes/Compatibility/Themes/Astra.php:92
 msgid "If enabled with Advanced > Template Loader > Distraction Free Portal, Astra\\'s header and footer are displayed and Astra styles and scripts load on checkout. If disabled with Distraction Free Portal, Astra styles and scripts are excluded for a minimal layout. With WordPress Theme loader, the full theme loads regardless of this setting."
 msgstr "Jei įjungta Advanced > Template Loader > Distraction Free Portal, Astra antraštė ir poraštė rodomi, o Astra stiliai ir skriptai įkeliami atsiskaitymo metu. Jei išjungta su Distraction Free Portal, Astra stiliai ir skriptai yra pašalinami, kad būtų minimalus išdėstymas. Naudojant WordPress temos įkroviklį, visa tema įkeliama nepaisant šio nustatymo."
+
+#: includes/Compatibility/Gateways/PayPalForWooCommerce.php:38
+msgid "Please update to the latest version of PayPal for WooCommerce to get full support."
+msgstr "Prašome atnaujinti į naujausią PayPal for WooCommerce versiją, kad gautumėte pilną palaikymą."
+
+#: includes/Compatibility/Gateways/PayPalForWooCommerce.php:363
+msgid "Logged in with PayPal. Please continue your order below."
+msgstr "Prisijungėte naudodami „PayPal“. Prašome tęsti užsakymą žemiau."
 
 #: includes/Compatibility/Plugins/WooCommerceGiftCards.php:64
 #: includes/Compatibility/Plugins/WooCommerceGiftCards.php:72
@@ -1988,14 +1996,6 @@ msgstr "Įgalinti Beaver Themer palaikymą"
 msgid "Allow Beaver Themer to replace header and footer."
 msgstr "Leisti Beaver Themer pakeisti antraštę ir poraštę."
 
-#: includes/Compatibility/Gateways/PayPalForWooCommerce.php:38
-msgid "Please update to the latest version of PayPal for WooCommerce to get full support."
-msgstr "Prašome atnaujinti į naujausią PayPal for WooCommerce versiją, kad gautumėte pilną palaikymą."
-
-#: includes/Compatibility/Gateways/PayPalForWooCommerce.php:363
-msgid "Logged in with PayPal. Please continue your order below."
-msgstr "Prisijungėte naudodami „PayPal“. Prašome tęsti užsakymą žemiau."
-
 #: includes/Admin/Views/html-refund-offer.php:22
 msgid "Product"
 msgstr "Produktas"
@@ -2023,6 +2023,116 @@ msgstr "Pastaba:"
 #: includes/Admin/Views/html-refund-offer.php:114
 msgid "Refunding an offer will process the refund with the payment gateway and create a WooCommerce refund record."
 msgstr "Grąžinant pasiūlymą, grąžinimas bus apdorotas per mokėjimo sistemą ir sukurtas WooCommerce grąžinimo įrašas."
+
+#: includes/Admin/Notices/WelcomeNotice.php:12
+msgid "Welcome to CheckoutWC"
+msgstr "Sveiki atvykę į CheckoutWC"
+
+#: includes/Admin/Notices/WelcomeNotice.php:20
+msgid "Thank you for installing CheckoutWC! We automatically activated your license. You are all set!"
+msgstr "Ačiū, kad įdiegėte CheckoutWC! Jūsų licencija buvo automatiškai suaktyvinta. Viskas paruošta!"
+
+#: includes/Admin/Notices/WelcomeNotice.php:26
+msgid "Thank you for installing CheckoutWC! To get started, enter your <strong>License Key</strong> below, save, and click <strong>Activate Site</strong>."
+msgstr "Ačiū, kad įdiegėte CheckoutWC! Norėdami pradėti, įveskite žemiau savo <strong>licencijos raktą</strong>, išsaugokite ir spustelėkite <strong>Aktyvuoti svetainę</strong>."
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:20
+msgid "your email"
+msgstr "jūsų el. paštas"
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:88
+msgid "privacy policy"
+msgstr "privatumo politika"
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:93
+msgid "By joining, %1$s will be added to our mailing list. Read our %2$s."
+msgstr "Prisijungdami, %1$s bus pridėtas prie mūsų naujienlaiškio sąrašo. Skaitykite mūsų %2$s."
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:99
+msgid "Join Newsletter & Save 25%"
+msgstr "Prenumeruokite naujienlaiškį ir sutaupykite 25%"
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:102
+msgid "Join Newsletter"
+msgstr "Prenumeruoti naujienlaiškį"
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:113
+msgid "Sign up to our newsletter and get proven conversion tips and checkout optimization strategies from the CheckoutWC team."
+msgstr "Užsiregistruokite mūsų naujienlaiškiui ir gaukite patikrintų konversijų patarimų bei CheckoutWC komandos optimizavimo strategijų."
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:116
+msgid "Boost Your Conversions with Proven Strategies."
+msgstr "Padidinkite savo konversijas su patikrintomis strategijomis."
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:123
+msgid "We're so glad that you've chosen CheckoutWC to handle your checkouts. Unlock more sales with premium features like order bumps, abandoned cart recovery, and much more."
+msgstr "Džiaugiamės, kad pasirinkote CheckoutWC savo atsiskaitymams. Atrakinkite daugiau pardavimų su premium funkcijomis, tokiomis kaip užsakymų priedai, pamestų krepšelių atkūrimas ir dar daugiau."
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:126
+msgid "Unlock more sales with CheckoutWC Premium"
+msgstr "Atrakinkite daugiau pardavimų su CheckoutWC Premium"
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:144
+msgid "Sorry, there was an error joining our newsletter. Please refresh the page and try again."
+msgstr "Atsiprašome, įvyko klaida prisijungiant prie mūsų naujienlaiškio. Atlikite puslapio atnaujinimą ir bandykite dar kartą."
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:243
+msgid "Please wait..."
+msgstr "Prašome palaukti..."
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:320
+msgid "Sorry, your account has insufficient permissions to join our newsletter."
+msgstr "Atsiprašome, jūsų paskyra neturi pakankamų teisių prisijungti prie mūsų naujienlaiškio."
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:354
+msgid "You have already joined our newsletter!"
+msgstr "Jūs jau esate prisijungę prie mūsų naujienlaiškio!"
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:396
+msgid "Thank you for joining our newsletter!"
+msgstr "Ačiū, kad prisijungėte prie mūsų naujienlaiškio!"
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:410
+msgid "Security check failed."
+msgstr "Saugumo patikra nepavyko."
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:414
+msgid "Insufficient permissions."
+msgstr "Nepakankamos teisės."
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:422
+msgid "Notice dismissed."
+msgstr "Pranešimas atmestas."
+
+# %1$s: URL to pricing page, %2$s: "purchase a new license" link text, %3$s: Support email URL, %4$s: "please contact support" link text
+#: includes/Admin/Notices/InvalidLicenseKeyNotice.php:15
+msgid "Your license key appears to have expired. Please <a href=\"%1$s\" target=\"_blank\">%2$s</a> to restore functionality. If you believe this is in error, <a href=\"%3$s\">%4$s</a>."
+msgstr "Atrodo, kad jūsų licencijos raktas pasibaigė. Prašome <a href=\"%1$s\" target=\"_blank\">%2$s</a>, kad atkurtumėte funkcionalumą. Jei manote, kad tai klaida, <a href=\"%3$s\">%4$s</a>."
+
+#: includes/Admin/Notices/InvalidLicenseKeyNotice.php:17
+msgid "purchase a new license"
+msgstr "įsigyti naują licenciją"
+
+#: includes/Admin/Notices/InvalidLicenseKeyNotice.php:19
+msgid "please contact support"
+msgstr "prašome susisiekti su palaikymu"
+
+# %1$s: URL to activation page, %2$s: "Start Here" link text
+#: includes/Admin/Notices/InactiveLicenseNotice.php:11
+msgid "Your license key is not active for this site. Please visit <a href=\"%1$s\">%2$s</a> to activate your license and restore functionality."
+msgstr "Jūsų licencijos raktas nėra aktyvus šiai svetainei. Prašome apsilankyti <a href=\"%1$s\">%2$s</a>, kad suaktyvintumėte licenciją ir atkurtumėte funkcionalumą."
+
+#: includes/Admin/Notices/BFNotice.php:13
+msgid "Black Friday Sale - 40% Off"
+msgstr "Juodojo penktadienio išpardavimas – 40 % nuolaida"
+
+#: includes/Admin/Notices/BFNotice.php:14
+msgid "You're missing out on revenue growth tools like Order Bumps, Upsells, Abandoned Cart Recovery and more! Save 40% on CheckoutWC pro plans for Black Friday, ends December 4th"
+msgstr "Jūs praleidžiate pajamas didinančias priemones, tokias kaip Užsakymų papildymai, Papildomi pasiūlymai, Paliktų krepšelių atkūrimas ir dar daugiau! Sutaupykite 40 % pirkdami CheckoutWC pro planus Juodajam penktadieniui, pasiūlymas galioja iki gruodžio 4 d."
+
+#: includes/Admin/Notices/BFNotice.php:27
+msgid "Get CheckoutWC Pro Now!"
+msgstr "Įsigykite CheckoutWC Pro dabar!"
 
 #: includes/Admin/Pages/WooCommercePages.php:21
 msgid "Pages"
@@ -3146,116 +3256,6 @@ msgstr "Ištrinti Visus Sekamus Krepšelius"
 msgid "Note: This resets ALL abandoned cart recovery statistics!"
 msgstr "Pastaba: Tai iš naujo nustato VISĄ atmesto krepšelio atkūrimo statistiką!"
 
-#: includes/Admin/Notices/WelcomeNotice.php:12
-msgid "Welcome to CheckoutWC"
-msgstr "Sveiki atvykę į CheckoutWC"
-
-#: includes/Admin/Notices/WelcomeNotice.php:20
-msgid "Thank you for installing CheckoutWC! We automatically activated your license. You are all set!"
-msgstr "Ačiū, kad įdiegėte CheckoutWC! Jūsų licencija buvo automatiškai suaktyvinta. Viskas paruošta!"
-
-#: includes/Admin/Notices/WelcomeNotice.php:26
-msgid "Thank you for installing CheckoutWC! To get started, enter your <strong>License Key</strong> below, save, and click <strong>Activate Site</strong>."
-msgstr "Ačiū, kad įdiegėte CheckoutWC! Norėdami pradėti, įveskite žemiau savo <strong>licencijos raktą</strong>, išsaugokite ir spustelėkite <strong>Aktyvuoti svetainę</strong>."
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:20
-msgid "your email"
-msgstr "jūsų el. paštas"
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:88
-msgid "privacy policy"
-msgstr "privatumo politika"
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:93
-msgid "By joining, %1$s will be added to our mailing list. Read our %2$s."
-msgstr "Prisijungdami, %1$s bus pridėtas prie mūsų naujienlaiškio sąrašo. Skaitykite mūsų %2$s."
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:99
-msgid "Join Newsletter & Save 25%"
-msgstr "Prenumeruokite naujienlaiškį ir sutaupykite 25%"
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:102
-msgid "Join Newsletter"
-msgstr "Prenumeruoti naujienlaiškį"
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:113
-msgid "Sign up to our newsletter and get proven conversion tips and checkout optimization strategies from the CheckoutWC team."
-msgstr "Užsiregistruokite mūsų naujienlaiškiui ir gaukite patikrintų konversijų patarimų bei CheckoutWC komandos optimizavimo strategijų."
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:116
-msgid "Boost Your Conversions with Proven Strategies."
-msgstr "Padidinkite savo konversijas su patikrintomis strategijomis."
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:123
-msgid "We're so glad that you've chosen CheckoutWC to handle your checkouts. Unlock more sales with premium features like order bumps, abandoned cart recovery, and much more."
-msgstr "Džiaugiamės, kad pasirinkote CheckoutWC savo atsiskaitymams. Atrakinkite daugiau pardavimų su premium funkcijomis, tokiomis kaip užsakymų priedai, pamestų krepšelių atkūrimas ir dar daugiau."
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:126
-msgid "Unlock more sales with CheckoutWC Premium"
-msgstr "Atrakinkite daugiau pardavimų su CheckoutWC Premium"
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:144
-msgid "Sorry, there was an error joining our newsletter. Please refresh the page and try again."
-msgstr "Atsiprašome, įvyko klaida prisijungiant prie mūsų naujienlaiškio. Atlikite puslapio atnaujinimą ir bandykite dar kartą."
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:243
-msgid "Please wait..."
-msgstr "Prašome palaukti..."
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:320
-msgid "Sorry, your account has insufficient permissions to join our newsletter."
-msgstr "Atsiprašome, jūsų paskyra neturi pakankamų teisių prisijungti prie mūsų naujienlaiškio."
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:354
-msgid "You have already joined our newsletter!"
-msgstr "Jūs jau esate prisijungę prie mūsų naujienlaiškio!"
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:396
-msgid "Thank you for joining our newsletter!"
-msgstr "Ačiū, kad prisijungėte prie mūsų naujienlaiškio!"
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:410
-msgid "Security check failed."
-msgstr "Saugumo patikra nepavyko."
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:414
-msgid "Insufficient permissions."
-msgstr "Nepakankamos teisės."
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:422
-msgid "Notice dismissed."
-msgstr "Pranešimas atmestas."
-
-# %1$s: URL to pricing page, %2$s: "purchase a new license" link text, %3$s: Support email URL, %4$s: "please contact support" link text
-#: includes/Admin/Notices/InvalidLicenseKeyNotice.php:15
-msgid "Your license key appears to have expired. Please <a href=\"%1$s\" target=\"_blank\">%2$s</a> to restore functionality. If you believe this is in error, <a href=\"%3$s\">%4$s</a>."
-msgstr "Atrodo, kad jūsų licencijos raktas pasibaigė. Prašome <a href=\"%1$s\" target=\"_blank\">%2$s</a>, kad atkurtumėte funkcionalumą. Jei manote, kad tai klaida, <a href=\"%3$s\">%4$s</a>."
-
-#: includes/Admin/Notices/InvalidLicenseKeyNotice.php:17
-msgid "purchase a new license"
-msgstr "įsigyti naują licenciją"
-
-#: includes/Admin/Notices/InvalidLicenseKeyNotice.php:19
-msgid "please contact support"
-msgstr "prašome susisiekti su palaikymu"
-
-# %1$s: URL to activation page, %2$s: "Start Here" link text
-#: includes/Admin/Notices/InactiveLicenseNotice.php:11
-msgid "Your license key is not active for this site. Please visit <a href=\"%1$s\">%2$s</a> to activate your license and restore functionality."
-msgstr "Jūsų licencijos raktas nėra aktyvus šiai svetainei. Prašome apsilankyti <a href=\"%1$s\">%2$s</a>, kad suaktyvintumėte licenciją ir atkurtumėte funkcionalumą."
-
-#: includes/Admin/Notices/BFNotice.php:13
-msgid "Black Friday Sale - 40% Off"
-msgstr "Juodojo penktadienio išpardavimas – 40 % nuolaida"
-
-#: includes/Admin/Notices/BFNotice.php:14
-msgid "You're missing out on revenue growth tools like Order Bumps, Upsells, Abandoned Cart Recovery and more! Save 40% on CheckoutWC pro plans for Black Friday, ends December 4th"
-msgstr "Jūs praleidžiate pajamas didinančias priemones, tokias kaip Užsakymų papildymai, Papildomi pasiūlymai, Paliktų krepšelių atkūrimas ir dar daugiau! Sutaupykite 40 % pirkdami CheckoutWC pro planus Juodajam penktadieniui, pasiūlymas galioja iki gruodžio 4 d."
-
-#: includes/Admin/Notices/BFNotice.php:27
-msgid "Get CheckoutWC Pro Now!"
-msgstr "Įsigykite CheckoutWC Pro dabar!"
-
 #: client/ts/functions/cfwFormatDate.ts:38
 msgid "Sunday"
 msgstr "Sekmadienis"
@@ -4098,6 +4098,18 @@ msgstr "Data, kada A/B testas turėtų baigtis. Po šios datos bus rodomas origi
 msgid "Traffic split percentages must total 100%. Please adjust your percentages."
 msgstr "Srauto pasiskirstymo procentai turi sudaryti 100%. Prašome pakoreguoti procentus."
 
+#: client/ts/frontend/Components/TermsAndConditionsModal.tsx:15
+msgid "Terms and Conditions"
+msgstr "Sąlygos ir nuostatos"
+
+#: client/ts/frontend/Components/SuggestedProductsCarousel.tsx:84
+msgid "View Product"
+msgstr "Peržiūrėti produktą"
+
+#: client/ts/frontend/Components/SideCartComponent.tsx:38
+msgid "Close Cart"
+msgstr "Uždaryti krepšelį"
+
 #: client/ts/frontend/Actions/CompleteOrderAction.ts:196
 msgid "Could not connect to server. Please refresh and try again or contact site administrator."
 msgstr "Nepavyko prisijungti prie serverio. Prašome atnaujinti ir bandyti dar kartą arba susisiekti su svetainės administratoriumi."
@@ -4121,18 +4133,6 @@ msgstr "Serverio laikas baigėsi apdorojant jūsų užklausą. Prašome atnaujin
 #: client/ts/frontend/Actions/CompleteOrderAction.ts:206
 msgid "Request was aborted. Please contact site administrator."
 msgstr "Užklausa buvo nutraukta. Prašome susisiekti su svetainės administratoriumi."
-
-#: client/ts/frontend/Components/TermsAndConditionsModal.tsx:15
-msgid "Terms and Conditions"
-msgstr "Sąlygos ir nuostatos"
-
-#: client/ts/frontend/Components/SuggestedProductsCarousel.tsx:84
-msgid "View Product"
-msgstr "Peržiūrėti produktą"
-
-#: client/ts/frontend/Components/SideCartComponent.tsx:38
-msgid "Close Cart"
-msgstr "Uždaryti krepšelį"
 
 #: client/ts/admin/Components/TrustBadgeRow.tsx:172
 msgid "Determine when this Trust Badge should be displayed."
@@ -4302,6 +4302,363 @@ msgstr "Įkeliama..."
 #: client/ts/admin/Components/acr/carts.tsx:234
 msgid "Tracked Carts"
 msgstr "Sekami krepšeliai"
+
+#: client/ts/admin/Components/Metaboxes/ProductsAndVariationsCompleter.tsx:44
+msgid "All products with titles that include {{query /}}"
+msgstr "Visi produktai, kurių pavadinimuose yra {{query /}}"
+
+#: client/ts/admin/Components/Metaboxes/ProductTagCompleter.tsx:44
+msgid "All product tags that include {{query /}}"
+msgstr "Visi produkto žymekliai, kuriuose yra {{query /}}"
+
+#: client/ts/admin/Components/Metaboxes/ProductAttributeTermsCompleter.tsx:99
+msgid "All attribute terms that include {{query /}}"
+msgstr "Visi atributų terminai, kurie apima {{query /}}"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsSetupModal.tsx:62
+msgid "Let\\'s configure a few things to get you started quickly."
+msgstr "Konfigūruokime keletą dalykų, kad greitai pradėtumėte."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsSetupModal.tsx:66
+msgid "Give your new Order Bump a name. This is just for admins - it won\\'t be displayed to customers."
+msgstr "Suteikite naujam užsakymo priedui pavadinimą. Tai skirta tik administratoriams – klientams nebus rodoma."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsSetupModal.tsx:78
+msgid "Which product should be added to the cart when this Order Bump is accepted?"
+msgstr "Kuris produktas turėtų būti pridėtas į krepšelį, kai priimamas šis užsakymo priedas?"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsSetupModal.tsx:80
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:33
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:92
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:130
+#: client/ts/admin/Components/Metaboxes/OrderBumpsGeneralPanel.tsx:44
+msgid "Search for product"
+msgstr "Ieškoti produkto"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsSetupModal.tsx:91
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferDiscountPanel.tsx:19
+msgid "Discount Type"
+msgstr "Nuolaidos tipas"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsSetupModal.tsx:94
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferDiscountPanel.tsx:23
+msgid "Percent Off"
+msgstr "Procentinė nuolaida"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsSetupModal.tsx:95
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferDiscountPanel.tsx:24
+msgid "Amount Off"
+msgstr "Fiksuota suma"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsSetupModal.tsx:105
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferDiscountPanel.tsx:34
+msgid "Discount"
+msgstr "Nuolaida"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsSetupModal.tsx:106
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferDiscountPanel.tsx:35
+msgid "The amount or percentage applied as a discount to the Offer Product. Leave blank or enter 0 to charge full price."
+msgstr "Suma arba procentas, taikomas kaip nuolaida pasiūlymo produktui. Palikite tuščią arba įveskite 0, kad būtų taikoma pilna kaina."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsSetupModal.tsx:117
+msgid "Continue"
+msgstr "Tęsti"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsSetupModal.tsx:122
+msgid "Continue to review your order bump, optionally add display conditions, and publish."
+msgstr "Tęskite peržiūrėti užsakymo priedą, pasirinktinai pridėkite rodymo sąlygas ir paskelbkite."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:19
+msgid "You must select an offer product."
+msgstr "Turite pasirinkti pasiūlymo produktą."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:26
+msgid "Offer"
+msgstr "Pasiūlymas"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:44
+msgid "Auto Add Order Bump to Cart"
+msgstr "Automatiškai pridėti užsakymo priedą į krepšelį"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:45
+msgid "If conditions are satisfied, automatically add this order bump to the cart. Useful for free gifts or other offers that don\\'t require customer action."
+msgstr "Jei sąlygos tenkinamos, automatiškai pridėkite šį užsakymo priedą į krepšelį. Naudinga dovanoms ar kitiems pasiūlymams, kuriems nereikia kliento veiksmų."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:56
+msgid "Auto Match Variations Between Search and Offer Product"
+msgstr "Automatiškai suderinti variacijas tarp paieškos ir pasiūlymo produkto"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:61
+msgid "Add offer product to the cart with the same variable configuration as the product below."
+msgstr "Pridėti pasiūlymo produktą į krepšelį su ta pačia kintamąja konfigūracija kaip žemiau esantis produktas."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:65
+msgid "Only applies when Auto Match Cart Product and Offer Product are variable products with matching variation attributes (Size, Color, etc)"
+msgstr "Taikoma tik tada, kai Automatiškai suderinti krepšelio produktą ir pasiūlymo produktą yra kintamieji produktai su atitinkančiomis variacijų savybėmis (dydis, spalva ir kt.)"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:69
+msgid "Leave unchecked to have customers to select variation options in a modal window."
+msgstr "Palikite nepažymėtą, kad klientai galėtų pasirinkti variacijų parinktis modalinio lango lange."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:73
+msgid "If offer product is not variable, this option is ignored."
+msgstr "Jei pasiūlymo produktas nėra kintamasis, ši parinktis ignoruojama."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:90
+msgid "Auto Match Variations Cart Product"
+msgstr "Automatiškai suderinti variacijas krepšelio produktui"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:98
+msgid "The product in the cart to match the Order Bump variations to."
+msgstr "Produktas krepšelyje, su kuriuo suderinsite užsakymo priedo variacijas."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:113
+msgid "Match Quantity of Offer Product to Display Condition Product"
+msgstr "Suderinti pasiūlymo produkto kiekį su rodymo sąlygos produktu"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:114
+msgid "If customer has two of the display condition product in the cart, two of the offer product will be added to the cart."
+msgstr "Jei klientas turi du rodymo sąlygos produktus krepšelyje, du pasiūlymo produktai bus pridėti į krepšelį."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:128
+msgid "Match Quantity Cart Product"
+msgstr "Suderinti krepšelio produkto kiekį"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:136
+msgid "The product in the cart to match the Order Bump quantity to."
+msgstr "Produktas krepšelyje, su kuriuo suderinsite užsakymo priedo kiekį."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:151
+msgid "Quantity of Offer Product To Add"
+msgstr "Pridėti pasiūlymo produkto kiekį"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:152
+msgid "The quantity to add to the cart when offer is accepted."
+msgstr "Kiekis, kuris bus pridėtas į krepšelį, kai pasiūlymas priimtas."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:161
+msgid "Allow Customer To Change Quantity In Cart"
+msgstr "Leisti klientui keisti kiekį krepšelyje"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:162
+msgid "Allow customer to change the quantity of this order bump in the cart."
+msgstr "Leisti klientui keisti šio užsakymo priedo kiekį krepšelyje."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:22
+msgid "Offer Language"
+msgstr "Pasiūlymo kalba"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:29
+msgid "Place Order Modal Heading"
+msgstr "Užsakymo pateikimo modalo antraštė"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:30
+msgid "Default if blank: Your order is almost complete..."
+msgstr "Numatytoji, jei tuščia: Jūsų užsakymas beveik baigtas..."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:30
+msgid "Wait %s! Here\\'s an exclusive offer to compliment your order!"
+msgstr "Palaukite %s! Štai išskirtinis pasiūlymas, kuris papildys jūsų užsakymą!"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:39
+msgid "Place Order Modal Subheading"
+msgstr "Užsakymo pateikimo modalo paantraštė"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:40
+msgid "Default if blank: Add this offer to your order and save!"
+msgstr "Numatytoji, jei tuščia: Pridėkite šį pasiūlymą prie savo užsakymo ir sutaupykite!"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:52
+msgid "Offer Acceptance Checkbox Label"
+msgstr "Pasiūlymo priėmimo žymės langelio etikėtė"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:52
+msgid "Offer Acceptance Button Label"
+msgstr "Pasiūlymo priėmimo mygtuko etikėtė"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:53
+msgid "Example: Yes! Please add this offer to my order"
+msgstr "Pavyzdys: Taip! Prašau pridėti šį pasiūlymą prie mano užsakymo"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:63
+msgid "Offer Description"
+msgstr "Pasiūlymo aprašymas"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:64
+msgid "Example: Limited time offer! Get an EXCLUSIVE discount right now! Click the checkbox above to add this product to your order now."
+msgstr "Pavyzdys: Riboto laiko pasiūlymas! Gaukite IŠSKIRTINĮ nuolaidą dabar! Spustelėkite aukščiau esantį žymės langelį, kad pridėtumėte šį produktą prie savo užsakymo dabar."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:74
+msgid "Modal Offer Rejection Link Text"
+msgstr "Modalinio pasiūlymo atmetimo nuorodos tekstas"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:78
+msgid "Displays in modal version of Order Bump, such as Place Order bumps or when the Offer Product is a variable product (as opposed to a specific variation)."
+msgstr "Rodo užsakymo priedo modalinėje versijoje, pvz., Užsakymo pateikimo prieduose arba kai pasiūlymo produktas yra kintamasis produktas (o ne konkretus variantas)."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:83
+msgid "Default if blank: No thanks, just complete my order"
+msgstr "Numatytoji, jei tuščia: Ne, ačiū, tiesiog užbaigti mano užsakymą"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:85
+msgid "Default if blank: No thanks"
+msgstr "Numatytoji, jei tuščia: Ne, ačiū"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferDiscountPanel.tsx:15
+msgid "Offer Discount"
+msgstr "Pasiūlymo nuolaida"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferDiscountPanel.tsx:20
+msgid "Amount Off: Remove fixed amount from the product price. Percent Off: Discount product by specified percentage."
+msgstr "Fiksuota suma: pašalina fiksuotą sumą nuo produkto kainos. Procentinė nuolaida: sumažina produkto kainą nurodytu procentu."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferDiscountPanel.tsx:46
+msgid "Item Removal Behavior"
+msgstr "Prekės pašalinimo elgsena"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferDiscountPanel.tsx:47
+msgid "What happens when the display for product is removed from the cart. Default: Order Bump remains in the cart but bump specific discounts are removed."
+msgstr "Kas nutinka, kai prekė pašalinama iš krepšelio. Numatytoji reikšmė: užsakymo priedas lieka krepšelyje, bet priedui taikomos nuolaidos pašalinamos."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferDiscountPanel.tsx:50
+msgid "Leave In Cart With Normal Price"
+msgstr "Palikti krepšelyje už įprastą kainą"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferDiscountPanel.tsx:51
+msgid "Remove Order Bump From Cart"
+msgstr "Pašalinti užsakymo priedą iš krepšelio"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsGeneralPanel.tsx:13
+msgid "You must set an upsell replacement product."
+msgstr "Turite nustatyti papildomo pardavimo pakaitinį produktą."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsGeneralPanel.tsx:20
+msgid "Offer Type"
+msgstr "Pasiūlymo tipas"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsGeneralPanel.tsx:24
+msgid "Use Order Bump As Upsell"
+msgstr "Naudoti užsakymo priedą kaip papildomą pardavimą"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsGeneralPanel.tsx:28
+msgid "Replace a cart item with offer product when this Order Bump is taken."
+msgstr "Pakeiskite krepšelio prekę pasiūlymo produktu, kai šis užsakymo priedas pasirenkamas."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsGeneralPanel.tsx:42
+msgid "Which product does this upsell replace in the cart?"
+msgstr "Kurią prekę šis papildomas pardavimas pakeičia krepšelyje?"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsGeneralPanel.tsx:50
+msgid "This product must be in the cart for this order bump to be shown."
+msgstr "Ši prekė turi būti krepšelyje, kad būtų rodomas šis užsakymo priedas."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:32
+msgid "Block Editor is only used for Full Screen Order Bumps (Configurable for Place Order and Post Purchase One-Click bumps). Blocks are ignored for other configurations."
+msgstr "Blokų redaktorius naudojamas tik viso ekrano užsakymo priedams (konfigūruojama Užsakymo pateikimo ir Vieno paspaudimo po pirkimo priedams). Blokai ignoruojami kitoms konfigūracijoms."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:48
+msgid "Post Purchase One-Click bumps require a compatible payment gateway. We recommend using Place Order bumps when using non-compatible gateways."
+msgstr "Vieno paspaudimo po pirkimo priedams reikalinga suderinama mokėjimo sistema. Rekomenduojame naudoti Užsakymo pateikimo priedus, kai naudojamos nesuderinamos sistemos."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:54
+msgid "Learn more about supported gateways"
+msgstr "Sužinokite daugiau apie palaikomas mokėjimo sistemas"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:61
+msgid "Read our Order Bumps documentation"
+msgstr "Perskaitykite mūsų Užsakymo Priedų dokumentaciją"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:82
+msgid "Display Location"
+msgstr "Rodymo vieta"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:91
+msgid "Below Cart Items"
+msgstr "Žemiau krepšelio prekių"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:92
+msgid "Below Cart Items (Side Cart Only)"
+msgstr "Žemiau krepšelio prekių (tik šoniniame krepšelyje)"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:93
+msgid "Below Cart Items (Checkout Only)"
+msgstr "Žemiau krepšelio prekių (tik atsiskaitymo metu)"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:94
+msgid "Above Terms and Conditions"
+msgstr "Virš taisyklių ir sąlygų"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:95
+msgid "Above Express Checkout"
+msgstr "Virš greitojo atsiskaitymo"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:96
+msgid "Bottom of Information Step"
+msgstr "Informacijos žingsnio apačioje"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:97
+msgid "Bottom of Shipping Step"
+msgstr "Pristatymo žingsnio apačioje"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:98
+msgid "Below Complete Order Button"
+msgstr "Žemiau mygtuko „Užbaigti užsakymą“"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:109
+msgid "Note: Displays above the terms and conditions on mobile devices."
+msgstr "Pastaba: Rodoma virš sąlygų ir nuostatų mobiliuosiuose įrenginiuose."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:112
+msgid "Displays in a popup when Place Order is clicked, before the order is submitted"
+msgstr "Rodoma iššokančiame lange, kai paspaudžiamas Užsakymo pateikimas, prieš pateikiant užsakymą"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:115
+msgid "Displays in a popup on the Thank You page."
+msgstr "Rodoma iššokančiame lange Padėkos puslapyje."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:119
+msgid "Full Screen Landing Page (Use Block Editor To Design)"
+msgstr "Viso ekrano nukreipimo puslapis (naudokite blokų redaktorių dizainui)"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:120
+msgid "If checked, the bump offer will be displayed full screen. Use Order Bump Offer Form block to design the offer."
+msgstr "Jei pažymėta, priedo pasiūlymas bus rodomas visame ekrane. Naudokite užsakymo priedo pasiūlymo formos bloką pasiūlymui sukurti."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayConditions.tsx:26
+msgid "Show Bump When These Conditions Are True:"
+msgstr "Rodyti Bump, kai šios sąlygos yra teisingos:"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayConditions.tsx:29
+msgid "This bump will be shown when the correct upsell product is in the cart and the Offer Product is not in the cart. To further limit when this bump is shown, add a rule below."
+msgstr "Šis bump bus rodomas, kai teisingas papildomas pardavimo produktas yra krepšelyje, o pasiūlymo produktas nėra krepšelyje. Norėdami dar labiau apriboti, kada šis bump rodomas, pridėkite taisyklę žemiau."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayConditions.tsx:31
+msgid "This bump will always be shown when the Offer Product is not in the cart. To limit when this bump is shown, add a rule below."
+msgstr "Šis bump visada bus rodomas, kai pasiūlymo produktas nėra krepšelyje. Norėdami apriboti, kada šis bump rodomas, pridėkite taisyklę žemiau."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsActionsPanel.tsx:15
+msgid "Actions"
+msgstr "Veiksmai"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsActionsPanel.tsx:21
+msgid "Remove These Products From The Cart"
+msgstr "Pašalinti šias prekes iš krepšelio"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsActionsPanel.tsx:23
+msgid "If any of these products are in the cart, remove them when this bump is added to the cart."
+msgstr "Jei bet kuri iš šių prekių yra krepšelyje, pašalinkite jas, kai šis priedas pridedamas prie krepšelio."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsActionsPanel.tsx:24
+msgid "Search for products"
+msgstr "Ieškoti produktų"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsActionsPanel.tsx:35
+msgid "Apply Free Shipping"
+msgstr "Taikyti nemokamą pristatymą"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsActionsPanel.tsx:36
+msgid "When this bump is added to the cart, apply free shipping to the cart."
+msgstr "Kai šis priedas pridedamas prie krepšelio, taikykite nemokamą pristatymą krepšeliui."
 
 #: client/ts/admin/Components/Forms/WooCommercePagesGlobalOptionsSettingsForm.tsx:49
 #: client/ts/admin/Components/Forms/CheckoutSettingsForm.tsx:570
@@ -5938,363 +6295,6 @@ msgstr "Turite neišsaugotų pakeitimų. Ar tikrai norite išeiti?"
 #: client/ts/admin/Components/CheckoutEditor/EditorApp.tsx:150
 msgid "Changing templates will update the logo, typography, colors, field label style, and footer text to those defined by the selected template. Are you sure you want to continue?"
 msgstr "Keičiant šablonus bus atnaujintas logotipas, tipografija, spalvos, laukų etikečių stilius ir poraštės tekstas pagal pasirinktą šabloną. Ar tikrai norite tęsti?"
-
-#: client/ts/admin/Components/Metaboxes/ProductsAndVariationsCompleter.tsx:44
-msgid "All products with titles that include {{query /}}"
-msgstr "Visi produktai, kurių pavadinimuose yra {{query /}}"
-
-#: client/ts/admin/Components/Metaboxes/ProductTagCompleter.tsx:44
-msgid "All product tags that include {{query /}}"
-msgstr "Visi produkto žymekliai, kuriuose yra {{query /}}"
-
-#: client/ts/admin/Components/Metaboxes/ProductAttributeTermsCompleter.tsx:99
-msgid "All attribute terms that include {{query /}}"
-msgstr "Visi atributų terminai, kurie apima {{query /}}"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsSetupModal.tsx:62
-msgid "Let\\'s configure a few things to get you started quickly."
-msgstr "Konfigūruokime keletą dalykų, kad greitai pradėtumėte."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsSetupModal.tsx:66
-msgid "Give your new Order Bump a name. This is just for admins - it won\\'t be displayed to customers."
-msgstr "Suteikite naujam užsakymo priedui pavadinimą. Tai skirta tik administratoriams – klientams nebus rodoma."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsSetupModal.tsx:78
-msgid "Which product should be added to the cart when this Order Bump is accepted?"
-msgstr "Kuris produktas turėtų būti pridėtas į krepšelį, kai priimamas šis užsakymo priedas?"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsSetupModal.tsx:80
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:33
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:92
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:130
-#: client/ts/admin/Components/Metaboxes/OrderBumpsGeneralPanel.tsx:44
-msgid "Search for product"
-msgstr "Ieškoti produkto"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsSetupModal.tsx:91
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferDiscountPanel.tsx:19
-msgid "Discount Type"
-msgstr "Nuolaidos tipas"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsSetupModal.tsx:94
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferDiscountPanel.tsx:23
-msgid "Percent Off"
-msgstr "Procentinė nuolaida"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsSetupModal.tsx:95
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferDiscountPanel.tsx:24
-msgid "Amount Off"
-msgstr "Fiksuota suma"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsSetupModal.tsx:105
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferDiscountPanel.tsx:34
-msgid "Discount"
-msgstr "Nuolaida"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsSetupModal.tsx:106
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferDiscountPanel.tsx:35
-msgid "The amount or percentage applied as a discount to the Offer Product. Leave blank or enter 0 to charge full price."
-msgstr "Suma arba procentas, taikomas kaip nuolaida pasiūlymo produktui. Palikite tuščią arba įveskite 0, kad būtų taikoma pilna kaina."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsSetupModal.tsx:117
-msgid "Continue"
-msgstr "Tęsti"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsSetupModal.tsx:122
-msgid "Continue to review your order bump, optionally add display conditions, and publish."
-msgstr "Tęskite peržiūrėti užsakymo priedą, pasirinktinai pridėkite rodymo sąlygas ir paskelbkite."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:19
-msgid "You must select an offer product."
-msgstr "Turite pasirinkti pasiūlymo produktą."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:26
-msgid "Offer"
-msgstr "Pasiūlymas"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:44
-msgid "Auto Add Order Bump to Cart"
-msgstr "Automatiškai pridėti užsakymo priedą į krepšelį"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:45
-msgid "If conditions are satisfied, automatically add this order bump to the cart. Useful for free gifts or other offers that don\\'t require customer action."
-msgstr "Jei sąlygos tenkinamos, automatiškai pridėkite šį užsakymo priedą į krepšelį. Naudinga dovanoms ar kitiems pasiūlymams, kuriems nereikia kliento veiksmų."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:56
-msgid "Auto Match Variations Between Search and Offer Product"
-msgstr "Automatiškai suderinti variacijas tarp paieškos ir pasiūlymo produkto"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:61
-msgid "Add offer product to the cart with the same variable configuration as the product below."
-msgstr "Pridėti pasiūlymo produktą į krepšelį su ta pačia kintamąja konfigūracija kaip žemiau esantis produktas."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:65
-msgid "Only applies when Auto Match Cart Product and Offer Product are variable products with matching variation attributes (Size, Color, etc)"
-msgstr "Taikoma tik tada, kai Automatiškai suderinti krepšelio produktą ir pasiūlymo produktą yra kintamieji produktai su atitinkančiomis variacijų savybėmis (dydis, spalva ir kt.)"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:69
-msgid "Leave unchecked to have customers to select variation options in a modal window."
-msgstr "Palikite nepažymėtą, kad klientai galėtų pasirinkti variacijų parinktis modalinio lango lange."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:73
-msgid "If offer product is not variable, this option is ignored."
-msgstr "Jei pasiūlymo produktas nėra kintamasis, ši parinktis ignoruojama."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:90
-msgid "Auto Match Variations Cart Product"
-msgstr "Automatiškai suderinti variacijas krepšelio produktui"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:98
-msgid "The product in the cart to match the Order Bump variations to."
-msgstr "Produktas krepšelyje, su kuriuo suderinsite užsakymo priedo variacijas."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:113
-msgid "Match Quantity of Offer Product to Display Condition Product"
-msgstr "Suderinti pasiūlymo produkto kiekį su rodymo sąlygos produktu"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:114
-msgid "If customer has two of the display condition product in the cart, two of the offer product will be added to the cart."
-msgstr "Jei klientas turi du rodymo sąlygos produktus krepšelyje, du pasiūlymo produktai bus pridėti į krepšelį."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:128
-msgid "Match Quantity Cart Product"
-msgstr "Suderinti krepšelio produkto kiekį"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:136
-msgid "The product in the cart to match the Order Bump quantity to."
-msgstr "Produktas krepšelyje, su kuriuo suderinsite užsakymo priedo kiekį."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:151
-msgid "Quantity of Offer Product To Add"
-msgstr "Pridėti pasiūlymo produkto kiekį"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:152
-msgid "The quantity to add to the cart when offer is accepted."
-msgstr "Kiekis, kuris bus pridėtas į krepšelį, kai pasiūlymas priimtas."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:161
-msgid "Allow Customer To Change Quantity In Cart"
-msgstr "Leisti klientui keisti kiekį krepšelyje"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:162
-msgid "Allow customer to change the quantity of this order bump in the cart."
-msgstr "Leisti klientui keisti šio užsakymo priedo kiekį krepšelyje."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:22
-msgid "Offer Language"
-msgstr "Pasiūlymo kalba"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:29
-msgid "Place Order Modal Heading"
-msgstr "Užsakymo pateikimo modalo antraštė"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:30
-msgid "Default if blank: Your order is almost complete..."
-msgstr "Numatytoji, jei tuščia: Jūsų užsakymas beveik baigtas..."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:30
-msgid "Wait %s! Here\\'s an exclusive offer to compliment your order!"
-msgstr "Palaukite %s! Štai išskirtinis pasiūlymas, kuris papildys jūsų užsakymą!"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:39
-msgid "Place Order Modal Subheading"
-msgstr "Užsakymo pateikimo modalo paantraštė"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:40
-msgid "Default if blank: Add this offer to your order and save!"
-msgstr "Numatytoji, jei tuščia: Pridėkite šį pasiūlymą prie savo užsakymo ir sutaupykite!"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:52
-msgid "Offer Acceptance Checkbox Label"
-msgstr "Pasiūlymo priėmimo žymės langelio etikėtė"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:52
-msgid "Offer Acceptance Button Label"
-msgstr "Pasiūlymo priėmimo mygtuko etikėtė"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:53
-msgid "Example: Yes! Please add this offer to my order"
-msgstr "Pavyzdys: Taip! Prašau pridėti šį pasiūlymą prie mano užsakymo"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:63
-msgid "Offer Description"
-msgstr "Pasiūlymo aprašymas"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:64
-msgid "Example: Limited time offer! Get an EXCLUSIVE discount right now! Click the checkbox above to add this product to your order now."
-msgstr "Pavyzdys: Riboto laiko pasiūlymas! Gaukite IŠSKIRTINĮ nuolaidą dabar! Spustelėkite aukščiau esantį žymės langelį, kad pridėtumėte šį produktą prie savo užsakymo dabar."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:74
-msgid "Modal Offer Rejection Link Text"
-msgstr "Modalinio pasiūlymo atmetimo nuorodos tekstas"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:78
-msgid "Displays in modal version of Order Bump, such as Place Order bumps or when the Offer Product is a variable product (as opposed to a specific variation)."
-msgstr "Rodo užsakymo priedo modalinėje versijoje, pvz., Užsakymo pateikimo prieduose arba kai pasiūlymo produktas yra kintamasis produktas (o ne konkretus variantas)."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:83
-msgid "Default if blank: No thanks, just complete my order"
-msgstr "Numatytoji, jei tuščia: Ne, ačiū, tiesiog užbaigti mano užsakymą"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:85
-msgid "Default if blank: No thanks"
-msgstr "Numatytoji, jei tuščia: Ne, ačiū"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferDiscountPanel.tsx:15
-msgid "Offer Discount"
-msgstr "Pasiūlymo nuolaida"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferDiscountPanel.tsx:20
-msgid "Amount Off: Remove fixed amount from the product price. Percent Off: Discount product by specified percentage."
-msgstr "Fiksuota suma: pašalina fiksuotą sumą nuo produkto kainos. Procentinė nuolaida: sumažina produkto kainą nurodytu procentu."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferDiscountPanel.tsx:46
-msgid "Item Removal Behavior"
-msgstr "Prekės pašalinimo elgsena"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferDiscountPanel.tsx:47
-msgid "What happens when the display for product is removed from the cart. Default: Order Bump remains in the cart but bump specific discounts are removed."
-msgstr "Kas nutinka, kai prekė pašalinama iš krepšelio. Numatytoji reikšmė: užsakymo priedas lieka krepšelyje, bet priedui taikomos nuolaidos pašalinamos."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferDiscountPanel.tsx:50
-msgid "Leave In Cart With Normal Price"
-msgstr "Palikti krepšelyje už įprastą kainą"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferDiscountPanel.tsx:51
-msgid "Remove Order Bump From Cart"
-msgstr "Pašalinti užsakymo priedą iš krepšelio"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsGeneralPanel.tsx:13
-msgid "You must set an upsell replacement product."
-msgstr "Turite nustatyti papildomo pardavimo pakaitinį produktą."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsGeneralPanel.tsx:20
-msgid "Offer Type"
-msgstr "Pasiūlymo tipas"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsGeneralPanel.tsx:24
-msgid "Use Order Bump As Upsell"
-msgstr "Naudoti užsakymo priedą kaip papildomą pardavimą"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsGeneralPanel.tsx:28
-msgid "Replace a cart item with offer product when this Order Bump is taken."
-msgstr "Pakeiskite krepšelio prekę pasiūlymo produktu, kai šis užsakymo priedas pasirenkamas."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsGeneralPanel.tsx:42
-msgid "Which product does this upsell replace in the cart?"
-msgstr "Kurią prekę šis papildomas pardavimas pakeičia krepšelyje?"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsGeneralPanel.tsx:50
-msgid "This product must be in the cart for this order bump to be shown."
-msgstr "Ši prekė turi būti krepšelyje, kad būtų rodomas šis užsakymo priedas."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:32
-msgid "Block Editor is only used for Full Screen Order Bumps (Configurable for Place Order and Post Purchase One-Click bumps). Blocks are ignored for other configurations."
-msgstr "Blokų redaktorius naudojamas tik viso ekrano užsakymo priedams (konfigūruojama Užsakymo pateikimo ir Vieno paspaudimo po pirkimo priedams). Blokai ignoruojami kitoms konfigūracijoms."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:48
-msgid "Post Purchase One-Click bumps require a compatible payment gateway. We recommend using Place Order bumps when using non-compatible gateways."
-msgstr "Vieno paspaudimo po pirkimo priedams reikalinga suderinama mokėjimo sistema. Rekomenduojame naudoti Užsakymo pateikimo priedus, kai naudojamos nesuderinamos sistemos."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:54
-msgid "Learn more about supported gateways"
-msgstr "Sužinokite daugiau apie palaikomas mokėjimo sistemas"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:61
-msgid "Read our Order Bumps documentation"
-msgstr "Perskaitykite mūsų Užsakymo Priedų dokumentaciją"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:82
-msgid "Display Location"
-msgstr "Rodymo vieta"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:91
-msgid "Below Cart Items"
-msgstr "Žemiau krepšelio prekių"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:92
-msgid "Below Cart Items (Side Cart Only)"
-msgstr "Žemiau krepšelio prekių (tik šoniniame krepšelyje)"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:93
-msgid "Below Cart Items (Checkout Only)"
-msgstr "Žemiau krepšelio prekių (tik atsiskaitymo metu)"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:94
-msgid "Above Terms and Conditions"
-msgstr "Virš taisyklių ir sąlygų"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:95
-msgid "Above Express Checkout"
-msgstr "Virš greitojo atsiskaitymo"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:96
-msgid "Bottom of Information Step"
-msgstr "Informacijos žingsnio apačioje"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:97
-msgid "Bottom of Shipping Step"
-msgstr "Pristatymo žingsnio apačioje"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:98
-msgid "Below Complete Order Button"
-msgstr "Žemiau mygtuko „Užbaigti užsakymą“"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:109
-msgid "Note: Displays above the terms and conditions on mobile devices."
-msgstr "Pastaba: Rodoma virš sąlygų ir nuostatų mobiliuosiuose įrenginiuose."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:112
-msgid "Displays in a popup when Place Order is clicked, before the order is submitted"
-msgstr "Rodoma iššokančiame lange, kai paspaudžiamas Užsakymo pateikimas, prieš pateikiant užsakymą"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:115
-msgid "Displays in a popup on the Thank You page."
-msgstr "Rodoma iššokančiame lange Padėkos puslapyje."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:119
-msgid "Full Screen Landing Page (Use Block Editor To Design)"
-msgstr "Viso ekrano nukreipimo puslapis (naudokite blokų redaktorių dizainui)"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:120
-msgid "If checked, the bump offer will be displayed full screen. Use Order Bump Offer Form block to design the offer."
-msgstr "Jei pažymėta, priedo pasiūlymas bus rodomas visame ekrane. Naudokite užsakymo priedo pasiūlymo formos bloką pasiūlymui sukurti."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayConditions.tsx:26
-msgid "Show Bump When These Conditions Are True:"
-msgstr "Rodyti Bump, kai šios sąlygos yra teisingos:"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayConditions.tsx:29
-msgid "This bump will be shown when the correct upsell product is in the cart and the Offer Product is not in the cart. To further limit when this bump is shown, add a rule below."
-msgstr "Šis bump bus rodomas, kai teisingas papildomas pardavimo produktas yra krepšelyje, o pasiūlymo produktas nėra krepšelyje. Norėdami dar labiau apriboti, kada šis bump rodomas, pridėkite taisyklę žemiau."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayConditions.tsx:31
-msgid "This bump will always be shown when the Offer Product is not in the cart. To limit when this bump is shown, add a rule below."
-msgstr "Šis bump visada bus rodomas, kai pasiūlymo produktas nėra krepšelyje. Norėdami apriboti, kada šis bump rodomas, pridėkite taisyklę žemiau."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsActionsPanel.tsx:15
-msgid "Actions"
-msgstr "Veiksmai"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsActionsPanel.tsx:21
-msgid "Remove These Products From The Cart"
-msgstr "Pašalinti šias prekes iš krepšelio"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsActionsPanel.tsx:23
-msgid "If any of these products are in the cart, remove them when this bump is added to the cart."
-msgstr "Jei bet kuri iš šių prekių yra krepšelyje, pašalinkite jas, kai šis priedas pridedamas prie krepšelio."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsActionsPanel.tsx:24
-msgid "Search for products"
-msgstr "Ieškoti produktų"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsActionsPanel.tsx:35
-msgid "Apply Free Shipping"
-msgstr "Taikyti nemokamą pristatymą"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsActionsPanel.tsx:36
-msgid "When this bump is added to the cart, apply free shipping to the cart."
-msgstr "Kai šis priedas pridedamas prie krepšelio, taikykite nemokamą pristatymą krepšeliui."
 
 #: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:66
 msgid "Step"

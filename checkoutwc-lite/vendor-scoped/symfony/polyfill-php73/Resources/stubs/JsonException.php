@@ -1,6 +1,6 @@
 <?php
 
-namespace CheckoutWC;
+
 
 /*
  * This file is part of the Symfony package.
@@ -14,5 +14,5 @@ if (\PHP_VERSION_ID < 70300) {
     class JsonException extends \Exception
     {
     }
-    \class_alias('CheckoutWC\JsonException', 'JsonException', \false);
+
 }
