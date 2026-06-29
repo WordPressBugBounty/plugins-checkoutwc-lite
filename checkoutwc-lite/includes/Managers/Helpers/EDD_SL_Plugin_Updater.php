@@ -148,7 +148,10 @@ class EDD_SL_Plugin_Updater {
 				$no_update->banners_rtl = array();
 			}
 
-			$_transient_data->last_checked           = time();
+			// Do not set $_transient_data->last_checked here: WordPress core manages it in wp_update_plugins().
+			// Core stores this transient without an expiration, so the decision to re-check rests on
+			// last_checked alone - resetting it on every transient write indefinitely defers real update checks.
+			// Newer upstream EDD SL updater versions removed this assignment as well.
 			$_transient_data->checked[ $this->name ] = $this->version;
 
 			if ( $no_update ) {

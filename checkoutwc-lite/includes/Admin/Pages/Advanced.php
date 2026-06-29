@@ -25,17 +25,17 @@ class Advanced extends PageAbstract {
 
 		$this->set_tabbed_navigation( new TabNavigation( 'advanced' ) );
 
-		$this->get_tabbed_navigation()->add_tab( __( 'Advanced', 'checkout-wc' ), add_query_arg( array( 'subpage' => 'advanced' ), $this->get_url() ) );
-		$this->get_tabbed_navigation()->add_tab( __( 'Scripts', 'checkout-wc' ), add_query_arg( array( 'subpage' => 'scripts' ), $this->get_url() ) );
-		$this->get_tabbed_navigation()->add_tab( __( 'Tools', 'checkout-wc' ), add_query_arg( array( 'subpage' => 'tools' ), $this->get_url() ) );
+		$this->get_tabbed_navigation()->add_tab( __( 'Advanced', 'checkout-wc' ), add_query_arg( [ 'subpage' => 'advanced' ], $this->get_url() ), 'advanced' );
+		$this->get_tabbed_navigation()->add_tab( __( 'Scripts', 'checkout-wc' ), add_query_arg( [ 'subpage' => 'scripts' ], $this->get_url() ), 'scripts' );
+		$this->get_tabbed_navigation()->add_tab( __( 'Tools', 'checkout-wc' ), add_query_arg( [ 'subpage' => 'tools' ], $this->get_url() ), 'tools' );
 
-		add_action( 'wp_ajax_cfw_generate_settings', array( $this, 'generate_settings_export' ) );
-		add_action( 'admin_init', array( $this, 'maybe_upload_settings' ), 0 );
+		add_action( 'wp_ajax_cfw_generate_settings', [ $this, 'generate_settings_export' ] );
+		add_action( 'admin_init', [ $this, 'maybe_upload_settings' ], 0 );
 	}
 
 	public function output() {
 		$current_tab_function = $this->get_tabbed_navigation()->get_current_tab() . '_tab';
-		$callable             = array( $this, $current_tab_function );
+		$callable             = [ $this, $current_tab_function ];
 
 		$this->get_tabbed_navigation()->display_tabs();
 
@@ -123,7 +123,7 @@ class Advanced extends PageAbstract {
 			wp_die();
 		}
 
-		$settings = array();
+		$settings = [];
 
 		// Get all WP options that start with cfw_.
 		$values = $wpdb->get_results( "SELECT option_name, option_value FROM $wpdb->options WHERE option_name LIKE '\_cfw_%' AND option_name <> '_cfw__settings' AND option_name <> '_cfwlite__settings'" );
@@ -173,15 +173,15 @@ class Advanced extends PageAbstract {
 				'cfw_import_settings_error',
 				__( 'CheckoutWC Settings Import Failed', 'checkout-wc' ),
 				__( 'Unable to import settings. Did you select a JSON file to upload?', 'checkout-wc' ),
-				array(
+				[
 					'type'        => 'error',
 					'dismissible' => false,
-				)
+				]
 			);
 			return;
 		}
 
-		$upload = ! empty( $_FILES['uploaded_settings'] ) ? $_FILES['uploaded_settings'] : array(); // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
+		$upload = ! empty( $_FILES['uploaded_settings'] ) ? $_FILES['uploaded_settings'] : []; // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
 
 		if ( empty( $upload ) ) {
 			wp_die( esc_html__( 'Error. Uploaded file appears empty.', 'checkout-wc' ) );
@@ -254,10 +254,10 @@ class Advanced extends PageAbstract {
 			'cfw_import_settings_success',
 			__( 'CheckoutWC Settings Import Successful', 'checkout-wc' ),
 			__( 'Successfully imported settings.', 'checkout-wc' ),
-			array(
+			[
 				'type'        => 'success',
 				'dismissible' => false,
-			)
+			]
 		);
 	}
 
@@ -276,7 +276,7 @@ class Advanced extends PageAbstract {
 		$logo = wp_remote_get( $file_url );
 
 		if ( is_wp_error( $logo ) ) {
-			wc_get_logger()->error( 'Error fetching logo during settings import: ' . $logo->get_error_message(), array( 'source' => 'checkout-wc' ) );
+			wc_get_logger()->error( 'Error fetching logo during settings import: ' . $logo->get_error_message(), [ 'source' => 'checkout-wc' ] );
 			return false;
 		}
 
@@ -285,13 +285,13 @@ class Advanced extends PageAbstract {
 		if ( ! $upload_file['error'] ) {
 			$wp_file_type = wp_check_filetype( $filename, null );
 
-			$attachment = array(
+			$attachment = [
 				'post_mime_type' => $wp_file_type['type'],
 				'post_parent'    => 0,
 				'post_title'     => preg_replace( '/\.[^.]+$/', '', $filename ),
 				'post_content'   => '',
 				'post_status'    => 'inherit',
-			);
+			];
 
 			$attachment_id = wp_insert_attachment( $attachment, $upload_file['file'], 0 );
 
@@ -313,27 +313,27 @@ class Advanced extends PageAbstract {
 
 		if ( 'advanced' === $this->get_tabbed_navigation()->get_current_tab() ) {
 			$this->set_script_data(
-				array(
-					'settings' => array(
+				[
+					'settings' => [
 						'template_loader'             => SettingsManager::instance()->get_setting( 'template_loader' ),
 						'enable_beta_version_updates' => SettingsManager::instance()->get_setting( 'enable_beta_version_updates' ) === 'yes',
 						'hide_admin_bar_button'       => SettingsManager::instance()->get_setting( 'hide_admin_bar_button' ) === 'yes',
 						'enable_debug_log'            => SettingsManager::instance()->get_setting( 'enable_debug_log' ) === 'yes',
-						'allow_tracking'              => array( SettingsManager::instance()->get_setting( 'allow_tracking' ) ),
+						'allow_tracking'              => [ SettingsManager::instance()->get_setting( 'allow_tracking' ) ],
 						'allow_uninstall'             => SettingsManager::instance()->get_setting( 'allow_uninstall' ) === 'yes',
-					),
-					'params'   => array(
+					],
+					'params'   => [
 						'allow_tracking_hash' => md5( trailingslashit( home_url() ) ),
-					),
+					],
 					'plan'     => $this->get_plan_data(),
-				)
+				]
 			);
 		}
 
 		if ( 'scripts' === $this->get_tabbed_navigation()->get_current_tab() ) {
 			$this->set_script_data(
-				array(
-					'settings' => array(
+				[
+					'settings' => [
 						'header_scripts'           => cfw_get_setting( 'header_scripts', null, '' ),
 						'footer_scripts'           => cfw_get_setting( 'footer_scripts', null, '' ),
 						'php_snippets'             => cfw_get_setting( 'php_snippets', null, '' ),
@@ -343,9 +343,9 @@ class Advanced extends PageAbstract {
 						'footer_scripts_thank_you' => cfw_get_setting( 'footer_scripts_thank_you', null, '' ),
 						'header_scripts_order_pay' => cfw_get_setting( 'header_scripts_order_pay', null, '' ),
 						'footer_scripts_order_pay' => cfw_get_setting( 'footer_scripts_order_pay', null, '' ),
-					),
+					],
 					'plan'     => $this->get_plan_data(),
-				)
+				]
 			);
 		}
 	}

@@ -1282,6 +1282,30 @@ function cfw_payment_tab_content_terms_and_conditions() {
 	do_action( 'cfw_checkout_before_payment_method_terms_checkbox' );
 
 	wc_get_template( 'checkout/terms.php' );
+
+	cfw_privacy_policy_page_content();
+}
+
+/**
+ * Output the privacy policy page content in a hidden wrapper
+ *
+ * Mirrors wc_terms_and_conditions_page_content() so that the privacy policy
+ * link can open in a modal instead of navigating away from the checkout.
+ *
+ * @since 11.1.3
+ */
+function cfw_privacy_policy_page_content() {
+	$privacy_page_id = wc_privacy_policy_page_id();
+
+	if ( ! $privacy_page_id ) {
+		return;
+	}
+
+	$page = get_post( $privacy_page_id );
+
+	if ( $page && 'publish' === $page->post_status && $page->post_content && ! post_password_required( $page ) && ! has_shortcode( $page->post_content, 'woocommerce_checkout' ) ) {
+		echo '<div class="cfw-privacy-policy-content" style="display: none;">' . wc_format_content( wp_kses_post( $page->post_content ) ) . '</div>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+	}
 }
 
 /**
@@ -2060,6 +2084,8 @@ function cfw_order_pay_payment_form( WC_Order $order, array $available_gateways,
 			<?php cfw_payment_methods( $order, false ); ?>
 
 			<?php wc_get_template( 'checkout/terms.php' ); ?>
+
+			<?php cfw_privacy_policy_page_content(); ?>
 
 			<?php
 			/**

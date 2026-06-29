@@ -27,6 +27,7 @@ use Objectiv\Plugins\Checkout\Admin\Notices\LiteEmailOptIn;
 use Objectiv\Plugins\Checkout\Admin\Notices\PortoWarning;
 use Objectiv\Plugins\Checkout\Admin\Notices\WoostifyWarning;
 use Objectiv\Plugins\Checkout\Admin\Pages\AbandonedCartRecoveryAdminFree;
+use Objectiv\Plugins\Checkout\Admin\Pages\ABTestingAdminFree;
 use Objectiv\Plugins\Checkout\Admin\Pages\AdminPagesRegistry;
 use Objectiv\Plugins\Checkout\Admin\Pages\Advanced;
 use Objectiv\Plugins\Checkout\Admin\Pages\Appearance;
@@ -310,6 +311,7 @@ add_action(
 			'side_cart'               => ( new SideCartAdminFree() )->set_priority( 80 ),
 			'trust_badges'            => ( new TrustBadgesAdminFree() )->set_priority( 90 ),
 			'order_bumps'             => ( new OrderBumpsAdminFree() )->set_priority( 95 ),
+			'ab_testing'              => ( new ABTestingAdminFree() )->set_priority( 96 ),
 			'local_pickup'            => ( new LocalPickupAdminFree() )->set_priority( 102 ),
 			'abandoned_cart_recovery' => ( new AbandonedCartRecoveryAdminFree() )->set_priority( 104 ),
 			'integrations'            => ( new Integrations() )->set_priority( 105 ),
@@ -338,11 +340,11 @@ if ( ! PlanManager::has_premium_plan_or_higher() ) {
 		'admin_menu',
 		function() {
 			add_submenu_page(
-			'cfw-settings',
-			esc_html__( 'Upgrade to Premium', 'checkout-wc' ),
-			esc_html__( 'Upgrade to Premium', 'checkout-wc' ),
-			'manage_options',
-			esc_url( 'https://www.checkoutwc.com/lite-upgrade/?utm_campaign=liteplugin&utm_medium=admin-menu&utm_source=WordPress&utm_content=Upgrade+to+Pro' )
+				'cfw-settings',
+				esc_html__( 'Upgrade to Premium', 'checkout-wc' ),
+				esc_html__( 'Upgrade to Premium', 'checkout-wc' ),
+				'manage_options',
+				esc_url( 'https://www.checkoutwc.com/lite-upgrade/?utm_campaign=liteplugin&utm_medium=admin-menu&utm_source=WordPress&utm_content=Upgrade+to+Pro' )
 			);
 		},
 		125
@@ -1278,6 +1280,12 @@ add_action(
 			'cfw_checkout_update_order_review',
 			function() {
 				FormFieldAugmenter::instance()->add_hooks();
+
+				// is_cfw_page() is false during the update_order_review AJAX request, so the
+				// wp-hooked init() above doesn't run. Initialize here too, otherwise fields
+				// re-rendered into fragments (e.g. LocalPickup's shipping country field) lose
+				// their augmented args such as `columns` and render full-width.
+				AddressFieldsAugmenter::instance()->init();
 			},
 			1
 		);

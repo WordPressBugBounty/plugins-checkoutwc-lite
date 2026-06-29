@@ -25,12 +25,12 @@ class Appearance extends PageAbstract {
 	}
 
 	public function init() {
-		add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_assets' ), 1000 );
-		add_action( $this->settings_manager->prefix . '_settings_saved', array( $this, 'maybe_activate_theme' ) );
+		add_action( 'admin_enqueue_scripts', [ $this, 'enqueue_assets' ], 1000 );
+		add_action( $this->settings_manager->prefix . '_settings_saved', [ $this, 'maybe_activate_theme' ] );
 
 		$this->set_tabbed_navigation( new TabNavigation( 'templates' ) );
-		$this->get_tabbed_navigation()->add_tab( __( 'Template', 'checkout-wc' ), add_query_arg( array( 'subpage' => 'templates' ), $this->get_url() ), 'templates' );
-		$this->get_tabbed_navigation()->add_tab( __( 'Design', 'checkout-wc' ), add_query_arg( array( 'subpage' => 'design' ), $this->get_url() ) );
+		$this->get_tabbed_navigation()->add_tab( __( 'Template', 'checkout-wc' ), add_query_arg( [ 'subpage' => 'templates' ], $this->get_url() ), 'templates' );
+		$this->get_tabbed_navigation()->add_tab( __( 'Design', 'checkout-wc' ), add_query_arg( [ 'subpage' => 'design' ], $this->get_url() ), 'design' );
 
 		parent::init();
 	}
@@ -38,7 +38,7 @@ class Appearance extends PageAbstract {
 	public function maybe_activate_theme() {
 		$prefix = $this->settings_manager->prefix;
 
-		$new_settings = wc_clean( wp_unslash( $_REQUEST[ "{$prefix}_setting" ] ?? array() ) ); // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+		$new_settings = wc_clean( wp_unslash( $_REQUEST[ "{$prefix}_setting" ] ?? [] ) ); // phpcs:ignore WordPress.Security.NonceVerification.Recommended
 
 		if ( empty( $new_settings['active_template'] ) ) {
 			return;
@@ -71,7 +71,7 @@ class Appearance extends PageAbstract {
 
 		// Move active template to the top
 		if ( isset( $templates[ $active_template ] ) ) {
-			$templates = array_merge( array( $active_template => $templates[ $active_template ] ), $templates );
+			$templates = array_merge( [ $active_template => $templates[ $active_template ] ], $templates );
 		}
 		?>
 		<div class="cfw-theme-browser">
@@ -84,21 +84,21 @@ class Appearance extends PageAbstract {
 					$locked      = ! $active && ! PlanManager::has_premium_plan_or_higher();
 					$preview_url = wc_get_checkout_url();
 					$products    = wc_get_products(
-						array(
+						[
 							'limit'  => 1,
 							'status' => 'publish',
-							'type'   => array( 'simple' ),
-						)
+							'type'   => [ 'simple' ],
+						]
 					);
 
 					if ( empty( $products ) ) {
 						$products = wc_get_products(
-							array(
+							[
 								'parent_exclude' => 0,
 								'limit'          => 1,
 								'status'         => 'publish',
-								'type'           => array( 'variable' ),
-							)
+								'type'           => [ 'variable' ],
+							]
 						);
 					}
 
@@ -106,10 +106,10 @@ class Appearance extends PageAbstract {
 					if ( ! empty( $products ) ) {
 						$product = $products[0];
 
-						$preview_url = add_query_arg( array( 'add-to-cart' => $product->get_id() ), $preview_url );
+						$preview_url = add_query_arg( [ 'add-to-cart' => $product->get_id() ], $preview_url );
 					}
 
-					$preview_url = add_query_arg( array( 'cfw-preview' => $template->get_slug() ), $preview_url );
+					$preview_url = add_query_arg( [ 'cfw-preview' => $template->get_slug() ], $preview_url );
 					?>
 					<div class="theme max-w-full shadow-lg <?php echo $active ? 'active' : ''; ?> <?php echo $locked ? 'locked' : ''; ?>">
 						<div class="theme-screenshot">
@@ -194,23 +194,23 @@ class Appearance extends PageAbstract {
 	 */
 	public static function get_theme_color_settings( $template_slug = null ): array {
 		$active_template = null !== $template_slug ? new Template( $template_slug ) : cfw_get_active_template();
-		$color_settings  = array();
+		$color_settings  = [];
 
 		// Body
-		$color_settings['body'] = array(
+		$color_settings['body'] = [
 			'title'    => __( 'Body', 'checkout-wc' ),
-			'settings' => array(),
-		);
+			'settings' => [],
+		];
 
 		$color_settings['body']['settings']['body_background_color'] = __( 'Background', 'checkout-wc' );
 		$color_settings['body']['settings']['body_text_color']       = __( 'Text', 'checkout-wc' );
 		$color_settings['body']['settings']['link_color']            = __( 'Link', 'checkout-wc' );
 
 		// Header
-		$color_settings['header'] = array(
+		$color_settings['header'] = [
 			'title'    => __( 'Header', 'checkout-wc' ),
-			'settings' => array(),
-		);
+			'settings' => [],
+		];
 
 		if ( $active_template->supports( 'header-background' ) ) {
 			$color_settings['header']['settings']['header_background_color'] = __( 'Background', 'checkout-wc' );
@@ -219,10 +219,10 @@ class Appearance extends PageAbstract {
 		$color_settings['header']['settings']['header_text_color'] = __( 'Text', 'checkout-wc' );
 
 		// Footer
-		$color_settings['footer'] = array(
+		$color_settings['footer'] = [
 			'title'    => __( 'Footer', 'checkout-wc' ),
-			'settings' => array(),
-		);
+			'settings' => [],
+		];
 
 		if ( $active_template->supports( 'footer-background' ) ) {
 			$color_settings['footer']['settings']['footer_background_color'] = __( 'Background', 'checkout-wc' );
@@ -231,10 +231,10 @@ class Appearance extends PageAbstract {
 		$color_settings['footer']['settings']['footer_color'] = __( 'Text', 'checkout-wc' );
 
 		// Cart Summary
-		$color_settings['cart_summary'] = array(
+		$color_settings['cart_summary'] = [
 			'title'    => __( 'Cart Summary', 'checkout-wc' ),
-			'settings' => array(),
-		);
+			'settings' => [],
+		];
 
 		if ( $active_template->supports( 'summary-background' ) ) {
 			$color_settings['cart_summary']['settings']['summary_background_color'] = __( 'Background', 'checkout-wc' );
@@ -249,10 +249,10 @@ class Appearance extends PageAbstract {
 		$color_settings['cart_summary']['settings']['cart_item_quantity_text_color'] = __( 'Quantity Bubble Text', 'checkout-wc' );
 
 		// Breadcrumbs
-		$color_settings['breadcrumbs'] = array(
+		$color_settings['breadcrumbs'] = [
 			'title'    => __( 'Breadcrumbs', 'checkout-wc' ),
-			'settings' => array(),
-		);
+			'settings' => [],
+		];
 
 		if ( $active_template->supports( 'breadcrumb-colors' ) ) {
 			$color_settings['breadcrumbs']['settings']['breadcrumb_completed_text_color']   = __( 'Completed Text', 'checkout-wc' );
@@ -263,10 +263,10 @@ class Appearance extends PageAbstract {
 			$color_settings['breadcrumbs']['settings']['breadcrumb_next_accent_color']      = __( 'Next Accent', 'checkout-wc' );
 		}
 
-		$color_settings['buttons'] = array(
+		$color_settings['buttons'] = [
 			'title'    => __( 'Buttons', 'checkout-wc' ),
-			'settings' => array(),
-		);
+			'settings' => [],
+		];
 
 		// Buttons
 		$color_settings['buttons']['settings']['button_color']                      = __( 'Primary Background', 'checkout-wc' );
@@ -279,7 +279,7 @@ class Appearance extends PageAbstract {
 		$color_settings['buttons']['settings']['secondary_button_text_hover_color'] = __( 'Secondary Text Hover', 'checkout-wc' );
 
 		// Theme Specific Colors
-		$color_settings['active_theme_colors'] = array(
+		$color_settings['active_theme_colors'] = [
 			'title'    => __( 'Theme Specific Colors', 'checkout-wc' ),
 			/**
 			 * Filters the active theme colors settings.
@@ -287,8 +287,8 @@ class Appearance extends PageAbstract {
 			 * @param array $color_settings The active theme colors settings.
 			 * @since 5.1.0
 			 */
-			'settings' => apply_filters( 'cfw_active_theme_color_settings', array() ),
-		);
+			'settings' => apply_filters( 'cfw_active_theme_color_settings', [] ),
+		];
 
 		/**
 		 * Filters the theme color settings.
@@ -306,7 +306,7 @@ class Appearance extends PageAbstract {
 	public static function get_theme_color_settings_defaults( $template_slug = null ): array {
 		$template        = null !== $template_slug ? new Template( $template_slug ) : cfw_get_active_template();
 		$color_settings  = self::get_theme_color_settings( $template_slug );
-		$defaults        = array();
+		$defaults        = [];
 
 		foreach ( $color_settings as $color_setting_section ) {
 			foreach ( $color_setting_section['settings'] as $key => $label ) {
@@ -323,36 +323,36 @@ class Appearance extends PageAbstract {
 		}
 
 		$template_slug      = cfw_get_active_template()->get_slug();
-		$settings           = array(
-			SettingsManager::instance()->add_suffix( 'logo_attachment_id', array( $template_slug ) ) => SettingsManager::instance()->get_setting( 'logo_attachment_id', array( $template_slug ) ),
-			SettingsManager::instance()->add_suffix( 'label_style', array( $template_slug ) )        => SettingsManager::instance()->get_setting( 'label_style', array( $template_slug ) ),
-			SettingsManager::instance()->add_suffix( 'footer_text', array( $template_slug ) )        => SettingsManager::instance()->get_setting( 'footer_text', array( $template_slug ) ),
-			SettingsManager::instance()->add_suffix( 'custom_css', array( $template_slug ) )        => SettingsManager::instance()->get_setting( 'custom_css', array( $template_slug ) ),
+		$settings           = [
+			SettingsManager::instance()->add_suffix( 'logo_attachment_id', [ $template_slug ] ) => SettingsManager::instance()->get_setting( 'logo_attachment_id', [ $template_slug ] ),
+			SettingsManager::instance()->add_suffix( 'label_style', [ $template_slug ] )        => SettingsManager::instance()->get_setting( 'label_style', [ $template_slug ] ),
+			SettingsManager::instance()->add_suffix( 'footer_text', [ $template_slug ] )        => SettingsManager::instance()->get_setting( 'footer_text', [ $template_slug ] ),
+			SettingsManager::instance()->add_suffix( 'custom_css', [ $template_slug ] )        => SettingsManager::instance()->get_setting( 'custom_css', [ $template_slug ] ),
 			'footer_text_editor_mode' => SettingsManager::instance()->get_setting( 'footer_text_editor_mode' ),
-		);
+		];
 		$raw_color_settings = self::get_theme_color_settings();
 
 		foreach ( $raw_color_settings as $color_setting_section ) {
 			foreach ( $color_setting_section['settings'] as $key => $label ) {
-				$settings[ SettingsManager::instance()->add_suffix( $key, array( $template_slug ) ) ] = SettingsManager::instance()->get_setting( $key, array( $template_slug ) );
+				$settings[ SettingsManager::instance()->add_suffix( $key, [ $template_slug ] ) ] = SettingsManager::instance()->get_setting( $key, [ $template_slug ] );
 			}
 		}
 
-		$settings[ SettingsManager::instance()->add_suffix( 'body_font', array( $template_slug ) ) ]    = SettingsManager::instance()->get_setting( 'body_font', array( $template_slug ) );
-		$settings[ SettingsManager::instance()->add_suffix( 'heading_font', array( $template_slug ) ) ] = SettingsManager::instance()->get_setting( 'heading_font', array( $template_slug ) );
+		$settings[ SettingsManager::instance()->add_suffix( 'body_font', [ $template_slug ] ) ]    = SettingsManager::instance()->get_setting( 'body_font', [ $template_slug ] );
+		$settings[ SettingsManager::instance()->add_suffix( 'heading_font', [ $template_slug ] ) ] = SettingsManager::instance()->get_setting( 'heading_font', [ $template_slug ] );
 
 		$this->set_script_data(
-			array(
+			[
 				'settings' => $settings,
-				'params'   => array(
+				'params'   => [
 					'font_options'            => $this->get_font_settings(),
 					'template_path'           => cfw_get_active_template()->get_slug(),
 					'color_settings'          => self::get_theme_color_settings(),
 					'color_settings_defaults' => self::get_theme_color_settings_defaults(),
-					'logo_preview_url'        => wp_get_attachment_url( SettingsManager::instance()->get_setting( 'logo_attachment_id', array( cfw_get_active_template()->get_slug() ) ) ),
-				),
+					'logo_preview_url'        => wp_get_attachment_url( SettingsManager::instance()->get_setting( 'logo_attachment_id', [ cfw_get_active_template()->get_slug() ] ) ),
+				],
 				'plan'     => $this->get_plan_data(),
-			)
+			]
 		);
 	}
 }

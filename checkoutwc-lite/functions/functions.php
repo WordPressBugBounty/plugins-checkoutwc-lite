@@ -2633,6 +2633,11 @@ function cfw_get_suggested_products( int $limit = 3, bool $random_fallback = fal
 				continue;
 			}
 
+			// Protect against products hidden from the catalog
+			if ( ! $cross_sell_product->is_visible() ) {
+				continue;
+			}
+
 			$cross_sells[] = $cross_sell_product;
 		}
 
@@ -2644,6 +2649,8 @@ function cfw_get_suggested_products( int $limit = 3, bool $random_fallback = fal
 					'status'       => 'publish',
 					'orderby'      => 'rand',
 					'stock_status' => 'instock',
+					// 'catalog' matches the cross-sell path's is_visible(): excludes hidden and search-only products, keeps "Shop only".
+					'visibility'   => 'catalog',
 				]
 			);
 

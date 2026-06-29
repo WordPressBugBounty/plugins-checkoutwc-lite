@@ -47,6 +47,7 @@ return array(
     'Objectiv\\Plugins\\Checkout\\Admin\\Notices\\TurnstileFeatureNotice' => $baseDir . '/includes/Admin/Notices/TurnstileFeatureNotice.php',
     'Objectiv\\Plugins\\Checkout\\Admin\\Notices\\WelcomeNotice' => $baseDir . '/includes/Admin/Notices/WelcomeNotice.php',
     'Objectiv\\Plugins\\Checkout\\Admin\\Notices\\WoostifyWarning' => $baseDir . '/includes/Admin/Notices/WoostifyWarning.php',
+    'Objectiv\\Plugins\\Checkout\\Admin\\Pages\\ABTestingAdminFree' => $baseDir . '/includes/Admin/Pages/ABTestingAdminFree.php',
     'Objectiv\\Plugins\\Checkout\\Admin\\Pages\\AbandonedCartRecoveryAdminFree' => $baseDir . '/includes/Admin/Pages/AbandonedCartRecoveryAdminFree.php',
     'Objectiv\\Plugins\\Checkout\\Admin\\Pages\\AdminPagesRegistry' => $baseDir . '/includes/Admin/Pages/AdminPagesRegistry.php',
     'Objectiv\\Plugins\\Checkout\\Admin\\Pages\\Advanced' => $baseDir . '/includes/Admin/Pages/Advanced.php',

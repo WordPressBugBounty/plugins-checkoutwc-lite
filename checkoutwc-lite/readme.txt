@@ -4,7 +4,7 @@ Donate link: https://www.checkoutwc.com
 Tags: woocommerce-checkout, checkout-optimization, cart-abandonment, one-page-checkout, express-checkout
 Requires at least: 5.2
 Tested up to: 7.0
-Stable tag: 11.1.2
+Stable tag: 11.1.3
 Requires PHP: 7.4
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
@@ -250,6 +250,16 @@ Enable WordPress debugging (add define('WP_DEBUG', true); to wp-config.php) and 
 == Changelog ==
 
 Free version updates are non-sequential due to the unified development branch we use with the premium versions.
+
+= Version 11.1.3 =
+
+- Tweak - Open the privacy policy link in a modal at checkout, matching the existing Terms and Conditions behavior
+- Tweak - Show A/B Testing as a locked premium menu entry
+- Fix - Prevent the client-side error logger from endlessly retrying when its own logging request fails
+- Fix - Translate checkout field labels and placeholders even when the WooCommerce language pack is not installed on the site
+- Fix - Admin header tab menus breaking when the admin language uses a non-Latin alphabet
+- Fix - "Create account" checkbox no longer re-checks itself after a guest unticks it and reloads the checkout or edits their email
+* Fix - Scrollbar appearing on the Apple Pay, Google Pay, and Link order buttons with Payment Plugins for Stripe
 
 = Version 11.1.2 =
 

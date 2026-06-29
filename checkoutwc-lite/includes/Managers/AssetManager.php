@@ -29,13 +29,13 @@ class AssetManager {
 	}
 
 	public function init() {
-		add_action( 'wp_enqueue_scripts', array( $this, 'set_global_assets' ) );
+		add_action( 'wp_enqueue_scripts', [ $this, 'set_global_assets' ] );
 		add_action(
 			'wp_enqueue_scripts',
-			array(
+			[
 				$this,
 				'set_cfw_page_assets',
-			),
+			],
 			100
 		); // Woo uses 6, divi uses 15, yith uses 25 - so this is after those
 	}
@@ -59,7 +59,7 @@ class AssetManager {
 			$src = str_replace( '.css', '-rtl.css', $src );
 		}
 
-		wp_enqueue_style( $replacement_handle, $src, array(), $manifest['chunks'][ $handle ]['hash'] ?? CFW_VERSION );
+		wp_enqueue_style( $replacement_handle, $src, [], $manifest['chunks'][ $handle ]['hash'] ?? CFW_VERSION );
 	}
 
 	/**
@@ -76,7 +76,7 @@ class AssetManager {
 		}
 
 		if ( PlanManager::can_access_feature( 'enable_side_cart', 'plus' ) ) {
-			cfw_register_scripts( array( 'side-cart' ) );
+			cfw_register_scripts( [ 'side-cart' ] );
 			self::enqueue_style( 'cfw-grid' );
 			self::enqueue_style( 'side-cart-styles' );
 
@@ -96,10 +96,10 @@ class AssetManager {
 		wp_localize_script(
 			$handle,
 			'wpApiSettings',
-			array(
+			[
 				'root'  => esc_url_raw( rest_url() ),
 				'nonce' => wp_create_nonce( 'wp_rest' ),
-			)
+			]
 		);
 	}
 
@@ -142,7 +142,7 @@ class AssetManager {
 		self::enqueue_style( 'cfw-grid' );
 
 		if ( cfw_is_checkout() ) {
-			cfw_register_scripts( array( 'checkout' ) );
+			cfw_register_scripts( [ 'checkout' ] );
 
 			wp_enqueue_script( 'woocommerce' );
 
@@ -152,7 +152,7 @@ class AssetManager {
 
 			wp_dequeue_style( 'woocommerce-smallscreen' );
 		} elseif ( is_checkout_pay_page() ) {
-			cfw_register_scripts( array( 'order-pay' ) );
+			cfw_register_scripts( [ 'order-pay' ] );
 
 			wp_enqueue_script( 'woocommerce' );
 
@@ -160,7 +160,7 @@ class AssetManager {
 				self::enqueue_style( 'order-pay-styles', 'cfw_front' );
 			}
 		} elseif ( is_order_received_page() ) {
-			cfw_register_scripts( array( 'thank-you' ) );
+			cfw_register_scripts( [ 'thank-you' ] );
 
 			wp_enqueue_script( 'woocommerce' );
 
@@ -227,27 +227,27 @@ class AssetManager {
 		wp_localize_script(
 			'woocommerce',
 			'wc_cart_fragments_params',
-			array(
+			[
 				'ajax_url'    => WC()->ajax_url(),
 				'wc_ajax_url' => \WC_AJAX::get_endpoint( '%%endpoint%%' ),
-			)
+			]
 		);
 
 		// Used by our copy of address-i18n.js which is called AddressInternationalizationService
 		wp_localize_script(
 			'woocommerce',
 			'wc_address_i18n_params',
-			array(
+			[
 				'locale'             => wp_json_encode( WC()->countries->get_country_locale() ),
 				'locale_fields'      => wp_json_encode( WC()->countries->get_country_locale_field_selectors() ),
 				'i18n_required_text' => esc_attr__( 'required', 'woocommerce' ),
 				'i18n_optional_text' => esc_html__( 'optional', 'woocommerce' ),
-			)
+			]
 		);
 
 		if ( cfw_is_checkout() || cfw_is_checkout_pay_page() ) {
 			global $wp_scripts;
-			$wp_scripts->registered['wc-country-select']->deps = array( 'jquery' );
+			$wp_scripts->registered['wc-country-select']->deps = [ 'jquery' ];
 
 			$this->enqueue_selectWoo();
 
@@ -258,7 +258,7 @@ class AssetManager {
 	}
 
 	public function enqueue_selectWoo() {
-		cfw_register_scripts( array( 'selectwoo' ) );
+		cfw_register_scripts( [ 'selectwoo' ] );
 		wp_enqueue_script( 'selectWoo' );
 
 		$this->nuke_script( 'select2' );
@@ -370,8 +370,8 @@ class AssetManager {
 
 		$max_bumps = SettingsManager::instance()->get_setting( 'max_bumps' );
 
-		return array(
-			'settings' => array(
+		return [
+			'settings' => [
 				'user_logged_in'                   => is_user_logged_in(),
 				'shipping_countries'               => $shipping_countries,
 				'allowed_countries'                => $allowed_countries,
@@ -404,8 +404,8 @@ class AssetManager {
 				'max_bumps'                        => $max_bumps < 0 ? 999 : $max_bumps,
 				'coupons_enabled'                  => wc_coupons_enabled(),
 				'show_free_shipping_progress_bar_without_calculated_packages' => apply_filters( 'cfw_show_free_shipping_progress_bar_without_calculated_packages', false ),
-			),
-			'messages' => array(
+			],
+			'messages' => [
 				/**
 				 * Filters promo code button label
 				 *
@@ -441,8 +441,8 @@ class AssetManager {
 				 * @since 3.0.0
 				 */
 				'promo_code_placeholder'      => apply_filters( 'cfw_promo_code_placeholder', __( 'Enter Promo Code', 'checkout-wc' ) ),
-			),
-		);
+			],
+		];
 	}
 
 	/**
@@ -452,8 +452,8 @@ class AssetManager {
 		$max_after_checkout_bumps = SettingsManager::instance()->get_setting( 'max_after_checkout_bumps' );
 
 		// Store policies data massage
-		$store_policies = PlanManager::has_premium_plan_or_higher() ? cfw_get_setting( 'store_policies', null, array() ) : array();
-		$store_policies = is_array( $store_policies ) ? $store_policies : array(); // abundance of caution
+		$store_policies = PlanManager::has_premium_plan_or_higher() ? cfw_get_setting( 'store_policies', null, [] ) : [];
+		$store_policies = is_array( $store_policies ) ? $store_policies : []; // abundance of caution
 		$store_policies = array_filter(
 			$store_policies,
 			function ( $item ) {
@@ -468,7 +468,7 @@ class AssetManager {
 
 		/** This filter is documented in includes/AddressFieldsAugmenter.php */
 		$enable_separate_address_1_fields = apply_filters( 'cfw_enable_separate_address_1_fields', 'yes' === SettingsManager::instance()->get_setting( 'enable_discreet_address_1_fields' ) );  // phpcs:ignore WooCommerce.Commenting.CommentHooks.MissingSinceComment
-		$enable_separate_address_1_fields = apply_filters_deprecated( 'cfw_enable_discrete_address_1_fields', array( $enable_separate_address_1_fields ), '10.0.0', 'cfw_enable_separate_address_1_fields' );
+		$enable_separate_address_1_fields = apply_filters_deprecated( 'cfw_enable_discrete_address_1_fields', [ $enable_separate_address_1_fields ], '10.0.0', 'cfw_enable_separate_address_1_fields' );
 
 		/**
 		 * Filter cfw_event_object array
@@ -481,13 +481,13 @@ class AssetManager {
 		 */
 		$cfw_event_object = apply_filters(
 			'cfw_event_object',
-			array(
+			[
 				'data'            => array_merge_recursive(
 					self::get_data(),
-					array(
+					[
 						'login_form'         => cfw_get_login_form_html(),
 						'lost_password_form' => cfw_get_lost_password_form_html(),
-					)
+					]
 				),
 				/**
 				 * Filter TypeScript compatibility classes and params
@@ -496,8 +496,8 @@ class AssetManager {
 				 *
 				 * @since 3.0.0
 				 */
-				'compatibility'   => apply_filters( 'cfw_typescript_compatibility_classes_and_params', array() ),
-				'settings'        => array(
+				'compatibility'   => apply_filters( 'cfw_typescript_compatibility_classes_and_params', [] ),
+				'settings'        => [
 					'base_country'                      => WC()->countries->get_base_country(),
 					'locale_prefix'                     => $this->get_locale_prefix(),
 					'parsley_locale'                    => $this->get_parsley_locale(),
@@ -574,7 +574,7 @@ class AssetManager {
 					 *
 					 * @since 3.0.0
 					 */
-					'address_autocomplete_billing_countries' => apply_filters( 'cfw_address_autocomplete_billing_countries', array() ),
+					'address_autocomplete_billing_countries' => apply_filters( 'cfw_address_autocomplete_billing_countries', [] ),
 					'is_registration_required'          => WC()->checkout()->is_registration_required(),
 					/**
 					 * Filter whether to automatically generate password for new accounts
@@ -603,7 +603,7 @@ class AssetManager {
 					 *
 					 * @since 8.2.22
 					 */
-					'phone_field_highlighted_countries' => (array) apply_filters( 'cfw_phone_field_highlighted_countries', SettingsManager::instance()->get_setting( 'enable_highlighted_countries' ) === 'yes' ? SettingsManager::instance()->get_setting( 'highlighted_countries' ) : array() ),
+					'phone_field_highlighted_countries' => (array) apply_filters( 'cfw_phone_field_highlighted_countries', SettingsManager::instance()->get_setting( 'enable_highlighted_countries' ) === 'yes' ? SettingsManager::instance()->get_setting( 'highlighted_countries' ) : [] ),
 					'store_policies'                    => $store_policies,
 					'ship_to_billing_address_only'      => wc_ship_to_billing_address_only(),
 					'max_after_checkout_bumps'          => $max_after_checkout_bumps < 0 ? 999 : $max_after_checkout_bumps,
@@ -627,7 +627,7 @@ class AssetManager {
 					 */
 					'field_persistence_excludes'        => apply_filters(
 						'cfw_field_data_persistence_excludes',
-						array(
+						[
 							'input[type="button"]',
 							'input[type="file"]',
 							'input[type="hidden"]',
@@ -666,10 +666,10 @@ class AssetManager {
 							'#terms',
 							'#ship-to-different-address-checkbox',
 							'[data-persist="false"]', // catch-all, used in cfw_form_field() for non-empty values
-						)
+						]
 					),
-				),
-				'messages'        => array(
+				],
+				'messages'        => [
 					/**
 					 * Filter the invalid phone number error message
 					 *
@@ -719,8 +719,8 @@ class AssetManager {
 					 */
 					'shipping_methods_heading'          => apply_filters( 'cfw_shipping_method_heading', esc_html__( 'Shipping method', 'checkout-wc' ) ),
 					'edit_cart_variation_label'         => __( 'Edit', 'woocommerce' ),
-				),
-				'checkout_params' => array(
+				],
+				'checkout_params' => [
 					'ajax_url'                  => WC()->ajax_url(),
 					'wc_ajax_url'               => \WC_AJAX::get_endpoint( '%%endpoint%%' ),
 					'update_order_review_nonce' => wp_create_nonce( 'update-order-review' ),
@@ -735,16 +735,16 @@ class AssetManager {
 					'dist_path'                 => CFW_PATH_ASSETS,
 					'is_rtl'                    => is_rtl(),
 					'cart_hash_key'             => cfw_apply_filters( 'woocommerce_cart_hash_key', 'wc_cart_hash_' . md5( get_current_blog_id() . '_' . get_site_url( get_current_blog_id(), '/' ) . get_template() ) ),
-				),
-				'runtime_params'  => array(
+				],
+				'runtime_params'  => [
 					'runtime_email_matched_user' => false, // default to false
-				),
-			)
+				],
+			]
 		);
 
 		// Do this because of the order of replacement
 		// Otherwise the default data overwrites the real data
-		$side_cart_data = PlanManager::can_access_feature( 'enable_side_cart', 'plus' ) ? $this->get_side_cart_event_object() : array();
+		$side_cart_data = PlanManager::can_access_feature( 'enable_side_cart', 'plus' ) ? $this->get_side_cart_event_object() : [];
 		unset( $side_cart_data['data'] );
 
 		return array_replace_recursive( self::get_default_event_data(), $cfw_event_object, $side_cart_data );
@@ -773,9 +773,9 @@ class AssetManager {
 			 */
 			apply_filters(
 				'cfw_side_cart_event_object',
-				array(
+				[
 					'data'            => self::get_default_data(),
-					'settings'        => array(
+					'settings'        => [
 						/**
 						 * Filter whether to auto open the side cart on add to cart
 						 *
@@ -828,8 +828,8 @@ class AssetManager {
 						'enable_side_cart_coupon_code_link' => SettingsManager::instance()->get_setting( 'enable_side_cart_coupon_code_link' ) === 'yes',
 						'enable_order_bumps'               => SettingsManager::instance()->get_setting( 'enable_order_bumps' ) === 'yes',
 						'enable_order_bumps_on_side_cart'  => SettingsManager::instance()->get_setting( 'enable_order_bumps_on_side_cart' ) === 'yes',
-					),
-					'messages'        => array(
+					],
+					'messages'        => [
 						'quantity_prompt_message'   => __( 'Please enter a new quantity:', 'checkout-wc' ),
 						'delete_confirm_message'    => __( 'Are you sure you want to remove this item from your cart?', 'checkout-wc' ),
 						'view_cart'                 => __( 'View cart', 'woocommerce' ),
@@ -840,8 +840,9 @@ class AssetManager {
 						'proceed_to_checkout_label' => __( 'Proceed to checkout', 'woocommerce' ),
 						'continue_shopping_label'   => __( 'Continue shopping', 'woocommerce' ),
 						'edit_cart_variation_label' => __( 'Edit', 'woocommerce' ),
-					),
-					'checkout_params' => array(
+						'view_product_label'        => __( 'View Product', 'checkout-wc' ),
+					],
+					'checkout_params' => [
 						'ajax_url'            => WC()->ajax_url(),
 						'wc_ajax_url'         => \WC_AJAX::get_endpoint( '%%endpoint%%' ),
 						'remove_coupon_nonce' => wp_create_nonce( 'remove-coupon' ),
@@ -852,9 +853,9 @@ class AssetManager {
 						'dist_path'           => CFW_PATH_ASSETS,
 						'is_rtl'              => is_rtl(),
 
-					),
-					'runtime_params'  => array(),
-				)
+					],
+					'runtime_params'  => [],
+				]
 			)
 		);
 	}
@@ -875,8 +876,8 @@ class AssetManager {
 		WC()->cart->calculate_totals();
 		cfw_do_action( 'woocommerce_check_cart_items' );
 
-		$data = array(
-			'cart'         => array(
+		$data = [
+			'cart'         => [
 				'isEmpty'       => WC()->cart && WC()->cart->is_empty(),
 				'needsPayment'  => WC()->cart && WC()->cart->needs_payment(),
 				'items'         => cfw_get_cart_items_data(),
@@ -890,11 +891,11 @@ class AssetManager {
 				 */
 				'notices'       => cfw_get_function_output( 'cfw_wc_print_notices', apply_filters( 'cfw_get_data_clear_notices', ! is_checkout() ) ),
 				'shipping'      => cfw_get_cart_shipping_data(),
-			),
-			'bumps'        => array(), // placeholder to prevent errors
-			'trust_badges' => PlanManager::can_access_feature( 'enable_trust_badges' ) ? array_values( cfw_get_trust_badges() ) : array(),
+			],
+			'bumps'        => [], // placeholder to prevent errors
+			'trust_badges' => PlanManager::can_access_feature( 'enable_trust_badges' ) ? array_values( cfw_get_trust_badges() ) : [],
 			'review'       => cfw_get_review_data(),
-		);
+		];
 
 		/**
 		 * Always grab totals last
@@ -918,13 +919,13 @@ class AssetManager {
 	}
 
 	public static function get_default_data(): array {
-		return array(
-			'cart'         => array(
+		return [
+			'cart'         => [
 				'isEmpty'       => WC()->cart && WC()->cart->is_empty(),
 				'needsPayment'  => false,
-				'items'         => array(),
-				'actions'       => array(),
-				'staticActions' => array(
+				'items'         => [],
+				'actions'       => [],
+				'staticActions' => [
 					'woocommerce_cart_is_empty'          => ( ! is_checkout() && WC()->cart && WC()->cart->is_empty() ) ? cfw_get_action_output( 'woocommerce_cart_is_empty' ) : '',
 
 					/**
@@ -933,37 +934,37 @@ class AssetManager {
 					 * @since 7.0.0
 					 */
 					'checkoutwc_empty_side_cart_content' => WC()->cart && WC()->cart->is_empty() ? cfw_get_action_output( 'checkoutwc_empty_side_cart_content' ) : '',
-				),
-				'notices'       => array(),
-				'shipping'      => array(),
-				'totals'        => array(
-					'actions'  => array(),
-					'subtotal' => array(
+				],
+				'notices'       => [],
+				'shipping'      => [],
+				'totals'        => [
+					'actions'  => [],
+					'subtotal' => [
 						'label' => '',
 						'value' => '',
-					),
-					'total'    => array(
+					],
+					'total'    => [
 						'label' => '',
 						'value' => '',
-					),
-					'coupons'  => array(),
-					'fees'     => array(),
-					'taxes'    => array(),
+					],
+					'coupons'  => [],
+					'fees'     => [],
+					'taxes'    => [],
 					'quantity' => 0,
-				),
-			),
-			'bumps'        => array(),
-			'trust_badges' => array(),
-			'side_cart'    => array(
-				'free_shipping_progress_bar' => array(
+				],
+			],
+			'bumps'        => [],
+			'trust_badges' => [],
+			'side_cart'    => [
+				'free_shipping_progress_bar' => [
 					'has_free_shipping'        => false,
 					'amount_remaining'         => 0,
 					'fill_percentage'          => 0,
 					'free_shipping_message'    => '',
 					'amount_remaining_message' => '',
-				),
-				'suggested_products'         => array(),
-			),
-		);
+				],
+				'suggested_products'         => [],
+			],
+		];
 	}
 }

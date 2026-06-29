@@ -18,7 +18,7 @@ class TabNavigation {
 	 * @since 0.1.0
 	 * @var array $tabs Array of added tabs.
 	 */
-	private $tabs = array();
+	private $tabs = [];
 
 	/**
 	 * Selected tab query arg.
@@ -59,10 +59,17 @@ class TabNavigation {
 		if ( false === $tab_slug ) {
 			$tab_slug = sanitize_key( $title );
 		}
-		$this->tabs[ $tab_slug ] = array(
+
+		// Translated titles (e.g. Cyrillic) can sanitize to an empty string, which would
+		// collapse multiple tabs onto the same array key. Fall back to a stable unique slug.
+		if ( empty( $tab_slug ) ) {
+			$tab_slug = 'tab-' . ( count( $this->tabs ) + 1 );
+		}
+
+		$this->tabs[ $tab_slug ] = [
 			'title' => $title,
 			'url'   => $url,
-		);
+		];
 	}
 
 	/**

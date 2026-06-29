@@ -24,16 +24,22 @@ class LocalPickupAdminFree extends PageAbstract {
 
 		$this->set_tabbed_navigation( new TabNavigation( 'settings' ) );
 
-		$this->get_tabbed_navigation()->add_tab( __( 'Settings', 'checkout-wc' ), add_query_arg( array( 'subpage' => 'settings' ), $this->get_url() ) );
+		$this->get_tabbed_navigation()->add_tab( __( 'Settings', 'checkout-wc' ), add_query_arg( [ 'subpage' => 'settings' ], $this->get_url() ), 'settings' );
 		$this->get_tabbed_navigation()->add_tab(
 			__( 'Manage Pickup Locations', 'checkout-wc' ),
-			add_query_arg( array( 'subpage' => 'placeholder' ), $this->get_url() )
+			add_query_arg( [ 'subpage' => 'placeholder' ], $this->get_url() ),
+			'managepickuplocations'
 		);
 	}
 
 	public function output() {
 		$current_tab_function = $this->get_tabbed_navigation()->get_current_tab() . '_tab';
-		$callable             = array( $this, $current_tab_function );
+		$callable             = [ $this, $current_tab_function ];
+
+		// The subpage query arg is user input and may not match a tab method - fall back instead of fataling.
+		if ( ! is_callable( $callable ) ) {
+			$callable = [ $this, 'settings_tab' ];
+		}
 
 		$this->get_tabbed_navigation()->display_tabs();
 
@@ -196,8 +202,8 @@ class LocalPickupAdminFree extends PageAbstract {
 		// Get all shipping methods
 		$data_store = \WC_Data_Store::load( 'shipping-zone' );
 		$raw_zones  = $data_store->get_zones();
-		$zones      = array();
-		$methods    = array();
+		$zones      = [];
+		$methods    = [];
 
 		foreach ( $raw_zones as $raw_zone ) {
 			$zones[] = new \WC_Shipping_Zone( $raw_zone );
@@ -230,8 +236,8 @@ class LocalPickupAdminFree extends PageAbstract {
 		$pickup_methods = array_flip( $pickup_methods );
 
 		$this->set_script_data(
-			array(
-				'settings'             => array(
+			[
+				'settings'             => [
 					'pickup_methods'                     => $pickup_methods,
 					'enable_pickup'                      => SettingsManager::instance()->get_setting( 'enable_pickup' ) === 'yes',
 					'enable_pickup_ship_option'          => SettingsManager::instance()->get_setting( 'enable_pickup_ship_option' ) === 'yes',
@@ -241,15 +247,15 @@ class LocalPickupAdminFree extends PageAbstract {
 					'enable_pickup_shipping_method_other_regex' => SettingsManager::instance()->get_setting( 'enable_pickup_shipping_method_other_regex' ) === 'yes',
 					'enable_pickup_method_step'          => SettingsManager::instance()->get_setting( 'enable_pickup_method_step' ) === 'yes',
 					'hide_pickup_methods'                => SettingsManager::instance()->get_setting( 'hide_pickup_methods' ) === 'yes',
-				),
-				'woocommerce_settings' => array(
+				],
+				'woocommerce_settings' => [
 					'shipping_methods' => $shipping_methods,
-				),
-				'params'               => array(
+				],
+				'params'               => [
 					'pickup_locations_edit_screen_url' => admin_url( 'edit.php?post_type=cfw_pickup_location' ),
-				),
+				],
 				'plan'                 => $this->get_plan_data(),
-			)
+			]
 		);
 	}
 }

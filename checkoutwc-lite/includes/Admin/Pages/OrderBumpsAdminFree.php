@@ -22,18 +22,19 @@ class OrderBumpsAdminFree extends PageAbstract {
 
 		$this->set_tabbed_navigation( new TabNavigation( 'settings' ) );
 
-		$this->get_tabbed_navigation()->add_tab( __( 'Settings', 'checkout-wc' ), add_query_arg( array( 'subpage' => 'settings' ), $this->get_url() ) );
+		$this->get_tabbed_navigation()->add_tab( __( 'Settings', 'checkout-wc' ), add_query_arg( [ 'subpage' => 'settings' ], $this->get_url() ), 'settings' );
 		$this->get_tabbed_navigation()->add_tab(
 			__( 'Manage Bumps', 'checkout-wc' ),
 			add_query_arg(
-				array(),
+				[],
 				admin_url( 'edit.php' )
-			)
+			),
+			'managebumps'
 		);
 	}
 
 	public function get_url(): string {
-		$page_slug = join( '-', array_filter( array( self::$parent_slug, 'order_bumps' ) ) );
+		$page_slug = join( '-', array_filter( [ self::$parent_slug, 'order_bumps' ] ) );
 		$url       = add_query_arg( 'page', $page_slug, admin_url( 'admin.php' ) );
 
 		return esc_url( $url );
@@ -49,7 +50,12 @@ class OrderBumpsAdminFree extends PageAbstract {
 		}
 
 		$current_tab_function = $this->get_tabbed_navigation()->get_current_tab() . '_tab';
-		$callable             = array( $this, $current_tab_function );
+		$callable             = [ $this, $current_tab_function ];
+
+		// The subpage query arg is user input and may not match a tab method - fall back instead of fataling.
+		if ( ! is_callable( $callable ) ) {
+			$callable = [ $this, 'settings_tab' ];
+		}
 
 		$this->get_tabbed_navigation()->display_tabs();
 

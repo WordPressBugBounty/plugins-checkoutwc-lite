@@ -62,6 +62,7 @@ class ComposerStaticInitCheckoutForWooCommerce
         'Objectiv\\Plugins\\Checkout\\Admin\\Notices\\TurnstileFeatureNotice' => __DIR__ . '/../..' . '/includes/Admin/Notices/TurnstileFeatureNotice.php',
         'Objectiv\\Plugins\\Checkout\\Admin\\Notices\\WelcomeNotice' => __DIR__ . '/../..' . '/includes/Admin/Notices/WelcomeNotice.php',
         'Objectiv\\Plugins\\Checkout\\Admin\\Notices\\WoostifyWarning' => __DIR__ . '/../..' . '/includes/Admin/Notices/WoostifyWarning.php',
+        'Objectiv\\Plugins\\Checkout\\Admin\\Pages\\ABTestingAdminFree' => __DIR__ . '/../..' . '/includes/Admin/Pages/ABTestingAdminFree.php',
         'Objectiv\\Plugins\\Checkout\\Admin\\Pages\\AbandonedCartRecoveryAdminFree' => __DIR__ . '/../..' . '/includes/Admin/Pages/AbandonedCartRecoveryAdminFree.php',
         'Objectiv\\Plugins\\Checkout\\Admin\\Pages\\AdminPagesRegistry' => __DIR__ . '/../..' . '/includes/Admin/Pages/AdminPagesRegistry.php',
         'Objectiv\\Plugins\\Checkout\\Admin\\Pages\\Advanced' => __DIR__ . '/../..' . '/includes/Admin/Pages/Advanced.php',

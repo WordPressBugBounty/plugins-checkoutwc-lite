@@ -14,7 +14,7 @@ use WC_Order;
  * @package Objectiv\Plugins\Checkout\Core
  */
 class AddressFieldsAugmenter extends SingletonAbstract {
-	private $priorities = array(
+	private $priorities = [
 		'first_name' => 10,
 		'last_name'  => 20,
 		'company'    => 30,
@@ -25,7 +25,7 @@ class AddressFieldsAugmenter extends SingletonAbstract {
 		'state'      => 80,
 		'city'       => 90,
 		'phone'      => 100,
-	);
+	];
 
 	/**
 	 * Whether the phone fields are enabled
@@ -35,22 +35,37 @@ class AddressFieldsAugmenter extends SingletonAbstract {
 	 */
 	private $phone_enabled;
 
+	/**
+	 * Whether init() has already registered its hooks.
+	 *
+	 * @var bool
+	 */
+	private $hooks_added = false;
+
 	public function init() {
+		// init() runs on both page render (wp) and the update_order_review AJAX
+		// request, so guard against registering the filters twice in one request.
+		if ( $this->hooks_added ) {
+			return;
+		}
+
+		$this->hooks_added = true;
+
 		$this->phone_enabled = cfw_is_phone_fields_enabled();
 
 		// Setup address field defaults
-		add_filter( 'woocommerce_default_address_fields', array( $this, 'get_custom_default_address_fields' ), 100000, 1 );
-		add_filter( 'woocommerce_get_country_locale', array( $this, 'enforce_field_priorities' ), 100000, 1 );
-		add_filter( 'woocommerce_get_country_locale', array( $this, 'sync_label_and_placeholder' ), 100000, 1 );
+		add_filter( 'woocommerce_default_address_fields', [ $this, 'get_custom_default_address_fields' ], 100000, 1 );
+		add_filter( 'woocommerce_get_country_locale', [ $this, 'enforce_field_priorities' ], 100000, 1 );
+		add_filter( 'woocommerce_get_country_locale', [ $this, 'sync_label_and_placeholder' ], 100000, 1 );
 
 		// Fix billing email field
-		add_filter( 'woocommerce_billing_fields', array( $this, 'update_billing_email_field' ), 100000 );
+		add_filter( 'woocommerce_billing_fields', [ $this, 'update_billing_email_field' ], 100000 );
 
 		// Add default value to full name fields
-		add_filter( 'woocommerce_checkout_fields', array( $this, 'add_default_value_to_full_name_fields' ), 100000 );
+		add_filter( 'woocommerce_checkout_fields', [ $this, 'add_default_value_to_full_name_fields' ], 100000 );
 
 		if ( $this->phone_enabled ) {
-			add_filter( 'woocommerce_billing_fields', array( $this, 'add_billing_phone_to_address_fields' ), 10, 1 );
+			add_filter( 'woocommerce_billing_fields', [ $this, 'add_billing_phone_to_address_fields' ], 10, 1 );
 		}
 
 		/**
@@ -140,47 +155,49 @@ class AddressFieldsAugmenter extends SingletonAbstract {
 		 * @param array $enable_separate_address_1_fields Whether to enable separate address 1 fields
 		 */
 		$enable_separate_address_1_fields = apply_filters( 'cfw_enable_separate_address_1_fields', 'yes' === SettingsManager::instance()->get_setting( 'enable_discreet_address_1_fields' ) ) && is_cfw_page();
-		$enable_separate_address_1_fields = apply_filters_deprecated( 'cfw_enable_discrete_address_1_fields', array( $enable_separate_address_1_fields ), '10.0.0', 'cfw_enable_separate_address_1_fields' );
+		$enable_separate_address_1_fields = apply_filters_deprecated( 'cfw_enable_discrete_address_1_fields', [ $enable_separate_address_1_fields ], '10.0.0', 'cfw_enable_separate_address_1_fields' );
 		$separate_address_1_fields_order  = SettingsManager::instance()->get_setting( 'discreet_address_1_fields_order' );
 
 		if ( $use_fullname_field ) {
-			$fields['full_name'] = array(
+			$fields['full_name'] = [
 				'label'             => __( 'Full name', 'checkout-wc' ),
 				'required'          => true,
-				'input_class'       => array(),
+				'input_class'       => [],
 				'priority'          => $this->priorities['first_name'] - 1,
 				'autocomplete'      => 'name',
 				'columns'           => 12,
-				'custom_attributes' => array(
+				'custom_attributes' => [
 					'data-parsley-trigger'  => 'change focusout',
 					'data-parsley-fullname' => 'true',
-				),
-			);
+				],
+			];
 		}
 
 		// First Name
+		$fields['first_name']['label']             = $this->translate_address_string( $fields['first_name']['label'] );
 		$fields['first_name']['placeholder']       = $fields['first_name']['label'];
-		$fields['first_name']['class']             = array();
+		$fields['first_name']['class']             = [];
 		$fields['first_name']['autocomplete']      = 'given-name';
-		$fields['first_name']['input_class']       = array();
+		$fields['first_name']['input_class']       = [];
 		$fields['first_name']['priority']          = $this->priorities['first_name'];
 		$fields['first_name']['columns']           = 6;
-		$fields['first_name']['custom_attributes'] = array(
+		$fields['first_name']['custom_attributes'] = [
 			'data-parsley-trigger'       => 'change focusout',
 			'data-parsley-name-not-email' => 'true',
-		);
+		];
 
 		// Last Name
+		$fields['last_name']['label']             = $this->translate_address_string( $fields['last_name']['label'] );
 		$fields['last_name']['placeholder']       = $fields['last_name']['label'];
-		$fields['last_name']['class']             = array();
+		$fields['last_name']['class']             = [];
 		$fields['last_name']['autocomplete']      = 'family-name';
-		$fields['last_name']['input_class']       = array();
+		$fields['last_name']['input_class']       = [];
 		$fields['last_name']['priority']          = $this->priorities['last_name'];
 		$fields['last_name']['columns']           = 6;
-		$fields['last_name']['custom_attributes'] = array(
+		$fields['last_name']['custom_attributes'] = [
 			'data-parsley-trigger'       => 'change focusout',
 			'data-parsley-name-not-email' => 'true',
-		);
+		];
 
 		if ( $use_fullname_field ) {
 			$fields['first_name']['class'][] = 'cfw-hidden';
@@ -188,128 +205,134 @@ class AddressFieldsAugmenter extends SingletonAbstract {
 		}
 
 		// Address 1
+		$fields['address_1']['label']             = $this->translate_address_string( $fields['address_1']['label'] );
 		$fields['address_1']['placeholder']       = $fields['address_1']['label'];
-		$fields['address_1']['class']             = array( 'address-field' );
+		$fields['address_1']['class']             = [ 'address-field' ];
 		$fields['address_1']['autocomplete']      = 'address-line1';
-		$fields['address_1']['input_class']       = array();
+		$fields['address_1']['input_class']       = [];
 		$fields['address_1']['priority']          = $this->priorities['address_1'];
 		$fields['address_1']['columns']           = 12;
-		$fields['address_1']['custom_attributes'] = array(
+		$fields['address_1']['custom_attributes'] = [
 			'data-parsley-trigger' => 'change focusout',
-		);
+		];
 
 		if ( $enable_separate_address_1_fields ) {
-			$fields['house_number'] = array(
+			$fields['house_number'] = [
 				'label'             => __( 'House number', 'checkout-wc' ),
 				'required'          => true,
-				'input_class'       => array(),
+				'input_class'       => [],
 				'priority'          => $this->priorities['address_1'] - 2,
 				'columns'           => 4,
-				'custom_attributes' => array(
+				'custom_attributes' => [
 					'data-parsley-trigger' => 'change focusout',
-				),
-			);
+				],
+			];
 
 			// If alternate, move street_name field before house_number field
-			$fields['street_name'] = array(
+			$fields['street_name'] = [
 				'label'             => __( 'Street name', 'checkout-wc' ),
 				'required'          => true,
-				'input_class'       => array(),
+				'input_class'       => [],
 				'priority'          => $this->priorities['address_1'] - ( 'alternate' === $separate_address_1_fields_order ? 3 : 1 ),
 				'columns'           => 8,
-				'custom_attributes' => array(
+				'custom_attributes' => [
 					'data-parsley-trigger' => 'change focusout',
-				),
-			);
+				],
+			];
 
 			$fields['address_1']['class'][] = 'cfw-hidden';
 		}
 
 		// Address 2
 		if ( isset( $fields['address_2'] ) ) {
-			$fields['address_2']['label']        = __( 'Apartment, suite, unit, etc.', 'woocommerce' );
+			$fields['address_2']['label']        = $this->translate_address_string( __( 'Apartment, suite, unit, etc.', 'woocommerce' ) );
 			$fields['address_2']['label_class']  = '';
 			$fields['address_2']['placeholder']  = $fields['address_2']['label'];
-			$fields['address_2']['class']        = array( 'address-field' );
+			$fields['address_2']['class']        = [ 'address-field' ];
 			$fields['address_2']['autocomplete'] = 'address-line2';
-			$fields['address_2']['input_class']  = array();
+			$fields['address_2']['input_class']  = [];
 			$fields['address_2']['priority']     = $this->priorities['address_2'];
 			$fields['address_2']['columns']      = 12;
 		}
 
 		// Company
 		if ( isset( $fields['company'] ) ) {
+			$fields['company']['label']        = $this->translate_address_string( $fields['company']['label'] );
 			$fields['company']['placeholder']  = $fields['company']['label'];
-			$fields['company']['class']        = array();
+			$fields['company']['class']        = [];
 			$fields['company']['autocomplete'] = 'organization';
-			$fields['company']['input_class']  = array( 'update_totals_on_change' );
+			$fields['company']['input_class']  = [ 'update_totals_on_change' ];
 			$fields['company']['priority']     = $this->priorities['company'];
 			$fields['company']['columns']      = 12;
 		}
 
 		// Country
+		$fields['country']['label']        = $this->translate_address_string( $fields['country']['label'] );
 		$fields['country']['type']         = 'country';
-		$fields['country']['class']        = array( 'address-field', 'update_totals_on_change' );
-		$fields['country']['input_class']  = array( 'cfw-no-select2' );
+		$fields['country']['class']        = [ 'address-field', 'update_totals_on_change' ];
+		$fields['country']['input_class']  = [ 'cfw-no-select2' ];
 		$fields['country']['autocomplete'] = 'country';
 		$fields['country']['priority']     = 60;
 		$fields['country']['columns']      = 4;
 
 		// Postcode
+		$fields['postcode']['label']             = $this->translate_address_string( $fields['postcode']['label'] );
 		$fields['postcode']['placeholder']       = $fields['postcode']['label'];
-		$fields['postcode']['class']             = array( 'address-field' );
-		$fields['postcode']['validate']          = array( 'postcode' );
+		$fields['postcode']['class']             = [ 'address-field' ];
+		$fields['postcode']['validate']          = [ 'postcode' ];
 		$fields['postcode']['autocomplete']      = 'postal-code';
-		$fields['postcode']['input_class']       = array();
+		$fields['postcode']['input_class']       = [];
 		$fields['postcode']['priority']          = $this->priorities['postcode'];
 		$fields['postcode']['columns']           = 4;
-		$fields['postcode']['custom_attributes'] = array(
+		$fields['postcode']['custom_attributes'] = [
 			'data-parsley-length'   => '[2,12]',
 			'data-parsley-trigger'  => 'change focusout',
 			'data-parsley-postcode' => 'true',
 			'data-parsley-debounce' => '200',
-		);
+		];
 
 		// State
 		$fields['state']['type']              = 'state';
+		$fields['state']['label']             = $this->translate_address_string( $fields['state']['label'] );
 		$fields['state']['placeholder']       = $fields['state']['label'];
-		$fields['state']['class']             = array( 'address-field' );
-		$fields['state']['input_class']       = array( 'cfw-no-select2' );
-		$fields['state']['validate']          = array( 'state' );
+		$fields['state']['class']             = [ 'address-field' ];
+		$fields['state']['input_class']       = [ 'cfw-no-select2' ];
+		$fields['state']['validate']          = [ 'state' ];
 		$fields['state']['autocomplete']      = 'address-level1';
 		$fields['state']['priority']          = $this->priorities['state'];
 		$fields['state']['columns']           = 4;
-		$fields['state']['custom_attributes'] = array(
+		$fields['state']['custom_attributes'] = [
 			'data-parsley-trigger' => 'input change focusout',
-		);
+		];
 
 		// City
+		$fields['city']['label']             = $this->translate_address_string( $fields['city']['label'] );
 		$fields['city']['placeholder']       = $fields['city']['label'];
-		$fields['city']['class']             = array( 'address-field' );
+		$fields['city']['class']             = [ 'address-field' ];
 		$fields['city']['autocomplete']      = 'address-level2';
-		$fields['city']['input_class']       = array();
+		$fields['city']['input_class']       = [];
 		$fields['city']['priority']          = $this->priorities['city'];
 		$fields['city']['columns']           = 12;
-		$fields['city']['custom_attributes'] = array(
+		$fields['city']['custom_attributes'] = [
 			'data-parsley-trigger' => 'change focusout',
-		);
+		];
 
 		// Phone
 		if ( $this->phone_enabled ) {
-			$fields['phone'] = array(
+			$fields['phone'] = [
 				'type'              => 'tel',
-				'label'             => __( 'Phone', 'woocommerce' ),
-				'placeholder'       => __( 'Phone', 'woocommerce' ),
+				'label'             => $this->translate_address_string( __( 'Phone', 'woocommerce' ) ),
+				'placeholder'       => $this->translate_address_string( __( 'Phone', 'woocommerce' ) ),
 				'required'          => 'required' === get_option( 'woocommerce_checkout_phone_field', 'required' ),
 				'autocomplete'      => 'tel',
-				'input_class'       => array(),
+				'input_class'       => [],
 				'priority'          => $this->priorities['phone'],
 				'columns'           => 12,
-				'validate'          => array( 'phone' ),
-				'custom_attributes' => array(
+				'validate'          => [ 'phone' ],
+				'custom_attributes' => [
 					'data-parsley-trigger' => 'input change focusout',
-				),
-			);
+				],
+			];
 		}
 
 		foreach ( $fields as $key => $field ) {
@@ -317,7 +340,7 @@ class AddressFieldsAugmenter extends SingletonAbstract {
 
 			if ( isset( $field['placeholder'] ) && ! $field['required'] && 'hidden' !== $type ) {
 				// Add optional to placeholder
-				$fields[ $key ]['placeholder'] = sprintf( '%s (%s)', $field['placeholder'], __( 'optional', 'woocommerce' ) );
+				$fields[ $key ]['placeholder'] = sprintf( '%s (%s)', $field['placeholder'], $this->translate_address_string( __( 'optional', 'woocommerce' ) ) );
 			}
 		}
 
@@ -361,7 +384,10 @@ class AddressFieldsAugmenter extends SingletonAbstract {
 		foreach ( $locales as $country => $locale ) {
 			foreach ( $locale as $field_key => $field_data ) {
 				if ( isset( $field_data['label'] ) ) {
-					$locales[ $country ][ $field_key ]['placeholder'] = $field_data['label'];
+					$label = $this->translate_address_string( $field_data['label'] );
+
+					$locales[ $country ][ $field_key ]['label']       = $label;
+					$locales[ $country ][ $field_key ]['placeholder'] = $label;
 				}
 			}
 		}
@@ -379,5 +405,81 @@ class AddressFieldsAugmenter extends SingletonAbstract {
 		}
 
 		return $fields;
+	}
+
+	/**
+	 * Translates a WooCommerce address field string, falling back to the checkout-wc text domain.
+	 *
+	 * When the WooCommerce language pack is installed, the incoming string is already translated, so the msgid lookup misses and the string is returned unchanged.
+	 * When the pack is missing, the incoming string is still the English msgid, so the lookup returns the translation bundled with CheckoutWC instead of leaking English into the checkout.
+	 *
+	 * @see AddressFieldsAugmenter::get_registered_address_strings()
+	 *
+	 * @since 11.1.3
+	 *
+	 * @param mixed $text The address field label or placeholder.
+	 *
+	 * @return mixed
+	 */
+	private function translate_address_string( $text ) {
+		if ( ! is_string( $text ) || '' === $text ) {
+			return $text;
+		}
+
+		// phpcs:ignore WordPress.WP.I18n.NonSingularStringLiteralText -- Variable msgid is intentional: it falls back to the bundled checkout-wc translation when the WooCommerce language pack is absent. The msgids are registered in get_registered_address_strings().
+		return __( $text, 'checkout-wc' );
+	}
+
+	/**
+	 * Registers the WooCommerce address field strings translatable through the checkout-wc text domain.
+	 *
+	 * This method is never called at runtime. It only exists so that translation tooling extracts these msgids into the .pot file, keeping the bundled translations used by translate_address_string() complete.
+	 * The strings mirror the address field labels in WC_Countries::get_default_address_fields() and the per-country overrides in WC_Countries::get_country_locale().
+	 *
+	 * @see AddressFieldsAugmenter::translate_address_string()
+	 *
+	 * @since 11.1.3
+	 *
+	 * @return array
+	 */
+	private function get_registered_address_strings(): array {
+		return [
+			// Default address field labels (WC_Countries::get_default_address_fields()).
+			__( 'First name', 'checkout-wc' ),
+			__( 'Last name', 'checkout-wc' ),
+			__( 'Company name', 'checkout-wc' ),
+			__( 'Country / Region', 'checkout-wc' ),
+			__( 'Street address', 'checkout-wc' ),
+			__( 'Apartment, suite, unit, etc.', 'checkout-wc' ),
+			__( 'Town / City', 'checkout-wc' ),
+			__( 'State / County', 'checkout-wc' ),
+			__( 'Postcode / ZIP', 'checkout-wc' ),
+			__( 'Phone', 'checkout-wc' ),
+			__( 'Email address', 'checkout-wc' ),
+			__( 'optional', 'checkout-wc' ),
+			// Per-country address field label overrides (WC_Countries::get_country_locale()).
+			__( 'Canton', 'checkout-wc' ),
+			__( 'County', 'checkout-wc' ),
+			__( 'Department', 'checkout-wc' ),
+			__( 'District', 'checkout-wc' ),
+			__( 'Eircode', 'checkout-wc' ),
+			__( 'Municipality', 'checkout-wc' ),
+			__( 'Municipality / District', 'checkout-wc' ),
+			__( 'PIN Code', 'checkout-wc' ),
+			__( 'Parish', 'checkout-wc' ),
+			__( 'Postal Code', 'checkout-wc' ),
+			__( 'Postal code', 'checkout-wc' ),
+			__( 'Postcode', 'checkout-wc' ),
+			__( 'Prefecture', 'checkout-wc' ),
+			__( 'Province', 'checkout-wc' ),
+			__( 'Region', 'checkout-wc' ),
+			__( 'State', 'checkout-wc' ),
+			__( 'State / Zone', 'checkout-wc' ),
+			__( 'Suburb', 'checkout-wc' ),
+			__( 'Town / City / Post Office', 'checkout-wc' ),
+			__( 'Town / District', 'checkout-wc' ),
+			__( 'Town / Village', 'checkout-wc' ),
+			__( 'ZIP Code', 'checkout-wc' ),
+		];
 	}
 }

@@ -5,7 +5,7 @@ namespace Objectiv\Plugins\Checkout;
 use Objectiv\Plugins\Checkout\Managers\SettingsManager;
 
 class FormFieldAugmenter extends SingletonAbstract {
-	protected $checkbox_like_field_types = array( 'checkbox', 'radio' );
+	protected $checkbox_like_field_types = [ 'checkbox', 'radio' ];
 	protected $filters_added             = false;
 
 	public function add_hooks() {
@@ -15,15 +15,15 @@ class FormFieldAugmenter extends SingletonAbstract {
 
 		$this->filters_added = true;
 
-		add_filter( 'cfw_pre_output_fieldset_field_args', array( $this, 'calculate_columns' ), 100000 - 1000, 1 );
-		add_filter( 'woocommerce_form_field_args', array( $this, 'calculate_columns' ), 100000, 1 );
-		add_filter( 'woocommerce_form_field_args', array( $this, 'cfw_form_field_args' ), 100000, 2 );
-		add_filter( 'woocommerce_form_field', array( $this, 'remove_extraneous_field_classes' ), 100000, 1 );
-		add_filter( 'woocommerce_form_field', array( $this, 'add_select_container_class' ), 200000, 1 );
-		add_filter( 'woocommerce_form_field', array( $this, 'cleanup_space_between_checkbox_input_and_text' ), 200000, 3 );
-		add_filter( 'woocommerce_form_field', array( $this, 'add_before_html' ), 200000, 3 );
-		add_filter( 'woocommerce_form_field', array( $this, 'add_after_html' ), 200000, 3 );
-		add_filter( 'woocommerce_form_field_password', array( $this, 'password_field_toggle' ), 200000, 4 );
+		add_filter( 'cfw_pre_output_fieldset_field_args', [ $this, 'calculate_columns' ], 100000 - 1000, 1 );
+		add_filter( 'woocommerce_form_field_args', [ $this, 'calculate_columns' ], 100000, 1 );
+		add_filter( 'woocommerce_form_field_args', [ $this, 'cfw_form_field_args' ], 100000, 2 );
+		add_filter( 'woocommerce_form_field', [ $this, 'remove_extraneous_field_classes' ], 100000, 1 );
+		add_filter( 'woocommerce_form_field', [ $this, 'add_select_container_class' ], 200000, 1 );
+		add_filter( 'woocommerce_form_field', [ $this, 'cleanup_space_between_checkbox_input_and_text' ], 200000, 3 );
+		add_filter( 'woocommerce_form_field', [ $this, 'add_before_html' ], 200000, 3 );
+		add_filter( 'woocommerce_form_field', [ $this, 'add_after_html' ], 200000, 3 );
+		add_filter( 'woocommerce_form_field_password', [ $this, 'password_field_toggle' ], 200000, 4 );
 	}
 
 	public function remove_hooks() {
@@ -33,19 +33,19 @@ class FormFieldAugmenter extends SingletonAbstract {
 
 		$this->filters_added = false;
 
-		remove_filter( 'cfw_pre_output_fieldset_field_args', array( $this, 'calculate_columns' ), 100000 - 1000, 1 );
-		remove_filter( 'woocommerce_form_field_args', array( $this, 'calculate_columns' ), 100000 );
-		remove_filter( 'woocommerce_form_field_args', array( $this, 'cfw_form_field_args' ), 100000 );
-		remove_filter( 'woocommerce_form_field', array( $this, 'remove_extraneous_field_classes' ), 100000 );
-		remove_filter( 'woocommerce_form_field', array( $this, 'add_select_container_class' ), 200000 );
-		remove_filter( 'woocommerce_form_field', array( $this, 'cleanup_space_between_checkbox_input_and_text' ), 200000, 3 );
-		remove_filter( 'woocommerce_form_field', array( $this, 'add_before_html' ), 200000 );
-		remove_filter( 'woocommerce_form_field_password', array( $this, 'password_field_toggle' ), 200000, 3 );
+		remove_filter( 'cfw_pre_output_fieldset_field_args', [ $this, 'calculate_columns' ], 100000 - 1000, 1 );
+		remove_filter( 'woocommerce_form_field_args', [ $this, 'calculate_columns' ], 100000 );
+		remove_filter( 'woocommerce_form_field_args', [ $this, 'cfw_form_field_args' ], 100000 );
+		remove_filter( 'woocommerce_form_field', [ $this, 'remove_extraneous_field_classes' ], 100000 );
+		remove_filter( 'woocommerce_form_field', [ $this, 'add_select_container_class' ], 200000 );
+		remove_filter( 'woocommerce_form_field', [ $this, 'cleanup_space_between_checkbox_input_and_text' ], 200000, 3 );
+		remove_filter( 'woocommerce_form_field', [ $this, 'add_before_html' ], 200000 );
+		remove_filter( 'woocommerce_form_field_password', [ $this, 'password_field_toggle' ], 200000, 3 );
 	}
 
 	public function calculate_columns( $args ): array {
 		if ( ! isset( $args['class'] ) || ! is_array( $args['class'] ) ) {
-			$args['class'] = ! empty( $args['class'] ) ? array( $args['class'] ) : array();
+			$args['class'] = ! empty( $args['class'] ) ? [ $args['class'] ] : [];
 		}
 
 		// Calculate columns
@@ -94,14 +94,14 @@ class FormFieldAugmenter extends SingletonAbstract {
 	 * @param mixed $key  The key.
 	 * @return array
 	 */
-	public function cfw_form_field_args( $args = array(), $key = null ): array {
+	public function cfw_form_field_args( $args = [], $key = null ): array {
 		// Handle input classes
 		if ( is_string( $args['input_class'] ) ) {
-			$args['input_class'] = array( $args['input_class'] );
+			$args['input_class'] = [ $args['input_class'] ];
 		}
 
 		if ( is_string( $args['label_class'] ) ) {
-			$args['label_class'] = array( $args['label_class'] );
+			$args['label_class'] = [ $args['label_class'] ];
 		}
 
 		// Add field type class
@@ -122,7 +122,7 @@ class FormFieldAugmenter extends SingletonAbstract {
 		 * @since 6.2.3
 		 * @param array $field_types The nonfloating label field types
 		 */
-		if ( 'floating' === $label_style && ! in_array( $args['type'], apply_filters( 'cfw_non_floating_label_field_types', array( 'checkbox', 'radio' ) ), true ) ) {
+		if ( 'floating' === $label_style && ! in_array( $args['type'], apply_filters( 'cfw_non_floating_label_field_types', [ 'checkbox', 'radio' ] ), true ) ) {
 			$args['label_class'][] = 'cfw-floatable-label';
 		}
 
@@ -138,8 +138,12 @@ class FormFieldAugmenter extends SingletonAbstract {
 		// Set saved value
 		$args['custom_attributes']['data-saved-value'] = $value ?? 'CFW_EMPTY';
 
+		$args['label'] = $this->translate_form_string( $args['label'] );
+
 		$label_for_placeholder = wp_strip_all_tags( $args['label'] );
-		$args['placeholder']   = ! empty( $args['placeholder'] ) ? $args['placeholder'] : trim( preg_replace( '/\s*\*+$/', '', $label_for_placeholder ) );
+		$args['placeholder']   = $this->translate_form_string( ! empty( $args['placeholder'] ) ? $args['placeholder'] : trim( preg_replace( '/\s*\*+$/', '', $label_for_placeholder ) ) );
+
+		$optional_label = $this->translate_form_string( __( 'optional', 'woocommerce' ) );
 
 		/**
 		 * Whether to append optional to field placeholder
@@ -148,9 +152,8 @@ class FormFieldAugmenter extends SingletonAbstract {
 		 * @deprecated 10.1.13
 		 * @param bool $append Whether to append optional to field placeholder
 		 * @param mixed $key  The key.
-		 *
 		 */
-		$suppress_placeholder = apply_filters_deprecated( 'cfw_form_field_append_optional_to_placeholder', array( isset( $args['suppress_optional_suffix'] ), $key  ), 'CheckoutWC 10.1.13', 'cfw_form_field_suppress_optional_in_placeholder' );
+		$suppress_placeholder = apply_filters_deprecated( 'cfw_form_field_append_optional_to_placeholder', [ isset( $args['suppress_optional_suffix'] ), $key  ], 'CheckoutWC 10.1.13', 'cfw_form_field_suppress_optional_in_placeholder' );
 
 		/**
 		 * Whether to suppress 'optional' from field placeholder
@@ -160,13 +163,13 @@ class FormFieldAugmenter extends SingletonAbstract {
 		 * @param mixed $key  The key.
 		 */
 		$suppress_placeholder = apply_filters( 'cfw_form_field_suppress_optional_in_placeholder', $suppress_placeholder, $key );
-		if ( ! $args['required'] && ! isset( $args['custom_attributes']['readonly'] ) && false === stripos( $args['placeholder'], __( 'optional', 'woocommerce' ) ) && ! $suppress_placeholder ) {
-			$args['placeholder'] .= ' (' . __( 'optional', 'woocommerce' ) . ')';
+		if ( ! $args['required'] && ! isset( $args['custom_attributes']['readonly'] ) && false === stripos( $args['placeholder'], $optional_label ) && ! $suppress_placeholder ) {
+			$args['placeholder'] .= ' (' . $optional_label . ')';
 		}
 
 		if ( ! $args['required'] ) {
 			// Prevent doubled optional in labels - woocommerce_form_field() adds it
-			$args['label'] = str_ireplace( '(' . __( 'optional', 'woocommerce' ) . ')', '', $args['label'] );
+			$args['label'] = str_ireplace( '(' . $optional_label . ')', '', $args['label'] );
 		}
 
 		// Make sure we have a default option
@@ -175,7 +178,7 @@ class FormFieldAugmenter extends SingletonAbstract {
 			reset( $args['options'] );
 
 			if ( key( $args['options'] ) !== '' ) {
-				$args['options'] = array( '' => __( 'Choose an option', 'woocommerce' ) ) + $args['options'];
+				$args['options'] = [ '' => __( 'Choose an option', 'woocommerce' ) ] + $args['options'];
 			}
 
 			/**
@@ -203,7 +206,7 @@ class FormFieldAugmenter extends SingletonAbstract {
 	 * @return array|string|string[]
 	 */
 	public function remove_extraneous_field_classes( $field ) {
-		$classes_to_remove = array( 'form-row-first', 'form-row-last', 'form-row-wide' );
+		$classes_to_remove = [ 'form-row-first', 'form-row-last', 'form-row-wide' ];
 
 		foreach ( $classes_to_remove as $class ) {
 			if ( strpos( $field, $class ) !== false ) {
@@ -238,7 +241,7 @@ class FormFieldAugmenter extends SingletonAbstract {
 	 * @param mixed  $args   The arguments.
 	 * @return array|string|string[]
 	 */
-	public function cleanup_space_between_checkbox_input_and_text( string $field, $key = null, $args = array() ): string {
+	public function cleanup_space_between_checkbox_input_and_text( string $field, $key = null, $args = [] ): string {
 		if ( ! in_array( $args['type'], $this->get_checkbox_like_field_types(), true ) ) {
 			return $field;
 		}
@@ -263,12 +266,12 @@ class FormFieldAugmenter extends SingletonAbstract {
 			return 'floating';
 		}
 
-		$style = SettingsManager::instance()->get_setting( 'label_style', array( $active_template->get_slug() ) );
+		$style = SettingsManager::instance()->get_setting( 'label_style', [ $active_template->get_slug() ] );
 
 		return ( $style === 'normal' ) ? 'normal' : 'floating';
 	}
 
-	public function add_before_html( $field, $key = null, $args = array() ) {
+	public function add_before_html( $field, $key = null, $args = [] ) {
 		if ( $args['before_html'] ?? false ) {
 			$field = $args['before_html'] . $field;
 		}
@@ -276,7 +279,7 @@ class FormFieldAugmenter extends SingletonAbstract {
 		return $field;
 	}
 
-	public function add_after_html( $field, $key = null, $args = array() ) {
+	public function add_after_html( $field, $key = null, $args = [] ) {
 		if ( $args['after_html'] ?? false ) {
 			$field .= $args['after_html'];
 		}
@@ -284,7 +287,7 @@ class FormFieldAugmenter extends SingletonAbstract {
 		return $field;
 	}
 
-	public function maybe_add_parsley_attributes( $args = array() ): array {
+	public function maybe_add_parsley_attributes( $args = [] ): array {
 		if ( ! $args['required'] ) {
 			return $args;
 		}
@@ -330,12 +333,34 @@ class FormFieldAugmenter extends SingletonAbstract {
 	 *
 	 * @return string
 	 */
-	public function password_field_toggle( $field, $key = null, $args = array(), $value = null ): string {
+	public function password_field_toggle( $field, $key = null, $args = [], $value = null ): string {
 		$eye_open = '<svg xmlns="http://www.w3.org/2000/svg" class="cfw-eye-open" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" /><path stroke-linecap="round" stroke-linejoin="round" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" /></svg>';
 		$eye_shut = '<svg xmlns="http://www.w3.org/2000/svg" class="cfw-eye-shut" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13.875 18.825A10.05 10.05 0 0112 19c-4.478 0-8.268-2.943-9.543-7a9.97 9.97 0 011.563-3.029m5.858.908a3 3 0 114.243 4.243M9.878 9.878l4.242 4.242M9.88 9.88l-3.29-3.29m7.532 7.532l3.29 3.29M3 3l3.59 3.59m0 0A9.953 9.953 0 0112 5c4.478 0 8.268 2.943 9.543 7a10.025 10.025 0 01-4.132 5.411m0 0L21 21" /></svg>';
 
 		$wrap = '<a class="cfw-password-toggle cfw-password-eye-open" tabindex="-1" href="javascript:">' . $eye_open . $eye_shut . '</a>';
 
 		return str_replace( '<input', "{$wrap}<input", $field );
+	}
+
+	/**
+	 * Run a field string through the checkout-wc text domain as a fallback.
+	 *
+	 * Field labels arrive translated by the woocommerce text domain when the site has the
+	 * WooCommerce language pack installed; without it they arrive as English msgids, which
+	 * the bundled checkout-wc translations can still resolve. Unknown strings pass through.
+	 *
+	 * @since 11.1.3
+	 *
+	 * @param mixed $text The string to translate.
+	 *
+	 * @return mixed
+	 */
+	private function translate_form_string( $text ) {
+		if ( ! is_string( $text ) || '' === $text ) {
+			return $text;
+		}
+
+		// phpcs:ignore WordPress.WP.I18n.NonSingularStringLiteralText -- Variable msgid is intentional: bundled checkout-wc translations act as a fallback when the WooCommerce language pack is absent.
+		return __( $text, 'checkout-wc' );
 	}
 }
