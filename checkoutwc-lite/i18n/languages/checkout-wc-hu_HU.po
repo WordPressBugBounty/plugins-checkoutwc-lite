@@ -8,7 +8,7 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "POT-Creation-Date: 2025-07-25 09:22-0400\n"
-"PO-Revision-Date: 2026-06-29T12:40:11+00:00\n"
+"PO-Revision-Date: 2026-07-02T13:09:59+00:00\n"
 "Language: hu-HU\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Poedit 3.6\n"
@@ -351,8 +351,8 @@ msgid "Shipping address"
 msgstr "Szállítási cím"
 
 #: functions/template-functions.php:935
-#: templates/glass/functions.php:40
 #: templates/futurist/functions.php:16
+#: templates/glass/functions.php:40
 msgid "Your Cart"
 msgstr "Kosarad"
 
@@ -498,8 +498,8 @@ msgid "Settings"
 msgstr "Beállítások"
 
 #: functions/premium-init.php:339
-#: includes/Admin/Pages/General.php:25
 #: includes/Admin/Notices/InactiveLicenseNotice.php:13
+#: includes/Admin/Pages/General.php:25
 msgid "Start Here"
 msgstr "Itt kezdje"
 
@@ -651,7 +651,7 @@ msgid "Ship to"
 msgstr "Kiszállítás"
 
 #: functions/functions.php:229
-#: includes/Features/LocalPickup.php:746
+#: includes/Features/LocalPickup.php:758
 #: includes/Admin/Pages/PickupLocationsAdminFree.php:93
 #: includes/Admin/Pages/Premium/PickupLocations.php:92
 msgid "Address"
@@ -662,7 +662,7 @@ msgid "Sorry, it seems that there are no available payment methods for your loca
 msgstr "Sajnáljuk, úgy tűnik, hogy az Ön helyére nincs elérhető fizetési mód. Kérjük, lépjen kapcsolatba velünk, ha segítségre van szüksége vagy alternatív megoldást szeretne."
 
 #: functions/functions.php:785
-#: includes/Features/LocalPickup.php:1067
+#: includes/Features/LocalPickup.php:1079
 msgid "Shipping costs are calculated during checkout."
 msgstr "A szállítási költségek a fizetés során kerülnek kiszámításra."
 
@@ -763,7 +763,7 @@ msgstr "Csökkentés"
 #: functions/functions.php:2404
 #: includes/Managers/AssetManager.php:721
 #: includes/Managers/AssetManager.php:842
-#: includes/Features/LocalPickup.php:490
+#: includes/Features/LocalPickup.php:502
 #: includes/Features/AbandonedCartRecovery.php:122
 #: includes/Features/ABTesting.php:145
 #: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:632
@@ -903,6 +903,19 @@ msgstr "A SendWP már csatlakoztatva van."
 msgid "Something went wrong. SendWP was not installed correctly."
 msgstr "Valami hiba történt. A SendWP nem lett megfelelően telepítve."
 
+#: includes/Shipping/CFW_Shipping_Local_Pickup.php:35
+#: includes/Shipping/CFW_Shipping_Local_Pickup.php:48
+#: includes/Admin/Pages/LocalPickupAdminFree.php:19
+#: includes/Admin/Pages/LocalPickupAdminFree.php:56
+#: includes/Admin/Pages/Premium/LocalPickupAdmin.php:20
+#: client/ts/admin/Components/Forms/LocalPickupSettingsForm.tsx:62
+msgid "Local Pickup"
+msgstr "Helyi átvétel"
+
+#: includes/Shipping/CFW_Shipping_Local_Pickup.php:36
+msgid "Allow customers to pick up orders themselves. This version does not require shipping zones."
+msgstr "Engedélyezze az ügyfeleknek, hogy maguk vegyék át a rendeléseket. Ez a verzió nem igényel szállítási zónákat."
+
 #: includes/Stats/StatCollection.php:193
 msgid "Once Weekly"
 msgstr "Hetente egyszer"
@@ -927,18 +940,41 @@ msgstr "Engedélyez"
 msgid "Do not allow"
 msgstr "Nem engedélyez"
 
-#: includes/Shipping/CFW_Shipping_Local_Pickup.php:35
-#: includes/Shipping/CFW_Shipping_Local_Pickup.php:48
-#: includes/Admin/Pages/LocalPickupAdminFree.php:19
-#: includes/Admin/Pages/LocalPickupAdminFree.php:56
-#: includes/Admin/Pages/Premium/LocalPickupAdmin.php:20
-#: client/ts/admin/Components/Forms/LocalPickupSettingsForm.tsx:62
-msgid "Local Pickup"
-msgstr "Helyi átvétel"
+#: includes/Loaders/LoaderAbstract.php:134
+#: includes/Loaders/LoaderAbstract.php:244
+msgid "Sorry, this order is invalid and cannot be paid for."
+msgstr "Sajnáljuk, ez a rendelés érvénytelen, és nem fizethető ki."
 
-#: includes/Shipping/CFW_Shipping_Local_Pickup.php:36
-msgid "Allow customers to pick up orders themselves. This version does not require shipping zones."
-msgstr "Engedélyezze az ügyfeleknek, hogy maguk vegyék át a rendeléseket. Ez a verzió nem igényel szállítási zónákat."
+#: includes/Loaders/LoaderAbstract.php:138
+msgid "Please log in to your account below to continue to the payment form."
+msgstr "Kérjük, jelentkezzen be az alábbi fiókjába a fizetési űrlap folytatásához."
+
+#: includes/Loaders/LoaderAbstract.php:145
+msgid "You are paying for a guest order. Please continue with payment only if you recognize this order."
+msgstr "Vendég rendelésért fizet. Csak akkor folytassa a fizetést, ha felismeri ezt a rendelést."
+
+#: includes/Loaders/LoaderAbstract.php:151
+msgid "This order cannot be paid for. Please contact us if you need assistance."
+msgstr "Ez a rendelés nem fizethető ki. Kérjük, lépjen kapcsolatba velünk, ha segítségre van szüksége."
+
+#: includes/Loaders/LoaderAbstract.php:157
+#: includes/Loaders/LoaderAbstract.php:241
+msgid "This order&rsquo;s status is &ldquo;%s&rdquo;&mdash;it cannot be paid for. Please contact us if you need assistance."
+msgstr "Ennek a rendelésnek az állapota „%s” — nem fizethető ki. Kérjük, lépjen kapcsolatba velünk, ha segítségre van szüksége."
+
+#: includes/Loaders/LoaderAbstract.php:186
+msgid "Sorry, \"%s\" is no longer in stock so this order cannot be paid for. We apologize for any inconvenience caused."
+msgstr "Sajnáljuk, a(z) „%s” már nincs készleten, így ezt a rendelést nem lehet kifizetni. Elnézést a kellemetlenségért."
+
+#: includes/Loaders/LoaderAbstract.php:200
+msgid "Sorry, we do not have enough \"%1$s\" in stock to fulfill your order (%2$s available). We apologize for any inconvenience caused."
+msgstr "Sajnáljuk, nincs elegendő „%1$s” készleten a rendelés teljesítéséhez (elérhető: %2$s). Elnézést a kellemetlenségért."
+
+#: includes/Loaders/LoaderAbstract.php:247
+#: includes/Action/ProcessOfferPaymentAction.php:73
+#: includes/Features/OneClick/OfferRefundManager.php:177
+msgid "Invalid order."
+msgstr "Érvénytelen rendelés."
 
 #: includes/Managers/UpdatesManager.php:416
 msgid "CheckoutWC License Key"
@@ -1099,7 +1135,7 @@ msgid "Please enter a valid postcode / ZIP."
 msgstr "Valós irányítószámot kell megadni."
 
 #: includes/Managers/AssetManager.php:700
-#: includes/Features/LocalPickup.php:614
+#: includes/Features/LocalPickup.php:626
 msgid "Pickup"
 msgstr "Elvitel"
 
@@ -1157,42 +1193,6 @@ msgstr "Tovább a pénztárhoz"
 msgid "View Product"
 msgstr "Termék megtekintése"
 
-#: includes/Loaders/LoaderAbstract.php:134
-#: includes/Loaders/LoaderAbstract.php:244
-msgid "Sorry, this order is invalid and cannot be paid for."
-msgstr "Sajnáljuk, ez a rendelés érvénytelen, és nem fizethető ki."
-
-#: includes/Loaders/LoaderAbstract.php:138
-msgid "Please log in to your account below to continue to the payment form."
-msgstr "Kérjük, jelentkezzen be az alábbi fiókjába a fizetési űrlap folytatásához."
-
-#: includes/Loaders/LoaderAbstract.php:145
-msgid "You are paying for a guest order. Please continue with payment only if you recognize this order."
-msgstr "Vendég rendelésért fizet. Csak akkor folytassa a fizetést, ha felismeri ezt a rendelést."
-
-#: includes/Loaders/LoaderAbstract.php:151
-msgid "This order cannot be paid for. Please contact us if you need assistance."
-msgstr "Ez a rendelés nem fizethető ki. Kérjük, lépjen kapcsolatba velünk, ha segítségre van szüksége."
-
-#: includes/Loaders/LoaderAbstract.php:157
-#: includes/Loaders/LoaderAbstract.php:241
-msgid "This order&rsquo;s status is &ldquo;%s&rdquo;&mdash;it cannot be paid for. Please contact us if you need assistance."
-msgstr "Ennek a rendelésnek az állapota „%s” — nem fizethető ki. Kérjük, lépjen kapcsolatba velünk, ha segítségre van szüksége."
-
-#: includes/Loaders/LoaderAbstract.php:186
-msgid "Sorry, \"%s\" is no longer in stock so this order cannot be paid for. We apologize for any inconvenience caused."
-msgstr "Sajnáljuk, a(z) „%s” már nincs készleten, így ezt a rendelést nem lehet kifizetni. Elnézést a kellemetlenségért."
-
-#: includes/Loaders/LoaderAbstract.php:200
-msgid "Sorry, we do not have enough \"%1$s\" in stock to fulfill your order (%2$s available). We apologize for any inconvenience caused."
-msgstr "Sajnáljuk, nincs elegendő „%1$s” készleten a rendelés teljesítéséhez (elérhető: %2$s). Elnézést a kellemetlenségért."
-
-#: includes/Loaders/LoaderAbstract.php:247
-#: includes/Action/ProcessOfferPaymentAction.php:73
-#: includes/Features/OneClick/OfferRefundManager.php:177
-msgid "Invalid order."
-msgstr "Érvénytelen rendelés."
-
 #: includes/Features/Turnstile.php:134
 #: includes/Features/Turnstile.php:188
 #: includes/Features/Turnstile.php:362
@@ -1249,114 +1249,110 @@ msgstr "Bővítés: %s"
 msgid "Delivery method"
 msgstr "Szállítási mód"
 
-#: includes/Features/LocalPickup.php:170
+#: includes/Features/LocalPickup.php:178
 msgid "Pick up"
 msgstr "Vedd fel"
 
-#: includes/Features/LocalPickup.php:185
+#: includes/Features/LocalPickup.php:197
 msgid "Ship"
 msgstr "Behajóz"
 
-#: includes/Features/LocalPickup.php:288
+#: includes/Features/LocalPickup.php:300
 msgid "Pickup locations"
 msgstr "Átvételi helyek"
 
-#: includes/Features/LocalPickup.php:485
-#: includes/Features/LocalPickup.php:487
+#: includes/Features/LocalPickup.php:497
+#: includes/Features/LocalPickup.php:499
 #: includes/Admin/Pages/PickupLocationsAdminFree.php:21
 #: includes/Admin/Pages/Premium/PickupLocations.php:22
 msgid "Pickup Locations"
 msgstr "Átvételi helyek"
 
-#: includes/Features/LocalPickup.php:486
-#: includes/Features/LocalPickup.php:672
-#: includes/Features/LocalPickup.php:760
-#: includes/Features/LocalPickup.php:802
-#: includes/Features/LocalPickup.php:1130
-#: includes/Features/LocalPickup.php:1155
+#: includes/Features/LocalPickup.php:498
+#: includes/Features/LocalPickup.php:684
+#: includes/Features/LocalPickup.php:772
+#: includes/Features/LocalPickup.php:814
+#: includes/Features/LocalPickup.php:1142
+#: includes/Features/LocalPickup.php:1167
 msgid "Pickup Location"
 msgstr "Átvétel helyszíne"
 
-#: includes/Features/LocalPickup.php:488
+#: includes/Features/LocalPickup.php:500
 msgid "Add Pickup Location"
 msgstr "Átvételi hely hozzáadása"
 
-#: includes/Features/LocalPickup.php:489
+#: includes/Features/LocalPickup.php:501
 msgid "Add New Pickup Location"
 msgstr "Új átvételi hely hozzáadása"
 
-#: includes/Features/LocalPickup.php:491
+#: includes/Features/LocalPickup.php:503
 msgid "Edit Pickup Location"
 msgstr "Átvételi hely szerkesztése"
 
-#: includes/Features/LocalPickup.php:492
+#: includes/Features/LocalPickup.php:504
 msgid "New Pickup Location"
 msgstr "Új átvételi hely"
 
-#: includes/Features/LocalPickup.php:493
+#: includes/Features/LocalPickup.php:505
 msgid "View Pickup Locations"
 msgstr "Átvételi helyek megtekintése"
 
-#: includes/Features/LocalPickup.php:494
+#: includes/Features/LocalPickup.php:506
 msgid "View Pickup Location"
 msgstr "Átvételi hely megtekintése"
 
-#: includes/Features/LocalPickup.php:495
+#: includes/Features/LocalPickup.php:507
 msgid "Search Pickup Locations"
 msgstr "Átvételi helyek keresése"
 
-#: includes/Features/LocalPickup.php:496
+#: includes/Features/LocalPickup.php:508
 msgid "No Pickup Location found"
 msgstr "Nem található átvételi hely"
 
-#: includes/Features/LocalPickup.php:497
+#: includes/Features/LocalPickup.php:509
 msgid "No Pickup Locations found in trash"
 msgstr "Nem találhatók átvételi helyek a kukában"
 
-#: includes/Features/LocalPickup.php:502
+#: includes/Features/LocalPickup.php:514
 msgid "This is where you can add new Pickup Locations."
 msgstr "Itt adhat hozzá új átvételi helyeket."
 
-#: includes/Features/LocalPickup.php:579
+#: includes/Features/LocalPickup.php:591
 #: client/ts/frontend/Components/ReviewPane/PaymentMethodReviewPane.tsx:37
 #: client/ts/frontend/Components/ReviewPane/OrderReviewStepReviewPane.tsx:37
 msgid "Method"
 msgstr "Módszer"
 
-#: includes/Features/LocalPickup.php:597
-msgid "Pick up in store"
-msgstr "Vedd fel a boltban"
-
-#: includes/Features/LocalPickup.php:732
+#: includes/Features/LocalPickup.php:744
 msgid "Pickup instructions"
 msgstr "Átvételi utasítások"
 
-#: includes/Features/LocalPickup.php:922
+#: includes/Features/LocalPickup.php:934
 msgid "Usually ready in 1 hour."
 msgstr "Általában 1 óra alatt kész."
 
-#: includes/Features/LocalPickup.php:923
+#: includes/Features/LocalPickup.php:935
 msgid "Usually ready in 2 hours."
 msgstr "Általában 2 óra alatt kész."
 
-#: includes/Features/LocalPickup.php:924
+#: includes/Features/LocalPickup.php:936
 msgid "Usually ready in 4 hours."
 msgstr "Általában 4 óra alatt kész."
 
-#: includes/Features/LocalPickup.php:925
+#: includes/Features/LocalPickup.php:937
 msgid "Usually ready in 24 hours."
 msgstr "Általában 24 órán belül kész."
 
-#: includes/Features/LocalPickup.php:926
+#: includes/Features/LocalPickup.php:938
 msgid "Usually ready in 2-4 days."
 msgstr "Általában 2-4 nap alatt kész."
 
-#: includes/Features/LocalPickup.php:927
+#: includes/Features/LocalPickup.php:939
 msgid "Usually ready in 5+ days."
 msgstr "Általában 5+ nap alatt kész."
 
-#: includes/Features/LocalPickup.php:1139
-#: includes/Features/LocalPickup.php:1166
+#: includes/Features/LocalPickup.php:1151
+#: includes/Features/LocalPickup.php:1178
 msgid "Pickup Instructions:"
 msgstr "Átvételi utasítások:"
 
@@ -1826,6 +1822,24 @@ msgstr "Rendelés Bump ajánlat űrlap"
 msgid "The form to accept or reject the bump offer."
 msgstr "Az űrlap az ajánlat elfogadásához vagy elutasításához."
 
+# %1$s: Plugin name, %2$s: Link opening tag, %3$s: Version number, %4$s: Link closing tag
+#: includes/Managers/Helpers/EDD_SL_Plugin_Updater.php:281
+msgid "There is a new version of %1$s available. %2$sView version %3$s details%4$s."
+msgstr "Elérhető egy új verzió a %1$s-ből. %2$sNézze meg a %3$s verzió részleteit%4$s."
+
+# %1$s: Plugin name, %2$s: Link opening tag, %3$s: Version number, %4$s: Link closing tag, %5$s: Update link opening tag, %6$s: Update link closing tag
+#: includes/Managers/Helpers/EDD_SL_Plugin_Updater.php:290
+msgid "There is a new version of %1$s available. %2$sView version %3$s details%4$s or %5$supdate now%6$s."
+msgstr "Elérhető egy új verzió a %1$s-ből. %2$sNézze meg a %3$s verzió részleteit%4$s vagy %5$sfrissítsen most%6$s."
+
+#: includes/Managers/Helpers/EDD_SL_Plugin_Updater.php:534
+msgid "You do not have permission to install plugin updates"
+msgstr "Nincs jogosultsága a bővítmény frissítések telepítéséhez"
+
+#: includes/Managers/Helpers/EDD_SL_Plugin_Updater.php:534
+msgid "Error"
+msgstr "Hiba"
+
 #: includes/Model/Bumps/BumpAbstract.php:1013
 #: includes/Model/Bumps/BumpAbstract.php:1023
 #: includes/Model/ABTests/OrderBumpsABTest.php:30
@@ -1880,24 +1894,6 @@ msgstr "Nem található a kukában"
 #: includes/Features/ABTesting/ABTestTypeRegistry.php:124
 msgid "Test different variations of order bumps to see which performs better."
 msgstr "Tesztelje a rendeléskiegészítők különböző változatait, hogy megtudja, melyik működik jobban."
-
-# %1$s: Plugin name, %2$s: Link opening tag, %3$s: Version number, %4$s: Link closing tag
-#: includes/Managers/Helpers/EDD_SL_Plugin_Updater.php:281
-msgid "There is a new version of %1$s available. %2$sView version %3$s details%4$s."
-msgstr "Elérhető egy új verzió a %1$s-ből. %2$sNézze meg a %3$s verzió részleteit%4$s."
-
-# %1$s: Plugin name, %2$s: Link opening tag, %3$s: Version number, %4$s: Link closing tag, %5$s: Update link opening tag, %6$s: Update link closing tag
-#: includes/Managers/Helpers/EDD_SL_Plugin_Updater.php:290
-msgid "There is a new version of %1$s available. %2$sView version %3$s details%4$s or %5$supdate now%6$s."
-msgstr "Elérhető egy új verzió a %1$s-ből. %2$sNézze meg a %3$s verzió részleteit%4$s vagy %5$sfrissítsen most%6$s."
-
-#: includes/Managers/Helpers/EDD_SL_Plugin_Updater.php:534
-msgid "You do not have permission to install plugin updates"
-msgstr "Nincs jogosultsága a bővítmény frissítések telepítéséhez"
-
-#: includes/Managers/Helpers/EDD_SL_Plugin_Updater.php:534
-msgid "Error"
-msgstr "Hiba"
 
 #: includes/Features/OneClick/OrderStatusManager.php:52
 msgid "Pending Offer <span class=\"count\">(%s)</span>"
@@ -2150,6 +2146,116 @@ msgstr "Megjegyzés:"
 #: includes/Admin/Views/html-refund-offer.php:114
 msgid "Refunding an offer will process the refund with the payment gateway and create a WooCommerce refund record."
 msgstr "Az ajánlat visszatérítése a fizetési átjárón keresztül történik, és létrehoz egy WooCommerce visszatérítési rekordot."
+
+#: includes/Admin/Notices/WelcomeNotice.php:12
+msgid "Welcome to CheckoutWC"
+msgstr "Üdvözlünk a CheckoutWC-ben"
+
+#: includes/Admin/Notices/WelcomeNotice.php:20
+msgid "Thank you for installing CheckoutWC! We automatically activated your license. You are all set!"
+msgstr "Köszönjük, hogy telepítette a CheckoutWC-t! Automatikusan aktiváltuk a licencét. Minden készen áll!"
+
+#: includes/Admin/Notices/WelcomeNotice.php:26
+msgid "Thank you for installing CheckoutWC! To get started, enter your <strong>License Key</strong> below, save, and click <strong>Activate Site</strong>."
+msgstr "Köszönjük, hogy telepítette a CheckoutWC-t! A kezdéshez adja meg az alábbi <strong>Licenckulcsot</strong>, mentse el, majd kattintson a <strong>Webhely aktiválása</strong> gombra."
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:20
+msgid "your email"
+msgstr "az ön e-mail címe"
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:88
+msgid "privacy policy"
+msgstr "adatvédelmi irányelvek"
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:93
+msgid "By joining, %1$s will be added to our mailing list. Read our %2$s."
+msgstr "A csatlakozással %1$s felkerül hírlevelünk listájára. Olvassa el adatvédelmi irányelveinket: %2$s."
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:99
+msgid "Join Newsletter & Save 25%"
+msgstr "Iratkozzon fel hírlevelünkre és takarítson meg 25%-ot"
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:102
+msgid "Join Newsletter"
+msgstr "Iratkozzon fel hírlevelünkre"
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:113
+msgid "Sign up to our newsletter and get proven conversion tips and checkout optimization strategies from the CheckoutWC team."
+msgstr "Iratkozzon fel hírlevelünkre, és kapjon bevált konverziós tippeket és pénztár optimalizálási stratégiákat a CheckoutWC csapatától."
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:116
+msgid "Boost Your Conversions with Proven Strategies."
+msgstr "Növelje konverzióit bevált stratégiákkal."
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:123
+msgid "We're so glad that you've chosen CheckoutWC to handle your checkouts. Unlock more sales with premium features like order bumps, abandoned cart recovery, and much more."
+msgstr "Örülünk, hogy a CheckoutWC-t választotta pénztárai kezelésére. Oldjon fel több eladást prémium funkciókkal, mint például rendeléskiegészítők, elhagyott kosár visszaállítása és még sok más."
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:126
+msgid "Unlock more sales with CheckoutWC Premium"
+msgstr "Oldjon fel több eladást a CheckoutWC Premium segítségével"
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:144
+msgid "Sorry, there was an error joining our newsletter. Please refresh the page and try again."
+msgstr "Sajnáljuk, hiba történt a hírlevélhez való csatlakozáskor. Kérjük, frissítse az oldalt, és próbálja újra."
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:243
+msgid "Please wait..."
+msgstr "Kérjük, várjon..."
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:320
+msgid "Sorry, your account has insufficient permissions to join our newsletter."
+msgstr "Sajnáljuk, fiókjának nincs megfelelő jogosultsága a hírlevélhez való csatlakozáshoz."
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:354
+msgid "You have already joined our newsletter!"
+msgstr "Már feliratkozott hírlevelünkre!"
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:396
+msgid "Thank you for joining our newsletter!"
+msgstr "Köszönjük, hogy feliratkozott hírlevelünkre!"
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:410
+msgid "Security check failed."
+msgstr "Biztonsági ellenőrzés sikertelen."
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:414
+msgid "Insufficient permissions."
+msgstr "Nem megfelelő jogosultságok."
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:422
+msgid "Notice dismissed."
+msgstr "Értesítés elutasítva."
+
+# %1$s: URL to pricing page, %2$s: "purchase a new license" link text, %3$s: Support email URL, %4$s: "please contact support" link text
+#: includes/Admin/Notices/InvalidLicenseKeyNotice.php:15
+msgid "Your license key appears to have expired. Please <a href=\"%1$s\" target=\"_blank\">%2$s</a> to restore functionality. If you believe this is in error, <a href=\"%3$s\">%4$s</a>."
+msgstr "Úgy tűnik, hogy a licenckulcsa lejárt. Kérjük, <a href=\"%1$s\" target=\"_blank\">%2$s</a> a funkciók visszaállításához. Ha úgy gondolja, hogy ez hiba, <a href=\"%3$s\">%4$s</a>."
+
+#: includes/Admin/Notices/InvalidLicenseKeyNotice.php:17
+msgid "purchase a new license"
+msgstr "új licenc vásárlása"
+
+#: includes/Admin/Notices/InvalidLicenseKeyNotice.php:19
+msgid "please contact support"
+msgstr "lépjen kapcsolatba a támogatással"
+
+# %1$s: URL to activation page, %2$s: "Start Here" link text
+#: includes/Admin/Notices/InactiveLicenseNotice.php:11
+msgid "Your license key is not active for this site. Please visit <a href=\"%1$s\">%2$s</a> to activate your license and restore functionality."
+msgstr "A licenckulcsa nem aktív ezen a webhelyen. Kérjük, látogasson el ide: <a href=\"%1$s\">%2$s</a> a licenc aktiválásához és a funkciók visszaállításához."
+
+#: includes/Admin/Notices/BFNotice.php:13
+msgid "Black Friday Sale - 40% Off"
+msgstr "Fekete Péntek Akció - 40% Kedvezmény"
+
+#: includes/Admin/Notices/BFNotice.php:14
+msgid "You're missing out on revenue growth tools like Order Bumps, Upsells, Abandoned Cart Recovery and more! Save 40% on CheckoutWC pro plans for Black Friday, ends December 4th"
+msgstr "Lemarad a bevételnövelő eszközökről, mint például a Rendelés Kiegészítők, Felértékelések, Elhagyott Kosár Visszaszerzés és még sok más! Spóroljon 40%-ot a CheckoutWC pro csomagokon a Fekete Péntek alkalmából, az akció december 4-ig tart"
+
+#: includes/Admin/Notices/BFNotice.php:27
+msgid "Get CheckoutWC Pro Now!"
+msgstr "Szerezze be most a CheckoutWC Pro-t!"
 
 #: includes/Admin/Pages/WooCommercePages.php:21
 msgid "Pages"
@@ -3295,116 +3401,6 @@ msgstr "A/B tesztelés engedélyezése"
 msgid "Allow A/B tests to be created and applied on the checkout page."
 msgstr "Lehetővé teszi A/B tesztek létrehozását és alkalmazását a fizetési oldalon."
 
-#: includes/Admin/Notices/WelcomeNotice.php:12
-msgid "Welcome to CheckoutWC"
-msgstr "Üdvözlünk a CheckoutWC-ben"
-
-#: includes/Admin/Notices/WelcomeNotice.php:20
-msgid "Thank you for installing CheckoutWC! We automatically activated your license. You are all set!"
-msgstr "Köszönjük, hogy telepítette a CheckoutWC-t! Automatikusan aktiváltuk a licencét. Minden készen áll!"
-
-#: includes/Admin/Notices/WelcomeNotice.php:26
-msgid "Thank you for installing CheckoutWC! To get started, enter your <strong>License Key</strong> below, save, and click <strong>Activate Site</strong>."
-msgstr "Köszönjük, hogy telepítette a CheckoutWC-t! A kezdéshez adja meg az alábbi <strong>Licenckulcsot</strong>, mentse el, majd kattintson a <strong>Webhely aktiválása</strong> gombra."
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:20
-msgid "your email"
-msgstr "az ön e-mail címe"
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:88
-msgid "privacy policy"
-msgstr "adatvédelmi irányelvek"
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:93
-msgid "By joining, %1$s will be added to our mailing list. Read our %2$s."
-msgstr "A csatlakozással %1$s felkerül hírlevelünk listájára. Olvassa el adatvédelmi irányelveinket: %2$s."
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:99
-msgid "Join Newsletter & Save 25%"
-msgstr "Iratkozzon fel hírlevelünkre és takarítson meg 25%-ot"
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:102
-msgid "Join Newsletter"
-msgstr "Iratkozzon fel hírlevelünkre"
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:113
-msgid "Sign up to our newsletter and get proven conversion tips and checkout optimization strategies from the CheckoutWC team."
-msgstr "Iratkozzon fel hírlevelünkre, és kapjon bevált konverziós tippeket és pénztár optimalizálási stratégiákat a CheckoutWC csapatától."
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:116
-msgid "Boost Your Conversions with Proven Strategies."
-msgstr "Növelje konverzióit bevált stratégiákkal."
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:123
-msgid "We're so glad that you've chosen CheckoutWC to handle your checkouts. Unlock more sales with premium features like order bumps, abandoned cart recovery, and much more."
-msgstr "Örülünk, hogy a CheckoutWC-t választotta pénztárai kezelésére. Oldjon fel több eladást prémium funkciókkal, mint például rendeléskiegészítők, elhagyott kosár visszaállítása és még sok más."
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:126
-msgid "Unlock more sales with CheckoutWC Premium"
-msgstr "Oldjon fel több eladást a CheckoutWC Premium segítségével"
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:144
-msgid "Sorry, there was an error joining our newsletter. Please refresh the page and try again."
-msgstr "Sajnáljuk, hiba történt a hírlevélhez való csatlakozáskor. Kérjük, frissítse az oldalt, és próbálja újra."
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:243
-msgid "Please wait..."
-msgstr "Kérjük, várjon..."
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:320
-msgid "Sorry, your account has insufficient permissions to join our newsletter."
-msgstr "Sajnáljuk, fiókjának nincs megfelelő jogosultsága a hírlevélhez való csatlakozáshoz."
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:354
-msgid "You have already joined our newsletter!"
-msgstr "Már feliratkozott hírlevelünkre!"
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:396
-msgid "Thank you for joining our newsletter!"
-msgstr "Köszönjük, hogy feliratkozott hírlevelünkre!"
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:410
-msgid "Security check failed."
-msgstr "Biztonsági ellenőrzés sikertelen."
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:414
-msgid "Insufficient permissions."
-msgstr "Nem megfelelő jogosultságok."
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:422
-msgid "Notice dismissed."
-msgstr "Értesítés elutasítva."
-
-# %1$s: URL to pricing page, %2$s: "purchase a new license" link text, %3$s: Support email URL, %4$s: "please contact support" link text
-#: includes/Admin/Notices/InvalidLicenseKeyNotice.php:15
-msgid "Your license key appears to have expired. Please <a href=\"%1$s\" target=\"_blank\">%2$s</a> to restore functionality. If you believe this is in error, <a href=\"%3$s\">%4$s</a>."
-msgstr "Úgy tűnik, hogy a licenckulcsa lejárt. Kérjük, <a href=\"%1$s\" target=\"_blank\">%2$s</a> a funkciók visszaállításához. Ha úgy gondolja, hogy ez hiba, <a href=\"%3$s\">%4$s</a>."
-
-#: includes/Admin/Notices/InvalidLicenseKeyNotice.php:17
-msgid "purchase a new license"
-msgstr "új licenc vásárlása"
-
-#: includes/Admin/Notices/InvalidLicenseKeyNotice.php:19
-msgid "please contact support"
-msgstr "lépjen kapcsolatba a támogatással"
-
-# %1$s: URL to activation page, %2$s: "Start Here" link text
-#: includes/Admin/Notices/InactiveLicenseNotice.php:11
-msgid "Your license key is not active for this site. Please visit <a href=\"%1$s\">%2$s</a> to activate your license and restore functionality."
-msgstr "A licenckulcsa nem aktív ezen a webhelyen. Kérjük, látogasson el ide: <a href=\"%1$s\">%2$s</a> a licenc aktiválásához és a funkciók visszaállításához."
-
-#: includes/Admin/Notices/BFNotice.php:13
-msgid "Black Friday Sale - 40% Off"
-msgstr "Fekete Péntek Akció - 40% Kedvezmény"
-
-#: includes/Admin/Notices/BFNotice.php:14
-msgid "You're missing out on revenue growth tools like Order Bumps, Upsells, Abandoned Cart Recovery and more! Save 40% on CheckoutWC pro plans for Black Friday, ends December 4th"
-msgstr "Lemarad a bevételnövelő eszközökről, mint például a Rendelés Kiegészítők, Felértékelések, Elhagyott Kosár Visszaszerzés és még sok más! Spóroljon 40%-ot a CheckoutWC pro csomagokon a Fekete Péntek alkalmából, az akció december 4-ig tart"
-
-#: includes/Admin/Notices/BFNotice.php:27
-msgid "Get CheckoutWC Pro Now!"
-msgstr "Szerezze be most a CheckoutWC Pro-t!"
-
 #: client/ts/functions/cfwFormatDate.ts:38
 msgid "Sunday"
 msgstr "Vasárnap"
@@ -4241,18 +4237,6 @@ msgstr "Az a dátum, amikor az A/B teszt véget ér. Ezután az eredeti variáns
 msgid "Traffic split percentages must total 100%. Please adjust your percentages."
 msgstr "A forgalommegosztási százalékoknak 100%-ot kell elérniük. Kérjük, módosítsa a százalékokat."
 
-#: client/ts/frontend/Components/TermsAndConditions.ts:29
-msgid "Terms and Conditions"
-msgstr "Felhasználási feltételek"
-
-#: client/ts/frontend/Components/TermsAndConditions.ts:35
-msgid "Privacy Policy"
-msgstr "Adatvédelmi irányelvek"
-
-#: client/ts/frontend/Components/SideCartComponent.tsx:38
-msgid "Close Cart"
-msgstr "Kosár bezárása"
-
 #: client/ts/frontend/Actions/CompleteOrderAction.ts:196
 msgid "Could not connect to server. Please refresh and try again or contact site administrator."
 msgstr "Nem tudott csatlakozni a szerverhez. Kérjük, frissítsen és próbálja újra, vagy lépjen kapcsolatba a webhely adminisztrátorával."
@@ -4276,6 +4260,18 @@ msgstr "A kiszolgáló a kérés feldolgozása közben időtúllépett. Kérjük
 #: client/ts/frontend/Actions/CompleteOrderAction.ts:206
 msgid "Request was aborted. Please contact site administrator."
 msgstr "A kérés megszakadt. Kérjük, lépjen kapcsolatba a webhely adminisztrátorával."
+
+#: client/ts/frontend/Components/TermsAndConditions.ts:29
+msgid "Terms and Conditions"
+msgstr "Felhasználási feltételek"
+
+#: client/ts/frontend/Components/TermsAndConditions.ts:35
+msgid "Privacy Policy"
+msgstr "Adatvédelmi irányelvek"
+
+#: client/ts/frontend/Components/SideCartComponent.tsx:38
+msgid "Close Cart"
+msgstr "Kosár bezárása"
 
 #: client/ts/admin/Components/TrustBadgeRow.tsx:172
 msgid "Determine when this Trust Badge should be displayed."

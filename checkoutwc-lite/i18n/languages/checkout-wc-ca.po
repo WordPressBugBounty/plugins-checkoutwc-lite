@@ -8,7 +8,7 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "POT-Creation-Date: 2025-07-25 09:22-0400\n"
-"PO-Revision-Date: 2026-06-29T12:40:12+00:00\n"
+"PO-Revision-Date: 2026-07-02T13:09:59+00:00\n"
 "Language: ca\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 3.8\n"
@@ -359,8 +359,8 @@ msgid "Shipping address"
 msgstr "Adreça d'enviament"
 
 #: functions/template-functions.php:935
-#: templates/glass/functions.php:40
 #: templates/futurist/functions.php:16
+#: templates/glass/functions.php:40
 msgid "Your Cart"
 msgstr "La vostra cistella"
 
@@ -506,8 +506,8 @@ msgid "Settings"
 msgstr "Configuració"
 
 #: functions/premium-init.php:339
-#: includes/Admin/Pages/General.php:25
 #: includes/Admin/Notices/InactiveLicenseNotice.php:13
+#: includes/Admin/Pages/General.php:25
 msgid "Start Here"
 msgstr "Comenceu aquí"
 
@@ -659,7 +659,7 @@ msgid "Ship to"
 msgstr "Enviar a"
 
 #: functions/functions.php:229
-#: includes/Features/LocalPickup.php:746
+#: includes/Features/LocalPickup.php:758
 #: includes/Admin/Pages/PickupLocationsAdminFree.php:93
 #: includes/Admin/Pages/Premium/PickupLocations.php:92
 msgid "Address"
@@ -670,7 +670,7 @@ msgid "Sorry, it seems that there are no available payment methods for your loca
 msgstr "Ho sentim, sembla que no hi ha mètodes de pagament disponibles per a la vostra ubicació. Si necessiteu assistència o voleu fer altres acords, poseu-vos en contacte amb nosaltres."
 
 #: functions/functions.php:785
-#: includes/Features/LocalPickup.php:1067
+#: includes/Features/LocalPickup.php:1079
 msgid "Shipping costs are calculated during checkout."
 msgstr "Els costos d'enviament es calculen durant el procés de compra."
 
@@ -771,7 +771,7 @@ msgstr "Disminuir"
 #: functions/functions.php:2404
 #: includes/Managers/AssetManager.php:721
 #: includes/Managers/AssetManager.php:842
-#: includes/Features/LocalPickup.php:490
+#: includes/Features/LocalPickup.php:502
 #: includes/Features/AbandonedCartRecovery.php:122
 #: includes/Features/ABTesting.php:145
 #: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:632
@@ -911,6 +911,19 @@ msgstr "SendWP ja està connectat."
 msgid "Something went wrong. SendWP was not installed correctly."
 msgstr "Alguna cosa ha anat malament. SendWP no s'ha instal·lat correctament."
 
+#: includes/Shipping/CFW_Shipping_Local_Pickup.php:35
+#: includes/Shipping/CFW_Shipping_Local_Pickup.php:48
+#: includes/Admin/Pages/LocalPickupAdminFree.php:19
+#: includes/Admin/Pages/LocalPickupAdminFree.php:56
+#: includes/Admin/Pages/Premium/LocalPickupAdmin.php:20
+#: client/ts/admin/Components/Forms/LocalPickupSettingsForm.tsx:62
+msgid "Local Pickup"
+msgstr "Recollida local"
+
+#: includes/Shipping/CFW_Shipping_Local_Pickup.php:36
+msgid "Allow customers to pick up orders themselves. This version does not require shipping zones."
+msgstr "Permetre als clients recollir les comandes ells mateixos. Aquesta versió no requereix zones d'enviament."
+
 #: includes/Stats/StatCollection.php:193
 msgid "Once Weekly"
 msgstr "Un cop a la setmana"
@@ -935,18 +948,41 @@ msgstr "Permetre"
 msgid "Do not allow"
 msgstr "No permetre"
 
-#: includes/Shipping/CFW_Shipping_Local_Pickup.php:35
-#: includes/Shipping/CFW_Shipping_Local_Pickup.php:48
-#: includes/Admin/Pages/LocalPickupAdminFree.php:19
-#: includes/Admin/Pages/LocalPickupAdminFree.php:56
-#: includes/Admin/Pages/Premium/LocalPickupAdmin.php:20
-#: client/ts/admin/Components/Forms/LocalPickupSettingsForm.tsx:62
-msgid "Local Pickup"
-msgstr "Recollida local"
+#: includes/Loaders/LoaderAbstract.php:134
+#: includes/Loaders/LoaderAbstract.php:244
+msgid "Sorry, this order is invalid and cannot be paid for."
+msgstr "Ho sentim, aquesta comanda no és vàlida i no es pot pagar."
 
-#: includes/Shipping/CFW_Shipping_Local_Pickup.php:36
-msgid "Allow customers to pick up orders themselves. This version does not require shipping zones."
-msgstr "Permetre als clients recollir les comandes ells mateixos. Aquesta versió no requereix zones d'enviament."
+#: includes/Loaders/LoaderAbstract.php:138
+msgid "Please log in to your account below to continue to the payment form."
+msgstr "Si us plau, inicia sessió al teu compte a continuació per continuar amb el formulari de pagament."
+
+#: includes/Loaders/LoaderAbstract.php:145
+msgid "You are paying for a guest order. Please continue with payment only if you recognize this order."
+msgstr "Estàs pagant una comanda d'hoste. Continua amb el pagament només si reconeixes aquesta comanda."
+
+#: includes/Loaders/LoaderAbstract.php:151
+msgid "This order cannot be paid for. Please contact us if you need assistance."
+msgstr "Aquesta comanda no es pot pagar. Si necessites ajuda, contacta'ns."
+
+#: includes/Loaders/LoaderAbstract.php:157
+#: includes/Loaders/LoaderAbstract.php:241
+msgid "This order&rsquo;s status is &ldquo;%s&rdquo;&mdash;it cannot be paid for. Please contact us if you need assistance."
+msgstr "L'estat d'aquesta comanda és «%s»—no es pot pagar. Si necessites ajuda, contacta'ns."
+
+#: includes/Loaders/LoaderAbstract.php:186
+msgid "Sorry, \"%s\" is no longer in stock so this order cannot be paid for. We apologize for any inconvenience caused."
+msgstr "Ho sentim, \"%s\" ja no està disponible i aquesta comanda no es pot pagar. Disculpa les molèsties ocasionades."
+
+#: includes/Loaders/LoaderAbstract.php:200
+msgid "Sorry, we do not have enough \"%1$s\" in stock to fulfill your order (%2$s available). We apologize for any inconvenience caused."
+msgstr "Ho sentim, no tenim prou \"%1$s\" en estoc per complir la teva comanda (%2$s disponibles). Disculpa les molèsties ocasionades."
+
+#: includes/Loaders/LoaderAbstract.php:247
+#: includes/Action/ProcessOfferPaymentAction.php:73
+#: includes/Features/OneClick/OfferRefundManager.php:177
+msgid "Invalid order."
+msgstr "Comanda no vàlida."
 
 #: includes/Managers/UpdatesManager.php:416
 msgid "CheckoutWC License Key"
@@ -1107,7 +1143,7 @@ msgid "Please enter a valid postcode / ZIP."
 msgstr "Si us plau, introdueix un codi postal / ZIP vàlid."
 
 #: includes/Managers/AssetManager.php:700
-#: includes/Features/LocalPickup.php:614
+#: includes/Features/LocalPickup.php:626
 msgid "Pickup"
 msgstr "Recollida"
 
@@ -1165,42 +1201,6 @@ msgstr "Procedir al pagament"
 msgid "View Product"
 msgstr "Veure producte"
 
-#: includes/Loaders/LoaderAbstract.php:134
-#: includes/Loaders/LoaderAbstract.php:244
-msgid "Sorry, this order is invalid and cannot be paid for."
-msgstr "Ho sentim, aquesta comanda no és vàlida i no es pot pagar."
-
-#: includes/Loaders/LoaderAbstract.php:138
-msgid "Please log in to your account below to continue to the payment form."
-msgstr "Si us plau, inicia sessió al teu compte a continuació per continuar amb el formulari de pagament."
-
-#: includes/Loaders/LoaderAbstract.php:145
-msgid "You are paying for a guest order. Please continue with payment only if you recognize this order."
-msgstr "Estàs pagant una comanda d'hoste. Continua amb el pagament només si reconeixes aquesta comanda."
-
-#: includes/Loaders/LoaderAbstract.php:151
-msgid "This order cannot be paid for. Please contact us if you need assistance."
-msgstr "Aquesta comanda no es pot pagar. Si necessites ajuda, contacta'ns."
-
-#: includes/Loaders/LoaderAbstract.php:157
-#: includes/Loaders/LoaderAbstract.php:241
-msgid "This order&rsquo;s status is &ldquo;%s&rdquo;&mdash;it cannot be paid for. Please contact us if you need assistance."
-msgstr "L'estat d'aquesta comanda és «%s»—no es pot pagar. Si necessites ajuda, contacta'ns."
-
-#: includes/Loaders/LoaderAbstract.php:186
-msgid "Sorry, \"%s\" is no longer in stock so this order cannot be paid for. We apologize for any inconvenience caused."
-msgstr "Ho sentim, \"%s\" ja no està disponible i aquesta comanda no es pot pagar. Disculpa les molèsties ocasionades."
-
-#: includes/Loaders/LoaderAbstract.php:200
-msgid "Sorry, we do not have enough \"%1$s\" in stock to fulfill your order (%2$s available). We apologize for any inconvenience caused."
-msgstr "Ho sentim, no tenim prou \"%1$s\" en estoc per complir la teva comanda (%2$s disponibles). Disculpa les molèsties ocasionades."
-
-#: includes/Loaders/LoaderAbstract.php:247
-#: includes/Action/ProcessOfferPaymentAction.php:73
-#: includes/Features/OneClick/OfferRefundManager.php:177
-msgid "Invalid order."
-msgstr "Comanda no vàlida."
-
 #: includes/Features/Turnstile.php:134
 #: includes/Features/Turnstile.php:188
 #: includes/Features/Turnstile.php:362
@@ -1257,114 +1257,110 @@ msgstr "Té complement: %s"
 msgid "Delivery method"
 msgstr "Mètode de lliurament"
 
-#: includes/Features/LocalPickup.php:170
+#: includes/Features/LocalPickup.php:178
 msgid "Pick up"
 msgstr "Recollir"
 
-#: includes/Features/LocalPickup.php:185
+#: includes/Features/LocalPickup.php:197
 msgid "Ship"
 msgstr "Enviar"
 
-#: includes/Features/LocalPickup.php:288
+#: includes/Features/LocalPickup.php:300
 msgid "Pickup locations"
 msgstr "Llocs de recollida"
 
-#: includes/Features/LocalPickup.php:485
-#: includes/Features/LocalPickup.php:487
+#: includes/Features/LocalPickup.php:497
+#: includes/Features/LocalPickup.php:499
 #: includes/Admin/Pages/PickupLocationsAdminFree.php:21
 #: includes/Admin/Pages/Premium/PickupLocations.php:22
 msgid "Pickup Locations"
 msgstr "Llocs de recollida"
 
-#: includes/Features/LocalPickup.php:486
-#: includes/Features/LocalPickup.php:672
-#: includes/Features/LocalPickup.php:760
-#: includes/Features/LocalPickup.php:802
-#: includes/Features/LocalPickup.php:1130
-#: includes/Features/LocalPickup.php:1155
+#: includes/Features/LocalPickup.php:498
+#: includes/Features/LocalPickup.php:684
+#: includes/Features/LocalPickup.php:772
+#: includes/Features/LocalPickup.php:814
+#: includes/Features/LocalPickup.php:1142
+#: includes/Features/LocalPickup.php:1167
 msgid "Pickup Location"
 msgstr "Lloc de recollida"
 
-#: includes/Features/LocalPickup.php:488
+#: includes/Features/LocalPickup.php:500
 msgid "Add Pickup Location"
 msgstr "Afegir lloc de recollida"
 
-#: includes/Features/LocalPickup.php:489
+#: includes/Features/LocalPickup.php:501
 msgid "Add New Pickup Location"
 msgstr "Afegir nou lloc de recollida"
 
-#: includes/Features/LocalPickup.php:491
+#: includes/Features/LocalPickup.php:503
 msgid "Edit Pickup Location"
 msgstr "Editar lloc de recollida"
 
-#: includes/Features/LocalPickup.php:492
+#: includes/Features/LocalPickup.php:504
 msgid "New Pickup Location"
 msgstr "Nou lloc de recollida"
 
-#: includes/Features/LocalPickup.php:493
+#: includes/Features/LocalPickup.php:505
 msgid "View Pickup Locations"
 msgstr "Veure llocs de recollida"
 
-#: includes/Features/LocalPickup.php:494
+#: includes/Features/LocalPickup.php:506
 msgid "View Pickup Location"
 msgstr "Veure lloc de recollida"
 
-#: includes/Features/LocalPickup.php:495
+#: includes/Features/LocalPickup.php:507
 msgid "Search Pickup Locations"
 msgstr "Cercar llocs de recollida"
 
-#: includes/Features/LocalPickup.php:496
+#: includes/Features/LocalPickup.php:508
 msgid "No Pickup Location found"
 msgstr "No s'ha trobat cap lloc de recollida"
 
-#: includes/Features/LocalPickup.php:497
+#: includes/Features/LocalPickup.php:509
 msgid "No Pickup Locations found in trash"
 msgstr "No s'han trobat llocs de recollida a la paperera"
 
-#: includes/Features/LocalPickup.php:502
+#: includes/Features/LocalPickup.php:514
 msgid "This is where you can add new Pickup Locations."
 msgstr "Aquí pots afegir nous llocs de recollida."
 
-#: includes/Features/LocalPickup.php:579
+#: includes/Features/LocalPickup.php:591
 #: client/ts/frontend/Components/ReviewPane/PaymentMethodReviewPane.tsx:37
 #: client/ts/frontend/Components/ReviewPane/OrderReviewStepReviewPane.tsx:37
 msgid "Method"
 msgstr "Mètode"
 
-#: includes/Features/LocalPickup.php:597
-msgid "Pick up in store"
-msgstr "Recollir a la botiga"
-
-#: includes/Features/LocalPickup.php:732
+#: includes/Features/LocalPickup.php:744
 msgid "Pickup instructions"
 msgstr "Instruccions de recollida"
 
-#: includes/Features/LocalPickup.php:922
+#: includes/Features/LocalPickup.php:934
 msgid "Usually ready in 1 hour."
 msgstr "Normalment llest en 1 hora."
 
-#: includes/Features/LocalPickup.php:923
+#: includes/Features/LocalPickup.php:935
 msgid "Usually ready in 2 hours."
 msgstr "Normalment llest en 2 hores."
 
-#: includes/Features/LocalPickup.php:924
+#: includes/Features/LocalPickup.php:936
 msgid "Usually ready in 4 hours."
 msgstr "Normalment llest en 4 hores."
 
-#: includes/Features/LocalPickup.php:925
+#: includes/Features/LocalPickup.php:937
 msgid "Usually ready in 24 hours."
 msgstr "Normalment llest en 24 hores."
 
-#: includes/Features/LocalPickup.php:926
+#: includes/Features/LocalPickup.php:938
 msgid "Usually ready in 2-4 days."
 msgstr "Normalment llest en 2-4 dies."
 
-#: includes/Features/LocalPickup.php:927
+#: includes/Features/LocalPickup.php:939
 msgid "Usually ready in 5+ days."
 msgstr "Normalment llest en més de 5 dies."
 
-#: includes/Features/LocalPickup.php:1139
-#: includes/Features/LocalPickup.php:1166
+#: includes/Features/LocalPickup.php:1151
+#: includes/Features/LocalPickup.php:1178
 msgid "Pickup Instructions:"
 msgstr "Instruccions de recollida:"
 
@@ -1834,6 +1830,24 @@ msgstr "Formulari d'oferta d'Order Bump"
 msgid "The form to accept or reject the bump offer."
 msgstr "El formulari per acceptar o rebutjar l'oferta bump."
 
+# %1$s: Plugin name, %2$s: Link opening tag, %3$s: Version number, %4$s: Link closing tag
+#: includes/Managers/Helpers/EDD_SL_Plugin_Updater.php:281
+msgid "There is a new version of %1$s available. %2$sView version %3$s details%4$s."
+msgstr "Hi ha una nova versió de %1$s disponible. %2$sVeure detalls de la versió %3$s%4$s."
+
+# %1$s: Plugin name, %2$s: Link opening tag, %3$s: Version number, %4$s: Link closing tag, %5$s: Update link opening tag, %6$s: Update link closing tag
+#: includes/Managers/Helpers/EDD_SL_Plugin_Updater.php:290
+msgid "There is a new version of %1$s available. %2$sView version %3$s details%4$s or %5$supdate now%6$s."
+msgstr "Hi ha una nova versió de %1$s disponible. %2$sVeure detalls de la versió %3$s%4$s o %5$sactualitza ara%6$s."
+
+#: includes/Managers/Helpers/EDD_SL_Plugin_Updater.php:534
+msgid "You do not have permission to install plugin updates"
+msgstr "No tens permís per instal·lar actualitzacions de plugins"
+
+#: includes/Managers/Helpers/EDD_SL_Plugin_Updater.php:534
+msgid "Error"
+msgstr "Error"
+
 #: includes/Model/Bumps/BumpAbstract.php:1013
 #: includes/Model/Bumps/BumpAbstract.php:1023
 #: includes/Model/ABTests/OrderBumpsABTest.php:30
@@ -1888,24 +1902,6 @@ msgstr "No trobat a la paperera"
 #: includes/Features/ABTesting/ABTestTypeRegistry.php:124
 msgid "Test different variations of order bumps to see which performs better."
 msgstr "Prova diferents variants de suports de comanda per veure quin funciona millor."
-
-# %1$s: Plugin name, %2$s: Link opening tag, %3$s: Version number, %4$s: Link closing tag
-#: includes/Managers/Helpers/EDD_SL_Plugin_Updater.php:281
-msgid "There is a new version of %1$s available. %2$sView version %3$s details%4$s."
-msgstr "Hi ha una nova versió de %1$s disponible. %2$sVeure detalls de la versió %3$s%4$s."
-
-# %1$s: Plugin name, %2$s: Link opening tag, %3$s: Version number, %4$s: Link closing tag, %5$s: Update link opening tag, %6$s: Update link closing tag
-#: includes/Managers/Helpers/EDD_SL_Plugin_Updater.php:290
-msgid "There is a new version of %1$s available. %2$sView version %3$s details%4$s or %5$supdate now%6$s."
-msgstr "Hi ha una nova versió de %1$s disponible. %2$sVeure detalls de la versió %3$s%4$s o %5$sactualitza ara%6$s."
-
-#: includes/Managers/Helpers/EDD_SL_Plugin_Updater.php:534
-msgid "You do not have permission to install plugin updates"
-msgstr "No tens permís per instal·lar actualitzacions de plugins"
-
-#: includes/Managers/Helpers/EDD_SL_Plugin_Updater.php:534
-msgid "Error"
-msgstr "Error"
 
 #: includes/Features/OneClick/OrderStatusManager.php:52
 msgid "Pending Offer <span class=\"count\">(%s)</span>"
@@ -2158,6 +2154,116 @@ msgstr "Nota:"
 #: includes/Admin/Views/html-refund-offer.php:114
 msgid "Refunding an offer will process the refund with the payment gateway and create a WooCommerce refund record."
 msgstr "Reemborsar una oferta processarà el reemborsament amb la passarel·la de pagament i crearà un registre de reemborsament a WooCommerce."
+
+#: includes/Admin/Notices/WelcomeNotice.php:12
+msgid "Welcome to CheckoutWC"
+msgstr "Benvingut a CheckoutWC"
+
+#: includes/Admin/Notices/WelcomeNotice.php:20
+msgid "Thank you for installing CheckoutWC! We automatically activated your license. You are all set!"
+msgstr "Gràcies per instal·lar CheckoutWC! Hem activat automàticament la teva llicència. Tot està llest!"
+
+#: includes/Admin/Notices/WelcomeNotice.php:26
+msgid "Thank you for installing CheckoutWC! To get started, enter your <strong>License Key</strong> below, save, and click <strong>Activate Site</strong>."
+msgstr "Gràcies per instal·lar CheckoutWC! Per començar, introdueix la teva <strong>Clau de Llicència</strong> a continuació, desa i fes clic a <strong>Activa el lloc</strong>."
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:20
+msgid "your email"
+msgstr "el teu correu electrònic"
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:88
+msgid "privacy policy"
+msgstr "política de privacitat"
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:93
+msgid "By joining, %1$s will be added to our mailing list. Read our %2$s."
+msgstr "En unir-te, %1$s serà afegit a la nostra llista de correu. Llegeix la nostra %2$s."
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:99
+msgid "Join Newsletter & Save 25%"
+msgstr "Uneix-te al butlletí i estalvia un 25%"
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:102
+msgid "Join Newsletter"
+msgstr "Uneix-te al butlletí"
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:113
+msgid "Sign up to our newsletter and get proven conversion tips and checkout optimization strategies from the CheckoutWC team."
+msgstr "Subscriu-te al nostre butlletí i obtén consells provats de conversió i estratègies d'optimització de la compra de l'equip de CheckoutWC."
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:116
+msgid "Boost Your Conversions with Proven Strategies."
+msgstr "Impulsa les teves conversions amb estratègies provades."
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:123
+msgid "We're so glad that you've chosen CheckoutWC to handle your checkouts. Unlock more sales with premium features like order bumps, abandoned cart recovery, and much more."
+msgstr "Ens alegra molt que hagis triat CheckoutWC per gestionar les teves compres. Desbloqueja més vendes amb funcions premium com ara impulsos de comanda, recuperació de carret abandonat i molt més."
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:126
+msgid "Unlock more sales with CheckoutWC Premium"
+msgstr "Desbloqueja més vendes amb CheckoutWC Premium"
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:144
+msgid "Sorry, there was an error joining our newsletter. Please refresh the page and try again."
+msgstr "Ho sentim, hi ha hagut un error en unir-se al nostre butlletí. Si us plau, actualitza la pàgina i torna-ho a provar."
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:243
+msgid "Please wait..."
+msgstr "Si us plau, espera..."
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:320
+msgid "Sorry, your account has insufficient permissions to join our newsletter."
+msgstr "Ho sentim, el teu compte no té permisos suficients per unir-se al nostre butlletí."
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:354
+msgid "You have already joined our newsletter!"
+msgstr "Ja t'has unit al nostre butlletí!"
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:396
+msgid "Thank you for joining our newsletter!"
+msgstr "Gràcies per unir-te al nostre butlletí!"
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:410
+msgid "Security check failed."
+msgstr "La comprovació de seguretat ha fallat."
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:414
+msgid "Insufficient permissions."
+msgstr "Permisos insuficients."
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:422
+msgid "Notice dismissed."
+msgstr "Avís descartat."
+
+# %1$s: URL to pricing page, %2$s: "purchase a new license" link text, %3$s: Support email URL, %4$s: "please contact support" link text
+#: includes/Admin/Notices/InvalidLicenseKeyNotice.php:15
+msgid "Your license key appears to have expired. Please <a href=\"%1$s\" target=\"_blank\">%2$s</a> to restore functionality. If you believe this is in error, <a href=\"%3$s\">%4$s</a>."
+msgstr "La teva clau de llicència sembla que ha caducat. Si us plau, <a href=\"%1$s\" target=\"_blank\">%2$s</a> per restaurar la funcionalitat. Si creus que és un error, <a href=\"%3$s\">%4$s</a>."
+
+#: includes/Admin/Notices/InvalidLicenseKeyNotice.php:17
+msgid "purchase a new license"
+msgstr "compra una nova llicència"
+
+#: includes/Admin/Notices/InvalidLicenseKeyNotice.php:19
+msgid "please contact support"
+msgstr "si us plau contacta amb el suport"
+
+# %1$s: URL to activation page, %2$s: "Start Here" link text
+#: includes/Admin/Notices/InactiveLicenseNotice.php:11
+msgid "Your license key is not active for this site. Please visit <a href=\"%1$s\">%2$s</a> to activate your license and restore functionality."
+msgstr "La teva clau de llicència no està activa per a aquest lloc. Si us plau, visita <a href=\"%1$s\">%2$s</a> per activar la teva llicència i restaurar la funcionalitat."
+
+#: includes/Admin/Notices/BFNotice.php:13
+msgid "Black Friday Sale - 40% Off"
+msgstr "Oferta de Black Friday - 40% de descompte"
+
+#: includes/Admin/Notices/BFNotice.php:14
+msgid "You're missing out on revenue growth tools like Order Bumps, Upsells, Abandoned Cart Recovery and more! Save 40% on CheckoutWC pro plans for Black Friday, ends December 4th"
+msgstr "Estàs perdent eines de creixement d'ingressos com Order Bumps, Upsells, Recuperació de Carret Abandonat i més! Estalvia un 40% en els plans pro de CheckoutWC per Black Friday, acaba el 4 de desembre"
+
+#: includes/Admin/Notices/BFNotice.php:27
+msgid "Get CheckoutWC Pro Now!"
+msgstr "Obteniu CheckoutWC Pro ara!"
 
 #: includes/Admin/Pages/WooCommercePages.php:21
 msgid "Pages"
@@ -3303,116 +3409,6 @@ msgstr "Habilitar proves A/B"
 msgid "Allow A/B tests to be created and applied on the checkout page."
 msgstr "Permetre crear i aplicar proves A/B a la pàgina de pagament."
 
-#: includes/Admin/Notices/WelcomeNotice.php:12
-msgid "Welcome to CheckoutWC"
-msgstr "Benvingut a CheckoutWC"
-
-#: includes/Admin/Notices/WelcomeNotice.php:20
-msgid "Thank you for installing CheckoutWC! We automatically activated your license. You are all set!"
-msgstr "Gràcies per instal·lar CheckoutWC! Hem activat automàticament la teva llicència. Tot està llest!"
-
-#: includes/Admin/Notices/WelcomeNotice.php:26
-msgid "Thank you for installing CheckoutWC! To get started, enter your <strong>License Key</strong> below, save, and click <strong>Activate Site</strong>."
-msgstr "Gràcies per instal·lar CheckoutWC! Per començar, introdueix la teva <strong>Clau de Llicència</strong> a continuació, desa i fes clic a <strong>Activa el lloc</strong>."
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:20
-msgid "your email"
-msgstr "el teu correu electrònic"
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:88
-msgid "privacy policy"
-msgstr "política de privacitat"
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:93
-msgid "By joining, %1$s will be added to our mailing list. Read our %2$s."
-msgstr "En unir-te, %1$s serà afegit a la nostra llista de correu. Llegeix la nostra %2$s."
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:99
-msgid "Join Newsletter & Save 25%"
-msgstr "Uneix-te al butlletí i estalvia un 25%"
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:102
-msgid "Join Newsletter"
-msgstr "Uneix-te al butlletí"
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:113
-msgid "Sign up to our newsletter and get proven conversion tips and checkout optimization strategies from the CheckoutWC team."
-msgstr "Subscriu-te al nostre butlletí i obtén consells provats de conversió i estratègies d'optimització de la compra de l'equip de CheckoutWC."
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:116
-msgid "Boost Your Conversions with Proven Strategies."
-msgstr "Impulsa les teves conversions amb estratègies provades."
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:123
-msgid "We're so glad that you've chosen CheckoutWC to handle your checkouts. Unlock more sales with premium features like order bumps, abandoned cart recovery, and much more."
-msgstr "Ens alegra molt que hagis triat CheckoutWC per gestionar les teves compres. Desbloqueja més vendes amb funcions premium com ara impulsos de comanda, recuperació de carret abandonat i molt més."
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:126
-msgid "Unlock more sales with CheckoutWC Premium"
-msgstr "Desbloqueja més vendes amb CheckoutWC Premium"
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:144
-msgid "Sorry, there was an error joining our newsletter. Please refresh the page and try again."
-msgstr "Ho sentim, hi ha hagut un error en unir-se al nostre butlletí. Si us plau, actualitza la pàgina i torna-ho a provar."
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:243
-msgid "Please wait..."
-msgstr "Si us plau, espera..."
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:320
-msgid "Sorry, your account has insufficient permissions to join our newsletter."
-msgstr "Ho sentim, el teu compte no té permisos suficients per unir-se al nostre butlletí."
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:354
-msgid "You have already joined our newsletter!"
-msgstr "Ja t'has unit al nostre butlletí!"
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:396
-msgid "Thank you for joining our newsletter!"
-msgstr "Gràcies per unir-te al nostre butlletí!"
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:410
-msgid "Security check failed."
-msgstr "La comprovació de seguretat ha fallat."
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:414
-msgid "Insufficient permissions."
-msgstr "Permisos insuficients."
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:422
-msgid "Notice dismissed."
-msgstr "Avís descartat."
-
-# %1$s: URL to pricing page, %2$s: "purchase a new license" link text, %3$s: Support email URL, %4$s: "please contact support" link text
-#: includes/Admin/Notices/InvalidLicenseKeyNotice.php:15
-msgid "Your license key appears to have expired. Please <a href=\"%1$s\" target=\"_blank\">%2$s</a> to restore functionality. If you believe this is in error, <a href=\"%3$s\">%4$s</a>."
-msgstr "La teva clau de llicència sembla que ha caducat. Si us plau, <a href=\"%1$s\" target=\"_blank\">%2$s</a> per restaurar la funcionalitat. Si creus que és un error, <a href=\"%3$s\">%4$s</a>."
-
-#: includes/Admin/Notices/InvalidLicenseKeyNotice.php:17
-msgid "purchase a new license"
-msgstr "compra una nova llicència"
-
-#: includes/Admin/Notices/InvalidLicenseKeyNotice.php:19
-msgid "please contact support"
-msgstr "si us plau contacta amb el suport"
-
-# %1$s: URL to activation page, %2$s: "Start Here" link text
-#: includes/Admin/Notices/InactiveLicenseNotice.php:11
-msgid "Your license key is not active for this site. Please visit <a href=\"%1$s\">%2$s</a> to activate your license and restore functionality."
-msgstr "La teva clau de llicència no està activa per a aquest lloc. Si us plau, visita <a href=\"%1$s\">%2$s</a> per activar la teva llicència i restaurar la funcionalitat."
-
-#: includes/Admin/Notices/BFNotice.php:13
-msgid "Black Friday Sale - 40% Off"
-msgstr "Oferta de Black Friday - 40% de descompte"
-
-#: includes/Admin/Notices/BFNotice.php:14
-msgid "You're missing out on revenue growth tools like Order Bumps, Upsells, Abandoned Cart Recovery and more! Save 40% on CheckoutWC pro plans for Black Friday, ends December 4th"
-msgstr "Estàs perdent eines de creixement d'ingressos com Order Bumps, Upsells, Recuperació de Carret Abandonat i més! Estalvia un 40% en els plans pro de CheckoutWC per Black Friday, acaba el 4 de desembre"
-
-#: includes/Admin/Notices/BFNotice.php:27
-msgid "Get CheckoutWC Pro Now!"
-msgstr "Obteniu CheckoutWC Pro ara!"
-
 #: client/ts/functions/cfwFormatDate.ts:38
 msgid "Sunday"
 msgstr "Diumenge"
@@ -4249,18 +4245,6 @@ msgstr "La data en què hauria de finalitzar la prova A/B. Després d'aquesta da
 msgid "Traffic split percentages must total 100%. Please adjust your percentages."
 msgstr "Els percentatges de repartiment del trànsit han de sumar el 100%. Ajusta els teus percentatges, si us plau."
 
-#: client/ts/frontend/Components/TermsAndConditions.ts:29
-msgid "Terms and Conditions"
-msgstr "Termes i condicions"
-
-#: client/ts/frontend/Components/TermsAndConditions.ts:35
-msgid "Privacy Policy"
-msgstr "Política de privacitat"
-
-#: client/ts/frontend/Components/SideCartComponent.tsx:38
-msgid "Close Cart"
-msgstr "Tancar la cistella"
-
 #: client/ts/frontend/Actions/CompleteOrderAction.ts:196
 msgid "Could not connect to server. Please refresh and try again or contact site administrator."
 msgstr "No s'ha pogut connectar amb el servidor. Actualitzeu la pàgina i torneu-ho a provar o contacteu amb l'administrador del lloc."
@@ -4284,6 +4268,18 @@ msgstr "El servidor ha superat el temps d'espera mentre processava la vostra sol
 #: client/ts/frontend/Actions/CompleteOrderAction.ts:206
 msgid "Request was aborted. Please contact site administrator."
 msgstr "La sol·licitud ha estat abortada. Contacteu amb l'administrador del lloc."
+
+#: client/ts/frontend/Components/TermsAndConditions.ts:29
+msgid "Terms and Conditions"
+msgstr "Termes i condicions"
+
+#: client/ts/frontend/Components/TermsAndConditions.ts:35
+msgid "Privacy Policy"
+msgstr "Política de privacitat"
+
+#: client/ts/frontend/Components/SideCartComponent.tsx:38
+msgid "Close Cart"
+msgstr "Tancar la cistella"
 
 #: client/ts/admin/Components/TrustBadgeRow.tsx:172
 msgid "Determine when this Trust Badge should be displayed."

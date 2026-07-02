@@ -8,7 +8,7 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "POT-Creation-Date: 2025-07-25 09:22-0400\n"
-"PO-Revision-Date: 2026-06-29T12:40:12+00:00\n"
+"PO-Revision-Date: 2026-07-02T13:09:59+00:00\n"
 "Language: ka-GE\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 3.6\n"
@@ -359,8 +359,8 @@ msgid "Shipping address"
 msgstr "მიწოდების მისამართი"
 
 #: functions/template-functions.php:935
-#: templates/glass/functions.php:40
 #: templates/futurist/functions.php:16
+#: templates/glass/functions.php:40
 msgid "Your Cart"
 msgstr "თქვენი კალათა"
 
@@ -506,8 +506,8 @@ msgid "Settings"
 msgstr "პარამეტრები"
 
 #: functions/premium-init.php:339
-#: includes/Admin/Pages/General.php:25
 #: includes/Admin/Notices/InactiveLicenseNotice.php:13
+#: includes/Admin/Pages/General.php:25
 msgid "Start Here"
 msgstr "დაიწყეთ აქ"
 
@@ -659,7 +659,7 @@ msgid "Ship to"
 msgstr "გზავნიან"
 
 #: functions/functions.php:229
-#: includes/Features/LocalPickup.php:746
+#: includes/Features/LocalPickup.php:758
 #: includes/Admin/Pages/PickupLocationsAdminFree.php:93
 #: includes/Admin/Pages/Premium/PickupLocations.php:92
 msgid "Address"
@@ -670,7 +670,7 @@ msgid "Sorry, it seems that there are no available payment methods for your loca
 msgstr "უკაცრავად, თქვენი ადგილმდებარეობისთვის ხელმისაწვდომი გადახდის მეთოდები არ არის. გთხოვთ, დაგვიკავშირდეთ დახმარებისთვის ან ალტერნატიული შეთანხმებისთვის."
 
 #: functions/functions.php:785
-#: includes/Features/LocalPickup.php:1067
+#: includes/Features/LocalPickup.php:1079
 msgid "Shipping costs are calculated during checkout."
 msgstr "მიტანის ღირებულება გამოითვლება გადახდის დროს."
 
@@ -771,7 +771,7 @@ msgstr "შემცირება"
 #: functions/functions.php:2404
 #: includes/Managers/AssetManager.php:721
 #: includes/Managers/AssetManager.php:842
-#: includes/Features/LocalPickup.php:490
+#: includes/Features/LocalPickup.php:502
 #: includes/Features/AbandonedCartRecovery.php:122
 #: includes/Features/ABTesting.php:145
 #: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:632
@@ -911,6 +911,19 @@ msgstr "SendWP უკვე დაკავშირებულია."
 msgid "Something went wrong. SendWP was not installed correctly."
 msgstr "რაღაც შეცდომა მოხდა. SendWP არ დაინსტალირდა სწორად."
 
+#: includes/Shipping/CFW_Shipping_Local_Pickup.php:35
+#: includes/Shipping/CFW_Shipping_Local_Pickup.php:48
+#: includes/Admin/Pages/LocalPickupAdminFree.php:19
+#: includes/Admin/Pages/LocalPickupAdminFree.php:56
+#: includes/Admin/Pages/Premium/LocalPickupAdmin.php:20
+#: client/ts/admin/Components/Forms/LocalPickupSettingsForm.tsx:62
+msgid "Local Pickup"
+msgstr "ადგილობრივი მიღება"
+
+#: includes/Shipping/CFW_Shipping_Local_Pickup.php:36
+msgid "Allow customers to pick up orders themselves. This version does not require shipping zones."
+msgstr "მომხმარებლებს შეუძლიათ თავად აიღონ შეკვეთები. ამ ვერსიას არ სჭირდება გადაზიდვის ზონები."
+
 #: includes/Stats/StatCollection.php:193
 msgid "Once Weekly"
 msgstr "კვირაში ერთხელ"
@@ -935,18 +948,41 @@ msgstr "ნებართვა"
 msgid "Do not allow"
 msgstr "არ დაუშვა"
 
-#: includes/Shipping/CFW_Shipping_Local_Pickup.php:35
-#: includes/Shipping/CFW_Shipping_Local_Pickup.php:48
-#: includes/Admin/Pages/LocalPickupAdminFree.php:19
-#: includes/Admin/Pages/LocalPickupAdminFree.php:56
-#: includes/Admin/Pages/Premium/LocalPickupAdmin.php:20
-#: client/ts/admin/Components/Forms/LocalPickupSettingsForm.tsx:62
-msgid "Local Pickup"
-msgstr "ადგილობრივი მიღება"
+#: includes/Loaders/LoaderAbstract.php:134
+#: includes/Loaders/LoaderAbstract.php:244
+msgid "Sorry, this order is invalid and cannot be paid for."
+msgstr "ბოდიშს გიხდით, ეს შეკვეთა არასწორია და გადახდა არ არის შესაძლებელი."
 
-#: includes/Shipping/CFW_Shipping_Local_Pickup.php:36
-msgid "Allow customers to pick up orders themselves. This version does not require shipping zones."
-msgstr "მომხმარებლებს შეუძლიათ თავად აიღონ შეკვეთები. ამ ვერსიას არ სჭირდება გადაზიდვის ზონები."
+#: includes/Loaders/LoaderAbstract.php:138
+msgid "Please log in to your account below to continue to the payment form."
+msgstr "გთხოვთ, გაიარეთ ავტორიზაცია ქვემოთ, რათა გააგრძელოთ გადახდის ფორმაზე."
+
+#: includes/Loaders/LoaderAbstract.php:145
+msgid "You are paying for a guest order. Please continue with payment only if you recognize this order."
+msgstr "თქვენ იხდით სტუმრის შეკვეთას. გთხოვთ, გააგრძელოთ გადახდა მხოლოდ იმ შემთხვევაში, თუ ამ შეკვეთას იცნობთ."
+
+#: includes/Loaders/LoaderAbstract.php:151
+msgid "This order cannot be paid for. Please contact us if you need assistance."
+msgstr "ეს შეკვეთა არ არის გადახდისთვის ხელმისაწვდომი. გთხოვთ, დაგვიკავშირდეთ დახმარებისთვის."
+
+#: includes/Loaders/LoaderAbstract.php:157
+#: includes/Loaders/LoaderAbstract.php:241
+msgid "This order&rsquo;s status is &ldquo;%s&rdquo;&mdash;it cannot be paid for. Please contact us if you need assistance."
+msgstr "ამ შეკვეთის სტატუსია „%s“ — გადახდა არ არის შესაძლებელი. გთხოვთ, დაგვიკავშირდეთ დახმარებისთვის."
+
+#: includes/Loaders/LoaderAbstract.php:186
+msgid "Sorry, \"%s\" is no longer in stock so this order cannot be paid for. We apologize for any inconvenience caused."
+msgstr "ბოდიშს გიხდით, \"%s\" აღარ არის მარაგში, ამიტომ ეს შეკვეთა არ შეიძლება გადაიხადოს. ბოდიშს ვუხდით ნებისმიერი неудобства-სთვის."
+
+#: includes/Loaders/LoaderAbstract.php:200
+msgid "Sorry, we do not have enough \"%1$s\" in stock to fulfill your order (%2$s available). We apologize for any inconvenience caused."
+msgstr "ბოდიშს გიხდით, ჩვენ არ გვაქვს საკმარისი \"%1$s\" მარაგში თქვენი შეკვეთის დასაკმაყოფილებლად (%2$s ხელმისაწვდომია). ბოდიშს ვუხდით ნებისმიერი неудобства-სთვის."
+
+#: includes/Loaders/LoaderAbstract.php:247
+#: includes/Action/ProcessOfferPaymentAction.php:73
+#: includes/Features/OneClick/OfferRefundManager.php:177
+msgid "Invalid order."
+msgstr "არასწორი შეკვეთა."
 
 #: includes/Managers/UpdatesManager.php:416
 msgid "CheckoutWC License Key"
@@ -1107,7 +1143,7 @@ msgid "Please enter a valid postcode / ZIP."
 msgstr "გთხოვთ შეიტანოთ სწორი საფოსტო კოდი / ინდექსი."
 
 #: includes/Managers/AssetManager.php:700
-#: includes/Features/LocalPickup.php:614
+#: includes/Features/LocalPickup.php:626
 msgid "Pickup"
 msgstr "Აღება"
 
@@ -1165,42 +1201,6 @@ msgstr "ყიდვა"
 msgid "View Product"
 msgstr "პროდუქტის ნახვა"
 
-#: includes/Loaders/LoaderAbstract.php:134
-#: includes/Loaders/LoaderAbstract.php:244
-msgid "Sorry, this order is invalid and cannot be paid for."
-msgstr "ბოდიშს გიხდით, ეს შეკვეთა არასწორია და გადახდა არ არის შესაძლებელი."
-
-#: includes/Loaders/LoaderAbstract.php:138
-msgid "Please log in to your account below to continue to the payment form."
-msgstr "გთხოვთ, გაიარეთ ავტორიზაცია ქვემოთ, რათა გააგრძელოთ გადახდის ფორმაზე."
-
-#: includes/Loaders/LoaderAbstract.php:145
-msgid "You are paying for a guest order. Please continue with payment only if you recognize this order."
-msgstr "თქვენ იხდით სტუმრის შეკვეთას. გთხოვთ, გააგრძელოთ გადახდა მხოლოდ იმ შემთხვევაში, თუ ამ შეკვეთას იცნობთ."
-
-#: includes/Loaders/LoaderAbstract.php:151
-msgid "This order cannot be paid for. Please contact us if you need assistance."
-msgstr "ეს შეკვეთა არ არის გადახდისთვის ხელმისაწვდომი. გთხოვთ, დაგვიკავშირდეთ დახმარებისთვის."
-
-#: includes/Loaders/LoaderAbstract.php:157
-#: includes/Loaders/LoaderAbstract.php:241
-msgid "This order&rsquo;s status is &ldquo;%s&rdquo;&mdash;it cannot be paid for. Please contact us if you need assistance."
-msgstr "ამ შეკვეთის სტატუსია „%s“ — გადახდა არ არის შესაძლებელი. გთხოვთ, დაგვიკავშირდეთ დახმარებისთვის."
-
-#: includes/Loaders/LoaderAbstract.php:186
-msgid "Sorry, \"%s\" is no longer in stock so this order cannot be paid for. We apologize for any inconvenience caused."
-msgstr "ბოდიშს გიხდით, \"%s\" აღარ არის მარაგში, ამიტომ ეს შეკვეთა არ შეიძლება გადაიხადოს. ბოდიშს ვუხდით ნებისმიერი неудобства-სთვის."
-
-#: includes/Loaders/LoaderAbstract.php:200
-msgid "Sorry, we do not have enough \"%1$s\" in stock to fulfill your order (%2$s available). We apologize for any inconvenience caused."
-msgstr "ბოდიშს გიხდით, ჩვენ არ გვაქვს საკმარისი \"%1$s\" მარაგში თქვენი შეკვეთის დასაკმაყოფილებლად (%2$s ხელმისაწვდომია). ბოდიშს ვუხდით ნებისმიერი неудобства-სთვის."
-
-#: includes/Loaders/LoaderAbstract.php:247
-#: includes/Action/ProcessOfferPaymentAction.php:73
-#: includes/Features/OneClick/OfferRefundManager.php:177
-msgid "Invalid order."
-msgstr "არასწორი შეკვეთა."
-
 #: includes/Features/Turnstile.php:134
 #: includes/Features/Turnstile.php:188
 #: includes/Features/Turnstile.php:362
@@ -1257,114 +1257,110 @@ msgstr "აქვს ბამპი: %s"
 msgid "Delivery method"
 msgstr "Მიწოდების მეთოდი"
 
-#: includes/Features/LocalPickup.php:170
+#: includes/Features/LocalPickup.php:178
 msgid "Pick up"
 msgstr "Აღება"
 
-#: includes/Features/LocalPickup.php:185
+#: includes/Features/LocalPickup.php:197
 msgid "Ship"
 msgstr "ხომალდი"
 
-#: includes/Features/LocalPickup.php:288
+#: includes/Features/LocalPickup.php:300
 msgid "Pickup locations"
 msgstr "პიკაპის ადგილები"
 
-#: includes/Features/LocalPickup.php:485
-#: includes/Features/LocalPickup.php:487
+#: includes/Features/LocalPickup.php:497
+#: includes/Features/LocalPickup.php:499
 #: includes/Admin/Pages/PickupLocationsAdminFree.php:21
 #: includes/Admin/Pages/Premium/PickupLocations.php:22
 msgid "Pickup Locations"
 msgstr "მიღების ადგილები"
 
-#: includes/Features/LocalPickup.php:486
-#: includes/Features/LocalPickup.php:672
-#: includes/Features/LocalPickup.php:760
-#: includes/Features/LocalPickup.php:802
-#: includes/Features/LocalPickup.php:1130
-#: includes/Features/LocalPickup.php:1155
+#: includes/Features/LocalPickup.php:498
+#: includes/Features/LocalPickup.php:684
+#: includes/Features/LocalPickup.php:772
+#: includes/Features/LocalPickup.php:814
+#: includes/Features/LocalPickup.php:1142
+#: includes/Features/LocalPickup.php:1167
 msgid "Pickup Location"
 msgstr "Ლოკაციის არჩევა"
 
-#: includes/Features/LocalPickup.php:488
+#: includes/Features/LocalPickup.php:500
 msgid "Add Pickup Location"
 msgstr "მიღების ადგილის დამატება"
 
-#: includes/Features/LocalPickup.php:489
+#: includes/Features/LocalPickup.php:501
 msgid "Add New Pickup Location"
 msgstr "ახალი მიღების ადგილის დამატება"
 
-#: includes/Features/LocalPickup.php:491
+#: includes/Features/LocalPickup.php:503
 msgid "Edit Pickup Location"
 msgstr "მიღების ადგილის რედაქტირება"
 
-#: includes/Features/LocalPickup.php:492
+#: includes/Features/LocalPickup.php:504
 msgid "New Pickup Location"
 msgstr "ახალი მიღების ადგილი"
 
-#: includes/Features/LocalPickup.php:493
+#: includes/Features/LocalPickup.php:505
 msgid "View Pickup Locations"
 msgstr "მიღების ადგილების ნახვა"
 
-#: includes/Features/LocalPickup.php:494
+#: includes/Features/LocalPickup.php:506
 msgid "View Pickup Location"
 msgstr "მიღების ადგილის ნახვა"
 
-#: includes/Features/LocalPickup.php:495
+#: includes/Features/LocalPickup.php:507
 msgid "Search Pickup Locations"
 msgstr "მიღების ადგილების ძებნა"
 
-#: includes/Features/LocalPickup.php:496
+#: includes/Features/LocalPickup.php:508
 msgid "No Pickup Location found"
 msgstr "მიღების ადგილი არ მოიძებნა"
 
-#: includes/Features/LocalPickup.php:497
+#: includes/Features/LocalPickup.php:509
 msgid "No Pickup Locations found in trash"
 msgstr "მიღების ადგილები არ მოიძებნა ნაგავში"
 
-#: includes/Features/LocalPickup.php:502
+#: includes/Features/LocalPickup.php:514
 msgid "This is where you can add new Pickup Locations."
 msgstr "აქ შეგიძლიათ დაამატოთ ახალი აღების ადგილები."
 
-#: includes/Features/LocalPickup.php:579
+#: includes/Features/LocalPickup.php:591
 #: client/ts/frontend/Components/ReviewPane/PaymentMethodReviewPane.tsx:37
 #: client/ts/frontend/Components/ReviewPane/OrderReviewStepReviewPane.tsx:37
 msgid "Method"
 msgstr "მეთოდი"
 
-#: includes/Features/LocalPickup.php:597
-msgid "Pick up in store"
-msgstr "აიღეთ მაღაზიაში"
-
-#: includes/Features/LocalPickup.php:732
+#: includes/Features/LocalPickup.php:744
 msgid "Pickup instructions"
 msgstr "პიკაპის ინსტრუქციები"
 
-#: includes/Features/LocalPickup.php:922
+#: includes/Features/LocalPickup.php:934
 msgid "Usually ready in 1 hour."
 msgstr "ჩვეულებრივ მზადდება 1 საათში."
 
-#: includes/Features/LocalPickup.php:923
+#: includes/Features/LocalPickup.php:935
 msgid "Usually ready in 2 hours."
 msgstr "ჩვეულებრივ მზადდება 2 საათში."
 
-#: includes/Features/LocalPickup.php:924
+#: includes/Features/LocalPickup.php:936
 msgid "Usually ready in 4 hours."
 msgstr "ჩვეულებრივ მზადდება 4 საათში."
 
-#: includes/Features/LocalPickup.php:925
+#: includes/Features/LocalPickup.php:937
 msgid "Usually ready in 24 hours."
 msgstr "ჩვეულებრივ მზადდება 24 საათში."
 
-#: includes/Features/LocalPickup.php:926
+#: includes/Features/LocalPickup.php:938
 msgid "Usually ready in 2-4 days."
 msgstr "ჩვეულებრივ მზადდება 2-4 დღეში."
 
-#: includes/Features/LocalPickup.php:927
+#: includes/Features/LocalPickup.php:939
 msgid "Usually ready in 5+ days."
 msgstr "ჩვეულებრივ მზადდება 5+ დღეში."
 
-#: includes/Features/LocalPickup.php:1139
-#: includes/Features/LocalPickup.php:1166
+#: includes/Features/LocalPickup.php:1151
+#: includes/Features/LocalPickup.php:1178
 msgid "Pickup Instructions:"
 msgstr "მიღების ინსტრუქციები:"
 
@@ -1834,6 +1830,24 @@ msgstr "შეკვეთის დამატებითი შეთავ�
 msgid "The form to accept or reject the bump offer."
 msgstr "ფორმა შეთავაზების მიღებისა ან უარყოფისთვის."
 
+# %1$s: Plugin name, %2$s: Link opening tag, %3$s: Version number, %4$s: Link closing tag
+#: includes/Managers/Helpers/EDD_SL_Plugin_Updater.php:281
+msgid "There is a new version of %1$s available. %2$sView version %3$s details%4$s."
+msgstr "მიმდინარე %1$s-ის ახალი ვერსიაა ხელმისაწვდომი. %2$sიხილეთ ვერსია %3$s-ის დეტალები%4$s."
+
+# %1$s: Plugin name, %2$s: Link opening tag, %3$s: Version number, %4$s: Link closing tag, %5$s: Update link opening tag, %6$s: Update link closing tag
+#: includes/Managers/Helpers/EDD_SL_Plugin_Updater.php:290
+msgid "There is a new version of %1$s available. %2$sView version %3$s details%4$s or %5$supdate now%6$s."
+msgstr "მიმდინარე %1$s-ის ახალი ვერსიაა ხელმისაწვდომი. %2$sიხილეთ ვერსია %3$s-ის დეტალები%4$s ან %5$sგანაახლეთ ახლა%6$s."
+
+#: includes/Managers/Helpers/EDD_SL_Plugin_Updater.php:534
+msgid "You do not have permission to install plugin updates"
+msgstr "თქვენ არ გაქვთ უფლება დააინსტალიროთ პლაგინის განახლებები"
+
+#: includes/Managers/Helpers/EDD_SL_Plugin_Updater.php:534
+msgid "Error"
+msgstr "შეცდომა"
+
 #: includes/Model/Bumps/BumpAbstract.php:1013
 #: includes/Model/Bumps/BumpAbstract.php:1023
 #: includes/Model/ABTests/OrderBumpsABTest.php:30
@@ -1888,24 +1902,6 @@ msgstr "არ მოიძებნა ნაგავში"
 #: includes/Features/ABTesting/ABTestTypeRegistry.php:124
 msgid "Test different variations of order bumps to see which performs better."
 msgstr "ტესტირება შეკვეთის ბმპის სხვადასხვა ვარიანტების, რომ ნახოთ რომელი უკეთ მუშაობს."
-
-# %1$s: Plugin name, %2$s: Link opening tag, %3$s: Version number, %4$s: Link closing tag
-#: includes/Managers/Helpers/EDD_SL_Plugin_Updater.php:281
-msgid "There is a new version of %1$s available. %2$sView version %3$s details%4$s."
-msgstr "მიმდინარე %1$s-ის ახალი ვერსიაა ხელმისაწვდომი. %2$sიხილეთ ვერსია %3$s-ის დეტალები%4$s."
-
-# %1$s: Plugin name, %2$s: Link opening tag, %3$s: Version number, %4$s: Link closing tag, %5$s: Update link opening tag, %6$s: Update link closing tag
-#: includes/Managers/Helpers/EDD_SL_Plugin_Updater.php:290
-msgid "There is a new version of %1$s available. %2$sView version %3$s details%4$s or %5$supdate now%6$s."
-msgstr "მიმდინარე %1$s-ის ახალი ვერსიაა ხელმისაწვდომი. %2$sიხილეთ ვერსია %3$s-ის დეტალები%4$s ან %5$sგანაახლეთ ახლა%6$s."
-
-#: includes/Managers/Helpers/EDD_SL_Plugin_Updater.php:534
-msgid "You do not have permission to install plugin updates"
-msgstr "თქვენ არ გაქვთ უფლება დააინსტალიროთ პლაგინის განახლებები"
-
-#: includes/Managers/Helpers/EDD_SL_Plugin_Updater.php:534
-msgid "Error"
-msgstr "შეცდომა"
 
 #: includes/Features/OneClick/OrderStatusManager.php:52
 msgid "Pending Offer <span class=\"count\">(%s)</span>"
@@ -2158,6 +2154,116 @@ msgstr "შენიშვნა:"
 #: includes/Admin/Views/html-refund-offer.php:114
 msgid "Refunding an offer will process the refund with the payment gateway and create a WooCommerce refund record."
 msgstr "შეთავაზების დაბრუნება გამოიწვევს დაბრუნების პროცესს გადახდის სერვისთან და შექმნის WooCommerce-ის დაბრუნების ჩანაწერს."
+
+#: includes/Admin/Notices/WelcomeNotice.php:12
+msgid "Welcome to CheckoutWC"
+msgstr "მოგესალმებით CheckoutWC-ში"
+
+#: includes/Admin/Notices/WelcomeNotice.php:20
+msgid "Thank you for installing CheckoutWC! We automatically activated your license. You are all set!"
+msgstr "გმადლობთ CheckoutWC-ის ინსტალაციისთვის! ჩვენ ავტომატურად გავააქტიურეთ თქვენი ლიცენზია. ყველაფერი მზად არის!"
+
+#: includes/Admin/Notices/WelcomeNotice.php:26
+msgid "Thank you for installing CheckoutWC! To get started, enter your <strong>License Key</strong> below, save, and click <strong>Activate Site</strong>."
+msgstr "გმადლობთ CheckoutWC-ის ინსტალაციისთვის! დასაწყებად, შეიყვანეთ თქვენი <strong>ლიცენზიის გასაღები</strong> ქვემოთ, შეინახეთ და დააჭირეთ <strong>საიტის გააქტიურებას</strong>."
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:20
+msgid "your email"
+msgstr "თქვენი ელ.ფოსტა"
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:88
+msgid "privacy policy"
+msgstr "კონფიდენციალურობის პოლიტიკა"
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:93
+msgid "By joining, %1$s will be added to our mailing list. Read our %2$s."
+msgstr "ჩართვისას, %1$s დაემატება ჩვენს მარკეტინგულ სიაში. წაიკითხეთ ჩვენი %2$s."
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:99
+msgid "Join Newsletter & Save 25%"
+msgstr "გამოწერეთ სიახლეების გამოწერა და დაზოგეთ 25%"
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:102
+msgid "Join Newsletter"
+msgstr "გამოწერა სიახლეების გამოწერაზე"
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:113
+msgid "Sign up to our newsletter and get proven conversion tips and checkout optimization strategies from the CheckoutWC team."
+msgstr "გამოწერეთ ჩვენი სიახლეების გამოწერა და მიიღეთ დამტკიცებული კონვერტაციის რჩევები და გადახდის ოპტიმიზაციის სტრატეგიები CheckoutWC გუნდისგან."
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:116
+msgid "Boost Your Conversions with Proven Strategies."
+msgstr "გააძლიერეთ თქვენი კონვერტაციები დამტკიცებული სტრატეგიებით."
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:123
+msgid "We're so glad that you've chosen CheckoutWC to handle your checkouts. Unlock more sales with premium features like order bumps, abandoned cart recovery, and much more."
+msgstr "ჩვენ ძალიან მოხარული ვართ, რომ აირჩიეთ CheckoutWC თქვენი გადახდების მართვისთვის. გააღეთ მეტი გაყიდვები პრემიუმ ფუნქციებით, როგორიცაა შეკვეთის ბმპები, მიტოვებული კალათის აღდგენა და სხვა მრავალი."
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:126
+msgid "Unlock more sales with CheckoutWC Premium"
+msgstr "გააღეთ მეტი გაყიდვები CheckoutWC პრემიუმით"
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:144
+msgid "Sorry, there was an error joining our newsletter. Please refresh the page and try again."
+msgstr "ბოდიში, მოხდა შეცდომა ჩვენი სიახლეების გამოწერაში. გთხოვთ, განაახლეთ გვერდი და სცადეთ თავიდან."
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:243
+msgid "Please wait..."
+msgstr "გთხოვთ, დაელოდეთ..."
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:320
+msgid "Sorry, your account has insufficient permissions to join our newsletter."
+msgstr "ბოდიში, თქვენს ანგარიშს არ აქვს საკმარისი უფლებები ჩვენი სიახლეების გამოწერაში ჩართვისთვის."
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:354
+msgid "You have already joined our newsletter!"
+msgstr "თქვენ უკვე გამოწერილი ხართ ჩვენი სიახლეების გამოწერაზე!"
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:396
+msgid "Thank you for joining our newsletter!"
+msgstr "გმადლობთ ჩვენი სიახლეების გამოწერაში ჩართვისთვის!"
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:410
+msgid "Security check failed."
+msgstr "უსაფრთხოების შემოწმება წარუმატებელი იყო."
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:414
+msgid "Insufficient permissions."
+msgstr "საკმარისი უფლებები არ არის."
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:422
+msgid "Notice dismissed."
+msgstr "შეტყობინება გაუქმებულია."
+
+# %1$s: URL to pricing page, %2$s: "purchase a new license" link text, %3$s: Support email URL, %4$s: "please contact support" link text
+#: includes/Admin/Notices/InvalidLicenseKeyNotice.php:15
+msgid "Your license key appears to have expired. Please <a href=\"%1$s\" target=\"_blank\">%2$s</a> to restore functionality. If you believe this is in error, <a href=\"%3$s\">%4$s</a>."
+msgstr "თქვენი ლიცენზიის გასაღები, როგორც ჩანს, ვადაგასულია. გთხოვთ <a href=\"%1$s\" target=\"_blank\">%2$s</a> ფუნქციონალობის აღსადგენად. თუ მიიჩნევთ, რომ ეს შეცდომაა, <a href=\"%3$s\">%4$s</a>."
+
+#: includes/Admin/Notices/InvalidLicenseKeyNotice.php:17
+msgid "purchase a new license"
+msgstr "ახალი ლიცენზიის შეძენა"
+
+#: includes/Admin/Notices/InvalidLicenseKeyNotice.php:19
+msgid "please contact support"
+msgstr "გთხოვთ, დაუკავშირდით მხარდაჭერას"
+
+# %1$s: URL to activation page, %2$s: "Start Here" link text
+#: includes/Admin/Notices/InactiveLicenseNotice.php:11
+msgid "Your license key is not active for this site. Please visit <a href=\"%1$s\">%2$s</a> to activate your license and restore functionality."
+msgstr "თქვენი ლიცენზიის გასაღები ამ საიტზე არ არის აქტიური. გთხოვთ, ეწვიეთ <a href=\"%1$s\">%2$s</a> თქვენი ლიცენზიის გასააქტიურებლად და ფუნქციონალობის აღსადგენად."
+
+#: includes/Admin/Notices/BFNotice.php:13
+msgid "Black Friday Sale - 40% Off"
+msgstr "შავი პარასკევის აქცია - 40% ფასდაკლება"
+
+#: includes/Admin/Notices/BFNotice.php:14
+msgid "You're missing out on revenue growth tools like Order Bumps, Upsells, Abandoned Cart Recovery and more! Save 40% on CheckoutWC pro plans for Black Friday, ends December 4th"
+msgstr "თქვენ გამოტოვებთ შემოსავლის ზრდის ინსტრუმენტებს, როგორიცაა შეკვეთის დამატებები, დამატებითი შეთავაზებები, მიტოვებული კალათის აღდგენა და სხვა! დაზოგეთ 40% CheckoutWC Pro გეგმებზე შავი პარასკევის დროს, მოქმედებს 4 დეკემბრამდე"
+
+#: includes/Admin/Notices/BFNotice.php:27
+msgid "Get CheckoutWC Pro Now!"
+msgstr "მიიღეთ CheckoutWC Pro ახლა!"
 
 #: includes/Admin/Pages/WooCommercePages.php:21
 msgid "Pages"
@@ -3303,116 +3409,6 @@ msgstr "ჩართეთ A/B ტესტირება"
 msgid "Allow A/B tests to be created and applied on the checkout page."
 msgstr "შეიძლება შექმნას და გამოყენებულ იქნას A/B ტესტები გადახდის გვერდზე."
 
-#: includes/Admin/Notices/WelcomeNotice.php:12
-msgid "Welcome to CheckoutWC"
-msgstr "მოგესალმებით CheckoutWC-ში"
-
-#: includes/Admin/Notices/WelcomeNotice.php:20
-msgid "Thank you for installing CheckoutWC! We automatically activated your license. You are all set!"
-msgstr "გმადლობთ CheckoutWC-ის ინსტალაციისთვის! ჩვენ ავტომატურად გავააქტიურეთ თქვენი ლიცენზია. ყველაფერი მზად არის!"
-
-#: includes/Admin/Notices/WelcomeNotice.php:26
-msgid "Thank you for installing CheckoutWC! To get started, enter your <strong>License Key</strong> below, save, and click <strong>Activate Site</strong>."
-msgstr "გმადლობთ CheckoutWC-ის ინსტალაციისთვის! დასაწყებად, შეიყვანეთ თქვენი <strong>ლიცენზიის გასაღები</strong> ქვემოთ, შეინახეთ და დააჭირეთ <strong>საიტის გააქტიურებას</strong>."
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:20
-msgid "your email"
-msgstr "თქვენი ელ.ფოსტა"
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:88
-msgid "privacy policy"
-msgstr "კონფიდენციალურობის პოლიტიკა"
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:93
-msgid "By joining, %1$s will be added to our mailing list. Read our %2$s."
-msgstr "ჩართვისას, %1$s დაემატება ჩვენს მარკეტინგულ სიაში. წაიკითხეთ ჩვენი %2$s."
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:99
-msgid "Join Newsletter & Save 25%"
-msgstr "გამოწერეთ სიახლეების გამოწერა და დაზოგეთ 25%"
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:102
-msgid "Join Newsletter"
-msgstr "გამოწერა სიახლეების გამოწერაზე"
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:113
-msgid "Sign up to our newsletter and get proven conversion tips and checkout optimization strategies from the CheckoutWC team."
-msgstr "გამოწერეთ ჩვენი სიახლეების გამოწერა და მიიღეთ დამტკიცებული კონვერტაციის რჩევები და გადახდის ოპტიმიზაციის სტრატეგიები CheckoutWC გუნდისგან."
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:116
-msgid "Boost Your Conversions with Proven Strategies."
-msgstr "გააძლიერეთ თქვენი კონვერტაციები დამტკიცებული სტრატეგიებით."
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:123
-msgid "We're so glad that you've chosen CheckoutWC to handle your checkouts. Unlock more sales with premium features like order bumps, abandoned cart recovery, and much more."
-msgstr "ჩვენ ძალიან მოხარული ვართ, რომ აირჩიეთ CheckoutWC თქვენი გადახდების მართვისთვის. გააღეთ მეტი გაყიდვები პრემიუმ ფუნქციებით, როგორიცაა შეკვეთის ბმპები, მიტოვებული კალათის აღდგენა და სხვა მრავალი."
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:126
-msgid "Unlock more sales with CheckoutWC Premium"
-msgstr "გააღეთ მეტი გაყიდვები CheckoutWC პრემიუმით"
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:144
-msgid "Sorry, there was an error joining our newsletter. Please refresh the page and try again."
-msgstr "ბოდიში, მოხდა შეცდომა ჩვენი სიახლეების გამოწერაში. გთხოვთ, განაახლეთ გვერდი და სცადეთ თავიდან."
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:243
-msgid "Please wait..."
-msgstr "გთხოვთ, დაელოდეთ..."
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:320
-msgid "Sorry, your account has insufficient permissions to join our newsletter."
-msgstr "ბოდიში, თქვენს ანგარიშს არ აქვს საკმარისი უფლებები ჩვენი სიახლეების გამოწერაში ჩართვისთვის."
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:354
-msgid "You have already joined our newsletter!"
-msgstr "თქვენ უკვე გამოწერილი ხართ ჩვენი სიახლეების გამოწერაზე!"
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:396
-msgid "Thank you for joining our newsletter!"
-msgstr "გმადლობთ ჩვენი სიახლეების გამოწერაში ჩართვისთვის!"
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:410
-msgid "Security check failed."
-msgstr "უსაფრთხოების შემოწმება წარუმატებელი იყო."
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:414
-msgid "Insufficient permissions."
-msgstr "საკმარისი უფლებები არ არის."
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:422
-msgid "Notice dismissed."
-msgstr "შეტყობინება გაუქმებულია."
-
-# %1$s: URL to pricing page, %2$s: "purchase a new license" link text, %3$s: Support email URL, %4$s: "please contact support" link text
-#: includes/Admin/Notices/InvalidLicenseKeyNotice.php:15
-msgid "Your license key appears to have expired. Please <a href=\"%1$s\" target=\"_blank\">%2$s</a> to restore functionality. If you believe this is in error, <a href=\"%3$s\">%4$s</a>."
-msgstr "თქვენი ლიცენზიის გასაღები, როგორც ჩანს, ვადაგასულია. გთხოვთ <a href=\"%1$s\" target=\"_blank\">%2$s</a> ფუნქციონალობის აღსადგენად. თუ მიიჩნევთ, რომ ეს შეცდომაა, <a href=\"%3$s\">%4$s</a>."
-
-#: includes/Admin/Notices/InvalidLicenseKeyNotice.php:17
-msgid "purchase a new license"
-msgstr "ახალი ლიცენზიის შეძენა"
-
-#: includes/Admin/Notices/InvalidLicenseKeyNotice.php:19
-msgid "please contact support"
-msgstr "გთხოვთ, დაუკავშირდით მხარდაჭერას"
-
-# %1$s: URL to activation page, %2$s: "Start Here" link text
-#: includes/Admin/Notices/InactiveLicenseNotice.php:11
-msgid "Your license key is not active for this site. Please visit <a href=\"%1$s\">%2$s</a> to activate your license and restore functionality."
-msgstr "თქვენი ლიცენზიის გასაღები ამ საიტზე არ არის აქტიური. გთხოვთ, ეწვიეთ <a href=\"%1$s\">%2$s</a> თქვენი ლიცენზიის გასააქტიურებლად და ფუნქციონალობის აღსადგენად."
-
-#: includes/Admin/Notices/BFNotice.php:13
-msgid "Black Friday Sale - 40% Off"
-msgstr "შავი პარასკევის აქცია - 40% ფასდაკლება"
-
-#: includes/Admin/Notices/BFNotice.php:14
-msgid "You're missing out on revenue growth tools like Order Bumps, Upsells, Abandoned Cart Recovery and more! Save 40% on CheckoutWC pro plans for Black Friday, ends December 4th"
-msgstr "თქვენ გამოტოვებთ შემოსავლის ზრდის ინსტრუმენტებს, როგორიცაა შეკვეთის დამატებები, დამატებითი შეთავაზებები, მიტოვებული კალათის აღდგენა და სხვა! დაზოგეთ 40% CheckoutWC Pro გეგმებზე შავი პარასკევის დროს, მოქმედებს 4 დეკემბრამდე"
-
-#: includes/Admin/Notices/BFNotice.php:27
-msgid "Get CheckoutWC Pro Now!"
-msgstr "მიიღეთ CheckoutWC Pro ახლა!"
-
 #: client/ts/functions/cfwFormatDate.ts:38
 msgid "Sunday"
 msgstr "კვირა"
@@ -4249,18 +4245,6 @@ msgstr "თარიღი, როდის უნდა დასრულდ�
 msgid "Traffic split percentages must total 100%. Please adjust your percentages."
 msgstr "ტრაფიკის განაწილების პროცენტებმა უნდა შეადგინოს 100%. გთხოვთ, დაარეგულიროთ პროცენტები."
 
-#: client/ts/frontend/Components/TermsAndConditions.ts:29
-msgid "Terms and Conditions"
-msgstr "წესები და პირობები"
-
-#: client/ts/frontend/Components/TermsAndConditions.ts:35
-msgid "Privacy Policy"
-msgstr "კონფიდენციალურობის პოლიტიკა"
-
-#: client/ts/frontend/Components/SideCartComponent.tsx:38
-msgid "Close Cart"
-msgstr "კალათის დახურვა"
-
 #: client/ts/frontend/Actions/CompleteOrderAction.ts:196
 msgid "Could not connect to server. Please refresh and try again or contact site administrator."
 msgstr "სერვერთან დაკავშირება ვერ მოხერხდა. გთხოვთ, განაახლეთ გვერდი და სცადეთ ისევ ან დაუკავშირდით საიტის ადმინისტრატორს."
@@ -4284,6 +4268,18 @@ msgstr "სერვერმა დრო ამოიწურა თქვე
 #: client/ts/frontend/Actions/CompleteOrderAction.ts:206
 msgid "Request was aborted. Please contact site administrator."
 msgstr "მოთხოვნა შეწყვეტილია. გთხოვთ, დაუკავშირდით საიტის ადმინისტრატორს."
+
+#: client/ts/frontend/Components/TermsAndConditions.ts:29
+msgid "Terms and Conditions"
+msgstr "წესები და პირობები"
+
+#: client/ts/frontend/Components/TermsAndConditions.ts:35
+msgid "Privacy Policy"
+msgstr "კონფიდენციალურობის პოლიტიკა"
+
+#: client/ts/frontend/Components/SideCartComponent.tsx:38
+msgid "Close Cart"
+msgstr "კალათის დახურვა"
 
 #: client/ts/admin/Components/TrustBadgeRow.tsx:172
 msgid "Determine when this Trust Badge should be displayed."

@@ -55,7 +55,7 @@ class Klaviyo extends CompatibilityAbstract {
 		if ( ! empty( $settings['klaviyo_newsletter_list_id'] ) ) {
 			$newsletter_field = kl_checkbox_custom_checkout_field( [] );
 
-			woocommerce_form_field( 'kl_newsletter_checkbox', $newsletter_field['billing']['kl_newsletter_checkbox'] );
+			woocommerce_form_field( 'kl_newsletter_checkbox', $this->disable_persistence( $newsletter_field['billing']['kl_newsletter_checkbox'] ) );
 		}
 
 		$mobile_consent_enabled = function_exists( 'kl_any_mobile_channel_enabled' )
@@ -73,7 +73,7 @@ class Klaviyo extends CompatibilityAbstract {
 				$mobile_field = kl_sms_consent_checkout_field( [] );
 			}
 
-			woocommerce_form_field( 'kl_sms_consent_checkbox', $mobile_field['billing']['kl_sms_consent_checkbox'] );
+			woocommerce_form_field( 'kl_sms_consent_checkbox', $this->disable_persistence( $mobile_field['billing']['kl_sms_consent_checkbox'] ) );
 
 			if ( function_exists( 'kl_mobile_compliance_text' ) ) {
 				kl_mobile_compliance_text();
@@ -83,5 +83,21 @@ class Klaviyo extends CompatibilityAbstract {
 		}
 
 		echo '</div>';
+	}
+
+	/**
+	 * Opt a field out of CheckoutWC's field persistence (Garlic).
+	 *
+	 * Klaviyo's consent checkboxes rely on their `default` to render pre-checked, matching
+	 * standard WooCommerce checkout. Without this, Garlic governs the checked state from
+	 * localStorage and the server-rendered `default` is lost.
+	 *
+	 * @param array $field The field arguments.
+	 * @return array
+	 */
+	private function disable_persistence( array $field ): array {
+		$field['custom_attributes']['data-persist'] = 'false';
+
+		return $field;
 	}
 }

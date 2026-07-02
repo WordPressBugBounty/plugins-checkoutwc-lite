@@ -8,7 +8,7 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "POT-Creation-Date: 2025-07-25 09:22-0400\n"
-"PO-Revision-Date: 2026-06-29T12:40:11+00:00\n"
+"PO-Revision-Date: 2026-07-02T13:09:59+00:00\n"
 "Language: zh-CN\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Poedit 3.6\n"
@@ -357,8 +357,8 @@ msgid "Shipping address"
 msgstr "配送地址"
 
 #: functions/template-functions.php:935
-#: templates/glass/functions.php:40
 #: templates/futurist/functions.php:16
+#: templates/glass/functions.php:40
 msgid "Your Cart"
 msgstr "您的购物车"
 
@@ -504,8 +504,8 @@ msgid "Settings"
 msgstr "设置"
 
 #: functions/premium-init.php:339
-#: includes/Admin/Pages/General.php:25
 #: includes/Admin/Notices/InactiveLicenseNotice.php:13
+#: includes/Admin/Pages/General.php:25
 msgid "Start Here"
 msgstr "从这里开始"
 
@@ -657,7 +657,7 @@ msgid "Ship to"
 msgstr "寄送到"
 
 #: functions/functions.php:229
-#: includes/Features/LocalPickup.php:746
+#: includes/Features/LocalPickup.php:758
 #: includes/Admin/Pages/PickupLocationsAdminFree.php:93
 #: includes/Admin/Pages/Premium/PickupLocations.php:92
 msgid "Address"
@@ -668,7 +668,7 @@ msgid "Sorry, it seems that there are no available payment methods for your loca
 msgstr "抱歉，似乎您所在地区没有可用的支付方式。如需帮助或希望安排其他支付方式，请联系我们。"
 
 #: functions/functions.php:785
-#: includes/Features/LocalPickup.php:1067
+#: includes/Features/LocalPickup.php:1079
 msgid "Shipping costs are calculated during checkout."
 msgstr "运费将在结账时计算。"
 
@@ -769,7 +769,7 @@ msgstr "递减"
 #: functions/functions.php:2404
 #: includes/Managers/AssetManager.php:721
 #: includes/Managers/AssetManager.php:842
-#: includes/Features/LocalPickup.php:490
+#: includes/Features/LocalPickup.php:502
 #: includes/Features/AbandonedCartRecovery.php:122
 #: includes/Features/ABTesting.php:145
 #: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:632
@@ -909,6 +909,19 @@ msgstr "SendWP 已经连接。"
 msgid "Something went wrong. SendWP was not installed correctly."
 msgstr "出现错误。SendWP 未正确安装。"
 
+#: includes/Shipping/CFW_Shipping_Local_Pickup.php:35
+#: includes/Shipping/CFW_Shipping_Local_Pickup.php:48
+#: includes/Admin/Pages/LocalPickupAdminFree.php:19
+#: includes/Admin/Pages/LocalPickupAdminFree.php:56
+#: includes/Admin/Pages/Premium/LocalPickupAdmin.php:20
+#: client/ts/admin/Components/Forms/LocalPickupSettingsForm.tsx:62
+msgid "Local Pickup"
+msgstr "本地自提"
+
+#: includes/Shipping/CFW_Shipping_Local_Pickup.php:36
+msgid "Allow customers to pick up orders themselves. This version does not require shipping zones."
+msgstr "允许客户自行取货。此版本不需要运输区域。"
+
 #: includes/Stats/StatCollection.php:193
 msgid "Once Weekly"
 msgstr "每周一次"
@@ -933,18 +946,41 @@ msgstr "允许"
 msgid "Do not allow"
 msgstr "不允许"
 
-#: includes/Shipping/CFW_Shipping_Local_Pickup.php:35
-#: includes/Shipping/CFW_Shipping_Local_Pickup.php:48
-#: includes/Admin/Pages/LocalPickupAdminFree.php:19
-#: includes/Admin/Pages/LocalPickupAdminFree.php:56
-#: includes/Admin/Pages/Premium/LocalPickupAdmin.php:20
-#: client/ts/admin/Components/Forms/LocalPickupSettingsForm.tsx:62
-msgid "Local Pickup"
-msgstr "本地自提"
+#: includes/Loaders/LoaderAbstract.php:134
+#: includes/Loaders/LoaderAbstract.php:244
+msgid "Sorry, this order is invalid and cannot be paid for."
+msgstr "抱歉，此订单无效，无法付款。"
 
-#: includes/Shipping/CFW_Shipping_Local_Pickup.php:36
-msgid "Allow customers to pick up orders themselves. This version does not require shipping zones."
-msgstr "允许客户自行取货。此版本不需要运输区域。"
+#: includes/Loaders/LoaderAbstract.php:138
+msgid "Please log in to your account below to continue to the payment form."
+msgstr "请登录您的账户以继续付款表单。"
+
+#: includes/Loaders/LoaderAbstract.php:145
+msgid "You are paying for a guest order. Please continue with payment only if you recognize this order."
+msgstr "您正在为访客订单付款。仅当您确认此订单时才继续付款。"
+
+#: includes/Loaders/LoaderAbstract.php:151
+msgid "This order cannot be paid for. Please contact us if you need assistance."
+msgstr "此订单无法付款。如需帮助，请联系我们。"
+
+#: includes/Loaders/LoaderAbstract.php:157
+#: includes/Loaders/LoaderAbstract.php:241
+msgid "This order&rsquo;s status is &ldquo;%s&rdquo;&mdash;it cannot be paid for. Please contact us if you need assistance."
+msgstr "此订单状态为“%s”——无法付款。如需帮助，请联系我们。"
+
+#: includes/Loaders/LoaderAbstract.php:186
+msgid "Sorry, \"%s\" is no longer in stock so this order cannot be paid for. We apologize for any inconvenience caused."
+msgstr "抱歉，“%s”已无库存，无法付款。对此造成的不便，我们深表歉意。"
+
+#: includes/Loaders/LoaderAbstract.php:200
+msgid "Sorry, we do not have enough \"%1$s\" in stock to fulfill your order (%2$s available). We apologize for any inconvenience caused."
+msgstr "抱歉，我们没有足够的“%1$s”库存来完成您的订单（仅有 %2$s 可用）。对此造成的不便，我们深表歉意。"
+
+#: includes/Loaders/LoaderAbstract.php:247
+#: includes/Action/ProcessOfferPaymentAction.php:73
+#: includes/Features/OneClick/OfferRefundManager.php:177
+msgid "Invalid order."
+msgstr "无效订单。"
 
 #: includes/Managers/UpdatesManager.php:416
 msgid "CheckoutWC License Key"
@@ -1105,7 +1141,7 @@ msgid "Please enter a valid postcode / ZIP."
 msgstr "请输入有效的邮政编码。"
 
 #: includes/Managers/AssetManager.php:700
-#: includes/Features/LocalPickup.php:614
+#: includes/Features/LocalPickup.php:626
 msgid "Pickup"
 msgstr "自取"
 
@@ -1163,42 +1199,6 @@ msgstr "进行结算"
 msgid "View Product"
 msgstr "查看产品"
 
-#: includes/Loaders/LoaderAbstract.php:134
-#: includes/Loaders/LoaderAbstract.php:244
-msgid "Sorry, this order is invalid and cannot be paid for."
-msgstr "抱歉，此订单无效，无法付款。"
-
-#: includes/Loaders/LoaderAbstract.php:138
-msgid "Please log in to your account below to continue to the payment form."
-msgstr "请登录您的账户以继续付款表单。"
-
-#: includes/Loaders/LoaderAbstract.php:145
-msgid "You are paying for a guest order. Please continue with payment only if you recognize this order."
-msgstr "您正在为访客订单付款。仅当您确认此订单时才继续付款。"
-
-#: includes/Loaders/LoaderAbstract.php:151
-msgid "This order cannot be paid for. Please contact us if you need assistance."
-msgstr "此订单无法付款。如需帮助，请联系我们。"
-
-#: includes/Loaders/LoaderAbstract.php:157
-#: includes/Loaders/LoaderAbstract.php:241
-msgid "This order&rsquo;s status is &ldquo;%s&rdquo;&mdash;it cannot be paid for. Please contact us if you need assistance."
-msgstr "此订单状态为“%s”——无法付款。如需帮助，请联系我们。"
-
-#: includes/Loaders/LoaderAbstract.php:186
-msgid "Sorry, \"%s\" is no longer in stock so this order cannot be paid for. We apologize for any inconvenience caused."
-msgstr "抱歉，“%s”已无库存，无法付款。对此造成的不便，我们深表歉意。"
-
-#: includes/Loaders/LoaderAbstract.php:200
-msgid "Sorry, we do not have enough \"%1$s\" in stock to fulfill your order (%2$s available). We apologize for any inconvenience caused."
-msgstr "抱歉，我们没有足够的“%1$s”库存来完成您的订单（仅有 %2$s 可用）。对此造成的不便，我们深表歉意。"
-
-#: includes/Loaders/LoaderAbstract.php:247
-#: includes/Action/ProcessOfferPaymentAction.php:73
-#: includes/Features/OneClick/OfferRefundManager.php:177
-msgid "Invalid order."
-msgstr "无效订单。"
-
 #: includes/Features/Turnstile.php:134
 #: includes/Features/Turnstile.php:188
 #: includes/Features/Turnstile.php:362
@@ -1255,114 +1255,110 @@ msgstr "有附加项：%s"
 msgid "Delivery method"
 msgstr "运费方式"
 
-#: includes/Features/LocalPickup.php:170
+#: includes/Features/LocalPickup.php:178
 msgid "Pick up"
 msgstr "提取"
 
-#: includes/Features/LocalPickup.php:185
+#: includes/Features/LocalPickup.php:197
 msgid "Ship"
 msgstr "发"
 
-#: includes/Features/LocalPickup.php:288
+#: includes/Features/LocalPickup.php:300
 msgid "Pickup locations"
 msgstr "取货地点"
 
-#: includes/Features/LocalPickup.php:485
-#: includes/Features/LocalPickup.php:487
+#: includes/Features/LocalPickup.php:497
+#: includes/Features/LocalPickup.php:499
 #: includes/Admin/Pages/PickupLocationsAdminFree.php:21
 #: includes/Admin/Pages/Premium/PickupLocations.php:22
 msgid "Pickup Locations"
 msgstr "自提地点"
 
-#: includes/Features/LocalPickup.php:486
-#: includes/Features/LocalPickup.php:672
-#: includes/Features/LocalPickup.php:760
-#: includes/Features/LocalPickup.php:802
-#: includes/Features/LocalPickup.php:1130
-#: includes/Features/LocalPickup.php:1155
+#: includes/Features/LocalPickup.php:498
+#: includes/Features/LocalPickup.php:684
+#: includes/Features/LocalPickup.php:772
+#: includes/Features/LocalPickup.php:814
+#: includes/Features/LocalPickup.php:1142
+#: includes/Features/LocalPickup.php:1167
 msgid "Pickup Location"
 msgstr "取货地点"
 
-#: includes/Features/LocalPickup.php:488
+#: includes/Features/LocalPickup.php:500
 msgid "Add Pickup Location"
 msgstr "添加自提地点"
 
-#: includes/Features/LocalPickup.php:489
+#: includes/Features/LocalPickup.php:501
 msgid "Add New Pickup Location"
 msgstr "添加新的自提地点"
 
-#: includes/Features/LocalPickup.php:491
+#: includes/Features/LocalPickup.php:503
 msgid "Edit Pickup Location"
 msgstr "编辑自提地点"
 
-#: includes/Features/LocalPickup.php:492
+#: includes/Features/LocalPickup.php:504
 msgid "New Pickup Location"
 msgstr "新的自提地点"
 
-#: includes/Features/LocalPickup.php:493
+#: includes/Features/LocalPickup.php:505
 msgid "View Pickup Locations"
 msgstr "查看自提地点"
 
-#: includes/Features/LocalPickup.php:494
+#: includes/Features/LocalPickup.php:506
 msgid "View Pickup Location"
 msgstr "查看自提地点"
 
-#: includes/Features/LocalPickup.php:495
+#: includes/Features/LocalPickup.php:507
 msgid "Search Pickup Locations"
 msgstr "搜索自提地点"
 
-#: includes/Features/LocalPickup.php:496
+#: includes/Features/LocalPickup.php:508
 msgid "No Pickup Location found"
 msgstr "未找到自提地点"
 
-#: includes/Features/LocalPickup.php:497
+#: includes/Features/LocalPickup.php:509
 msgid "No Pickup Locations found in trash"
 msgstr "垃圾箱中未找到自提地点"
 
-#: includes/Features/LocalPickup.php:502
+#: includes/Features/LocalPickup.php:514
 msgid "This is where you can add new Pickup Locations."
 msgstr "您可以在这里添加新的自提地点。"
 
-#: includes/Features/LocalPickup.php:579
+#: includes/Features/LocalPickup.php:591
 #: client/ts/frontend/Components/ReviewPane/PaymentMethodReviewPane.tsx:37
 #: client/ts/frontend/Components/ReviewPane/OrderReviewStepReviewPane.tsx:37
 msgid "Method"
 msgstr "方法"
 
-#: includes/Features/LocalPickup.php:597
-msgid "Pick up in store"
-msgstr "到店取货"
-
-#: includes/Features/LocalPickup.php:732
+#: includes/Features/LocalPickup.php:744
 msgid "Pickup instructions"
 msgstr "接机说明"
 
-#: includes/Features/LocalPickup.php:922
+#: includes/Features/LocalPickup.php:934
 msgid "Usually ready in 1 hour."
 msgstr "通常在1小时内完成。"
 
-#: includes/Features/LocalPickup.php:923
+#: includes/Features/LocalPickup.php:935
 msgid "Usually ready in 2 hours."
 msgstr "通常在2小时内准备好。"
 
-#: includes/Features/LocalPickup.php:924
+#: includes/Features/LocalPickup.php:936
 msgid "Usually ready in 4 hours."
 msgstr "通常在4小时内准备好。"
 
-#: includes/Features/LocalPickup.php:925
+#: includes/Features/LocalPickup.php:937
 msgid "Usually ready in 24 hours."
 msgstr "通常在24小时内准备好。"
 
-#: includes/Features/LocalPickup.php:926
+#: includes/Features/LocalPickup.php:938
 msgid "Usually ready in 2-4 days."
 msgstr "通常在2-4天内准备好。"
 
-#: includes/Features/LocalPickup.php:927
+#: includes/Features/LocalPickup.php:939
 msgid "Usually ready in 5+ days."
 msgstr "通常在5天以上准备好。"
 
-#: includes/Features/LocalPickup.php:1139
-#: includes/Features/LocalPickup.php:1166
+#: includes/Features/LocalPickup.php:1151
+#: includes/Features/LocalPickup.php:1178
 msgid "Pickup Instructions:"
 msgstr "取货说明："
 
@@ -1832,6 +1828,24 @@ msgstr "订单附加优惠表单"
 msgid "The form to accept or reject the bump offer."
 msgstr "接受或拒绝附加优惠的表单。"
 
+# %1$s: Plugin name, %2$s: Link opening tag, %3$s: Version number, %4$s: Link closing tag
+#: includes/Managers/Helpers/EDD_SL_Plugin_Updater.php:281
+msgid "There is a new version of %1$s available. %2$sView version %3$s details%4$s."
+msgstr "%1$s 有新版本可用。%2$s查看版本 %3$s 详情%4$s。"
+
+# %1$s: Plugin name, %2$s: Link opening tag, %3$s: Version number, %4$s: Link closing tag, %5$s: Update link opening tag, %6$s: Update link closing tag
+#: includes/Managers/Helpers/EDD_SL_Plugin_Updater.php:290
+msgid "There is a new version of %1$s available. %2$sView version %3$s details%4$s or %5$supdate now%6$s."
+msgstr "%1$s 有新版本可用。%2$s查看版本 %3$s 详情%4$s 或 %5$s立即更新%6$s。"
+
+#: includes/Managers/Helpers/EDD_SL_Plugin_Updater.php:534
+msgid "You do not have permission to install plugin updates"
+msgstr "您没有权限安装插件更新"
+
+#: includes/Managers/Helpers/EDD_SL_Plugin_Updater.php:534
+msgid "Error"
+msgstr "错误"
+
 #: includes/Model/Bumps/BumpAbstract.php:1013
 #: includes/Model/Bumps/BumpAbstract.php:1023
 #: includes/Model/ABTests/OrderBumpsABTest.php:30
@@ -1886,24 +1900,6 @@ msgstr "回收站中未找到"
 #: includes/Features/ABTesting/ABTestTypeRegistry.php:124
 msgid "Test different variations of order bumps to see which performs better."
 msgstr "测试不同的订单附加销售变体，看看哪个表现更好。"
-
-# %1$s: Plugin name, %2$s: Link opening tag, %3$s: Version number, %4$s: Link closing tag
-#: includes/Managers/Helpers/EDD_SL_Plugin_Updater.php:281
-msgid "There is a new version of %1$s available. %2$sView version %3$s details%4$s."
-msgstr "%1$s 有新版本可用。%2$s查看版本 %3$s 详情%4$s。"
-
-# %1$s: Plugin name, %2$s: Link opening tag, %3$s: Version number, %4$s: Link closing tag, %5$s: Update link opening tag, %6$s: Update link closing tag
-#: includes/Managers/Helpers/EDD_SL_Plugin_Updater.php:290
-msgid "There is a new version of %1$s available. %2$sView version %3$s details%4$s or %5$supdate now%6$s."
-msgstr "%1$s 有新版本可用。%2$s查看版本 %3$s 详情%4$s 或 %5$s立即更新%6$s。"
-
-#: includes/Managers/Helpers/EDD_SL_Plugin_Updater.php:534
-msgid "You do not have permission to install plugin updates"
-msgstr "您没有权限安装插件更新"
-
-#: includes/Managers/Helpers/EDD_SL_Plugin_Updater.php:534
-msgid "Error"
-msgstr "错误"
 
 #: includes/Features/OneClick/OrderStatusManager.php:52
 msgid "Pending Offer <span class=\"count\">(%s)</span>"
@@ -2155,6 +2151,116 @@ msgstr "注意："
 #: includes/Admin/Views/html-refund-offer.php:114
 msgid "Refunding an offer will process the refund with the payment gateway and create a WooCommerce refund record."
 msgstr "退款优惠将通过支付网关处理退款并创建 WooCommerce 退款记录。"
+
+#: includes/Admin/Notices/WelcomeNotice.php:12
+msgid "Welcome to CheckoutWC"
+msgstr "欢迎使用 CheckoutWC"
+
+#: includes/Admin/Notices/WelcomeNotice.php:20
+msgid "Thank you for installing CheckoutWC! We automatically activated your license. You are all set!"
+msgstr "感谢您安装 CheckoutWC！我们已自动激活您的许可证。您已准备就绪！"
+
+#: includes/Admin/Notices/WelcomeNotice.php:26
+msgid "Thank you for installing CheckoutWC! To get started, enter your <strong>License Key</strong> below, save, and click <strong>Activate Site</strong>."
+msgstr "感谢您安装 CheckoutWC！要开始使用，请在下方输入您的<strong>许可证密钥</strong>，保存，然后点击<strong>激活站点</strong>。"
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:20
+msgid "your email"
+msgstr "您的电子邮件"
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:88
+msgid "privacy policy"
+msgstr "隐私政策"
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:93
+msgid "By joining, %1$s will be added to our mailing list. Read our %2$s."
+msgstr "加入后，%1$s 将被添加到我们的邮件列表。阅读我们的 %2$s。"
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:99
+msgid "Join Newsletter & Save 25%"
+msgstr "加入通讯并节省 25%"
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:102
+msgid "Join Newsletter"
+msgstr "加入通讯"
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:113
+msgid "Sign up to our newsletter and get proven conversion tips and checkout optimization strategies from the CheckoutWC team."
+msgstr "注册我们的通讯，获取 CheckoutWC 团队提供的经过验证的转化技巧和结账优化策略。"
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:116
+msgid "Boost Your Conversions with Proven Strategies."
+msgstr "用经过验证的策略提升您的转化率。"
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:123
+msgid "We're so glad that you've chosen CheckoutWC to handle your checkouts. Unlock more sales with premium features like order bumps, abandoned cart recovery, and much more."
+msgstr "我们非常高兴您选择 CheckoutWC 来处理您的结账。通过订单附加、遗弃购物车恢复等高级功能解锁更多销售机会。"
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:126
+msgid "Unlock more sales with CheckoutWC Premium"
+msgstr "使用 CheckoutWC 高级版解锁更多销售"
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:144
+msgid "Sorry, there was an error joining our newsletter. Please refresh the page and try again."
+msgstr "抱歉，加入我们的通讯时出现错误。请刷新页面并重试。"
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:243
+msgid "Please wait..."
+msgstr "请稍候..."
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:320
+msgid "Sorry, your account has insufficient permissions to join our newsletter."
+msgstr "抱歉，您的账户权限不足，无法加入我们的通讯。"
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:354
+msgid "You have already joined our newsletter!"
+msgstr "您已加入我们的通讯！"
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:396
+msgid "Thank you for joining our newsletter!"
+msgstr "感谢您加入我们的通讯！"
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:410
+msgid "Security check failed."
+msgstr "安全检查失败。"
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:414
+msgid "Insufficient permissions."
+msgstr "权限不足。"
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:422
+msgid "Notice dismissed."
+msgstr "通知已关闭。"
+
+# %1$s: URL to pricing page, %2$s: "purchase a new license" link text, %3$s: Support email URL, %4$s: "please contact support" link text
+#: includes/Admin/Notices/InvalidLicenseKeyNotice.php:15
+msgid "Your license key appears to have expired. Please <a href=\"%1$s\" target=\"_blank\">%2$s</a> to restore functionality. If you believe this is in error, <a href=\"%3$s\">%4$s</a>."
+msgstr "您的许可证密钥似乎已过期。请<a href=\"%1$s\" target=\"_blank\">%2$s</a>以恢复功能。如果您认为这是错误，请<a href=\"%3$s\">%4$s</a>。"
+
+#: includes/Admin/Notices/InvalidLicenseKeyNotice.php:17
+msgid "purchase a new license"
+msgstr "购买新许可证"
+
+#: includes/Admin/Notices/InvalidLicenseKeyNotice.php:19
+msgid "please contact support"
+msgstr "请联系支持"
+
+# %1$s: URL to activation page, %2$s: "Start Here" link text
+#: includes/Admin/Notices/InactiveLicenseNotice.php:11
+msgid "Your license key is not active for this site. Please visit <a href=\"%1$s\">%2$s</a> to activate your license and restore functionality."
+msgstr "您的许可证密钥未在此站点激活。请访问<a href=\"%1$s\">%2$s</a>以激活您的许可证并恢复功能。"
+
+#: includes/Admin/Notices/BFNotice.php:13
+msgid "Black Friday Sale - 40% Off"
+msgstr "黑色星期五促销 - 享受40%折扣"
+
+#: includes/Admin/Notices/BFNotice.php:14
+msgid "You're missing out on revenue growth tools like Order Bumps, Upsells, Abandoned Cart Recovery and more! Save 40% on CheckoutWC pro plans for Black Friday, ends December 4th"
+msgstr "您正在错过订单附加销售、追加销售、遗弃购物车恢复等收入增长工具！黑色星期五期间，CheckoutWC专业版计划享受40%折扣，截止日期为12月4日"
+
+#: includes/Admin/Notices/BFNotice.php:27
+msgid "Get CheckoutWC Pro Now!"
+msgstr "立即获取CheckoutWC专业版！"
 
 #: includes/Admin/Pages/WooCommercePages.php:21
 msgid "Pages"
@@ -3300,116 +3406,6 @@ msgstr "启用 A/B 测试"
 msgid "Allow A/B tests to be created and applied on the checkout page."
 msgstr "允许在结账页面创建和应用 A/B 测试。"
 
-#: includes/Admin/Notices/WelcomeNotice.php:12
-msgid "Welcome to CheckoutWC"
-msgstr "欢迎使用 CheckoutWC"
-
-#: includes/Admin/Notices/WelcomeNotice.php:20
-msgid "Thank you for installing CheckoutWC! We automatically activated your license. You are all set!"
-msgstr "感谢您安装 CheckoutWC！我们已自动激活您的许可证。您已准备就绪！"
-
-#: includes/Admin/Notices/WelcomeNotice.php:26
-msgid "Thank you for installing CheckoutWC! To get started, enter your <strong>License Key</strong> below, save, and click <strong>Activate Site</strong>."
-msgstr "感谢您安装 CheckoutWC！要开始使用，请在下方输入您的<strong>许可证密钥</strong>，保存，然后点击<strong>激活站点</strong>。"
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:20
-msgid "your email"
-msgstr "您的电子邮件"
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:88
-msgid "privacy policy"
-msgstr "隐私政策"
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:93
-msgid "By joining, %1$s will be added to our mailing list. Read our %2$s."
-msgstr "加入后，%1$s 将被添加到我们的邮件列表。阅读我们的 %2$s。"
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:99
-msgid "Join Newsletter & Save 25%"
-msgstr "加入通讯并节省 25%"
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:102
-msgid "Join Newsletter"
-msgstr "加入通讯"
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:113
-msgid "Sign up to our newsletter and get proven conversion tips and checkout optimization strategies from the CheckoutWC team."
-msgstr "注册我们的通讯，获取 CheckoutWC 团队提供的经过验证的转化技巧和结账优化策略。"
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:116
-msgid "Boost Your Conversions with Proven Strategies."
-msgstr "用经过验证的策略提升您的转化率。"
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:123
-msgid "We're so glad that you've chosen CheckoutWC to handle your checkouts. Unlock more sales with premium features like order bumps, abandoned cart recovery, and much more."
-msgstr "我们非常高兴您选择 CheckoutWC 来处理您的结账。通过订单附加、遗弃购物车恢复等高级功能解锁更多销售机会。"
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:126
-msgid "Unlock more sales with CheckoutWC Premium"
-msgstr "使用 CheckoutWC 高级版解锁更多销售"
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:144
-msgid "Sorry, there was an error joining our newsletter. Please refresh the page and try again."
-msgstr "抱歉，加入我们的通讯时出现错误。请刷新页面并重试。"
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:243
-msgid "Please wait..."
-msgstr "请稍候..."
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:320
-msgid "Sorry, your account has insufficient permissions to join our newsletter."
-msgstr "抱歉，您的账户权限不足，无法加入我们的通讯。"
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:354
-msgid "You have already joined our newsletter!"
-msgstr "您已加入我们的通讯！"
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:396
-msgid "Thank you for joining our newsletter!"
-msgstr "感谢您加入我们的通讯！"
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:410
-msgid "Security check failed."
-msgstr "安全检查失败。"
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:414
-msgid "Insufficient permissions."
-msgstr "权限不足。"
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:422
-msgid "Notice dismissed."
-msgstr "通知已关闭。"
-
-# %1$s: URL to pricing page, %2$s: "purchase a new license" link text, %3$s: Support email URL, %4$s: "please contact support" link text
-#: includes/Admin/Notices/InvalidLicenseKeyNotice.php:15
-msgid "Your license key appears to have expired. Please <a href=\"%1$s\" target=\"_blank\">%2$s</a> to restore functionality. If you believe this is in error, <a href=\"%3$s\">%4$s</a>."
-msgstr "您的许可证密钥似乎已过期。请<a href=\"%1$s\" target=\"_blank\">%2$s</a>以恢复功能。如果您认为这是错误，请<a href=\"%3$s\">%4$s</a>。"
-
-#: includes/Admin/Notices/InvalidLicenseKeyNotice.php:17
-msgid "purchase a new license"
-msgstr "购买新许可证"
-
-#: includes/Admin/Notices/InvalidLicenseKeyNotice.php:19
-msgid "please contact support"
-msgstr "请联系支持"
-
-# %1$s: URL to activation page, %2$s: "Start Here" link text
-#: includes/Admin/Notices/InactiveLicenseNotice.php:11
-msgid "Your license key is not active for this site. Please visit <a href=\"%1$s\">%2$s</a> to activate your license and restore functionality."
-msgstr "您的许可证密钥未在此站点激活。请访问<a href=\"%1$s\">%2$s</a>以激活您的许可证并恢复功能。"
-
-#: includes/Admin/Notices/BFNotice.php:13
-msgid "Black Friday Sale - 40% Off"
-msgstr "黑色星期五促销 - 享受40%折扣"
-
-#: includes/Admin/Notices/BFNotice.php:14
-msgid "You're missing out on revenue growth tools like Order Bumps, Upsells, Abandoned Cart Recovery and more! Save 40% on CheckoutWC pro plans for Black Friday, ends December 4th"
-msgstr "您正在错过订单附加销售、追加销售、遗弃购物车恢复等收入增长工具！黑色星期五期间，CheckoutWC专业版计划享受40%折扣，截止日期为12月4日"
-
-#: includes/Admin/Notices/BFNotice.php:27
-msgid "Get CheckoutWC Pro Now!"
-msgstr "立即获取CheckoutWC专业版！"
-
 #: client/ts/functions/cfwFormatDate.ts:38
 msgid "Sunday"
 msgstr "星期日"
@@ -4245,18 +4241,6 @@ msgstr "A/B测试应结束的日期。此日期之后，将显示原始变体。
 msgid "Traffic split percentages must total 100%. Please adjust your percentages."
 msgstr "流量分配百分比总和必须为100%。请调整您的百分比。"
 
-#: client/ts/frontend/Components/TermsAndConditions.ts:29
-msgid "Terms and Conditions"
-msgstr "条款和条件"
-
-#: client/ts/frontend/Components/TermsAndConditions.ts:35
-msgid "Privacy Policy"
-msgstr "隐私政策"
-
-#: client/ts/frontend/Components/SideCartComponent.tsx:38
-msgid "Close Cart"
-msgstr "关闭购物车"
-
 #: client/ts/frontend/Actions/CompleteOrderAction.ts:196
 msgid "Could not connect to server. Please refresh and try again or contact site administrator."
 msgstr "无法连接到服务器。请刷新后重试或联系网站管理员。"
@@ -4280,6 +4264,18 @@ msgstr "服务器处理请求超时。请刷新后重试或联系网站管理员
 #: client/ts/frontend/Actions/CompleteOrderAction.ts:206
 msgid "Request was aborted. Please contact site administrator."
 msgstr "请求已中止。请联系网站管理员。"
+
+#: client/ts/frontend/Components/TermsAndConditions.ts:29
+msgid "Terms and Conditions"
+msgstr "条款和条件"
+
+#: client/ts/frontend/Components/TermsAndConditions.ts:35
+msgid "Privacy Policy"
+msgstr "隐私政策"
+
+#: client/ts/frontend/Components/SideCartComponent.tsx:38
+msgid "Close Cart"
+msgstr "关闭购物车"
 
 #: client/ts/admin/Components/TrustBadgeRow.tsx:172
 msgid "Determine when this Trust Badge should be displayed."

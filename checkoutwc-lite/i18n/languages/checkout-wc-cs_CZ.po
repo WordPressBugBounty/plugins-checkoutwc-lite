@@ -8,7 +8,7 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "POT-Creation-Date: 2025-07-25 09:22-0400\n"
-"PO-Revision-Date: 2026-06-29T12:40:11+00:00\n"
+"PO-Revision-Date: 2026-07-02T13:09:59+00:00\n"
 "Language: cs-CZ\n"
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n>=2 && n<=4 ? 1 : 2);\n"
 "X-Generator: Poedit 3.6\n"
@@ -359,8 +359,8 @@ msgid "Shipping address"
 msgstr "Dodací adresa"
 
 #: functions/template-functions.php:935
-#: templates/glass/functions.php:40
 #: templates/futurist/functions.php:16
+#: templates/glass/functions.php:40
 msgid "Your Cart"
 msgstr "Váš košík"
 
@@ -506,8 +506,8 @@ msgid "Settings"
 msgstr "Nastavení"
 
 #: functions/premium-init.php:339
-#: includes/Admin/Pages/General.php:25
 #: includes/Admin/Notices/InactiveLicenseNotice.php:13
+#: includes/Admin/Pages/General.php:25
 msgid "Start Here"
 msgstr "Začněte zde"
 
@@ -659,7 +659,7 @@ msgid "Ship to"
 msgstr "Odeslat na"
 
 #: functions/functions.php:229
-#: includes/Features/LocalPickup.php:746
+#: includes/Features/LocalPickup.php:758
 #: includes/Admin/Pages/PickupLocationsAdminFree.php:93
 #: includes/Admin/Pages/Premium/PickupLocations.php:92
 msgid "Address"
@@ -670,7 +670,7 @@ msgid "Sorry, it seems that there are no available payment methods for your loca
 msgstr "Omlouváme se, zdá se, že pro vaši lokalitu nejsou dostupné žádné platební metody. Kontaktujte nás, pokud potřebujete pomoc nebo chcete sjednat jiná řešení."
 
 #: functions/functions.php:785
-#: includes/Features/LocalPickup.php:1067
+#: includes/Features/LocalPickup.php:1079
 msgid "Shipping costs are calculated during checkout."
 msgstr "Náklady na dopravu jsou vypočítány během dokončení objednávky."
 
@@ -771,7 +771,7 @@ msgstr "Snížení"
 #: functions/functions.php:2404
 #: includes/Managers/AssetManager.php:721
 #: includes/Managers/AssetManager.php:842
-#: includes/Features/LocalPickup.php:490
+#: includes/Features/LocalPickup.php:502
 #: includes/Features/AbandonedCartRecovery.php:122
 #: includes/Features/ABTesting.php:145
 #: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:632
@@ -911,6 +911,19 @@ msgstr "SendWP je již připojen."
 msgid "Something went wrong. SendWP was not installed correctly."
 msgstr "Něco se pokazilo. SendWP nebyl správně nainstalován."
 
+#: includes/Shipping/CFW_Shipping_Local_Pickup.php:35
+#: includes/Shipping/CFW_Shipping_Local_Pickup.php:48
+#: includes/Admin/Pages/LocalPickupAdminFree.php:19
+#: includes/Admin/Pages/LocalPickupAdminFree.php:56
+#: includes/Admin/Pages/Premium/LocalPickupAdmin.php:20
+#: client/ts/admin/Components/Forms/LocalPickupSettingsForm.tsx:62
+msgid "Local Pickup"
+msgstr "Místní vyzvednutí"
+
+#: includes/Shipping/CFW_Shipping_Local_Pickup.php:36
+msgid "Allow customers to pick up orders themselves. This version does not require shipping zones."
+msgstr "Umožněte zákazníkům vyzvednout si objednávky sami. Tato verze nevyžaduje přepravní zóny."
+
 #: includes/Stats/StatCollection.php:193
 msgid "Once Weekly"
 msgstr "Jednou týdně"
@@ -935,18 +948,41 @@ msgstr "Povolit"
 msgid "Do not allow"
 msgstr "Nepovolit"
 
-#: includes/Shipping/CFW_Shipping_Local_Pickup.php:35
-#: includes/Shipping/CFW_Shipping_Local_Pickup.php:48
-#: includes/Admin/Pages/LocalPickupAdminFree.php:19
-#: includes/Admin/Pages/LocalPickupAdminFree.php:56
-#: includes/Admin/Pages/Premium/LocalPickupAdmin.php:20
-#: client/ts/admin/Components/Forms/LocalPickupSettingsForm.tsx:62
-msgid "Local Pickup"
-msgstr "Místní vyzvednutí"
+#: includes/Loaders/LoaderAbstract.php:134
+#: includes/Loaders/LoaderAbstract.php:244
+msgid "Sorry, this order is invalid and cannot be paid for."
+msgstr "Omlouváme se, tato objednávka je neplatná a nelze ji zaplatit."
 
-#: includes/Shipping/CFW_Shipping_Local_Pickup.php:36
-msgid "Allow customers to pick up orders themselves. This version does not require shipping zones."
-msgstr "Umožněte zákazníkům vyzvednout si objednávky sami. Tato verze nevyžaduje přepravní zóny."
+#: includes/Loaders/LoaderAbstract.php:138
+msgid "Please log in to your account below to continue to the payment form."
+msgstr "Pro pokračování k platebnímu formuláři se prosím přihlaste ke svému účtu níže."
+
+#: includes/Loaders/LoaderAbstract.php:145
+msgid "You are paying for a guest order. Please continue with payment only if you recognize this order."
+msgstr "Platíte za objednávku hosta. Pokračujte v platbě pouze, pokud tuto objednávku rozpoznáte."
+
+#: includes/Loaders/LoaderAbstract.php:151
+msgid "This order cannot be paid for. Please contact us if you need assistance."
+msgstr "Tuto objednávku nelze zaplatit. Pokud potřebujete pomoc, kontaktujte nás."
+
+#: includes/Loaders/LoaderAbstract.php:157
+#: includes/Loaders/LoaderAbstract.php:241
+msgid "This order&rsquo;s status is &ldquo;%s&rdquo;&mdash;it cannot be paid for. Please contact us if you need assistance."
+msgstr "Stav této objednávky je „%s“ — nelze ji zaplatit. Pokud potřebujete pomoc, kontaktujte nás."
+
+#: includes/Loaders/LoaderAbstract.php:186
+msgid "Sorry, \"%s\" is no longer in stock so this order cannot be paid for. We apologize for any inconvenience caused."
+msgstr "Omlouváme se, \"%s\" již není skladem, takže tuto objednávku nelze zaplatit. Omlouváme se za způsobené potíže."
+
+#: includes/Loaders/LoaderAbstract.php:200
+msgid "Sorry, we do not have enough \"%1$s\" in stock to fulfill your order (%2$s available). We apologize for any inconvenience caused."
+msgstr "Omlouváme se, nemáme dostatek \"%1$s\" skladem k vyřízení vaší objednávky (%2$s dostupných). Omlouváme se za způsobené potíže."
+
+#: includes/Loaders/LoaderAbstract.php:247
+#: includes/Action/ProcessOfferPaymentAction.php:73
+#: includes/Features/OneClick/OfferRefundManager.php:177
+msgid "Invalid order."
+msgstr "Neplatná objednávka."
 
 #: includes/Managers/UpdatesManager.php:416
 msgid "CheckoutWC License Key"
@@ -1107,7 +1143,7 @@ msgid "Please enter a valid postcode / ZIP."
 msgstr "Zadejte prosím platné poštovní směrovací číslo / PSČ."
 
 #: includes/Managers/AssetManager.php:700
-#: includes/Features/LocalPickup.php:614
+#: includes/Features/LocalPickup.php:626
 msgid "Pickup"
 msgstr "Vyzvednout"
 
@@ -1165,42 +1201,6 @@ msgstr "Přejít na platbu"
 msgid "View Product"
 msgstr "Zobrazit produkt"
 
-#: includes/Loaders/LoaderAbstract.php:134
-#: includes/Loaders/LoaderAbstract.php:244
-msgid "Sorry, this order is invalid and cannot be paid for."
-msgstr "Omlouváme se, tato objednávka je neplatná a nelze ji zaplatit."
-
-#: includes/Loaders/LoaderAbstract.php:138
-msgid "Please log in to your account below to continue to the payment form."
-msgstr "Pro pokračování k platebnímu formuláři se prosím přihlaste ke svému účtu níže."
-
-#: includes/Loaders/LoaderAbstract.php:145
-msgid "You are paying for a guest order. Please continue with payment only if you recognize this order."
-msgstr "Platíte za objednávku hosta. Pokračujte v platbě pouze, pokud tuto objednávku rozpoznáte."
-
-#: includes/Loaders/LoaderAbstract.php:151
-msgid "This order cannot be paid for. Please contact us if you need assistance."
-msgstr "Tuto objednávku nelze zaplatit. Pokud potřebujete pomoc, kontaktujte nás."
-
-#: includes/Loaders/LoaderAbstract.php:157
-#: includes/Loaders/LoaderAbstract.php:241
-msgid "This order&rsquo;s status is &ldquo;%s&rdquo;&mdash;it cannot be paid for. Please contact us if you need assistance."
-msgstr "Stav této objednávky je „%s“ — nelze ji zaplatit. Pokud potřebujete pomoc, kontaktujte nás."
-
-#: includes/Loaders/LoaderAbstract.php:186
-msgid "Sorry, \"%s\" is no longer in stock so this order cannot be paid for. We apologize for any inconvenience caused."
-msgstr "Omlouváme se, \"%s\" již není skladem, takže tuto objednávku nelze zaplatit. Omlouváme se za způsobené potíže."
-
-#: includes/Loaders/LoaderAbstract.php:200
-msgid "Sorry, we do not have enough \"%1$s\" in stock to fulfill your order (%2$s available). We apologize for any inconvenience caused."
-msgstr "Omlouváme se, nemáme dostatek \"%1$s\" skladem k vyřízení vaší objednávky (%2$s dostupných). Omlouváme se za způsobené potíže."
-
-#: includes/Loaders/LoaderAbstract.php:247
-#: includes/Action/ProcessOfferPaymentAction.php:73
-#: includes/Features/OneClick/OfferRefundManager.php:177
-msgid "Invalid order."
-msgstr "Neplatná objednávka."
-
 #: includes/Features/Turnstile.php:134
 #: includes/Features/Turnstile.php:188
 #: includes/Features/Turnstile.php:362
@@ -1257,114 +1257,110 @@ msgstr "Má Bump: %s"
 msgid "Delivery method"
 msgstr "Způsob doručení"
 
-#: includes/Features/LocalPickup.php:170
+#: includes/Features/LocalPickup.php:178
 msgid "Pick up"
 msgstr "K vyzvednutí"
 
-#: includes/Features/LocalPickup.php:185
+#: includes/Features/LocalPickup.php:197
 msgid "Ship"
 msgstr "Dopravovat"
 
-#: includes/Features/LocalPickup.php:288
+#: includes/Features/LocalPickup.php:300
 msgid "Pickup locations"
 msgstr "Místa vyzvednutí"
 
-#: includes/Features/LocalPickup.php:485
-#: includes/Features/LocalPickup.php:487
+#: includes/Features/LocalPickup.php:497
+#: includes/Features/LocalPickup.php:499
 #: includes/Admin/Pages/PickupLocationsAdminFree.php:21
 #: includes/Admin/Pages/Premium/PickupLocations.php:22
 msgid "Pickup Locations"
 msgstr "Místa vyzvednutí"
 
-#: includes/Features/LocalPickup.php:486
-#: includes/Features/LocalPickup.php:672
-#: includes/Features/LocalPickup.php:760
-#: includes/Features/LocalPickup.php:802
-#: includes/Features/LocalPickup.php:1130
-#: includes/Features/LocalPickup.php:1155
+#: includes/Features/LocalPickup.php:498
+#: includes/Features/LocalPickup.php:684
+#: includes/Features/LocalPickup.php:772
+#: includes/Features/LocalPickup.php:814
+#: includes/Features/LocalPickup.php:1142
+#: includes/Features/LocalPickup.php:1167
 msgid "Pickup Location"
 msgstr "Místo vyzvednutí"
 
-#: includes/Features/LocalPickup.php:488
+#: includes/Features/LocalPickup.php:500
 msgid "Add Pickup Location"
 msgstr "Přidat místo vyzvednutí"
 
-#: includes/Features/LocalPickup.php:489
+#: includes/Features/LocalPickup.php:501
 msgid "Add New Pickup Location"
 msgstr "Přidat nové místo vyzvednutí"
 
-#: includes/Features/LocalPickup.php:491
+#: includes/Features/LocalPickup.php:503
 msgid "Edit Pickup Location"
 msgstr "Upravit místo vyzvednutí"
 
-#: includes/Features/LocalPickup.php:492
+#: includes/Features/LocalPickup.php:504
 msgid "New Pickup Location"
 msgstr "Nové místo vyzvednutí"
 
-#: includes/Features/LocalPickup.php:493
+#: includes/Features/LocalPickup.php:505
 msgid "View Pickup Locations"
 msgstr "Zobrazit místa vyzvednutí"
 
-#: includes/Features/LocalPickup.php:494
+#: includes/Features/LocalPickup.php:506
 msgid "View Pickup Location"
 msgstr "Zobrazit místo vyzvednutí"
 
-#: includes/Features/LocalPickup.php:495
+#: includes/Features/LocalPickup.php:507
 msgid "Search Pickup Locations"
 msgstr "Hledat místa vyzvednutí"
 
-#: includes/Features/LocalPickup.php:496
+#: includes/Features/LocalPickup.php:508
 msgid "No Pickup Location found"
 msgstr "Nebylo nalezeno žádné místo vyzvednutí"
 
-#: includes/Features/LocalPickup.php:497
+#: includes/Features/LocalPickup.php:509
 msgid "No Pickup Locations found in trash"
 msgstr "V koši nebyla nalezena žádná místa vyzvednutí"
 
-#: includes/Features/LocalPickup.php:502
+#: includes/Features/LocalPickup.php:514
 msgid "This is where you can add new Pickup Locations."
 msgstr "Zde můžete přidat nová místa vyzvednutí."
 
-#: includes/Features/LocalPickup.php:579
+#: includes/Features/LocalPickup.php:591
 #: client/ts/frontend/Components/ReviewPane/PaymentMethodReviewPane.tsx:37
 #: client/ts/frontend/Components/ReviewPane/OrderReviewStepReviewPane.tsx:37
 msgid "Method"
 msgstr "Metoda"
 
-#: includes/Features/LocalPickup.php:597
-msgid "Pick up in store"
-msgstr "Vyzvednutí v obchodě"
-
-#: includes/Features/LocalPickup.php:732
+#: includes/Features/LocalPickup.php:744
 msgid "Pickup instructions"
 msgstr "Pokyny k vyzvednutí"
 
-#: includes/Features/LocalPickup.php:922
+#: includes/Features/LocalPickup.php:934
 msgid "Usually ready in 1 hour."
 msgstr "Obvykle je hotová za 1 hodinu."
 
-#: includes/Features/LocalPickup.php:923
+#: includes/Features/LocalPickup.php:935
 msgid "Usually ready in 2 hours."
 msgstr "Obvykle je hotová do 2 hodin."
 
-#: includes/Features/LocalPickup.php:924
+#: includes/Features/LocalPickup.php:936
 msgid "Usually ready in 4 hours."
 msgstr "Obvykle je hotová za 4 hodiny."
 
-#: includes/Features/LocalPickup.php:925
+#: includes/Features/LocalPickup.php:937
 msgid "Usually ready in 24 hours."
 msgstr "Obvykle do 24 hodin."
 
-#: includes/Features/LocalPickup.php:926
+#: includes/Features/LocalPickup.php:938
 msgid "Usually ready in 2-4 days."
 msgstr "Obvykle je hotová za 2-4 dny."
 
-#: includes/Features/LocalPickup.php:927
+#: includes/Features/LocalPickup.php:939
 msgid "Usually ready in 5+ days."
 msgstr "Obvykle je hotová za více než 5 dní."
 
-#: includes/Features/LocalPickup.php:1139
-#: includes/Features/LocalPickup.php:1166
+#: includes/Features/LocalPickup.php:1151
+#: includes/Features/LocalPickup.php:1178
 msgid "Pickup Instructions:"
 msgstr "Pokyny k vyzvednutí:"
 
@@ -1834,6 +1830,24 @@ msgstr "Formulář nabídky Order Bump"
 msgid "The form to accept or reject the bump offer."
 msgstr "Formulář pro přijetí nebo odmítnutí nabídky bump."
 
+# %1$s: Plugin name, %2$s: Link opening tag, %3$s: Version number, %4$s: Link closing tag
+#: includes/Managers/Helpers/EDD_SL_Plugin_Updater.php:281
+msgid "There is a new version of %1$s available. %2$sView version %3$s details%4$s."
+msgstr "Je k dispozici nová verze %1$s. %2$sZobrazit podrobnosti verze %3$s%4$s."
+
+# %1$s: Plugin name, %2$s: Link opening tag, %3$s: Version number, %4$s: Link closing tag, %5$s: Update link opening tag, %6$s: Update link closing tag
+#: includes/Managers/Helpers/EDD_SL_Plugin_Updater.php:290
+msgid "There is a new version of %1$s available. %2$sView version %3$s details%4$s or %5$supdate now%6$s."
+msgstr "Je k dispozici nová verze %1$s. %2$sZobrazit podrobnosti verze %3$s%4$s nebo %5$saktualizovat nyní%6$s."
+
+#: includes/Managers/Helpers/EDD_SL_Plugin_Updater.php:534
+msgid "You do not have permission to install plugin updates"
+msgstr "Nemáte oprávnění k instalaci aktualizací pluginů"
+
+#: includes/Managers/Helpers/EDD_SL_Plugin_Updater.php:534
+msgid "Error"
+msgstr "Chyba"
+
 #: includes/Model/Bumps/BumpAbstract.php:1013
 #: includes/Model/Bumps/BumpAbstract.php:1023
 #: includes/Model/ABTests/OrderBumpsABTest.php:30
@@ -1888,24 +1902,6 @@ msgstr "Nenalezeno v koši"
 #: includes/Features/ABTesting/ABTestTypeRegistry.php:124
 msgid "Test different variations of order bumps to see which performs better."
 msgstr "Testujte různé varianty objednávkových bumpů a zjistěte, která funguje lépe."
-
-# %1$s: Plugin name, %2$s: Link opening tag, %3$s: Version number, %4$s: Link closing tag
-#: includes/Managers/Helpers/EDD_SL_Plugin_Updater.php:281
-msgid "There is a new version of %1$s available. %2$sView version %3$s details%4$s."
-msgstr "Je k dispozici nová verze %1$s. %2$sZobrazit podrobnosti verze %3$s%4$s."
-
-# %1$s: Plugin name, %2$s: Link opening tag, %3$s: Version number, %4$s: Link closing tag, %5$s: Update link opening tag, %6$s: Update link closing tag
-#: includes/Managers/Helpers/EDD_SL_Plugin_Updater.php:290
-msgid "There is a new version of %1$s available. %2$sView version %3$s details%4$s or %5$supdate now%6$s."
-msgstr "Je k dispozici nová verze %1$s. %2$sZobrazit podrobnosti verze %3$s%4$s nebo %5$saktualizovat nyní%6$s."
-
-#: includes/Managers/Helpers/EDD_SL_Plugin_Updater.php:534
-msgid "You do not have permission to install plugin updates"
-msgstr "Nemáte oprávnění k instalaci aktualizací pluginů"
-
-#: includes/Managers/Helpers/EDD_SL_Plugin_Updater.php:534
-msgid "Error"
-msgstr "Chyba"
 
 #: includes/Features/OneClick/OrderStatusManager.php:52
 msgid "Pending Offer <span class=\"count\">(%s)</span>"
@@ -2159,6 +2155,116 @@ msgstr "Poznámka:"
 #: includes/Admin/Views/html-refund-offer.php:114
 msgid "Refunding an offer will process the refund with the payment gateway and create a WooCommerce refund record."
 msgstr "Vrácení nabídky zpracuje vrácení peněz přes platební bránu a vytvoří záznam o vrácení ve WooCommerce."
+
+#: includes/Admin/Notices/WelcomeNotice.php:12
+msgid "Welcome to CheckoutWC"
+msgstr "Vítejte v CheckoutWC"
+
+#: includes/Admin/Notices/WelcomeNotice.php:20
+msgid "Thank you for installing CheckoutWC! We automatically activated your license. You are all set!"
+msgstr "Děkujeme za instalaci CheckoutWC! Vaše licence byla automaticky aktivována. Vše je připraveno!"
+
+#: includes/Admin/Notices/WelcomeNotice.php:26
+msgid "Thank you for installing CheckoutWC! To get started, enter your <strong>License Key</strong> below, save, and click <strong>Activate Site</strong>."
+msgstr "Děkujeme za instalaci CheckoutWC! Pro začátek zadejte níže svůj <strong>licenční klíč</strong>, uložte a klikněte na <strong>Aktivovat web</strong>."
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:20
+msgid "your email"
+msgstr "váš e-mail"
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:88
+msgid "privacy policy"
+msgstr "zásady ochrany osobních údajů"
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:93
+msgid "By joining, %1$s will be added to our mailing list. Read our %2$s."
+msgstr "Přihlášením bude %1$s přidán do našeho mailing listu. Přečtěte si naše %2$s."
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:99
+msgid "Join Newsletter & Save 25%"
+msgstr "Přihlaste se k odběru newsletteru a ušetřete 25 %"
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:102
+msgid "Join Newsletter"
+msgstr "Přihlásit se k odběru newsletteru"
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:113
+msgid "Sign up to our newsletter and get proven conversion tips and checkout optimization strategies from the CheckoutWC team."
+msgstr "Přihlaste se k odběru našeho newsletteru a získejte ověřené tipy na konverze a strategie optimalizace pokladny od týmu CheckoutWC."
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:116
+msgid "Boost Your Conversions with Proven Strategies."
+msgstr "Zvyšte své konverze ověřenými strategiemi."
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:123
+msgid "We're so glad that you've chosen CheckoutWC to handle your checkouts. Unlock more sales with premium features like order bumps, abandoned cart recovery, and much more."
+msgstr "Jsme rádi, že jste si vybrali CheckoutWC pro správu svých pokladen. Odemkněte více prodejů s prémiovými funkcemi jako jsou objednávkové doplňky, obnovení opuštěného košíku a mnoho dalšího."
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:126
+msgid "Unlock more sales with CheckoutWC Premium"
+msgstr "Odemkněte více prodejů s CheckoutWC Premium"
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:144
+msgid "Sorry, there was an error joining our newsletter. Please refresh the page and try again."
+msgstr "Omlouváme se, při přihlášení k odběru newsletteru došlo k chybě. Prosím obnovte stránku a zkuste to znovu."
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:243
+msgid "Please wait..."
+msgstr "Prosím čekejte..."
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:320
+msgid "Sorry, your account has insufficient permissions to join our newsletter."
+msgstr "Omlouváme se, váš účet nemá dostatečná oprávnění pro přihlášení k odběru newsletteru."
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:354
+msgid "You have already joined our newsletter!"
+msgstr "Již jste přihlášeni k odběru našeho newsletteru!"
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:396
+msgid "Thank you for joining our newsletter!"
+msgstr "Děkujeme, že jste se přihlásili k odběru našeho newsletteru!"
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:410
+msgid "Security check failed."
+msgstr "Bezpečnostní kontrola selhala."
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:414
+msgid "Insufficient permissions."
+msgstr "Nedostatečná oprávnění."
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:422
+msgid "Notice dismissed."
+msgstr "Upozornění bylo zavřeno."
+
+# %1$s: URL to pricing page, %2$s: "purchase a new license" link text, %3$s: Support email URL, %4$s: "please contact support" link text
+#: includes/Admin/Notices/InvalidLicenseKeyNotice.php:15
+msgid "Your license key appears to have expired. Please <a href=\"%1$s\" target=\"_blank\">%2$s</a> to restore functionality. If you believe this is in error, <a href=\"%3$s\">%4$s</a>."
+msgstr "Zdá se, že platnost vašeho licenčního klíče vypršela. Prosím <a href=\"%1$s\" target=\"_blank\">%2$s</a> pro obnovení funkčnosti. Pokud si myslíte, že se jedná o chybu, <a href=\"%3$s\">%4$s</a>."
+
+#: includes/Admin/Notices/InvalidLicenseKeyNotice.php:17
+msgid "purchase a new license"
+msgstr "zakoupit novou licenci"
+
+#: includes/Admin/Notices/InvalidLicenseKeyNotice.php:19
+msgid "please contact support"
+msgstr "kontaktujte prosím podporu"
+
+# %1$s: URL to activation page, %2$s: "Start Here" link text
+#: includes/Admin/Notices/InactiveLicenseNotice.php:11
+msgid "Your license key is not active for this site. Please visit <a href=\"%1$s\">%2$s</a> to activate your license and restore functionality."
+msgstr "Váš licenční klíč není pro tento web aktivní. Navštivte prosím <a href=\"%1$s\">%2$s</a> pro aktivaci licence a obnovení funkčnosti."
+
+#: includes/Admin/Notices/BFNotice.php:13
+msgid "Black Friday Sale - 40% Off"
+msgstr "Výprodej Black Friday - 40% sleva"
+
+#: includes/Admin/Notices/BFNotice.php:14
+msgid "You're missing out on revenue growth tools like Order Bumps, Upsells, Abandoned Cart Recovery and more! Save 40% on CheckoutWC pro plans for Black Friday, ends December 4th"
+msgstr "Přicházíte o nástroje pro růst příjmů, jako jsou Order Bumps, Upsells, Obnova opuštěného košíku a další! Ušetřete 40 % na plánech CheckoutWC pro během Black Friday, akce končí 4. prosince"
+
+#: includes/Admin/Notices/BFNotice.php:27
+msgid "Get CheckoutWC Pro Now!"
+msgstr "Získejte CheckoutWC Pro nyní!"
 
 #: includes/Admin/Pages/WooCommercePages.php:21
 msgid "Pages"
@@ -3304,116 +3410,6 @@ msgstr "Povolit A/B testování"
 msgid "Allow A/B tests to be created and applied on the checkout page."
 msgstr "Umožnit vytváření a aplikaci A/B testů na stránce pokladny."
 
-#: includes/Admin/Notices/WelcomeNotice.php:12
-msgid "Welcome to CheckoutWC"
-msgstr "Vítejte v CheckoutWC"
-
-#: includes/Admin/Notices/WelcomeNotice.php:20
-msgid "Thank you for installing CheckoutWC! We automatically activated your license. You are all set!"
-msgstr "Děkujeme za instalaci CheckoutWC! Vaše licence byla automaticky aktivována. Vše je připraveno!"
-
-#: includes/Admin/Notices/WelcomeNotice.php:26
-msgid "Thank you for installing CheckoutWC! To get started, enter your <strong>License Key</strong> below, save, and click <strong>Activate Site</strong>."
-msgstr "Děkujeme za instalaci CheckoutWC! Pro začátek zadejte níže svůj <strong>licenční klíč</strong>, uložte a klikněte na <strong>Aktivovat web</strong>."
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:20
-msgid "your email"
-msgstr "váš e-mail"
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:88
-msgid "privacy policy"
-msgstr "zásady ochrany osobních údajů"
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:93
-msgid "By joining, %1$s will be added to our mailing list. Read our %2$s."
-msgstr "Přihlášením bude %1$s přidán do našeho mailing listu. Přečtěte si naše %2$s."
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:99
-msgid "Join Newsletter & Save 25%"
-msgstr "Přihlaste se k odběru newsletteru a ušetřete 25 %"
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:102
-msgid "Join Newsletter"
-msgstr "Přihlásit se k odběru newsletteru"
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:113
-msgid "Sign up to our newsletter and get proven conversion tips and checkout optimization strategies from the CheckoutWC team."
-msgstr "Přihlaste se k odběru našeho newsletteru a získejte ověřené tipy na konverze a strategie optimalizace pokladny od týmu CheckoutWC."
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:116
-msgid "Boost Your Conversions with Proven Strategies."
-msgstr "Zvyšte své konverze ověřenými strategiemi."
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:123
-msgid "We're so glad that you've chosen CheckoutWC to handle your checkouts. Unlock more sales with premium features like order bumps, abandoned cart recovery, and much more."
-msgstr "Jsme rádi, že jste si vybrali CheckoutWC pro správu svých pokladen. Odemkněte více prodejů s prémiovými funkcemi jako jsou objednávkové doplňky, obnovení opuštěného košíku a mnoho dalšího."
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:126
-msgid "Unlock more sales with CheckoutWC Premium"
-msgstr "Odemkněte více prodejů s CheckoutWC Premium"
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:144
-msgid "Sorry, there was an error joining our newsletter. Please refresh the page and try again."
-msgstr "Omlouváme se, při přihlášení k odběru newsletteru došlo k chybě. Prosím obnovte stránku a zkuste to znovu."
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:243
-msgid "Please wait..."
-msgstr "Prosím čekejte..."
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:320
-msgid "Sorry, your account has insufficient permissions to join our newsletter."
-msgstr "Omlouváme se, váš účet nemá dostatečná oprávnění pro přihlášení k odběru newsletteru."
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:354
-msgid "You have already joined our newsletter!"
-msgstr "Již jste přihlášeni k odběru našeho newsletteru!"
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:396
-msgid "Thank you for joining our newsletter!"
-msgstr "Děkujeme, že jste se přihlásili k odběru našeho newsletteru!"
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:410
-msgid "Security check failed."
-msgstr "Bezpečnostní kontrola selhala."
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:414
-msgid "Insufficient permissions."
-msgstr "Nedostatečná oprávnění."
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:422
-msgid "Notice dismissed."
-msgstr "Upozornění bylo zavřeno."
-
-# %1$s: URL to pricing page, %2$s: "purchase a new license" link text, %3$s: Support email URL, %4$s: "please contact support" link text
-#: includes/Admin/Notices/InvalidLicenseKeyNotice.php:15
-msgid "Your license key appears to have expired. Please <a href=\"%1$s\" target=\"_blank\">%2$s</a> to restore functionality. If you believe this is in error, <a href=\"%3$s\">%4$s</a>."
-msgstr "Zdá se, že platnost vašeho licenčního klíče vypršela. Prosím <a href=\"%1$s\" target=\"_blank\">%2$s</a> pro obnovení funkčnosti. Pokud si myslíte, že se jedná o chybu, <a href=\"%3$s\">%4$s</a>."
-
-#: includes/Admin/Notices/InvalidLicenseKeyNotice.php:17
-msgid "purchase a new license"
-msgstr "zakoupit novou licenci"
-
-#: includes/Admin/Notices/InvalidLicenseKeyNotice.php:19
-msgid "please contact support"
-msgstr "kontaktujte prosím podporu"
-
-# %1$s: URL to activation page, %2$s: "Start Here" link text
-#: includes/Admin/Notices/InactiveLicenseNotice.php:11
-msgid "Your license key is not active for this site. Please visit <a href=\"%1$s\">%2$s</a> to activate your license and restore functionality."
-msgstr "Váš licenční klíč není pro tento web aktivní. Navštivte prosím <a href=\"%1$s\">%2$s</a> pro aktivaci licence a obnovení funkčnosti."
-
-#: includes/Admin/Notices/BFNotice.php:13
-msgid "Black Friday Sale - 40% Off"
-msgstr "Výprodej Black Friday - 40% sleva"
-
-#: includes/Admin/Notices/BFNotice.php:14
-msgid "You're missing out on revenue growth tools like Order Bumps, Upsells, Abandoned Cart Recovery and more! Save 40% on CheckoutWC pro plans for Black Friday, ends December 4th"
-msgstr "Přicházíte o nástroje pro růst příjmů, jako jsou Order Bumps, Upsells, Obnova opuštěného košíku a další! Ušetřete 40 % na plánech CheckoutWC pro během Black Friday, akce končí 4. prosince"
-
-#: includes/Admin/Notices/BFNotice.php:27
-msgid "Get CheckoutWC Pro Now!"
-msgstr "Získejte CheckoutWC Pro nyní!"
-
 #: client/ts/functions/cfwFormatDate.ts:38
 msgid "Sunday"
 msgstr "Neděle"
@@ -4251,18 +4247,6 @@ msgstr "Datum, kdy by měl A/B test skončit. Po tomto datu bude zobrazena půvo
 msgid "Traffic split percentages must total 100%. Please adjust your percentages."
 msgstr "Procenta rozdělení provozu musí činit 100 %. Prosím upravte svá procenta."
 
-#: client/ts/frontend/Components/TermsAndConditions.ts:29
-msgid "Terms and Conditions"
-msgstr "Obchodní podmínky"
-
-#: client/ts/frontend/Components/TermsAndConditions.ts:35
-msgid "Privacy Policy"
-msgstr "Zásady ochrany soukromí"
-
-#: client/ts/frontend/Components/SideCartComponent.tsx:38
-msgid "Close Cart"
-msgstr "Zavřít košík"
-
 #: client/ts/frontend/Actions/CompleteOrderAction.ts:196
 msgid "Could not connect to server. Please refresh and try again or contact site administrator."
 msgstr "Nepodařilo se připojit k serveru. Prosím obnovte stránku a zkuste to znovu nebo kontaktujte správce webu."
@@ -4286,6 +4270,18 @@ msgstr "Server vypršel časový limit při zpracování vašeho požadavku. Pro
 #: client/ts/frontend/Actions/CompleteOrderAction.ts:206
 msgid "Request was aborted. Please contact site administrator."
 msgstr "Požadavek byl přerušen. Prosím kontaktujte správce webu."
+
+#: client/ts/frontend/Components/TermsAndConditions.ts:29
+msgid "Terms and Conditions"
+msgstr "Obchodní podmínky"
+
+#: client/ts/frontend/Components/TermsAndConditions.ts:35
+msgid "Privacy Policy"
+msgstr "Zásady ochrany soukromí"
+
+#: client/ts/frontend/Components/SideCartComponent.tsx:38
+msgid "Close Cart"
+msgstr "Zavřít košík"
 
 #: client/ts/admin/Components/TrustBadgeRow.tsx:172
 msgid "Determine when this Trust Badge should be displayed."

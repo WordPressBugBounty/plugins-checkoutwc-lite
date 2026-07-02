@@ -4,7 +4,7 @@ Donate link: https://www.checkoutwc.com
 Tags: woocommerce-checkout, checkout-optimization, cart-abandonment, one-page-checkout, express-checkout
 Requires at least: 5.2
 Tested up to: 7.0
-Stable tag: 11.1.3
+Stable tag: 11.1.4
 Requires PHP: 7.4
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
@@ -250,6 +250,12 @@ Enable WordPress debugging (add define('WP_DEBUG', true); to wp-config.php) and 
 == Changelog ==
 
 Free version updates are non-sequential due to the unified development branch we use with the premium versions.
+
+= Version 11.1.4 =
+
+- Fix - Checkout could submit an empty country on single-country stores, blocking orders with "Please enter an address to continue" on some browsers
+- Fix - Local pickup orders no longer trigger shipping field validation errors during Apple Pay express checkout with Payment Plugins for Stripe
+- Fix - Shipping address fields no longer reappear after a checkout update when local pickup is selected
 
 = Version 11.1.3 =
 

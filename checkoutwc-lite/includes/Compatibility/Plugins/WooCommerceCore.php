@@ -237,9 +237,18 @@ class WooCommerceCore extends CompatibilityAbstract {
 			// Remove the shim option
 			$field = preg_replace( '/<option value="shim".*shim<\/option>/', '', $field, -1, $count );
 
-			// Now select the remaining country
+			// With the shim removed, the field holds the empty placeholder option
+			// followed by the single real country option. Pre-select that country
+			// (matched by its two-letter country code) so it submits without the
+			// customer having to open the dropdown.
+			//
+			// We must select only that one option. Marking every option selected
+			// (the placeholder included) leaves two selected <option>s in a single
+			// select, which browsers resolve differently: some - notably mobile
+			// Safari - pick the empty placeholder, so the country posts empty and
+			// WooCommerce rejects the order with "Please enter an address to continue".
 			if ( $count ) {
-				$field = str_replace( 'value=', 'selected="selected" value=', $field );
+				$field = preg_replace( '/<option value="([A-Z]{2})"/', '<option value="$1" selected="selected"', $field, 1 );
 			}
 		}
 

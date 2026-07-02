@@ -1094,6 +1094,13 @@ add_action(
 		add_filter(
 			'the_posts',
 			function( $posts ) {
+				// The order-received endpoint lives on the checkout page, but when CheckoutWC
+				// isn't rendering the thank-you page the merchant owns that content. Leave it
+				// alone so their custom order-received content isn't wiped.
+				if ( function_exists( 'is_order_received_page' ) && is_order_received_page() && ! cfw_is_order_received_page() ) {
+					return $posts;
+				}
+
 				$checkout_page_id = wc_get_page_id( 'checkout' );
 
 				foreach ( $posts as $post ) {

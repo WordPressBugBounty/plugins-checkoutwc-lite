@@ -8,7 +8,7 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "POT-Creation-Date: 2025-07-25 09:22-0400\n"
-"PO-Revision-Date: 2026-06-29T12:40:12+00:00\n"
+"PO-Revision-Date: 2026-07-02T13:09:59+00:00\n"
 "Language: de-CH\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 3.6\n"
@@ -362,8 +362,8 @@ msgid "Shipping address"
 msgstr "Lieferadresse"
 
 #: functions/template-functions.php:935
-#: templates/glass/functions.php:40
 #: templates/futurist/functions.php:16
+#: templates/glass/functions.php:40
 msgid "Your Cart"
 msgstr "Ihr Warenkorb"
 
@@ -509,8 +509,8 @@ msgid "Settings"
 msgstr "Einstellungen"
 
 #: functions/premium-init.php:339
-#: includes/Admin/Pages/General.php:25
 #: includes/Admin/Notices/InactiveLicenseNotice.php:13
+#: includes/Admin/Pages/General.php:25
 msgid "Start Here"
 msgstr "Hier starten"
 
@@ -662,7 +662,7 @@ msgid "Ship to"
 msgstr "Lieferadresse"
 
 #: functions/functions.php:229
-#: includes/Features/LocalPickup.php:746
+#: includes/Features/LocalPickup.php:758
 #: includes/Admin/Pages/PickupLocationsAdminFree.php:93
 #: includes/Admin/Pages/Premium/PickupLocations.php:92
 msgid "Address"
@@ -673,7 +673,7 @@ msgid "Sorry, it seems that there are no available payment methods for your loca
 msgstr "Entschuldigung, es scheint keine verfügbaren Zahlungsmethoden für Ihren Standort zu geben. Bitte kontaktieren Sie uns, wenn Sie Unterstützung benötigen oder alternative Vereinbarungen treffen möchten."
 
 #: functions/functions.php:785
-#: includes/Features/LocalPickup.php:1067
+#: includes/Features/LocalPickup.php:1079
 msgid "Shipping costs are calculated during checkout."
 msgstr "Die Versandkosten werden während des Bezahlvorgangs berechnet."
 
@@ -774,7 +774,7 @@ msgstr "Verkleinern"
 #: functions/functions.php:2404
 #: includes/Managers/AssetManager.php:721
 #: includes/Managers/AssetManager.php:842
-#: includes/Features/LocalPickup.php:490
+#: includes/Features/LocalPickup.php:502
 #: includes/Features/AbandonedCartRecovery.php:122
 #: includes/Features/ABTesting.php:145
 #: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:632
@@ -914,6 +914,19 @@ msgstr "SendWP ist bereits verbunden."
 msgid "Something went wrong. SendWP was not installed correctly."
 msgstr "Etwas ist schiefgelaufen. SendWP wurde nicht korrekt installiert."
 
+#: includes/Shipping/CFW_Shipping_Local_Pickup.php:35
+#: includes/Shipping/CFW_Shipping_Local_Pickup.php:48
+#: includes/Admin/Pages/LocalPickupAdminFree.php:19
+#: includes/Admin/Pages/LocalPickupAdminFree.php:56
+#: includes/Admin/Pages/Premium/LocalPickupAdmin.php:20
+#: client/ts/admin/Components/Forms/LocalPickupSettingsForm.tsx:62
+msgid "Local Pickup"
+msgstr "Lokale Abholung"
+
+#: includes/Shipping/CFW_Shipping_Local_Pickup.php:36
+msgid "Allow customers to pick up orders themselves. This version does not require shipping zones."
+msgstr "Ermöglichen Sie Kunden, Bestellungen selbst abzuholen. Diese Version benötigt keine Versandzonen."
+
 #: includes/Stats/StatCollection.php:193
 msgid "Once Weekly"
 msgstr "Einmal wöchentlich"
@@ -938,18 +951,41 @@ msgstr "Erlauben"
 msgid "Do not allow"
 msgstr "Nicht erlauben"
 
-#: includes/Shipping/CFW_Shipping_Local_Pickup.php:35
-#: includes/Shipping/CFW_Shipping_Local_Pickup.php:48
-#: includes/Admin/Pages/LocalPickupAdminFree.php:19
-#: includes/Admin/Pages/LocalPickupAdminFree.php:56
-#: includes/Admin/Pages/Premium/LocalPickupAdmin.php:20
-#: client/ts/admin/Components/Forms/LocalPickupSettingsForm.tsx:62
-msgid "Local Pickup"
-msgstr "Lokale Abholung"
+#: includes/Loaders/LoaderAbstract.php:134
+#: includes/Loaders/LoaderAbstract.php:244
+msgid "Sorry, this order is invalid and cannot be paid for."
+msgstr "Entschuldigung, diese Bestellung ist ungültig und kann nicht bezahlt werden."
 
-#: includes/Shipping/CFW_Shipping_Local_Pickup.php:36
-msgid "Allow customers to pick up orders themselves. This version does not require shipping zones."
-msgstr "Ermöglichen Sie Kunden, Bestellungen selbst abzuholen. Diese Version benötigt keine Versandzonen."
+#: includes/Loaders/LoaderAbstract.php:138
+msgid "Please log in to your account below to continue to the payment form."
+msgstr "Bitte melden Sie sich unten in Ihrem Konto an, um zum Zahlungsformular zu gelangen."
+
+#: includes/Loaders/LoaderAbstract.php:145
+msgid "You are paying for a guest order. Please continue with payment only if you recognize this order."
+msgstr "Sie bezahlen für eine Gastbestellung. Bitte fahren Sie mit der Zahlung nur fort, wenn Sie diese Bestellung erkennen."
+
+#: includes/Loaders/LoaderAbstract.php:151
+msgid "This order cannot be paid for. Please contact us if you need assistance."
+msgstr "Diese Bestellung kann nicht bezahlt werden. Bitte kontaktieren Sie uns, wenn Sie Hilfe benötigen."
+
+#: includes/Loaders/LoaderAbstract.php:157
+#: includes/Loaders/LoaderAbstract.php:241
+msgid "This order&rsquo;s status is &ldquo;%s&rdquo;&mdash;it cannot be paid for. Please contact us if you need assistance."
+msgstr "Der Status dieser Bestellung ist „%s“—sie kann nicht bezahlt werden. Bitte kontaktieren Sie uns, wenn Sie Hilfe benötigen."
+
+#: includes/Loaders/LoaderAbstract.php:186
+msgid "Sorry, \"%s\" is no longer in stock so this order cannot be paid for. We apologize for any inconvenience caused."
+msgstr "Entschuldigung, „%s“ ist nicht mehr auf Lager, daher kann diese Bestellung nicht bezahlt werden. Wir entschuldigen uns für die Unannehmlichkeiten."
+
+#: includes/Loaders/LoaderAbstract.php:200
+msgid "Sorry, we do not have enough \"%1$s\" in stock to fulfill your order (%2$s available). We apologize for any inconvenience caused."
+msgstr "Entschuldigung, wir haben nicht genügend „%1$s“ auf Lager, um Ihre Bestellung zu erfüllen (%2$s verfügbar). Wir entschuldigen uns für die Unannehmlichkeiten."
+
+#: includes/Loaders/LoaderAbstract.php:247
+#: includes/Action/ProcessOfferPaymentAction.php:73
+#: includes/Features/OneClick/OfferRefundManager.php:177
+msgid "Invalid order."
+msgstr "Ungültige Bestellung."
 
 #: includes/Managers/UpdatesManager.php:416
 msgid "CheckoutWC License Key"
@@ -1110,7 +1146,7 @@ msgid "Please enter a valid postcode / ZIP."
 msgstr "Bitte gib eine gültige Postleitzahl ein."
 
 #: includes/Managers/AssetManager.php:700
-#: includes/Features/LocalPickup.php:614
+#: includes/Features/LocalPickup.php:626
 msgid "Pickup"
 msgstr "Abholauftrag"
 
@@ -1168,42 +1204,6 @@ msgstr "Weiter zur Kasse"
 msgid "View Product"
 msgstr "Produkt ansehen"
 
-#: includes/Loaders/LoaderAbstract.php:134
-#: includes/Loaders/LoaderAbstract.php:244
-msgid "Sorry, this order is invalid and cannot be paid for."
-msgstr "Entschuldigung, diese Bestellung ist ungültig und kann nicht bezahlt werden."
-
-#: includes/Loaders/LoaderAbstract.php:138
-msgid "Please log in to your account below to continue to the payment form."
-msgstr "Bitte melden Sie sich unten in Ihrem Konto an, um zum Zahlungsformular zu gelangen."
-
-#: includes/Loaders/LoaderAbstract.php:145
-msgid "You are paying for a guest order. Please continue with payment only if you recognize this order."
-msgstr "Sie bezahlen für eine Gastbestellung. Bitte fahren Sie mit der Zahlung nur fort, wenn Sie diese Bestellung erkennen."
-
-#: includes/Loaders/LoaderAbstract.php:151
-msgid "This order cannot be paid for. Please contact us if you need assistance."
-msgstr "Diese Bestellung kann nicht bezahlt werden. Bitte kontaktieren Sie uns, wenn Sie Hilfe benötigen."
-
-#: includes/Loaders/LoaderAbstract.php:157
-#: includes/Loaders/LoaderAbstract.php:241
-msgid "This order&rsquo;s status is &ldquo;%s&rdquo;&mdash;it cannot be paid for. Please contact us if you need assistance."
-msgstr "Der Status dieser Bestellung ist „%s“—sie kann nicht bezahlt werden. Bitte kontaktieren Sie uns, wenn Sie Hilfe benötigen."
-
-#: includes/Loaders/LoaderAbstract.php:186
-msgid "Sorry, \"%s\" is no longer in stock so this order cannot be paid for. We apologize for any inconvenience caused."
-msgstr "Entschuldigung, „%s“ ist nicht mehr auf Lager, daher kann diese Bestellung nicht bezahlt werden. Wir entschuldigen uns für die Unannehmlichkeiten."
-
-#: includes/Loaders/LoaderAbstract.php:200
-msgid "Sorry, we do not have enough \"%1$s\" in stock to fulfill your order (%2$s available). We apologize for any inconvenience caused."
-msgstr "Entschuldigung, wir haben nicht genügend „%1$s“ auf Lager, um Ihre Bestellung zu erfüllen (%2$s verfügbar). Wir entschuldigen uns für die Unannehmlichkeiten."
-
-#: includes/Loaders/LoaderAbstract.php:247
-#: includes/Action/ProcessOfferPaymentAction.php:73
-#: includes/Features/OneClick/OfferRefundManager.php:177
-msgid "Invalid order."
-msgstr "Ungültige Bestellung."
-
 #: includes/Features/Turnstile.php:134
 #: includes/Features/Turnstile.php:188
 #: includes/Features/Turnstile.php:362
@@ -1260,114 +1260,110 @@ msgstr "Hat Bump: %s"
 msgid "Delivery method"
 msgstr "Art der Zustellung"
 
-#: includes/Features/LocalPickup.php:170
+#: includes/Features/LocalPickup.php:178
 msgid "Pick up"
 msgstr "Abholen"
 
-#: includes/Features/LocalPickup.php:185
+#: includes/Features/LocalPickup.php:197
 msgid "Ship"
 msgstr "Ausliefern"
 
-#: includes/Features/LocalPickup.php:288
+#: includes/Features/LocalPickup.php:300
 msgid "Pickup locations"
 msgstr "Abholorte"
 
-#: includes/Features/LocalPickup.php:485
-#: includes/Features/LocalPickup.php:487
+#: includes/Features/LocalPickup.php:497
+#: includes/Features/LocalPickup.php:499
 #: includes/Admin/Pages/PickupLocationsAdminFree.php:21
 #: includes/Admin/Pages/Premium/PickupLocations.php:22
 msgid "Pickup Locations"
 msgstr "Abholorte"
 
-#: includes/Features/LocalPickup.php:486
-#: includes/Features/LocalPickup.php:672
-#: includes/Features/LocalPickup.php:760
-#: includes/Features/LocalPickup.php:802
-#: includes/Features/LocalPickup.php:1130
-#: includes/Features/LocalPickup.php:1155
+#: includes/Features/LocalPickup.php:498
+#: includes/Features/LocalPickup.php:684
+#: includes/Features/LocalPickup.php:772
+#: includes/Features/LocalPickup.php:814
+#: includes/Features/LocalPickup.php:1142
+#: includes/Features/LocalPickup.php:1167
 msgid "Pickup Location"
 msgstr "Abholort"
 
-#: includes/Features/LocalPickup.php:488
+#: includes/Features/LocalPickup.php:500
 msgid "Add Pickup Location"
 msgstr "Abholort hinzufügen"
 
-#: includes/Features/LocalPickup.php:489
+#: includes/Features/LocalPickup.php:501
 msgid "Add New Pickup Location"
 msgstr "Neuen Abholort hinzufügen"
 
-#: includes/Features/LocalPickup.php:491
+#: includes/Features/LocalPickup.php:503
 msgid "Edit Pickup Location"
 msgstr "Abholort bearbeiten"
 
-#: includes/Features/LocalPickup.php:492
+#: includes/Features/LocalPickup.php:504
 msgid "New Pickup Location"
 msgstr "Neuer Abholort"
 
-#: includes/Features/LocalPickup.php:493
+#: includes/Features/LocalPickup.php:505
 msgid "View Pickup Locations"
 msgstr "Abholorte anzeigen"
 
-#: includes/Features/LocalPickup.php:494
+#: includes/Features/LocalPickup.php:506
 msgid "View Pickup Location"
 msgstr "Abholort anzeigen"
 
-#: includes/Features/LocalPickup.php:495
+#: includes/Features/LocalPickup.php:507
 msgid "Search Pickup Locations"
 msgstr "Abholorte suchen"
 
-#: includes/Features/LocalPickup.php:496
+#: includes/Features/LocalPickup.php:508
 msgid "No Pickup Location found"
 msgstr "Kein Abholort gefunden"
 
-#: includes/Features/LocalPickup.php:497
+#: includes/Features/LocalPickup.php:509
 msgid "No Pickup Locations found in trash"
 msgstr "Keine Abholorte im Papierkorb gefunden"
 
-#: includes/Features/LocalPickup.php:502
+#: includes/Features/LocalPickup.php:514
 msgid "This is where you can add new Pickup Locations."
 msgstr "Hier können Sie neue Abholorte hinzufügen."
 
-#: includes/Features/LocalPickup.php:579
+#: includes/Features/LocalPickup.php:591
 #: client/ts/frontend/Components/ReviewPane/PaymentMethodReviewPane.tsx:37
 #: client/ts/frontend/Components/ReviewPane/OrderReviewStepReviewPane.tsx:37
 msgid "Method"
 msgstr "Methode"
 
-#: includes/Features/LocalPickup.php:597
-msgid "Pick up in store"
-msgstr "Abholung im Geschäft"
-
-#: includes/Features/LocalPickup.php:732
+#: includes/Features/LocalPickup.php:744
 msgid "Pickup instructions"
 msgstr "Anweisungen für die Abholung"
 
-#: includes/Features/LocalPickup.php:922
+#: includes/Features/LocalPickup.php:934
 msgid "Usually ready in 1 hour."
 msgstr "In der Regel in 1 Stunde fertig."
 
-#: includes/Features/LocalPickup.php:923
+#: includes/Features/LocalPickup.php:935
 msgid "Usually ready in 2 hours."
 msgstr "Normalerweise in 2 Stunden fertig."
 
-#: includes/Features/LocalPickup.php:924
+#: includes/Features/LocalPickup.php:936
 msgid "Usually ready in 4 hours."
 msgstr "In der Regel in 4 Stunden fertig."
 
-#: includes/Features/LocalPickup.php:925
+#: includes/Features/LocalPickup.php:937
 msgid "Usually ready in 24 hours."
 msgstr "In der Regel innerhalb von 24 Stunden verfügbar."
 
-#: includes/Features/LocalPickup.php:926
+#: includes/Features/LocalPickup.php:938
 msgid "Usually ready in 2-4 days."
 msgstr "Normalerweise in 2-4 Tagen fertig."
 
-#: includes/Features/LocalPickup.php:927
+#: includes/Features/LocalPickup.php:939
 msgid "Usually ready in 5+ days."
 msgstr "Normalerweise in 5+ Tagen fertig."
 
-#: includes/Features/LocalPickup.php:1139
-#: includes/Features/LocalPickup.php:1166
+#: includes/Features/LocalPickup.php:1151
+#: includes/Features/LocalPickup.php:1178
 msgid "Pickup Instructions:"
 msgstr "Abholanweisungen:"
 
@@ -1837,6 +1833,24 @@ msgstr "Order Bump Angebotsformular"
 msgid "The form to accept or reject the bump offer."
 msgstr "Das Formular zum Akzeptieren oder Ablehnen des Bump-Angebots."
 
+# %1$s: Plugin name, %2$s: Link opening tag, %3$s: Version number, %4$s: Link closing tag
+#: includes/Managers/Helpers/EDD_SL_Plugin_Updater.php:281
+msgid "There is a new version of %1$s available. %2$sView version %3$s details%4$s."
+msgstr "Eine neue Version von %1$s ist verfügbar. %2$sDetails zu Version %3$s anzeigen%4$s."
+
+# %1$s: Plugin name, %2$s: Link opening tag, %3$s: Version number, %4$s: Link closing tag, %5$s: Update link opening tag, %6$s: Update link closing tag
+#: includes/Managers/Helpers/EDD_SL_Plugin_Updater.php:290
+msgid "There is a new version of %1$s available. %2$sView version %3$s details%4$s or %5$supdate now%6$s."
+msgstr "Eine neue Version von %1$s ist verfügbar. %2$sDetails zu Version %3$s anzeigen%4$s oder %5$sjetzt aktualisieren%6$s."
+
+#: includes/Managers/Helpers/EDD_SL_Plugin_Updater.php:534
+msgid "You do not have permission to install plugin updates"
+msgstr "Sie haben keine Berechtigung, Plugin-Updates zu installieren"
+
+#: includes/Managers/Helpers/EDD_SL_Plugin_Updater.php:534
+msgid "Error"
+msgstr "Fehler"
+
 #: includes/Model/Bumps/BumpAbstract.php:1013
 #: includes/Model/Bumps/BumpAbstract.php:1023
 #: includes/Model/ABTests/OrderBumpsABTest.php:30
@@ -1891,24 +1905,6 @@ msgstr "Nicht im Papierkorb gefunden"
 #: includes/Features/ABTesting/ABTestTypeRegistry.php:124
 msgid "Test different variations of order bumps to see which performs better."
 msgstr "Testen Sie verschiedene Varianten von Order Bumps, um zu sehen, welche besser funktioniert."
-
-# %1$s: Plugin name, %2$s: Link opening tag, %3$s: Version number, %4$s: Link closing tag
-#: includes/Managers/Helpers/EDD_SL_Plugin_Updater.php:281
-msgid "There is a new version of %1$s available. %2$sView version %3$s details%4$s."
-msgstr "Eine neue Version von %1$s ist verfügbar. %2$sDetails zu Version %3$s anzeigen%4$s."
-
-# %1$s: Plugin name, %2$s: Link opening tag, %3$s: Version number, %4$s: Link closing tag, %5$s: Update link opening tag, %6$s: Update link closing tag
-#: includes/Managers/Helpers/EDD_SL_Plugin_Updater.php:290
-msgid "There is a new version of %1$s available. %2$sView version %3$s details%4$s or %5$supdate now%6$s."
-msgstr "Eine neue Version von %1$s ist verfügbar. %2$sDetails zu Version %3$s anzeigen%4$s oder %5$sjetzt aktualisieren%6$s."
-
-#: includes/Managers/Helpers/EDD_SL_Plugin_Updater.php:534
-msgid "You do not have permission to install plugin updates"
-msgstr "Sie haben keine Berechtigung, Plugin-Updates zu installieren"
-
-#: includes/Managers/Helpers/EDD_SL_Plugin_Updater.php:534
-msgid "Error"
-msgstr "Fehler"
 
 #: includes/Features/OneClick/OrderStatusManager.php:52
 msgid "Pending Offer <span class=\"count\">(%s)</span>"
@@ -2161,6 +2157,116 @@ msgstr "Hinweis:"
 #: includes/Admin/Views/html-refund-offer.php:114
 msgid "Refunding an offer will process the refund with the payment gateway and create a WooCommerce refund record."
 msgstr "Die Rückerstattung eines Angebots verarbeitet die Rückerstattung über das Zahlungsgateway und erstellt einen WooCommerce-Rückerstattungseintrag."
+
+#: includes/Admin/Notices/WelcomeNotice.php:12
+msgid "Welcome to CheckoutWC"
+msgstr "Willkommen bei CheckoutWC"
+
+#: includes/Admin/Notices/WelcomeNotice.php:20
+msgid "Thank you for installing CheckoutWC! We automatically activated your license. You are all set!"
+msgstr "Danke, dass Sie CheckoutWC installiert haben! Wir haben Ihre Lizenz automatisch aktiviert. Alles ist bereit!"
+
+#: includes/Admin/Notices/WelcomeNotice.php:26
+msgid "Thank you for installing CheckoutWC! To get started, enter your <strong>License Key</strong> below, save, and click <strong>Activate Site</strong>."
+msgstr "Danke, dass Sie CheckoutWC installiert haben! Um zu beginnen, geben Sie unten Ihren <strong>Lizenzschlüssel</strong> ein, speichern Sie und klicken Sie auf <strong>Website aktivieren</strong>."
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:20
+msgid "your email"
+msgstr "Ihre E-Mail"
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:88
+msgid "privacy policy"
+msgstr "Datenschutzrichtlinie"
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:93
+msgid "By joining, %1$s will be added to our mailing list. Read our %2$s."
+msgstr "Durch die Anmeldung wird %1$s zu unserer Mailingliste hinzugefügt. Lesen Sie unsere %2$s."
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:99
+msgid "Join Newsletter & Save 25%"
+msgstr "Newsletter abonnieren & 25% sparen"
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:102
+msgid "Join Newsletter"
+msgstr "Newsletter abonnieren"
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:113
+msgid "Sign up to our newsletter and get proven conversion tips and checkout optimization strategies from the CheckoutWC team."
+msgstr "Melden Sie sich für unseren Newsletter an und erhalten Sie bewährte Tipps zur Conversion-Optimierung und Checkout-Strategien vom CheckoutWC-Team."
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:116
+msgid "Boost Your Conversions with Proven Strategies."
+msgstr "Steigern Sie Ihre Conversions mit bewährten Strategien."
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:123
+msgid "We're so glad that you've chosen CheckoutWC to handle your checkouts. Unlock more sales with premium features like order bumps, abandoned cart recovery, and much more."
+msgstr "Wir freuen uns sehr, dass Sie sich für CheckoutWC zur Abwicklung Ihrer Checkouts entschieden haben. Schalten Sie mehr Verkäufe mit Premium-Funktionen wie Order Bumps, Wiederherstellung abgebrochener Warenkörbe und vielem mehr frei."
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:126
+msgid "Unlock more sales with CheckoutWC Premium"
+msgstr "Mehr Verkäufe mit CheckoutWC Premium freischalten"
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:144
+msgid "Sorry, there was an error joining our newsletter. Please refresh the page and try again."
+msgstr "Entschuldigung, beim Anmelden zu unserem Newsletter ist ein Fehler aufgetreten. Bitte aktualisieren Sie die Seite und versuchen Sie es erneut."
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:243
+msgid "Please wait..."
+msgstr "Bitte warten..."
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:320
+msgid "Sorry, your account has insufficient permissions to join our newsletter."
+msgstr "Entschuldigung, Ihr Konto hat nicht die erforderlichen Berechtigungen, um unseren Newsletter zu abonnieren."
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:354
+msgid "You have already joined our newsletter!"
+msgstr "Sie haben unseren Newsletter bereits abonniert!"
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:396
+msgid "Thank you for joining our newsletter!"
+msgstr "Vielen Dank für Ihre Anmeldung zu unserem Newsletter!"
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:410
+msgid "Security check failed."
+msgstr "Sicherheitsprüfung fehlgeschlagen."
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:414
+msgid "Insufficient permissions."
+msgstr "Unzureichende Berechtigungen."
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:422
+msgid "Notice dismissed."
+msgstr "Hinweis wurde ausgeblendet."
+
+# %1$s: URL to pricing page, %2$s: "purchase a new license" link text, %3$s: Support email URL, %4$s: "please contact support" link text
+#: includes/Admin/Notices/InvalidLicenseKeyNotice.php:15
+msgid "Your license key appears to have expired. Please <a href=\"%1$s\" target=\"_blank\">%2$s</a> to restore functionality. If you believe this is in error, <a href=\"%3$s\">%4$s</a>."
+msgstr "Ihr Lizenzschlüssel scheint abgelaufen zu sein. Bitte <a href=\"%1$s\" target=\"_blank\">%2$s</a>, um die Funktionalität wiederherzustellen. Wenn Sie glauben, dass dies ein Fehler ist, <a href=\"%3$s\">%4$s</a>."
+
+#: includes/Admin/Notices/InvalidLicenseKeyNotice.php:17
+msgid "purchase a new license"
+msgstr "eine neue Lizenz kaufen"
+
+#: includes/Admin/Notices/InvalidLicenseKeyNotice.php:19
+msgid "please contact support"
+msgstr "bitte kontaktieren Sie den Support"
+
+# %1$s: URL to activation page, %2$s: "Start Here" link text
+#: includes/Admin/Notices/InactiveLicenseNotice.php:11
+msgid "Your license key is not active for this site. Please visit <a href=\"%1$s\">%2$s</a> to activate your license and restore functionality."
+msgstr "Ihr Lizenzschlüssel ist für diese Seite nicht aktiv. Bitte besuchen Sie <a href=\"%1$s\">%2$s</a>, um Ihre Lizenz zu aktivieren und die Funktionalität wiederherzustellen."
+
+#: includes/Admin/Notices/BFNotice.php:13
+msgid "Black Friday Sale - 40% Off"
+msgstr "Black Friday Verkauf - 40% Rabatt"
+
+#: includes/Admin/Notices/BFNotice.php:14
+msgid "You're missing out on revenue growth tools like Order Bumps, Upsells, Abandoned Cart Recovery and more! Save 40% on CheckoutWC pro plans for Black Friday, ends December 4th"
+msgstr "Sie verpassen Umsatzwachstums-Tools wie Order Bumps, Upsells, Abandoned Cart Recovery und mehr! Sparen Sie 40% auf CheckoutWC Pro-Pläne zum Black Friday, endet am 4. Dezember"
+
+#: includes/Admin/Notices/BFNotice.php:27
+msgid "Get CheckoutWC Pro Now!"
+msgstr "Jetzt CheckoutWC Pro holen!"
 
 #: includes/Admin/Pages/WooCommercePages.php:21
 msgid "Pages"
@@ -3306,116 +3412,6 @@ msgstr "A/B-Tests aktivieren"
 msgid "Allow A/B tests to be created and applied on the checkout page."
 msgstr "Erlaubt das Erstellen und Anwenden von A/B-Tests auf der Checkout-Seite."
 
-#: includes/Admin/Notices/WelcomeNotice.php:12
-msgid "Welcome to CheckoutWC"
-msgstr "Willkommen bei CheckoutWC"
-
-#: includes/Admin/Notices/WelcomeNotice.php:20
-msgid "Thank you for installing CheckoutWC! We automatically activated your license. You are all set!"
-msgstr "Danke, dass Sie CheckoutWC installiert haben! Wir haben Ihre Lizenz automatisch aktiviert. Alles ist bereit!"
-
-#: includes/Admin/Notices/WelcomeNotice.php:26
-msgid "Thank you for installing CheckoutWC! To get started, enter your <strong>License Key</strong> below, save, and click <strong>Activate Site</strong>."
-msgstr "Danke, dass Sie CheckoutWC installiert haben! Um zu beginnen, geben Sie unten Ihren <strong>Lizenzschlüssel</strong> ein, speichern Sie und klicken Sie auf <strong>Website aktivieren</strong>."
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:20
-msgid "your email"
-msgstr "Ihre E-Mail"
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:88
-msgid "privacy policy"
-msgstr "Datenschutzrichtlinie"
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:93
-msgid "By joining, %1$s will be added to our mailing list. Read our %2$s."
-msgstr "Durch die Anmeldung wird %1$s zu unserer Mailingliste hinzugefügt. Lesen Sie unsere %2$s."
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:99
-msgid "Join Newsletter & Save 25%"
-msgstr "Newsletter abonnieren & 25% sparen"
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:102
-msgid "Join Newsletter"
-msgstr "Newsletter abonnieren"
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:113
-msgid "Sign up to our newsletter and get proven conversion tips and checkout optimization strategies from the CheckoutWC team."
-msgstr "Melden Sie sich für unseren Newsletter an und erhalten Sie bewährte Tipps zur Conversion-Optimierung und Checkout-Strategien vom CheckoutWC-Team."
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:116
-msgid "Boost Your Conversions with Proven Strategies."
-msgstr "Steigern Sie Ihre Conversions mit bewährten Strategien."
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:123
-msgid "We're so glad that you've chosen CheckoutWC to handle your checkouts. Unlock more sales with premium features like order bumps, abandoned cart recovery, and much more."
-msgstr "Wir freuen uns sehr, dass Sie sich für CheckoutWC zur Abwicklung Ihrer Checkouts entschieden haben. Schalten Sie mehr Verkäufe mit Premium-Funktionen wie Order Bumps, Wiederherstellung abgebrochener Warenkörbe und vielem mehr frei."
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:126
-msgid "Unlock more sales with CheckoutWC Premium"
-msgstr "Mehr Verkäufe mit CheckoutWC Premium freischalten"
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:144
-msgid "Sorry, there was an error joining our newsletter. Please refresh the page and try again."
-msgstr "Entschuldigung, beim Anmelden zu unserem Newsletter ist ein Fehler aufgetreten. Bitte aktualisieren Sie die Seite und versuchen Sie es erneut."
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:243
-msgid "Please wait..."
-msgstr "Bitte warten..."
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:320
-msgid "Sorry, your account has insufficient permissions to join our newsletter."
-msgstr "Entschuldigung, Ihr Konto hat nicht die erforderlichen Berechtigungen, um unseren Newsletter zu abonnieren."
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:354
-msgid "You have already joined our newsletter!"
-msgstr "Sie haben unseren Newsletter bereits abonniert!"
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:396
-msgid "Thank you for joining our newsletter!"
-msgstr "Vielen Dank für Ihre Anmeldung zu unserem Newsletter!"
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:410
-msgid "Security check failed."
-msgstr "Sicherheitsprüfung fehlgeschlagen."
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:414
-msgid "Insufficient permissions."
-msgstr "Unzureichende Berechtigungen."
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:422
-msgid "Notice dismissed."
-msgstr "Hinweis wurde ausgeblendet."
-
-# %1$s: URL to pricing page, %2$s: "purchase a new license" link text, %3$s: Support email URL, %4$s: "please contact support" link text
-#: includes/Admin/Notices/InvalidLicenseKeyNotice.php:15
-msgid "Your license key appears to have expired. Please <a href=\"%1$s\" target=\"_blank\">%2$s</a> to restore functionality. If you believe this is in error, <a href=\"%3$s\">%4$s</a>."
-msgstr "Ihr Lizenzschlüssel scheint abgelaufen zu sein. Bitte <a href=\"%1$s\" target=\"_blank\">%2$s</a>, um die Funktionalität wiederherzustellen. Wenn Sie glauben, dass dies ein Fehler ist, <a href=\"%3$s\">%4$s</a>."
-
-#: includes/Admin/Notices/InvalidLicenseKeyNotice.php:17
-msgid "purchase a new license"
-msgstr "eine neue Lizenz kaufen"
-
-#: includes/Admin/Notices/InvalidLicenseKeyNotice.php:19
-msgid "please contact support"
-msgstr "bitte kontaktieren Sie den Support"
-
-# %1$s: URL to activation page, %2$s: "Start Here" link text
-#: includes/Admin/Notices/InactiveLicenseNotice.php:11
-msgid "Your license key is not active for this site. Please visit <a href=\"%1$s\">%2$s</a> to activate your license and restore functionality."
-msgstr "Ihr Lizenzschlüssel ist für diese Seite nicht aktiv. Bitte besuchen Sie <a href=\"%1$s\">%2$s</a>, um Ihre Lizenz zu aktivieren und die Funktionalität wiederherzustellen."
-
-#: includes/Admin/Notices/BFNotice.php:13
-msgid "Black Friday Sale - 40% Off"
-msgstr "Black Friday Verkauf - 40% Rabatt"
-
-#: includes/Admin/Notices/BFNotice.php:14
-msgid "You're missing out on revenue growth tools like Order Bumps, Upsells, Abandoned Cart Recovery and more! Save 40% on CheckoutWC pro plans for Black Friday, ends December 4th"
-msgstr "Sie verpassen Umsatzwachstums-Tools wie Order Bumps, Upsells, Abandoned Cart Recovery und mehr! Sparen Sie 40% auf CheckoutWC Pro-Pläne zum Black Friday, endet am 4. Dezember"
-
-#: includes/Admin/Notices/BFNotice.php:27
-msgid "Get CheckoutWC Pro Now!"
-msgstr "Jetzt CheckoutWC Pro holen!"
-
 #: client/ts/functions/cfwFormatDate.ts:38
 msgid "Sunday"
 msgstr "Sonntag"
@@ -4252,18 +4248,6 @@ msgstr "Das Datum, an dem der A/B-Test enden soll. Nach diesem Datum wird die Or
 msgid "Traffic split percentages must total 100%. Please adjust your percentages."
 msgstr "Die Traffic-Aufteilungsprozentsätze müssen 100 % ergeben. Bitte passen Sie Ihre Prozentsätze an."
 
-#: client/ts/frontend/Components/TermsAndConditions.ts:29
-msgid "Terms and Conditions"
-msgstr "Allgemeine Geschäftsbedingungen"
-
-#: client/ts/frontend/Components/TermsAndConditions.ts:35
-msgid "Privacy Policy"
-msgstr "Datenschutzerklärung"
-
-#: client/ts/frontend/Components/SideCartComponent.tsx:38
-msgid "Close Cart"
-msgstr "Warenkorb schließen"
-
 #: client/ts/frontend/Actions/CompleteOrderAction.ts:196
 msgid "Could not connect to server. Please refresh and try again or contact site administrator."
 msgstr "Die Verbindung zum Server konnte nicht hergestellt werden. Bitte aktualisieren Sie die Seite und versuchen Sie es erneut oder wenden Sie sich an den Website-Administrator."
@@ -4287,6 +4271,18 @@ msgstr "Der Server hat bei der Bearbeitung Ihrer Anfrage eine Zeitüberschreitun
 #: client/ts/frontend/Actions/CompleteOrderAction.ts:206
 msgid "Request was aborted. Please contact site administrator."
 msgstr "Die Anfrage wurde abgebrochen. Bitte kontaktieren Sie den Administrator der Website."
+
+#: client/ts/frontend/Components/TermsAndConditions.ts:29
+msgid "Terms and Conditions"
+msgstr "Allgemeine Geschäftsbedingungen"
+
+#: client/ts/frontend/Components/TermsAndConditions.ts:35
+msgid "Privacy Policy"
+msgstr "Datenschutzerklärung"
+
+#: client/ts/frontend/Components/SideCartComponent.tsx:38
+msgid "Close Cart"
+msgstr "Warenkorb schließen"
 
 #: client/ts/admin/Components/TrustBadgeRow.tsx:172
 msgid "Determine when this Trust Badge should be displayed."
