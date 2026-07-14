@@ -3429,13 +3429,26 @@
                         "variable": "$color_settings"
                     },
                     {
+                        "name": "param",
+                        "content": "The template these settings are being built for.",
+                        "types": [
+                            "\\Template"
+                        ],
+                        "variable": "$active_template"
+                    },
+                    {
                         "name": "since",
                         "content": "5.1.0"
+                    },
+                    {
+                        "name": "since",
+                        "content": "11.2.0",
+                        "description": "Added the $active_template parameter so callbacks can scope settings to their own template."
                     }
                 ],
                 "long_description_html": ""
             },
-            "args": 1
+            "args": 2
         },
         {
             "name": "cfw_add_to_cart_redirect",
@@ -7749,39 +7762,6 @@
                 "long_description_html": ""
             },
             "args": 1
-        },
-        {
-            "name": "cfw_trust_badges_output_action",
-            "file": "Features/TrustBadges.php",
-            "type": "filter",
-            "doc": {
-                "description": "Filter the action to output the trust badges",
-                "long_description": "",
-                "tags": [
-                    {
-                        "name": "since",
-                        "content": "9.0.0"
-                    },
-                    {
-                        "name": "param",
-                        "content": "The action to output the trust badges",
-                        "types": [
-                            "string"
-                        ],
-                        "variable": "$action"
-                    },
-                    {
-                        "name": "param",
-                        "content": "The position of the trust badges",
-                        "types": [
-                            "string"
-                        ],
-                        "variable": "$position"
-                    }
-                ],
-                "long_description_html": ""
-            },
-            "args": 2
         },
         {
             "name": "cfw_typescript_compatibility_classes_and_params",

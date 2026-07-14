@@ -47,6 +47,7 @@ use Objectiv\Plugins\Checkout\Admin\WelcomeScreenActivationRedirector;
 use Objectiv\Plugins\Checkout\Admin\WooCommerceAdminScreenAugmenter;
 use Objectiv\Plugins\Checkout\API\PreviewSettingsAPI;
 use Objectiv\Plugins\Checkout\API\SettingsAPI;
+use Objectiv\Plugins\Checkout\API\SlotsAPI;
 use Objectiv\Plugins\Checkout\API\UserRolesAPI;
 use Objectiv\Plugins\Checkout\CartImageSizeAdder;
 use Objectiv\Plugins\Checkout\Compatibility\CompatibilityAbstract;
@@ -253,9 +254,11 @@ use Objectiv\Plugins\Checkout\Install;
 use Objectiv\Plugins\Checkout\Managers\NoticesManager;
 use Objectiv\Plugins\Checkout\Managers\PlanManager;
 use Objectiv\Plugins\Checkout\Managers\SettingsManager;
+use Objectiv\Plugins\Checkout\Managers\SlotManager;
 use Objectiv\Plugins\Checkout\Model\DetectedPaymentGateway;
 use Objectiv\Plugins\Checkout\Model\Template;
 use Objectiv\Plugins\Checkout\PhpErrorOutputSuppressor;
+use Objectiv\Plugins\Checkout\Renderers\SlotRenderer;
 
 // Setup our Singletons here
 $settings_manager = SettingsManager::instance();
@@ -289,6 +292,37 @@ add_filter(
 ( new SettingsAPI() );
 ( new UserRolesAPI() );
 ( new PreviewSettingsAPI() );
+( new SlotsAPI() );
+
+// Slot system - migration runs once on init, renderer registers hooks.
+add_action(
+	'init',
+	function() {
+		SlotManager::instance()->maybe_migrate();
+		SlotRenderer::instance()->init();
+
+		// Auto-assign bumps to their slot when saved via classic editor / wp-admin.
+		add_action( 'save_post_cfw_order_bumps', [ SlotManager::instance(), 'maybe_auto_assign_bump_to_slot' ], 20, 3 );
+
+		// Apply per-badge slot choices from the Trust Badges settings page, then
+		// remove any deleted trust badges from slot assignments.
+		add_action( 'cfw_updated_setting__cfw_trust_badges', [ SlotManager::instance(), 'reconcile_trust_badge_slots' ], 9, 2 );
+		add_action( 'cfw_updated_setting__cfw_trust_badges', [ SlotManager::instance(), 'remove_deleted_trust_badges_from_slots' ], 10, 2 );
+
+		// Remove permanently-deleted order bumps from slot assignments.
+		add_action( 'before_delete_post', [ SlotManager::instance(), 'on_bump_before_delete' ] );
+
+		// Gutenberg (REST API) saves meta AFTER save_post fires, so re-run using the post-meta-updated hook.
+		add_action(
+			'rest_after_insert_cfw_order_bumps',
+			static function( WP_Post $post ) {
+				SlotManager::instance()->maybe_auto_assign_bump_to_slot( $post->ID, $post, true );
+			},
+			20
+		);
+	},
+	20 // After premium-init features have registered (priority 10 default).
+);
 
 /**
  * Admin Settings Pages

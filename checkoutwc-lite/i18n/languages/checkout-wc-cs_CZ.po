@@ -8,7 +8,7 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "POT-Creation-Date: 2025-07-25 09:22-0400\n"
-"PO-Revision-Date: 2026-07-02T13:09:59+00:00\n"
+"PO-Revision-Date: 2026-07-14T15:17:14+00:00\n"
 "Language: cs-CZ\n"
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n>=2 && n<=4 ? 1 : 2);\n"
 "X-Generator: Poedit 3.6\n"
@@ -30,7 +30,7 @@ msgstr ""
 #: includes/Admin/Pages/PageAbstract.php:106
 #: includes/Admin/Pages/General.php:341
 #: includes/Admin/Pages/Premium/PickupLocations.php:217
-#: includes/Admin/Pages/Premium/OrderBumps.php:404
+#: includes/Admin/Pages/Premium/OrderBumps.php:428
 #: includes/Admin/Pages/Premium/LocalPickupAdmin.php:165
 #: includes/Admin/Pages/Premium/AbandonedCartRecovery.php:243
 #: includes/Admin/Pages/Premium/ABTestingAdmin.php:559
@@ -124,8 +124,9 @@ msgstr "Byt, apartmá, jednotka atd."
 #: includes/Admin/ShippingPhoneController.php:32
 #: includes/Admin/ShippingPhoneController.php:33
 #: includes/Admin/ShippingPhoneController.php:43
+#: client/ts/admin/Components/acr/carts.tsx:70
 #: client/ts/admin/Components/Forms/CheckoutSettingsForm.tsx:467
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:381
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:406
 #: client/ts/admin/Components/CheckoutEditor/panels/CheckoutSettingsPanel.tsx:246
 msgid "Phone"
 msgstr "Telefon"
@@ -163,8 +164,8 @@ msgid "Postcode / ZIP"
 msgstr "PSČ"
 
 #: includes/AddressFieldsAugmenter.php:458
-#: functions/functions.php:4091
-#: functions/functions.php:4092
+#: functions/functions.php:4206
+#: functions/functions.php:4207
 msgid "Email address"
 msgstr "E-mailová adresa"
 
@@ -214,7 +215,7 @@ msgstr "PSČ"
 
 #: includes/AddressFieldsAugmenter.php:472
 #: client/ts/admin/Components/Forms/CheckoutSettingsForm.tsx:455
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:378
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:403
 #: client/ts/admin/Components/CheckoutEditor/panels/CheckoutSettingsPanel.tsx:243
 msgid "Postcode"
 msgstr "PSČ"
@@ -233,7 +234,7 @@ msgstr "Kraj"
 
 #: includes/AddressFieldsAugmenter.php:476
 #: client/ts/admin/Components/Forms/CheckoutSettingsForm.tsx:459
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:379
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:404
 #: client/ts/admin/Components/CheckoutEditor/panels/CheckoutSettingsPanel.tsx:244
 msgid "State"
 msgstr "Stát"
@@ -282,8 +283,8 @@ msgstr "Expresní pokladna"
 
 #: functions/template-functions.php:331
 #: functions/template-functions.php:345
-#: functions/template-functions.php:1864
-#: functions/template-functions.php:2197
+#: functions/template-functions.php:1893
+#: functions/template-functions.php:2226
 msgid "Information"
 msgstr "Informace"
 
@@ -301,7 +302,7 @@ msgid "Log in."
 msgstr "Přihlaste se."
 
 #: functions/template-functions.php:480
-#: includes/Managers/AssetManager.php:695
+#: includes/Managers/AssetManager.php:701
 msgid "An account is already registered with your email address. <a href=\"#\" class=\"showlogin\">Please log in.</a>"
 msgstr "Účet s touto e-mailovou adresou je již registrován. <a href=\"#\" class=\"showlogin\">Prosím přihlaste se.</a>"
 
@@ -338,7 +339,7 @@ msgstr "Odhlásit se."
 
 #: functions/template-functions.php:736
 #: functions/template-functions.php:774
-#: functions/template-functions.php:1901
+#: functions/template-functions.php:1930
 msgid "Billing and Shipping address"
 msgstr "Fakturační a dodací adresa"
 
@@ -346,45 +347,45 @@ msgstr "Fakturační a dodací adresa"
 #: functions/template-functions.php:786
 #: functions/template-functions.php:1190
 #: functions/template-functions.php:1204
-#: functions/template-functions.php:1929
+#: functions/template-functions.php:1958
 #: includes/Compatibility/Gateways/PayPalForWooCommerce.php:192
 msgid "Billing address"
 msgstr "Fakturační adresa"
 
 #: functions/template-functions.php:759
 #: functions/template-functions.php:797
-#: functions/template-functions.php:1913
-#: includes/Managers/AssetManager.php:691
+#: functions/template-functions.php:1942
+#: includes/Managers/AssetManager.php:697
 msgid "Shipping address"
 msgstr "Dodací adresa"
 
 #: functions/template-functions.php:935
+#: templates/glass/functions.php:37
 #: templates/futurist/functions.php:16
-#: templates/glass/functions.php:40
 msgid "Your Cart"
 msgstr "Váš košík"
 
 #: functions/template-functions.php:1036
-#: functions/template-functions.php:1945
-#: functions/template-functions.php:2219
-#: functions/functions.php:3460
+#: functions/template-functions.php:1974
+#: functions/template-functions.php:2248
+#: functions/functions.php:3465
 msgid "Shipping"
 msgstr "Doprava"
 
 #: functions/template-functions.php:1054
-#: functions/template-functions.php:1885
-#: functions/template-functions.php:2240
-#: functions/functions.php:1023
-#: functions/functions.php:1038
+#: functions/template-functions.php:1914
+#: functions/template-functions.php:2269
+#: functions/functions.php:1026
+#: functions/functions.php:1041
 #: client/ts/frontend/Components/ReviewPane/OrderReviewStepReviewPane.tsx:47
 msgid "Payment"
 msgstr "Platba"
 
 #: functions/template-functions.php:1054
-#: functions/template-functions.php:2240
+#: functions/template-functions.php:2269
 #: includes/Features/OrderReviewStep.php:74
-#: includes/Admin/Pages/TrustBadgesAdminFree.php:121
-#: client/ts/admin/Components/TrustBadgeRow.tsx:113
+#: includes/Admin/Pages/TrustBadgesAdminFree.php:88
+#: client/ts/admin/Components/TrustBadgeRow.tsx:124
 msgid "Review"
 msgstr "Recenze"
 
@@ -396,91 +397,91 @@ msgstr "Zdarma"
 msgid "Select the address that matches your card or payment method."
 msgstr "Vyberte adresu, která odpovídá vaší kartě nebo způsobu platby."
 
-#: functions/template-functions.php:1570
+#: functions/template-functions.php:1599
 msgid "Unfortunately your order cannot be processed as the originating bank/merchant has declined your transaction. Please attempt your purchase again."
 msgstr "Bohužel nelze zpracovat vaši objednávku, protože banka/prodejce transakci zamítl. Prosím, zkuste nákup znovu."
 
-#: functions/template-functions.php:1574
+#: functions/template-functions.php:1603
 msgid "Pay"
 msgstr "Zaplatit"
 
 # %s is the order number
-#: functions/template-functions.php:1592
+#: functions/template-functions.php:1621
 msgid "Order %s"
 msgstr "Objednávka %s"
 
 # %s is the billing first name
-#: functions/template-functions.php:1611
+#: functions/template-functions.php:1640
 msgid "Thank you %s!"
 msgstr "Děkujeme %s!"
 
-#: functions/template-functions.php:1722
+#: functions/template-functions.php:1751
 msgid "Order status"
 msgstr "Stav objednávky"
 
-#: functions/template-functions.php:1765
+#: functions/template-functions.php:1794
 msgid "Order updates"
 msgstr "Aktualizace objednávky"
 
-#: functions/template-functions.php:1776
+#: functions/template-functions.php:1805
 msgid "You’ll get shipping and delivery updates by email."
 msgstr "Aktualizace zásilek a doručování získáte e-mailem."
 
-#: functions/template-functions.php:1794
+#: functions/template-functions.php:1823
 msgid "Downloads"
 msgstr "Stažení"
 
-#: functions/template-functions.php:1834
+#: functions/template-functions.php:1863
 msgid "&infin;"
 msgstr "&infin;"
 
-#: functions/template-functions.php:1840
+#: functions/template-functions.php:1869
 msgid "Never"
 msgstr "Nikdy"
 
-#: functions/template-functions.php:1879
+#: functions/template-functions.php:1908
 msgid "Contact information"
 msgstr "Kontaktní informace"
 
-#: functions/template-functions.php:1906
-#: functions/template-functions.php:1918
 #: functions/template-functions.php:1935
+#: functions/template-functions.php:1947
+#: functions/template-functions.php:1964
 msgid "N/A"
 msgstr "Není k dispozici"
 
-#: functions/template-functions.php:1975
-#: includes/Managers/AssetManager.php:841
+#: functions/template-functions.php:2004
+#: includes/Managers/AssetManager.php:847
 msgid "Continue shopping"
 msgstr "Pokračovat v nákupu"
 
-#: functions/template-functions.php:2005
+#: functions/template-functions.php:2034
 #: includes/Loaders/LoaderAbstract.php:111
 msgid "Pay for order"
 msgstr "Zaplatit objednávku"
 
-#: functions/template-functions.php:2023
+#: functions/template-functions.php:2052
 #: includes/Features/AbandonedCartRecovery.php:118
-#: client/ts/admin/Components/acr/carts.tsx:63
+#: client/ts/admin/Components/acr/carts.tsx:64
 msgid "Email"
 msgstr "E-mail"
 
-#: functions/template-functions.php:2033
-#: functions/functions.php:4009
-#: functions/functions.php:4010
+#: functions/template-functions.php:2062
+#: functions/functions.php:4124
+#: functions/functions.php:4125
 msgid "Password"
 msgstr "Heslo"
 
-#: functions/template-functions.php:2049
-#: functions/functions.php:4049
+#: functions/template-functions.php:2078
+#: functions/functions.php:4164
 msgid "Login"
 msgstr "Přihlášení"
 
-#: functions/template-functions.php:2052
-#: functions/functions.php:4042
+#: functions/template-functions.php:2081
+#: functions/functions.php:4157
 msgid "Lost your password?"
 msgstr "Ztratili jste heslo?"
 
-#: functions/template-functions.php:2314
+#: functions/template-functions.php:2343
 msgid "Your Cart is Empty"
 msgstr "Váš košík je prázdný"
 
@@ -498,7 +499,7 @@ msgstr "Vaše licence je platná a aktivovaná pro tento web, ale CheckoutWC je 
 #: includes/Admin/Pages/OrderBumpsAdminFree.php:25
 #: includes/Admin/Pages/LocalPickupAdminFree.php:27
 #: includes/Admin/Pages/AbandonedCartRecoveryAdminFree.php:27
-#: includes/Admin/Pages/Premium/OrderBumps.php:57
+#: includes/Admin/Pages/Premium/OrderBumps.php:58
 #: includes/Admin/Pages/Premium/LocalPickupAdmin.php:28
 #: includes/Admin/Pages/Premium/AbandonedCartRecovery.php:34
 #: includes/Admin/Pages/Premium/ABTestingAdmin.php:35
@@ -506,8 +507,8 @@ msgid "Settings"
 msgstr "Nastavení"
 
 #: functions/premium-init.php:339
-#: includes/Admin/Notices/InactiveLicenseNotice.php:13
 #: includes/Admin/Pages/General.php:25
+#: includes/Admin/Notices/InactiveLicenseNotice.php:13
 msgid "Start Here"
 msgstr "Začněte zde"
 
@@ -566,310 +567,311 @@ msgstr "Povolili jste sledování obnovení opuštěného košíku, ale nemáte 
 msgid "Learn More"
 msgstr "Zjistit více"
 
-#: functions/init.php:344
-#: functions/init.php:345
+#: functions/init.php:378
+#: functions/init.php:379
 msgid "Upgrade to Premium"
 msgstr "Přejít na Premium"
 
-#: functions/init.php:745
+#: functions/init.php:779
 msgid "CheckoutWC: Footer"
 msgstr "CheckoutWC: Patička"
 
-#: functions/init.php:789
-#: functions/init.php:794
+#: functions/init.php:823
+#: functions/init.php:828
 msgid "Configure Avada to Work With CheckoutWC"
 msgstr "Nastavit Avada pro práci s CheckoutWC"
 
 # %1$s: Guide URL, %2$s: Guide link text
-#: functions/init.php:792
+#: functions/init.php:826
 msgid "CheckoutWC and Avada work great together, but you will need to adjust a couple of theme settings. Please see our guide here: <a target=\"_blank\" href=\"%1$s\">%2$s</a>"
 msgstr "CheckoutWC a Avada spolu skvěle fungují, ale budete muset upravit několik nastavení motivu. Podívejte se na náš průvodce zde: <a target=\"_blank\" href=\"%1$s\">%2$s</a>"
 
-#: functions/init.php:801
+#: functions/init.php:835
 msgid "Incompatible Plugin: Please Deactivate The Bluehost Plugin"
 msgstr "Nezkompatibilní plugin: prosím deaktivujte plugin Bluehost"
 
 # %1$s: Help URL, %2$s: Help link text
-#: functions/init.php:804
+#: functions/init.php:838
 msgid "CheckoutWC and Bluehost work great together, but you must deactivate The Bluehost Plugin to prevent problems. More info here: <a target=\"_blank\" href=\"%1$s\">%2$s</a>"
 msgstr "CheckoutWC a Bluehost spolu skvěle fungují, ale musíte deaktivovat plugin Bluehost, aby nedocházelo k problémům. Více informací zde: <a target=\"_blank\" href=\"%1$s\">%2$s</a>"
 
-#: functions/init.php:806
+#: functions/init.php:840
 msgid "How To Fix Problems With The Bluehost Plugin"
 msgstr "Jak opravit problémy s pluginem Bluehost"
 
-#: functions/init.php:816
+#: functions/init.php:850
 msgid "Configure Divi to Work With CheckoutWC"
 msgstr "Nastavte Divi pro práci s CheckoutWC"
 
 # %1$s: Guide URL, %2$s: Guide link text
-#: functions/init.php:819
+#: functions/init.php:853
 msgid "CheckoutWC and Divi work great together, but you will need to adjust a couple of settings. Please see our guide here: <a target=\"_blank\" href=\"%1$s\">%2$s</a>"
 msgstr "CheckoutWC a Divi spolu skvěle fungují, ale budete muset upravit několik nastavení. Podívejte se na náš průvodce zde: <a target=\"_blank\" href=\"%1$s\">%2$s</a>"
 
-#: functions/init.php:821
+#: functions/init.php:855
 msgid "How To Fix Styling Issues With Divi Theme"
 msgstr "Jak opravit problémy se stylem v motivu Divi"
 
-#: functions/init.php:828
+#: functions/init.php:862
 msgid "Configure Porto to Work With CheckoutWC"
 msgstr "Nastavte Porto pro práci s CheckoutWC"
 
 # %1$s: Guide URL, %2$s: Guide link text
-#: functions/init.php:831
+#: functions/init.php:865
 msgid "CheckoutWC and Porto work great together, but you will need to adjust a couple of settings. Please see our guide here: <a target=\"_blank\" href=\"%1$s\">%2$s</a>"
 msgstr "CheckoutWC a Porto spolu skvěle fungují, ale budete muset upravit několik nastavení. Podívejte se na náš průvodce zde: <a target=\"_blank\" href=\"%1$s\">%2$s</a>"
 
-#: functions/init.php:833
+#: functions/init.php:867
 msgid "Fix Problems With Porto Theme"
 msgstr "Opravte problémy s motivem Porto"
 
-#: functions/init.php:840
+#: functions/init.php:874
 msgid "Configure Astra Pro to Work With CheckoutWC"
 msgstr "Nastavte Astra Pro pro práci s CheckoutWC"
 
 # %1$s: Info URL, %2$s: Info link text
-#: functions/init.php:843
+#: functions/init.php:877
 msgid "CheckoutWC and Astra Pro work great together, but there is one setting you should check. More info here: <a target=\"_blank\" href=\"%1$s\">%2$s</a>"
 msgstr "CheckoutWC a Astra Pro spolu skvěle fungují, ale jedno nastavení byste měli zkontrolovat. Více informací zde: <a target=\"_blank\" href=\"%1$s\">%2$s</a>"
 
-#: functions/init.php:845
+#: functions/init.php:879
 msgid "Fix Layout Issues with Astra Pro"
 msgstr "Opravte problémy s rozložením u Astra Pro"
 
-#: functions/init.php:852
+#: functions/init.php:886
 msgid "Configure Woostify to Work With CheckoutWC"
 msgstr "Nastavte Woostify pro práci s CheckoutWC"
 
 # %1$s: Info URL, %2$s: Info link text
-#: functions/init.php:855
+#: functions/init.php:889
 msgid "CheckoutWC and Woostify work great together, but there is one setting you should check. More info here: <a target=\"_blank\" href=\"%1$s\">%2$s</a>"
 msgstr "CheckoutWC a Woostify spolu skvěle fungují, ale jedno nastavení byste měli zkontrolovat. Více informací zde: <a target=\"_blank\" href=\"%1$s\">%2$s</a>"
 
-#: functions/init.php:857
+#: functions/init.php:891
 msgid "Fix AJAX Add To Cart with Woostify and CheckoutWC Side Cart"
 msgstr "Opravte AJAX přidání do košíku s Woostify a CheckoutWC bočním košíkem"
 
-#: functions/init.php:1052
+#: functions/init.php:1086
 msgid "Admin Preview Mode: CheckoutWC templates are disabled for normal users. To fix this, please activate templates here: WP Admin > CheckoutWC > Start Here"
 msgstr "Režim náhledu správce: Šablony CheckoutWC jsou pro běžné uživatele zakázány. Pro opravu prosím aktivujte šablony zde: WP Admin > CheckoutWC > Začít zde"
 
-#: functions/functions.php:227
+#: functions/functions.php:228
 msgid "Ship to"
 msgstr "Odeslat na"
 
-#: functions/functions.php:229
+#: functions/functions.php:230
 #: includes/Features/LocalPickup.php:758
 #: includes/Admin/Pages/PickupLocationsAdminFree.php:93
 #: includes/Admin/Pages/Premium/PickupLocations.php:92
 msgid "Address"
 msgstr "Adresa"
 
-#: functions/functions.php:623
+#: functions/functions.php:626
 msgid "Sorry, it seems that there are no available payment methods for your location. Please contact us if you require assistance or wish to make alternate arrangements."
 msgstr "Omlouváme se, zdá se, že pro vaši lokalitu nejsou dostupné žádné platební metody. Kontaktujte nás, pokud potřebujete pomoc nebo chcete sjednat jiná řešení."
 
-#: functions/functions.php:785
+#: functions/functions.php:788
 #: includes/Features/LocalPickup.php:1079
 msgid "Shipping costs are calculated during checkout."
 msgstr "Náklady na dopravu jsou vypočítány během dokončení objednávky."
 
-#: functions/functions.php:785
+#: functions/functions.php:788
 msgid "Enter your address to view shipping options."
 msgstr "Zadejte svou adresu pro zobrazení možností dopravy."
 
-#: functions/functions.php:796
+#: functions/functions.php:799
 msgid "No shipping methods available"
 msgstr "Nejsou k dispozici žádné způsoby dopravy"
 
-#: functions/functions.php:824
+#: functions/functions.php:827
 #: includes/Model/Bumps/BumpAbstract.php:814
 msgid "Free!"
 msgstr "Zdarma!"
 
-#: functions/functions.php:960
+#: functions/functions.php:963
 #: includes/Features/AbandonedCartRecovery.php:695
 msgid "Complete Order"
 msgstr "Dokončit objednávku"
 
-#: functions/functions.php:1064
+#: functions/functions.php:1067
 msgid "All transactions are secure and encrypted."
 msgstr "Všechny transakce jsou zabezpečené a šifrované."
 
-#: functions/functions.php:1087
+#: functions/functions.php:1090
 msgid "Your order is free. No payment is required."
 msgstr "Vaše objednávka je zdarma. Není požadována žádná platba."
 
-#: functions/functions.php:1131
+#: functions/functions.php:1134
 msgid "Same as shipping address"
 msgstr "Stejné jako dodací adresa"
 
-#: functions/functions.php:1140
+#: functions/functions.php:1143
 msgid "Use a different billing address"
 msgstr "Použití jinou fakturační adresu"
 
 # %1$s: Old order status, %2$s: New order status
-#: functions/functions.php:1272
+#: functions/functions.php:1275
 msgid "Order status changed from %1$s to %2$s."
 msgstr "Stav objednávky se změnil z %1$s na %2$s."
 
-#: functions/functions.php:1297
+#: functions/functions.php:1300
 msgid "Tracking Number:"
 msgstr "Sledovací číslo:"
 
-#: functions/functions.php:1384
+#: functions/functions.php:1387
 msgid "Return to cart"
 msgstr "Zpět do košíku"
 
-#: functions/functions.php:1421
+#: functions/functions.php:1424
 msgid "Continue to shipping"
 msgstr "Vybrat si způsob dopravy"
 
-#: functions/functions.php:1447
+#: functions/functions.php:1450
 msgid "Continue to payment"
 msgstr "Pokračovat"
 
-#: functions/functions.php:1447
-#: functions/functions.php:1487
+#: functions/functions.php:1450
+#: functions/functions.php:1490
 msgid "Review order"
 msgstr "Shrnutí objednávky"
 
-#: functions/functions.php:1511
+#: functions/functions.php:1514
 msgid "Return to information"
 msgstr "Zpět k informacím"
 
-#: functions/functions.php:1531
+#: functions/functions.php:1534
 msgid "Return to shipping"
 msgstr "Návrat k dopravě"
 
-#: functions/functions.php:1551
+#: functions/functions.php:1554
 msgid "Return to payment"
 msgstr "Návrat k platbě"
 
-#: functions/functions.php:1598
+#: functions/functions.php:1601
 #: includes/Features/SideCart.php:220
 msgid "Cart"
 msgstr "Košík"
 
-#: functions/functions.php:1871
+#: functions/functions.php:1874
 msgid "CheckoutWC: Error matching %1$d to customer %2$d"
 msgstr "CheckoutWC: Chyba při přiřazování %1$d k zákazníkovi %2$d"
 
-#: functions/functions.php:2160
+#: functions/functions.php:2163
 msgid "Or"
 msgstr "Nebo"
 
-#: functions/functions.php:2245
+#: functions/functions.php:2248
 msgid "You can only have 1 %s in your cart."
 msgstr "V košíku můžete mít pouze 1 %s."
 
-#: functions/functions.php:2395
+#: functions/functions.php:2398
 #: client/ts/frontend/Components/CartItemQuantityControl.tsx:55
 msgid "Decrement"
 msgstr "Snížení"
 
-#: functions/functions.php:2404
-#: includes/Managers/AssetManager.php:721
-#: includes/Managers/AssetManager.php:842
+#: functions/functions.php:2407
+#: includes/Managers/AssetManager.php:727
+#: includes/Managers/AssetManager.php:848
 #: includes/Features/LocalPickup.php:502
 #: includes/Features/AbandonedCartRecovery.php:122
-#: includes/Features/ABTesting.php:145
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:632
+#: includes/Features/ABTesting.php:150
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:633
 #: client/ts/frontend/Components/CartItemQuantityControl.tsx:63
+#: client/ts/admin/Components/CheckoutEditor/slots/AssignedItem.tsx:227
 msgid "Edit"
 msgstr "Upravit"
 
-#: functions/functions.php:2407
+#: functions/functions.php:2410
 #: client/ts/frontend/Components/CartItemQuantityControl.tsx:70
 msgid "Increment"
 msgstr "Zvýšení"
 
-#: functions/functions.php:3121
+#: functions/functions.php:3124
 msgid "Unsubscribe"
 msgstr "Odhlásit"
 
-#: functions/functions.php:3486
+#: functions/functions.php:3491
 #: includes/Features/AbandonedCartRecovery.php:750
-#: client/ts/admin/Components/acr/carts.tsx:69
+#: client/ts/admin/Components/acr/carts.tsx:74
 msgid "Subtotal"
 msgstr "Mezisoučet"
 
-#: functions/functions.php:3490
+#: functions/functions.php:3495
 #: includes/Admin/Views/html-refund-offer.php:25
 msgid "Total"
 msgstr "Celkem"
 
-#: functions/functions.php:3543
+#: functions/functions.php:3548
 msgid "There are no shipping options available. Please ensure that your address has been entered correctly, or contact us if you need any help."
 msgstr "Nejsou dostupné žádné možnosti dopravy. Ujistěte se, že jste správně zadali svou adresu, nebo nás kontaktujte, pokud potřebujete pomoc."
 
-#: functions/functions.php:3782
+#: functions/functions.php:3897
 #: includes/Admin/Pages/AbandonedCartRecoveryAdminFree.php:73
 msgid "SendWP - Transactional Email"
 msgstr "SendWP - Transakční e-mail"
 
-#: functions/functions.php:3787
+#: functions/functions.php:3902
 #: includes/Admin/Pages/AbandonedCartRecoveryAdminFree.php:77
 msgid "SendWP makes getting emails delivered as simple as a few clicks. So you can relax know those important emails are being delivered on time."
 msgstr "SendWP usnadňuje doručování e-mailů na pár kliknutí. Můžete si tak být jisti, že důležité e-maily budou doručeny včas."
 
-#: functions/functions.php:3790
+#: functions/functions.php:3905
 #: includes/Admin/Pages/AbandonedCartRecoveryAdminFree.php:79
 msgid "Try SendWP now and <strong>get your first month for just $1.</strong>"
 msgstr "Vyzkoušejte SendWP nyní a <strong>získejte první měsíc za pouhých 1 $.</strong>"
 
-#: functions/functions.php:3800
+#: functions/functions.php:3915
 #: includes/Admin/Pages/AbandonedCartRecoveryAdminFree.php:87
 msgid "Note: SendWP is optional. You can use any transactional email service you prefer."
 msgstr "Poznámka: SendWP je volitelný. Můžete použít jakoukoli službu pro transakční e-maily, kterou preferujete."
 
-#: functions/functions.php:3809
+#: functions/functions.php:3924
 #: includes/Admin/Pages/AbandonedCartRecoveryAdminFree.php:94
 msgid "Connect to SendWP"
 msgstr "Připojit k SendWP"
 
-#: functions/functions.php:3957
+#: functions/functions.php:4072
 msgid "Welcome back"
 msgstr "Vítejte zpět"
 
-#: functions/functions.php:3971
+#: functions/functions.php:4086
 msgid "It looks like you already have an account. Please enter your login details below."
 msgstr "Vypadá to, že již máte účet. Zadejte prosím své přihlašovací údaje níže."
 
-#: functions/functions.php:3985
+#: functions/functions.php:4100
 msgid "If you have shopped with us before, please enter your login details below."
 msgstr "Pokud jste u nás již nakupovali, zadejte prosím níže své přihlašovací údaje."
 
-#: functions/functions.php:3995
-#: functions/functions.php:3996
+#: functions/functions.php:4110
+#: functions/functions.php:4111
 msgid "Username or email address"
 msgstr "Uživatelské jméno nebo e-mailová adresa"
 
-#: functions/functions.php:4030
+#: functions/functions.php:4145
 msgid "Remember me"
 msgstr "Zapamatovat si mě"
 
-#: functions/functions.php:4061
+#: functions/functions.php:4176
 msgid "Or continue as guest"
 msgstr "Nebo pokračujte jako host"
 
-#: functions/functions.php:4081
+#: functions/functions.php:4196
 msgid "Lost your password? Please enter your username or email address. You will receive a link to create a new password via email."
 msgstr "Zapomněli jste heslo? Zadejte své uživatelské jméno nebo e-mailovou adresu. Obdržíte odkaz pro vytvoření nového hesla e-mailem."
 
-#: functions/functions.php:4104
+#: functions/functions.php:4219
 msgid "Reset password"
 msgstr "Obnovit heslo"
 
-#: functions/functions.php:4119
+#: functions/functions.php:4234
 #: includes/API/OrderBumpPreviewAPI.php:57
 #: includes/API/OrderBumpOfferFormPreviewAPI.php:46
 #: includes/API/GetVariationFormAPI.php:33
 msgid "Product not found"
 msgstr "Produkt nebyl nalezen"
 
-#: functions/functions.php:4135
-#: functions/functions.php:4280
+#: functions/functions.php:4250
+#: functions/functions.php:4395
 #: includes/API/PostPurchaseBumpProductFormAPI.php:24
 msgid "No thanks"
 msgstr "Ne, děkuji"
@@ -891,7 +893,7 @@ msgstr "Přeskočit a deaktivovat nyní"
 msgid "CheckoutWC: You cannot activate an AB test that is not registered."
 msgstr "CheckoutWC: Nemůžete aktivovat AB test, který není registrován."
 
-#: templates/glass/functions.php:68
+#: templates/glass/functions.php:67
 msgid "Accent Color"
 msgstr "Akcentní barva"
 
@@ -910,19 +912,6 @@ msgstr "SendWP je již připojen."
 #: lib/sendwp-sdk/remote-install.php:84
 msgid "Something went wrong. SendWP was not installed correctly."
 msgstr "Něco se pokazilo. SendWP nebyl správně nainstalován."
-
-#: includes/Shipping/CFW_Shipping_Local_Pickup.php:35
-#: includes/Shipping/CFW_Shipping_Local_Pickup.php:48
-#: includes/Admin/Pages/LocalPickupAdminFree.php:19
-#: includes/Admin/Pages/LocalPickupAdminFree.php:56
-#: includes/Admin/Pages/Premium/LocalPickupAdmin.php:20
-#: client/ts/admin/Components/Forms/LocalPickupSettingsForm.tsx:62
-msgid "Local Pickup"
-msgstr "Místní vyzvednutí"
-
-#: includes/Shipping/CFW_Shipping_Local_Pickup.php:36
-msgid "Allow customers to pick up orders themselves. This version does not require shipping zones."
-msgstr "Umožněte zákazníkům vyzvednout si objednávky sami. Tato verze nevyžaduje přepravní zóny."
 
 #: includes/Stats/StatCollection.php:193
 msgid "Once Weekly"
@@ -948,41 +937,18 @@ msgstr "Povolit"
 msgid "Do not allow"
 msgstr "Nepovolit"
 
-#: includes/Loaders/LoaderAbstract.php:134
-#: includes/Loaders/LoaderAbstract.php:244
-msgid "Sorry, this order is invalid and cannot be paid for."
-msgstr "Omlouváme se, tato objednávka je neplatná a nelze ji zaplatit."
+#: includes/Shipping/CFW_Shipping_Local_Pickup.php:35
+#: includes/Shipping/CFW_Shipping_Local_Pickup.php:48
+#: includes/Admin/Pages/LocalPickupAdminFree.php:19
+#: includes/Admin/Pages/LocalPickupAdminFree.php:56
+#: includes/Admin/Pages/Premium/LocalPickupAdmin.php:20
+#: client/ts/admin/Components/Forms/LocalPickupSettingsForm.tsx:62
+msgid "Local Pickup"
+msgstr "Místní vyzvednutí"
 
-#: includes/Loaders/LoaderAbstract.php:138
-msgid "Please log in to your account below to continue to the payment form."
-msgstr "Pro pokračování k platebnímu formuláři se prosím přihlaste ke svému účtu níže."
-
-#: includes/Loaders/LoaderAbstract.php:145
-msgid "You are paying for a guest order. Please continue with payment only if you recognize this order."
-msgstr "Platíte za objednávku hosta. Pokračujte v platbě pouze, pokud tuto objednávku rozpoznáte."
-
-#: includes/Loaders/LoaderAbstract.php:151
-msgid "This order cannot be paid for. Please contact us if you need assistance."
-msgstr "Tuto objednávku nelze zaplatit. Pokud potřebujete pomoc, kontaktujte nás."
-
-#: includes/Loaders/LoaderAbstract.php:157
-#: includes/Loaders/LoaderAbstract.php:241
-msgid "This order&rsquo;s status is &ldquo;%s&rdquo;&mdash;it cannot be paid for. Please contact us if you need assistance."
-msgstr "Stav této objednávky je „%s“ — nelze ji zaplatit. Pokud potřebujete pomoc, kontaktujte nás."
-
-#: includes/Loaders/LoaderAbstract.php:186
-msgid "Sorry, \"%s\" is no longer in stock so this order cannot be paid for. We apologize for any inconvenience caused."
-msgstr "Omlouváme se, \"%s\" již není skladem, takže tuto objednávku nelze zaplatit. Omlouváme se za způsobené potíže."
-
-#: includes/Loaders/LoaderAbstract.php:200
-msgid "Sorry, we do not have enough \"%1$s\" in stock to fulfill your order (%2$s available). We apologize for any inconvenience caused."
-msgstr "Omlouváme se, nemáme dostatek \"%1$s\" skladem k vyřízení vaší objednávky (%2$s dostupných). Omlouváme se za způsobené potíže."
-
-#: includes/Loaders/LoaderAbstract.php:247
-#: includes/Action/ProcessOfferPaymentAction.php:73
-#: includes/Features/OneClick/OfferRefundManager.php:177
-msgid "Invalid order."
-msgstr "Neplatná objednávka."
+#: includes/Shipping/CFW_Shipping_Local_Pickup.php:36
+msgid "Allow customers to pick up orders themselves. This version does not require shipping zones."
+msgstr "Umožněte zákazníkům vyzvednout si objednávky sami. Tato verze nevyžaduje přepravní zóny."
 
 #: includes/Managers/UpdatesManager.php:416
 msgid "CheckoutWC License Key"
@@ -1007,7 +973,7 @@ msgstr "Limit aktivace"
 #: includes/Managers/UpdatesManager.php:456
 #: includes/Admin/Pages/Premium/ABTestingAdmin.php:96
 #: includes/Admin/Pages/Premium/ABTestingAdmin.php:737
-#: client/ts/admin/Components/acr/carts.tsx:75
+#: client/ts/admin/Components/acr/carts.tsx:80
 msgid "Status"
 msgstr "Stav"
 
@@ -1082,6 +1048,117 @@ msgstr "Nelze ověřit licenci online (%1$d/%2$d neúspěšných pokusů). Použ
 msgid "License verified successfully."
 msgstr "Licence byla úspěšně ověřena."
 
+#: includes/Managers/SlotManager.php:80
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:101
+msgid "Before Express Checkout"
+msgstr "Před expresním nákupem"
+
+#: includes/Managers/SlotManager.php:85
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:102
+msgid "After Customer Account"
+msgstr "Po zákaznickém účtu"
+
+#: includes/Managers/SlotManager.php:90
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:103
+msgid "After Delivery Method"
+msgstr "Po způsobu doručení"
+
+#: includes/Managers/SlotManager.php:95
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:104
+msgid "After Shipping Address"
+msgstr "Po adrese doručení"
+
+#: includes/Managers/SlotManager.php:100
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:105
+msgid "After Shipping Methods"
+msgstr "Po způsobech dopravy"
+
+#: includes/Managers/SlotManager.php:105
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:106
+#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:144
+msgid "After Payment Methods"
+msgstr "Po platebních metodách"
+
+#: includes/Managers/SlotManager.php:110
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:107
+msgid "After Billing Address"
+msgstr "Po fakturační adrese"
+
+#: includes/Managers/SlotManager.php:115
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:108
+msgid "Before Terms & Conditions"
+msgstr "Před obchodními podmínkami"
+
+#: includes/Managers/SlotManager.php:120
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:109
+msgid "After Terms & Conditions"
+msgstr "Po obchodních podmínkách"
+
+#: includes/Managers/SlotManager.php:125
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:110
+msgid "After Complete Order"
+msgstr "Po dokončení objednávky"
+
+#: includes/Managers/SlotManager.php:130
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:111
+msgid "Before Cart Summary Items"
+msgstr "Před položkami souhrnu košíku"
+
+#: includes/Managers/SlotManager.php:135
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:112
+msgid "After Cart Summary Items"
+msgstr "Po položkách souhrnu košíku"
+
+#: includes/Managers/SlotManager.php:140
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:113
+msgid "Before Cart Summary Totals"
+msgstr "Před součty souhrnu košíku"
+
+#: includes/Managers/SlotManager.php:145
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:114
+msgid "After Cart Summary Totals"
+msgstr "Po součtech souhrnu košíku"
+
+#: includes/Managers/SlotManager.php:150
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:115
+msgid "Before Footer"
+msgstr "Před zápatím"
+
+#: includes/Managers/SlotManager.php:155
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:116
+msgid "After Footer"
+msgstr "Po zápatí"
+
+#: includes/Managers/SlotManager.php:173
+#: client/ts/admin/Components/TrustBadgeRow.tsx:166
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:100
+msgid "— No Slot Assigned —"
+msgstr "— Není přiřazena žádná pozice —"
+
+#: includes/Managers/SlotManager.php:178
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:119
+msgid "After Cart Summary Items (Checkout and Side Cart)"
+msgstr "Po položkách souhrnu košíku (vyúčtování a boční košík)"
+
+#: includes/Managers/SlotManager.php:179
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:120
+msgid "After Cart Summary Items (Side Cart Only)"
+msgstr "Po položkách souhrnu košíku (pouze boční košík)"
+
+#: includes/Managers/SlotManager.php:180
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:121
+msgid "Place Order Click (Checkout)"
+msgstr "Kliknutí na objednávku (pokladna)"
+
+#: includes/Managers/SlotManager.php:181
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:122
+msgid "Post Purchase One-Click (Thank You)"
+msgstr "Jedno-klik po nákupu (poděkování)"
+
+#: includes/Managers/SlotManager.php:439
+msgid "Badge %d"
+msgstr "Odznak %d"
+
 #: includes/Managers/AssetManager.php:243
 msgid "required"
 msgstr "povinné"
@@ -1103,103 +1180,144 @@ msgstr "Slevový kód"
 msgid "Enter Promo Code"
 msgstr "Vložte slevový kód"
 
-#: includes/Managers/AssetManager.php:680
+#: includes/Managers/AssetManager.php:686
 msgid "Please enter a valid phone number."
 msgstr "Zadejte prosím platné telefonní číslo."
 
-#: includes/Managers/AssetManager.php:689
+#: includes/Managers/AssetManager.php:695
 msgid "Please enter your first and last name."
 msgstr "Zadejte prosím své jméno a příjmení."
 
-#: includes/Managers/AssetManager.php:690
+#: includes/Managers/AssetManager.php:696
 msgid "Please enter a name, not an email address."
 msgstr "Zadejte prosím jméno, ne e-mailovou adresu."
 
-#: includes/Managers/AssetManager.php:692
-#: includes/Managers/AssetManager.php:833
+#: includes/Managers/AssetManager.php:698
+#: includes/Managers/AssetManager.php:839
 msgid "Please enter a new quantity:"
 msgstr "Zadejte nové množství:"
 
-#: includes/Managers/AssetManager.php:693
+#: includes/Managers/AssetManager.php:699
 msgid "3-digit security code usually found on the back of your card. American Express cards have a 4-digit code located on the front."
 msgstr "Třímístný bezpečnostní kód se obvykle nachází na zadní straně karty. Karty American Express mají na přední straně čtyřmístný kód."
 
-#: includes/Managers/AssetManager.php:694
-#: includes/Managers/AssetManager.php:834
+#: includes/Managers/AssetManager.php:700
+#: includes/Managers/AssetManager.php:840
 msgid "Are you sure you want to remove this item from your cart?"
 msgstr "Opravdu chcete tuto položku odebrat z košíku?"
 
 # %s: Field name
-#: includes/Managers/AssetManager.php:697
+#: includes/Managers/AssetManager.php:703
 msgid "%s is a required field."
 msgstr "%s je povinné pole."
 
-#: includes/Managers/AssetManager.php:698
+#: includes/Managers/AssetManager.php:704
 msgid "There was a problem checking out. Please try again. If the problem persists, please get in touch with us so we can assist."
 msgstr "Při placení došlo k problému. Zkuste to prosím znovu. Pokud problém přetrvává, kontaktujte nás, abychom vám mohli pomoci."
 
-#: includes/Managers/AssetManager.php:699
+#: includes/Managers/AssetManager.php:705
 msgid "Please enter a valid postcode / ZIP."
 msgstr "Zadejte prosím platné poštovní směrovací číslo / PSČ."
 
-#: includes/Managers/AssetManager.php:700
+#: includes/Managers/AssetManager.php:706
 #: includes/Features/LocalPickup.php:626
 msgid "Pickup"
 msgstr "Vyzvednout"
 
-#: includes/Managers/AssetManager.php:701
+#: includes/Managers/AssetManager.php:707
 msgid "Continue to pickup"
 msgstr "Pokračovat ve vyzvedávání"
 
-#: includes/Managers/AssetManager.php:702
-#: includes/Managers/AssetManager.php:836
+#: includes/Managers/AssetManager.php:708
+#: includes/Managers/AssetManager.php:842
 msgid "Update"
 msgstr "Aktualizovat"
 
-#: includes/Managers/AssetManager.php:703
-#: includes/Managers/AssetManager.php:837
+#: includes/Managers/AssetManager.php:709
+#: includes/Managers/AssetManager.php:843
 #: includes/API/GetVariationFormAPI.php:150
 msgid "Add to cart"
 msgstr "Přidat do košíku"
 
-#: includes/Managers/AssetManager.php:704
-#: includes/Managers/AssetManager.php:838
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2304
+#: includes/Managers/AssetManager.php:710
+#: includes/Managers/AssetManager.php:844
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2308
+#: client/ts/admin/Components/CheckoutEditor/slots/UnsavedChangesDialog.tsx:51
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:457
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:492
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:276
+#: client/ts/admin/Components/CheckoutEditor/slots/CustomHtmlEditor.tsx:76
 msgid "Cancel"
 msgstr "Zrušit"
 
-#: includes/Managers/AssetManager.php:712
+#: includes/Managers/AssetManager.php:718
 msgid "Start with post/zip code or street"
 msgstr "Začněte poštovním směrovacím číslem nebo ulicí"
 
-#: includes/Managers/AssetManager.php:720
+#: includes/Managers/AssetManager.php:726
 msgid "Shipping method"
 msgstr "Způsob dopravy"
 
-#: includes/Managers/AssetManager.php:734
+#: includes/Managers/AssetManager.php:740
 msgid "Error processing checkout. Please try again."
 msgstr "Chyba při zpracování platby. Zkuste to prosím znovu."
 
-#: includes/Managers/AssetManager.php:760
+#: includes/Managers/AssetManager.php:766
 msgid "You may also like&hellip;"
 msgstr "Mohlo by se vám také líbit&hellip;"
 
-#: includes/Managers/AssetManager.php:835
+#: includes/Managers/AssetManager.php:841
 #: client/ts/frontend/Components/SideCartFloatingButton.tsx:26
 msgid "View cart"
 msgstr "Zobrazit košík"
 
-#: includes/Managers/AssetManager.php:839
+#: includes/Managers/AssetManager.php:845
 msgid "Remove %s from cart"
 msgstr "Odstranit %s z košíku"
 
-#: includes/Managers/AssetManager.php:840
+#: includes/Managers/AssetManager.php:846
 msgid "Proceed to checkout"
 msgstr "Přejít na platbu"
 
-#: includes/Managers/AssetManager.php:843
+#: includes/Managers/AssetManager.php:849
 msgid "View Product"
 msgstr "Zobrazit produkt"
+
+#: includes/Loaders/LoaderAbstract.php:134
+#: includes/Loaders/LoaderAbstract.php:244
+msgid "Sorry, this order is invalid and cannot be paid for."
+msgstr "Omlouváme se, tato objednávka je neplatná a nelze ji zaplatit."
+
+#: includes/Loaders/LoaderAbstract.php:138
+msgid "Please log in to your account below to continue to the payment form."
+msgstr "Pro pokračování k platebnímu formuláři se prosím přihlaste ke svému účtu níže."
+
+#: includes/Loaders/LoaderAbstract.php:145
+msgid "You are paying for a guest order. Please continue with payment only if you recognize this order."
+msgstr "Platíte za objednávku hosta. Pokračujte v platbě pouze, pokud tuto objednávku rozpoznáte."
+
+#: includes/Loaders/LoaderAbstract.php:151
+msgid "This order cannot be paid for. Please contact us if you need assistance."
+msgstr "Tuto objednávku nelze zaplatit. Pokud potřebujete pomoc, kontaktujte nás."
+
+#: includes/Loaders/LoaderAbstract.php:157
+#: includes/Loaders/LoaderAbstract.php:241
+msgid "This order&rsquo;s status is &ldquo;%s&rdquo;&mdash;it cannot be paid for. Please contact us if you need assistance."
+msgstr "Stav této objednávky je „%s“ — nelze ji zaplatit. Pokud potřebujete pomoc, kontaktujte nás."
+
+#: includes/Loaders/LoaderAbstract.php:186
+msgid "Sorry, \"%s\" is no longer in stock so this order cannot be paid for. We apologize for any inconvenience caused."
+msgstr "Omlouváme se, \"%s\" již není skladem, takže tuto objednávku nelze zaplatit. Omlouváme se za způsobené potíže."
+
+#: includes/Loaders/LoaderAbstract.php:200
+msgid "Sorry, we do not have enough \"%1$s\" in stock to fulfill your order (%2$s available). We apologize for any inconvenience caused."
+msgstr "Omlouváme se, nemáme dostatek \"%1$s\" skladem k vyřízení vaší objednávky (%2$s dostupných). Omlouváme se za způsobené potíže."
+
+#: includes/Loaders/LoaderAbstract.php:247
+#: includes/Action/ProcessOfferPaymentAction.php:73
+#: includes/Features/OneClick/OfferRefundManager.php:177
+msgid "Invalid order."
+msgstr "Neplatná objednávka."
 
 #: includes/Features/Turnstile.php:134
 #: includes/Features/Turnstile.php:188
@@ -1239,16 +1357,16 @@ msgstr "CheckoutWC:"
 msgid "Settings marked with asterisks (**) may be overridden based on your Side Cart settings. (CheckoutWC > Side Cart)"
 msgstr "Nastavení označená hvězdičkami (**) mohou být přepsána na základě nastavení vašeho bočního košíku. (CheckoutWC > Boční košík)"
 
-#: includes/Features/OrderBumps.php:609
+#: includes/Features/OrderBumps.php:610
 msgid "All orders"
 msgstr "Všechny objednávky"
 
-#: includes/Features/OrderBumps.php:612
+#: includes/Features/OrderBumps.php:613
 msgid "Contains Any Order Bump"
 msgstr "Obsahuje jakýkoli Order Bump"
 
 # %s: Order bump title
-#: includes/Features/OrderBumps.php:618
+#: includes/Features/OrderBumps.php:619
 msgid "Has Bump: %s"
 msgstr "Má Bump: %s"
 
@@ -1445,7 +1563,7 @@ msgstr "Položka"
 
 #: includes/Features/AbandonedCartRecovery.php:741
 #: includes/Admin/Views/html-refund-offer.php:23
-#: client/ts/admin/Components/acr/carts.tsx:59
+#: client/ts/admin/Components/acr/carts.tsx:60
 msgid "Name"
 msgstr "Název"
 
@@ -1470,57 +1588,57 @@ msgstr "Pouze CheckoutWC ACR"
 msgid "Check this box if the coupon can only be used by customers with an abandoned cart."
 msgstr "Zaškrtněte toto políčko, pokud může být kupón použit pouze zákazníky s opuštěným košíkem."
 
-#: includes/Features/ABTesting.php:140
-#: includes/Features/ABTesting.php:142
+#: includes/Features/ABTesting.php:145
+#: includes/Features/ABTesting.php:147
 msgid "A/B Tests"
 msgstr "A/B testy"
 
-#: includes/Features/ABTesting.php:141
-#: includes/Admin/Pages/Premium/OrderBumps.php:132
+#: includes/Features/ABTesting.php:146
+#: includes/Admin/Pages/Premium/OrderBumps.php:133
 msgid "A/B Test"
 msgstr "A/B test"
 
-#: includes/Features/ABTesting.php:143
+#: includes/Features/ABTesting.php:148
 msgid "Add A/B Test"
 msgstr "Přidat A/B test"
 
-#: includes/Features/ABTesting.php:144
+#: includes/Features/ABTesting.php:149
 msgid "Add New A/B Test"
 msgstr "Přidat nový A/B test"
 
-#: includes/Features/ABTesting.php:146
+#: includes/Features/ABTesting.php:151
 msgid "Edit A/B Test"
 msgstr "Upravit A/B test"
 
-#: includes/Features/ABTesting.php:147
+#: includes/Features/ABTesting.php:152
 msgid "New A/B Test"
 msgstr "Nový A/B test"
 
-#: includes/Features/ABTesting.php:148
+#: includes/Features/ABTesting.php:153
 msgid "View A/B Tests"
 msgstr "Zobrazit A/B testy"
 
-#: includes/Features/ABTesting.php:149
+#: includes/Features/ABTesting.php:154
 msgid "View A/B Test"
 msgstr "Zobrazit A/B test"
 
-#: includes/Features/ABTesting.php:150
+#: includes/Features/ABTesting.php:155
 msgid "Search A/B Tests"
 msgstr "Hledat A/B testy"
 
-#: includes/Features/ABTesting.php:151
+#: includes/Features/ABTesting.php:156
 msgid "No A/B Tests found"
 msgstr "Nebyly nalezeny žádné A/B testy"
 
-#: includes/Features/ABTesting.php:152
+#: includes/Features/ABTesting.php:157
 msgid "No A/B Tests found in trash"
 msgstr "Nebyly nalezeny žádné A/B testy v koši"
 
-#: includes/Features/ABTesting.php:157
+#: includes/Features/ABTesting.php:162
 msgid "This is where you can manage A/B tests for order bumps and other checkout elements."
 msgstr "Zde můžete spravovat A/B testy pro objednávkové nabídky a další prvky pokladny."
 
-#: includes/Features/ABTesting.php:331
+#: includes/Features/ABTesting.php:336
 msgid "You are editing an A/B test variant. After saving, close this window to return to your variants list."
 msgstr "Právě upravujete variantu A/B testu. Po uložení zavřete toto okno a vraťte se k seznamu variant."
 
@@ -1548,6 +1666,7 @@ msgstr "Plugin je <strong>příliš složitý na konfiguraci.</strong>"
 #: includes/Admin/Pages/LocalPickupAdminFree.php:184
 #: includes/Admin/Pages/LocalPickupAdminFree.php:221
 #: includes/Admin/Pages/Premium/LocalPickupAdmin.php:225
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:118
 #: client/ts/admin/Components/Forms/AdvancedSettingsForm.tsx:104
 msgid "Other"
 msgstr "Jiné"
@@ -1762,9 +1881,9 @@ msgstr "Objednávka přijata"
 
 #: includes/API/OrderBumpsSearchAPI.php:64
 #: includes/API/OrderBumpsSearchAPI.php:102
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:228
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:526
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:585
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:229
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:527
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:586
 msgid "No Title #%d"
 msgstr "Bez názvu #%d"
 
@@ -1830,38 +1949,21 @@ msgstr "Formulář nabídky Order Bump"
 msgid "The form to accept or reject the bump offer."
 msgstr "Formulář pro přijetí nebo odmítnutí nabídky bump."
 
-# %1$s: Plugin name, %2$s: Link opening tag, %3$s: Version number, %4$s: Link closing tag
-#: includes/Managers/Helpers/EDD_SL_Plugin_Updater.php:281
-msgid "There is a new version of %1$s available. %2$sView version %3$s details%4$s."
-msgstr "Je k dispozici nová verze %1$s. %2$sZobrazit podrobnosti verze %3$s%4$s."
-
-# %1$s: Plugin name, %2$s: Link opening tag, %3$s: Version number, %4$s: Link closing tag, %5$s: Update link opening tag, %6$s: Update link closing tag
-#: includes/Managers/Helpers/EDD_SL_Plugin_Updater.php:290
-msgid "There is a new version of %1$s available. %2$sView version %3$s details%4$s or %5$supdate now%6$s."
-msgstr "Je k dispozici nová verze %1$s. %2$sZobrazit podrobnosti verze %3$s%4$s nebo %5$saktualizovat nyní%6$s."
-
-#: includes/Managers/Helpers/EDD_SL_Plugin_Updater.php:534
-msgid "You do not have permission to install plugin updates"
-msgstr "Nemáte oprávnění k instalaci aktualizací pluginů"
-
-#: includes/Managers/Helpers/EDD_SL_Plugin_Updater.php:534
-msgid "Error"
-msgstr "Chyba"
-
 #: includes/Model/Bumps/BumpAbstract.php:1013
 #: includes/Model/Bumps/BumpAbstract.php:1023
 #: includes/Model/ABTests/OrderBumpsABTest.php:30
 #: includes/Features/ABTesting/ABTestTypeRegistry.php:123
 #: includes/Admin/Pages/OrderBumpsAdminFree.php:17
 #: includes/Admin/Pages/OrderBumpsAdminFree.php:71
-#: includes/Admin/Pages/Premium/OrderBumps.php:45
+#: includes/Admin/Pages/Premium/OrderBumps.php:46
 #: client/ts/admin/Components/Forms/OrderBumpSettingsForm.tsx:45
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:294
 msgid "Order Bumps"
 msgstr "Nabídky k objednávce"
 
 #: includes/Model/Bumps/BumpAbstract.php:1014
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:192
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:1610
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:193
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:1614
 msgid "Order Bump"
 msgstr "Nabídka k objednávce"
 
@@ -1902,6 +2004,24 @@ msgstr "Nenalezeno v koši"
 #: includes/Features/ABTesting/ABTestTypeRegistry.php:124
 msgid "Test different variations of order bumps to see which performs better."
 msgstr "Testujte různé varianty objednávkových bumpů a zjistěte, která funguje lépe."
+
+# %1$s: Plugin name, %2$s: Link opening tag, %3$s: Version number, %4$s: Link closing tag
+#: includes/Managers/Helpers/EDD_SL_Plugin_Updater.php:281
+msgid "There is a new version of %1$s available. %2$sView version %3$s details%4$s."
+msgstr "Je k dispozici nová verze %1$s. %2$sZobrazit podrobnosti verze %3$s%4$s."
+
+# %1$s: Plugin name, %2$s: Link opening tag, %3$s: Version number, %4$s: Link closing tag, %5$s: Update link opening tag, %6$s: Update link closing tag
+#: includes/Managers/Helpers/EDD_SL_Plugin_Updater.php:290
+msgid "There is a new version of %1$s available. %2$sView version %3$s details%4$s or %5$supdate now%6$s."
+msgstr "Je k dispozici nová verze %1$s. %2$sZobrazit podrobnosti verze %3$s%4$s nebo %5$saktualizovat nyní%6$s."
+
+#: includes/Managers/Helpers/EDD_SL_Plugin_Updater.php:534
+msgid "You do not have permission to install plugin updates"
+msgstr "Nemáte oprávnění k instalaci aktualizací pluginů"
+
+#: includes/Managers/Helpers/EDD_SL_Plugin_Updater.php:534
+msgid "Error"
+msgstr "Chyba"
 
 #: includes/Features/OneClick/OrderStatusManager.php:52
 msgid "Pending Offer <span class=\"count\">(%s)</span>"
@@ -2128,144 +2248,6 @@ msgstr "Povolit podporu Beaver Themer"
 msgid "Allow Beaver Themer to replace header and footer."
 msgstr "Povolit Beaver Themer nahradit hlavičku a patičku."
 
-#: includes/Admin/Views/html-refund-offer.php:22
-msgid "Product"
-msgstr "Produkt"
-
-#: includes/Admin/Views/html-refund-offer.php:24
-msgid "Qty"
-msgstr "Množství"
-
-#: includes/Admin/Views/html-refund-offer.php:26
-msgid "Action"
-msgstr "Akce"
-
-#: includes/Admin/Views/html-refund-offer.php:89
-msgid "Refund"
-msgstr "Vrácení peněz"
-
-#: includes/Admin/Views/html-refund-offer.php:101
-msgid "No order bump payments found for this order."
-msgstr "Pro tuto objednávku nebyly nalezeny žádné platby za objednávkové bumpy."
-
-#: includes/Admin/Views/html-refund-offer.php:113
-msgid "Note:"
-msgstr "Poznámka:"
-
-#: includes/Admin/Views/html-refund-offer.php:114
-msgid "Refunding an offer will process the refund with the payment gateway and create a WooCommerce refund record."
-msgstr "Vrácení nabídky zpracuje vrácení peněz přes platební bránu a vytvoří záznam o vrácení ve WooCommerce."
-
-#: includes/Admin/Notices/WelcomeNotice.php:12
-msgid "Welcome to CheckoutWC"
-msgstr "Vítejte v CheckoutWC"
-
-#: includes/Admin/Notices/WelcomeNotice.php:20
-msgid "Thank you for installing CheckoutWC! We automatically activated your license. You are all set!"
-msgstr "Děkujeme za instalaci CheckoutWC! Vaše licence byla automaticky aktivována. Vše je připraveno!"
-
-#: includes/Admin/Notices/WelcomeNotice.php:26
-msgid "Thank you for installing CheckoutWC! To get started, enter your <strong>License Key</strong> below, save, and click <strong>Activate Site</strong>."
-msgstr "Děkujeme za instalaci CheckoutWC! Pro začátek zadejte níže svůj <strong>licenční klíč</strong>, uložte a klikněte na <strong>Aktivovat web</strong>."
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:20
-msgid "your email"
-msgstr "váš e-mail"
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:88
-msgid "privacy policy"
-msgstr "zásady ochrany osobních údajů"
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:93
-msgid "By joining, %1$s will be added to our mailing list. Read our %2$s."
-msgstr "Přihlášením bude %1$s přidán do našeho mailing listu. Přečtěte si naše %2$s."
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:99
-msgid "Join Newsletter & Save 25%"
-msgstr "Přihlaste se k odběru newsletteru a ušetřete 25 %"
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:102
-msgid "Join Newsletter"
-msgstr "Přihlásit se k odběru newsletteru"
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:113
-msgid "Sign up to our newsletter and get proven conversion tips and checkout optimization strategies from the CheckoutWC team."
-msgstr "Přihlaste se k odběru našeho newsletteru a získejte ověřené tipy na konverze a strategie optimalizace pokladny od týmu CheckoutWC."
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:116
-msgid "Boost Your Conversions with Proven Strategies."
-msgstr "Zvyšte své konverze ověřenými strategiemi."
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:123
-msgid "We're so glad that you've chosen CheckoutWC to handle your checkouts. Unlock more sales with premium features like order bumps, abandoned cart recovery, and much more."
-msgstr "Jsme rádi, že jste si vybrali CheckoutWC pro správu svých pokladen. Odemkněte více prodejů s prémiovými funkcemi jako jsou objednávkové doplňky, obnovení opuštěného košíku a mnoho dalšího."
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:126
-msgid "Unlock more sales with CheckoutWC Premium"
-msgstr "Odemkněte více prodejů s CheckoutWC Premium"
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:144
-msgid "Sorry, there was an error joining our newsletter. Please refresh the page and try again."
-msgstr "Omlouváme se, při přihlášení k odběru newsletteru došlo k chybě. Prosím obnovte stránku a zkuste to znovu."
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:243
-msgid "Please wait..."
-msgstr "Prosím čekejte..."
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:320
-msgid "Sorry, your account has insufficient permissions to join our newsletter."
-msgstr "Omlouváme se, váš účet nemá dostatečná oprávnění pro přihlášení k odběru newsletteru."
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:354
-msgid "You have already joined our newsletter!"
-msgstr "Již jste přihlášeni k odběru našeho newsletteru!"
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:396
-msgid "Thank you for joining our newsletter!"
-msgstr "Děkujeme, že jste se přihlásili k odběru našeho newsletteru!"
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:410
-msgid "Security check failed."
-msgstr "Bezpečnostní kontrola selhala."
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:414
-msgid "Insufficient permissions."
-msgstr "Nedostatečná oprávnění."
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:422
-msgid "Notice dismissed."
-msgstr "Upozornění bylo zavřeno."
-
-# %1$s: URL to pricing page, %2$s: "purchase a new license" link text, %3$s: Support email URL, %4$s: "please contact support" link text
-#: includes/Admin/Notices/InvalidLicenseKeyNotice.php:15
-msgid "Your license key appears to have expired. Please <a href=\"%1$s\" target=\"_blank\">%2$s</a> to restore functionality. If you believe this is in error, <a href=\"%3$s\">%4$s</a>."
-msgstr "Zdá se, že platnost vašeho licenčního klíče vypršela. Prosím <a href=\"%1$s\" target=\"_blank\">%2$s</a> pro obnovení funkčnosti. Pokud si myslíte, že se jedná o chybu, <a href=\"%3$s\">%4$s</a>."
-
-#: includes/Admin/Notices/InvalidLicenseKeyNotice.php:17
-msgid "purchase a new license"
-msgstr "zakoupit novou licenci"
-
-#: includes/Admin/Notices/InvalidLicenseKeyNotice.php:19
-msgid "please contact support"
-msgstr "kontaktujte prosím podporu"
-
-# %1$s: URL to activation page, %2$s: "Start Here" link text
-#: includes/Admin/Notices/InactiveLicenseNotice.php:11
-msgid "Your license key is not active for this site. Please visit <a href=\"%1$s\">%2$s</a> to activate your license and restore functionality."
-msgstr "Váš licenční klíč není pro tento web aktivní. Navštivte prosím <a href=\"%1$s\">%2$s</a> pro aktivaci licence a obnovení funkčnosti."
-
-#: includes/Admin/Notices/BFNotice.php:13
-msgid "Black Friday Sale - 40% Off"
-msgstr "Výprodej Black Friday - 40% sleva"
-
-#: includes/Admin/Notices/BFNotice.php:14
-msgid "You're missing out on revenue growth tools like Order Bumps, Upsells, Abandoned Cart Recovery and more! Save 40% on CheckoutWC pro plans for Black Friday, ends December 4th"
-msgstr "Přicházíte o nástroje pro růst příjmů, jako jsou Order Bumps, Upsells, Obnova opuštěného košíku a další! Ušetřete 40 % na plánech CheckoutWC pro během Black Friday, akce končí 4. prosince"
-
-#: includes/Admin/Notices/BFNotice.php:27
-msgid "Get CheckoutWC Pro Now!"
-msgstr "Získejte CheckoutWC Pro nyní!"
-
 #: includes/Admin/Pages/WooCommercePages.php:21
 msgid "Pages"
 msgstr "Stránky"
@@ -2281,182 +2263,138 @@ msgid "Global Options"
 msgstr "Globální možnosti"
 
 #: includes/Admin/Pages/TrustBadgesAdminFree.php:14
-#: includes/Admin/Pages/TrustBadgesAdminFree.php:89
-#: includes/Admin/Pages/Premium/TrustBadges.php:15
-#: client/ts/admin/Components/Forms/TrustBadgeSettingsForm.tsx:187
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:513
+#: includes/Admin/Pages/TrustBadgesAdminFree.php:56
+#: includes/Admin/Pages/Premium/TrustBadges.php:16
+#: client/ts/admin/Components/Forms/TrustBadgeSettingsForm.tsx:150
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:544
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:348
 msgid "Trust Badges"
 msgstr "Důvěryhodné značky"
 
 #: includes/Admin/Pages/TrustBadgesAdminFree.php:24
-#: client/ts/admin/Components/Forms/TrustBadgeSettingsForm.tsx:80
+#: client/ts/admin/Components/Forms/TrustBadgeSettingsForm.tsx:60
 msgid "Trust Badge Options"
 msgstr "Možnosti důvěryhodnostních odznaků"
 
 #: includes/Admin/Pages/TrustBadgesAdminFree.php:25
-#: client/ts/admin/Components/Forms/TrustBadgeSettingsForm.tsx:81
+#: client/ts/admin/Components/Forms/TrustBadgeSettingsForm.tsx:61
 msgid "Configure general Trust Badge options."
 msgstr "Nakonfigurujte obecné možnosti důvěryhodnostních odznaků."
 
 #: includes/Admin/Pages/TrustBadgesAdminFree.php:38
-#: client/ts/admin/Components/Forms/TrustBadgeSettingsForm.tsx:86
+#: client/ts/admin/Components/Forms/TrustBadgeSettingsForm.tsx:66
 msgid "Enable Trust Badges"
 msgstr "Povolit důvěryhodnostní odznaky"
 
 #: includes/Admin/Pages/TrustBadgesAdminFree.php:39
-#: client/ts/admin/Components/Forms/TrustBadgeSettingsForm.tsx:87
 msgid "Enable trust badges on CheckoutWC templates. Uncheck to hide badges."
 msgstr "Povolit důvěryhodnostní odznaky na šablonách CheckoutWC. Zrušte zaškrtnutí pro skrytí odznaků."
 
 #: includes/Admin/Pages/TrustBadgesAdminFree.php:43
-#: client/ts/admin/Components/Forms/TrustBadgeSettingsForm.tsx:98
-msgid "Trust Badge Output Location"
-msgstr "Umístění výstupu důvěryhodnostních odznaků"
-
-#: includes/Admin/Pages/TrustBadgesAdminFree.php:44
-#: client/ts/admin/Components/Forms/TrustBadgeSettingsForm.tsx:99
-msgid "Where to display the trust badges on the checkout page."
-msgstr "Kde zobrazit důvěryhodnostní odznaky na stránce pokladny."
-
-#: includes/Admin/Pages/TrustBadgesAdminFree.php:51
-#: client/ts/admin/Components/Forms/TrustBadgeSettingsForm.tsx:20
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:493
-msgid "Below the checkout cart summary"
-msgstr "Pod souhrnem košíku při pokladně"
-
-#: includes/Admin/Pages/TrustBadgesAdminFree.php:52
-#: client/ts/admin/Components/Forms/TrustBadgeSettingsForm.tsx:21
-msgid "Output in a single column below the checkout cart summary totals"
-msgstr "Výstup v jednom sloupci pod souhrnem košíku při pokladně"
-
-#: includes/Admin/Pages/TrustBadgesAdminFree.php:60
-#: client/ts/admin/Components/Forms/TrustBadgeSettingsForm.tsx:25
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:494
-msgid "After the checkout form"
-msgstr "Po formuláři pokladny"
-
-#: includes/Admin/Pages/TrustBadgesAdminFree.php:61
-#: client/ts/admin/Components/Forms/TrustBadgeSettingsForm.tsx:26
-msgid "Output in a single row below the checkout form above the footer"
-msgstr "Výstup v jednom řádku pod formulářem pokladny nad patičkou"
-
-#: includes/Admin/Pages/TrustBadgesAdminFree.php:69
-#: client/ts/admin/Components/Forms/TrustBadgeSettingsForm.tsx:30
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:495
-msgid "Top of the footer"
-msgstr "Horní část patičky"
-
-#: includes/Admin/Pages/TrustBadgesAdminFree.php:70
-#: client/ts/admin/Components/Forms/TrustBadgeSettingsForm.tsx:31
-msgid "Output in a single row inside the footer"
-msgstr "Výstup v jednom řádku uvnitř patičky"
-
-#: includes/Admin/Pages/TrustBadgesAdminFree.php:76
-#: client/ts/admin/Components/Forms/TrustBadgeSettingsForm.tsx:104
 #: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:171
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:482
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:219
 msgid "Heading"
 msgstr "Nadpis"
 
-#: includes/Admin/Pages/TrustBadgesAdminFree.php:77
-#: includes/Admin/Pages/TrustBadgesAdminFree.php:78
-#: client/ts/admin/Components/Forms/TrustBadgeSettingsForm.tsx:105
-#: client/ts/admin/Components/Forms/TrustBadgeSettingsForm.tsx:106
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:485
+#: includes/Admin/Pages/TrustBadgesAdminFree.php:44
+#: includes/Admin/Pages/TrustBadgesAdminFree.php:45
 msgid "Example: Why choose us?"
 msgstr "Příklad: Proč si vybrat nás?"
 
-#: includes/Admin/Pages/TrustBadgesAdminFree.php:77
+#: includes/Admin/Pages/TrustBadgesAdminFree.php:44
 msgid "We've Got You Covered!"
 msgstr "Máme vás kryté!"
 
-#: includes/Admin/Pages/TrustBadgesAdminFree.php:90
-#: client/ts/admin/Components/Forms/TrustBadgeSettingsForm.tsx:188
+#: includes/Admin/Pages/TrustBadgesAdminFree.php:57
+#: client/ts/admin/Components/Forms/TrustBadgeSettingsForm.tsx:151
 msgid "Create trust badges to display on your checkout page."
 msgstr "Vytvořte důvěryhodnostní odznaky pro zobrazení na vaší stránce pokladny."
 
-#: includes/Admin/Pages/TrustBadgesAdminFree.php:112
-#: client/ts/admin/Components/TrustBadgeRow.tsx:79
-#: client/ts/admin/Components/TrustBadgeRow.tsx:82
+#: includes/Admin/Pages/TrustBadgesAdminFree.php:79
+#: client/ts/admin/Components/TrustBadgeRow.tsx:90
+#: client/ts/admin/Components/TrustBadgeRow.tsx:93
 #: client/ts/admin/Components/Metaboxes/OrderBumpsSetupModal.tsx:65
 msgid "Title"
 msgstr "Název"
 
-#: includes/Admin/Pages/TrustBadgesAdminFree.php:112
-#: includes/Admin/Pages/TrustBadgesAdminFree.php:158
-#: includes/Admin/Pages/TrustBadgesAdminFree.php:161
+#: includes/Admin/Pages/TrustBadgesAdminFree.php:79
+#: includes/Admin/Pages/TrustBadgesAdminFree.php:125
+#: includes/Admin/Pages/TrustBadgesAdminFree.php:128
 msgid "30 Day Money Back Guarantee!"
 msgstr "30denní záruka vrácení peněz!"
 
-#: includes/Admin/Pages/TrustBadgesAdminFree.php:114
-#: client/ts/admin/Components/TrustBadgeRow.tsx:93
-#: client/ts/admin/Components/TrustBadgeRow.tsx:96
+#: includes/Admin/Pages/TrustBadgesAdminFree.php:81
+#: client/ts/admin/Components/TrustBadgeRow.tsx:104
+#: client/ts/admin/Components/TrustBadgeRow.tsx:107
 msgid "Subtitle"
 msgstr "Podtitul"
 
-#: includes/Admin/Pages/TrustBadgesAdminFree.php:119
+#: includes/Admin/Pages/TrustBadgesAdminFree.php:86
 #: includes/Admin/Pages/Appearance.php:32
 #: includes/Admin/Pages/Premium/AbandonedCartRecovery.php:462
-#: client/ts/admin/Components/TrustBadgeRow.tsx:106
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:86
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:95
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:99
+#: client/ts/admin/Components/TrustBadgeRow.tsx:117
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:105
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:114
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:118
 #: client/ts/admin/Components/CheckoutEditor/panels/DesignSettingsPanel.tsx:52
 msgid "Template"
 msgstr "Šablona"
 
-#: includes/Admin/Pages/TrustBadgesAdminFree.php:120
-#: client/ts/admin/Components/TrustBadgeRow.tsx:112
+#: includes/Admin/Pages/TrustBadgesAdminFree.php:87
+#: client/ts/admin/Components/TrustBadgeRow.tsx:123
 msgid "Guarantee"
 msgstr "Záruka"
 
-#: includes/Admin/Pages/TrustBadgesAdminFree.php:126
-#: client/ts/admin/Components/TrustBadgeRow.tsx:120
+#: includes/Admin/Pages/TrustBadgesAdminFree.php:93
+#: client/ts/admin/Components/TrustBadgeRow.tsx:131
 msgid "Image"
 msgstr "Obrázek"
 
-#: includes/Admin/Pages/TrustBadgesAdminFree.php:127
+#: includes/Admin/Pages/TrustBadgesAdminFree.php:94
 #: client/ts/admin/Components/MediaLibraryButton.tsx:43
 msgid "Choose Image"
 msgstr "Vybrat obrázek"
 
-#: includes/Admin/Pages/TrustBadgesAdminFree.php:130
-#: client/ts/admin/Components/TrustBadgeRow.tsx:132
+#: includes/Admin/Pages/TrustBadgesAdminFree.php:97
+#: client/ts/admin/Components/TrustBadgeRow.tsx:143
 msgid "Clear image"
 msgstr "Vymazat obrázek"
 
-#: includes/Admin/Pages/TrustBadgesAdminFree.php:134
-#: client/ts/admin/Components/TrustBadgeRow.tsx:140
+#: includes/Admin/Pages/TrustBadgesAdminFree.php:101
+#: client/ts/admin/Components/TrustBadgeRow.tsx:177
 msgid "Description"
 msgstr "Popis"
 
-#: includes/Admin/Pages/TrustBadgesAdminFree.php:136
-#: includes/Admin/Pages/TrustBadgesAdminFree.php:162
+#: includes/Admin/Pages/TrustBadgesAdminFree.php:103
+#: includes/Admin/Pages/TrustBadgesAdminFree.php:129
 msgid "Every product we sell comes with a 30-day money-back guarantee. Have a problem? Let us know and we'll make it right!"
 msgstr "Každý produkt, který prodáváme, má 30denní záruku vrácení peněz. Máte problém? Dejte nám vědět a my to napravíme!"
 
-#: includes/Admin/Pages/TrustBadgesAdminFree.php:140
+#: includes/Admin/Pages/TrustBadgesAdminFree.php:107
 msgid "WYSIWYG"
 msgstr "WYSIWYG"
 
-#: includes/Admin/Pages/TrustBadgesAdminFree.php:144
+#: includes/Admin/Pages/TrustBadgesAdminFree.php:111
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:428
+#: client/ts/admin/Components/CheckoutEditor/slots/CustomHtmlEditor.tsx:37
+#: client/ts/admin/Components/CheckoutEditor/slots/AssignedItem.tsx:73
 msgid "HTML"
 msgstr "HTML"
 
-#: includes/Admin/Pages/TrustBadgesAdminFree.php:150
-#: client/ts/admin/Components/TrustBadgeRow.tsx:148
-#: client/ts/admin/Components/TrustBadgeRow.tsx:171
+#: includes/Admin/Pages/TrustBadgesAdminFree.php:117
+#: client/ts/admin/Components/TrustBadgeRow.tsx:185
+#: client/ts/admin/Components/TrustBadgeRow.tsx:208
 #: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayConditions.tsx:22
 msgid "Display Conditions"
 msgstr "Podmínky zobrazení"
 
-#: includes/Admin/Pages/TrustBadgesAdminFree.php:151
-#: client/ts/admin/Components/TrustBadgeRow.tsx:156
+#: includes/Admin/Pages/TrustBadgesAdminFree.php:118
+#: client/ts/admin/Components/TrustBadgeRow.tsx:193
 msgid "Manage Display Conditions"
 msgstr "Spravovat podmínky zobrazení"
 
-#: includes/Admin/Pages/TrustBadgesAdminFree.php:183
-#: client/ts/admin/Components/TrustBadgeRepeater.tsx:128
+#: includes/Admin/Pages/TrustBadgesAdminFree.php:150
+#: client/ts/admin/Components/TrustBadgeRepeater.tsx:135
 msgid "Add Trust Badge"
 msgstr "Přidat odznak důvěry"
 
@@ -2663,6 +2601,7 @@ msgstr "Zahodit?"
 #: includes/Admin/Pages/PageAbstract.php:136
 #: includes/Admin/Pages/PageAbstract.php:157
 #: client/ts/admin/Components/CheckoutEditor/EditorHeader.tsx:203
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:403
 msgid "Save Changes"
 msgstr "Uložit změny"
 
@@ -2681,20 +2620,20 @@ msgid "This setting is currently programmatically overridden. To enable it remov
 msgstr "Toto nastavení je momentálně programově přepsáno. Pro jeho povolení odstraňte svůj vlastní kód."
 
 #: includes/Admin/Pages/PageAbstract.php:333
-#: includes/Admin/Pages/Premium/OrderBumps.php:980
+#: includes/Admin/Pages/Premium/OrderBumps.php:1004
 #: includes/Admin/Pages/Premium/AbandonedCartRecovery.php:850
 msgid "Upgrade Your Plan"
 msgstr "Upgradujte svůj plán"
 
 # %1$s: Account URL, %2$s: Help URL
 #: includes/Admin/Pages/PageAbstract.php:350
-#: includes/Admin/Pages/Premium/OrderBumps.php:990
+#: includes/Admin/Pages/Premium/OrderBumps.php:1014
 #: includes/Admin/Pages/Premium/AbandonedCartRecovery.php:869
 msgid "You can upgrade your license in <a class=\"text-blue-600 underline\" target=\"_blank\" href=\"%1$s\">Account</a>. For help upgrading your license, <a class=\"text-blue-600 underline\" target=\"_blank\" href=\"%2$s\">click here.</a>"
 msgstr "Své předplatné můžete upgradovat v <a class=\"text-blue-600 underline\" target=\"_blank\" href=\"%1$s\">Účtu</a>. Pro pomoc s upgradem licence <a class=\"text-blue-600 underline\" target=\"_blank\" href=\"%2$s\">klikněte zde.</a>"
 
 #: includes/Admin/Pages/OrderBumpsAdminFree.php:27
-#: includes/Admin/Pages/Premium/OrderBumps.php:59
+#: includes/Admin/Pages/Premium/OrderBumps.php:60
 msgid "Manage Bumps"
 msgstr "Spravovat doplňky"
 
@@ -2716,13 +2655,13 @@ msgstr "Povolit zobrazení nabídek navíc."
 
 #: includes/Admin/Pages/OrderBumpsAdminFree.php:81
 #: client/ts/admin/Components/Forms/OrderBumpSettingsForm.tsx:64
-msgid "Maximum Order Bumps"
-msgstr "Maximální počet nabídek navíc"
+msgid "Maximum Order Bumps Per Slot"
+msgstr "Maximální počet objednávkových přírůstků na pozici"
 
 #: includes/Admin/Pages/OrderBumpsAdminFree.php:82
 #: client/ts/admin/Components/Forms/OrderBumpSettingsForm.tsx:65
-msgid "The maximum number of bumps that can be displayed per output location. Use -1 for unlimited."
-msgstr "Maximální počet nabídek, které mohou být zobrazeny na jedno výstupní místo. Použijte -1 pro neomezeně."
+msgid "The maximum number of order bumps displayed in each checkout slot."
+msgstr "Maximální počet nabídek k objednávce zobrazených v každém slotu pokladny."
 
 #: includes/Admin/Pages/OrderBumpsAdminFree.php:85
 #: client/ts/admin/Components/Forms/OrderBumpSettingsForm.tsx:70
@@ -2730,8 +2669,8 @@ msgid "Maximum Place Order Bumps"
 msgstr "Maximální počet objednávkových bumpů"
 
 #: includes/Admin/Pages/OrderBumpsAdminFree.php:86
-msgid "The maximum number of modal bumps that can be displayed after submitting checkout. Use -1 for unlimited."
-msgstr "Maximální počet modálních upozornění, která lze zobrazit po odeslání objednávky. Použijte -1 pro neomezený počet."
+msgid "The maximum number of modal bumps displayed after submitting checkout."
+msgstr "Maximální počet modálních nabídek zobrazených po odeslání pokladny."
 
 #: includes/Admin/Pages/LocalPickupAdminFree.php:29
 #: includes/Admin/Pages/Premium/LocalPickupAdmin.php:30
@@ -2860,7 +2799,7 @@ msgstr "Integrace"
 
 #: includes/Admin/Pages/General.php:40
 #: includes/Admin/Pages/General.php:41
-#: includes/Admin/Pages/CheckoutEditor.php:13
+#: includes/Admin/Pages/CheckoutEditor.php:14
 #: client/ts/admin/Components/CheckoutEditor/EditorHeader.tsx:75
 msgid "Checkout Editor"
 msgstr "Editor pokladny"
@@ -2998,13 +2937,13 @@ msgstr "Šablona a funkčnost CheckoutWC budou dočasně obcházeny (jen pro vá
 
 #: includes/Admin/Pages/ExpressCheckout.php:16
 #: client/ts/admin/Components/Forms/ExpressCheckoutSettingsForm.tsx:54
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:388
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:394
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:413
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:419
 msgid "Express Checkout"
 msgstr "Expresní pokladna"
 
 # 1: Admin page title, 2: Network or site name.
-#: includes/Admin/Pages/CheckoutEditor.php:49
+#: includes/Admin/Pages/CheckoutEditor.php:50
 msgid "%1$s ‹ %2$s — WordPress"
 msgstr "%1$s ‹ %2$s — WordPress"
 
@@ -3037,7 +2976,7 @@ msgid "System Font Stack (fastest)"
 msgstr "Systémový font stack (nejrychlejší)"
 
 #: includes/Admin/Pages/Appearance.php:201
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:198
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:219
 msgid "Body"
 msgstr "Tělo"
 
@@ -3052,6 +2991,8 @@ msgstr "Pozadí"
 #: includes/Admin/Pages/Appearance.php:219
 #: includes/Admin/Pages/Appearance.php:231
 #: includes/Admin/Pages/Appearance.php:241
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:428
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:247
 msgid "Text"
 msgstr "Text"
 
@@ -3061,21 +3002,21 @@ msgid "Link"
 msgstr "Odkaz"
 
 #: includes/Admin/Pages/Appearance.php:211
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:202
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:223
 msgid "Header"
 msgstr "Záhlaví"
 
 #: includes/Admin/Pages/Appearance.php:223
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:203
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:568
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:224
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:627
 msgid "Footer"
 msgstr "Patička"
 
 #: includes/Admin/Pages/Appearance.php:235
 #: client/ts/admin/Components/Forms/WooCommercePagesGlobalOptionsSettingsForm.tsx:48
 #: client/ts/admin/Components/Forms/CheckoutSettingsForm.tsx:569
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:201
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:409
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:222
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:434
 #: client/ts/admin/Components/CheckoutEditor/panels/CheckoutSettingsPanel.tsx:305
 msgid "Cart Summary"
 msgstr "Souhrn košíku"
@@ -3093,7 +3034,7 @@ msgid "Quantity Bubble Text"
 msgstr "Text bubliny množství"
 
 #: includes/Admin/Pages/Appearance.php:253
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:200
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:221
 msgid "Breadcrumbs"
 msgstr "Navigační cesta"
 
@@ -3122,7 +3063,7 @@ msgid "Next Accent"
 msgstr "Další akcent"
 
 #: includes/Admin/Pages/Appearance.php:267
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:199
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:220
 msgid "Buttons"
 msgstr "Tlačítka"
 
@@ -3164,7 +3105,7 @@ msgstr "Barvy specifické pro téma"
 
 #: includes/Admin/Pages/Advanced.php:20
 #: includes/Admin/Pages/Advanced.php:28
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:586
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:645
 msgid "Advanced"
 msgstr "Pokročilé"
 
@@ -3410,6 +3351,144 @@ msgstr "Povolit A/B testování"
 msgid "Allow A/B tests to be created and applied on the checkout page."
 msgstr "Umožnit vytváření a aplikaci A/B testů na stránce pokladny."
 
+#: includes/Admin/Views/html-refund-offer.php:22
+msgid "Product"
+msgstr "Produkt"
+
+#: includes/Admin/Views/html-refund-offer.php:24
+msgid "Qty"
+msgstr "Množství"
+
+#: includes/Admin/Views/html-refund-offer.php:26
+msgid "Action"
+msgstr "Akce"
+
+#: includes/Admin/Views/html-refund-offer.php:89
+msgid "Refund"
+msgstr "Vrácení peněz"
+
+#: includes/Admin/Views/html-refund-offer.php:101
+msgid "No order bump payments found for this order."
+msgstr "Pro tuto objednávku nebyly nalezeny žádné platby za objednávkové bumpy."
+
+#: includes/Admin/Views/html-refund-offer.php:113
+msgid "Note:"
+msgstr "Poznámka:"
+
+#: includes/Admin/Views/html-refund-offer.php:114
+msgid "Refunding an offer will process the refund with the payment gateway and create a WooCommerce refund record."
+msgstr "Vrácení nabídky zpracuje vrácení peněz přes platební bránu a vytvoří záznam o vrácení ve WooCommerce."
+
+#: includes/Admin/Notices/WelcomeNotice.php:12
+msgid "Welcome to CheckoutWC"
+msgstr "Vítejte v CheckoutWC"
+
+#: includes/Admin/Notices/WelcomeNotice.php:20
+msgid "Thank you for installing CheckoutWC! We automatically activated your license. You are all set!"
+msgstr "Děkujeme za instalaci CheckoutWC! Vaše licence byla automaticky aktivována. Vše je připraveno!"
+
+#: includes/Admin/Notices/WelcomeNotice.php:26
+msgid "Thank you for installing CheckoutWC! To get started, enter your <strong>License Key</strong> below, save, and click <strong>Activate Site</strong>."
+msgstr "Děkujeme za instalaci CheckoutWC! Pro začátek zadejte níže svůj <strong>licenční klíč</strong>, uložte a klikněte na <strong>Aktivovat web</strong>."
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:20
+msgid "your email"
+msgstr "váš e-mail"
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:88
+msgid "privacy policy"
+msgstr "zásady ochrany osobních údajů"
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:93
+msgid "By joining, %1$s will be added to our mailing list. Read our %2$s."
+msgstr "Přihlášením bude %1$s přidán do našeho mailing listu. Přečtěte si naše %2$s."
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:99
+msgid "Join Newsletter & Save 25%"
+msgstr "Přihlaste se k odběru newsletteru a ušetřete 25 %"
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:102
+msgid "Join Newsletter"
+msgstr "Přihlásit se k odběru newsletteru"
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:113
+msgid "Sign up to our newsletter and get proven conversion tips and checkout optimization strategies from the CheckoutWC team."
+msgstr "Přihlaste se k odběru našeho newsletteru a získejte ověřené tipy na konverze a strategie optimalizace pokladny od týmu CheckoutWC."
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:116
+msgid "Boost Your Conversions with Proven Strategies."
+msgstr "Zvyšte své konverze ověřenými strategiemi."
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:123
+msgid "We're so glad that you've chosen CheckoutWC to handle your checkouts. Unlock more sales with premium features like order bumps, abandoned cart recovery, and much more."
+msgstr "Jsme rádi, že jste si vybrali CheckoutWC pro správu svých pokladen. Odemkněte více prodejů s prémiovými funkcemi jako jsou objednávkové doplňky, obnovení opuštěného košíku a mnoho dalšího."
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:126
+msgid "Unlock more sales with CheckoutWC Premium"
+msgstr "Odemkněte více prodejů s CheckoutWC Premium"
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:144
+msgid "Sorry, there was an error joining our newsletter. Please refresh the page and try again."
+msgstr "Omlouváme se, při přihlášení k odběru newsletteru došlo k chybě. Prosím obnovte stránku a zkuste to znovu."
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:243
+msgid "Please wait..."
+msgstr "Prosím čekejte..."
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:320
+msgid "Sorry, your account has insufficient permissions to join our newsletter."
+msgstr "Omlouváme se, váš účet nemá dostatečná oprávnění pro přihlášení k odběru newsletteru."
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:354
+msgid "You have already joined our newsletter!"
+msgstr "Již jste přihlášeni k odběru našeho newsletteru!"
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:396
+msgid "Thank you for joining our newsletter!"
+msgstr "Děkujeme, že jste se přihlásili k odběru našeho newsletteru!"
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:410
+msgid "Security check failed."
+msgstr "Bezpečnostní kontrola selhala."
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:414
+msgid "Insufficient permissions."
+msgstr "Nedostatečná oprávnění."
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:422
+msgid "Notice dismissed."
+msgstr "Upozornění bylo zavřeno."
+
+# %1$s: URL to pricing page, %2$s: "purchase a new license" link text, %3$s: Support email URL, %4$s: "please contact support" link text
+#: includes/Admin/Notices/InvalidLicenseKeyNotice.php:15
+msgid "Your license key appears to have expired. Please <a href=\"%1$s\" target=\"_blank\">%2$s</a> to restore functionality. If you believe this is in error, <a href=\"%3$s\">%4$s</a>."
+msgstr "Zdá se, že platnost vašeho licenčního klíče vypršela. Prosím <a href=\"%1$s\" target=\"_blank\">%2$s</a> pro obnovení funkčnosti. Pokud si myslíte, že se jedná o chybu, <a href=\"%3$s\">%4$s</a>."
+
+#: includes/Admin/Notices/InvalidLicenseKeyNotice.php:17
+msgid "purchase a new license"
+msgstr "zakoupit novou licenci"
+
+#: includes/Admin/Notices/InvalidLicenseKeyNotice.php:19
+msgid "please contact support"
+msgstr "kontaktujte prosím podporu"
+
+# %1$s: URL to activation page, %2$s: "Start Here" link text
+#: includes/Admin/Notices/InactiveLicenseNotice.php:11
+msgid "Your license key is not active for this site. Please visit <a href=\"%1$s\">%2$s</a> to activate your license and restore functionality."
+msgstr "Váš licenční klíč není pro tento web aktivní. Navštivte prosím <a href=\"%1$s\">%2$s</a> pro aktivaci licence a obnovení funkčnosti."
+
+#: includes/Admin/Notices/BFNotice.php:13
+msgid "Black Friday Sale - 40% Off"
+msgstr "Výprodej Black Friday - 40% sleva"
+
+#: includes/Admin/Notices/BFNotice.php:14
+msgid "You're missing out on revenue growth tools like Order Bumps, Upsells, Abandoned Cart Recovery and more! Save 40% on CheckoutWC pro plans for Black Friday, ends December 4th"
+msgstr "Přicházíte o nástroje pro růst příjmů, jako jsou Order Bumps, Upsells, Obnova opuštěného košíku a další! Ušetřete 40 % na plánech CheckoutWC pro během Black Friday, akce končí 4. prosince"
+
+#: includes/Admin/Notices/BFNotice.php:27
+msgid "Get CheckoutWC Pro Now!"
+msgstr "Získejte CheckoutWC Pro nyní!"
+
 #: client/ts/functions/cfwFormatDate.ts:38
 msgid "Sunday"
 msgstr "Neděle"
@@ -3629,347 +3708,342 @@ msgid "Are you sure you want to clear all tracked carts and reset all recovery s
 msgstr "Opravdu chcete vymazat všechny sledované košíky a resetovat všechny statistiky obnovy? Tuto akci nelze vrátit zpět."
 
 #: client/ts/admin/admin.ts:178
-#: client/ts/admin/Components/CheckoutEditor/EditorApp.tsx:123
+#: client/ts/admin/Components/CheckoutEditor/EditorApp.tsx:177
 msgid "Are you sure you want to discard all unsaved changes?"
 msgstr "Opravdu chcete zahodit všechny neuložené změny?"
 
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:59
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:244
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:60
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:245
 msgid "Variants"
 msgstr "Varianty"
 
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:128
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:129
 msgid "Invalid action"
 msgstr "Neplatná akce"
 
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:198
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:199
 msgid "The order bump originally configured for this A/B test is no longer available."
 msgstr "Původně nakonfigurovaný order bump pro tento A/B test již není k dispozici."
 
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:199
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:200
 msgid "It is recommended you"
 msgstr "Doporučuje se, abyste"
 
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:201
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:202
 msgid "delete this A/B test"
 msgstr "smazali tento A/B test"
 
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:210
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:1627
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:211
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:1631
 msgid "Are you sure you want to delete this A/B test? This action cannot be undone."
 msgstr "Opravdu chcete smazat tento A/B test? Tuto akci nelze vrátit zpět."
 
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:236
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:237
 msgid "Select the order bump to test variants against."
 msgstr "Vyberte order bump, proti kterému chcete testovat varianty."
 
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:251
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:1996
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2086
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:252
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2000
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2090
 msgid "Select an order bump to view and manage variants."
 msgstr "Vyberte order bump pro zobrazení a správu variant."
 
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:256
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:257
 msgid "Manage variants for this A/B test. Click \"Create Variant\" to add a new variant."
 msgstr "Spravujte varianty tohoto A/B testu. Klikněte na „Vytvořit variantu“ pro přidání nové varianty."
 
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:272
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:273
 msgid "Traffic Split"
 msgstr "Rozdělení provozu"
 
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:276
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:277
 msgid "Equal"
 msgstr "Rovnoměrné"
 
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:277
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:278
 msgid "Custom"
 msgstr "Vlastní"
 
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:280
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:281
 msgid "Choose how to split traffic between the original order bump and variants. Equal splits traffic evenly, Custom allows you to set specific percentages."
 msgstr "Zvolte, jak rozdělit provoz mezi původní order bump a varianty. Rovnoměrné rozděluje provoz rovnoměrně, Vlastní umožňuje nastavit konkrétní procenta."
 
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:286
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:287
 msgid "Traffic Percentages"
 msgstr "Procenta provozu"
 
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:291
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:292
 msgid "Enter percentages for the original order bump and each variant. Total must equal 100%."
 msgstr "Zadejte procenta pro původní order bump a každou variantu. Celkem musí být 100 %."
 
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:530
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:589
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:531
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:590
 msgid "Draft"
 msgstr "Koncept"
 
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:532
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:591
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:533
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:592
 msgid "Trashed"
 msgstr "Smazáno"
 
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:536
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:1546
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:537
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:1550
 msgid "Original"
 msgstr "Původní"
 
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:540
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:605
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:1558
-#: includes/Admin/Pages/Premium/OrderBumps.php:125
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:541
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:606
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:1562
+#: includes/Admin/Pages/Premium/OrderBumps.php:126
 msgid "Conversion Rate"
 msgstr "Míra konverze"
 
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:544
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:609
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:1562
-#: includes/Admin/Pages/Premium/OrderBumps.php:126
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:545
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:610
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:1566
+#: includes/Admin/Pages/Premium/OrderBumps.php:127
 msgid "Revenue"
 msgstr "Příjmy"
 
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:550
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:618
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:1572
-#: includes/Admin/Pages/Premium/OrderBumps.php:127
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:489
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:551
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:619
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:1576
+#: includes/Admin/Pages/Premium/OrderBumps.php:128
 msgid "Location"
 msgstr "Umístění"
 
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:554
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:622
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:1582
-#: includes/Admin/Pages/Premium/OrderBumps.php:128
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:555
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:623
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:1586
+#: includes/Admin/Pages/Premium/OrderBumps.php:129
 #: client/ts/admin/Components/Metaboxes/OrderBumpsSetupModal.tsx:77
 #: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:31
 msgid "Offer Product"
 msgstr "Nabídnout produkt"
 
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:596
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:597
 msgid "Delete variant"
 msgstr "Smazat variantu"
 
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:629
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2301
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2319
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:630
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2305
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2323
 msgid "Select Winner"
 msgstr "Vybrat vítěze"
 
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:649
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2264
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:650
 #: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2268
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2274
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2272
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2278
 msgid "Create Variant"
 msgstr "Vytvořit variantu"
 
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:846
-msgid "After Checkout Submit"
-msgstr "Po odeslání objednávky"
-
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:864
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:860
 msgid "Order bump saved"
 msgstr "Order bump uložen"
 
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:881
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:877
 msgid "Invalid order bump ID."
 msgstr "Neplatné ID order bumpu."
 
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:907
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:903
 msgid "Invalid variant ID."
 msgstr "Neplatné ID varianty."
 
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:916
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:912
 msgid "This is not a valid variant."
 msgstr "Toto není platná varianta."
 
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:929
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:925
 msgid "Variant does not belong to the specified order bump."
 msgstr "Varianta nepatří k určenému order bumpu."
 
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:944
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2154
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:940
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2158
 msgid "Failed to delete variant."
 msgstr "Nepodařilo se smazat variantu."
 
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:957
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:953
 msgid "Variant deleted successfully."
 msgstr "Varianta byla úspěšně smazána."
 
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:1101
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:1097
 msgid "Invalid test ID."
 msgstr "Neplatné ID testu."
 
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:1108
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:1104
 msgid "Variant title is required."
 msgstr "Název varianty je povinný."
 
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:1117
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:1260
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:1113
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:1264
 msgid "Invalid test."
 msgstr "Neplatný test."
 
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:1134
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:1130
 msgid "Please select an order bump for this test before creating variants."
 msgstr "Než vytvoříte varianty, vyberte prosím order bump pro tento test."
 
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:1143
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:1139
 msgid "Order bump not found."
 msgstr "Order bump nebyl nalezen."
 
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:1160
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2266
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:1156
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2270
 msgid "Failed to create variant."
 msgstr "Nepodařilo se vytvořit variantu."
 
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:1203
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:1199
 msgid "Variant created successfully."
 msgstr "Varianta byla úspěšně vytvořena."
 
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:1233
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:1237
 msgid "Winner set successfully."
 msgstr "Vítěz byl úspěšně nastaven."
 
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:1251
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:1255
 msgid "Invalid variant or test ID."
 msgstr "Neplatné ID varianty nebo testu."
 
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:1269
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:1273
 msgid "Test must be marked as Complete before selecting a winner."
 msgstr "Test musí být označen jako dokončený před výběrem vítěze."
 
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:1278
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:1282
 msgid "No order bump associated with this test."
 msgstr "S tímto testem není spojen žádný order bump."
 
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:1298
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:1302
 msgid "Invalid variant."
 msgstr "Neplatná varianta."
 
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:1306
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:1310
 msgid "The original order bump cannot be set as the winner. Please select a variant."
 msgstr "Původní order bump nemůže být nastaven jako vítěz. Vyberte prosím variantu."
 
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:1314
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:1318
 msgid "Variant does not belong to this test."
 msgstr "Varianta nepatří k tomuto testu."
 
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:1494
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:1498
 msgid "This test is active. It ends once you set the status to completed or when the end date is reached. You can then select a winner."
 msgstr "Tento test je aktivní. Končí, jakmile nastavíte stav na dokončený nebo když je dosažen konec data. Poté můžete vybrat vítěze."
 
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:1497
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:1501
 msgid "This test is paused due to one or more of the following conditions:"
 msgstr "Tento test je pozastaven z jednoho nebo více následujících důvodů:"
 
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:1498
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:1502
 msgid "It was manually paused or is not published"
 msgstr "Byl manuálně pozastaven nebo není publikován"
 
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:1499
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:1503
 msgid "Original order bump is not published or was deleted"
 msgstr "Původní order bump není publikován nebo byl smazán"
 
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:1500
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:1504
 msgid "Order bump variants are not created or published"
 msgstr "Varianty order bumpu nejsou vytvořeny nebo publikovány"
 
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:1501
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:1505
 msgid "A/B testing and/or order bumps features have been disabled"
 msgstr "Funkce A/B testování a/nebo order bumpů byly deaktivovány"
 
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:1502
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:1506
 msgid "If these are no longer true and you want to resume the test, set the status to active."
 msgstr "Pokud již tyto podmínky neplatí a chcete test obnovit, nastavte stav na aktivní."
 
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:1506
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:1510
 msgid "This test is complete. Select a variant below as the winner."
 msgstr "Tento test je dokončen. Vyberte níže variantu jako vítěze."
 
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:1510
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:1514
 msgid "This test is complete, and a winner has already been selected."
 msgstr "Tento test je dokončen a vítěz již byl vybrán."
 
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:1546
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:1550
 msgid "Winner"
 msgstr "Vítěz"
 
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:1611
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:1615
 msgid "delete this test"
 msgstr "smazat tento test"
 
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:1616
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:1620
 msgid "To create a new A/B test for the \"%1$s\" order bump, %2$s."
 msgstr "Pro vytvoření nového A/B testu pro objednávkový doplněk „%1$s“ %2$s."
 
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:1813
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:1817
 msgid "Existing Test:"
 msgstr "Existující test:"
 
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:1850
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:1854
 msgid "Search for an order bump..."
 msgstr "Hledat objednávkový doplněk..."
 
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:1955
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:1959
 msgid "You have not yet created any order bumps."
 msgstr "Ještě jste nevytvořili žádné objednávkové doplňky."
 
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:1957
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:1961
 msgid "Create an order bump"
 msgstr "Vytvořit objednávkový doplněk"
 
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2017
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2021
 msgid "Loading variants..."
 msgstr "Načítání variant..."
 
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2053
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2059
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2057
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2063
 msgid "Error loading variants."
 msgstr "Chyba při načítání variant."
 
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2105
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2109
 msgid "Are you sure you want to delete this variant? This action cannot be undone. If using a custom traffic split, the traffic percentages will be redistributed proportionally across the remaining variants."
 msgstr "Opravdu chcete smazat tuto variantu? Tuto akci nelze vrátit zpět. Pokud používáte vlastní rozdělení provozu, procenta provozu budou proporcionálně přerozdělena mezi zbývající varianty."
 
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2159
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2163
 msgid "An error occurred while deleting the variant."
 msgstr "Při mazání varianty došlo k chybě."
 
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2184
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2258
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2188
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2262
 msgid "Edit Variant"
 msgstr "Upravit variantu"
 
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2218
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2222
 msgid "Enter a title for this variant:"
 msgstr "Zadejte název této varianty:"
 
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2226
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2230
 msgid "Creating..."
 msgstr "Vytváření..."
 
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2272
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2276
 msgid "An error occurred while creating the variant."
 msgstr "Při vytváření varianty došlo k chybě."
 
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2292
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2296
 msgid "Selecting this variant as the winner will update the original order bump to match it and delete variants."
 msgstr "Výběr této varianty jako vítěze aktualizuje původní objednávkový doplněk tak, aby mu odpovídal, a smaže ostatní varianty."
 
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2296
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2300
 msgid "Apply this variant\\'s conversion stats to the original order bump."
 msgstr "Použít konverzní statistiky této varianty na původní objednávkový doplněk."
 
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2354
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2358
 msgid "Failed to select winner."
 msgstr "Výběr vítěze se nezdařil."
 
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2359
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2363
 msgid "An error occurred while setting the winner."
 msgstr "Při nastavení vítěze došlo k chybě."
 
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2392
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2396
 msgid "Traffic split percentages must total exactly 100%. Please adjust your percentages before saving."
 msgstr "Procenta rozdělení provozu musí přesně činit 100 %. Před uložením upravte prosím svá procenta."
 
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2479
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2483
 msgid "(Original)"
 msgstr "(Původní)"
 
@@ -3997,53 +4071,43 @@ msgstr "CheckoutWC: Po součtech bočního košíku"
 msgid "CheckoutWC: After Side Cart Buttons"
 msgstr "CheckoutWC: Po tlačítkách bočního košíku"
 
-#: includes/Admin/Pages/Premium/OrderBumps.php:124
+#: includes/Admin/Pages/Premium/OrderBumps.php:125
 msgid "ID"
 msgstr "ID"
 
-#: includes/Admin/Pages/Premium/OrderBumps.php:125
+#: includes/Admin/Pages/Premium/OrderBumps.php:126
 msgid "Conversion Rate tracks how often a bump is added to an actual completed purchase. If 20 orders are placed and a bump was displayed on 10 of those orders and the bump was purchased 5 times, the conversion rate is 50%."
 msgstr "Míra konverze sleduje, jak často je bump přidán k dokončenému nákupu. Pokud je zadáno 20 objednávek, bump byl zobrazen u 10 z nich a bump byl zakoupen 5krát, míra konverze je 50 %."
 
-#: includes/Admin/Pages/Premium/OrderBumps.php:126
+#: includes/Admin/Pages/Premium/OrderBumps.php:127
 msgid "The additional revenue that an Order Bump has captured. When configured as an upsell, it calculates the relative value between the offer product and the product being replaced. Revenues incurred before version 6.1.4 are estimated."
 msgstr "Dodatečné příjmy, které získal Order Bump. Pokud je nastaven jako upsell, vypočítává relativní hodnotu mezi nabízeným produktem a produktem, který je nahrazován. Příjmy vzniklé před verzí 6.1.4 jsou odhadované."
 
-#: includes/Admin/Pages/Premium/OrderBumps.php:160
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:99
-msgid "Place Order Click (Checkout)"
-msgstr "Kliknutí na objednávku (pokladna)"
-
-#: includes/Admin/Pages/Premium/OrderBumps.php:162
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:100
-msgid "Post Purchase One-Click (Thank You)"
-msgstr "Jedno-klik po nákupu (poděkování)"
-
-#: includes/Admin/Pages/Premium/OrderBumps.php:208
+#: includes/Admin/Pages/Premium/OrderBumps.php:232
 msgid "View Test"
 msgstr "Zobrazit test"
 
-#: includes/Admin/Pages/Premium/OrderBumps.php:218
+#: includes/Admin/Pages/Premium/OrderBumps.php:242
 msgid "Add Test"
 msgstr "Přidat test"
 
-#: includes/Admin/Pages/Premium/OrderBumps.php:297
+#: includes/Admin/Pages/Premium/OrderBumps.php:321
 msgid "All <span class=\"count\">(%s)</span>"
 msgid_plural "All <span class=\"count\">(%s)</span>"
 msgstr[0] "Vše <span class=\"count\">(%s)</span>"
 msgstr[1] ""
 msgstr[2] ""
 
-#: includes/Admin/Pages/Premium/OrderBumps.php:495
+#: includes/Admin/Pages/Premium/OrderBumps.php:519
 msgid "Reset Order Bump Conversion Stats"
 msgstr "Resetovat statistiky konverzí Order Bump"
 
 # %1$d: Allowed bump count, %2$d: Used bump count
-#: includes/Admin/Pages/Premium/OrderBumps.php:983
+#: includes/Admin/Pages/Premium/OrderBumps.php:1007
 msgid "Your CheckoutWC plan allows you to create %1$d Order Bumps. You have used %2$d."
 msgstr "Váš plán CheckoutWC vám umožňuje vytvořit %1$d Order Bumpů. Použili jste %2$d."
 
-#: includes/Admin/Pages/Premium/OrderBumps.php:986
+#: includes/Admin/Pages/Premium/OrderBumps.php:1010
 msgid "You cannot create or publish new Order Bumps if you are over the limit."
 msgstr "Nemůžete vytvořit nebo publikovat nové Order Bumpy, pokud jste překročili limit."
 
@@ -4283,36 +4347,45 @@ msgstr "Zásady ochrany soukromí"
 msgid "Close Cart"
 msgstr "Zavřít košík"
 
-#: client/ts/admin/Components/TrustBadgeRow.tsx:172
+#: client/ts/admin/Components/TrustBadgeRow.tsx:151
+msgid "Slot"
+msgstr "Slot"
+
+#: client/ts/admin/Components/TrustBadgeRow.tsx:158
+msgid "Multiple slots — manage in checkout editor"
+msgstr "Více slotů — spravujte v editoru pokladny"
+
+#: client/ts/admin/Components/TrustBadgeRow.tsx:209
 msgid "Determine when this Trust Badge should be displayed."
 msgstr "Určete, kdy by se měla tato důvěryhodná značka zobrazovat."
 
-#: client/ts/admin/Components/TrustBadgeRow.tsx:177
+#: client/ts/admin/Components/TrustBadgeRow.tsx:214
 #: client/ts/admin/Components/CheckoutEditor/EditorHeader.tsx:61
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:207
 msgid "Close"
 msgstr "Zavřít"
 
-#: client/ts/admin/Components/TrustBadgeRow.tsx:187
+#: client/ts/admin/Components/TrustBadgeRow.tsx:224
 msgid "Guarantee Title"
 msgstr "Název záruky"
 
-#: client/ts/admin/Components/TrustBadgeRow.tsx:188
+#: client/ts/admin/Components/TrustBadgeRow.tsx:225
 msgid "The details of your guarantee."
 msgstr "Detaily vaší záruky."
 
-#: client/ts/admin/Components/TrustBadgeRow.tsx:193
+#: client/ts/admin/Components/TrustBadgeRow.tsx:230
 msgid "Example Customer Name"
 msgstr "Příklad jména zákazníka"
 
-#: client/ts/admin/Components/TrustBadgeRow.tsx:194
+#: client/ts/admin/Components/TrustBadgeRow.tsx:231
 msgid "Example Customer Role"
 msgstr "Příklad role zákazníka"
 
-#: client/ts/admin/Components/TrustBadgeRow.tsx:195
+#: client/ts/admin/Components/TrustBadgeRow.tsx:232
 msgid "The glowingly positive review text!"
 msgstr "Velmi pozitivní recenze!"
 
-#: client/ts/admin/Components/TrustBadgeRow.tsx:207
+#: client/ts/admin/Components/TrustBadgeRow.tsx:244
 msgid "Are you sure you want to remove this trust badge?"
 msgstr "Opravdu chcete tuto důvěryhodnou značku odstranit?"
 
@@ -4338,7 +4411,7 @@ msgid "Yes, replace my settings!"
 msgstr "Ano, nahraďte moje nastavení!"
 
 #: client/ts/admin/Components/SettingsFormContainer.tsx:27
-#: client/ts/admin/Components/CheckoutEditor/EditorApp.tsx:114
+#: client/ts/admin/Components/CheckoutEditor/EditorApp.tsx:168
 msgid "Failed to save settings. Error: %s"
 msgstr "Nepodařilo se uložit nastavení. Chyba: %s"
 
@@ -4407,48 +4480,48 @@ msgstr "Změnit způsob dopravy"
 msgid "Change payment method"
 msgstr "Změnit způsob platby"
 
-#: client/ts/admin/Components/acr/carts.tsx:32
+#: client/ts/admin/Components/acr/carts.tsx:33
 msgid "All"
 msgstr "Vše"
 
-#: client/ts/admin/Components/acr/carts.tsx:36
+#: client/ts/admin/Components/acr/carts.tsx:37
 msgid "New"
 msgstr "Nové"
 
-#: client/ts/admin/Components/acr/carts.tsx:40
+#: client/ts/admin/Components/acr/carts.tsx:41
 msgid "Abandoned"
 msgstr "Opuštěné"
 
-#: client/ts/admin/Components/acr/carts.tsx:44
+#: client/ts/admin/Components/acr/carts.tsx:45
 msgid "Recovered"
 msgstr "Obnovené"
 
-#: client/ts/admin/Components/acr/carts.tsx:48
+#: client/ts/admin/Components/acr/carts.tsx:49
 msgid "Lost"
 msgstr "Ztracené"
 
-#: client/ts/admin/Components/acr/carts.tsx:52
+#: client/ts/admin/Components/acr/carts.tsx:53
 msgid "Unsubscribed"
 msgstr "Odhlášené"
 
-#: client/ts/admin/Components/acr/carts.tsx:81
+#: client/ts/admin/Components/acr/carts.tsx:86
 msgid "Emails Sent"
 msgstr "Odeslané e-maily"
 
-#: client/ts/admin/Components/acr/carts.tsx:87
+#: client/ts/admin/Components/acr/carts.tsx:92
 msgid "Date"
 msgstr "Datum"
 
-#: client/ts/admin/Components/acr/carts.tsx:179
-#: client/ts/admin/Components/acr/carts.tsx:187
+#: client/ts/admin/Components/acr/carts.tsx:184
+#: client/ts/admin/Components/acr/carts.tsx:192
 msgid "Cart Items"
 msgstr "Položky v košíku"
 
-#: client/ts/admin/Components/acr/carts.tsx:180
+#: client/ts/admin/Components/acr/carts.tsx:185
 msgid "Loading..."
 msgstr "Načítání..."
 
-#: client/ts/admin/Components/acr/carts.tsx:234
+#: client/ts/admin/Components/acr/carts.tsx:239
 msgid "Tracked Carts"
 msgstr "Sledované košíky"
 
@@ -4701,75 +4774,44 @@ msgstr "Který produkt tento upsell nahrazuje v košíku?"
 msgid "This product must be in the cart for this order bump to be shown."
 msgstr "Tento produkt musí být v košíku, aby se tento order bump zobrazil."
 
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:32
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:31
 msgid "Block Editor is only used for Full Screen Order Bumps (Configurable for Place Order and Post Purchase One-Click bumps). Blocks are ignored for other configurations."
 msgstr "Editor bloků se používá pouze pro objednávkové doplňky na celou obrazovku (konfigurovatelné pro objednávkové doplňky při zadání objednávky a jedno-klik po nákupu). Bloky jsou ignorovány u ostatních konfigurací."
 
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:48
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:47
 msgid "Post Purchase One-Click bumps require a compatible payment gateway. We recommend using Place Order bumps when using non-compatible gateways."
 msgstr "Jedno-klik po nákupu vyžaduje kompatibilní platební bránu. Doporučujeme používat objednávkové doplňky při zadání objednávky u nekompatibilních bran."
 
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:54
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:53
 msgid "Learn more about supported gateways"
 msgstr "Zjistit více o podporovaných branách"
 
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:61
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:60
 msgid "Read our Order Bumps documentation"
 msgstr "Přečtěte si naši dokumentaci k Order Bumps"
 
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:82
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:83
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:90
 msgid "Display Location"
 msgstr "Umístění zobrazení"
 
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:91
-msgid "Below Cart Items"
-msgstr "Pod položkami v košíku"
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:99
+msgid "Checkout Slot"
+msgstr "Slot pokladny"
 
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:92
-msgid "Below Cart Items (Side Cart Only)"
-msgstr "Pod položkami v košíku (pouze boční košík)"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:93
-msgid "Below Cart Items (Checkout Only)"
-msgstr "Pod položkami v košíku (pouze pokladna)"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:94
-msgid "Above Terms and Conditions"
-msgstr "Nad podmínkami"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:95
-msgid "Above Express Checkout"
-msgstr "Nad expresní pokladnou"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:96
-msgid "Bottom of Information Step"
-msgstr "Dole na kroku informací"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:97
-msgid "Bottom of Shipping Step"
-msgstr "Dole na kroku dopravy"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:98
-msgid "Below Complete Order Button"
-msgstr "Pod tlačítkem dokončení objednávky"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:109
-msgid "Note: Displays above the terms and conditions on mobile devices."
-msgstr "Poznámka: Zobrazuje se nad obchodními podmínkami na mobilních zařízeních."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:112
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:129
 msgid "Displays in a popup when Place Order is clicked, before the order is submitted"
 msgstr "Zobrazuje se v popup okně při kliknutí na Odeslat objednávku, před odesláním objednávky"
 
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:115
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:132
 msgid "Displays in a popup on the Thank You page."
 msgstr "Zobrazuje se v popup okně na stránce Poděkování."
 
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:119
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:136
 msgid "Full Screen Landing Page (Use Block Editor To Design)"
 msgstr "Celá obrazovka vstupní stránky (použijte editor bloků pro návrh)"
 
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:120
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:137
 msgid "If checked, the bump offer will be displayed full screen. Use Order Bump Offer Form block to design the offer."
 msgstr "Pokud je zaškrtnuto, nabídka bumpu se zobrazí na celou obrazovku. Použijte blok Order Bump Offer Form pro návrh nabídky."
 
@@ -4828,7 +4870,7 @@ msgid "Enable sale price under on cart item labels at checkout. Example: <s>$10.
 msgstr "Povolit prodejní cenu pod popisky položek v košíku při pokladně. Příklad: <s>$10.00</s> $5.00"
 
 #: client/ts/admin/Components/Forms/WooCommercePagesGlobalOptionsSettingsForm.tsx:61
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:452
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:477
 msgid "Cart Item Links"
 msgstr "Odkazy na položky v košíku"
 
@@ -4845,7 +4887,7 @@ msgid "Do not link cart items to single product page. (Recommended)"
 msgstr "Nepřipojovat odkazy na položky v košíku na stránku jednotlivého produktu. (doporučeno)"
 
 #: client/ts/admin/Components/Forms/WooCommercePagesGlobalOptionsSettingsForm.tsx:71
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:456
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:481
 msgid "Enabled"
 msgstr "Povoleno"
 
@@ -4862,7 +4904,7 @@ msgid "Open cart item links in a new window."
 msgstr "Otevřít odkazy na položky v košíku v novém okně."
 
 #: client/ts/admin/Components/Forms/WooCommercePagesGlobalOptionsSettingsForm.tsx:89
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:461
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:486
 msgid "Cart Item Data Display"
 msgstr "Zobrazení dat položek v košíku"
 
@@ -4881,7 +4923,7 @@ msgstr "Zobrazit pouze hodnoty variant. Například Velikost: XL, Barva: Červen
 #: client/ts/admin/Components/Forms/WooCommercePagesGlobalOptionsSettingsForm.tsx:99
 #: client/ts/admin/Components/Forms/CheckoutSettingsForm.tsx:191
 #: client/ts/admin/Components/Forms/CheckoutSettingsForm.tsx:212
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:465
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:490
 #: client/ts/admin/Components/CheckoutEditor/panels/CheckoutSettingsPanel.tsx:85
 #: client/ts/admin/Components/CheckoutEditor/panels/CheckoutSettingsPanel.tsx:97
 msgid "WooCommerce Default"
@@ -4899,81 +4941,98 @@ msgstr "Obchodní podmínky"
 msgid "Store Policies are displayed as links in the footer of the checkout, order pay, and thank you pages. Clicking them displays the policy in a modal window."
 msgstr "Obchodní podmínky jsou zobrazeny jako odkazy v patičce na stránkách pokladny, platby objednávky a poděkování. Kliknutím se zobrazí podmínky v modálním okně."
 
-#: client/ts/admin/Components/Forms/TrustBadgeSettingsForm.tsx:121
+#: client/ts/admin/Components/Forms/TrustBadgeSettingsForm.tsx:67
+msgid "Create trust badges below and choose a slot for each. Fine-tune placement in the"
+msgstr "Vytvořte níže ověřovací odznaky důvěry a vyberte pro každý slot. Umístění dolaďte v"
+
+#: client/ts/admin/Components/Forms/TrustBadgeSettingsForm.tsx:67
+#: client/ts/admin/Components/Forms/TrustBadgeSettingsForm.tsx:91
+msgid "checkout editor"
+msgstr "editoru pokladny"
+
+#: client/ts/admin/Components/Forms/TrustBadgeSettingsForm.tsx:67
+msgid "Turn this setting off to hide all trust badges."
+msgstr "Vypněte toto nastavení pro skrytí všech ověřovacích odznaků důvěry."
+
+#: client/ts/admin/Components/Forms/TrustBadgeSettingsForm.tsx:84
 msgid "WooCommerce Reviews"
 msgstr "Recenze WooCommerce"
 
-#: client/ts/admin/Components/Forms/TrustBadgeSettingsForm.tsx:122
-msgid "Automatically display WooCommerce product reviews as trust badges."
-msgstr "Automaticky zobrazit recenze produktů WooCommerce jako důvěryhodné odznaky."
+#: client/ts/admin/Components/Forms/TrustBadgeSettingsForm.tsx:85
+msgid "Display WooCommerce product reviews as trust badges."
+msgstr "Zobrazit recenze produktů WooCommerce jako ověřovací odznaky důvěry."
 
-#: client/ts/admin/Components/Forms/TrustBadgeSettingsForm.tsx:127
+#: client/ts/admin/Components/Forms/TrustBadgeSettingsForm.tsx:90
 msgid "Enable WooCommerce Review Badges"
 msgstr "Povolit odznaky recenzí WooCommerce"
 
-#: client/ts/admin/Components/Forms/TrustBadgeSettingsForm.tsx:128
-msgid "Automatically show product reviews as trust badges alongside manually created badges."
-msgstr "Automaticky zobrazovat recenze produktů jako důvěryhodné odznaky spolu s ručně vytvořenými odznaky."
+#: client/ts/admin/Components/Forms/TrustBadgeSettingsForm.tsx:91
+msgid "Once enabled, assign them to slots in the"
+msgstr "Po povolení je přiřaďte do slotů v"
 
-#: client/ts/admin/Components/Forms/TrustBadgeSettingsForm.tsx:139
+#: client/ts/admin/Components/Forms/TrustBadgeSettingsForm.tsx:91
+msgid "Turn this setting off to hide customer reviews."
+msgstr "Vypněte toto nastavení pro skrytí recenzí zákazníků."
+
+#: client/ts/admin/Components/Forms/TrustBadgeSettingsForm.tsx:102
 msgid "Reviewbird is connected. Reviews will be sourced from Reviewbird."
 msgstr "Reviewbird je připojen. Recenze budou získávány z Reviewbird."
 
-#: client/ts/admin/Components/Forms/TrustBadgeSettingsForm.tsx:145
+#: client/ts/admin/Components/Forms/TrustBadgeSettingsForm.tsx:108
 msgid "Review Source Priority"
 msgstr "Priorita zdroje recenzí"
 
-#: client/ts/admin/Components/Forms/TrustBadgeSettingsForm.tsx:146
+#: client/ts/admin/Components/Forms/TrustBadgeSettingsForm.tsx:109
 msgid "Choose which reviews to prioritize for display."
 msgstr "Vyberte, které recenze mají mít přednost při zobrazení."
 
-#: client/ts/admin/Components/Forms/TrustBadgeSettingsForm.tsx:148
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:528
+#: client/ts/admin/Components/Forms/TrustBadgeSettingsForm.tsx:111
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:578
 msgid "Cart products only"
 msgstr "Pouze produkty v košíku"
 
-#: client/ts/admin/Components/Forms/TrustBadgeSettingsForm.tsx:149
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:529
+#: client/ts/admin/Components/Forms/TrustBadgeSettingsForm.tsx:112
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:579
 msgid "Cart products first, then site-wide"
 msgstr "Nejprve produkty v košíku, poté celosítové"
 
-#: client/ts/admin/Components/Forms/TrustBadgeSettingsForm.tsx:150
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:530
+#: client/ts/admin/Components/Forms/TrustBadgeSettingsForm.tsx:113
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:580
 msgid "Any product reviews"
 msgstr "Jakékoli recenze produktů"
 
-#: client/ts/admin/Components/Forms/TrustBadgeSettingsForm.tsx:157
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:535
+#: client/ts/admin/Components/Forms/TrustBadgeSettingsForm.tsx:120
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:585
 msgid "Minimum Star Rating"
 msgstr "Minimální hodnocení hvězdičkami"
 
-#: client/ts/admin/Components/Forms/TrustBadgeSettingsForm.tsx:158
+#: client/ts/admin/Components/Forms/TrustBadgeSettingsForm.tsx:121
 msgid "Only show reviews with this rating or higher."
 msgstr "Zobrazovat pouze recenze s tímto hodnocením nebo vyšším."
 
-#: client/ts/admin/Components/Forms/TrustBadgeSettingsForm.tsx:160
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:539
+#: client/ts/admin/Components/Forms/TrustBadgeSettingsForm.tsx:123
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:588
 msgid "3+ stars"
 msgstr "3+ hvězdičky"
 
-#: client/ts/admin/Components/Forms/TrustBadgeSettingsForm.tsx:161
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:540
+#: client/ts/admin/Components/Forms/TrustBadgeSettingsForm.tsx:124
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:589
 msgid "4+ stars"
 msgstr "4+ hvězdičky"
 
-#: client/ts/admin/Components/Forms/TrustBadgeSettingsForm.tsx:162
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:541
+#: client/ts/admin/Components/Forms/TrustBadgeSettingsForm.tsx:125
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:590
 msgid "5 stars only"
 msgstr "Pouze 5 hvězdiček"
 
-#: client/ts/admin/Components/Forms/TrustBadgeSettingsForm.tsx:169
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:546
+#: client/ts/admin/Components/Forms/TrustBadgeSettingsForm.tsx:132
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:595
 msgid "Maximum Reviews to Show"
 msgstr "Maximální počet recenzí k zobrazení"
 
-#: client/ts/admin/Components/Forms/TrustBadgeSettingsForm.tsx:170
-msgid "How many WooCommerce reviews to display (1-5)"
-msgstr "Kolik recenzí WooCommerce zobrazit (1-5)"
+#: client/ts/admin/Components/Forms/TrustBadgeSettingsForm.tsx:133
+msgid "How many WooCommerce reviews to display (1-6)"
+msgstr "Kolik recenzí WooCommerce zobrazit (1–6)"
 
 #: client/ts/admin/Components/Forms/ThankYouSettingsForm.tsx:54
 msgid "Control the Order Received / Thank You endpoint."
@@ -5223,8 +5282,8 @@ msgid "Enable Continue Shopping Button at bottom of Side Cart. Disabled by defau
 msgstr "Povolit tlačítko Pokračovat v nákupu ve spodní části bočního košíku. Ve výchozím nastavení zakázáno."
 
 #: client/ts/admin/Components/Forms/OrderBumpSettingsForm.tsx:71
-msgid "The maximum number of modal bumps that can be displayed after clicking Place Order. Use -1 for unlimited."
-msgstr "Maximální počet modálních bumpů, které lze zobrazit po kliknutí na Odeslat objednávku. Použijte -1 pro neomezeně."
+msgid "The maximum number of modal bumps displayed after clicking Place Order."
+msgstr "Maximální počet modálních nabídek zobrazených po kliknutí na Odeslat objednávku."
 
 #: client/ts/admin/Components/Forms/LocalPickupSettingsForm.tsx:126
 msgid "You probably do not want to select any pickup methods here. If you do not select any Local Pickup Shipping Methods, we will add an ad-hoc local pickup shipping method in each zone for you. If you would prefer to manage this yourself, you can select the methods you want to use here."
@@ -5346,10 +5405,6 @@ msgstr "Před platebními metodami"
 msgid "Display before payment method selection"
 msgstr "Zobrazit před výběrem platební metody"
 
-#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:144
-msgid "After Payment Methods"
-msgstr "Po platebních metodách"
-
 #: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:145
 msgid "Display after payment method selection"
 msgstr "Zobrazit po výběru platební metody"
@@ -5396,7 +5451,7 @@ msgstr "Velikost widgetu Turnstile"
 
 #: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:168
 #: client/ts/admin/Components/Forms/AppearanceDesignSettingsForm.tsx:84
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:340
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:365
 #: client/ts/admin/Components/CheckoutEditor/panels/DesignSettingsPanel.tsx:131
 msgid "Normal"
 msgstr "Normální"
@@ -5483,7 +5538,7 @@ msgid "See our recommended Express Checkout gateways here."
 msgstr "Zde najdete naše doporučené platební brány Express Checkout."
 
 #: client/ts/admin/Components/Forms/CheckoutSettingsForm.tsx:109
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:231
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:256
 #: client/ts/admin/Components/CheckoutEditor/panels/CheckoutSettingsPanel.tsx:29
 msgid "Steps"
 msgstr "Kroky"
@@ -5623,7 +5678,7 @@ msgid "Control how different checkout fields appear."
 msgstr "Ovládejte, jak se zobrazují různá pole pokladny."
 
 #: client/ts/admin/Components/Forms/CheckoutSettingsForm.tsx:232
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:345
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:370
 #: client/ts/admin/Components/CheckoutEditor/panels/CheckoutSettingsPanel.tsx:107
 msgid "Phone Field"
 msgstr "Pole telefon"
@@ -5634,19 +5689,19 @@ msgid "Determines whether the WooCommerce native phone field is enabled."
 msgstr "Určuje, zda je povoleno nativní pole telefonu WooCommerce."
 
 #: client/ts/admin/Components/Forms/CheckoutSettingsForm.tsx:237
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:348
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:373
 #: client/ts/admin/Components/CheckoutEditor/panels/CheckoutSettingsPanel.tsx:110
 msgid "Hidden"
 msgstr "Skryté"
 
 #: client/ts/admin/Components/Forms/CheckoutSettingsForm.tsx:241
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:349
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:374
 #: client/ts/admin/Components/CheckoutEditor/panels/CheckoutSettingsPanel.tsx:111
 msgid "Optional"
 msgstr "Volitelné"
 
 #: client/ts/admin/Components/Forms/CheckoutSettingsForm.tsx:245
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:350
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:375
 #: client/ts/admin/Components/CheckoutEditor/panels/CheckoutSettingsPanel.tsx:112
 msgid "Required"
 msgstr "Povinné"
@@ -5661,7 +5716,7 @@ msgid "Enable or disable WooCommerce Order Notes field. (Default: Disabled)"
 msgstr "Povolte nebo zakažte pole poznámky k objednávce WooCommerce. (Výchozí: zakázáno)"
 
 #: client/ts/admin/Components/Forms/CheckoutSettingsForm.tsx:260
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:332
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:357
 #: client/ts/admin/Components/CheckoutEditor/panels/CheckoutSettingsPanel.tsx:124
 msgid "Order Notes field is being controlled by a filter or a plugin."
 msgstr "Pole poznámky k objednávce je řízeno filtrem nebo pluginem."
@@ -5695,7 +5750,7 @@ msgid "Values are combined into a single address_1 field based on country select
 msgstr "Hodnoty jsou sloučeny do jednoho pole address_1 na základě země vybrané zákazníkem."
 
 #: client/ts/admin/Components/Forms/CheckoutSettingsForm.tsx:298
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:289
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:314
 #: client/ts/admin/Components/CheckoutEditor/panels/CheckoutSettingsPanel.tsx:155
 msgid "Separate Address Fields Display Order"
 msgstr "Pořadí zobrazení samostatných polí adresy"
@@ -5705,7 +5760,7 @@ msgid "Choose how display separate address 1 fields."
 msgstr "Vyberte, jak zobrazit samostatná pole address 1."
 
 #: client/ts/admin/Components/Forms/CheckoutSettingsForm.tsx:304
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:293
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:318
 #: client/ts/admin/Components/CheckoutEditor/panels/CheckoutSettingsPanel.tsx:159
 msgid "[House Number] [Street Name]"
 msgstr "[Číslo domu] [Název ulice]"
@@ -5715,7 +5770,7 @@ msgid "Display the House Number before the Street Name. (Default)"
 msgstr "Zobrazit číslo domu před názvem ulice. (Výchozí)"
 
 #: client/ts/admin/Components/Forms/CheckoutSettingsForm.tsx:309
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:294
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:319
 #: client/ts/admin/Components/CheckoutEditor/panels/CheckoutSettingsPanel.tsx:160
 msgid "[Street Name] [House Number]"
 msgstr "[Název ulice] [Číslo domu]"
@@ -5747,14 +5802,13 @@ msgid "Promote selected countries to the top of the countries list in country dr
 msgstr "Propagovat vybrané země na začátek seznamu zemí v rozbalovacích seznamech zemí."
 
 #: client/ts/admin/Components/Forms/CheckoutSettingsForm.tsx:344
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:310
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:319
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:335
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:344
 #: client/ts/admin/Components/CheckoutEditor/panels/CheckoutSettingsPanel.tsx:185
 msgid "Highlighted Countries"
 msgstr "Zvýrazněné země"
 
 #: client/ts/admin/Components/Forms/CheckoutSettingsForm.tsx:345
-#: client/ts/admin/Components/CheckoutEditor/panels/CheckoutSettingsPanel.tsx:186
 msgid "The countries to show first in country dropdowns."
 msgstr "Země, které se mají zobrazit jako první v rozbalovacích seznamech zemí."
 
@@ -5832,7 +5886,7 @@ msgid "Control address fields."
 msgstr "Ovládat pole adresy."
 
 #: client/ts/admin/Components/Forms/CheckoutSettingsForm.tsx:412
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:363
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:388
 #: client/ts/admin/Components/CheckoutEditor/panels/CheckoutSettingsPanel.tsx:222
 msgid "Force Different Billing Address"
 msgstr "Vynutit jinou fakturační adresu"
@@ -5862,43 +5916,43 @@ msgid "Choose which billing address fields are visible for customers."
 msgstr "Vyberte, která pole fakturační adresy jsou pro zákazníky viditelná."
 
 #: client/ts/admin/Components/Forms/CheckoutSettingsForm.tsx:431
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:372
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:397
 #: client/ts/admin/Components/CheckoutEditor/panels/CheckoutSettingsPanel.tsx:237
 msgid "First Name"
 msgstr "Jméno"
 
 #: client/ts/admin/Components/Forms/CheckoutSettingsForm.tsx:435
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:373
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:398
 #: client/ts/admin/Components/CheckoutEditor/panels/CheckoutSettingsPanel.tsx:238
 msgid "Last Name"
 msgstr "Příjmení"
 
 #: client/ts/admin/Components/Forms/CheckoutSettingsForm.tsx:439
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:374
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:399
 #: client/ts/admin/Components/CheckoutEditor/panels/CheckoutSettingsPanel.tsx:239
 msgid "Address 1"
 msgstr "Adresa 1"
 
 #: client/ts/admin/Components/Forms/CheckoutSettingsForm.tsx:443
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:375
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:400
 #: client/ts/admin/Components/CheckoutEditor/panels/CheckoutSettingsPanel.tsx:240
 msgid "Address 2"
 msgstr "Adresa 2"
 
 #: client/ts/admin/Components/Forms/CheckoutSettingsForm.tsx:447
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:376
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:401
 #: client/ts/admin/Components/CheckoutEditor/panels/CheckoutSettingsPanel.tsx:241
 msgid "Company"
 msgstr "Společnost"
 
 #: client/ts/admin/Components/Forms/CheckoutSettingsForm.tsx:451
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:377
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:402
 #: client/ts/admin/Components/CheckoutEditor/panels/CheckoutSettingsPanel.tsx:242
 msgid "Country"
 msgstr "Země"
 
 #: client/ts/admin/Components/Forms/CheckoutSettingsForm.tsx:463
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:380
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:405
 #: client/ts/admin/Components/CheckoutEditor/panels/CheckoutSettingsPanel.tsx:245
 msgid "City"
 msgstr "Město"
@@ -6101,8 +6155,8 @@ msgid "Configure your template."
 msgstr "Konfigurujte svou šablonu."
 
 #: client/ts/admin/Components/Forms/AppearanceDesignSettingsForm.tsx:66
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:153
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:159
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:174
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:180
 #: client/ts/admin/Components/CheckoutEditor/panels/DesignSettingsPanel.tsx:119
 msgid "Logo"
 msgstr "Logo"
@@ -6112,7 +6166,7 @@ msgid "Choose the logo you wish to display in the header. If you do not choose a
 msgstr "Vyberte logo, které chcete zobrazit v záhlaví. Pokud logo nevyberete, použijeme název vašeho webu."
 
 #: client/ts/admin/Components/Forms/AppearanceDesignSettingsForm.tsx:74
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:336
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:361
 #: client/ts/admin/Components/CheckoutEditor/panels/DesignSettingsPanel.tsx:127
 msgid "Field Label Style"
 msgstr "Styl popisků polí"
@@ -6123,7 +6177,7 @@ msgid "Choose how you want form labels styled."
 msgstr "Vyberte, jak chcete stylovat popisky formulářů."
 
 #: client/ts/admin/Components/Forms/AppearanceDesignSettingsForm.tsx:79
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:339
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:364
 #: client/ts/admin/Components/CheckoutEditor/panels/DesignSettingsPanel.tsx:130
 msgid "Floating (Recommended)"
 msgstr "Plovoucí (doporučeno)"
@@ -6138,7 +6192,7 @@ msgid "Labels appear above each field at all times."
 msgstr "Popisky se zobrazují nad každým polem vždy."
 
 #: client/ts/admin/Components/Forms/AppearanceDesignSettingsForm.tsx:105
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:168
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:189
 #: client/ts/admin/Components/CheckoutEditor/panels/DesignSettingsPanel.tsx:149
 msgid "Typography"
 msgstr "Typografie"
@@ -6148,7 +6202,7 @@ msgid "Configure fonts."
 msgstr "Konfigurujte písma."
 
 #: client/ts/admin/Components/Forms/AppearanceDesignSettingsForm.tsx:111
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:174
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:195
 #: client/ts/admin/Components/CheckoutEditor/panels/DesignSettingsPanel.tsx:152
 msgid "Body Font"
 msgstr "Písmo těla"
@@ -6159,7 +6213,7 @@ msgid "Choose the font for the body text."
 msgstr "Vyberte písmo pro hlavní text."
 
 #: client/ts/admin/Components/Forms/AppearanceDesignSettingsForm.tsx:119
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:180
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:201
 #: client/ts/admin/Components/CheckoutEditor/panels/DesignSettingsPanel.tsx:159
 msgid "Heading Font"
 msgstr "Písmo nadpisů"
@@ -6170,7 +6224,7 @@ msgid "Choose the font for the headings."
 msgstr "Vyberte písmo pro nadpisy."
 
 #: client/ts/admin/Components/Forms/AppearanceDesignSettingsForm.tsx:131
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:188
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:209
 #: client/ts/admin/Components/CheckoutEditor/panels/DesignSettingsPanel.tsx:166
 msgid "Colors"
 msgstr "Barvy"
@@ -6356,15 +6410,15 @@ msgstr "Zaškrtněte jakoukoli uživatelskou roli, která by měla být vylouče
 msgid "Are you sure you want to delete all tracked carts?"
 msgstr "Opravdu chcete smazat všechny sledované košíky?"
 
-#: client/ts/admin/Components/CheckoutEditor/EditorPreview.tsx:59
+#: client/ts/admin/Components/CheckoutEditor/EditorPreview.tsx:98
 msgid "No products can be found to show in the editor. Ensure you have products which are published and in stock."
 msgstr "V editoru nebyly nalezeny žádné produkty k zobrazení. Ujistěte se, že máte produkty, které jsou publikované a skladem."
 
-#: client/ts/admin/Components/CheckoutEditor/EditorPreview.tsx:99
+#: client/ts/admin/Components/CheckoutEditor/EditorPreview.tsx:148
 msgid "Updating preview…"
 msgstr "Aktualizuji náhled…"
 
-#: client/ts/admin/Components/CheckoutEditor/EditorPreview.tsx:108
+#: client/ts/admin/Components/CheckoutEditor/EditorPreview.tsx:157
 msgid "Checkout Preview"
 msgstr "Náhled pokladny"
 
@@ -6417,130 +6471,162 @@ msgstr "Zapnuto"
 msgid "Off"
 msgstr "Vypnuto"
 
-#: client/ts/admin/Components/CheckoutEditor/EditorApp.tsx:70
+#: client/ts/admin/Components/CheckoutEditor/EditorApp.tsx:99
 msgid "You have unsaved changes. Are you sure you want to leave?"
 msgstr "Máte neuložené změny. Opravdu chcete odejít?"
 
-#: client/ts/admin/Components/CheckoutEditor/EditorApp.tsx:150
+#: client/ts/admin/Components/CheckoutEditor/EditorApp.tsx:204
 msgid "Changing templates will update the logo, typography, colors, field label style, and footer text to those defined by the selected template. Are you sure you want to continue?"
 msgstr "Změna šablon aktualizuje logo, typografii, barvy, styl popisků polí a text patičky podle vybrané šablony. Opravdu chcete pokračovat?"
 
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:66
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:79
 msgid "Step"
 msgstr "Krok"
 
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:105
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:119
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:126
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:140
 #: client/ts/admin/Components/CheckoutEditor/panels/DesignSettingsPanel.tsx:86
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:27
 msgid "Paid plan required"
 msgstr "Vyžadován placený plán"
 
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:141
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:162
 #: client/ts/admin/Components/CheckoutEditor/panels/DesignSettingsPanel.tsx:108
 msgid "A Basic, Plus, Pro, or Agency plan is required to access all templates."
 msgstr "Pro přístup ke všem šablonám je vyžadován plán Basic, Plus, Pro nebo Agency."
 
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:237
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:228
+msgid "Misc"
+msgstr "Různé"
+
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:262
 msgid "Shipping Methods"
 msgstr "Způsoby dopravy"
 
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:246
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:271
 msgid "Order Review"
 msgstr "Kontrola objednávky"
 
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:254
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:279
 msgid "One Page Checkout"
 msgstr "Jednostránková pokladna"
 
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:264
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:289
 msgid "Fields"
 msgstr "Pole"
 
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:270
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:295
 msgid "Address Fields Link"
 msgstr "Odkaz na pole adresy"
 
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:275
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:300
 msgid "Coupon Code Link"
 msgstr "Odkaz na kód kupónu"
 
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:281
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:306
 msgid "Full Name Field"
 msgstr "Pole celého jména"
 
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:301
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:326
 msgid "Separate House Number/Street Name"
 msgstr "Oddělené číslo domu/název ulice"
 
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:327
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:336
+#: client/ts/admin/Components/CheckoutEditor/panels/CheckoutSettingsPanel.tsx:186
+msgid "Countries selected here will appear at the top of the billing and shipping country dropdowns, making them quicker for customers to find."
+msgstr "Země vybrané zde se zobrazí na začátku rozbalovacích seznamů zemí pro fakturaci a dopravu, což zákazníkům usnadní jejich nalezení."
+
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:352
 msgid "Order Notes"
 msgstr "Poznámky k objednávce"
 
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:357
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:382
 msgid "Addresses"
 msgstr "Adresy"
 
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:368
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:393
 msgid "Billing Address Fields"
 msgstr "Pole fakturační adresy"
 
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:401
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:426
 msgid "No supported gateways detected.<br><a class=\"text-blue-600 hover:text-blue-800\" target=\"_blank\" href=\"https://www.checkoutwc.com/documentation/supported-express-payment-gateways/\">See our recommendations.</a>"
 msgstr "Nebyl detekován žádný podporovaný platební brána.<br><a class=\"text-blue-600 hover:text-blue-800\" target=\"_blank\" href=\"https://www.checkoutwc.com/documentation/supported-express-payment-gateways/\">Podívejte se na naše doporučení.</a>"
 
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:419
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:444
 msgid "Variation Edits"
 msgstr "Úpravy variant"
 
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:425
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:450
 msgid "Item Remove"
 msgstr "Odebrání položky"
 
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:434
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:459
 msgid "Cart Editing"
 msgstr "Úprava košíku"
 
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:442
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:467
 msgid "Sale Prices"
 msgstr "Prodejní ceny"
 
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:447
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:472
 msgid "Sticky Cart on Scroll"
 msgstr "Přilepený košík při posouvání"
 
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:455
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:480
 msgid "Disabled"
 msgstr "Zakázáno"
 
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:464
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:489
 msgid "Short"
 msgstr "Krátký"
 
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:472
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:497
+msgid "Slots"
+msgstr "Sloty"
+
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:513
 msgid "Badges"
 msgstr "Odznaky"
 
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:499
-msgid "To add trust badges, you can manage them in"
-msgstr "Pro přidání důvěryhodnostních odznaků je můžete spravovat v"
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:523
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:557
+msgid "Checkout Area Columns"
+msgstr "Sloupce oblasti pokladny"
 
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:504
-msgid "trust badges settings"
-msgstr "nastavení důvěryhodnostních odznaků"
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:529
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:563
+msgid "Cart Summary Area Columns"
+msgstr "Sloupce oblasti shrnutí košíku"
 
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:524
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:535
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:569
+msgid "Mobile Columns"
+msgstr "Mobilní sloupce"
+
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:575
 msgid "Priority"
 msgstr "Priorita"
 
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:557
-msgid "Review Badges"
-msgstr "Kontrola odznaků"
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:604
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:402
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:418
+#: client/ts/admin/Components/CheckoutEditor/slots/AssignedItem.tsx:64
+msgid "Customer Reviews"
+msgstr "Recenze zákazníků"
 
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:574
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:613
+msgid "Add badges to your checkout layout in"
+msgstr "Přidejte odznaky do rozložení pokladny v"
+
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:619
+msgid "slots"
+msgstr "sloţkách"
+
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:633
 msgid "Footer Text"
 msgstr "Text v patičce"
 
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:591
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:650
 msgid "The settings in this editor cover the most commonly used options for most stores. However, many additional settings are available. Once you\\'ve saved any changes, head over to the CheckoutWC menu in your WordPress dashboard to explore more options."
 msgstr "Nastavení v tomto editoru pokrývá nejčastěji používané možnosti pro většinu obchodů. Nicméně je k dispozici mnoho dalších nastavení. Po uložení změn přejděte do nabídky CheckoutWC ve vašem WordPress dashboardu a prozkoumejte další možnosti."
 
@@ -6679,6 +6765,216 @@ msgstr "Zobrazit loga kreditních karet na mobilu."
 #: client/ts/admin/Components/CheckoutEditor/panels/CheckoutSettingsPanel.tsx:379
 msgid "Example: Show order summary and coupons."
 msgstr "Příklad: Zobrazit souhrn objednávky a kupony."
+
+# %s: item type e.g. "order bump"
+#: client/ts/admin/Components/CheckoutEditor/slots/UnsavedChangesDialog.tsx:37
+msgid "Create a new %s"
+msgstr "Vytvořit nový %s"
+
+# %s: item type e.g. "order bump"
+#: client/ts/admin/Components/CheckoutEditor/slots/UnsavedChangesDialog.tsx:42
+msgid "A new tab will open where you can create your %s. When you\\'ve saved it, close that tab and return here - the editor will update automatically."
+msgstr "Otevře se nová karta, kde můžete vytvořit svůj %s. Po uložení ji zavřete a vraťte se sem – editor se automaticky aktualizuje."
+
+# %s: item type e.g. "order bump"
+#: client/ts/admin/Components/CheckoutEditor/slots/UnsavedChangesDialog.tsx:59
+msgid "Create %s"
+msgstr "Vytvořit %s"
+
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotsPanel.tsx:161
+msgid "No slots available."
+msgstr "Žádné sloty nejsou k dispozici."
+
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotsPanel.tsx:198
+msgid "Order bumps are assigned to slots but the feature is disabled. Enable order bumps in"
+msgstr "Nabídky k objednávce jsou přiřazeny ke slotům, ale funkce je zakázána. Povolit nabídky k objednávce v"
+
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotsPanel.tsx:204
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotsPanel.tsx:224
+msgid "order bumps"
+msgstr "nabídky k objednávce"
+
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotsPanel.tsx:218
+msgid "One or more slots exceed the maximum order bumps per slot. Increase the limit in"
+msgstr "Jeden nebo více slotů překračuje maximální počet nabídek na slot. Zvyšte limit v"
+
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotsPanel.tsx:238
+msgid "Trust badges are assigned to slots but the feature is disabled. Enable trust badges in"
+msgstr "Důvěryhodné odznaky jsou přiřazeny do slotů, ale funkce je zakázána. Povolit důvěryhodné odznaky v"
+
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotsPanel.tsx:244
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotsPanel.tsx:264
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotsPanel.tsx:313
+msgid "badges"
+msgstr "odznaky"
+
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotsPanel.tsx:258
+msgid "Customer reviews are assigned to slots but the feature is disabled. Enable customer reviews in"
+msgstr "Hodnocení zákazníků jsou přiřazena do slotů, ale funkce je zakázána. Povolit hodnocení zákazníků v"
+
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotsPanel.tsx:307
+msgid "Column settings for badges are configured in"
+msgstr "Nastavení sloupců pro odznaky jsou nakonfigurována v"
+
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:115
+msgid "This order bump is part of an active A/B test. It cannot be removed while the test is running."
+msgstr "Tento doplněk objednávky je součástí aktivního A/B testu. Nelze jej odstranit, dokud test probíhá."
+
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:119
+msgid "Remove this item from the slot?"
+msgstr "Odstranit tuto položku ze slotu?"
+
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:208
+msgid "Assign item to slot"
+msgstr "Přiřadit položku do slotu"
+
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:258
+msgid "On mobile and tablets, this slot is inside the \"Show order summary\" section."
+msgstr "Na mobilních zařízeních a tabletech je tento slot uvnitř sekce „Zobrazit shrnutí objednávky“."
+
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:268
+msgid "This slot won\\'t be shown for pickups."
+msgstr "Tento slot nebude zobrazen pro vyzvednutí."
+
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:279
+msgid "On mobile and tablets, the cart collapses and order bumps in this slot will move to the Above Terms & Conditions slot."
+msgstr "Na mobilních zařízeních a tabletech se košík sbalí a doplňky objednávky v tomto slotu se přesunou do slotu Nad podmínkami."
+
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:319
+msgid "Release to drop here"
+msgstr "Pusťte pro vložení sem"
+
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:322
+msgid "No items assigned."
+msgstr "Žádné přiřazené položky."
+
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:329
+msgid "Add item"
+msgstr "Přidat položku"
+
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:414
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:233
+msgid "Level"
+msgstr "Úroveň"
+
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:433
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:252
+msgid "e.g. Why choose us?"
+msgstr "např. Proč si vybrat nás?"
+
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:441
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:475
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:260
+msgid "Margin"
+msgstr "Okraj"
+
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:446
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:480
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:265
+msgid "e.g., 10px 0 20px 0"
+msgstr "např. 10px 0 20px 0"
+
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:464
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:499
+msgid "Save"
+msgstr "Uložit"
+
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:201
+msgid "Add Item"
+msgstr "Přidat položku"
+
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:227
+msgid "+ New heading"
+msgstr "+ Nový nadpis"
+
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:284
+#: client/ts/admin/Components/CheckoutEditor/slots/CustomHtmlEditor.tsx:40
+msgid "Add"
+msgstr "Přidat"
+
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:302
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:371
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:419
+msgid "(in slot)"
+msgstr "(v pozici)"
+
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:303
+msgid "(in other slot)"
+msgstr "(v jiné pozici)"
+
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:329
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:340
+msgid "+ New order bump"
+msgstr "+ Nový doplněk objednávky"
+
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:336
+msgid "order bump"
+msgstr "doplněk objednávky"
+
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:337
+msgid "A new tab will open where you can create your order bump. When you\\'ve saved it, close that tab and return here — it will be added to your chosen slot automatically."
+msgstr "Otevře se nová karta, kde můžete vytvořit svůj doplněk objednávky. Po jeho uložení tuto kartu zavřete a vraťte se sem — bude automaticky přidán do vybrané pozice."
+
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:379
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:390
+msgid "+ New trust badge"
+msgstr "+ Nový odznak důvěry"
+
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:386
+msgid "trust badge"
+msgstr "odznak důvěry"
+
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:387
+msgid "A new tab will open where you can create your trust badge. When you\\'ve saved it, close that tab and return here — it will appear in this list ready to assign."
+msgstr "Otevře se nová karta, kde můžete vytvořit svůj odznak důvěry. Po jeho uložení tuto kartu zavřete a vraťte se sem — objeví se v tomto seznamu připravený k přiřazení."
+
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:399
+msgid "Review Badges"
+msgstr "Kontrola odznaků"
+
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:436
+msgid "+ New HTML"
+msgstr "+ Nový HTML"
+
+#: client/ts/admin/Components/CheckoutEditor/slots/CustomHtmlEditor.tsx:46
+msgid "Name (optional)"
+msgstr "Název (volitelně)"
+
+#: client/ts/admin/Components/CheckoutEditor/slots/CustomHtmlEditor.tsx:51
+msgid "e.g. Free Shipping Promo"
+msgstr "např. Promo akce dopravy zdarma"
+
+#: client/ts/admin/Components/CheckoutEditor/slots/CustomHtmlEditor.tsx:59
+msgid "HTML content"
+msgstr "HTML obsah"
+
+#: client/ts/admin/Components/CheckoutEditor/slots/AssignedItem.tsx:66
+msgid "(empty heading)"
+msgstr "(prázdný nadpis)"
+
+#: client/ts/admin/Components/CheckoutEditor/slots/AssignedItem.tsx:148
+msgid "This order bump is part of an active A/B test and cannot be moved or removed while the test is running."
+msgstr "Tento doplněk objednávky je součástí aktivního A/B testu a nelze jej přesunout ani odstranit, dokud test probíhá."
+
+#: client/ts/admin/Components/CheckoutEditor/slots/AssignedItem.tsx:151
+msgid "This bump is placed here automatically by its Checkout and Side Cart display location. It also appears in the side cart and isn\\'t counted toward this slot\\'s order bump limit."
+msgstr "Tento doplněk je zde umístěn automaticky podle zobrazení v pokladně a bočním košíku. Také se zobrazuje v bočním košíku a nepočítá se do limitu doplňků objednávky této pozice."
+
+#: client/ts/admin/Components/CheckoutEditor/slots/AssignedItem.tsx:154
+msgid "This item has display conditions. It will only appear to customers who meet the configured criteria and may not be visible on every checkout."
+msgstr "Tato položka má podmínky zobrazení. Zobrazí se pouze zákazníkům, kteří splňují nastavená kritéria, a nemusí být viditelná u každé pokladny."
+
+#: client/ts/admin/Components/CheckoutEditor/slots/AssignedItem.tsx:157
+msgid "The offer product for this bump is already in the preview cart, so it may not be visible in the preview."
+msgstr "Nabízený produkt tohoto doplňku je již v náhledovém košíku, takže nemusí být v náhledu viditelný."
+
+#: client/ts/admin/Components/CheckoutEditor/slots/AssignedItem.tsx:168
+msgid "Drag to reorder"
+msgstr "Táhnout pro změnu pořadí"
+
+#: client/ts/admin/Components/CheckoutEditor/slots/AssignedItem.tsx:241
+msgid "Remove"
+msgstr "Odebrat"
 
 #: client/ts/admin/Components/Metaboxes/Fields/Rules/fields.ts:47
 msgid "Is equal to"
@@ -6953,14 +7249,14 @@ msgid "Delete Rule"
 msgstr "Smazat pravidlo"
 
 # %d: shipping package number
-#: functions/functions.php:381
-#: functions/functions.php:3446
-msgctxt "woocommerce"
+#: functions/functions.php:384
+#: functions/functions.php:3451
+msgctxt "shipping packages"
 msgid "Shipping"
 msgid_plural "Shipping %d"
-msgstr[0] "Doručení"
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "Doprava"
+msgstr[1] "Doprava %d"
+msgstr[2] "Doprava %d"
 
 #: includes/Features/OneClick/OrderStatusManager.php:47
 #: includes/Features/OneClick/OrderStatusManager.php:64

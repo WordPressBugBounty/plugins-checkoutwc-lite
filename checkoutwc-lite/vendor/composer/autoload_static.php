@@ -27,6 +27,7 @@ class ComposerStaticInitCheckoutForWooCommerce
         'Objectiv\\Plugins\\Checkout\\API\\PostPurchaseBumpProductFormAPI' => __DIR__ . '/../..' . '/includes/API/PostPurchaseBumpProductFormAPI.php',
         'Objectiv\\Plugins\\Checkout\\API\\PreviewSettingsAPI' => __DIR__ . '/../..' . '/includes/API/PreviewSettingsAPI.php',
         'Objectiv\\Plugins\\Checkout\\API\\SettingsAPI' => __DIR__ . '/../..' . '/includes/API/SettingsAPI.php',
+        'Objectiv\\Plugins\\Checkout\\API\\SlotsAPI' => __DIR__ . '/../..' . '/includes/API/SlotsAPI.php',
         'Objectiv\\Plugins\\Checkout\\API\\UserRolesAPI' => __DIR__ . '/../..' . '/includes/API/UserRolesAPI.php',
         'Objectiv\\Plugins\\Checkout\\Action\\AccountExistsAction' => __DIR__ . '/../..' . '/includes/Action/AccountExistsAction.php',
         'Objectiv\\Plugins\\Checkout\\Action\\AddToCartAction' => __DIR__ . '/../..' . '/includes/Action/AddToCartAction.php',
@@ -304,6 +305,7 @@ class ComposerStaticInitCheckoutForWooCommerce
         'Objectiv\\Plugins\\Checkout\\Managers\\PlanManager' => __DIR__ . '/../..' . '/includes/Managers/PlanManager.php',
         'Objectiv\\Plugins\\Checkout\\Managers\\SettingsManager' => __DIR__ . '/../..' . '/includes/Managers/SettingsManager.php',
         'Objectiv\\Plugins\\Checkout\\Managers\\SettingsManagerAbstract' => __DIR__ . '/../..' . '/includes/Managers/SettingsManagerAbstract.php',
+        'Objectiv\\Plugins\\Checkout\\Managers\\SlotManager' => __DIR__ . '/../..' . '/includes/Managers/SlotManager.php',
         'Objectiv\\Plugins\\Checkout\\Managers\\StyleManager' => __DIR__ . '/../..' . '/includes/Managers/StyleManager.php',
         'Objectiv\\Plugins\\Checkout\\Managers\\UpdatesManager' => __DIR__ . '/../..' . '/includes/Managers/UpdatesManager.php',
         'Objectiv\\Plugins\\Checkout\\Model\\AlternativePlugin' => __DIR__ . '/../..' . '/includes/Model/AlternativePlugin.php',
@@ -317,6 +319,7 @@ class ComposerStaticInitCheckoutForWooCommerce
         'Objectiv\\Plugins\\Checkout\\PhpErrorOutputSuppressor' => __DIR__ . '/../..' . '/includes/PhpErrorOutputSuppressor.php',
         'Objectiv\\Plugins\\Checkout\\RateLimiterWPTransientStorage' => __DIR__ . '/../..' . '/includes/RateLimiterWPTransientStorage.php',
         'Objectiv\\Plugins\\Checkout\\RateLimiterWooCommerceSessionStorage' => __DIR__ . '/../..' . '/includes/RateLimiterWooCommerceSessionStorage.php',
+        'Objectiv\\Plugins\\Checkout\\Renderers\\SlotRenderer' => __DIR__ . '/../..' . '/includes/Renderers/SlotRenderer.php',
         'Objectiv\\Plugins\\Checkout\\Shipping\\CFW_Shipping_Local_Pickup' => __DIR__ . '/../..' . '/includes/Shipping/CFW_Shipping_Local_Pickup.php',
         'Objectiv\\Plugins\\Checkout\\SingletonAbstract' => __DIR__ . '/../..' . '/includes/SingletonAbstract.php',
     );

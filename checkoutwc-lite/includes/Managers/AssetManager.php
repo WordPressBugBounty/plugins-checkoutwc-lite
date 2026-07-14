@@ -595,6 +595,12 @@ class AssetManager {
 					 */
 					'use_fullname_field'                => apply_filters( 'cfw_enable_fullname_field', 'yes' === SettingsManager::instance()->get_setting( 'use_fullname_field' ) ),
 					'trust_badges_display'              => SettingsManager::instance()->get_setting( 'trust_badge_position' ),
+					'trust_badge_columns'               => max( 1, (int) ( SettingsManager::instance()->get_setting( 'trust_badge_columns' ) ?: 3 ) ),
+					'trust_badge_cart_columns'          => max( 1, (int) ( SettingsManager::instance()->get_setting( 'trust_badge_cart_columns' ) ?: 2 ) ),
+					'trust_badge_mobile_columns'        => max( 1, (int) ( SettingsManager::instance()->get_setting( 'trust_badge_mobile_columns' ) ?: 1 ) ),
+					'review_badge_columns'              => max( 1, (int) ( SettingsManager::instance()->get_setting( 'review_badge_columns' ) ?: 3 ) ),
+					'review_badge_cart_columns'         => max( 1, (int) ( SettingsManager::instance()->get_setting( 'review_badge_cart_columns' ) ?: 2 ) ),
+					'review_badge_mobile_columns'       => max( 1, (int) ( SettingsManager::instance()->get_setting( 'review_badge_mobile_columns' ) ?: 1 ) ),
 					'enable_one_page_checkout'          => SettingsManager::instance()->get_setting( 'enable_one_page_checkout' ) === 'yes',
 					/**
 					 * Filter intl-tel-input preferred countries

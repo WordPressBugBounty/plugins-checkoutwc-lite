@@ -1304,7 +1304,36 @@ function cfw_privacy_policy_page_content() {
 	$page = get_post( $privacy_page_id );
 
 	if ( $page && 'publish' === $page->post_status && $page->post_content && ! post_password_required( $page ) && ! has_shortcode( $page->post_content, 'woocommerce_checkout' ) ) {
-		echo '<div class="cfw-privacy-policy-content" style="display: none;">' . wc_format_content( wp_kses_post( $page->post_content ) ) . '</div>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+		// Use a <template> so the page content is parsed into an inert fragment and
+		// cannot re-parent checkout elements if the markup is unbalanced (e.g. page builders).
+		// The modal JS reads its innerHTML on demand.
+		echo '<template class="cfw-privacy-policy-content">' . wc_format_content( wp_kses_post( $page->post_content ) ) . '</template>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+	}
+}
+
+/**
+ * Output the terms and conditions page content in an inert <template>
+ *
+ * Replaces WooCommerce core's wc_terms_and_conditions_page_content(), which
+ * embeds the terms page content in a hidden <div> in the checkout DOM. When
+ * that page is page-builder-built, the unbalanced markup can re-parent checkout
+ * elements (e.g. the order summary) and collapse the layout. A <template> is
+ * parsed into a separate, inert fragment, so it can't affect layout. The modal
+ * JS reads its innerHTML on demand.
+ *
+ * @since 11.2.0
+ */
+function cfw_terms_and_conditions_page_content() {
+	$terms_page_id = wc_terms_and_conditions_page_id();
+
+	if ( ! $terms_page_id ) {
+		return;
+	}
+
+	$page = get_post( $terms_page_id );
+
+	if ( $page && 'publish' === $page->post_status && $page->post_content && ! has_shortcode( $page->post_content, 'woocommerce_checkout' ) ) {
+		echo '<template class="woocommerce-terms-and-conditions">' . wc_format_content( wp_kses_post( $page->post_content ) ) . '</template>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 	}
 }
 

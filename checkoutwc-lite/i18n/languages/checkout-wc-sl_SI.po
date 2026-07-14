@@ -8,7 +8,7 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "POT-Creation-Date: 2025-07-25 09:22-0400\n"
-"PO-Revision-Date: 2026-07-02T13:09:59+00:00\n"
+"PO-Revision-Date: 2026-07-14T15:17:14+00:00\n"
 "Language: sl-SI\n"
 "Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100>=3 && n%100<=4 ? 2 : 3);\n"
 "X-Generator: Poedit 3.6\n"
@@ -30,7 +30,7 @@ msgstr ""
 #: includes/Admin/Pages/PageAbstract.php:106
 #: includes/Admin/Pages/General.php:341
 #: includes/Admin/Pages/Premium/PickupLocations.php:217
-#: includes/Admin/Pages/Premium/OrderBumps.php:404
+#: includes/Admin/Pages/Premium/OrderBumps.php:428
 #: includes/Admin/Pages/Premium/LocalPickupAdmin.php:165
 #: includes/Admin/Pages/Premium/AbandonedCartRecovery.php:243
 #: includes/Admin/Pages/Premium/ABTestingAdmin.php:559
@@ -124,8 +124,9 @@ msgstr "Stanovanje, apartma, enota itd."
 #: includes/Admin/ShippingPhoneController.php:32
 #: includes/Admin/ShippingPhoneController.php:33
 #: includes/Admin/ShippingPhoneController.php:43
+#: client/ts/admin/Components/acr/carts.tsx:70
 #: client/ts/admin/Components/Forms/CheckoutSettingsForm.tsx:467
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:381
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:406
 #: client/ts/admin/Components/CheckoutEditor/panels/CheckoutSettingsPanel.tsx:246
 msgid "Phone"
 msgstr "Telefon"
@@ -163,8 +164,8 @@ msgid "Postcode / ZIP"
 msgstr "Poštna št."
 
 #: includes/AddressFieldsAugmenter.php:458
-#: functions/functions.php:4091
-#: functions/functions.php:4092
+#: functions/functions.php:4206
+#: functions/functions.php:4207
 msgid "Email address"
 msgstr "E-poštni naslov"
 
@@ -214,7 +215,7 @@ msgstr "Poštna številka"
 
 #: includes/AddressFieldsAugmenter.php:472
 #: client/ts/admin/Components/Forms/CheckoutSettingsForm.tsx:455
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:378
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:403
 #: client/ts/admin/Components/CheckoutEditor/panels/CheckoutSettingsPanel.tsx:243
 msgid "Postcode"
 msgstr "Poštna številka"
@@ -233,7 +234,7 @@ msgstr "Regija"
 
 #: includes/AddressFieldsAugmenter.php:476
 #: client/ts/admin/Components/Forms/CheckoutSettingsForm.tsx:459
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:379
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:404
 #: client/ts/admin/Components/CheckoutEditor/panels/CheckoutSettingsPanel.tsx:244
 msgid "State"
 msgstr "Zvezna država"
@@ -282,8 +283,8 @@ msgstr "Hitra blagajna"
 
 #: functions/template-functions.php:331
 #: functions/template-functions.php:345
-#: functions/template-functions.php:1864
-#: functions/template-functions.php:2197
+#: functions/template-functions.php:1893
+#: functions/template-functions.php:2226
 msgid "Information"
 msgstr "Informacija"
 
@@ -301,7 +302,7 @@ msgid "Log in."
 msgstr "Prijavite se."
 
 #: functions/template-functions.php:480
-#: includes/Managers/AssetManager.php:695
+#: includes/Managers/AssetManager.php:701
 msgid "An account is already registered with your email address. <a href=\"#\" class=\"showlogin\">Please log in.</a>"
 msgstr "Račun je že registriran z vašim e-poštnim naslovom. <a href=\"#\" class=\"showlogin\">Prosimo, prijavite se.</a>"
 
@@ -338,7 +339,7 @@ msgstr "Odjava."
 
 #: functions/template-functions.php:736
 #: functions/template-functions.php:774
-#: functions/template-functions.php:1901
+#: functions/template-functions.php:1930
 msgid "Billing and Shipping address"
 msgstr "Naslov za obračun in pošiljanje"
 
@@ -346,45 +347,45 @@ msgstr "Naslov za obračun in pošiljanje"
 #: functions/template-functions.php:786
 #: functions/template-functions.php:1190
 #: functions/template-functions.php:1204
-#: functions/template-functions.php:1929
+#: functions/template-functions.php:1958
 #: includes/Compatibility/Gateways/PayPalForWooCommerce.php:192
 msgid "Billing address"
 msgstr "Naslov naročnika"
 
 #: functions/template-functions.php:759
 #: functions/template-functions.php:797
-#: functions/template-functions.php:1913
-#: includes/Managers/AssetManager.php:691
+#: functions/template-functions.php:1942
+#: includes/Managers/AssetManager.php:697
 msgid "Shipping address"
 msgstr "Naslov za dostavo"
 
 #: functions/template-functions.php:935
+#: templates/glass/functions.php:37
 #: templates/futurist/functions.php:16
-#: templates/glass/functions.php:40
 msgid "Your Cart"
 msgstr "Vaša košarica"
 
 #: functions/template-functions.php:1036
-#: functions/template-functions.php:1945
-#: functions/template-functions.php:2219
-#: functions/functions.php:3460
+#: functions/template-functions.php:1974
+#: functions/template-functions.php:2248
+#: functions/functions.php:3465
 msgid "Shipping"
 msgstr "Dostava"
 
 #: functions/template-functions.php:1054
-#: functions/template-functions.php:1885
-#: functions/template-functions.php:2240
-#: functions/functions.php:1023
-#: functions/functions.php:1038
+#: functions/template-functions.php:1914
+#: functions/template-functions.php:2269
+#: functions/functions.php:1026
+#: functions/functions.php:1041
 #: client/ts/frontend/Components/ReviewPane/OrderReviewStepReviewPane.tsx:47
 msgid "Payment"
 msgstr "Plačilo"
 
 #: functions/template-functions.php:1054
-#: functions/template-functions.php:2240
+#: functions/template-functions.php:2269
 #: includes/Features/OrderReviewStep.php:74
-#: includes/Admin/Pages/TrustBadgesAdminFree.php:121
-#: client/ts/admin/Components/TrustBadgeRow.tsx:113
+#: includes/Admin/Pages/TrustBadgesAdminFree.php:88
+#: client/ts/admin/Components/TrustBadgeRow.tsx:124
 msgid "Review"
 msgstr "Pregled"
 
@@ -396,91 +397,91 @@ msgstr "Brezplačno"
 msgid "Select the address that matches your card or payment method."
 msgstr "Izberite naslov, ki se ujema z vašo kartico ali plačilnim sredstvom."
 
-#: functions/template-functions.php:1570
+#: functions/template-functions.php:1599
 msgid "Unfortunately your order cannot be processed as the originating bank/merchant has declined your transaction. Please attempt your purchase again."
 msgstr "Žal vašega naročila ni mogoče obdelati, saj je banka/izdajatelj kartice zavrnil vašo transakcijo. Prosimo, poskusite nakup znova."
 
-#: functions/template-functions.php:1574
+#: functions/template-functions.php:1603
 msgid "Pay"
 msgstr "Plačaj"
 
 # %s is the order number
-#: functions/template-functions.php:1592
+#: functions/template-functions.php:1621
 msgid "Order %s"
 msgstr "Naročilo %s"
 
 # %s is the billing first name
-#: functions/template-functions.php:1611
+#: functions/template-functions.php:1640
 msgid "Thank you %s!"
 msgstr "Hvala %s!"
 
-#: functions/template-functions.php:1722
+#: functions/template-functions.php:1751
 msgid "Order status"
 msgstr "Zaključek naročila"
 
-#: functions/template-functions.php:1765
+#: functions/template-functions.php:1794
 msgid "Order updates"
 msgstr "Posodobitve naročila"
 
-#: functions/template-functions.php:1776
+#: functions/template-functions.php:1805
 msgid "You’ll get shipping and delivery updates by email."
 msgstr "Posodobitve dostave in dostave boste prejeli po e-pošti."
 
-#: functions/template-functions.php:1794
+#: functions/template-functions.php:1823
 msgid "Downloads"
 msgstr "Prenosi"
 
-#: functions/template-functions.php:1834
+#: functions/template-functions.php:1863
 msgid "&infin;"
 msgstr "&infin;"
 
-#: functions/template-functions.php:1840
+#: functions/template-functions.php:1869
 msgid "Never"
 msgstr "Nikoli"
 
-#: functions/template-functions.php:1879
+#: functions/template-functions.php:1908
 msgid "Contact information"
 msgstr "Kontaktni podatki"
 
-#: functions/template-functions.php:1906
-#: functions/template-functions.php:1918
 #: functions/template-functions.php:1935
+#: functions/template-functions.php:1947
+#: functions/template-functions.php:1964
 msgid "N/A"
 msgstr "Ni na voljo"
 
-#: functions/template-functions.php:1975
-#: includes/Managers/AssetManager.php:841
+#: functions/template-functions.php:2004
+#: includes/Managers/AssetManager.php:847
 msgid "Continue shopping"
 msgstr "Nadaljuj z nakupovanjem"
 
-#: functions/template-functions.php:2005
+#: functions/template-functions.php:2034
 #: includes/Loaders/LoaderAbstract.php:111
 msgid "Pay for order"
 msgstr "Plačaj naročilo"
 
-#: functions/template-functions.php:2023
+#: functions/template-functions.php:2052
 #: includes/Features/AbandonedCartRecovery.php:118
-#: client/ts/admin/Components/acr/carts.tsx:63
+#: client/ts/admin/Components/acr/carts.tsx:64
 msgid "Email"
 msgstr "E-pošta"
 
-#: functions/template-functions.php:2033
-#: functions/functions.php:4009
-#: functions/functions.php:4010
+#: functions/template-functions.php:2062
+#: functions/functions.php:4124
+#: functions/functions.php:4125
 msgid "Password"
 msgstr "Geslo"
 
-#: functions/template-functions.php:2049
-#: functions/functions.php:4049
+#: functions/template-functions.php:2078
+#: functions/functions.php:4164
 msgid "Login"
 msgstr "Prijava"
 
-#: functions/template-functions.php:2052
-#: functions/functions.php:4042
+#: functions/template-functions.php:2081
+#: functions/functions.php:4157
 msgid "Lost your password?"
 msgstr "Ste pozabili geslo?"
 
-#: functions/template-functions.php:2314
+#: functions/template-functions.php:2343
 msgid "Your Cart is Empty"
 msgstr "Vaša košarica je prazna"
 
@@ -498,7 +499,7 @@ msgstr "Vaša licenca je veljavna in aktivirana za to stran, vendar je CheckoutW
 #: includes/Admin/Pages/OrderBumpsAdminFree.php:25
 #: includes/Admin/Pages/LocalPickupAdminFree.php:27
 #: includes/Admin/Pages/AbandonedCartRecoveryAdminFree.php:27
-#: includes/Admin/Pages/Premium/OrderBumps.php:57
+#: includes/Admin/Pages/Premium/OrderBumps.php:58
 #: includes/Admin/Pages/Premium/LocalPickupAdmin.php:28
 #: includes/Admin/Pages/Premium/AbandonedCartRecovery.php:34
 #: includes/Admin/Pages/Premium/ABTestingAdmin.php:35
@@ -506,8 +507,8 @@ msgid "Settings"
 msgstr "Nastavitve"
 
 #: functions/premium-init.php:339
-#: includes/Admin/Notices/InactiveLicenseNotice.php:13
 #: includes/Admin/Pages/General.php:25
+#: includes/Admin/Notices/InactiveLicenseNotice.php:13
 msgid "Start Here"
 msgstr "Začni tukaj"
 
@@ -566,310 +567,311 @@ msgstr "Omogočili ste sledenje obnovitvi zapuščenih košaric, vendar nimate o
 msgid "Learn More"
 msgstr "Izvedi več"
 
-#: functions/init.php:344
-#: functions/init.php:345
+#: functions/init.php:378
+#: functions/init.php:379
 msgid "Upgrade to Premium"
 msgstr "Nadgradi na Premium"
 
-#: functions/init.php:745
+#: functions/init.php:779
 msgid "CheckoutWC: Footer"
 msgstr "CheckoutWC: Noga"
 
-#: functions/init.php:789
-#: functions/init.php:794
+#: functions/init.php:823
+#: functions/init.php:828
 msgid "Configure Avada to Work With CheckoutWC"
 msgstr "Konfigurirajte Avada za delo s CheckoutWC"
 
 # %1$s: Guide URL, %2$s: Guide link text
-#: functions/init.php:792
+#: functions/init.php:826
 msgid "CheckoutWC and Avada work great together, but you will need to adjust a couple of theme settings. Please see our guide here: <a target=\"_blank\" href=\"%1$s\">%2$s</a>"
 msgstr "CheckoutWC in Avada odlično delujeta skupaj, vendar boste morali prilagoditi nekaj nastavitev teme. Prosimo, oglejte si naš vodič tukaj: <a target=\"_blank\" href=\"%1$s\">%2$s</a>"
 
-#: functions/init.php:801
+#: functions/init.php:835
 msgid "Incompatible Plugin: Please Deactivate The Bluehost Plugin"
 msgstr "Nezdružljiv vtičnik: prosimo, onemogočite vtičnik Bluehost"
 
 # %1$s: Help URL, %2$s: Help link text
-#: functions/init.php:804
+#: functions/init.php:838
 msgid "CheckoutWC and Bluehost work great together, but you must deactivate The Bluehost Plugin to prevent problems. More info here: <a target=\"_blank\" href=\"%1$s\">%2$s</a>"
 msgstr "CheckoutWC in Bluehost odlično delujeta skupaj, vendar morate onemogočiti vtičnik Bluehost, da preprečite težave. Več informacij tukaj: <a target=\"_blank\" href=\"%1$s\">%2$s</a>"
 
-#: functions/init.php:806
+#: functions/init.php:840
 msgid "How To Fix Problems With The Bluehost Plugin"
 msgstr "Kako odpraviti težave z vtičnikom Bluehost"
 
-#: functions/init.php:816
+#: functions/init.php:850
 msgid "Configure Divi to Work With CheckoutWC"
 msgstr "Konfigurirajte Divi za delo s CheckoutWC"
 
 # %1$s: Guide URL, %2$s: Guide link text
-#: functions/init.php:819
+#: functions/init.php:853
 msgid "CheckoutWC and Divi work great together, but you will need to adjust a couple of settings. Please see our guide here: <a target=\"_blank\" href=\"%1$s\">%2$s</a>"
 msgstr "CheckoutWC in Divi odlično delujeta skupaj, vendar boste morali prilagoditi nekaj nastavitev. Oglejte si naš vodič tukaj: <a target=\"_blank\" href=\"%1$s\">%2$s</a>"
 
-#: functions/init.php:821
+#: functions/init.php:855
 msgid "How To Fix Styling Issues With Divi Theme"
 msgstr "Kako odpraviti težave s slogom teme Divi"
 
-#: functions/init.php:828
+#: functions/init.php:862
 msgid "Configure Porto to Work With CheckoutWC"
 msgstr "Konfigurirajte Porto za delo s CheckoutWC"
 
 # %1$s: Guide URL, %2$s: Guide link text
-#: functions/init.php:831
+#: functions/init.php:865
 msgid "CheckoutWC and Porto work great together, but you will need to adjust a couple of settings. Please see our guide here: <a target=\"_blank\" href=\"%1$s\">%2$s</a>"
 msgstr "CheckoutWC in Porto odlično delujeta skupaj, vendar boste morali prilagoditi nekaj nastavitev. Oglejte si naš vodič tukaj: <a target=\"_blank\" href=\"%1$s\">%2$s</a>"
 
-#: functions/init.php:833
+#: functions/init.php:867
 msgid "Fix Problems With Porto Theme"
 msgstr "Odpravite težave s temo Porto"
 
-#: functions/init.php:840
+#: functions/init.php:874
 msgid "Configure Astra Pro to Work With CheckoutWC"
 msgstr "Konfigurirajte Astra Pro za delo s CheckoutWC"
 
 # %1$s: Info URL, %2$s: Info link text
-#: functions/init.php:843
+#: functions/init.php:877
 msgid "CheckoutWC and Astra Pro work great together, but there is one setting you should check. More info here: <a target=\"_blank\" href=\"%1$s\">%2$s</a>"
 msgstr "CheckoutWC in Astra Pro odlično delujeta skupaj, vendar morate preveriti eno nastavitev. Več informacij tukaj: <a target=\"_blank\" href=\"%1$s\">%2$s</a>"
 
-#: functions/init.php:845
+#: functions/init.php:879
 msgid "Fix Layout Issues with Astra Pro"
 msgstr "Odpravite težave z razporeditvijo pri Astra Pro"
 
-#: functions/init.php:852
+#: functions/init.php:886
 msgid "Configure Woostify to Work With CheckoutWC"
 msgstr "Konfigurirajte Woostify za delo s CheckoutWC"
 
 # %1$s: Info URL, %2$s: Info link text
-#: functions/init.php:855
+#: functions/init.php:889
 msgid "CheckoutWC and Woostify work great together, but there is one setting you should check. More info here: <a target=\"_blank\" href=\"%1$s\">%2$s</a>"
 msgstr "CheckoutWC in Woostify odlično delujeta skupaj, vendar morate preveriti eno nastavitev. Več informacij tukaj: <a target=\"_blank\" href=\"%1$s\">%2$s</a>"
 
-#: functions/init.php:857
+#: functions/init.php:891
 msgid "Fix AJAX Add To Cart with Woostify and CheckoutWC Side Cart"
 msgstr "Odpravite težave z AJAX dodajanjem v košarico pri Woostify in CheckoutWC stranski košarici"
 
-#: functions/init.php:1052
+#: functions/init.php:1086
 msgid "Admin Preview Mode: CheckoutWC templates are disabled for normal users. To fix this, please activate templates here: WP Admin > CheckoutWC > Start Here"
 msgstr "Način predogleda skrbnika: Predloge CheckoutWC so onemogočene za običajne uporabnike. Za popravilo prosimo aktivirajte predloge tukaj: WP Admin > CheckoutWC > Začni tukaj"
 
-#: functions/functions.php:227
+#: functions/functions.php:228
 msgid "Ship to"
 msgstr "Naslov dostave"
 
-#: functions/functions.php:229
+#: functions/functions.php:230
 #: includes/Features/LocalPickup.php:758
 #: includes/Admin/Pages/PickupLocationsAdminFree.php:93
 #: includes/Admin/Pages/Premium/PickupLocations.php:92
 msgid "Address"
 msgstr "Naslov"
 
-#: functions/functions.php:623
+#: functions/functions.php:626
 msgid "Sorry, it seems that there are no available payment methods for your location. Please contact us if you require assistance or wish to make alternate arrangements."
 msgstr "Oprostite, zdi se, da za vašo lokacijo ni na voljo nobenih načinov plačila. Prosimo, kontaktirajte nas, če potrebujete pomoč ali želite urediti drugačne možnosti."
 
-#: functions/functions.php:785
+#: functions/functions.php:788
 #: includes/Features/LocalPickup.php:1079
 msgid "Shipping costs are calculated during checkout."
 msgstr "Stroški pošiljanja se izračunajo med zaključkom nakupa."
 
-#: functions/functions.php:785
+#: functions/functions.php:788
 msgid "Enter your address to view shipping options."
 msgstr "Vnesite svoj naslov, da si ogledate možnosti pošiljanja."
 
-#: functions/functions.php:796
+#: functions/functions.php:799
 msgid "No shipping methods available"
 msgstr "Načini dostave niso na voljo"
 
-#: functions/functions.php:824
+#: functions/functions.php:827
 #: includes/Model/Bumps/BumpAbstract.php:814
 msgid "Free!"
 msgstr "Brezplačno!"
 
-#: functions/functions.php:960
+#: functions/functions.php:963
 #: includes/Features/AbandonedCartRecovery.php:695
 msgid "Complete Order"
 msgstr "Popolna naročilo"
 
-#: functions/functions.php:1064
+#: functions/functions.php:1067
 msgid "All transactions are secure and encrypted."
 msgstr "Vse transakcije so varne in šifrirane."
 
-#: functions/functions.php:1087
+#: functions/functions.php:1090
 msgid "Your order is free. No payment is required."
 msgstr "Vaše naročilo je brezplačno. Plačilo ni potrebno."
 
-#: functions/functions.php:1131
+#: functions/functions.php:1134
 msgid "Same as shipping address"
 msgstr "Enako kot naslov za dostavo"
 
-#: functions/functions.php:1140
+#: functions/functions.php:1143
 msgid "Use a different billing address"
 msgstr "Uporabite drug naslov za izstavitev računa"
 
 # %1$s: Old order status, %2$s: New order status
-#: functions/functions.php:1272
+#: functions/functions.php:1275
 msgid "Order status changed from %1$s to %2$s."
 msgstr "Status naročila se je spremenil iz %1$s v %2$s."
 
-#: functions/functions.php:1297
+#: functions/functions.php:1300
 msgid "Tracking Number:"
 msgstr "Številka za sledenje:"
 
-#: functions/functions.php:1384
+#: functions/functions.php:1387
 msgid "Return to cart"
 msgstr "Nazaj v košarico"
 
-#: functions/functions.php:1421
+#: functions/functions.php:1424
 msgid "Continue to shipping"
 msgstr "Nadaljujte z pošiljanjem"
 
-#: functions/functions.php:1447
+#: functions/functions.php:1450
 msgid "Continue to payment"
 msgstr "Continue to payment"
 
-#: functions/functions.php:1447
-#: functions/functions.php:1487
+#: functions/functions.php:1450
+#: functions/functions.php:1490
 msgid "Review order"
 msgstr "Pregledaj naročilo"
 
-#: functions/functions.php:1511
+#: functions/functions.php:1514
 msgid "Return to information"
 msgstr "Vrnite se k informacijam"
 
-#: functions/functions.php:1531
+#: functions/functions.php:1534
 msgid "Return to shipping"
 msgstr "Vrnite se k pošiljanju"
 
-#: functions/functions.php:1551
+#: functions/functions.php:1554
 msgid "Return to payment"
 msgstr "Vrnitev na plačilo"
 
-#: functions/functions.php:1598
+#: functions/functions.php:1601
 #: includes/Features/SideCart.php:220
 msgid "Cart"
 msgstr "Košarica"
 
-#: functions/functions.php:1871
+#: functions/functions.php:1874
 msgid "CheckoutWC: Error matching %1$d to customer %2$d"
 msgstr "CheckoutWC: Napaka pri ujemanju %1$d s stranko %2$d"
 
-#: functions/functions.php:2160
+#: functions/functions.php:2163
 msgid "Or"
 msgstr "Or"
 
-#: functions/functions.php:2245
+#: functions/functions.php:2248
 msgid "You can only have 1 %s in your cart."
 msgstr "V košarici lahko imate samo 1 %s."
 
-#: functions/functions.php:2395
+#: functions/functions.php:2398
 #: client/ts/frontend/Components/CartItemQuantityControl.tsx:55
 msgid "Decrement"
 msgstr "Zmanjšanje"
 
-#: functions/functions.php:2404
-#: includes/Managers/AssetManager.php:721
-#: includes/Managers/AssetManager.php:842
+#: functions/functions.php:2407
+#: includes/Managers/AssetManager.php:727
+#: includes/Managers/AssetManager.php:848
 #: includes/Features/LocalPickup.php:502
 #: includes/Features/AbandonedCartRecovery.php:122
-#: includes/Features/ABTesting.php:145
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:632
+#: includes/Features/ABTesting.php:150
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:633
 #: client/ts/frontend/Components/CartItemQuantityControl.tsx:63
+#: client/ts/admin/Components/CheckoutEditor/slots/AssignedItem.tsx:227
 msgid "Edit"
 msgstr "Uredi"
 
-#: functions/functions.php:2407
+#: functions/functions.php:2410
 #: client/ts/frontend/Components/CartItemQuantityControl.tsx:70
 msgid "Increment"
 msgstr "Povečanje"
 
-#: functions/functions.php:3121
+#: functions/functions.php:3124
 msgid "Unsubscribe"
 msgstr "Izpiši se"
 
-#: functions/functions.php:3486
+#: functions/functions.php:3491
 #: includes/Features/AbandonedCartRecovery.php:750
-#: client/ts/admin/Components/acr/carts.tsx:69
+#: client/ts/admin/Components/acr/carts.tsx:74
 msgid "Subtotal"
 msgstr "Vmesni seštevek"
 
-#: functions/functions.php:3490
+#: functions/functions.php:3495
 #: includes/Admin/Views/html-refund-offer.php:25
 msgid "Total"
 msgstr "Skupaj"
 
-#: functions/functions.php:3543
+#: functions/functions.php:3548
 msgid "There are no shipping options available. Please ensure that your address has been entered correctly, or contact us if you need any help."
 msgstr "Ni na voljo nobenih možnosti dostave. Preverite, ali ste pravilno vnesli naslov, ali pa nas kontaktirajte, če potrebujete pomoč."
 
-#: functions/functions.php:3782
+#: functions/functions.php:3897
 #: includes/Admin/Pages/AbandonedCartRecoveryAdminFree.php:73
 msgid "SendWP - Transactional Email"
 msgstr "SendWP - Transakcijski e-poštni naslov"
 
-#: functions/functions.php:3787
+#: functions/functions.php:3902
 #: includes/Admin/Pages/AbandonedCartRecoveryAdminFree.php:77
 msgid "SendWP makes getting emails delivered as simple as a few clicks. So you can relax know those important emails are being delivered on time."
 msgstr "SendWP omogoča enostavno dostavo e-pošte z nekaj kliki. Tako se lahko sprostite, saj veste, da so pomembna sporočila dostavljena pravočasno."
 
-#: functions/functions.php:3790
+#: functions/functions.php:3905
 #: includes/Admin/Pages/AbandonedCartRecoveryAdminFree.php:79
 msgid "Try SendWP now and <strong>get your first month for just $1.</strong>"
 msgstr "Preizkusite SendWP zdaj in <strong>prvi mesec dobite za samo 1 $.</strong>"
 
-#: functions/functions.php:3800
+#: functions/functions.php:3915
 #: includes/Admin/Pages/AbandonedCartRecoveryAdminFree.php:87
 msgid "Note: SendWP is optional. You can use any transactional email service you prefer."
 msgstr "Opomba: SendWP je neobvezen. Uporabite lahko katero koli storitev za transakcijsko e-pošto, ki vam ustreza."
 
-#: functions/functions.php:3809
+#: functions/functions.php:3924
 #: includes/Admin/Pages/AbandonedCartRecoveryAdminFree.php:94
 msgid "Connect to SendWP"
 msgstr "Poveži se s SendWP"
 
-#: functions/functions.php:3957
+#: functions/functions.php:4072
 msgid "Welcome back"
 msgstr "Dobrodošel nazaj"
 
-#: functions/functions.php:3971
+#: functions/functions.php:4086
 msgid "It looks like you already have an account. Please enter your login details below."
 msgstr "Videti je, da že imate račun. Prosimo, vnesite svoje podatke za prijavo spodaj."
 
-#: functions/functions.php:3985
+#: functions/functions.php:4100
 msgid "If you have shopped with us before, please enter your login details below."
 msgstr "Če ste pri nas že nakupovali, spodaj vnesite svoje podatke za prijavo."
 
-#: functions/functions.php:3995
-#: functions/functions.php:3996
+#: functions/functions.php:4110
+#: functions/functions.php:4111
 msgid "Username or email address"
 msgstr "Uporabniško ime ali e-poštni naslov"
 
-#: functions/functions.php:4030
+#: functions/functions.php:4145
 msgid "Remember me"
 msgstr "Zapomni si me"
 
-#: functions/functions.php:4061
+#: functions/functions.php:4176
 msgid "Or continue as guest"
 msgstr "Ali nadaljujte kot gost"
 
-#: functions/functions.php:4081
+#: functions/functions.php:4196
 msgid "Lost your password? Please enter your username or email address. You will receive a link to create a new password via email."
 msgstr "Ste pozabili geslo? Vnesite svoje uporabniško ime ali e-poštni naslov. Prejeli boste povezavo za ustvarjanje novega gesla po e-pošti."
 
-#: functions/functions.php:4104
+#: functions/functions.php:4219
 msgid "Reset password"
 msgstr "Ponastavi geslo"
 
-#: functions/functions.php:4119
+#: functions/functions.php:4234
 #: includes/API/OrderBumpPreviewAPI.php:57
 #: includes/API/OrderBumpOfferFormPreviewAPI.php:46
 #: includes/API/GetVariationFormAPI.php:33
 msgid "Product not found"
 msgstr "Izdelek ni najden"
 
-#: functions/functions.php:4135
-#: functions/functions.php:4280
+#: functions/functions.php:4250
+#: functions/functions.php:4395
 #: includes/API/PostPurchaseBumpProductFormAPI.php:24
 msgid "No thanks"
 msgstr "Ne, hvala"
@@ -891,7 +893,7 @@ msgstr "Preskoči in deaktiviraj zdaj"
 msgid "CheckoutWC: You cannot activate an AB test that is not registered."
 msgstr "CheckoutWC: Ne morete aktivirati AB testa, ki ni registriran."
 
-#: templates/glass/functions.php:68
+#: templates/glass/functions.php:67
 msgid "Accent Color"
 msgstr "Barva poudarka"
 
@@ -910,19 +912,6 @@ msgstr "SendWP je že povezan."
 #: lib/sendwp-sdk/remote-install.php:84
 msgid "Something went wrong. SendWP was not installed correctly."
 msgstr "Nekaj je šlo narobe. SendWP ni bil pravilno nameščen."
-
-#: includes/Shipping/CFW_Shipping_Local_Pickup.php:35
-#: includes/Shipping/CFW_Shipping_Local_Pickup.php:48
-#: includes/Admin/Pages/LocalPickupAdminFree.php:19
-#: includes/Admin/Pages/LocalPickupAdminFree.php:56
-#: includes/Admin/Pages/Premium/LocalPickupAdmin.php:20
-#: client/ts/admin/Components/Forms/LocalPickupSettingsForm.tsx:62
-msgid "Local Pickup"
-msgstr "Lokalni prevzem"
-
-#: includes/Shipping/CFW_Shipping_Local_Pickup.php:36
-msgid "Allow customers to pick up orders themselves. This version does not require shipping zones."
-msgstr "Dovolite strankam, da same prevzamejo naročila. Ta različica ne zahteva poštnih con."
 
 #: includes/Stats/StatCollection.php:193
 msgid "Once Weekly"
@@ -948,41 +937,18 @@ msgstr "Dovoli"
 msgid "Do not allow"
 msgstr "Ne dovoli"
 
-#: includes/Loaders/LoaderAbstract.php:134
-#: includes/Loaders/LoaderAbstract.php:244
-msgid "Sorry, this order is invalid and cannot be paid for."
-msgstr "Oprostite, ta naročilo ni veljavno in ga ni mogoče plačati."
+#: includes/Shipping/CFW_Shipping_Local_Pickup.php:35
+#: includes/Shipping/CFW_Shipping_Local_Pickup.php:48
+#: includes/Admin/Pages/LocalPickupAdminFree.php:19
+#: includes/Admin/Pages/LocalPickupAdminFree.php:56
+#: includes/Admin/Pages/Premium/LocalPickupAdmin.php:20
+#: client/ts/admin/Components/Forms/LocalPickupSettingsForm.tsx:62
+msgid "Local Pickup"
+msgstr "Lokalni prevzem"
 
-#: includes/Loaders/LoaderAbstract.php:138
-msgid "Please log in to your account below to continue to the payment form."
-msgstr "Za nadaljevanje do plačilnega obrazca se prosimo prijavite v svoj račun spodaj."
-
-#: includes/Loaders/LoaderAbstract.php:145
-msgid "You are paying for a guest order. Please continue with payment only if you recognize this order."
-msgstr "Plačujete za naročilo gosta. Nadaljujte s plačilom samo, če prepoznate to naročilo."
-
-#: includes/Loaders/LoaderAbstract.php:151
-msgid "This order cannot be paid for. Please contact us if you need assistance."
-msgstr "To naročilo ni mogoče plačati. Če potrebujete pomoč, nas kontaktirajte."
-
-#: includes/Loaders/LoaderAbstract.php:157
-#: includes/Loaders/LoaderAbstract.php:241
-msgid "This order&rsquo;s status is &ldquo;%s&rdquo;&mdash;it cannot be paid for. Please contact us if you need assistance."
-msgstr "Status tega naročila je „%s“ — ni ga mogoče plačati. Če potrebujete pomoč, nas kontaktirajte."
-
-#: includes/Loaders/LoaderAbstract.php:186
-msgid "Sorry, \"%s\" is no longer in stock so this order cannot be paid for. We apologize for any inconvenience caused."
-msgstr "Oprostite, \"%s\" ni več na zalogi, zato tega naročila ni mogoče plačati. Opravičujemo se za morebitne nevšečnosti."
-
-#: includes/Loaders/LoaderAbstract.php:200
-msgid "Sorry, we do not have enough \"%1$s\" in stock to fulfill your order (%2$s available). We apologize for any inconvenience caused."
-msgstr "Oprostite, nimamo dovolj \"%1$s\" na zalogi za izpolnitev vašega naročila (na voljo %2$s). Opravičujemo se za morebitne nevšečnosti."
-
-#: includes/Loaders/LoaderAbstract.php:247
-#: includes/Action/ProcessOfferPaymentAction.php:73
-#: includes/Features/OneClick/OfferRefundManager.php:177
-msgid "Invalid order."
-msgstr "Neveljavna naročilo."
+#: includes/Shipping/CFW_Shipping_Local_Pickup.php:36
+msgid "Allow customers to pick up orders themselves. This version does not require shipping zones."
+msgstr "Dovolite strankam, da same prevzamejo naročila. Ta različica ne zahteva poštnih con."
 
 #: includes/Managers/UpdatesManager.php:416
 msgid "CheckoutWC License Key"
@@ -1007,7 +973,7 @@ msgstr "Omejitev aktivacije"
 #: includes/Managers/UpdatesManager.php:456
 #: includes/Admin/Pages/Premium/ABTestingAdmin.php:96
 #: includes/Admin/Pages/Premium/ABTestingAdmin.php:737
-#: client/ts/admin/Components/acr/carts.tsx:75
+#: client/ts/admin/Components/acr/carts.tsx:80
 msgid "Status"
 msgstr "Status"
 
@@ -1082,6 +1048,117 @@ msgstr "Ni mogoče preveriti licence prek spleta (%1$d/%2$d neuspelih poskusov).
 msgid "License verified successfully."
 msgstr "Licenca je bila uspešno preverjena."
 
+#: includes/Managers/SlotManager.php:80
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:101
+msgid "Before Express Checkout"
+msgstr "Pred hitrim nakupom"
+
+#: includes/Managers/SlotManager.php:85
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:102
+msgid "After Customer Account"
+msgstr "Za uporabniškim računom"
+
+#: includes/Managers/SlotManager.php:90
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:103
+msgid "After Delivery Method"
+msgstr "Za načinom dostave"
+
+#: includes/Managers/SlotManager.php:95
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:104
+msgid "After Shipping Address"
+msgstr "Za naslovom za dostavo"
+
+#: includes/Managers/SlotManager.php:100
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:105
+msgid "After Shipping Methods"
+msgstr "Za načini dostave"
+
+#: includes/Managers/SlotManager.php:105
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:106
+#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:144
+msgid "After Payment Methods"
+msgstr "Po načinih plačila"
+
+#: includes/Managers/SlotManager.php:110
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:107
+msgid "After Billing Address"
+msgstr "Za naslovom za obračun"
+
+#: includes/Managers/SlotManager.php:115
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:108
+msgid "Before Terms & Conditions"
+msgstr "Pred pogoji poslovanja"
+
+#: includes/Managers/SlotManager.php:120
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:109
+msgid "After Terms & Conditions"
+msgstr "Za pogoji poslovanja"
+
+#: includes/Managers/SlotManager.php:125
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:110
+msgid "After Complete Order"
+msgstr "Za dokončanim naročilom"
+
+#: includes/Managers/SlotManager.php:130
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:111
+msgid "Before Cart Summary Items"
+msgstr "Pred povzetkom artiklov v košarici"
+
+#: includes/Managers/SlotManager.php:135
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:112
+msgid "After Cart Summary Items"
+msgstr "Za povzetkom artiklov v košarici"
+
+#: includes/Managers/SlotManager.php:140
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:113
+msgid "Before Cart Summary Totals"
+msgstr "Pred povzetkom skupnih zneskov v košarici"
+
+#: includes/Managers/SlotManager.php:145
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:114
+msgid "After Cart Summary Totals"
+msgstr "Za povzetkom skupnih zneskov v košarici"
+
+#: includes/Managers/SlotManager.php:150
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:115
+msgid "Before Footer"
+msgstr "Pred nogo strani"
+
+#: includes/Managers/SlotManager.php:155
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:116
+msgid "After Footer"
+msgstr "Za nogo strani"
+
+#: includes/Managers/SlotManager.php:173
+#: client/ts/admin/Components/TrustBadgeRow.tsx:166
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:100
+msgid "— No Slot Assigned —"
+msgstr "— Ni dodeljene reže —"
+
+#: includes/Managers/SlotManager.php:178
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:119
+msgid "After Cart Summary Items (Checkout and Side Cart)"
+msgstr "Za povzetkom artiklov v košarici (nakup in stranska košarica)"
+
+#: includes/Managers/SlotManager.php:179
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:120
+msgid "After Cart Summary Items (Side Cart Only)"
+msgstr "Za povzetkom artiklov v košarici (samo stranska košarica)"
+
+#: includes/Managers/SlotManager.php:180
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:121
+msgid "Place Order Click (Checkout)"
+msgstr "Klik za oddajo naročila (blagajna)"
+
+#: includes/Managers/SlotManager.php:181
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:122
+msgid "Post Purchase One-Click (Thank You)"
+msgstr "Nakup z enim klikom po nakupu (Hvala)"
+
+#: includes/Managers/SlotManager.php:439
+msgid "Badge %d"
+msgstr "Značka %d"
+
 #: includes/Managers/AssetManager.php:243
 msgid "required"
 msgstr "zahtevano"
@@ -1103,103 +1180,144 @@ msgstr "Promocijska koda"
 msgid "Enter Promo Code"
 msgstr "Vnesite promocijsko kodo"
 
-#: includes/Managers/AssetManager.php:680
+#: includes/Managers/AssetManager.php:686
 msgid "Please enter a valid phone number."
 msgstr "Vnesite veljavno telefonsko številko."
 
-#: includes/Managers/AssetManager.php:689
+#: includes/Managers/AssetManager.php:695
 msgid "Please enter your first and last name."
 msgstr "Vnesite svoje ime in priimek."
 
-#: includes/Managers/AssetManager.php:690
+#: includes/Managers/AssetManager.php:696
 msgid "Please enter a name, not an email address."
 msgstr "Prosimo, vnesite ime, ne e-poštni naslov."
 
-#: includes/Managers/AssetManager.php:692
-#: includes/Managers/AssetManager.php:833
+#: includes/Managers/AssetManager.php:698
+#: includes/Managers/AssetManager.php:839
 msgid "Please enter a new quantity:"
 msgstr "Vnesite novo količino:"
 
-#: includes/Managers/AssetManager.php:693
+#: includes/Managers/AssetManager.php:699
 msgid "3-digit security code usually found on the back of your card. American Express cards have a 4-digit code located on the front."
 msgstr "3-mestna varnostna koda je običajno na zadnji strani kartice. Kartice American Express imajo na sprednji strani 4-mestno kodo."
 
-#: includes/Managers/AssetManager.php:694
-#: includes/Managers/AssetManager.php:834
+#: includes/Managers/AssetManager.php:700
+#: includes/Managers/AssetManager.php:840
 msgid "Are you sure you want to remove this item from your cart?"
 msgstr "Ali ste prepričani, da želite ta izdelek odstraniti iz košarice?"
 
 # %s: Field name
-#: includes/Managers/AssetManager.php:697
+#: includes/Managers/AssetManager.php:703
 msgid "%s is a required field."
 msgstr "%s je obvezno polje."
 
-#: includes/Managers/AssetManager.php:698
+#: includes/Managers/AssetManager.php:704
 msgid "There was a problem checking out. Please try again. If the problem persists, please get in touch with us so we can assist."
 msgstr "Prišlo je do težave pri zaključku nakupa. Prosimo, poskusite znova. Če težava vztraja, nas kontaktirajte, da vam lahko pomagamo."
 
-#: includes/Managers/AssetManager.php:699
+#: includes/Managers/AssetManager.php:705
 msgid "Please enter a valid postcode / ZIP."
 msgstr "Vnesite veljavno poštno številko."
 
-#: includes/Managers/AssetManager.php:700
+#: includes/Managers/AssetManager.php:706
 #: includes/Features/LocalPickup.php:626
 msgid "Pickup"
 msgstr "Prevzem"
 
-#: includes/Managers/AssetManager.php:701
+#: includes/Managers/AssetManager.php:707
 msgid "Continue to pickup"
 msgstr "Nadaljujte s prevzemom"
 
-#: includes/Managers/AssetManager.php:702
-#: includes/Managers/AssetManager.php:836
+#: includes/Managers/AssetManager.php:708
+#: includes/Managers/AssetManager.php:842
 msgid "Update"
 msgstr "Posodobi"
 
-#: includes/Managers/AssetManager.php:703
-#: includes/Managers/AssetManager.php:837
+#: includes/Managers/AssetManager.php:709
+#: includes/Managers/AssetManager.php:843
 #: includes/API/GetVariationFormAPI.php:150
 msgid "Add to cart"
 msgstr "Dodaj v košarico"
 
-#: includes/Managers/AssetManager.php:704
-#: includes/Managers/AssetManager.php:838
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2304
+#: includes/Managers/AssetManager.php:710
+#: includes/Managers/AssetManager.php:844
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2308
+#: client/ts/admin/Components/CheckoutEditor/slots/UnsavedChangesDialog.tsx:51
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:457
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:492
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:276
+#: client/ts/admin/Components/CheckoutEditor/slots/CustomHtmlEditor.tsx:76
 msgid "Cancel"
 msgstr "Prekliči"
 
-#: includes/Managers/AssetManager.php:712
+#: includes/Managers/AssetManager.php:718
 msgid "Start with post/zip code or street"
 msgstr "Začnite s poštno/poštno številko ali ulico"
 
-#: includes/Managers/AssetManager.php:720
+#: includes/Managers/AssetManager.php:726
 msgid "Shipping method"
 msgstr "Način dostave"
 
-#: includes/Managers/AssetManager.php:734
+#: includes/Managers/AssetManager.php:740
 msgid "Error processing checkout. Please try again."
 msgstr "Napaka pri obdelavi nakupa. Prosimo, poskusite znova."
 
-#: includes/Managers/AssetManager.php:760
+#: includes/Managers/AssetManager.php:766
 msgid "You may also like&hellip;"
 msgstr "Morda vam bo všeč&hellip;"
 
-#: includes/Managers/AssetManager.php:835
+#: includes/Managers/AssetManager.php:841
 #: client/ts/frontend/Components/SideCartFloatingButton.tsx:26
 msgid "View cart"
 msgstr "Ogled košarice"
 
-#: includes/Managers/AssetManager.php:839
+#: includes/Managers/AssetManager.php:845
 msgid "Remove %s from cart"
 msgstr "Odstrani %s iz košarice"
 
-#: includes/Managers/AssetManager.php:840
+#: includes/Managers/AssetManager.php:846
 msgid "Proceed to checkout"
 msgstr "Nadaljuj na blagajno"
 
-#: includes/Managers/AssetManager.php:843
+#: includes/Managers/AssetManager.php:849
 msgid "View Product"
 msgstr "Ogled izdelka"
+
+#: includes/Loaders/LoaderAbstract.php:134
+#: includes/Loaders/LoaderAbstract.php:244
+msgid "Sorry, this order is invalid and cannot be paid for."
+msgstr "Oprostite, ta naročilo ni veljavno in ga ni mogoče plačati."
+
+#: includes/Loaders/LoaderAbstract.php:138
+msgid "Please log in to your account below to continue to the payment form."
+msgstr "Za nadaljevanje do plačilnega obrazca se prosimo prijavite v svoj račun spodaj."
+
+#: includes/Loaders/LoaderAbstract.php:145
+msgid "You are paying for a guest order. Please continue with payment only if you recognize this order."
+msgstr "Plačujete za naročilo gosta. Nadaljujte s plačilom samo, če prepoznate to naročilo."
+
+#: includes/Loaders/LoaderAbstract.php:151
+msgid "This order cannot be paid for. Please contact us if you need assistance."
+msgstr "To naročilo ni mogoče plačati. Če potrebujete pomoč, nas kontaktirajte."
+
+#: includes/Loaders/LoaderAbstract.php:157
+#: includes/Loaders/LoaderAbstract.php:241
+msgid "This order&rsquo;s status is &ldquo;%s&rdquo;&mdash;it cannot be paid for. Please contact us if you need assistance."
+msgstr "Status tega naročila je „%s“ — ni ga mogoče plačati. Če potrebujete pomoč, nas kontaktirajte."
+
+#: includes/Loaders/LoaderAbstract.php:186
+msgid "Sorry, \"%s\" is no longer in stock so this order cannot be paid for. We apologize for any inconvenience caused."
+msgstr "Oprostite, \"%s\" ni več na zalogi, zato tega naročila ni mogoče plačati. Opravičujemo se za morebitne nevšečnosti."
+
+#: includes/Loaders/LoaderAbstract.php:200
+msgid "Sorry, we do not have enough \"%1$s\" in stock to fulfill your order (%2$s available). We apologize for any inconvenience caused."
+msgstr "Oprostite, nimamo dovolj \"%1$s\" na zalogi za izpolnitev vašega naročila (na voljo %2$s). Opravičujemo se za morebitne nevšečnosti."
+
+#: includes/Loaders/LoaderAbstract.php:247
+#: includes/Action/ProcessOfferPaymentAction.php:73
+#: includes/Features/OneClick/OfferRefundManager.php:177
+msgid "Invalid order."
+msgstr "Neveljavna naročilo."
 
 #: includes/Features/Turnstile.php:134
 #: includes/Features/Turnstile.php:188
@@ -1239,16 +1357,16 @@ msgstr "CheckoutWC:"
 msgid "Settings marked with asterisks (**) may be overridden based on your Side Cart settings. (CheckoutWC > Side Cart)"
 msgstr "Nastavitve označene z zvezdicami (**) se lahko preglasijo glede na vaše nastavitve stranske košarice. (CheckoutWC > Stranska košarica)"
 
-#: includes/Features/OrderBumps.php:609
+#: includes/Features/OrderBumps.php:610
 msgid "All orders"
 msgstr "Vsa naročila"
 
-#: includes/Features/OrderBumps.php:612
+#: includes/Features/OrderBumps.php:613
 msgid "Contains Any Order Bump"
 msgstr "Vsebuje katerikoli Order Bump"
 
 # %s: Order bump title
-#: includes/Features/OrderBumps.php:618
+#: includes/Features/OrderBumps.php:619
 msgid "Has Bump: %s"
 msgstr "Ima Bump: %s"
 
@@ -1445,7 +1563,7 @@ msgstr "Postavka"
 
 #: includes/Features/AbandonedCartRecovery.php:741
 #: includes/Admin/Views/html-refund-offer.php:23
-#: client/ts/admin/Components/acr/carts.tsx:59
+#: client/ts/admin/Components/acr/carts.tsx:60
 msgid "Name"
 msgstr "Ime"
 
@@ -1470,57 +1588,57 @@ msgstr "Samo CheckoutWC ACR"
 msgid "Check this box if the coupon can only be used by customers with an abandoned cart."
 msgstr "Označite to polje, če kupon lahko uporabljajo samo kupci z opuščenim vozičkom."
 
-#: includes/Features/ABTesting.php:140
-#: includes/Features/ABTesting.php:142
+#: includes/Features/ABTesting.php:145
+#: includes/Features/ABTesting.php:147
 msgid "A/B Tests"
 msgstr "A/B testi"
 
-#: includes/Features/ABTesting.php:141
-#: includes/Admin/Pages/Premium/OrderBumps.php:132
+#: includes/Features/ABTesting.php:146
+#: includes/Admin/Pages/Premium/OrderBumps.php:133
 msgid "A/B Test"
 msgstr "A/B test"
 
-#: includes/Features/ABTesting.php:143
+#: includes/Features/ABTesting.php:148
 msgid "Add A/B Test"
 msgstr "Dodaj A/B test"
 
-#: includes/Features/ABTesting.php:144
+#: includes/Features/ABTesting.php:149
 msgid "Add New A/B Test"
 msgstr "Dodaj nov A/B test"
 
-#: includes/Features/ABTesting.php:146
+#: includes/Features/ABTesting.php:151
 msgid "Edit A/B Test"
 msgstr "Uredi A/B test"
 
-#: includes/Features/ABTesting.php:147
+#: includes/Features/ABTesting.php:152
 msgid "New A/B Test"
 msgstr "Nov A/B test"
 
-#: includes/Features/ABTesting.php:148
+#: includes/Features/ABTesting.php:153
 msgid "View A/B Tests"
 msgstr "Ogled A/B testov"
 
-#: includes/Features/ABTesting.php:149
+#: includes/Features/ABTesting.php:154
 msgid "View A/B Test"
 msgstr "Ogled A/B testa"
 
-#: includes/Features/ABTesting.php:150
+#: includes/Features/ABTesting.php:155
 msgid "Search A/B Tests"
 msgstr "Iskanje A/B testov"
 
-#: includes/Features/ABTesting.php:151
+#: includes/Features/ABTesting.php:156
 msgid "No A/B Tests found"
 msgstr "Ni najdenih A/B testov"
 
-#: includes/Features/ABTesting.php:152
+#: includes/Features/ABTesting.php:157
 msgid "No A/B Tests found in trash"
 msgstr "Ni najdenih A/B testov v košu"
 
-#: includes/Features/ABTesting.php:157
+#: includes/Features/ABTesting.php:162
 msgid "This is where you can manage A/B tests for order bumps and other checkout elements."
 msgstr "Tukaj lahko upravljate A/B teste za dodatke k naročilu in druge elemente blagajne."
 
-#: includes/Features/ABTesting.php:331
+#: includes/Features/ABTesting.php:336
 msgid "You are editing an A/B test variant. After saving, close this window to return to your variants list."
 msgstr "Urejate različico A/B testa. Po shranjevanju zaprite to okno, da se vrnete na seznam različic."
 
@@ -1548,6 +1666,7 @@ msgstr "Vtičnik je <strong>preveč zapleten za konfiguracijo.</strong>"
 #: includes/Admin/Pages/LocalPickupAdminFree.php:184
 #: includes/Admin/Pages/LocalPickupAdminFree.php:221
 #: includes/Admin/Pages/Premium/LocalPickupAdmin.php:225
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:118
 #: client/ts/admin/Components/Forms/AdvancedSettingsForm.tsx:104
 msgid "Other"
 msgstr "Drugo"
@@ -1762,9 +1881,9 @@ msgstr "Prejeto naročilo"
 
 #: includes/API/OrderBumpsSearchAPI.php:64
 #: includes/API/OrderBumpsSearchAPI.php:102
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:228
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:526
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:585
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:229
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:527
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:586
 msgid "No Title #%d"
 msgstr "Brez naslova #%d"
 
@@ -1830,38 +1949,21 @@ msgstr "Obrazec za ponudbo dodatka k naročilu"
 msgid "The form to accept or reject the bump offer."
 msgstr "Obrazec za sprejem ali zavrnitev ponudbe dodatka."
 
-# %1$s: Plugin name, %2$s: Link opening tag, %3$s: Version number, %4$s: Link closing tag
-#: includes/Managers/Helpers/EDD_SL_Plugin_Updater.php:281
-msgid "There is a new version of %1$s available. %2$sView version %3$s details%4$s."
-msgstr "Na voljo je nova različica %1$s. %2$sOgled podrobnosti različice %3$s%4$s."
-
-# %1$s: Plugin name, %2$s: Link opening tag, %3$s: Version number, %4$s: Link closing tag, %5$s: Update link opening tag, %6$s: Update link closing tag
-#: includes/Managers/Helpers/EDD_SL_Plugin_Updater.php:290
-msgid "There is a new version of %1$s available. %2$sView version %3$s details%4$s or %5$supdate now%6$s."
-msgstr "Na voljo je nova različica %1$s. %2$sOgled podrobnosti različice %3$s%4$s ali %5$sposodobite zdaj%6$s."
-
-#: includes/Managers/Helpers/EDD_SL_Plugin_Updater.php:534
-msgid "You do not have permission to install plugin updates"
-msgstr "Nimate dovoljenja za namestitev posodobitev vtičnikov"
-
-#: includes/Managers/Helpers/EDD_SL_Plugin_Updater.php:534
-msgid "Error"
-msgstr "Napaka"
-
 #: includes/Model/Bumps/BumpAbstract.php:1013
 #: includes/Model/Bumps/BumpAbstract.php:1023
 #: includes/Model/ABTests/OrderBumpsABTest.php:30
 #: includes/Features/ABTesting/ABTestTypeRegistry.php:123
 #: includes/Admin/Pages/OrderBumpsAdminFree.php:17
 #: includes/Admin/Pages/OrderBumpsAdminFree.php:71
-#: includes/Admin/Pages/Premium/OrderBumps.php:45
+#: includes/Admin/Pages/Premium/OrderBumps.php:46
 #: client/ts/admin/Components/Forms/OrderBumpSettingsForm.tsx:45
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:294
 msgid "Order Bumps"
 msgstr "Naročni dodatki"
 
 #: includes/Model/Bumps/BumpAbstract.php:1014
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:192
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:1610
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:193
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:1614
 msgid "Order Bump"
 msgstr "Naročni dodatek"
 
@@ -1902,6 +2004,24 @@ msgstr "Ni najdeno v košu"
 #: includes/Features/ABTesting/ABTestTypeRegistry.php:124
 msgid "Test different variations of order bumps to see which performs better."
 msgstr "Preizkusite različne različice dodatkov k naročilu, da vidite, katera deluje bolje."
+
+# %1$s: Plugin name, %2$s: Link opening tag, %3$s: Version number, %4$s: Link closing tag
+#: includes/Managers/Helpers/EDD_SL_Plugin_Updater.php:281
+msgid "There is a new version of %1$s available. %2$sView version %3$s details%4$s."
+msgstr "Na voljo je nova različica %1$s. %2$sOgled podrobnosti različice %3$s%4$s."
+
+# %1$s: Plugin name, %2$s: Link opening tag, %3$s: Version number, %4$s: Link closing tag, %5$s: Update link opening tag, %6$s: Update link closing tag
+#: includes/Managers/Helpers/EDD_SL_Plugin_Updater.php:290
+msgid "There is a new version of %1$s available. %2$sView version %3$s details%4$s or %5$supdate now%6$s."
+msgstr "Na voljo je nova različica %1$s. %2$sOgled podrobnosti različice %3$s%4$s ali %5$sposodobite zdaj%6$s."
+
+#: includes/Managers/Helpers/EDD_SL_Plugin_Updater.php:534
+msgid "You do not have permission to install plugin updates"
+msgstr "Nimate dovoljenja za namestitev posodobitev vtičnikov"
+
+#: includes/Managers/Helpers/EDD_SL_Plugin_Updater.php:534
+msgid "Error"
+msgstr "Napaka"
 
 #: includes/Features/OneClick/OrderStatusManager.php:52
 msgid "Pending Offer <span class=\"count\">(%s)</span>"
@@ -2129,144 +2249,6 @@ msgstr "Omogoči podporo Beaver Themer"
 msgid "Allow Beaver Themer to replace header and footer."
 msgstr "Dovoli Beaver Themer, da zamenja glavo in nogo."
 
-#: includes/Admin/Views/html-refund-offer.php:22
-msgid "Product"
-msgstr "Izdelek"
-
-#: includes/Admin/Views/html-refund-offer.php:24
-msgid "Qty"
-msgstr "Količina"
-
-#: includes/Admin/Views/html-refund-offer.php:26
-msgid "Action"
-msgstr "Dejanje"
-
-#: includes/Admin/Views/html-refund-offer.php:89
-msgid "Refund"
-msgstr "Povračilo"
-
-#: includes/Admin/Views/html-refund-offer.php:101
-msgid "No order bump payments found for this order."
-msgstr "Za to naročilo ni najdenih plačil dodatkov k naročilu."
-
-#: includes/Admin/Views/html-refund-offer.php:113
-msgid "Note:"
-msgstr "Opomba:"
-
-#: includes/Admin/Views/html-refund-offer.php:114
-msgid "Refunding an offer will process the refund with the payment gateway and create a WooCommerce refund record."
-msgstr "Povračilo ponudbe bo izvedlo povračilo prek plačilnega prehoda in ustvarilo zapis o povračilu v WooCommerce."
-
-#: includes/Admin/Notices/WelcomeNotice.php:12
-msgid "Welcome to CheckoutWC"
-msgstr "Dobrodošli v CheckoutWC"
-
-#: includes/Admin/Notices/WelcomeNotice.php:20
-msgid "Thank you for installing CheckoutWC! We automatically activated your license. You are all set!"
-msgstr "Hvala, ker ste namestili CheckoutWC! Vaša licenca je bila samodejno aktivirana. Vse je pripravljeno!"
-
-#: includes/Admin/Notices/WelcomeNotice.php:26
-msgid "Thank you for installing CheckoutWC! To get started, enter your <strong>License Key</strong> below, save, and click <strong>Activate Site</strong>."
-msgstr "Hvala, ker ste namestili CheckoutWC! Za začetek vnesite svojo <strong>licenčni ključ</strong> spodaj, shranite in kliknite <strong>Aktiviraj spletno mesto</strong>."
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:20
-msgid "your email"
-msgstr "vaš e-poštni naslov"
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:88
-msgid "privacy policy"
-msgstr "politika zasebnosti"
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:93
-msgid "By joining, %1$s will be added to our mailing list. Read our %2$s."
-msgstr "Z vpisom bo %1$s dodan na naš seznam prejemnikov. Preberite našo %2$s."
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:99
-msgid "Join Newsletter & Save 25%"
-msgstr "Pridružite se novicam in prihranite 25%"
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:102
-msgid "Join Newsletter"
-msgstr "Pridružite se novicam"
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:113
-msgid "Sign up to our newsletter and get proven conversion tips and checkout optimization strategies from the CheckoutWC team."
-msgstr "Prijavite se na naše novice in prejmite preverjene nasvete za konverzijo ter strategije optimizacije blagajne od ekipe CheckoutWC."
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:116
-msgid "Boost Your Conversions with Proven Strategies."
-msgstr "Povečajte svoje konverzije s preverjenimi strategijami."
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:123
-msgid "We're so glad that you've chosen CheckoutWC to handle your checkouts. Unlock more sales with premium features like order bumps, abandoned cart recovery, and much more."
-msgstr "Veseli smo, da ste izbrali CheckoutWC za upravljanje vaših blagajn. Odklenite več prodaje z vrhunskimi funkcijami, kot so dodatki k naročilu, obnova zapuščenih košaric in še več."
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:126
-msgid "Unlock more sales with CheckoutWC Premium"
-msgstr "Odklenite več prodaje z CheckoutWC Premium"
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:144
-msgid "Sorry, there was an error joining our newsletter. Please refresh the page and try again."
-msgstr "Oprostite, pri prijavi na naše novice je prišlo do napake. Osvežite stran in poskusite znova."
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:243
-msgid "Please wait..."
-msgstr "Prosimo, počakajte..."
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:320
-msgid "Sorry, your account has insufficient permissions to join our newsletter."
-msgstr "Oprostite, vaš račun nima zadostnih dovoljenj za prijavo na naše novice."
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:354
-msgid "You have already joined our newsletter!"
-msgstr "Že ste prijavljeni na naše novice!"
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:396
-msgid "Thank you for joining our newsletter!"
-msgstr "Hvala, ker ste se prijavili na naše novice!"
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:410
-msgid "Security check failed."
-msgstr "Varnostni pregled ni uspel."
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:414
-msgid "Insufficient permissions."
-msgstr "Nedovoljena dovoljenja."
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:422
-msgid "Notice dismissed."
-msgstr "Obvestilo je bilo zavrnjeno."
-
-# %1$s: URL to pricing page, %2$s: "purchase a new license" link text, %3$s: Support email URL, %4$s: "please contact support" link text
-#: includes/Admin/Notices/InvalidLicenseKeyNotice.php:15
-msgid "Your license key appears to have expired. Please <a href=\"%1$s\" target=\"_blank\">%2$s</a> to restore functionality. If you believe this is in error, <a href=\"%3$s\">%4$s</a>."
-msgstr "Vaš licenčni ključ je potekel. Prosimo, <a href=\"%1$s\" target=\"_blank\">%2$s</a>, da obnovite funkcionalnost. Če menite, da gre za napako, <a href=\"%3$s\">%4$s</a>."
-
-#: includes/Admin/Notices/InvalidLicenseKeyNotice.php:17
-msgid "purchase a new license"
-msgstr "kupi novo licenco"
-
-#: includes/Admin/Notices/InvalidLicenseKeyNotice.php:19
-msgid "please contact support"
-msgstr "prosimo, kontaktirajte podporo"
-
-# %1$s: URL to activation page, %2$s: "Start Here" link text
-#: includes/Admin/Notices/InactiveLicenseNotice.php:11
-msgid "Your license key is not active for this site. Please visit <a href=\"%1$s\">%2$s</a> to activate your license and restore functionality."
-msgstr "Vaš licenčni ključ ni aktiven za to spletno mesto. Prosimo, obiščite <a href=\"%1$s\">%2$s</a>, da aktivirate svojo licenco in obnovite funkcionalnost."
-
-#: includes/Admin/Notices/BFNotice.php:13
-msgid "Black Friday Sale - 40% Off"
-msgstr "Črni petek razprodaja - 40 % popusta"
-
-#: includes/Admin/Notices/BFNotice.php:14
-msgid "You're missing out on revenue growth tools like Order Bumps, Upsells, Abandoned Cart Recovery and more! Save 40% on CheckoutWC pro plans for Black Friday, ends December 4th"
-msgstr "Izgubljate orodja za rast prihodkov, kot so Order Bumps, Upsells, Obnova zapuščenih košaric in še več! Prihranite 40 % na profesionalnih načrtih CheckoutWC za Črni petek, akcija traja do 4. decembra"
-
-#: includes/Admin/Notices/BFNotice.php:27
-msgid "Get CheckoutWC Pro Now!"
-msgstr "Pridobite CheckoutWC Pro zdaj!"
-
 #: includes/Admin/Pages/WooCommercePages.php:21
 msgid "Pages"
 msgstr "Strani"
@@ -2282,182 +2264,138 @@ msgid "Global Options"
 msgstr "Globalne možnosti"
 
 #: includes/Admin/Pages/TrustBadgesAdminFree.php:14
-#: includes/Admin/Pages/TrustBadgesAdminFree.php:89
-#: includes/Admin/Pages/Premium/TrustBadges.php:15
-#: client/ts/admin/Components/Forms/TrustBadgeSettingsForm.tsx:187
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:513
+#: includes/Admin/Pages/TrustBadgesAdminFree.php:56
+#: includes/Admin/Pages/Premium/TrustBadges.php:16
+#: client/ts/admin/Components/Forms/TrustBadgeSettingsForm.tsx:150
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:544
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:348
 msgid "Trust Badges"
 msgstr "Značke zaupanja"
 
 #: includes/Admin/Pages/TrustBadgesAdminFree.php:24
-#: client/ts/admin/Components/Forms/TrustBadgeSettingsForm.tsx:80
+#: client/ts/admin/Components/Forms/TrustBadgeSettingsForm.tsx:60
 msgid "Trust Badge Options"
 msgstr "Možnosti zaupanja vrednih značk"
 
 #: includes/Admin/Pages/TrustBadgesAdminFree.php:25
-#: client/ts/admin/Components/Forms/TrustBadgeSettingsForm.tsx:81
+#: client/ts/admin/Components/Forms/TrustBadgeSettingsForm.tsx:61
 msgid "Configure general Trust Badge options."
 msgstr "Konfigurirajte splošne možnosti zaupanja vrednih značk."
 
 #: includes/Admin/Pages/TrustBadgesAdminFree.php:38
-#: client/ts/admin/Components/Forms/TrustBadgeSettingsForm.tsx:86
+#: client/ts/admin/Components/Forms/TrustBadgeSettingsForm.tsx:66
 msgid "Enable Trust Badges"
 msgstr "Omogoči zaupanja vredne značke"
 
 #: includes/Admin/Pages/TrustBadgesAdminFree.php:39
-#: client/ts/admin/Components/Forms/TrustBadgeSettingsForm.tsx:87
 msgid "Enable trust badges on CheckoutWC templates. Uncheck to hide badges."
 msgstr "Omogoči zaupanja vredne značke na predlogah CheckoutWC. Odznačite za skrivanje značk."
 
 #: includes/Admin/Pages/TrustBadgesAdminFree.php:43
-#: client/ts/admin/Components/Forms/TrustBadgeSettingsForm.tsx:98
-msgid "Trust Badge Output Location"
-msgstr "Lokacija izpisa zaupanja vrednih značk"
-
-#: includes/Admin/Pages/TrustBadgesAdminFree.php:44
-#: client/ts/admin/Components/Forms/TrustBadgeSettingsForm.tsx:99
-msgid "Where to display the trust badges on the checkout page."
-msgstr "Kje prikazati zaupanja vredne značke na strani blagajne."
-
-#: includes/Admin/Pages/TrustBadgesAdminFree.php:51
-#: client/ts/admin/Components/Forms/TrustBadgeSettingsForm.tsx:20
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:493
-msgid "Below the checkout cart summary"
-msgstr "Pod povzetkom košarice na blagajni"
-
-#: includes/Admin/Pages/TrustBadgesAdminFree.php:52
-#: client/ts/admin/Components/Forms/TrustBadgeSettingsForm.tsx:21
-msgid "Output in a single column below the checkout cart summary totals"
-msgstr "Izpis v eni stolpcu pod skupnimi zneski povzetka košarice na blagajni"
-
-#: includes/Admin/Pages/TrustBadgesAdminFree.php:60
-#: client/ts/admin/Components/Forms/TrustBadgeSettingsForm.tsx:25
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:494
-msgid "After the checkout form"
-msgstr "Po obrazcu blagajne"
-
-#: includes/Admin/Pages/TrustBadgesAdminFree.php:61
-#: client/ts/admin/Components/Forms/TrustBadgeSettingsForm.tsx:26
-msgid "Output in a single row below the checkout form above the footer"
-msgstr "Izpis v eni vrstici pod obrazcem blagajne nad nogo"
-
-#: includes/Admin/Pages/TrustBadgesAdminFree.php:69
-#: client/ts/admin/Components/Forms/TrustBadgeSettingsForm.tsx:30
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:495
-msgid "Top of the footer"
-msgstr "Na vrhu noge"
-
-#: includes/Admin/Pages/TrustBadgesAdminFree.php:70
-#: client/ts/admin/Components/Forms/TrustBadgeSettingsForm.tsx:31
-msgid "Output in a single row inside the footer"
-msgstr "Izpis v eni vrstici znotraj noge"
-
-#: includes/Admin/Pages/TrustBadgesAdminFree.php:76
-#: client/ts/admin/Components/Forms/TrustBadgeSettingsForm.tsx:104
 #: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:171
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:482
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:219
 msgid "Heading"
 msgstr "Naslov"
 
-#: includes/Admin/Pages/TrustBadgesAdminFree.php:77
-#: includes/Admin/Pages/TrustBadgesAdminFree.php:78
-#: client/ts/admin/Components/Forms/TrustBadgeSettingsForm.tsx:105
-#: client/ts/admin/Components/Forms/TrustBadgeSettingsForm.tsx:106
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:485
+#: includes/Admin/Pages/TrustBadgesAdminFree.php:44
+#: includes/Admin/Pages/TrustBadgesAdminFree.php:45
 msgid "Example: Why choose us?"
 msgstr "Primer: Zakaj izbrati nas?"
 
-#: includes/Admin/Pages/TrustBadgesAdminFree.php:77
+#: includes/Admin/Pages/TrustBadgesAdminFree.php:44
 msgid "We've Got You Covered!"
 msgstr "Poskrbeli smo za vas!"
 
-#: includes/Admin/Pages/TrustBadgesAdminFree.php:90
-#: client/ts/admin/Components/Forms/TrustBadgeSettingsForm.tsx:188
+#: includes/Admin/Pages/TrustBadgesAdminFree.php:57
+#: client/ts/admin/Components/Forms/TrustBadgeSettingsForm.tsx:151
 msgid "Create trust badges to display on your checkout page."
 msgstr "Ustvarite zaupanja vredne značke za prikaz na vaši strani blagajne."
 
-#: includes/Admin/Pages/TrustBadgesAdminFree.php:112
-#: client/ts/admin/Components/TrustBadgeRow.tsx:79
-#: client/ts/admin/Components/TrustBadgeRow.tsx:82
+#: includes/Admin/Pages/TrustBadgesAdminFree.php:79
+#: client/ts/admin/Components/TrustBadgeRow.tsx:90
+#: client/ts/admin/Components/TrustBadgeRow.tsx:93
 #: client/ts/admin/Components/Metaboxes/OrderBumpsSetupModal.tsx:65
 msgid "Title"
 msgstr "Naslov"
 
-#: includes/Admin/Pages/TrustBadgesAdminFree.php:112
-#: includes/Admin/Pages/TrustBadgesAdminFree.php:158
-#: includes/Admin/Pages/TrustBadgesAdminFree.php:161
+#: includes/Admin/Pages/TrustBadgesAdminFree.php:79
+#: includes/Admin/Pages/TrustBadgesAdminFree.php:125
+#: includes/Admin/Pages/TrustBadgesAdminFree.php:128
 msgid "30 Day Money Back Guarantee!"
 msgstr "30-dnevna garancija vračila denarja!"
 
-#: includes/Admin/Pages/TrustBadgesAdminFree.php:114
-#: client/ts/admin/Components/TrustBadgeRow.tsx:93
-#: client/ts/admin/Components/TrustBadgeRow.tsx:96
+#: includes/Admin/Pages/TrustBadgesAdminFree.php:81
+#: client/ts/admin/Components/TrustBadgeRow.tsx:104
+#: client/ts/admin/Components/TrustBadgeRow.tsx:107
 msgid "Subtitle"
 msgstr "Podnaslov"
 
-#: includes/Admin/Pages/TrustBadgesAdminFree.php:119
+#: includes/Admin/Pages/TrustBadgesAdminFree.php:86
 #: includes/Admin/Pages/Appearance.php:32
 #: includes/Admin/Pages/Premium/AbandonedCartRecovery.php:462
-#: client/ts/admin/Components/TrustBadgeRow.tsx:106
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:86
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:95
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:99
+#: client/ts/admin/Components/TrustBadgeRow.tsx:117
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:105
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:114
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:118
 #: client/ts/admin/Components/CheckoutEditor/panels/DesignSettingsPanel.tsx:52
 msgid "Template"
 msgstr "Predloga"
 
-#: includes/Admin/Pages/TrustBadgesAdminFree.php:120
-#: client/ts/admin/Components/TrustBadgeRow.tsx:112
+#: includes/Admin/Pages/TrustBadgesAdminFree.php:87
+#: client/ts/admin/Components/TrustBadgeRow.tsx:123
 msgid "Guarantee"
 msgstr "Garancija"
 
-#: includes/Admin/Pages/TrustBadgesAdminFree.php:126
-#: client/ts/admin/Components/TrustBadgeRow.tsx:120
+#: includes/Admin/Pages/TrustBadgesAdminFree.php:93
+#: client/ts/admin/Components/TrustBadgeRow.tsx:131
 msgid "Image"
 msgstr "Slika"
 
-#: includes/Admin/Pages/TrustBadgesAdminFree.php:127
+#: includes/Admin/Pages/TrustBadgesAdminFree.php:94
 #: client/ts/admin/Components/MediaLibraryButton.tsx:43
 msgid "Choose Image"
 msgstr "Izberi sliko"
 
-#: includes/Admin/Pages/TrustBadgesAdminFree.php:130
-#: client/ts/admin/Components/TrustBadgeRow.tsx:132
+#: includes/Admin/Pages/TrustBadgesAdminFree.php:97
+#: client/ts/admin/Components/TrustBadgeRow.tsx:143
 msgid "Clear image"
 msgstr "Počisti sliko"
 
-#: includes/Admin/Pages/TrustBadgesAdminFree.php:134
-#: client/ts/admin/Components/TrustBadgeRow.tsx:140
+#: includes/Admin/Pages/TrustBadgesAdminFree.php:101
+#: client/ts/admin/Components/TrustBadgeRow.tsx:177
 msgid "Description"
 msgstr "Opis"
 
-#: includes/Admin/Pages/TrustBadgesAdminFree.php:136
-#: includes/Admin/Pages/TrustBadgesAdminFree.php:162
+#: includes/Admin/Pages/TrustBadgesAdminFree.php:103
+#: includes/Admin/Pages/TrustBadgesAdminFree.php:129
 msgid "Every product we sell comes with a 30-day money-back guarantee. Have a problem? Let us know and we'll make it right!"
 msgstr "Vsak izdelek, ki ga prodajamo, ima 30-dnevno garancijo vračila denarja. Imate težave? Sporočite nam in uredili bomo!"
 
-#: includes/Admin/Pages/TrustBadgesAdminFree.php:140
+#: includes/Admin/Pages/TrustBadgesAdminFree.php:107
 msgid "WYSIWYG"
 msgstr "WYSIWYG"
 
-#: includes/Admin/Pages/TrustBadgesAdminFree.php:144
+#: includes/Admin/Pages/TrustBadgesAdminFree.php:111
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:428
+#: client/ts/admin/Components/CheckoutEditor/slots/CustomHtmlEditor.tsx:37
+#: client/ts/admin/Components/CheckoutEditor/slots/AssignedItem.tsx:73
 msgid "HTML"
 msgstr "HTML"
 
-#: includes/Admin/Pages/TrustBadgesAdminFree.php:150
-#: client/ts/admin/Components/TrustBadgeRow.tsx:148
-#: client/ts/admin/Components/TrustBadgeRow.tsx:171
+#: includes/Admin/Pages/TrustBadgesAdminFree.php:117
+#: client/ts/admin/Components/TrustBadgeRow.tsx:185
+#: client/ts/admin/Components/TrustBadgeRow.tsx:208
 #: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayConditions.tsx:22
 msgid "Display Conditions"
 msgstr "Pogoji prikaza"
 
-#: includes/Admin/Pages/TrustBadgesAdminFree.php:151
-#: client/ts/admin/Components/TrustBadgeRow.tsx:156
+#: includes/Admin/Pages/TrustBadgesAdminFree.php:118
+#: client/ts/admin/Components/TrustBadgeRow.tsx:193
 msgid "Manage Display Conditions"
 msgstr "Upravljaj pogoje prikaza"
 
-#: includes/Admin/Pages/TrustBadgesAdminFree.php:183
-#: client/ts/admin/Components/TrustBadgeRepeater.tsx:128
+#: includes/Admin/Pages/TrustBadgesAdminFree.php:150
+#: client/ts/admin/Components/TrustBadgeRepeater.tsx:135
 msgid "Add Trust Badge"
 msgstr "Dodaj znak zaupanja"
 
@@ -2664,6 +2602,7 @@ msgstr "Zavrzi?"
 #: includes/Admin/Pages/PageAbstract.php:136
 #: includes/Admin/Pages/PageAbstract.php:157
 #: client/ts/admin/Components/CheckoutEditor/EditorHeader.tsx:203
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:403
 msgid "Save Changes"
 msgstr "Shrani spremembe"
 
@@ -2682,20 +2621,20 @@ msgid "This setting is currently programmatically overridden. To enable it remov
 msgstr "Ta nastavitev je trenutno programatsko preglasjena. Za omogočitev odstranite svojo prilagojeno kodo."
 
 #: includes/Admin/Pages/PageAbstract.php:333
-#: includes/Admin/Pages/Premium/OrderBumps.php:980
+#: includes/Admin/Pages/Premium/OrderBumps.php:1004
 #: includes/Admin/Pages/Premium/AbandonedCartRecovery.php:850
 msgid "Upgrade Your Plan"
 msgstr "Nadgradite svoj načrt"
 
 # %1$s: Account URL, %2$s: Help URL
 #: includes/Admin/Pages/PageAbstract.php:350
-#: includes/Admin/Pages/Premium/OrderBumps.php:990
+#: includes/Admin/Pages/Premium/OrderBumps.php:1014
 #: includes/Admin/Pages/Premium/AbandonedCartRecovery.php:869
 msgid "You can upgrade your license in <a class=\"text-blue-600 underline\" target=\"_blank\" href=\"%1$s\">Account</a>. For help upgrading your license, <a class=\"text-blue-600 underline\" target=\"_blank\" href=\"%2$s\">click here.</a>"
 msgstr "Licenco lahko nadgradite v <a class=\"text-blue-600 underline\" target=\"_blank\" href=\"%1$s\">Računu</a>. Za pomoč pri nadgradnji licence, <a class=\"text-blue-600 underline\" target=\"_blank\" href=\"%2$s\">kliknite tukaj.</a>"
 
 #: includes/Admin/Pages/OrderBumpsAdminFree.php:27
-#: includes/Admin/Pages/Premium/OrderBumps.php:59
+#: includes/Admin/Pages/Premium/OrderBumps.php:60
 msgid "Manage Bumps"
 msgstr "Upravljaj dodatke"
 
@@ -2717,13 +2656,13 @@ msgstr "Dovoli prikaz dodatkov k naročilu."
 
 #: includes/Admin/Pages/OrderBumpsAdminFree.php:81
 #: client/ts/admin/Components/Forms/OrderBumpSettingsForm.tsx:64
-msgid "Maximum Order Bumps"
-msgstr "Največje število dodatkov k naročilu"
+msgid "Maximum Order Bumps Per Slot"
+msgstr "Največje število dodatnih naročil na režo"
 
 #: includes/Admin/Pages/OrderBumpsAdminFree.php:82
 #: client/ts/admin/Components/Forms/OrderBumpSettingsForm.tsx:65
-msgid "The maximum number of bumps that can be displayed per output location. Use -1 for unlimited."
-msgstr "Največje število dodatkov, ki se lahko prikažejo na lokacijo izpisa. Uporabite -1 za neomejeno."
+msgid "The maximum number of order bumps displayed in each checkout slot."
+msgstr "Največje število dodatnih ponudb naročila, prikazanih v vsakem mestu za zaključek nakupa."
 
 #: includes/Admin/Pages/OrderBumpsAdminFree.php:85
 #: client/ts/admin/Components/Forms/OrderBumpSettingsForm.tsx:70
@@ -2731,8 +2670,8 @@ msgid "Maximum Place Order Bumps"
 msgstr "Največje število dodatkov k naročilu"
 
 #: includes/Admin/Pages/OrderBumpsAdminFree.php:86
-msgid "The maximum number of modal bumps that can be displayed after submitting checkout. Use -1 for unlimited."
-msgstr "Največje število modalnih pojavnih oken, ki se lahko prikažejo po oddaji nakupa. Uporabite -1 za neomejeno."
+msgid "The maximum number of modal bumps displayed after submitting checkout."
+msgstr "Največje število modalnih dodatnih ponudb, prikazanih po oddaji naročila."
 
 #: includes/Admin/Pages/LocalPickupAdminFree.php:29
 #: includes/Admin/Pages/Premium/LocalPickupAdmin.php:30
@@ -2861,7 +2800,7 @@ msgstr "Integracije"
 
 #: includes/Admin/Pages/General.php:40
 #: includes/Admin/Pages/General.php:41
-#: includes/Admin/Pages/CheckoutEditor.php:13
+#: includes/Admin/Pages/CheckoutEditor.php:14
 #: client/ts/admin/Components/CheckoutEditor/EditorHeader.tsx:75
 msgid "Checkout Editor"
 msgstr "Urejevalnik blagajne"
@@ -2999,13 +2938,13 @@ msgstr "Predloga in funkcionalnost CheckoutWC bosta začasno zaobideni (samo za 
 
 #: includes/Admin/Pages/ExpressCheckout.php:16
 #: client/ts/admin/Components/Forms/ExpressCheckoutSettingsForm.tsx:54
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:388
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:394
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:413
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:419
 msgid "Express Checkout"
 msgstr "Hitra blagajna"
 
 # 1: Admin page title, 2: Network or site name.
-#: includes/Admin/Pages/CheckoutEditor.php:49
+#: includes/Admin/Pages/CheckoutEditor.php:50
 msgid "%1$s ‹ %2$s — WordPress"
 msgstr "%1$s ‹ %2$s — WordPress"
 
@@ -3038,7 +2977,7 @@ msgid "System Font Stack (fastest)"
 msgstr "Sistemska pisava (najhitreje)"
 
 #: includes/Admin/Pages/Appearance.php:201
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:198
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:219
 msgid "Body"
 msgstr "Telo"
 
@@ -3053,6 +2992,8 @@ msgstr "Ozadje"
 #: includes/Admin/Pages/Appearance.php:219
 #: includes/Admin/Pages/Appearance.php:231
 #: includes/Admin/Pages/Appearance.php:241
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:428
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:247
 msgid "Text"
 msgstr "Besedilo"
 
@@ -3062,21 +3003,21 @@ msgid "Link"
 msgstr "Povezava"
 
 #: includes/Admin/Pages/Appearance.php:211
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:202
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:223
 msgid "Header"
 msgstr "Glava"
 
 #: includes/Admin/Pages/Appearance.php:223
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:203
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:568
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:224
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:627
 msgid "Footer"
 msgstr "Noga"
 
 #: includes/Admin/Pages/Appearance.php:235
 #: client/ts/admin/Components/Forms/WooCommercePagesGlobalOptionsSettingsForm.tsx:48
 #: client/ts/admin/Components/Forms/CheckoutSettingsForm.tsx:569
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:201
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:409
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:222
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:434
 #: client/ts/admin/Components/CheckoutEditor/panels/CheckoutSettingsPanel.tsx:305
 msgid "Cart Summary"
 msgstr "Povzetek košarice"
@@ -3094,7 +3035,7 @@ msgid "Quantity Bubble Text"
 msgstr "Besedilo mehurčka količine"
 
 #: includes/Admin/Pages/Appearance.php:253
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:200
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:221
 msgid "Breadcrumbs"
 msgstr "Drobtinice"
 
@@ -3123,7 +3064,7 @@ msgid "Next Accent"
 msgstr "Naslednji poudarek"
 
 #: includes/Admin/Pages/Appearance.php:267
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:199
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:220
 msgid "Buttons"
 msgstr "Gumbi"
 
@@ -3165,7 +3106,7 @@ msgstr "Barve teme"
 
 #: includes/Admin/Pages/Advanced.php:20
 #: includes/Admin/Pages/Advanced.php:28
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:586
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:645
 msgid "Advanced"
 msgstr "Napredno"
 
@@ -3411,6 +3352,144 @@ msgstr "Omogoči A/B testiranje"
 msgid "Allow A/B tests to be created and applied on the checkout page."
 msgstr "Dovoli ustvarjanje in uporabo A/B testov na strani za plačilo."
 
+#: includes/Admin/Views/html-refund-offer.php:22
+msgid "Product"
+msgstr "Izdelek"
+
+#: includes/Admin/Views/html-refund-offer.php:24
+msgid "Qty"
+msgstr "Količina"
+
+#: includes/Admin/Views/html-refund-offer.php:26
+msgid "Action"
+msgstr "Dejanje"
+
+#: includes/Admin/Views/html-refund-offer.php:89
+msgid "Refund"
+msgstr "Povračilo"
+
+#: includes/Admin/Views/html-refund-offer.php:101
+msgid "No order bump payments found for this order."
+msgstr "Za to naročilo ni najdenih plačil dodatkov k naročilu."
+
+#: includes/Admin/Views/html-refund-offer.php:113
+msgid "Note:"
+msgstr "Opomba:"
+
+#: includes/Admin/Views/html-refund-offer.php:114
+msgid "Refunding an offer will process the refund with the payment gateway and create a WooCommerce refund record."
+msgstr "Povračilo ponudbe bo izvedlo povračilo prek plačilnega prehoda in ustvarilo zapis o povračilu v WooCommerce."
+
+#: includes/Admin/Notices/WelcomeNotice.php:12
+msgid "Welcome to CheckoutWC"
+msgstr "Dobrodošli v CheckoutWC"
+
+#: includes/Admin/Notices/WelcomeNotice.php:20
+msgid "Thank you for installing CheckoutWC! We automatically activated your license. You are all set!"
+msgstr "Hvala, ker ste namestili CheckoutWC! Vaša licenca je bila samodejno aktivirana. Vse je pripravljeno!"
+
+#: includes/Admin/Notices/WelcomeNotice.php:26
+msgid "Thank you for installing CheckoutWC! To get started, enter your <strong>License Key</strong> below, save, and click <strong>Activate Site</strong>."
+msgstr "Hvala, ker ste namestili CheckoutWC! Za začetek vnesite svojo <strong>licenčni ključ</strong> spodaj, shranite in kliknite <strong>Aktiviraj spletno mesto</strong>."
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:20
+msgid "your email"
+msgstr "vaš e-poštni naslov"
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:88
+msgid "privacy policy"
+msgstr "politika zasebnosti"
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:93
+msgid "By joining, %1$s will be added to our mailing list. Read our %2$s."
+msgstr "Z vpisom bo %1$s dodan na naš seznam prejemnikov. Preberite našo %2$s."
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:99
+msgid "Join Newsletter & Save 25%"
+msgstr "Pridružite se novicam in prihranite 25%"
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:102
+msgid "Join Newsletter"
+msgstr "Pridružite se novicam"
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:113
+msgid "Sign up to our newsletter and get proven conversion tips and checkout optimization strategies from the CheckoutWC team."
+msgstr "Prijavite se na naše novice in prejmite preverjene nasvete za konverzijo ter strategije optimizacije blagajne od ekipe CheckoutWC."
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:116
+msgid "Boost Your Conversions with Proven Strategies."
+msgstr "Povečajte svoje konverzije s preverjenimi strategijami."
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:123
+msgid "We're so glad that you've chosen CheckoutWC to handle your checkouts. Unlock more sales with premium features like order bumps, abandoned cart recovery, and much more."
+msgstr "Veseli smo, da ste izbrali CheckoutWC za upravljanje vaših blagajn. Odklenite več prodaje z vrhunskimi funkcijami, kot so dodatki k naročilu, obnova zapuščenih košaric in še več."
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:126
+msgid "Unlock more sales with CheckoutWC Premium"
+msgstr "Odklenite več prodaje z CheckoutWC Premium"
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:144
+msgid "Sorry, there was an error joining our newsletter. Please refresh the page and try again."
+msgstr "Oprostite, pri prijavi na naše novice je prišlo do napake. Osvežite stran in poskusite znova."
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:243
+msgid "Please wait..."
+msgstr "Prosimo, počakajte..."
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:320
+msgid "Sorry, your account has insufficient permissions to join our newsletter."
+msgstr "Oprostite, vaš račun nima zadostnih dovoljenj za prijavo na naše novice."
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:354
+msgid "You have already joined our newsletter!"
+msgstr "Že ste prijavljeni na naše novice!"
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:396
+msgid "Thank you for joining our newsletter!"
+msgstr "Hvala, ker ste se prijavili na naše novice!"
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:410
+msgid "Security check failed."
+msgstr "Varnostni pregled ni uspel."
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:414
+msgid "Insufficient permissions."
+msgstr "Nedovoljena dovoljenja."
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:422
+msgid "Notice dismissed."
+msgstr "Obvestilo je bilo zavrnjeno."
+
+# %1$s: URL to pricing page, %2$s: "purchase a new license" link text, %3$s: Support email URL, %4$s: "please contact support" link text
+#: includes/Admin/Notices/InvalidLicenseKeyNotice.php:15
+msgid "Your license key appears to have expired. Please <a href=\"%1$s\" target=\"_blank\">%2$s</a> to restore functionality. If you believe this is in error, <a href=\"%3$s\">%4$s</a>."
+msgstr "Vaš licenčni ključ je potekel. Prosimo, <a href=\"%1$s\" target=\"_blank\">%2$s</a>, da obnovite funkcionalnost. Če menite, da gre za napako, <a href=\"%3$s\">%4$s</a>."
+
+#: includes/Admin/Notices/InvalidLicenseKeyNotice.php:17
+msgid "purchase a new license"
+msgstr "kupi novo licenco"
+
+#: includes/Admin/Notices/InvalidLicenseKeyNotice.php:19
+msgid "please contact support"
+msgstr "prosimo, kontaktirajte podporo"
+
+# %1$s: URL to activation page, %2$s: "Start Here" link text
+#: includes/Admin/Notices/InactiveLicenseNotice.php:11
+msgid "Your license key is not active for this site. Please visit <a href=\"%1$s\">%2$s</a> to activate your license and restore functionality."
+msgstr "Vaš licenčni ključ ni aktiven za to spletno mesto. Prosimo, obiščite <a href=\"%1$s\">%2$s</a>, da aktivirate svojo licenco in obnovite funkcionalnost."
+
+#: includes/Admin/Notices/BFNotice.php:13
+msgid "Black Friday Sale - 40% Off"
+msgstr "Črni petek razprodaja - 40 % popusta"
+
+#: includes/Admin/Notices/BFNotice.php:14
+msgid "You're missing out on revenue growth tools like Order Bumps, Upsells, Abandoned Cart Recovery and more! Save 40% on CheckoutWC pro plans for Black Friday, ends December 4th"
+msgstr "Izgubljate orodja za rast prihodkov, kot so Order Bumps, Upsells, Obnova zapuščenih košaric in še več! Prihranite 40 % na profesionalnih načrtih CheckoutWC za Črni petek, akcija traja do 4. decembra"
+
+#: includes/Admin/Notices/BFNotice.php:27
+msgid "Get CheckoutWC Pro Now!"
+msgstr "Pridobite CheckoutWC Pro zdaj!"
+
 #: client/ts/functions/cfwFormatDate.ts:38
 msgid "Sunday"
 msgstr "Nedelja"
@@ -3630,347 +3709,342 @@ msgid "Are you sure you want to clear all tracked carts and reset all recovery s
 msgstr "Ali ste prepričani, da želite počistiti vse sledene vozičke in ponastaviti vse statistike okrevanja? To ni mogoče razveljaviti."
 
 #: client/ts/admin/admin.ts:178
-#: client/ts/admin/Components/CheckoutEditor/EditorApp.tsx:123
+#: client/ts/admin/Components/CheckoutEditor/EditorApp.tsx:177
 msgid "Are you sure you want to discard all unsaved changes?"
 msgstr "Ali ste prepričani, da želite zavreči vse neshranjene spremembe?"
 
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:59
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:244
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:60
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:245
 msgid "Variants"
 msgstr "Variacije"
 
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:128
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:129
 msgid "Invalid action"
 msgstr "Neveljavna akcija"
 
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:198
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:199
 msgid "The order bump originally configured for this A/B test is no longer available."
 msgstr "Naročni sunek, prvotno nastavljen za ta A/B test, ni več na voljo."
 
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:199
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:200
 msgid "It is recommended you"
 msgstr "Priporočamo, da"
 
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:201
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:202
 msgid "delete this A/B test"
 msgstr "izbrišete ta A/B test"
 
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:210
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:1627
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:211
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:1631
 msgid "Are you sure you want to delete this A/B test? This action cannot be undone."
 msgstr "Ste prepričani, da želite izbrisati ta A/B test? Tega dejanja ni mogoče razveljaviti."
 
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:236
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:237
 msgid "Select the order bump to test variants against."
 msgstr "Izberite naročni sunek, s katerim boste preizkusili variacije."
 
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:251
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:1996
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2086
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:252
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2000
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2090
 msgid "Select an order bump to view and manage variants."
 msgstr "Izberite naročni sunek za ogled in upravljanje variacij."
 
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:256
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:257
 msgid "Manage variants for this A/B test. Click \"Create Variant\" to add a new variant."
 msgstr "Upravljajte variacije za ta A/B test. Kliknite \"Ustvari varianto\" za dodajanje nove variante."
 
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:272
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:273
 msgid "Traffic Split"
 msgstr "Razdelitev prometa"
 
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:276
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:277
 msgid "Equal"
 msgstr "Enako"
 
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:277
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:278
 msgid "Custom"
 msgstr "Po meri"
 
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:280
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:281
 msgid "Choose how to split traffic between the original order bump and variants. Equal splits traffic evenly, Custom allows you to set specific percentages."
 msgstr "Izberite, kako razdeliti promet med izvirnim naročnim sunekom in variacijami. Enako razdeli promet enakomerno, Po meri pa omogoča nastavitev določenih odstotkov."
 
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:286
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:287
 msgid "Traffic Percentages"
 msgstr "Odstotki prometa"
 
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:291
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:292
 msgid "Enter percentages for the original order bump and each variant. Total must equal 100%."
 msgstr "Vnesite odstotke za izvirni naročni sunek in vsako varianto. Skupaj mora biti 100%."
 
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:530
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:589
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:531
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:590
 msgid "Draft"
 msgstr "Osnutek"
 
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:532
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:591
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:533
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:592
 msgid "Trashed"
 msgstr "Izbrisano"
 
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:536
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:1546
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:537
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:1550
 msgid "Original"
 msgstr "Izvirnik"
 
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:540
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:605
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:1558
-#: includes/Admin/Pages/Premium/OrderBumps.php:125
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:541
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:606
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:1562
+#: includes/Admin/Pages/Premium/OrderBumps.php:126
 msgid "Conversion Rate"
 msgstr "Stopnja konverzije"
 
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:544
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:609
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:1562
-#: includes/Admin/Pages/Premium/OrderBumps.php:126
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:545
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:610
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:1566
+#: includes/Admin/Pages/Premium/OrderBumps.php:127
 msgid "Revenue"
 msgstr "Prihodki"
 
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:550
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:618
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:1572
-#: includes/Admin/Pages/Premium/OrderBumps.php:127
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:489
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:551
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:619
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:1576
+#: includes/Admin/Pages/Premium/OrderBumps.php:128
 msgid "Location"
 msgstr "Lokacija"
 
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:554
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:622
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:1582
-#: includes/Admin/Pages/Premium/OrderBumps.php:128
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:555
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:623
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:1586
+#: includes/Admin/Pages/Premium/OrderBumps.php:129
 #: client/ts/admin/Components/Metaboxes/OrderBumpsSetupModal.tsx:77
 #: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:31
 msgid "Offer Product"
 msgstr "Ponudba izdelka"
 
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:596
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:597
 msgid "Delete variant"
 msgstr "Izbriši varianto"
 
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:629
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2301
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2319
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:630
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2305
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2323
 msgid "Select Winner"
 msgstr "Izberi zmagovalca"
 
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:649
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2264
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:650
 #: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2268
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2274
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2272
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2278
 msgid "Create Variant"
 msgstr "Ustvari varianto"
 
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:846
-msgid "After Checkout Submit"
-msgstr "Po oddaji naročila"
-
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:864
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:860
 msgid "Order bump saved"
 msgstr "Naročni sunek je shranjen"
 
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:881
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:877
 msgid "Invalid order bump ID."
 msgstr "Neveljavna ID naročnega suneka."
 
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:907
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:903
 msgid "Invalid variant ID."
 msgstr "Neveljavna ID variante."
 
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:916
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:912
 msgid "This is not a valid variant."
 msgstr "To ni veljavna varianta."
 
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:929
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:925
 msgid "Variant does not belong to the specified order bump."
 msgstr "Varianta ne pripada določenemu naročnemu suneku."
 
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:944
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2154
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:940
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2158
 msgid "Failed to delete variant."
 msgstr "Brisanje variante ni uspelo."
 
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:957
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:953
 msgid "Variant deleted successfully."
 msgstr "Varianta je bila uspešno izbrisana."
 
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:1101
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:1097
 msgid "Invalid test ID."
 msgstr "Neveljavna ID testa."
 
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:1108
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:1104
 msgid "Variant title is required."
 msgstr "Naslov variante je obvezen."
 
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:1117
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:1260
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:1113
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:1264
 msgid "Invalid test."
 msgstr "Neveljaven test."
 
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:1134
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:1130
 msgid "Please select an order bump for this test before creating variants."
 msgstr "Pred ustvarjanjem variacij izberite naročni sunek za ta test."
 
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:1143
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:1139
 msgid "Order bump not found."
 msgstr "Naročni sunek ni najden."
 
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:1160
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2266
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:1156
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2270
 msgid "Failed to create variant."
 msgstr "Ustvarjanje variante ni uspelo."
 
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:1203
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:1199
 msgid "Variant created successfully."
 msgstr "Varianta je bila uspešno ustvarjena."
 
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:1233
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:1237
 msgid "Winner set successfully."
 msgstr "Zmagovalec je bil uspešno nastavljen."
 
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:1251
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:1255
 msgid "Invalid variant or test ID."
 msgstr "Neveljavna ID variante ali testa."
 
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:1269
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:1273
 msgid "Test must be marked as Complete before selecting a winner."
 msgstr "Test mora biti označen kot dokončan, preden izberete zmagovalca."
 
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:1278
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:1282
 msgid "No order bump associated with this test."
 msgstr "S tem testom ni povezan noben naročni sunek."
 
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:1298
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:1302
 msgid "Invalid variant."
 msgstr "Neveljavna varianta."
 
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:1306
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:1310
 msgid "The original order bump cannot be set as the winner. Please select a variant."
 msgstr "Izvirni naročni sunek ne more biti nastavljen kot zmagovalec. Prosimo, izberite varianto."
 
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:1314
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:1318
 msgid "Variant does not belong to this test."
 msgstr "Varianta ne pripada temu testu."
 
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:1494
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:1498
 msgid "This test is active. It ends once you set the status to completed or when the end date is reached. You can then select a winner."
 msgstr "Ta test je aktiven. Konča se, ko nastavite status na dokončan ali ko doseže datum konca. Nato lahko izberete zmagovalca."
 
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:1497
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:1501
 msgid "This test is paused due to one or more of the following conditions:"
 msgstr "Ta test je začasno ustavljen zaradi enega ali več naslednjih pogojev:"
 
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:1498
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:1502
 msgid "It was manually paused or is not published"
 msgstr "Bil je ročno ustavljen ali ni objavljen"
 
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:1499
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:1503
 msgid "Original order bump is not published or was deleted"
 msgstr "Izvirni naročni sunek ni objavljen ali je bil izbrisan"
 
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:1500
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:1504
 msgid "Order bump variants are not created or published"
 msgstr "Variacije naročnega suneka niso ustvarjene ali objavljene"
 
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:1501
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:1505
 msgid "A/B testing and/or order bumps features have been disabled"
 msgstr "Funkcije A/B testiranja in/ali naročnih sunek so onemogočene"
 
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:1502
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:1506
 msgid "If these are no longer true and you want to resume the test, set the status to active."
 msgstr "Če to ni več res in želite nadaljevati test, nastavite status na aktiven."
 
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:1506
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:1510
 msgid "This test is complete. Select a variant below as the winner."
 msgstr "Ta test je dokončan. Izberite varianto spodaj kot zmagovalca."
 
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:1510
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:1514
 msgid "This test is complete, and a winner has already been selected."
 msgstr "Ta test je dokončan in zmagovalec je že izbran."
 
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:1546
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:1550
 msgid "Winner"
 msgstr "Zmagovalec"
 
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:1611
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:1615
 msgid "delete this test"
 msgstr "izbriši ta test"
 
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:1616
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:1620
 msgid "To create a new A/B test for the \"%1$s\" order bump, %2$s."
 msgstr "Za ustvarjanje novega A/B testa za \"%1$s\" order bump, %2$s."
 
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:1813
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:1817
 msgid "Existing Test:"
 msgstr "Obstoječi test:"
 
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:1850
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:1854
 msgid "Search for an order bump..."
 msgstr "Išči order bump..."
 
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:1955
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:1959
 msgid "You have not yet created any order bumps."
 msgstr "Še niste ustvarili nobenih order bumpov."
 
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:1957
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:1961
 msgid "Create an order bump"
 msgstr "Ustvari order bump"
 
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2017
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2021
 msgid "Loading variants..."
 msgstr "Nalaganje različic..."
 
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2053
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2059
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2057
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2063
 msgid "Error loading variants."
 msgstr "Napaka pri nalaganju različic."
 
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2105
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2109
 msgid "Are you sure you want to delete this variant? This action cannot be undone. If using a custom traffic split, the traffic percentages will be redistributed proportionally across the remaining variants."
 msgstr "Ste prepričani, da želite izbrisati to različico? Tega dejanja ni mogoče razveljaviti. Če uporabljate prilagojeno razdelitev prometa, bodo odstotki prometa sorazmerno prerazporejeni med preostale različice."
 
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2159
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2163
 msgid "An error occurred while deleting the variant."
 msgstr "Pri brisanju različice je prišlo do napake."
 
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2184
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2258
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2188
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2262
 msgid "Edit Variant"
 msgstr "Uredi različico"
 
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2218
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2222
 msgid "Enter a title for this variant:"
 msgstr "Vnesite naslov za to različico:"
 
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2226
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2230
 msgid "Creating..."
 msgstr "Ustvarjanje..."
 
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2272
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2276
 msgid "An error occurred while creating the variant."
 msgstr "Pri ustvarjanju različice je prišlo do napake."
 
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2292
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2296
 msgid "Selecting this variant as the winner will update the original order bump to match it and delete variants."
 msgstr "Izbira te različice kot zmagovalke bo posodobila izvirni order bump, da bo ustrezal tej, in izbrisala druge različice."
 
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2296
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2300
 msgid "Apply this variant\\'s conversion stats to the original order bump."
 msgstr "Uporabi statistiko konverzij te različice za izvirni order bump."
 
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2354
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2358
 msgid "Failed to select winner."
 msgstr "Izbira zmagovalca ni uspela."
 
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2359
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2363
 msgid "An error occurred while setting the winner."
 msgstr "Pri nastavitvi zmagovalca je prišlo do napake."
 
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2392
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2396
 msgid "Traffic split percentages must total exactly 100%. Please adjust your percentages before saving."
 msgstr "Odstotki razdelitve prometa morajo skupaj znašati natanko 100%. Prosimo, prilagodite odstotke pred shranjevanjem."
 
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2479
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2483
 msgid "(Original)"
 msgstr "(Izvirnik)"
 
@@ -3998,37 +4072,27 @@ msgstr "CheckoutWC: Po skupnih zneskih stranske košarice"
 msgid "CheckoutWC: After Side Cart Buttons"
 msgstr "CheckoutWC: Po gumbih stranske košarice"
 
-#: includes/Admin/Pages/Premium/OrderBumps.php:124
+#: includes/Admin/Pages/Premium/OrderBumps.php:125
 msgid "ID"
 msgstr "ID"
 
-#: includes/Admin/Pages/Premium/OrderBumps.php:125
+#: includes/Admin/Pages/Premium/OrderBumps.php:126
 msgid "Conversion Rate tracks how often a bump is added to an actual completed purchase. If 20 orders are placed and a bump was displayed on 10 of those orders and the bump was purchased 5 times, the conversion rate is 50%."
 msgstr "Stopnja konverzije spremlja, kako pogosto je bil dodan dodatek (bump) k dejansko dokončanemu nakupu. Če je bilo oddanih 20 naročil in je bil dodatek prikazan pri 10 od teh naročil ter je bil kupljen 5-krat, je stopnja konverzije 50 %."
 
-#: includes/Admin/Pages/Premium/OrderBumps.php:126
+#: includes/Admin/Pages/Premium/OrderBumps.php:127
 msgid "The additional revenue that an Order Bump has captured. When configured as an upsell, it calculates the relative value between the offer product and the product being replaced. Revenues incurred before version 6.1.4 are estimated."
 msgstr "Dodatni prihodki, ki jih je zajel Order Bump. Ko je nastavljen kot upsell, izračuna relativno vrednost med ponudbenim izdelkom in izdelkom, ki ga nadomešča. Prihodki, nastali pred različico 6.1.4, so ocenjeni."
 
-#: includes/Admin/Pages/Premium/OrderBumps.php:160
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:99
-msgid "Place Order Click (Checkout)"
-msgstr "Klik za oddajo naročila (blagajna)"
-
-#: includes/Admin/Pages/Premium/OrderBumps.php:162
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:100
-msgid "Post Purchase One-Click (Thank You)"
-msgstr "Nakup z enim klikom po nakupu (Hvala)"
-
-#: includes/Admin/Pages/Premium/OrderBumps.php:208
+#: includes/Admin/Pages/Premium/OrderBumps.php:232
 msgid "View Test"
 msgstr "Poglej test"
 
-#: includes/Admin/Pages/Premium/OrderBumps.php:218
+#: includes/Admin/Pages/Premium/OrderBumps.php:242
 msgid "Add Test"
 msgstr "Dodaj test"
 
-#: includes/Admin/Pages/Premium/OrderBumps.php:297
+#: includes/Admin/Pages/Premium/OrderBumps.php:321
 msgid "All <span class=\"count\">(%s)</span>"
 msgid_plural "All <span class=\"count\">(%s)</span>"
 msgstr[0] "Vsi <span class=\"count\">(%s)</span>"
@@ -4036,16 +4100,16 @@ msgstr[1] ""
 msgstr[2] ""
 msgstr[3] ""
 
-#: includes/Admin/Pages/Premium/OrderBumps.php:495
+#: includes/Admin/Pages/Premium/OrderBumps.php:519
 msgid "Reset Order Bump Conversion Stats"
 msgstr "Ponastavi statistiko konverzij za Order Bump"
 
 # %1$d: Allowed bump count, %2$d: Used bump count
-#: includes/Admin/Pages/Premium/OrderBumps.php:983
+#: includes/Admin/Pages/Premium/OrderBumps.php:1007
 msgid "Your CheckoutWC plan allows you to create %1$d Order Bumps. You have used %2$d."
 msgstr "Vaš CheckoutWC načrt vam omogoča ustvarjanje %1$d Order Bumpov. Uporabili ste %2$d."
 
-#: includes/Admin/Pages/Premium/OrderBumps.php:986
+#: includes/Admin/Pages/Premium/OrderBumps.php:1010
 msgid "You cannot create or publish new Order Bumps if you are over the limit."
 msgstr "Ne morete ustvariti ali objaviti novih Order Bumpov, če ste prekoračili omejitev."
 
@@ -4285,36 +4349,45 @@ msgstr "Pravilnik o zasebnosti"
 msgid "Close Cart"
 msgstr "Zapri košarico"
 
-#: client/ts/admin/Components/TrustBadgeRow.tsx:172
+#: client/ts/admin/Components/TrustBadgeRow.tsx:151
+msgid "Slot"
+msgstr "Mesto"
+
+#: client/ts/admin/Components/TrustBadgeRow.tsx:158
+msgid "Multiple slots — manage in checkout editor"
+msgstr "Več mest — upravljajte v urejevalniku zaključka nakupa"
+
+#: client/ts/admin/Components/TrustBadgeRow.tsx:209
 msgid "Determine when this Trust Badge should be displayed."
 msgstr "Določite, kdaj naj bo ta znak zaupanja prikazan."
 
-#: client/ts/admin/Components/TrustBadgeRow.tsx:177
+#: client/ts/admin/Components/TrustBadgeRow.tsx:214
 #: client/ts/admin/Components/CheckoutEditor/EditorHeader.tsx:61
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:207
 msgid "Close"
 msgstr "Zapri"
 
-#: client/ts/admin/Components/TrustBadgeRow.tsx:187
+#: client/ts/admin/Components/TrustBadgeRow.tsx:224
 msgid "Guarantee Title"
 msgstr "Naslov garancije"
 
-#: client/ts/admin/Components/TrustBadgeRow.tsx:188
+#: client/ts/admin/Components/TrustBadgeRow.tsx:225
 msgid "The details of your guarantee."
 msgstr "Podrobnosti vaše garancije."
 
-#: client/ts/admin/Components/TrustBadgeRow.tsx:193
+#: client/ts/admin/Components/TrustBadgeRow.tsx:230
 msgid "Example Customer Name"
 msgstr "Primer imena stranke"
 
-#: client/ts/admin/Components/TrustBadgeRow.tsx:194
+#: client/ts/admin/Components/TrustBadgeRow.tsx:231
 msgid "Example Customer Role"
 msgstr "Primer vloge stranke"
 
-#: client/ts/admin/Components/TrustBadgeRow.tsx:195
+#: client/ts/admin/Components/TrustBadgeRow.tsx:232
 msgid "The glowingly positive review text!"
 msgstr "Izjemno pozitivno besedilo ocene!"
 
-#: client/ts/admin/Components/TrustBadgeRow.tsx:207
+#: client/ts/admin/Components/TrustBadgeRow.tsx:244
 msgid "Are you sure you want to remove this trust badge?"
 msgstr "Ste prepričani, da želite odstraniti ta znak zaupanja?"
 
@@ -4340,7 +4413,7 @@ msgid "Yes, replace my settings!"
 msgstr "Da, zamenjaj moje nastavitve!"
 
 #: client/ts/admin/Components/SettingsFormContainer.tsx:27
-#: client/ts/admin/Components/CheckoutEditor/EditorApp.tsx:114
+#: client/ts/admin/Components/CheckoutEditor/EditorApp.tsx:168
 msgid "Failed to save settings. Error: %s"
 msgstr "Neuspešno shranjevanje nastavitev. Napaka: %s"
 
@@ -4409,48 +4482,48 @@ msgstr "Spremeni način dostave"
 msgid "Change payment method"
 msgstr "Spremeni način plačila"
 
-#: client/ts/admin/Components/acr/carts.tsx:32
+#: client/ts/admin/Components/acr/carts.tsx:33
 msgid "All"
 msgstr "Vse"
 
-#: client/ts/admin/Components/acr/carts.tsx:36
+#: client/ts/admin/Components/acr/carts.tsx:37
 msgid "New"
 msgstr "Novo"
 
-#: client/ts/admin/Components/acr/carts.tsx:40
+#: client/ts/admin/Components/acr/carts.tsx:41
 msgid "Abandoned"
 msgstr "Zapuščeno"
 
-#: client/ts/admin/Components/acr/carts.tsx:44
+#: client/ts/admin/Components/acr/carts.tsx:45
 msgid "Recovered"
 msgstr "Obnovljeno"
 
-#: client/ts/admin/Components/acr/carts.tsx:48
+#: client/ts/admin/Components/acr/carts.tsx:49
 msgid "Lost"
 msgstr "Izgubljeno"
 
-#: client/ts/admin/Components/acr/carts.tsx:52
+#: client/ts/admin/Components/acr/carts.tsx:53
 msgid "Unsubscribed"
 msgstr "Odjavljen"
 
-#: client/ts/admin/Components/acr/carts.tsx:81
+#: client/ts/admin/Components/acr/carts.tsx:86
 msgid "Emails Sent"
 msgstr "Poslana e-pošta"
 
-#: client/ts/admin/Components/acr/carts.tsx:87
+#: client/ts/admin/Components/acr/carts.tsx:92
 msgid "Date"
 msgstr "Datum"
 
-#: client/ts/admin/Components/acr/carts.tsx:179
-#: client/ts/admin/Components/acr/carts.tsx:187
+#: client/ts/admin/Components/acr/carts.tsx:184
+#: client/ts/admin/Components/acr/carts.tsx:192
 msgid "Cart Items"
 msgstr "Predmeti v košarici"
 
-#: client/ts/admin/Components/acr/carts.tsx:180
+#: client/ts/admin/Components/acr/carts.tsx:185
 msgid "Loading..."
 msgstr "Nalaganje..."
 
-#: client/ts/admin/Components/acr/carts.tsx:234
+#: client/ts/admin/Components/acr/carts.tsx:239
 msgid "Tracked Carts"
 msgstr "Spremljane košarice"
 
@@ -4703,75 +4776,44 @@ msgstr "Kateri izdelek ta upsell nadomešča v košarici?"
 msgid "This product must be in the cart for this order bump to be shown."
 msgstr "Ta izdelek mora biti v košarici, da se ta order bump prikaže."
 
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:32
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:31
 msgid "Block Editor is only used for Full Screen Order Bumps (Configurable for Place Order and Post Purchase One-Click bumps). Blocks are ignored for other configurations."
 msgstr "Urejevalnik blokov se uporablja samo za Order Bumpe na celotnem zaslonu (nastavljivo za Place Order in Post Purchase One-Click bumps). Bloki se prezrejo za druge konfiguracije."
 
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:48
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:47
 msgid "Post Purchase One-Click bumps require a compatible payment gateway. We recommend using Place Order bumps when using non-compatible gateways."
 msgstr "Post Purchase One-Click bumps zahtevajo združljiv plačilni prehod. Priporočamo uporabo Place Order bumps pri uporabi nezdružljivih prehodov."
 
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:54
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:53
 msgid "Learn more about supported gateways"
 msgstr "Izvedite več o podprtih prehodih"
 
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:61
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:60
 msgid "Read our Order Bumps documentation"
 msgstr "Preberite našo dokumentacijo o Order Bumps"
 
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:82
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:83
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:90
 msgid "Display Location"
 msgstr "Lokacija prikaza"
 
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:91
-msgid "Below Cart Items"
-msgstr "Pod izdelki v košarici"
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:99
+msgid "Checkout Slot"
+msgstr "Mesto zaključka nakupa"
 
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:92
-msgid "Below Cart Items (Side Cart Only)"
-msgstr "Pod izdelki v košarici (samo stranska košarica)"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:93
-msgid "Below Cart Items (Checkout Only)"
-msgstr "Pod izdelki v košarici (samo blagajna)"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:94
-msgid "Above Terms and Conditions"
-msgstr "Nad pogoji in določili"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:95
-msgid "Above Express Checkout"
-msgstr "Nad Express Checkout"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:96
-msgid "Bottom of Information Step"
-msgstr "Spodaj na koraku informacij"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:97
-msgid "Bottom of Shipping Step"
-msgstr "Spodaj na koraku dostave"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:98
-msgid "Below Complete Order Button"
-msgstr "Pod gumbom za dokončanje naročila"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:109
-msgid "Note: Displays above the terms and conditions on mobile devices."
-msgstr "Opomba: Prikazuje se nad pogoji in določili na mobilnih napravah."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:112
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:129
 msgid "Displays in a popup when Place Order is clicked, before the order is submitted"
 msgstr "Prikazuje se v pojavnem oknu, ko kliknete Oddaj naročilo, preden je naročilo poslano"
 
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:115
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:132
 msgid "Displays in a popup on the Thank You page."
 msgstr "Prikazuje se v pojavnem oknu na strani Zahvaljujemo se vam."
 
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:119
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:136
 msgid "Full Screen Landing Page (Use Block Editor To Design)"
 msgstr "Celoten zaslon pristajalne strani (uporabite urejevalnik blokov za oblikovanje)"
 
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:120
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:137
 msgid "If checked, the bump offer will be displayed full screen. Use Order Bump Offer Form block to design the offer."
 msgstr "Če je označeno, bo ponudba bump prikazana na celotnem zaslonu. Za oblikovanje ponudbe uporabite blok Order Bump Offer Form."
 
@@ -4830,7 +4872,7 @@ msgid "Enable sale price under on cart item labels at checkout. Example: <s>$10.
 msgstr "Omogoči prodajno ceno pod oznakami predmetov v košarici na blagajni. Primer: <s>$10.00</s> $5.00"
 
 #: client/ts/admin/Components/Forms/WooCommercePagesGlobalOptionsSettingsForm.tsx:61
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:452
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:477
 msgid "Cart Item Links"
 msgstr "Povezave predmetov v košarici"
 
@@ -4847,7 +4889,7 @@ msgid "Do not link cart items to single product page. (Recommended)"
 msgstr "Ne povezuj predmetov v košarici na stran posameznega izdelka. (Priporočeno)"
 
 #: client/ts/admin/Components/Forms/WooCommercePagesGlobalOptionsSettingsForm.tsx:71
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:456
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:481
 msgid "Enabled"
 msgstr "Omogočeno"
 
@@ -4864,7 +4906,7 @@ msgid "Open cart item links in a new window."
 msgstr "Odpri povezave predmetov v košarici v novem oknu."
 
 #: client/ts/admin/Components/Forms/WooCommercePagesGlobalOptionsSettingsForm.tsx:89
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:461
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:486
 msgid "Cart Item Data Display"
 msgstr "Prikaz podatkov o predmetih v košarici"
 
@@ -4883,7 +4925,7 @@ msgstr "Prikaži samo vrednosti različic. Na primer, Velikost: XL, Barva: Rdeč
 #: client/ts/admin/Components/Forms/WooCommercePagesGlobalOptionsSettingsForm.tsx:99
 #: client/ts/admin/Components/Forms/CheckoutSettingsForm.tsx:191
 #: client/ts/admin/Components/Forms/CheckoutSettingsForm.tsx:212
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:465
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:490
 #: client/ts/admin/Components/CheckoutEditor/panels/CheckoutSettingsPanel.tsx:85
 #: client/ts/admin/Components/CheckoutEditor/panels/CheckoutSettingsPanel.tsx:97
 msgid "WooCommerce Default"
@@ -4901,81 +4943,98 @@ msgstr "Pravila trgovine"
 msgid "Store Policies are displayed as links in the footer of the checkout, order pay, and thank you pages. Clicking them displays the policy in a modal window."
 msgstr "Pravila trgovine so prikazana kot povezave v nogi strani blagajne, plačila naročila in strani zahvale. Klik nanje prikaže pravilo v modalnem oknu."
 
-#: client/ts/admin/Components/Forms/TrustBadgeSettingsForm.tsx:121
+#: client/ts/admin/Components/Forms/TrustBadgeSettingsForm.tsx:67
+msgid "Create trust badges below and choose a slot for each. Fine-tune placement in the"
+msgstr "Ustvarite zaščitne oznake zaupanja spodaj in izberite mesto za vsako. Natančno prilagodite postavitev v"
+
+#: client/ts/admin/Components/Forms/TrustBadgeSettingsForm.tsx:67
+#: client/ts/admin/Components/Forms/TrustBadgeSettingsForm.tsx:91
+msgid "checkout editor"
+msgstr "urejevalniku zaključka nakupa"
+
+#: client/ts/admin/Components/Forms/TrustBadgeSettingsForm.tsx:67
+msgid "Turn this setting off to hide all trust badges."
+msgstr "To nastavitev izklopite, da skrijete vse zaščitne oznake zaupanja."
+
+#: client/ts/admin/Components/Forms/TrustBadgeSettingsForm.tsx:84
 msgid "WooCommerce Reviews"
 msgstr "WooCommerce ocene"
 
-#: client/ts/admin/Components/Forms/TrustBadgeSettingsForm.tsx:122
-msgid "Automatically display WooCommerce product reviews as trust badges."
-msgstr "Samodejno prikaži WooCommerce ocene izdelkov kot značke zaupanja."
+#: client/ts/admin/Components/Forms/TrustBadgeSettingsForm.tsx:85
+msgid "Display WooCommerce product reviews as trust badges."
+msgstr "Prikažite ocene izdelkov WooCommerce kot zaščitne oznake zaupanja."
 
-#: client/ts/admin/Components/Forms/TrustBadgeSettingsForm.tsx:127
+#: client/ts/admin/Components/Forms/TrustBadgeSettingsForm.tsx:90
 msgid "Enable WooCommerce Review Badges"
 msgstr "Omogoči značke ocen WooCommerce"
 
-#: client/ts/admin/Components/Forms/TrustBadgeSettingsForm.tsx:128
-msgid "Automatically show product reviews as trust badges alongside manually created badges."
-msgstr "Samodejno prikaži ocene izdelkov kot značke zaupanja skupaj z ročno ustvarjenimi značkami."
+#: client/ts/admin/Components/Forms/TrustBadgeSettingsForm.tsx:91
+msgid "Once enabled, assign them to slots in the"
+msgstr "Ko je omogočeno, jih dodelite mestom v"
 
-#: client/ts/admin/Components/Forms/TrustBadgeSettingsForm.tsx:139
+#: client/ts/admin/Components/Forms/TrustBadgeSettingsForm.tsx:91
+msgid "Turn this setting off to hide customer reviews."
+msgstr "To nastavitev izklopite, da skrijete ocene strank."
+
+#: client/ts/admin/Components/Forms/TrustBadgeSettingsForm.tsx:102
 msgid "Reviewbird is connected. Reviews will be sourced from Reviewbird."
 msgstr "Reviewbird je povezan. Mnenja bodo pridobljena iz Reviewbird."
 
-#: client/ts/admin/Components/Forms/TrustBadgeSettingsForm.tsx:145
+#: client/ts/admin/Components/Forms/TrustBadgeSettingsForm.tsx:108
 msgid "Review Source Priority"
 msgstr "Prednost vira ocen"
 
-#: client/ts/admin/Components/Forms/TrustBadgeSettingsForm.tsx:146
+#: client/ts/admin/Components/Forms/TrustBadgeSettingsForm.tsx:109
 msgid "Choose which reviews to prioritize for display."
 msgstr "Izberite, katere ocene naj imajo prednost pri prikazu."
 
-#: client/ts/admin/Components/Forms/TrustBadgeSettingsForm.tsx:148
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:528
+#: client/ts/admin/Components/Forms/TrustBadgeSettingsForm.tsx:111
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:578
 msgid "Cart products only"
 msgstr "Samo izdelki v košarici"
 
-#: client/ts/admin/Components/Forms/TrustBadgeSettingsForm.tsx:149
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:529
+#: client/ts/admin/Components/Forms/TrustBadgeSettingsForm.tsx:112
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:579
 msgid "Cart products first, then site-wide"
 msgstr "Najprej izdelki v košarici, nato po celotni strani"
 
-#: client/ts/admin/Components/Forms/TrustBadgeSettingsForm.tsx:150
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:530
+#: client/ts/admin/Components/Forms/TrustBadgeSettingsForm.tsx:113
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:580
 msgid "Any product reviews"
 msgstr "Katere koli ocene izdelkov"
 
-#: client/ts/admin/Components/Forms/TrustBadgeSettingsForm.tsx:157
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:535
+#: client/ts/admin/Components/Forms/TrustBadgeSettingsForm.tsx:120
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:585
 msgid "Minimum Star Rating"
 msgstr "Minimalna ocena z zvezdicami"
 
-#: client/ts/admin/Components/Forms/TrustBadgeSettingsForm.tsx:158
+#: client/ts/admin/Components/Forms/TrustBadgeSettingsForm.tsx:121
 msgid "Only show reviews with this rating or higher."
 msgstr "Prikaži samo ocene s to oceno ali višjo."
 
-#: client/ts/admin/Components/Forms/TrustBadgeSettingsForm.tsx:160
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:539
+#: client/ts/admin/Components/Forms/TrustBadgeSettingsForm.tsx:123
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:588
 msgid "3+ stars"
 msgstr "3+ zvezdice"
 
-#: client/ts/admin/Components/Forms/TrustBadgeSettingsForm.tsx:161
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:540
+#: client/ts/admin/Components/Forms/TrustBadgeSettingsForm.tsx:124
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:589
 msgid "4+ stars"
 msgstr "4+ zvezdice"
 
-#: client/ts/admin/Components/Forms/TrustBadgeSettingsForm.tsx:162
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:541
+#: client/ts/admin/Components/Forms/TrustBadgeSettingsForm.tsx:125
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:590
 msgid "5 stars only"
 msgstr "Samo 5 zvezdic"
 
-#: client/ts/admin/Components/Forms/TrustBadgeSettingsForm.tsx:169
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:546
+#: client/ts/admin/Components/Forms/TrustBadgeSettingsForm.tsx:132
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:595
 msgid "Maximum Reviews to Show"
 msgstr "Največje število prikazanih ocen"
 
-#: client/ts/admin/Components/Forms/TrustBadgeSettingsForm.tsx:170
-msgid "How many WooCommerce reviews to display (1-5)"
-msgstr "Koliko WooCommerce ocen prikazati (1-5)"
+#: client/ts/admin/Components/Forms/TrustBadgeSettingsForm.tsx:133
+msgid "How many WooCommerce reviews to display (1-6)"
+msgstr "Koliko ocen WooCommerce prikazati (1-6)"
 
 #: client/ts/admin/Components/Forms/ThankYouSettingsForm.tsx:54
 msgid "Control the Order Received / Thank You endpoint."
@@ -5225,8 +5284,8 @@ msgid "Enable Continue Shopping Button at bottom of Side Cart. Disabled by defau
 msgstr "Omogoči gumb Nadaljuj z nakupovanjem na dnu stranske košarice. Privzeto onemogočeno."
 
 #: client/ts/admin/Components/Forms/OrderBumpSettingsForm.tsx:71
-msgid "The maximum number of modal bumps that can be displayed after clicking Place Order. Use -1 for unlimited."
-msgstr "Največje število modalnih bumpov, ki se lahko prikažejo po kliku na Oddaj naročilo. Uporabite -1 za neomejeno."
+msgid "The maximum number of modal bumps displayed after clicking Place Order."
+msgstr "Največje število modalnih dodatnih ponudb, prikazanih po kliku na Oddaj naročilo."
 
 #: client/ts/admin/Components/Forms/LocalPickupSettingsForm.tsx:126
 msgid "You probably do not want to select any pickup methods here. If you do not select any Local Pickup Shipping Methods, we will add an ad-hoc local pickup shipping method in each zone for you. If you would prefer to manage this yourself, you can select the methods you want to use here."
@@ -5348,10 +5407,6 @@ msgstr "Pred načini plačila"
 msgid "Display before payment method selection"
 msgstr "Prikaži pred izbiro načina plačila"
 
-#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:144
-msgid "After Payment Methods"
-msgstr "Po načinih plačila"
-
 #: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:145
 msgid "Display after payment method selection"
 msgstr "Prikaži po izbiri načina plačila"
@@ -5398,7 +5453,7 @@ msgstr "Velikost pripomočka Turnstile"
 
 #: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:168
 #: client/ts/admin/Components/Forms/AppearanceDesignSettingsForm.tsx:84
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:340
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:365
 #: client/ts/admin/Components/CheckoutEditor/panels/DesignSettingsPanel.tsx:131
 msgid "Normal"
 msgstr "Normalna"
@@ -5485,7 +5540,7 @@ msgid "See our recommended Express Checkout gateways here."
 msgstr "Oglejte si naše priporočene plačilne prehode Express Checkout tukaj."
 
 #: client/ts/admin/Components/Forms/CheckoutSettingsForm.tsx:109
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:231
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:256
 #: client/ts/admin/Components/CheckoutEditor/panels/CheckoutSettingsPanel.tsx:29
 msgid "Steps"
 msgstr "Koraki"
@@ -5625,7 +5680,7 @@ msgid "Control how different checkout fields appear."
 msgstr "Nadzorujte, kako se prikažejo različna polja zaključka nakupa."
 
 #: client/ts/admin/Components/Forms/CheckoutSettingsForm.tsx:232
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:345
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:370
 #: client/ts/admin/Components/CheckoutEditor/panels/CheckoutSettingsPanel.tsx:107
 msgid "Phone Field"
 msgstr "Polje za telefon"
@@ -5636,19 +5691,19 @@ msgid "Determines whether the WooCommerce native phone field is enabled."
 msgstr "Določa, ali je vgrajeno WooCommerce polje za telefon omogočeno."
 
 #: client/ts/admin/Components/Forms/CheckoutSettingsForm.tsx:237
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:348
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:373
 #: client/ts/admin/Components/CheckoutEditor/panels/CheckoutSettingsPanel.tsx:110
 msgid "Hidden"
 msgstr "Skrito"
 
 #: client/ts/admin/Components/Forms/CheckoutSettingsForm.tsx:241
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:349
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:374
 #: client/ts/admin/Components/CheckoutEditor/panels/CheckoutSettingsPanel.tsx:111
 msgid "Optional"
 msgstr "Neobvezno"
 
 #: client/ts/admin/Components/Forms/CheckoutSettingsForm.tsx:245
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:350
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:375
 #: client/ts/admin/Components/CheckoutEditor/panels/CheckoutSettingsPanel.tsx:112
 msgid "Required"
 msgstr "Obvezno"
@@ -5663,7 +5718,7 @@ msgid "Enable or disable WooCommerce Order Notes field. (Default: Disabled)"
 msgstr "Omogoči ali onemogoči WooCommerce polje za opombe k naročilu. (Privzeto: onemogočeno)"
 
 #: client/ts/admin/Components/Forms/CheckoutSettingsForm.tsx:260
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:332
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:357
 #: client/ts/admin/Components/CheckoutEditor/panels/CheckoutSettingsPanel.tsx:124
 msgid "Order Notes field is being controlled by a filter or a plugin."
 msgstr "Polje za opombe k naročilu nadzoruje filter ali vtičnik."
@@ -5697,7 +5752,7 @@ msgid "Values are combined into a single address_1 field based on country select
 msgstr "Vrednosti so združene v eno polje address_1 glede na državo, ki jo izbere kupec."
 
 #: client/ts/admin/Components/Forms/CheckoutSettingsForm.tsx:298
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:289
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:314
 #: client/ts/admin/Components/CheckoutEditor/panels/CheckoutSettingsPanel.tsx:155
 msgid "Separate Address Fields Display Order"
 msgstr "Vrstni red prikaza ločenih polj naslova"
@@ -5707,7 +5762,7 @@ msgid "Choose how display separate address 1 fields."
 msgstr "Izberite, kako prikazati ločena polja address 1."
 
 #: client/ts/admin/Components/Forms/CheckoutSettingsForm.tsx:304
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:293
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:318
 #: client/ts/admin/Components/CheckoutEditor/panels/CheckoutSettingsPanel.tsx:159
 msgid "[House Number] [Street Name]"
 msgstr "[Hišna številka] [Ime ulice]"
@@ -5717,7 +5772,7 @@ msgid "Display the House Number before the Street Name. (Default)"
 msgstr "Prikaži hišno številko pred imenom ulice. (Privzeto)"
 
 #: client/ts/admin/Components/Forms/CheckoutSettingsForm.tsx:309
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:294
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:319
 #: client/ts/admin/Components/CheckoutEditor/panels/CheckoutSettingsPanel.tsx:160
 msgid "[Street Name] [House Number]"
 msgstr "[Ime ulice] [Hišna številka]"
@@ -5749,14 +5804,13 @@ msgid "Promote selected countries to the top of the countries list in country dr
 msgstr "Izbrane države premaknite na vrh seznama držav v spustnih menijih."
 
 #: client/ts/admin/Components/Forms/CheckoutSettingsForm.tsx:344
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:310
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:319
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:335
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:344
 #: client/ts/admin/Components/CheckoutEditor/panels/CheckoutSettingsPanel.tsx:185
 msgid "Highlighted Countries"
 msgstr "Označene države"
 
 #: client/ts/admin/Components/Forms/CheckoutSettingsForm.tsx:345
-#: client/ts/admin/Components/CheckoutEditor/panels/CheckoutSettingsPanel.tsx:186
 msgid "The countries to show first in country dropdowns."
 msgstr "Države, ki se prikažejo prve v spustnih menijih držav."
 
@@ -5834,7 +5888,7 @@ msgid "Control address fields."
 msgstr "Nadzor polj naslova."
 
 #: client/ts/admin/Components/Forms/CheckoutSettingsForm.tsx:412
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:363
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:388
 #: client/ts/admin/Components/CheckoutEditor/panels/CheckoutSettingsPanel.tsx:222
 msgid "Force Different Billing Address"
 msgstr "Zahtevaj drugačen naslov za obračun"
@@ -5864,43 +5918,43 @@ msgid "Choose which billing address fields are visible for customers."
 msgstr "Izberite, katera polja za naslov za obračun so vidna strankam."
 
 #: client/ts/admin/Components/Forms/CheckoutSettingsForm.tsx:431
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:372
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:397
 #: client/ts/admin/Components/CheckoutEditor/panels/CheckoutSettingsPanel.tsx:237
 msgid "First Name"
 msgstr "Ime"
 
 #: client/ts/admin/Components/Forms/CheckoutSettingsForm.tsx:435
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:373
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:398
 #: client/ts/admin/Components/CheckoutEditor/panels/CheckoutSettingsPanel.tsx:238
 msgid "Last Name"
 msgstr "Priimek"
 
 #: client/ts/admin/Components/Forms/CheckoutSettingsForm.tsx:439
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:374
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:399
 #: client/ts/admin/Components/CheckoutEditor/panels/CheckoutSettingsPanel.tsx:239
 msgid "Address 1"
 msgstr "Naslov 1"
 
 #: client/ts/admin/Components/Forms/CheckoutSettingsForm.tsx:443
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:375
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:400
 #: client/ts/admin/Components/CheckoutEditor/panels/CheckoutSettingsPanel.tsx:240
 msgid "Address 2"
 msgstr "Naslov 2"
 
 #: client/ts/admin/Components/Forms/CheckoutSettingsForm.tsx:447
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:376
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:401
 #: client/ts/admin/Components/CheckoutEditor/panels/CheckoutSettingsPanel.tsx:241
 msgid "Company"
 msgstr "Podjetje"
 
 #: client/ts/admin/Components/Forms/CheckoutSettingsForm.tsx:451
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:377
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:402
 #: client/ts/admin/Components/CheckoutEditor/panels/CheckoutSettingsPanel.tsx:242
 msgid "Country"
 msgstr "Država"
 
 #: client/ts/admin/Components/Forms/CheckoutSettingsForm.tsx:463
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:380
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:405
 #: client/ts/admin/Components/CheckoutEditor/panels/CheckoutSettingsPanel.tsx:245
 msgid "City"
 msgstr "Mesto"
@@ -6103,8 +6157,8 @@ msgid "Configure your template."
 msgstr "Konfigurirajte svojo predlogo."
 
 #: client/ts/admin/Components/Forms/AppearanceDesignSettingsForm.tsx:66
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:153
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:159
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:174
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:180
 #: client/ts/admin/Components/CheckoutEditor/panels/DesignSettingsPanel.tsx:119
 msgid "Logo"
 msgstr "Logotip"
@@ -6114,7 +6168,7 @@ msgid "Choose the logo you wish to display in the header. If you do not choose a
 msgstr "Izberite logotip, ki ga želite prikazati v glavi. Če ne izberete logotipa, bomo uporabili ime vaše strani."
 
 #: client/ts/admin/Components/Forms/AppearanceDesignSettingsForm.tsx:74
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:336
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:361
 #: client/ts/admin/Components/CheckoutEditor/panels/DesignSettingsPanel.tsx:127
 msgid "Field Label Style"
 msgstr "Slog oznake polja"
@@ -6125,7 +6179,7 @@ msgid "Choose how you want form labels styled."
 msgstr "Izberite, kako želite oblikovati oznake obrazca."
 
 #: client/ts/admin/Components/Forms/AppearanceDesignSettingsForm.tsx:79
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:339
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:364
 #: client/ts/admin/Components/CheckoutEditor/panels/DesignSettingsPanel.tsx:130
 msgid "Floating (Recommended)"
 msgstr "Lebdeče (priporočeno)"
@@ -6140,7 +6194,7 @@ msgid "Labels appear above each field at all times."
 msgstr "Oznake so vedno prikazane nad vsakim poljem."
 
 #: client/ts/admin/Components/Forms/AppearanceDesignSettingsForm.tsx:105
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:168
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:189
 #: client/ts/admin/Components/CheckoutEditor/panels/DesignSettingsPanel.tsx:149
 msgid "Typography"
 msgstr "Tipografija"
@@ -6150,7 +6204,7 @@ msgid "Configure fonts."
 msgstr "Konfigurirajte pisave."
 
 #: client/ts/admin/Components/Forms/AppearanceDesignSettingsForm.tsx:111
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:174
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:195
 #: client/ts/admin/Components/CheckoutEditor/panels/DesignSettingsPanel.tsx:152
 msgid "Body Font"
 msgstr "Pisava telesa"
@@ -6161,7 +6215,7 @@ msgid "Choose the font for the body text."
 msgstr "Izberite pisavo za glavno besedilo."
 
 #: client/ts/admin/Components/Forms/AppearanceDesignSettingsForm.tsx:119
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:180
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:201
 #: client/ts/admin/Components/CheckoutEditor/panels/DesignSettingsPanel.tsx:159
 msgid "Heading Font"
 msgstr "Pisava naslovov"
@@ -6172,7 +6226,7 @@ msgid "Choose the font for the headings."
 msgstr "Izberite pisavo za naslove."
 
 #: client/ts/admin/Components/Forms/AppearanceDesignSettingsForm.tsx:131
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:188
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:209
 #: client/ts/admin/Components/CheckoutEditor/panels/DesignSettingsPanel.tsx:166
 msgid "Colors"
 msgstr "Barve"
@@ -6358,15 +6412,15 @@ msgstr "Označite katero koli uporabniško vlogo, ki naj bo izključena iz e-po�
 msgid "Are you sure you want to delete all tracked carts?"
 msgstr "Ali ste prepričani, da želite izbrisati vse sledene košarice?"
 
-#: client/ts/admin/Components/CheckoutEditor/EditorPreview.tsx:59
+#: client/ts/admin/Components/CheckoutEditor/EditorPreview.tsx:98
 msgid "No products can be found to show in the editor. Ensure you have products which are published and in stock."
 msgstr "V urejevalniku ni mogoče najti izdelkov za prikaz. Prepričajte se, da imate izdelke, ki so objavljeni in na zalogi."
 
-#: client/ts/admin/Components/CheckoutEditor/EditorPreview.tsx:99
+#: client/ts/admin/Components/CheckoutEditor/EditorPreview.tsx:148
 msgid "Updating preview…"
 msgstr "Posodabljanje predogleda…"
 
-#: client/ts/admin/Components/CheckoutEditor/EditorPreview.tsx:108
+#: client/ts/admin/Components/CheckoutEditor/EditorPreview.tsx:157
 msgid "Checkout Preview"
 msgstr "Predogled blagajne"
 
@@ -6419,130 +6473,162 @@ msgstr "Na"
 msgid "Off"
 msgstr "Izklopljeno"
 
-#: client/ts/admin/Components/CheckoutEditor/EditorApp.tsx:70
+#: client/ts/admin/Components/CheckoutEditor/EditorApp.tsx:99
 msgid "You have unsaved changes. Are you sure you want to leave?"
 msgstr "Imate neshranjene spremembe. Ste prepričani, da želite oditi?"
 
-#: client/ts/admin/Components/CheckoutEditor/EditorApp.tsx:150
+#: client/ts/admin/Components/CheckoutEditor/EditorApp.tsx:204
 msgid "Changing templates will update the logo, typography, colors, field label style, and footer text to those defined by the selected template. Are you sure you want to continue?"
 msgstr "Spreminjanje predlog bo posodobilo logotip, tipografijo, barve, slog oznak polj in besedilo v nogi na tiste, ki jih določa izbrana predloga. Ste prepričani, da želite nadaljevati?"
 
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:66
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:79
 msgid "Step"
 msgstr "Korak"
 
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:105
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:119
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:126
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:140
 #: client/ts/admin/Components/CheckoutEditor/panels/DesignSettingsPanel.tsx:86
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:27
 msgid "Paid plan required"
 msgstr "Zahteva se plačani načrt"
 
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:141
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:162
 #: client/ts/admin/Components/CheckoutEditor/panels/DesignSettingsPanel.tsx:108
 msgid "A Basic, Plus, Pro, or Agency plan is required to access all templates."
 msgstr "Za dostop do vseh predlog je potreben osnovni, Plus, Pro ali agencijski načrt."
 
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:237
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:228
+msgid "Misc"
+msgstr "Razno"
+
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:262
 msgid "Shipping Methods"
 msgstr "Metode dostave"
 
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:246
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:271
 msgid "Order Review"
 msgstr "Pregled naročila"
 
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:254
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:279
 msgid "One Page Checkout"
 msgstr "Enostranska blagajna"
 
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:264
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:289
 msgid "Fields"
 msgstr "Polja"
 
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:270
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:295
 msgid "Address Fields Link"
 msgstr "Povezava polj naslova"
 
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:275
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:300
 msgid "Coupon Code Link"
 msgstr "Povezava kode kupona"
 
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:281
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:306
 msgid "Full Name Field"
 msgstr "Polje polno ime"
 
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:301
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:326
 msgid "Separate House Number/Street Name"
 msgstr "Ločeno hišna številka/ulica"
 
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:327
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:336
+#: client/ts/admin/Components/CheckoutEditor/panels/CheckoutSettingsPanel.tsx:186
+msgid "Countries selected here will appear at the top of the billing and shipping country dropdowns, making them quicker for customers to find."
+msgstr "Države, izbrane tukaj, se bodo prikazale na vrhu spustnih seznamov za državo za obračunavanje in dostavo, kar bo strankam omogočilo hitrejše iskanje."
+
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:352
 msgid "Order Notes"
 msgstr "Opombe k naročilu"
 
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:357
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:382
 msgid "Addresses"
 msgstr "Naslovi"
 
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:368
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:393
 msgid "Billing Address Fields"
 msgstr "Polja za naslov za obračun"
 
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:401
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:426
 msgid "No supported gateways detected.<br><a class=\"text-blue-600 hover:text-blue-800\" target=\"_blank\" href=\"https://www.checkoutwc.com/documentation/supported-express-payment-gateways/\">See our recommendations.</a>"
 msgstr "Ni zaznanih podprtih plačilnih prehodov.<br><a class=\"text-blue-600 hover:text-blue-800\" target=\"_blank\" href=\"https://www.checkoutwc.com/documentation/supported-express-payment-gateways/\">Oglejte si naša priporočila.</a>"
 
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:419
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:444
 msgid "Variation Edits"
 msgstr "Urejanje različic"
 
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:425
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:450
 msgid "Item Remove"
 msgstr "Odstranitev artikla"
 
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:434
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:459
 msgid "Cart Editing"
 msgstr "Urejanje košarice"
 
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:442
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:467
 msgid "Sale Prices"
 msgstr "Prodajne cene"
 
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:447
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:472
 msgid "Sticky Cart on Scroll"
 msgstr "Lepljiva košarica ob pomiku"
 
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:455
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:480
 msgid "Disabled"
 msgstr "Onemogočeno"
 
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:464
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:489
 msgid "Short"
 msgstr "Kratko"
 
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:472
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:497
+msgid "Slots"
+msgstr "Prosti mesti"
+
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:513
 msgid "Badges"
 msgstr "Značke"
 
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:499
-msgid "To add trust badges, you can manage them in"
-msgstr "Za dodajanje zaupanja vrednih značk jih lahko upravljate v"
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:523
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:557
+msgid "Checkout Area Columns"
+msgstr "Stolpci območja zaključka nakupa"
 
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:504
-msgid "trust badges settings"
-msgstr "nastavitvah zaupanja vrednih značk"
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:529
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:563
+msgid "Cart Summary Area Columns"
+msgstr "Stolpci območja povzetka košarice"
 
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:524
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:535
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:569
+msgid "Mobile Columns"
+msgstr "Stolpci za mobilne naprave"
+
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:575
 msgid "Priority"
 msgstr "Prednost"
 
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:557
-msgid "Review Badges"
-msgstr "Pregled značk"
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:604
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:402
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:418
+#: client/ts/admin/Components/CheckoutEditor/slots/AssignedItem.tsx:64
+msgid "Customer Reviews"
+msgstr "Mnenja strank"
 
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:574
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:613
+msgid "Add badges to your checkout layout in"
+msgstr "Dodajte značke v postavitev zaključka nakupa v"
+
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:619
+msgid "slots"
+msgstr "prosta mesta"
+
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:633
 msgid "Footer Text"
 msgstr "Besedilo v nogi"
 
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:591
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:650
 msgid "The settings in this editor cover the most commonly used options for most stores. However, many additional settings are available. Once you\\'ve saved any changes, head over to the CheckoutWC menu in your WordPress dashboard to explore more options."
 msgstr "Nastavitve v tem urejevalniku pokrivajo najpogosteje uporabljene možnosti za večino trgovin. Vendar je na voljo še veliko dodatnih nastavitev. Ko shranite spremembe, pojdite v meni CheckoutWC v vaši WordPress nadzorni plošči, da raziščete več možnosti."
 
@@ -6681,6 +6767,216 @@ msgstr "Prikaži logotipe kreditnih kartic na mobilnih napravah."
 #: client/ts/admin/Components/CheckoutEditor/panels/CheckoutSettingsPanel.tsx:379
 msgid "Example: Show order summary and coupons."
 msgstr "Primer: Prikaži povzetek naročila in kupone."
+
+# %s: item type e.g. "order bump"
+#: client/ts/admin/Components/CheckoutEditor/slots/UnsavedChangesDialog.tsx:37
+msgid "Create a new %s"
+msgstr "Ustvari novega %s"
+
+# %s: item type e.g. "order bump"
+#: client/ts/admin/Components/CheckoutEditor/slots/UnsavedChangesDialog.tsx:42
+msgid "A new tab will open where you can create your %s. When you\\'ve saved it, close that tab and return here - the editor will update automatically."
+msgstr "Odprlo se bo novo okno, kjer lahko ustvarite svoj %s. Ko ga shranite, zaprite to okno in se vrnite sem - urejevalnik se bo samodejno posodobil."
+
+# %s: item type e.g. "order bump"
+#: client/ts/admin/Components/CheckoutEditor/slots/UnsavedChangesDialog.tsx:59
+msgid "Create %s"
+msgstr "Ustvari %s"
+
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotsPanel.tsx:161
+msgid "No slots available."
+msgstr "Ni razpoložljivih mest."
+
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotsPanel.tsx:198
+msgid "Order bumps are assigned to slots but the feature is disabled. Enable order bumps in"
+msgstr "Dodatne ponudbe so dodeljene mestom, vendar je funkcija onemogočena. Omogočite dodatne ponudbe v"
+
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotsPanel.tsx:204
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotsPanel.tsx:224
+msgid "order bumps"
+msgstr "dodatnih ponudbah"
+
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotsPanel.tsx:218
+msgid "One or more slots exceed the maximum order bumps per slot. Increase the limit in"
+msgstr "Eno ali več mest presega največje število dodatnih ponudb na mesto. Povečajte omejitev v"
+
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotsPanel.tsx:238
+msgid "Trust badges are assigned to slots but the feature is disabled. Enable trust badges in"
+msgstr "Zaupni žetoni so dodeljeni režam, vendar je funkcija onemogočena. Omogočite zaupne žetone v"
+
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotsPanel.tsx:244
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotsPanel.tsx:264
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotsPanel.tsx:313
+msgid "badges"
+msgstr "žetoni"
+
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotsPanel.tsx:258
+msgid "Customer reviews are assigned to slots but the feature is disabled. Enable customer reviews in"
+msgstr "Mnenja strank so dodeljena režam, vendar je funkcija onemogočena. Omogočite mnenja strank v"
+
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotsPanel.tsx:307
+msgid "Column settings for badges are configured in"
+msgstr "Nastavitve stolpcev za žetone so konfigurirane v"
+
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:115
+msgid "This order bump is part of an active A/B test. It cannot be removed while the test is running."
+msgstr "Ta dodatna ponudba je del aktivnega A/B testa. Med izvajanjem testa je ni mogoče odstraniti."
+
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:119
+msgid "Remove this item from the slot?"
+msgstr "Odstraniti ta element iz reže?"
+
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:208
+msgid "Assign item to slot"
+msgstr "Dodeli element reži"
+
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:258
+msgid "On mobile and tablets, this slot is inside the \"Show order summary\" section."
+msgstr "Na mobilnih napravah in tablicah je ta rež v razdelku »Prikaži povzetek naročila«."
+
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:268
+msgid "This slot won\\'t be shown for pickups."
+msgstr "Ta rež ne bo prikazan za prevzeme."
+
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:279
+msgid "On mobile and tablets, the cart collapses and order bumps in this slot will move to the Above Terms & Conditions slot."
+msgstr "Na mobilnih napravah in tablicah se košarica strne, dodatne ponudbe v tej reži pa se premaknejo v režo Nad pogoji in določili."
+
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:319
+msgid "Release to drop here"
+msgstr "Spustite za vnašanje sem"
+
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:322
+msgid "No items assigned."
+msgstr "Ni dodeljenih elementov."
+
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:329
+msgid "Add item"
+msgstr "Dodaj element"
+
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:414
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:233
+msgid "Level"
+msgstr "Nivo"
+
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:433
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:252
+msgid "e.g. Why choose us?"
+msgstr "npr. Zakaj izbrati nas?"
+
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:441
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:475
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:260
+msgid "Margin"
+msgstr "Rob"
+
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:446
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:480
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:265
+msgid "e.g., 10px 0 20px 0"
+msgstr "npr., 10px 0 20px 0"
+
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:464
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:499
+msgid "Save"
+msgstr "Shrani"
+
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:201
+msgid "Add Item"
+msgstr "Dodaj element"
+
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:227
+msgid "+ New heading"
+msgstr "+ Nova naslovnica"
+
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:284
+#: client/ts/admin/Components/CheckoutEditor/slots/CustomHtmlEditor.tsx:40
+msgid "Add"
+msgstr "Dodaj"
+
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:302
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:371
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:419
+msgid "(in slot)"
+msgstr "(v režo)"
+
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:303
+msgid "(in other slot)"
+msgstr "(v drugem režo)"
+
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:329
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:340
+msgid "+ New order bump"
+msgstr "+ Nov dodatek k naročilu"
+
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:336
+msgid "order bump"
+msgstr "dodatek k naročilu"
+
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:337
+msgid "A new tab will open where you can create your order bump. When you\\'ve saved it, close that tab and return here — it will be added to your chosen slot automatically."
+msgstr "Odprlo se bo novo okno, kjer lahko ustvarite svoj dodatek k naročilu. Ko ga shranite, zaprite to okno in se vrnite sem — samodejno bo dodan v izbrani režo."
+
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:379
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:390
+msgid "+ New trust badge"
+msgstr "+ Novi znak zaupanja"
+
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:386
+msgid "trust badge"
+msgstr "znak zaupanja"
+
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:387
+msgid "A new tab will open where you can create your trust badge. When you\\'ve saved it, close that tab and return here — it will appear in this list ready to assign."
+msgstr "Odprlo se bo novo okno, kjer lahko ustvarite svoj znak zaupanja. Ko ga shranite, zaprite to okno in se vrnite sem — pojavil se bo na tem seznamu, pripravljen za dodelitev."
+
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:399
+msgid "Review Badges"
+msgstr "Pregled značk"
+
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:436
+msgid "+ New HTML"
+msgstr "+ Nov HTML"
+
+#: client/ts/admin/Components/CheckoutEditor/slots/CustomHtmlEditor.tsx:46
+msgid "Name (optional)"
+msgstr "Ime (neobvezno)"
+
+#: client/ts/admin/Components/CheckoutEditor/slots/CustomHtmlEditor.tsx:51
+msgid "e.g. Free Shipping Promo"
+msgstr "npr. Promocija brezplačne dostave"
+
+#: client/ts/admin/Components/CheckoutEditor/slots/CustomHtmlEditor.tsx:59
+msgid "HTML content"
+msgstr "Vsebina HTML"
+
+#: client/ts/admin/Components/CheckoutEditor/slots/AssignedItem.tsx:66
+msgid "(empty heading)"
+msgstr "(prazno naslovno polje)"
+
+#: client/ts/admin/Components/CheckoutEditor/slots/AssignedItem.tsx:148
+msgid "This order bump is part of an active A/B test and cannot be moved or removed while the test is running."
+msgstr "Ta dodatek k naročilu je del aktivnega A/B testa in ga med izvajanjem testa ni mogoče premakniti ali odstraniti."
+
+#: client/ts/admin/Components/CheckoutEditor/slots/AssignedItem.tsx:151
+msgid "This bump is placed here automatically by its Checkout and Side Cart display location. It also appears in the side cart and isn\\'t counted toward this slot\\'s order bump limit."
+msgstr "Ta dodatek je tukaj samodejno postavljen glede na lokacijo prikaza na blagajni in stranski košarici. Prav tako se pojavi v stranski košarici in se ne šteje v omejitev dodatkov za ta režo."
+
+#: client/ts/admin/Components/CheckoutEditor/slots/AssignedItem.tsx:154
+msgid "This item has display conditions. It will only appear to customers who meet the configured criteria and may not be visible on every checkout."
+msgstr "Ta element ima prikazne pogoje. Pojavil se bo samo strankam, ki izpolnjujejo nastavljene kriterije, in morda ne bo viden na vseh blagajnah."
+
+#: client/ts/admin/Components/CheckoutEditor/slots/AssignedItem.tsx:157
+msgid "The offer product for this bump is already in the preview cart, so it may not be visible in the preview."
+msgstr "Ponudbeni izdelek za ta dodatek je že v predogledu košarice, zato morda ni viden v predogledu."
+
+#: client/ts/admin/Components/CheckoutEditor/slots/AssignedItem.tsx:168
+msgid "Drag to reorder"
+msgstr "Povlecite za spremembo vrstnega reda"
+
+#: client/ts/admin/Components/CheckoutEditor/slots/AssignedItem.tsx:241
+msgid "Remove"
+msgstr "Odstrani"
 
 #: client/ts/admin/Components/Metaboxes/Fields/Rules/fields.ts:47
 msgid "Is equal to"
@@ -6955,15 +7251,15 @@ msgid "Delete Rule"
 msgstr "Izbriši pravilo"
 
 # %d: shipping package number
-#: functions/functions.php:381
-#: functions/functions.php:3446
-msgctxt "woocommerce"
+#: functions/functions.php:384
+#: functions/functions.php:3451
+msgctxt "shipping packages"
 msgid "Shipping"
 msgid_plural "Shipping %d"
-msgstr[0] "Pošiljanje"
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "Dostava"
+msgstr[1] "Dostava %d"
+msgstr[2] "Dostava %d"
+msgstr[3] "Dostava %d"
 
 #: includes/Features/OneClick/OrderStatusManager.php:47
 #: includes/Features/OneClick/OrderStatusManager.php:64

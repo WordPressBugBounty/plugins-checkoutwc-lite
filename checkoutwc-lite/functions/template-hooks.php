@@ -117,6 +117,19 @@ add_action( 'cfw_checkout_cart_summary', 'cfw_close_cart_summary_div', 75 ); // 
 // Lost password modal
 add_action( 'cfw_checkout_main_container_end', 'cfw_lost_password_modal_container' );
 
+// Terms & conditions modal content: replace WooCommerce core's emitter with a
+// <template>-based one so page-builder markup can't corrupt the checkout layout
+// (see cfw_terms_and_conditions_page_content()). Deferred to init so it runs
+// after WooCommerce has registered its own callback regardless of plugin load order.
+add_action(
+	'init',
+	function() {
+		remove_action( 'woocommerce_checkout_terms_and_conditions', 'wc_terms_and_conditions_page_content', 30 );
+		add_action( 'woocommerce_checkout_terms_and_conditions', 'cfw_terms_and_conditions_page_content', 30 );
+	},
+	20
+);
+
 /**
  * Thank You (Order Received)
  *

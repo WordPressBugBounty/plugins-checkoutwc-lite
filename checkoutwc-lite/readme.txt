@@ -1,160 +1,153 @@
-=== CheckoutWC Lite ===
+=== CheckoutWC Lite – Conversion optimized WooCommerce checkout ===
 Contributors: kestrelwp, clifgriffin
 Donate link: https://www.checkoutwc.com
-Tags: woocommerce-checkout, checkout-optimization, cart-abandonment, one-page-checkout, express-checkout
+Tags: checkout, woocommerce-checkout, express-checkout, checkout-optimization, cart-abandonment
 Requires at least: 5.2
-Tested up to: 7.0
-Stable tag: 11.1.4
+Tested up to: 7.0.1
+Stable tag: 11.2.0
 Requires PHP: 7.4
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
-Replace your WooCommerce checkout page with a beautiful, mobile friendly, conversion optimized, Shopify like checkout template.
+Shopify-style WooCommerce checkout that lifts conversions. Free express payments (Apple Pay, Google Pay, PayPal) and address autocomplete.
 
 == Description ==
 
-<strong>Checkout Optimization for WooCommerce - Why replace your WooCommerce Checkout?</strong>
+<strong>Stop losing sales to WooCommerce's clunky default checkout.</strong>
 
-Stop losing sales to WooCommerce's clunky default checkout. CheckoutWC gives you a modern, Shopify-style checkout proven to boost conversions 20-35% based on real customer reports. With express payments (Apple Pay, Google Pay, PayPal), address autocomplete, instant validation, and mobile-first design
+CheckoutWC replaces it with a fast, Shopify-style checkout that customers report <strong>boosts conversions 20-35%</strong>.
 
-<strong>The best Shopify features with the best of WooCommerce ✅</strong>
+Free express payments (<strong>Apple Pay, Google Pay, and PayPal</strong>) and smart address autocomplete are built in - no page builders, no funnel hacks, no monthly SaaS fees.
 
-Which do you think is easier: doubling your traffic or doubling your conversion rate from 1% to 2%? 🤔
+Free forever. No credit card, no page builder, no monthly SaaS fee - set up your optimized checkout in minutes.
 
-The answer is probably obvious: it’s much easier and less expensive to fix a leaky checkout page than it is to double the number of people who visit your site. Lead generation is expensive!
+[youtube https://www.youtube.com/watch?v=Hh3lV0gbX78]
 
-### Highlights
-- Beautiful <strong>multi-step</strong> checkout that guide customers smoothly through your store
-- <strong>Express checkout</strong>: Apple Pay, Google Pay, PayPal - one-click checkout with supported gateways
-- <strong>Mobile-first design</strong> that looks great on any device
-- <strong>Smart validation & autocomplete</strong> (ZIP/postal → city/state, email domain suggestions)
-- <strong>Cart & shipping optimizations<strong>:  only ask customers for the information you need, whether you're selling digital goods, subscriptions, or regular shipped products
-- <strong>Customer conveniences</strong>: existing user detection, clear totals, sensible billing address controls
-- <strong>Theme & gateway compatibility</strong>: works with popular WooCommerce themes and payment providers
+Thousands of WooCommerce stores use CheckoutWC to reduce cart abandonment and turn more visitors into buyers.
 
-CheckoutWC provides a modern, <strong>conversion-focused WooCommerce checkout</strong> that’s 100% responsive and easy to tailor to your site, no more page builders or funnel hacks required.
-Here are the major benefits of optimizing your WooCommerce checkout with CheckoutWC:
+### A checkout built to reduce cart abandonment
 
-<strong>Conversion-Optimized WooCommerce Checkout Template</strong>
+<strong>A guided, Shopify-style checkout flow</strong>
 
-Replace the default WooCommerce checkout with a beautiful multi-step template inspired by Shopify and built for higher conversions. Instead of a clunky, one-size-fits-all checkout that causes cart abandonment, you get a modern flow that guides customers through each step with clarity. Our merchants consistently see higher conversion rates simply by switching to CheckoutWC.
+Replace WooCommerce's one-page wall of fields with a clean multi-step flow: contact info, then shipping, then payment. Each step feels short and achievable, which is exactly what reduces cart abandonment on mobile.
 
-<strong>Express Checkout Options</strong>
+<strong>Express payments that close the sale in seconds</strong>
 
-Support for Apple Pay, Google Pay, and PayPal gateways gives you a true express checkout experience. Customers can skip the form and complete their order in seconds, which dramatically reduces cart abandonment and improves mobile checkout performance. Express checkout is one of the easiest ways to increase revenue without changing your products or traffic.
+Apple Pay, Google Pay, and PayPal let customers skip the form entirely and pay with one tap. Express checkout is one of the fastest ways to lift revenue without changing your products or traffic - and it's free in CheckoutWC Lite.
 
-<strong>Mobile-Friendly & One Page Checkout Ready</strong>
+<strong>Fewer form errors, faster entry</strong>
 
-Every CheckoutWC template is 100% responsive and optimized for phones, tablets, and desktops. Whether you prefer a multi-step WooCommerce checkout or a single one page checkout flow, CheckoutWC makes it easy to give customers a faster, smoother experience on every device.
+ZIP/postal autocomplete fills in city and state automatically, and inline validation catches mistakes before they cause failed orders. Less typing, fewer errors, more completed checkouts.
 
-<strong>Smart Field Handling with Address Autocomplete</strong>
+<strong>Works with your theme and gateway</strong>
 
-Stop losing sales to slow, error-prone forms. CheckoutWC includes instant field validation, email domain suggestions, and address autocomplete (zip → city/state). These features save time, reduce mistakes, and make the WooCommerce checkout process feel polished.
+CheckoutWC takes over the checkout without a page builder, so it fits your existing store. It works with all WooCommerce themes and every major payment gateway. If it works with WooCommerce's default checkout, it works with CheckoutWC.
 
-<strong>Cart & Shipping Optimizations</strong>
+### What store owners say
 
-Fight cart abandonment with built-in checkout optimizations: skip the cart page entirely, skip shipping fields when not needed, hide optional fields, and collapse extra inputs. CheckoutWC Lite also makes sure sale prices and totals are displayed clearly, which increases trust and helps customers complete their purchase.
+"CheckoutWC has taken our WooCommerce checkout to the next level! We were able to create a simple, streamlined, elegant checkout flow that made purchasing effortless. After launch we saw an over 50% increase in conversion rate." - Scott Marquart, Stringjoy
 
-<strong>Customer-Friendly Experience Improvements</strong>
+"By far the most important plugin we have for our site. The constant development, fast support, and great community make this plugin 5 stars. The streamlined checkout has helped our conversion rates at least 30%." - Michael Savage, Lynx Defense
 
-Detect existing users by email, simplify billing address handling, show mobile cart totals above the place order button, and make free orders frictionless by hiding unnecessary billing fields. These small touches create a checkout that feels intuitive and professional, which keeps customers coming back.
+"The work CheckoutWC has done to help make WooCommerce checkouts look and feel natural, and drive conversion, is top notch. I highly recommend CheckoutWC to every store I talk with." - Chris Lema, Cherith
 
-<strong>Works With Every Theme & Payment Gateway</strong>
+"CheckoutWC makes customizing the checkout page easy and the process for customers even easier. A more pleasant experience for them, and more sales for me." - Joe Casabona, How I Built It
 
-CheckoutWC Lite is designed for broad compatibility. It works with all WooCommerce themes, all payment gateways, and popular extensions out of the box. No matter how your store is set up, CheckoutWC makes sure your WooCommerce checkout just works.
+### How it works
 
-<strong>Developer-Friendly Tools</strong>
+1. Install and activate - CheckoutWC takes over your WooCommerce checkout with sensible defaults.
+2. Set your logo, colors, and layout in the CheckoutWC settings.
+3. Go live - customers move through a faster, guided checkout on every device.
 
-Need more control? CheckoutWC Lite includes options to add header and footer scripts or extend functionality with PHP snippets. Developers can easily customize the WooCommerce checkout experience without fighting against page builders or messy templates. Do what the WooCommerce block checkout won’t let you!
+### Everything in CheckoutWC Lite (free)
+
+- <strong>Shopify-style multi-step checkout</strong> that replaces the default WooCommerce checkout page
+- <strong>Express checkout</strong>: Apple Pay, Google Pay, and PayPal with supported gateways
+- <strong>Address autocomplete</strong>: ZIP/postal code fills city and state automatically
+- <strong>Smart inline validation</strong> that catches errors before they cost you the order
+- <strong>Mobile-first design</strong> that's 100% responsive on phones, tablets, and desktops
+- <strong>Customizable branding</strong>: set your logo and colors to match your store
+- <strong>Universal compatibility</strong>: works with all WooCommerce themes and payment gateways
+
+If it works with WooCommerce's default checkout, it works with CheckoutWC.
+
+### Want even more?
+
+Unlock more features when you need them with a paid plan.
+
+<strong>Premium checkout templates</strong>
+
+Shopify-style one-page and multi-step layouts like Glass, Futurist, Copify, and Groove - all mobile-optimized and built for higher conversion rates, with inline editing and returning-customer matching.
+
+<strong>Side cart and order bumps</strong>
+
+Add a modern AJAX side cart with live totals and free-shipping goals, and boost average order value with rule-based order bumps and post-purchase one-click upsells.
+
+<strong>Abandoned cart recovery</strong>
+
+Capture customer emails early and send automated recovery emails with discounts or gentle nudges to win back sales you would otherwise lose.
+
+<strong>Advanced conversion tools</strong>
+
+Trust badges, Google Maps address autocomplete, Cloudflare Turnstile spam protection, local pickup, A/B testing for order bumps, and PHP snippets for developers.
+
+<strong>Place badges and bumps exactly where you want</strong>
+
+Drop order bumps, trust badges, and reviews into named positions across your checkout, then drag them into the exact order you want - all in the visual editor, no code required. See how this works in the video below.
+
+[youtube https://www.youtube.com/watch?v=V9B3HGhS-7I]
+
+<a href="https://www.checkoutwc.com/pricing/">Compare plans and pricing →</a>
+
+All paid plans include a 30-day money-back guarantee.
 
 ### Integrations
 
-CheckoutWC works with major WooCommerce extensions including Subscriptions, Memberships, and Constellation by Kestrel.
+CheckoutWC works with major WooCommerce extensions including Subscriptions, Memberships, and Constellation by Kestrel. It also integrates with popular payment gateways (Stripe, PayPal, Square, Authorize.net) and shipping plugins.
 
-It also integrates seamlessly with popular payment gateways (Stripe, PayPal, Square, Authorize.net) and shipping plugins.
-
-## Want even more? CheckoutWC Pro unlocks…
-
-### CheckoutWC Pro Features
-
-<strong>Premium Checkout Templates</strong>
-
-Unlock Shopify-style one-page and multi-step WooCommerce checkout layouts like Glass, Futurist,, and Midas. All templates are mobile-optimized, lightweight, and built for higher conversion rates. Features include inline field editing, persistent carts across sessions, user matching for returning customers, and a smoother checkout flow than default WooCommerce or blocks.
-
-<strong>Conversion Optimizations</strong>
-
-Pro adds proven WooCommerce checkout enhancements that reduce cart abandonment: trust badges, smarter coupon handling, collapsible order review and cart summaries, inline validation, email domain autocomplete, and address autocomplete (Google Maps/Fetchify). Express checkout gateway support for Apple Pay, Google Pay, PayPal, and Amazon Pay lets customers complete orders in seconds.
-
-<strong>Side Cart for WooCommerce</strong>
-
-Give your customers a faster, more seamless shopping experience with a modern, AJAX-powered WooCommerce Side Cart. Instead of forcing shoppers to reload pages or visit the cart separately, you can show live cart contents, quantities, totals, and shipping progress without interrupting the browsing flow. The side cart supports coupon entry, product variations, and inline quantity edits. You can also display free shipping goals and order bumps on the cart to increase your average order value.
-
-<strong>Order Bumps & Upsells</strong>
-
-Boost your average order value with native WooCommerce order bumps and upsells. Rule-based targeting by product, category, cart total, or coupon. Multiple placement options (above payment, below totals, inside the side cart), flexible layouts and skins, and support for variable products. Add post-purchase upsells and downsells with after-checkout modal offers or suggested product carousels.
-
-<strong>Abandoned Cart Recovery</strong>
-
-Recover lost sales automatically with built-in WooCommerce abandoned cart recovery. CheckoutWC captures customer emails early in the checkout process, allowing you to send automated reminders to shoppers who abandon their carts. Send personalized follow-ups with discounts, offers, or gentle nudges to complete the purchase. Simple to set up and proven to win back sales you thought were gone.
-
-<strong>Compatibility & Developer Tools</strong>
-
-CheckoutWC Pro works with WooCommerce Subscriptions, Memberships, Constellation by Kestrel, physical, digital, and mixed carts, plus local pickup and delivery flows. Translation-ready with multi-currency, RTL, and WCAG 2.0 AA accessibility compliance. Track your checkout funnel with Google Analytics 4, Facebook Pixel, TikTok, and built-in hooks. Developers get a visual action hooks guide, safe template overrides, and a full snippet library. Lightweight, secure, and compatible with 99%+ of WooCommerce themes, payment gateways, and shipping providers.
-
-## Who Uses CheckoutWC?
+### Who uses CheckoutWC?
 
 <strong>CheckoutWC is built for any WooCommerce store that wants higher conversions and fewer abandoned carts.</strong>
 
-Whether you sell physical products, digital downloads, or subscriptions, it gives you a faster, modern, conversion-optimized checkout that works with every WooCommerce theme and gateway.
-
-### Perfect for:
 - <strong>Store owners</strong> who want a Shopify-style WooCommerce checkout that looks professional and builds trust
-- <strong>Agencies & freelancers</strong> managing multiple client stores at scale
-- <strong>Course creators & membership sites</strong> using WooCommerce Subscriptions, WooCommerce Memberships, or Constellation
-- <strong>Subscription & dropshipping businesses</strong> needing fast, mobile-friendly checkout flows
+- <strong>Agencies and freelancers</strong> managing multiple client stores at scale
+- <strong>Course creators and membership sites</strong> using WooCommerce Subscriptions, Memberships, or Constellation
+- <strong>Subscription and dropshipping businesses</strong> needing fast, mobile-friendly checkout flows
 - <strong>Digital product sellers</strong> who want fewer failed orders and smoother repeat purchases
-- <strong>Local businesses & pickup / delivery shops</strong> needing clear shipping and pickup options.
 
-If you sell with <strong>WooCommerce</strong>, CheckoutWC works for you. No extra setup or ecosystem changes required.
+If you sell with <strong>WooCommerce</strong>, CheckoutWC works for you.
 
-## How to Improve Your WooCommerce Checkout Conversion Rate
+### Why choose CheckoutWC by Kestrel?
 
-Improving your WooCommerce checkout conversion rate starts with removing friction. Every extra field, confusing label, or slow-loading element creates hesitation, and hesitation kills sales.
+We built CheckoutWC as a purpose-made WooCommerce checkout plugin that combines Shopify's speed and clarity with the flexibility of WordPress - no complicated setup, no locked-down SaaS pricing. Just a drop-in upgrade that works with your store today.
 
-<strong>CheckoutWC fixes this by replacing that one-page wall of fields with a guided, conversion-optimized flow.</strong> Customers move step-by-step through the process: first contact info, then shipping, then payment. Each section feels short and achievable, reducing anxiety and form fatigue. On mobile, this makes a dramatic difference—buyers see only what’s relevant at each stage and can complete a purchase with one thumb.
+<strong>A better WooCommerce checkout - fast, lightweight, and built to convert.</strong>
 
-Express checkout options like Apple Pay, Google Pay, and PayPal eliminate typing altogether, while address autocomplete and instant validation prevent common form errors that cause failed orders. Built-in optimizations such as skipping unnecessary steps (like shipping on digital orders) and showing clear order totals reduce uncertainty, which builds trust and confidence.
+Install CheckoutWC Lite free, add your logo and colors, and give your shoppers a faster checkout today.
 
-In short, CheckoutWC transforms WooCommerce from a functional checkout into a <strong>sales engine</strong>—a checkout experience designed to convert visitors instead of losing them. When you remove friction and make the path to payment effortless, every bit of your marketing traffic becomes more valuable.
+### External services
 
-## External services ##
+CheckoutWC optionally connects to the Google Fonts API to load web fonts for your checkout template. A request is sent to Google Fonts when you open CheckoutWC → Appearance → Design (to fetch available font options), and on the checkout page only if you have actively selected a Google font. If you do not choose a Google font, no calls are made to Google. This service is provided by Google: <a href="https://policies.google.com/terms">terms of use</a>, <a href="https://policies.google.com/privacy">privacy policy</a>.
 
-CheckoutWC optionally connects to the Google Fonts API to load web fonts for your checkout template.
+== Installation ==
 
-- A request is sent to Google Fonts when you open <strong>CheckoutWC → Appearance → Design</strong> (to fetch available font options).
-- On the checkout page, a request is only made if you’ve actively selected a Google font.
-
-If you do not choose a Google font, <strong>no calls are made to Google</strong>. This service is provided by Google: Terms of Use, Privacy Policy.
-
-This service is provided by Google: [terms of use](https://policies.google.com/terms), [privacy policy](https://policies.google.com/privacy).
-
-## Why choose CheckoutWC by Kestrel?
-
-<strong>CheckoutWC began inside a WooCommerce agency</strong> frustrated by the limitations of the default checkout. Every project meant wrestling with hooks, custom code, or expensive third-party plugins that never felt native to WordPress.
-
-We built CheckoutWC as a <strong>purpose-made WooCommerce checkout plugin</strong> that combines the speed and clarity of Shopify’s checkout with the flexibility of WordPress. No complicated setup. No locked-down SaaS pricing. Just a drop-in upgrade that works with your store today.
-
-Now, <strong>thousands of WooCommerce stores</strong> use CheckoutWC to reduce cart abandonment and improve conversions. It’s fast, intuitive, and built with store owners and agencies in mind.
-
-<strong>A better WooCommerce checkout — fast, lightweight, and built to convert.</strong>
+1. In your WordPress admin, go to Plugins → Add New and search for "CheckoutWC."
+2. Click Install Now, then Activate. (Or upload the plugin zip via Plugins → Add New → Upload Plugin.)
+3. Make sure WooCommerce is installed and active - CheckoutWC requires it.
+4. Open CheckoutWC in the admin menu to set your logo, colors, and layout. CheckoutWC takes over your checkout automatically.
+5. Process a test order in your payment gateway's test mode before going live.
 
 == Frequently Asked Questions ==
+
+= Is CheckoutWC Lite really free? =
+
+Yes. CheckoutWC Lite is free on WordPress.org and includes the Shopify-style multi-step checkout, express payments (Apple Pay, Google Pay, PayPal), ZIP/postal address autocomplete, smart validation, and mobile-first design. Premium templates, side cart, order bumps, abandoned cart recovery, and other advanced tools are available on a paid plan.
 
 = Will it work with my theme and gateway? =
 
 Yes. CheckoutWC is designed for universal compatibility with all WooCommerce themes. Unlike other checkout plugins that rely on specific theme structures, CheckoutWC uses a template-based system that works independently of your theme's design.
 
-CheckoutWC supports all major payment gateways including Stripe, PayPal, Square, Authorize.net, and more. It also works with popular shipping providers and WooCommerce extensions. If it works with WooCommerce's default checkout, it will work with CheckoutWC
+CheckoutWC supports all major payment gateways including Stripe, PayPal, Square, Authorize.net, and more. It also works with popular shipping providers and WooCommerce extensions. If it works with WooCommerce's default checkout, it will work with CheckoutWC.
 
 = Do I need Apple Pay/Google Pay for express checkout? =
 
@@ -168,13 +161,21 @@ CheckoutWC replaces the WooCommerce checkout page entirely, so it doesn't use th
 
 Yes. CheckoutWC works with all major WooCommerce shipping plugins including WooCommerce Shipping, ShipStation, Table Rate Shipping, Advanced Shipment Tracking, and more. Any shipping method that works with WooCommerce's default checkout will work seamlessly with CheckoutWC. The plugin displays shipping options the same way WooCommerce does, just in a more user-friendly layout.
 
-= How do I upgrade from Lite to Pro? =
+= How do I upgrade to a paid plan? =
 
-Purchase CheckoutWC Pro from <a href="https://www.checkoutwc.com">checkoutwc.com</a>, download the Pro version, and install it on your site (you can keep Lite installed or remove it). Your Lite settings are automatically preserved when you activate Pro. Enter your Pro license key in CheckoutWC → License to receive updates and unlock all Pro features. Your checkout continues working without interruption during the upgrade.
+Choose a plan at <a href="https://www.checkoutwc.com/pricing/">checkoutwc.com/pricing</a>, download the plugin, and install it on your site. Your Lite settings are preserved automatically. Enter your license key in CheckoutWC → License to receive updates and unlock the paid features. Your checkout keeps working without interruption during the upgrade.
+
+= How do I enable address autocomplete? =
+
+CheckoutWC Lite includes ZIP/postal code autocomplete that fills city and state automatically - enable it in CheckoutWC settings. For full Google Maps address autocomplete (predictive address search as you type), upgrade to a paid plan and configure your preferred provider in settings.
+
+= Can developers customize the checkout? =
+
+Yes. CheckoutWC Lite supports theme template overrides and includes 40+ action hooks and 50+ filter hooks for customizing the checkout, cart summary, and thank-you pages, plus header and footer script fields. Executing PHP snippets from the admin and the visual action hooks guide are available on a paid plan.
 
 = Is it translation-ready and RTL-friendly? =
 
-Yes. CheckoutWC is fully translation-ready and supports right-to-left (RTL) languages. We've bundled translations for many languages, and the plugin works with WPML, Polylang, and other translation plugins. If we don't have a translation for your language yet, let us know and we'll add it.
+Yes. CheckoutWC is fully translation-ready and supports right-to-left (RTL) languages. We've bundled translations for many languages, and the plugin works with WPML, Polylang, and other translation plugins.
 
 CheckoutWC is already translated into <a href="https://www.checkoutwc.com/documentation/localization/">over 20 languages</a>.
 
@@ -182,74 +183,33 @@ CheckoutWC is already translated into <a href="https://www.checkoutwc.com/docume
 
 No. CheckoutWC templates are lightweight and optimized for performance. The plugin typically loads faster than WooCommerce's default checkout because it uses streamlined code and efficient rendering. We prioritize speed alongside conversion optimization.
 
-= How do I enable address autocomplete? =
-
-CheckoutWC Lite includes basic address autocomplete for ZIP/postal code that automatically fills city and state. Enable it in CheckoutWC settings. For full Google Maps address autocomplete (predictive address search as you type), upgrade to CheckoutWC Pro and configure your preferred provider in settings.
-
 = How do I test the checkout safely? =
 
-Use your payment gateway's test mode to process test transactions without charging real money. Test both guest checkout and logged-in checkout, verify coupons apply correctly, confirm shipping methods display properly, and check tax calculations. Always test on a staging site first before going live. If you have questions during testing, contact our support team for assistance.
-
-= Where can developers customize templates? =
-
-Developers can customize CheckoutWC using our visual hooks guide and snippet examples in our documentation. Add custom header and footer scripts through the settings panel, or use PHP snippets to extend functionality. Safe template overrides are supported for advanced customization. If you need a customization option that doesn't exist, let us know and we'll add it.
-
-== Troubleshooting Common Issues ==
-
-Having trouble with your <strong>WooCommerce checkout</strong>? Most <strong>CheckoutWC issues</strong> can be fixed quickly with these steps:
-
-= Checkout page not loading or showing errors =
-
-If your checkout page isn't loading properly, first update all your plugins to their latest versions. Many issues are resolved in updates. Next, check for plugin conflicts by deactivating all plugins except WooCommerce, CheckoutWC, your payment gateway, and shipping methods. If this fixes the problem, reactivate plugins one at a time to identify the conflict.
-
-= Express payment buttons not showing =
-
-Verify your payment gateway is configured with valid API keys and has express payments enabled in its settings. Remember that Apple Pay only appears on Safari or Apple devices, and Google Pay only shows on Chrome and Android devices. Check your browser's developer console (F12) for JavaScript errors that might prevent buttons from loading. Ensure you're using a compatible gateway like Stripe, Square, or PayPal Commerce Platform.
-
-= Error: "Account username is a required field" =
-
-This means WooCommerce is not configured to automatically generate usernames. Go to WooCommerce → Settings → Accounts & Privacy and enable the option to automatically generate usernames from customer emails
-
-= Error: "We were unable to process your order, please try again" =
-
-This indicates WooCommerce cannot verify checkout submits. Update WooCommerce to the latest version (requires WooCommerce 3.4 or higher). Clear your site cache after updating.
-
-= Checkout page styling looks broken =
-
-Clear your site cache and browser cache first. Check for JavaScript errors in your browser console (F12). If you're using a theme like Divi, Astra Pro, or Avada, there may be conflicting checkout styles. Try temporarily switching to a default WordPress theme (like Twenty Twenty-Four or Storefront) to confirm it's a theme conflict. Contact support with your theme name for specific compatibility guidance.
-
-= Address autocomplete not working =
-
-CheckoutWC Lite includes ZIP/postal code autocomplete that fills city and state automatically. This requires valid postal code data for your country. For Google Maps address autocomplete (predictive search as you type), you need CheckoutWC Pro with a valid Google Maps API key configured. If you're seeing "Google Maps error" messages on your checkout, check your browser console for API key errors and verify your API key is configured correctly with the Places API enabled.
-
-= Changes to settings not appearing on checkout =
-
-After changing CheckoutWC settings, clear all caches: your site cache plugin, CDN cache (like Cloudflare), and browser cache. Hard refresh your browser using Ctrl+Shift+R (Windows) or Cmd+Shift+R (Mac). Try viewing the checkout in incognito/private browsing mode to rule out browser caching issues.
-
-= Server error messages (404, 500, 504 errors) =
-
-404 errors indicate the AJAX endpoint cannot be found—usually a server configuration issue or permalink problem. Try resaving your permalinks in Settings → Permalinks. 500 errors indicate a PHP fatal error; check your error logs or enable WordPress debugging (WP_DEBUG) to see the specific error. 504 timeout errors indicate server performance problems unrelated to CheckoutWC—contact your hosting provider.
-
-= Finding plugin conflicts quickly =
-
-If you have many plugins installed, use a binary search method: deactivate half your plugins, test the checkout, then you'll know which half contains the problem. Keep dividing in half until you find the specific plugin causing issues. This is much faster than testing plugins one by one.
-
-= Still having problems? =
-
-Enable WordPress debugging (add define('WP_DEBUG', true); to wp-config.php) and check your error logs for specific error messages. Test on a staging site when possible. Contact CheckoutWC support with details about your active theme, plugins, and any error messages from the browser console or server logs.
+Use your payment gateway's test mode to process test transactions without charging real money. Test both guest checkout and logged-in checkout, verify coupons apply correctly, confirm shipping methods display properly, and check tax calculations. Always test on a staging site first before going live.
 
 == Screenshots ==
 
-1. The first checkout step collects the customer shipping information.
-2. The second checkout step lets customers choose their shipping method. (For shipped orders - skipped for digital orders)
-3. The third checkout step lets customers enter their payment information.
-4. The checkout template is also optimized for mobile devices.
-5. Checkout settings let you customize your checkout page.
-6. Design settings let you customize your logo, colors, and CSS.
+1. Shopify-style multi-step WooCommerce checkout - the customer information step.
+2. The shipping method step with saved contact and address details.
+3. The payment step with a clear order summary and billing options.
+4. A fast, mobile-first checkout on phones and tablets.
+5. ZIP/postal autocomplete fills in city and state automatically.
+6. Smart inline validation catches errors before the order fails.
 
 == Changelog ==
 
 Free version updates are non-sequential due to the unified development branch we use with the premium versions.
+
+= Version 11.2.0 =
+
+- Feature - Checkout Slots: place headings, custom HTML, and other elements into named positions across the checkout from the Checkout Editor, with drag-to-reorder and per-item spacing
+- Fix - Glass template's selected shipping and payment method highlight color can now be changed from the editor (Colors > Misc)
+- Fix - Glass template breadcrumb colors (completed, current and next step text, and the current step accent) now follow the editor's Breadcrumb color settings instead of being locked to the button color
+- Fix - The "Accent Color" control (Colors > Misc) no longer appears in the editor for templates that don't use it
+- Fix - A privacy policy or terms & conditions page built with a page builder (e.g. Avada) no longer collapses the checkout to a single column with no order summary
+- Fix - Glass template footer no longer overlaps the terms and privacy policy modals
+- Fix - Checkout no longer fatals on PHP 8 when a shipping extension gives shipping packages string keys
+- Dev - Slot output is wrapped in a cfw-slot-wrap div - custom CSS or JS that targeted checkout slot content by its previous position in the DOM may need updating
 
 = Version 11.1.4 =
 

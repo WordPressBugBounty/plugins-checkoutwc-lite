@@ -78,12 +78,12 @@ class OrderBumpsAdminFree extends PageAbstract {
 						<div class="cfw-admin-section-component-content px-4 py-5 bg-white space-y-6 sm:p-6">
 							<div class="flex items-center space-x-4"><button class="bg-lime-500 relative inline-flex h-7 w-14 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-indigo-600 focus:ring-offset-2" id="headlessui-switch-:r0:" role="switch" type="button" tabindex="0" aria-checked="true" data-headlessui-state="checked" aria-labelledby="headlessui-label-:r1:" aria-describedby="headlessui-description-:r2:"><span class="sr-only">Use setting</span><span aria-hidden="true" class="translate-x-[1.75rem] pointer-events-none inline-block h-6 w-6 transform rounded-full bg-white shadow ring-0 transition duration-200 ease-in-out"></span></button><span class="flex flex-grow flex-col"><span class="text-sm font-medium leading-6 text-gray-900" id="headlessui-label-:r1:"><?php esc_html_e( 'Enable Order Bumps', 'checkout-wc' ); ?></span><span class="text-sm text-gray-500" id="headlessui-description-:r2:"><?php esc_html_e( 'Allow Order Bumps to be displayed.', 'checkout-wc' ); ?></span></span></div>
 							<div class="cfw-admin-field-container ">
-								<label for="max_bumps" class="block text-sm font-medium text-gray-700"><?php esc_html_e( 'Maximum Order Bumps', 'checkout-wc' ); ?></label><input name="max_bumps" type="number" id="max_bumps" class="w-64 shadow-sm focus:ring-blue-500 focus:border-blue-500 block sm:text-sm border border-gray-300 rounded-md" value="-1">
-								<p class="mt-2 text-sm text-gray-500"><?php esc_html_e( 'The maximum number of bumps that can be displayed per output location. Use -1 for unlimited.', 'checkout-wc' ); ?></p>
+								<label for="max_bumps" class="block text-sm font-medium text-gray-700"><?php esc_html_e( 'Maximum Order Bumps Per Slot', 'checkout-wc' ); ?></label><input name="max_bumps" type="number" id="max_bumps" class="w-64 shadow-sm focus:ring-blue-500 focus:border-blue-500 block sm:text-sm border border-gray-300 rounded-md" value="-1">
+								<p class="mt-2 text-sm text-gray-500"><?php esc_html_e( 'The maximum number of order bumps displayed in each checkout slot.', 'checkout-wc' ); ?></p>
 							</div>
 							<div class="cfw-admin-field-container ">
 								<label for="max_after_checkout_bumps" class="block text-sm font-medium text-gray-700"><?php esc_html_e( 'Maximum Place Order Bumps', 'checkout-wc' ); ?></label><input name="max_after_checkout_bumps" type="number" id="max_after_checkout_bumps" class="w-64 shadow-sm focus:ring-blue-500 focus:border-blue-500 block sm:text-sm border border-gray-300 rounded-md" value="1">
-								<p class="mt-2 text-sm text-gray-500"><?php esc_html_e( 'The maximum number of modal bumps that can be displayed after submitting checkout. Use -1 for unlimited.', 'checkout-wc' ); ?></p>
+								<p class="mt-2 text-sm text-gray-500"><?php esc_html_e( 'The maximum number of modal bumps displayed after submitting checkout.', 'checkout-wc' ); ?></p>
 							</div>
 						</div>
 					</div>

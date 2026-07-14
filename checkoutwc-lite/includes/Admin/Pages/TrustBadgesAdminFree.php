@@ -39,40 +39,7 @@ class TrustBadgesAdminFree extends PageAbstract {
 										<span class="text-sm text-gray-500" id="headlessui-description-:r2:"><?php esc_html_e( 'Enable trust badges on CheckoutWC templates. Uncheck to hide badges.', 'checkout-wc' ); ?></span>
 									</span>
 								</div>
-								<div class="cfw-admin-field-container cfw-admin-field-radio-group ">
-									<legend class="text-base font-medium text-gray-900"><?php esc_html_e( 'Trust Badge Output Location', 'checkout-wc' ); ?></legend>
-									<p class="text-sm leading-5 text-gray-500"><?php esc_html_e( 'Where to display the trust badges on the checkout page.', 'checkout-wc' ); ?></p>
-									<div class="space-y-5 mt-4">
-										<div class="relative flex items-start">
-											<div class="flex items-center h-5">
-												<input name="trust_badge_position" type="radio" id="trust_badge_position_below_cart_summary" class="focus:ring-blue-800 h-4 w-4 text-blue-500 border-gray-300" value="below_cart_summary" checked="">
-											</div>
-											<div class="ml-3 text-sm">
-												<label for="trust_badge_position_below_cart_summary" class="font-medium text-gray-700" style="vertical-align: unset;"><?php esc_html_e( 'Below the checkout cart summary', 'checkout-wc' ); ?></label>
-												<p id="small-description" class="text-gray-500"><?php esc_html_e( 'Output in a single column below the checkout cart summary totals', 'checkout-wc' ); ?></p>
-											</div>
-										</div>
-										<div class="relative flex items-start">
-											<div class="flex items-center h-5">
-												<input name="trust_badge_position" type="radio" id="trust_badge_position_below_checkout_form" class="focus:ring-blue-800 h-4 w-4 text-blue-500 border-gray-300" value="below_checkout_form">
-											</div>
-											<div class="ml-3 text-sm">
-												<label for="trust_badge_position_below_checkout_form" class="font-medium text-gray-700" style="vertical-align: unset;"><?php esc_html_e( 'After the checkout form', 'checkout-wc' ); ?></label>
-												<p id="small-description" class="text-gray-500"><?php esc_html_e( 'Output in a single row below the checkout form above the footer', 'checkout-wc' ); ?></p>
-											</div>
-										</div>
-										<div class="relative flex items-start">
-											<div class="flex items-center h-5">
-												<input name="trust_badge_position" type="radio" id="trust_badge_position_in_footer" class="focus:ring-blue-800 h-4 w-4 text-blue-500 border-gray-300" value="in_footer">
-											</div>
-											<div class="ml-3 text-sm">
-												<label for="trust_badge_position_in_footer" class="font-medium text-gray-700" style="vertical-align: unset;"><?php esc_html_e( 'Top of the footer', 'checkout-wc' ); ?></label>
-												<p id="small-description" class="text-gray-500"><?php esc_html_e( 'Output in a single row inside the footer', 'checkout-wc' ); ?></p>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="cfw-admin-field-container ">
+<div class="cfw-admin-field-container ">
 									<label for="trust_badges_title" class="block text-sm font-medium text-gray-700"><?php esc_html_e( 'Heading', 'checkout-wc' ); ?></label>
 									<input name="trust_badges_title" type="text" id="trust_badges_title" placeholder="<?php esc_attr_e( 'Example: Why choose us?', 'checkout-wc' ); ?>" class="shadow-sm focus:ring-blue-500 focus:border-blue-500 block w-full sm:text-sm border border-gray-300 rounded-md" value="<?php esc_attr_e( "We've Got You Covered!", 'checkout-wc' ); ?>">
 									<p class="mt-2 text-sm text-gray-500"><?php esc_html_e( 'Example: Why choose us?', 'checkout-wc' ); ?></p>

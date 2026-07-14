@@ -229,12 +229,14 @@ Filters the active theme colors settings.
 | Name | Type | Description |
 | ---- | ---- | ----------- |
 | `$color_settings` | `array` | The active theme colors settings. |
+| `$active_template` | `\Template` | The template these settings are being built for. |
 
 **Changelog**
 
 | Version | Description |
 | ------- | ----------- |
 | `5.1.0` | Introduced. |
+| `11.2.0` | Introduced. |
 
 Source: `Admin/Pages/Appearance.php`
 
@@ -5231,25 +5233,6 @@ Filter to add additional trust badges (like WooCommerce reviews)
 | `10.2.9` | Introduced. |
 
 Source: `functions.php`
-
-## `cfw_trust_badges_output_action`
-
-Filter the action to output the trust badges
-
-**Parameters**
-
-| Name | Type | Description |
-| ---- | ---- | ----------- |
-| `$action` | `string` | The action to output the trust badges |
-| `$position` | `string` | The position of the trust badges |
-
-**Changelog**
-
-| Version | Description |
-| ------- | ----------- |
-| `9.0.0` | Introduced. |
-
-Source: `Features/TrustBadges.php`
 
 ## `cfw_typescript_compatibility_classes_and_params`
 

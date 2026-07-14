@@ -13,6 +13,7 @@ use Objectiv\Plugins\Checkout\Loaders\Redirect;
 use Objectiv\Plugins\Checkout\Managers\AssetManager;
 use Objectiv\Plugins\Checkout\Managers\PlanManager;
 use Objectiv\Plugins\Checkout\Managers\SettingsManager;
+use Objectiv\Plugins\Checkout\Managers\SlotManager;
 use Objectiv\Plugins\Checkout\Model\CartItem;
 use Objectiv\Plugins\Checkout\Model\OrderItem;
 use Objectiv\Plugins\Checkout\Model\RulesProcessor;
@@ -326,11 +327,13 @@ function cfw_get_posted_address_fields( string $fieldset = 'billing' ) : array {
 }
 
 function cfw_get_cart_shipping_data() : array {
-	$packages      = WC()->shipping()->get_packages();
-	$shipping_data = [];
+	$packages       = WC()->shipping()->get_packages();
+	$shipping_data  = [];
+	$package_number = 0;
 
 	foreach ( $packages as $i => $package ) {
 		$product_names = [];
+		$package_number++;
 
 		if ( count( $packages ) > 1 ) {
 			foreach ( $package['contents'] as $item_id => $values ) {
@@ -378,8 +381,8 @@ function cfw_get_cart_shipping_data() : array {
 			'woocommerce_shipping_package_name',
 			sprintf(
 			/* translators: %d: shipping package number */
-				_nx( 'Shipping', 'Shipping %d', ( $i + 1 ), 'shipping packages', 'woocommerce' ),
-				( $i + 1 )
+				_nx( 'Shipping', 'Shipping %d', $package_number, 'shipping packages', 'woocommerce' ),
+				$package_number
 			),
 			$i,
 			$package
@@ -1998,7 +2001,7 @@ function cfw_get_order_received_order() {
 
 	if ( ! $order_id ) {
 		$session_data = WC()->session->get( 'cfw_post_purchase_data', null );
-		$order_id     = cfw_apply_filters( 'woocommerce_thankyou_order_id', absint( $session_data['order_id'] ) );
+		$order_id     = cfw_apply_filters( 'woocommerce_thankyou_order_id', absint( $session_data['order_id'] ?? 0 ) );
 
 		return wc_get_order( $order_id );
 	}
@@ -3420,9 +3423,11 @@ function cfw_get_cart_totals_data() : array {
 		 * @param array $itemize_shipping_costs Whether to itemize shipping costs in totals (default: false)
 		 */
 		if ( apply_filters( 'cfw_totals_itemize_shipping_costs', false ) ) {
-			$packages = WC()->shipping()->get_packages();
+			$packages       = WC()->shipping()->get_packages();
+			$package_number = 0;
 
 			foreach ( $packages as $i => $package ) {
+				$package_number++;
 				$chosen_method     = WC()->session->chosen_shipping_methods[ $i ] ?? '';
 				$available_methods = empty( $package['rates'] ) ? [] : $package['rates'];
 
@@ -3443,8 +3448,8 @@ function cfw_get_cart_totals_data() : array {
 						 *
 						 * @since 2.0.0
 						 */
-						'label' => cfw_apply_filters( 'woocommerce_shipping_package_name', sprintf( _nx( 'Shipping', 'Shipping %d', ( $i + 1 ), 'shipping packages', 'woocommerce' ), ( $i + 1 ) ), $i, $package ),
-						'value' => WC()->cart->display_prices_including_tax() ? $method->cost + $method->get_shipping_tax() : $method->cost,
+						'label' => cfw_apply_filters( 'woocommerce_shipping_package_name', sprintf( _nx( 'Shipping', 'Shipping %d', $package_number, 'shipping packages', 'woocommerce' ), $package_number ), $i, $package ),
+						'value' => WC()->cart->display_prices_including_tax() ? (float) $method->cost + (float) $method->get_shipping_tax() : (float) $method->cost,
 					];
 				}
 			}
@@ -3680,19 +3685,7 @@ function cfw_get_review_data() : array {
  * @throws Exception if the bumps data cannot be retrieved
  */
 function cfw_get_order_bumps_data() : array {
-	$data      = [];
-	$locations = [
-		'below_cart_items',
-		'below_side_cart_items',
-		'below_checkout_cart_items',
-		'above_terms_and_conditions',
-		'above_express_checkout',
-		'bottom_information_tab',
-		'bottom_shipping_tab',
-		'below_complete_order_button',
-		'complete_order',
-		'post_purchase_one_click',
-	];
+	$data = [];
 
 	$bumps = BumpFactory::get_all( 'publish' );
 
@@ -3714,20 +3707,85 @@ function cfw_get_order_bumps_data() : array {
 		$max_bumps = 999;
 	}
 
-	foreach ( $locations as $location ) {
+	// When the slot system is active (migration has run) each bump's effective
+	// location is determined by its slot assignment rather than the legacy
+	// cfw_ob_display_location post-meta. This ensures that bumps reassigned to
+	// a different slot via the checkout editor appear in the correct position.
+	if ( get_option( SlotManager::MIGRATED_FLAG ) ) {
+		// Build bump_id → slot_id map from slot assignments.
+		// Handles both 'order_bump' type (direct bump ID) and 'ab_test' type
+		// (resolved via the cfw_ab_test_order_bump meta → parent bump ID, which
+		// variant bumps inherit via their WordPress post_parent).
+		$bump_slot_map       = [];
+		$bump_sort_order_map = [];
+		$bump_margin_map     = [];
+		foreach ( SlotManager::instance()->get_slots() as $slot_id => $items ) {
+			foreach ( $items as $item ) {
+				$type = $item['type'] ?? '';
+				if ( 'order_bump' === $type && ! empty( $item['id'] ) ) {
+					$bump_id_key                         = (int) $item['id'];
+					$bump_slot_map[ $bump_id_key ]       = $slot_id;
+					$bump_sort_order_map[ $bump_id_key ] = (int) ( $item['sort_order'] ?? 0 );
+					$bump_margin_map[ $bump_id_key ]     = sanitize_text_field( $item['margin'] ?? '' );
+				} elseif ( 'ab_test' === $type && ! empty( $item['id'] ) ) {
+					// Map the parent bump's ID to the slot so that variant bumps
+					// (which have the parent as their WordPress post_parent) can
+					// also be located via wp_get_post_parent_id() below.
+					$parent_bump_id = (int) get_post_meta( (int) $item['id'], 'cfw_ab_test_order_bump', true );
+					if ( $parent_bump_id ) {
+						$bump_slot_map[ $parent_bump_id ]       = $slot_id;
+						$bump_sort_order_map[ $parent_bump_id ] = (int) ( $item['sort_order'] ?? 0 );
+						$bump_margin_map[ $parent_bump_id ]     = sanitize_text_field( $item['margin'] ?? '' );
+					}
+				}
+			}
+		}
+
 		foreach ( $bumps as $bump ) {
-			if ( $count >= $max_bumps ) {
-				break;
+			if ( ! $bump->can_be_displayed( 'all' ) ) {
+				continue;
 			}
 
-			if ( ! $bump->can_be_displayed( $location ) ) {
-				continue;
+			$bump_id   = $bump->get_id();
+			$parent_id = (int) wp_get_post_parent_id( $bump_id );
+
+			if ( isset( $bump_slot_map[ $bump_id ] ) ) {
+				// Direct order_bump assignment.
+				$location = $bump_slot_map[ $bump_id ];
+			} elseif ( $parent_id && isset( $bump_slot_map[ $parent_id ] ) ) {
+				// Variant bump resolved from an A/B test – inherit the parent's slot.
+				$location = $bump_slot_map[ $parent_id ];
+			} else {
+				// Bump is not assigned to any slot — skip most cases.
+				// Any bump whose meta location is a known slot ID must be explicitly
+				// placed in a slot to appear (stale meta from a previous assignment
+				// is not sufficient). Legacy slot-managed locations, complete_order,
+				// and post_purchase_one_click are also skipped here.
+				// below_cart_items (checkout + side cart) and below_side_cart_items
+				// are non-slot locations that fall through and render on their own.
+				$legacy_location        = $bump->get_display_location();
+				$slot_managed_locations = [
+					'below_checkout_cart_items',
+					'above_express_checkout',
+					'bottom_information_tab',
+					'bottom_shipping_tab',
+					'above_terms_and_conditions',
+					'below_complete_order_button',
+					'complete_order',
+					'post_purchase_one_click',
+				];
+				if ( in_array( $legacy_location, $slot_managed_locations, true )
+					|| array_key_exists( $legacy_location, SlotManager::get_slot_hook_map() ) ) {
+					continue;
+				}
+
+				$location = $legacy_location;
 			}
 
 			$offer_product    = $bump->get_offer_product();
 			$thumb            = $offer_product->get_image( 'cfw_order_bump_thumb' );
 			$wrapped_thumb    = $offer_product->is_visible() ? sprintf( $link_wrap, $offer_product->get_permalink(), $thumb ) : $thumb;
-			$variation_parent = $offer_product->is_type( 'variable' ) && 0 === $offer_product->get_parent_id() && 'no' === get_post_meta( $bump->get_id(), 'cfw_ob_enable_auto_match', true );
+			$variation_parent = $offer_product->is_type( 'variable' ) && 0 === $offer_product->get_parent_id() && 'no' === get_post_meta( $bump_id, 'cfw_ob_enable_auto_match', true );
 
 			$data[] = [
 				'id'               => $bump->get_id(),
@@ -3737,16 +3795,73 @@ function cfw_get_order_bumps_data() : array {
 				'offerLanguage'    => do_shortcode( $bump->get_offer_language() ),
 				'offerPrice'       => wp_kses_post( $bump->get_offer_product_price() ),
 				'variationParent'  => $variation_parent,
-				'selected'         => ! in_array( $bump->get_id(), $auto_added_bumps, true ) && $bump->should_be_auto_added() && $bump->get_offer_product()->get_type() === 'variable',
+				'selected'         => ! in_array( $bump_id, $auto_added_bumps, true ) && $bump->should_be_auto_added() && $bump->get_offer_product()->get_type() === 'variable',
 				'location'         => $location,
+				'sort_order'       => $bump_sort_order_map[ $bump_id ] ?? 0,
+				'margin'           => $bump_margin_map[ $bump_id ] ?? '',
 			];
 
-			$count++;
-
-			// Remember auto added bumps
+			// Remember auto added bumps.
 			if ( $bump->should_be_auto_added() ) {
-				$auto_added_bumps[] = $bump->get_id();
+				$auto_added_bumps[] = $bump_id;
 				WC()->session->set( 'cfw_auto_added_bumps', $auto_added_bumps );
+			}
+		}
+
+		// Sort by sort_order within each location so the JS receives bumps in the
+		// correct slot-assigned sequence (BumpFactory::get_all returns database order).
+		usort( $data, fn( $a, $b ) => ( $a['sort_order'] ?? 0 ) - ( $b['sort_order'] ?? 0 ) );
+	} else {
+		// Legacy path (slot migration has not run): iterate locations → bumps
+		// using the bump's stored cfw_ob_display_location value.
+		$locations = [
+			'below_cart_items',
+			'below_side_cart_items',
+			'below_checkout_cart_items',
+			'above_terms_and_conditions',
+			'above_express_checkout',
+			'bottom_information_tab',
+			'bottom_shipping_tab',
+			'below_complete_order_button',
+			'complete_order',
+			'post_purchase_one_click',
+		];
+
+		foreach ( $locations as $location ) {
+			foreach ( $bumps as $bump ) {
+				if ( $count >= $max_bumps ) {
+					break;
+				}
+
+				if ( ! $bump->can_be_displayed( $location ) ) {
+					continue;
+				}
+
+				$bump_id          = $bump->get_id();
+				$offer_product    = $bump->get_offer_product();
+				$thumb            = $offer_product->get_image( 'cfw_order_bump_thumb' );
+				$wrapped_thumb    = $offer_product->is_visible() ? sprintf( $link_wrap, $offer_product->get_permalink(), $thumb ) : $thumb;
+				$variation_parent = $offer_product->is_type( 'variable' ) && 0 === $offer_product->get_parent_id() && 'no' === get_post_meta( $bump_id, 'cfw_ob_enable_auto_match', true );
+
+				$data[] = [
+					'id'               => $bump_id,
+					'offerProductId'   => $offer_product->get_id(),
+					'wrappedThumb'     => wp_kses_post( $wrapped_thumb ),
+					'offerDescription' => do_shortcode( $bump->get_offer_description() ),
+					'offerLanguage'    => do_shortcode( $bump->get_offer_language() ),
+					'offerPrice'       => wp_kses_post( $bump->get_offer_product_price() ),
+					'variationParent'  => $variation_parent,
+					'selected'         => ! in_array( $bump_id, $auto_added_bumps, true ) && $bump->should_be_auto_added() && $bump->get_offer_product()->get_type() === 'variable',
+					'location'         => $location,
+				];
+
+				$count++;
+
+				// Remember auto added bumps.
+				if ( $bump->should_be_auto_added() ) {
+					$auto_added_bumps[] = $bump_id;
+					WC()->session->set( 'cfw_auto_added_bumps', $auto_added_bumps );
+				}
 			}
 		}
 	}

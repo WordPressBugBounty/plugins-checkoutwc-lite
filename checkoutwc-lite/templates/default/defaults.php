@@ -6,7 +6,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * The default colors for this theme
  */
-$defaults = array(
+$defaults = [
 	'body_background_color'             => '#ffffff',
 	'body_text_color'                   => '#333333',
 	'header_background_color'           => '#ffffff',
@@ -19,6 +19,9 @@ $defaults = array(
 	'button_hover_color'                => '#555555',
 	'button_text_hover_color'           => '#ffffff',
 	'secondary_button_color'            => '#999999',
+	'summary_background_color'          => '#ffffff',
+	'summary_mobile_background_color'   => '#f4f4f4',
+	'summary_text_color'                => '#333333',
 	'summary_link_color'                => '#0073aa',
 	'secondary_button_text_color'       => '#ffffff',
 	'secondary_button_hover_color'      => '#666666',
@@ -31,7 +34,6 @@ $defaults = array(
 	'breadcrumb_completed_accent_color' => '#333333',
 	'breadcrumb_current_accent_color'   => '#333333',
 	'breadcrumb_next_accent_color'      => '#333333',
-	'summary_mobile_background_color'   => '#f4f4f4',
 	'body_font'                         => 'inter-cfw',
 	'heading_font'                      => 'inter-cfw',
-);
+];

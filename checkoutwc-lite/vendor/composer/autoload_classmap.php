@@ -12,6 +12,7 @@ return array(
     'Objectiv\\Plugins\\Checkout\\API\\PostPurchaseBumpProductFormAPI' => $baseDir . '/includes/API/PostPurchaseBumpProductFormAPI.php',
     'Objectiv\\Plugins\\Checkout\\API\\PreviewSettingsAPI' => $baseDir . '/includes/API/PreviewSettingsAPI.php',
     'Objectiv\\Plugins\\Checkout\\API\\SettingsAPI' => $baseDir . '/includes/API/SettingsAPI.php',
+    'Objectiv\\Plugins\\Checkout\\API\\SlotsAPI' => $baseDir . '/includes/API/SlotsAPI.php',
     'Objectiv\\Plugins\\Checkout\\API\\UserRolesAPI' => $baseDir . '/includes/API/UserRolesAPI.php',
     'Objectiv\\Plugins\\Checkout\\Action\\AccountExistsAction' => $baseDir . '/includes/Action/AccountExistsAction.php',
     'Objectiv\\Plugins\\Checkout\\Action\\AddToCartAction' => $baseDir . '/includes/Action/AddToCartAction.php',
@@ -289,6 +290,7 @@ return array(
     'Objectiv\\Plugins\\Checkout\\Managers\\PlanManager' => $baseDir . '/includes/Managers/PlanManager.php',
     'Objectiv\\Plugins\\Checkout\\Managers\\SettingsManager' => $baseDir . '/includes/Managers/SettingsManager.php',
     'Objectiv\\Plugins\\Checkout\\Managers\\SettingsManagerAbstract' => $baseDir . '/includes/Managers/SettingsManagerAbstract.php',
+    'Objectiv\\Plugins\\Checkout\\Managers\\SlotManager' => $baseDir . '/includes/Managers/SlotManager.php',
     'Objectiv\\Plugins\\Checkout\\Managers\\StyleManager' => $baseDir . '/includes/Managers/StyleManager.php',
     'Objectiv\\Plugins\\Checkout\\Managers\\UpdatesManager' => $baseDir . '/includes/Managers/UpdatesManager.php',
     'Objectiv\\Plugins\\Checkout\\Model\\AlternativePlugin' => $baseDir . '/includes/Model/AlternativePlugin.php',
@@ -302,6 +304,7 @@ return array(
     'Objectiv\\Plugins\\Checkout\\PhpErrorOutputSuppressor' => $baseDir . '/includes/PhpErrorOutputSuppressor.php',
     'Objectiv\\Plugins\\Checkout\\RateLimiterWPTransientStorage' => $baseDir . '/includes/RateLimiterWPTransientStorage.php',
     'Objectiv\\Plugins\\Checkout\\RateLimiterWooCommerceSessionStorage' => $baseDir . '/includes/RateLimiterWooCommerceSessionStorage.php',
+    'Objectiv\\Plugins\\Checkout\\Renderers\\SlotRenderer' => $baseDir . '/includes/Renderers/SlotRenderer.php',
     'Objectiv\\Plugins\\Checkout\\Shipping\\CFW_Shipping_Local_Pickup' => $baseDir . '/includes/Shipping/CFW_Shipping_Local_Pickup.php',
     'Objectiv\\Plugins\\Checkout\\SingletonAbstract' => $baseDir . '/includes/SingletonAbstract.php',
 );

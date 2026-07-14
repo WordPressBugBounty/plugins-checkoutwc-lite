@@ -284,10 +284,12 @@ class Appearance extends PageAbstract {
 			/**
 			 * Filters the active theme colors settings.
 			 *
-			 * @param array $color_settings The active theme colors settings.
+			 * @param array    $color_settings The active theme colors settings.
+			 * @param Template $active_template The template these settings are being built for.
 			 * @since 5.1.0
+			 * @since 11.2.0 Added the $active_template parameter so callbacks can scope settings to their own template.
 			 */
-			'settings' => apply_filters( 'cfw_active_theme_color_settings', [] ),
+			'settings' => apply_filters( 'cfw_active_theme_color_settings', [], $active_template ),
 		];
 
 		/**

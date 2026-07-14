@@ -3,6 +3,7 @@
 namespace Objectiv\Plugins\Checkout\Admin\Pages;
 
 use Objectiv\Plugins\Checkout\Managers\SettingsManager;
+use Objectiv\Plugins\Checkout\Managers\SlotManager;
 use Objectiv\Plugins\Checkout\Managers\PlanManager;
 use Objectiv\Plugins\Checkout\Model\Template;
 use function WordpressEnqueueChunksPlugin\get as cfwChunkedScriptsConfigGet;
@@ -139,8 +140,8 @@ class CheckoutEditor extends PageAbstract {
 			$editor_settings[ $settings_manager->add_suffix( 'heading_font', [ $template_slug ] ) ] = $template_defaults['heading_font'] ?? '';
 		}
 
-		// Colors: body, buttons, breadcrumbs, cart_summary, header, footer (template-scoped).
-		$color_section_ids  = [ 'body', 'buttons', 'breadcrumbs', 'cart_summary', 'header', 'footer' ];
+		// Colors (template-scoped). active_theme_colors holds per-template settings (e.g. Glass accent color).
+		$color_section_ids  = [ 'body', 'buttons', 'breadcrumbs', 'cart_summary', 'header', 'footer', 'active_theme_colors' ];
 		$raw_color_settings = Appearance::get_theme_color_settings( $template_slug );
 		foreach ( $color_section_ids as $section_id ) {
 			if ( isset( $raw_color_settings[ $section_id ]['settings'] ) ) {
@@ -187,14 +188,25 @@ class CheckoutEditor extends PageAbstract {
 		$editor_settings['cart_item_link']                              = $settings_manager->get_setting( 'cart_item_link' );
 		$editor_settings['cart_item_data_display']                      = $settings_manager->get_setting( 'cart_item_data_display' );
 
+		// Order Bumps.
+		$editor_settings['enable_order_bumps']      = $settings_manager->get_setting( 'enable_order_bumps' ) === 'yes';
+		$editor_settings['order_bumps_settings_url'] = add_query_arg( 'page', 'cfw-settings-order_bumps', admin_url( 'admin.php' ) );
+		$editor_settings['max_bumps']               = (int) ( $settings_manager->get_setting( 'max_bumps' ) ?? 10 );
+
 		// Badges.
-		$editor_settings['enable_trust_badges']     = $settings_manager->get_setting( 'enable_trust_badges' ) === 'yes';
-		$editor_settings['trust_badge_position']    = $settings_manager->get_setting( 'trust_badge_position' );
-		$editor_settings['trust_badges_title']      = $settings_manager->get_setting( 'trust_badges_title' );
-		$editor_settings['enable_wc_review_badges'] = $settings_manager->get_setting( 'enable_wc_review_badges' ) === 'yes';
-		$editor_settings['wc_review_source']        = $settings_manager->get_setting( 'wc_review_source' );
-		$editor_settings['wc_review_min_rating']    = $settings_manager->get_setting( 'wc_review_min_rating' );
-		$editor_settings['wc_review_limit']         = (int) $settings_manager->get_setting( 'wc_review_limit' );
+		$editor_settings['enable_trust_badges']       = $settings_manager->get_setting( 'enable_trust_badges' ) === 'yes';
+		$editor_settings['trust_badge_position']      = $settings_manager->get_setting( 'trust_badge_position' );
+		$editor_settings['trust_badges_title']        = $settings_manager->get_setting( 'trust_badges_title' );
+		$editor_settings['trust_badge_columns']            = max( 1, (int) ( $settings_manager->get_setting( 'trust_badge_columns' ) ?: 3 ) );
+		$editor_settings['trust_badge_cart_columns']       = max( 1, (int) ( $settings_manager->get_setting( 'trust_badge_cart_columns' ) ?: 2 ) );
+		$editor_settings['trust_badge_mobile_columns']      = max( 1, (int) ( $settings_manager->get_setting( 'trust_badge_mobile_columns' ) ?: 1 ) );
+		$editor_settings['enable_wc_review_badges']        = $settings_manager->get_setting( 'enable_wc_review_badges' ) === 'yes';
+		$editor_settings['wc_review_source']               = $settings_manager->get_setting( 'wc_review_source' );
+		$editor_settings['wc_review_min_rating']           = $settings_manager->get_setting( 'wc_review_min_rating' );
+		$editor_settings['wc_review_limit']                = (int) $settings_manager->get_setting( 'wc_review_limit' );
+		$editor_settings['review_badge_columns']           = max( 1, (int) ( $settings_manager->get_setting( 'review_badge_columns' ) ?: 3 ) );
+		$editor_settings['review_badge_cart_columns']      = max( 1, (int) ( $settings_manager->get_setting( 'review_badge_cart_columns' ) ?: 2 ) );
+		$editor_settings['review_badge_mobile_columns']     = max( 1, (int) ( $settings_manager->get_setting( 'review_badge_mobile_columns' ) ?: 1 ) );
 
 		// Footer (template-scoped + mode).
 		$editor_settings[ $settings_manager->add_suffix( 'footer_text', [ $template_slug ] ) ] = $settings_manager->get_setting( 'footer_text', [ $template_slug ] );
@@ -206,7 +218,7 @@ class CheckoutEditor extends PageAbstract {
 		// Express Checkout (same as CheckoutWC > Express Checkout page).
 		$editor_settings['disable_express_checkout'] = $settings_manager->get_setting( 'disable_express_checkout' ) === 'yes';
 
-		// Color defaults for reset/preview (only for body, buttons, breadcrumbs, cart_summary, header, footer).
+		// Color defaults for reset/preview.
 		$all_color_defaults = Appearance::get_theme_color_settings_defaults( $template_slug );
 		$color_settings_defaults = [];
 		foreach ( $color_section_ids as $section_id ) {
@@ -219,11 +231,19 @@ class CheckoutEditor extends PageAbstract {
 			}
 		}
 
-		// When previewing a non-active template, pre-populate the preview transient with the
-		// template's correct defaults so the preview iframe shows the right colors on first load
-		// (before FormObserver fires). Without this the iframe falls back to stale DB values.
+		// Always seed the preview transient on page load so the preview iframe never starts
+		// from a stale transient left behind by a previous editing session. Slot assignments
+		// are written in every case; non-active templates additionally inject their
+		// template-specific color/font defaults (before FormObserver fires).
+		SlotManager::instance()->maybe_migrate();
+		$slot_manager_early = SlotManager::instance();
+
+		$preview_transient = [
+			SlotManager::SLOTS_OPTION       => $slot_manager_early->get_slots(),
+			SlotManager::HTML_BLOCKS_OPTION => $slot_manager_early->get_custom_html_blocks(),
+		];
+
 		if ( ! $is_active_template ) {
-			$preview_transient = [];
 			foreach ( $color_section_ids as $section_id ) {
 				if ( isset( $raw_color_settings[ $section_id ]['settings'] ) ) {
 					foreach ( array_keys( $raw_color_settings[ $section_id ]['settings'] ) as $key ) {
@@ -233,8 +253,9 @@ class CheckoutEditor extends PageAbstract {
 			}
 			$preview_transient[ $settings_manager->add_suffix( 'body_font', [ $template_slug ] ) ]    = $template_defaults['body_font'] ?? '';
 			$preview_transient[ $settings_manager->add_suffix( 'heading_font', [ $template_slug ] ) ] = $template_defaults['heading_font'] ?? '';
-			set_transient( '_cfw_editor_preview_' . get_current_user_id(), $preview_transient, 30 * MINUTE_IN_SECONDS );
 		}
+
+		set_transient( '_cfw_editor_preview_' . get_current_user_id(), $preview_transient, 30 * MINUTE_IN_SECONDS );
 
 		$appearance_instance = new Appearance();
 
@@ -355,6 +376,11 @@ class CheckoutEditor extends PageAbstract {
 			admin_url( 'admin.php' )
 		);
 
+		// Run slot migration before building editor data so the editor reflects migrated assignments.
+		SlotManager::instance()->maybe_migrate();
+
+		$slot_manager = SlotManager::instance();
+
 		$this->set_script_data(
 			[
 				'editor_settings' => [
@@ -373,12 +399,20 @@ class CheckoutEditor extends PageAbstract {
 						'requires_license'          => defined( 'CFW_PREMIUM_PLAN_IDS' ),
 					],
 				],
+				'slots_data'           => [
+					'slot_definitions'   => SlotManager::get_slot_hook_map(),
+					'assignments'        => $slot_manager->get_slots(),
+					'custom_html_blocks' => $slot_manager->get_custom_html_blocks(),
+					'available_items'  => $slot_manager->get_available_items(),
+				],
 				'preview_url'          => $preview_url,
 				'has_products'         => $has_products,
 				'close_url'            => $close_url,
 				'editor_url'           => $editor_url,
 				'saved_active_template' => $saved_slug,
 				'admin_url'            => admin_url( 'admin.php' ),
+				'new_order_bump_url'   => admin_url( 'post-new.php?post_type=cfw_order_bumps' ),
+				'new_trust_badge_url'  => admin_url( 'admin.php?page=cfw-settings-trust-badges' ),
 				'editor_logo_url' => CFW_PATH_URL_BASE . 'assets/images/cfw.svg',
 				'plan'            => $this->get_plan_data(),
 				'templates'       => $editor_templates,
