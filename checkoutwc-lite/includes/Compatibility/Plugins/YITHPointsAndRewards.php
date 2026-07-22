@@ -10,7 +10,7 @@ class YITHPointsAndRewards extends CompatibilityAbstract {
 	}
 
 	public function pre_init() {
-		add_action( 'cfw_template_redirect_priority', array( $this, 'maybe_change_template_redirect_priority' ) );
+		add_action( 'cfw_template_redirect_priority', [ $this, 'maybe_change_template_redirect_priority' ] );
 	}
 
 	public function maybe_change_template_redirect_priority( $priority ) {

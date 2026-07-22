@@ -10,12 +10,12 @@ class Fattureincloud extends CompatibilityAbstract {
 	}
 
 	public function run_immediately() {
-		add_filter( 'woocommerce_update_order_review_fragments', array( $this, 'update_checkout_fragments' ), 1000 );
+		add_filter( 'woocommerce_update_order_review_fragments', [ $this, 'update_checkout_fragments' ], 1000 );
 	}
 
 	public function run() {
 		remove_filter( 'woocommerce_billing_fields', 'billing_fields_woofc', 10 );
-		add_action( 'cfw_checkout_payment_method_tab', array( $this, 'output_fields' ), 21 );
+		add_action( 'cfw_checkout_payment_method_tab', [ $this, 'output_fields' ], 21 );
 	}
 
 	public function get_fields_wrapped() {
@@ -30,7 +30,7 @@ class Fattureincloud extends CompatibilityAbstract {
 	public function get_fields() {
 		ob_start();
 
-		$fields = billing_fields_woofc( array() );
+		$fields = billing_fields_woofc( [] );
 
 		foreach ( $fields as $key => $field ) {
 			/**

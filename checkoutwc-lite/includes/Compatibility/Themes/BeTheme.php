@@ -13,13 +13,13 @@ class BeTheme extends CompatibilityAbstract {
 		add_action(
 			'cfw_before_process_checkout',
 			function () {
-				add_filter( 'wc_get_template', array( $this, 'force_correct_notice_templates' ), 10, 5 );
+				add_filter( 'wc_get_template', [ $this, 'force_correct_notice_templates' ], 10, 5 );
 			}
 		);
 	}
 
 	public function run() {
-		add_filter( 'wc_get_template', array( $this, 'force_correct_notice_templates' ), 10, 5 );
+		add_filter( 'wc_get_template', [ $this, 'force_correct_notice_templates' ], 10, 5 );
 		remove_action( 'woocommerce_review_order_after_submit', 'mfn_return_cart_link' );
 	}
 

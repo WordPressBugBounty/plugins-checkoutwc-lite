@@ -15,7 +15,7 @@ class LogInAction extends CFWAction {
 	}
 
 	public function action() {
-		$info                  = array();
+		$info                  = [];
 		$info['user_login']    = trim( sanitize_text_field( wp_unslash( $_POST['email'] ?? '' ) ) ); // phpcs:ignore WordPress.Security.NonceVerification.Missing
 		$info['user_password'] = sanitize_text_field( wp_unslash( $_POST['password'] ?? '' ) ); // phpcs:ignore WordPress.Security.NonceVerification.Missing
 		$info['remember']      = true;
@@ -36,7 +36,7 @@ class LogInAction extends CFWAction {
 		 */
 		$validation_error = cfw_apply_filters( 'woocommerce_process_login_errors', $validation_error, $info['user_login'], $info['user_password'] );
 
-		$out = array();
+		$out = [];
 
 		if ( is_wp_error( $user ) ) {
 			$out['logged_in'] = false;

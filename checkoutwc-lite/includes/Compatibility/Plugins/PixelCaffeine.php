@@ -14,7 +14,7 @@ class PixelCaffeine extends CompatibilityAbstract {
 	}
 
 	public function run() {
-		add_filter( 'cfw_body_classes', array( $this, 'add_pixel_caffeine_body_class' ) );
+		add_filter( 'cfw_body_classes', [ $this, 'add_pixel_caffeine_body_class' ] );
 	}
 
 	public function add_pixel_caffeine_body_class( $classes ) {

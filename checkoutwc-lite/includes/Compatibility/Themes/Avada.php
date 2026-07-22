@@ -36,16 +36,16 @@ class Avada extends CompatibilityAbstract {
 
 		// Avada 7.4 fixes
 		if ( version_compare( AVADA_VERSION, '7.4.0', '>=' ) ) {
-			add_action( 'wp_enqueue_scripts', array( $this, 'fix_avada_74' ), 100 );
+			add_action( 'wp_enqueue_scripts', [ $this, 'fix_avada_74' ], 100 );
 		}
 
 		// 7.3 and below fixes
 		if ( version_compare( AVADA_VERSION, '7.4.0', '<' ) ) {
 			$this->checkout_page_fixes();
 
-			add_action( 'wp_head', array( $this, 'cleanup_css' ), 0 );
-			add_action( 'wp_enqueue_scripts', array( $this, 'cleanup_css_new' ), 0 ); // latest Avada
-			add_action( 'wp_body_open', array( $this, 'cleanup_css_new' ), 0 ); // latest Avada
+			add_action( 'wp_head', [ $this, 'cleanup_css' ], 0 );
+			add_action( 'wp_enqueue_scripts', [ $this, 'cleanup_css_new' ], 0 ); // latest Avada
+			add_action( 'wp_body_open', [ $this, 'cleanup_css_new' ], 0 ); // latest Avada
 		}
 
 		// All Versions For Now
@@ -63,12 +63,12 @@ class Avada extends CompatibilityAbstract {
 		}
 
 		// Remove actions
-		remove_action( 'woocommerce_after_checkout_form', array( $avada_woocommerce, 'after_checkout_form' ) );
-		remove_action( 'woocommerce_checkout_after_order_review', array( $avada_woocommerce, 'checkout_after_order_review' ), 20 );
-		remove_action( 'woocommerce_checkout_before_customer_details', array( $avada_woocommerce, 'checkout_before_customer_details' ) );
-		remove_action( 'woocommerce_checkout_after_customer_details', array( $avada_woocommerce, 'checkout_after_customer_details' ) );
-		remove_action( 'woocommerce_checkout_billing', array( $avada_woocommerce, 'checkout_billing' ), 20 );
-		remove_action( 'woocommerce_checkout_shipping', array( $avada_woocommerce, 'checkout_shipping' ), 20 );
+		remove_action( 'woocommerce_after_checkout_form', [ $avada_woocommerce, 'after_checkout_form' ] );
+		remove_action( 'woocommerce_checkout_after_order_review', [ $avada_woocommerce, 'checkout_after_order_review' ], 20 );
+		remove_action( 'woocommerce_checkout_before_customer_details', [ $avada_woocommerce, 'checkout_before_customer_details' ] );
+		remove_action( 'woocommerce_checkout_after_customer_details', [ $avada_woocommerce, 'checkout_after_customer_details' ] );
+		remove_action( 'woocommerce_checkout_billing', [ $avada_woocommerce, 'checkout_billing' ], 20 );
+		remove_action( 'woocommerce_checkout_shipping', [ $avada_woocommerce, 'checkout_shipping' ], 20 );
 	}
 
 	public function checkout_page_fixes() {
@@ -83,9 +83,9 @@ class Avada extends CompatibilityAbstract {
 			return;
 		}
 
-		remove_action( 'woocommerce_before_checkout_form', array( $avada_woocommerce, 'avada_top_user_container' ), 1 );
-		remove_action( 'woocommerce_before_checkout_form', array( $avada_woocommerce, 'checkout_coupon_form' ), 10 );
-		remove_action( 'woocommerce_before_checkout_form', array( $avada_woocommerce, 'before_checkout_form' ), 10 );
+		remove_action( 'woocommerce_before_checkout_form', [ $avada_woocommerce, 'avada_top_user_container' ], 1 );
+		remove_action( 'woocommerce_before_checkout_form', [ $avada_woocommerce, 'checkout_coupon_form' ], 10 );
+		remove_action( 'woocommerce_before_checkout_form', [ $avada_woocommerce, 'before_checkout_form' ], 10 );
 	}
 
 	public function fix_avada_74() {
@@ -106,17 +106,17 @@ class Avada extends CompatibilityAbstract {
 		}
 
 		if ( fusion_get_option( 'media_queries_async' ) ) {
-			remove_action( 'wp_enqueue_scripts', array( $inline_instance, 'add_inline_css' ), 101 );
-			remove_action( $loading_action, array( $inline_instance, 'add_custom_css_to_wp_head' ), $priority );
+			remove_action( 'wp_enqueue_scripts', [ $inline_instance, 'add_inline_css' ], 101 );
+			remove_action( $loading_action, [ $inline_instance, 'add_custom_css_to_wp_head' ], $priority );
 		} else {
-			remove_action( $loading_action, array( $inline_instance, 'add_inline_css_wp_head' ), $priority );
+			remove_action( $loading_action, [ $inline_instance, 'add_inline_css_wp_head' ], $priority );
 		}
 	}
 
 	public function run_on_thankyou() {
-		add_action( 'wp_head', array( $this, 'cleanup_css' ), 0 );
-		add_action( 'wp_enqueue_scripts', array( $this, 'cleanup_css_new' ), 0 ); // latest Avada
-		add_action( 'wp_body_open', array( $this, 'cleanup_css_new' ), 0 ); // latest Avada
+		add_action( 'wp_head', [ $this, 'cleanup_css' ], 0 );
+		add_action( 'wp_enqueue_scripts', [ $this, 'cleanup_css_new' ], 0 ); // latest Avada
+		add_action( 'wp_body_open', [ $this, 'cleanup_css_new' ], 0 ); // latest Avada
 
 		$this->disable_lazy_loading();
 
@@ -131,9 +131,9 @@ class Avada extends CompatibilityAbstract {
 			return;
 		}
 
-		remove_action( 'woocommerce_thankyou', array( $avada_woocommerce, 'view_order' ), 20 );
-		remove_action( 'woocommerce_view_order', array( $avada_woocommerce, 'view_order' ) );
-		remove_action( 'woocommerce_thankyou', array( $avada_woocommerce, 'view_order' ) );
+		remove_action( 'woocommerce_thankyou', [ $avada_woocommerce, 'view_order' ], 20 );
+		remove_action( 'woocommerce_view_order', [ $avada_woocommerce, 'view_order' ] );
+		remove_action( 'woocommerce_thankyou', [ $avada_woocommerce, 'view_order' ] );
 	}
 
 	public function disable_lazy_loading() {
@@ -142,7 +142,7 @@ class Avada extends CompatibilityAbstract {
 		}
 
 		$fusion = \Fusion::get_instance();
-		remove_filter( 'wp_get_attachment_image_attributes', array( $fusion->images, 'lazy_load_attributes' ), 10 );
+		remove_filter( 'wp_get_attachment_image_attributes', [ $fusion->images, 'lazy_load_attributes' ], 10 );
 	}
 
 	/**
@@ -158,9 +158,9 @@ class Avada extends CompatibilityAbstract {
 			return;
 		}
 
-		remove_action( \fusion_should_defer_styles_loading() ? 'wp_body_open' : 'wp_enqueue_scripts', array( $fusion_dynamic_css_file, 'add_inline_css' ) );
-		remove_action( 'wp_head', array( $fusion_dynamic_css_file, 'add_custom_css_to_wp_head' ), 999 );
-		remove_action( 'wp_head', array( $fusion_dynamic_css_file, 'add_inline_css_wp_head' ), 999 );
+		remove_action( \fusion_should_defer_styles_loading() ? 'wp_body_open' : 'wp_enqueue_scripts', [ $fusion_dynamic_css_file, 'add_inline_css' ] );
+		remove_action( 'wp_head', [ $fusion_dynamic_css_file, 'add_custom_css_to_wp_head' ], 999 );
+		remove_action( 'wp_head', [ $fusion_dynamic_css_file, 'add_inline_css_wp_head' ], 999 );
 	}
 
 	public function cleanup_css_new() {
@@ -170,6 +170,6 @@ class Avada extends CompatibilityAbstract {
 			return;
 		}
 
-		remove_action( 'wp_enqueue_scripts', array( $object, 'enqueue_dynamic_css' ), 11 );
+		remove_action( 'wp_enqueue_scripts', [ $object, 'enqueue_dynamic_css' ], 11 );
 	}
 }

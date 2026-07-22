@@ -26,7 +26,7 @@ class EditorPreviewSettingsOverride {
 		}
 
 		if ( $is_preview_page ) {
-			add_filter( 'show_admin_bar', array( $this, 'filter_show_admin_bar_in_editor_preview' ), 1 );
+			add_filter( 'show_admin_bar', [ $this, 'filter_show_admin_bar_in_editor_preview' ], 1 );
 		}
 
 		$user_id  = get_current_user_id();

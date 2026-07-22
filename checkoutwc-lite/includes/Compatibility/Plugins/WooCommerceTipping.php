@@ -10,7 +10,7 @@ class WooCommerceTipping extends CompatibilityAbstract {
 	}
 
 	public function run() {
-		add_action( 'cfw_checkout_cart_summary', array( $this, 'output' ), 65 );
+		add_action( 'cfw_checkout_cart_summary', [ $this, 'output' ], 65 );
 	}
 
 	public function output() {

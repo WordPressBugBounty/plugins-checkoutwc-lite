@@ -10,7 +10,7 @@ class TMOrganik extends CompatibilityAbstract {
 	}
 
 	public function run() {
-		add_action( 'wp_head', array( $this, 'shim_headroom' ) );
+		add_action( 'wp_head', [ $this, 'shim_headroom' ] );
 	}
 
 	public function shim_headroom() {

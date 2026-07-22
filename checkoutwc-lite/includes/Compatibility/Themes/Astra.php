@@ -11,7 +11,7 @@ class Astra extends CompatibilityAbstract {
 	}
 
 	public function pre_init() {
-		add_filter( 'cfw_admin_integrations_checkbox_fields', array( $this, 'admin_integration_settings' ) );
+		add_filter( 'cfw_admin_integrations_checkbox_fields', [ $this, 'admin_integration_settings' ] );
 	}
 
 	public function run() {
@@ -22,8 +22,8 @@ class Astra extends CompatibilityAbstract {
 		}
 
 		if ( $astra_support_enabled ) {
-			add_action( 'cfw_custom_header', array( $this, 'astra_header' ) );
-			add_action( 'cfw_custom_footer', array( $this, 'astra_footer' ) );
+			add_action( 'cfw_custom_header', [ $this, 'astra_header' ] );
+			add_action( 'cfw_custom_footer', [ $this, 'astra_footer' ] );
 
 			// Allow Astra's styles and scripts to load (prevent them from being blocked).
 			remove_filter( 'cfw_blocked_style_handles', 'cfw_remove_theme_styles', 10 );
@@ -86,12 +86,12 @@ class Astra extends CompatibilityAbstract {
 			return $integrations;
 		}
 
-		$integrations[] = array(
+		$integrations[] = [
 			'name'          => 'enable_astra_support',
 			'label'         => __( 'Enable Astra Support (Beta)', 'checkout-wc' ),
 			'description'   => __( 'If enabled with Advanced > Template Loader > Distraction Free Portal, Astra\'s header and footer are displayed and Astra styles and scripts load on checkout. If disabled with Distraction Free Portal, Astra styles and scripts are excluded for a minimal layout. With WordPress Theme loader, the full theme loads regardless of this setting.', 'checkout-wc' ),
 			'initial_value' => SettingsManager::instance()->get_setting( 'enable_astra_support' ) === 'yes',
-		);
+		];
 
 		return $integrations;
 	}

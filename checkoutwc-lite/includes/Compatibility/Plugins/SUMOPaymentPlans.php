@@ -11,9 +11,9 @@ class SUMOPaymentPlans extends CompatibilityAbstract {
 
 	public function run() {
 		try {
-			add_action( 'cfw_checkout_before_payment_methods', array( \SUMO_PP_Order_PaymentPlan::instance(), 'render_plan_selector' ) );
+			add_action( 'cfw_checkout_before_payment_methods', [ \SUMO_PP_Order_PaymentPlan::instance(), 'render_plan_selector' ] );
 		} catch ( Exception $e ) {
-			wc_get_logger()->error( 'CheckoutWC: Failed to load SUMO plan selector: ' . $e->getMessage(), array( 'source' => 'checkout-wc' ) );
+			wc_get_logger()->error( 'CheckoutWC: Failed to load SUMO plan selector: ' . $e->getMessage(), [ 'source' => 'checkout-wc' ] );
 		}
 	}
 }

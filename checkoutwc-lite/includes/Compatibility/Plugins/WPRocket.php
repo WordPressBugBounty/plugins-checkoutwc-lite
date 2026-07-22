@@ -14,11 +14,11 @@ class WPRocket extends CompatibilityAbstract {
 			return;
 		}
 
-		add_filter( 'cfw_admin_integrations_checkbox_fields', array( $this, 'admin_integration_settings' ) );
-		add_action( SettingsManager::instance()->prefix . '_settings_saved', array( $this, 'maybe_delete_cache_empty_cart' ), 10, 1 );
-		add_action( 'cfw_before_plugin_data_upgrades', array( $this, 'delete_cache_empty_cart' ) );
-		add_filter( 'rocket_rucss_safelist', array( $this, 'exclude_css' ) );
-		add_filter( 'rocket_delay_js_exclusions', array( $this, 'exclude_js' ) );
+		add_filter( 'cfw_admin_integrations_checkbox_fields', [ $this, 'admin_integration_settings' ] );
+		add_action( SettingsManager::instance()->prefix . '_settings_saved', [ $this, 'maybe_delete_cache_empty_cart' ], 10, 1 );
+		add_action( 'cfw_before_plugin_data_upgrades', [ $this, 'delete_cache_empty_cart' ] );
+		add_filter( 'rocket_rucss_safelist', [ $this, 'exclude_css' ] );
+		add_filter( 'rocket_delay_js_exclusions', [ $this, 'exclude_js' ] );
 	}
 
 	public function maybe_delete_cache_empty_cart( array $new_settings ) {
@@ -57,7 +57,7 @@ class WPRocket extends CompatibilityAbstract {
 		 * /wp-includes/js/dist/blocks.min.js
 		 * /wp-includes/js/dist/vendor/react-dom.min.js
 		 */
-		$wp_excludes = array(
+		$wp_excludes = [
 			'/wp-includes/js/dist/vendor/react.(.*).js',
 			'/wp-includes/js/dist/vendor/react-dom.(.*).js',
 			'/wp-includes/js/dist/private-apis.(.*).js',
@@ -71,7 +71,7 @@ class WPRocket extends CompatibilityAbstract {
 			'/wp-includes/js/dist/blocks.(.*).js',
 			'/wp-includes/js/dist/is-shallow-equal.(.*).js',
 			'\/jquery(-migrate)?-?([0-9.]+)?(.min|.slim|.slim.min)?.js(\?(.*))?( |\'|"|>)',
-		);
+		];
 
 		foreach ( $wp_excludes as $wp_exclude ) {
 			$excluded_js[] = $wp_exclude;
@@ -111,12 +111,12 @@ class WPRocket extends CompatibilityAbstract {
 			return $integrations;
 		}
 
-		$integrations[] = array(
+		$integrations[] = [
 			'name'          => 'enable_wp_rocket_delay_js_compatibility_mode',
 			'label'         => __( 'Enable WP Rocket Delay JS Execution compatibility mode', 'checkout-wc' ),
 			'description'   => __( 'By default, we exclude our scripts and script dependencies to prevent compatibility problems. Uncheck to allow CheckoutWC scripts to be delayed for maximum performance.', 'checkout-wc' ),
 			'initial_value' => SettingsManager::instance()->get_setting( 'enable_wp_rocket_delay_js_compatibility_mode' ) === 'yes',
-		);
+		];
 
 		return $integrations;
 	}

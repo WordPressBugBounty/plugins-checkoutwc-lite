@@ -85,7 +85,7 @@ abstract class LoaderAbstract {
 		 *
 		 * @param array $global_params The global template parameters
 		 */
-		return apply_filters( 'cfw_template_global_params', array() );
+		return apply_filters( 'cfw_template_global_params', [] );
 	}
 
 	/**
@@ -106,11 +106,11 @@ abstract class LoaderAbstract {
 		 */
 		$global_template_parameters = apply_filters(
 			'cfw_template_global_params',
-			array(
+			[
 				'call_receipt_hook'  => false,
 				'order_button_text'  => cfw_apply_filters( 'woocommerce_pay_order_button_text', __( 'Pay for order', 'woocommerce' ) ),
-				'available_gateways' => array(),
-			)
+				'available_gateways' => [],
+			]
 		);
 
 		add_action(
@@ -159,10 +159,10 @@ abstract class LoaderAbstract {
 
 				// Ensure order items are still stocked if paying for a failed order. Pending orders do not need this check because stock is held.
 				if ( ! $order->has_status( wc_get_is_pending_statuses() ) ) {
-					$quantities = array();
+					$quantities = [];
 
 					foreach ( $order->get_items() as $item_key => $item ) {
-						if ( $item && is_callable( array( $item, 'get_product' ) ) ) {
+						if ( $item && is_callable( [ $item, 'get_product' ] ) ) {
 							$product = $item->get_product();
 
 							if ( ! $product ) {
@@ -174,7 +174,7 @@ abstract class LoaderAbstract {
 					}
 
 					foreach ( $order->get_items() as $item_key => $item ) {
-						if ( $item && is_callable( array( $item, 'get_product' ) ) ) {
+						if ( $item && is_callable( [ $item, 'get_product' ] ) ) {
 							$product = $item->get_product();
 
 							if ( ! $product ) {
@@ -204,11 +204,11 @@ abstract class LoaderAbstract {
 				}
 
 				WC()->customer->set_props(
-					array(
+					[
 						'billing_country'  => $order->get_billing_country() ? $order->get_billing_country() : null,
 						'billing_state'    => $order->get_billing_state() ? $order->get_billing_state() : null,
 						'billing_postcode' => $order->get_billing_postcode() ? $order->get_billing_postcode() : null,
-					)
+					]
 				);
 				WC()->customer->save();
 
@@ -275,7 +275,7 @@ abstract class LoaderAbstract {
 		 *
 		 * @param array $global_template_parameters The global template parameters
 		 */
-		$global_template_parameters = apply_filters( 'cfw_template_global_params', array() );
+		$global_template_parameters = apply_filters( 'cfw_template_global_params', [] );
 
 		// Empty awaiting payment session.
 		unset( WC()->session->order_awaiting_payment );

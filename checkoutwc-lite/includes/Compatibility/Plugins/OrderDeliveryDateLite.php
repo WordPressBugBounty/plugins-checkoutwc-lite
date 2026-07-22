@@ -11,16 +11,16 @@ class OrderDeliveryDateLite extends CompatibilityAbstract {
 
 	public function run() {
 		if ( defined( 'ORDDD_LITE_SHOPPING_CART_HOOK' ) ) {
-			remove_action( ORDDD_LITE_SHOPPING_CART_HOOK, array( 'Orddd_Lite_Process', 'orddd_lite_my_custom_checkout_field' ) );
-			add_action( 'cfw_checkout_after_shipping_methods', array( 'Orddd_Lite_Process', 'orddd_lite_my_custom_checkout_field' ) );
+			remove_action( ORDDD_LITE_SHOPPING_CART_HOOK, [ 'Orddd_Lite_Process', 'orddd_lite_my_custom_checkout_field' ] );
+			add_action( 'cfw_checkout_after_shipping_methods', [ 'Orddd_Lite_Process', 'orddd_lite_my_custom_checkout_field' ] );
 		}
 	}
 
 	public function typescript_class_and_params( array $compatibility ): array {
-		$compatibility[] = array(
+		$compatibility[] = [
 			'class'  => 'OrderDeliveryDate',
-			'params' => array(),
-		);
+			'params' => [],
+		];
 
 		return $compatibility;
 	}

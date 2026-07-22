@@ -3,7 +3,7 @@ namespace Objectiv\Plugins\Checkout;
 
 class GoogleFontsURLGenerator {
 
-	private $fonts   = array();
+	private $fonts   = [];
 	private $display = 'swap';
 	private $text    = null;
 	private $baseUrl = 'https://fonts.googleapis.com/css2';
@@ -19,9 +19,9 @@ class GoogleFontsURLGenerator {
 	 */
 	public function addFont( string $family, $weights = null, bool $italic = false ): GoogleFontsURLGenerator {
 		if ( ! isset( $this->fonts[ $family ] ) ) {
-			$this->fonts[ $family ] = array(
-				'variants' => array(),
-			);
+			$this->fonts[ $family ] = [
+				'variants' => [],
+			];
 		}
 
 		// Handle different weight formats
@@ -54,10 +54,10 @@ class GoogleFontsURLGenerator {
 	private function addVariant( string $family, ?string $weight, bool $italic ) {
 		$key = ( $italic ? 'i' : 'n' ) . ':' . ( $weight ? $weight : '400' );
 
-		$this->fonts[ $family ]['variants'][ $key ] = array(
+		$this->fonts[ $family ]['variants'][ $key ] = [
 			'weight' => $weight ? $weight : '400',
 			'italic' => $italic,
-		);
+		];
 	}
 
 	/**
@@ -99,7 +99,7 @@ class GoogleFontsURLGenerator {
 	 * @return self
 	 */
 	public function setDisplay( string $display ): GoogleFontsURLGenerator {
-		$validValues = array( 'auto', 'block', 'swap', 'fallback', 'optional' );
+		$validValues = [ 'auto', 'block', 'swap', 'fallback', 'optional' ];
 
 		if ( in_array( $display, $validValues, true ) ) {
 			$this->display = $display;
@@ -131,7 +131,7 @@ class GoogleFontsURLGenerator {
 			return '';
 		}
 
-		$params = array();
+		$params = [];
 
 		// Build family parameters
 		foreach ( $this->fonts as $family => $data ) {
@@ -202,10 +202,10 @@ class GoogleFontsURLGenerator {
 	 * @return array
 	 */
 	private function groupVariants( array $variants ): array {
-		$groups = array(
-			'ranges' => array(),
-			'simple' => array(),
-		);
+		$groups = [
+			'ranges' => [],
+			'simple' => [],
+		];
 
 		foreach ( $variants as $variant ) {
 			if ( strpos( $variant['weight'], '..' ) !== false ) {
@@ -228,10 +228,10 @@ class GoogleFontsURLGenerator {
 	private function buildAxisSpec( array $groups ): string {
 		$hasItalic  = false;
 		$hasRegular = false;
-		$specs      = array();
+		$specs      = [];
 
 		// 1. Check if we need the 'ital' axis and if any regular styles are present.
-		$allVariants = array_merge( $groups['ranges'] ?? array(), $groups['simple'] ?? array() );
+		$allVariants = array_merge( $groups['ranges'] ?? [], $groups['simple'] ?? [] );
 		foreach ( $allVariants as $variant ) {
 			if ( $variant['italic'] ) {
 				$hasItalic = true;
@@ -254,8 +254,8 @@ class GoogleFontsURLGenerator {
 
 		// 3. Handle individual weights
 		if ( ! empty( $groups['simple'] ) ) {
-			$regularWeights = array();
-			$italicWeights  = array();
+			$regularWeights = [];
+			$italicWeights  = [];
 
 			foreach ( $groups['simple'] as $variant ) {
 				if ( $variant['italic'] ) {
@@ -306,7 +306,7 @@ class GoogleFontsURLGenerator {
 	 * @return self
 	 */
 	public function reset(): GoogleFontsURLGenerator {
-		$this->fonts   = array();
+		$this->fonts   = [];
 		$this->display = 'swap';
 		$this->text    = null;
 

@@ -20,6 +20,6 @@ class WCFieldFactory extends CompatibilityAbstract {
 			return;
 		}
 
-		remove_filter( 'woocommerce_checkout_fields', array( $Wcff_CheckoutFields, 'wcccf_filter_checkout_fields' ), $priority );
+		remove_filter( 'woocommerce_checkout_fields', [ $Wcff_CheckoutFields, 'wcccf_filter_checkout_fields' ], $priority );
 	}
 }

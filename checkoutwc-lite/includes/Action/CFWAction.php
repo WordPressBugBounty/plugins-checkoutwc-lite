@@ -22,7 +22,7 @@ abstract class CFWAction {
 
 	public function load() {
 		remove_all_actions( "wc_ajax_{$this->get_id()}" );
-		add_action( "wc_ajax_{$this->get_id()}", array( $this, 'execute' ) );
+		add_action( "wc_ajax_{$this->get_id()}", [ $this, 'execute' ] );
 
 		/**
 		 * These legacy handlers are here because Woo adds them and 3rd party plugins
@@ -31,10 +31,10 @@ abstract class CFWAction {
 		 * restricted
 		 */
 		remove_all_actions( "wp_ajax_woocommerce_{$this->get_id()}" );
-		add_action( "wp_ajax_woocommerce_{$this->get_id()}", array( $this, 'execute' ) );
+		add_action( "wp_ajax_woocommerce_{$this->get_id()}", [ $this, 'execute' ] );
 
 		remove_all_actions( "wp_ajax_nopriv_woocommerce_{$this->get_id()}" );
-		add_action( "wp_ajax_nopriv_woocommerce_{$this->get_id()}", array( $this, 'execute' ) );
+		add_action( "wp_ajax_nopriv_woocommerce_{$this->get_id()}", [ $this, 'execute' ] );
 	}
 
 	public function execute() {

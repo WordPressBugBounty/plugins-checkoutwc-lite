@@ -10,27 +10,27 @@ class LiteEmailOptIn extends NoticeAbstract {
 
 	public function __construct() {
 		parent::__construct();
-		add_action( 'admin_footer', array( $this, 'add_inline_script' ) );
-		add_action( 'wp_ajax_cfw_lite_email_opt_in', array( $this, 'handle_ajax_opt_in' ) );
-		add_action( 'wp_ajax_cfw_lite_email_opt_in_dismiss', array( $this, 'handle_ajax_dismiss' ) );
+		add_action( 'admin_footer', [ $this, 'add_inline_script' ] );
+		add_action( 'wp_ajax_cfw_lite_email_opt_in', [ $this, 'handle_ajax_opt_in' ] );
+		add_action( 'wp_ajax_cfw_lite_email_opt_in_dismiss', [ $this, 'handle_ajax_dismiss' ] );
 	}
 
 	public function add(): void {
 		$current_user = wp_get_current_user();
-		$user_email = $current_user->user_email ? $current_user->user_email : __( 'your email', 'checkout-wc' );
+		$user_email   = $current_user->user_email ? $current_user->user_email : __( 'your email', 'checkout-wc' );
 
 		$notice_type = $this->get_notice_type();
-		$content = $this->get_notice_content( $notice_type, $user_email );
+		$content     = $this->get_notice_content( $notice_type, $user_email );
 
 		parent::maybe_add(
 			'cfw_lite_email_opt_in',
 			$content['title'],
 			$content['message'],
-			array(
+			[
 				'type'        => 'info',
 				'scope'       => 'global',
 				'dismissible' => true,
-			)
+			]
 		);
 	}
 
@@ -95,10 +95,10 @@ class LiteEmailOptIn extends NoticeAbstract {
 
 	private function get_notice_content( string $notice_type, string $user_email ): array {
 		if ( $notice_type === 'orders_milestone' ) {
-			$content = $this->get_notice_content_orders_milestone();
+			$content      = $this->get_notice_content_orders_milestone();
 			$button_label = esc_html__( 'Join Newsletter & Save 25%', 'checkout-wc' );
 		} else {
-			$content = $this->get_notice_content_default();
+			$content      = $this->get_notice_content_default();
 			$button_label = esc_html__( 'Join Newsletter', 'checkout-wc' );
 		}
 
@@ -112,20 +112,20 @@ class LiteEmailOptIn extends NoticeAbstract {
 	private function get_notice_content_default(): array {
 		$message = $this->get_notice_content_paragraph_wrap( esc_html__( 'Sign up to our newsletter and get proven conversion tips and checkout optimization strategies from the CheckoutWC team.', 'checkout-wc' ) );
 
-		return array(
+		return [
 			'title'   => esc_html__( 'Boost Your Conversions with Proven Strategies.', 'checkout-wc' ),
 			'message' => $message,
-		);
+		];
 	}
 
 	private function get_notice_content_orders_milestone(): array {
 		// translators: %s: Discount text
 		$message = $this->get_notice_content_paragraph_wrap( esc_html__( "We're so glad that you've chosen CheckoutWC to handle your checkouts. Unlock more sales with premium features like order bumps, abandoned cart recovery, and much more.", 'checkout-wc' ) );
 
-		return array(
+		return [
 			'title'   => esc_html__( 'Unlock more sales with CheckoutWC Premium', 'checkout-wc' ),
 			'message' => $message,
-		);
+		];
 	}
 
 	private function get_notice_content_paragraph_wrap( string $content ): string {
@@ -135,9 +135,9 @@ class LiteEmailOptIn extends NoticeAbstract {
 	private function get_notice_status(): array {
 		$status = SettingsManager::instance()->get_setting( self::OPTION_NAME );
 		if ( ! $status ) {
-			$status = array( 'dismissed' => array(), 'subscribed' => false );
+			$status = [ 'dismissed' => [], 'subscribed' => false ];
 		}
-		return wp_parse_args( $status, array( 'dismissed' => array(), 'subscribed' => false ) );
+		return wp_parse_args( $status, [ 'dismissed' => [], 'subscribed' => false ] );
 	}
 
 	protected function get_subscription_error_message(): string {
@@ -168,7 +168,7 @@ class LiteEmailOptIn extends NoticeAbstract {
 	}
 
 	private function mark_as_subscribed(): void {
-		$status = $this->get_notice_status();
+		$status               = $this->get_notice_status();
 		$status['subscribed'] = true;
 		SettingsManager::instance()->update_setting( self::OPTION_NAME, $status );
 	}
@@ -186,7 +186,7 @@ class LiteEmailOptIn extends NoticeAbstract {
 		}
 
 		$install_timestamp = strtotime( $install_date );
-		$threshold = $this->get_orders_milestone_threshold();
+		$threshold         = $this->get_orders_milestone_threshold();
 
 		// Check for cached result first
 		$transient_key = '_cfw_lite_email_opt_in_reached_orders_milestone_threshold';
@@ -197,19 +197,19 @@ class LiteEmailOptIn extends NoticeAbstract {
 		}
 
 		// Get orders up to the threshold + 1 (to check if we have at least threshold)
-		$order_query_args = array(
+		$order_query_args = [
 			'limit'        => $threshold + 1,
 			'return'       => 'ids',
 			'date_created' => '>' . $install_timestamp,
-		);
+		];
 
 		if ( cfw_is_hpos_enabled() ) {
-			$order_query_args['meta_query'] = array(
-				array(
+			$order_query_args['meta_query'] = [
+				[
 					'key'   => '_cfw',
 					'value' => 'true',
-				),
-			);
+				],
+			];
 		} else {
 			$order_query_args['meta_key']   = '_cfw';
 			$order_query_args['meta_value'] = 'true';
@@ -313,31 +313,31 @@ class LiteEmailOptIn extends NoticeAbstract {
 
 	public function handle_ajax_opt_in(): void {
 		if ( ! wp_verify_nonce( $_POST['nonce'] ?? '', 'cfw_lite_email_opt_in' ) ) {
-			wp_send_json_error( array( 'message' => $this->get_subscription_error_message() ) );
+			wp_send_json_error( [ 'message' => $this->get_subscription_error_message() ] );
 		}
 
 		if ( ! current_user_can( $this->get_required_capability() ) ) {
-			wp_send_json_error( array( 'message' => __( 'Sorry, your account has insufficient permissions to join our newsletter.', 'checkout-wc' ) ) );
+			wp_send_json_error( [ 'message' => __( 'Sorry, your account has insufficient permissions to join our newsletter.', 'checkout-wc' ) ] );
 		}
 
 		// Process email subscription
-		$current_user	= wp_get_current_user();
-		$email			= $current_user->user_email;
-		$first_name		= $current_user->first_name ?: '';
-		$last_name		= $current_user->last_name ?: '';
+		$current_user = wp_get_current_user();
+		$email        = $current_user->user_email;
+		$first_name   = $current_user->first_name ?: '';
+		$last_name    = $current_user->last_name ?: '';
 
 		// Check if contact already exists using Kestrel Connect
-		$check_url = 'https://connect.kestrelwp.io/checkoutwc/groundhogg/check-contact?email=' . urlencode( $email );
-		$check_response = wp_remote_get( $check_url, array(
-			'headers' => array(
-				'Accept'		=> 'application/json',
-				'Content-Type'	=> 'application/json',
-			),
+		$check_url      = 'https://connect.kestrelwp.io/checkoutwc/groundhogg/check-contact?email=' . urlencode( $email );
+		$check_response = wp_remote_get( $check_url, [
+			'headers' => [
+				'Accept'        => 'application/json',
+				'Content-Type'  => 'application/json',
+			],
 			'timeout' => 30,
-		) );
+		] );
 
 		if ( is_wp_error( $check_response ) ) {
-			wp_send_json_error( array( 'message' => $this->get_subscription_error_message() ) );
+			wp_send_json_error( [ 'message' => $this->get_subscription_error_message() ] );
 		}
 
 		$check_body = wp_remote_retrieve_body( $check_response );
@@ -351,18 +351,18 @@ class LiteEmailOptIn extends NoticeAbstract {
 				isset( $check_data['exists'] ) &&
 				$check_data['exists'] === true ) {
 			$this->mark_as_subscribed();
-			wp_send_json_success( array( 'message' => __( 'You have already joined our newsletter!', 'checkout-wc' ) ) );
+			wp_send_json_success( [ 'message' => __( 'You have already joined our newsletter!', 'checkout-wc' ) ] );
 		}
 
 		// Add contact using Kestrel Connect
-		$add_url = 'https://connect.kestrelwp.io/checkoutwc/groundhogg/add-contact';
-		$add_data = array(
-			'email'			=> $email,
-			'optin_status'	=> 4,
-			'tags'			=> [
+		$add_url  = 'https://connect.kestrelwp.io/checkoutwc/groundhogg/add-contact';
+		$add_data = [
+			'email'         => $email,
+			'optin_status'  => 4,
+			'tags'          => [
 				95, // LiteEmailOptIn tag ID
 			],
-		);
+		];
 
 		if ( ! empty( $first_name ) ) {
 			$add_data['first_name'] = $first_name;
@@ -371,17 +371,17 @@ class LiteEmailOptIn extends NoticeAbstract {
 			$add_data['last_name'] = $last_name;
 		}
 
-		$response = wp_remote_post( $add_url, array(
-			'headers' => array(
-				'Accept'		=> 'application/json',
-				'Content-Type'	=> 'application/json',
-			),
-			'body'		=> wp_json_encode( $add_data ),
-			'timeout'	=> 30,
-		) );
+		$response = wp_remote_post( $add_url, [
+			'headers' => [
+				'Accept'        => 'application/json',
+				'Content-Type'  => 'application/json',
+			],
+			'body'      => wp_json_encode( $add_data ),
+			'timeout'   => 30,
+		] );
 
 		if ( is_wp_error( $response ) ) {
-			wp_send_json_error( array( 'message' => $this->get_subscription_error_message() ) );
+			wp_send_json_error( [ 'message' => $this->get_subscription_error_message() ] );
 		}
 
 		$response_code = wp_remote_retrieve_response_code( $response );
@@ -390,10 +390,10 @@ class LiteEmailOptIn extends NoticeAbstract {
 
 		// Check for successful response (201) and success status
 		if ( $response_code === 201 &&
-			 isset( $response_data['status'] ) &&
-			 $response_data['status'] === 'success' ) {
+			isset( $response_data['status'] ) &&
+			$response_data['status'] === 'success' ) {
 			$this->mark_as_subscribed();
-			wp_send_json_success( array( 'message' => __( 'Thank you for joining our newsletter!', 'checkout-wc' ) ) );
+			wp_send_json_success( [ 'message' => __( 'Thank you for joining our newsletter!', 'checkout-wc' ) ] );
 		}
 
 		// Handle fallback error response
@@ -402,16 +402,16 @@ class LiteEmailOptIn extends NoticeAbstract {
 			$error_message = $response_data['message'];
 		}
 
-		wp_send_json_error( array( 'message' => $error_message ) );
+		wp_send_json_error( [ 'message' => $error_message ] );
 	}
 
 	public function handle_ajax_dismiss(): void {
 		if ( ! wp_verify_nonce( $_POST['nonce'] ?? '', 'cfw_lite_email_opt_in_dismiss' ) ) {
-			wp_send_json_error( array( 'message' => __( 'Security check failed.', 'checkout-wc' ) ) );
+			wp_send_json_error( [ 'message' => __( 'Security check failed.', 'checkout-wc' ) ] );
 		}
 
 		if ( ! current_user_can( $this->get_required_capability() ) ) {
-			wp_send_json_error( array( 'message' => __( 'Insufficient permissions.', 'checkout-wc' ) ) );
+			wp_send_json_error( [ 'message' => __( 'Insufficient permissions.', 'checkout-wc' ) ] );
 		}
 
 		// Determine dismissal type based on the current notice type being shown
@@ -419,6 +419,6 @@ class LiteEmailOptIn extends NoticeAbstract {
 
 		$this->mark_as_dismissed( $dismissal_type );
 
-		wp_send_json_success( array( 'message' => __( 'Notice dismissed.', 'checkout-wc' ) ) );
+		wp_send_json_success( [ 'message' => __( 'Notice dismissed.', 'checkout-wc' ) ] );
 	}
 }

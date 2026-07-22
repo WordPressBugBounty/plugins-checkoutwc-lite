@@ -10,8 +10,8 @@ class WPML extends CompatibilityAbstract {
 	}
 
 	public function run() {
-		add_filter( 'cfw_acr_cart_meta', array( $this, 'add_site_language_meta' ), 10, 1 );
-		add_action( 'cfw_acr_handle_meta', array( $this, 'set_site_language' ), 10, 1 );
+		add_filter( 'cfw_acr_cart_meta', [ $this, 'add_site_language_meta' ], 10, 1 );
+		add_action( 'cfw_acr_handle_meta', [ $this, 'set_site_language' ], 10, 1 );
 	}
 
 	public function add_site_language_meta( $meta ) {

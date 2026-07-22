@@ -11,34 +11,34 @@ class ThemeHighCheckoutFieldEditorPro extends CompatibilityAbstract {
 	}
 
 	public function pre_init() {
-		add_filter( 'cfw_admin_integrations_checkbox_fields', array( $this, 'admin_integration_settings' ) );
+		add_filter( 'cfw_admin_integrations_checkbox_fields', [ $this, 'admin_integration_settings' ] );
 		add_filter(
 			'thwcfe_hidden_fields_display_position',
-			array(
+			[
 				$this,
 				'thwcfe_hidden_fields_display_position',
-			),
+			],
 			1000
 		);
 
 		// Use both of these filters - the first one isn't sufficient by itself and seems to be a legacy holdover
 		// But it's the only way to modify the display position select in settings
-		add_filter( 'thwcfe_custom_section_positions', array( $this, 'custom_section_display_positions' ) );
+		add_filter( 'thwcfe_custom_section_positions', [ $this, 'custom_section_display_positions' ] );
 
 		// This one is required to actually render the custom section
-		add_filter( 'thwcfe_custom_section_display_positions', array( $this, 'custom_section_display_positions' ) );
+		add_filter( 'thwcfe_custom_section_display_positions', [ $this, 'custom_section_display_positions' ] );
 	}
 
 	public function run() {
-		add_filter( 'thwcfe_public_script_deps', array( $this, 'cleanup_select_woo' ), 1000 );
+		add_filter( 'thwcfe_public_script_deps', [ $this, 'cleanup_select_woo' ], 1000 );
 
 		// Stop modifying address fields
 		$hp_cf    = apply_filters( 'thwcfd_woocommerce_checkout_fields_hook_priority', 1000 ); // phpcs:ignore
 		$instance = cfw_get_hook_instance_object( 'woocommerce_billing_fields', 'woo_billing_fields', $hp_cf );
 
 		if ( $instance && SettingsManager::instance()->get_setting( 'allow_thcfe_address_modification' ) !== 'yes' ) {
-			remove_filter( 'woocommerce_billing_fields', array( $instance, 'woo_billing_fields' ), $hp_cf );
-			remove_filter( 'woocommerce_shipping_fields', array( $instance, 'woo_shipping_fields' ), $hp_cf );
+			remove_filter( 'woocommerce_billing_fields', [ $instance, 'woo_billing_fields' ], $hp_cf );
+			remove_filter( 'woocommerce_shipping_fields', [ $instance, 'woo_shipping_fields' ], $hp_cf );
 		}
 	}
 
@@ -64,12 +64,12 @@ class ThemeHighCheckoutFieldEditorPro extends CompatibilityAbstract {
 			return $integrations;
 		}
 
-		$integrations[] = array(
+		$integrations[] = [
 			'name'          => 'allow_thcfe_address_modification',
 			'label'         => __( 'Enable ThemeHigh Checkout Field Editor address field overrides', 'checkout-wc' ),
 			'description'   => __( 'Allow ThemeHigh Checkout Field Editor to modify billing and shipping address fields. (Not Recommended)', 'checkout-wc' ),
 			'initial_value' => SettingsManager::instance()->get_setting( 'allow_thcfe_address_modification' ) === 'yes',
-		);
+		];
 
 		return $integrations;
 	}

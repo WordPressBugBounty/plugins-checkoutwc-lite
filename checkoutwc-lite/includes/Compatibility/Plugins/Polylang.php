@@ -14,8 +14,8 @@ class Polylang extends CompatibilityAbstract {
 			return;
 		}
 
-		add_filter( 'cfw_restricted_post_types_count_args', array( $this, 'add_language_arg' ) );
-		add_filter( 'cfw_restricted_post_types_publish_override', array( $this, 'maybe_allow_publish' ), 10, 2 );
+		add_filter( 'cfw_restricted_post_types_count_args', [ $this, 'add_language_arg' ] );
+		add_filter( 'cfw_restricted_post_types_publish_override', [ $this, 'maybe_allow_publish' ], 10, 2 );
 	}
 
 	public function add_site_language_meta( $meta ) {
@@ -56,8 +56,8 @@ class Polylang extends CompatibilityAbstract {
 			}
 		);
 
-		add_filter( 'cfw_acr_cart_meta', array( $this, 'add_site_language_meta' ), 10, 1 );
-		add_action( 'cfw_acr_handle_meta', array( $this, 'set_site_language' ), 10, 1 );
+		add_filter( 'cfw_acr_cart_meta', [ $this, 'add_site_language_meta' ], 10, 1 );
+		add_action( 'cfw_acr_handle_meta', [ $this, 'set_site_language' ], 10, 1 );
 	}
 
 	public function run_on_thankyou() {

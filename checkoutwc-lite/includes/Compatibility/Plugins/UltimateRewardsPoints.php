@@ -13,7 +13,7 @@ class UltimateRewardsPoints extends CompatibilityAbstract {
 		// Add earn points and save message
 		// This is necessary because WooCommerce Ultimate Rewards uses a WooCommerce native checkout
 		// template override
-		add_action( 'cfw_checkout_before_form', array( $this, 'render_earn_points_message' ) );
+		add_action( 'cfw_checkout_before_form', [ $this, 'render_earn_points_message' ] );
 	}
 
 	public function render_earn_points_message() {

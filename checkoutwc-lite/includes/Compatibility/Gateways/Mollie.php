@@ -10,10 +10,10 @@ class Mollie extends CompatibilityAbstract {
 	}
 
 	public function typescript_class_and_params( array $compatibility ): array {
-		$compatibility[] = array(
+		$compatibility[] = [
 			'class'  => 'Mollie',
-			'params' => array(),
-		);
+			'params' => [],
+		];
 
 		return $compatibility;
 	}

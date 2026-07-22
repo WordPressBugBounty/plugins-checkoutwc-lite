@@ -45,10 +45,10 @@ class AfterPayKrokedil extends CompatibilityAbstract {
 
 		add_action(
 			'cfw_checkout_before_payment_method_terms_checkbox',
-			array(
+			[
 				$wc_afterpay_pre_check_customer,
 				'display_pre_check_form',
-			)
+			]
 		);
 	}
 }

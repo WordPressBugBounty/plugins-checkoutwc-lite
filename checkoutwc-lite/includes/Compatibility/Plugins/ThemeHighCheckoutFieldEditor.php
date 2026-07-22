@@ -11,7 +11,7 @@ class ThemeHighCheckoutFieldEditor extends CompatibilityAbstract {
 	}
 
 	public function pre_init() {
-		add_filter( 'cfw_admin_integrations_checkbox_fields', array( $this, 'admin_integration_settings' ) );
+		add_filter( 'cfw_admin_integrations_checkbox_fields', [ $this, 'admin_integration_settings' ] );
 	}
 
 	public function run() {
@@ -24,8 +24,8 @@ class ThemeHighCheckoutFieldEditor extends CompatibilityAbstract {
 		$instance = cfw_get_hook_instance_object( 'woocommerce_billing_fields', 'billing_fields', $hp_billing_fields );
 
 		if ( $instance && SettingsManager::instance()->get_setting( 'allow_thcfe_address_modification' ) !== 'yes' ) {
-			remove_filter( 'woocommerce_billing_fields', array( $instance, 'billing_fields' ), $hp_billing_fields );
-			remove_filter( 'woocommerce_shipping_fields', array( $instance, 'shipping_fields' ), $hp_shipping_fields );
+			remove_filter( 'woocommerce_billing_fields', [ $instance, 'billing_fields' ], $hp_billing_fields );
+			remove_filter( 'woocommerce_shipping_fields', [ $instance, 'shipping_fields' ], $hp_shipping_fields );
 		}
 	}
 
@@ -41,12 +41,12 @@ class ThemeHighCheckoutFieldEditor extends CompatibilityAbstract {
 			return $integrations;
 		}
 
-		$integrations[] = array(
+		$integrations[] = [
 			'name'          => 'allow_thcfe_address_modification',
 			'label'         => __( 'Enable ThemeHigh Checkout Field Editor address field overrides.', 'checkout-wc' ),
 			'description'   => __( 'Allow ThemeHigh Checkout Field Editor to modify billing and shipping address fields. (Not Recommended)', 'checkout-wc' ),
 			'initial_value' => SettingsManager::instance()->get_setting( 'allow_thcfe_address_modification' ) === 'yes',
-		);
+		];
 
 		return $integrations;
 	}

@@ -20,10 +20,10 @@ class WelcomeScreenActivationRedirector {
 		// Redirect to settings general
 		wp_safe_redirect(
 			add_query_arg(
-				array(
+				[
 					'page'        => 'cfw-settings',
 					'cfw_welcome' => 'true',
-				),
+				],
 				admin_url( 'admin.php' )
 			)
 		);

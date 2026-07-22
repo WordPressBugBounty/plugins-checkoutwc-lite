@@ -16,6 +16,6 @@ class Kangu extends CompatibilityAbstract {
 			return;
 		}
 
-		remove_action( 'woocommerce_review_order_before_order_total', array( $instance, 'get_shippings_to_cart' ) );
+		remove_action( 'woocommerce_review_order_before_order_total', [ $instance, 'get_shippings_to_cart' ] );
 	}
 }

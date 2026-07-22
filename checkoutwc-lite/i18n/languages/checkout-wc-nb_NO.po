@@ -8,7 +8,7 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "POT-Creation-Date: 2025-07-25 09:22-0400\n"
-"PO-Revision-Date: 2026-07-14T15:17:14+00:00\n"
+"PO-Revision-Date: 2026-07-22T14:04:55+00:00\n"
 "Language: nb-NO\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 3.6\n"
@@ -28,10 +28,10 @@ msgstr ""
 #: includes/Admin/Pages/PageAbstract.php:106
 #: includes/Admin/Pages/General.php:341
 #: includes/Admin/Pages/Premium/PickupLocations.php:217
-#: includes/Admin/Pages/Premium/OrderBumps.php:428
+#: includes/Admin/Pages/Premium/OrderBumps.php:444
 #: includes/Admin/Pages/Premium/LocalPickupAdmin.php:165
 #: includes/Admin/Pages/Premium/AbandonedCartRecovery.php:243
-#: includes/Admin/Pages/Premium/ABTestingAdmin.php:559
+#: includes/Admin/Pages/Premium/ABTestingAdmin.php:634
 msgid "CheckoutWC"
 msgstr "CheckoutWC"
 
@@ -373,8 +373,8 @@ msgstr "Frakt"
 #: functions/template-functions.php:1054
 #: functions/template-functions.php:1914
 #: functions/template-functions.php:2269
-#: functions/functions.php:1026
-#: functions/functions.php:1041
+#: functions/functions.php:1023
+#: functions/functions.php:1038
 #: client/ts/frontend/Components/ReviewPane/OrderReviewStepReviewPane.tsx:47
 msgid "Payment"
 msgstr "Betaling"
@@ -388,6 +388,7 @@ msgid "Review"
 msgstr "Anmeldelse"
 
 #: functions/template-functions.php:1073
+#: includes/Features/SideCart.php:1180
 msgid "Free"
 msgstr "Gratis"
 
@@ -479,20 +480,20 @@ msgstr "Logg inn"
 msgid "Lost your password?"
 msgstr "Mist passordet ditt?"
 
-#: functions/template-functions.php:2343
+#: functions/template-functions.php:2362
 msgid "Your Cart is Empty"
 msgstr "Vognen din er tom"
 
-#: functions/premium-init.php:334
+#: functions/premium-init.php:341
 msgid "CheckoutWC Templates Deactivated"
 msgstr "CheckoutWC-maler deaktivert"
 
 # %1$s: "Settings" text, %2$s: "Start Here" text, %3$s: "Activate CheckoutWC Templates" text
-#: functions/premium-init.php:337
+#: functions/premium-init.php:344
 msgid "Your license is valid and activated for this site but CheckoutWC is disabled for normal customers. To fix this, go to %1$s > %2$s and toggle \"%3$s\"."
 msgstr "Lisensen din er gyldig og aktivert for dette nettstedet, men CheckoutWC er deaktivert for vanlige kunder. For å fikse dette, gå til %1$s > %2$s og slå på \"%3$s\"."
 
-#: functions/premium-init.php:338
+#: functions/premium-init.php:345
 #: includes/Admin/AdminPluginsPageManager.php:40
 #: includes/Admin/Pages/OrderBumpsAdminFree.php:25
 #: includes/Admin/Pages/LocalPickupAdminFree.php:27
@@ -500,67 +501,67 @@ msgstr "Lisensen din er gyldig og aktivert for dette nettstedet, men CheckoutWC 
 #: includes/Admin/Pages/Premium/OrderBumps.php:58
 #: includes/Admin/Pages/Premium/LocalPickupAdmin.php:28
 #: includes/Admin/Pages/Premium/AbandonedCartRecovery.php:34
-#: includes/Admin/Pages/Premium/ABTestingAdmin.php:35
+#: includes/Admin/Pages/Premium/ABTestingAdmin.php:56
 msgid "Settings"
 msgstr "Innstillinger"
 
-#: functions/premium-init.php:339
+#: functions/premium-init.php:346
 #: includes/Admin/Pages/General.php:25
 #: includes/Admin/Notices/InactiveLicenseNotice.php:13
 msgid "Start Here"
 msgstr "Start her"
 
-#: functions/premium-init.php:340
+#: functions/premium-init.php:347
 #: includes/Admin/Pages/General.php:195
 msgid "Activate CheckoutWC Templates"
 msgstr "Aktiver CheckoutWC-maler"
 
-#: functions/premium-init.php:347
+#: functions/premium-init.php:354
 msgid "Invalid CheckoutWC License"
 msgstr "Ugyldig CheckoutWC-lisens"
 
 # %1$s: Pricing URL, %2$s: "purchase a license" link text
-#: functions/premium-init.php:350
+#: functions/premium-init.php:357
 msgid "Your license key is missing or invalid. Please verify that your license key is valid or <a target=\"_blank\" href=\"%1$s\">%2$s</a> to restore full functionality."
 msgstr "Lisensnøkkelen din mangler eller er ugyldig. Vennligst bekreft at lisensnøkkelen din er gyldig eller <a target=\"_blank\" href=\"%1$s\">%2$s</a> for å gjenopprette full funksjonalitet."
 
-#: functions/premium-init.php:352
+#: functions/premium-init.php:359
 msgid "purchase a license"
 msgstr "kjøp en lisens"
 
-#: functions/premium-init.php:368
+#: functions/premium-init.php:375
 msgid "New Feature: Cloudflare Turnstile Bot Protection"
 msgstr "Ny funksjon: Cloudflare Turnstile botbeskyttelse"
 
 # 1: Cloudflare Turnstile name wrapped in strong tags, 2: Setup link
-#: functions/premium-init.php:371
+#: functions/premium-init.php:378
 msgid "CheckoutWC now supports %1$s - a privacy-first, CAPTCHA-free way to protect your checkout from bots and spam orders. %2$s"
 msgstr "CheckoutWC støtter nå %1$s - en personvernfokusert, CAPTCHA-fri måte å beskytte kassen din mot roboter og spam-bestillinger. %2$s"
 
 # The name of the Cloudflare Turnstile service
-#: functions/premium-init.php:375
+#: functions/premium-init.php:382
 #: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:64
 msgid "Cloudflare Turnstile"
 msgstr "Cloudflare Turnstile"
 
-#: functions/premium-init.php:381
+#: functions/premium-init.php:388
 msgid "Setup Cloudflare Turnstile now"
 msgstr "Sett opp Cloudflare Turnstile nå"
 
-#: functions/premium-init.php:386
+#: functions/premium-init.php:393
 msgid "Upgrade your plan now to access"
 msgstr "Oppgrader planen din nå for å få tilgang"
 
-#: functions/premium-init.php:399
+#: functions/premium-init.php:406
 msgid "Abandoned Cart Recovery Tracking Disabled"
 msgstr "Sporing av gjenoppretting av forlatt handlekurv deaktivert"
 
 # %1$s: Gist URL, %2$s: "Learn More" link text
-#: functions/premium-init.php:402
+#: functions/premium-init.php:409
 msgid "You have enabled Abandoned Cart Recovery tracking, but you do not have any emails published. To track carts, you need to publish emails or use this dev filter: <a target=\"_blank\" href=\"%1$s\">%2$s</a>."
 msgstr "Du har aktivert sporing av gjenoppretting av forlatt handlekurv, men du har ingen e-poster publisert. For å spore handlekurver må du publisere e-poster eller bruke denne utviklerfilteret: <a target=\"_blank\" href=\"%1$s\">%2$s</a>."
 
-#: functions/premium-init.php:404
+#: functions/premium-init.php:411
 #: includes/Admin/Pages/AbandonedCartRecoveryAdminFree.php:82
 msgid "Learn More"
 msgstr "Lær mer"
@@ -664,110 +665,110 @@ msgstr "Send til"
 msgid "Address"
 msgstr "Adresse"
 
-#: functions/functions.php:626
+#: functions/functions.php:623
 msgid "Sorry, it seems that there are no available payment methods for your location. Please contact us if you require assistance or wish to make alternate arrangements."
 msgstr "Beklager, det ser ut til at det ikke finnes tilgjengelige betalingsmetoder for din lokasjon. Vennligst kontakt oss hvis du trenger hjelp eller ønsker alternative ordninger."
 
-#: functions/functions.php:788
+#: functions/functions.php:785
 #: includes/Features/LocalPickup.php:1079
 msgid "Shipping costs are calculated during checkout."
 msgstr "Fraktkostnader beregnes under utsjekking."
 
-#: functions/functions.php:788
+#: functions/functions.php:785
 msgid "Enter your address to view shipping options."
 msgstr "Skriv inn adressen din for å se fraktalternativer."
 
-#: functions/functions.php:799
+#: functions/functions.php:796
 msgid "No shipping methods available"
 msgstr "Ingen forsendelsesmetoder tilgjengelig"
 
-#: functions/functions.php:827
+#: functions/functions.php:824
 #: includes/Model/Bumps/BumpAbstract.php:814
 msgid "Free!"
 msgstr "Gratis!"
 
-#: functions/functions.php:963
+#: functions/functions.php:960
 #: includes/Features/AbandonedCartRecovery.php:695
 msgid "Complete Order"
 msgstr "Fullfør ordre"
 
-#: functions/functions.php:1067
+#: functions/functions.php:1064
 msgid "All transactions are secure and encrypted."
 msgstr "Alle transaksjoner er sikre og krypterte."
 
-#: functions/functions.php:1090
+#: functions/functions.php:1087
 msgid "Your order is free. No payment is required."
 msgstr "Din bestilling er gratis. Ingen betaling kreves."
 
-#: functions/functions.php:1134
+#: functions/functions.php:1131
 msgid "Same as shipping address"
 msgstr "Samme som leveringsadresse"
 
-#: functions/functions.php:1143
+#: functions/functions.php:1140
 msgid "Use a different billing address"
 msgstr "Bruk en annen fakturaadresse"
 
 # %1$s: Old order status, %2$s: New order status
-#: functions/functions.php:1275
+#: functions/functions.php:1272
 msgid "Order status changed from %1$s to %2$s."
 msgstr "Ordrestatus endret fra %1$s til %2$s."
 
-#: functions/functions.php:1300
+#: functions/functions.php:1297
 msgid "Tracking Number:"
 msgstr "Sporingsnummer:"
 
-#: functions/functions.php:1387
+#: functions/functions.php:1384
 msgid "Return to cart"
 msgstr "Tilbake til handlekurven"
 
-#: functions/functions.php:1424
+#: functions/functions.php:1421
 msgid "Continue to shipping"
 msgstr "Fortsett å sende"
 
-#: functions/functions.php:1450
+#: functions/functions.php:1447
 msgid "Continue to payment"
 msgstr "Fortsett til betaling"
 
-#: functions/functions.php:1450
-#: functions/functions.php:1490
+#: functions/functions.php:1447
+#: functions/functions.php:1487
 msgid "Review order"
 msgstr "Kontroller bestilling"
 
-#: functions/functions.php:1514
+#: functions/functions.php:1511
 msgid "Return to information"
 msgstr "Gå tilbake til informasjon"
 
-#: functions/functions.php:1534
+#: functions/functions.php:1531
 msgid "Return to shipping"
 msgstr "Gå tilbake til frakt"
 
-#: functions/functions.php:1554
+#: functions/functions.php:1551
 msgid "Return to payment"
 msgstr "Gå tilbake til betaling"
 
-#: functions/functions.php:1601
-#: includes/Features/SideCart.php:220
+#: functions/functions.php:1598
+#: includes/Features/SideCart.php:276
 msgid "Cart"
 msgstr "Handlekurv"
 
-#: functions/functions.php:1874
+#: functions/functions.php:1871
 msgid "CheckoutWC: Error matching %1$d to customer %2$d"
 msgstr "CheckoutWC: Feil ved matching av %1$d til kunde %2$d"
 
-#: functions/functions.php:2163
+#: functions/functions.php:2160
 msgid "Or"
 msgstr "Eller"
 
-#: functions/functions.php:2248
+#: functions/functions.php:2245
 msgid "You can only have 1 %s in your cart."
 msgstr "Du kan kun ha 1 %s i handlekurven din."
 
-#: functions/functions.php:2398
+#: functions/functions.php:2395
 #: client/ts/frontend/Components/CartItemQuantityControl.tsx:55
 msgid "Decrement"
 msgstr "Redusere"
 
-#: functions/functions.php:2407
+#: functions/functions.php:2404
 #: includes/Managers/AssetManager.php:727
 #: includes/Managers/AssetManager.php:848
 #: includes/Features/LocalPickup.php:502
@@ -779,12 +780,12 @@ msgstr "Redusere"
 msgid "Edit"
 msgstr "Rediger"
 
-#: functions/functions.php:2410
+#: functions/functions.php:2407
 #: client/ts/frontend/Components/CartItemQuantityControl.tsx:70
 msgid "Increment"
 msgstr "Økende"
 
-#: functions/functions.php:3124
+#: functions/functions.php:3121
 msgid "Unsubscribe"
 msgstr "Meld av"
 
@@ -969,8 +970,8 @@ msgid "Activation Limit"
 msgstr "Aktiveringsgrense"
 
 #: includes/Managers/UpdatesManager.php:456
-#: includes/Admin/Pages/Premium/ABTestingAdmin.php:96
-#: includes/Admin/Pages/Premium/ABTestingAdmin.php:737
+#: includes/Admin/Pages/Premium/ABTestingAdmin.php:171
+#: includes/Admin/Pages/Premium/ABTestingAdmin.php:812
 #: client/ts/admin/Components/acr/carts.tsx:80
 msgid "Status"
 msgstr "Status"
@@ -1153,7 +1154,7 @@ msgstr "Klikk for å legge inn bestilling (utsjekk)"
 msgid "Post Purchase One-Click (Thank You)"
 msgstr "Etterkjøp ett-klikk (takk)"
 
-#: includes/Managers/SlotManager.php:439
+#: includes/Managers/SlotManager.php:441
 msgid "Badge %d"
 msgstr "Merke %d"
 
@@ -1241,8 +1242,8 @@ msgstr "Legg i handlekurv"
 #: includes/Managers/AssetManager.php:844
 #: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2308
 #: client/ts/admin/Components/CheckoutEditor/slots/UnsavedChangesDialog.tsx:51
-#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:457
-#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:492
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:458
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:493
 #: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:276
 #: client/ts/admin/Components/CheckoutEditor/slots/CustomHtmlEditor.tsx:76
 msgid "Cancel"
@@ -1336,22 +1337,67 @@ msgstr "Verifisering mislyktes. Vennligst prøv igjen."
 msgid "We have detected that Simple Cloudflare Turnstile is active. To enable CheckoutWC Turnstile functionality, please deactivate Simple Cloudflare Turnstile."
 msgstr "Vi har oppdaget at Simple Cloudflare Turnstile er aktiv. For å aktivere CheckoutWC Turnstile-funksjonalitet, vennligst deaktiver Simple Cloudflare Turnstile."
 
-#: includes/Features/SideCart.php:640
-#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:289
+# %s is a comma-separated list of product names
+#: includes/Features/SideCart.php:783
+msgid "These rewards-bar gift products can\\'t be auto-added because they are not simple products — please choose a simple product instead: %s"
+msgstr "Disse gaveproduktene fra belønningslinjen kan ikke legges til automatisk fordi de ikke er enkle produkter — vennligst velg et enkelt produkt i stedet: %s"
+
+# %s is the gift product name
+#: includes/Features/SideCart.php:1246
+msgid "Auto-managed free gift: %s — created by the Side Cart rewards bar, do not edit"
+msgstr "Automatisk administrert gratisgave: %s — opprettet av Side Cart-belønningslinjen, ikke rediger"
+
+#: includes/Features/SideCart.php:1481
+#: includes/Features/SideCart.php:1538
+#: client/ts/admin/Components/FreeShippingTierRow.tsx:87
 msgid "Congrats! You get free standard shipping."
 msgstr "Gratulerer! Du får gratis standard frakt."
 
-#: includes/Features/SideCart.php:654
+#: includes/Features/SideCart.php:1495
 msgid "You\\'re %s away from free shipping!"
 msgstr "Du mangler %s for gratis frakt!"
 
-#: includes/Features/SideCart.php:769
+#: includes/Features/SideCart.php:1539
+#: client/ts/admin/Components/FreeShippingTierRow.tsx:88
+#: client/ts/admin/Components/FreeShippingTierRow.tsx:89
+msgid "Reward unlocked!"
+msgstr "Belønning låst opp!"
+
+#: includes/Features/SideCart.php:1547
+#: client/ts/admin/Components/FreeShippingTierRow.tsx:94
+msgid "You're %s away from free shipping!"
+msgstr "Du er %s borte fra gratis frakt!"
+
+#: includes/Features/SideCart.php:1549
+#: client/ts/admin/Components/FreeShippingTierRow.tsx:96
+#: client/ts/admin/Components/FreeShippingTierRow.tsx:98
+msgid "You're %s away from your next reward!"
+msgstr "Du er %s unna din neste belønning!"
+
+#: includes/Features/SideCart.php:1556
+#: client/ts/admin/Components/FreeShippingTierRow.tsx:113
+msgid "Free shipping"
+msgstr "Gratis frakt"
+
+#: includes/Features/SideCart.php:1557
+#: client/ts/frontend/Components/CheckoutCartTableRow.tsx:48
+#: client/ts/frontend/Components/CartTableRow.tsx:48
+#: client/ts/admin/Components/FreeShippingTierRow.tsx:114
+msgid "Free gift"
+msgstr "Gratis gave"
+
+#: includes/Features/SideCart.php:1558
+#: client/ts/admin/Components/FreeShippingTierRow.tsx:170
+msgid "Reward"
+msgstr "Belønning"
+
+#: includes/Features/SideCart.php:1682
 #: includes/Admin/WooCommerceAdminScreenAugmenter.php:24
 #: includes/Admin/WooCommerceAdminScreenAugmenter.php:45
 msgid "CheckoutWC:"
 msgstr "CheckoutWC:"
 
-#: includes/Features/SideCart.php:770
+#: includes/Features/SideCart.php:1683
 msgid "Settings marked with asterisks (**) may be overridden based on your Side Cart settings. (CheckoutWC > Side Cart)"
 msgstr "Innstillinger merket med stjerner (**) kan overstyres basert på dine Side Cart-innstillinger. (CheckoutWC > Side Cart)"
 
@@ -1877,8 +1923,8 @@ msgstr "Spesialtilbud"
 msgid "Order Received"
 msgstr "Bestillingen er mottat"
 
-#: includes/API/OrderBumpsSearchAPI.php:64
-#: includes/API/OrderBumpsSearchAPI.php:102
+#: includes/API/OrderBumpsSearchAPI.php:72
+#: includes/API/OrderBumpsSearchAPI.php:110
 #: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:229
 #: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:527
 #: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:586
@@ -2089,8 +2135,8 @@ msgid "Refunded"
 msgstr "Refundert"
 
 #: includes/Features/OneClick/OfferOrderManager.php:140
-msgid "Order bump payment of %s received for %s"
-msgstr "Betaling for ordretilbud på %s mottatt for %s"
+msgid "Order bump payment of %1$s received for %2$s"
+msgstr "Mottatt ordretillegg på %1$s for %2$s"
 
 #: includes/Features/OneClick/OfferOrderManager.php:223
 msgid "Order created from post-purchase offer (accepted after timeout)."
@@ -2116,14 +2162,6 @@ msgstr "Aktiver Astra-støtte (Beta)"
 #: includes/Compatibility/Themes/Astra.php:92
 msgid "If enabled with Advanced > Template Loader > Distraction Free Portal, Astra\\'s header and footer are displayed and Astra styles and scripts load on checkout. If disabled with Distraction Free Portal, Astra styles and scripts are excluded for a minimal layout. With WordPress Theme loader, the full theme loads regardless of this setting."
 msgstr "Hvis aktivert med Avansert > Malinnlasting > Forstyrrelsesfri portal, vises Astras topp- og bunntekst, og Astra-stiler og skript lastes inn ved utsjekking. Hvis deaktivert med Forstyrrelsesfri portal, ekskluderes Astra-stiler og skript for et minimalt oppsett. Med WordPress-temalasteren lastes hele temaet uansett denne innstillingen."
-
-#: includes/Compatibility/Gateways/PayPalForWooCommerce.php:38
-msgid "Please update to the latest version of PayPal for WooCommerce to get full support."
-msgstr "Vennligst oppdater til siste versjon av PayPal for WooCommerce for full støtte."
-
-#: includes/Compatibility/Gateways/PayPalForWooCommerce.php:363
-msgid "Logged in with PayPal. Please continue your order below."
-msgstr "Logget inn med PayPal. Vennligst fullfør din ordre nedenfor."
 
 #: includes/Compatibility/Plugins/WooCommerceGiftCards.php:64
 #: includes/Compatibility/Plugins/WooCommerceGiftCards.php:72
@@ -2245,6 +2283,42 @@ msgstr "Aktiver Beaver Themer-støtte"
 msgid "Allow Beaver Themer to replace header and footer."
 msgstr "Tillat Beaver Themer å erstatte topptekst og bunntekst."
 
+#: includes/Compatibility/Gateways/PayPalForWooCommerce.php:38
+msgid "Please update to the latest version of PayPal for WooCommerce to get full support."
+msgstr "Vennligst oppdater til siste versjon av PayPal for WooCommerce for full støtte."
+
+#: includes/Compatibility/Gateways/PayPalForWooCommerce.php:363
+msgid "Logged in with PayPal. Please continue your order below."
+msgstr "Logget inn med PayPal. Vennligst fullfør din ordre nedenfor."
+
+#: includes/Admin/Views/html-refund-offer.php:22
+msgid "Product"
+msgstr "Produkt"
+
+#: includes/Admin/Views/html-refund-offer.php:24
+msgid "Qty"
+msgstr "Antall"
+
+#: includes/Admin/Views/html-refund-offer.php:26
+msgid "Action"
+msgstr "Handling"
+
+#: includes/Admin/Views/html-refund-offer.php:89
+msgid "Refund"
+msgstr "Refusjon"
+
+#: includes/Admin/Views/html-refund-offer.php:101
+msgid "No order bump payments found for this order."
+msgstr "Ingen betalinger for ordretilbud funnet for denne ordren."
+
+#: includes/Admin/Views/html-refund-offer.php:113
+msgid "Note:"
+msgstr "Merk:"
+
+#: includes/Admin/Views/html-refund-offer.php:114
+msgid "Refunding an offer will process the refund with the payment gateway and create a WooCommerce refund record."
+msgstr "Refusjon av et tilbud vil behandle refusjonen via betalingsgateway og opprette en refusjonspost i WooCommerce."
+
 #: includes/Admin/Pages/WooCommercePages.php:21
 msgid "Pages"
 msgstr "Sider"
@@ -2263,8 +2337,8 @@ msgstr "Globale innstillinger"
 #: includes/Admin/Pages/TrustBadgesAdminFree.php:56
 #: includes/Admin/Pages/Premium/TrustBadges.php:16
 #: client/ts/admin/Components/Forms/TrustBadgeSettingsForm.tsx:150
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:544
 #: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:348
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:544
 msgid "Trust Badges"
 msgstr "Tillitssymboler"
 
@@ -2288,7 +2362,7 @@ msgid "Enable trust badges on CheckoutWC templates. Uncheck to hide badges."
 msgstr "Aktiver tillitsmerker på CheckoutWC-maler. Fjern merket for å skjule merkene."
 
 #: includes/Admin/Pages/TrustBadgesAdminFree.php:43
-#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:171
+#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:181
 #: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:219
 msgid "Heading"
 msgstr "Overskrift"
@@ -2465,52 +2539,52 @@ msgstr "Kontakt support"
 #: includes/Admin/Pages/SideCartAdminFree.php:16
 #: includes/Admin/Pages/SideCartAdminFree.php:26
 #: includes/Admin/Pages/Premium/SideCart.php:17
-#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:90
+#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:100
 msgid "Side Cart"
 msgstr "Sidevogn"
 
 #: includes/Admin/Pages/SideCartAdminFree.php:27
-#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:91
+#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:101
 msgid "Configure the Side Cart."
 msgstr "Konfigurer sidevognen."
 
 #: includes/Admin/Pages/SideCartAdminFree.php:34
-#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:97
+#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:107
 msgid "Enable Side Cart"
 msgstr "Aktiver sidevogn"
 
 #: includes/Admin/Pages/SideCartAdminFree.php:34
-#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:98
+#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:108
 msgid "Replace your cart page with a beautiful side cart that slides in from the right when items are added to the cart."
 msgstr "Erstatt handlekurvsiden din med en vakker sidevogn som glir inn fra høyre når varer legges i kurven."
 
 #: includes/Admin/Pages/SideCartAdminFree.php:44
-#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:113
+#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:123
 msgid "Side Cart Icon"
 msgstr "Sidevogn-ikon"
 
 #: includes/Admin/Pages/SideCartAdminFree.php:45
-#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:114
+#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:124
 msgid "Used by the Side Cart and Floating Side Cart Button."
 msgstr "Brukes av sidevognen og flytende sidevognknapp."
 
 #: includes/Admin/Pages/SideCartAdminFree.php:55
-#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:121
+#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:131
 msgid "Icon"
 msgstr "Ikon"
 
 #: includes/Admin/Pages/SideCartAdminFree.php:56
-#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:122
+#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:132
 msgid "Choose the Side Cart icon."
 msgstr "Velg sidevogn-ikonet."
 
 #: includes/Admin/Pages/SideCartAdminFree.php:101
-#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:129
+#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:139
 msgid "Custom Icon"
 msgstr "Egendefinert ikon"
 
 #: includes/Admin/Pages/SideCartAdminFree.php:102
-#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:130
+#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:140
 msgid "Upload a custom icon. Overrides the icon selection above. SVG REQUIRED."
 msgstr "Last opp et egendefinert ikon. Overstyrer ikonvalget ovenfor. SVG PÅKREVD."
 
@@ -2525,42 +2599,42 @@ msgid "Clear"
 msgstr "Tøm"
 
 #: includes/Admin/Pages/SideCartAdminFree.php:107
-#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:137
+#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:147
 msgid "Width"
 msgstr "Bredde"
 
 #: includes/Admin/Pages/SideCartAdminFree.php:108
-#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:138
+#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:148
 msgid "The width of the icon in pixels. Default: 34"
 msgstr "Ikonets bredde i piksler. Standard: 34"
 
 #: includes/Admin/Pages/SideCartAdminFree.php:121
-#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:155
+#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:165
 msgid "Suggested Products"
 msgstr "Foreslåtte produkter"
 
 #: includes/Admin/Pages/SideCartAdminFree.php:122
-#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:156
+#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:166
 msgid "Configure Suggested Products cross-sells."
 msgstr "Konfigurer kryssalg for foreslåtte produkter."
 
 #: includes/Admin/Pages/SideCartAdminFree.php:132
-#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:161
+#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:171
 msgid "Enable Suggested Products"
 msgstr "Aktiver foreslåtte produkter"
 
 #: includes/Admin/Pages/SideCartAdminFree.php:133
-#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:162
+#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:172
 msgid "Display cross sells / suggested products at the bottom of the side cart."
 msgstr "Vis kryssalg / foreslåtte produkter nederst i sidevognen."
 
 #: includes/Admin/Pages/SideCartAdminFree.php:145
-#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:198
+#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:208
 msgid "Floating Side Cart Button"
 msgstr "Flytende sidevognknapp"
 
 #: includes/Admin/Pages/SideCartAdminFree.php:146
-#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:199
+#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:209
 msgid "Configure the Floating Side Cart Button"
 msgstr "Konfigurer den flytende sidevognknappen"
 
@@ -2598,7 +2672,7 @@ msgstr "Forkaste?"
 #: includes/Admin/Pages/PageAbstract.php:136
 #: includes/Admin/Pages/PageAbstract.php:157
 #: client/ts/admin/Components/CheckoutEditor/EditorHeader.tsx:203
-#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:403
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:404
 msgid "Save Changes"
 msgstr "Lagre endringer"
 
@@ -2617,14 +2691,14 @@ msgid "This setting is currently programmatically overridden. To enable it remov
 msgstr "Denne innstillingen er for øyeblikket programmessig overskrevet. For å aktivere den, fjern din egendefinerte kode."
 
 #: includes/Admin/Pages/PageAbstract.php:333
-#: includes/Admin/Pages/Premium/OrderBumps.php:1004
+#: includes/Admin/Pages/Premium/OrderBumps.php:1034
 #: includes/Admin/Pages/Premium/AbandonedCartRecovery.php:850
 msgid "Upgrade Your Plan"
 msgstr "Oppgrader planen din"
 
 # %1$s: Account URL, %2$s: Help URL
 #: includes/Admin/Pages/PageAbstract.php:350
-#: includes/Admin/Pages/Premium/OrderBumps.php:1014
+#: includes/Admin/Pages/Premium/OrderBumps.php:1044
 #: includes/Admin/Pages/Premium/AbandonedCartRecovery.php:869
 msgid "You can upgrade your license in <a class=\"text-blue-600 underline\" target=\"_blank\" href=\"%1$s\">Account</a>. For help upgrading your license, <a class=\"text-blue-600 underline\" target=\"_blank\" href=\"%2$s\">click here.</a>"
 msgstr "Du kan oppgradere lisensen din i <a class=\"text-blue-600 underline\" target=\"_blank\" href=\"%1$s\">Konto</a>. For hjelp med å oppgradere lisensen, <a class=\"text-blue-600 underline\" target=\"_blank\" href=\"%2$s\">klikk her.</a>"
@@ -2640,7 +2714,7 @@ msgid "Configure Order Bump settings."
 msgstr "Konfigurer innstillinger for ordretilbud."
 
 #: includes/Admin/Pages/OrderBumpsAdminFree.php:79
-#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:353
+#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:354
 #: client/ts/admin/Components/Forms/OrderBumpSettingsForm.tsx:52
 msgid "Enable Order Bumps"
 msgstr "Aktiver ordretilbud"
@@ -2988,7 +3062,7 @@ msgstr "Bakgrunn"
 #: includes/Admin/Pages/Appearance.php:219
 #: includes/Admin/Pages/Appearance.php:231
 #: includes/Admin/Pages/Appearance.php:241
-#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:428
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:429
 #: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:247
 msgid "Text"
 msgstr "Tekst"
@@ -3328,7 +3402,7 @@ msgstr "Merk: Dette tilbakestiller ALLE statistikker for gjenoppretting av forla
 
 #: includes/Admin/Pages/ABTestingAdminFree.php:15
 #: includes/Admin/Pages/ABTestingAdminFree.php:29
-#: includes/Admin/Pages/Premium/ABTestingAdmin.php:27
+#: includes/Admin/Pages/Premium/ABTestingAdmin.php:45
 #: client/ts/admin/Components/Forms/ABTestingSettingsForm.tsx:42
 msgid "A/B Testing"
 msgstr "A/B-testing"
@@ -3347,34 +3421,6 @@ msgstr "Aktiver A/B-testing"
 #: client/ts/admin/Components/Forms/ABTestingSettingsForm.tsx:50
 msgid "Allow A/B tests to be created and applied on the checkout page."
 msgstr "Tillat at A/B-tester opprettes og brukes på utsjekkingssiden."
-
-#: includes/Admin/Views/html-refund-offer.php:22
-msgid "Product"
-msgstr "Produkt"
-
-#: includes/Admin/Views/html-refund-offer.php:24
-msgid "Qty"
-msgstr "Antall"
-
-#: includes/Admin/Views/html-refund-offer.php:26
-msgid "Action"
-msgstr "Handling"
-
-#: includes/Admin/Views/html-refund-offer.php:89
-msgid "Refund"
-msgstr "Refusjon"
-
-#: includes/Admin/Views/html-refund-offer.php:101
-msgid "No order bump payments found for this order."
-msgstr "Ingen betalinger for ordretilbud funnet for denne ordren."
-
-#: includes/Admin/Views/html-refund-offer.php:113
-msgid "Note:"
-msgstr "Merk:"
-
-#: includes/Admin/Views/html-refund-offer.php:114
-msgid "Refunding an offer will process the refund with the payment gateway and create a WooCommerce refund record."
-msgstr "Refusjon av et tilbud vil behandle refusjonen via betalingsgateway og opprette en refusjonspost i WooCommerce."
 
 #: includes/Admin/Notices/WelcomeNotice.php:12
 msgid "Welcome to CheckoutWC"
@@ -4088,22 +4134,22 @@ msgstr "Vis test"
 msgid "Add Test"
 msgstr "Legg til test"
 
-#: includes/Admin/Pages/Premium/OrderBumps.php:321
+#: includes/Admin/Pages/Premium/OrderBumps.php:327
 msgid "All <span class=\"count\">(%s)</span>"
 msgid_plural "All <span class=\"count\">(%s)</span>"
 msgstr[0] "Alle <span class=\"count\">(%s)</span>"
 msgstr[1] ""
 
-#: includes/Admin/Pages/Premium/OrderBumps.php:519
+#: includes/Admin/Pages/Premium/OrderBumps.php:535
 msgid "Reset Order Bump Conversion Stats"
 msgstr "Tilbakestill konverteringsstatistikk for ordretillegg"
 
 # %1$d: Allowed bump count, %2$d: Used bump count
-#: includes/Admin/Pages/Premium/OrderBumps.php:1007
+#: includes/Admin/Pages/Premium/OrderBumps.php:1037
 msgid "Your CheckoutWC plan allows you to create %1$d Order Bumps. You have used %2$d."
 msgstr "Din CheckoutWC-plan tillater deg å lage %1$d ordretillegg. Du har brukt %2$d."
 
-#: includes/Admin/Pages/Premium/OrderBumps.php:1010
+#: includes/Admin/Pages/Premium/OrderBumps.php:1040
 msgid "You cannot create or publish new Order Bumps if you are over the limit."
 msgstr "Du kan ikke opprette eller publisere nye ordretillegg hvis du har overskredet grensen."
 
@@ -4123,8 +4169,8 @@ msgid "Send this long after cart has been abandoned."
 msgstr "Send dette lenge etter at handlekurven er forlatt."
 
 #: includes/Admin/Pages/Premium/AbandonedCartRecovery.php:101
-#: includes/Admin/Pages/Premium/ABTestingAdmin.php:136
-#: includes/Admin/Pages/Premium/ABTestingAdmin.php:744
+#: includes/Admin/Pages/Premium/ABTestingAdmin.php:211
+#: includes/Admin/Pages/Premium/ABTestingAdmin.php:819
 #: client/ts/admin/Components/CheckoutEditor/panels/DesignSettingsPanel.tsx:82
 msgid "Active"
 msgstr "Aktiv"
@@ -4219,7 +4265,7 @@ msgid "Unsubscribe Link"
 msgstr "Avmeldingslenke"
 
 #: includes/Admin/Pages/Premium/AbandonedCartRecovery.php:642
-#: includes/Admin/Pages/Premium/ABTestingAdmin.php:240
+#: includes/Admin/Pages/Premium/ABTestingAdmin.php:315
 msgid "Permission denied."
 msgstr "Tillatelse nektet."
 
@@ -4240,72 +4286,88 @@ msgstr "Din CheckoutWC-plan tillater deg å lage %1$d e-poster for forlatt handl
 msgid "You cannot create or publish new Abandoned Cart Recovery emails if you are over the limit."
 msgstr "Du kan ikke opprette eller publisere nye e-poster for gjenoppretting av forlatt handlekurv hvis du har overskredet grensen."
 
-#: includes/Admin/Pages/Premium/ABTestingAdmin.php:37
+#: includes/Admin/Pages/Premium/ABTestingAdmin.php:58
 msgid "Manage Tests"
 msgstr "Administrer tester"
 
-#: includes/Admin/Pages/Premium/ABTestingAdmin.php:95
-#: includes/Admin/Pages/Premium/ABTestingAdmin.php:711
+#: includes/Admin/Pages/Premium/ABTestingAdmin.php:170
+#: includes/Admin/Pages/Premium/ABTestingAdmin.php:786
 msgid "Type"
 msgstr "Type"
 
-#: includes/Admin/Pages/Premium/ABTestingAdmin.php:97
+#: includes/Admin/Pages/Premium/ABTestingAdmin.php:172
 msgid "Duration"
 msgstr "Varighet"
 
-#: includes/Admin/Pages/Premium/ABTestingAdmin.php:137
-#: includes/Admin/Pages/Premium/ABTestingAdmin.php:745
+#: includes/Admin/Pages/Premium/ABTestingAdmin.php:212
+#: includes/Admin/Pages/Premium/ABTestingAdmin.php:820
 msgid "Paused"
 msgstr "Pause"
 
-#: includes/Admin/Pages/Premium/ABTestingAdmin.php:138
-#: includes/Admin/Pages/Premium/ABTestingAdmin.php:746
+#: includes/Admin/Pages/Premium/ABTestingAdmin.php:213
+#: includes/Admin/Pages/Premium/ABTestingAdmin.php:821
 msgid "Complete"
 msgstr "Fullført"
 
-#: includes/Admin/Pages/Premium/ABTestingAdmin.php:162
+#: includes/Admin/Pages/Premium/ABTestingAdmin.php:237
 msgid "Finished"
 msgstr "Ferdig"
 
-#: includes/Admin/Pages/Premium/ABTestingAdmin.php:171
+#: includes/Admin/Pages/Premium/ABTestingAdmin.php:246
 msgid "Ongoing"
 msgstr "Pågående"
 
-#: includes/Admin/Pages/Premium/ABTestingAdmin.php:246
+#: includes/Admin/Pages/Premium/ABTestingAdmin.php:321
 msgid "Invalid test type."
 msgstr "Ugyldig testtype."
 
-#: includes/Admin/Pages/Premium/ABTestingAdmin.php:256
+#: includes/Admin/Pages/Premium/ABTestingAdmin.php:331
 msgid "Test type does not support UI operations."
 msgstr "Testtypen støtter ikke brukergrensesnittoperasjoner."
 
-#: includes/Admin/Pages/Premium/ABTestingAdmin.php:628
+#: includes/Admin/Pages/Premium/ABTestingAdmin.php:703
 msgid "Test"
 msgstr "Test"
 
-#: includes/Admin/Pages/Premium/ABTestingAdmin.php:749
+#: includes/Admin/Pages/Premium/ABTestingAdmin.php:824
 msgid "The current status of this A/B test."
 msgstr "Gjeldende status for denne A/B-testen."
 
-#: includes/Admin/Pages/Premium/ABTestingAdmin.php:762
+#: includes/Admin/Pages/Premium/ABTestingAdmin.php:837
 msgid "Start Date"
 msgstr "Startdato"
 
-#: includes/Admin/Pages/Premium/ABTestingAdmin.php:774
+#: includes/Admin/Pages/Premium/ABTestingAdmin.php:849
 msgid "The date when the A/B test should start. Leave empty to start immediately."
 msgstr "Datoen når A/B-testen skal starte. La stå tomt for å starte umiddelbart."
 
-#: includes/Admin/Pages/Premium/ABTestingAdmin.php:780
+#: includes/Admin/Pages/Premium/ABTestingAdmin.php:855
 msgid "End Date"
 msgstr "Sluttdato"
 
-#: includes/Admin/Pages/Premium/ABTestingAdmin.php:792
+#: includes/Admin/Pages/Premium/ABTestingAdmin.php:867
 msgid "The date when the A/B test should end. After this date, the original variant will be displayed. Leave empty for no end date."
 msgstr "Datoen når A/B-testen skal avsluttes. Etter denne datoen vil den opprinnelige varianten vises. La stå tomt for ingen sluttdato."
 
-#: includes/Admin/Pages/Premium/ABTestingAdmin.php:1099
+#: includes/Admin/Pages/Premium/ABTestingAdmin.php:1174
 msgid "Traffic split percentages must total 100%. Please adjust your percentages."
 msgstr "Trafikkfordelingen må totalt være 100 %. Vennligst juster prosentene."
+
+#: client/ts/frontend/Components/TermsAndConditions.ts:29
+msgid "Terms and Conditions"
+msgstr "Vilkår og betingelser"
+
+#: client/ts/frontend/Components/TermsAndConditions.ts:35
+msgid "Privacy Policy"
+msgstr "Personvernerklæring"
+
+#: client/ts/frontend/Components/SideCartComponent.tsx:38
+msgid "Close Cart"
+msgstr "Lukk handlekurv"
+
+#: client/ts/frontend/Components/FreeShippingProgressBar.tsx:232
+msgid "Unlocked"
+msgstr "Låst opp"
 
 #: client/ts/frontend/Actions/CompleteOrderAction.ts:196
 msgid "Could not connect to server. Please refresh and try again or contact site administrator."
@@ -4330,18 +4392,6 @@ msgstr "Serveren brukte for lang tid på å behandle forespørselen. Vennligst o
 #: client/ts/frontend/Actions/CompleteOrderAction.ts:206
 msgid "Request was aborted. Please contact site administrator."
 msgstr "Forespørselen ble avbrutt. Vennligst kontakt nettstedets administrator."
-
-#: client/ts/frontend/Components/TermsAndConditions.ts:29
-msgid "Terms and Conditions"
-msgstr "Vilkår og betingelser"
-
-#: client/ts/frontend/Components/TermsAndConditions.ts:35
-msgid "Privacy Policy"
-msgstr "Personvernerklæring"
-
-#: client/ts/frontend/Components/SideCartComponent.tsx:38
-msgid "Close Cart"
-msgstr "Lukk handlekurv"
 
 #: client/ts/admin/Components/TrustBadgeRow.tsx:151
 msgid "Slot"
@@ -4444,6 +4494,86 @@ msgstr "Lås opp med Premium"
 #: client/ts/admin/Components/LockedFieldWrapper.tsx:60
 msgid "A %s plan is required to access these features."
 msgstr "En %s plan kreves for å få tilgang til disse funksjonene."
+
+#: client/ts/admin/Components/FreeShippingTierRow.tsx:49
+msgid "You don't have a Free Shipping method set up, so reaching this tier won't actually make shipping free — the bar only shows progress. Add one in WooCommerce shipping settings."
+msgstr "Du har ikke satt opp en Gratis frakt-metode, så å nå dette nivået vil ikke gjøre frakten gratis — linjen viser kun fremdrift. Legg til en i WooCommerce fraktinnstillinger."
+
+#: client/ts/admin/Components/FreeShippingTierRow.tsx:69
+msgid "Your Free Shipping method starts at %1$s, but this tier unlocks at %2$s — customers will see \"unlocked\" here and still be charged. Set the threshold to %1$s or higher to match."
+msgstr "Din Gratis frakt-metode starter ved %1$s, men dette nivået låses opp ved %2$s — kundene vil se «låst opp» her og fortsatt bli belastet. Sett terskelen til %1$s eller høyere for å samsvare."
+
+#: client/ts/admin/Components/FreeShippingTierRow.tsx:75
+msgid "Your Free Shipping method requires a coupon, so reaching this spend tier won\\'t make shipping free on its own."
+msgstr "Din Gratis frakt-metode krever en kupong, så å nå dette forbruksnivået gjør ikke frakten gratis alene."
+
+#: client/ts/admin/Components/FreeShippingTierRow.tsx:115
+msgid "Custom message only"
+msgstr "Kun egendefinert melding"
+
+#: client/ts/admin/Components/FreeShippingTierRow.tsx:136
+msgid "Tier %d"
+msgstr "Nivå %d"
+
+#: client/ts/admin/Components/FreeShippingTierRow.tsx:143
+msgid "Remove tier"
+msgstr "Fjern nivå"
+
+#: client/ts/admin/Components/FreeShippingTierRow.tsx:155
+msgid "Threshold"
+msgstr "Terskel"
+
+#: client/ts/admin/Components/FreeShippingTierRow.tsx:185
+msgid "Color"
+msgstr "Farge"
+
+#: client/ts/admin/Components/FreeShippingTierRow.tsx:201
+msgid "Enter a spend threshold above 0. Without one the free gift never unlocks and the tier is hidden from the bar."
+msgstr "Skriv inn en forbruksterskel over 0. Uten en vil ikke gratisgaven noen gang låses opp og nivået skjules fra linjen."
+
+#: client/ts/admin/Components/FreeShippingTierRow.tsx:202
+msgid "Enter a spend threshold above 0 — a tier with no threshold never unlocks and is hidden from the bar."
+msgstr "Skriv inn en forbruksterskel over 0 — et nivå uten terskel låses aldri opp og skjules fra linjen."
+
+#: client/ts/admin/Components/FreeShippingTierRow.tsx:218
+msgid "Open shipping settings"
+msgstr "Åpne fraktinnstillinger"
+
+#: client/ts/admin/Components/FreeShippingTierRow.tsx:227
+msgid "Short label"
+msgstr "Kort etikett"
+
+#: client/ts/admin/Components/FreeShippingTierRow.tsx:242
+msgid "Gift product"
+msgstr "Gaveprodukt"
+
+#: client/ts/admin/Components/FreeShippingTierRow.tsx:244
+msgid "Added to the cart free when this tier is reached. Only simple products can be a gift — variable products are not shown, since a variation cannot be auto-added."
+msgstr "Legges gratis i handlekurven når dette nivået nås. Bare enkle produkter kan være en gave — variable produkter vises ikke, siden en variant ikke kan legges til automatisk."
+
+#: client/ts/admin/Components/FreeShippingTierRow.tsx:245
+msgid "Search for a simple product"
+msgstr "Søk etter et enkelt produkt"
+
+#: client/ts/admin/Components/FreeShippingTierRow.tsx:253
+msgid "Unlocked message"
+msgstr "Melding ved opplåsing"
+
+#: client/ts/admin/Components/FreeShippingTierRow.tsx:266
+msgid "Locked message"
+msgstr "Melding ved låst status"
+
+#: client/ts/admin/Components/FreeShippingTierRow.tsx:282
+msgid "Include the %s placeholder in the locked message — it is replaced with the amount remaining."
+msgstr "Inkluder %s-plassholderen i meldingen for låst status — den erstattes med gjenværende beløp."
+
+#: client/ts/admin/Components/FreeShippingTierRepeater.tsx:73
+msgid "Stack up to three thresholds to reward customers as they spend more. Tiers are ordered by threshold automatically."
+msgstr "Stabl opptil tre terskler for å belønne kunder etter hvert som de handler mer. Nivåer ordnes automatisk etter terskel."
+
+#: client/ts/admin/Components/FreeShippingTierRepeater.tsx:96
+msgid "Add tier"
+msgstr "Legg til nivå"
 
 #: client/ts/frontend/Components/ReviewPane/ShippingMethodReviewPane.tsx:15
 #: client/ts/frontend/Components/ReviewPane/PaymentMethodReviewPane.tsx:15
@@ -4857,7 +4987,7 @@ msgid "Configure the Cart Summary on the checkout page."
 msgstr "Konfigurer handlekurvsammendraget på utsjekkingssiden."
 
 #: client/ts/admin/Components/Forms/WooCommercePagesGlobalOptionsSettingsForm.tsx:54
-#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:367
+#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:368
 msgid "Enable Sale Prices"
 msgstr "Aktiver salgspriser"
 
@@ -5066,214 +5196,202 @@ msgstr "Bestillingsstatus"
 msgid "Choose which Order Statuses are shown as a progress bar on the Thank You page."
 msgstr "Velg hvilke bestillingsstatus som vises som fremdriftslinje på takk-siden."
 
-#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:145
+#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:155
 msgid "Icon Color"
 msgstr "Ikonfarge"
 
-#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:172
+#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:182
 msgid "Heading above the suggested products. Leave blank for default. Default: You may also like&hellip;"
 msgstr "Overskrift over de foreslåtte produktene. La stå tomt for standard. Standard: Du vil kanskje også like&hellip;"
 
-#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:173
+#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:183
 msgid "You may also like…"
 msgstr "Du vil kanskje også like…"
 
-#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:179
+#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:189
 msgid "Enable Random Cross Sells Fallback"
 msgstr "Aktiver tilfeldig kryssalg som reserve"
 
-#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:180
+#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:190
 msgid "If none of the cart products have cross sell items defined, display random products instead."
 msgstr "Hvis ingen av produktene i kurven har definerte kryssalg, vis tilfeldige produkter i stedet."
 
-#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:186
+#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:196
 msgid "Link to Product Page"
 msgstr "Lenke til produktside"
 
-#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:187
+#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:197
 msgid "Link suggested products to their product pages instead of adding directly to cart."
 msgstr "Lenk foreslåtte produkter til produktsidene deres i stedet for å legge dem direkte i handlekurven."
 
-#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:204
+#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:214
 msgid "Enable Floating Cart Button"
 msgstr "Aktiver flytende vognknapp"
 
-#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:205
+#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:215
 msgid "Enable floating cart button on the bottom right of pages."
 msgstr "Aktiver flytende vognknapp nederst til høyre på sidene."
 
-#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:215
+#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:225
 msgid "Right Position"
 msgstr "Høyre posisjon"
 
-#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:216
+#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:226
 msgid "The position from the right side of the screen in pixels. Default: 20"
 msgstr "Posisjonen fra høyre side av skjermen i piksler. Standard: 20"
 
-#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:222
+#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:232
 msgid "Bottom Position"
 msgstr "Nederste posisjon"
 
-#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:223
+#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:233
 msgid "The position from the bottom of the screen in pixels. Default: 20"
 msgstr "Posisjonen fra bunnen av skjermen i piksler. Standard: 20"
 
-#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:230
+#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:240
 msgid "Hide Button If Empty Cart"
 msgstr "Skjul knapp hvis tom vogn"
 
-#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:231
+#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:241
 msgid "Hide floating cart button if cart is empty."
 msgstr "Skjul flytende vognknapp hvis vognen er tom."
 
-#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:242
-msgid "Free Shipping Progress Bar"
-msgstr "Fremdriftslinje for gratis frakt"
+#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:252
+msgid "Free shipping & rewards bar"
+msgstr "Gratis frakt- og belønningslinje"
 
-#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:243
-msgid "Configure the Free Shipping Progress Bar"
-msgstr "Konfigurer fremdriftslinjen for gratis frakt"
-
-#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:248
-msgid "Enable Free Shipping Progress Bar"
-msgstr "Aktiver fremdriftslinje for gratis frakt"
-
-#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:249
-msgid "Enable Free Shipping progress bar to show customers how close they are to obtaining free shipping. Uses your shipping settings to determine limits. To override, specify amount below."
-msgstr "Aktiver fremdriftslinje for gratis frakt for å vise kundene hvor nær de er å oppnå gratis frakt. Bruker dine fraktinnstillinger for å bestemme grenser. For å overstyre, spesifiser beløp nedenfor."
+#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:253
+msgid "Reward shoppers as they spend more — free shipping, a free gift, or a custom perk."
+msgstr "Belønn kunder etter hvert som de handler mer — gratis frakt, en gratis gave eller en tilpasset fordel."
 
 #: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:258
-msgid "Free Shipping Threshold"
-msgstr "Grense for gratis frakt"
+msgid "Enable free shipping & rewards bar"
+msgstr "Aktiver gratis frakt- og belønningslinje"
 
 #: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:259
-msgid "Cart subtotal required to qualify for free shipping. To use automatic detection based on shipping configuration, leave blank. Enter in store base currency."
-msgstr "Handlekurvens delsum som kreves for å kvalifisere for gratis frakt. For automatisk deteksjon basert på fraktkonfigurasjon, la stå tomt. Oppgi i butikkens basisvaluta."
+msgid "Show shoppers how close they are to free shipping, a free gift, or a custom reward as they add to their cart."
+msgstr "Vis kunder hvor nær de er gratis frakt, en gratis gave eller en tilpasset belønning når de legger til varer i handlekurven."
 
-#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:265
-msgid "Amount Remaining Message"
-msgstr "Melding om gjenværende beløp"
+#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:278
+msgid "Exclude shipping classes"
+msgstr "Ekskluder fraktklasser"
 
-#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:268
-msgid "You're %s away from free shipping!"
-msgstr "Du er %s borte fra gratis frakt!"
+#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:279
+msgid "Items in the selected shipping classes do not count toward the progress bar thresholds."
+msgstr "Varer i de valgte fraktklassene teller ikke med i terskelverdiene for fremdriftslinjen."
 
-#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:272
-msgid "The amount remaining to qualify for free shipping message. Leave blank for default. Default: You're %s away from free shipping!"
-msgstr "Beløpet som gjenstår for å kvalifisere for gratis frakt-melding. La stå tomt for standard. Standard: Du er %s unna gratis frakt!"
-
-#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:281
-msgid "Please ensure your amount remaining message includes the %s placeholder which is replaced with amount remaining when displayed to customers."
-msgstr "Vennligst sørg for at meldingen om gjenværende beløp inkluderer %s-plassholderen som erstattes med gjenværende beløp når den vises til kunder."
+#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:287
+msgid "Show on the checkout page"
+msgstr "Vis på kassesiden"
 
 #: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:288
-msgid "Free Shipping Message"
-msgstr "Melding om gratis frakt"
+msgid "Also show the free shipping & rewards bar in the checkout page cart summary."
+msgstr "Vis også gratis frakt- og belønningslinjen i handlekurvens sammendrag på kassesiden."
 
-#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:290
-msgid "The free shipping message. Leave blank for default. Default: Congrats! You get free standard shipping."
-msgstr "Meldingen om gratis frakt. La stå tomt for standard. Standard: Gratulerer! Du får gratis standardfrakt."
-
-#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:296
-msgid "Enable Free Shipping Progress Bar At Checkout"
-msgstr "Aktiver fremdriftslinje for gratis frakt ved utsjekk"
-
-#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:297
-msgid "Enable Free Shipping Progress Bar on the checkout page cart summary."
-msgstr "Aktiver fremdriftslinje for gratis frakt på handlekurvsammendraget på utsjekkingssiden."
-
-#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:304
-msgid "Progress Indicator Color"
-msgstr "Farge på fremdriftsindikator"
-
-#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:311
+#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:295
 msgid "Progress Bar Background Color"
 msgstr "Bakgrunnsfarge på fremdriftslinje"
 
-#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:326
+#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:310
+msgid "Empty cart"
+msgstr "Tøm handlekurven"
+
+#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:311
+msgid "Customize what shoppers see when the side cart is empty."
+msgstr "Tilpass hva kunder ser når sidehandlekurven er tom."
+
+#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:315
+msgid "Empty cart image"
+msgstr "Bilde for tom handlekurv"
+
+#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:316
+msgid "Shown above the empty cart message in the side cart. Leave blank for text only."
+msgstr "Vises over meldingen om tom handlekurv i sidehandlevognen. La stå tomt for kun tekst."
+
+#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:327
 msgid "Options"
 msgstr "Alternativer"
 
-#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:327
+#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:328
 msgid "Control various Side Cart options."
 msgstr "Kontroller ulike Side Cart-alternativer."
 
-#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:332
+#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:333
 msgid "Disable Cart Auto Open"
 msgstr "Deaktiver automatisk åpning av handlekurv"
 
-#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:333
+#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:334
 msgid "Instead of opening the side cart, gently shake the floating cart button (if visible) to indicate a successful add to cart event."
 msgstr "I stedet for å åpne sidekurven, rist forsiktig på den flytende handlekurvknappen (hvis synlig) for å indikere en vellykket legg til handlekurv-hendelse."
 
-#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:339
+#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:340
 msgid "Enable AJAX Add to Cart"
 msgstr "Aktiver AJAX Legg til i handlekurv"
 
-#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:340
+#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:341
 msgid "Use AJAX on archive and single product pages to add items to cart. By default, WooCommerce requires a full form submit with page reload. Enabling this option uses AJAX to add items to the cart."
 msgstr "Bruk AJAX på arkiv- og enkeltproduktsider for å legge til varer i handlekurven. Som standard krever WooCommerce full innsending av skjema med sideoppdatering. Aktivering av dette alternativet bruker AJAX for å legge til varer i handlekurven."
 
-#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:346
+#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:347
 msgid "Enable Express Payment Buttons"
 msgstr "Aktiver raske betalingsknapper"
 
-#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:347
+#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:348
 msgid "Enable express payment buttons from gateways that support the WooCommerce Minicart."
 msgstr "Aktiver raske betalingsknapper fra betalingsløsninger som støtter WooCommerce Minicart."
 
-#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:354
+#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:355
 msgid "Enable order bumps that are set to display below cart items to appear in side cart."
 msgstr "Aktiver ordretilbud som er satt til å vises under handlekurvartikler for å vises i sidekurven."
 
-#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:360
+#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:361
 #: client/ts/admin/Components/Forms/CheckoutSettingsForm.tsx:587
 #: client/ts/admin/Components/CheckoutEditor/panels/CheckoutSettingsPanel.tsx:318
 msgid "Allow Variation Changes"
 msgstr "Tillat endringer av variasjoner"
 
-#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:361
+#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:362
 #: client/ts/admin/Components/Forms/CheckoutSettingsForm.tsx:588
 msgid "Displays an edit link under cart items that allows customers to change which variation is selected in the cart."
 msgstr "Vis en redigeringslenke under handlekurvartikler som lar kunder endre hvilken variasjon som er valgt i handlekurven."
 
-#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:368
+#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:369
 msgid "Enable sale price under on cart item labels in side cart. Example: <s>$10.00</s> $5.00"
 msgstr "Aktiver salgspris under etiketter for handlekurvartikler i sidekurven. Eksempel: <s>$10.00</s> $5.00"
 
-#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:374
+#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:375
 msgid "Enable Coupons"
 msgstr "Aktiver kuponger"
 
-#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:375
+#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:376
 msgid "Enable customers to apply coupons from the side cart."
 msgstr "La kunder bruke kuponger fra sidekurven."
 
-#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:382
+#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:383
 #: client/ts/admin/Components/Forms/CheckoutSettingsForm.tsx:266
 #: client/ts/admin/Components/CheckoutEditor/panels/CheckoutSettingsPanel.tsx:128
 msgid "Hide Coupon Code Field Behind Link"
 msgstr "Skjul felt for kupongkode bak lenke"
 
-#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:383
+#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:384
 #: client/ts/admin/Components/Forms/CheckoutSettingsForm.tsx:267
 #: client/ts/admin/Components/CheckoutEditor/panels/CheckoutSettingsPanel.tsx:129
 msgid "Initially hide coupon field until \"Have a coupon code?\" link is clicked."
 msgstr "Skjul kupongfeltet i utgangspunktet til lenken \"Har du en kupongkode?\" klikkes."
 
-#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:390
+#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:391
 msgid "Show Shipping and Totals"
 msgstr "Vis frakt og totaler"
 
-#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:391
+#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:392
 msgid "Enable customers to see shipping and order total in addition to subtotal."
 msgstr "La kunder se frakt og ordretotal i tillegg til delsum."
 
-#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:397
+#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:398
 msgid "Enable Continue Shopping Button"
 msgstr "Aktiver knapp for å fortsette å handle"
 
-#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:398
+#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:399
 msgid "Enable Continue Shopping Button at bottom of Side Cart. Disabled by default."
 msgstr "Aktiver knapp for å fortsette å handle nederst i Side Cart. Deaktivert som standard."
 
@@ -6475,16 +6593,234 @@ msgstr "Du har ulagsrede endringer. Er du sikker på at du vil forlate siden?"
 msgid "Changing templates will update the logo, typography, colors, field label style, and footer text to those defined by the selected template. Are you sure you want to continue?"
 msgstr "Endring av maler vil oppdatere logo, typografi, farger, stil på feltetiketter og bunntekst til de som er definert av den valgte malen. Er du sikker på at du vil fortsette?"
 
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:79
-msgid "Step"
-msgstr "Trinn"
+# %s: item type e.g. "order bump"
+#: client/ts/admin/Components/CheckoutEditor/slots/UnsavedChangesDialog.tsx:37
+msgid "Create a new %s"
+msgstr "Opprett en ny %s"
 
+# %s: item type e.g. "order bump"
+#: client/ts/admin/Components/CheckoutEditor/slots/UnsavedChangesDialog.tsx:42
+msgid "A new tab will open where you can create your %s. When you\\'ve saved it, close that tab and return here - the editor will update automatically."
+msgstr "En ny fane åpnes hvor du kan opprette din %s. Når du har lagret den, lukk den fanen og gå tilbake hit – redigereren oppdateres automatisk."
+
+# %s: item type e.g. "order bump"
+#: client/ts/admin/Components/CheckoutEditor/slots/UnsavedChangesDialog.tsx:59
+msgid "Create %s"
+msgstr "Opprett %s"
+
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotsPanel.tsx:161
+msgid "No slots available."
+msgstr "Ingen plasser tilgjengelig."
+
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotsPanel.tsx:198
+msgid "Order bumps are assigned to slots but the feature is disabled. Enable order bumps in"
+msgstr "Ordretillegg er tildelt plasser, men funksjonen er deaktivert. Aktiver ordretillegg i"
+
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotsPanel.tsx:204
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotsPanel.tsx:224
+msgid "order bumps"
+msgstr "ordretillegg"
+
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotsPanel.tsx:218
+msgid "One or more slots exceed the maximum order bumps per slot. Increase the limit in"
+msgstr "Én eller flere plasser overskrider maks antall ordretillegg per plass. Øk grensen i"
+
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotsPanel.tsx:238
+msgid "Trust badges are assigned to slots but the feature is disabled. Enable trust badges in"
+msgstr "Tillitsmerker er tildelt til plasser, men funksjonen er deaktivert. Aktiver tillitsmerker i"
+
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotsPanel.tsx:244
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotsPanel.tsx:264
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotsPanel.tsx:313
+msgid "badges"
+msgstr "merker"
+
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotsPanel.tsx:258
+msgid "Customer reviews are assigned to slots but the feature is disabled. Enable customer reviews in"
+msgstr "Kundeanmeldelser er tildelt til plasser, men funksjonen er deaktivert. Aktiver kundeanmeldelser i"
+
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotsPanel.tsx:307
+msgid "Column settings for badges are configured in"
+msgstr "Kolonneinnstillinger for merker konfigureres i"
+
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:83
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:84
+msgid "Not shown for orders that don\\'t need shipping (e.g. digital products or pickup)."
+msgstr "Vises ikke for bestillinger som ikke trenger frakt (f.eks. digitale produkter eller henting)."
+
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:118
+msgid "This order bump is part of an active A/B test. It cannot be removed while the test is running."
+msgstr "Denne ordretillegget er en del av en aktiv A/B-test. Den kan ikke fjernes mens testen pågår."
+
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:122
+msgid "Remove this item from the slot?"
+msgstr "Fjerne dette elementet fra plassen?"
+
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:211
+msgid "Assign item to slot"
+msgstr "Tildele element til plass"
+
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:261
+msgid "On mobile and tablets, this slot is inside the \"Show order summary\" section."
+msgstr "På mobil og nettbrett er denne plassen inne i seksjonen «Vis ordresammendrag»."
+
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:280
+msgid "On mobile and tablets, the cart collapses and order bumps in this slot will move to the Above Terms & Conditions slot."
+msgstr "På mobil og nettbrett kollapser handlekurven, og ordretillegg i denne plassen flyttes til plassen Over vilkår og betingelser."
+
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:320
+msgid "Release to drop here"
+msgstr "Slipp for å slippe her"
+
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:323
+msgid "No items assigned."
+msgstr "Ingen elementer tildelt."
+
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:330
+msgid "Add item"
+msgstr "Legg til element"
+
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:415
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:233
+msgid "Level"
+msgstr "Nivå"
+
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:434
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:252
+msgid "e.g. Why choose us?"
+msgstr "f.eks. Hvorfor velge oss?"
+
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:442
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:476
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:260
+msgid "Margin"
+msgstr "Margin"
+
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:447
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:481
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:265
+msgid "e.g., 10px 0 20px 0"
+msgstr "f.eks., 10px 0 20px 0"
+
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:465
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:500
+msgid "Save"
+msgstr "Lagre"
+
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:27
 #: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:126
 #: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:140
 #: client/ts/admin/Components/CheckoutEditor/panels/DesignSettingsPanel.tsx:86
-#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:27
 msgid "Paid plan required"
 msgstr "Betalt plan kreves"
+
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:201
+msgid "Add Item"
+msgstr "Legg til element"
+
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:227
+msgid "+ New heading"
+msgstr "+ Ny overskrift"
+
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:284
+#: client/ts/admin/Components/CheckoutEditor/slots/CustomHtmlEditor.tsx:40
+msgid "Add"
+msgstr "Legg til"
+
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:302
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:371
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:419
+msgid "(in slot)"
+msgstr "(i plassering)"
+
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:303
+msgid "(in other slot)"
+msgstr "(i annen plassering)"
+
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:329
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:340
+msgid "+ New order bump"
+msgstr "+ Nytt ordretilbud"
+
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:336
+msgid "order bump"
+msgstr "ordretilbud"
+
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:337
+msgid "A new tab will open where you can create your order bump. When you\\'ve saved it, close that tab and return here — it will be added to your chosen slot automatically."
+msgstr "En ny fane åpnes der du kan lage ditt ordretilbud. Når du har lagret det, lukker du den fanen og kommer tilbake hit — det legges automatisk til i den valgte plasseringen."
+
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:379
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:390
+msgid "+ New trust badge"
+msgstr "+ Nytt tillitsmerke"
+
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:386
+msgid "trust badge"
+msgstr "tillitsmerke"
+
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:387
+msgid "A new tab will open where you can create your trust badge. When you\\'ve saved it, close that tab and return here — it will appear in this list ready to assign."
+msgstr "En ny fane åpnes der du kan lage ditt tillitsmerke. Når du har lagret det, lukker du den fanen og kommer tilbake hit — det vises i denne listen klart til å tildeles."
+
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:399
+msgid "Review Badges"
+msgstr "Vurderingsmerker"
+
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:402
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:418
+#: client/ts/admin/Components/CheckoutEditor/slots/AssignedItem.tsx:64
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:604
+msgid "Customer Reviews"
+msgstr "Kundeanmeldelser"
+
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:436
+msgid "+ New HTML"
+msgstr "+ Ny HTML"
+
+#: client/ts/admin/Components/CheckoutEditor/slots/CustomHtmlEditor.tsx:46
+msgid "Name (optional)"
+msgstr "Navn (valgfritt)"
+
+#: client/ts/admin/Components/CheckoutEditor/slots/CustomHtmlEditor.tsx:51
+msgid "e.g. Free Shipping Promo"
+msgstr "f.eks. Gratis frakt-kampanje"
+
+#: client/ts/admin/Components/CheckoutEditor/slots/CustomHtmlEditor.tsx:59
+msgid "HTML content"
+msgstr "HTML-innhold"
+
+#: client/ts/admin/Components/CheckoutEditor/slots/AssignedItem.tsx:66
+msgid "(empty heading)"
+msgstr "(tom overskrift)"
+
+#: client/ts/admin/Components/CheckoutEditor/slots/AssignedItem.tsx:148
+msgid "This order bump has an A/B test associated with it and cannot be moved or removed. Delete the test to unlock it."
+msgstr "Denne ordretillegget har en A/B-test knyttet til seg og kan ikke flyttes eller fjernes. Slett testen for å låse det opp."
+
+#: client/ts/admin/Components/CheckoutEditor/slots/AssignedItem.tsx:151
+msgid "This bump is placed here automatically by its Checkout and Side Cart display location. It also appears in the side cart and isn\\'t counted toward this slot\\'s order bump limit."
+msgstr "Dette tilbudet plasseres her automatisk basert på sin visningsplassering i kassen og sidevognen. Det vises også i sidevognen og telles ikke med i denne plasseringens grense for ordretilbud."
+
+#: client/ts/admin/Components/CheckoutEditor/slots/AssignedItem.tsx:154
+msgid "This item has display conditions. It will only appear to customers who meet the configured criteria and may not be visible on every checkout."
+msgstr "Dette elementet har visningsbetingelser. Det vil kun vises for kunder som oppfyller de konfigurerte kriteriene og kan ikke være synlig på alle kasser."
+
+#: client/ts/admin/Components/CheckoutEditor/slots/AssignedItem.tsx:157
+msgid "The offer product for this bump is already in the preview cart, so it may not be visible in the preview."
+msgstr "Tilbudsproduktet for dette tilbudet er allerede i forhåndsvisningsvognen, så det kan hende det ikke er synlig i forhåndsvisningen."
+
+#: client/ts/admin/Components/CheckoutEditor/slots/AssignedItem.tsx:168
+msgid "Drag to reorder"
+msgstr "Dra for å endre rekkefølge"
+
+#: client/ts/admin/Components/CheckoutEditor/slots/AssignedItem.tsx:241
+msgid "Remove"
+msgstr "Fjern"
+
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:79
+msgid "Step"
+msgstr "Trinn"
 
 #: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:162
 #: client/ts/admin/Components/CheckoutEditor/panels/DesignSettingsPanel.tsx:108
@@ -6602,13 +6938,6 @@ msgstr "Mobilkolonner"
 #: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:575
 msgid "Priority"
 msgstr "Prioritet"
-
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:604
-#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:402
-#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:418
-#: client/ts/admin/Components/CheckoutEditor/slots/AssignedItem.tsx:64
-msgid "Customer Reviews"
-msgstr "Kundeanmeldelser"
 
 #: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:613
 msgid "Add badges to your checkout layout in"
@@ -6761,216 +7090,6 @@ msgstr "Vis kredittkortlogoer på mobil."
 #: client/ts/admin/Components/CheckoutEditor/panels/CheckoutSettingsPanel.tsx:379
 msgid "Example: Show order summary and coupons."
 msgstr "Eksempel: Vis ordresammendrag og kuponger."
-
-# %s: item type e.g. "order bump"
-#: client/ts/admin/Components/CheckoutEditor/slots/UnsavedChangesDialog.tsx:37
-msgid "Create a new %s"
-msgstr "Opprett en ny %s"
-
-# %s: item type e.g. "order bump"
-#: client/ts/admin/Components/CheckoutEditor/slots/UnsavedChangesDialog.tsx:42
-msgid "A new tab will open where you can create your %s. When you\\'ve saved it, close that tab and return here - the editor will update automatically."
-msgstr "En ny fane åpnes hvor du kan opprette din %s. Når du har lagret den, lukk den fanen og gå tilbake hit – redigereren oppdateres automatisk."
-
-# %s: item type e.g. "order bump"
-#: client/ts/admin/Components/CheckoutEditor/slots/UnsavedChangesDialog.tsx:59
-msgid "Create %s"
-msgstr "Opprett %s"
-
-#: client/ts/admin/Components/CheckoutEditor/slots/SlotsPanel.tsx:161
-msgid "No slots available."
-msgstr "Ingen plasser tilgjengelig."
-
-#: client/ts/admin/Components/CheckoutEditor/slots/SlotsPanel.tsx:198
-msgid "Order bumps are assigned to slots but the feature is disabled. Enable order bumps in"
-msgstr "Ordretillegg er tildelt plasser, men funksjonen er deaktivert. Aktiver ordretillegg i"
-
-#: client/ts/admin/Components/CheckoutEditor/slots/SlotsPanel.tsx:204
-#: client/ts/admin/Components/CheckoutEditor/slots/SlotsPanel.tsx:224
-msgid "order bumps"
-msgstr "ordretillegg"
-
-#: client/ts/admin/Components/CheckoutEditor/slots/SlotsPanel.tsx:218
-msgid "One or more slots exceed the maximum order bumps per slot. Increase the limit in"
-msgstr "Én eller flere plasser overskrider maks antall ordretillegg per plass. Øk grensen i"
-
-#: client/ts/admin/Components/CheckoutEditor/slots/SlotsPanel.tsx:238
-msgid "Trust badges are assigned to slots but the feature is disabled. Enable trust badges in"
-msgstr "Tillitsmerker er tildelt til plasser, men funksjonen er deaktivert. Aktiver tillitsmerker i"
-
-#: client/ts/admin/Components/CheckoutEditor/slots/SlotsPanel.tsx:244
-#: client/ts/admin/Components/CheckoutEditor/slots/SlotsPanel.tsx:264
-#: client/ts/admin/Components/CheckoutEditor/slots/SlotsPanel.tsx:313
-msgid "badges"
-msgstr "merker"
-
-#: client/ts/admin/Components/CheckoutEditor/slots/SlotsPanel.tsx:258
-msgid "Customer reviews are assigned to slots but the feature is disabled. Enable customer reviews in"
-msgstr "Kundeanmeldelser er tildelt til plasser, men funksjonen er deaktivert. Aktiver kundeanmeldelser i"
-
-#: client/ts/admin/Components/CheckoutEditor/slots/SlotsPanel.tsx:307
-msgid "Column settings for badges are configured in"
-msgstr "Kolonneinnstillinger for merker konfigureres i"
-
-#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:115
-msgid "This order bump is part of an active A/B test. It cannot be removed while the test is running."
-msgstr "Denne ordretillegget er en del av en aktiv A/B-test. Den kan ikke fjernes mens testen pågår."
-
-#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:119
-msgid "Remove this item from the slot?"
-msgstr "Fjerne dette elementet fra plassen?"
-
-#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:208
-msgid "Assign item to slot"
-msgstr "Tildele element til plass"
-
-#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:258
-msgid "On mobile and tablets, this slot is inside the \"Show order summary\" section."
-msgstr "På mobil og nettbrett er denne plassen inne i seksjonen «Vis ordresammendrag»."
-
-#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:268
-msgid "This slot won\\'t be shown for pickups."
-msgstr "Denne plassen vil ikke vises for henting."
-
-#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:279
-msgid "On mobile and tablets, the cart collapses and order bumps in this slot will move to the Above Terms & Conditions slot."
-msgstr "På mobil og nettbrett kollapser handlekurven, og ordretillegg i denne plassen flyttes til plassen Over vilkår og betingelser."
-
-#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:319
-msgid "Release to drop here"
-msgstr "Slipp for å slippe her"
-
-#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:322
-msgid "No items assigned."
-msgstr "Ingen elementer tildelt."
-
-#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:329
-msgid "Add item"
-msgstr "Legg til element"
-
-#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:414
-#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:233
-msgid "Level"
-msgstr "Nivå"
-
-#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:433
-#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:252
-msgid "e.g. Why choose us?"
-msgstr "f.eks. Hvorfor velge oss?"
-
-#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:441
-#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:475
-#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:260
-msgid "Margin"
-msgstr "Margin"
-
-#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:446
-#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:480
-#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:265
-msgid "e.g., 10px 0 20px 0"
-msgstr "f.eks., 10px 0 20px 0"
-
-#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:464
-#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:499
-msgid "Save"
-msgstr "Lagre"
-
-#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:201
-msgid "Add Item"
-msgstr "Legg til element"
-
-#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:227
-msgid "+ New heading"
-msgstr "+ Ny overskrift"
-
-#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:284
-#: client/ts/admin/Components/CheckoutEditor/slots/CustomHtmlEditor.tsx:40
-msgid "Add"
-msgstr "Legg til"
-
-#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:302
-#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:371
-#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:419
-msgid "(in slot)"
-msgstr "(i plassering)"
-
-#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:303
-msgid "(in other slot)"
-msgstr "(i annen plassering)"
-
-#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:329
-#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:340
-msgid "+ New order bump"
-msgstr "+ Nytt ordretilbud"
-
-#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:336
-msgid "order bump"
-msgstr "ordretilbud"
-
-#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:337
-msgid "A new tab will open where you can create your order bump. When you\\'ve saved it, close that tab and return here — it will be added to your chosen slot automatically."
-msgstr "En ny fane åpnes der du kan lage ditt ordretilbud. Når du har lagret det, lukker du den fanen og kommer tilbake hit — det legges automatisk til i den valgte plasseringen."
-
-#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:379
-#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:390
-msgid "+ New trust badge"
-msgstr "+ Nytt tillitsmerke"
-
-#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:386
-msgid "trust badge"
-msgstr "tillitsmerke"
-
-#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:387
-msgid "A new tab will open where you can create your trust badge. When you\\'ve saved it, close that tab and return here — it will appear in this list ready to assign."
-msgstr "En ny fane åpnes der du kan lage ditt tillitsmerke. Når du har lagret det, lukker du den fanen og kommer tilbake hit — det vises i denne listen klart til å tildeles."
-
-#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:399
-msgid "Review Badges"
-msgstr "Vurderingsmerker"
-
-#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:436
-msgid "+ New HTML"
-msgstr "+ Ny HTML"
-
-#: client/ts/admin/Components/CheckoutEditor/slots/CustomHtmlEditor.tsx:46
-msgid "Name (optional)"
-msgstr "Navn (valgfritt)"
-
-#: client/ts/admin/Components/CheckoutEditor/slots/CustomHtmlEditor.tsx:51
-msgid "e.g. Free Shipping Promo"
-msgstr "f.eks. Gratis frakt-kampanje"
-
-#: client/ts/admin/Components/CheckoutEditor/slots/CustomHtmlEditor.tsx:59
-msgid "HTML content"
-msgstr "HTML-innhold"
-
-#: client/ts/admin/Components/CheckoutEditor/slots/AssignedItem.tsx:66
-msgid "(empty heading)"
-msgstr "(tom overskrift)"
-
-#: client/ts/admin/Components/CheckoutEditor/slots/AssignedItem.tsx:148
-msgid "This order bump is part of an active A/B test and cannot be moved or removed while the test is running."
-msgstr "Dette ordretilbudet er en del av en aktiv A/B-test og kan ikke flyttes eller fjernes mens testen pågår."
-
-#: client/ts/admin/Components/CheckoutEditor/slots/AssignedItem.tsx:151
-msgid "This bump is placed here automatically by its Checkout and Side Cart display location. It also appears in the side cart and isn\\'t counted toward this slot\\'s order bump limit."
-msgstr "Dette tilbudet plasseres her automatisk basert på sin visningsplassering i kassen og sidevognen. Det vises også i sidevognen og telles ikke med i denne plasseringens grense for ordretilbud."
-
-#: client/ts/admin/Components/CheckoutEditor/slots/AssignedItem.tsx:154
-msgid "This item has display conditions. It will only appear to customers who meet the configured criteria and may not be visible on every checkout."
-msgstr "Dette elementet har visningsbetingelser. Det vil kun vises for kunder som oppfyller de konfigurerte kriteriene og kan ikke være synlig på alle kasser."
-
-#: client/ts/admin/Components/CheckoutEditor/slots/AssignedItem.tsx:157
-msgid "The offer product for this bump is already in the preview cart, so it may not be visible in the preview."
-msgstr "Tilbudsproduktet for dette tilbudet er allerede i forhåndsvisningsvognen, så det kan hende det ikke er synlig i forhåndsvisningen."
-
-#: client/ts/admin/Components/CheckoutEditor/slots/AssignedItem.tsx:168
-msgid "Drag to reorder"
-msgstr "Dra for å endre rekkefølge"
-
-#: client/ts/admin/Components/CheckoutEditor/slots/AssignedItem.tsx:241
-msgid "Remove"
-msgstr "Fjern"
 
 #: client/ts/admin/Components/Metaboxes/Fields/Rules/fields.ts:47
 msgid "Is equal to"

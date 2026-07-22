@@ -15,9 +15,9 @@ class ValidateEmailDomainAction extends CFWAction {
 	public function action() {
 		if ( empty( $_POST['email'] ) ) { // phpcs:ignore WordPress.Security.NonceVerification.Missing
 			$this->out(
-				array(
+				[
 					'message' => 'Invalid email validation request. Must include email.',
-				),
+				],
 				418 // I'm a teapot
 			);
 		}
@@ -39,10 +39,10 @@ class ValidateEmailDomainAction extends CFWAction {
 		$valid = apply_filters( 'cfw_email_domain_valid', checkdnsrr( $email_domain . '.', 'MX' ), $email_domain, $email_address );
 
 		$this->out(
-			array(
+			[
 				// translators: %s is the postcode field label
 				'message' => $valid ? '' : __( 'Email address contains invalid domain name.', 'checkout-wc' ),
-			),
+			],
 			$valid ? 200 : 400
 		);
 	}

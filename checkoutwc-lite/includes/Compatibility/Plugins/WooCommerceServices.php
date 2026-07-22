@@ -13,9 +13,9 @@ class WooCommerceServices extends CompatibilityAbstract {
 		$woocommerce_services = cfw_get_hook_instance_object( 'woocommerce_shipping_fields', 'add_shipping_phone_to_checkout' );
 
 		if ( ! empty( $woocommerce_services ) ) {
-			remove_filter( 'woocommerce_shipping_fields', array( $woocommerce_services, 'add_shipping_phone_to_checkout' ) );
-			remove_action( 'woocommerce_admin_shipping_fields', array( $woocommerce_services, 'add_shipping_phone_to_order_fields' ) );
-			remove_filter( 'woocommerce_get_order_address', array( $woocommerce_services, 'get_shipping_phone_from_order' ), 10 );
+			remove_filter( 'woocommerce_shipping_fields', [ $woocommerce_services, 'add_shipping_phone_to_checkout' ] );
+			remove_action( 'woocommerce_admin_shipping_fields', [ $woocommerce_services, 'add_shipping_phone_to_order_fields' ] );
+			remove_filter( 'woocommerce_get_order_address', [ $woocommerce_services, 'get_shipping_phone_from_order' ], 10 );
 		}
 	}
 

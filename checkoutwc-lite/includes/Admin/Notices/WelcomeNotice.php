@@ -5,7 +5,7 @@ namespace Objectiv\Plugins\Checkout\Admin\Notices;
 use Objectiv\Plugins\Checkout\Managers\UpdatesManager;
 
 class WelcomeNotice extends NoticeAbstract {
-	public function maybe_add( string $id = '', string $title = '', string $message = '', array $options = array() ) {
+	public function maybe_add( string $id = '', string $title = '', string $message = '', array $options = [] ) {
 		$updates_manager = UpdatesManager::instance();
 
 		$id    = 'cfw_welcome';
@@ -26,7 +26,7 @@ class WelcomeNotice extends NoticeAbstract {
 			$message = __( 'Thank you for installing CheckoutWC! To get started, enter your <strong>License Key</strong> below, save, and click <strong>Activate Site</strong>.', 'checkout-wc' );
 		}
 
-		parent::maybe_add( $id, $title, $message, array( 'type' => 'success' ) );
+		parent::maybe_add( $id, $title, $message, [ 'type' => 'success' ] );
 	}
 
 	protected function should_add(): bool {

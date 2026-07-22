@@ -36,7 +36,7 @@ class DeclineOfferAction extends CFWAction {
 		$bump_id = isset( $_POST['bump_id'] ) ? absint( $_POST['bump_id'] ) : 0;
 
 		if ( ! $bump_id || ! check_ajax_referer( 'cfw_process_offer_' . $bump_id, '_wpnonce', false ) ) {
-			wp_send_json_error( array( 'message' => __( 'Invalid security token.', 'checkout-wc' ) ) );
+			wp_send_json_error( [ 'message' => __( 'Invalid security token.', 'checkout-wc' ) ] );
 			return;
 		}
 
@@ -45,13 +45,13 @@ class DeclineOfferAction extends CFWAction {
 		$order_key = isset( $_POST['order_key'] ) ? sanitize_text_field( wp_unslash( $_POST['order_key'] ) ) : '';
 
 		if ( ! $order_id || ! $order_key ) {
-			wp_send_json_error( array( 'message' => __( 'Invalid order information.', 'checkout-wc' ) ) );
+			wp_send_json_error( [ 'message' => __( 'Invalid order information.', 'checkout-wc' ) ] );
 			return;
 		}
 
 		$order = wc_get_order( $order_id );
 		if ( ! $order || $order->get_order_key() !== $order_key ) {
-			wp_send_json_error( array( 'message' => __( 'Order verification failed.', 'checkout-wc' ) ) );
+			wp_send_json_error( [ 'message' => __( 'Order verification failed.', 'checkout-wc' ) ] );
 			return;
 		}
 
@@ -59,10 +59,10 @@ class DeclineOfferAction extends CFWAction {
 		if ( ! WC()->session ) {
 			// Session unavailable - just reload to thank you page
 			wp_send_json_success(
-				array(
+				[
 					'message' => __( 'Redirecting...', 'checkout-wc' ),
 					'reload'  => true,
-				)
+				]
 			);
 			return;
 		}
@@ -72,17 +72,17 @@ class DeclineOfferAction extends CFWAction {
 		if ( ! $session_data ) {
 			// Session expired is OK - just redirect to thank you page
 			wp_send_json_success(
-				array(
+				[
 					'message' => __( 'Session expired. Redirecting...', 'checkout-wc' ),
 					'reload'  => true,
-				)
+				]
 			);
 			return;
 		}
 
 		// Mark bump as declined
 		$session_data['handled_bumps'][ $bump_id ] = 'declined';
-		$session_data['pending_bumps'] = array_diff( $session_data['pending_bumps'], array( $bump_id ) );
+		$session_data['pending_bumps']             = array_diff( $session_data['pending_bumps'], [ $bump_id ] );
 		WC()->session->set( 'cfw_post_purchase_data', $session_data );
 
 		cfw_debug_log( 'Post-purchase bump ' . $bump_id . ' declined for order ' . $order_id );
@@ -98,10 +98,10 @@ class DeclineOfferAction extends CFWAction {
 
 		// Return success with reload flag
 		wp_send_json_success(
-			array(
+			[
 				'message' => __( 'Offer declined.', 'checkout-wc' ),
 				'reload'  => true,
-			)
+			]
 		);
 	}
 }

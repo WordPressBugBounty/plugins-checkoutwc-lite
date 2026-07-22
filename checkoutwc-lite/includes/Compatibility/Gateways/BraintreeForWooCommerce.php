@@ -13,8 +13,8 @@ class BraintreeForWooCommerce extends CompatibilityAbstract {
 
 	public function run() {
 		remove_action( 'woocommerce_checkout_before_customer_details', 'wc_braintree_banner_checkout_template' );
-		add_action( 'cfw_payment_request_buttons', array( $this, 'render_banner_buttons' ) );
-		add_filter( 'wc_braintree_paypal_button_options', array( $this, 'force_pp_button_height' ) );
+		add_action( 'cfw_payment_request_buttons', [ $this, 'render_banner_buttons' ] );
+		add_filter( 'wc_braintree_paypal_button_options', [ $this, 'force_pp_button_height' ] );
 	}
 
 	public function pre_init() {
@@ -25,18 +25,18 @@ class BraintreeForWooCommerce extends CompatibilityAbstract {
 		add_filter(
 			'cfw_detected_gateways',
 			function ( $gateways ) {
-			$gateways[] = new DetectedPaymentGateway(
+				$gateways[] = new DetectedPaymentGateway(
 				'Payment Plugins Braintree For WooCommerce',
 				GatewaySupport::FULLY_SUPPORTED
-			);
+				);
 
-			return $gateways;
+				return $gateways;
 			}
 		);
 	}
 
 	public function render_banner_buttons() {
-		$gateways = array();
+		$gateways = [];
 		foreach ( WC()->payment_gateways()->get_available_payment_gateways() as $id => $gateway ) {
 			if ( $gateway->supports( 'wc_braintree_banner_checkout' ) && $gateway->banner_checkout_enabled() ) {
 				$gateways[ $id ] = $gateway;
@@ -62,10 +62,10 @@ class BraintreeForWooCommerce extends CompatibilityAbstract {
 	}
 
 	public function typescript_class_and_params( array $compatibility ): array {
-		$compatibility[] = array(
+		$compatibility[] = [
 			'class'  => 'BraintreeForWooCommerce',
-			'params' => array(),
-		);
+			'params' => [],
+		];
 
 		return $compatibility;
 	}

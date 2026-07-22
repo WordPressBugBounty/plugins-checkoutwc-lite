@@ -10,11 +10,11 @@ class WooCommerceMemberships extends CompatibilityAbstract {
 	}
 
 	public function pre_init() {
-		add_action( 'wc_memberships_discounts_enable_price_html_adjustments', array( $this, 'queue_removal' ) );
+		add_action( 'wc_memberships_discounts_enable_price_html_adjustments', [ $this, 'queue_removal' ] );
 	}
 
 	public function queue_removal() {
-		add_filter( 'woocommerce_get_item_data', array( $this, 'remove' ), 1 );
+		add_filter( 'woocommerce_get_item_data', [ $this, 'remove' ], 1 );
 	}
 
 	public function remove( $value ) {
@@ -29,7 +29,7 @@ class WooCommerceMemberships extends CompatibilityAbstract {
 		}
 
 		$instance = $memberships->get_member_discounts_instance();
-		$callback = array( $instance, 'display_cart_purchasing_discount_message' );
+		$callback = [ $instance, 'display_cart_purchasing_discount_message' ];
 
 		remove_filter( 'woocommerce_get_item_data', $callback );
 

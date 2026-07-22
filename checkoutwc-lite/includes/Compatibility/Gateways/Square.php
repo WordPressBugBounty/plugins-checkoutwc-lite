@@ -21,7 +21,7 @@ class Square extends CompatibilityAbstract {
 		 * @param bool $allow Whether to ignore shipping phone requirement during payment requests
 		 */
 		if ( apply_filters( 'cfw_square_payment_requests_ignore_shipping_phone', true ) ) {
-			add_action( 'wc_ajax_square_digital_wallet_process_checkout', array( $this, 'process_payment_request_ajax_checkout' ), 1 );
+			add_action( 'wc_ajax_square_digital_wallet_process_checkout', [ $this, 'process_payment_request_ajax_checkout' ], 1 );
 		}
 
 		if ( ! $this->is_available() ) {
@@ -42,20 +42,20 @@ class Square extends CompatibilityAbstract {
 	}
 
 	public function run() {
-		add_action( 'cfw_checkout_before_order_review_container', array( $this, 'render_error_receiver_stub' ) );
-		add_action( 'wp', array( $this, 'payment_request_buttons' ), 100 );
+		add_action( 'cfw_checkout_before_order_review_container', [ $this, 'render_error_receiver_stub' ] );
+		add_action( 'wp', [ $this, 'payment_request_buttons' ], 100 );
 
 		add_action(
 			'cfw_checkout_payment_method_tab',
 			function () {
 				?>
 			<table class="shop_table woocommerce-checkout-review-order-table"></table>
-			<?php
+				<?php
 			},
 			15
 		);
 
-		add_filter( 'woocommerce_update_order_review_fragments', array( $this, 'remove_gift_card_payment_fragments' ) );
+		add_filter( 'woocommerce_update_order_review_fragments', [ $this, 'remove_gift_card_payment_fragments' ] );
 	}
 
 	public function remove_gift_card_payment_fragments( $fragments ) {
@@ -64,7 +64,7 @@ class Square extends CompatibilityAbstract {
 		}
 
 		if ( WC()->cart->needs_payment() && isset( $fragments['has-balance'] ) && $fragments['has-balance'] ) {
-			$object                            = new class() {
+			$object = new class() {
 				public function needs_payment(): bool {
 					return false;
 				}
@@ -82,8 +82,8 @@ class Square extends CompatibilityAbstract {
 			return;
 		}
 
-		remove_action( 'woocommerce_before_checkout_form', array( $instance, 'render_button' ), 15 );
-		add_action( 'cfw_payment_request_buttons', array( $instance, 'render_button' ), 1 );
+		remove_action( 'woocommerce_before_checkout_form', [ $instance, 'render_button' ], 15 );
+		add_action( 'cfw_payment_request_buttons', [ $instance, 'render_button' ], 1 );
 	}
 
 	public function render_error_receiver_stub() {
@@ -106,7 +106,7 @@ class Square extends CompatibilityAbstract {
 				function ( $fields ) {
 					if ( isset( $fields['shipping']['shipping_phone'] ) ) {
 						$fields['shipping']['shipping_phone']['required'] = false;
-						$fields['shipping']['shipping_phone']['validate'] = array();
+						$fields['shipping']['shipping_phone']['validate'] = [];
 					}
 
 					if ( 'yes' === SettingsManager::instance()->get_setting( 'use_fullname_field' ) ) {
@@ -136,10 +136,10 @@ class Square extends CompatibilityAbstract {
 	 * @return array
 	 */
 	public function typescript_class_and_params( array $compatibility ): array {
-		$compatibility[] = array(
+		$compatibility[] = [
 			'class'  => 'Square',
-			'params' => array(),
-		);
+			'params' => [],
+		];
 
 		return $compatibility;
 	}

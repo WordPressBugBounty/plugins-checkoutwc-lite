@@ -16,10 +16,10 @@ class LostPasswordAction extends CFWAction {
 
 	public function action() {
 		$nonce_value = wc_get_var( $_POST['woocommerce-lost-password-nonce'] ); // @codingStandardsIgnoreLine.
-		$error       = array(
+		$error       = [
 			'result'  => false,
 			'message' => 'An error occurred. Please contact site administrator.',
-		);
+		];
 
 		if ( ! wp_verify_nonce( $nonce_value, 'lost_password' ) ) {
 			$this->out( $error );
@@ -28,10 +28,10 @@ class LostPasswordAction extends CFWAction {
 		$success = \WC_Shortcode_My_Account::retrieve_password();
 
 		if ( ! $success ) {
-			$all_notices = WC()->session->get( 'wc_notices', array() );
+			$all_notices = WC()->session->get( 'wc_notices', [] );
 
 			$notice_type = 'error';
-			$notices     = array();
+			$notices     = [];
 
 			if ( wc_notice_count( $notice_type ) > 0 && isset( $all_notices[ $notice_type ] ) ) {
 				// In WooCommerce 3.9+, messages can be an array with two properties:
@@ -46,18 +46,18 @@ class LostPasswordAction extends CFWAction {
 			WC()->session->set( 'wc_notices', $all_notices );
 
 			$this->out(
-				array(
+				[
 					'result'  => false,
 					'message' => join( ' ', $notices ),
-				)
+				]
 			);
 		}
 
 		$this->out(
-			array(
+			[
 				'result'  => true,
 				'message' => esc_html( cfw_apply_filters( 'woocommerce_lost_password_confirmation_message', esc_html__( 'A password reset email has been sent to the email address on file for your account, but may take several minutes to show up in your inbox. Please wait at least 10 minutes before attempting another reset.', 'woocommerce' ) ) ),
-			)
+			]
 		);
 	}
 }

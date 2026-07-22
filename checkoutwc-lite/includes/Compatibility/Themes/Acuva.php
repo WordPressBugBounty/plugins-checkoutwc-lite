@@ -16,6 +16,6 @@ class Acuva extends CompatibilityAbstract {
 			return;
 		}
 
-		remove_filter( 'woocommerce_cart_item_quantity', array( $instance, 'ac_display_cart_quantity' ), 10 );
+		remove_filter( 'woocommerce_cart_item_quantity', [ $instance, 'ac_display_cart_quantity' ], 10 );
 	}
 }

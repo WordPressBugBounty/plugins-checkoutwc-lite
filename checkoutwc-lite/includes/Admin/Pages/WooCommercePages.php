@@ -26,16 +26,16 @@ class WooCommercePages extends PageAbstract {
 
 		$this->set_tabbed_navigation( new TabNavigation( 'checkout' ) );
 
-		$this->get_tabbed_navigation()->add_tab( __( 'Checkout', 'checkout-wc' ), add_query_arg( array( 'subpage' => 'checkout' ), $this->get_url() ), 'checkout' );
-		$this->get_tabbed_navigation()->add_tab( __( 'Thank You', 'checkout-wc' ), add_query_arg( array( 'subpage' => 'thankyou' ), $this->get_url() ), 'thankyou' );
-		$this->get_tabbed_navigation()->add_tab( __( 'Global Options', 'checkout-wc' ), add_query_arg( array( 'subpage' => 'globaloptions' ), $this->get_url() ), 'globaloptions' );
+		$this->get_tabbed_navigation()->add_tab( __( 'Checkout', 'checkout-wc' ), add_query_arg( [ 'subpage' => 'checkout' ], $this->get_url() ), 'checkout' );
+		$this->get_tabbed_navigation()->add_tab( __( 'Thank You', 'checkout-wc' ), add_query_arg( [ 'subpage' => 'thankyou' ], $this->get_url() ), 'thankyou' );
+		$this->get_tabbed_navigation()->add_tab( __( 'Global Options', 'checkout-wc' ), add_query_arg( [ 'subpage' => 'globaloptions' ], $this->get_url() ), 'globaloptions' );
 	}
 
 	public function output() {
 		$this->get_tabbed_navigation()->display_tabs();
 
 		$current_tab_function = $this->get_tabbed_navigation()->get_current_tab() . '_tab';
-		$callable             = array( $this, $current_tab_function );
+		$callable             = [ $this, $current_tab_function ];
 
 		if ( is_callable( $callable ) ) {
 			call_user_func( $callable );
@@ -65,7 +65,7 @@ class WooCommercePages extends PageAbstract {
 			return;
 		}
 
-		$store_policies = cfw_get_setting( 'store_policies', null, array() );
+		$store_policies = cfw_get_setting( 'store_policies', null, [] );
 
 		// Seed store policies with internal ID that won't change
 		foreach ( $store_policies as $index => $policy ) {
@@ -88,8 +88,8 @@ class WooCommercePages extends PageAbstract {
 		asort( $countries );
 
 		$this->set_script_data(
-			array(
-				'settings'             => array(
+			[
+				'settings'             => [
 					// Checkout settings
 					'skip_cart_step'                       => SettingsManager::instance()->get_setting( 'skip_cart_step' ) === 'yes',
 					'skip_shipping_step'                   => SettingsManager::instance()->get_setting( 'skip_shipping_step' ) === 'yes',
@@ -131,7 +131,7 @@ class WooCommercePages extends PageAbstract {
 					'enable_sticky_cart_summary'           => SettingsManager::instance()->get_setting( 'enable_sticky_cart_summary' ) === 'yes',
 					// Thank You settings
 					'enable_thank_you_page'                => SettingsManager::instance()->get_setting( 'enable_thank_you_page' ) === 'yes',
-					'thank_you_order_statuses'             => cfw_get_setting( 'thank_you_order_statuses', null, array() ),
+					'thank_you_order_statuses'             => cfw_get_setting( 'thank_you_order_statuses', null, [] ),
 					'enable_map_embed'                     => SettingsManager::instance()->get_setting( 'enable_map_embed' ) === 'yes',
 					'override_view_order_template'         => SettingsManager::instance()->get_setting( 'override_view_order_template' ) === 'yes',
 					// Global Options settings
@@ -141,16 +141,16 @@ class WooCommercePages extends PageAbstract {
 					'cart_item_data_display'               => SettingsManager::instance()->get_setting( 'cart_item_data_display' ),
 					'store_policies'                       => array_values( $store_policies ),
 					'wp_option/woocommerce_checkout_phone_field' => get_option( 'woocommerce_checkout_phone_field', 'required' ),
-				),
-				'woocommerce_settings' => array(
+				],
+				'woocommerce_settings' => [
 					'countries'                => $countries,
 					'thank_you_order_statuses' => wc_get_order_statuses(),
-				),
-				'conditional_settings' => array(
+				],
+				'conditional_settings' => [
 					'order_notes_enable' => ! has_filter( 'woocommerce_enable_order_notes_field' ) || ( SettingsManager::instance()->get_setting( 'enable_order_notes' ) === 'yes' && 1 === cfw_count_filters( 'woocommerce_enable_order_notes_field' ) ),
-				),
+				],
 				'plan'                 => $this->get_plan_data(),
-			)
+			]
 		);
 	}
 }

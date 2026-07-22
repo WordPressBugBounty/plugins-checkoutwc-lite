@@ -13,7 +13,7 @@ class KlarnaPayment extends CompatibilityAbstract {
 	}
 
 	public function run() {
-		add_action( 'cfw_payment_gateway_list_klarna_payments_alternate', array( $this, 'klarna_payments_content' ), 10, 1 );
+		add_action( 'cfw_payment_gateway_list_klarna_payments_alternate', [ $this, 'klarna_payments_content' ], 10, 1 );
 		add_filter( 'cfw_show_gateway_klarna_payments', '__return_false' );
 	}
 
@@ -130,10 +130,10 @@ class KlarnaPayment extends CompatibilityAbstract {
 	}
 
 	public function typescript_class_and_params( array $compatibility ): array {
-		$compatibility[] = array(
+		$compatibility[] = [
 			'class'  => 'KlarnaPayments',
-			'params' => array(),
-		);
+			'params' => [],
+		];
 
 		return $compatibility;
 	}

@@ -18,9 +18,9 @@ class UpdatePaymentMethodAction extends CFWAction {
 		WC()->session->set( 'chosen_payment_method', wc_clean( wp_unslash( $_POST['paymentMethod'] ?? '' ) ) ); // phpcs:ignore WordPress.Security.NonceVerification.Missing
 
 		$this->out(
-			array(
+			[
 				'payment_method' => WC()->session->get( 'chosen_payment_method' ),
-			)
+			]
 		);
 	}
 }

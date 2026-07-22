@@ -24,7 +24,7 @@ class OneClickUpsells extends CompatibilityAbstract {
 
 		if ( ! empty( $gateways['ocupaypal'] ) ) {
 			if ( 'top' === $gateways['ocupaypal']->checkout_page || 'both' === $gateways['ocupaypal']->checkout_page ) {
-				add_action( 'cfw_checkout_before_customer_info_tab', array( $this, 'gb_ocu_paypal_display_button' ), 5 );
+				add_action( 'cfw_checkout_before_customer_info_tab', [ $this, 'gb_ocu_paypal_display_button' ], 5 );
 			}
 		}
 	}

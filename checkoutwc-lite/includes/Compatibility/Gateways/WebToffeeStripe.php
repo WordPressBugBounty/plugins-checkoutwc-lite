@@ -42,11 +42,11 @@ class WebToffeeStripe extends CompatibilityAbstract {
 		}
 
 		// Remove theirs
-		remove_action( 'woocommerce_before_checkout_form', array( $instance, 'eh_add_payment_request_button' ) );
-		remove_action( 'woocommerce_before_checkout_form', array( $instance, 'display_payment_request_button_separator' ) );
+		remove_action( 'woocommerce_before_checkout_form', [ $instance, 'eh_add_payment_request_button' ] );
+		remove_action( 'woocommerce_before_checkout_form', [ $instance, 'display_payment_request_button_separator' ] );
 
 		// Add ours
-		add_action( 'cfw_payment_request_buttons', array( $instance, 'eh_add_payment_request_button' ) );
+		add_action( 'cfw_payment_request_buttons', [ $instance, 'eh_add_payment_request_button' ] );
 	}
 
 	public function maybe_rehook_applepay() {
@@ -57,10 +57,10 @@ class WebToffeeStripe extends CompatibilityAbstract {
 		}
 
 		// Remove theirs
-		remove_action( 'woocommerce_before_checkout_form', array( $instance, 'add_apple_pay_button' ) );
-		remove_action( 'woocommerce_before_checkout_form', array( $instance, 'display_payment_request_button_separator' ) );
+		remove_action( 'woocommerce_before_checkout_form', [ $instance, 'add_apple_pay_button' ] );
+		remove_action( 'woocommerce_before_checkout_form', [ $instance, 'display_payment_request_button_separator' ] );
 
 		// Add ours
-		add_action( 'cfw_payment_request_buttons', array( $instance, 'add_apple_pay_button' ) );
+		add_action( 'cfw_payment_request_buttons', [ $instance, 'add_apple_pay_button' ] );
 	}
 }

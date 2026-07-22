@@ -10,10 +10,10 @@ class NoticesManager extends SingletonAbstract {
 	public function init() {
 		$this->set_notices_object( new Notices() );
 
-		add_action( 'admin_notices', array( $this->notices, 'boot' ), -100 );
+		add_action( 'admin_notices', [ $this->notices, 'boot' ], -100 );
 	}
 
-	public function add( string $id, string $title, string $message, array $options = array() ) {
+	public function add( string $id, string $title, string $message, array $options = [] ) {
 		$this->get_notices_object()->add( $id, $title, $message, $options );
 	}
 
@@ -27,7 +27,7 @@ class NoticesManager extends SingletonAbstract {
 
 	public function get_deferred_notices(): array {
 		$all      = $this->notices->get_all();
-		$deferred = array();
+		$deferred = [];
 
 		foreach ( $all as $notice ) {
 			if ( 'deferred' === $notice->get_option( 'mode' ) ) {

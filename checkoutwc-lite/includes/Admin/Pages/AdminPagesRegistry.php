@@ -3,7 +3,7 @@
 namespace Objectiv\Plugins\Checkout\Admin\Pages;
 
 class AdminPagesRegistry {
-	private static $pages = array();
+	private static $pages = [];
 
 	public static function bulk_add( $pages ) {
 		self::$pages = array_merge( self::$pages, $pages );

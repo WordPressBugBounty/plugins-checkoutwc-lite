@@ -13,16 +13,16 @@ class PayPalForWooCommerce extends CompatibilityAbstract {
 	}
 
 	public function typescript_class_and_params( array $compatibility ): array {
-		$compatibility[] = array(
+		$compatibility[] = [
 			'class'  => 'PayPalForWooCommerce',
-			'params' => array(),
-		);
+			'params' => [],
+		];
 
 		return $compatibility;
 	}
 
 	public function pre_init() {
-		add_action( 'cfw_before_process_checkout', array( $this, 'maybe_unrequire_fields' ) );
+		add_action( 'cfw_before_process_checkout', [ $this, 'maybe_unrequire_fields' ] );
 
 		if ( ! defined( 'PAYPAL_FOR_WOOCOMMERCE_PLUGIN_DIR' ) ) {
 			return;
@@ -47,12 +47,12 @@ class PayPalForWooCommerce extends CompatibilityAbstract {
 		add_filter(
 			'cfw_detected_gateways',
 			function ( $gateways ) {
-			$gateways[] = new DetectedPaymentGateway(
+				$gateways[] = new DetectedPaymentGateway(
 				'Angelleye PayPal for WooCommerce',
 				GatewaySupport::FULLY_SUPPORTED
-			);
+				);
 
-			return $gateways;
+				return $gateways;
 			}
 		);
 	}
@@ -90,14 +90,14 @@ class PayPalForWooCommerce extends CompatibilityAbstract {
 				return;
 			}
 
-			add_filter( 'angelleye_ec_checkout_page_buy_now_nutton', array( $this, 'modify_payment_button_output' ), 10, 1 );
+			add_filter( 'angelleye_ec_checkout_page_buy_now_nutton', [ $this, 'modify_payment_button_output' ], 10, 1 );
 
 			if ( ! empty( $angelleye_paypal_express_checkout_helper ) && ! empty( $angelleye_paypal_express_checkout_helper->show_on_checkout ) && ( 'top' === $angelleye_paypal_express_checkout_helper->show_on_checkout || 'both' === $angelleye_paypal_express_checkout_helper->show_on_checkout ) ) {
-				add_action( 'cfw_payment_request_buttons', array( $this, 'add_paypal_express_to_checkout' ) );
+				add_action( 'cfw_payment_request_buttons', [ $this, 'add_paypal_express_to_checkout' ] );
 			}
 
 			// Remove top of checkout message
-			remove_action( 'woocommerce_before_checkout_form', array( $angelleye_paypal_express_checkout_helper, 'checkout_message' ), 5 );
+			remove_action( 'woocommerce_before_checkout_form', [ $angelleye_paypal_express_checkout_helper, 'checkout_message' ], 5 );
 
 			if ( $angelleye_paypal_express_checkout_helper->function_helper->ec_is_express_checkout() ) {
 				add_filter( 'cfw_enable_separate_address_1_fields', '__return_false' );
@@ -197,7 +197,7 @@ class PayPalForWooCommerce extends CompatibilityAbstract {
 					8
 				);
 
-				add_action( 'cfw_checkout_payment_method_tab', array( $angelleye_paypal_express_checkout_helper, 'ec_formatted_billing_address' ), 9 );
+				add_action( 'cfw_checkout_payment_method_tab', [ $angelleye_paypal_express_checkout_helper, 'ec_formatted_billing_address' ], 9 );
 
 				add_action(
 					'cfw_checkout_payment_method_tab',
@@ -210,8 +210,8 @@ class PayPalForWooCommerce extends CompatibilityAbstract {
 								$email_field    = $billing_fields['billing_email'];
 
 								$Angelleye_PayPal_Express_Checkout_Helper = \Angelleye_PayPal_Express_Checkout_Helper::instance();
-								$shipping_details                         = $Angelleye_PayPal_Express_Checkout_Helper->ec_get_session_data( 'shipping_details' );
-								$email                                    = WC()->checkout()->get_value( 'billing_email' );
+								$shipping_details = $Angelleye_PayPal_Express_Checkout_Helper->ec_get_session_data( 'shipping_details' );
+								$email            = WC()->checkout()->get_value( 'billing_email' );
 
 								if ( empty( $email ) ) {
 									$email = ! empty( $shipping_details['email'] ) ? $shipping_details['email'] : '';
@@ -312,10 +312,10 @@ class PayPalForWooCommerce extends CompatibilityAbstract {
 	}
 
 	public function modify_payment_button_output( $button_output ) {
-		$content_strings_to_remove = array(
+		$content_strings_to_remove = [
 			'<div style="clear:both; margin-bottom:10px;"></div>',
 			'<div class="clear"></div>',
-		);
+		];
 
 		// Remove unwanted strings
 		foreach ( $content_strings_to_remove as $content_str ) {
@@ -353,7 +353,7 @@ class PayPalForWooCommerce extends CompatibilityAbstract {
 				return;
 			}
 
-			add_action( 'cfw_checkout_before_customer_info_tab', array( $this, 'add_notice' ), 10 );
+			add_action( 'cfw_checkout_before_customer_info_tab', [ $this, 'add_notice' ], 10 );
 		}
 	}
 
@@ -378,8 +378,8 @@ class PayPalForWooCommerce extends CompatibilityAbstract {
 		$email_field    = $billing_fields['billing_email'];
 
 		$Angelleye_PayPal_Express_Checkout_Helper = \Angelleye_PayPal_Express_Checkout_Helper::instance();
-		$shipping_details                         = $Angelleye_PayPal_Express_Checkout_Helper->ec_get_session_data( 'shipping_details' );
-		$email                                    = WC()->checkout()->get_value( 'billing_email' );
+		$shipping_details = $Angelleye_PayPal_Express_Checkout_Helper->ec_get_session_data( 'shipping_details' );
+		$email            = WC()->checkout()->get_value( 'billing_email' );
 
 		if ( empty( $email ) ) {
 			$email = ! empty( $shipping_details['email'] ) ? $shipping_details['email'] : '';

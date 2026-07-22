@@ -16,9 +16,9 @@ class EnhancedEcommerceGoogleAnalytics extends CompatibilityAbstract {
 			$wc_enhanced_ecommerce_google_analytics = $integrations['enhanced_ecommerce_google_analytics'];
 
 			// Checkout Actions
-			add_action( 'cfw_checkout_before_customer_info_tab', array( $wc_enhanced_ecommerce_google_analytics, 'checkout_step_1_tracking' ) );
-			add_action( 'cfw_checkout_before_shipping_method_tab', array( $wc_enhanced_ecommerce_google_analytics, 'checkout_step_2_tracking' ) );
-			add_action( 'cfw_checkout_before_payment_method_tab', array( $wc_enhanced_ecommerce_google_analytics, 'checkout_step_3_tracking' ) );
+			add_action( 'cfw_checkout_before_customer_info_tab', [ $wc_enhanced_ecommerce_google_analytics, 'checkout_step_1_tracking' ] );
+			add_action( 'cfw_checkout_before_shipping_method_tab', [ $wc_enhanced_ecommerce_google_analytics, 'checkout_step_2_tracking' ] );
+			add_action( 'cfw_checkout_before_payment_method_tab', [ $wc_enhanced_ecommerce_google_analytics, 'checkout_step_3_tracking' ] );
 		}
 	}
 }

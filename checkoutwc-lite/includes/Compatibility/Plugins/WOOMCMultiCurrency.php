@@ -43,8 +43,8 @@ class WOOMCMultiCurrency extends CompatibilityAbstract {
 
 		// Hook into CheckoutWC's display price calculation actions to temporarily disable our filters
 		// This prevents double-discounting when CheckoutWC calculates cart item display prices
-		add_action( 'cfw_before_bump_display_price_calculation', array( $this, 'remove_price_filters' ) );
-		add_action( 'cfw_after_bump_display_price_calculation', array( $this, 'add_price_filters' ) );
+		add_action( 'cfw_before_bump_display_price_calculation', [ $this, 'remove_price_filters' ] );
+		add_action( 'cfw_after_bump_display_price_calculation', [ $this, 'add_price_filters' ] );
 	}
 
 	/**
@@ -149,8 +149,8 @@ class WOOMCMultiCurrency extends CompatibilityAbstract {
 	 * Without these, WOOMC custom prices override order bump discounts in the UI.
 	 */
 	public function add_price_filters() {
-		add_filter( 'woocommerce_product_get_price', array( $this, 'intercept_display_price_calls' ), 9999, 2 );
-		add_filter( 'woocommerce_product_variation_get_price', array( $this, 'intercept_display_price_calls' ), 9999, 2 );
+		add_filter( 'woocommerce_product_get_price', [ $this, 'intercept_display_price_calls' ], 9999, 2 );
+		add_filter( 'woocommerce_product_variation_get_price', [ $this, 'intercept_display_price_calls' ], 9999, 2 );
 	}
 
 	/**
@@ -159,7 +159,7 @@ class WOOMCMultiCurrency extends CompatibilityAbstract {
 	 * Used to prevent infinite loops and double-discounting during CheckoutWC calculations.
 	 */
 	public function remove_price_filters() {
-		remove_filter( 'woocommerce_product_get_price', array( $this, 'intercept_display_price_calls' ), 9999 );
-		remove_filter( 'woocommerce_product_variation_get_price', array( $this, 'intercept_display_price_calls' ), 9999 );
+		remove_filter( 'woocommerce_product_get_price', [ $this, 'intercept_display_price_calls' ], 9999 );
+		remove_filter( 'woocommerce_product_variation_get_price', [ $this, 'intercept_display_price_calls' ], 9999 );
 	}
 }

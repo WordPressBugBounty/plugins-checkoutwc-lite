@@ -14,16 +14,16 @@ abstract class CompatibilityAbstract extends SingletonAbstract {
 	final public function init() {
 		if ( $this->is_available() && ( ! is_admin() || wp_doing_ajax() ) ) {
 			// Allow scripts and styles for certain plugins
-			add_filter( 'cfw_blocked_style_handles', array( $this, 'remove_styles' ), 10, 1 );
-			add_filter( 'cfw_blocked_script_handles', array( $this, 'remove_scripts' ), 10, 1 );
-			add_filter( 'cfw_typescript_compatibility_classes_and_params', array( $this, 'typescript_class_and_params' ), 10, 1 );
+			add_filter( 'cfw_blocked_style_handles', [ $this, 'remove_styles' ], 10, 1 );
+			add_filter( 'cfw_blocked_script_handles', [ $this, 'remove_scripts' ], 10, 1 );
+			add_filter( 'cfw_typescript_compatibility_classes_and_params', [ $this, 'typescript_class_and_params' ], 10, 1 );
 
 			// Run if on checkout
 			$this->run_immediately();
-			add_action( 'wp', array( $this, 'queue_checkout_and_order_pay_page_actions' ), 0 );
-			add_action( 'wp', array( $this, 'queue_order_received_actions' ), 0 );
-			add_action( 'cfw_checkout_update_order_review', array( $this, 'run' ) );
-			add_action( 'wp_loaded', array( $this, 'run_on_wp_loaded' ), 0 );
+			add_action( 'wp', [ $this, 'queue_checkout_and_order_pay_page_actions' ], 0 );
+			add_action( 'wp', [ $this, 'queue_order_received_actions' ], 0 );
+			add_action( 'cfw_checkout_update_order_review', [ $this, 'run' ] );
+			add_action( 'wp_loaded', [ $this, 'run_on_wp_loaded' ], 0 );
 		}
 	}
 

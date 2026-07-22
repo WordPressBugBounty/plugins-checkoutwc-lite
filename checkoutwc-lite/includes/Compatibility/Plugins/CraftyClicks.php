@@ -15,7 +15,7 @@ class CraftyClicks extends CompatibilityAbstract {
 		if ( ! empty( $all_integrations['craftyclicks_postcode_lookup'] ) ) {
 			$craftyclicks_postcode_lookup = $all_integrations['craftyclicks_postcode_lookup'];
 
-			add_action( 'cfw_checkout_before_customer_info_tab', array( $craftyclicks_postcode_lookup, 'addCheckoutJs' ) );
+			add_action( 'cfw_checkout_before_customer_info_tab', [ $craftyclicks_postcode_lookup, 'addCheckoutJs' ] );
 		}
 	}
 }

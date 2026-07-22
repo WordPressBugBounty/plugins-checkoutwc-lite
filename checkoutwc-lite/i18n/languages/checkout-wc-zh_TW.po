@@ -8,7 +8,7 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "POT-Creation-Date: 2025-07-25 09:22-0400\n"
-"PO-Revision-Date: 2026-07-14T15:17:14+00:00\n"
+"PO-Revision-Date: 2026-07-22T14:04:55+00:00\n"
 "Language: zh-TW\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Poedit 3.6\n"
@@ -30,10 +30,10 @@ msgstr ""
 #: includes/Admin/Pages/PageAbstract.php:106
 #: includes/Admin/Pages/General.php:341
 #: includes/Admin/Pages/Premium/PickupLocations.php:217
-#: includes/Admin/Pages/Premium/OrderBumps.php:428
+#: includes/Admin/Pages/Premium/OrderBumps.php:444
 #: includes/Admin/Pages/Premium/LocalPickupAdmin.php:165
 #: includes/Admin/Pages/Premium/AbandonedCartRecovery.php:243
-#: includes/Admin/Pages/Premium/ABTestingAdmin.php:559
+#: includes/Admin/Pages/Premium/ABTestingAdmin.php:634
 msgid "CheckoutWC"
 msgstr "CheckoutWC"
 
@@ -375,8 +375,8 @@ msgstr "運送方式"
 #: functions/template-functions.php:1054
 #: functions/template-functions.php:1914
 #: functions/template-functions.php:2269
-#: functions/functions.php:1026
-#: functions/functions.php:1041
+#: functions/functions.php:1023
+#: functions/functions.php:1038
 #: client/ts/frontend/Components/ReviewPane/OrderReviewStepReviewPane.tsx:47
 msgid "Payment"
 msgstr "付款"
@@ -390,6 +390,7 @@ msgid "Review"
 msgstr "評論"
 
 #: functions/template-functions.php:1073
+#: includes/Features/SideCart.php:1180
 msgid "Free"
 msgstr "免費"
 
@@ -481,20 +482,20 @@ msgstr "登入"
 msgid "Lost your password?"
 msgstr "忘記密碼？"
 
-#: functions/template-functions.php:2343
+#: functions/template-functions.php:2362
 msgid "Your Cart is Empty"
 msgstr "您的購物車是空的"
 
-#: functions/premium-init.php:334
+#: functions/premium-init.php:341
 msgid "CheckoutWC Templates Deactivated"
 msgstr "CheckoutWC 模板已停用"
 
 # %1$s: "Settings" text, %2$s: "Start Here" text, %3$s: "Activate CheckoutWC Templates" text
-#: functions/premium-init.php:337
+#: functions/premium-init.php:344
 msgid "Your license is valid and activated for this site but CheckoutWC is disabled for normal customers. To fix this, go to %1$s > %2$s and toggle \"%3$s\"."
 msgstr "您的授權在此網站有效且已啟用，但 CheckoutWC 對一般客戶已被禁用。要解決此問題，請前往 %1$s > %2$s 並切換「%3$s」。"
 
-#: functions/premium-init.php:338
+#: functions/premium-init.php:345
 #: includes/Admin/AdminPluginsPageManager.php:40
 #: includes/Admin/Pages/OrderBumpsAdminFree.php:25
 #: includes/Admin/Pages/LocalPickupAdminFree.php:27
@@ -502,67 +503,67 @@ msgstr "您的授權在此網站有效且已啟用，但 CheckoutWC 對一般客
 #: includes/Admin/Pages/Premium/OrderBumps.php:58
 #: includes/Admin/Pages/Premium/LocalPickupAdmin.php:28
 #: includes/Admin/Pages/Premium/AbandonedCartRecovery.php:34
-#: includes/Admin/Pages/Premium/ABTestingAdmin.php:35
+#: includes/Admin/Pages/Premium/ABTestingAdmin.php:56
 msgid "Settings"
 msgstr "設定"
 
-#: functions/premium-init.php:339
+#: functions/premium-init.php:346
 #: includes/Admin/Pages/General.php:25
 #: includes/Admin/Notices/InactiveLicenseNotice.php:13
 msgid "Start Here"
 msgstr "從這裡開始"
 
-#: functions/premium-init.php:340
+#: functions/premium-init.php:347
 #: includes/Admin/Pages/General.php:195
 msgid "Activate CheckoutWC Templates"
 msgstr "啟用 CheckoutWC 模板"
 
-#: functions/premium-init.php:347
+#: functions/premium-init.php:354
 msgid "Invalid CheckoutWC License"
 msgstr "無效的 CheckoutWC 授權"
 
 # %1$s: Pricing URL, %2$s: "purchase a license" link text
-#: functions/premium-init.php:350
+#: functions/premium-init.php:357
 msgid "Your license key is missing or invalid. Please verify that your license key is valid or <a target=\"_blank\" href=\"%1$s\">%2$s</a> to restore full functionality."
 msgstr "您的授權金鑰缺失或無效。請確認您的授權金鑰有效，或<a target=\"_blank\" href=\"%1$s\">%2$s</a>以恢復完整功能。"
 
-#: functions/premium-init.php:352
+#: functions/premium-init.php:359
 msgid "purchase a license"
 msgstr "購買授權"
 
-#: functions/premium-init.php:368
+#: functions/premium-init.php:375
 msgid "New Feature: Cloudflare Turnstile Bot Protection"
 msgstr "新功能：Cloudflare Turnstile 機器人防護"
 
 # 1: Cloudflare Turnstile name wrapped in strong tags, 2: Setup link
-#: functions/premium-init.php:371
+#: functions/premium-init.php:378
 msgid "CheckoutWC now supports %1$s - a privacy-first, CAPTCHA-free way to protect your checkout from bots and spam orders. %2$s"
 msgstr "CheckoutWC 現在支援 %1$s — 一種以隱私為先、無 CAPTCHA 的方式，保護您的結帳頁面免受機器人和垃圾訂單的侵擾。%2$s"
 
 # The name of the Cloudflare Turnstile service
-#: functions/premium-init.php:375
+#: functions/premium-init.php:382
 #: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:64
 msgid "Cloudflare Turnstile"
 msgstr "Cloudflare Turnstile"
 
-#: functions/premium-init.php:381
+#: functions/premium-init.php:388
 msgid "Setup Cloudflare Turnstile now"
 msgstr "立即設定 Cloudflare Turnstile"
 
-#: functions/premium-init.php:386
+#: functions/premium-init.php:393
 msgid "Upgrade your plan now to access"
 msgstr "立即升級您的方案以訪問"
 
-#: functions/premium-init.php:399
+#: functions/premium-init.php:406
 msgid "Abandoned Cart Recovery Tracking Disabled"
 msgstr "放棄購物車回復追蹤已停用"
 
 # %1$s: Gist URL, %2$s: "Learn More" link text
-#: functions/premium-init.php:402
+#: functions/premium-init.php:409
 msgid "You have enabled Abandoned Cart Recovery tracking, but you do not have any emails published. To track carts, you need to publish emails or use this dev filter: <a target=\"_blank\" href=\"%1$s\">%2$s</a>."
 msgstr "您已啟用放棄購物車回復追蹤，但尚未發布任何電子郵件。要追蹤購物車，您需要發布電子郵件或使用此開發過濾器：<a target=\"_blank\" href=\"%1$s\">%2$s</a>。"
 
-#: functions/premium-init.php:404
+#: functions/premium-init.php:411
 #: includes/Admin/Pages/AbandonedCartRecoveryAdminFree.php:82
 msgid "Learn More"
 msgstr "了解更多"
@@ -666,110 +667,110 @@ msgstr "運送至"
 msgid "Address"
 msgstr "地址"
 
-#: functions/functions.php:626
+#: functions/functions.php:623
 msgid "Sorry, it seems that there are no available payment methods for your location. Please contact us if you require assistance or wish to make alternate arrangements."
 msgstr "抱歉，似乎您所在地區沒有可用的付款方式。如需協助或想安排其他付款方式，請與我們聯絡。"
 
-#: functions/functions.php:788
+#: functions/functions.php:785
 #: includes/Features/LocalPickup.php:1079
 msgid "Shipping costs are calculated during checkout."
 msgstr "運費將在結帳時計算。"
 
-#: functions/functions.php:788
+#: functions/functions.php:785
 msgid "Enter your address to view shipping options."
 msgstr "輸入您的地址以查看運送選項。"
 
-#: functions/functions.php:799
+#: functions/functions.php:796
 msgid "No shipping methods available"
 msgstr "沒有可用的送貨方式"
 
-#: functions/functions.php:827
+#: functions/functions.php:824
 #: includes/Model/Bumps/BumpAbstract.php:814
 msgid "Free!"
 msgstr "免費！"
 
-#: functions/functions.php:963
+#: functions/functions.php:960
 #: includes/Features/AbandonedCartRecovery.php:695
 msgid "Complete Order"
 msgstr "完成訂單"
 
-#: functions/functions.php:1067
+#: functions/functions.php:1064
 msgid "All transactions are secure and encrypted."
 msgstr "所有交易都是安全和加密的。"
 
-#: functions/functions.php:1090
+#: functions/functions.php:1087
 msgid "Your order is free. No payment is required."
 msgstr "您的訂單是免費的。無需付款。"
 
-#: functions/functions.php:1134
+#: functions/functions.php:1131
 msgid "Same as shipping address"
 msgstr "跟郵寄地址一樣"
 
-#: functions/functions.php:1143
+#: functions/functions.php:1140
 msgid "Use a different billing address"
 msgstr "使用其他帳單地址"
 
 # %1$s: Old order status, %2$s: New order status
-#: functions/functions.php:1275
+#: functions/functions.php:1272
 msgid "Order status changed from %1$s to %2$s."
 msgstr "訂單狀態已從 %1$s 變更為 %2$s。"
 
-#: functions/functions.php:1300
+#: functions/functions.php:1297
 msgid "Tracking Number:"
 msgstr "追蹤編號："
 
-#: functions/functions.php:1387
+#: functions/functions.php:1384
 msgid "Return to cart"
 msgstr "返回到購物車"
 
-#: functions/functions.php:1424
+#: functions/functions.php:1421
 msgid "Continue to shipping"
 msgstr "繼續運送"
 
-#: functions/functions.php:1450
+#: functions/functions.php:1447
 msgid "Continue to payment"
 msgstr "繼續付款"
 
-#: functions/functions.php:1450
-#: functions/functions.php:1490
+#: functions/functions.php:1447
+#: functions/functions.php:1487
 msgid "Review order"
 msgstr "查看訂單"
 
-#: functions/functions.php:1514
+#: functions/functions.php:1511
 msgid "Return to information"
 msgstr "返回信息"
 
-#: functions/functions.php:1534
+#: functions/functions.php:1531
 msgid "Return to shipping"
 msgstr "返回運輸"
 
-#: functions/functions.php:1554
+#: functions/functions.php:1551
 msgid "Return to payment"
 msgstr "返回付款"
 
-#: functions/functions.php:1601
-#: includes/Features/SideCart.php:220
+#: functions/functions.php:1598
+#: includes/Features/SideCart.php:276
 msgid "Cart"
 msgstr "購物車"
 
-#: functions/functions.php:1874
+#: functions/functions.php:1871
 msgid "CheckoutWC: Error matching %1$d to customer %2$d"
 msgstr "CheckoutWC：將 %1$d 與客戶 %2$d 匹配時出錯"
 
-#: functions/functions.php:2163
+#: functions/functions.php:2160
 msgid "Or"
 msgstr "或"
 
-#: functions/functions.php:2248
+#: functions/functions.php:2245
 msgid "You can only have 1 %s in your cart."
 msgstr "您的購物車中只能有 1 個 %s。"
 
-#: functions/functions.php:2398
+#: functions/functions.php:2395
 #: client/ts/frontend/Components/CartItemQuantityControl.tsx:55
 msgid "Decrement"
 msgstr "遞減"
 
-#: functions/functions.php:2407
+#: functions/functions.php:2404
 #: includes/Managers/AssetManager.php:727
 #: includes/Managers/AssetManager.php:848
 #: includes/Features/LocalPickup.php:502
@@ -781,12 +782,12 @@ msgstr "遞減"
 msgid "Edit"
 msgstr "編輯"
 
-#: functions/functions.php:2410
+#: functions/functions.php:2407
 #: client/ts/frontend/Components/CartItemQuantityControl.tsx:70
 msgid "Increment"
 msgstr "增量"
 
-#: functions/functions.php:3124
+#: functions/functions.php:3121
 msgid "Unsubscribe"
 msgstr "取消訂閱"
 
@@ -971,8 +972,8 @@ msgid "Activation Limit"
 msgstr "激活限制"
 
 #: includes/Managers/UpdatesManager.php:456
-#: includes/Admin/Pages/Premium/ABTestingAdmin.php:96
-#: includes/Admin/Pages/Premium/ABTestingAdmin.php:737
+#: includes/Admin/Pages/Premium/ABTestingAdmin.php:171
+#: includes/Admin/Pages/Premium/ABTestingAdmin.php:812
 #: client/ts/admin/Components/acr/carts.tsx:80
 msgid "Status"
 msgstr "狀態"
@@ -1155,7 +1156,7 @@ msgstr "下單點擊（結帳）"
 msgid "Post Purchase One-Click (Thank You)"
 msgstr "購後一鍵（感謝頁）"
 
-#: includes/Managers/SlotManager.php:439
+#: includes/Managers/SlotManager.php:441
 msgid "Badge %d"
 msgstr "徽章 %d"
 
@@ -1243,8 +1244,8 @@ msgstr "加入購物車"
 #: includes/Managers/AssetManager.php:844
 #: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2308
 #: client/ts/admin/Components/CheckoutEditor/slots/UnsavedChangesDialog.tsx:51
-#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:457
-#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:492
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:458
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:493
 #: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:276
 #: client/ts/admin/Components/CheckoutEditor/slots/CustomHtmlEditor.tsx:76
 msgid "Cancel"
@@ -1338,22 +1339,67 @@ msgstr "驗證失敗。請再試一次。"
 msgid "We have detected that Simple Cloudflare Turnstile is active. To enable CheckoutWC Turnstile functionality, please deactivate Simple Cloudflare Turnstile."
 msgstr "我們偵測到 Simple Cloudflare Turnstile 正在啟用。若要啟用 CheckoutWC Turnstile 功能，請停用 Simple Cloudflare Turnstile。"
 
-#: includes/Features/SideCart.php:640
-#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:289
+# %s is a comma-separated list of product names
+#: includes/Features/SideCart.php:783
+msgid "These rewards-bar gift products can\\'t be auto-added because they are not simple products — please choose a simple product instead: %s"
+msgstr "這些獎勵欄禮品無法自動加入，因為它們不是簡單產品 — 請改選擇簡單產品：%s"
+
+# %s is the gift product name
+#: includes/Features/SideCart.php:1246
+msgid "Auto-managed free gift: %s — created by the Side Cart rewards bar, do not edit"
+msgstr "自動管理的免費禮物：%s — 由側邊購物車獎勵欄建立，請勿編輯"
+
+#: includes/Features/SideCart.php:1481
+#: includes/Features/SideCart.php:1538
+#: client/ts/admin/Components/FreeShippingTierRow.tsx:87
 msgid "Congrats! You get free standard shipping."
 msgstr "恭喜！您可以獲得免費的標準送貨服務。"
 
-#: includes/Features/SideCart.php:654
+#: includes/Features/SideCart.php:1495
 msgid "You\\'re %s away from free shipping!"
 msgstr "您還差 %s 即可享有免運費！"
 
-#: includes/Features/SideCart.php:769
+#: includes/Features/SideCart.php:1539
+#: client/ts/admin/Components/FreeShippingTierRow.tsx:88
+#: client/ts/admin/Components/FreeShippingTierRow.tsx:89
+msgid "Reward unlocked!"
+msgstr "獎勵已解鎖！"
+
+#: includes/Features/SideCart.php:1547
+#: client/ts/admin/Components/FreeShippingTierRow.tsx:94
+msgid "You're %s away from free shipping!"
+msgstr "您距離免費送貨還有 %s！"
+
+#: includes/Features/SideCart.php:1549
+#: client/ts/admin/Components/FreeShippingTierRow.tsx:96
+#: client/ts/admin/Components/FreeShippingTierRow.tsx:98
+msgid "You're %s away from your next reward!"
+msgstr "距離下一個獎勵您還差 %s！"
+
+#: includes/Features/SideCart.php:1556
+#: client/ts/admin/Components/FreeShippingTierRow.tsx:113
+msgid "Free shipping"
+msgstr "免運費"
+
+#: includes/Features/SideCart.php:1557
+#: client/ts/frontend/Components/CheckoutCartTableRow.tsx:48
+#: client/ts/frontend/Components/CartTableRow.tsx:48
+#: client/ts/admin/Components/FreeShippingTierRow.tsx:114
+msgid "Free gift"
+msgstr "免費禮物"
+
+#: includes/Features/SideCart.php:1558
+#: client/ts/admin/Components/FreeShippingTierRow.tsx:170
+msgid "Reward"
+msgstr "獎勵"
+
+#: includes/Features/SideCart.php:1682
 #: includes/Admin/WooCommerceAdminScreenAugmenter.php:24
 #: includes/Admin/WooCommerceAdminScreenAugmenter.php:45
 msgid "CheckoutWC:"
 msgstr "CheckoutWC："
 
-#: includes/Features/SideCart.php:770
+#: includes/Features/SideCart.php:1683
 msgid "Settings marked with asterisks (**) may be overridden based on your Side Cart settings. (CheckoutWC > Side Cart)"
 msgstr "標有星號 (**) 的設定可能會根據您的側邊購物車設定被覆蓋。（CheckoutWC > 側邊購物車）"
 
@@ -1879,8 +1925,8 @@ msgstr "特別優惠"
 msgid "Order Received"
 msgstr "訂單<br/> 已收到"
 
-#: includes/API/OrderBumpsSearchAPI.php:64
-#: includes/API/OrderBumpsSearchAPI.php:102
+#: includes/API/OrderBumpsSearchAPI.php:72
+#: includes/API/OrderBumpsSearchAPI.php:110
 #: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:229
 #: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:527
 #: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:586
@@ -2090,8 +2136,8 @@ msgid "Refunded"
 msgstr "已退款"
 
 #: includes/Features/OneClick/OfferOrderManager.php:140
-msgid "Order bump payment of %s received for %s"
-msgstr "收到訂單加購付款 %s，訂單 %s"
+msgid "Order bump payment of %1$s received for %2$s"
+msgstr "已收到 %2$s 的加購付款 %1$s"
 
 #: includes/Features/OneClick/OfferOrderManager.php:223
 msgid "Order created from post-purchase offer (accepted after timeout)."
@@ -2117,14 +2163,6 @@ msgstr "啟用 Astra 支援（測試版）"
 #: includes/Compatibility/Themes/Astra.php:92
 msgid "If enabled with Advanced > Template Loader > Distraction Free Portal, Astra\\'s header and footer are displayed and Astra styles and scripts load on checkout. If disabled with Distraction Free Portal, Astra styles and scripts are excluded for a minimal layout. With WordPress Theme loader, the full theme loads regardless of this setting."
 msgstr "如果在進階 > 模板加載器 > 無干擾入口中啟用，Astra 的頁首和頁尾將顯示，且 Astra 的樣式和腳本會在結帳時加載。如果在無干擾入口中禁用，則會排除 Astra 的樣式和腳本，以達到簡約佈局。使用 WordPress 主題加載器時，無論此設定如何，完整主題都會加載。"
-
-#: includes/Compatibility/Gateways/PayPalForWooCommerce.php:38
-msgid "Please update to the latest version of PayPal for WooCommerce to get full support."
-msgstr "請更新至最新版本的 PayPal for WooCommerce 以獲得完整支援。"
-
-#: includes/Compatibility/Gateways/PayPalForWooCommerce.php:363
-msgid "Logged in with PayPal. Please continue your order below."
-msgstr "使用貝寶登錄。請在下面繼續訂購。"
 
 #: includes/Compatibility/Plugins/WooCommerceGiftCards.php:64
 #: includes/Compatibility/Plugins/WooCommerceGiftCards.php:72
@@ -2246,6 +2284,42 @@ msgstr "啟用 Beaver Themer 支援"
 msgid "Allow Beaver Themer to replace header and footer."
 msgstr "允許 Beaver Themer 取代頁首和頁尾。"
 
+#: includes/Compatibility/Gateways/PayPalForWooCommerce.php:38
+msgid "Please update to the latest version of PayPal for WooCommerce to get full support."
+msgstr "請更新至最新版本的 PayPal for WooCommerce 以獲得完整支援。"
+
+#: includes/Compatibility/Gateways/PayPalForWooCommerce.php:363
+msgid "Logged in with PayPal. Please continue your order below."
+msgstr "使用貝寶登錄。請在下面繼續訂購。"
+
+#: includes/Admin/Views/html-refund-offer.php:22
+msgid "Product"
+msgstr "產品"
+
+#: includes/Admin/Views/html-refund-offer.php:24
+msgid "Qty"
+msgstr "數量"
+
+#: includes/Admin/Views/html-refund-offer.php:26
+msgid "Action"
+msgstr "操作"
+
+#: includes/Admin/Views/html-refund-offer.php:89
+msgid "Refund"
+msgstr "退款"
+
+#: includes/Admin/Views/html-refund-offer.php:101
+msgid "No order bump payments found for this order."
+msgstr "此訂單找不到訂單加購付款。"
+
+#: includes/Admin/Views/html-refund-offer.php:113
+msgid "Note:"
+msgstr "注意："
+
+#: includes/Admin/Views/html-refund-offer.php:114
+msgid "Refunding an offer will process the refund with the payment gateway and create a WooCommerce refund record."
+msgstr "退款優惠將透過付款閘道處理退款，並建立 WooCommerce 退款記錄。"
+
 #: includes/Admin/Pages/WooCommercePages.php:21
 msgid "Pages"
 msgstr "頁面"
@@ -2264,8 +2338,8 @@ msgstr "全球选项"
 #: includes/Admin/Pages/TrustBadgesAdminFree.php:56
 #: includes/Admin/Pages/Premium/TrustBadges.php:16
 #: client/ts/admin/Components/Forms/TrustBadgeSettingsForm.tsx:150
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:544
 #: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:348
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:544
 msgid "Trust Badges"
 msgstr "信任徽章"
 
@@ -2289,7 +2363,7 @@ msgid "Enable trust badges on CheckoutWC templates. Uncheck to hide badges."
 msgstr "在 CheckoutWC 模板上啟用信任徽章。取消勾選以隱藏徽章。"
 
 #: includes/Admin/Pages/TrustBadgesAdminFree.php:43
-#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:171
+#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:181
 #: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:219
 msgid "Heading"
 msgstr "標題"
@@ -2466,52 +2540,52 @@ msgstr "聯絡支援"
 #: includes/Admin/Pages/SideCartAdminFree.php:16
 #: includes/Admin/Pages/SideCartAdminFree.php:26
 #: includes/Admin/Pages/Premium/SideCart.php:17
-#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:90
+#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:100
 msgid "Side Cart"
 msgstr "側邊購物車"
 
 #: includes/Admin/Pages/SideCartAdminFree.php:27
-#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:91
+#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:101
 msgid "Configure the Side Cart."
 msgstr "配置側邊購物車。"
 
 #: includes/Admin/Pages/SideCartAdminFree.php:34
-#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:97
+#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:107
 msgid "Enable Side Cart"
 msgstr "啟用側邊購物車"
 
 #: includes/Admin/Pages/SideCartAdminFree.php:34
-#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:98
+#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:108
 msgid "Replace your cart page with a beautiful side cart that slides in from the right when items are added to the cart."
 msgstr "用漂亮的側邊購物車取代您的購物車頁面，當商品加入購物車時，側邊購物車會從右側滑入。"
 
 #: includes/Admin/Pages/SideCartAdminFree.php:44
-#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:113
+#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:123
 msgid "Side Cart Icon"
 msgstr "側邊購物車圖示"
 
 #: includes/Admin/Pages/SideCartAdminFree.php:45
-#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:114
+#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:124
 msgid "Used by the Side Cart and Floating Side Cart Button."
 msgstr "側邊購物車和浮動側邊購物車按鈕使用。"
 
 #: includes/Admin/Pages/SideCartAdminFree.php:55
-#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:121
+#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:131
 msgid "Icon"
 msgstr "圖示"
 
 #: includes/Admin/Pages/SideCartAdminFree.php:56
-#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:122
+#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:132
 msgid "Choose the Side Cart icon."
 msgstr "選擇側邊購物車圖示。"
 
 #: includes/Admin/Pages/SideCartAdminFree.php:101
-#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:129
+#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:139
 msgid "Custom Icon"
 msgstr "自訂圖示"
 
 #: includes/Admin/Pages/SideCartAdminFree.php:102
-#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:130
+#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:140
 msgid "Upload a custom icon. Overrides the icon selection above. SVG REQUIRED."
 msgstr "上傳自訂圖示。會覆蓋上述圖示選擇。需為 SVG 格式。"
 
@@ -2526,42 +2600,42 @@ msgid "Clear"
 msgstr "清除"
 
 #: includes/Admin/Pages/SideCartAdminFree.php:107
-#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:137
+#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:147
 msgid "Width"
 msgstr "寬度"
 
 #: includes/Admin/Pages/SideCartAdminFree.php:108
-#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:138
+#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:148
 msgid "The width of the icon in pixels. Default: 34"
 msgstr "圖示的寬度（像素）。預設值：34"
 
 #: includes/Admin/Pages/SideCartAdminFree.php:121
-#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:155
+#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:165
 msgid "Suggested Products"
 msgstr "推薦商品"
 
 #: includes/Admin/Pages/SideCartAdminFree.php:122
-#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:156
+#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:166
 msgid "Configure Suggested Products cross-sells."
 msgstr "配置推薦商品交叉銷售。"
 
 #: includes/Admin/Pages/SideCartAdminFree.php:132
-#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:161
+#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:171
 msgid "Enable Suggested Products"
 msgstr "啟用推薦商品"
 
 #: includes/Admin/Pages/SideCartAdminFree.php:133
-#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:162
+#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:172
 msgid "Display cross sells / suggested products at the bottom of the side cart."
 msgstr "在側邊購物車底部顯示交叉銷售 / 推薦商品。"
 
 #: includes/Admin/Pages/SideCartAdminFree.php:145
-#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:198
+#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:208
 msgid "Floating Side Cart Button"
 msgstr "浮動側邊購物車按鈕"
 
 #: includes/Admin/Pages/SideCartAdminFree.php:146
-#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:199
+#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:209
 msgid "Configure the Floating Side Cart Button"
 msgstr "配置浮動側邊購物車按鈕"
 
@@ -2599,7 +2673,7 @@ msgstr "要放棄嗎？"
 #: includes/Admin/Pages/PageAbstract.php:136
 #: includes/Admin/Pages/PageAbstract.php:157
 #: client/ts/admin/Components/CheckoutEditor/EditorHeader.tsx:203
-#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:403
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:404
 msgid "Save Changes"
 msgstr "儲存變更"
 
@@ -2618,14 +2692,14 @@ msgid "This setting is currently programmatically overridden. To enable it remov
 msgstr "此設定目前被程式碼覆寫。要啟用它，請移除您的自訂程式碼。"
 
 #: includes/Admin/Pages/PageAbstract.php:333
-#: includes/Admin/Pages/Premium/OrderBumps.php:1004
+#: includes/Admin/Pages/Premium/OrderBumps.php:1034
 #: includes/Admin/Pages/Premium/AbandonedCartRecovery.php:850
 msgid "Upgrade Your Plan"
 msgstr "升級您的方案"
 
 # %1$s: Account URL, %2$s: Help URL
 #: includes/Admin/Pages/PageAbstract.php:350
-#: includes/Admin/Pages/Premium/OrderBumps.php:1014
+#: includes/Admin/Pages/Premium/OrderBumps.php:1044
 #: includes/Admin/Pages/Premium/AbandonedCartRecovery.php:869
 msgid "You can upgrade your license in <a class=\"text-blue-600 underline\" target=\"_blank\" href=\"%1$s\">Account</a>. For help upgrading your license, <a class=\"text-blue-600 underline\" target=\"_blank\" href=\"%2$s\">click here.</a>"
 msgstr "您可以在 <a class=\"text-blue-600 underline\" target=\"_blank\" href=\"%1$s\">帳戶</a> 升級您的授權。若需升級授權的協助，<a class=\"text-blue-600 underline\" target=\"_blank\" href=\"%2$s\">請點此。</a>"
@@ -2641,7 +2715,7 @@ msgid "Configure Order Bump settings."
 msgstr "設定訂單加購選項。"
 
 #: includes/Admin/Pages/OrderBumpsAdminFree.php:79
-#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:353
+#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:354
 #: client/ts/admin/Components/Forms/OrderBumpSettingsForm.tsx:52
 msgid "Enable Order Bumps"
 msgstr "啟用訂單加購"
@@ -2989,7 +3063,7 @@ msgstr "背景"
 #: includes/Admin/Pages/Appearance.php:219
 #: includes/Admin/Pages/Appearance.php:231
 #: includes/Admin/Pages/Appearance.php:241
-#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:428
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:429
 #: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:247
 msgid "Text"
 msgstr "文字"
@@ -3329,7 +3403,7 @@ msgstr "注意：這將重置所有放棄購物車回復統計資料！"
 
 #: includes/Admin/Pages/ABTestingAdminFree.php:15
 #: includes/Admin/Pages/ABTestingAdminFree.php:29
-#: includes/Admin/Pages/Premium/ABTestingAdmin.php:27
+#: includes/Admin/Pages/Premium/ABTestingAdmin.php:45
 #: client/ts/admin/Components/Forms/ABTestingSettingsForm.tsx:42
 msgid "A/B Testing"
 msgstr "A/B 測試"
@@ -3348,34 +3422,6 @@ msgstr "啟用 A/B 測試"
 #: client/ts/admin/Components/Forms/ABTestingSettingsForm.tsx:50
 msgid "Allow A/B tests to be created and applied on the checkout page."
 msgstr "允許在結帳頁面建立並套用 A/B 測試。"
-
-#: includes/Admin/Views/html-refund-offer.php:22
-msgid "Product"
-msgstr "產品"
-
-#: includes/Admin/Views/html-refund-offer.php:24
-msgid "Qty"
-msgstr "數量"
-
-#: includes/Admin/Views/html-refund-offer.php:26
-msgid "Action"
-msgstr "操作"
-
-#: includes/Admin/Views/html-refund-offer.php:89
-msgid "Refund"
-msgstr "退款"
-
-#: includes/Admin/Views/html-refund-offer.php:101
-msgid "No order bump payments found for this order."
-msgstr "此訂單找不到訂單加購付款。"
-
-#: includes/Admin/Views/html-refund-offer.php:113
-msgid "Note:"
-msgstr "注意："
-
-#: includes/Admin/Views/html-refund-offer.php:114
-msgid "Refunding an offer will process the refund with the payment gateway and create a WooCommerce refund record."
-msgstr "退款優惠將透過付款閘道處理退款，並建立 WooCommerce 退款記錄。"
 
 #: includes/Admin/Notices/WelcomeNotice.php:12
 msgid "Welcome to CheckoutWC"
@@ -4089,21 +4135,21 @@ msgstr "查看測試"
 msgid "Add Test"
 msgstr "新增測試"
 
-#: includes/Admin/Pages/Premium/OrderBumps.php:321
+#: includes/Admin/Pages/Premium/OrderBumps.php:327
 msgid "All <span class=\"count\">(%s)</span>"
 msgid_plural "All <span class=\"count\">(%s)</span>"
 msgstr[0] "全部 <span class=\"count\">(%s)</span>"
 
-#: includes/Admin/Pages/Premium/OrderBumps.php:519
+#: includes/Admin/Pages/Premium/OrderBumps.php:535
 msgid "Reset Order Bump Conversion Stats"
 msgstr "重設加購轉換統計"
 
 # %1$d: Allowed bump count, %2$d: Used bump count
-#: includes/Admin/Pages/Premium/OrderBumps.php:1007
+#: includes/Admin/Pages/Premium/OrderBumps.php:1037
 msgid "Your CheckoutWC plan allows you to create %1$d Order Bumps. You have used %2$d."
 msgstr "您的 CheckoutWC 方案允許您建立 %1$d 個加購。您已使用 %2$d 個。"
 
-#: includes/Admin/Pages/Premium/OrderBumps.php:1010
+#: includes/Admin/Pages/Premium/OrderBumps.php:1040
 msgid "You cannot create or publish new Order Bumps if you are over the limit."
 msgstr "超過限制後，您無法建立或發布新的加購。"
 
@@ -4123,8 +4169,8 @@ msgid "Send this long after cart has been abandoned."
 msgstr "在購物車被遺棄很久後才發送此郵件。"
 
 #: includes/Admin/Pages/Premium/AbandonedCartRecovery.php:101
-#: includes/Admin/Pages/Premium/ABTestingAdmin.php:136
-#: includes/Admin/Pages/Premium/ABTestingAdmin.php:744
+#: includes/Admin/Pages/Premium/ABTestingAdmin.php:211
+#: includes/Admin/Pages/Premium/ABTestingAdmin.php:819
 #: client/ts/admin/Components/CheckoutEditor/panels/DesignSettingsPanel.tsx:82
 msgid "Active"
 msgstr "啟用中"
@@ -4219,7 +4265,7 @@ msgid "Unsubscribe Link"
 msgstr "取消訂閱連結"
 
 #: includes/Admin/Pages/Premium/AbandonedCartRecovery.php:642
-#: includes/Admin/Pages/Premium/ABTestingAdmin.php:240
+#: includes/Admin/Pages/Premium/ABTestingAdmin.php:315
 msgid "Permission denied."
 msgstr "權限被拒絕。"
 
@@ -4240,72 +4286,88 @@ msgstr "您的 CheckoutWC 方案允許您建立 %1$d 封遺棄購物車電子郵
 msgid "You cannot create or publish new Abandoned Cart Recovery emails if you are over the limit."
 msgstr "如果超出限制，您將無法建立或發佈新的遺棄購物車回復電子郵件。"
 
-#: includes/Admin/Pages/Premium/ABTestingAdmin.php:37
+#: includes/Admin/Pages/Premium/ABTestingAdmin.php:58
 msgid "Manage Tests"
 msgstr "管理測試"
 
-#: includes/Admin/Pages/Premium/ABTestingAdmin.php:95
-#: includes/Admin/Pages/Premium/ABTestingAdmin.php:711
+#: includes/Admin/Pages/Premium/ABTestingAdmin.php:170
+#: includes/Admin/Pages/Premium/ABTestingAdmin.php:786
 msgid "Type"
 msgstr "類型"
 
-#: includes/Admin/Pages/Premium/ABTestingAdmin.php:97
+#: includes/Admin/Pages/Premium/ABTestingAdmin.php:172
 msgid "Duration"
 msgstr "持續時間"
 
-#: includes/Admin/Pages/Premium/ABTestingAdmin.php:137
-#: includes/Admin/Pages/Premium/ABTestingAdmin.php:745
+#: includes/Admin/Pages/Premium/ABTestingAdmin.php:212
+#: includes/Admin/Pages/Premium/ABTestingAdmin.php:820
 msgid "Paused"
 msgstr "已暫停"
 
-#: includes/Admin/Pages/Premium/ABTestingAdmin.php:138
-#: includes/Admin/Pages/Premium/ABTestingAdmin.php:746
+#: includes/Admin/Pages/Premium/ABTestingAdmin.php:213
+#: includes/Admin/Pages/Premium/ABTestingAdmin.php:821
 msgid "Complete"
 msgstr "完成"
 
-#: includes/Admin/Pages/Premium/ABTestingAdmin.php:162
+#: includes/Admin/Pages/Premium/ABTestingAdmin.php:237
 msgid "Finished"
 msgstr "已結束"
 
-#: includes/Admin/Pages/Premium/ABTestingAdmin.php:171
+#: includes/Admin/Pages/Premium/ABTestingAdmin.php:246
 msgid "Ongoing"
 msgstr "進行中"
 
-#: includes/Admin/Pages/Premium/ABTestingAdmin.php:246
+#: includes/Admin/Pages/Premium/ABTestingAdmin.php:321
 msgid "Invalid test type."
 msgstr "無效的測試類型。"
 
-#: includes/Admin/Pages/Premium/ABTestingAdmin.php:256
+#: includes/Admin/Pages/Premium/ABTestingAdmin.php:331
 msgid "Test type does not support UI operations."
 msgstr "測試類型不支援 UI 操作。"
 
-#: includes/Admin/Pages/Premium/ABTestingAdmin.php:628
+#: includes/Admin/Pages/Premium/ABTestingAdmin.php:703
 msgid "Test"
 msgstr "測試"
 
-#: includes/Admin/Pages/Premium/ABTestingAdmin.php:749
+#: includes/Admin/Pages/Premium/ABTestingAdmin.php:824
 msgid "The current status of this A/B test."
 msgstr "此 A/B 測試的當前狀態。"
 
-#: includes/Admin/Pages/Premium/ABTestingAdmin.php:762
+#: includes/Admin/Pages/Premium/ABTestingAdmin.php:837
 msgid "Start Date"
 msgstr "開始日期"
 
-#: includes/Admin/Pages/Premium/ABTestingAdmin.php:774
+#: includes/Admin/Pages/Premium/ABTestingAdmin.php:849
 msgid "The date when the A/B test should start. Leave empty to start immediately."
 msgstr "A/B 測試應開始的日期。留空則立即開始。"
 
-#: includes/Admin/Pages/Premium/ABTestingAdmin.php:780
+#: includes/Admin/Pages/Premium/ABTestingAdmin.php:855
 msgid "End Date"
 msgstr "結束日期"
 
-#: includes/Admin/Pages/Premium/ABTestingAdmin.php:792
+#: includes/Admin/Pages/Premium/ABTestingAdmin.php:867
 msgid "The date when the A/B test should end. After this date, the original variant will be displayed. Leave empty for no end date."
 msgstr "A/B 測試應結束的日期。此日期之後，將顯示原始變體。留空表示無結束日期。"
 
-#: includes/Admin/Pages/Premium/ABTestingAdmin.php:1099
+#: includes/Admin/Pages/Premium/ABTestingAdmin.php:1174
 msgid "Traffic split percentages must total 100%. Please adjust your percentages."
 msgstr "流量分配百分比必須總計 100%。請調整您的百分比。"
+
+#: client/ts/frontend/Components/TermsAndConditions.ts:29
+msgid "Terms and Conditions"
+msgstr "條款與細則"
+
+#: client/ts/frontend/Components/TermsAndConditions.ts:35
+msgid "Privacy Policy"
+msgstr "隱私權政策"
+
+#: client/ts/frontend/Components/SideCartComponent.tsx:38
+msgid "Close Cart"
+msgstr "關閉購物車"
+
+#: client/ts/frontend/Components/FreeShippingProgressBar.tsx:232
+msgid "Unlocked"
+msgstr "已解鎖"
 
 #: client/ts/frontend/Actions/CompleteOrderAction.ts:196
 msgid "Could not connect to server. Please refresh and try again or contact site administrator."
@@ -4330,18 +4392,6 @@ msgstr "服务器在处理您的请求时超时。请刷新并重试，或联系
 #: client/ts/frontend/Actions/CompleteOrderAction.ts:206
 msgid "Request was aborted. Please contact site administrator."
 msgstr "请求已中止。请联系网站管理员。"
-
-#: client/ts/frontend/Components/TermsAndConditions.ts:29
-msgid "Terms and Conditions"
-msgstr "條款與細則"
-
-#: client/ts/frontend/Components/TermsAndConditions.ts:35
-msgid "Privacy Policy"
-msgstr "隱私權政策"
-
-#: client/ts/frontend/Components/SideCartComponent.tsx:38
-msgid "Close Cart"
-msgstr "關閉購物車"
 
 #: client/ts/admin/Components/TrustBadgeRow.tsx:151
 msgid "Slot"
@@ -4444,6 +4494,86 @@ msgstr "使用高級版解鎖"
 #: client/ts/admin/Components/LockedFieldWrapper.tsx:60
 msgid "A %s plan is required to access these features."
 msgstr "需要 %s 計劃才能訪問這些功能。"
+
+#: client/ts/admin/Components/FreeShippingTierRow.tsx:49
+msgid "You don't have a Free Shipping method set up, so reaching this tier won't actually make shipping free — the bar only shows progress. Add one in WooCommerce shipping settings."
+msgstr "您尚未設定免運費方式，因此達成此等級實際上不會使運費免費 — 獎勵欄僅顯示進度。請至 WooCommerce 運送設定新增。"
+
+#: client/ts/admin/Components/FreeShippingTierRow.tsx:69
+msgid "Your Free Shipping method starts at %1$s, but this tier unlocks at %2$s — customers will see \"unlocked\" here and still be charged. Set the threshold to %1$s or higher to match."
+msgstr "您的免運費方式起始於 %1$s，但此等級解鎖門檻為 %2$s — 客戶會看到「已解鎖」但仍須付運費。請將門檻設定為 %1$s 或更高以符合。"
+
+#: client/ts/admin/Components/FreeShippingTierRow.tsx:75
+msgid "Your Free Shipping method requires a coupon, so reaching this spend tier won\\'t make shipping free on its own."
+msgstr "您的免運費方式需要使用優惠券，因此達到此消費等級本身不會使運費免費。"
+
+#: client/ts/admin/Components/FreeShippingTierRow.tsx:115
+msgid "Custom message only"
+msgstr "僅自訂訊息"
+
+#: client/ts/admin/Components/FreeShippingTierRow.tsx:136
+msgid "Tier %d"
+msgstr "等級 %d"
+
+#: client/ts/admin/Components/FreeShippingTierRow.tsx:143
+msgid "Remove tier"
+msgstr "移除等級"
+
+#: client/ts/admin/Components/FreeShippingTierRow.tsx:155
+msgid "Threshold"
+msgstr "門檻"
+
+#: client/ts/admin/Components/FreeShippingTierRow.tsx:185
+msgid "Color"
+msgstr "顏色"
+
+#: client/ts/admin/Components/FreeShippingTierRow.tsx:201
+msgid "Enter a spend threshold above 0. Without one the free gift never unlocks and the tier is hidden from the bar."
+msgstr "請輸入大於 0 的消費門檻。若無，免費禮物永遠無法解鎖，且該等級將從獎勵欄隱藏。"
+
+#: client/ts/admin/Components/FreeShippingTierRow.tsx:202
+msgid "Enter a spend threshold above 0 — a tier with no threshold never unlocks and is hidden from the bar."
+msgstr "請輸入大於 0 的消費門檻 — 無門檻的等級永遠無法解鎖並隱藏於獎勵欄中。"
+
+#: client/ts/admin/Components/FreeShippingTierRow.tsx:218
+msgid "Open shipping settings"
+msgstr "開啟運送設定"
+
+#: client/ts/admin/Components/FreeShippingTierRow.tsx:227
+msgid "Short label"
+msgstr "簡短標籤"
+
+#: client/ts/admin/Components/FreeShippingTierRow.tsx:242
+msgid "Gift product"
+msgstr "贈品"
+
+#: client/ts/admin/Components/FreeShippingTierRow.tsx:244
+msgid "Added to the cart free when this tier is reached. Only simple products can be a gift — variable products are not shown, since a variation cannot be auto-added."
+msgstr "達到此層級時會免費加入購物車。只有簡單商品可作為贈品 — 變化商品不顯示，因為無法自動加入變化。"
+
+#: client/ts/admin/Components/FreeShippingTierRow.tsx:245
+msgid "Search for a simple product"
+msgstr "搜尋簡單商品"
+
+#: client/ts/admin/Components/FreeShippingTierRow.tsx:253
+msgid "Unlocked message"
+msgstr "已解鎖訊息"
+
+#: client/ts/admin/Components/FreeShippingTierRow.tsx:266
+msgid "Locked message"
+msgstr "鎖定訊息"
+
+#: client/ts/admin/Components/FreeShippingTierRow.tsx:282
+msgid "Include the %s placeholder in the locked message — it is replaced with the amount remaining."
+msgstr "在鎖定訊息中包含 %s 佔位符 — 它會被剩餘金額取代。"
+
+#: client/ts/admin/Components/FreeShippingTierRepeater.tsx:73
+msgid "Stack up to three thresholds to reward customers as they spend more. Tiers are ordered by threshold automatically."
+msgstr "最多可疊加三個門檻，隨著消費增加獎勵顧客。層級會自動依門檻排序。"
+
+#: client/ts/admin/Components/FreeShippingTierRepeater.tsx:96
+msgid "Add tier"
+msgstr "新增層級"
 
 #: client/ts/frontend/Components/ReviewPane/ShippingMethodReviewPane.tsx:15
 #: client/ts/frontend/Components/ReviewPane/PaymentMethodReviewPane.tsx:15
@@ -4857,7 +4987,7 @@ msgid "Configure the Cart Summary on the checkout page."
 msgstr "設定結帳頁面的購物車摘要。"
 
 #: client/ts/admin/Components/Forms/WooCommercePagesGlobalOptionsSettingsForm.tsx:54
-#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:367
+#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:368
 msgid "Enable Sale Prices"
 msgstr "啟用促銷價格"
 
@@ -5066,214 +5196,202 @@ msgstr "訂單狀態"
 msgid "Choose which Order Statuses are shown as a progress bar on the Thank You page."
 msgstr "選擇哪些訂單狀態會在謝謝頁面上顯示為進度條。"
 
-#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:145
+#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:155
 msgid "Icon Color"
 msgstr "圖示顏色"
 
-#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:172
+#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:182
 msgid "Heading above the suggested products. Leave blank for default. Default: You may also like&hellip;"
 msgstr "推薦商品上方的標題。留空則為預設。預設值：您可能也喜歡&hellip;"
 
-#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:173
+#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:183
 msgid "You may also like…"
 msgstr "您可能也喜歡…"
 
-#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:179
+#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:189
 msgid "Enable Random Cross Sells Fallback"
 msgstr "啟用隨機交叉銷售備用"
 
-#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:180
+#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:190
 msgid "If none of the cart products have cross sell items defined, display random products instead."
 msgstr "如果購物車中的商品沒有定義交叉銷售商品，則改為顯示隨機商品。"
 
-#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:186
+#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:196
 msgid "Link to Product Page"
 msgstr "連結至產品頁面"
 
-#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:187
+#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:197
 msgid "Link suggested products to their product pages instead of adding directly to cart."
 msgstr "將建議產品連結至其產品頁面，而非直接加入購物車。"
 
-#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:204
+#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:214
 msgid "Enable Floating Cart Button"
 msgstr "啟用浮動購物車按鈕"
 
-#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:205
+#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:215
 msgid "Enable floating cart button on the bottom right of pages."
 msgstr "在頁面右下角啟用浮動購物車按鈕。"
 
-#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:215
+#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:225
 msgid "Right Position"
 msgstr "右側位置"
 
-#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:216
+#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:226
 msgid "The position from the right side of the screen in pixels. Default: 20"
 msgstr "距離螢幕右側的像素位置。預設值：20"
 
-#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:222
+#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:232
 msgid "Bottom Position"
 msgstr "底部位置"
 
-#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:223
+#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:233
 msgid "The position from the bottom of the screen in pixels. Default: 20"
 msgstr "距離螢幕底部的像素位置。預設值：20"
 
-#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:230
+#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:240
 msgid "Hide Button If Empty Cart"
 msgstr "購物車空時隱藏按鈕"
 
-#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:231
+#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:241
 msgid "Hide floating cart button if cart is empty."
 msgstr "購物車空時隱藏浮動購物車按鈕。"
 
-#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:242
-msgid "Free Shipping Progress Bar"
-msgstr "免運費進度條"
+#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:252
+msgid "Free shipping & rewards bar"
+msgstr "免運費與獎勵條"
 
-#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:243
-msgid "Configure the Free Shipping Progress Bar"
-msgstr "配置免運費進度條"
-
-#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:248
-msgid "Enable Free Shipping Progress Bar"
-msgstr "啟用免運費進度條"
-
-#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:249
-msgid "Enable Free Shipping progress bar to show customers how close they are to obtaining free shipping. Uses your shipping settings to determine limits. To override, specify amount below."
-msgstr "啟用免運費進度條，向顧客顯示距離免運費還有多近。使用您的運費設定來判定門檻。若要覆蓋，請在下方指定金額。"
+#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:253
+msgid "Reward shoppers as they spend more — free shipping, a free gift, or a custom perk."
+msgstr "隨著消費增加獎勵購物者 — 免運費、免費贈品或自訂獎勵。"
 
 #: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:258
-msgid "Free Shipping Threshold"
-msgstr "免運費門檻"
+msgid "Enable free shipping & rewards bar"
+msgstr "啟用免運費與獎勵條"
 
 #: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:259
-msgid "Cart subtotal required to qualify for free shipping. To use automatic detection based on shipping configuration, leave blank. Enter in store base currency."
-msgstr "達到免運費資格所需的購物車小計。若要使用基於運費設定的自動偵測，請留空。請以商店基礎貨幣輸入。"
+msgid "Show shoppers how close they are to free shipping, a free gift, or a custom reward as they add to their cart."
+msgstr "當購物者加入購物車時，顯示他們離免運費、免費贈品或自訂獎勵還差多少。"
 
-#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:265
-msgid "Amount Remaining Message"
-msgstr "剩餘金額訊息"
+#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:278
+msgid "Exclude shipping classes"
+msgstr "排除運費類別"
 
-#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:268
-msgid "You're %s away from free shipping!"
-msgstr "您距離免費送貨還有 %s！"
+#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:279
+msgid "Items in the selected shipping classes do not count toward the progress bar thresholds."
+msgstr "選擇的運費類別內的商品不計入進度條門檻。"
 
-#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:272
-msgid "The amount remaining to qualify for free shipping message. Leave blank for default. Default: You're %s away from free shipping!"
-msgstr "符合免運條件的剩餘金額訊息。留空則使用預設值。預設值：您還差 %s 即可享免運！"
-
-#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:281
-msgid "Please ensure your amount remaining message includes the %s placeholder which is replaced with amount remaining when displayed to customers."
-msgstr "請確保您的剩餘金額訊息包含 %s 佔位符，該佔位符會在顯示給顧客時被剩餘金額取代。"
+#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:287
+msgid "Show on the checkout page"
+msgstr "在結帳頁面顯示"
 
 #: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:288
-msgid "Free Shipping Message"
-msgstr "免運訊息"
+msgid "Also show the free shipping & rewards bar in the checkout page cart summary."
+msgstr "也在結帳頁面購物車摘要中顯示免運費與獎勵條。"
 
-#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:290
-msgid "The free shipping message. Leave blank for default. Default: Congrats! You get free standard shipping."
-msgstr "免運訊息。留空則使用預設值。預設值：恭喜！您可享有免費標準運送。"
-
-#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:296
-msgid "Enable Free Shipping Progress Bar At Checkout"
-msgstr "在結帳時啟用免運進度條"
-
-#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:297
-msgid "Enable Free Shipping Progress Bar on the checkout page cart summary."
-msgstr "在結帳頁面的購物車摘要中啟用免運進度條。"
-
-#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:304
-msgid "Progress Indicator Color"
-msgstr "進度指示器顏色"
-
-#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:311
+#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:295
 msgid "Progress Bar Background Color"
 msgstr "進度條背景顏色"
 
-#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:326
+#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:310
+msgid "Empty cart"
+msgstr "清空購物車"
+
+#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:311
+msgid "Customize what shoppers see when the side cart is empty."
+msgstr "自訂購物車側欄為空時購物者所見內容。"
+
+#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:315
+msgid "Empty cart image"
+msgstr "空購物車圖片"
+
+#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:316
+msgid "Shown above the empty cart message in the side cart. Leave blank for text only."
+msgstr "顯示於側邊購物車中空購物車訊息上方。留空則只顯示文字。"
+
+#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:327
 msgid "Options"
 msgstr "選項"
 
-#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:327
+#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:328
 msgid "Control various Side Cart options."
 msgstr "控制各種側邊購物車選項。"
 
-#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:332
+#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:333
 msgid "Disable Cart Auto Open"
 msgstr "停用購物車自動開啟"
 
-#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:333
+#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:334
 msgid "Instead of opening the side cart, gently shake the floating cart button (if visible) to indicate a successful add to cart event."
 msgstr "不開啟側邊購物車，而是輕微搖動浮動購物車按鈕（如果可見）以表示成功加入購物車事件。"
 
-#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:339
+#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:340
 msgid "Enable AJAX Add to Cart"
 msgstr "啟用 AJAX 加入購物車"
 
-#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:340
+#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:341
 msgid "Use AJAX on archive and single product pages to add items to cart. By default, WooCommerce requires a full form submit with page reload. Enabling this option uses AJAX to add items to the cart."
 msgstr "在商品列表和單一商品頁面使用 AJAX 加入購物車。預設情況下，WooCommerce 需要完整表單提交並重新載入頁面。啟用此選項將使用 AJAX 加入購物車。"
 
-#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:346
+#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:347
 msgid "Enable Express Payment Buttons"
 msgstr "啟用快速付款按鈕"
 
-#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:347
+#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:348
 msgid "Enable express payment buttons from gateways that support the WooCommerce Minicart."
 msgstr "啟用支援 WooCommerce 小購物車的支付閘道快速付款按鈕。"
 
-#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:354
+#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:355
 msgid "Enable order bumps that are set to display below cart items to appear in side cart."
 msgstr "啟用設定為顯示於購物車商品下方的訂單加購，並在側邊購物車中顯示。"
 
-#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:360
+#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:361
 #: client/ts/admin/Components/Forms/CheckoutSettingsForm.tsx:587
 #: client/ts/admin/Components/CheckoutEditor/panels/CheckoutSettingsPanel.tsx:318
 msgid "Allow Variation Changes"
 msgstr "允許變體變更"
 
-#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:361
+#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:362
 #: client/ts/admin/Components/Forms/CheckoutSettingsForm.tsx:588
 msgid "Displays an edit link under cart items that allows customers to change which variation is selected in the cart."
 msgstr "在購物車商品下方顯示編輯連結，允許顧客更改購物車中選擇的變體。"
 
-#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:368
+#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:369
 msgid "Enable sale price under on cart item labels in side cart. Example: <s>$10.00</s> $5.00"
 msgstr "在側邊購物車的購物車商品標籤下方啟用促銷價格。範例：<s>$10.00</s> $5.00"
 
-#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:374
+#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:375
 msgid "Enable Coupons"
 msgstr "啟用優惠券"
 
-#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:375
+#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:376
 msgid "Enable customers to apply coupons from the side cart."
 msgstr "允許顧客從側邊購物車套用優惠券。"
 
-#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:382
+#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:383
 #: client/ts/admin/Components/Forms/CheckoutSettingsForm.tsx:266
 #: client/ts/admin/Components/CheckoutEditor/panels/CheckoutSettingsPanel.tsx:128
 msgid "Hide Coupon Code Field Behind Link"
 msgstr "將優惠券代碼欄位隱藏於連結後方"
 
-#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:383
+#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:384
 #: client/ts/admin/Components/Forms/CheckoutSettingsForm.tsx:267
 #: client/ts/admin/Components/CheckoutEditor/panels/CheckoutSettingsPanel.tsx:129
 msgid "Initially hide coupon field until \"Have a coupon code?\" link is clicked."
 msgstr "初始隱藏優惠券欄位，直到點擊「有優惠券代碼嗎？」連結。"
 
-#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:390
+#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:391
 msgid "Show Shipping and Totals"
 msgstr "顯示運費與總計"
 
-#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:391
+#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:392
 msgid "Enable customers to see shipping and order total in addition to subtotal."
 msgstr "允許顧客查看運費與訂單總計，除了小計之外。"
 
-#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:397
+#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:398
 msgid "Enable Continue Shopping Button"
 msgstr "啟用繼續購物按鈕"
 
-#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:398
+#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:399
 msgid "Enable Continue Shopping Button at bottom of Side Cart. Disabled by default."
 msgstr "在側邊購物車底部啟用繼續購物按鈕。預設為停用。"
 
@@ -6475,16 +6593,234 @@ msgstr "您有未儲存的變更。您確定要離開嗎？"
 msgid "Changing templates will update the logo, typography, colors, field label style, and footer text to those defined by the selected template. Are you sure you want to continue?"
 msgstr "更換範本將更新標誌、字體、顏色、欄位標籤樣式及頁尾文字，改為所選範本所定義的樣式。您確定要繼續嗎？"
 
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:79
-msgid "Step"
-msgstr "步驟"
+# %s: item type e.g. "order bump"
+#: client/ts/admin/Components/CheckoutEditor/slots/UnsavedChangesDialog.tsx:37
+msgid "Create a new %s"
+msgstr "建立新的 %s"
 
+# %s: item type e.g. "order bump"
+#: client/ts/admin/Components/CheckoutEditor/slots/UnsavedChangesDialog.tsx:42
+msgid "A new tab will open where you can create your %s. When you\\'ve saved it, close that tab and return here - the editor will update automatically."
+msgstr "將開啟新分頁讓您建立 %s。儲存後，關閉該分頁並回到這裡 — 編輯器將自動更新。"
+
+# %s: item type e.g. "order bump"
+#: client/ts/admin/Components/CheckoutEditor/slots/UnsavedChangesDialog.tsx:59
+msgid "Create %s"
+msgstr "建立 %s"
+
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotsPanel.tsx:161
+msgid "No slots available."
+msgstr "沒有可用的區塊。"
+
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotsPanel.tsx:198
+msgid "Order bumps are assigned to slots but the feature is disabled. Enable order bumps in"
+msgstr "訂單加購已指派至區塊，但功能已停用。請在"
+
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotsPanel.tsx:204
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotsPanel.tsx:224
+msgid "order bumps"
+msgstr "訂單加購"
+
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotsPanel.tsx:218
+msgid "One or more slots exceed the maximum order bumps per slot. Increase the limit in"
+msgstr "一個或多個區塊超過每區塊訂單加購的最大限制。請在"
+
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotsPanel.tsx:238
+msgid "Trust badges are assigned to slots but the feature is disabled. Enable trust badges in"
+msgstr "信任徽章已指派至欄位，但此功能已停用。請在中啟用信任徽章"
+
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotsPanel.tsx:244
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotsPanel.tsx:264
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotsPanel.tsx:313
+msgid "badges"
+msgstr "徽章"
+
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotsPanel.tsx:258
+msgid "Customer reviews are assigned to slots but the feature is disabled. Enable customer reviews in"
+msgstr "顧客評論已指派至欄位，但此功能已停用。請在中啟用顧客評論"
+
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotsPanel.tsx:307
+msgid "Column settings for badges are configured in"
+msgstr "徽章的欄位設定位於"
+
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:83
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:84
+msgid "Not shown for orders that don\\'t need shipping (e.g. digital products or pickup)."
+msgstr "不會顯示在不需要運送的訂單（例如數位產品或自取）。"
+
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:118
+msgid "This order bump is part of an active A/B test. It cannot be removed while the test is running."
+msgstr "此加購項目是進行中的 A/B 測試的一部分。測試進行中時無法移除。"
+
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:122
+msgid "Remove this item from the slot?"
+msgstr "要從欄位中移除此項目嗎？"
+
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:211
+msgid "Assign item to slot"
+msgstr "指派項目至欄位"
+
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:261
+msgid "On mobile and tablets, this slot is inside the \"Show order summary\" section."
+msgstr "在手機和平板上，此欄位位於「顯示訂單摘要」區段內。"
+
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:280
+msgid "On mobile and tablets, the cart collapses and order bumps in this slot will move to the Above Terms & Conditions slot."
+msgstr "在手機和平板上，購物車會收合，且此欄位中的加購項目會移至「條款與條件上方」欄位。"
+
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:320
+msgid "Release to drop here"
+msgstr "釋放以放置於此"
+
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:323
+msgid "No items assigned."
+msgstr "未指派任何項目。"
+
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:330
+msgid "Add item"
+msgstr "新增項目"
+
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:415
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:233
+msgid "Level"
+msgstr "等級"
+
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:434
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:252
+msgid "e.g. Why choose us?"
+msgstr "例如：為什麼選擇我們？"
+
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:442
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:476
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:260
+msgid "Margin"
+msgstr "邊距"
+
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:447
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:481
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:265
+msgid "e.g., 10px 0 20px 0"
+msgstr "例如：10px 0 20px 0"
+
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:465
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:500
+msgid "Save"
+msgstr "儲存"
+
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:27
 #: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:126
 #: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:140
 #: client/ts/admin/Components/CheckoutEditor/panels/DesignSettingsPanel.tsx:86
-#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:27
 msgid "Paid plan required"
 msgstr "需要付費方案"
+
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:201
+msgid "Add Item"
+msgstr "新增項目"
+
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:227
+msgid "+ New heading"
+msgstr "+ 新標題"
+
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:284
+#: client/ts/admin/Components/CheckoutEditor/slots/CustomHtmlEditor.tsx:40
+msgid "Add"
+msgstr "新增"
+
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:302
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:371
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:419
+msgid "(in slot)"
+msgstr "(在插槽中)"
+
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:303
+msgid "(in other slot)"
+msgstr "(在其他插槽中)"
+
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:329
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:340
+msgid "+ New order bump"
+msgstr "+ 新增訂單加購"
+
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:336
+msgid "order bump"
+msgstr "訂單加購"
+
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:337
+msgid "A new tab will open where you can create your order bump. When you\\'ve saved it, close that tab and return here — it will be added to your chosen slot automatically."
+msgstr "將會開啟一個新分頁，您可以在那裡建立您的訂單加購。儲存後，請關閉該分頁並返回這裡 — 它將自動新增至您選擇的插槽。"
+
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:379
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:390
+msgid "+ New trust badge"
+msgstr "+ 新增信任標章"
+
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:386
+msgid "trust badge"
+msgstr "信任標章"
+
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:387
+msgid "A new tab will open where you can create your trust badge. When you\\'ve saved it, close that tab and return here — it will appear in this list ready to assign."
+msgstr "將會開啟一個新分頁，您可以在那裡建立您的信任標章。儲存後，請關閉該分頁並返回這裡 — 它將出現在此列表中，準備指派。"
+
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:399
+msgid "Review Badges"
+msgstr "評論徽章"
+
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:402
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:418
+#: client/ts/admin/Components/CheckoutEditor/slots/AssignedItem.tsx:64
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:604
+msgid "Customer Reviews"
+msgstr "顧客評論"
+
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:436
+msgid "+ New HTML"
+msgstr "+ 新增 HTML"
+
+#: client/ts/admin/Components/CheckoutEditor/slots/CustomHtmlEditor.tsx:46
+msgid "Name (optional)"
+msgstr "名稱（選填）"
+
+#: client/ts/admin/Components/CheckoutEditor/slots/CustomHtmlEditor.tsx:51
+msgid "e.g. Free Shipping Promo"
+msgstr "例如 免費運送促銷"
+
+#: client/ts/admin/Components/CheckoutEditor/slots/CustomHtmlEditor.tsx:59
+msgid "HTML content"
+msgstr "HTML 內容"
+
+#: client/ts/admin/Components/CheckoutEditor/slots/AssignedItem.tsx:66
+msgid "(empty heading)"
+msgstr "(空標題)"
+
+#: client/ts/admin/Components/CheckoutEditor/slots/AssignedItem.tsx:148
+msgid "This order bump has an A/B test associated with it and cannot be moved or removed. Delete the test to unlock it."
+msgstr "此加購項目關聯了 A/B 測試，無法移動或移除。請刪除測試以解鎖。"
+
+#: client/ts/admin/Components/CheckoutEditor/slots/AssignedItem.tsx:151
+msgid "This bump is placed here automatically by its Checkout and Side Cart display location. It also appears in the side cart and isn\\'t counted toward this slot\\'s order bump limit."
+msgstr "此加購由其結帳及側邊購物車顯示位置自動放置。它也會出現在側邊購物車中，且不計入此插槽的訂單加購限制。"
+
+#: client/ts/admin/Components/CheckoutEditor/slots/AssignedItem.tsx:154
+msgid "This item has display conditions. It will only appear to customers who meet the configured criteria and may not be visible on every checkout."
+msgstr "此項目具有顯示條件。只有符合設定條件的顧客才能看見，且可能不會在每次結帳時顯示。"
+
+#: client/ts/admin/Components/CheckoutEditor/slots/AssignedItem.tsx:157
+msgid "The offer product for this bump is already in the preview cart, so it may not be visible in the preview."
+msgstr "此加購的優惠商品已在預覽購物車中，因此可能在預覽中看不到。"
+
+#: client/ts/admin/Components/CheckoutEditor/slots/AssignedItem.tsx:168
+msgid "Drag to reorder"
+msgstr "拖曳以重新排序"
+
+#: client/ts/admin/Components/CheckoutEditor/slots/AssignedItem.tsx:241
+msgid "Remove"
+msgstr "移除"
+
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:79
+msgid "Step"
+msgstr "步驟"
 
 #: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:162
 #: client/ts/admin/Components/CheckoutEditor/panels/DesignSettingsPanel.tsx:108
@@ -6602,13 +6938,6 @@ msgstr "行動裝置欄位數"
 #: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:575
 msgid "Priority"
 msgstr "優先順序"
-
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:604
-#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:402
-#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:418
-#: client/ts/admin/Components/CheckoutEditor/slots/AssignedItem.tsx:64
-msgid "Customer Reviews"
-msgstr "顧客評論"
 
 #: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:613
 msgid "Add badges to your checkout layout in"
@@ -6761,216 +7090,6 @@ msgstr "在行動裝置上顯示信用卡標誌。"
 #: client/ts/admin/Components/CheckoutEditor/panels/CheckoutSettingsPanel.tsx:379
 msgid "Example: Show order summary and coupons."
 msgstr "範例：顯示訂單摘要和優惠券。"
-
-# %s: item type e.g. "order bump"
-#: client/ts/admin/Components/CheckoutEditor/slots/UnsavedChangesDialog.tsx:37
-msgid "Create a new %s"
-msgstr "建立新的 %s"
-
-# %s: item type e.g. "order bump"
-#: client/ts/admin/Components/CheckoutEditor/slots/UnsavedChangesDialog.tsx:42
-msgid "A new tab will open where you can create your %s. When you\\'ve saved it, close that tab and return here - the editor will update automatically."
-msgstr "將開啟新分頁讓您建立 %s。儲存後，關閉該分頁並回到這裡 — 編輯器將自動更新。"
-
-# %s: item type e.g. "order bump"
-#: client/ts/admin/Components/CheckoutEditor/slots/UnsavedChangesDialog.tsx:59
-msgid "Create %s"
-msgstr "建立 %s"
-
-#: client/ts/admin/Components/CheckoutEditor/slots/SlotsPanel.tsx:161
-msgid "No slots available."
-msgstr "沒有可用的區塊。"
-
-#: client/ts/admin/Components/CheckoutEditor/slots/SlotsPanel.tsx:198
-msgid "Order bumps are assigned to slots but the feature is disabled. Enable order bumps in"
-msgstr "訂單加購已指派至區塊，但功能已停用。請在"
-
-#: client/ts/admin/Components/CheckoutEditor/slots/SlotsPanel.tsx:204
-#: client/ts/admin/Components/CheckoutEditor/slots/SlotsPanel.tsx:224
-msgid "order bumps"
-msgstr "訂單加購"
-
-#: client/ts/admin/Components/CheckoutEditor/slots/SlotsPanel.tsx:218
-msgid "One or more slots exceed the maximum order bumps per slot. Increase the limit in"
-msgstr "一個或多個區塊超過每區塊訂單加購的最大限制。請在"
-
-#: client/ts/admin/Components/CheckoutEditor/slots/SlotsPanel.tsx:238
-msgid "Trust badges are assigned to slots but the feature is disabled. Enable trust badges in"
-msgstr "信任徽章已指派至欄位，但此功能已停用。請在中啟用信任徽章"
-
-#: client/ts/admin/Components/CheckoutEditor/slots/SlotsPanel.tsx:244
-#: client/ts/admin/Components/CheckoutEditor/slots/SlotsPanel.tsx:264
-#: client/ts/admin/Components/CheckoutEditor/slots/SlotsPanel.tsx:313
-msgid "badges"
-msgstr "徽章"
-
-#: client/ts/admin/Components/CheckoutEditor/slots/SlotsPanel.tsx:258
-msgid "Customer reviews are assigned to slots but the feature is disabled. Enable customer reviews in"
-msgstr "顧客評論已指派至欄位，但此功能已停用。請在中啟用顧客評論"
-
-#: client/ts/admin/Components/CheckoutEditor/slots/SlotsPanel.tsx:307
-msgid "Column settings for badges are configured in"
-msgstr "徽章的欄位設定位於"
-
-#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:115
-msgid "This order bump is part of an active A/B test. It cannot be removed while the test is running."
-msgstr "此加購項目是進行中的 A/B 測試的一部分。測試進行中時無法移除。"
-
-#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:119
-msgid "Remove this item from the slot?"
-msgstr "要從欄位中移除此項目嗎？"
-
-#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:208
-msgid "Assign item to slot"
-msgstr "指派項目至欄位"
-
-#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:258
-msgid "On mobile and tablets, this slot is inside the \"Show order summary\" section."
-msgstr "在手機和平板上，此欄位位於「顯示訂單摘要」區段內。"
-
-#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:268
-msgid "This slot won\\'t be shown for pickups."
-msgstr "此欄位不會顯示於取貨訂單。"
-
-#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:279
-msgid "On mobile and tablets, the cart collapses and order bumps in this slot will move to the Above Terms & Conditions slot."
-msgstr "在手機和平板上，購物車會收合，且此欄位中的加購項目會移至「條款與條件上方」欄位。"
-
-#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:319
-msgid "Release to drop here"
-msgstr "釋放以放置於此"
-
-#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:322
-msgid "No items assigned."
-msgstr "未指派任何項目。"
-
-#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:329
-msgid "Add item"
-msgstr "新增項目"
-
-#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:414
-#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:233
-msgid "Level"
-msgstr "等級"
-
-#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:433
-#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:252
-msgid "e.g. Why choose us?"
-msgstr "例如：為什麼選擇我們？"
-
-#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:441
-#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:475
-#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:260
-msgid "Margin"
-msgstr "邊距"
-
-#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:446
-#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:480
-#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:265
-msgid "e.g., 10px 0 20px 0"
-msgstr "例如：10px 0 20px 0"
-
-#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:464
-#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:499
-msgid "Save"
-msgstr "儲存"
-
-#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:201
-msgid "Add Item"
-msgstr "新增項目"
-
-#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:227
-msgid "+ New heading"
-msgstr "+ 新標題"
-
-#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:284
-#: client/ts/admin/Components/CheckoutEditor/slots/CustomHtmlEditor.tsx:40
-msgid "Add"
-msgstr "新增"
-
-#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:302
-#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:371
-#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:419
-msgid "(in slot)"
-msgstr "(在插槽中)"
-
-#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:303
-msgid "(in other slot)"
-msgstr "(在其他插槽中)"
-
-#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:329
-#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:340
-msgid "+ New order bump"
-msgstr "+ 新增訂單加購"
-
-#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:336
-msgid "order bump"
-msgstr "訂單加購"
-
-#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:337
-msgid "A new tab will open where you can create your order bump. When you\\'ve saved it, close that tab and return here — it will be added to your chosen slot automatically."
-msgstr "將會開啟一個新分頁，您可以在那裡建立您的訂單加購。儲存後，請關閉該分頁並返回這裡 — 它將自動新增至您選擇的插槽。"
-
-#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:379
-#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:390
-msgid "+ New trust badge"
-msgstr "+ 新增信任標章"
-
-#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:386
-msgid "trust badge"
-msgstr "信任標章"
-
-#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:387
-msgid "A new tab will open where you can create your trust badge. When you\\'ve saved it, close that tab and return here — it will appear in this list ready to assign."
-msgstr "將會開啟一個新分頁，您可以在那裡建立您的信任標章。儲存後，請關閉該分頁並返回這裡 — 它將出現在此列表中，準備指派。"
-
-#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:399
-msgid "Review Badges"
-msgstr "評論徽章"
-
-#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:436
-msgid "+ New HTML"
-msgstr "+ 新增 HTML"
-
-#: client/ts/admin/Components/CheckoutEditor/slots/CustomHtmlEditor.tsx:46
-msgid "Name (optional)"
-msgstr "名稱（選填）"
-
-#: client/ts/admin/Components/CheckoutEditor/slots/CustomHtmlEditor.tsx:51
-msgid "e.g. Free Shipping Promo"
-msgstr "例如 免費運送促銷"
-
-#: client/ts/admin/Components/CheckoutEditor/slots/CustomHtmlEditor.tsx:59
-msgid "HTML content"
-msgstr "HTML 內容"
-
-#: client/ts/admin/Components/CheckoutEditor/slots/AssignedItem.tsx:66
-msgid "(empty heading)"
-msgstr "(空標題)"
-
-#: client/ts/admin/Components/CheckoutEditor/slots/AssignedItem.tsx:148
-msgid "This order bump is part of an active A/B test and cannot be moved or removed while the test is running."
-msgstr "此訂單加購正在進行中的 A/B 測試中，測試期間無法移動或移除。"
-
-#: client/ts/admin/Components/CheckoutEditor/slots/AssignedItem.tsx:151
-msgid "This bump is placed here automatically by its Checkout and Side Cart display location. It also appears in the side cart and isn\\'t counted toward this slot\\'s order bump limit."
-msgstr "此加購由其結帳及側邊購物車顯示位置自動放置。它也會出現在側邊購物車中，且不計入此插槽的訂單加購限制。"
-
-#: client/ts/admin/Components/CheckoutEditor/slots/AssignedItem.tsx:154
-msgid "This item has display conditions. It will only appear to customers who meet the configured criteria and may not be visible on every checkout."
-msgstr "此項目具有顯示條件。只有符合設定條件的顧客才能看見，且可能不會在每次結帳時顯示。"
-
-#: client/ts/admin/Components/CheckoutEditor/slots/AssignedItem.tsx:157
-msgid "The offer product for this bump is already in the preview cart, so it may not be visible in the preview."
-msgstr "此加購的優惠商品已在預覽購物車中，因此可能在預覽中看不到。"
-
-#: client/ts/admin/Components/CheckoutEditor/slots/AssignedItem.tsx:168
-msgid "Drag to reorder"
-msgstr "拖曳以重新排序"
-
-#: client/ts/admin/Components/CheckoutEditor/slots/AssignedItem.tsx:241
-msgid "Remove"
-msgstr "移除"
 
 #: client/ts/admin/Components/Metaboxes/Fields/Rules/fields.ts:47
 msgid "Is equal to"

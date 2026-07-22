@@ -10,12 +10,12 @@ class MyShipper extends CompatibilityAbstract {
 	}
 
 	public function typescript_class_and_params( array $compatibility ): array {
-		$compatibility[] = array(
+		$compatibility[] = [
 			'class'  => 'MyShipper',
-			'params' => array(
+			'params' => [
 				'notice' => 'Shipping Account Number is required.',
-			),
-		);
+			],
+		];
 
 		return $compatibility;
 	}

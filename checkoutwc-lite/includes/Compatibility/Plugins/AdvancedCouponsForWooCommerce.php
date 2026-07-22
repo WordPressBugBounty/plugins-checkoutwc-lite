@@ -17,6 +17,6 @@ class AdvancedCouponsForWooCommerce extends CompatibilityAbstract {
 			return;
 		}
 
-		add_action( 'cfw_coupon_module_end', array( $checkout, 'display_checkout_tabbed_box' ), 11 );
+		add_action( 'cfw_coupon_module_end', [ $checkout, 'display_checkout_tabbed_box' ], 11 );
 	}
 }

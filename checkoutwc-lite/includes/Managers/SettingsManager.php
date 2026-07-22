@@ -21,7 +21,7 @@ class SettingsManager extends SettingsManagerAbstract implements SettingsGetterI
 	 * @param array  $keys The keys to add to the setting name.
 	 * @return string
 	 */
-	public function add_suffix( string $setting_name, array $keys = array() ): string {
+	public function add_suffix( string $setting_name, array $keys = [] ): string {
 		if ( empty( $keys ) ) {
 			return $setting_name;
 		}
@@ -39,7 +39,7 @@ class SettingsManager extends SettingsManagerAbstract implements SettingsGetterI
 	 * @param array  $keys The keys to add to the setting name.
 	 * @return bool
 	 */
-	public function add_setting( string $setting, $value, array $keys = array() ): bool {
+	public function add_setting( string $setting, $value, array $keys = [] ): bool {
 		return parent::add_setting( $this->add_suffix( $setting, $keys ), $value );
 	}
 
@@ -52,7 +52,7 @@ class SettingsManager extends SettingsManagerAbstract implements SettingsGetterI
 	 *
 	 * @return bool
 	 */
-	public function update_setting( string $setting, $value, array $keys = array() ): bool {
+	public function update_setting( string $setting, $value, array $keys = [] ): bool {
 		return parent::update_setting( $this->add_suffix( $setting, $keys ), $value );
 	}
 
@@ -63,7 +63,7 @@ class SettingsManager extends SettingsManagerAbstract implements SettingsGetterI
 	 * @param array  $keys The keys to add to the setting name.
 	 * @return bool
 	 */
-	public function delete_setting( string $setting, array $keys = array() ): bool {
+	public function delete_setting( string $setting, array $keys = [] ): bool {
 		return parent::delete_setting( $this->add_suffix( $setting, $keys ) );
 	}
 
@@ -74,7 +74,7 @@ class SettingsManager extends SettingsManagerAbstract implements SettingsGetterI
 	 * @param array  $keys The keys to add to the setting name.
 	 * @return false|mixed
 	 */
-	public function get_setting( string $setting, array $keys = array() ) {
+	public function get_setting( string $setting, array $keys = [] ) {
 		return parent::get_setting( $this->add_suffix( $setting, $keys ) );
 	}
 
@@ -85,7 +85,7 @@ class SettingsManager extends SettingsManagerAbstract implements SettingsGetterI
 	 * @param array  $keys The keys to add to the setting name.
 	 * @return string
 	 */
-	public function get_field_name( string $setting, array $keys = array() ): string {
+	public function get_field_name( string $setting, array $keys = [] ): string {
 		return parent::get_field_name( $this->add_suffix( $setting, $keys ) );
 	}
 }

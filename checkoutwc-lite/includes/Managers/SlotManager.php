@@ -361,9 +361,11 @@ class SlotManager extends SingletonAbstract {
 		$settings = SettingsManager::instance();
 
 		// Build the bump-to-A/B-test lookup used to flag locked order bumps below.
-		// Order bumps and A/B testing are Pro only, so skip in the lite build.
+		// A/B testing is Pro only; skip when it isn't available so tests can't lock slots the
+		// merchant has no way to manage (the A/B admin is gated to Pro). Existing test posts are
+		// left untouched and re-lock their bumps if the plan is upgraded again.
 		$bump_to_ab_test = [];
-		if ( $this->bumps_available() ) {
+		if ( $this->bumps_available() && $this->ab_testing_available() ) {
 			$ab_test_posts = get_posts(
 				[
 					'post_type'   => ABTesting::get_post_type(),
@@ -915,11 +917,19 @@ class SlotManager extends SingletonAbstract {
 	// ------------------------------------------------------------------
 
 	/**
-	 * Whether order bumps are available. Bumps are a Pro-only feature, so the
+	 * Whether order bumps are available. Bumps are a premium feature, so the
 	 * BumpFactory class is absent from the lite build.
 	 */
 	private function bumps_available(): bool {
 		return class_exists( '\Objectiv\Plugins\Checkout\Factories\BumpFactory' );
+	}
+
+	/**
+	 * Whether A/B testing is available on the current plan. A/B testing is Pro only,
+	 * and its slot locks should only apply where the merchant can manage the tests.
+	 */
+	private function ab_testing_available(): bool {
+		return PlanManager::has_premium_plan_or_higher( 'pro' );
 	}
 
 	/**

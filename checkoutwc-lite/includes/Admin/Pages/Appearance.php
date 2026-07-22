@@ -269,13 +269,13 @@ class Appearance extends PageAbstract {
 		];
 
 		// Buttons
-		$color_settings['buttons']['settings']['button_color']                      = __( 'Primary Background', 'checkout-wc' );
-		$color_settings['buttons']['settings']['button_text_color']                 = __( 'Primary Text', 'checkout-wc' );
-		$color_settings['buttons']['settings']['button_hover_color']                = __( 'Primary Background Hover', 'checkout-wc' );
-		$color_settings['buttons']['settings']['button_text_hover_color']           = __( 'Primary Text Hover', 'checkout-wc' );
-		$color_settings['buttons']['settings']['secondary_button_color']            = __( 'Secondary Background', 'checkout-wc' );
-		$color_settings['buttons']['settings']['secondary_button_text_color']       = __( 'Secondary Text', 'checkout-wc' );
-		$color_settings['buttons']['settings']['secondary_button_hover_color']      = __( 'Secondary Background Hover', 'checkout-wc' );
+		$color_settings['buttons']['settings']['button_color']                 = __( 'Primary Background', 'checkout-wc' );
+		$color_settings['buttons']['settings']['button_text_color']            = __( 'Primary Text', 'checkout-wc' );
+		$color_settings['buttons']['settings']['button_hover_color']           = __( 'Primary Background Hover', 'checkout-wc' );
+		$color_settings['buttons']['settings']['button_text_hover_color']      = __( 'Primary Text Hover', 'checkout-wc' );
+		$color_settings['buttons']['settings']['secondary_button_color']       = __( 'Secondary Background', 'checkout-wc' );
+		$color_settings['buttons']['settings']['secondary_button_text_color']  = __( 'Secondary Text', 'checkout-wc' );
+		$color_settings['buttons']['settings']['secondary_button_hover_color'] = __( 'Secondary Background Hover', 'checkout-wc' );
 		$color_settings['buttons']['settings']['secondary_button_text_hover_color'] = __( 'Secondary Text Hover', 'checkout-wc' );
 
 		// Theme Specific Colors
@@ -306,9 +306,9 @@ class Appearance extends PageAbstract {
 	 * @return array
 	 */
 	public static function get_theme_color_settings_defaults( $template_slug = null ): array {
-		$template        = null !== $template_slug ? new Template( $template_slug ) : cfw_get_active_template();
-		$color_settings  = self::get_theme_color_settings( $template_slug );
-		$defaults        = [];
+		$template       = null !== $template_slug ? new Template( $template_slug ) : cfw_get_active_template();
+		$color_settings = self::get_theme_color_settings( $template_slug );
+		$defaults       = [];
 
 		foreach ( $color_settings as $color_setting_section ) {
 			foreach ( $color_setting_section['settings'] as $key => $label ) {

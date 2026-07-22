@@ -5,14 +5,14 @@ namespace Objectiv\Plugins\Checkout\Managers;
 use Objectiv\Plugins\Checkout\SingletonAbstract;
 
 abstract class SettingsManagerAbstract extends SingletonAbstract {
-	public $settings = array();
+	public $settings = [];
 	public $prefix;
 	public $delimiter;
 
 	public function __construct() {}
 
 	public function init() {
-		add_action( 'admin_init', array( $this, 'save_settings' ), 0 );
+		add_action( 'admin_init', [ $this, 'save_settings' ], 0 );
 	}
 
 	/**
@@ -55,7 +55,7 @@ abstract class SettingsManagerAbstract extends SingletonAbstract {
 		 * @param mixed $value The new value.
 		 * @param mixed $old_value The old value.
 		 */
-		do_action_ref_array( 'cfw_updated_setting', array( $setting, $value, $old_value ) );
+		do_action_ref_array( 'cfw_updated_setting', [ $setting, $value, $old_value ] );
 
 		/**
 		 * Fires when setting updates
@@ -64,7 +64,7 @@ abstract class SettingsManagerAbstract extends SingletonAbstract {
 		 * @param mixed $value The new value.
 		 * @param mixed $old_value The old value.
 		 */
-		do_action_ref_array( 'cfw_updated_setting_' . $setting, array( $value, $old_value ) );
+		do_action_ref_array( 'cfw_updated_setting_' . $setting, [ $value, $old_value ] );
 
 		return $result;
 	}
@@ -159,7 +159,7 @@ abstract class SettingsManagerAbstract extends SingletonAbstract {
 
 		// Always run this action as long as we had a valid nonce
 		// phpcs:disable WooCommerce.Commenting.CommentHooks.MissingHookComment
-		do_action( "{$this->prefix}_settings_saved", $new_settings ?? array() );
+		do_action( "{$this->prefix}_settings_saved", $new_settings ?? [] );
 		// phpcs:enable WooCommerce.Commenting.CommentHooks.MissingHookComment
 	}
 
@@ -176,7 +176,7 @@ abstract class SettingsManagerAbstract extends SingletonAbstract {
 			_deprecated_function( __METHOD__, 'CheckoutWC 8.0.0', '' );
 		}
 
-		$values = array();
+		$values = [];
 
 		$obj = get_option( "{$this->prefix}_settings", false );
 

@@ -10,7 +10,7 @@ class MondialRelay extends CompatibilityAbstract {
 	}
 
 	public function run() {
-		add_filter( 'cfw_body_classes', array( $this, 'add_body_class' ) );
+		add_filter( 'cfw_body_classes', [ $this, 'add_body_class' ] );
 	}
 
 	/**
@@ -26,10 +26,10 @@ class MondialRelay extends CompatibilityAbstract {
 	}
 
 	public function typescript_class_and_params( array $compatibility ): array {
-		$compatibility[] = array(
+		$compatibility[] = [
 			'class'  => 'MondialRelay',
-			'params' => array(),
-		);
+			'params' => [],
+		];
 
 		return $compatibility;
 	}

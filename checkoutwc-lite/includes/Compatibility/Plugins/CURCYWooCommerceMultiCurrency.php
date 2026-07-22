@@ -10,7 +10,7 @@ class CURCYWooCommerceMultiCurrency extends CompatibilityAbstract {
 	}
 
 	public function pre_init() {
-		add_filter( 'cfw_order_bump_captured_revenue', array( $this, 'protect_captured_revenue_from_currency_conversion' ), 10 );
+		add_filter( 'cfw_order_bump_captured_revenue', [ $this, 'protect_captured_revenue_from_currency_conversion' ], 10 );
 	}
 
 	public function protect_captured_revenue_from_currency_conversion( $revenue ) {

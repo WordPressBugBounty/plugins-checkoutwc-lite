@@ -6,7 +6,7 @@ class PhpErrorOutputSuppressor {
 	public function __construct() {}
 
 	public function init() {
-		add_action( 'plugins_loaded', array( $this, 'suppress_error_output' ) );
+		add_action( 'plugins_loaded', [ $this, 'suppress_error_output' ] );
 	}
 
 	/**

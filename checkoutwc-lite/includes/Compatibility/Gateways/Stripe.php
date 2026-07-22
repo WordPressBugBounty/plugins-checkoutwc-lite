@@ -25,7 +25,7 @@ class Stripe extends CompatibilityAbstract {
 		 * @param bool $allow Whether to ignore shipping phone requirement during payment requests
 		 */
 		if ( apply_filters( 'cfw_stripe_payment_requests_ignore_shipping_phone', true ) ) {
-			add_action( 'wc_ajax_wc_stripe_create_order', array( $this, 'process_payment_request_ajax_checkout' ), 1 );
+			add_action( 'wc_ajax_wc_stripe_create_order', [ $this, 'process_payment_request_ajax_checkout' ], 1 );
 		}
 
 		if ( ! $this->is_available() ) {
@@ -35,7 +35,7 @@ class Stripe extends CompatibilityAbstract {
 		add_filter(
 			'cfw_detected_gateways',
 			function ( $gateways ) {
-			$gateways[] = new DetectedPaymentGateway(
+				$gateways[] = new DetectedPaymentGateway(
 				'WooCommerce Stripe Gateway',
 				GatewaySupport::FULLY_SUPPORTED,
 				'Fully supported, but we recommend switching to <a class="text-blue-600 underline" target="_blank" href="https://wordpress.org/plugins/woo-stripe-payment/">Payment Plugins for Stripe WooCommerce</a>. Their plugin is designed to work with CheckoutWC so there are fewer unexpected issues with updates.',
@@ -43,9 +43,9 @@ class Stripe extends CompatibilityAbstract {
 					'woo-stripe-payment',
 					'Payment Plugins for Stripe WooCommerce'
 				)
-			);
+				);
 
-			return $gateways;
+				return $gateways;
 			}
 		);
 	}
@@ -66,8 +66,8 @@ class Stripe extends CompatibilityAbstract {
 
 		$stripe_ece = \WC_Stripe_Express_Checkout_Element::instance();
 
-		remove_action( 'woocommerce_checkout_before_customer_details', array( $stripe_ece, 'display_express_checkout_button_html' ), 1 );
-		add_action( 'cfw_payment_request_buttons', array( $stripe_ece, 'display_express_checkout_button_html' ), 1 );
+		remove_action( 'woocommerce_checkout_before_customer_details', [ $stripe_ece, 'display_express_checkout_button_html' ], 1 );
+		add_action( 'cfw_payment_request_buttons', [ $stripe_ece, 'display_express_checkout_button_html' ], 1 );
 	}
 
 	public function process_payment_request_ajax_checkout() {
@@ -80,7 +80,7 @@ class Stripe extends CompatibilityAbstract {
 				function ( $fields ) {
 					if ( isset( $fields['shipping']['shipping_phone'] ) ) {
 						$fields['shipping']['shipping_phone']['required'] = false;
-						$fields['shipping']['shipping_phone']['validate'] = array();
+						$fields['shipping']['shipping_phone']['validate'] = [];
 					}
 
 					if ( 'yes' === SettingsManager::instance()->get_setting( 'use_fullname_field' ) ) {
@@ -103,10 +103,10 @@ class Stripe extends CompatibilityAbstract {
 	}
 
 	public function typescript_class_and_params( array $compatibility ): array {
-		$compatibility[] = array(
+		$compatibility[] = [
 			'class'  => 'Stripe',
-			'params' => array(),
-		);
+			'params' => [],
+		];
 
 		return $compatibility;
 	}
@@ -123,10 +123,10 @@ class Stripe extends CompatibilityAbstract {
 		$stripe_settings = WC_Stripe_Helper::get_stripe_settings();
 
 		// Check the legacy payment_request_button_locations setting
-		$prb_locations = $stripe_settings['payment_request_button_locations'] ?? array();
+		$prb_locations = $stripe_settings['payment_request_button_locations'] ?? [];
 
 		// Check the new express_checkout_button_locations setting
-		$ece_locations = $stripe_settings['express_checkout_button_locations'] ?? array();
+		$ece_locations = $stripe_settings['express_checkout_button_locations'] ?? [];
 
 		// If checkout is explicitly in either location array, respect that
 		if ( in_array( 'checkout', $prb_locations, true ) || in_array( 'checkout', $ece_locations, true ) ) {

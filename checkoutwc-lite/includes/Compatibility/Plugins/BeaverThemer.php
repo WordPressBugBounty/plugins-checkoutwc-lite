@@ -11,7 +11,7 @@ class BeaverThemer extends CompatibilityAbstract {
 	}
 
 	public function pre_init() {
-		add_filter( 'cfw_admin_integrations_checkbox_fields', array( $this, 'admin_integration_settings' ) );
+		add_filter( 'cfw_admin_integrations_checkbox_fields', [ $this, 'admin_integration_settings' ] );
 	}
 
 	public function run() {
@@ -33,12 +33,12 @@ class BeaverThemer extends CompatibilityAbstract {
 			return $integrations;
 		}
 
-		$integrations[] = array(
+		$integrations[] = [
 			'name'          => 'enable_beaver_themer_support',
 			'label'         => __( 'Enable Beaver Themer Support', 'checkout-wc' ),
 			'description'   => __( 'Allow Beaver Themer to replace header and footer.', 'checkout-wc' ),
 			'initial_value' => SettingsManager::instance()->get_setting( 'enable_beaver_themer_support' ) === 'yes',
-		);
+		];
 
 		return $integrations;
 	}

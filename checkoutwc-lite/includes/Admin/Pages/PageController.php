@@ -6,15 +6,15 @@ use Objectiv\Plugins\Checkout\Managers\NoticesManager;
 use function WordpressEnqueueChunksPlugin\get as cfwChunkedScriptsConfigGet;
 
 class PageController {
-	protected $pages = array();
+	protected $pages = [];
 
 	public function __construct( array $pages ) {
 		$this->pages = $pages;
 	}
 
 	public function init() {
-		add_action( 'admin_head', array( $this, 'custom_css' ) );
-		add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_scripts' ), 1000 );
+		add_action( 'admin_head', [ $this, 'custom_css' ] );
+		add_action( 'admin_enqueue_scripts', [ $this, 'enqueue_scripts' ], 1000 );
 
 		$this->maybe_add_body_class();
 
@@ -49,7 +49,7 @@ class PageController {
 			add_filter(
 				"wpecp/register/{$chunk_name}",
 				function ( $args ) use ( $chunk_name ) {
-					if ( ! in_array( $chunk_name, array( 'admin', 'admin-acr-reports', 'admin-settings' ), true ) ) {
+					if ( ! in_array( $chunk_name, [ 'admin', 'admin-acr-reports', 'admin-settings' ], true ) ) {
 						return $args;
 					}
 
@@ -62,7 +62,7 @@ class PageController {
 
 		// Admin global styles
 		if ( isset( $manifest['chunks']['admin-global-styles']['file'] ) ) {
-			wp_enqueue_style( 'objectiv-cfw-admin-global-styles', "{$front}/{$manifest['chunks']['admin-global-styles']['file']}", array(), $manifest['chunks']['admin-global-styles']['hash'] );
+			wp_enqueue_style( 'objectiv-cfw-admin-global-styles', "{$front}/{$manifest['chunks']['admin-global-styles']['file']}", [], $manifest['chunks']['admin-global-styles']['hash'] );
 		}
 
 		// Only load on our pages past here.
@@ -71,21 +71,21 @@ class PageController {
 		}
 
 		if ( isset( $manifest['chunks']['admin-styles']['file'] ) ) {
-			wp_enqueue_style( 'objectiv-cfw-admin-styles', "{$front}/{$manifest['chunks']['admin-styles']['file']}", array( 'wc-components', 'wp-components' ), $manifest['chunks']['admin-styles']['hash'] );
+			wp_enqueue_style( 'objectiv-cfw-admin-styles', "{$front}/{$manifest['chunks']['admin-styles']['file']}", [ 'wc-components', 'wp-components' ], $manifest['chunks']['admin-styles']['hash'] );
 		}
 
 		wp_enqueue_style( 'woocommerce_admin_styles' );
-		cfw_register_scripts( array( 'admin' ) );
+		cfw_register_scripts( [ 'admin' ] );
 
-		wp_enqueue_code_editor( array( 'type' => 'text/html' ) );
+		wp_enqueue_code_editor( [ 'type' => 'text/html' ] );
 		wp_enqueue_script( 'cfw-admin' );
 
-		$settings_array = array(
+		$settings_array = [
 			'i18n_nav_warning' => __( 'The changes you made will be lost if you navigate away from this page.', 'woocommerce' ),
 			'ajax_url'         => admin_url( 'admin-ajax.php' ),
 			'nonce'            => wp_create_nonce( 'objectiv-cfw-admin-save' ),
 			'deferred_notices' => $this->get_deferred_notices(),
-		);
+		];
 		wp_localize_script( 'cfw-admin', 'objectiv_cfw_admin', $settings_array );
 	}
 
@@ -105,7 +105,7 @@ class PageController {
 
 	protected function get_deferred_notices(): array {
 		$raw_notices = NoticesManager::instance()->get_deferred_notices();
-		$notices     = array();
+		$notices     = [];
 
 		foreach ( $raw_notices as $notice ) {
 			if ( ! $notice->show() ) {

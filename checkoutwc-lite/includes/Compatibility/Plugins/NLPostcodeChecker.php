@@ -13,14 +13,14 @@ class NLPostcodeChecker extends CompatibilityAbstract {
 	public function run() {
 		$this->disable_nl_hooks();
 
-		remove_filter( 'woocommerce_get_country_locale', array( AddressFieldsAugmenter::instance(), 'prevent_postcode_sort_change' ) );
+		remove_filter( 'woocommerce_get_country_locale', [ AddressFieldsAugmenter::instance(), 'prevent_postcode_sort_change' ] );
 
-		add_filter( 'woocommerce_default_address_fields', array( $this, 'modify_fields' ), 100001, 1 ); // run after our normal hook
-		add_filter( 'woocommerce_get_country_locale', array( $this, 'prevent_postcode_sort_change' ), 100 );
+		add_filter( 'woocommerce_default_address_fields', [ $this, 'modify_fields' ], 100001, 1 ); // run after our normal hook
+		add_filter( 'woocommerce_get_country_locale', [ $this, 'prevent_postcode_sort_change' ], 100 );
 		add_filter( 'cfw_enable_zip_autocomplete', '__return_false' );
 
 		// Fix shipping preview
-		add_filter( 'cfw_get_shipping_details_address', array( $this, 'fix_shipping_preview' ), 10, 2 );
+		add_filter( 'cfw_get_shipping_details_address', [ $this, 'fix_shipping_preview' ], 10, 2 );
 	}
 
 	public function disable_nl_hooks() {
@@ -32,14 +32,14 @@ class NLPostcodeChecker extends CompatibilityAbstract {
 		$wc_nl_postcode_fields = cfw_get_hook_instance_object( 'woocommerce_billing_fields', 'nl_billing_fields', $priority );
 
 		if ( ! empty( $wpo_wc_nl_pc_checkout ) ) {
-			remove_filter( 'woocommerce_billing_fields', array( $wpo_wc_nl_pc_checkout, 'nl_billing_fields' ), 100 );
-			remove_filter( 'woocommerce_shipping_fields', array( $wpo_wc_nl_pc_checkout, 'nl_shipping_fields' ), 100 );
+			remove_filter( 'woocommerce_billing_fields', [ $wpo_wc_nl_pc_checkout, 'nl_billing_fields' ], 100 );
+			remove_filter( 'woocommerce_shipping_fields', [ $wpo_wc_nl_pc_checkout, 'nl_shipping_fields' ], 100 );
 		}
 
 		if ( ! empty( $wc_nl_postcode_fields ) ) {
-			remove_filter( 'woocommerce_billing_fields', array( $wc_nl_postcode_fields, 'nl_billing_fields' ), $priority );
-			remove_filter( 'woocommerce_shipping_fields', array( $wc_nl_postcode_fields, 'nl_shipping_fields' ), $priority );
-			remove_action( 'woocommerce_checkout_update_order_meta', array( &$wc_nl_postcode_fields, 'merge_street_number_suffix' ), 20 );
+			remove_filter( 'woocommerce_billing_fields', [ $wc_nl_postcode_fields, 'nl_billing_fields' ], $priority );
+			remove_filter( 'woocommerce_shipping_fields', [ $wc_nl_postcode_fields, 'nl_shipping_fields' ], $priority );
+			remove_action( 'woocommerce_checkout_update_order_meta', [ &$wc_nl_postcode_fields, 'merge_street_number_suffix' ], 20 );
 		}
 	}
 
@@ -48,49 +48,49 @@ class NLPostcodeChecker extends CompatibilityAbstract {
 		$fields['postcode']['priority'] = 11;
 
 		// Add street name
-		$fields['street_name'] = array(
+		$fields['street_name'] = [
 			'label'             => __( 'Street name', 'wpo_wcnlpc' ),
 			'placeholder'       => esc_attr__( 'Street name', 'wpo_wcnlpc' ),
 			'required'          => true,
-			'class'             => array(),
+			'class'             => [],
 			'autocomplete'      => '',
-			'input_class'       => array(),
+			'input_class'       => [],
 			'priority'          => 14,
 			'columns'           => 12,
-			'custom_attributes' => array(
+			'custom_attributes' => [
 				'data-parsley-trigger' => 'change focusout',
-			),
-		);
+			],
+		];
 
 		// Then add house number
-		$fields['house_number'] = array(
+		$fields['house_number'] = [
 			'label'             => __( 'Nr.', 'wpo_wcnlpc' ),
 			'placeholder'       => esc_attr__( 'Nr.', 'wpo_wcnlpc' ),
 			'required'          => true,
-			'class'             => array(),
+			'class'             => [],
 			'autocomplete'      => '',
-			'input_class'       => array(),
+			'input_class'       => [],
 			'priority'          => 12,
 			'columns'           => 4,
-			'custom_attributes' => array(
+			'custom_attributes' => [
 				'data-parsley-trigger' => 'change focusout',
-			),
-		);
+			],
+		];
 
 		// Then house number suffix
-		$fields['house_number_suffix'] = array(
+		$fields['house_number_suffix'] = [
 			'label'             => _x( 'Suffix', 'full string', 'wpo_wcnlpc' ),
 			'placeholder'       => esc_attr_x( 'Suffix', 'full string', 'wpo_wcnlpc' ),
 			'required'          => false,
-			'class'             => array(),
+			'class'             => [],
 			'autocomplete'      => '',
-			'input_class'       => array(),
+			'input_class'       => [],
 			'priority'          => 13,
 			'columns'           => 4,
-			'custom_attributes' => array(
+			'custom_attributes' => [
 				'data-parsley-trigger' => 'change focusout',
-			),
-		);
+			],
+		];
 
 		$fields['state']['columns'] = 8;
 
@@ -129,10 +129,10 @@ class NLPostcodeChecker extends CompatibilityAbstract {
 
 
 	public function typescript_class_and_params( array $compatibility ): array {
-		$compatibility[] = array(
+		$compatibility[] = [
 			'class'  => 'NLPostcodeChecker',
-			'params' => array(),
-		);
+			'params' => [],
+		];
 
 		return $compatibility;
 	}

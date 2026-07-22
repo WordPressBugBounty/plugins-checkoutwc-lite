@@ -17,10 +17,10 @@ class InactiveLicenseNotice extends NoticeAbstract {
 			'cfw_inactive_license',
 			'CheckoutWC License Deactivated',
 			$message,
-			array(
+			[
 				'type'        => 'error',
 				'dismissible' => false,
-			)
+			]
 		);
 	}
 

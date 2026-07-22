@@ -27,10 +27,10 @@ class AmazonPayV1 extends CompatibilityAbstract {
 
 	protected $shipping_info_helper = null;
 
-	protected $gateway_classes = array(
+	protected $gateway_classes = [
 		'WC_Gateway_Amazon_Payments_Advanced_Subscriptions',
 		'WC_Gateway_Amazon_Payments_Advanced',
-	);
+	];
 
 	protected $available = false;
 
@@ -99,7 +99,7 @@ class AmazonPayV1 extends CompatibilityAbstract {
 		try {
 			$settings = \WC_Amazon_Payments_Advanced_API::get_settings();
 		} catch ( \Exception $e ) {
-			$settings = array();
+			$settings = [];
 		}
 
 		if ( 'yes' === $settings['enabled'] ) {
@@ -111,13 +111,13 @@ class AmazonPayV1 extends CompatibilityAbstract {
 				add_filter( 'cfw_enable_enhanced_login', '__return_false' ); // disable our login UX
 				add_filter( 'cfw_enable_fullname_field', '__return_false' ); // disable full name field
 				remove_action( 'woocommerce_before_checkout_form', 'woocommerce_checkout_login_form', 10 ); // disable default WooCommerce login UX
-				add_action( 'cfw_checkout_customer_info_tab', array( $this, 'shim_email_field' ), 30 );
-				add_action( 'cfw_wp_head', array( $this, 'runtime_styles' ) );
+				add_action( 'cfw_checkout_customer_info_tab', [ $this, 'shim_email_field' ], 30 );
+				add_action( 'cfw_wp_head', [ $this, 'runtime_styles' ] );
 			}
 
-			add_action( 'woocommerce_amazon_checkout_init', array( $this, 'queue_widgets' ) );
-			add_action( 'woocommerce_checkout_init', array( $this, 'checkout_init' ), 11 );
-			add_action( 'woocommerce_checkout_init', array( $this, 'remove_banners' ), 100 );
+			add_action( 'woocommerce_amazon_checkout_init', [ $this, 'queue_widgets' ] );
+			add_action( 'woocommerce_checkout_init', [ $this, 'checkout_init' ], 11 );
+			add_action( 'woocommerce_checkout_init', [ $this, 'remove_banners' ], 100 );
 
 			$this->get_amazon_gateway();
 		}
@@ -156,16 +156,16 @@ class AmazonPayV1 extends CompatibilityAbstract {
 		// Remove default locations
 		$apa = wc_apa();
 
-		remove_action( 'woocommerce_checkout_before_customer_details', array( $apa, 'payment_widget' ), 20 );
-		remove_action( 'woocommerce_checkout_before_customer_details', array( $apa, 'address_widget' ), 10 );
+		remove_action( 'woocommerce_checkout_before_customer_details', [ $apa, 'payment_widget' ], 20 );
+		remove_action( 'woocommerce_checkout_before_customer_details', [ $apa, 'address_widget' ], 10 );
 
 		// Remove before the form messages
 		if ( empty( $reference_id ) && empty( $access_token ) ) {
-			remove_action( 'woocommerce_before_checkout_form', array( $this->amazon_payments, 'checkout_message' ), 5 );
-			remove_action( 'before_woocommerce_pay', array( $this->amazon_payments, 'checkout_message' ), 5 );
+			remove_action( 'woocommerce_before_checkout_form', [ $this->amazon_payments, 'checkout_message' ], 5 );
+			remove_action( 'before_woocommerce_pay', [ $this->amazon_payments, 'checkout_message' ], 5 );
 		}
 
-		remove_action( 'woocommerce_before_checkout_form', array( $this->amazon_payments, 'placeholder_checkout_message_container' ), 5 );
+		remove_action( 'woocommerce_before_checkout_form', [ $this->amazon_payments, 'placeholder_checkout_message_container' ], 5 );
 	}
 
 	/**
@@ -181,8 +181,8 @@ class AmazonPayV1 extends CompatibilityAbstract {
 		}
 
 		if ( empty( $reference_id ) && empty( $access_token ) ) {
-			add_action( 'cfw_payment_request_buttons', array( $this->amazon_payments, 'checkout_message' ) );
-			add_action( 'cfw_wp_head', array( $this, 'protect_shipping_fields' ) );
+			add_action( 'cfw_payment_request_buttons', [ $this->amazon_payments, 'checkout_message' ] );
+			add_action( 'cfw_wp_head', [ $this, 'protect_shipping_fields' ] );
 		} else {
 			// Remove shipping address preview if a subscription is in the cart
 			if ( class_exists( '\\WC_Subscriptions_Cart' ) && \WC_Subscriptions_Cart::cart_contains_subscription() ) {
@@ -204,11 +204,11 @@ class AmazonPayV1 extends CompatibilityAbstract {
 	}
 
 	public function queue_widgets() {
-		add_action( 'cfw_checkout_before_customer_info_address', array( $this, 'address_widget' ), 10 );
-		add_action( 'cfw_checkout_before_customer_info_address', array( $this, 'output_shim_divs_close' ), 11 );
+		add_action( 'cfw_checkout_before_customer_info_address', [ $this, 'address_widget' ], 10 );
+		add_action( 'cfw_checkout_before_customer_info_address', [ $this, 'output_shim_divs_close' ], 11 );
 
-		add_action( 'cfw_checkout_after_payment_methods', array( $this, 'output_shim_divs_open' ), 19 );
-		add_action( 'cfw_checkout_after_payment_methods', array( $this, 'payment_widget' ), 20 );
+		add_action( 'cfw_checkout_after_payment_methods', [ $this, 'output_shim_divs_open' ], 19 );
+		add_action( 'cfw_checkout_after_payment_methods', [ $this, 'payment_widget' ], 20 );
 	}
 
 	public function address_widget() {
@@ -253,9 +253,9 @@ class AmazonPayV1 extends CompatibilityAbstract {
 
 	public function typescript_class_and_params( array $compatibility ): array {
 
-		$compatibility['AmazonPayV1'] = array(
+		$compatibility['AmazonPayV1'] = [
 			'class'  => 'AmazonPayV1',
-			'params' => array(
+			'params' => [
 				/**
 				 * Filters whether to supress shipping field validation when logged into Amazon Pay
 				 *
@@ -264,8 +264,8 @@ class AmazonPayV1 extends CompatibilityAbstract {
 				 * @param bool $suppress_validation True suppress validation (Default), false validate
 				 */
 				'cfw_amazon_suppress_shipping_field_validation' => apply_filters( 'cfw_amazon_suppress_shipping_field_validation', true ),
-			),
-		);
+			],
+		];
 
 		return $compatibility;
 	}

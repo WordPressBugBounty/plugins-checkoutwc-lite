@@ -11,7 +11,7 @@ class QuantityDiscountsPricingForWoocommerce extends CompatibilityAbstract {
 	}
 
 	public function run_on_wp_loaded() {
-		add_filter( 'cfw_cart_item_discount', array( $this, 'show_quantity_discount_on_cart_item' ), 10, 2 );
+		add_filter( 'cfw_cart_item_discount', [ $this, 'show_quantity_discount_on_cart_item' ], 10, 2 );
 	}
 
 	public function show_quantity_discount_on_cart_item( $price_html, $cart_item ) {
@@ -27,7 +27,7 @@ class QuantityDiscountsPricingForWoocommerce extends CompatibilityAbstract {
 
 		if ( $sale_price < $original_price ) {
 			if ( 'incl' === get_option( 'woocommerce_tax_display_cart' ) && 'yes' === get_option( 'woocommerce_calc_taxes' ) ) {
-				$original_price = wc_get_price_including_tax( $product, array( 'price' => $original_price ) );
+				$original_price = wc_get_price_including_tax( $product, [ 'price' => $original_price ] );
 				$sale_price     = wc_get_price_including_tax( $product );
 			}
 

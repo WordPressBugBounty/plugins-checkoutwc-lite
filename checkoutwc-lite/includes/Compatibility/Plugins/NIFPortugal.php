@@ -11,7 +11,7 @@ class NIFPortugal extends CompatibilityAbstract {
 
 	public function run() {
 		add_filter( 'woocommerce_nif_field_class', '__return_empty_string' );
-		add_filter( 'cfw_get_shipping_checkout_fields', array( $this, 'add_nif_field' ) );
+		add_filter( 'cfw_get_shipping_checkout_fields', [ $this, 'add_nif_field' ] );
 	}
 
 	public function add_nif_field( $fields ) {
@@ -23,10 +23,10 @@ class NIFPortugal extends CompatibilityAbstract {
 	}
 
 	public function typescript_class_and_params( array $compatibility ): array {
-		$compatibility[] = array(
+		$compatibility[] = [
 			'class'  => 'NIFPortugal',
-			'params' => array(),
-		);
+			'params' => [],
+		];
 
 		return $compatibility;
 	}

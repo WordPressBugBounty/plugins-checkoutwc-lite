@@ -44,9 +44,9 @@ class AmazonPay extends CompatibilityAbstract {
 
 	public function pre_init() {
 		if ( $this->is_available() ) {
-			add_action( 'woocommerce_checkout_init', array( $this, 'checkout_init' ), 11 );
-			add_action( 'woocommerce_checkout_init', array( $this, 'remove_banners' ), 100 );
-			add_action( 'wp_loaded', array( $this, 'start' ), 0 );
+			add_action( 'woocommerce_checkout_init', [ $this, 'checkout_init' ], 11 );
+			add_action( 'woocommerce_checkout_init', [ $this, 'remove_banners' ], 100 );
+			add_action( 'wp_loaded', [ $this, 'start' ], 0 );
 			add_filter(
 				'cfw_detected_gateways',
 				function ( $gateways ) {
@@ -67,16 +67,16 @@ class AmazonPay extends CompatibilityAbstract {
 				add_filter( 'cfw_enable_enhanced_login', '__return_false' ); // disable our login UX
 				add_filter( 'cfw_enable_fullname_field', '__return_false' ); // disable full name field
 				remove_action( 'woocommerce_before_checkout_form', 'woocommerce_checkout_login_form', 10 ); // disable default WooCommerce login UX
-				add_action( 'cfw_checkout_customer_info_tab', array( $this, 'shim_email_field' ), 30 );
+				add_action( 'cfw_checkout_customer_info_tab', [ $this, 'shim_email_field' ], 30 );
 			}
 
-			add_action( 'woocommerce_amazon_checkout_init', array( $this, 'queue_widgets' ) );
+			add_action( 'woocommerce_amazon_checkout_init', [ $this, 'queue_widgets' ] );
 		}
 	}
 
 	public function checkout_init() {
 		if ( ! $this->is_logged_in() ) {
-			add_action( 'cfw_payment_request_buttons', array( $this->get_gateway(), 'checkout_message' ) );
+			add_action( 'cfw_payment_request_buttons', [ $this->get_gateway(), 'checkout_message' ] );
 		} else {
 			// Remove shipping address preview if a subscription is in the cart
 			if ( class_exists( '\\WC_Subscriptions_Cart' ) && \WC_Subscriptions_Cart::cart_contains_subscription() ) {
@@ -97,14 +97,14 @@ class AmazonPay extends CompatibilityAbstract {
 	}
 
 	public function remove_banners() {
-		remove_action( 'woocommerce_checkout_before_customer_details', array( $this->get_gateway(), 'display_amazon_customer_info' ) );
+		remove_action( 'woocommerce_checkout_before_customer_details', [ $this->get_gateway(), 'display_amazon_customer_info' ] );
 
 		// Remove before the form messages
 		if ( ! $this->is_logged_in() ) {
-			remove_action( 'woocommerce_before_checkout_form', array( $this->get_gateway(), 'checkout_message' ), 5 );
+			remove_action( 'woocommerce_before_checkout_form', [ $this->get_gateway(), 'checkout_message' ], 5 );
 		}
 
-		remove_action( 'woocommerce_before_checkout_form', array( $this->get_gateway(), 'placeholder_checkout_message_container' ), 5 );
+		remove_action( 'woocommerce_before_checkout_form', [ $this->get_gateway(), 'placeholder_checkout_message_container' ], 5 );
 	}
 
 	public function shim_email_field() {
@@ -116,7 +116,7 @@ class AmazonPay extends CompatibilityAbstract {
 	}
 
 	public function queue_widgets() {
-		add_action( 'cfw_checkout_before_customer_info_address', array( $this, 'customer_info_widget' ), 10 );
+		add_action( 'cfw_checkout_before_customer_info_address', [ $this, 'customer_info_widget' ], 10 );
 	}
 
 	public function customer_info_widget() {
@@ -172,10 +172,10 @@ class AmazonPay extends CompatibilityAbstract {
 
 	public function typescript_class_and_params( array $compatibility ): array {
 
-		$compatibility['AmazonPay'] = array(
+		$compatibility['AmazonPay'] = [
 			'class'  => 'AmazonPay',
-			'params' => array(),
-		);
+			'params' => [],
+		];
 
 		return $compatibility;
 	}

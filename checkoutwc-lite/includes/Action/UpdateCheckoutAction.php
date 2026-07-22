@@ -19,7 +19,7 @@ class UpdateCheckoutAction extends CFWAction {
 		}
 
 		remove_all_actions( "wc_ajax_{$this->get_id()}" );
-		add_action( "wc_ajax_{$this->get_id()}", array( $this, 'execute' ), 1 );
+		add_action( "wc_ajax_{$this->get_id()}", [ $this, 'execute' ], 1 );
 
 		/**
 		 * These legacy handlers are here because Woo adds them and 3rd party plugins
@@ -28,10 +28,10 @@ class UpdateCheckoutAction extends CFWAction {
 		 * restricted
 		 */
 		remove_all_actions( "wp_ajax_woocommerce_{$this->get_id()}" );
-		add_action( "wp_ajax_woocommerce_{$this->get_id()}", array( $this, 'execute' ), 1 );
+		add_action( "wp_ajax_woocommerce_{$this->get_id()}", [ $this, 'execute' ], 1 );
 
 		remove_all_actions( "wp_ajax_nopriv_woocommerce_{$this->get_id()}" );
-		add_action( "wp_ajax_nopriv_woocommerce_{$this->get_id()}", array( $this, 'execute' ), 1 );
+		add_action( "wp_ajax_nopriv_woocommerce_{$this->get_id()}", [ $this, 'execute' ], 1 );
 	}
 
 	/**
@@ -63,15 +63,15 @@ class UpdateCheckoutAction extends CFWAction {
 			$target_selector = apply_filters( 'cfw_session_expired_target_element', 'form.woocommerce-checkout' );
 
 			$this->out(
-				array(
+				[
 					'redirect'  => false,
 					'fragments' => cfw_apply_filters(
 						'woocommerce_update_order_review_fragments',
-						array(
+						[
 							$target_selector => '<div class="woocommerce-error">' . __( 'Sorry, your session has expired.', 'woocommerce' ) . ' <a href="' . esc_url( wc_get_page_permalink( 'shop' ) ) . '" class="wc-backward">' . __( 'Return to shop', 'woocommerce' ) . '</a></div>',
-						)
+						]
 					),
-				)
+				]
 			);
 		}
 
@@ -88,7 +88,7 @@ class UpdateCheckoutAction extends CFWAction {
 		do_action( 'cfw_checkout_update_order_review', isset( $_POST['post_data'] ) ? wp_unslash( $_POST['post_data'] ) : '' ); // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
 
 		$chosen_shipping_methods = WC()->session->get( 'chosen_shipping_methods' );
-		$posted_shipping_methods = isset( $_POST['shipping_method'] ) ? wc_clean( wp_unslash( $_POST['shipping_method'] ) ) : array();
+		$posted_shipping_methods = isset( $_POST['shipping_method'] ) ? wc_clean( wp_unslash( $_POST['shipping_method'] ) ) : [];
 
 		if ( is_array( $posted_shipping_methods ) ) {
 			foreach ( $posted_shipping_methods as $i => $value ) {
@@ -103,37 +103,37 @@ class UpdateCheckoutAction extends CFWAction {
 		}
 
 		WC()->customer->set_props(
-			array(
+			[
 				'billing_country'   => isset( $_POST['country'] ) ? wc_clean( wp_unslash( $_POST['country'] ) ) : null,
 				'billing_state'     => isset( $_POST['state'] ) ? wc_clean( wp_unslash( $_POST['state'] ) ) : null,
 				'billing_postcode'  => isset( $_POST['postcode'] ) ? trim( wc_clean( wp_unslash( $_POST['postcode'] ) ) ) : null,
 				'billing_city'      => isset( $_POST['city'] ) ? wc_clean( wp_unslash( $_POST['city'] ) ) : null,
 				'billing_address_1' => isset( $_POST['address'] ) ? wc_clean( wp_unslash( $_POST['address'] ) ) : null,
 				'billing_address_2' => isset( $_POST['address_2'] ) ? wc_clean( wp_unslash( $_POST['address_2'] ) ) : null,
-			)
+			]
 		);
 
 		if ( wc_ship_to_billing_address_only() || ! WC()->cart->needs_shipping() ) {
 			WC()->customer->set_props(
-				array(
+				[
 					'shipping_country'   => isset( $_POST['country'] ) ? wc_clean( wp_unslash( $_POST['country'] ) ) : null,
 					'shipping_state'     => isset( $_POST['state'] ) ? wc_clean( wp_unslash( $_POST['state'] ) ) : null,
 					'shipping_postcode'  => isset( $_POST['postcode'] ) ? trim( wc_clean( wp_unslash( $_POST['postcode'] ) ) ) : null,
 					'shipping_city'      => isset( $_POST['city'] ) ? wc_clean( wp_unslash( $_POST['city'] ) ) : null,
 					'shipping_address_1' => isset( $_POST['address'] ) ? wc_clean( wp_unslash( $_POST['address'] ) ) : null,
 					'shipping_address_2' => isset( $_POST['address_2'] ) ? wc_clean( wp_unslash( $_POST['address_2'] ) ) : null,
-				)
+				]
 			);
 		} else {
 			WC()->customer->set_props(
-				array(
+				[
 					'shipping_country'   => isset( $_POST['s_country'] ) ? wc_clean( wp_unslash( $_POST['s_country'] ) ) : null,
 					'shipping_state'     => isset( $_POST['s_state'] ) ? wc_clean( wp_unslash( $_POST['s_state'] ) ) : null,
 					'shipping_postcode'  => isset( $_POST['s_postcode'] ) ? trim( wc_clean( wp_unslash( $_POST['s_postcode'] ) ) ) : null,
 					'shipping_city'      => isset( $_POST['s_city'] ) ? wc_clean( wp_unslash( $_POST['s_city'] ) ) : null,
 					'shipping_address_1' => isset( $_POST['s_address'] ) ? wc_clean( wp_unslash( $_POST['s_address'] ) ) : null,
 					'shipping_address_2' => isset( $_POST['s_address_2'] ) ? wc_clean( wp_unslash( $_POST['s_address_2'] ) ) : null,
-				)
+				]
 			);
 		}
 
@@ -233,16 +233,16 @@ class UpdateCheckoutAction extends CFWAction {
 		/** This action is documented in woocommerce/includes/class-wc-checkout.php */
 		cfw_do_action( 'woocommerce_check_cart_items' );
 
-		$update_checkout_output = array(
+		$update_checkout_output = [
 			'fragments'                 => cfw_apply_filters(
 				'woocommerce_update_order_review_fragments', /** This filter is documented in woocommerce/includes/class-wc-ajax.php */
-				array(
+				[
 					'#cfw-checkout-before-order-review' => $this->get_action_output( 'woocommerce_checkout_before_order_review', 'cfw-checkout-before-order-review' ),
 					'#cfw-checkout-after-order-review'  => $this->get_action_output( 'woocommerce_checkout_after_order_review', 'cfw-checkout-after-order-review' ),
 					'#cfw-place-order'                  => cfw_get_place_order(),
 					'#cfw-billing-methods'              => $updated_payment_methods,
 					'#woocommerce_review_order_before_cart_contents' => $this->get_action_output( 'woocommerce_review_order_before_cart_contents' ),
-				)
+				]
 			),
 			'reload'                    => $reload_checkout,
 			'redirect'                  => $redirect,
@@ -252,7 +252,7 @@ class UpdateCheckoutAction extends CFWAction {
 			'total'                     => WC()->cart->get_total( 'edit' ),
 			'data'                      => AssetManager::get_data(),
 			'cart_hash'                 => WC()->cart->get_cart_hash(),
-		);
+		];
 
 		if ( ! $reload_checkout ) {
 			// Do this last so that anything that runs above can bubble up a notice

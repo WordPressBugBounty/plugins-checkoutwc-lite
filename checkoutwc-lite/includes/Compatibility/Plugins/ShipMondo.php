@@ -10,12 +10,12 @@ class ShipMondo extends CompatibilityAbstract {
 	}
 
 	public function typescript_class_and_params( array $compatibility ): array {
-		$compatibility[] = array(
+		$compatibility[] = [
 			'class'  => 'ShipMondo',
-			'params' => array(
+			'params' => [
 				'notice' => __( 'Please select a pickup point before placing your order.', 'pakkelabels-for-woocommerce' ),
-			),
-		);
+			],
+		];
 
 		return $compatibility;
 	}

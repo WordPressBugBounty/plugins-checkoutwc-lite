@@ -8,28 +8,28 @@ use WP_REST_Response;
 class OrderBumpsSearchAPI {
 
 	public function __construct() {
-		add_action( 'rest_api_init', array( $this, 'register_routes' ) );
+		add_action( 'rest_api_init', [ $this, 'register_routes' ] );
 	}
 
 	public function register_routes() {
 		register_rest_route(
 			'checkoutwc/v1',
 			'order-bumps',
-			array(
+			[
 				'methods'             => 'GET',
-				'callback'            => array( $this, 'get_order_bumps' ),
-				'permission_callback' => array( $this, 'check_permissions' ),
-			)
+				'callback'            => [ $this, 'get_order_bumps' ],
+				'permission_callback' => [ $this, 'check_permissions' ],
+			]
 		);
 
 		register_rest_route(
 			'checkoutwc/v1',
 			'order-bumps/(?P<parent_id>\d+)/variants',
-			array(
+			[
 				'methods'             => 'GET',
-				'callback'            => array( $this, 'get_order_bump_variants' ),
-				'permission_callback' => array( $this, 'check_permissions' ),
-			)
+				'callback'            => [ $this, 'get_order_bump_variants' ],
+				'permission_callback' => [ $this, 'check_permissions' ],
+			]
 		);
 	}
 
@@ -37,14 +37,22 @@ class OrderBumpsSearchAPI {
 		$search  = $request->get_param( 'term' ) ?? '';
 		$exclude = $request->get_param( 'exclude' ) ?? '';
 
-		$args = array(
+		$args = [
 			'post_type'      => BumpAbstract::get_post_type(),
 			'posts_per_page' => -1,
 			'post_status'    => 'publish',
 			'post_parent'    => 0, // Exclude variants (only show parent order bumps)
 			'orderby'        => 'title',
 			'order'          => 'ASC',
-		);
+			// Exclude system-managed bumps (e.g. the Side Cart rewards-bar free gift). They're
+			// provisioned automatically and must not be selectable as an A/B test subject.
+			'meta_query'     => [ // phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_meta_query
+				[
+					'key'     => '_cfw_managed_by',
+					'compare' => 'NOT EXISTS',
+				],
+			],
+		];
 
 		if ( ! empty( $search ) ) {
 			$args['s'] = sanitize_text_field( $search );
@@ -57,16 +65,16 @@ class OrderBumpsSearchAPI {
 
 		$posts = get_posts( $args );
 
-		$results = array();
+		$results = [];
 		foreach ( $posts as $post ) {
 			$title = trim( $post->post_title );
 			if ( empty( $title ) ) {
 				$title = sprintf( __( 'No Title #%d', 'checkout-wc' ), $post->ID );
 			}
-			$results[] = array(
+			$results[] = [
 				'id'   => $post->ID,
 				'text' => $title,
-			);
+			];
 		}
 
 		return new WP_REST_Response( $results, 200 );
@@ -77,17 +85,17 @@ class OrderBumpsSearchAPI {
 		$search    = $request->get_param( 'term' ) ?? '';
 
 		if ( empty( $parent_id ) ) {
-			return new WP_REST_Response( array(), 200 );
+			return new WP_REST_Response( [], 200 );
 		}
 
-		$args = array(
+		$args = [
 			'post_type'      => BumpAbstract::get_post_type(),
 			'posts_per_page' => -1,
 			'post_status'    => 'publish',
 			'post_parent'    => absint( $parent_id ),
 			'orderby'        => 'title',
 			'order'          => 'ASC',
-		);
+		];
 
 		if ( ! empty( $search ) ) {
 			$args['s'] = sanitize_text_field( $search );
@@ -95,16 +103,16 @@ class OrderBumpsSearchAPI {
 
 		$posts = get_posts( $args );
 
-		$results = array();
+		$results = [];
 		foreach ( $posts as $post ) {
 			$title = trim( $post->post_title );
 			if ( empty( $title ) ) {
 				$title = sprintf( __( 'No Title #%d', 'checkout-wc' ), $post->ID );
 			}
-			$results[] = array(
+			$results[] = [
 				'id'   => $post->ID,
 				'text' => $title,
-			);
+			];
 		}
 
 		return new WP_REST_Response( $results, 200 );

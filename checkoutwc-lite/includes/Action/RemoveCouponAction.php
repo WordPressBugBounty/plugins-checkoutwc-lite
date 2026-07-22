@@ -42,11 +42,11 @@ class RemoveCouponAction extends CFWAction {
 			 */
 			apply_filters(
 				'cfw_remove_coupon_response',
-				array(
+				[
 					'result' => $result,
 					'html'   => $output,
 					'coupon' => $coupon,
-				)
+				]
 			)
 		);
 	}

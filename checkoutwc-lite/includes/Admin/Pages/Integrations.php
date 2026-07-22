@@ -18,7 +18,7 @@ class Integrations extends PageAbstract {
 	}
 
 	public function init() {
-		$integrations = cfw_apply_filters( 'cfw_admin_integrations_checkbox_fields', array() );
+		$integrations = cfw_apply_filters( 'cfw_admin_integrations_checkbox_fields', [] );
 
 		if ( ! defined( 'CFW_PREMIUM_PLAN_IDS' ) && count( $integrations ) === 0 ) {
 			return;
@@ -39,10 +39,10 @@ class Integrations extends PageAbstract {
 		}
 
 		$this->set_script_data(
-			array(
-				'settings'     => array(
+			[
+				'settings'     => [
 					'google_places_api_key' => SettingsManager::instance()->get_setting( 'google_places_api_key' ),
-					
+
 					// Turnstile settings
 					'turnstile_enabled'                    => SettingsManager::instance()->get_setting( 'turnstile_enabled' ) === 'yes',
 					'turnstile_site_key'                   => SettingsManager::instance()->get_setting( 'turnstile_site_key' ),
@@ -57,7 +57,7 @@ class Integrations extends PageAbstract {
 					'turnstile_guest_only'                 => SettingsManager::instance()->get_setting( 'turnstile_guest_only' ) === 'yes',
 					'turnstile_has_conflict'               => Turnstile::has_conflict(),
 					'turnstile_conflict_notice'            => Turnstile::get_conflict_notice(),
-				),
+				],
 				/**
 				 * Filters third party checkboxes here:  WP Admin > CheckoutWC > Advanced > Integrations
 				 *
@@ -66,9 +66,9 @@ class Integrations extends PageAbstract {
 				 * @param array $integrations The integrations admin page class
 				 * @since 9.0.0
 				 */
-				'integrations' => apply_filters( 'cfw_admin_integrations_checkbox_fields', array() ),
+				'integrations' => apply_filters( 'cfw_admin_integrations_checkbox_fields', [] ),
 				'plan'         => $this->get_plan_data(),
-			)
+			]
 		);
 	}
 }

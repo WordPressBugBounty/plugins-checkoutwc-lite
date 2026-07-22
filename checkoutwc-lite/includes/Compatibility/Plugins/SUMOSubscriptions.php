@@ -18,7 +18,7 @@ class SUMOSubscriptions extends CompatibilityAbstract {
 	}
 
 	public function add_cart_item_message() {
-		add_action( 'cfw_cart_item_after_data', array( $this, 'cart_item_message' ), 10, 2 );
+		add_action( 'cfw_cart_item_after_data', [ $this, 'cart_item_message' ], 10, 2 );
 	}
 
 	public function cart_item_message( $cart_item, $cart_item_key ) {

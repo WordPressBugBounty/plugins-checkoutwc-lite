@@ -31,7 +31,7 @@ class Vipps extends CompatibilityAbstract {
 	}
 
 	public function run() {
-		add_action( 'cfw_payment_request_buttons', array( $this, 'add_vipps_button' ) );
+		add_action( 'cfw_payment_request_buttons', [ $this, 'add_vipps_button' ] );
 	}
 
 	public function add_vipps_button() {

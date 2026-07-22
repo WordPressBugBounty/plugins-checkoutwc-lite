@@ -14,7 +14,7 @@ class OceanWP extends CompatibilityAbstract {
 	}
 
 	public function run() {
-		add_filter( 'cfw_blocked_script_handles', array( $this, 'allow_main_js' ), 10, 1 );
+		add_filter( 'cfw_blocked_script_handles', [ $this, 'allow_main_js' ], 10, 1 );
 	}
 
 	public function allow_main_js( $blocked_handles ) {

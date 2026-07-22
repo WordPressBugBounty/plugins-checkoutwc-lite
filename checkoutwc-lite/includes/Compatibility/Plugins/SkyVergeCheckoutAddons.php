@@ -10,9 +10,9 @@ class SkyVergeCheckoutAddons extends CompatibilityAbstract {
 	}
 
 	public function run() {
-		add_filter( 'wc_checkout_add_ons_position', array( $this, 'set_checkout_add_ons_position' ) );
-		add_filter( 'cfw_non_floating_label_field_types', array( $this, 'add_non_floating_label_field_types' ) );
-		add_filter( 'cfw_checkbox_like_field_types', array( $this, 'add_checkbox_like_field_types' ) );
+		add_filter( 'wc_checkout_add_ons_position', [ $this, 'set_checkout_add_ons_position' ] );
+		add_filter( 'cfw_non_floating_label_field_types', [ $this, 'add_non_floating_label_field_types' ] );
+		add_filter( 'cfw_checkbox_like_field_types', [ $this, 'add_checkbox_like_field_types' ] );
 	}
 
 	/**

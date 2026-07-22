@@ -10,7 +10,7 @@ class WooCommercePointsandRewards extends CompatibilityAbstract {
 	}
 
 	public function run() {
-		add_action( 'cfw_wp_head', array( $this, 'add_helper_script' ) );
+		add_action( 'cfw_wp_head', [ $this, 'add_helper_script' ] );
 	}
 
 	public function add_helper_script() {

@@ -24,6 +24,17 @@ use Objectiv\Plugins\Checkout\SingletonAbstract;
 class SlotRenderer extends SingletonAbstract {
 
 	/**
+	 * The slot whose position follows the billing address across cart types.
+	 */
+	const BILLING_SLOT_ID = 'after_billing_address';
+
+	/**
+	 * Hook fired after the billing address on the information step, i.e. for
+	 * no-shipping (e.g. digital) carts where billing is collected up front.
+	 */
+	const INFO_STEP_BILLING_HOOK = 'cfw_checkout_after_billing_address';
+
+	/**
 	 * Registers the WordPress action hooks for all non-empty slots.
 	 *
 	 * In editor preview mode every slot is registered (even empty ones) so that
@@ -45,26 +56,71 @@ class SlotRenderer extends SingletonAbstract {
 				continue;
 			}
 
-			add_action(
-				$hook_config['hook'],
-				function () use ( $slot_id, $has_items, $is_preview ) {
-					$classes = 'cfw-slot-wrap';
-					if ( $is_preview ) {
-						$classes .= ' cfw-slot-marker';
+			// The "After Billing Address" slot follows the billing address, which
+			// lives on the payment step for shipping carts but on the information
+			// step for no-shipping (e.g. digital) carts. Register both positions,
+			// each guarded so the slot renders exactly once per cart type.
+			if ( self::BILLING_SLOT_ID === $slot_id ) {
+				$this->register_slot_output(
+					$slot_id,
+					$hook_config['hook'],
+					$hook_config['priority'],
+					$has_items,
+					$is_preview,
+					static function (): bool {
+						return WC()->cart && WC()->cart->needs_shipping_address();
 					}
-					echo '<div class="' . esc_attr( $classes ) . '" data-cfw-slot="' . esc_attr( $slot_id ) . '"';
-					if ( $is_preview ) {
-						echo ' data-cfw-slot-marker="' . esc_attr( $slot_id ) . '"';
+				);
+				$this->register_slot_output(
+					$slot_id,
+					self::INFO_STEP_BILLING_HOOK,
+					10,
+					$has_items,
+					$is_preview,
+					static function (): bool {
+						return WC()->cart && ! WC()->cart->needs_shipping();
 					}
-					echo '>';
-					if ( $has_items ) {
-						$this->render_slot( $slot_id );
-					}
-					echo '</div>';
-				},
-				$hook_config['priority']
-			);
+				);
+				continue;
+			}
+
+			$this->register_slot_output( $slot_id, $hook_config['hook'], $hook_config['priority'], $has_items, $is_preview );
 		}
+	}
+
+	/**
+	 * Registers a single slot-output action on a hook.
+	 *
+	 * @param string        $slot_id    The slot identifier.
+	 * @param string        $hook       The action hook to render on.
+	 * @param int           $priority   The hook priority.
+	 * @param bool          $has_items  Whether the slot has assigned items.
+	 * @param bool          $is_preview Whether this is an editor preview load.
+	 * @param callable|null $condition  Optional predicate; when it returns false the slot does not render.
+	 */
+	private function register_slot_output( string $slot_id, string $hook, int $priority, bool $has_items, bool $is_preview, ?callable $condition = null ): void {
+		add_action(
+			$hook,
+			function () use ( $slot_id, $has_items, $is_preview, $condition ) {
+				if ( null !== $condition && ! $condition() ) {
+					return;
+				}
+				$classes = 'cfw-slot-wrap';
+				if ( $is_preview ) {
+					$classes .= ' cfw-slot-marker';
+				}
+				echo '<div class="' . esc_attr( $classes ) . '" data-cfw-slot="' . esc_attr( $slot_id ) . '"';
+				if ( $is_preview ) {
+					echo ' data-cfw-slot-marker="' . esc_attr( $slot_id ) . '"';
+				}
+				echo '>';
+				if ( $has_items ) {
+					$this->render_slot( $slot_id );
+				}
+				echo '</div>';
+			},
+			$priority
+		);
 	}
 
 	/**
@@ -93,10 +149,10 @@ class SlotRenderer extends SingletonAbstract {
 	 * @param string $slot_id The slot identifier.
 	 */
 	public function render_slot( string $slot_id ): void {
-		$assignments               = SlotManager::instance()->get_slots();
-		$html_blocks               = SlotManager::instance()->get_custom_html_blocks();
-		$slot_items                = $assignments[ $slot_id ] ?? [];
-		$output_bump_ids           = []; // Prevent processing the same bump/test twice per slot.
+		$assignments                  = SlotManager::instance()->get_slots();
+		$html_blocks                  = SlotManager::instance()->get_custom_html_blocks();
+		$slot_items                   = $assignments[ $slot_id ] ?? [];
+		$output_bump_ids              = []; // Prevent processing the same bump/test twice per slot.
 		$slot_bump_container_rendered = false; // All order bumps in a slot share one container div.
 
 		usort( $slot_items, fn( $a, $b ) => ( $a['sort_order'] ?? 0 ) - ( $b['sort_order'] ?? 0 ) );

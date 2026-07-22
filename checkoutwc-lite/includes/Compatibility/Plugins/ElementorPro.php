@@ -14,9 +14,9 @@ class ElementorPro extends CompatibilityAbstract {
 	}
 
 	public function pre_init() {
-		add_filter( 'cfw_admin_integrations_checkbox_fields', array( $this, 'admin_integration_settings' ) );
+		add_filter( 'cfw_admin_integrations_checkbox_fields', [ $this, 'admin_integration_settings' ] );
 
-		add_action( 'cfw_permissioned_init', array( $this, 'prevent_thank_you_page_override' ) );
+		add_action( 'cfw_permissioned_init', [ $this, 'prevent_thank_you_page_override' ] );
 	}
 
 	public function prevent_thank_you_page_override() {
@@ -34,7 +34,7 @@ class ElementorPro extends CompatibilityAbstract {
 			return;
 		}
 
-		remove_filter( 'woocommerce_get_endpoint_url', array( $instance, 'get_order_received_endpoint_url' ), 10 );
+		remove_filter( 'woocommerce_get_endpoint_url', [ $instance, 'get_order_received_endpoint_url' ], 10 );
 	}
 
 	public function run() {
@@ -90,12 +90,12 @@ class ElementorPro extends CompatibilityAbstract {
 			return $integrations;
 		}
 
-		$integrations[] = array(
+		$integrations[] = [
 			'name'          => 'enable_elementor_pro_support',
 			'label'         => __( 'Enable Elementor Pro support.', 'checkout-wc' ),
 			'description'   => __( 'Allow Elementor Pro to replace header and footer.', 'checkout-wc' ),
 			'initial_value' => SettingsManager::instance()->get_setting( 'enable_elementor_pro_support' ) === 'yes',
-		);
+		];
 
 		return $integrations;
 	}

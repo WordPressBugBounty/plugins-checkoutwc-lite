@@ -8,48 +8,48 @@ use WP_REST_Server;
 
 class SettingsAPI {
 	public function __construct() {
-		add_action( 'rest_api_init', array( $this, 'register_route' ) );
+		add_action( 'rest_api_init', [ $this, 'register_route' ] );
 	}
 
 	public function register_route() {
 		register_rest_route(
 			'checkoutwc/v1',
 			'setting/(?P<setting_key>[\S]+)',
-			array(
+			[
 				'methods'             => WP_REST_Server::READABLE,
-				'callback'            => array( $this, 'get_setting' ),
-				'permission_callback' => array( $this, 'can_access_settings_api' ),
-			)
+				'callback'            => [ $this, 'get_setting' ],
+				'permission_callback' => [ $this, 'can_access_settings_api' ],
+			]
 		);
 
 		register_rest_route(
 			'checkoutwc/v1',
 			'settings',
-			array(
+			[
 				'methods'             => WP_REST_Server::EDITABLE,
-				'callback'            => array( $this, 'update_multiple_settings' ),
-				'permission_callback' => array( $this, 'can_access_settings_api' ),
-			)
+				'callback'            => [ $this, 'update_multiple_settings' ],
+				'permission_callback' => [ $this, 'can_access_settings_api' ],
+			]
 		);
 
 		register_rest_route(
 			'checkoutwc/v1',
 			'settings',
-			array(
+			[
 				'methods'             => WP_REST_Server::READABLE,
-				'callback'            => array( $this, 'get_multiple_settings' ),
-				'permission_callback' => array( $this, 'can_access_settings_api' ),
-			)
+				'callback'            => [ $this, 'get_multiple_settings' ],
+				'permission_callback' => [ $this, 'can_access_settings_api' ],
+			]
 		);
 
 		register_rest_route(
 			'checkoutwc/v1',
 			'setting/(?P<setting_key>[\S]+)',
-			array(
+			[
 				'methods'             => WP_REST_Server::EDITABLE,
-				'callback'            => array( $this, 'update_setting' ),
-				'permission_callback' => array( $this, 'can_access_settings_api' ),
-			)
+				'callback'            => [ $this, 'update_setting' ],
+				'permission_callback' => [ $this, 'can_access_settings_api' ],
+			]
 		);
 	}
 
@@ -60,30 +60,30 @@ class SettingsAPI {
 			// phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized, WordPress.Security.NonceVerification.Recommended
 			$keys = $this->recursive_sanitize_text_field( wp_unslash( $_GET['keys'] ) );
 		} else {
-			$keys = array();
+			$keys = [];
 		}
 
 		if ( stripos( $key, 'wp_option/' ) === 0 ) {
 			return rest_ensure_response(
-				array(
+				[
 					'key'   => str_replace( 'wp_option/', '', $key ),
 					'value' => get_option( $key ),
-				)
+				]
 			);
 		}
 
 		return rest_ensure_response(
-			array(
+			[
 				'key'   => $key,
 				'value' => SettingsManager::instance()->get_setting( $key, $keys ),
-			)
+			]
 		);
 	}
 
 	public function get_multiple_settings( \WP_REST_Request $request ) {
 		$manager       = SettingsManager::instance();
 		$body          = json_decode( $request->get_body() );
-		$response_data = array();
+		$response_data = [];
 
 		// Check if the 'settings' key exists and is an array
 		if ( ! isset( $body->settings ) ) {
@@ -96,12 +96,12 @@ class SettingsAPI {
 		foreach ( $body->settings as $setting ) {
 			if ( ! isset( $setting->name ) ) {
 				// Skip if the name is not set
-				$response_data[] = array( 'error' => 'Missing name for a setting.' );
+				$response_data[] = [ 'error' => 'Missing name for a setting.' ];
 				continue;
 			}
 
 			$name = $setting->name;
-			$keys = isset( $setting->keys ) ? $this->recursive_sanitize_text_field( $setting->keys ) : array();
+			$keys = isset( $setting->keys ) ? $this->recursive_sanitize_text_field( $setting->keys ) : [];
 
 			if ( stripos( $name, 'wp_option/' ) === 0 ) {
 				$option_name = str_replace( 'wp_option/', '', $name );
@@ -112,16 +112,16 @@ class SettingsAPI {
 
 			// Check if the setting exists
 			if ( is_null( $value ) ) {
-				$response_data[] = array(
+				$response_data[] = [
 					'name'  => $name,
 					'error' => "Setting $name does not exist.",
-				);
+				];
 			} else {
 				// Add the retrieved setting to the response
-				$response_data[] = array(
+				$response_data[] = [
 					'name'  => $name,
 					'value' => $value,
-				);
+				];
 			}
 		}
 
@@ -132,7 +132,7 @@ class SettingsAPI {
 		$manager       = SettingsManager::instance();
 		$key           = $request->get_param( 'setting_key' );
 		$body          = json_decode( $request->get_body() );
-		$response_data = array();
+		$response_data = [];
 
 		if ( ! isset( $body->value ) ) {
 			$response_data['error'] = 'No value provided';
@@ -145,7 +145,7 @@ class SettingsAPI {
 			// phpcs:ignore WordPress.Security.NonceVerification.Recommended
 			$keys = $this->recursive_sanitize_text_field( wc_clean( wp_unslash( $_GET['keys'] ) ) );
 		} else {
-			$keys = array();
+			$keys = [];
 		}
 
 		$value = $this->convert_nested_array_objects_to_arrays( $body->value );
@@ -174,7 +174,7 @@ class SettingsAPI {
 	public function update_multiple_settings( \WP_REST_Request $request ) {
 		$manager       = SettingsManager::instance();
 		$body          = json_decode( $request->get_body() );
-		$response_data = array();
+		$response_data = [];
 
 		// Check if the 'settings' key exists and is an array
 		if ( ! isset( $body->settings ) ) {
@@ -187,13 +187,13 @@ class SettingsAPI {
 		foreach ( $body->settings as $setting ) {
 			if ( ! isset( $setting->name ) || ! isset( $setting->value ) ) {
 				// Skip if key or value is not set
-				$response_data[] = array( 'error' => 'Missing key or value for a setting.' );
+				$response_data[] = [ 'error' => 'Missing key or value for a setting.' ];
 				continue;
 			}
 
 			$name  = $setting->name;
 			$value = $this->convert_nested_array_objects_to_arrays( $setting->value );
-			$keys  = isset( $setting->keys ) ? $this->recursive_sanitize_text_field( $setting->keys ) : array();
+			$keys  = isset( $setting->keys ) ? $this->recursive_sanitize_text_field( $setting->keys ) : [];
 
 			if ( stripos( $name, 'wp_option/' ) === 0 ) {
 				$option_name = str_replace( 'wp_option/', '', $name );
@@ -208,12 +208,12 @@ class SettingsAPI {
 			$success = $this->areEqual( $value, $newValue );
 
 			// Add the update status of each setting to the response
-			$response_data[] = array(
+			$response_data[] = [
 				'name'      => $name,
 				'new_value' => $newValue,
 				'success'   => $success,
 				'error'     => $success ? null : "Unable to update setting_key: $name to value: $value",
-			);
+			];
 		}
 
 		return rest_ensure_response( $response_data );

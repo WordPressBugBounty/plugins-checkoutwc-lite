@@ -25,7 +25,7 @@ class NexcessMU extends CompatibilityAbstract {
 			return;
 		}
 
-		add_action( 'wp_enqueue_scripts', array( $this, 'prevent_disable_fragments' ), 1 );
+		add_action( 'wp_enqueue_scripts', [ $this, 'prevent_disable_fragments' ], 1 );
 	}
 
 	public function prevent_disable_fragments() {
@@ -36,6 +36,6 @@ class NexcessMU extends CompatibilityAbstract {
 			return;
 		}
 
-		remove_action( 'wp_enqueue_scripts', array( $instance, 'dequeueCartFragments' ), 20 );
+		remove_action( 'wp_enqueue_scripts', [ $instance, 'dequeueCartFragments' ], 20 );
 	}
 }

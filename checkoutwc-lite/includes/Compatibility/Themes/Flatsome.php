@@ -20,8 +20,8 @@ class Flatsome extends CompatibilityAbstract {
 
 		remove_action( 'wp_head', 'flatsome_custom_css', 100 );
 
-		add_filter( 'cfw_blocked_style_handles', array( $this, 'allow_swatches_style' ), 100, 1 );
-		add_filter( 'cfw_blocked_script_handles', array( $this, 'allow_swatches_script' ), 100, 1 );
+		add_filter( 'cfw_blocked_style_handles', [ $this, 'allow_swatches_style' ], 100, 1 );
+		add_filter( 'cfw_blocked_script_handles', [ $this, 'allow_swatches_script' ], 100, 1 );
 	}
 
 	public function allow_swatches_style( array $styles ): array {

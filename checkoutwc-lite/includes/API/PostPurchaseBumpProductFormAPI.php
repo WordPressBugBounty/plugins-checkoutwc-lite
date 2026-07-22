@@ -17,7 +17,7 @@ class PostPurchaseBumpProductFormAPI extends ModalOrderBumpProductFormAPI {
 	 * @throws Exception If the bump cannot be retrieved.
 	 */
 	public function get_product_form( WP_REST_Request $data ) {
-		$bump                                  = BumpFactory::get( $data->get_param( 'bump_id' ) );
+		$bump = BumpFactory::get( $data->get_param( 'bump_id' ) );
 		$this->cfw_ob_offer_cancel_button_text = $bump->get_offer_cancel_button_text();
 
 		if ( empty( $this->cfw_ob_offer_cancel_button_text ) ) {
@@ -86,9 +86,9 @@ class PostPurchaseBumpProductFormAPI extends ModalOrderBumpProductFormAPI {
 		</div>
 		<?php
 		return rest_ensure_response(
-			array(
+			[
 				'html' => ob_get_clean(),
-			)
+			]
 		);
 	}
 }

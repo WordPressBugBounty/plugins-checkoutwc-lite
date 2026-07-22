@@ -12,7 +12,7 @@ class Thrive extends CompatibilityAbstract {
 	}
 
 	public function run() {
-		remove_filter( 'woocommerce_checkout_fields', array( Filters::class, 'alter_billing_fields' ) );
-		remove_action( 'wp_enqueue_scripts', array( Hooks::class, 'enqueue_scripts' ), PHP_INT_MAX );
+		remove_filter( 'woocommerce_checkout_fields', [ Filters::class, 'alter_billing_fields' ] );
+		remove_action( 'wp_enqueue_scripts', [ Hooks::class, 'enqueue_scripts' ], PHP_INT_MAX );
 	}
 }

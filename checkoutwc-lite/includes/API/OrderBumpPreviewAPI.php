@@ -19,13 +19,13 @@ class OrderBumpPreviewAPI {
 				register_rest_route(
 					'checkoutwc/v1',
 					'order-bump-modal-preview',
-					array(
+					[
 						'methods'             => 'POST',
-						'callback'            => array( $this, 'get_preview' ),
+						'callback'            => [ $this, 'get_preview' ],
 						'permission_callback' => function () {
 							return current_user_can( 'edit_posts' );
 						},
-					)
+					]
 				);
 			}
 		);
@@ -47,26 +47,26 @@ class OrderBumpPreviewAPI {
 		$offer_cancel_button_text = sanitize_text_field( $request->get_param( 'offer_cancel_button_text' ) );
 
 		// Validate display location
-		if ( ! in_array( $display_location, array( 'complete_order', 'post_purchase_one_click' ), true ) ) {
-			return new \WP_Error( 'invalid_location', __( 'Invalid display location', 'checkout-wc' ), array( 'status' => 400 ) );
+		if ( ! in_array( $display_location, [ 'complete_order', 'post_purchase_one_click' ], true ) ) {
+			return new \WP_Error( 'invalid_location', __( 'Invalid display location', 'checkout-wc' ), [ 'status' => 400 ] );
 		}
 
 		// Get product
 		$product = wc_get_product( $offer_product_id );
 		if ( ! $product ) {
-			return new \WP_Error( 'product_not_found', __( 'Product not found', 'checkout-wc' ), array( 'status' => 404 ) );
+			return new \WP_Error( 'product_not_found', __( 'Product not found', 'checkout-wc' ), [ 'status' => 404 ] );
 		}
 
 		// Create PreviewBump with editor values
 		$preview_bump = new PreviewBump(
-			array(
+			[
 				'display_location'         => $display_location,
 				'offer_heading'            => $offer_heading,
 				'offer_subheading'         => $offer_subheading,
 				'offer_description'        => $offer_description,
 				'offer_language'           => $offer_language,
 				'offer_cancel_button_text' => $offer_cancel_button_text,
-			),
+			],
 			$product
 		);
 
@@ -81,9 +81,9 @@ class OrderBumpPreviewAPI {
 		$html = $this->wrap_product_form( $product_form_html, $preview_bump );
 
 		return rest_ensure_response(
-			array(
+			[
 				'html' => $html,
-			)
+			]
 		);
 	}
 

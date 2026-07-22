@@ -10,14 +10,14 @@ namespace Objectiv\Plugins\Checkout\Managers;
  * @package Objectiv\Plugins\Checkout\Managers
  */
 class PlanManager {
-	const PLAN_HIERARCHY = array(
+	const PLAN_HIERARCHY = [
 		'basic'  => 1,
 		'plus'   => 2,
 		'pro'    => 3,
 		'agency' => 4,
-	);
+	];
 
-	protected static $plan_lookup = array();
+	protected static $plan_lookup = [];
 
 	/**
 	 * Does the user have the required plan?
@@ -129,7 +129,7 @@ class PlanManager {
 			return self::$plan_lookup;
 		}
 
-		$plan_ids = defined( 'CFW_PREMIUM_PLAN_IDS' ) ? CFW_PREMIUM_PLAN_IDS : array();
+		$plan_ids = defined( 'CFW_PREMIUM_PLAN_IDS' ) ? CFW_PREMIUM_PLAN_IDS : [];
 
 		foreach ( $plan_ids as $plan => $ids ) {
 			foreach ( $ids as $id ) {

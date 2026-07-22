@@ -10,7 +10,7 @@ class AmazonPayV1ShippingInfoHelper {
 
 	public function __construct() {
 		if ( class_exists( '\\WC_Amazon_Payments_Advanced_API' ) ) {
-			add_action( 'cfw_amazon_payment_gateway_found', array( $this, 'get_gateway' ), 10, 1 );
+			add_action( 'cfw_amazon_payment_gateway_found', [ $this, 'get_gateway' ], 10, 1 );
 		}
 	}
 
@@ -36,13 +36,13 @@ class AmazonPayV1ShippingInfoHelper {
 	 */
 	public function add_remove_shipping_info_function() {
 		// Remove amazon's store_shipping_info_in_session
-		remove_action( 'woocommerce_checkout_update_order_review', array( $this->gateway, 'store_shipping_info_in_session' ), 10 );
+		remove_action( 'woocommerce_checkout_update_order_review', [ $this->gateway, 'store_shipping_info_in_session' ], 10 );
 
 		// Add ours
-		add_action( 'woocommerce_checkout_update_order_review', array( $this, 'store_shipping_info_in_session' ) );
+		add_action( 'woocommerce_checkout_update_order_review', [ $this, 'store_shipping_info_in_session' ] );
 
 		// Disable payment method refresh
-		add_action( 'woocommerce_checkout_update_order_review', array( $this, 'disable_refresh' ) );
+		add_action( 'woocommerce_checkout_update_order_review', [ $this, 'disable_refresh' ] );
 	}
 
 	/**
@@ -73,7 +73,7 @@ class AmazonPayV1ShippingInfoHelper {
 		$address = $this->normalize_address( $address );
 		// @codingStandardsIgnoreEnd
 
-		foreach ( array( 'first_name', 'last_name', 'address_1', 'address_2', 'country', 'state', 'postcode', 'city' ) as $field ) {
+		foreach ( [ 'first_name', 'last_name', 'address_1', 'address_2', 'country', 'state', 'postcode', 'city' ] as $field ) {
 			if ( ! isset( $address[ $field ] ) ) {
 				continue;
 			}
@@ -155,11 +155,11 @@ class AmazonPayV1ShippingInfoHelper {
 	 * @since 1.7.0
 	 */
 	private function set_customer_info( string $setter_suffix, $value ) {
-		$setter             = array( WC()->customer, 'set_' . $setter_suffix );
+		$setter             = [ WC()->customer, 'set_' . $setter_suffix ];
 		$is_shipping_setter = strpos( $setter_suffix, 'shipping_' ) !== false;
 
 		if ( version_compare( WC_VERSION, '3.0', '>=' ) && ! $is_shipping_setter ) {
-			$setter = array( WC()->customer, 'set_billing_' . $setter_suffix );
+			$setter = [ WC()->customer, 'set_billing_' . $setter_suffix ];
 		}
 
 		call_user_func( $setter, $value );

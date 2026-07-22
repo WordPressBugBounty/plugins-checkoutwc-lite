@@ -10,7 +10,7 @@ class MixPanel extends CompatibilityAbstract {
 	}
 
 	public function run() {
-		add_action( 'cfw_wp_head', array( $this, 'mixpanel_head' ), 31 ); // 31 is after init_block, which injects header scripts / styles
+		add_action( 'cfw_wp_head', [ $this, 'mixpanel_head' ], 31 ); // 31 is after init_block, which injects header scripts / styles
 	}
 
 	public function mixpanel_head() {

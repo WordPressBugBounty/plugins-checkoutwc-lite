@@ -30,7 +30,7 @@ class Redirect extends LoaderAbstract {
 			// Setup checkout
 			$global_template_parameters = self::init_checkout();
 
-			add_action( 'wp_head', array( '\Objectiv\Plugins\Checkout\Loaders\Redirect', 'custom_styles' ), 5, 5 ); // print styles happens at priority 8
+			add_action( 'wp_head', [ '\Objectiv\Plugins\Checkout\Loaders\Redirect', 'custom_styles' ], 5, 5 ); // print styles happens at priority 8
 
 			self::suppress_errors();
 			self::disable_caching();
@@ -38,7 +38,7 @@ class Redirect extends LoaderAbstract {
 			self::hook_cfw_wp_head();
 			self::hook_cfw_wp_footer();
 
-			$css_classes = cfw_apply_filters( 'body_class', array( 'checkout-wc', 'woocommerce', 'woocommerce-checkout', cfw_get_active_template()->get_slug() ), array() );
+			$css_classes = cfw_apply_filters( 'body_class', [ 'checkout-wc', 'woocommerce', 'woocommerce-checkout', cfw_get_active_template()->get_slug() ], [] );
 
 			if ( ! cfw_show_shipping_tab() ) {
 				$css_classes[] = 'cfw-hide-shipping';
@@ -85,7 +85,7 @@ class Redirect extends LoaderAbstract {
 				return;
 			}
 
-			add_action( 'wp_head', array( '\Objectiv\Plugins\Checkout\Loaders\Redirect', 'custom_styles' ), 5, 5 ); // print styles happens at priority 8
+			add_action( 'wp_head', [ '\Objectiv\Plugins\Checkout\Loaders\Redirect', 'custom_styles' ], 5, 5 ); // print styles happens at priority 8
 
 			self::suppress_errors();
 			self::disable_caching();
@@ -93,7 +93,7 @@ class Redirect extends LoaderAbstract {
 			self::hook_cfw_wp_head();
 			self::hook_cfw_wp_footer();
 
-			$css_classes = array( 'checkout-wc', 'woocommerce', 'woocommerce-checkout', cfw_get_active_template()->get_slug() );
+			$css_classes = [ 'checkout-wc', 'woocommerce', 'woocommerce-checkout', cfw_get_active_template()->get_slug() ];
 
 			/**
 			 * Filter CheckoutWC specific body classes
@@ -139,7 +139,7 @@ class Redirect extends LoaderAbstract {
 				return; // prevent PHP warnings
 			}
 
-			add_action( 'wp_head', array( '\Objectiv\Plugins\Checkout\Loaders\Redirect', 'custom_styles' ), 5, 5 ); // print styles happens at priority 8
+			add_action( 'wp_head', [ '\Objectiv\Plugins\Checkout\Loaders\Redirect', 'custom_styles' ], 5, 5 ); // print styles happens at priority 8
 
 			self::suppress_errors();
 			self::disable_caching();
@@ -147,7 +147,7 @@ class Redirect extends LoaderAbstract {
 			self::hook_cfw_wp_head();
 			self::hook_cfw_wp_footer();
 
-			$css_classes = array( 'checkout-wc', 'woocommerce', cfw_get_active_template()->get_slug() );
+			$css_classes = [ 'checkout-wc', 'woocommerce', cfw_get_active_template()->get_slug() ];
 
 			/**
 			 * Filter CheckoutWC specific body classes
@@ -254,7 +254,7 @@ class Redirect extends LoaderAbstract {
 		 *
 		 * @param array $blocked_style_handles The blocked stylesheet handles
 		 */
-		$blocked_style_handles = apply_filters( 'cfw_blocked_style_handles', array() );
+		$blocked_style_handles = apply_filters( 'cfw_blocked_style_handles', [] );
 
 		foreach ( $blocked_style_handles as $blocked_style_handle ) {
 			wp_dequeue_style( $blocked_style_handle );
@@ -273,7 +273,7 @@ class Redirect extends LoaderAbstract {
 		 *
 		 * @param array $blocked_script_handles The blocked script handles
 		 */
-		$blocked_script_handles = apply_filters( 'cfw_blocked_script_handles', array() );
+		$blocked_script_handles = apply_filters( 'cfw_blocked_script_handles', [] );
 
 		foreach ( $blocked_script_handles as $blocked_script_handle ) {
 			wp_dequeue_script( $blocked_script_handle );
@@ -334,25 +334,25 @@ class Redirect extends LoaderAbstract {
 	 * Do this at wp_head as well as wp_enqueue_scripts. This gives us two chances to win.
 	 */
 	public static function suppress_assets() {
-		add_action( 'wp_head', array( '\Objectiv\Plugins\Checkout\Loaders\Redirect', 'remove_styles' ), 1 );
-		add_action( 'wp_head', array( '\Objectiv\Plugins\Checkout\Loaders\Redirect', 'remove_scripts' ), 1 );
-		add_action( 'wp_enqueue_scripts', array( '\Objectiv\Plugins\Checkout\Loaders\Redirect', 'remove_styles' ), 100000 );
-		add_action( 'wp_enqueue_scripts', array( '\Objectiv\Plugins\Checkout\Loaders\Redirect', 'remove_scripts' ), 100000 );
-		add_action( 'wp_footer', array( '\Objectiv\Plugins\Checkout\Loaders\Redirect', 'remove_styles' ), 19 ); // 20 is when footer scripts are output
-		add_action( 'wp_footer', array( '\Objectiv\Plugins\Checkout\Loaders\Redirect', 'remove_scripts' ), 19 ); // 20 is when footer scripts are output
+		add_action( 'wp_head', [ '\Objectiv\Plugins\Checkout\Loaders\Redirect', 'remove_styles' ], 1 );
+		add_action( 'wp_head', [ '\Objectiv\Plugins\Checkout\Loaders\Redirect', 'remove_scripts' ], 1 );
+		add_action( 'wp_enqueue_scripts', [ '\Objectiv\Plugins\Checkout\Loaders\Redirect', 'remove_styles' ], 100000 );
+		add_action( 'wp_enqueue_scripts', [ '\Objectiv\Plugins\Checkout\Loaders\Redirect', 'remove_scripts' ], 100000 );
+		add_action( 'wp_footer', [ '\Objectiv\Plugins\Checkout\Loaders\Redirect', 'remove_styles' ], 19 ); // 20 is when footer scripts are output
+		add_action( 'wp_footer', [ '\Objectiv\Plugins\Checkout\Loaders\Redirect', 'remove_scripts' ], 19 ); // 20 is when footer scripts are output
 	}
 
 	/**
 	 * Setup cfw_wp_head actions
 	 */
 	public static function hook_cfw_wp_head() {
-		add_action( 'cfw_wp_head', array( '\Objectiv\Plugins\Checkout\Loaders\Redirect', 'output_meta_tags' ), 10, 4 );
-		add_action( 'cfw_wp_head', array( '\Objectiv\Plugins\Checkout\Loaders\Redirect', 'output_custom_header_scripts' ), 20, 4 );
-		add_action( 'cfw_wp_head', array( '\Objectiv\Plugins\Checkout\Loaders\Redirect', 'output_page_title' ), 30, 4 );
+		add_action( 'cfw_wp_head', [ '\Objectiv\Plugins\Checkout\Loaders\Redirect', 'output_meta_tags' ], 10, 4 );
+		add_action( 'cfw_wp_head', [ '\Objectiv\Plugins\Checkout\Loaders\Redirect', 'output_custom_header_scripts' ], 20, 4 );
+		add_action( 'cfw_wp_head', [ '\Objectiv\Plugins\Checkout\Loaders\Redirect', 'output_page_title' ], 30, 4 );
 	}
 
 	public static function hook_cfw_wp_footer() {
-		add_action( 'cfw_wp_footer', array( 'Objectiv\Plugins\Checkout\Loaders\Redirect', 'output_custom_footer_scripts' ) );
+		add_action( 'cfw_wp_footer', [ 'Objectiv\Plugins\Checkout\Loaders\Redirect', 'output_custom_footer_scripts' ] );
 	}
 
 	/**

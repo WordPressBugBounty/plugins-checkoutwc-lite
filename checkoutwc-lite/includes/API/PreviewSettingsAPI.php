@@ -6,25 +6,25 @@ use WP_REST_Server;
 
 class PreviewSettingsAPI {
 	public function __construct() {
-		add_action( 'rest_api_init', array( $this, 'register_routes' ) );
+		add_action( 'rest_api_init', [ $this, 'register_routes' ] );
 	}
 
 	public function register_routes() {
 		register_rest_route(
 			'checkoutwc/v1',
 			'preview-settings',
-			array(
-				array(
+			[
+				[
 					'methods'             => WP_REST_Server::EDITABLE,
-					'callback'            => array( $this, 'store_preview_settings' ),
-					'permission_callback' => array( $this, 'can_manage' ),
-				),
-				array(
+					'callback'            => [ $this, 'store_preview_settings' ],
+					'permission_callback' => [ $this, 'can_manage' ],
+				],
+				[
 					'methods'             => WP_REST_Server::DELETABLE,
-					'callback'            => array( $this, 'clear_preview_settings' ),
-					'permission_callback' => array( $this, 'can_manage' ),
-				),
-			)
+					'callback'            => [ $this, 'clear_preview_settings' ],
+					'permission_callback' => [ $this, 'can_manage' ],
+				],
+			]
 		);
 	}
 
@@ -34,7 +34,7 @@ class PreviewSettingsAPI {
 
 		set_transient( '_cfw_editor_preview_' . $user_id, $settings, 30 * MINUTE_IN_SECONDS );
 
-		return rest_ensure_response( array( 'success' => true ) );
+		return rest_ensure_response( [ 'success' => true ] );
 	}
 
 	public function clear_preview_settings() {
@@ -42,7 +42,7 @@ class PreviewSettingsAPI {
 
 		delete_transient( '_cfw_editor_preview_' . $user_id );
 
-		return rest_ensure_response( array( 'success' => true ) );
+		return rest_ensure_response( [ 'success' => true ] );
 	}
 
 	public function can_manage(): bool {

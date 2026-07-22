@@ -5,29 +5,29 @@ namespace Objectiv\Plugins\Checkout\Compatibility\Plugins;
 use Objectiv\Plugins\Checkout\Compatibility\CompatibilityAbstract;
 
 class WooFunnelsOrderBumps extends CompatibilityAbstract {
-	private $positions = array(
-		'cfw_woocommerce_checkout_order_review_above_payment_gateway' => array(
+	private $positions = [
+		'cfw_woocommerce_checkout_order_review_above_payment_gateway' => [
 			'name'     => 'CheckoutWC: Above The Payment Gateways',
 			'hook'     => 'cfw_checkout_payment_method_tab',
 			'priority' => 7,
 			'id'       => 'cfw_woocommerce_checkout_order_review_above_payment_gateway',
-		),
-		'cfw_woocommerce_checkout_order_review_below_payment_gateway' => array(
+		],
+		'cfw_woocommerce_checkout_order_review_below_payment_gateway' => [
 			'name'     => 'CheckoutWC: Below The Payment Gateways',
 			'hook'     => 'cfw_checkout_payment_method_tab',
 			'priority' => 12,
 			'id'       => 'cfw_woocommerce_checkout_order_review_below_payment_gateway',
-		),
-	);
+		],
+	];
 
 	public function is_available(): bool {
 		return function_exists( 'WFOB_Core' );
 	}
 
 	public function pre_init() {
-		add_filter( 'wfob_bump_positions', array( $this, 'add_cfw_positions' ) );
-		add_action( 'wfob_position_not_found', array( $this, 'position_not_found' ), 10, 2 );
-		add_action( 'wfob_position_fragment_not_found', array( $this, 'position_fragment_not_found' ), 10, 2 );
+		add_filter( 'wfob_bump_positions', [ $this, 'add_cfw_positions' ] );
+		add_action( 'wfob_position_not_found', [ $this, 'position_not_found' ], 10, 2 );
+		add_action( 'wfob_position_fragment_not_found', [ $this, 'position_fragment_not_found' ], 10, 2 );
 	}
 
 	public function run() {
@@ -47,20 +47,20 @@ class WooFunnelsOrderBumps extends CompatibilityAbstract {
 	}
 
 	public function typescript_class_and_params( array $compatibility ): array {
-		$compatibility[] = array(
+		$compatibility[] = [
 			'class'  => 'WooFunnelsOrderBumps',
-			'params' => array(),
-		);
+			'params' => [],
+		];
 
 		return $compatibility;
 	}
 
 	public function position_not_found( $position_id, $position ) {
-		add_action( $position['hook'], array( $this, $position_id ), $position['priority'] );
+		add_action( $position['hook'], [ $this, $position_id ], $position['priority'] );
 	}
 
 	public function position_fragment_not_found( $position_id, $position ) {
-		add_action( 'woocommerce_update_order_review_fragments', array( $this, $position_id . '_frg' ), $position['priority'] );
+		add_action( 'woocommerce_update_order_review_fragments', [ $this, $position_id . '_frg' ], $position['priority'] );
 	}
 
 	public function cfw_woocommerce_checkout_order_review_above_payment_gateway() {
@@ -107,8 +107,8 @@ class WooFunnelsOrderBumps extends CompatibilityAbstract {
 
 		ob_start();
 		$bumps          = \WFOB_Bump_Fc::get_bumps();
-		$shown_bump_ids = array();
-		WC()->session->set( 'wfob_no_of_bump_shown', array() );
+		$shown_bump_ids = [];
+		WC()->session->set( 'wfob_no_of_bump_shown', [] );
 		if ( count( $bumps ) > 0 ) {
 			foreach ( $bumps as $bump_id => $bump ) {
 				$shown_bump_ids[] = $bump_id;

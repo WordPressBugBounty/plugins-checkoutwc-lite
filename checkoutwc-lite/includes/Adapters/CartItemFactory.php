@@ -8,7 +8,7 @@ use WC_Cart;
 
 class CartItemFactory {
 	public static function get( WC_Cart $cart ): array {
-		$items = array();
+		$items = [];
 
 		foreach ( $cart->get_cart() as $key => $item ) {
 			// Some of our callbacks rely on cart_item_key being a string

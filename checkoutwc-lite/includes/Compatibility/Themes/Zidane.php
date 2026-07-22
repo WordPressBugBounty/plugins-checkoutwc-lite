@@ -12,6 +12,6 @@ class Zidane extends CompatibilityAbstract {
 	public function run() {
 		$zidane_framework = zidane_framework();
 
-		remove_action( 'wp_footer', array( $zidane_framework, 'init_javascript' ) );
+		remove_action( 'wp_footer', [ $zidane_framework, 'init_javascript' ] );
 	}
 }

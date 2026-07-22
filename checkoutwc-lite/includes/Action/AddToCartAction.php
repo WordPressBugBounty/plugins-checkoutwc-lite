@@ -44,7 +44,7 @@ class AddToCartAction extends CFWAction {
 		}
 
 		$this->out(
-			array(
+			[
 				'result'    => $result,
 				'cart_hash' => WC()->cart->get_cart_hash(),
 				'data'      => AssetManager::get_data(),
@@ -55,7 +55,7 @@ class AddToCartAction extends CFWAction {
 				 * @since 7.3.0
 				 */
 				'redirect'  => apply_filters( 'cfw_add_to_cart_redirect', $redirect, $product_id ),
-			)
+			]
 		);
 	}
 }

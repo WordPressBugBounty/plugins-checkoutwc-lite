@@ -15,9 +15,9 @@ class ValidatePostcodeAction extends CFWAction {
 	public function action() {
 		if ( empty( $_POST['postcode'] ) || empty( $_POST['country'] ) ) { // phpcs:ignore WordPress.Security.NonceVerification.Missing
 			$this->out(
-				array(
+				[
 					'message' => 'Invalid postcode validation request. Must include postcode and country.',
-				),
+				],
 				202 // I was a teapot, but now I'm just a noncommittal response
 			);
 		}
@@ -28,10 +28,10 @@ class ValidatePostcodeAction extends CFWAction {
 		$valid = \WC_Validation::is_postcode( trim( $postcode ), $country );
 
 		$this->out(
-			array(
+			[
 				// translators: %s is the postcode field label
 				'message' => $valid ? '' : __( 'Please enter a valid %s.', 'checkout-wc' ),
-			),
+			],
 			$valid ? 200 : 400
 		);
 	}

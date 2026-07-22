@@ -14,7 +14,7 @@ class Weglot extends CompatibilityAbstract {
 		// Weglot uses output buffering that runs afoul of our error prevention strategies
 		wc_maybe_define_constant( 'CFW_ACTION_NO_ERROR_SUPPRESSION_BUFFER', true );
 
-		add_filter( 'cfw_parsley_locale', array( $this, 'override_parsley_locale' ) );
+		add_filter( 'cfw_parsley_locale', [ $this, 'override_parsley_locale' ] );
 	}
 
 	public function override_parsley_locale( $locale ) {

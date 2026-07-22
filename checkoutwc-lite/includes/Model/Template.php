@@ -21,7 +21,7 @@ class Template {
 	private $author               = '';
 	private $authoruri            = '';
 	private $version              = '';
-	private $supports             = array();
+	private $supports             = [];
 	private $slug                 = '';
 
 	/**
@@ -29,14 +29,14 @@ class Template {
 	 * @static
 	 * @var array $default_headers
 	 */
-	public static $default_headers = array(
+	public static $default_headers = [
 		'Name'        => 'Template Name',
 		'Description' => 'Description',
 		'Author'      => 'Author',
 		'AuthorURI'   => 'Author URI',
 		'Version'     => 'Version',
 		'Supports'    => 'Supports',
-	);
+	];
 
 	/**
 	 * Template constructor.
@@ -75,7 +75,7 @@ class Template {
 			$data = get_file_data( $stylesheet_path, self::$default_headers );
 
 			$data['Name']     = ( '' === $data['Name'] ) ? ucfirst( basename( $this->get_basepath() ) ) : $data['Name'];
-			$data['Supports'] = isset( $data['Supports'] ) ? explode( ', ', $data['Supports'] ) : array();
+			$data['Supports'] = isset( $data['Supports'] ) ? explode( ', ', $data['Supports'] ) : [];
 
 			foreach ( $data as $key => $value ) {
 				$key          = str_replace( ' ', '_', $key );
@@ -123,9 +123,9 @@ class Template {
 
 		foreach ( $defaults as $setting => $value ) {
 			if ( defined( 'CFW_FORCE_TEMPLATE_RESET' ) ) {
-				$settings_manager->update_setting( $setting, $value, array( $this->get_slug() ) );
+				$settings_manager->update_setting( $setting, $value, [ $this->get_slug() ] );
 			} else {
-				$settings_manager->add_setting( $setting, $value, array( $this->get_slug() ) );
+				$settings_manager->add_setting( $setting, $value, [ $this->get_slug() ] );
 			}
 		}
 
@@ -166,7 +166,7 @@ class Template {
 	 * @return string[]
 	 */
 	public function get_standard_default_settings(): array {
-		return array(
+		return [
 			'body_background_color'             => '#ffffff',
 			'body_text_color'                   => '#333333',
 			'header_background_color'           => '#ffffff',
@@ -194,10 +194,10 @@ class Template {
 			'breadcrumb_completed_accent_color' => '#333333',
 			'breadcrumb_current_accent_color'   => '#333333',
 			'breadcrumb_next_accent_color'      => '#333333',
-		);
+		];
 	}
 
-	public function view( $filename, $parameters = array() ) {
+	public function view( $filename, $parameters = [] ) {
 		$filename_with_basepath = trailingslashit( $this->get_basepath() ) . $filename;
 		$template_name          = $this->get_slug();
 		$template_piece_name    = basename( $filename, '.php' );
@@ -342,7 +342,7 @@ class Template {
 	}
 
 	public static function get_all_available(): array {
-		$templates = array();
+		$templates = [];
 
 		foreach ( glob( trailingslashit( cfw_get_plugin_template_path() ) . '*', GLOB_ONLYDIR ) as $template ) {
 			$templates[ basename( $template ) ] = new self( basename( $template ) );
@@ -371,10 +371,10 @@ class Template {
 					if ( is_readable( $asset_file_path ) ) {
 						$asset_file = include $asset_file_path;
 					} else {
-						$asset_file = array(
+						$asset_file = [
 							'version'      => '1.0.0',
-							'dependencies' => array( 'jquery' ),
-						);
+							'dependencies' => [ 'jquery' ],
+						];
 					}
 
 					$url = $template->get_template_uri() . '/build/style-index.css';
@@ -384,7 +384,7 @@ class Template {
 					}
 
 					// Register styles & scripts.
-					wp_enqueue_style( 'cfw_front_template_css', $url, array(), $asset_file['version'] );
+					wp_enqueue_style( 'cfw_front_template_css', $url, [], $asset_file['version'] );
 					wp_enqueue_script( 'wc-checkout', $template->get_template_uri() . '/build/index.js', $asset_file['dependencies'], $asset_file['version'], true );
 				}
 			);
@@ -400,8 +400,8 @@ class Template {
 			function () use ( $template ) {
 				$min = ( ! CFW_DEV_MODE ) ? '.min' : '';
 
-				wp_enqueue_style( 'cfw_front_template_css', $template->get_template_uri() . "/style{$min}.css", array(), CFW_VERSION );
-				wp_enqueue_script( 'wc-checkout', $template->get_template_uri() . "/theme{$min}.js", array( 'jquery' ), CFW_VERSION, true );
+				wp_enqueue_style( 'cfw_front_template_css', $template->get_template_uri() . "/style{$min}.css", [], CFW_VERSION );
+				wp_enqueue_script( 'wc-checkout', $template->get_template_uri() . "/theme{$min}.js", [ 'jquery' ], CFW_VERSION, true );
 			}
 		);
 	}

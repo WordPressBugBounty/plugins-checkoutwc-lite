@@ -8,24 +8,24 @@ use WC_Cart;
 
 class WPCProductBundles extends CompatibilityAbstract {
 
-	private $bundle_bump_data = array();
+	private $bundle_bump_data = [];
 
 	public function is_available(): bool {
 		return function_exists( 'woosb_init' );
 	}
 
 	public function run_immediately() {
-		add_filter( 'woocommerce_checkout_cart_item_quantity', array( $this, 'hide_quantity_dropdown' ), 100, 2 );
+		add_filter( 'woocommerce_checkout_cart_item_quantity', [ $this, 'hide_quantity_dropdown' ], 100, 2 );
 
 		// Add filter to determine if cart items should be skipped in sync_bump_cart_prices
-		add_filter( 'cfw_skip_bump_cart_item_pricing', array( $this, 'skip_wpc_bundle_pricing' ), 10, 2 );
+		add_filter( 'cfw_skip_bump_cart_item_pricing', [ $this, 'skip_wpc_bundle_pricing' ], 10, 2 );
 
 		// Skip discount HTML for WPC bundles to prevent double discount display
-		add_filter( 'cfw_skip_bump_cart_item_discount_html', array( $this, 'skip_wpc_bundle_pricing' ), 10, 2 );
+		add_filter( 'cfw_skip_bump_cart_item_discount_html', [ $this, 'skip_wpc_bundle_pricing' ], 10, 2 );
 
 		// Handle WPC bundle pricing for order bumps
-		add_action( 'woocommerce_before_calculate_totals', array( $this, 'store_bundle_bump_data' ), 50000 );
-		add_filter( 'woosb_bundles_price', array( $this, 'apply_bundle_bump_discount' ), 10, 2 );
+		add_action( 'woocommerce_before_calculate_totals', [ $this, 'store_bundle_bump_data' ], 50000 );
+		add_filter( 'woosb_bundles_price', [ $this, 'apply_bundle_bump_discount' ], 10, 2 );
 	}
 
 	public function hide_quantity_dropdown( $quantity, $cart_item ) {
@@ -78,7 +78,7 @@ class WPCProductBundles extends CompatibilityAbstract {
 
 			// Store the discount amount for this bundle
 			if ( $original_price > 0 ) {
-				$discount_amount                          = $original_price - $bump_price;
+				$discount_amount = $original_price - $bump_price;
 				$this->bundle_bump_data[ $cart_item_key ] = $discount_amount;
 			}
 		}

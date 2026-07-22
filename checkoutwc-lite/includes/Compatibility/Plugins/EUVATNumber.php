@@ -10,7 +10,7 @@ class EUVATNumber extends CompatibilityAbstract {
 	}
 
 	public function run() {
-		add_filter( 'woocommerce_form_field_args', array( $this, 'maybe_change_placeholder' ), 10, 2 );
+		add_filter( 'woocommerce_form_field_args', [ $this, 'maybe_change_placeholder' ], 10, 2 );
 	}
 
 	public function maybe_change_placeholder( $field, $key ) {
@@ -22,10 +22,10 @@ class EUVATNumber extends CompatibilityAbstract {
 	}
 
 	public function typescript_class_and_params( array $compatibility ): array {
-		$compatibility[] = array(
+		$compatibility[] = [
 			'class'  => 'EUVatNumber',
-			'params' => array(),
-		);
+			'params' => [],
+		];
 
 		return $compatibility;
 	}

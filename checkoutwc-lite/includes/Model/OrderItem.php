@@ -36,10 +36,10 @@ class OrderItem implements ItemInterface {
 		 * @param WC_Order_Item $item The order item
 		 * @since 7.2.1
 		 */
-		$this->thumbnail = apply_filters( 'cfw_order_item_thumbnail', $item_product ? $item_product->get_image( 'cfw_cart_thumb' ) : '', $item );
-		$this->quantity  = $item->get_quantity();
-		$this->title     = $item->get_name();
-		$this->url       = $item_product ? get_permalink( $item->get_product_id() ) : '';
+		$this->thumbnail    = apply_filters( 'cfw_order_item_thumbnail', $item_product ? $item_product->get_image( 'cfw_cart_thumb' ) : '', $item );
+		$this->quantity     = $item->get_quantity();
+		$this->title        = $item->get_name();
+		$this->url          = $item_product ? get_permalink( $item->get_product_id() ) : '';
 		$this->subtotal     = ! empty( $item_subtotal ) ? $item_subtotal : wc_price( $item->get_subtotal() );
 		$this->subtotal_raw = (float) $item->get_subtotal();
 		/**
@@ -102,7 +102,7 @@ class OrderItem implements ItemInterface {
 	}
 
 	public function get_data(): array {
-		return $this->data ?? array();
+		return $this->data ?? [];
 	}
 
 	public function get_formatted_data(): string {
@@ -110,7 +110,7 @@ class OrderItem implements ItemInterface {
 	}
 
 	protected function get_order_item_data( WC_Order_Item $item ): array {
-		$data = array();
+		$data = [];
 
 		foreach ( $item->get_formatted_meta_data() as $meta ) {
 			$data[ $meta->display_key ] = $meta->display_value;
@@ -128,7 +128,7 @@ class OrderItem implements ItemInterface {
 		 * @since 7.2.1
 		 */
 		if ( apply_filters( 'cfw_cart_item_data_expanded', SettingsManager::instance()->get_setting( 'cart_item_data_display' ) === 'woocommerce' ) ) {
-			return wc_display_item_meta( $this->get_raw_item(), array( 'echo' => false ) );
+			return wc_display_item_meta( $this->get_raw_item(), [ 'echo' => false ] );
 		}
 
 		$item_data = $this->get_data();
@@ -137,7 +137,7 @@ class OrderItem implements ItemInterface {
 			return '';
 		}
 
-		$display_outputs = array();
+		$display_outputs = [];
 
 		foreach ( $item_data as $raw_key => $raw_value ) {
 			$key               = wp_kses_post( $raw_key );

@@ -13,7 +13,7 @@ class WooCommercePayPalPayments extends CompatibilityAbstract {
 	}
 
 	public function pre_init() {
-		add_filter( 'cfw_is_checkout', array( $this, 'is_checkout' ) );
+		add_filter( 'cfw_is_checkout', [ $this, 'is_checkout' ] );
 
 		if ( ! $this->is_available() ) {
 			return;

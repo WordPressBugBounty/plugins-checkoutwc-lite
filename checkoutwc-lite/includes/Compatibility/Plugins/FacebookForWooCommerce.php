@@ -14,7 +14,7 @@ class FacebookForWooCommerce extends CompatibilityAbstract {
 
 		foreach ( $integrations as $integration ) {
 			if ( is_a( $integration, '\\WC_Facebookcommerce_Integration' ) && ! empty( $integration->events_tracker ) ) {
-				add_action( 'cfw_checkout_after_form', array( $integration->events_tracker, 'inject_initiate_checkout_event' ) );
+				add_action( 'cfw_checkout_after_form', [ $integration->events_tracker, 'inject_initiate_checkout_event' ] );
 			}
 		}
 	}

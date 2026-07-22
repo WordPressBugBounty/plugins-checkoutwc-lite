@@ -13,7 +13,7 @@ class Reviewbird extends CompatibilityAbstract {
 	}
 
 	public function run_immediately() {
-		add_filter( 'cfw_wc_review_badges', array( $this, 'provide_reviewbird_badges' ), 10, 5 );
+		add_filter( 'cfw_wc_review_badges', [ $this, 'provide_reviewbird_badges' ], 10, 5 );
 	}
 
 	/**
@@ -35,31 +35,31 @@ class Reviewbird extends CompatibilityAbstract {
 		}
 
 		// Convert reviewbird reviews to badge format (matches WC review badge format exactly)
-		$reviewbird_badges = array();
+		$reviewbird_badges = [];
 
 		foreach ( $reviews as $review ) {
 			$author_name = $review['author']['name'] ?? 'Anonymous';
 			$product     = isset( $review['product_id'] ) ? wc_get_product( $review['product_id'] ) : null;
 			$is_verified = ! empty( $review['verified_purchase'] );
 
-			$badge_data = array(
+			$badge_data = [
 				'id'          => 'wc_review_' . $review['id'],
 				'template'    => 'review',
 				'title'       => $author_name,
 				'subtitle'    => $this->format_review_subtitle( (int) $review['rating'], $product, $is_verified ),
 				'description' => wp_trim_words( $review['body'] ?? '', 25 ),
 				'mode'        => 'text',
-			);
+			];
 
 			$avatar_url = get_avatar_url(
 				$review['author']['email_hash'] . '@md5.gravatar.com',
-				array(
+				[
 					'size'    => 64,
 					'default' => '404',
-				)
+				]
 			);
 			if ( $this->gravatar_exists( $avatar_url ) ) {
-				$badge_data['image'] = array( 'url' => $avatar_url );
+				$badge_data['image'] = [ 'url' => $avatar_url ];
 			}
 
 			$reviewbird_badges[] = $badge_data;
@@ -86,17 +86,17 @@ class Reviewbird extends CompatibilityAbstract {
 			return $cached;
 		}
 
-		$args = array(
+		$args = [
 			'sort'   => 'rating_high',
 			'rating' => $min_rating,
-		);
+		];
 
 		// Early return for cart_only with empty cart - no need to cache this
 		if ( 'cart_only' === $source && empty( $cart_product_ids ) ) {
-			return array();
+			return [];
 		}
 
-		$reviews = array();
+		$reviews = [];
 
 		if ( 'cart_only' === $source ) {
 			$response = reviewbird_get_product_reviews( $cart_product_ids, $limit, $args );
@@ -109,7 +109,7 @@ class Reviewbird extends CompatibilityAbstract {
 
 			// Fill remaining with sitewide reviews
 			if ( count( $reviews ) < $limit ) {
-				$response = reviewbird_get_product_reviews( array(), $limit, $args );
+				$response = reviewbird_get_product_reviews( [], $limit, $args );
 				$sitewide = $this->extract_reviews( $response );
 
 				$existing_ids = array_column( $reviews, 'id' );
@@ -124,7 +124,7 @@ class Reviewbird extends CompatibilityAbstract {
 			}
 		} else {
 			// Sitewide
-			$response = reviewbird_get_product_reviews( array(), $limit, $args );
+			$response = reviewbird_get_product_reviews( [], $limit, $args );
 			$reviews  = $this->extract_reviews( $response );
 		}
 
@@ -140,7 +140,7 @@ class Reviewbird extends CompatibilityAbstract {
 	 */
 	private function extract_reviews( $response ): array {
 		if ( is_wp_error( $response ) || empty( $response['reviews'] ) ) {
-			return array();
+			return [];
 		}
 		return $response['reviews'];
 	}

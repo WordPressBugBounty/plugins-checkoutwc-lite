@@ -20,13 +20,13 @@ class ConvertKitforWooCommerce extends CompatibilityAbstract {
 		$this->plugin_instance = cfw_get_hook_instance_object( 'woocommerce_checkout_fields', 'add_opt_in_checkbox' );
 
 		if ( $this->plugin_instance ) {
-			remove_filter( 'woocommerce_checkout_fields', array( $instance, 'add_opt_in_checkbox' ) );
-			add_action( 'woocommerce_after_checkout_billing_form', array( $this, 'output_convertkit_checkbox' ) );
+			remove_filter( 'woocommerce_checkout_fields', [ $instance, 'add_opt_in_checkbox' ] );
+			add_action( 'woocommerce_after_checkout_billing_form', [ $this, 'output_convertkit_checkbox' ] );
 		}
 	}
 
 	public function output_convertkit_checkbox() {
-		$field = $this->plugin_instance->add_opt_in_checkbox( array() );
+		$field = $this->plugin_instance->add_opt_in_checkbox( [] );
 
 		woocommerce_form_field( 'ckwc_opt_in', $field['billing']['ckwc_opt_in'] );
 	}

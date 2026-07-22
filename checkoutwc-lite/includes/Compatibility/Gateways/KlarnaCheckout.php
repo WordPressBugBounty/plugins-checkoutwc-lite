@@ -44,20 +44,20 @@ class KlarnaCheckout extends CompatibilityAbstract {
 	}
 
 	public function typescript_class_and_params( array $compatibility ): array {
-		$compatibility[] = array(
+		$compatibility[] = [
 			'class'  => 'KlarnaCheckout',
 			'event'  => 'before-setup',
-			'params' => array(
+			'params' => [
 				'showEasyTabs' => ! $this->is_klarna_payment_selected(),
-			),
-		);
+			],
+		];
 
 		return $compatibility;
 	}
 
 	public function run_immediately() {
 		if ( $this->is_klarna_payment_selected() ) {
-			add_filter( 'woocommerce_checkout_fields', array( $this, 'unrequire_shipping_phone' ), 100000, 1 );
+			add_filter( 'woocommerce_checkout_fields', [ $this, 'unrequire_shipping_phone' ], 100000, 1 );
 		}
 	}
 
@@ -74,8 +74,8 @@ class KlarnaCheckout extends CompatibilityAbstract {
 			add_filter( 'cfw_load_tabs', '__return_false' );
 		}
 
-		add_filter( 'cfw_load_checkout_template', array( $this, 'detect_confirmation_page' ), 10, 1 );
-		add_action( 'cfw_checkout_loaded_pre_head', array( $this, 'klarna_template_hooks' ), 10 );
+		add_filter( 'cfw_load_checkout_template', [ $this, 'detect_confirmation_page' ], 10, 1 );
+		add_action( 'cfw_checkout_loaded_pre_head', [ $this, 'klarna_template_hooks' ], 10 );
 	}
 
 	public function is_klarna_payment_selected(): bool {
@@ -94,17 +94,17 @@ class KlarnaCheckout extends CompatibilityAbstract {
 		if ( $this->is_klarna_payment_selected() ) {
 			$klarna_checkout_for_woocommerce_templates = \KCO_Templates::get_instance();
 
-			remove_action( 'wp_footer', array( $klarna_checkout_for_woocommerce_templates, 'check_that_kco_template_has_loaded' ) );
+			remove_action( 'wp_footer', [ $klarna_checkout_for_woocommerce_templates, 'check_that_kco_template_has_loaded' ] );
 
 			add_filter( 'cfw_replace_form', '__return_true' );
-			add_action( 'cfw_checkout_form', array( $this, 'klarna_checkout_form' ) );
+			add_action( 'cfw_checkout_form', [ $this, 'klarna_checkout_form' ] );
 		} elseif ( $show_button ) {
-			add_action( 'cfw_payment_request_buttons', array( $this, 'add_klarna_pay_button' ) );
+			add_action( 'cfw_payment_request_buttons', [ $this, 'add_klarna_pay_button' ] );
 		}
 	}
 
 	public function klarna_checkout_form() {
-		wc_get_template( 'checkout/form-checkout.php', array( 'checkout' => WC()->checkout() ) );
+		wc_get_template( 'checkout/form-checkout.php', [ 'checkout' => WC()->checkout() ] );
 	}
 
 	public function add_klarna_pay_button() {
@@ -157,7 +157,7 @@ class KlarnaCheckout extends CompatibilityAbstract {
 	public function unrequire_shipping_phone( $fields ) {
 		if ( isset( $fields['shipping']['shipping_phone'] ) ) {
 			$fields['shipping']['shipping_phone']['required'] = false;
-			$fields['shipping']['shipping_phone']['validate'] = array();
+			$fields['shipping']['shipping_phone']['validate'] = [];
 		}
 
 		if ( 'yes' === SettingsManager::instance()->get_setting( 'use_fullname_field' ) ) {

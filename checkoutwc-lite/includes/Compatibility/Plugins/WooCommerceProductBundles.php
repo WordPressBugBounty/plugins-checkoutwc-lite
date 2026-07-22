@@ -10,10 +10,10 @@ class WooCommerceProductBundles extends CompatibilityAbstract {
 	}
 
 	public function pre_init() {
-		add_action( 'cfw_order_bump_add_to_cart_product_type_bundle', array( $this, 'bundle_add_to_cart' ), 10, 6 );
-		add_filter( 'cfw_cart_item_quantity_max_value', array( $this, 'handle_bundled_item_max_quantity' ), 10, 3 );
-		add_filter( 'cfw_cart_item_quantity_min_value', array( $this, 'handle_bundled_item_min_quantity' ), 10, 3 );
-		add_filter( 'cfw_cart_quantity_input_has_override', array( $this, 'handle_bundled_item_quantity_input_override' ), 10, 2 );
+		add_action( 'cfw_order_bump_add_to_cart_product_type_bundle', [ $this, 'bundle_add_to_cart' ], 10, 6 );
+		add_filter( 'cfw_cart_item_quantity_max_value', [ $this, 'handle_bundled_item_max_quantity' ], 10, 3 );
+		add_filter( 'cfw_cart_item_quantity_min_value', [ $this, 'handle_bundled_item_min_quantity' ], 10, 3 );
+		add_filter( 'cfw_cart_quantity_input_has_override', [ $this, 'handle_bundled_item_quantity_input_override' ], 10, 2 );
 	}
 
 	public function bundle_add_to_cart( $product_id, $quantity, $variation_id, $variation_data, $metadata, $product ) {
@@ -26,7 +26,7 @@ class WooCommerceProductBundles extends CompatibilityAbstract {
 	}
 
 	public function get_default_attributes( $product ): array {
-		$configuration = array();
+		$configuration = [];
 
 		/**
 		 * The WC_PB_Cart instance
@@ -48,9 +48,9 @@ class WooCommerceProductBundles extends CompatibilityAbstract {
 				continue;
 			}
 
-			$default_attributes                        = $product->get_default_attributes();
-			$configuration[ $item_id ]                 = $item_configuration;
-			$configuration[ $item_id ]['attributes']   = array();
+			$default_attributes        = $product->get_default_attributes();
+			$configuration[ $item_id ] = $item_configuration;
+			$configuration[ $item_id ]['attributes']   = [];
 			$configuration[ $item_id ]['variation_id'] = cfw_get_variation_id_from_attributes( $product, $default_attributes );
 
 			foreach ( $default_attributes as $attribute_name => $attribute_value ) {

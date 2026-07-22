@@ -11,7 +11,7 @@ class WooCommerceSubscriptionGifting extends CompatibilityAbstract {
 	}
 
 	public function run() {
-		add_action( 'cfw_after_cart_item_row', array( $this, 'maybe_display_gifting_information' ), 10, 2 );
+		add_action( 'cfw_after_cart_item_row', [ $this, 'maybe_display_gifting_information' ], 10, 2 );
 
 		remove_action( 'woocommerce_before_checkout_shipping_form', 'WCSG_Checkout::maybe_display_recipient_shipping_notice', 10 );
 	}

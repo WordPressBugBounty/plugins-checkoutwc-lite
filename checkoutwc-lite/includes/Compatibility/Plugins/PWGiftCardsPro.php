@@ -10,7 +10,7 @@ class PWGiftCardsPro extends CompatibilityAbstract {
 	}
 
 	public function run() {
-		add_action( 'cfw_wp_head', array( $this, 'gift_card_remove_fix' ), 51 );
+		add_action( 'cfw_wp_head', [ $this, 'gift_card_remove_fix' ], 51 );
 	}
 
 	public function gift_card_remove_fix() {

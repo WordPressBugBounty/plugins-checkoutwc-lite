@@ -14,7 +14,7 @@ class FreeGiftsforWooCommerce extends CompatibilityAbstract {
 			return;
 		}
 
-		add_action( 'cfw_cart_updated', array( $this, 'update_cart_gifts' ) );
+		add_action( 'cfw_cart_updated', [ $this, 'update_cart_gifts' ] );
 
 		/**
 		 * Whether to prevent redirecting during add to cart when Free Gifts for WooComemrce is active
@@ -27,7 +27,7 @@ class FreeGiftsforWooCommerce extends CompatibilityAbstract {
 			return;
 		}
 
-		add_action( 'wp', array( $this, 'prevent_redirect' ), 0 );
+		add_action( 'wp', [ $this, 'prevent_redirect' ], 0 );
 	}
 
 	public function run() {
@@ -41,33 +41,33 @@ class FreeGiftsforWooCommerce extends CompatibilityAbstract {
 			// Hook for the gift display in the checkout page.
 			remove_action(
 				'woocommerce_checkout_order_review',
-				array(
+				[
 					'\\FGF_Gift_Products_Handler',
 					'render_gift_products_checkout_page',
-				),
+				],
 				$customize_hook['priority']
 			);
 
 			add_action(
 				'cfw_checkout_main_container_start',
-				array(
+				[
 					'\\FGF_Gift_Products_Handler',
 					'render_gift_products_checkout_page',
-				)
+				]
 			);
 		}
 	}
 
 	public function prevent_redirect() {
 		// Fix for Free Gifts for WooCommerce that causes add to cart output to be hijacked with side cart
-		remove_action( 'wp', array( 'FGF_Gift_Products_Handler', 'add_to_cart_automatic_gift_product' ) );
+		remove_action( 'wp', [ 'FGF_Gift_Products_Handler', 'add_to_cart_automatic_gift_product' ] );
 	}
 
 	public function update_cart_gifts() {
 		try {
 			\FGF_Rule_Handler::reset();
 		} catch ( \Exception $e ) {
-			wc_get_logger()->error( $e->getMessage(), array( 'source' => 'checkout-wc' ) );
+			wc_get_logger()->error( $e->getMessage(), [ 'source' => 'checkout-wc' ] );
 		}
 
 		\FGF_Gift_Products_Handler::automatic_gift_product( false );

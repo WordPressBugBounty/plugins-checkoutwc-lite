@@ -8,7 +8,7 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "POT-Creation-Date: 2025-07-25 09:22-0400\n"
-"PO-Revision-Date: 2026-07-14T15:17:14+00:00\n"
+"PO-Revision-Date: 2026-07-22T14:04:55+00:00\n"
 "Language: ru-RU\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
 "X-Generator: Poedit 3.6\n"
@@ -30,10 +30,10 @@ msgstr ""
 #: includes/Admin/Pages/PageAbstract.php:106
 #: includes/Admin/Pages/General.php:341
 #: includes/Admin/Pages/Premium/PickupLocations.php:217
-#: includes/Admin/Pages/Premium/OrderBumps.php:428
+#: includes/Admin/Pages/Premium/OrderBumps.php:444
 #: includes/Admin/Pages/Premium/LocalPickupAdmin.php:165
 #: includes/Admin/Pages/Premium/AbandonedCartRecovery.php:243
-#: includes/Admin/Pages/Premium/ABTestingAdmin.php:559
+#: includes/Admin/Pages/Premium/ABTestingAdmin.php:634
 msgid "CheckoutWC"
 msgstr "CheckoutWC"
 
@@ -375,8 +375,8 @@ msgstr "Доставка"
 #: functions/template-functions.php:1054
 #: functions/template-functions.php:1914
 #: functions/template-functions.php:2269
-#: functions/functions.php:1026
-#: functions/functions.php:1041
+#: functions/functions.php:1023
+#: functions/functions.php:1038
 #: client/ts/frontend/Components/ReviewPane/OrderReviewStepReviewPane.tsx:47
 msgid "Payment"
 msgstr "Оплата"
@@ -390,6 +390,7 @@ msgid "Review"
 msgstr "Обзор"
 
 #: functions/template-functions.php:1073
+#: includes/Features/SideCart.php:1180
 msgid "Free"
 msgstr "Бесплатно"
 
@@ -481,20 +482,20 @@ msgstr "Войти"
 msgid "Lost your password?"
 msgstr "Забыли пароль?"
 
-#: functions/template-functions.php:2343
+#: functions/template-functions.php:2362
 msgid "Your Cart is Empty"
 msgstr "Ваша корзина пуста"
 
-#: functions/premium-init.php:334
+#: functions/premium-init.php:341
 msgid "CheckoutWC Templates Deactivated"
 msgstr "Шаблоны CheckoutWC деактивированы"
 
 # %1$s: "Settings" text, %2$s: "Start Here" text, %3$s: "Activate CheckoutWC Templates" text
-#: functions/premium-init.php:337
+#: functions/premium-init.php:344
 msgid "Your license is valid and activated for this site but CheckoutWC is disabled for normal customers. To fix this, go to %1$s > %2$s and toggle \"%3$s\"."
 msgstr "Ваша лицензия действительна и активирована для этого сайта, но CheckoutWC отключен для обычных клиентов. Чтобы исправить это, перейдите в %1$s > %2$s и переключите \"%3$s\"."
 
-#: functions/premium-init.php:338
+#: functions/premium-init.php:345
 #: includes/Admin/AdminPluginsPageManager.php:40
 #: includes/Admin/Pages/OrderBumpsAdminFree.php:25
 #: includes/Admin/Pages/LocalPickupAdminFree.php:27
@@ -502,67 +503,67 @@ msgstr "Ваша лицензия действительна и активиро
 #: includes/Admin/Pages/Premium/OrderBumps.php:58
 #: includes/Admin/Pages/Premium/LocalPickupAdmin.php:28
 #: includes/Admin/Pages/Premium/AbandonedCartRecovery.php:34
-#: includes/Admin/Pages/Premium/ABTestingAdmin.php:35
+#: includes/Admin/Pages/Premium/ABTestingAdmin.php:56
 msgid "Settings"
 msgstr "Настройки"
 
-#: functions/premium-init.php:339
+#: functions/premium-init.php:346
 #: includes/Admin/Pages/General.php:25
 #: includes/Admin/Notices/InactiveLicenseNotice.php:13
 msgid "Start Here"
 msgstr "Начать здесь"
 
-#: functions/premium-init.php:340
+#: functions/premium-init.php:347
 #: includes/Admin/Pages/General.php:195
 msgid "Activate CheckoutWC Templates"
 msgstr "Активировать шаблоны CheckoutWC"
 
-#: functions/premium-init.php:347
+#: functions/premium-init.php:354
 msgid "Invalid CheckoutWC License"
 msgstr "Недействительная лицензия CheckoutWC"
 
 # %1$s: Pricing URL, %2$s: "purchase a license" link text
-#: functions/premium-init.php:350
+#: functions/premium-init.php:357
 msgid "Your license key is missing or invalid. Please verify that your license key is valid or <a target=\"_blank\" href=\"%1$s\">%2$s</a> to restore full functionality."
 msgstr "Ваш лицензионный ключ отсутствует или недействителен. Пожалуйста, проверьте действительность ключа или <a target=\"_blank\" href=\"%1$s\">%2$s</a> для восстановления полной функциональности."
 
-#: functions/premium-init.php:352
+#: functions/premium-init.php:359
 msgid "purchase a license"
 msgstr "приобрести лицензию"
 
-#: functions/premium-init.php:368
+#: functions/premium-init.php:375
 msgid "New Feature: Cloudflare Turnstile Bot Protection"
 msgstr "Новая функция: Защита от ботов Cloudflare Turnstile"
 
 # 1: Cloudflare Turnstile name wrapped in strong tags, 2: Setup link
-#: functions/premium-init.php:371
+#: functions/premium-init.php:378
 msgid "CheckoutWC now supports %1$s - a privacy-first, CAPTCHA-free way to protect your checkout from bots and spam orders. %2$s"
 msgstr "CheckoutWC теперь поддерживает %1$s - способ защиты вашей кассы от ботов и спам-заказов с приоритетом на конфиденциальность и без CAPTCHA. %2$s"
 
 # The name of the Cloudflare Turnstile service
-#: functions/premium-init.php:375
+#: functions/premium-init.php:382
 #: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:64
 msgid "Cloudflare Turnstile"
 msgstr "Cloudflare Turnstile"
 
-#: functions/premium-init.php:381
+#: functions/premium-init.php:388
 msgid "Setup Cloudflare Turnstile now"
 msgstr "Настроить Cloudflare Turnstile сейчас"
 
-#: functions/premium-init.php:386
+#: functions/premium-init.php:393
 msgid "Upgrade your plan now to access"
 msgstr "Обновите ваш план сейчас, чтобы получить доступ"
 
-#: functions/premium-init.php:399
+#: functions/premium-init.php:406
 msgid "Abandoned Cart Recovery Tracking Disabled"
 msgstr "Отслеживание восстановления заброшенной корзины отключено"
 
 # %1$s: Gist URL, %2$s: "Learn More" link text
-#: functions/premium-init.php:402
+#: functions/premium-init.php:409
 msgid "You have enabled Abandoned Cart Recovery tracking, but you do not have any emails published. To track carts, you need to publish emails or use this dev filter: <a target=\"_blank\" href=\"%1$s\">%2$s</a>."
 msgstr "Вы включили отслеживание восстановления заброшенной корзины, но у вас нет опубликованных писем. Чтобы отслеживать корзины, необходимо опубликовать письма или использовать этот dev-фильтр: <a target=\"_blank\" href=\"%1$s\">%2$s</a>."
 
-#: functions/premium-init.php:404
+#: functions/premium-init.php:411
 #: includes/Admin/Pages/AbandonedCartRecoveryAdminFree.php:82
 msgid "Learn More"
 msgstr "Узнать больше"
@@ -666,110 +667,110 @@ msgstr "Доставка в"
 msgid "Address"
 msgstr "Адрес"
 
-#: functions/functions.php:626
+#: functions/functions.php:623
 msgid "Sorry, it seems that there are no available payment methods for your location. Please contact us if you require assistance or wish to make alternate arrangements."
 msgstr "Извините, похоже, что для вашего региона нет доступных способов оплаты. Пожалуйста, свяжитесь с нами, если вам нужна помощь или вы хотите договориться об альтернативных вариантах."
 
-#: functions/functions.php:788
+#: functions/functions.php:785
 #: includes/Features/LocalPickup.php:1079
 msgid "Shipping costs are calculated during checkout."
 msgstr "Стоимость доставки рассчитывается при оформлении заказа."
 
-#: functions/functions.php:788
+#: functions/functions.php:785
 msgid "Enter your address to view shipping options."
 msgstr "Введите ваш адрес, чтобы просмотреть варианты доставки."
 
-#: functions/functions.php:799
+#: functions/functions.php:796
 msgid "No shipping methods available"
 msgstr "Методы доставки отсутствуют"
 
-#: functions/functions.php:827
+#: functions/functions.php:824
 #: includes/Model/Bumps/BumpAbstract.php:814
 msgid "Free!"
 msgstr "Бесплатно!"
 
-#: functions/functions.php:963
+#: functions/functions.php:960
 #: includes/Features/AbandonedCartRecovery.php:695
 msgid "Complete Order"
 msgstr "Завершить заказ"
 
-#: functions/functions.php:1067
+#: functions/functions.php:1064
 msgid "All transactions are secure and encrypted."
 msgstr "Все операции защищены и зашифрованы."
 
-#: functions/functions.php:1090
+#: functions/functions.php:1087
 msgid "Your order is free. No payment is required."
 msgstr "Ваш заказ бесплатный. Оплата не требуется."
 
-#: functions/functions.php:1134
+#: functions/functions.php:1131
 msgid "Same as shipping address"
 msgstr "Тот же, что адрес доставки"
 
-#: functions/functions.php:1143
+#: functions/functions.php:1140
 msgid "Use a different billing address"
 msgstr "Использовать другой адрес для выставления счетов"
 
 # %1$s: Old order status, %2$s: New order status
-#: functions/functions.php:1275
+#: functions/functions.php:1272
 msgid "Order status changed from %1$s to %2$s."
 msgstr "Статус заказа изменён с %1$s на %2$s."
 
-#: functions/functions.php:1300
+#: functions/functions.php:1297
 msgid "Tracking Number:"
 msgstr "Номер для отслеживания:"
 
-#: functions/functions.php:1387
+#: functions/functions.php:1384
 msgid "Return to cart"
 msgstr "Вернуться в корзину"
 
-#: functions/functions.php:1424
+#: functions/functions.php:1421
 msgid "Continue to shipping"
 msgstr "Продолжить отгрузку"
 
-#: functions/functions.php:1450
+#: functions/functions.php:1447
 msgid "Continue to payment"
 msgstr "Перейти к оплате"
 
-#: functions/functions.php:1450
-#: functions/functions.php:1490
+#: functions/functions.php:1447
+#: functions/functions.php:1487
 msgid "Review order"
 msgstr "Просмотр заказа"
 
-#: functions/functions.php:1514
+#: functions/functions.php:1511
 msgid "Return to information"
 msgstr "Вернуться к информации"
 
-#: functions/functions.php:1534
+#: functions/functions.php:1531
 msgid "Return to shipping"
 msgstr "Возврат к отгрузке"
 
-#: functions/functions.php:1554
+#: functions/functions.php:1551
 msgid "Return to payment"
 msgstr "Возврат к оплате"
 
-#: functions/functions.php:1601
-#: includes/Features/SideCart.php:220
+#: functions/functions.php:1598
+#: includes/Features/SideCart.php:276
 msgid "Cart"
 msgstr "Корзина"
 
-#: functions/functions.php:1874
+#: functions/functions.php:1871
 msgid "CheckoutWC: Error matching %1$d to customer %2$d"
 msgstr "CheckoutWC: Ошибка сопоставления %1$d с клиентом %2$d"
 
-#: functions/functions.php:2163
+#: functions/functions.php:2160
 msgid "Or"
 msgstr "Или"
 
-#: functions/functions.php:2248
+#: functions/functions.php:2245
 msgid "You can only have 1 %s in your cart."
 msgstr "В вашей корзине может быть только 1 %s."
 
-#: functions/functions.php:2398
+#: functions/functions.php:2395
 #: client/ts/frontend/Components/CartItemQuantityControl.tsx:55
 msgid "Decrement"
 msgstr "Уменьшение"
 
-#: functions/functions.php:2407
+#: functions/functions.php:2404
 #: includes/Managers/AssetManager.php:727
 #: includes/Managers/AssetManager.php:848
 #: includes/Features/LocalPickup.php:502
@@ -781,12 +782,12 @@ msgstr "Уменьшение"
 msgid "Edit"
 msgstr "Редактировать"
 
-#: functions/functions.php:2410
+#: functions/functions.php:2407
 #: client/ts/frontend/Components/CartItemQuantityControl.tsx:70
 msgid "Increment"
 msgstr "Шаг"
 
-#: functions/functions.php:3124
+#: functions/functions.php:3121
 msgid "Unsubscribe"
 msgstr "Отказаться от подписки"
 
@@ -971,8 +972,8 @@ msgid "Activation Limit"
 msgstr "Предел активации"
 
 #: includes/Managers/UpdatesManager.php:456
-#: includes/Admin/Pages/Premium/ABTestingAdmin.php:96
-#: includes/Admin/Pages/Premium/ABTestingAdmin.php:737
+#: includes/Admin/Pages/Premium/ABTestingAdmin.php:171
+#: includes/Admin/Pages/Premium/ABTestingAdmin.php:812
 #: client/ts/admin/Components/acr/carts.tsx:80
 msgid "Status"
 msgstr "Статус"
@@ -1155,7 +1156,7 @@ msgstr "Клик по оформлению заказа (Оформление)"
 msgid "Post Purchase One-Click (Thank You)"
 msgstr "Покупка в один клик после оформления (Спасибо)"
 
-#: includes/Managers/SlotManager.php:439
+#: includes/Managers/SlotManager.php:441
 msgid "Badge %d"
 msgstr "Значок %d"
 
@@ -1243,8 +1244,8 @@ msgstr "Добавить в корзину"
 #: includes/Managers/AssetManager.php:844
 #: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2308
 #: client/ts/admin/Components/CheckoutEditor/slots/UnsavedChangesDialog.tsx:51
-#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:457
-#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:492
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:458
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:493
 #: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:276
 #: client/ts/admin/Components/CheckoutEditor/slots/CustomHtmlEditor.tsx:76
 msgid "Cancel"
@@ -1338,22 +1339,67 @@ msgstr "Проверка не прошла. Пожалуйста, попробу
 msgid "We have detected that Simple Cloudflare Turnstile is active. To enable CheckoutWC Turnstile functionality, please deactivate Simple Cloudflare Turnstile."
 msgstr "Мы обнаружили, что Simple Cloudflare Turnstile активен. Чтобы включить функциональность CheckoutWC Turnstile, пожалуйста, деактивируйте Simple Cloudflare Turnstile."
 
-#: includes/Features/SideCart.php:640
-#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:289
+# %s is a comma-separated list of product names
+#: includes/Features/SideCart.php:783
+msgid "These rewards-bar gift products can\\'t be auto-added because they are not simple products — please choose a simple product instead: %s"
+msgstr "Эти подарочные товары из панели наград не могут быть добавлены автоматически, потому что они не являются простыми товарами — пожалуйста, выберите простой товар: %s"
+
+# %s is the gift product name
+#: includes/Features/SideCart.php:1246
+msgid "Auto-managed free gift: %s — created by the Side Cart rewards bar, do not edit"
+msgstr "Автоматически управляемый бесплатный подарок: %s — создан панелью наград Side Cart, не редактировать"
+
+#: includes/Features/SideCart.php:1481
+#: includes/Features/SideCart.php:1538
+#: client/ts/admin/Components/FreeShippingTierRow.tsx:87
 msgid "Congrats! You get free standard shipping."
 msgstr "Поздравляем! Вы получаете бесплатную стандартную доставку."
 
-#: includes/Features/SideCart.php:654
+#: includes/Features/SideCart.php:1495
 msgid "You\\'re %s away from free shipping!"
 msgstr "Вам осталось %s до бесплатной доставки!"
 
-#: includes/Features/SideCart.php:769
+#: includes/Features/SideCart.php:1539
+#: client/ts/admin/Components/FreeShippingTierRow.tsx:88
+#: client/ts/admin/Components/FreeShippingTierRow.tsx:89
+msgid "Reward unlocked!"
+msgstr "Награда разблокирована!"
+
+#: includes/Features/SideCart.php:1547
+#: client/ts/admin/Components/FreeShippingTierRow.tsx:94
+msgid "You're %s away from free shipping!"
+msgstr "Вы находитесь на расстоянии %s от бесплатной доставки!"
+
+#: includes/Features/SideCart.php:1549
+#: client/ts/admin/Components/FreeShippingTierRow.tsx:96
+#: client/ts/admin/Components/FreeShippingTierRow.tsx:98
+msgid "You're %s away from your next reward!"
+msgstr "До следующей награды осталось %s!"
+
+#: includes/Features/SideCart.php:1556
+#: client/ts/admin/Components/FreeShippingTierRow.tsx:113
+msgid "Free shipping"
+msgstr "Бесплатная доставка"
+
+#: includes/Features/SideCart.php:1557
+#: client/ts/frontend/Components/CheckoutCartTableRow.tsx:48
+#: client/ts/frontend/Components/CartTableRow.tsx:48
+#: client/ts/admin/Components/FreeShippingTierRow.tsx:114
+msgid "Free gift"
+msgstr "Бесплатный подарок"
+
+#: includes/Features/SideCart.php:1558
+#: client/ts/admin/Components/FreeShippingTierRow.tsx:170
+msgid "Reward"
+msgstr "Награда"
+
+#: includes/Features/SideCart.php:1682
 #: includes/Admin/WooCommerceAdminScreenAugmenter.php:24
 #: includes/Admin/WooCommerceAdminScreenAugmenter.php:45
 msgid "CheckoutWC:"
 msgstr "CheckoutWC:"
 
-#: includes/Features/SideCart.php:770
+#: includes/Features/SideCart.php:1683
 msgid "Settings marked with asterisks (**) may be overridden based on your Side Cart settings. (CheckoutWC > Side Cart)"
 msgstr "Настройки, отмеченные звездочками (**), могут быть переопределены в зависимости от ваших настроек боковой корзины. (CheckoutWC > Боковая корзина)"
 
@@ -1879,8 +1925,8 @@ msgstr "Специальное предложение"
 msgid "Order Received"
 msgstr "Заказ принят"
 
-#: includes/API/OrderBumpsSearchAPI.php:64
-#: includes/API/OrderBumpsSearchAPI.php:102
+#: includes/API/OrderBumpsSearchAPI.php:72
+#: includes/API/OrderBumpsSearchAPI.php:110
 #: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:229
 #: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:527
 #: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:586
@@ -2092,8 +2138,8 @@ msgid "Refunded"
 msgstr "Возвращено"
 
 #: includes/Features/OneClick/OfferOrderManager.php:140
-msgid "Order bump payment of %s received for %s"
-msgstr "Оплата дополнительной покупки %s получена для %s"
+msgid "Order bump payment of %1$s received for %2$s"
+msgstr "Получена оплата дополнительного заказа в размере %1$s за %2$s"
 
 #: includes/Features/OneClick/OfferOrderManager.php:223
 msgid "Order created from post-purchase offer (accepted after timeout)."
@@ -2119,14 +2165,6 @@ msgstr "Включить поддержку Astra (бета)"
 #: includes/Compatibility/Themes/Astra.php:92
 msgid "If enabled with Advanced > Template Loader > Distraction Free Portal, Astra\\'s header and footer are displayed and Astra styles and scripts load on checkout. If disabled with Distraction Free Portal, Astra styles and scripts are excluded for a minimal layout. With WordPress Theme loader, the full theme loads regardless of this setting."
 msgstr "Если включено в разделе Расширенные > Загрузчик шаблонов > Портал без отвлекающих факторов, отображаются шапка и подвал Astra, а стили и скрипты Astra загружаются на странице оформления заказа. Если отключено в Портале без отвлекающих факторов, стили и скрипты Astra исключаются для минимального оформления. При использовании загрузчика темы WordPress полная тема загружается независимо от этой настройки."
-
-#: includes/Compatibility/Gateways/PayPalForWooCommerce.php:38
-msgid "Please update to the latest version of PayPal for WooCommerce to get full support."
-msgstr "Пожалуйста, обновите PayPal для WooCommerce до последней версии для полной поддержки."
-
-#: includes/Compatibility/Gateways/PayPalForWooCommerce.php:363
-msgid "Logged in with PayPal. Please continue your order below."
-msgstr "Вход в систему PayPal. Пожалуйста, продолжайте Ваш заказ ниже."
 
 #: includes/Compatibility/Plugins/WooCommerceGiftCards.php:64
 #: includes/Compatibility/Plugins/WooCommerceGiftCards.php:72
@@ -2248,6 +2286,42 @@ msgstr "Включить поддержку Beaver Themer"
 msgid "Allow Beaver Themer to replace header and footer."
 msgstr "Разрешить Beaver Themer заменять шапку и подвал."
 
+#: includes/Compatibility/Gateways/PayPalForWooCommerce.php:38
+msgid "Please update to the latest version of PayPal for WooCommerce to get full support."
+msgstr "Пожалуйста, обновите PayPal для WooCommerce до последней версии для полной поддержки."
+
+#: includes/Compatibility/Gateways/PayPalForWooCommerce.php:363
+msgid "Logged in with PayPal. Please continue your order below."
+msgstr "Вход в систему PayPal. Пожалуйста, продолжайте Ваш заказ ниже."
+
+#: includes/Admin/Views/html-refund-offer.php:22
+msgid "Product"
+msgstr "Продукт"
+
+#: includes/Admin/Views/html-refund-offer.php:24
+msgid "Qty"
+msgstr "Кол-во"
+
+#: includes/Admin/Views/html-refund-offer.php:26
+msgid "Action"
+msgstr "Действие"
+
+#: includes/Admin/Views/html-refund-offer.php:89
+msgid "Refund"
+msgstr "Возврат"
+
+#: includes/Admin/Views/html-refund-offer.php:101
+msgid "No order bump payments found for this order."
+msgstr "Платежи за дополнительные покупки для этого заказа не найдены."
+
+#: includes/Admin/Views/html-refund-offer.php:113
+msgid "Note:"
+msgstr "Примечание:"
+
+#: includes/Admin/Views/html-refund-offer.php:114
+msgid "Refunding an offer will process the refund with the payment gateway and create a WooCommerce refund record."
+msgstr "Возврат предложения обработает возврат через платежный шлюз и создаст запись возврата в WooCommerce."
+
 #: includes/Admin/Pages/WooCommercePages.php:21
 msgid "Pages"
 msgstr "Страницы"
@@ -2266,8 +2340,8 @@ msgstr "Глобальные опции"
 #: includes/Admin/Pages/TrustBadgesAdminFree.php:56
 #: includes/Admin/Pages/Premium/TrustBadges.php:16
 #: client/ts/admin/Components/Forms/TrustBadgeSettingsForm.tsx:150
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:544
 #: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:348
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:544
 msgid "Trust Badges"
 msgstr "Значки доверия"
 
@@ -2291,7 +2365,7 @@ msgid "Enable trust badges on CheckoutWC templates. Uncheck to hide badges."
 msgstr "Включить значки доверия в шаблонах CheckoutWC. Снимите галочку, чтобы скрыть значки."
 
 #: includes/Admin/Pages/TrustBadgesAdminFree.php:43
-#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:171
+#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:181
 #: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:219
 msgid "Heading"
 msgstr "Заголовок"
@@ -2468,52 +2542,52 @@ msgstr "Связаться с поддержкой"
 #: includes/Admin/Pages/SideCartAdminFree.php:16
 #: includes/Admin/Pages/SideCartAdminFree.php:26
 #: includes/Admin/Pages/Premium/SideCart.php:17
-#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:90
+#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:100
 msgid "Side Cart"
 msgstr "Боковая корзина"
 
 #: includes/Admin/Pages/SideCartAdminFree.php:27
-#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:91
+#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:101
 msgid "Configure the Side Cart."
 msgstr "Настройте боковую корзину."
 
 #: includes/Admin/Pages/SideCartAdminFree.php:34
-#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:97
+#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:107
 msgid "Enable Side Cart"
 msgstr "Включить боковую корзину"
 
 #: includes/Admin/Pages/SideCartAdminFree.php:34
-#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:98
+#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:108
 msgid "Replace your cart page with a beautiful side cart that slides in from the right when items are added to the cart."
 msgstr "Замените страницу корзины красивой боковой корзиной, которая выезжает справа при добавлении товаров в корзину."
 
 #: includes/Admin/Pages/SideCartAdminFree.php:44
-#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:113
+#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:123
 msgid "Side Cart Icon"
 msgstr "Иконка боковой корзины"
 
 #: includes/Admin/Pages/SideCartAdminFree.php:45
-#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:114
+#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:124
 msgid "Used by the Side Cart and Floating Side Cart Button."
 msgstr "Используется боковой корзиной и плавающей кнопкой боковой корзины."
 
 #: includes/Admin/Pages/SideCartAdminFree.php:55
-#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:121
+#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:131
 msgid "Icon"
 msgstr "Иконка"
 
 #: includes/Admin/Pages/SideCartAdminFree.php:56
-#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:122
+#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:132
 msgid "Choose the Side Cart icon."
 msgstr "Выберите иконку боковой корзины."
 
 #: includes/Admin/Pages/SideCartAdminFree.php:101
-#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:129
+#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:139
 msgid "Custom Icon"
 msgstr "Пользовательская иконка"
 
 #: includes/Admin/Pages/SideCartAdminFree.php:102
-#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:130
+#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:140
 msgid "Upload a custom icon. Overrides the icon selection above. SVG REQUIRED."
 msgstr "Загрузите пользовательскую иконку. Перекрывает выбор иконки выше. ТРЕБУЕТСЯ SVG."
 
@@ -2528,42 +2602,42 @@ msgid "Clear"
 msgstr "Очистить"
 
 #: includes/Admin/Pages/SideCartAdminFree.php:107
-#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:137
+#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:147
 msgid "Width"
 msgstr "Ширина"
 
 #: includes/Admin/Pages/SideCartAdminFree.php:108
-#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:138
+#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:148
 msgid "The width of the icon in pixels. Default: 34"
 msgstr "Ширина иконки в пикселях. По умолчанию: 34"
 
 #: includes/Admin/Pages/SideCartAdminFree.php:121
-#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:155
+#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:165
 msgid "Suggested Products"
 msgstr "Рекомендуемые товары"
 
 #: includes/Admin/Pages/SideCartAdminFree.php:122
-#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:156
+#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:166
 msgid "Configure Suggested Products cross-sells."
 msgstr "Настройте перекрестные продажи рекомендуемых товаров."
 
 #: includes/Admin/Pages/SideCartAdminFree.php:132
-#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:161
+#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:171
 msgid "Enable Suggested Products"
 msgstr "Включить рекомендуемые товары"
 
 #: includes/Admin/Pages/SideCartAdminFree.php:133
-#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:162
+#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:172
 msgid "Display cross sells / suggested products at the bottom of the side cart."
 msgstr "Отображать перекрестные продажи / рекомендуемые товары внизу боковой корзины."
 
 #: includes/Admin/Pages/SideCartAdminFree.php:145
-#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:198
+#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:208
 msgid "Floating Side Cart Button"
 msgstr "Плавающая кнопка боковой корзины"
 
 #: includes/Admin/Pages/SideCartAdminFree.php:146
-#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:199
+#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:209
 msgid "Configure the Floating Side Cart Button"
 msgstr "Настройте плавающую кнопку боковой корзины"
 
@@ -2601,7 +2675,7 @@ msgstr "Отменить?"
 #: includes/Admin/Pages/PageAbstract.php:136
 #: includes/Admin/Pages/PageAbstract.php:157
 #: client/ts/admin/Components/CheckoutEditor/EditorHeader.tsx:203
-#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:403
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:404
 msgid "Save Changes"
 msgstr "Сохранить изменения"
 
@@ -2620,14 +2694,14 @@ msgid "This setting is currently programmatically overridden. To enable it remov
 msgstr "Эта настройка в настоящее время программно переопределена. Чтобы включить её, удалите ваш пользовательский код."
 
 #: includes/Admin/Pages/PageAbstract.php:333
-#: includes/Admin/Pages/Premium/OrderBumps.php:1004
+#: includes/Admin/Pages/Premium/OrderBumps.php:1034
 #: includes/Admin/Pages/Premium/AbandonedCartRecovery.php:850
 msgid "Upgrade Your Plan"
 msgstr "Обновите ваш план"
 
 # %1$s: Account URL, %2$s: Help URL
 #: includes/Admin/Pages/PageAbstract.php:350
-#: includes/Admin/Pages/Premium/OrderBumps.php:1014
+#: includes/Admin/Pages/Premium/OrderBumps.php:1044
 #: includes/Admin/Pages/Premium/AbandonedCartRecovery.php:869
 msgid "You can upgrade your license in <a class=\"text-blue-600 underline\" target=\"_blank\" href=\"%1$s\">Account</a>. For help upgrading your license, <a class=\"text-blue-600 underline\" target=\"_blank\" href=\"%2$s\">click here.</a>"
 msgstr "Вы можете обновить лицензию в <a class=\"text-blue-600 underline\" target=\"_blank\" href=\"%1$s\">Аккаунте</a>. Для помощи с обновлением лицензии <a class=\"text-blue-600 underline\" target=\"_blank\" href=\"%2$s\">нажмите здесь.</a>"
@@ -2643,7 +2717,7 @@ msgid "Configure Order Bump settings."
 msgstr "Настроить параметры Order Bump."
 
 #: includes/Admin/Pages/OrderBumpsAdminFree.php:79
-#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:353
+#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:354
 #: client/ts/admin/Components/Forms/OrderBumpSettingsForm.tsx:52
 msgid "Enable Order Bumps"
 msgstr "Включить Order Bumps"
@@ -2991,7 +3065,7 @@ msgstr "Фон"
 #: includes/Admin/Pages/Appearance.php:219
 #: includes/Admin/Pages/Appearance.php:231
 #: includes/Admin/Pages/Appearance.php:241
-#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:428
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:429
 #: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:247
 msgid "Text"
 msgstr "Текст"
@@ -3331,7 +3405,7 @@ msgstr "Примечание: Это сбросит ВСЮ статистику 
 
 #: includes/Admin/Pages/ABTestingAdminFree.php:15
 #: includes/Admin/Pages/ABTestingAdminFree.php:29
-#: includes/Admin/Pages/Premium/ABTestingAdmin.php:27
+#: includes/Admin/Pages/Premium/ABTestingAdmin.php:45
 #: client/ts/admin/Components/Forms/ABTestingSettingsForm.tsx:42
 msgid "A/B Testing"
 msgstr "A/B тестирование"
@@ -3350,34 +3424,6 @@ msgstr "Включить A/B тестирование"
 #: client/ts/admin/Components/Forms/ABTestingSettingsForm.tsx:50
 msgid "Allow A/B tests to be created and applied on the checkout page."
 msgstr "Разрешить создание и применение A/B тестов на странице оформления заказа."
-
-#: includes/Admin/Views/html-refund-offer.php:22
-msgid "Product"
-msgstr "Продукт"
-
-#: includes/Admin/Views/html-refund-offer.php:24
-msgid "Qty"
-msgstr "Кол-во"
-
-#: includes/Admin/Views/html-refund-offer.php:26
-msgid "Action"
-msgstr "Действие"
-
-#: includes/Admin/Views/html-refund-offer.php:89
-msgid "Refund"
-msgstr "Возврат"
-
-#: includes/Admin/Views/html-refund-offer.php:101
-msgid "No order bump payments found for this order."
-msgstr "Платежи за дополнительные покупки для этого заказа не найдены."
-
-#: includes/Admin/Views/html-refund-offer.php:113
-msgid "Note:"
-msgstr "Примечание:"
-
-#: includes/Admin/Views/html-refund-offer.php:114
-msgid "Refunding an offer will process the refund with the payment gateway and create a WooCommerce refund record."
-msgstr "Возврат предложения обработает возврат через платежный шлюз и создаст запись возврата в WooCommerce."
 
 #: includes/Admin/Notices/WelcomeNotice.php:12
 msgid "Welcome to CheckoutWC"
@@ -4091,23 +4137,23 @@ msgstr "Просмотр теста"
 msgid "Add Test"
 msgstr "Добавить тест"
 
-#: includes/Admin/Pages/Premium/OrderBumps.php:321
+#: includes/Admin/Pages/Premium/OrderBumps.php:327
 msgid "All <span class=\"count\">(%s)</span>"
 msgid_plural "All <span class=\"count\">(%s)</span>"
 msgstr[0] "Все <span class=\"count\">(%s)</span>"
 msgstr[1] ""
 msgstr[2] ""
 
-#: includes/Admin/Pages/Premium/OrderBumps.php:519
+#: includes/Admin/Pages/Premium/OrderBumps.php:535
 msgid "Reset Order Bump Conversion Stats"
 msgstr "Сбросить статистику конверсии Order Bump"
 
 # %1$d: Allowed bump count, %2$d: Used bump count
-#: includes/Admin/Pages/Premium/OrderBumps.php:1007
+#: includes/Admin/Pages/Premium/OrderBumps.php:1037
 msgid "Your CheckoutWC plan allows you to create %1$d Order Bumps. You have used %2$d."
 msgstr "Ваш план CheckoutWC позволяет создавать %1$d Order Bumps. Вы использовали %2$d."
 
-#: includes/Admin/Pages/Premium/OrderBumps.php:1010
+#: includes/Admin/Pages/Premium/OrderBumps.php:1040
 msgid "You cannot create or publish new Order Bumps if you are over the limit."
 msgstr "Вы не можете создавать или публиковать новые Order Bumps, если превышен лимит."
 
@@ -4127,8 +4173,8 @@ msgid "Send this long after cart has been abandoned."
 msgstr "Отправить это сообщение спустя долгое время после заброшенной корзины."
 
 #: includes/Admin/Pages/Premium/AbandonedCartRecovery.php:101
-#: includes/Admin/Pages/Premium/ABTestingAdmin.php:136
-#: includes/Admin/Pages/Premium/ABTestingAdmin.php:744
+#: includes/Admin/Pages/Premium/ABTestingAdmin.php:211
+#: includes/Admin/Pages/Premium/ABTestingAdmin.php:819
 #: client/ts/admin/Components/CheckoutEditor/panels/DesignSettingsPanel.tsx:82
 msgid "Active"
 msgstr "Активно"
@@ -4223,7 +4269,7 @@ msgid "Unsubscribe Link"
 msgstr "Ссылка для отписки"
 
 #: includes/Admin/Pages/Premium/AbandonedCartRecovery.php:642
-#: includes/Admin/Pages/Premium/ABTestingAdmin.php:240
+#: includes/Admin/Pages/Premium/ABTestingAdmin.php:315
 msgid "Permission denied."
 msgstr "Доступ запрещён."
 
@@ -4244,72 +4290,88 @@ msgstr "Ваш план CheckoutWC позволяет создавать %1$d п
 msgid "You cannot create or publish new Abandoned Cart Recovery emails if you are over the limit."
 msgstr "Вы не можете создавать или публиковать новые письма для восстановления брошенной корзины, если вы превысили лимит."
 
-#: includes/Admin/Pages/Premium/ABTestingAdmin.php:37
+#: includes/Admin/Pages/Premium/ABTestingAdmin.php:58
 msgid "Manage Tests"
 msgstr "Управление тестами"
 
-#: includes/Admin/Pages/Premium/ABTestingAdmin.php:95
-#: includes/Admin/Pages/Premium/ABTestingAdmin.php:711
+#: includes/Admin/Pages/Premium/ABTestingAdmin.php:170
+#: includes/Admin/Pages/Premium/ABTestingAdmin.php:786
 msgid "Type"
 msgstr "Тип"
 
-#: includes/Admin/Pages/Premium/ABTestingAdmin.php:97
+#: includes/Admin/Pages/Premium/ABTestingAdmin.php:172
 msgid "Duration"
 msgstr "Продолжительность"
 
-#: includes/Admin/Pages/Premium/ABTestingAdmin.php:137
-#: includes/Admin/Pages/Premium/ABTestingAdmin.php:745
+#: includes/Admin/Pages/Premium/ABTestingAdmin.php:212
+#: includes/Admin/Pages/Premium/ABTestingAdmin.php:820
 msgid "Paused"
 msgstr "Приостановлен"
 
-#: includes/Admin/Pages/Premium/ABTestingAdmin.php:138
-#: includes/Admin/Pages/Premium/ABTestingAdmin.php:746
+#: includes/Admin/Pages/Premium/ABTestingAdmin.php:213
+#: includes/Admin/Pages/Premium/ABTestingAdmin.php:821
 msgid "Complete"
 msgstr "Завершен"
 
-#: includes/Admin/Pages/Premium/ABTestingAdmin.php:162
+#: includes/Admin/Pages/Premium/ABTestingAdmin.php:237
 msgid "Finished"
 msgstr "Окончен"
 
-#: includes/Admin/Pages/Premium/ABTestingAdmin.php:171
+#: includes/Admin/Pages/Premium/ABTestingAdmin.php:246
 msgid "Ongoing"
 msgstr "В процессе"
 
-#: includes/Admin/Pages/Premium/ABTestingAdmin.php:246
+#: includes/Admin/Pages/Premium/ABTestingAdmin.php:321
 msgid "Invalid test type."
 msgstr "Недопустимый тип теста."
 
-#: includes/Admin/Pages/Premium/ABTestingAdmin.php:256
+#: includes/Admin/Pages/Premium/ABTestingAdmin.php:331
 msgid "Test type does not support UI operations."
 msgstr "Тип теста не поддерживает операции с интерфейсом."
 
-#: includes/Admin/Pages/Premium/ABTestingAdmin.php:628
+#: includes/Admin/Pages/Premium/ABTestingAdmin.php:703
 msgid "Test"
 msgstr "Тест"
 
-#: includes/Admin/Pages/Premium/ABTestingAdmin.php:749
+#: includes/Admin/Pages/Premium/ABTestingAdmin.php:824
 msgid "The current status of this A/B test."
 msgstr "Текущий статус этого A/B теста."
 
-#: includes/Admin/Pages/Premium/ABTestingAdmin.php:762
+#: includes/Admin/Pages/Premium/ABTestingAdmin.php:837
 msgid "Start Date"
 msgstr "Дата начала"
 
-#: includes/Admin/Pages/Premium/ABTestingAdmin.php:774
+#: includes/Admin/Pages/Premium/ABTestingAdmin.php:849
 msgid "The date when the A/B test should start. Leave empty to start immediately."
 msgstr "Дата начала A/B теста. Оставьте пустым для немедленного старта."
 
-#: includes/Admin/Pages/Premium/ABTestingAdmin.php:780
+#: includes/Admin/Pages/Premium/ABTestingAdmin.php:855
 msgid "End Date"
 msgstr "Дата окончания"
 
-#: includes/Admin/Pages/Premium/ABTestingAdmin.php:792
+#: includes/Admin/Pages/Premium/ABTestingAdmin.php:867
 msgid "The date when the A/B test should end. After this date, the original variant will be displayed. Leave empty for no end date."
 msgstr "Дата окончания A/B теста. После этой даты будет отображаться исходный вариант. Оставьте пустым для отсутствия даты окончания."
 
-#: includes/Admin/Pages/Premium/ABTestingAdmin.php:1099
+#: includes/Admin/Pages/Premium/ABTestingAdmin.php:1174
 msgid "Traffic split percentages must total 100%. Please adjust your percentages."
 msgstr "Сумма процентов распределения трафика должна быть 100%. Пожалуйста, отрегулируйте проценты."
+
+#: client/ts/frontend/Components/TermsAndConditions.ts:29
+msgid "Terms and Conditions"
+msgstr "Условия и положения"
+
+#: client/ts/frontend/Components/TermsAndConditions.ts:35
+msgid "Privacy Policy"
+msgstr "Политика конфиденциальности"
+
+#: client/ts/frontend/Components/SideCartComponent.tsx:38
+msgid "Close Cart"
+msgstr "Закрыть корзину"
+
+#: client/ts/frontend/Components/FreeShippingProgressBar.tsx:232
+msgid "Unlocked"
+msgstr "Разблокировано"
 
 #: client/ts/frontend/Actions/CompleteOrderAction.ts:196
 msgid "Could not connect to server. Please refresh and try again or contact site administrator."
@@ -4334,18 +4396,6 @@ msgstr "Сервер отключился во время обработки в�
 #: client/ts/frontend/Actions/CompleteOrderAction.ts:206
 msgid "Request was aborted. Please contact site administrator."
 msgstr "Запрос был прерван. Обратитесь к администратору сайта."
-
-#: client/ts/frontend/Components/TermsAndConditions.ts:29
-msgid "Terms and Conditions"
-msgstr "Условия и положения"
-
-#: client/ts/frontend/Components/TermsAndConditions.ts:35
-msgid "Privacy Policy"
-msgstr "Политика конфиденциальности"
-
-#: client/ts/frontend/Components/SideCartComponent.tsx:38
-msgid "Close Cart"
-msgstr "Закрыть корзину"
 
 #: client/ts/admin/Components/TrustBadgeRow.tsx:151
 msgid "Slot"
@@ -4448,6 +4498,86 @@ msgstr "Разблокировать с Premium"
 #: client/ts/admin/Components/LockedFieldWrapper.tsx:60
 msgid "A %s plan is required to access these features."
 msgstr "Для доступа к этим функциям требуется план %s."
+
+#: client/ts/admin/Components/FreeShippingTierRow.tsx:49
+msgid "You don't have a Free Shipping method set up, so reaching this tier won't actually make shipping free — the bar only shows progress. Add one in WooCommerce shipping settings."
+msgstr "У вас не настроен метод бесплатной доставки, поэтому достижение этого уровня на самом деле не сделает доставку бесплатной — панель показывает только прогресс. Добавьте метод в настройках доставки WooCommerce."
+
+#: client/ts/admin/Components/FreeShippingTierRow.tsx:69
+msgid "Your Free Shipping method starts at %1$s, but this tier unlocks at %2$s — customers will see \"unlocked\" here and still be charged. Set the threshold to %1$s or higher to match."
+msgstr "Ваш метод бесплатной доставки начинается с %1$s, но этот уровень разблокируется при %2$s — клиенты увидят «разблокировано» здесь, но доставка всё равно будет платной. Установите порог на %1$s или выше, чтобы совпадало."
+
+#: client/ts/admin/Components/FreeShippingTierRow.tsx:75
+msgid "Your Free Shipping method requires a coupon, so reaching this spend tier won\\'t make shipping free on its own."
+msgstr "Ваш метод бесплатной доставки требует купон, поэтому достижение этого уровня затрат само по себе не сделает доставку бесплатной."
+
+#: client/ts/admin/Components/FreeShippingTierRow.tsx:115
+msgid "Custom message only"
+msgstr "Только пользовательское сообщение"
+
+#: client/ts/admin/Components/FreeShippingTierRow.tsx:136
+msgid "Tier %d"
+msgstr "Уровень %d"
+
+#: client/ts/admin/Components/FreeShippingTierRow.tsx:143
+msgid "Remove tier"
+msgstr "Удалить уровень"
+
+#: client/ts/admin/Components/FreeShippingTierRow.tsx:155
+msgid "Threshold"
+msgstr "Порог"
+
+#: client/ts/admin/Components/FreeShippingTierRow.tsx:185
+msgid "Color"
+msgstr "Цвет"
+
+#: client/ts/admin/Components/FreeShippingTierRow.tsx:201
+msgid "Enter a spend threshold above 0. Without one the free gift never unlocks and the tier is hidden from the bar."
+msgstr "Введите порог затрат больше 0. Без него бесплатный подарок никогда не разблокируется, и уровень будет скрыт с панели."
+
+#: client/ts/admin/Components/FreeShippingTierRow.tsx:202
+msgid "Enter a spend threshold above 0 — a tier with no threshold never unlocks and is hidden from the bar."
+msgstr "Введите порог затрат больше 0 — уровень без порога никогда не разблокируется и скрыт с панели."
+
+#: client/ts/admin/Components/FreeShippingTierRow.tsx:218
+msgid "Open shipping settings"
+msgstr "Открыть настройки доставки"
+
+#: client/ts/admin/Components/FreeShippingTierRow.tsx:227
+msgid "Short label"
+msgstr "Краткая метка"
+
+#: client/ts/admin/Components/FreeShippingTierRow.tsx:242
+msgid "Gift product"
+msgstr "Подарочный товар"
+
+#: client/ts/admin/Components/FreeShippingTierRow.tsx:244
+msgid "Added to the cart free when this tier is reached. Only simple products can be a gift — variable products are not shown, since a variation cannot be auto-added."
+msgstr "Добавляется в корзину бесплатно при достижении этого уровня. В подарок могут быть добавлены только простые товары — вариативные товары не отображаются, так как вариация не может быть добавлена автоматически."
+
+#: client/ts/admin/Components/FreeShippingTierRow.tsx:245
+msgid "Search for a simple product"
+msgstr "Поиск простого товара"
+
+#: client/ts/admin/Components/FreeShippingTierRow.tsx:253
+msgid "Unlocked message"
+msgstr "Сообщение о разблокировке"
+
+#: client/ts/admin/Components/FreeShippingTierRow.tsx:266
+msgid "Locked message"
+msgstr "Сообщение о блокировке"
+
+#: client/ts/admin/Components/FreeShippingTierRow.tsx:282
+msgid "Include the %s placeholder in the locked message — it is replaced with the amount remaining."
+msgstr "Включите плейсхолдер %s в сообщение о блокировке — он заменяется на оставшуюся сумму."
+
+#: client/ts/admin/Components/FreeShippingTierRepeater.tsx:73
+msgid "Stack up to three thresholds to reward customers as they spend more. Tiers are ordered by threshold automatically."
+msgstr "Сложите до трёх порогов, чтобы вознаградить клиентов по мере их покупок. Уровни автоматически упорядочиваются по порогам."
+
+#: client/ts/admin/Components/FreeShippingTierRepeater.tsx:96
+msgid "Add tier"
+msgstr "Добавить уровень"
 
 #: client/ts/frontend/Components/ReviewPane/ShippingMethodReviewPane.tsx:15
 #: client/ts/frontend/Components/ReviewPane/PaymentMethodReviewPane.tsx:15
@@ -4861,7 +4991,7 @@ msgid "Configure the Cart Summary on the checkout page."
 msgstr "Настройте сводку корзины на странице оформления заказа."
 
 #: client/ts/admin/Components/Forms/WooCommercePagesGlobalOptionsSettingsForm.tsx:54
-#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:367
+#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:368
 msgid "Enable Sale Prices"
 msgstr "Включить цены со скидкой"
 
@@ -5070,214 +5200,202 @@ msgstr "Статусы заказов"
 msgid "Choose which Order Statuses are shown as a progress bar on the Thank You page."
 msgstr "Выберите, какие статусы заказов отображаются в виде индикатора прогресса на странице благодарности."
 
-#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:145
+#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:155
 msgid "Icon Color"
 msgstr "Цвет иконки"
 
-#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:172
+#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:182
 msgid "Heading above the suggested products. Leave blank for default. Default: You may also like&hellip;"
 msgstr "Заголовок над рекомендуемыми товарами. Оставьте пустым для значения по умолчанию. По умолчанию: Вам также может понравиться&hellip;"
 
-#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:173
+#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:183
 msgid "You may also like…"
 msgstr "Вам также может понравиться…"
 
-#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:179
+#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:189
 msgid "Enable Random Cross Sells Fallback"
 msgstr "Включить случайный запасной вариант перекрестных продаж"
 
-#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:180
+#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:190
 msgid "If none of the cart products have cross sell items defined, display random products instead."
 msgstr "Если ни у одного из товаров в корзине нет определённых перекрестных продаж, отображать случайные товары."
 
-#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:186
+#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:196
 msgid "Link to Product Page"
 msgstr "Ссылка на страницу товара"
 
-#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:187
+#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:197
 msgid "Link suggested products to their product pages instead of adding directly to cart."
 msgstr "Связывать рекомендуемые товары с их страницами товаров вместо добавления напрямую в корзину."
 
-#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:204
+#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:214
 msgid "Enable Floating Cart Button"
 msgstr "Включить плавающую кнопку корзины"
 
-#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:205
+#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:215
 msgid "Enable floating cart button on the bottom right of pages."
 msgstr "Включить плавающую кнопку корзины в правом нижнем углу страниц."
 
-#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:215
+#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:225
 msgid "Right Position"
 msgstr "Положение справа"
 
-#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:216
+#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:226
 msgid "The position from the right side of the screen in pixels. Default: 20"
 msgstr "Положение от правого края экрана в пикселях. По умолчанию: 20"
 
-#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:222
+#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:232
 msgid "Bottom Position"
 msgstr "Положение снизу"
 
-#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:223
+#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:233
 msgid "The position from the bottom of the screen in pixels. Default: 20"
 msgstr "Положение от нижнего края экрана в пикселях. По умолчанию: 20"
 
-#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:230
+#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:240
 msgid "Hide Button If Empty Cart"
 msgstr "Скрыть кнопку при пустой корзине"
 
-#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:231
+#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:241
 msgid "Hide floating cart button if cart is empty."
 msgstr "Скрывать плавающую кнопку корзины, если корзина пуста."
 
-#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:242
-msgid "Free Shipping Progress Bar"
-msgstr "Индикатор прогресса бесплатной доставки"
+#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:252
+msgid "Free shipping & rewards bar"
+msgstr "Панель бесплатной доставки и наград"
 
-#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:243
-msgid "Configure the Free Shipping Progress Bar"
-msgstr "Настройте индикатор прогресса бесплатной доставки"
-
-#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:248
-msgid "Enable Free Shipping Progress Bar"
-msgstr "Включить индикатор прогресса бесплатной доставки"
-
-#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:249
-msgid "Enable Free Shipping progress bar to show customers how close they are to obtaining free shipping. Uses your shipping settings to determine limits. To override, specify amount below."
-msgstr "Включить индикатор прогресса бесплатной доставки, чтобы показать клиентам, насколько они близки к получению бесплатной доставки. Использует ваши настройки доставки для определения лимитов. Чтобы переопределить, укажите сумму ниже."
+#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:253
+msgid "Reward shoppers as they spend more — free shipping, a free gift, or a custom perk."
+msgstr "Вознаграждайте покупателей по мере их покупок — бесплатная доставка, бесплатный подарок или индивидуальное поощрение."
 
 #: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:258
-msgid "Free Shipping Threshold"
-msgstr "Порог бесплатной доставки"
+msgid "Enable free shipping & rewards bar"
+msgstr "Включить панель бесплатной доставки и наград"
 
 #: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:259
-msgid "Cart subtotal required to qualify for free shipping. To use automatic detection based on shipping configuration, leave blank. Enter in store base currency."
-msgstr "Минимальная сумма корзины для получения бесплатной доставки. Чтобы использовать автоматическое определение на основе настроек доставки, оставьте пустым. Введите в базовой валюте магазина."
+msgid "Show shoppers how close they are to free shipping, a free gift, or a custom reward as they add to their cart."
+msgstr "Показывайте покупателям, насколько они близки к бесплатной доставке, бесплатному подарку или индивидуальной награде при добавлении товаров в корзину."
 
-#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:265
-msgid "Amount Remaining Message"
-msgstr "Сообщение об оставшейся сумме"
+#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:278
+msgid "Exclude shipping classes"
+msgstr "Исключить классы доставки"
 
-#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:268
-msgid "You're %s away from free shipping!"
-msgstr "Вы находитесь на расстоянии %s от бесплатной доставки!"
+#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:279
+msgid "Items in the selected shipping classes do not count toward the progress bar thresholds."
+msgstr "Товары из выбранных классов доставки не учитываются в порогах панели прогресса."
 
-#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:272
-msgid "The amount remaining to qualify for free shipping message. Leave blank for default. Default: You're %s away from free shipping!"
-msgstr "Сообщение о сумме, оставшейся для получения бесплатной доставки. Оставьте пустым для значения по умолчанию. По умолчанию: До бесплатной доставки осталось %s!"
-
-#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:281
-msgid "Please ensure your amount remaining message includes the %s placeholder which is replaced with amount remaining when displayed to customers."
-msgstr "Пожалуйста, убедитесь, что ваше сообщение об оставшейся сумме содержит заполнитель %s, который заменяется на оставшуюся сумму при отображении клиентам."
+#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:287
+msgid "Show on the checkout page"
+msgstr "Показывать на странице оформления заказа"
 
 #: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:288
-msgid "Free Shipping Message"
-msgstr "Сообщение о бесплатной доставке"
+msgid "Also show the free shipping & rewards bar in the checkout page cart summary."
+msgstr "Также показывать панель бесплатной доставки и наград в сводке корзины на странице оформления заказа."
 
-#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:290
-msgid "The free shipping message. Leave blank for default. Default: Congrats! You get free standard shipping."
-msgstr "Сообщение о бесплатной доставке. Оставьте пустым для значения по умолчанию. По умолчанию: Поздравляем! Вы получаете бесплатную стандартную доставку."
-
-#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:296
-msgid "Enable Free Shipping Progress Bar At Checkout"
-msgstr "Включить индикатор прогресса бесплатной доставки при оформлении заказа"
-
-#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:297
-msgid "Enable Free Shipping Progress Bar on the checkout page cart summary."
-msgstr "Включить индикатор прогресса бесплатной доставки на странице оформления заказа в сводке корзины."
-
-#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:304
-msgid "Progress Indicator Color"
-msgstr "Цвет индикатора прогресса"
-
-#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:311
+#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:295
 msgid "Progress Bar Background Color"
 msgstr "Цвет фона индикатора прогресса"
 
-#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:326
+#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:310
+msgid "Empty cart"
+msgstr "Пустая корзина"
+
+#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:311
+msgid "Customize what shoppers see when the side cart is empty."
+msgstr "Настройте, что видят покупатели, когда боковая корзина пуста."
+
+#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:315
+msgid "Empty cart image"
+msgstr "Изображение пустой корзины"
+
+#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:316
+msgid "Shown above the empty cart message in the side cart. Leave blank for text only."
+msgstr "Отображается над сообщением о пустой корзине в боковой панели. Оставьте пустым для отображения только текста."
+
+#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:327
 msgid "Options"
 msgstr "Опции"
 
-#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:327
+#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:328
 msgid "Control various Side Cart options."
 msgstr "Управление различными опциями боковой корзины."
 
-#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:332
+#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:333
 msgid "Disable Cart Auto Open"
 msgstr "Отключить автоматическое открытие корзины"
 
-#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:333
+#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:334
 msgid "Instead of opening the side cart, gently shake the floating cart button (if visible) to indicate a successful add to cart event."
 msgstr "Вместо открытия боковой корзины слегка потрясите плавающую кнопку корзины (если видна), чтобы указать успешное добавление товара в корзину."
 
-#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:339
+#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:340
 msgid "Enable AJAX Add to Cart"
 msgstr "Включить AJAX добавление в корзину"
 
-#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:340
+#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:341
 msgid "Use AJAX on archive and single product pages to add items to cart. By default, WooCommerce requires a full form submit with page reload. Enabling this option uses AJAX to add items to the cart."
 msgstr "Использовать AJAX на страницах архива и отдельных товаров для добавления товаров в корзину. По умолчанию WooCommerce требует полной отправки формы с перезагрузкой страницы. Включение этой опции использует AJAX для добавления товаров в корзину."
 
-#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:346
+#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:347
 msgid "Enable Express Payment Buttons"
 msgstr "Включить кнопки экспресс-оплаты"
 
-#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:347
+#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:348
 msgid "Enable express payment buttons from gateways that support the WooCommerce Minicart."
 msgstr "Включить кнопки экспресс-оплаты от платежных шлюзов, поддерживающих WooCommerce Minicart."
 
-#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:354
+#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:355
 msgid "Enable order bumps that are set to display below cart items to appear in side cart."
 msgstr "Включить order bumps, настроенные для отображения под товарами в корзине, чтобы они появлялись в боковой корзине."
 
-#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:360
+#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:361
 #: client/ts/admin/Components/Forms/CheckoutSettingsForm.tsx:587
 #: client/ts/admin/Components/CheckoutEditor/panels/CheckoutSettingsPanel.tsx:318
 msgid "Allow Variation Changes"
 msgstr "Разрешить изменение вариаций"
 
-#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:361
+#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:362
 #: client/ts/admin/Components/Forms/CheckoutSettingsForm.tsx:588
 msgid "Displays an edit link under cart items that allows customers to change which variation is selected in the cart."
 msgstr "Отображает ссылку редактирования под товарами в корзине, позволяющую клиентам менять выбранную вариацию в корзине."
 
-#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:368
+#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:369
 msgid "Enable sale price under on cart item labels in side cart. Example: <s>$10.00</s> $5.00"
 msgstr "Включить отображение цены со скидкой под метками товаров в боковой корзине. Пример: <s>$10.00</s> $5.00"
 
-#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:374
+#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:375
 msgid "Enable Coupons"
 msgstr "Включить купоны"
 
-#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:375
+#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:376
 msgid "Enable customers to apply coupons from the side cart."
 msgstr "Позволить клиентам применять купоны из боковой корзины."
 
-#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:382
+#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:383
 #: client/ts/admin/Components/Forms/CheckoutSettingsForm.tsx:266
 #: client/ts/admin/Components/CheckoutEditor/panels/CheckoutSettingsPanel.tsx:128
 msgid "Hide Coupon Code Field Behind Link"
 msgstr "Скрыть поле ввода кода купона за ссылкой"
 
-#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:383
+#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:384
 #: client/ts/admin/Components/Forms/CheckoutSettingsForm.tsx:267
 #: client/ts/admin/Components/CheckoutEditor/panels/CheckoutSettingsPanel.tsx:129
 msgid "Initially hide coupon field until \"Have a coupon code?\" link is clicked."
 msgstr "Изначально скрыть поле купона, пока не будет нажата ссылка «Есть код купона?»"
 
-#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:390
+#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:391
 msgid "Show Shipping and Totals"
 msgstr "Показать доставку и итоги"
 
-#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:391
+#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:392
 msgid "Enable customers to see shipping and order total in addition to subtotal."
 msgstr "Позволить клиентам видеть стоимость доставки и итог заказа в дополнение к промежуточной сумме."
 
-#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:397
+#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:398
 msgid "Enable Continue Shopping Button"
 msgstr "Включить кнопку «Продолжить покупки»"
 
-#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:398
+#: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:399
 msgid "Enable Continue Shopping Button at bottom of Side Cart. Disabled by default."
 msgstr "Включить кнопку «Продолжить покупки» внизу боковой корзины. По умолчанию отключена."
 
@@ -6479,16 +6597,234 @@ msgstr "У вас есть несохранённые изменения. Вы �
 msgid "Changing templates will update the logo, typography, colors, field label style, and footer text to those defined by the selected template. Are you sure you want to continue?"
 msgstr "Изменение шаблонов обновит логотип, типографику, цвета, стиль меток полей и текст в подвале согласно выбранному шаблону. Вы уверены, что хотите продолжить?"
 
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:79
-msgid "Step"
-msgstr "Шаг"
+# %s: item type e.g. "order bump"
+#: client/ts/admin/Components/CheckoutEditor/slots/UnsavedChangesDialog.tsx:37
+msgid "Create a new %s"
+msgstr "Создать новый %s"
 
+# %s: item type e.g. "order bump"
+#: client/ts/admin/Components/CheckoutEditor/slots/UnsavedChangesDialog.tsx:42
+msgid "A new tab will open where you can create your %s. When you\\'ve saved it, close that tab and return here - the editor will update automatically."
+msgstr "Откроется новая вкладка, где вы сможете создать %s. После сохранения закройте эту вкладку и вернитесь сюда — редактор обновится автоматически."
+
+# %s: item type e.g. "order bump"
+#: client/ts/admin/Components/CheckoutEditor/slots/UnsavedChangesDialog.tsx:59
+msgid "Create %s"
+msgstr "Создать %s"
+
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotsPanel.tsx:161
+msgid "No slots available."
+msgstr "Слоты отсутствуют."
+
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotsPanel.tsx:198
+msgid "Order bumps are assigned to slots but the feature is disabled. Enable order bumps in"
+msgstr "Дополнительные предложения назначены слотам, но функция отключена. Включите дополнительные предложения в"
+
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotsPanel.tsx:204
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotsPanel.tsx:224
+msgid "order bumps"
+msgstr "дополнительных предложениях"
+
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotsPanel.tsx:218
+msgid "One or more slots exceed the maximum order bumps per slot. Increase the limit in"
+msgstr "Один или несколько слотов превышают максимальное количество дополнительных предложений на слот. Увеличьте лимит в"
+
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotsPanel.tsx:238
+msgid "Trust badges are assigned to slots but the feature is disabled. Enable trust badges in"
+msgstr "Значки доверия назначены слотам, но функция отключена. Включите значки доверия в"
+
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotsPanel.tsx:244
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotsPanel.tsx:264
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotsPanel.tsx:313
+msgid "badges"
+msgstr "значки"
+
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotsPanel.tsx:258
+msgid "Customer reviews are assigned to slots but the feature is disabled. Enable customer reviews in"
+msgstr "Отзывы клиентов назначены слотам, но функция отключена. Включите отзывы клиентов в"
+
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotsPanel.tsx:307
+msgid "Column settings for badges are configured in"
+msgstr "Настройки колонок для значков настроены в"
+
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:83
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:84
+msgid "Not shown for orders that don\\'t need shipping (e.g. digital products or pickup)."
+msgstr "Не показывается для заказов, не требующих доставки (например, цифровые товары или самовывоз)."
+
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:118
+msgid "This order bump is part of an active A/B test. It cannot be removed while the test is running."
+msgstr "Этот дополнительный товар является частью активного A/B теста. Его нельзя удалить, пока тест запущен."
+
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:122
+msgid "Remove this item from the slot?"
+msgstr "Удалить этот элемент из слота?"
+
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:211
+msgid "Assign item to slot"
+msgstr "Назначить элемент в слот"
+
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:261
+msgid "On mobile and tablets, this slot is inside the \"Show order summary\" section."
+msgstr "На мобильных устройствах и планшетах этот слот находится в разделе «Показать сводку заказа»."
+
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:280
+msgid "On mobile and tablets, the cart collapses and order bumps in this slot will move to the Above Terms & Conditions slot."
+msgstr "На мобильных устройствах и планшетах корзина сворачивается, а дополнительные товары в этом слоте перемещаются в слот «Над условиями»."
+
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:320
+msgid "Release to drop here"
+msgstr "Отпустите, чтобы поместить сюда"
+
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:323
+msgid "No items assigned."
+msgstr "Элементы не назначены."
+
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:330
+msgid "Add item"
+msgstr "Добавить элемент"
+
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:415
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:233
+msgid "Level"
+msgstr "Уровень"
+
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:434
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:252
+msgid "e.g. Why choose us?"
+msgstr "напр., Почему выбирают нас?"
+
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:442
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:476
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:260
+msgid "Margin"
+msgstr "Отступ"
+
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:447
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:481
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:265
+msgid "e.g., 10px 0 20px 0"
+msgstr "напр., 10px 0 20px 0"
+
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:465
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:500
+msgid "Save"
+msgstr "Сохранить"
+
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:27
 #: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:126
 #: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:140
 #: client/ts/admin/Components/CheckoutEditor/panels/DesignSettingsPanel.tsx:86
-#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:27
 msgid "Paid plan required"
 msgstr "Требуется платный план"
+
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:201
+msgid "Add Item"
+msgstr "Добавить элемент"
+
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:227
+msgid "+ New heading"
+msgstr "+ Новый заголовок"
+
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:284
+#: client/ts/admin/Components/CheckoutEditor/slots/CustomHtmlEditor.tsx:40
+msgid "Add"
+msgstr "Добавить"
+
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:302
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:371
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:419
+msgid "(in slot)"
+msgstr "(в слоте)"
+
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:303
+msgid "(in other slot)"
+msgstr "(в другом слоте)"
+
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:329
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:340
+msgid "+ New order bump"
+msgstr "+ Новый дополнительный товар"
+
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:336
+msgid "order bump"
+msgstr "дополнительный товар"
+
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:337
+msgid "A new tab will open where you can create your order bump. When you\\'ve saved it, close that tab and return here — it will be added to your chosen slot automatically."
+msgstr "Откроется новая вкладка, где вы сможете создать дополнительный товар. После сохранения закройте эту вкладку и вернитесь сюда — он будет автоматически добавлен в выбранный слот."
+
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:379
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:390
+msgid "+ New trust badge"
+msgstr "+ Новый знак доверия"
+
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:386
+msgid "trust badge"
+msgstr "знак доверия"
+
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:387
+msgid "A new tab will open where you can create your trust badge. When you\\'ve saved it, close that tab and return here — it will appear in this list ready to assign."
+msgstr "Откроется новая вкладка, где вы сможете создать знак доверия. После сохранения закройте эту вкладку и вернитесь сюда — он появится в этом списке и будет готов к назначению."
+
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:399
+msgid "Review Badges"
+msgstr "Обзор значков"
+
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:402
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:418
+#: client/ts/admin/Components/CheckoutEditor/slots/AssignedItem.tsx:64
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:604
+msgid "Customer Reviews"
+msgstr "Отзывы клиентов"
+
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:436
+msgid "+ New HTML"
+msgstr "+ Новый HTML"
+
+#: client/ts/admin/Components/CheckoutEditor/slots/CustomHtmlEditor.tsx:46
+msgid "Name (optional)"
+msgstr "Название (необязательно)"
+
+#: client/ts/admin/Components/CheckoutEditor/slots/CustomHtmlEditor.tsx:51
+msgid "e.g. Free Shipping Promo"
+msgstr "например, Акция бесплатной доставки"
+
+#: client/ts/admin/Components/CheckoutEditor/slots/CustomHtmlEditor.tsx:59
+msgid "HTML content"
+msgstr "HTML-содержимое"
+
+#: client/ts/admin/Components/CheckoutEditor/slots/AssignedItem.tsx:66
+msgid "(empty heading)"
+msgstr "(пустой заголовок)"
+
+#: client/ts/admin/Components/CheckoutEditor/slots/AssignedItem.tsx:148
+msgid "This order bump has an A/B test associated with it and cannot be moved or removed. Delete the test to unlock it."
+msgstr "К этому дополнительному предложению привязан A/B-тест, поэтому его нельзя перемещать или удалять. Удалите тест, чтобы разблокировать его."
+
+#: client/ts/admin/Components/CheckoutEditor/slots/AssignedItem.tsx:151
+msgid "This bump is placed here automatically by its Checkout and Side Cart display location. It also appears in the side cart and isn\\'t counted toward this slot\\'s order bump limit."
+msgstr "Этот дополнительный товар размещён здесь автоматически согласно настройкам отображения на странице оформления заказа и боковой корзине. Он также отображается в боковой корзине и не учитывается в лимит дополнительного товара для этого слота."
+
+#: client/ts/admin/Components/CheckoutEditor/slots/AssignedItem.tsx:154
+msgid "This item has display conditions. It will only appear to customers who meet the configured criteria and may not be visible on every checkout."
+msgstr "У этого элемента есть условия отображения. Он будет виден только тем клиентам, которые соответствуют заданным критериям, и может быть не виден на каждом оформлении заказа."
+
+#: client/ts/admin/Components/CheckoutEditor/slots/AssignedItem.tsx:157
+msgid "The offer product for this bump is already in the preview cart, so it may not be visible in the preview."
+msgstr "Товар по этому предложению уже находится в корзине предварительного просмотра, поэтому он может быть не виден в превью."
+
+#: client/ts/admin/Components/CheckoutEditor/slots/AssignedItem.tsx:168
+msgid "Drag to reorder"
+msgstr "Перетащите для изменения порядка"
+
+#: client/ts/admin/Components/CheckoutEditor/slots/AssignedItem.tsx:241
+msgid "Remove"
+msgstr "Удалить"
+
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:79
+msgid "Step"
+msgstr "Шаг"
 
 #: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:162
 #: client/ts/admin/Components/CheckoutEditor/panels/DesignSettingsPanel.tsx:108
@@ -6606,13 +6942,6 @@ msgstr "Колонки для мобильных устройств"
 #: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:575
 msgid "Priority"
 msgstr "Приоритет"
-
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:604
-#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:402
-#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:418
-#: client/ts/admin/Components/CheckoutEditor/slots/AssignedItem.tsx:64
-msgid "Customer Reviews"
-msgstr "Отзывы клиентов"
 
 #: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:613
 msgid "Add badges to your checkout layout in"
@@ -6765,216 +7094,6 @@ msgstr "Показывать логотипы кредитных карт на �
 #: client/ts/admin/Components/CheckoutEditor/panels/CheckoutSettingsPanel.tsx:379
 msgid "Example: Show order summary and coupons."
 msgstr "Пример: показать сводку заказа и купоны."
-
-# %s: item type e.g. "order bump"
-#: client/ts/admin/Components/CheckoutEditor/slots/UnsavedChangesDialog.tsx:37
-msgid "Create a new %s"
-msgstr "Создать новый %s"
-
-# %s: item type e.g. "order bump"
-#: client/ts/admin/Components/CheckoutEditor/slots/UnsavedChangesDialog.tsx:42
-msgid "A new tab will open where you can create your %s. When you\\'ve saved it, close that tab and return here - the editor will update automatically."
-msgstr "Откроется новая вкладка, где вы сможете создать %s. После сохранения закройте эту вкладку и вернитесь сюда — редактор обновится автоматически."
-
-# %s: item type e.g. "order bump"
-#: client/ts/admin/Components/CheckoutEditor/slots/UnsavedChangesDialog.tsx:59
-msgid "Create %s"
-msgstr "Создать %s"
-
-#: client/ts/admin/Components/CheckoutEditor/slots/SlotsPanel.tsx:161
-msgid "No slots available."
-msgstr "Слоты отсутствуют."
-
-#: client/ts/admin/Components/CheckoutEditor/slots/SlotsPanel.tsx:198
-msgid "Order bumps are assigned to slots but the feature is disabled. Enable order bumps in"
-msgstr "Дополнительные предложения назначены слотам, но функция отключена. Включите дополнительные предложения в"
-
-#: client/ts/admin/Components/CheckoutEditor/slots/SlotsPanel.tsx:204
-#: client/ts/admin/Components/CheckoutEditor/slots/SlotsPanel.tsx:224
-msgid "order bumps"
-msgstr "дополнительных предложениях"
-
-#: client/ts/admin/Components/CheckoutEditor/slots/SlotsPanel.tsx:218
-msgid "One or more slots exceed the maximum order bumps per slot. Increase the limit in"
-msgstr "Один или несколько слотов превышают максимальное количество дополнительных предложений на слот. Увеличьте лимит в"
-
-#: client/ts/admin/Components/CheckoutEditor/slots/SlotsPanel.tsx:238
-msgid "Trust badges are assigned to slots but the feature is disabled. Enable trust badges in"
-msgstr "Значки доверия назначены слотам, но функция отключена. Включите значки доверия в"
-
-#: client/ts/admin/Components/CheckoutEditor/slots/SlotsPanel.tsx:244
-#: client/ts/admin/Components/CheckoutEditor/slots/SlotsPanel.tsx:264
-#: client/ts/admin/Components/CheckoutEditor/slots/SlotsPanel.tsx:313
-msgid "badges"
-msgstr "значки"
-
-#: client/ts/admin/Components/CheckoutEditor/slots/SlotsPanel.tsx:258
-msgid "Customer reviews are assigned to slots but the feature is disabled. Enable customer reviews in"
-msgstr "Отзывы клиентов назначены слотам, но функция отключена. Включите отзывы клиентов в"
-
-#: client/ts/admin/Components/CheckoutEditor/slots/SlotsPanel.tsx:307
-msgid "Column settings for badges are configured in"
-msgstr "Настройки колонок для значков настроены в"
-
-#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:115
-msgid "This order bump is part of an active A/B test. It cannot be removed while the test is running."
-msgstr "Этот дополнительный товар является частью активного A/B теста. Его нельзя удалить, пока тест запущен."
-
-#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:119
-msgid "Remove this item from the slot?"
-msgstr "Удалить этот элемент из слота?"
-
-#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:208
-msgid "Assign item to slot"
-msgstr "Назначить элемент в слот"
-
-#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:258
-msgid "On mobile and tablets, this slot is inside the \"Show order summary\" section."
-msgstr "На мобильных устройствах и планшетах этот слот находится в разделе «Показать сводку заказа»."
-
-#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:268
-msgid "This slot won\\'t be shown for pickups."
-msgstr "Этот слот не будет показан для самовывоза."
-
-#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:279
-msgid "On mobile and tablets, the cart collapses and order bumps in this slot will move to the Above Terms & Conditions slot."
-msgstr "На мобильных устройствах и планшетах корзина сворачивается, а дополнительные товары в этом слоте перемещаются в слот «Над условиями»."
-
-#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:319
-msgid "Release to drop here"
-msgstr "Отпустите, чтобы поместить сюда"
-
-#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:322
-msgid "No items assigned."
-msgstr "Элементы не назначены."
-
-#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:329
-msgid "Add item"
-msgstr "Добавить элемент"
-
-#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:414
-#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:233
-msgid "Level"
-msgstr "Уровень"
-
-#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:433
-#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:252
-msgid "e.g. Why choose us?"
-msgstr "напр., Почему выбирают нас?"
-
-#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:441
-#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:475
-#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:260
-msgid "Margin"
-msgstr "Отступ"
-
-#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:446
-#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:480
-#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:265
-msgid "e.g., 10px 0 20px 0"
-msgstr "напр., 10px 0 20px 0"
-
-#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:464
-#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:499
-msgid "Save"
-msgstr "Сохранить"
-
-#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:201
-msgid "Add Item"
-msgstr "Добавить элемент"
-
-#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:227
-msgid "+ New heading"
-msgstr "+ Новый заголовок"
-
-#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:284
-#: client/ts/admin/Components/CheckoutEditor/slots/CustomHtmlEditor.tsx:40
-msgid "Add"
-msgstr "Добавить"
-
-#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:302
-#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:371
-#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:419
-msgid "(in slot)"
-msgstr "(в слоте)"
-
-#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:303
-msgid "(in other slot)"
-msgstr "(в другом слоте)"
-
-#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:329
-#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:340
-msgid "+ New order bump"
-msgstr "+ Новый дополнительный товар"
-
-#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:336
-msgid "order bump"
-msgstr "дополнительный товар"
-
-#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:337
-msgid "A new tab will open where you can create your order bump. When you\\'ve saved it, close that tab and return here — it will be added to your chosen slot automatically."
-msgstr "Откроется новая вкладка, где вы сможете создать дополнительный товар. После сохранения закройте эту вкладку и вернитесь сюда — он будет автоматически добавлен в выбранный слот."
-
-#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:379
-#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:390
-msgid "+ New trust badge"
-msgstr "+ Новый знак доверия"
-
-#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:386
-msgid "trust badge"
-msgstr "знак доверия"
-
-#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:387
-msgid "A new tab will open where you can create your trust badge. When you\\'ve saved it, close that tab and return here — it will appear in this list ready to assign."
-msgstr "Откроется новая вкладка, где вы сможете создать знак доверия. После сохранения закройте эту вкладку и вернитесь сюда — он появится в этом списке и будет готов к назначению."
-
-#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:399
-msgid "Review Badges"
-msgstr "Обзор значков"
-
-#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:436
-msgid "+ New HTML"
-msgstr "+ Новый HTML"
-
-#: client/ts/admin/Components/CheckoutEditor/slots/CustomHtmlEditor.tsx:46
-msgid "Name (optional)"
-msgstr "Название (необязательно)"
-
-#: client/ts/admin/Components/CheckoutEditor/slots/CustomHtmlEditor.tsx:51
-msgid "e.g. Free Shipping Promo"
-msgstr "например, Акция бесплатной доставки"
-
-#: client/ts/admin/Components/CheckoutEditor/slots/CustomHtmlEditor.tsx:59
-msgid "HTML content"
-msgstr "HTML-содержимое"
-
-#: client/ts/admin/Components/CheckoutEditor/slots/AssignedItem.tsx:66
-msgid "(empty heading)"
-msgstr "(пустой заголовок)"
-
-#: client/ts/admin/Components/CheckoutEditor/slots/AssignedItem.tsx:148
-msgid "This order bump is part of an active A/B test and cannot be moved or removed while the test is running."
-msgstr "Этот дополнительный товар участвует в активном A/B тесте и не может быть перемещён или удалён, пока тест проводится."
-
-#: client/ts/admin/Components/CheckoutEditor/slots/AssignedItem.tsx:151
-msgid "This bump is placed here automatically by its Checkout and Side Cart display location. It also appears in the side cart and isn\\'t counted toward this slot\\'s order bump limit."
-msgstr "Этот дополнительный товар размещён здесь автоматически согласно настройкам отображения на странице оформления заказа и боковой корзине. Он также отображается в боковой корзине и не учитывается в лимит дополнительного товара для этого слота."
-
-#: client/ts/admin/Components/CheckoutEditor/slots/AssignedItem.tsx:154
-msgid "This item has display conditions. It will only appear to customers who meet the configured criteria and may not be visible on every checkout."
-msgstr "У этого элемента есть условия отображения. Он будет виден только тем клиентам, которые соответствуют заданным критериям, и может быть не виден на каждом оформлении заказа."
-
-#: client/ts/admin/Components/CheckoutEditor/slots/AssignedItem.tsx:157
-msgid "The offer product for this bump is already in the preview cart, so it may not be visible in the preview."
-msgstr "Товар по этому предложению уже находится в корзине предварительного просмотра, поэтому он может быть не виден в превью."
-
-#: client/ts/admin/Components/CheckoutEditor/slots/AssignedItem.tsx:168
-msgid "Drag to reorder"
-msgstr "Перетащите для изменения порядка"
-
-#: client/ts/admin/Components/CheckoutEditor/slots/AssignedItem.tsx:241
-msgid "Remove"
-msgstr "Удалить"
 
 #: client/ts/admin/Components/Metaboxes/Fields/Rules/fields.ts:47
 msgid "Is equal to"

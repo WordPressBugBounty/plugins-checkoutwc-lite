@@ -18,7 +18,7 @@ abstract class SingletonAbstract {
 	 * @since 1.0.0
 	 * @var null
 	 */
-	protected static $instance = array();
+	protected static $instance = [];
 
 	/**
 	 * Singleton constructor. Just a stub. Do not fill with logic

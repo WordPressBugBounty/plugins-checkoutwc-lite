@@ -113,7 +113,7 @@ class CheckoutEditor extends PageAbstract {
 		// Optional: edit a specific template in the editor without changing the saved option (template only updates on Save).
 		$requested_slug = isset( $_GET['cfw_editor_template'] ) ? sanitize_text_field( wp_unslash( $_GET['cfw_editor_template'] ) ) : ''; // phpcs:ignore WordPress.Security.NonceVerification.Recommended
 		$all_slugs      = array_keys( Template::get_all_available() );
-		$template_slug = ( $requested_slug && in_array( $requested_slug, $all_slugs, true ) ) ? $requested_slug : $saved_slug;
+		$template_slug  = ( $requested_slug && in_array( $requested_slug, $all_slugs, true ) ) ? $requested_slug : $saved_slug;
 
 		// Editor-only settings: only the keys used by the editor sections (Template, Logo, Typography, Colors, Steps, Fields, Addresses, Cart Summary, Footer).
 		$editor_settings = [];
@@ -147,8 +147,8 @@ class CheckoutEditor extends PageAbstract {
 			if ( isset( $raw_color_settings[ $section_id ]['settings'] ) ) {
 				foreach ( array_keys( $raw_color_settings[ $section_id ]['settings'] ) as $key ) {
 					if ( $is_active_template ) {
-						$saved  = $settings_manager->get_setting( $key, [ $template_slug ] );
-						$value  = false !== $saved ? $saved : ( $template_defaults[ $key ] ?? '' );
+						$saved = $settings_manager->get_setting( $key, [ $template_slug ] );
+						$value = false !== $saved ? $saved : ( $template_defaults[ $key ] ?? '' );
 					} else {
 						$value = $template_defaults[ $key ] ?? '';
 					}
@@ -165,48 +165,48 @@ class CheckoutEditor extends PageAbstract {
 		// Fields (template-scoped: label_style; rest global).
 		$editor_settings[ $settings_manager->add_suffix( 'label_style', [ $template_slug ] ) ] = $settings_manager->get_setting( 'label_style', [ $template_slug ] );
 		$editor_settings['wp_option/woocommerce_checkout_phone_field'] = get_option( 'woocommerce_checkout_phone_field', 'required' );
-		$editor_settings['enable_order_notes']                         = $settings_manager->get_setting( 'enable_order_notes' ) === 'yes';
-		$editor_settings['enable_coupon_code_link']                    = $settings_manager->get_setting( 'enable_coupon_code_link' ) === 'yes';
-		$editor_settings['hide_optional_address_fields_behind_link']   = $settings_manager->get_setting( 'hide_optional_address_fields_behind_link' ) === 'yes';
-		$editor_settings['enable_discreet_address_1_fields']           = $settings_manager->get_setting( 'enable_discreet_address_1_fields' ) === 'yes';
-		$editor_settings['discreet_address_1_fields_order']            = $settings_manager->get_setting( 'discreet_address_1_fields_order' );
-		$editor_settings['use_fullname_field']                         = $settings_manager->get_setting( 'use_fullname_field' ) === 'yes';
-		$editor_settings['enable_highlighted_countries']               = $settings_manager->get_setting( 'enable_highlighted_countries' ) === 'yes';
-		$editor_settings['highlighted_countries']                      = $settings_manager->get_setting( 'highlighted_countries' );
+		$editor_settings['enable_order_notes']      = $settings_manager->get_setting( 'enable_order_notes' ) === 'yes';
+		$editor_settings['enable_coupon_code_link'] = $settings_manager->get_setting( 'enable_coupon_code_link' ) === 'yes';
+		$editor_settings['hide_optional_address_fields_behind_link'] = $settings_manager->get_setting( 'hide_optional_address_fields_behind_link' ) === 'yes';
+		$editor_settings['enable_discreet_address_1_fields']         = $settings_manager->get_setting( 'enable_discreet_address_1_fields' ) === 'yes';
+		$editor_settings['discreet_address_1_fields_order']          = $settings_manager->get_setting( 'discreet_address_1_fields_order' );
+		$editor_settings['use_fullname_field']           = $settings_manager->get_setting( 'use_fullname_field' ) === 'yes';
+		$editor_settings['enable_highlighted_countries'] = $settings_manager->get_setting( 'enable_highlighted_countries' ) === 'yes';
+		$editor_settings['highlighted_countries']        = $settings_manager->get_setting( 'highlighted_countries' );
 
 		// Addresses.
 		$editor_settings['force_different_billing_address'] = $settings_manager->get_setting( 'force_different_billing_address' ) === 'yes';
-		$editor_settings['enabled_billing_address_fields']   = $settings_manager->get_setting( 'enabled_billing_address_fields' );
+		$editor_settings['enabled_billing_address_fields']  = $settings_manager->get_setting( 'enabled_billing_address_fields' );
 
 		// Cart Summary.
-		$editor_settings['enable_cart_editing']                         = $settings_manager->get_setting( 'enable_cart_editing' ) === 'yes';
-		$editor_settings['allow_checkout_cart_item_variation_changes']  = $settings_manager->get_setting( 'allow_checkout_cart_item_variation_changes' ) === 'yes';
-		$editor_settings['show_item_remove_button']                     = $settings_manager->get_setting( 'show_item_remove_button' ) === 'yes';
-		$editor_settings['cart_edit_empty_cart_redirect']               = $settings_manager->get_setting( 'cart_edit_empty_cart_redirect' );
-		$editor_settings['enable_sticky_cart_summary']                  = $settings_manager->get_setting( 'enable_sticky_cart_summary' ) === 'yes';
-		$editor_settings['show_cart_item_discount']                     = $settings_manager->get_setting( 'show_cart_item_discount' ) === 'yes';
-		$editor_settings['cart_item_link']                              = $settings_manager->get_setting( 'cart_item_link' );
-		$editor_settings['cart_item_data_display']                      = $settings_manager->get_setting( 'cart_item_data_display' );
+		$editor_settings['enable_cart_editing'] = $settings_manager->get_setting( 'enable_cart_editing' ) === 'yes';
+		$editor_settings['allow_checkout_cart_item_variation_changes'] = $settings_manager->get_setting( 'allow_checkout_cart_item_variation_changes' ) === 'yes';
+		$editor_settings['show_item_remove_button']                    = $settings_manager->get_setting( 'show_item_remove_button' ) === 'yes';
+		$editor_settings['cart_edit_empty_cart_redirect']              = $settings_manager->get_setting( 'cart_edit_empty_cart_redirect' );
+		$editor_settings['enable_sticky_cart_summary']                 = $settings_manager->get_setting( 'enable_sticky_cart_summary' ) === 'yes';
+		$editor_settings['show_cart_item_discount']                    = $settings_manager->get_setting( 'show_cart_item_discount' ) === 'yes';
+		$editor_settings['cart_item_link']         = $settings_manager->get_setting( 'cart_item_link' );
+		$editor_settings['cart_item_data_display'] = $settings_manager->get_setting( 'cart_item_data_display' );
 
 		// Order Bumps.
-		$editor_settings['enable_order_bumps']      = $settings_manager->get_setting( 'enable_order_bumps' ) === 'yes';
+		$editor_settings['enable_order_bumps']       = $settings_manager->get_setting( 'enable_order_bumps' ) === 'yes';
 		$editor_settings['order_bumps_settings_url'] = add_query_arg( 'page', 'cfw-settings-order_bumps', admin_url( 'admin.php' ) );
-		$editor_settings['max_bumps']               = (int) ( $settings_manager->get_setting( 'max_bumps' ) ?? 10 );
+		$editor_settings['max_bumps']                = (int) ( $settings_manager->get_setting( 'max_bumps' ) ?? 10 );
 
 		// Badges.
-		$editor_settings['enable_trust_badges']       = $settings_manager->get_setting( 'enable_trust_badges' ) === 'yes';
-		$editor_settings['trust_badge_position']      = $settings_manager->get_setting( 'trust_badge_position' );
-		$editor_settings['trust_badges_title']        = $settings_manager->get_setting( 'trust_badges_title' );
-		$editor_settings['trust_badge_columns']            = max( 1, (int) ( $settings_manager->get_setting( 'trust_badge_columns' ) ?: 3 ) );
-		$editor_settings['trust_badge_cart_columns']       = max( 1, (int) ( $settings_manager->get_setting( 'trust_badge_cart_columns' ) ?: 2 ) );
-		$editor_settings['trust_badge_mobile_columns']      = max( 1, (int) ( $settings_manager->get_setting( 'trust_badge_mobile_columns' ) ?: 1 ) );
-		$editor_settings['enable_wc_review_badges']        = $settings_manager->get_setting( 'enable_wc_review_badges' ) === 'yes';
-		$editor_settings['wc_review_source']               = $settings_manager->get_setting( 'wc_review_source' );
-		$editor_settings['wc_review_min_rating']           = $settings_manager->get_setting( 'wc_review_min_rating' );
-		$editor_settings['wc_review_limit']                = (int) $settings_manager->get_setting( 'wc_review_limit' );
-		$editor_settings['review_badge_columns']           = max( 1, (int) ( $settings_manager->get_setting( 'review_badge_columns' ) ?: 3 ) );
-		$editor_settings['review_badge_cart_columns']      = max( 1, (int) ( $settings_manager->get_setting( 'review_badge_cart_columns' ) ?: 2 ) );
-		$editor_settings['review_badge_mobile_columns']     = max( 1, (int) ( $settings_manager->get_setting( 'review_badge_mobile_columns' ) ?: 1 ) );
+		$editor_settings['enable_trust_badges']         = $settings_manager->get_setting( 'enable_trust_badges' ) === 'yes';
+		$editor_settings['trust_badge_position']        = $settings_manager->get_setting( 'trust_badge_position' );
+		$editor_settings['trust_badges_title']          = $settings_manager->get_setting( 'trust_badges_title' );
+		$editor_settings['trust_badge_columns']         = max( 1, (int) ( $settings_manager->get_setting( 'trust_badge_columns' ) ?: 3 ) );
+		$editor_settings['trust_badge_cart_columns']    = max( 1, (int) ( $settings_manager->get_setting( 'trust_badge_cart_columns' ) ?: 2 ) );
+		$editor_settings['trust_badge_mobile_columns']  = max( 1, (int) ( $settings_manager->get_setting( 'trust_badge_mobile_columns' ) ?: 1 ) );
+		$editor_settings['enable_wc_review_badges']     = $settings_manager->get_setting( 'enable_wc_review_badges' ) === 'yes';
+		$editor_settings['wc_review_source']            = $settings_manager->get_setting( 'wc_review_source' );
+		$editor_settings['wc_review_min_rating']        = $settings_manager->get_setting( 'wc_review_min_rating' );
+		$editor_settings['wc_review_limit']             = (int) $settings_manager->get_setting( 'wc_review_limit' );
+		$editor_settings['review_badge_columns']        = max( 1, (int) ( $settings_manager->get_setting( 'review_badge_columns' ) ?: 3 ) );
+		$editor_settings['review_badge_cart_columns']   = max( 1, (int) ( $settings_manager->get_setting( 'review_badge_cart_columns' ) ?: 2 ) );
+		$editor_settings['review_badge_mobile_columns'] = max( 1, (int) ( $settings_manager->get_setting( 'review_badge_mobile_columns' ) ?: 1 ) );
 
 		// Footer (template-scoped + mode).
 		$editor_settings[ $settings_manager->add_suffix( 'footer_text', [ $template_slug ] ) ] = $settings_manager->get_setting( 'footer_text', [ $template_slug ] );
@@ -219,7 +219,7 @@ class CheckoutEditor extends PageAbstract {
 		$editor_settings['disable_express_checkout'] = $settings_manager->get_setting( 'disable_express_checkout' ) === 'yes';
 
 		// Color defaults for reset/preview.
-		$all_color_defaults = Appearance::get_theme_color_settings_defaults( $template_slug );
+		$all_color_defaults      = Appearance::get_theme_color_settings_defaults( $template_slug );
 		$color_settings_defaults = [];
 		foreach ( $color_section_ids as $section_id ) {
 			if ( isset( $raw_color_settings[ $section_id ]['settings'] ) ) {
@@ -306,7 +306,7 @@ class CheckoutEditor extends PageAbstract {
 				'type'         => [ 'simple' ],
 			]
 		);
-		$candidates = $simple_query->get_products();
+		$candidates   = $simple_query->get_products();
 		foreach ( $candidates as $p ) {
 			if ( $p->is_purchasable() ) {
 				$product = $p;
@@ -323,7 +323,7 @@ class CheckoutEditor extends PageAbstract {
 					'type'         => [ 'variation' ],
 				]
 			);
-			$candidates = $variation_query->get_products();
+			$candidates      = $variation_query->get_products();
 			foreach ( $candidates as $p ) {
 				if ( $p->is_purchasable() ) {
 					$product = $p;

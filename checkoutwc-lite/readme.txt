@@ -3,8 +3,8 @@ Contributors: kestrelwp, clifgriffin
 Donate link: https://www.checkoutwc.com
 Tags: checkout, woocommerce-checkout, express-checkout, checkout-optimization, cart-abandonment
 Requires at least: 5.2
-Tested up to: 7.0.1
-Stable tag: 11.2.0
+Tested up to: 7.0.2
+Stable tag: 11.3.0
 Requires PHP: 7.4
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
@@ -81,7 +81,7 @@ Shopify-style one-page and multi-step layouts like Glass, Futurist, Copify, and 
 
 <strong>Side cart and order bumps</strong>
 
-Add a modern AJAX side cart with live totals and free-shipping goals, and boost average order value with rule-based order bumps and post-purchase one-click upsells.
+Add a modern AJAX side cart with live totals and a multi-tier rewards bar, and boost average order value with rule-based order bumps and post-purchase one-click upsells.
 
 <strong>Abandoned cart recovery</strong>
 
@@ -96,6 +96,12 @@ Trust badges, Google Maps address autocomplete, Cloudflare Turnstile spam protec
 Drop order bumps, trust badges, and reviews into named positions across your checkout, then drag them into the exact order you want - all in the visual editor, no code required. See how this works in the video below.
 
 [youtube https://www.youtube.com/watch?v=V9B3HGhS-7I]
+
+<strong>Multi-tier rewards bar</strong>
+
+Stack up to three spend-to-unlock tiers in a single progress bar - free shipping, an automatic free gift, and your own custom reward - so customers always have a reason to add one more item. Show it in the side cart and at checkout to lift average order value. See how this works in the video below.
+
+[youtube https://www.youtube.com/watch?v=afWIbQCETlc]
 
 <a href="https://www.checkoutwc.com/pricing/">Compare plans and pricing →</a>
 
@@ -199,6 +205,10 @@ Use your payment gateway's test mode to process test transactions without chargi
 == Changelog ==
 
 Free version updates are non-sequential due to the unified development branch we use with the premium versions.
+
+= Version 11.3.0 =
+
+- Fix - Checkout Slots: the "After Billing Address" slot now shows on digital / no-shipping checkouts, where it follows the billing address onto the information step; shipping-only slots are flagged in the editor so their absence on those checkouts is expected
 
 = Version 11.2.0 =
 

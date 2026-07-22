@@ -34,7 +34,7 @@ class CFW_Shipping_Local_Pickup extends \WC_Shipping_Local_Pickup {
 		$this->instance_id        = 0; // Always 0 for non-zone methods
 		$this->method_title       = __( 'Local Pickup', 'checkout-wc' );
 		$this->method_description = __( 'Allow customers to pick up orders themselves. This version does not require shipping zones.', 'checkout-wc' );
-		$this->supports           = array();
+		$this->supports           = [];
 
 		// Call parent init method
 		$this->init();
@@ -63,15 +63,15 @@ class CFW_Shipping_Local_Pickup extends \WC_Shipping_Local_Pickup {
 	 *
 	 * @param array $package Package information.
 	 */
-	public function calculate_shipping( $package = array() ) {
+	public function calculate_shipping( $package = [] ) {
 		$this->add_rate(
-			array(
+			[
 				'id'       => $this->id,
 				'label'    => $this->title,
 				'cost'     => $this->cost,
 				'taxes'    => false,   // default values (taxes will be automatically calculated)
 				'calc_tax' => 'per_order',
-			)
+			]
 		);
 	}
 

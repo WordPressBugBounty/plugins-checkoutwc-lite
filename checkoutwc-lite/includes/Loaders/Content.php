@@ -29,9 +29,9 @@ class Content extends LoaderAbstract {
 
 		$global_template_parameters = self::init_checkout();
 
-		add_action( 'wp_head', array( 'Objectiv\Plugins\Checkout\Loaders\Content', 'output_custom_header_scripts' ), 20, 4 );
-		add_action( 'wp_head', array( 'Objectiv\Plugins\Checkout\Loaders\Content', 'custom_styles' ), 5, 5 );
-		add_action( 'wp_footer', array( 'Objectiv\Plugins\Checkout\Loaders\Content', 'output_custom_footer_scripts' ) );
+		add_action( 'wp_head', [ 'Objectiv\Plugins\Checkout\Loaders\Content', 'output_custom_header_scripts' ], 20, 4 );
+		add_action( 'wp_head', [ 'Objectiv\Plugins\Checkout\Loaders\Content', 'custom_styles' ], 5, 5 );
+		add_action( 'wp_footer', [ 'Objectiv\Plugins\Checkout\Loaders\Content', 'output_custom_footer_scripts' ] );
 
 		add_shortcode(
 			'woocommerce_checkout',
@@ -69,9 +69,9 @@ class Content extends LoaderAbstract {
 			return;
 		}
 
-		add_action( 'wp_head', array( 'Objectiv\Plugins\Checkout\Loaders\Content', 'output_custom_header_scripts' ), 20, 4 );
-		add_action( 'wp_head', array( 'Objectiv\Plugins\Checkout\Loaders\Content', 'custom_styles' ), 5, 5 );
-		add_action( 'wp_footer', array( 'Objectiv\Plugins\Checkout\Loaders\Content', 'output_custom_footer_scripts' ) );
+		add_action( 'wp_head', [ 'Objectiv\Plugins\Checkout\Loaders\Content', 'output_custom_header_scripts' ], 20, 4 );
+		add_action( 'wp_head', [ 'Objectiv\Plugins\Checkout\Loaders\Content', 'custom_styles' ], 5, 5 );
+		add_action( 'wp_footer', [ 'Objectiv\Plugins\Checkout\Loaders\Content', 'output_custom_footer_scripts' ] );
 
 		add_shortcode(
 			'woocommerce_checkout',
@@ -108,9 +108,9 @@ class Content extends LoaderAbstract {
 
 		$global_template_parameters = self::init_thank_you();
 
-		add_action( 'wp_head', array( 'Objectiv\Plugins\Checkout\Loaders\Content', 'output_custom_header_scripts' ), 20, 4 );
-		add_action( 'wp_head', array( 'Objectiv\Plugins\Checkout\Loaders\Content', 'custom_styles' ), 5, 5 );
-		add_action( 'wp_footer', array( 'Objectiv\Plugins\Checkout\Loaders\Content', 'output_custom_footer_scripts' ) );
+		add_action( 'wp_head', [ 'Objectiv\Plugins\Checkout\Loaders\Content', 'output_custom_header_scripts' ], 20, 4 );
+		add_action( 'wp_head', [ 'Objectiv\Plugins\Checkout\Loaders\Content', 'custom_styles' ], 5, 5 );
+		add_action( 'wp_footer', [ 'Objectiv\Plugins\Checkout\Loaders\Content', 'output_custom_footer_scripts' ] );
 
 		add_shortcode(
 			'woocommerce_checkout',
@@ -134,14 +134,14 @@ class Content extends LoaderAbstract {
 	 * @deprecated 5.0.0
 	 */
 	public static function wp_head() {
-		add_action( 'wp_head', array( 'Objectiv\Plugins\Checkout\Loaders\Content', 'output_custom_header_scripts' ), 20, 4 );
-		add_action( 'wp_head', array( 'Objectiv\Plugins\Checkout\Loaders\Content', 'custom_styles' ), 5, 5 );
+		add_action( 'wp_head', [ 'Objectiv\Plugins\Checkout\Loaders\Content', 'output_custom_header_scripts' ], 20, 4 );
+		add_action( 'wp_head', [ 'Objectiv\Plugins\Checkout\Loaders\Content', 'custom_styles' ], 5, 5 );
 	}
 
 	/**
 	 * @deprecated 5.0.0
 	 */
 	public static function wp_footer() {
-		add_action( 'wp_footer', array( 'Objectiv\Plugins\Checkout\Loaders\Content', 'output_custom_footer_scripts' ) );
+		add_action( 'wp_footer', [ 'Objectiv\Plugins\Checkout\Loaders\Content', 'output_custom_footer_scripts' ] );
 	}
 }

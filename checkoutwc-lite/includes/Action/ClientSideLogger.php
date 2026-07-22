@@ -14,10 +14,10 @@ class ClientSideLogger extends CFWAction {
 		// Ensure WooCommerce session is available
 		if ( ! WC()->session ) {
 			$this->out(
-				array(
+				[
 					'success' => false,
 					'error'   => 'WooCommerce session is not available.',
-				)
+				]
 			);
 			return;
 		}
@@ -31,10 +31,10 @@ class ClientSideLogger extends CFWAction {
 
 		if ( ! $rateLimit->isAccepted() ) {
 			$this->out(
-				array(
+				[
 					'success' => false,
 					'error'   => 'Too many requests. Please try again later.',
-				)
+				]
 			);
 			return;
 		}
@@ -44,20 +44,20 @@ class ClientSideLogger extends CFWAction {
 
 		if ( empty( $log_data ) ) {
 			$this->out(
-				array(
+				[
 					'success' => false,
-				)
+				]
 			);
 
 			return;
 		}
 
-		wc_get_logger()->error( 'CheckoutWC Client Side Error: ' . print_r( $log_data, true ), array( 'source' => 'checkout-wc' ) ); // phpcs:ignore WordPress.PHP.DevelopmentFunctions.error_log_print_r
+		wc_get_logger()->error( 'CheckoutWC Client Side Error: ' . print_r( $log_data, true ), [ 'source' => 'checkout-wc' ] ); // phpcs:ignore WordPress.PHP.DevelopmentFunctions.error_log_print_r
 
 		$this->out(
-			array(
+			[
 				'success' => true,
-			)
+			]
 		);
 	}
 }

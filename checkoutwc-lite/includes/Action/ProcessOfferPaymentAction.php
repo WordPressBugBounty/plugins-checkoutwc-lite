@@ -56,10 +56,10 @@ class ProcessOfferPaymentAction extends CFWAction {
 		// Verify nonce
 		if ( ! wp_verify_nonce( $nonce, 'cfw_process_offer_' . $bump_id ) ) {
 			$this->out(
-				array(
+				[
 					'success' => false,
 					'message' => __( 'Security verification failed.', 'checkout-wc' ),
-				)
+				]
 			);
 			return;
 		}
@@ -68,10 +68,10 @@ class ProcessOfferPaymentAction extends CFWAction {
 		$order = wc_get_order( $order_id );
 		if ( ! $order ) {
 			$this->out(
-				array(
+				[
 					'success' => false,
 					'message' => __( 'Invalid order.', 'checkout-wc' ),
-				)
+				]
 			);
 			return;
 		}
@@ -79,22 +79,22 @@ class ProcessOfferPaymentAction extends CFWAction {
 		// Verify order key
 		if ( $order->get_order_key() !== $order_key ) {
 			$this->out(
-				array(
+				[
 					'success' => false,
 					'message' => __( 'Invalid order key.', 'checkout-wc' ),
-				)
+				]
 			);
 			return;
 		}
 
 		// Check order status - prevent processing on invalid statuses
-		$restricted_statuses = array( 'refunded', 'cancelled', 'failed' );
+		$restricted_statuses = [ 'refunded', 'cancelled', 'failed' ];
 		if ( in_array( $order->get_status(), $restricted_statuses, true ) ) {
 			$this->out(
-				array(
+				[
 					'success' => false,
 					'message' => __( 'This order cannot accept offers.', 'checkout-wc' ),
-				)
+				]
 			);
 			return;
 		}
@@ -103,10 +103,10 @@ class ProcessOfferPaymentAction extends CFWAction {
 		$payment_method = $order->get_payment_method();
 		if ( empty( $payment_method ) ) {
 			$this->out(
-				array(
+				[
 					'success' => false,
 					'message' => __( 'No payment method found.', 'checkout-wc' ),
-				)
+				]
 			);
 			return;
 		}
@@ -115,10 +115,10 @@ class ProcessOfferPaymentAction extends CFWAction {
 		$registry = GatewayRegistry::instance();
 		if ( ! $registry->is_gateway_supported( $payment_method ) ) {
 			$this->out(
-				array(
+				[
 					'success' => false,
 					'message' => __( 'Payment gateway does not support one-click upsells.', 'checkout-wc' ),
-				)
+				]
 			);
 			return;
 		}
@@ -127,10 +127,10 @@ class ProcessOfferPaymentAction extends CFWAction {
 		$gateway = $registry->load_gateway( $payment_method );
 		if ( ! $gateway ) {
 			$this->out(
-				array(
+				[
 					'success' => false,
 					'message' => __( 'Failed to load payment gateway.', 'checkout-wc' ),
-				)
+				]
 			);
 			return;
 		}
@@ -139,10 +139,10 @@ class ProcessOfferPaymentAction extends CFWAction {
 		$product = wc_get_product( $product_id );
 		if ( ! $product ) {
 			$this->out(
-				array(
+				[
 					'success' => false,
 					'message' => __( 'Invalid product.', 'checkout-wc' ),
-				)
+				]
 			);
 			return;
 		}
@@ -151,10 +151,10 @@ class ProcessOfferPaymentAction extends CFWAction {
 		$bump = \Objectiv\Plugins\Checkout\Factories\BumpFactory::get( $bump_id );
 		if ( ! $bump ) {
 			$this->out(
-				array(
+				[
 					'success' => false,
 					'message' => __( 'Invalid bump offer.', 'checkout-wc' ),
-				)
+				]
 			);
 			return;
 		}
@@ -174,7 +174,7 @@ class ProcessOfferPaymentAction extends CFWAction {
 			if ( wc_prices_include_tax() ) {
 				// Prices INCLUDE tax in store settings
 				// $offer_price already includes tax (e.g., $3.00 with tax included)
-				$price_excluding_tax = wc_get_price_excluding_tax( $product, array( 'price' => $offer_price ) );
+				$price_excluding_tax = wc_get_price_excluding_tax( $product, [ 'price' => $offer_price ] );
 
 				// For gateway: charge full amount with tax included
 				$price_for_gateway = $offer_price; // e.g., $3.00 (tax included)
@@ -185,7 +185,7 @@ class ProcessOfferPaymentAction extends CFWAction {
 			} else {
 				// Prices EXCLUDE tax in store settings
 				// $offer_price doesn't include tax (e.g., $3.00 without tax)
-				$price_including_tax = wc_get_price_including_tax( $product, array( 'price' => $offer_price ) );
+				$price_including_tax = wc_get_price_including_tax( $product, [ 'price' => $offer_price ] );
 
 				// For gateway: charge amount including tax
 				$price_for_gateway = $price_including_tax; // e.g., $3.15 ($3.00 + tax)
@@ -196,7 +196,7 @@ class ProcessOfferPaymentAction extends CFWAction {
 		}
 
 		// Build product data array (CartFlows format)
-		$product_data = array(
+		$product_data = [
 			'id'           => $product_id,
 			'variation_id' => $variation_id,
 			'qty'          => $qty,
@@ -206,11 +206,11 @@ class ProcessOfferPaymentAction extends CFWAction {
 			'bump_id'      => $bump_id, // woo-stripe-payment gateway expects this key
 			'action'       => 'cfw_offer_accepted',
 			'shipping_fee' => 0,
-			'args'         => array(
+			'args'         => [
 				'subtotal' => $price_for_args * $qty, // Tax-exclusive for order line item
 				'total'    => $price_for_args * $qty, // Tax-exclusive for order line item
-			),
-		);
+			],
+		];
 
 		// Debug logging for tax calculations
 		cfw_debug_log( 'Offer Tax Calculation:' );
@@ -248,10 +248,10 @@ class ProcessOfferPaymentAction extends CFWAction {
 			do_action( 'cfw_offer_payment_failed', $order, $product_data, $gateway );
 
 			$this->out(
-				array(
+				[
 					'success' => false,
 					'message' => __( 'Payment failed. Please try again.', 'checkout-wc' ),
-				)
+				]
 			);
 			return;
 		}
@@ -271,10 +271,10 @@ class ProcessOfferPaymentAction extends CFWAction {
 			do_action( 'cfw_offer_payment_succeeded_order_update_failed', $order, $product_data );
 
 			$this->out(
-				array(
+				[
 					'success' => false,
 					'message' => __( 'Payment successful but failed to update order.', 'checkout-wc' ),
-				)
+				]
 			);
 			return;
 		}
@@ -303,11 +303,11 @@ class ProcessOfferPaymentAction extends CFWAction {
 		}
 
 		$this->out(
-			array(
+			[
 				'success' => true,
 				'message' => __( 'Offer accepted successfully.', 'checkout-wc' ),
 				'reload'  => true, // Signal page reload to show next bump or updated order
-			)
+			]
 		);
 	}
 }

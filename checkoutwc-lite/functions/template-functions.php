@@ -678,7 +678,7 @@ function cfw_maybe_show_welcome_back_text() {
 			echo esc_attr( wp_logout_url( wc_get_checkout_url() ) );
 
 			?>
- "><?php esc_html_e( 'Log out.', 'checkout-wc' ); ?></a>
+"><?php esc_html_e( 'Log out.', 'checkout-wc' ); ?></a>
 		<?php endif; ?>
 	</div>
 	<?php
@@ -1830,7 +1830,7 @@ function cfw_thank_you_downloads( $order, $order_statues, $show_downloads, $down
 				echo esc_attr( $column_id );
 
 				?>
- "><span class="nobr"><?php echo esc_html( $column_name ); ?></span></th>
+"><span class="nobr"><?php echo esc_html( $column_name ); ?></span></th>
 			<?php endforeach; ?>
 		</tr>
 		</thead>
@@ -1842,7 +1842,7 @@ function cfw_thank_you_downloads( $order, $order_statues, $show_downloads, $down
 					echo esc_attr( $column_id );
 
 					?>
- " data-title="<?php echo esc_attr( $column_name ); ?>">
+" data-title="<?php echo esc_attr( $column_name ); ?>">
 						<?php
 						if ( has_action( 'woocommerce_account_downloads_column_' . $column_id ) ) {
 							cfw_do_action( 'woocommerce_account_downloads_column_' . $column_id, $download );
@@ -1914,7 +1914,7 @@ function cfw_thank_you_customer_information( WC_Order $order ) {
 				esc_html_e( 'Payment', 'checkout-wc' );
 
 				?>
- </h6>
+</h6>
 				<p><?php echo wp_kses_post( $payment_method_title ); ?></p>
 			</div>
 		<?php endif; ?>
@@ -1974,7 +1974,7 @@ function cfw_thank_you_customer_information( WC_Order $order ) {
 				esc_html_e( 'Shipping', 'checkout-wc' );
 
 				?>
- </h6>
+</h6>
 				<p>
 					<?php echo wp_kses_post( $order->get_shipping_method() ); ?>
 				</p>
@@ -2333,6 +2333,25 @@ function cfw_maybe_output_footer_nav_menu() {
 }
 
 function cfw_output_empty_cart_message() {
+	$empty_image_id = SettingsManager::instance()->get_setting( 'side_cart_empty_image_attachment_id' );
+
+	if ( ! empty( $empty_image_id ) && is_numeric( $empty_image_id ) ) {
+		$empty_image = wp_get_attachment_image(
+			(int) $empty_image_id,
+			'medium',
+			false,
+			[
+				'id'    => 'cfw_empty_side_cart_image',
+				'class' => 'cfw-empty-side-cart-image',
+				'alt'   => '',
+			]
+		);
+
+		if ( $empty_image ) {
+			echo wp_kses_post( $empty_image );
+		}
+	}
+
 	/**
 	 * Fires before the empty cart message is output.
 	 *

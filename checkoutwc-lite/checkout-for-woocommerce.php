@@ -7,11 +7,11 @@
  * Author URI: https://kestrelwp.com/
  * Text Domain: checkout-wc
  * Domain Path: /i18n/languages
- * Version: 11.2.0
+ * Version: 11.3.0
  * Requires Plugins: woocommerce
  * Requires at least: 5.2
  * Requires PHP: 7.4
- * Tested up to: 7.0.1
+ * Tested up to: 7.0.2
  * WC requires at least: 8.2
  * WC tested up to: 10.9.4
  * Build: <build_hash>
@@ -49,7 +49,7 @@ if ( defined( 'CFW_VERSION' ) ) {
 
 define( 'CFW_NAME', 'Checkout for WooCommerce' );
 define( 'CFW_UPDATE_URL', 'https://www.checkoutwc.com' );
-define( 'CFW_VERSION', '11.2.0' );
+define( 'CFW_VERSION', '11.3.0' );
 define( 'CFW_PATH', __DIR__ );
 define( 'CFW_URL', plugins_url( '/', __FILE__ ) );
 define( 'CFW_MAIN_FILE', __FILE__ );
@@ -85,7 +85,7 @@ add_filter(
 
 		// Use default handle 'woocommerce' for main pages since other plugins look for
 		// a script registered with that handle
-		if ( in_array( $chunk_name, array( 'checkout', 'order-pay', 'thank-you' ), true ) ) {
+		if ( in_array( $chunk_name, [ 'checkout', 'order-pay', 'thank-you' ], true ) ) {
 			$args['handle'] = 'woocommerce';
 			array_push( $args['deps'], 'jquery-blockui', 'js-cookie' );
 		}
@@ -109,7 +109,7 @@ add_filter(
 		if ( file_exists( $deps_file ) ) {
 			$deps_file = require $deps_file;
 
-			array_push( $args['deps'], ...$deps_file['dependencies'] ?? array() );
+			array_push( $args['deps'], ...$deps_file['dependencies'] ?? [] );
 		}
 
 		// Remove duplicate dependencies
@@ -139,14 +139,14 @@ if ( version_compare( phpversion(), '7.4', '<' ) ) {
 						wp_kses(
 							/* translators: %s - checkoutwc.com URL for documentation with more details. */
 							__( '<strong>Note:</strong> CheckoutWC Lite is disabled on your site until you fix the issue. <a href="%s" target="_blank" rel="noopener noreferrer">Need help? Click here.</a>', 'checkout-wc' ),
-							array(
-								'a'      => array(
-									'href'   => array(),
-									'target' => array(),
-									'rel'    => array(),
-								),
-								'strong' => array(),
-							)
+							[
+								'a'      => [
+									'href'   => [],
+									'target' => [],
+									'rel'    => [],
+								],
+								'strong' => [],
+							]
 						),
 						'https://www.checkoutwc.com/documentation/installation-requirements/'
 					);

@@ -11,27 +11,27 @@ class WooCommerceCheckoutFieldEditor extends CompatibilityAbstract {
 	}
 
 	public function pre_init() {
-		add_filter( 'cfw_admin_integrations_checkbox_fields', array( $this, 'admin_integration_settings' ) );
-		add_filter( 'woocommerce_custom_checkout_position', array( $this, 'add_additional_field_sizes' ) );
-		add_filter( 'cfw_pre_output_fieldset_field_args', array( $this, 'cfw_form_field_args' ), 100000 - 1000, 1 );
+		add_filter( 'cfw_admin_integrations_checkbox_fields', [ $this, 'admin_integration_settings' ] );
+		add_filter( 'woocommerce_custom_checkout_position', [ $this, 'add_additional_field_sizes' ] );
+		add_filter( 'cfw_pre_output_fieldset_field_args', [ $this, 'cfw_form_field_args' ], 100000 - 1000, 1 );
 
 		if ( SettingsManager::instance()->get_setting( 'allow_checkout_field_editor_address_modification' ) !== 'yes' ) {
 			// Add styles for WooCommerce Checkout Field Editor admin page
-			add_action( 'admin_head', array( $this, 'output_custom_styles' ) );
-			add_action( 'admin_init', array( $this, 'maybe_redirect_to_additional_fields_tab' ) );
+			add_action( 'admin_head', [ $this, 'output_custom_styles' ] );
+			add_action( 'admin_init', [ $this, 'maybe_redirect_to_additional_fields_tab' ] );
 		}
 
-		add_filter( 'pre_update_option_wc_fields_additional', array( $this, 'cleanup_classes' ) );
-		add_filter( 'pre_update_option_wc_fields_billing', array( $this, 'cleanup_classes' ) );
-		add_filter( 'pre_update_option_wc_fields_shipping', array( $this, 'cleanup_classes' ) );
+		add_filter( 'pre_update_option_wc_fields_additional', [ $this, 'cleanup_classes' ] );
+		add_filter( 'pre_update_option_wc_fields_billing', [ $this, 'cleanup_classes' ] );
+		add_filter( 'pre_update_option_wc_fields_shipping', [ $this, 'cleanup_classes' ] );
 	}
 
 	public function run_immediately() {
-		add_filter( 'woocommerce_enable_order_notes_field', array( $this, 'enable_notes_field' ) );
+		add_filter( 'woocommerce_enable_order_notes_field', [ $this, 'enable_notes_field' ] );
 
 		if ( SettingsManager::instance()->get_setting( 'allow_checkout_field_editor_address_modification' ) === 'yes' ) {
-			add_filter( 'option_wc_fields_billing', array( $this, 'cleanup_classes' ) );
-			add_filter( 'option_wc_fields_shipping', array( $this, 'cleanup_classes' ) );
+			add_filter( 'option_wc_fields_billing', [ $this, 'cleanup_classes' ] );
+			add_filter( 'option_wc_fields_shipping', [ $this, 'cleanup_classes' ] );
 
 			return;
 		}
@@ -42,7 +42,7 @@ class WooCommerceCheckoutFieldEditor extends CompatibilityAbstract {
 
 	public function run() {
 		remove_action( 'wp_enqueue_scripts', 'wc_checkout_fields_dequeue_address_i18n', 15 );
-		add_filter( 'cfw_body_classes', array( $this, 'add_body_class' ) );
+		add_filter( 'cfw_body_classes', [ $this, 'add_body_class' ] );
 	}
 
 	public function add_body_class( $classes ) {
@@ -63,12 +63,12 @@ class WooCommerceCheckoutFieldEditor extends CompatibilityAbstract {
 			return $integrations;
 		}
 
-		$integrations[] = array(
+		$integrations[] = [
 			'name'          => 'allow_checkout_field_editor_address_modification',
 			'label'         => __( 'Enable Checkout Field Editor address field overrides. (Not Recommended)', 'checkout-wc' ),
 			'description'   => __( 'Allow WooCommerce Checkout Field Editor to modify billing and shipping address fields. Not compatible with these features: Separate House Number and Street Name Address Fields, Full Name Field, Fetchify', 'checkout-wc' ),
 			'initial_value' => SettingsManager::instance()->get_setting( 'allow_checkout_field_editor_address_modification' ) === 'yes',
-		);
+		];
 
 		return $integrations;
 	}
@@ -76,9 +76,9 @@ class WooCommerceCheckoutFieldEditor extends CompatibilityAbstract {
 	public function cleanup_classes( $address_fields ) {
 		foreach ( $address_fields as $field_key => $field ) {
 			if ( is_array( $field['class'] ) ) {
-				$field['class'] = array(
+				$field['class'] = [
 					end( $field['class'] ),
-				);
+				];
 			}
 
 			// Update field array
@@ -94,14 +94,14 @@ class WooCommerceCheckoutFieldEditor extends CompatibilityAbstract {
 		 *
 		 * @see WooCommerceCheckoutFieldEditor::cfw_form_field_args()
 		 */
-		return array(
+		return [
 			'cfw-col-3'      => '25% Width',
 			'cfw-col-4'      => '33% Width',
 			'form-row-first' => '50% Width',
 			'cfw-col-8'      => '67% Width',
 			'cfw-col-9'      => '75% Width',
 			'form-row-wide'  => __( 'Full-width', 'woocommerce-checkout-field-editor' ),
-		);
+		];
 	}
 
 	public function enable_notes_field(): bool {

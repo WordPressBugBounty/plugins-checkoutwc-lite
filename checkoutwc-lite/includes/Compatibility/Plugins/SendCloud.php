@@ -10,12 +10,12 @@ class SendCloud extends CompatibilityAbstract {
 	}
 
 	public function typescript_class_and_params( array $compatibility ): array {
-		$compatibility[] = array(
+		$compatibility[] = [
 			'class'  => 'SendCloud',
-			'params' => array(
+			'params' => [
 				'notice' => __( 'Please choose a service point.', 'sendcloud-shipping' ),
-			),
-		);
+			],
+		];
 
 		return $compatibility;
 	}

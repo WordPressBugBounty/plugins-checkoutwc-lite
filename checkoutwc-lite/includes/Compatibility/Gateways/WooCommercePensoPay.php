@@ -35,19 +35,19 @@ class WooCommercePensoPay extends CompatibilityAbstract {
 		$WooCommercePensoPayMolliePay = cfw_get_hook_instance_object( 'woocommerce_checkout_before_customer_details', 'insert_woocommerce_pensopay_mobilepay_checkout', 10 );
 
 		if ( ! empty( $WooCommercePensoPayMolliePay ) ) {
-			remove_action( 'woocommerce_checkout_before_customer_details', array( $WooCommercePensoPayMolliePay, 'insert_woocommerce_pensopay_mobilepay_checkout' ), 10 );
+			remove_action( 'woocommerce_checkout_before_customer_details', [ $WooCommercePensoPayMolliePay, 'insert_woocommerce_pensopay_mobilepay_checkout' ], 10 );
 
 			if ( method_exists( $WooCommercePensoPayMolliePay, 'is_gateway_available' ) && $WooCommercePensoPayMolliePay->is_gateway_available() ) {
-				add_action( 'cfw_payment_request_buttons', array( $WooCommercePensoPayMolliePay, 'insert_woocommerce_pensopay_mobilepay_checkout' ), 10 );
+				add_action( 'cfw_payment_request_buttons', [ $WooCommercePensoPayMolliePay, 'insert_woocommerce_pensopay_mobilepay_checkout' ], 10 );
 			}
 		}
 	}
 
 	public function typescript_class_and_params( array $compatibility ): array {
-		$compatibility[] = array(
+		$compatibility[] = [
 			'class'  => 'WooCommercePensoPay',
-			'params' => array(),
-		);
+			'params' => [],
+		];
 
 		return $compatibility;
 	}

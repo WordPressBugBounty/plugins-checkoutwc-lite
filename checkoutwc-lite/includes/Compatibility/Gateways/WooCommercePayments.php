@@ -22,7 +22,7 @@ class WooCommercePayments extends CompatibilityAbstract {
 		 * @param bool $allow Whether to ignore shipping phone requirement during payment requests
 		 */
 		if ( apply_filters( 'cfw_wcpay_payment_requests_ignore_shipping_phone', true ) ) {
-			add_action( 'wc_ajax_wcpay_create_order', array( $this, 'process_payment_request_ajax_checkout' ), 1 );
+			add_action( 'wc_ajax_wcpay_create_order', [ $this, 'process_payment_request_ajax_checkout' ], 1 );
 		}
 
 		if ( ! $this->is_available() ) {
@@ -48,7 +48,7 @@ class WooCommercePayments extends CompatibilityAbstract {
 	}
 
 	public function run() {
-		add_action( 'wp_enqueue_scripts', array( $this, 'modify_localized_data' ), 100000 );
+		add_action( 'wp_enqueue_scripts', [ $this, 'modify_localized_data' ], 100000 );
 
 		$this->add_payment_request_buttons();
 	}
@@ -68,10 +68,10 @@ class WooCommercePayments extends CompatibilityAbstract {
 			}
 
 			// Remove default stripe request placement
-			remove_action( 'woocommerce_checkout_before_customer_details', array( $wc_payments_payment_request_button_handler, 'display_express_checkout_buttons' ), 1 );
+			remove_action( 'woocommerce_checkout_before_customer_details', [ $wc_payments_payment_request_button_handler, 'display_express_checkout_buttons' ], 1 );
 
 			// Add our own stripe requests
-			add_action( 'cfw_payment_request_buttons', array( $wc_payments_payment_request_button_handler, 'display_express_checkout_buttons' ), 1 );
+			add_action( 'cfw_payment_request_buttons', [ $wc_payments_payment_request_button_handler, 'display_express_checkout_buttons' ], 1 );
 		}
 	}
 
@@ -85,7 +85,7 @@ class WooCommercePayments extends CompatibilityAbstract {
 				function ( $fields ) {
 					if ( isset( $fields['shipping']['shipping_phone'] ) ) {
 						$fields['shipping']['shipping_phone']['required'] = false;
-						$fields['shipping']['shipping_phone']['validate'] = array();
+						$fields['shipping']['shipping_phone']['validate'] = [];
 					}
 
 					if ( 'yes' === SettingsManager::instance()->get_setting( 'use_fullname_field' ) ) {
@@ -128,10 +128,10 @@ class WooCommercePayments extends CompatibilityAbstract {
 	}
 
 	public function typescript_class_and_params( array $compatibility ): array {
-		$compatibility[] = array(
+		$compatibility[] = [
 			'class'  => 'WooCommercePayments',
-			'params' => array(),
-		);
+			'params' => [],
+		];
 
 		return $compatibility;
 	}

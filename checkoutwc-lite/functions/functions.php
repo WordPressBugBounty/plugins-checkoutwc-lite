@@ -573,12 +573,9 @@ function cfw_get_payment_methods_html() {
 						 * @since 2.0.0
 						 */
 						if ( apply_filters( "cfw_payment_gateway_{$gateway->id}_content", $gateway->has_fields() || $gateway->get_description() ) ) :
-							?>
-							<div class="payment_box payment_method_<?php
-							echo esc_attr( $gateway->id );
 
 							?>
- cfw-radio-reveal-content" <?php echo ! $gateway->chosen ? 'style="display:none;"' : ''; ?>>
+							<div class="payment_box payment_method_<?php echo esc_attr( $gateway->id ); ?> cfw-radio-reveal-content" <?php echo ! $gateway->chosen ? 'style="display:none;"' : ''; ?>>
 								<?php
 								ob_start();
 
@@ -693,7 +690,7 @@ function cfw_get_order_item_summary_table( WC_Order $order ) : string {
 							echo esc_attr( $item->get_url() );
 
 							?>
- ">
+">
 								<?php echo wp_kses_post( $item->get_title() ); ?>
 							</a>
 						<?php else : ?>
@@ -1160,7 +1157,7 @@ function cfw_billing_address_radio_group() {
 								checked( $default, 'same_as_shipping' );
 
 								?>
- />
+/>
 
 						<label for="billing_same_as_shipping_radio" class="cfw-radio-reveal-label">
 							<div>
@@ -3124,7 +3121,7 @@ function cfw_get_email_body( $preheader, $content ) {
 										esc_html_e( 'Unsubscribe', 'checkout-wc' );
 
 										?>
- </a>.
+</a>.
 									<?php endif; ?>
 								</td>
 							</tr>
@@ -3339,6 +3336,9 @@ function cfw_get_cart_items_data() : array {
 			'product_parent_id'                       => $item->get_product()->get_parent_id(),
 			'has_quantity_override'                   => cfw_cart_quantity_input_has_override( $raw_item, $key, $product ),
 			'discount_html'                           => cfw_get_item_discount_html( $item ),
+			'free_gift_label'                         => ( ! empty( $raw_item['_cfw_order_bump_id'] ) && 'side_cart_tier' === get_post_meta( (int) $raw_item['_cfw_order_bump_id'], '_cfw_managed_by', true ) )
+				? (string) get_post_meta( (int) $raw_item['_cfw_order_bump_id'], '_cfw_side_cart_tier_label', true )
+				: '',
 			'actions'                                 => [
 				/**
 				 * Fires after cart item data output
@@ -4292,7 +4292,7 @@ function cfw_get_order_bump_variable_product_form( WC_Product_Variable $variable
 						echo implode( ' ', array_map( 'sanitize_html_class', $wrapper_classes ) );
 
 						?>
- ">
+">
 						<div class="cfw-product-form-modal-image-wrap woocommerce-product-gallery__image">
 							<?php echo wp_kses_post( $image ); ?>
 						</div>
@@ -4319,7 +4319,7 @@ function cfw_get_order_bump_variable_product_form( WC_Product_Variable $variable
 									echo esc_attr( sanitize_title( $attribute_name ) );
 
 									?>
- ">
+">
 								<?php echo wp_kses_post( wc_attribute_label( $attribute_name ) ); ?>
 							</label>
 							<br/>

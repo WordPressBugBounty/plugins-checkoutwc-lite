@@ -20,6 +20,6 @@ class WPLoyalty extends CompatibilityAbstract {
 			return;
 		}
 
-		add_action( 'wp', array( $wp_loyalty_main, 'updateFreeProduct' ), 0 );
+		add_action( 'wp', [ $wp_loyalty_main, 'updateFreeProduct' ], 0 );
 	}
 }

@@ -86,9 +86,9 @@ class SlotsAPI {
 	 * @return WP_REST_Response
 	 */
 	public function save_slots( WP_REST_Request $request ): WP_REST_Response {
-		$manager         = SlotManager::instance();
-		$assignments     = $request->get_param( 'assignments' );
-		$html_blocks     = $request->get_param( 'custom_html_blocks' ) ?? [];
+		$manager     = SlotManager::instance();
+		$assignments = $request->get_param( 'assignments' );
+		$html_blocks = $request->get_param( 'custom_html_blocks' ) ?? [];
 
 		// Sanitise assignments.
 		$clean_assignments = [];

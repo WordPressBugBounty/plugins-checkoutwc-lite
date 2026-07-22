@@ -10,7 +10,7 @@ class WooFinvoicer extends CompatibilityAbstract {
 	}
 
 	public function run() {
-		add_filter( 'woocommerce_checkout_fields', array( $this, 'add_business_id_field' ), 100, 1 );
+		add_filter( 'woocommerce_checkout_fields', [ $this, 'add_business_id_field' ], 100, 1 );
 	}
 
 	/**

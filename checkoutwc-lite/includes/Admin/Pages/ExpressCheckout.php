@@ -33,22 +33,22 @@ class ExpressCheckout extends PageAbstract {
 		}
 
 		$this->set_script_data(
-			array(
-				'settings'             => array(
+			[
+				'settings'             => [
 					'disable_express_checkout' => SettingsManager::instance()->get_setting( 'disable_express_checkout' ) === 'yes',
-				),
-				'woocommerce_settings' => array(),
-				'params'               => array(
+				],
+				'woocommerce_settings' => [],
+				'params'               => [
 					/**
 					 * Filter detected gateways
 					 *
 					 * @since 9.0.0
 					 * @param array $gateways
 					 */
-					'gateways' => apply_filters( 'cfw_detected_gateways', array() ),
-				),
+					'gateways' => apply_filters( 'cfw_detected_gateways', [] ),
+				],
 				'plan'                 => $this->get_plan_data(),
-			)
+			]
 		);
 	}
 }

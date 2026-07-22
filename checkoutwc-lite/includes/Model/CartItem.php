@@ -52,13 +52,13 @@ class CartItem implements ItemInterface {
 		}
 
 		$woocommerce_filtered_cart_item_row_class = esc_attr( cfw_apply_filters( 'woocommerce_cart_item_class', 'cart_item', $item, $key ) );
-		$this->thumbnail                          = cfw_apply_filters( 'woocommerce_cart_item_thumbnail', $product->get_image( 'cfw_cart_thumb' ), $item, $key );
-		$this->quantity                           = floatval( $item['quantity'] );
-		$this->title                              = cfw_apply_filters( 'woocommerce_cart_item_name', $product->get_name(), $item, $key );
-		$this->url                                = get_permalink( $item['product_id'] );
-		$this->subtotal                           = cfw_apply_filters( 'woocommerce_cart_item_subtotal', WC()->cart->get_product_subtotal( $product, $item['quantity'] ), $item, $key );
-		$this->subtotal_raw                       = (float) ( $item['line_subtotal'] ?? 0 );
-		$this->hide_remove_item                   = cfw_apply_filters( 'woocommerce_cart_item_remove_link', 'PLACEHOLDER', $key ) === '';
+		$this->thumbnail        = cfw_apply_filters( 'woocommerce_cart_item_thumbnail', $product->get_image( 'cfw_cart_thumb' ), $item, $key );
+		$this->quantity         = floatval( $item['quantity'] );
+		$this->title            = cfw_apply_filters( 'woocommerce_cart_item_name', $product->get_name(), $item, $key );
+		$this->url              = get_permalink( $item['product_id'] );
+		$this->subtotal         = cfw_apply_filters( 'woocommerce_cart_item_subtotal', WC()->cart->get_product_subtotal( $product, $item['quantity'] ), $item, $key );
+		$this->subtotal_raw     = (float) ( $item['line_subtotal'] ?? 0 );
+		$this->hide_remove_item = cfw_apply_filters( 'woocommerce_cart_item_remove_link', 'PLACEHOLDER', $key ) === '';
 
 		/**
 		 * Filter the item row class
@@ -139,7 +139,7 @@ class CartItem implements ItemInterface {
 	}
 
 	protected function get_cart_item_data( array $cart_item ): array {
-		$item_data = array();
+		$item_data = [];
 
 		// Variation values are shown only if they are not found in the title as of 3.0.
 		// This is because variation titles display the attributes.
@@ -165,17 +165,17 @@ class CartItem implements ItemInterface {
 					continue;
 				}
 
-				$item_data[] = array(
+				$item_data[] = [
 					'key'   => $label,
 					'value' => $value,
-				);
+				];
 			}
 		}
 
 		// Filter item data to allow 3rd parties to add more to the array.
 		$item_data = cfw_apply_filters( 'woocommerce_get_item_data', $item_data, $cart_item );
 
-		$prepared_data = array();
+		$prepared_data = [];
 
 		// Format item data ready to display.
 		foreach ( $item_data as $key => $data ) {
@@ -213,7 +213,7 @@ class CartItem implements ItemInterface {
 			return '';
 		}
 
-		$display_outputs = array();
+		$display_outputs = [];
 
 		foreach ( $item_data as $raw_key => $raw_value ) {
 			if ( ! is_string( $raw_value ) ) {
@@ -278,7 +278,7 @@ class CartItem implements ItemInterface {
 	}
 
 	public function get_data(): array {
-		return $this->data ?? array();
+		return $this->data ?? [];
 	}
 
 	public function get_formatted_data(): string {
@@ -296,13 +296,13 @@ class CartItem implements ItemInterface {
 			$max_quantity = $product->get_max_purchase_quantity();
 		}
 
-		$defaults = array(
+		$defaults = [
 			'max_value' => cfw_apply_filters( 'woocommerce_quantity_input_max', $max_quantity, $product ),
 			'min_value' => cfw_apply_filters( 'woocommerce_quantity_input_min', $min_quantity, $product ),
 			'step'      => cfw_apply_filters( 'woocommerce_quantity_input_step', 1, $product ),
 			'readonly'  => false,
-			'classes'   => array(), // ticket #19016
-		);
+			'classes'   => [], // ticket #19016
+		];
 
 		$args = cfw_apply_filters( 'woocommerce_quantity_input_args', $defaults, $product );
 

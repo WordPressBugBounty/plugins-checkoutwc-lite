@@ -5,7 +5,7 @@ namespace Objectiv\Plugins\Checkout\Admin\Notices;
 use Objectiv\Plugins\Checkout\Managers\UpdatesManager;
 
 class InvalidLicenseKeyNotice extends NoticeAbstract {
-	public function maybe_add( string $id, string $title, string $message, array $options = array() ) {
+	public function maybe_add( string $id, string $title, string $message, array $options = [] ) {
 		$key_status  = UpdatesManager::instance()->get_field_value( 'key_status' );
 		$license_key = UpdatesManager::instance()->get_field_value( 'license_key' );
 

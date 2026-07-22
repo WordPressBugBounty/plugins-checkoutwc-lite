@@ -22,8 +22,8 @@ class Jupiter extends CompatibilityAbstract {
 		add_action( 'woocommerce_checkout_order_review', 'woocommerce_order_review' );
 		remove_action( 'woocommerce_checkout_shipping', 'woocommerce_order_review', 10 );
 
-		add_action( 'woocommerce_checkout_shipping', array( \WC_Checkout::instance(), 'checkout_form_shipping' ) );
-		remove_action( 'woocommerce_checkout_billing', array( \WC_Checkout::instance(), 'checkout_form_shipping' ) );
+		add_action( 'woocommerce_checkout_shipping', [ \WC_Checkout::instance(), 'checkout_form_shipping' ] );
+		remove_action( 'woocommerce_checkout_billing', [ \WC_Checkout::instance(), 'checkout_form_shipping' ] );
 	}
 
 	public function unset_theme_callbacks( $hook, $priority = 10 ) {
@@ -46,7 +46,7 @@ class Jupiter extends CompatibilityAbstract {
 					}
 				} catch ( \Exception $e ) {
 					/* translators: Error message logged when Jupiter theme callback removal fails */
-					wc_get_logger()->error( __( 'CheckoutWC: Failed to unset Jupiter theme callbacks.', 'checkout-wc' ), array( 'source' => 'checkout-wc' ) );
+					wc_get_logger()->error( __( 'CheckoutWC: Failed to unset Jupiter theme callbacks.', 'checkout-wc' ), [ 'source' => 'checkout-wc' ] );
 				}
 			}
 		}

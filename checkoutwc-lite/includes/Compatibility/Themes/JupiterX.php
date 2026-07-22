@@ -16,7 +16,7 @@ class JupiterX extends CompatibilityAbstract {
 	}
 
 	public function run_immediately() {
-		add_action( 'woocommerce_review_order_after_submit', array( $this, 'remove_actions' ), 0 );
+		add_action( 'woocommerce_review_order_after_submit', [ $this, 'remove_actions' ], 0 );
 	}
 
 	public function remove_actions() {

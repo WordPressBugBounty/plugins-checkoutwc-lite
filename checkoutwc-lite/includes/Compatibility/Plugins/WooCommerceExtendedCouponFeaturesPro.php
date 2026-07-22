@@ -20,7 +20,7 @@ class WooCommerceExtendedCouponFeaturesPro extends CompatibilityAbstract {
 		$free_plugins = $wjecf->get_plugin( 'pro-free-products' );
 
 		if ( $free_plugins ) {
-			add_filter( 'cfw_checkout_cart_summary', array( $free_plugins, 'render_checkout_select_free_product' ), 55 ); // after coupon module
+			add_filter( 'cfw_checkout_cart_summary', [ $free_plugins, 'render_checkout_select_free_product' ], 55 ); // after coupon module
 		}
 	}
 

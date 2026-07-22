@@ -24,7 +24,7 @@ class Install {
 			$wp_roles = new WP_Roles(); // phpcs:ignore WordPress.WP.GlobalVariablesOverride.Prohibited
 		}
 
-		$capabilities = array(
+		$capabilities = [
 			'cfw_manage_order_bumps',
 			'cfw_view_acr_reports',
 			'cfw_manage_pages',
@@ -41,7 +41,7 @@ class Install {
 			'cfw_import_settings',
 			'cfw_manage_acr',
 			'cfw_manage_options', // required to modify settings
-		);
+		];
 
 		foreach ( $capabilities as $capability ) {
 			$wp_roles->add_cap( 'administrator', $capability );
@@ -81,7 +81,7 @@ class Install {
 		SettingsManager::instance()->add_setting( 'enable_mobile_totals', 'yes' );
 		SettingsManager::instance()->add_setting( 'enable_order_pay', 'no' );
 		SettingsManager::instance()->add_setting( 'enable_thank_you_page', 'no' );
-		SettingsManager::instance()->add_setting( 'thank_you_order_statuses', array() );
+		SettingsManager::instance()->add_setting( 'thank_you_order_statuses', [] );
 		SettingsManager::instance()->add_setting( 'enable_map_embed', 'no' );
 		SettingsManager::instance()->add_setting( 'override_view_order_template', 'no' );
 		SettingsManager::instance()->add_setting( 'google_places_api_key', '' );
@@ -122,7 +122,7 @@ class Install {
 		SettingsManager::instance()->add_setting( 'smartystreets_auth_id', '' );
 		SettingsManager::instance()->add_setting( 'smartystreets_auth_token', '' );
 		SettingsManager::instance()->add_setting( 'hide_admin_bar_button', 'no' );
-		SettingsManager::instance()->add_setting( 'highlighted_countries', array() );
+		SettingsManager::instance()->add_setting( 'highlighted_countries', [] );
 		SettingsManager::instance()->add_setting( 'international_phone_field_standard', 'raw' );
 		SettingsManager::instance()->add_setting( 'enable_beta_version_updates', 'no' );
 		SettingsManager::instance()->add_setting( 'show_item_remove_button', 'no' );
@@ -133,7 +133,7 @@ class Install {
 		SettingsManager::instance()->add_setting( 'auto_select_free_shipping_method', 'no' );
 		SettingsManager::instance()->add_setting( 'show_cart_item_discount', 'yes' );
 		SettingsManager::instance()->add_setting( 'acr_simulate_only', 'no' );
-		SettingsManager::instance()->add_setting( 'pickup_methods', array() );
+		SettingsManager::instance()->add_setting( 'pickup_methods', [] );
 		SettingsManager::instance()->add_setting( 'hide_billing_address_for_free_orders', 'no' );
 		SettingsManager::instance()->add_setting( 'header_scripts', '' );
 		SettingsManager::instance()->add_setting( 'footer_scripts', '' );
@@ -144,8 +144,8 @@ class Install {
 		SettingsManager::instance()->add_setting( 'footer_scripts_thank_you', '' );
 		SettingsManager::instance()->add_setting( 'header_scripts_order_pay', '' );
 		SettingsManager::instance()->add_setting( 'footer_scripts_order_pay', '' );
-		SettingsManager::instance()->add_setting( 'store_policies', array() );
-		SettingsManager::instance()->add_setting( 'trust_badges', array() );
+		SettingsManager::instance()->add_setting( 'store_policies', [] );
+		SettingsManager::instance()->add_setting( 'trust_badges', [] );
 		SettingsManager::instance()->add_setting( 'trust_badges_title', '' );
 		SettingsManager::instance()->add_setting( 'disable_express_checkout', 'no' );
 		SettingsManager::instance()->add_setting( 'allow_checkout_cart_item_variation_changes', 'no' );
@@ -167,13 +167,13 @@ class Install {
 		SettingsManager::instance()->add_setting( 'enable_smartystreets_integration', 'no' );
 		SettingsManager::instance()->add_setting( 'enable_acr', 'no' );
 		SettingsManager::instance()->add_setting( 'acr_abandoned_time', 15 );
-		SettingsManager::instance()->add_setting( 'acr_excluded_roles', array() );
+		SettingsManager::instance()->add_setting( 'acr_excluded_roles', [] );
 		SettingsManager::instance()->add_setting(
 			'acr_recovered_order_statuses',
-			array(
+			[
 				'wc-processing',
 				'wc-completed',
-			)
+			]
 		);
 		SettingsManager::instance()->add_setting( 'acr_from_name', get_bloginfo( 'name' ) );
 		SettingsManager::instance()->add_setting( 'acr_from_address', get_option( 'admin_email' ) );
@@ -192,6 +192,9 @@ class Install {
 		SettingsManager::instance()->add_setting( 'side_cart_free_shipping_threshold', '' );
 		SettingsManager::instance()->add_setting( 'side_cart_amount_remaining_message', '' );
 		SettingsManager::instance()->add_setting( 'side_cart_free_shipping_message', '' );
+		SettingsManager::instance()->add_setting( 'side_cart_free_shipping_tiers', [] );
+		SettingsManager::instance()->add_setting( 'side_cart_free_shipping_excluded_shipping_classes', [] );
+		SettingsManager::instance()->add_setting( 'side_cart_empty_image_attachment_id', '' );
 		SettingsManager::instance()->add_setting( 'side_cart_free_shipping_progress_indicator_color', cfw_get_active_template()->get_default_setting( 'button_color' ) );
 		SettingsManager::instance()->add_setting( 'enable_floating_cart_button', 'yes' );
 		SettingsManager::instance()->add_setting( 'floating_cart_button_bottom_position', '20' );
@@ -209,7 +212,7 @@ class Install {
 
 		SettingsManager::instance()->add_setting(
 			'enabled_billing_address_fields',
-			array(
+			[
 				'billing_first_name',
 				'billing_last_name',
 				'billing_address_1',
@@ -220,7 +223,7 @@ class Install {
 				'billing_state',
 				'billing_city',
 				'billing_phone',
-			)
+			]
 		);
 
 		$custom_logo_id = get_theme_mod( 'custom_logo' );
@@ -228,12 +231,12 @@ class Install {
 		// Init templates and template settings
 		foreach ( cfw_get_available_templates() as $template ) {
 			if ( $custom_logo_id ) {
-				SettingsManager::instance()->add_setting( 'logo_attachment_id', $custom_logo_id, array( $template->get_slug() ) );
+				SettingsManager::instance()->add_setting( 'logo_attachment_id', $custom_logo_id, [ $template->get_slug() ] );
 			}
 
-			SettingsManager::instance()->add_setting( 'label_style', 'floating', array( $template->get_slug() ) );
-			SettingsManager::instance()->add_setting( 'footer_text', '', array( $template->get_slug() ) );
-			SettingsManager::instance()->add_setting( 'custom_css', '', array( $template->get_slug() ) );
+			SettingsManager::instance()->add_setting( 'label_style', 'floating', [ $template->get_slug() ] );
+			SettingsManager::instance()->add_setting( 'footer_text', '', [ $template->get_slug() ] );
+			SettingsManager::instance()->add_setting( 'custom_css', '', [ $template->get_slug() ] );
 
 			$template->init();
 		}

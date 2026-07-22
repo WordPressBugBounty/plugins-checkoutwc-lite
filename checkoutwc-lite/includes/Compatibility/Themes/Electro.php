@@ -10,7 +10,7 @@ class Electro extends CompatibilityAbstract {
 	}
 
 	public function pre_init() {
-		add_action( 'woocommerce_checkout_update_order_review', array( $this, 'cleanup_actions' ) );
+		add_action( 'woocommerce_checkout_update_order_review', [ $this, 'cleanup_actions' ] );
 	}
 
 	public function run() {

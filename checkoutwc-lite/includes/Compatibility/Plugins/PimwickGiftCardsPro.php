@@ -10,8 +10,8 @@ class PimwickGiftCardsPro extends CompatibilityAbstract {
 	}
 
 	public function run() {
-		add_filter( 'cfw_checkout_main_container_classes', array( $this, 'add_shim_class' ) );
-		add_filter( 'pre_option_pwgc_redeem_checkout_location', array( $this, 'force_location' ) );
+		add_filter( 'cfw_checkout_main_container_classes', [ $this, 'add_shim_class' ] );
+		add_filter( 'pre_option_pwgc_redeem_checkout_location', [ $this, 'force_location' ] );
 	}
 
 	public function add_shim_class( $classes ) {

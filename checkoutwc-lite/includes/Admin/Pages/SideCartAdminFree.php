@@ -101,7 +101,7 @@ class SideCartAdminFree extends PageAbstract {
 											<legend class="text-base font-medium text-gray-900"><?php esc_html_e( 'Custom Icon', 'checkout-wc' ); ?></legend>
 											<p class="text-sm leading-5 text-gray-500"><?php esc_html_e( 'Upload a custom icon. Overrides the icon selection above. SVG REQUIRED.', 'checkout-wc' ); ?></p>
 											<div class="cfw-admin-image-preview-wrapper mb-4 mt-4"></div>
-											<div class="block"><button type="button" class="mt-2 inline-flex items-center px-4 py-2 border border-gray-300 shadow-sm text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"><?php esc_html_e('Upload Image', 'checkout-wc' ); ?></button><button type="button" class="mt-2 inline-flex items-center px-4 py-2 border border-gray-300 shadow-sm text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"><?php esc_html_e( 'Clear', 'checkout-wc' ); ?></button></div>
+											<div class="block"><button type="button" class="mt-2 inline-flex items-center px-4 py-2 border border-gray-300 shadow-sm text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"><?php esc_html_e( 'Upload Image', 'checkout-wc' ); ?></button><button type="button" class="mt-2 inline-flex items-center px-4 py-2 border border-gray-300 shadow-sm text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"><?php esc_html_e( 'Clear', 'checkout-wc' ); ?></button></div>
 										</div>
 										<div class="cfw-admin-field-container ">
 											<label for="side_cart_icon_width" class="block text-sm font-medium text-gray-700"><?php esc_html_e( 'Width', 'checkout-wc' ); ?></label><input name="side_cart_icon_width" type="number" id="side_cart_icon_width" class="w-64 shadow-sm focus:ring-blue-500 focus:border-blue-500 block sm:text-sm border border-gray-300 rounded-md" value="34">
@@ -183,8 +183,8 @@ class SideCartAdminFree extends PageAbstract {
 				<div class="md:grid md:grid-cols-3 md:gap-6">
 					<div class="md:col-span-1">
 						<div class="px-4 sm:px-0">
-							<h3 class="text-lg font-medium leading-6 text-gray-900">Free Shipping Progress Bar</h3>
-							<p class="mt-1 text-sm text-gray-600">Configure the Free Shipping Progress Bar</p>
+							<h3 class="text-lg font-medium leading-6 text-gray-900">Free shipping &amp; rewards bar</h3>
+							<p class="mt-1 text-sm text-gray-600">Reward shoppers as they spend more — free shipping, a free gift, or a custom perk.</p>
 						</div>
 					</div>
 					<div class="mt-5 md:mt-0 md:col-span-2" id="free-shipping-progress-bar_content">
@@ -194,7 +194,7 @@ class SideCartAdminFree extends PageAbstract {
 								<div class="cfw-admin-field-container relative flex items-start ">
 									<div class="flex items-center h-5"><input name="enable_free_shipping_progress_bar" type="checkbox" id="cfw_checkbox_enable_free_shipping_progress_bar" class="focus:ring-blue-800 h-4 w-4 text-blue-500 border-gray-300 rounded disabled:bg-gray-100 disabled:border" value="true" checked=""></div>
 									<div class="ml-3 text-sm">
-										<label for="cfw_checkbox_enable_free_shipping_progress_bar" class="font-medium text-gray-700" style="vertical-align: unset;">Enable Free Shipping Progress Bar</label>
+										<label for="cfw_checkbox_enable_free_shipping_progress_bar" class="font-medium text-gray-700" style="vertical-align: unset;">Enable free shipping &amp; rewards bar</label>
 										<p class="text-gray-500">Enable Free Shipping progress bar to show customers how close they are to obtaining free shipping. Uses your shipping settings to determine limits. To override, specify amount below.</p>
 									</div>
 								</div>
@@ -213,8 +213,8 @@ class SideCartAdminFree extends PageAbstract {
 								<div class="cfw-admin-field-container relative flex items-start ">
 									<div class="flex items-center h-5"><input name="enable_free_shipping_progress_bar_at_checkout" type="checkbox" id="cfw_checkbox_enable_free_shipping_progress_bar_at_checkout" class="focus:ring-blue-800 h-4 w-4 text-blue-500 border-gray-300 rounded disabled:bg-gray-100 disabled:border" value="false"></div>
 									<div class="ml-3 text-sm">
-										<label for="cfw_checkbox_enable_free_shipping_progress_bar_at_checkout" class="font-medium text-gray-700" style="vertical-align: unset;">Enable Free Shipping Progress Bar At Checkout</label>
-										<p class="text-gray-500">Enable Free Shipping Progress Bar on the checkout page cart summary.</p>
+										<label for="cfw_checkbox_enable_free_shipping_progress_bar_at_checkout" class="font-medium text-gray-700" style="vertical-align: unset;">Show on the checkout page</label>
+										<p class="text-gray-500">Also show the free shipping &amp; rewards bar in the checkout page cart summary.</p>
 									</div>
 								</div>
 							</div>

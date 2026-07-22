@@ -25,66 +25,67 @@ class DatabaseUpdatesManager extends SingletonAbstract {
 	}
 
 	public function get_updates(): array {
-		return array(
-			'3.0.0'   => array( $this, 'update_300' ),
-			'3.3.0'   => array( $this, 'update_330' ),
-			'3.6.1'   => array( $this, 'update_361' ),
-			'3.14.0'  => array( $this, 'update_3140' ),
-			'5.3.0'   => array( $this, 'update_530' ),
-			'5.3.1'   => array( $this, 'update_531' ),
-			'5.3.2'   => array( $this, 'update_532' ),
-			'6.0.0'   => array( $this, 'update_600' ),
-			'6.0.1'   => array( $this, 'update_601' ),
-			'6.0.6'   => array( $this, 'update_606' ),
-			'6.1.0'   => array( $this, 'update_610' ),
-			'6.1.4'   => array( $this, 'update_614' ),
-			'7.0.0'   => array( $this, 'update_700' ),
-			'7.0.17'  => array( $this, 'update_7017' ),
-			'7.1.5'   => array( $this, 'update_715' ),
-			'7.1.8'   => array( $this, 'update_718' ),
-			'7.3.0'   => array( $this, 'update_730' ),
-			'7.3.1'   => array( $this, 'update_731' ),
-			'7.6.0'   => array( $this, 'update_760' ),
-			'7.8.0'   => array( $this, 'update_780' ),
-			'7.9.0'   => array( $this, 'update_790' ),
-			'7.10.2'  => array( $this, 'update_7102' ),
-			'8.0.0'   => array( $this, 'update_800' ),
-			'8.2.11'  => array( $this, 'update_8211' ),
-			'8.2.19'  => array( $this, 'update_8219' ),
-			'8.2.20'  => array( $this, 'update_8220' ),
+		return [
+			'3.0.0'   => [ $this, 'update_300' ],
+			'3.3.0'   => [ $this, 'update_330' ],
+			'3.6.1'   => [ $this, 'update_361' ],
+			'3.14.0'  => [ $this, 'update_3140' ],
+			'5.3.0'   => [ $this, 'update_530' ],
+			'5.3.1'   => [ $this, 'update_531' ],
+			'5.3.2'   => [ $this, 'update_532' ],
+			'6.0.0'   => [ $this, 'update_600' ],
+			'6.0.1'   => [ $this, 'update_601' ],
+			'6.0.6'   => [ $this, 'update_606' ],
+			'6.1.0'   => [ $this, 'update_610' ],
+			'6.1.4'   => [ $this, 'update_614' ],
+			'7.0.0'   => [ $this, 'update_700' ],
+			'7.0.17'  => [ $this, 'update_7017' ],
+			'7.1.5'   => [ $this, 'update_715' ],
+			'7.1.8'   => [ $this, 'update_718' ],
+			'7.3.0'   => [ $this, 'update_730' ],
+			'7.3.1'   => [ $this, 'update_731' ],
+			'7.6.0'   => [ $this, 'update_760' ],
+			'7.8.0'   => [ $this, 'update_780' ],
+			'7.9.0'   => [ $this, 'update_790' ],
+			'7.10.2'  => [ $this, 'update_7102' ],
+			'8.0.0'   => [ $this, 'update_800' ],
+			'8.2.11'  => [ $this, 'update_8211' ],
+			'8.2.19'  => [ $this, 'update_8219' ],
+			'8.2.20'  => [ $this, 'update_8220' ],
 			// Start 9.0.0 betas
-			'8.2.96'  => array( $this, 'update_8296' ),
-			'8.2.97'  => array( $this, 'update_8297' ),
-			'8.2.98'  => array( $this, 'update_8298' ),
-			'8.2.100' => array( $this, 'update_82100' ),
-			'8.2.104' => array( $this, 'update_82104' ),
-			'8.2.107' => array( $this, 'update_82107' ),
+			'8.2.96'  => [ $this, 'update_8296' ],
+			'8.2.97'  => [ $this, 'update_8297' ],
+			'8.2.98'  => [ $this, 'update_8298' ],
+			'8.2.100' => [ $this, 'update_82100' ],
+			'8.2.104' => [ $this, 'update_82104' ],
+			'8.2.107' => [ $this, 'update_82107' ],
 			// End 9.0.0 betas
-			'9.0.0'   => array( $this, 'update_900' ),
-			'9.0.2'   => array( $this, 'update_902' ),
-			'9.0.8'   => array( $this, 'update_908' ),
-			'9.0.9'   => array( $this, 'update_909' ),
-			'9.0.18'  => array( $this, 'update_9018' ),
-			'9.0.22'  => array( $this, 'update_9022' ),
-			'9.0.25'  => array( $this, 'update_9025' ),
-			'9.0.27'  => array( $this, 'update_9027' ),
-			'9.0.29'  => array( $this, 'update_9029' ),
-			'9.0.35'  => array( $this, 'update_9035' ),
-			'9.1.2'   => array( $this, 'update_912' ),
-			'9.1.700' => array( $this, 'update_91700' ), // 10.0.0-alpha
-			'10.0.0'  => array( $this, 'update_1000' ), // 10.0.0
-			'10.1.7'  => array( $this, 'update_1017' ),
-			'10.1.8'  => array( $this, 'update_1018' ),
-			'10.2.0'  => array( $this, 'update_1020' ),
-			'10.2.6'  => array( $this, 'update_1026' ),
-			'10.2.9'  => array( $this, 'update_1029' ),
-			'10.3.2'  => array( $this, 'update_1032' ),
-			'10.3.6'  => array( $this, 'update_1036' ),
-			'11.0.0'  => array( $this, 'update_1100' ),
-			'11.0.1'  => array( $this, 'update_1101' ),
-			'11.0.3'  => array( $this, 'update_1103' ),
+			'9.0.0'   => [ $this, 'update_900' ],
+			'9.0.2'   => [ $this, 'update_902' ],
+			'9.0.8'   => [ $this, 'update_908' ],
+			'9.0.9'   => [ $this, 'update_909' ],
+			'9.0.18'  => [ $this, 'update_9018' ],
+			'9.0.22'  => [ $this, 'update_9022' ],
+			'9.0.25'  => [ $this, 'update_9025' ],
+			'9.0.27'  => [ $this, 'update_9027' ],
+			'9.0.29'  => [ $this, 'update_9029' ],
+			'9.0.35'  => [ $this, 'update_9035' ],
+			'9.1.2'   => [ $this, 'update_912' ],
+			'9.1.700' => [ $this, 'update_91700' ], // 10.0.0-alpha
+			'10.0.0'  => [ $this, 'update_1000' ], // 10.0.0
+			'10.1.7'  => [ $this, 'update_1017' ],
+			'10.1.8'  => [ $this, 'update_1018' ],
+			'10.2.0'  => [ $this, 'update_1020' ],
+			'10.2.6'  => [ $this, 'update_1026' ],
+			'10.2.9'  => [ $this, 'update_1029' ],
+			'10.3.2'  => [ $this, 'update_1032' ],
+			'10.3.6'  => [ $this, 'update_1036' ],
+			'11.0.0'  => [ $this, 'update_1100' ],
+			'11.0.1'  => [ $this, 'update_1101' ],
+			'11.0.3'  => [ $this, 'update_1103' ],
+			'11.3.0'  => [ $this, 'update_1130' ],
 			// TODO: For future updates, bifurcate pro and lite versions?
-		);
+		];
 	}
 
 	/**
@@ -148,7 +149,7 @@ class DatabaseUpdatesManager extends SingletonAbstract {
 		 */
 		do_action( 'cfw_before_plugin_data_upgrades', $this->db_version );
 
-		$previous_updates = get_option( 'cfw_previous_updates', array() );
+		$previous_updates = get_option( 'cfw_previous_updates', [] );
 
 		// Run updates
 		foreach ( $this->get_updates() as $version => $callback ) {
@@ -157,7 +158,7 @@ class DatabaseUpdatesManager extends SingletonAbstract {
 				try {
 					call_user_func( $callback );
 				} catch ( Exception $e ) {
-					wc_get_logger()->error( 'CheckoutWC: Failed to run DB update. Update version: ' . $version . ' Error: ' . $e->getMessage(), array( 'source' => 'checkout-wc' ) );
+					wc_get_logger()->error( 'CheckoutWC: Failed to run DB update. Update version: ' . $version . ' Error: ' . $e->getMessage(), [ 'source' => 'checkout-wc' ] );
 				}
 
 				$previous_updates[ $version ] = true;
@@ -202,10 +203,10 @@ class DatabaseUpdatesManager extends SingletonAbstract {
 			return false;
 		}
 
-		return array(
+		return [
 			'key'   => $product_data,
 			'label' => $product->get_name(),
-		);
+		];
 	}
 
 	public function get_ob_category_data( $category_data ) {
@@ -220,10 +221,10 @@ class DatabaseUpdatesManager extends SingletonAbstract {
 			return false;
 		}
 
-		return array(
+		return [
 			'key'   => $term->term_id,
 			'label' => $term->name,
-		);
+		];
 	}
 
 	public function update_300() {
@@ -239,7 +240,7 @@ class DatabaseUpdatesManager extends SingletonAbstract {
 	}
 
 	public function update_361() {
-		SettingsManager::instance()->update_setting( 'accent_color', '#dee6fe', array( 'glass' ) );
+		SettingsManager::instance()->update_setting( 'accent_color', '#dee6fe', [ 'glass' ] );
 	}
 
 	public function update_3140() {
@@ -256,14 +257,14 @@ class DatabaseUpdatesManager extends SingletonAbstract {
 			$breadcrumb_next_accent_color      = '#333333';
 
 			if ( $template->get_slug() === 'glass' ) {
-				$breadcrumb_current_text_color   = SettingsManager::instance()->get_setting( 'button_color', array( 'glass' ) );
-				$breadcrumb_current_accent_color = SettingsManager::instance()->get_setting( 'button_color', array( 'glass' ) );
+				$breadcrumb_current_text_color   = SettingsManager::instance()->get_setting( 'button_color', [ 'glass' ] );
+				$breadcrumb_current_accent_color = SettingsManager::instance()->get_setting( 'button_color', [ 'glass' ] );
 				$breadcrumb_next_text_color      = '#dfdcdb';
 				$breadcrumb_next_accent_color    = '#dfdcdb';
 
 			} elseif ( $template->get_slug() === 'futurist' ) {
-				$futurist_header_bg_color          = SettingsManager::instance()->get_setting( 'header_background_color', array( $template->get_slug() ) );
-				$color                             = '#ffffff' === $futurist_header_bg_color ? '#333333' : '#222222';
+				$futurist_header_bg_color = SettingsManager::instance()->get_setting( 'header_background_color', [ $template->get_slug() ] );
+				$color                    = '#ffffff' === $futurist_header_bg_color ? '#333333' : '#222222';
 				$breadcrumb_completed_text_color   = $color;
 				$breadcrumb_current_text_color     = $color;
 				$breadcrumb_next_text_color        = $color;
@@ -272,12 +273,12 @@ class DatabaseUpdatesManager extends SingletonAbstract {
 				$breadcrumb_next_accent_color      = $color;
 			}
 
-			SettingsManager::instance()->update_setting( 'breadcrumb_completed_text_color', $breadcrumb_completed_text_color, array( $template->get_slug() ) );
-			SettingsManager::instance()->update_setting( 'breadcrumb_current_text_color', $breadcrumb_current_text_color, array( $template->get_slug() ) );
-			SettingsManager::instance()->update_setting( 'breadcrumb_next_text_color', $breadcrumb_next_text_color, array( $template->get_slug() ) );
-			SettingsManager::instance()->update_setting( 'breadcrumb_completed_accent_color', $breadcrumb_completed_accent_color, array( $template->get_slug() ) );
-			SettingsManager::instance()->update_setting( 'breadcrumb_current_accent_color', $breadcrumb_current_accent_color, array( $template->get_slug() ) );
-			SettingsManager::instance()->update_setting( 'breadcrumb_next_accent_color', $breadcrumb_next_accent_color, array( $template->get_slug() ) );
+			SettingsManager::instance()->update_setting( 'breadcrumb_completed_text_color', $breadcrumb_completed_text_color, [ $template->get_slug() ] );
+			SettingsManager::instance()->update_setting( 'breadcrumb_current_text_color', $breadcrumb_current_text_color, [ $template->get_slug() ] );
+			SettingsManager::instance()->update_setting( 'breadcrumb_next_text_color', $breadcrumb_next_text_color, [ $template->get_slug() ] );
+			SettingsManager::instance()->update_setting( 'breadcrumb_completed_accent_color', $breadcrumb_completed_accent_color, [ $template->get_slug() ] );
+			SettingsManager::instance()->update_setting( 'breadcrumb_current_accent_color', $breadcrumb_current_accent_color, [ $template->get_slug() ] );
+			SettingsManager::instance()->update_setting( 'breadcrumb_next_accent_color', $breadcrumb_next_accent_color, [ $template->get_slug() ] );
 		}
 
 		global $wpdb;
@@ -305,19 +306,19 @@ class DatabaseUpdatesManager extends SingletonAbstract {
 			$template->init();
 		}
 
-		SettingsManager::instance()->update_setting( 'summary_background_color', '#f8f8f8', array( 'futurist' ) );
+		SettingsManager::instance()->update_setting( 'summary_background_color', '#f8f8f8', [ 'futurist' ] );
 	}
 
 	public function update_532() {
-		$futurist_header_bg_color = SettingsManager::instance()->get_setting( 'header_background_color', array( 'futurist' ) );
+		$futurist_header_bg_color = SettingsManager::instance()->get_setting( 'header_background_color', [ 'futurist' ] );
 		$color                    = '#ffffff' === $futurist_header_bg_color ? '#333333' : $futurist_header_bg_color;
 
-		SettingsManager::instance()->update_setting( 'breadcrumb_completed_text_color', $color, array( 'futurist' ) );
-		SettingsManager::instance()->update_setting( 'breadcrumb_current_text_color', $color, array( 'futurist' ) );
-		SettingsManager::instance()->update_setting( 'breadcrumb_next_text_color', $color, array( 'futurist' ) );
-		SettingsManager::instance()->update_setting( 'breadcrumb_completed_accent_color', $color, array( 'futurist' ) );
-		SettingsManager::instance()->update_setting( 'breadcrumb_current_accent_color', $color, array( 'futurist' ) );
-		SettingsManager::instance()->update_setting( 'breadcrumb_next_accent_color', $color, array( 'futurist' ) );
+		SettingsManager::instance()->update_setting( 'breadcrumb_completed_text_color', $color, [ 'futurist' ] );
+		SettingsManager::instance()->update_setting( 'breadcrumb_current_text_color', $color, [ 'futurist' ] );
+		SettingsManager::instance()->update_setting( 'breadcrumb_next_text_color', $color, [ 'futurist' ] );
+		SettingsManager::instance()->update_setting( 'breadcrumb_completed_accent_color', $color, [ 'futurist' ] );
+		SettingsManager::instance()->update_setting( 'breadcrumb_current_accent_color', $color, [ 'futurist' ] );
+		SettingsManager::instance()->update_setting( 'breadcrumb_next_accent_color', $color, [ 'futurist' ] );
 	}
 
 	public function update_600() {
@@ -388,7 +389,7 @@ class DatabaseUpdatesManager extends SingletonAbstract {
 
 	public function update_718() {
 		foreach ( cfw_get_available_templates() as $template ) {
-			SettingsManager::instance()->update_setting( 'summary_link_color', '#0073aa', array( $template->get_slug() ) );
+			SettingsManager::instance()->update_setting( 'summary_link_color', '#0073aa', [ $template->get_slug() ] );
 		}
 
 		SettingsManager::instance()->add_setting( 'show_cart_item_discounts', 'no' );
@@ -398,7 +399,7 @@ class DatabaseUpdatesManager extends SingletonAbstract {
 	public function update_730() {
 		SettingsManager::instance()->add_setting(
 			'enabled_billing_address_fields',
-			array(
+			[
 				'billing_first_name',
 				'billing_last_name',
 				'billing_address_1',
@@ -409,7 +410,7 @@ class DatabaseUpdatesManager extends SingletonAbstract {
 				'billing_state',
 				'billing_city',
 				'billing_phone',
-			)
+			]
 		);
 	}
 
@@ -420,9 +421,9 @@ class DatabaseUpdatesManager extends SingletonAbstract {
 
 		$pickup_times     = LocalPickup::get_pickup_times();
 		$pickup_locations = get_posts(
-			array(
+			[
 				'post_type' => LocalPickup::get_post_type(),
-			)
+			]
 		);
 
 		if ( $pickup_locations ) {
@@ -503,8 +504,8 @@ class DatabaseUpdatesManager extends SingletonAbstract {
 		$heading_font = SettingsManager::instance()->get_setting( 'heading_font' );
 
 		// Update the current active template
-		SettingsManager::instance()->add_setting( 'body_font', $body_font, array( cfw_get_active_template()->get_slug() ) );
-		SettingsManager::instance()->add_setting( 'heading_font', $heading_font, array( cfw_get_active_template()->get_slug() ) );
+		SettingsManager::instance()->add_setting( 'body_font', $body_font, [ cfw_get_active_template()->get_slug() ] );
+		SettingsManager::instance()->add_setting( 'heading_font', $heading_font, [ cfw_get_active_template()->get_slug() ] );
 
 		// Cleanup old global settings
 		SettingsManager::instance()->delete_setting( 'body_font' );
@@ -534,8 +535,8 @@ class DatabaseUpdatesManager extends SingletonAbstract {
 			// This repairs the font setting for Groove unless it's already the active template in which
 			// case we stand down as we don't know if the customer prefers the System Font Stack option
 			if ( 'groove' !== cfw_get_active_template()->get_slug() ) {
-				SettingsManager::instance()->update_setting( 'body_font', 'inter-cfw', array( 'groove' ) );
-				SettingsManager::instance()->update_setting( 'heading_font', 'inter-cfw', array( 'groove' ) );
+				SettingsManager::instance()->update_setting( 'body_font', 'inter-cfw', [ 'groove' ] );
+				SettingsManager::instance()->update_setting( 'heading_font', 'inter-cfw', [ 'groove' ] );
 			}
 		}
 	}
@@ -553,7 +554,7 @@ class DatabaseUpdatesManager extends SingletonAbstract {
 	}
 
 	public function update_8296() {
-		$trust_badges = array_filter( cfw_get_setting( 'trust_badges', null, array() ) );
+		$trust_badges = array_filter( cfw_get_setting( 'trust_badges', null, [] ) );
 
 		// Backup the trust badges
 		SettingsManager::instance()->add_setting( 'trust_badges_v8', $trust_badges );
@@ -579,10 +580,10 @@ class DatabaseUpdatesManager extends SingletonAbstract {
 
 		// Make all design settings per template
 		foreach ( cfw_get_available_templates() as $template ) {
-			SettingsManager::instance()->add_setting( 'logo_attachment_id', SettingsManager::instance()->get_setting( 'logo_attachment_id' ), array( $template->get_slug() ) );
-			SettingsManager::instance()->add_setting( 'label_style', SettingsManager::instance()->get_setting( 'label_style' ), array( $template->get_slug() ) );
-			SettingsManager::instance()->add_setting( 'footer_text', SettingsManager::instance()->get_setting( 'footer_text' ), array( $template->get_slug() ) );
-			SettingsManager::instance()->add_setting( 'custom_css', SettingsManager::instance()->get_setting( 'custom_css' ), array( $template->get_slug() ) );
+			SettingsManager::instance()->add_setting( 'logo_attachment_id', SettingsManager::instance()->get_setting( 'logo_attachment_id' ), [ $template->get_slug() ] );
+			SettingsManager::instance()->add_setting( 'label_style', SettingsManager::instance()->get_setting( 'label_style' ), [ $template->get_slug() ] );
+			SettingsManager::instance()->add_setting( 'footer_text', SettingsManager::instance()->get_setting( 'footer_text' ), [ $template->get_slug() ] );
+			SettingsManager::instance()->add_setting( 'custom_css', SettingsManager::instance()->get_setting( 'custom_css' ), [ $template->get_slug() ] );
 		}
 
 		SettingsManager::instance()->add_setting( 'footer_text_editor_mode', 'WYSIWYG' );
@@ -616,33 +617,33 @@ class DatabaseUpdatesManager extends SingletonAbstract {
 
 			// Convert array of IDs to array of objects with key => id and label => name
 			$cfw_ob_products = array_map(
-				array( $this, 'get_ob_product_data' ),
-				is_array( $cfw_ob_products ) ? $cfw_ob_products : array()
+				[ $this, 'get_ob_product_data' ],
+				is_array( $cfw_ob_products ) ? $cfw_ob_products : []
 			);
 
 			$cfw_ob_exclude_products = array_map(
-				array( $this, 'get_ob_product_data' ),
-				is_array( $cfw_ob_exclude_products ) ? $cfw_ob_exclude_products : array()
+				[ $this, 'get_ob_product_data' ],
+				is_array( $cfw_ob_exclude_products ) ? $cfw_ob_exclude_products : []
 			);
 
 			$cfw_ob_products_to_remove = array_map(
-				array( $this, 'get_ob_product_data' ),
-				is_array( $cfw_ob_products_to_remove ) ? $cfw_ob_products_to_remove : array()
+				[ $this, 'get_ob_product_data' ],
+				is_array( $cfw_ob_products_to_remove ) ? $cfw_ob_products_to_remove : []
 			);
 
 			$cfw_ob_categories = array_map(
-				array( $this, 'get_ob_category_data' ),
-				is_array( $cfw_ob_categories ) ? $cfw_ob_categories : array()
+				[ $this, 'get_ob_category_data' ],
+				is_array( $cfw_ob_categories ) ? $cfw_ob_categories : []
 			);
 
 			$cfw_ob_exclude_categories = array_map(
-				array( $this, 'get_ob_category_data' ),
-				is_array( $cfw_ob_exclude_categories ) ? $cfw_ob_exclude_categories : array()
+				[ $this, 'get_ob_category_data' ],
+				is_array( $cfw_ob_exclude_categories ) ? $cfw_ob_exclude_categories : []
 			);
 
 			$cfw_ob_offer_product = array_map(
-				array( $this, 'get_ob_product_data' ),
-				is_array( $cfw_ob_offer_product ) ? $cfw_ob_offer_product : array( $cfw_ob_offer_product )
+				[ $this, 'get_ob_product_data' ],
+				is_array( $cfw_ob_offer_product ) ? $cfw_ob_offer_product : [ $cfw_ob_offer_product ]
 			);
 
 			add_post_meta( $bump->get_id(), 'cfw_ob_products_v9', array_filter( $cfw_ob_products ), true );
@@ -668,7 +669,7 @@ class DatabaseUpdatesManager extends SingletonAbstract {
 		$pickup_methods = SettingsManager::instance()->get_setting( 'pickup_methods' );
 
 		if ( false === $pickup_methods ) {
-			SettingsManager::instance()->add_setting( 'pickup_methods', array() );
+			SettingsManager::instance()->add_setting( 'pickup_methods', [] );
 		}
 	}
 
@@ -700,7 +701,7 @@ class DatabaseUpdatesManager extends SingletonAbstract {
 		 */
 		if ( ! empty( $new_trust_badges ) && count( $new_trust_badges ) > 0 ) {
 			// Backup the old trust badges
-			$old_trust_badges = cfw_get_setting( 'trust_badges', null, array() );
+			$old_trust_badges = cfw_get_setting( 'trust_badges', null, [] );
 
 			// Only do this if we actually have old trust badges
 			if ( count( $old_trust_badges ) > 0 ) {
@@ -730,7 +731,7 @@ class DatabaseUpdatesManager extends SingletonAbstract {
 		 *
 		 * Convert nested array objects to arrays
 		 */
-		$store_policies = cfw_get_setting( 'store_policies', null, array() );
+		$store_policies = cfw_get_setting( 'store_policies', null, [] );
 
 		if ( empty( $store_policies ) || ! is_array( $store_policies ) ) {
 			return;
@@ -797,33 +798,33 @@ class DatabaseUpdatesManager extends SingletonAbstract {
 
 			// Convert array of IDs to array of objects with key => id and label => name
 			$cfw_ob_products = array_map(
-				array( $this, 'get_ob_product_data' ),
-				is_array( $cfw_ob_products ) ? $cfw_ob_products : array()
+				[ $this, 'get_ob_product_data' ],
+				is_array( $cfw_ob_products ) ? $cfw_ob_products : []
 			);
 
 			$cfw_ob_exclude_products = array_map(
-				array( $this, 'get_ob_product_data' ),
-				is_array( $cfw_ob_exclude_products ) ? $cfw_ob_exclude_products : array()
+				[ $this, 'get_ob_product_data' ],
+				is_array( $cfw_ob_exclude_products ) ? $cfw_ob_exclude_products : []
 			);
 
 			$cfw_ob_products_to_remove = array_map(
-				array( $this, 'get_ob_product_data' ),
-				is_array( $cfw_ob_products_to_remove ) ? $cfw_ob_products_to_remove : array()
+				[ $this, 'get_ob_product_data' ],
+				is_array( $cfw_ob_products_to_remove ) ? $cfw_ob_products_to_remove : []
 			);
 
 			$cfw_ob_categories = array_map(
-				array( $this, 'get_ob_category_data' ),
-				is_array( $cfw_ob_categories ) ? $cfw_ob_categories : array()
+				[ $this, 'get_ob_category_data' ],
+				is_array( $cfw_ob_categories ) ? $cfw_ob_categories : []
 			);
 
 			$cfw_ob_exclude_categories = array_map(
-				array( $this, 'get_ob_category_data' ),
-				is_array( $cfw_ob_exclude_categories ) ? $cfw_ob_exclude_categories : array()
+				[ $this, 'get_ob_category_data' ],
+				is_array( $cfw_ob_exclude_categories ) ? $cfw_ob_exclude_categories : []
 			);
 
 			$cfw_ob_offer_product = array_map(
-				array( $this, 'get_ob_product_data' ),
-				is_array( $cfw_ob_offer_product ) ? $cfw_ob_offer_product : array( $cfw_ob_offer_product )
+				[ $this, 'get_ob_product_data' ],
+				is_array( $cfw_ob_offer_product ) ? $cfw_ob_offer_product : [ $cfw_ob_offer_product ]
 			);
 
 			add_post_meta( $bump->get_id(), 'cfw_ob_products_v9', $cfw_ob_products, true );
@@ -844,14 +845,14 @@ class DatabaseUpdatesManager extends SingletonAbstract {
 		}
 
 		$bumps     = BumpFactory::get_all();
-		$meta_keys = array(
+		$meta_keys = [
 			'cfw_ob_products_v9',
 			'cfw_ob_categories_v9',
 			'cfw_ob_products_to_remove_v9',
 			'cfw_ob_exclude_products_v9',
 			'cfw_ob_exclude_categories_v9',
 			'cfw_ob_offer_product_v9',
-		);
+		];
 
 		foreach ( $bumps as $bump ) {
 			foreach ( $meta_keys as $meta_key ) {
@@ -912,7 +913,7 @@ class DatabaseUpdatesManager extends SingletonAbstract {
 		}
 
 		if ( 'no' === SettingsManager::instance()->get_setting( 'highlighted_countries' ) ) {
-			SettingsManager::instance()->update_setting( 'highlighted_countries', array() );
+			SettingsManager::instance()->update_setting( 'highlighted_countries', [] );
 		}
 
 		if ( 'no' === SettingsManager::instance()->get_setting( 'international_phone_field_standard' ) ) {
@@ -920,11 +921,11 @@ class DatabaseUpdatesManager extends SingletonAbstract {
 		}
 
 		if ( 'no' === SettingsManager::instance()->get_setting( 'store_policies' ) ) {
-			SettingsManager::instance()->update_setting( 'store_policies', array() );
+			SettingsManager::instance()->update_setting( 'store_policies', [] );
 		}
 
 		if ( 'no' === SettingsManager::instance()->get_setting( 'trust_badges' ) ) {
-			SettingsManager::instance()->update_setting( 'trust_badges', array() );
+			SettingsManager::instance()->update_setting( 'trust_badges', [] );
 		}
 
 		if ( 'no' === SettingsManager::instance()->get_setting( 'trust_badges_title' ) ) {
@@ -940,7 +941,7 @@ class DatabaseUpdatesManager extends SingletonAbstract {
 		$value = SettingsManager::instance()->get_setting( 'thank_you_order_statuses' );
 
 		if ( is_string( $value ) || false === $value ) {
-			SettingsManager::instance()->update_setting( 'thank_you_order_statuses', array() );
+			SettingsManager::instance()->update_setting( 'thank_you_order_statuses', [] );
 		}
 	}
 
@@ -950,7 +951,7 @@ class DatabaseUpdatesManager extends SingletonAbstract {
 
 	public function update_9035() {
 		// Filter the array and cast it to an array for the weird situations where trust_badges is an empty string instead of an array
-		$trust_badge_items = array_filter( cfw_get_setting( 'trust_badges', null, array() ) );
+		$trust_badge_items = array_filter( cfw_get_setting( 'trust_badges', null, [] ) );
 
 		foreach ( $trust_badge_items as $index => $badge ) {
 			// Handle edge case where badges end up set to array where 0 element = false
@@ -990,7 +991,7 @@ class DatabaseUpdatesManager extends SingletonAbstract {
 			$rules = get_post_meta( $bump_id, 'cfw_ob_rules', true );
 
 			if ( ! is_array( $rules ) ) {
-				$rules = array();
+				$rules = [];
 			}
 
 			$has_changes       = false;
@@ -1000,14 +1001,14 @@ class DatabaseUpdatesManager extends SingletonAbstract {
 
 			// 1. If bump is not an upsell but is configured for specific products, migrate those products to rules
 			if ( 'specific_products' === $display_for && ! $is_upsell && count( $specific_products ) > 0 ) {
-				$rules[] = array(
+				$rules[] = [
 					'fieldKey'  => 'cartContents',
-					'subFields' => array(
+					'subFields' => [
 						'cartContents' => 'containsProducts',
 						'field_1'      => get_post_meta( $bump_id, 'cfw_ob_any_product', true ) === 'yes' ? 'atLeastOne' : 'all',
 						'field_2'      => $specific_products,
-					),
-				);
+					],
+				];
 
 				$has_changes = true;
 			}
@@ -1016,14 +1017,14 @@ class DatabaseUpdatesManager extends SingletonAbstract {
 			$specific_categories = get_post_meta( $bump_id, 'cfw_ob_categories_v9', true );
 
 			if ( 'specific_categories' === $display_for && count( $specific_categories ) > 0 ) {
-				$rules[] = array(
+				$rules[] = [
 					'fieldKey'  => 'cartContents',
-					'subFields' => array(
+					'subFields' => [
 						'cartContents' => 'containsCategories',
 						'field_1'      => 'atLeastOne',
 						'field_2'      => $specific_categories,
-					),
-				);
+					],
+				];
 
 				$has_changes = true;
 			}
@@ -1032,14 +1033,14 @@ class DatabaseUpdatesManager extends SingletonAbstract {
 			$product_exclusions = get_post_meta( $bump_id, 'cfw_ob_exclude_products_v9', true );
 
 			if ( count( $product_exclusions ) > 0 ) {
-				$rules[] = array(
+				$rules[] = [
 					'fieldKey'  => 'cartContents',
-					'subFields' => array(
+					'subFields' => [
 						'cartContents' => 'containsProducts',
 						'field_1'      => 'none',
 						'field_2'      => $product_exclusions,
-					),
-				);
+					],
+				];
 
 				$has_changes = true;
 			}
@@ -1048,14 +1049,14 @@ class DatabaseUpdatesManager extends SingletonAbstract {
 			$category_exclusions = get_post_meta( $bump_id, 'cfw_ob_exclude_categories_v9', true );
 
 			if ( count( $category_exclusions ) > 0 ) {
-				$rules[] = array(
+				$rules[] = [
 					'fieldKey'  => 'cartContents',
-					'subFields' => array(
+					'subFields' => [
 						'cartContents' => 'containsCategories',
 						'field_1'      => 'none',
 						'field_2'      => $category_exclusions,
-					),
-				);
+					],
+				];
 
 				$has_changes = true;
 			}
@@ -1064,13 +1065,13 @@ class DatabaseUpdatesManager extends SingletonAbstract {
 			$minimum_subtotal = get_post_meta( $bump_id, 'cfw_ob_minimum_subtotal', true );
 
 			if ( ! empty( $minimum_subtotal ) ) {
-				$rules[] = array(
+				$rules[] = [
 					'fieldKey'  => 'cartTotalValue',
-					'subFields' => array(
+					'subFields' => [
 						'field_0' => 'greaterThanEqual',
 						'field_1' => $minimum_subtotal,
-					),
-				);
+					],
+				];
 
 				$has_changes = true;
 			}
@@ -1201,7 +1202,7 @@ class DatabaseUpdatesManager extends SingletonAbstract {
 		}
 
 		$bumps                 = BumpFactory::get_all(); // 'any' status by default
-		$processed_attachments = array();
+		$processed_attachments = [];
 
 		foreach ( $bumps as $bump ) {
 			$offer_product = $bump->get_offer_product();
@@ -1227,6 +1228,49 @@ class DatabaseUpdatesManager extends SingletonAbstract {
 		}
 
 		ABTesting::map_capabilities();
+	}
+
+	/**
+	 * Seed the side cart rewards-bar tiers from the legacy single free shipping threshold.
+	 *
+	 * Existing single-threshold stores render identically after upgrading, with no reconfiguration.
+	 * Idempotent: does nothing if tiers already exist. Auto-detection stores (no explicit threshold)
+	 * keep an empty tiers array so the bar continues to derive its threshold from shipping settings.
+	 */
+	public function update_1130() {
+		$existing_tiers = SettingsManager::instance()->get_setting( 'side_cart_free_shipping_tiers' );
+
+		// Already configured (re-run or new install) — leave it alone.
+		if ( ! empty( $existing_tiers ) && is_array( $existing_tiers ) ) {
+			return;
+		}
+
+		$threshold = SettingsManager::instance()->get_setting( 'side_cart_free_shipping_threshold' );
+
+		// Auto-detection store: no explicit threshold to migrate. Keep tiers empty so the
+		// bar continues to derive its threshold from shipping configuration.
+		if ( '' === $threshold || null === $threshold || false === $threshold || ! is_numeric( $threshold ) ) {
+			SettingsManager::instance()->update_setting( 'side_cart_free_shipping_tiers', [] );
+
+			return;
+		}
+
+		$unlocked_message  = SettingsManager::instance()->get_setting( 'side_cart_free_shipping_message' );
+		$remaining_message = SettingsManager::instance()->get_setting( 'side_cart_amount_remaining_message' );
+		$color             = SettingsManager::instance()->get_setting( 'side_cart_free_shipping_progress_indicator_color' );
+
+		$tiers = [
+			[
+				'id'                => 'tier-0',
+				'threshold'         => (string) $threshold,
+				'reward_type'       => 'free_shipping',
+				'unlocked_message'  => is_string( $unlocked_message ) ? $unlocked_message : '',
+				'remaining_message' => is_string( $remaining_message ) ? $remaining_message : '',
+				'color'             => is_string( $color ) ? $color : '',
+			],
+		];
+
+		SettingsManager::instance()->update_setting( 'side_cart_free_shipping_tiers', $tiers );
 	}
 
 	private function regenerate_order_bump_thumbnail( int $attachment_id ) {
@@ -1264,7 +1308,7 @@ class DatabaseUpdatesManager extends SingletonAbstract {
 		if ( ! $resized ) {
 			wc_get_logger()->warning(
 				sprintf( 'CheckoutWC: Failed to regenerate Order Bump thumbnail for attachment %d', $attachment_id ),
-				array( 'source' => 'checkout-wc' )
+				[ 'source' => 'checkout-wc' ]
 			);
 			return;
 		}

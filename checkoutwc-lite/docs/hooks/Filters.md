@@ -4736,6 +4736,26 @@ The path to the side cart icon file
 
 Source: `Features/SideCart.php`
 
+## `cfw_side_cart_qualifying_subtotal`
+
+Filters the cart amount that counts toward the free shipping / rewards bar.
+
+Integration seam for table-rate and other custom shipping setups that determine the qualifying amount differently than the displayed subtotal.
+
+**Parameters**
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| `$subtotal` | `float` | The qualifying subtotal. |
+
+**Changelog**
+
+| Version | Description |
+| ------- | ----------- |
+| `11.3.0` | Introduced. |
+
+Source: `Features/SideCart.php`
+
 ## `cfw_side_cart_shipping_bar_data_exclude_discounts`
 
 Filters whether to exclude discounts from the subtotal when calculating the free shipping bar
@@ -4744,7 +4764,7 @@ Filters whether to exclude discounts from the subtotal when calculating the free
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| `$exclude_discounts` | `bool` | Whether to exclude discounts from the subtotal when calculating the free shipping bar |
+| `$exclude_discounts` | `bool` | Whether to exclude discounts from the subtotal. |
 
 **Changelog**
 
@@ -4771,6 +4791,44 @@ Filters whether to show shipping and tax totals in side cart
 | `7.7.0` | Introduced. |
 
 Source: `Managers/AssetManager.php`
+
+## `cfw_side_cart_tier_data`
+
+Filters the full data for a single rewards rail tier before it is sent to the side cart.
+
+**Parameters**
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| `$tier_data` | `array` | The display data (label, threshold, messages, color, state). |
+| `$tier` | `array` | The underlying tier data. |
+
+**Changelog**
+
+| Version | Description |
+| ------- | ----------- |
+| `11.3.0` | Introduced. |
+
+Source: `Features/SideCart.php`
+
+## `cfw_side_cart_tier_label`
+
+Filters the short label shown beneath a rewards rail tier node.
+
+**Parameters**
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| `$tier_label` | `string` | The resolved label. |
+| `$tier` | `array` | The tier data. |
+
+**Changelog**
+
+| Version | Description |
+| ------- | ----------- |
+| `11.3.0` | Introduced. |
+
+Source: `Features/SideCart.php`
 
 ## `cfw_skip_bump_cart_item_discount_html`
 

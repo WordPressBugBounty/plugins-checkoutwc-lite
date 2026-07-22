@@ -10,7 +10,7 @@ class WooCommerceAdvancedMessages extends CompatibilityAbstract {
 	}
 
 	public function pre_init() {
-		add_filter( 'wcam_locations', array( $this, 'add_checkoutwc_options' ) );
+		add_filter( 'wcam_locations', [ $this, 'add_checkoutwc_options' ] );
 	}
 
 	public function run_on_update_checkout() {
@@ -18,17 +18,17 @@ class WooCommerceAdvancedMessages extends CompatibilityAbstract {
 	}
 
 	public function add_checkoutwc_options( $locations ) {
-		$locations['Checkout']['woocommerce_checkout_before_order_review'] = array(
+		$locations['Checkout']['woocommerce_checkout_before_order_review'] = [
 			'action_hook' => 'woocommerce_checkout_before_order_review',
 			'priority'    => 10,
 			'name'        => 'CheckoutWC: Before cart',
-		);
+		];
 
-		$locations['Checkout']['woocommerce_checkout_after_order_review'] = array(
+		$locations['Checkout']['woocommerce_checkout_after_order_review'] = [
 			'action_hook' => 'woocommerce_checkout_after_order_review',
 			'priority'    => 10,
 			'name'        => 'CheckoutWC: After coupon',
-		);
+		];
 
 		return $locations;
 	}

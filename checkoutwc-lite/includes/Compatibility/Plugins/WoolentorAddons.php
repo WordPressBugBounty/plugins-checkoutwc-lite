@@ -16,6 +16,6 @@ class WoolentorAddons extends CompatibilityAbstract {
 			return;
 		}
 
-		remove_action( 'woocommerce_cart_item_name', array( $instance, 'add_product_thumbnail' ), 10 );
+		remove_action( 'woocommerce_cart_item_name', [ $instance, 'add_product_thumbnail' ], 10 );
 	}
 }

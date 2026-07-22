@@ -6,10 +6,10 @@ class WooCommerceAdminScreenAugmenter {
 	public function __construct() {}
 
 	public function init() {
-		add_action( 'woocommerce_sections_shipping', array( $this, 'output_woocommerce_shipping_settings_notice' ) );
-		add_filter( 'woocommerce_get_settings_shipping', array( $this, 'mark_possibly_overridden_shipping_settings' ), 10, 1 );
-		add_action( 'woocommerce_sections_account', array( $this, 'output_woocommerce_account_settings_notice' ) );
-		add_filter( 'woocommerce_get_settings_account', array( $this, 'mark_possibly_overridden_account_settings' ), 10, 1 );
+		add_action( 'woocommerce_sections_shipping', [ $this, 'output_woocommerce_shipping_settings_notice' ] );
+		add_filter( 'woocommerce_get_settings_shipping', [ $this, 'mark_possibly_overridden_shipping_settings' ], 10, 1 );
+		add_action( 'woocommerce_sections_account', [ $this, 'output_woocommerce_account_settings_notice' ] );
+		add_filter( 'woocommerce_get_settings_account', [ $this, 'mark_possibly_overridden_account_settings' ], 10, 1 );
 	}
 
 	public function output_woocommerce_shipping_settings_notice() {

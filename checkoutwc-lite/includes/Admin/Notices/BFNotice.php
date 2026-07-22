@@ -8,7 +8,7 @@ use Exception;
 use Objectiv\Plugins\Checkout\Managers\PlanManager;
 
 class BFNotice extends NoticeAbstract {
-	public function maybe_add( string $id = '', string $title = '', string $message = '', array $options = array() ) {
+	public function maybe_add( string $id = '', string $title = '', string $message = '', array $options = [] ) {
 		$id      = 'cfw_black_friday_2025';
 		$title   = __( 'Black Friday Sale - 40% Off', 'checkout-wc' );
 		$message = '<p>' . __( "You're missing out on revenue growth tools like Order Bumps, Upsells, Abandoned Cart Recovery and more! Save 40% on CheckoutWC pro plans for Black Friday, ends December 4th", 'checkout-wc' ) . '</p>';
@@ -17,11 +17,11 @@ class BFNotice extends NoticeAbstract {
 		$message .= sprintf(
 			'<p><a href="%s" target="_blank" class="button button-primary">%s</a></p>',
 			add_query_arg(
-				array(
+				[
 					'utm_source'   => 'WordPress',
 					'utm_medium'   => 'bfnotice',
 					'utm_campaign' => 'liteplugin',
-				),
+				],
 				'https://www.checkoutwc.com/black-friday-cyber-monday/'
 			),
 			__( 'Get CheckoutWC Pro Now!', 'checkout-wc' )
@@ -31,10 +31,10 @@ class BFNotice extends NoticeAbstract {
 			$id,
 			$title,
 			$message,
-			array(
+			[
 				'type'        => 'info',
 				'dismissible' => true,
-			)
+			]
 		);
 	}
 

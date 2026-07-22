@@ -12,14 +12,14 @@ class SavedAddressesForWooCommerce extends CompatibilityAbstract {
 	public function run() {
 		$saved_addresses_for_woocommerce = \SA_Saved_Addresses_For_WooCommerce::get_instance();
 
-		remove_action( 'woocommerce_before_checkout_billing_form', array( $saved_addresses_for_woocommerce, 'get_billing_addresses' ) );
-		remove_action( 'woocommerce_after_checkout_billing_form', array( $saved_addresses_for_woocommerce, 'enclose_the_billing_form' ) );
-		add_action( 'cfw_start_billing_address_container', array( $saved_addresses_for_woocommerce, 'get_billing_addresses' ) );
+		remove_action( 'woocommerce_before_checkout_billing_form', [ $saved_addresses_for_woocommerce, 'get_billing_addresses' ] );
+		remove_action( 'woocommerce_after_checkout_billing_form', [ $saved_addresses_for_woocommerce, 'enclose_the_billing_form' ] );
+		add_action( 'cfw_start_billing_address_container', [ $saved_addresses_for_woocommerce, 'get_billing_addresses' ] );
 
-		remove_action( 'woocommerce_before_checkout_shipping_form', array( $saved_addresses_for_woocommerce, 'get_shipping_addresses' ) );
-		remove_action( 'woocommerce_after_checkout_shipping_form', array( $saved_addresses_for_woocommerce, 'enclose_the_shipping_form' ) );
+		remove_action( 'woocommerce_before_checkout_shipping_form', [ $saved_addresses_for_woocommerce, 'get_shipping_addresses' ] );
+		remove_action( 'woocommerce_after_checkout_shipping_form', [ $saved_addresses_for_woocommerce, 'enclose_the_shipping_form' ] );
 
-		add_action( 'cfw_end_shipping_address_container', array( $saved_addresses_for_woocommerce, 'enclose_the_shipping_form' ) );
-		add_action( 'cfw_start_shipping_address_container', array( $saved_addresses_for_woocommerce, 'get_shipping_addresses' ) );
+		add_action( 'cfw_end_shipping_address_container', [ $saved_addresses_for_woocommerce, 'enclose_the_shipping_form' ] );
+		add_action( 'cfw_start_shipping_address_container', [ $saved_addresses_for_woocommerce, 'get_shipping_addresses' ] );
 	}
 }

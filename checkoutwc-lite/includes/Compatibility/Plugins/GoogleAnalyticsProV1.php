@@ -29,7 +29,7 @@ class GoogleAnalyticsProV1 extends CompatibilityAbstract {
 
 		// selected payment method
 		if ( $wc_google_analytics_pro_integration->has_event( 'selected_payment_method' ) ) {
-			add_action( 'cfw_checkout_after_payment_methods', array( $wc_google_analytics_pro_integration, 'selected_payment_method' ) );
+			add_action( 'cfw_checkout_after_payment_methods', [ $wc_google_analytics_pro_integration, 'selected_payment_method' ] );
 		}
 	}
 }

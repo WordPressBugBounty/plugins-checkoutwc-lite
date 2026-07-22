@@ -21,6 +21,6 @@ class BigBlue extends CompatibilityAbstract {
 			return;
 		}
 
-		add_action( 'cfw_checkout_after_shipping_methods', array( $instance, 'inject_preact_root_div' ), 9 );
+		add_action( 'cfw_checkout_after_shipping_methods', [ $instance, 'inject_preact_root_div' ], 9 );
 	}
 }

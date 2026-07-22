@@ -29,11 +29,11 @@ if (!function_exists('humbug_phpscoper_expose_class')) {
         }
     }
 }
-humbug_phpscoper_expose_class('Stringable', 'CheckoutWC\Stringable');
+humbug_phpscoper_expose_class('PhpToken', 'CheckoutWC\PhpToken');
 humbug_phpscoper_expose_class('Attribute', 'CheckoutWC\Attribute');
 humbug_phpscoper_expose_class('ValueError', 'CheckoutWC\ValueError');
+humbug_phpscoper_expose_class('Stringable', 'CheckoutWC\Stringable');
 humbug_phpscoper_expose_class('UnhandledMatchError', 'CheckoutWC\UnhandledMatchError');
-humbug_phpscoper_expose_class('PhpToken', 'CheckoutWC\PhpToken');
 humbug_phpscoper_expose_class('JsonException', 'CheckoutWC\JsonException');
 
 // Function aliases. For more information see:

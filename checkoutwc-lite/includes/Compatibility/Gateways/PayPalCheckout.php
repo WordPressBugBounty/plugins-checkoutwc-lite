@@ -36,7 +36,7 @@ class PayPalCheckout extends CompatibilityAbstract {
 	}
 
 	public function run() {
-		add_filter( 'cfw_is_checkout', array( $this, 'is_checkout' ), 10, 1 );
+		add_filter( 'cfw_is_checkout', [ $this, 'is_checkout' ], 10, 1 );
 	}
 
 	public function is_checkout( $is_checkout ) {

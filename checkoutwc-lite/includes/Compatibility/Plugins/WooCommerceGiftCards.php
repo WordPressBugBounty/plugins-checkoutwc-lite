@@ -22,13 +22,13 @@ class WooCommerceGiftCards extends CompatibilityAbstract {
 
 		$woocommerce_gift_cards = WC_GC();
 
-		remove_action( 'woocommerce_review_order_before_submit', array( $woocommerce_gift_cards->cart, 'display_form' ), 9 );
+		remove_action( 'woocommerce_review_order_before_submit', [ $woocommerce_gift_cards->cart, 'display_form' ], 9 );
 
-		add_action( 'cfw_coupon_module_end', array( $this, 'display_form' ), 9, 1 );
+		add_action( 'cfw_coupon_module_end', [ $this, 'display_form' ], 9, 1 );
 	}
 
 	public function run_on_wp_loaded() {
-		add_filter( 'woocommerce_update_order_review_fragments', array( $this, 'add_fragment' ), 10 );
+		add_filter( 'woocommerce_update_order_review_fragments', [ $this, 'add_fragment' ], 10 );
 	}
 
 	/**
@@ -100,20 +100,20 @@ class WooCommerceGiftCards extends CompatibilityAbstract {
 						<?php
 						woocommerce_form_field(
 							'wc_gc_cart_code',
-							array(
+							[
 								'id'                       => 'wc_gc_cart_code',
 								'type'                     => 'text',
 								'required'                 => false,
 								'label'                    => $woocommerce_gift_cards_field_label,
 								'placeholder'              => $woocommerce_gift_cards_field_placeholder,
 								'suppress_optional_suffix' => true,
-								'custom_attributes'        => array(
+								'custom_attributes'        => [
 									'data-storage' => 'false',
 									'autocomplete' => 'off',
 									'data-parsley-required' => 'false',
 									'style'        => 'width: 100%',
-								),
-							)
+								],
+							]
 						);
 						?>
 					</div>
@@ -129,10 +129,10 @@ class WooCommerceGiftCards extends CompatibilityAbstract {
 	}
 
 	public function typescript_class_and_params( array $compatibility ): array {
-		$compatibility[] = array(
+		$compatibility[] = [
 			'class'  => 'WooCommerceGiftCards',
-			'params' => array(),
-		);
+			'params' => [],
+		];
 
 		return $compatibility;
 	}

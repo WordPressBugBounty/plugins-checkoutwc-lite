@@ -16,7 +16,7 @@ class ResursBank extends CompatibilityAbstract {
 			return;
 		}
 
-		add_filter( 'cfw_payment_method_li_class', array( $this, 'put_payment_method_class_at_end' ) );
+		add_filter( 'cfw_payment_method_li_class', [ $this, 'put_payment_method_class_at_end' ] );
 
 		add_filter(
 			'cfw_detected_gateways',
@@ -44,7 +44,7 @@ class ResursBank extends CompatibilityAbstract {
 		}
 
 		$classes              = explode( ' ', $class_string );
-		$ordered_classes      = array();
+		$ordered_classes      = [];
 		$payment_method_class = '';
 
 		foreach ( $classes as $class ) {

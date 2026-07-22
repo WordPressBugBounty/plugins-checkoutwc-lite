@@ -10,8 +10,8 @@ class WooCommercePakettikauppa extends CompatibilityAbstract {
 	}
 
 	public function run() {
-		remove_filter( 'woocommerce_checkout_fields', array( \Wc_Pakettikauppa::get_instance()->frontend, 'add_checkout_fields' ) );
-		add_filter( 'woocommerce_checkout_fields', array( $this, 'add_shipping_email_field' ) );
+		remove_filter( 'woocommerce_checkout_fields', [ \Wc_Pakettikauppa::get_instance()->frontend, 'add_checkout_fields' ] );
+		add_filter( 'woocommerce_checkout_fields', [ $this, 'add_shipping_email_field' ] );
 	}
 
 	public function add_shipping_email_field( $fields ): array {

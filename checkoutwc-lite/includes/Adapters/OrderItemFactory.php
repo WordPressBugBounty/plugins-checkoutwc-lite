@@ -7,7 +7,7 @@ use WC_Order;
 
 class OrderItemFactory {
 	public static function get( WC_Order $order ): array {
-		$items = array();
+		$items = [];
 
 		foreach ( $order->get_items() as $item ) {
 			if ( ! cfw_apply_filters( 'woocommerce_order_item_visible', true, $item ) ) {

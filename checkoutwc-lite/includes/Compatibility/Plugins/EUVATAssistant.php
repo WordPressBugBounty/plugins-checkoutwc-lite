@@ -10,7 +10,7 @@ class EUVATAssistant extends CompatibilityAbstract {
 	}
 
 	public function run() {
-		add_filter( 'woocommerce_checkout_fields', array( $this, 'maybe_move_euvat_fields_to_order_step' ), 100, 1 );
+		add_filter( 'woocommerce_checkout_fields', [ $this, 'maybe_move_euvat_fields_to_order_step' ], 100, 1 );
 	}
 
 	public function maybe_move_euvat_fields_to_order_step( $fields ) {

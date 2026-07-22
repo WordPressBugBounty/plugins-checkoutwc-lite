@@ -10,14 +10,14 @@ class ExtraCheckoutFieldsBrazil extends CompatibilityAbstract {
 	}
 
 	public function run() {
-		add_filter( 'wcbcf_billing_fields', array( $this, 'checkout_billing_fields' ) );
-		add_filter( 'wcbcf_shipping_fields', array( $this, 'checkout_shipping_fields' ) );
+		add_filter( 'wcbcf_billing_fields', [ $this, 'checkout_billing_fields' ] );
+		add_filter( 'wcbcf_shipping_fields', [ $this, 'checkout_shipping_fields' ] );
 		add_filter(
 			'cfw_form_field_suppress_optional_in_placeholder',
-			array(
+			[
 				$this,
 				'suppress_optional_in_placeholder',
-			),
+			],
 			10,
 			2
 		);
@@ -50,23 +50,23 @@ class ExtraCheckoutFieldsBrazil extends CompatibilityAbstract {
 		$fields['billing_city']     = $unmodified_fields['city'];
 
 		$fields['billing_persontype']['columns']     = 12;
-		$fields['billing_persontype']['input_class'] = array( 'billing_persontype' );
+		$fields['billing_persontype']['input_class'] = [ 'billing_persontype' ];
 		$fields['billing_number']['columns']         = 12;
-		$fields['billing_number']['class']           = array();
+		$fields['billing_number']['class']           = [];
 		$fields['billing_neighborhood']['priority']  = 55;
 		$fields['billing_neighborhood']['columns']   = 12;
-		$fields['billing_neighborhood']['class']     = array();
+		$fields['billing_neighborhood']['class']     = [];
 		$fields['billing_cellphone']['columns']      = 12;
-		$fields['billing_cellphone']['class']        = array();
+		$fields['billing_cellphone']['class']        = [];
 
 		if ( isset( $fields['billing_birthdate'] ) ) {
 			$fields['billing_birthdate']['columns'] = 12;
-			$fields['billing_birthdate']['class']   = array();
+			$fields['billing_birthdate']['class']   = [];
 		}
 
 		if ( isset( $fields['billing_sex'] ) ) {
 			$fields['billing_sex']['columns'] = 12;
-			$fields['billing_sex']['class']   = array();
+			$fields['billing_sex']['class']   = [];
 		}
 
 		return $fields;
@@ -92,10 +92,10 @@ class ExtraCheckoutFieldsBrazil extends CompatibilityAbstract {
 		$fields['shipping_city']     = $unmodified_fields['city'];
 
 		$fields['shipping_number']['columns']        = 12;
-		$fields['shipping_number']['class']          = array();
+		$fields['shipping_number']['class']          = [];
 		$fields['shipping_neighborhood']['priority'] = 55;
 		$fields['shipping_neighborhood']['columns']  = 12;
-		$fields['shipping_neighborhood']['class']    = array();
+		$fields['shipping_neighborhood']['class']    = [];
 
 		if ( cfw_is_phone_fields_enabled() && ! empty( $unmodified_fields['phone'] ) ) {
 			$fields['shipping_phone'] = $unmodified_fields['phone'];
@@ -105,23 +105,23 @@ class ExtraCheckoutFieldsBrazil extends CompatibilityAbstract {
 	}
 
 	public function typescript_class_and_params( array $compatibility ): array {
-		$compatibility[] = array(
+		$compatibility[] = [
 			'class'  => 'ExtraCheckoutFieldsBrazil',
-			'params' => array(),
-		);
+			'params' => [],
+		];
 
 		return $compatibility;
 	}
 
 	public function suppress_optional_in_placeholder( $append, $field_key ) {
-		$blocked_fields = array(
+		$blocked_fields = [
 			'billing_persontype',
 			'billing_cnpj',
 			'billing_ie',
 			'billing_cpf',
 			'billing_rg',
 			'billing_company',
-		);
+		];
 
 		if ( in_array( $field_key, $blocked_fields, true ) ) {
 			return true;

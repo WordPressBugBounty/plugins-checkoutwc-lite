@@ -12,11 +12,11 @@ class CashierForWooCommerce extends CompatibilityAbstract {
 	}
 
 	public function pre_init() {
-		add_filter( 'cfw_admin_integrations_checkbox_fields', array( $this, 'admin_integration_settings' ) );
+		add_filter( 'cfw_admin_integrations_checkbox_fields', [ $this, 'admin_integration_settings' ] );
 	}
 
 	public function run_immediately() {
-		add_filter( 'woocommerce_enable_order_notes_field', array( $this, 'enable_notes_field' ) );
+		add_filter( 'woocommerce_enable_order_notes_field', [ $this, 'enable_notes_field' ] );
 
 		$enabled_modules = SA_WC_Cashier::get_instance()->get_enabled_modules();
 
@@ -38,8 +38,8 @@ class CashierForWooCommerce extends CompatibilityAbstract {
 
 		$instance = \SA_CFW_CFE_Woo_Checkout_Fields::get_instance();
 
-		remove_filter( 'woocommerce_billing_fields', array( $instance, 'billing_address' ), $billing_priority );
-		remove_filter( 'woocommerce_shipping_fields', array( $instance, 'shipping_address' ), $shipping_priority );
+		remove_filter( 'woocommerce_billing_fields', [ $instance, 'billing_address' ], $billing_priority );
+		remove_filter( 'woocommerce_shipping_fields', [ $instance, 'shipping_address' ], $shipping_priority );
 	}
 
 	public function run() {
@@ -57,12 +57,12 @@ class CashierForWooCommerce extends CompatibilityAbstract {
 			return $integrations;
 		}
 
-		$integrations[] = array(
+		$integrations[] = [
 			'name'          => 'allow_cashier_for_woocommerce_address_modification',
 			'label'         => __( 'Enable Cashier for WooCommerce address field overrides. (Not Recommended)', 'checkout-wc' ),
 			'description'   => __( 'Allow WooCommerce Cashier Checkout Field Editor module to modify billing and shipping address fields. Not compatible with these features: Separate House Number and Street Name Address Fields, Full Name Field', 'checkout-wc' ),
 			'initial_value' => SettingsManager::instance()->get_setting( 'allow_cashier_for_woocommerce_address_modification' ) === 'yes',
-		);
+		];
 
 		return $integrations;
 	}

@@ -11,8 +11,8 @@ class WooCommercePriceBasedOnCountry extends CompatibilityAbstract {
 	}
 
 	public function run_immediately() {
-		add_filter( 'cfw_order_bump_get_price_context', array( $this, 'change_bump_price_context' ), 10, 1 );
-		add_filter( 'cfw_order_bump_captured_revenue', array( $this, 'protect_captured_revenue_from_currency_conversion' ), 10 );
+		add_filter( 'cfw_order_bump_get_price_context', [ $this, 'change_bump_price_context' ], 10, 1 );
+		add_filter( 'cfw_order_bump_captured_revenue', [ $this, 'protect_captured_revenue_from_currency_conversion' ], 10 );
 	}
 
 	public function change_bump_price_context( $context ): string {

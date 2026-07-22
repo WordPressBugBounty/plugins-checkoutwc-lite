@@ -48,7 +48,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 					<td class="cfw-offer-thumb">
 						<?php
 						if ( $product ) {
-							echo wp_kses_post( $product->get_image( array( 50, 50 ) ) );
+							echo wp_kses_post( $product->get_image( [ 50, 50 ] ) );
 						}
 						?>
 					</td>
@@ -72,7 +72,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 						<?php echo esc_html( $item->get_quantity() ); ?>
 					</td>
 					<td class="cfw-offer-total">
-						<?php echo wp_kses_post( wc_price( $item_total, array( 'currency' => $order->get_currency() ) ) ); ?>
+						<?php echo wp_kses_post( wc_price( $item_total, [ 'currency' => $order->get_currency() ] ) ); ?>
 					</td>
 					<td class="cfw-offer-action">
 						<?php if ( 'yes' === $is_refunded ) : ?>

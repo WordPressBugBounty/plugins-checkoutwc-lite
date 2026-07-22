@@ -10,7 +10,7 @@ class WooCommerceProductRecommendations extends CompatibilityAbstract {
 	}
 
 	public function pre_init() {
-		add_filter( 'woocommerce_prl_locations', array( $this, 'add_deployment_location' ), 8 );
+		add_filter( 'woocommerce_prl_locations', [ $this, 'add_deployment_location' ], 8 );
 	}
 
 	public function add_deployment_location( $locations ) {

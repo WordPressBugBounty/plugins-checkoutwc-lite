@@ -13,7 +13,7 @@ class WooCommerceGermanized extends CompatibilityAbstract {
 		/**
 		 * Don't monkey around with gateways
 		 */
-		add_filter( 'woocommerce_gzd_compatibilities', array( $this, 'override_ppec_compat' ), 1000, 1 );
+		add_filter( 'woocommerce_gzd_compatibilities', [ $this, 'override_ppec_compat' ], 1000, 1 );
 	}
 
 	public function run() {
@@ -21,7 +21,7 @@ class WooCommerceGermanized extends CompatibilityAbstract {
 		 * Don't let WooCommerce Germanized Eff Up the Submit Button
 		 */
 		$wc_gzd_checkout = \WC_GZD_Checkout::instance();
-		remove_filter( 'woocommerce_update_order_review_fragments', array( $wc_gzd_checkout, 'refresh_order_submit' ), 150 );
+		remove_filter( 'woocommerce_update_order_review_fragments', [ $wc_gzd_checkout, 'refresh_order_submit' ], 150 );
 		remove_action( 'woocommerce_review_order_before_submit', 'woocommerce_gzd_template_set_order_button_remove_filter', PHP_INT_MAX );
 		remove_action( 'woocommerce_review_order_after_submit', 'woocommerce_gzd_template_set_order_button_show_filter', PHP_INT_MAX );
 		remove_action( 'woocommerce_gzd_review_order_before_submit', 'woocommerce_gzd_template_set_order_button_show_filter', PHP_INT_MAX );
@@ -79,10 +79,10 @@ class WooCommerceGermanized extends CompatibilityAbstract {
 	}
 
 	public function typescript_class_and_params( array $compatibility ): array {
-		$compatibility[] = array(
+		$compatibility[] = [
 			'class'  => 'WooCommerceGermanized',
-			'params' => array(),
-		);
+			'params' => [],
+		];
 
 		return $compatibility;
 	}

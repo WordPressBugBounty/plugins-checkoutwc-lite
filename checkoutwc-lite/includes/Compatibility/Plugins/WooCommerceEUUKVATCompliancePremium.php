@@ -17,7 +17,7 @@ class WooCommerceEUUKVATCompliancePremium extends CompatibilityAbstract {
 			return;
 		}
 
-		remove_action( 'woocommerce_checkout_billing', array( $object, 'vat_number_field' ), $priority );
-		add_action( 'cfw_checkout_customer_info_tab', array( $object, 'vat_number_field' ), 52 );
+		remove_action( 'woocommerce_checkout_billing', [ $object, 'vat_number_field' ], $priority );
+		add_action( 'cfw_checkout_customer_info_tab', [ $object, 'vat_number_field' ], 52 );
 	}
 }

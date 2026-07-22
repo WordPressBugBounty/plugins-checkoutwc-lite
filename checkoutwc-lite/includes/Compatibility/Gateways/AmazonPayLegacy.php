@@ -44,9 +44,9 @@ class AmazonPayLegacy extends CompatibilityAbstract {
 
 	public function pre_init() {
 		if ( $this->is_available() ) {
-			add_action( 'woocommerce_checkout_init', array( $this, 'checkout_init' ), 11 );
-			add_action( 'woocommerce_checkout_init', array( $this, 'remove_banners' ), 100 );
-			add_action( 'wp_loaded', array( $this, 'start' ), 0 );
+			add_action( 'woocommerce_checkout_init', [ $this, 'checkout_init' ], 11 );
+			add_action( 'woocommerce_checkout_init', [ $this, 'remove_banners' ], 100 );
+			add_action( 'wp_loaded', [ $this, 'start' ], 0 );
 
 			add_filter(
 				'cfw_detected_gateways',
@@ -69,27 +69,27 @@ class AmazonPayLegacy extends CompatibilityAbstract {
 				add_filter( 'cfw_enable_enhanced_login', '__return_false' ); // disable our login UX
 				add_filter( 'cfw_enable_fullname_field', '__return_false' ); // disable full name field
 				remove_action( 'woocommerce_before_checkout_form', 'woocommerce_checkout_login_form', 10 ); // disable default WooCommerce login UX
-				add_action( 'cfw_checkout_customer_info_tab', array( $this, 'shim_email_field' ), 30 );
-				add_action( 'cfw_wp_head', array( $this, 'runtime_styles' ) );
+				add_action( 'cfw_checkout_customer_info_tab', [ $this, 'shim_email_field' ], 30 );
+				add_action( 'cfw_wp_head', [ $this, 'runtime_styles' ] );
 			}
 
-			add_action( 'woocommerce_amazon_checkout_init', array( $this, 'queue_widgets' ) );
+			add_action( 'woocommerce_amazon_checkout_init', [ $this, 'queue_widgets' ] );
 
 			// Remove amazon's store_shipping_info_in_session
-			remove_action( 'woocommerce_checkout_update_order_review', array( $this->get_gateway(), 'store_shipping_info_in_session' ), 10 );
+			remove_action( 'woocommerce_checkout_update_order_review', [ $this->get_gateway(), 'store_shipping_info_in_session' ], 10 );
 
 			// Add ours
-			add_action( 'woocommerce_checkout_update_order_review', array( $this, 'store_shipping_info_in_session' ) );
+			add_action( 'woocommerce_checkout_update_order_review', [ $this, 'store_shipping_info_in_session' ] );
 
 			// Disable payment method refresh
-			add_action( 'woocommerce_checkout_update_order_review', array( $this, 'disable_refresh' ) );
+			add_action( 'woocommerce_checkout_update_order_review', [ $this, 'disable_refresh' ] );
 		}
 	}
 
 	public function checkout_init() {
 		if ( ! $this->is_logged_in() ) {
-			add_action( 'cfw_payment_request_buttons', array( $this->get_gateway(), 'checkout_message' ) );
-			add_action( 'cfw_wp_head', array( $this, 'protect_shipping_fields' ) );
+			add_action( 'cfw_payment_request_buttons', [ $this->get_gateway(), 'checkout_message' ] );
+			add_action( 'cfw_wp_head', [ $this, 'protect_shipping_fields' ] );
 		} else {
 			// Remove shipping address preview if a subscription is in the cart
 			if ( class_exists( '\\WC_Subscriptions_Cart' ) && \WC_Subscriptions_Cart::cart_contains_subscription() ) {
@@ -114,16 +114,16 @@ class AmazonPayLegacy extends CompatibilityAbstract {
 	}
 
 	public function remove_banners() {
-		remove_action( 'woocommerce_checkout_before_customer_details', array( $this->get_gateway(), 'payment_widget' ), 20 );
-		remove_action( 'woocommerce_checkout_before_customer_details', array( $this->get_gateway(), 'address_widget' ) );
+		remove_action( 'woocommerce_checkout_before_customer_details', [ $this->get_gateway(), 'payment_widget' ], 20 );
+		remove_action( 'woocommerce_checkout_before_customer_details', [ $this->get_gateway(), 'address_widget' ] );
 
 		// Remove before the form messages
 		if ( ! $this->is_logged_in() ) {
-			remove_action( 'woocommerce_before_checkout_form', array( $this->get_gateway(), 'checkout_message' ), 5 );
-			remove_action( 'before_woocommerce_pay', array( $this->get_gateway(), 'checkout_message' ), 5 );
+			remove_action( 'woocommerce_before_checkout_form', [ $this->get_gateway(), 'checkout_message' ], 5 );
+			remove_action( 'before_woocommerce_pay', [ $this->get_gateway(), 'checkout_message' ], 5 );
 		}
 
-		remove_action( 'woocommerce_before_checkout_form', array( $this->get_gateway(), 'placeholder_checkout_message_container' ), 5 );
+		remove_action( 'woocommerce_before_checkout_form', [ $this->get_gateway(), 'placeholder_checkout_message_container' ], 5 );
 	}
 
 	public function shim_email_field() {
@@ -153,15 +153,15 @@ class AmazonPayLegacy extends CompatibilityAbstract {
 	}
 
 	public function queue_widgets() {
-		add_action( 'cfw_checkout_before_customer_info_address', array( $this, 'address_widget' ), 10 );
-		add_action( 'cfw_checkout_before_customer_info_address', array( $this, 'output_shim_divs_close' ), 11 );
+		add_action( 'cfw_checkout_before_customer_info_address', [ $this, 'address_widget' ], 10 );
+		add_action( 'cfw_checkout_before_customer_info_address', [ $this, 'output_shim_divs_close' ], 11 );
 
 		if ( cfw_is_checkout_pay_page() ) {
 			return;
 		}
 
-		add_action( 'cfw_checkout_after_payment_methods', array( $this, 'output_shim_divs_open' ), 19 );
-		add_action( 'cfw_checkout_after_payment_methods', array( $this, 'payment_widget' ), 20 );
+		add_action( 'cfw_checkout_after_payment_methods', [ $this, 'output_shim_divs_open' ], 19 );
+		add_action( 'cfw_checkout_after_payment_methods', [ $this, 'payment_widget' ], 20 );
 	}
 
 	public function address_widget() {
@@ -236,9 +236,9 @@ class AmazonPayLegacy extends CompatibilityAbstract {
 
 	public function typescript_class_and_params( array $compatibility ): array {
 
-		$compatibility['AmazonPayLegacy'] = array(
+		$compatibility['AmazonPayLegacy'] = [
 			'class'  => 'AmazonPayLegacy',
-			'params' => array(
+			'params' => [
 				/**
 				 * Filters whether to suppress shipping field validation when logged into Amazon Pay
 				 *
@@ -247,8 +247,8 @@ class AmazonPayLegacy extends CompatibilityAbstract {
 				 * @param bool $suppress_validation True suppress validation (Default), false validate
 				 */
 				'cfw_amazon_suppress_shipping_field_validation' => apply_filters( 'cfw_amazon_suppress_shipping_field_validation', true ),
-			),
-		);
+			],
+		];
 
 		return $compatibility;
 	}
@@ -281,7 +281,7 @@ class AmazonPayLegacy extends CompatibilityAbstract {
 		$address = $this->normalize_address( $address );
 		// @codingStandardsIgnoreEnd
 
-		foreach ( array( 'first_name', 'last_name', 'address_1', 'address_2', 'country', 'state', 'postcode', 'city' ) as $field ) {
+		foreach ( [ 'first_name', 'last_name', 'address_1', 'address_2', 'country', 'state', 'postcode', 'city' ] as $field ) {
 			if ( ! isset( $address[ $field ] ) ) {
 				continue;
 			}
@@ -361,11 +361,11 @@ class AmazonPayLegacy extends CompatibilityAbstract {
 	 * @since 1.7.0
 	 */
 	private function set_customer_info( string $setter_suffix, $value ) {
-		$setter             = array( WC()->customer, 'set_' . $setter_suffix );
+		$setter             = [ WC()->customer, 'set_' . $setter_suffix ];
 		$is_shipping_setter = strpos( $setter_suffix, 'shipping_' ) !== false;
 
 		if ( defined( 'WC_VERSION' ) && version_compare( WC_VERSION, '3.0', '>=' ) && ! $is_shipping_setter ) {
-			$setter = array( WC()->customer, 'set_billing_' . $setter_suffix );
+			$setter = [ WC()->customer, 'set_billing_' . $setter_suffix ];
 		}
 
 		call_user_func( $setter, $value );

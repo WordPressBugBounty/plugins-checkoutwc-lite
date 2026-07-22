@@ -11,16 +11,16 @@ class WooCommerceSubscriptions extends CompatibilityAbstract {
 	}
 
 	public function pre_init() {
-		add_filter( 'cfw_is_checkout_pay_page', array( $this, 'disable_cfw_for_change_payment_request' ), 10, 1 );
-		add_filter( 'cfw_available_variations', array( $this, 'allow_variation_changes_for_subscription_limits' ), 10, 3 );
+		add_filter( 'cfw_is_checkout_pay_page', [ $this, 'disable_cfw_for_change_payment_request' ], 10, 1 );
+		add_filter( 'cfw_available_variations', [ $this, 'allow_variation_changes_for_subscription_limits' ], 10, 3 );
 	}
 
 	public function run_immediately() {
-		add_filter( 'cfw_show_shipping_tab', array( $this, 'maybe_hide_shipping_tab' ) );
+		add_filter( 'cfw_show_shipping_tab', [ $this, 'maybe_hide_shipping_tab' ] );
 	}
 
 	public function run() {
-		add_filter( 'woocommerce_checkout_registration_required', array( $this, 'override_registration_required' ), 10, 1 );
+		add_filter( 'woocommerce_checkout_registration_required', [ $this, 'override_registration_required' ], 10, 1 );
 	}
 
 	public function maybe_hide_shipping_tab( $show_shipping_tab ) {

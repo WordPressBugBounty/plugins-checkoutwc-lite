@@ -13,17 +13,17 @@ class MyParcel extends CompatibilityAbstract {
 		if ( WCMYPA()->setting_collection->isEnabled( 'use_split_address_fields' ) ) {
 			$this->disable_nl_hooks();
 
-			add_filter( 'woocommerce_default_address_fields', array( $this, 'add_new_fields' ), 100001, 1 ); // run after our normal hook
-			add_filter( 'woocommerce_get_country_locale', array( $this, 'prevent_postcode_sort_change' ), 100001 );
+			add_filter( 'woocommerce_default_address_fields', [ $this, 'add_new_fields' ], 100001, 1 ); // run after our normal hook
+			add_filter( 'woocommerce_get_country_locale', [ $this, 'prevent_postcode_sort_change' ], 100001 );
 
 			// Fix shipping preview
-			add_filter( 'cfw_get_shipping_details_address', array( $this, 'fix_shipping_preview' ), 10, 2 );
+			add_filter( 'cfw_get_shipping_details_address', [ $this, 'fix_shipping_preview' ], 10, 2 );
 		}
 
 		add_filter( 'cfw_enable_zip_autocomplete', '__return_false' );
 
 		// Move delivery options
-		add_filter( 'wc_wcmp_delivery_options_location', array( $this, 'move_delivery_options' ), 20 );
+		add_filter( 'wc_wcmp_delivery_options_location', [ $this, 'move_delivery_options' ], 20 );
 	}
 
 	public function disable_nl_hooks() {
@@ -36,56 +36,56 @@ class MyParcel extends CompatibilityAbstract {
 			return;
 		}
 
-		remove_filter( 'woocommerce_billing_fields', array( $instance, 'modifyBillingFields' ), $priority );
-		remove_filter( 'woocommerce_shipping_fields', array( $instance, 'modifyShippingFields' ), $priority );
-		remove_filter( 'woocommerce_default_address_fields', array( $instance, 'default_address_fields' ) );
+		remove_filter( 'woocommerce_billing_fields', [ $instance, 'modifyBillingFields' ], $priority );
+		remove_filter( 'woocommerce_shipping_fields', [ $instance, 'modifyShippingFields' ], $priority );
+		remove_filter( 'woocommerce_default_address_fields', [ $instance, 'default_address_fields' ] );
 	}
 
 	public function add_new_fields( $fields ) {
 		// Add street name
-		$fields['street_name'] = array(
+		$fields['street_name'] = [
 			'label'             => __( 'street_name', 'woocommerce-myparcel' ),
 			'placeholder'       => esc_attr__( 'Street name', 'woocommerce-postnl' ),
 			'required'          => true,
-			'class'             => array(),
+			'class'             => [],
 			'autocomplete'      => '',
-			'input_class'       => array(),
+			'input_class'       => [],
 			'priority'          => 31, // after company
 			'columns'           => 6,
-			'custom_attributes' => array(
+			'custom_attributes' => [
 				'data-parsley-trigger' => 'change focusout',
-			),
-		);
+			],
+		];
 
 		// Then add house number
-		$fields['house_number'] = array(
+		$fields['house_number'] = [
 			'label'             => __( 'abbreviation_house_number', 'woocommerce-myparcel' ),
 			'placeholder'       => esc_attr__( 'Nr.', 'woocommerce-postnl' ),
 			'required'          => true,
-			'class'             => array(),
+			'class'             => [],
 			'autocomplete'      => '',
-			'input_class'       => array(),
+			'input_class'       => [],
 			'priority'          => 32,
-			'custom_attributes' => array(
+			'custom_attributes' => [
 				'data-parsley-trigger' => 'change focusout',
-			),
+			],
 			'columns'           => 3,
-		);
+		];
 
 		// Then house number suffix
-		$fields['house_number_suffix'] = array(
+		$fields['house_number_suffix'] = [
 			'label'             => __( 'suffix', 'woocommerce-myparcel' ),
 			'placeholder'       => esc_attr__( 'Suffix', 'woocommerce-postnl' ),
 			'required'          => false,
-			'class'             => array(),
+			'class'             => [],
 			'autocomplete'      => '',
-			'input_class'       => array(),
+			'input_class'       => [],
 			'priority'          => 33,
 			'columns'           => 3,
-			'custom_attributes' => array(
+			'custom_attributes' => [
 				'data-parsley-trigger' => 'change focusout',
-			),
-		);
+			],
+		];
 
 		// Adjust postcode field
 		$fields['postcode']['priority'] = 85; // defaults to 70

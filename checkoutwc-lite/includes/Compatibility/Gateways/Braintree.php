@@ -80,13 +80,13 @@ class Braintree extends CompatibilityAbstract {
 		$cc_gateway_available     = isset( $payment_gateways[ $cc_gateway_id ] ) ? $payment_gateways[ $cc_gateway_id ]->is_available() : false;
 		$paypal_gateway_available = isset( $payment_gateways[ $paypal_gateway_id ] ) ? $payment_gateways[ $paypal_gateway_id ]->is_available() : false;
 
-		$compatibility[] = array(
+		$compatibility[] = [
 			'class'  => 'Braintree',
-			'params' => array(
+			'params' => [
 				'cc_gateway_available'     => $cc_gateway_available,
 				'paypal_gateway_available' => $paypal_gateway_available,
-			),
-		);
+			],
+		];
 
 		return $compatibility;
 	}

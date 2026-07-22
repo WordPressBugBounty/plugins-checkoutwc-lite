@@ -14,17 +14,17 @@ class PostNL4 extends CompatibilityAbstract {
 		if ( WCPOST()->setting_collection->isEnabled( 'use_split_address_fields' ) ) {
 			$this->disable_nl_hooks();
 
-			add_filter( 'woocommerce_default_address_fields', array( $this, 'add_new_fields' ), 100001, 1 ); // run after our normal hook
-			add_filter( 'woocommerce_get_country_locale', array( $this, 'prevent_postcode_sort_change' ), 100001 );
+			add_filter( 'woocommerce_default_address_fields', [ $this, 'add_new_fields' ], 100001, 1 ); // run after our normal hook
+			add_filter( 'woocommerce_get_country_locale', [ $this, 'prevent_postcode_sort_change' ], 100001 );
 
 			// Fix shipping preview
-			add_filter( 'cfw_get_shipping_details_address', array( $this, 'fix_shipping_preview' ), 10, 2 );
+			add_filter( 'cfw_get_shipping_details_address', [ $this, 'fix_shipping_preview' ], 10, 2 );
 		}
 
 		add_filter( 'cfw_enable_zip_autocomplete', '__return_false' );
 
 		// Move delivery options
-		add_filter( 'wc_wcpn_delivery_options_location', array( $this, 'move_delivery_options' ), 20 );
+		add_filter( 'wc_wcpn_delivery_options_location', [ $this, 'move_delivery_options' ], 20 );
 	}
 
 	public function disable_nl_hooks() {
@@ -36,9 +36,9 @@ class PostNL4 extends CompatibilityAbstract {
 			return;
 		}
 
-		remove_filter( 'woocommerce_billing_fields', array( $instance, 'modifyBillingFields' ), $priority );
-		remove_filter( 'woocommerce_shipping_fields', array( $instance, 'modifyShippingFields' ), $priority );
-		remove_filter( 'woocommerce_default_address_fields', array( $instance, 'default_address_fields' ) );
+		remove_filter( 'woocommerce_billing_fields', [ $instance, 'modifyBillingFields' ], $priority );
+		remove_filter( 'woocommerce_shipping_fields', [ $instance, 'modifyShippingFields' ], $priority );
+		remove_filter( 'woocommerce_default_address_fields', [ $instance, 'default_address_fields' ] );
 	}
 
 	public function add_new_fields( $fields ) {
@@ -46,49 +46,49 @@ class PostNL4 extends CompatibilityAbstract {
 		$fields['postcode']['priority'] = 22;
 
 		// Add street name
-		$fields['street_name'] = array(
+		$fields['street_name'] = [
 			'label'             => __( 'Street name', 'woocommerce-postnl' ),
 			'placeholder'       => esc_attr__( 'Street name', 'woocommerce-postnl' ),
 			'required'          => true,
-			'class'             => array(),
+			'class'             => [],
 			'autocomplete'      => '',
-			'input_class'       => array(),
+			'input_class'       => [],
 			'priority'          => 25,
 			'columns'           => 4,
-			'custom_attributes' => array(
+			'custom_attributes' => [
 				'data-parsley-trigger' => 'change focusout',
-			),
-		);
+			],
+		];
 
 		// Then add house number
-		$fields['house_number'] = array(
+		$fields['house_number'] = [
 			'label'             => __( 'Nr.', 'woocommerce-postnl' ),
 			'placeholder'       => esc_attr__( 'Nr.', 'woocommerce-postnl' ),
 			'required'          => true,
-			'class'             => array(),
+			'class'             => [],
 			'autocomplete'      => '',
-			'input_class'       => array(),
+			'input_class'       => [],
 			'priority'          => 26,
-			'custom_attributes' => array(
+			'custom_attributes' => [
 				'data-parsley-trigger' => 'change focusout',
-			),
+			],
 			'columns'           => 4,
-		);
+		];
 
 		// Then house number suffix
-		$fields['house_number_suffix'] = array(
+		$fields['house_number_suffix'] = [
 			'label'             => __( 'Suffix', 'woocommerce-postnl' ),
 			'placeholder'       => esc_attr__( 'Suffix', 'woocommerce-postnl' ),
 			'required'          => false,
-			'class'             => array(),
+			'class'             => [],
 			'autocomplete'      => '',
-			'input_class'       => array(),
+			'input_class'       => [],
 			'priority'          => 27,
 			'columns'           => 4,
-			'custom_attributes' => array(
+			'custom_attributes' => [
 				'data-parsley-trigger' => 'change focusout',
-			),
-		);
+			],
+		];
 
 		$fields['state']['columns'] = 8;
 
@@ -137,10 +137,10 @@ class PostNL4 extends CompatibilityAbstract {
 	}
 
 	public function typescript_class_and_params( array $compatibility ): array {
-		$compatibility[] = array(
+		$compatibility[] = [
 			'class'  => 'PostNL',
-			'params' => array(),
-		);
+			'params' => [],
+		];
 
 		return $compatibility;
 	}

@@ -7365,6 +7365,31 @@
             "args": 1
         },
         {
+            "name": "cfw_side_cart_qualifying_subtotal",
+            "file": "Features/SideCart.php",
+            "type": "filter",
+            "doc": {
+                "description": "Filters the cart amount that counts toward the free shipping / rewards bar.",
+                "long_description": "Integration seam for table-rate and other custom shipping setups that determine the qualifying amount differently than the displayed subtotal.",
+                "tags": [
+                    {
+                        "name": "param",
+                        "content": "The qualifying subtotal.",
+                        "types": [
+                            "float"
+                        ],
+                        "variable": "$subtotal"
+                    },
+                    {
+                        "name": "since",
+                        "content": "11.3.0"
+                    }
+                ],
+                "long_description_html": "<p>Integration seam for table-rate and other custom shipping setups that determine the qualifying amount differently than the displayed subtotal.</p>"
+            },
+            "args": 1
+        },
+        {
             "name": "cfw_side_cart_shipping_bar_data_exclude_discounts",
             "file": "Features/SideCart.php",
             "type": "filter",
@@ -7374,7 +7399,7 @@
                 "tags": [
                     {
                         "name": "param",
-                        "content": "Whether to exclude discounts from the subtotal when calculating the free shipping bar",
+                        "content": "Whether to exclude discounts from the subtotal.",
                         "types": [
                             "bool"
                         ],
@@ -7413,6 +7438,72 @@
                 "long_description_html": ""
             },
             "args": 1
+        },
+        {
+            "name": "cfw_side_cart_tier_data",
+            "file": "Features/SideCart.php",
+            "type": "filter",
+            "doc": {
+                "description": "Filters the full data for a single rewards rail tier before it is sent to the side cart.",
+                "long_description": "",
+                "tags": [
+                    {
+                        "name": "param",
+                        "content": "The display data (label, threshold, messages, color, state).",
+                        "types": [
+                            "array"
+                        ],
+                        "variable": "$tier_data"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The underlying tier data.",
+                        "types": [
+                            "array"
+                        ],
+                        "variable": "$tier"
+                    },
+                    {
+                        "name": "since",
+                        "content": "11.3.0"
+                    }
+                ],
+                "long_description_html": ""
+            },
+            "args": 2
+        },
+        {
+            "name": "cfw_side_cart_tier_label",
+            "file": "Features/SideCart.php",
+            "type": "filter",
+            "doc": {
+                "description": "Filters the short label shown beneath a rewards rail tier node.",
+                "long_description": "",
+                "tags": [
+                    {
+                        "name": "param",
+                        "content": "The resolved label.",
+                        "types": [
+                            "string"
+                        ],
+                        "variable": "$tier_label"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The tier data.",
+                        "types": [
+                            "array"
+                        ],
+                        "variable": "$tier"
+                    },
+                    {
+                        "name": "since",
+                        "content": "11.3.0"
+                    }
+                ],
+                "long_description_html": ""
+            },
+            "args": 2
         },
         {
             "name": "cfw_skip_bump_cart_item_discount_html",

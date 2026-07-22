@@ -7,7 +7,7 @@ class TurnstileFeatureNotice extends NoticeAbstract {
 		parent::__construct();
 
 		// Listen for the 10.2.0 upgrade action to set the transient
-		add_action( 'cfw_updated_to_1020', array( $this, 'set_notice_transient' ) );
+		add_action( 'cfw_updated_to_1020', [ $this, 'set_notice_transient' ] );
 	}
 
 	public function set_notice_transient() {

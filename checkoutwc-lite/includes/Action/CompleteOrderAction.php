@@ -17,7 +17,7 @@ class CompleteOrderAction extends CFWAction {
 	 * @since 1.0.0
 	 */
 	public function __construct() {
-		add_action( 'woocommerce_checkout_update_order_meta', array( $this, 'add_cfw_meta_data' ) );
+		add_action( 'woocommerce_checkout_update_order_meta', [ $this, 'add_cfw_meta_data' ] );
 
 		parent::__construct( 'checkout' );
 	}

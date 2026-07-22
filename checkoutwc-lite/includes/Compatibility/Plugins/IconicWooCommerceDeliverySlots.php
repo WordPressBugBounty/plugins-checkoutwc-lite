@@ -10,7 +10,7 @@ class IconicWooCommerceDeliverySlots extends CompatibilityAbstract {
 	}
 
 	public function pre_init() {
-		add_filter( 'iconic_wds_field_position_choices', array( $this, 'add_checkoutwc_choices' ) );
+		add_filter( 'iconic_wds_field_position_choices', [ $this, 'add_checkoutwc_choices' ] );
 	}
 
 	public function add_checkoutwc_choices( $choices ) {

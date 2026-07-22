@@ -8,8 +8,8 @@ class ShippingPhoneController {
 	public function __construct() {}
 
 	public function init() {
-		add_action( 'woocommerce_admin_order_data_after_shipping_address', array( $this, 'shipping_phone_display_admin_order_meta' ), 10, 1 );
-		add_action( 'woocommerce_process_shop_order_meta', array( $this, 'save_shipping_phone' ) );
+		add_action( 'woocommerce_admin_order_data_after_shipping_address', [ $this, 'shipping_phone_display_admin_order_meta' ], 10, 1 );
+		add_action( 'woocommerce_process_shop_order_meta', [ $this, 'save_shipping_phone' ] );
 	}
 
 	public function shipping_phone_display_admin_order_meta( $order ) {
@@ -28,7 +28,7 @@ class ShippingPhoneController {
 			 * @param bool $enable_editable_admin_phone_field True show editable field, false show label
 			 */
 			if ( apply_filters( 'cfw_enable_editable_admin_shipping_phone_field', true ) ) {
-				$field                = array();
+				$field                = [];
 				$field['placeholder'] = __( 'Phone', 'woocommerce' );
 				$field['label']       = __( 'Phone', 'woocommerce' );
 				$field['value']       = $shipping_phone;

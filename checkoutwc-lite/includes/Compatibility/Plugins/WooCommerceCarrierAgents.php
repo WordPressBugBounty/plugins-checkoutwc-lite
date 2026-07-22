@@ -13,7 +13,7 @@ class WooCommerceCarrierAgents extends CompatibilityAbstract {
 	}
 
 	public function pre_init() {
-		add_filter( 'woo_carrier_agents_search_output', array( $this, 'add_output_area' ) );
+		add_filter( 'woo_carrier_agents_search_output', [ $this, 'add_output_area' ] );
 	}
 
 	public function add_output_area( $action_hooks ) {

@@ -18,7 +18,7 @@ class AccountExistsAction extends CFWAction {
 		$email = sanitize_email( wp_unslash( $_POST['email'] ?? '' ) ); // phpcs:ignore WordPress.Security.NonceVerification.Missing
 
 		$this->out(
-			array(
+			[
 				/**
 				 * Filters whether an email address has an account
 				 *
@@ -28,7 +28,7 @@ class AccountExistsAction extends CFWAction {
 				 * @param string $email The email address we are checking
 				 */
 				'account_exists' => (bool) apply_filters( 'cfw_email_exists', email_exists( $email ), $email ),
-			)
+			]
 		);
 	}
 }

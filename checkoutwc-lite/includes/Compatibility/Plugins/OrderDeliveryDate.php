@@ -10,7 +10,7 @@ class OrderDeliveryDate extends CompatibilityAbstract {
 	}
 
 	public function pre_init() {
-		add_filter( 'orddd_shopping_cart_hook', array( $this, 'set_delivery_field_hook' ) );
+		add_filter( 'orddd_shopping_cart_hook', [ $this, 'set_delivery_field_hook' ] );
 	}
 
 	public function set_delivery_field_hook( $hook ) {
@@ -18,10 +18,10 @@ class OrderDeliveryDate extends CompatibilityAbstract {
 	}
 
 	public function typescript_class_and_params( array $compatibility ): array {
-		$compatibility[] = array(
+		$compatibility[] = [
 			'class'  => 'OrderDeliveryDate',
-			'params' => array(),
-		);
+			'params' => [],
+		];
 
 		return $compatibility;
 	}

@@ -13,8 +13,8 @@ class Neve extends CompatibilityAbstract {
 		$neve_woocommerce_compatibility = cfw_get_hook_instance_object( 'woocommerce_before_checkout_form', 'move_coupon' );
 
 		if ( $neve_woocommerce_compatibility ) {
-			remove_action( 'woocommerce_before_checkout_form', array( $neve_woocommerce_compatibility, 'move_coupon' ) );
-			remove_action( 'woocommerce_before_checkout_billing_form', array( $neve_woocommerce_compatibility, 'clear_coupon' ) );
+			remove_action( 'woocommerce_before_checkout_form', [ $neve_woocommerce_compatibility, 'move_coupon' ] );
+			remove_action( 'woocommerce_before_checkout_billing_form', [ $neve_woocommerce_compatibility, 'clear_coupon' ] );
 		}
 	}
 }

@@ -24,15 +24,15 @@ class OwnID extends CompatibilityAbstract {
 			$login_variant = 'ownid-auth-button';
 		}
 
-		$compatibility[] = array(
+		$compatibility[] = [
 			'class'  => 'OwnID',
-			'params' => array(
+			'params' => [
 				'loginVariant'        => $login_variant,
 				'language'            => esc_attr( substr( get_locale(), 0, 2 ) ),
 				'widgetPosition'      => esc_attr( get_option( 'ownid_widget_position' ) ),
 				'infoTooltipPosition' => esc_attr( get_option( 'ownid_infoTooltip_Position' ) ),
-			),
-		);
+			],
+		];
 
 		return $compatibility;
 	}

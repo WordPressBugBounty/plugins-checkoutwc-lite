@@ -22,7 +22,7 @@ class ActiveCampaign extends CompatibilityAbstract {
 			 */
 			$render_on = apply_filters( 'cfw_active_campaign_checkbox_hook', 'cfw_checkout_before_payment_method_tab_nav' );
 
-			add_action( $render_on, array( $ActiveCampaign_Public, 'handle_woocommerce_checkout_form' ) );
+			add_action( $render_on, [ $ActiveCampaign_Public, 'handle_woocommerce_checkout_form' ] );
 		}
 	}
 }
