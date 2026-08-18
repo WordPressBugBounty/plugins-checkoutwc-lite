@@ -8,7 +8,7 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "POT-Creation-Date: 2025-07-25 09:22-0400\n"
-"PO-Revision-Date: 2026-07-22T14:04:55+00:00\n"
+"PO-Revision-Date: 2026-08-18T15:55:05+00:00\n"
 "Language: ar\n"
 "Plural-Forms: nplurals=6; plural=(n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5);\n"
 "X-Generator: Poedit 3.6\n"
@@ -29,11 +29,11 @@ msgstr ""
 #: includes/Admin/Pages/PickupLocationsAdminFree.php:218
 #: includes/Admin/Pages/PageAbstract.php:106
 #: includes/Admin/Pages/General.php:341
-#: includes/Admin/Pages/Premium/PickupLocations.php:217
-#: includes/Admin/Pages/Premium/OrderBumps.php:444
+#: includes/Admin/Pages/Premium/PickupLocations.php:317
+#: includes/Admin/Pages/Premium/OrderBumps.php:450
 #: includes/Admin/Pages/Premium/LocalPickupAdmin.php:165
 #: includes/Admin/Pages/Premium/AbandonedCartRecovery.php:243
-#: includes/Admin/Pages/Premium/ABTestingAdmin.php:634
+#: includes/Admin/Pages/Premium/ABTestingAdmin.php:641
 msgid "CheckoutWC"
 msgstr "الخروج"
 
@@ -126,7 +126,7 @@ msgstr "شقة، جناح، وحدة، إلخ."
 #: includes/Admin/ShippingPhoneController.php:43
 #: client/ts/admin/Components/acr/carts.tsx:70
 #: client/ts/admin/Components/Forms/CheckoutSettingsForm.tsx:467
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:406
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:412
 #: client/ts/admin/Components/CheckoutEditor/panels/CheckoutSettingsPanel.tsx:246
 msgid "Phone"
 msgstr "الهاتف"
@@ -164,8 +164,8 @@ msgid "Postcode / ZIP"
 msgstr "الرمز البريدي / ZIP"
 
 #: includes/AddressFieldsAugmenter.php:458
-#: functions/functions.php:4206
-#: functions/functions.php:4207
+#: functions/functions.php:4214
+#: functions/functions.php:4215
 msgid "Email address"
 msgstr "عنوان البريد الإلكتروني"
 
@@ -215,7 +215,7 @@ msgstr "الرمز البريدي"
 
 #: includes/AddressFieldsAugmenter.php:472
 #: client/ts/admin/Components/Forms/CheckoutSettingsForm.tsx:455
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:403
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:409
 #: client/ts/admin/Components/CheckoutEditor/panels/CheckoutSettingsPanel.tsx:243
 msgid "Postcode"
 msgstr "الرمز البريدي"
@@ -234,7 +234,7 @@ msgstr "المنطقة"
 
 #: includes/AddressFieldsAugmenter.php:476
 #: client/ts/admin/Components/Forms/CheckoutSettingsForm.tsx:459
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:404
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:410
 #: client/ts/admin/Components/CheckoutEditor/panels/CheckoutSettingsPanel.tsx:244
 msgid "State"
 msgstr "الولاية"
@@ -368,15 +368,15 @@ msgstr "عربة التسوق"
 #: functions/template-functions.php:1036
 #: functions/template-functions.php:1974
 #: functions/template-functions.php:2248
-#: functions/functions.php:3465
+#: functions/functions.php:3468
 msgid "Shipping"
 msgstr "الشحن"
 
 #: functions/template-functions.php:1054
 #: functions/template-functions.php:1914
 #: functions/template-functions.php:2269
-#: functions/functions.php:1023
-#: functions/functions.php:1038
+#: functions/functions.php:1024
+#: functions/functions.php:1039
 #: client/ts/frontend/Components/ReviewPane/OrderReviewStepReviewPane.tsx:47
 msgid "Payment"
 msgstr "الدفع"
@@ -390,7 +390,7 @@ msgid "Review"
 msgstr "مراجعة"
 
 #: functions/template-functions.php:1073
-#: includes/Features/SideCart.php:1180
+#: includes/Features/SideCart.php:1207
 msgid "Free"
 msgstr "مجاني"
 
@@ -461,24 +461,24 @@ msgid "Pay for order"
 msgstr "ادفع للطلب"
 
 #: functions/template-functions.php:2052
-#: includes/Features/AbandonedCartRecovery.php:118
+#: includes/Features/AbandonedCartRecovery.php:124
 #: client/ts/admin/Components/acr/carts.tsx:64
 msgid "Email"
 msgstr "البريد الإلكتروني"
 
 #: functions/template-functions.php:2062
-#: functions/functions.php:4124
-#: functions/functions.php:4125
+#: functions/functions.php:4132
+#: functions/functions.php:4133
 msgid "Password"
 msgstr "كلمة المرور"
 
 #: functions/template-functions.php:2078
-#: functions/functions.php:4164
+#: functions/functions.php:4172
 msgid "Login"
 msgstr "تسجيل الدخول"
 
 #: functions/template-functions.php:2081
-#: functions/functions.php:4157
+#: functions/functions.php:4165
 msgid "Lost your password?"
 msgstr "هل فقدت كلمة المرور؟"
 
@@ -486,393 +486,393 @@ msgstr "هل فقدت كلمة المرور؟"
 msgid "Your Cart is Empty"
 msgstr "عربة التسوق فارغة"
 
-#: functions/premium-init.php:341
+#: functions/premium-init.php:340
 msgid "CheckoutWC Templates Deactivated"
 msgstr "تم تعطيل قوالب CheckoutWC"
 
 # %1$s: "Settings" text, %2$s: "Start Here" text, %3$s: "Activate CheckoutWC Templates" text
-#: functions/premium-init.php:344
+#: functions/premium-init.php:343
 msgid "Your license is valid and activated for this site but CheckoutWC is disabled for normal customers. To fix this, go to %1$s > %2$s and toggle \"%3$s\"."
 msgstr "رخصتك صالحة ومفعلة لهذا الموقع لكن CheckoutWC معطل للعملاء العاديين. لإصلاح ذلك، اذهب إلى %1$s > %2$s وقم بتبديل \"%3$s\"."
 
-#: functions/premium-init.php:345
+#: functions/premium-init.php:344
 #: includes/Admin/AdminPluginsPageManager.php:40
 #: includes/Admin/Pages/OrderBumpsAdminFree.php:25
 #: includes/Admin/Pages/LocalPickupAdminFree.php:27
 #: includes/Admin/Pages/AbandonedCartRecoveryAdminFree.php:27
-#: includes/Admin/Pages/Premium/OrderBumps.php:58
+#: includes/Admin/Pages/Premium/OrderBumps.php:60
 #: includes/Admin/Pages/Premium/LocalPickupAdmin.php:28
 #: includes/Admin/Pages/Premium/AbandonedCartRecovery.php:34
 #: includes/Admin/Pages/Premium/ABTestingAdmin.php:56
 msgid "Settings"
 msgstr "الإعدادات"
 
-#: functions/premium-init.php:346
+#: functions/premium-init.php:345
 #: includes/Admin/Pages/General.php:25
 #: includes/Admin/Notices/InactiveLicenseNotice.php:13
 msgid "Start Here"
 msgstr "ابدأ هنا"
 
-#: functions/premium-init.php:347
+#: functions/premium-init.php:346
 #: includes/Admin/Pages/General.php:195
 msgid "Activate CheckoutWC Templates"
 msgstr "تفعيل قوالب CheckoutWC"
 
-#: functions/premium-init.php:354
+#: functions/premium-init.php:353
 msgid "Invalid CheckoutWC License"
 msgstr "رخصة CheckoutWC غير صالحة"
 
 # %1$s: Pricing URL, %2$s: "purchase a license" link text
-#: functions/premium-init.php:357
+#: functions/premium-init.php:356
 msgid "Your license key is missing or invalid. Please verify that your license key is valid or <a target=\"_blank\" href=\"%1$s\">%2$s</a> to restore full functionality."
 msgstr "مفتاح الرخصة مفقود أو غير صالح. يرجى التحقق من صلاحية مفتاح الرخصة أو <a target=\"_blank\" href=\"%1$s\">%2$s</a> لاستعادة الوظائف الكاملة."
 
-#: functions/premium-init.php:359
+#: functions/premium-init.php:358
 msgid "purchase a license"
 msgstr "شراء رخصة"
 
-#: functions/premium-init.php:375
+#: functions/premium-init.php:374
 msgid "New Feature: Cloudflare Turnstile Bot Protection"
 msgstr "ميزة جديدة: حماية Cloudflare Turnstile من الروبوتات"
 
 # 1: Cloudflare Turnstile name wrapped in strong tags, 2: Setup link
-#: functions/premium-init.php:378
+#: functions/premium-init.php:377
 msgid "CheckoutWC now supports %1$s - a privacy-first, CAPTCHA-free way to protect your checkout from bots and spam orders. %2$s"
 msgstr "يدعم CheckoutWC الآن %1$s - طريقة تحترم الخصوصية وخالية من CAPTCHA لحماية عملية الدفع من الروبوتات والطلبات المزعجة. %2$s"
 
 # The name of the Cloudflare Turnstile service
-#: functions/premium-init.php:382
-#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:64
+#: functions/premium-init.php:381
+#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:78
 msgid "Cloudflare Turnstile"
 msgstr "Cloudflare Turnstile"
 
-#: functions/premium-init.php:388
+#: functions/premium-init.php:387
 msgid "Setup Cloudflare Turnstile now"
 msgstr "قم بإعداد Cloudflare Turnstile الآن"
 
-#: functions/premium-init.php:393
+#: functions/premium-init.php:392
 msgid "Upgrade your plan now to access"
 msgstr "قم بترقية خطتك الآن للوصول إلى"
 
-#: functions/premium-init.php:406
+#: functions/premium-init.php:405
 msgid "Abandoned Cart Recovery Tracking Disabled"
 msgstr "تم تعطيل تتبع استرداد عربة التسوق المهجورة"
 
 # %1$s: Gist URL, %2$s: "Learn More" link text
-#: functions/premium-init.php:409
+#: functions/premium-init.php:408
 msgid "You have enabled Abandoned Cart Recovery tracking, but you do not have any emails published. To track carts, you need to publish emails or use this dev filter: <a target=\"_blank\" href=\"%1$s\">%2$s</a>."
 msgstr "لقد قمت بتمكين تتبع استرداد عربة التسوق المهجورة، لكن لا توجد لديك أي رسائل بريد إلكتروني منشورة. لتتبع العربات، تحتاج إلى نشر الرسائل أو استخدام هذا الفلتر التطويري: <a target=\"_blank\" href=\"%1$s\">%2$s</a>."
 
-#: functions/premium-init.php:411
+#: functions/premium-init.php:410
 #: includes/Admin/Pages/AbandonedCartRecoveryAdminFree.php:82
 msgid "Learn More"
 msgstr "تعرف على المزيد"
 
-#: functions/init.php:378
-#: functions/init.php:379
+#: functions/init.php:390
+#: functions/init.php:391
 msgid "Upgrade to Premium"
 msgstr "الترقية إلى النسخة المميزة"
 
-#: functions/init.php:779
+#: functions/init.php:752
 msgid "CheckoutWC: Footer"
 msgstr "CheckoutWC: التذييل"
 
-#: functions/init.php:823
-#: functions/init.php:828
+#: functions/init.php:796
+#: functions/init.php:801
 msgid "Configure Avada to Work With CheckoutWC"
 msgstr "تكوين Avada للعمل مع CheckoutWC"
 
 # %1$s: Guide URL, %2$s: Guide link text
-#: functions/init.php:826
+#: functions/init.php:799
 msgid "CheckoutWC and Avada work great together, but you will need to adjust a couple of theme settings. Please see our guide here: <a target=\"_blank\" href=\"%1$s\">%2$s</a>"
 msgstr "يعمل CheckoutWC وAvada بشكل رائع معًا، لكنك ستحتاج إلى تعديل بعض إعدادات القالب. يرجى مراجعة دليلنا هنا: <a target=\"_blank\" href=\"%1$s\">%2$s</a>"
 
-#: functions/init.php:835
+#: functions/init.php:808
 msgid "Incompatible Plugin: Please Deactivate The Bluehost Plugin"
 msgstr "إضافة غير متوافقة: يرجى تعطيل إضافة Bluehost"
 
 # %1$s: Help URL, %2$s: Help link text
-#: functions/init.php:838
+#: functions/init.php:811
 msgid "CheckoutWC and Bluehost work great together, but you must deactivate The Bluehost Plugin to prevent problems. More info here: <a target=\"_blank\" href=\"%1$s\">%2$s</a>"
 msgstr "يعمل CheckoutWC وBluehost بشكل رائع معًا، لكن يجب عليك تعطيل إضافة Bluehost لتجنب المشاكل. مزيد من المعلومات هنا: <a target=\"_blank\" href=\"%1$s\">%2$s</a>"
 
-#: functions/init.php:840
+#: functions/init.php:813
 msgid "How To Fix Problems With The Bluehost Plugin"
 msgstr "كيفية إصلاح المشاكل مع إضافة Bluehost"
 
-#: functions/init.php:850
+#: functions/init.php:823
 msgid "Configure Divi to Work With CheckoutWC"
 msgstr "تكوين Divi للعمل مع CheckoutWC"
 
 # %1$s: Guide URL, %2$s: Guide link text
-#: functions/init.php:853
+#: functions/init.php:826
 msgid "CheckoutWC and Divi work great together, but you will need to adjust a couple of settings. Please see our guide here: <a target=\"_blank\" href=\"%1$s\">%2$s</a>"
 msgstr "يعمل CheckoutWC و Divi بشكل رائع معًا، ولكن ستحتاج إلى تعديل بعض الإعدادات. يرجى الاطلاع على دليلنا هنا: <a target=\"_blank\" href=\"%1$s\">%2$s</a>"
 
-#: functions/init.php:855
+#: functions/init.php:828
 msgid "How To Fix Styling Issues With Divi Theme"
 msgstr "كيفية إصلاح مشاكل التنسيق مع قالب Divi"
 
-#: functions/init.php:862
+#: functions/init.php:835
 msgid "Configure Porto to Work With CheckoutWC"
 msgstr "تكوين Porto للعمل مع CheckoutWC"
 
 # %1$s: Guide URL, %2$s: Guide link text
-#: functions/init.php:865
+#: functions/init.php:838
 msgid "CheckoutWC and Porto work great together, but you will need to adjust a couple of settings. Please see our guide here: <a target=\"_blank\" href=\"%1$s\">%2$s</a>"
 msgstr "يعمل CheckoutWC و Porto بشكل رائع معًا، ولكن ستحتاج إلى تعديل بعض الإعدادات. يرجى الاطلاع على دليلنا هنا: <a target=\"_blank\" href=\"%1$s\">%2$s</a>"
 
-#: functions/init.php:867
+#: functions/init.php:840
 msgid "Fix Problems With Porto Theme"
 msgstr "إصلاح المشاكل مع قالب Porto"
 
-#: functions/init.php:874
+#: functions/init.php:847
 msgid "Configure Astra Pro to Work With CheckoutWC"
 msgstr "تكوين Astra Pro للعمل مع CheckoutWC"
 
 # %1$s: Info URL, %2$s: Info link text
-#: functions/init.php:877
+#: functions/init.php:850
 msgid "CheckoutWC and Astra Pro work great together, but there is one setting you should check. More info here: <a target=\"_blank\" href=\"%1$s\">%2$s</a>"
 msgstr "يعمل CheckoutWC و Astra Pro بشكل رائع معًا، ولكن هناك إعداد واحد يجب عليك التحقق منه. مزيد من المعلومات هنا: <a target=\"_blank\" href=\"%1$s\">%2$s</a>"
 
-#: functions/init.php:879
+#: functions/init.php:852
 msgid "Fix Layout Issues with Astra Pro"
 msgstr "إصلاح مشاكل التخطيط مع Astra Pro"
 
-#: functions/init.php:886
+#: functions/init.php:859
 msgid "Configure Woostify to Work With CheckoutWC"
 msgstr "تكوين Woostify للعمل مع CheckoutWC"
 
 # %1$s: Info URL, %2$s: Info link text
-#: functions/init.php:889
+#: functions/init.php:862
 msgid "CheckoutWC and Woostify work great together, but there is one setting you should check. More info here: <a target=\"_blank\" href=\"%1$s\">%2$s</a>"
 msgstr "يعمل CheckoutWC و Woostify بشكل رائع معًا، ولكن هناك إعداد واحد يجب عليك التحقق منه. مزيد من المعلومات هنا: <a target=\"_blank\" href=\"%1$s\">%2$s</a>"
 
-#: functions/init.php:891
+#: functions/init.php:864
 msgid "Fix AJAX Add To Cart with Woostify and CheckoutWC Side Cart"
 msgstr "إصلاح إضافة AJAX إلى السلة مع Woostify و CheckoutWC Side Cart"
 
-#: functions/init.php:1086
+#: functions/init.php:1059
 msgid "Admin Preview Mode: CheckoutWC templates are disabled for normal users. To fix this, please activate templates here: WP Admin > CheckoutWC > Start Here"
 msgstr "وضع معاينة المسؤول: تم تعطيل قوالب CheckoutWC للمستخدمين العاديين. لإصلاح ذلك، يرجى تفعيل القوالب هنا: مسؤول WP > CheckoutWC > ابدأ هنا"
 
-#: functions/functions.php:228
+#: functions/functions.php:229
 msgid "Ship to"
 msgstr "الشحن إلى"
 
-#: functions/functions.php:230
-#: includes/Features/LocalPickup.php:758
+#: functions/functions.php:231
+#: includes/Features/LocalPickup.php:768
 #: includes/Admin/Pages/PickupLocationsAdminFree.php:93
-#: includes/Admin/Pages/Premium/PickupLocations.php:92
+#: includes/Admin/Pages/Premium/PickupLocations.php:101
 msgid "Address"
 msgstr "العنوان"
 
-#: functions/functions.php:623
+#: functions/functions.php:624
 msgid "Sorry, it seems that there are no available payment methods for your location. Please contact us if you require assistance or wish to make alternate arrangements."
 msgstr "عذرًا، يبدو أنه لا توجد طرق دفع متاحة لموقعك. يرجى الاتصال بنا إذا كنت بحاجة إلى مساعدة أو ترغب في ترتيب بديل."
 
-#: functions/functions.php:785
-#: includes/Features/LocalPickup.php:1079
+#: functions/functions.php:786
+#: includes/Features/LocalPickup.php:1095
 msgid "Shipping costs are calculated during checkout."
 msgstr "يتم حساب تكاليف الشحن أثناء إتمام الشراء."
 
-#: functions/functions.php:785
+#: functions/functions.php:786
 msgid "Enter your address to view shipping options."
 msgstr "أدخل عنوانك لعرض خيارات الشحن."
 
-#: functions/functions.php:796
+#: functions/functions.php:797
 msgid "No shipping methods available"
 msgstr "لا توجد طرق شحن متاحة"
 
-#: functions/functions.php:824
-#: includes/Model/Bumps/BumpAbstract.php:814
+#: functions/functions.php:825
+#: includes/Model/Bumps/BumpAbstract.php:835
 msgid "Free!"
 msgstr "مجاني!"
 
-#: functions/functions.php:960
-#: includes/Features/AbandonedCartRecovery.php:695
+#: functions/functions.php:961
+#: includes/Features/AbandonedCartRecovery.php:701
 msgid "Complete Order"
 msgstr "مكتملة"
 
-#: functions/functions.php:1064
+#: functions/functions.php:1065
 msgid "All transactions are secure and encrypted."
 msgstr "جميع المعاملات آمنة ومشفرة."
 
-#: functions/functions.php:1087
+#: functions/functions.php:1088
 msgid "Your order is free. No payment is required."
 msgstr "طلبك مجاني. لا يلزم الدفع."
 
-#: functions/functions.php:1131
+#: functions/functions.php:1132
 msgid "Same as shipping address"
 msgstr "نفس عنوان الشحن"
 
-#: functions/functions.php:1140
+#: functions/functions.php:1141
 msgid "Use a different billing address"
 msgstr "استخدم عنوان فاتورة مختلف"
 
 # %1$s: Old order status, %2$s: New order status
-#: functions/functions.php:1272
+#: functions/functions.php:1273
 msgid "Order status changed from %1$s to %2$s."
 msgstr "تم تغيير حالة الطلب من %1$s إلى %2$s."
 
-#: functions/functions.php:1297
+#: functions/functions.php:1298
 msgid "Tracking Number:"
 msgstr "رقم التتبع:"
 
-#: functions/functions.php:1384
+#: functions/functions.php:1385
 msgid "Return to cart"
 msgstr "الرجوع إلى عربة التسوق"
 
-#: functions/functions.php:1421
+#: functions/functions.php:1422
 msgid "Continue to shipping"
 msgstr "المواصلة إلى الشحن"
 
-#: functions/functions.php:1447
+#: functions/functions.php:1448
 msgid "Continue to payment"
 msgstr "الاستمرار في الدفع"
 
-#: functions/functions.php:1447
-#: functions/functions.php:1487
+#: functions/functions.php:1448
+#: functions/functions.php:1488
 msgid "Review order"
 msgstr "مراجعة الطلب"
 
-#: functions/functions.php:1511
+#: functions/functions.php:1512
 msgid "Return to information"
 msgstr "العودة إلى المعلومات"
 
-#: functions/functions.php:1531
+#: functions/functions.php:1532
 msgid "Return to shipping"
 msgstr "العودة إلى الشحن"
 
-#: functions/functions.php:1551
+#: functions/functions.php:1552
 msgid "Return to payment"
 msgstr "العودة إلى الدفع"
 
-#: functions/functions.php:1598
-#: includes/Features/SideCart.php:276
+#: functions/functions.php:1599
+#: includes/Features/SideCart.php:288
 msgid "Cart"
 msgstr "عربة التسوق"
 
-#: functions/functions.php:1871
+#: functions/functions.php:1872
 msgid "CheckoutWC: Error matching %1$d to customer %2$d"
 msgstr "CheckoutWC: خطأ في مطابقة %1$d مع العميل %2$d"
 
-#: functions/functions.php:2160
+#: functions/functions.php:2161
 msgid "Or"
 msgstr "او"
 
-#: functions/functions.php:2245
+#: functions/functions.php:2246
 msgid "You can only have 1 %s in your cart."
 msgstr "يمكنك أن يكون لديك فقط %s واحد في سلة التسوق الخاصة بك."
 
-#: functions/functions.php:2395
+#: functions/functions.php:2396
 #: client/ts/frontend/Components/CartItemQuantityControl.tsx:55
 msgid "Decrement"
 msgstr "إنقاص"
 
-#: functions/functions.php:2404
+#: functions/functions.php:2405
 #: includes/Managers/AssetManager.php:727
 #: includes/Managers/AssetManager.php:848
-#: includes/Features/LocalPickup.php:502
-#: includes/Features/AbandonedCartRecovery.php:122
+#: includes/Features/LocalPickup.php:510
+#: includes/Features/AbandonedCartRecovery.php:128
 #: includes/Features/ABTesting.php:150
 #: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:633
 #: client/ts/frontend/Components/CartItemQuantityControl.tsx:63
-#: client/ts/admin/Components/CheckoutEditor/slots/AssignedItem.tsx:227
+#: client/ts/admin/Components/CheckoutEditor/slots/AssignedItem.tsx:283
 msgid "Edit"
 msgstr "تعديل"
 
-#: functions/functions.php:2407
+#: functions/functions.php:2408
 #: client/ts/frontend/Components/CartItemQuantityControl.tsx:70
 msgid "Increment"
 msgstr "زيادة راتب"
 
-#: functions/functions.php:3121
+#: functions/functions.php:3122
 msgid "Unsubscribe"
 msgstr "إلغاء الاشتراك"
 
-#: functions/functions.php:3491
-#: includes/Features/AbandonedCartRecovery.php:750
+#: functions/functions.php:3494
+#: includes/Features/AbandonedCartRecovery.php:756
 #: client/ts/admin/Components/acr/carts.tsx:74
 msgid "Subtotal"
 msgstr "المجموع الفرعي"
 
-#: functions/functions.php:3495
+#: functions/functions.php:3498
 #: includes/Admin/Views/html-refund-offer.php:25
 msgid "Total"
 msgstr "الإجمالي"
 
-#: functions/functions.php:3548
+#: functions/functions.php:3551
 msgid "There are no shipping options available. Please ensure that your address has been entered correctly, or contact us if you need any help."
 msgstr "لا توجد خيارات شحن متاحة. يرجى التأكد من إدخال عنوانك بشكل صحيح، أو الاتصال بنا إذا كنت بحاجة إلى أي مساعدة."
 
-#: functions/functions.php:3897
+#: functions/functions.php:3905
 #: includes/Admin/Pages/AbandonedCartRecoveryAdminFree.php:73
 msgid "SendWP - Transactional Email"
 msgstr "SendWP - البريد الإلكتروني التفاعلي"
 
-#: functions/functions.php:3902
+#: functions/functions.php:3910
 #: includes/Admin/Pages/AbandonedCartRecoveryAdminFree.php:77
 msgid "SendWP makes getting emails delivered as simple as a few clicks. So you can relax know those important emails are being delivered on time."
 msgstr "يجعل SendWP إرسال الرسائل الإلكترونية أمرًا بسيطًا ببضع نقرات فقط. لذا يمكنك الاسترخاء مع العلم أن تلك الرسائل المهمة يتم تسليمها في الوقت المحدد."
 
-#: functions/functions.php:3905
+#: functions/functions.php:3913
 #: includes/Admin/Pages/AbandonedCartRecoveryAdminFree.php:79
 msgid "Try SendWP now and <strong>get your first month for just $1.</strong>"
 msgstr "جرّب SendWP الآن و<strong>احصل على الشهر الأول مقابل دولار واحد فقط.</strong>"
 
-#: functions/functions.php:3915
+#: functions/functions.php:3923
 #: includes/Admin/Pages/AbandonedCartRecoveryAdminFree.php:87
 msgid "Note: SendWP is optional. You can use any transactional email service you prefer."
 msgstr "ملاحظة: SendWP اختياري. يمكنك استخدام أي خدمة بريد إلكتروني تفاعلية تفضلها."
 
-#: functions/functions.php:3924
+#: functions/functions.php:3932
 #: includes/Admin/Pages/AbandonedCartRecoveryAdminFree.php:94
 msgid "Connect to SendWP"
 msgstr "الاتصال بـ SendWP"
 
-#: functions/functions.php:4072
+#: functions/functions.php:4080
 msgid "Welcome back"
 msgstr "أهلا بكم من جديد"
 
-#: functions/functions.php:4086
+#: functions/functions.php:4094
 msgid "It looks like you already have an account. Please enter your login details below."
 msgstr "يبدو أنه لديك حساب بالفعل. يرجى إدخال تفاصيل تسجيل الدخول الخاصة بك أدناه."
 
-#: functions/functions.php:4100
+#: functions/functions.php:4108
 msgid "If you have shopped with us before, please enter your login details below."
 msgstr "إذا كنت قد قمت بالتسوق معنا من قبل ، فيرجى إدخال تفاصيل تسجيل الدخول الخاصة بك أدناه."
 
-#: functions/functions.php:4110
-#: functions/functions.php:4111
+#: functions/functions.php:4118
+#: functions/functions.php:4119
 msgid "Username or email address"
 msgstr "اسم المستخدم أو عنوان البريد الإلكتروني"
 
-#: functions/functions.php:4145
+#: functions/functions.php:4153
 msgid "Remember me"
 msgstr "تذكرني"
 
-#: functions/functions.php:4176
+#: functions/functions.php:4184
 msgid "Or continue as guest"
 msgstr "أو تواصل كضيف"
 
-#: functions/functions.php:4196
+#: functions/functions.php:4204
 msgid "Lost your password? Please enter your username or email address. You will receive a link to create a new password via email."
 msgstr "هل فقدت كلمة المرور؟ يرجى إدخال اسم المستخدم أو عنوان البريد الإلكتروني الخاص بك. ستتلقى رابطًا لإنشاء كلمة مرور جديدة عبر البريد الإلكتروني."
 
-#: functions/functions.php:4219
+#: functions/functions.php:4227
 msgid "Reset password"
 msgstr "إعادة تعيين كلمة المرور"
 
-#: functions/functions.php:4234
+#: functions/functions.php:4242
 #: includes/API/OrderBumpPreviewAPI.php:57
 #: includes/API/OrderBumpOfferFormPreviewAPI.php:46
 #: includes/API/GetVariationFormAPI.php:33
 msgid "Product not found"
 msgstr "لم يتم ايجاد منتج"
 
-#: functions/functions.php:4250
-#: functions/functions.php:4395
+#: functions/functions.php:4258
+#: functions/functions.php:4416
 #: includes/API/PostPurchaseBumpProductFormAPI.php:24
 msgid "No thanks"
 msgstr "لا شكرا"
@@ -963,200 +963,204 @@ msgstr "تم تعيين مفتاح الترخيص الخاص بك بالثابت
 msgid "License Holder"
 msgstr "حامل الترخيص"
 
-#: includes/Managers/UpdatesManager.php:440
+#: includes/Managers/UpdatesManager.php:441
 msgid "Plan"
 msgstr "الخطة"
 
-#: includes/Managers/UpdatesManager.php:448
+#: includes/Managers/UpdatesManager.php:449
 msgid "Activation Limit"
 msgstr "حد التنشيط"
 
-#: includes/Managers/UpdatesManager.php:456
-#: includes/Admin/Pages/Premium/ABTestingAdmin.php:171
-#: includes/Admin/Pages/Premium/ABTestingAdmin.php:812
+#: includes/Managers/UpdatesManager.php:457
+#: includes/Admin/Pages/Premium/ABTestingAdmin.php:178
+#: includes/Admin/Pages/Premium/ABTestingAdmin.php:819
 #: client/ts/admin/Components/acr/carts.tsx:80
 msgid "Status"
 msgstr "الحالة"
 
-#: includes/Managers/UpdatesManager.php:463
+#: includes/Managers/UpdatesManager.php:464
 msgid "Refresh License Info"
 msgstr "تحديث معلومات الترخيص"
 
-#: includes/Managers/UpdatesManager.php:509
+#: includes/Managers/UpdatesManager.php:512
 msgid "Please enter your license key."
 msgstr "يرجى إدخال مفتاح الترخيص الخاص بك."
 
-#: includes/Managers/UpdatesManager.php:512
+#: includes/Managers/UpdatesManager.php:515
+#: includes/Managers/UpdatesManager.php:523
 msgid "Activate Site"
 msgstr "تفعيل الموقع"
 
-#: includes/Managers/UpdatesManager.php:515
+#: includes/Managers/UpdatesManager.php:518
 msgid "Deactivate Site"
 msgstr "إلغاء تفعيل الموقع"
 
 # Debug error message logged when license check reaches unexpected state
-#: includes/Managers/UpdatesManager.php:685
+#: includes/Managers/UpdatesManager.php:704
 msgid "License Check Error: You should not be able to get here. I am kind of freaked out."
 msgstr "خطأ في التحقق من الترخيص: لا يجب أن تصل إلى هنا. أنا مرتبك قليلاً."
 
 # %1$d: failure count, %2$d: max failures, %3$s: time since last failure
-#: includes/Managers/UpdatesManager.php:944
+#: includes/Managers/UpdatesManager.php:963
 msgid "Unable to verify CheckoutWC license (%1$d/%2$d attempts failed). Using cached license data. Last attempt: %3$s ago."
 msgstr "غير قادر على التحقق من ترخيص CheckoutWC (%1$d/%2$d محاولات فشلت). يتم استخدام بيانات الترخيص المخزنة مؤقتًا. آخر محاولة: منذ %3$s."
 
-#: includes/Managers/UpdatesManager.php:967
+#: includes/Managers/UpdatesManager.php:986
 msgid "%s license activation was not successful. Please check your key status below for more information."
 msgstr "تفعيل ترخيص %s لم يكن ناجحًا. يرجى التحقق من حالة المفتاح أدناه لمزيد من المعلومات."
 
-#: includes/Managers/UpdatesManager.php:985
+#: includes/Managers/UpdatesManager.php:1004
 msgid "%s license successfully activated."
 msgstr "تم تفعيل ترخيص %s بنجاح."
 
-#: includes/Managers/UpdatesManager.php:1003
+#: includes/Managers/UpdatesManager.php:1022
 msgid "%s license deactivation failed. Please try again, or contact support."
 msgstr "فشل إلغاء تفعيل ترخيص %s. يرجى المحاولة مرة أخرى، أو الاتصال بالدعم."
 
-#: includes/Managers/UpdatesManager.php:1021
+#: includes/Managers/UpdatesManager.php:1040
 msgid "%s license deactivated successfully."
 msgstr "تم إلغاء تفعيل ترخيص %s بنجاح."
 
-#: includes/Managers/UpdatesManager.php:1039
+#: includes/Managers/UpdatesManager.php:1058
 msgid "%s license settings saved successfully."
 msgstr "تم حفظ إعدادات ترخيص %s بنجاح."
 
-#: includes/Managers/UpdatesManager.php:1057
+#: includes/Managers/UpdatesManager.php:1076
 msgid "%1$s license activation failed: %2$s"
 msgstr "فشل تفعيل ترخيص %1$s: %2$s"
 
-#: includes/Managers/UpdatesManager.php:1075
+#: includes/Managers/UpdatesManager.php:1094
 msgid "%s license activation failed: Unable to connect to license server. Please check your internet connection or try again later."
 msgstr "فشل تفعيل ترخيص %s: غير قادر على الاتصال بخادم الترخيص. يرجى التحقق من اتصال الإنترنت الخاص بك أو المحاولة لاحقًا."
 
-#: includes/Managers/UpdatesManager.php:1093
+#: includes/Managers/UpdatesManager.php:1112
 msgid "%s: License deactivated locally. The license server could not be reached, but the license has been deactivated on this site."
 msgstr "%s: تم إلغاء تفعيل الترخيص محليًا. لم يكن من الممكن الوصول إلى خادم الترخيص، لكن الترخيص تم إلغاء تفعيله على هذا الموقع."
 
-#: includes/Managers/UpdatesManager.php:1242
+#: includes/Managers/UpdatesManager.php:1261
 msgid "Unable to verify your CheckoutWC license — the license server could not be reached. Your license and checkout are unaffected; only plugin updates are paused until the connection is restored."
 msgstr "تعذر التحقق من ترخيص CheckoutWC الخاص بك — لم يكن من الممكن الوصول إلى خادم الترخيص. ترخيصك وعمليات الدفع غير متأثرة؛ فقط تحديثات الإضافة متوقفة مؤقتًا حتى يتم استعادة الاتصال."
 
 # %1$d: failure count, %2$d: max failures, %3$s: time since last failure
-#: includes/Managers/UpdatesManager.php:1289
+#: includes/Managers/UpdatesManager.php:1308
 msgid "Unable to verify license online (%1$d/%2$d attempts failed). Using cached license data. Last attempt: %3$s ago."
 msgstr "غير قادر على التحقق من الترخيص عبر الإنترنت (%1$d/%2$d محاولات فشلت). يتم استخدام بيانات الترخيص المخزنة مؤقتًا. آخر محاولة: منذ %3$s."
 
-#: includes/Managers/UpdatesManager.php:1295
+#: includes/Managers/UpdatesManager.php:1314
 msgid "License verified successfully."
 msgstr "تم التحقق من الترخيص بنجاح."
 
-#: includes/Managers/SlotManager.php:80
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:101
+#: includes/Managers/SlotManager.php:83
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:159
 msgid "Before Express Checkout"
 msgstr "قبل الدفع السريع"
 
-#: includes/Managers/SlotManager.php:85
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:102
+#: includes/Managers/SlotManager.php:88
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:160
 msgid "After Customer Account"
 msgstr "بعد حساب العميل"
 
-#: includes/Managers/SlotManager.php:90
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:103
+#: includes/Managers/SlotManager.php:93
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:161
 msgid "After Delivery Method"
 msgstr "بعد طريقة التوصيل"
 
-#: includes/Managers/SlotManager.php:95
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:104
+#: includes/Managers/SlotManager.php:98
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:162
 msgid "After Shipping Address"
 msgstr "بعد عنوان الشحن"
 
-#: includes/Managers/SlotManager.php:100
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:105
+#: includes/Managers/SlotManager.php:103
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:163
 msgid "After Shipping Methods"
 msgstr "بعد طرق الشحن"
 
-#: includes/Managers/SlotManager.php:105
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:106
-#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:144
+#: includes/Managers/SlotManager.php:108
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:164
+#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:158
 msgid "After Payment Methods"
 msgstr "بعد طرق الدفع"
 
-#: includes/Managers/SlotManager.php:110
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:107
+#: includes/Managers/SlotManager.php:113
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:165
 msgid "After Billing Address"
 msgstr "بعد عنوان الفواتير"
 
-#: includes/Managers/SlotManager.php:115
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:108
+#: includes/Managers/SlotManager.php:118
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:166
 msgid "Before Terms & Conditions"
 msgstr "قبل الشروط والأحكام"
 
-#: includes/Managers/SlotManager.php:120
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:109
+#: includes/Managers/SlotManager.php:123
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:167
 msgid "After Terms & Conditions"
 msgstr "بعد الشروط والأحكام"
 
-#: includes/Managers/SlotManager.php:125
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:110
+#: includes/Managers/SlotManager.php:128
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:168
 msgid "After Complete Order"
 msgstr "بعد إكمال الطلب"
 
-#: includes/Managers/SlotManager.php:130
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:111
+#: includes/Managers/SlotManager.php:133
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:169
 msgid "Before Cart Summary Items"
 msgstr "قبل ملخص عناصر السلة"
 
-#: includes/Managers/SlotManager.php:135
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:112
+#: includes/Managers/SlotManager.php:138
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:170
 msgid "After Cart Summary Items"
 msgstr "بعد ملخص عناصر السلة"
 
-#: includes/Managers/SlotManager.php:140
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:113
+#: includes/Managers/SlotManager.php:143
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:171
 msgid "Before Cart Summary Totals"
 msgstr "قبل ملخص إجماليات السلة"
 
-#: includes/Managers/SlotManager.php:145
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:114
+#: includes/Managers/SlotManager.php:148
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:172
 msgid "After Cart Summary Totals"
 msgstr "بعد ملخص إجماليات السلة"
 
-#: includes/Managers/SlotManager.php:150
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:115
+#: includes/Managers/SlotManager.php:153
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:173
 msgid "Before Footer"
 msgstr "قبل التذييل"
 
-#: includes/Managers/SlotManager.php:155
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:116
+#: includes/Managers/SlotManager.php:158
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:174
 msgid "After Footer"
 msgstr "بعد التذييل"
 
-#: includes/Managers/SlotManager.php:173
+#: includes/Managers/SlotManager.php:176
 #: client/ts/admin/Components/TrustBadgeRow.tsx:166
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:100
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:158
 msgid "— No Slot Assigned —"
 msgstr "— لم يتم تعيين خانة —"
 
-#: includes/Managers/SlotManager.php:178
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:119
+#: includes/Managers/SlotManager.php:181
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:177
 msgid "After Cart Summary Items (Checkout and Side Cart)"
 msgstr "بعد ملخص عناصر السلة (الدفع والسلة الجانبية)"
 
-#: includes/Managers/SlotManager.php:179
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:120
+#: includes/Managers/SlotManager.php:182
+#: includes/Admin/Pages/Premium/OrderBumps.php:1191
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:178
 msgid "After Cart Summary Items (Side Cart Only)"
 msgstr "بعد ملخص عناصر السلة (السلة الجانبية فقط)"
 
-#: includes/Managers/SlotManager.php:180
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:121
+#: includes/Managers/SlotManager.php:183
+#: includes/Admin/Pages/Premium/OrderBumps.php:1192
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:179
 msgid "Place Order Click (Checkout)"
 msgstr "نقرة تقديم الطلب (الدفع)"
 
-#: includes/Managers/SlotManager.php:181
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:122
+#: includes/Managers/SlotManager.php:184
+#: includes/Admin/Pages/Premium/OrderBumps.php:1193
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:180
 msgid "Post Purchase One-Click (Thank You)"
 msgstr "نقرة الشراء بنقرة واحدة بعد الشراء (شكرًا لك)"
 
-#: includes/Managers/SlotManager.php:441
+#: includes/Managers/SlotManager.php:454
 msgid "Badge %d"
 msgstr "شارة %d"
 
@@ -1221,7 +1225,7 @@ msgid "Please enter a valid postcode / ZIP."
 msgstr "الرجاء إدخال رمز بريدي صالح."
 
 #: includes/Managers/AssetManager.php:706
-#: includes/Features/LocalPickup.php:626
+#: includes/Features/LocalPickup.php:636
 msgid "Pickup"
 msgstr "الإستلام"
 
@@ -1242,11 +1246,11 @@ msgstr "أضف إلى العربة"
 
 #: includes/Managers/AssetManager.php:710
 #: includes/Managers/AssetManager.php:844
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2308
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2383
 #: client/ts/admin/Components/CheckoutEditor/slots/UnsavedChangesDialog.tsx:51
-#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:458
-#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:493
-#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:276
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:488
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:546
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:291
 #: client/ts/admin/Components/CheckoutEditor/slots/CustomHtmlEditor.tsx:76
 msgid "Cancel"
 msgstr "إلغاء"
@@ -1340,66 +1344,66 @@ msgid "We have detected that Simple Cloudflare Turnstile is active. To enable Ch
 msgstr "لقد اكتشفنا أن Simple Cloudflare Turnstile نشط. لتمكين وظيفة CheckoutWC Turnstile، يرجى تعطيل Simple Cloudflare Turnstile."
 
 # %s is a comma-separated list of product names
-#: includes/Features/SideCart.php:783
+#: includes/Features/SideCart.php:795
 msgid "These rewards-bar gift products can\\'t be auto-added because they are not simple products — please choose a simple product instead: %s"
 msgstr "لا يمكن إضافة منتجات الهدايا الخاصة بشريط المكافآت هذا تلقائيًا لأنها ليست منتجات بسيطة — يرجى اختيار منتج بسيط بدلًا من ذلك: %s"
 
 # %s is the gift product name
-#: includes/Features/SideCart.php:1246
+#: includes/Features/SideCart.php:1273
 msgid "Auto-managed free gift: %s — created by the Side Cart rewards bar, do not edit"
 msgstr "هدية مجانية مُدارة تلقائيًا: %s — تم إنشاؤها بواسطة شريط مكافآت العربة الجانبية، لا تقم بالتعديل"
 
-#: includes/Features/SideCart.php:1481
-#: includes/Features/SideCart.php:1538
+#: includes/Features/SideCart.php:1508
+#: includes/Features/SideCart.php:1565
 #: client/ts/admin/Components/FreeShippingTierRow.tsx:87
 msgid "Congrats! You get free standard shipping."
 msgstr "تهاني! تحصل على شحن قياسي مجاني."
 
-#: includes/Features/SideCart.php:1495
+#: includes/Features/SideCart.php:1522
 msgid "You\\'re %s away from free shipping!"
 msgstr "أنت على بعد %s من الشحن المجاني!"
 
-#: includes/Features/SideCart.php:1539
+#: includes/Features/SideCart.php:1566
 #: client/ts/admin/Components/FreeShippingTierRow.tsx:88
 #: client/ts/admin/Components/FreeShippingTierRow.tsx:89
 msgid "Reward unlocked!"
 msgstr "تم فتح المكافأة!"
 
-#: includes/Features/SideCart.php:1547
+#: includes/Features/SideCart.php:1574
 #: client/ts/admin/Components/FreeShippingTierRow.tsx:94
 msgid "You're %s away from free shipping!"
 msgstr "أنت بعيد %s عن الشحن المجاني!"
 
-#: includes/Features/SideCart.php:1549
+#: includes/Features/SideCart.php:1576
 #: client/ts/admin/Components/FreeShippingTierRow.tsx:96
 #: client/ts/admin/Components/FreeShippingTierRow.tsx:98
 msgid "You're %s away from your next reward!"
 msgstr "أنت على بُعد %s من مكافأتك التالية!"
 
-#: includes/Features/SideCart.php:1556
+#: includes/Features/SideCart.php:1583
 #: client/ts/admin/Components/FreeShippingTierRow.tsx:113
 msgid "Free shipping"
 msgstr "شحن مجاني"
 
-#: includes/Features/SideCart.php:1557
+#: includes/Features/SideCart.php:1584
 #: client/ts/frontend/Components/CheckoutCartTableRow.tsx:48
 #: client/ts/frontend/Components/CartTableRow.tsx:48
 #: client/ts/admin/Components/FreeShippingTierRow.tsx:114
 msgid "Free gift"
 msgstr "هدية مجانية"
 
-#: includes/Features/SideCart.php:1558
+#: includes/Features/SideCart.php:1585
 #: client/ts/admin/Components/FreeShippingTierRow.tsx:170
 msgid "Reward"
 msgstr "مكافأة"
 
-#: includes/Features/SideCart.php:1682
+#: includes/Features/SideCart.php:1709
 #: includes/Admin/WooCommerceAdminScreenAugmenter.php:24
 #: includes/Admin/WooCommerceAdminScreenAugmenter.php:45
 msgid "CheckoutWC:"
 msgstr "CheckoutWC:"
 
-#: includes/Features/SideCart.php:1683
+#: includes/Features/SideCart.php:1710
 msgid "Settings marked with asterisks (**) may be overridden based on your Side Cart settings. (CheckoutWC > Side Cart)"
 msgstr "الإعدادات المعلمة بنجومتين (**) قد يتم تجاوزها بناءً على إعدادات سلة الجانب الخاصة بك. (CheckoutWC > Side Cart)"
 
@@ -1416,115 +1420,119 @@ msgstr "يحتوي على أي Order Bump"
 msgid "Has Bump: %s"
 msgstr "يحتوي على Bump: %s"
 
-#: includes/Features/LocalPickup.php:124
-#: includes/Features/LocalPickup.php:128
+#: includes/Features/LocalPickup.php:127
+#: includes/Features/LocalPickup.php:131
 msgid "Delivery method"
 msgstr "طريقة التوصيل"
 
-#: includes/Features/LocalPickup.php:178
+#: includes/Features/LocalPickup.php:181
 msgid "Pick up"
 msgstr "الاستـلام"
 
-#: includes/Features/LocalPickup.php:197
+#: includes/Features/LocalPickup.php:200
 msgid "Ship"
 msgstr "شحن"
 
-#: includes/Features/LocalPickup.php:300
+#: includes/Features/LocalPickup.php:308
 msgid "Pickup locations"
 msgstr "عنوان الاستلام"
 
-#: includes/Features/LocalPickup.php:497
-#: includes/Features/LocalPickup.php:499
+#: includes/Features/LocalPickup.php:505
+#: includes/Features/LocalPickup.php:507
 #: includes/Admin/Pages/PickupLocationsAdminFree.php:21
-#: includes/Admin/Pages/Premium/PickupLocations.php:22
+#: includes/Admin/Pages/Premium/PickupLocations.php:23
 msgid "Pickup Locations"
 msgstr "مواقع الاستلام"
 
-#: includes/Features/LocalPickup.php:498
-#: includes/Features/LocalPickup.php:684
-#: includes/Features/LocalPickup.php:772
-#: includes/Features/LocalPickup.php:814
-#: includes/Features/LocalPickup.php:1142
-#: includes/Features/LocalPickup.php:1167
+#: includes/Features/LocalPickup.php:506
+#: includes/Features/LocalPickup.php:694
+#: includes/Features/LocalPickup.php:782
+#: includes/Features/LocalPickup.php:830
+#: includes/Features/LocalPickup.php:1158
+#: includes/Features/LocalPickup.php:1183
 msgid "Pickup Location"
 msgstr "موقع الاستلام"
 
-#: includes/Features/LocalPickup.php:500
+#: includes/Features/LocalPickup.php:508
 msgid "Add Pickup Location"
 msgstr "أضف موقع استلام"
 
-#: includes/Features/LocalPickup.php:501
+#: includes/Features/LocalPickup.php:509
 msgid "Add New Pickup Location"
 msgstr "أضف موقع استلام جديد"
 
-#: includes/Features/LocalPickup.php:503
+#: includes/Features/LocalPickup.php:511
 msgid "Edit Pickup Location"
 msgstr "تعديل موقع الاستلام"
 
-#: includes/Features/LocalPickup.php:504
+#: includes/Features/LocalPickup.php:512
 msgid "New Pickup Location"
 msgstr "موقع استلام جديد"
 
-#: includes/Features/LocalPickup.php:505
+#: includes/Features/LocalPickup.php:513
 msgid "View Pickup Locations"
 msgstr "عرض مواقع الاستلام"
 
-#: includes/Features/LocalPickup.php:506
+#: includes/Features/LocalPickup.php:514
 msgid "View Pickup Location"
 msgstr "عرض موقع الاستلام"
 
-#: includes/Features/LocalPickup.php:507
+#: includes/Features/LocalPickup.php:515
 msgid "Search Pickup Locations"
 msgstr "بحث في مواقع الاستلام"
 
-#: includes/Features/LocalPickup.php:508
+#: includes/Features/LocalPickup.php:516
 msgid "No Pickup Location found"
 msgstr "لم يتم العثور على موقع استلام"
 
-#: includes/Features/LocalPickup.php:509
+#: includes/Features/LocalPickup.php:517
 msgid "No Pickup Locations found in trash"
 msgstr "لم يتم العثور على مواقع استلام في المهملات"
 
-#: includes/Features/LocalPickup.php:514
+#: includes/Features/LocalPickup.php:518
+msgid "Attributes"
+msgstr "الخصائص"
+
+#: includes/Features/LocalPickup.php:523
 msgid "This is where you can add new Pickup Locations."
 msgstr "هنا يمكنك إضافة مواقع استلام جديدة."
 
-#: includes/Features/LocalPickup.php:591
+#: includes/Features/LocalPickup.php:601
 #: client/ts/frontend/Components/ReviewPane/PaymentMethodReviewPane.tsx:37
 #: client/ts/frontend/Components/ReviewPane/OrderReviewStepReviewPane.tsx:37
 msgid "Method"
 msgstr "الطريقة"
 
-#: includes/Features/LocalPickup.php:744
+#: includes/Features/LocalPickup.php:754
 msgid "Pickup instructions"
 msgstr "تعليمات الاستلام"
 
-#: includes/Features/LocalPickup.php:934
+#: includes/Features/LocalPickup.php:950
 msgid "Usually ready in 1 hour."
 msgstr "عادة ما تكون جاهزة في غضون ساعة واحدة."
 
-#: includes/Features/LocalPickup.php:935
+#: includes/Features/LocalPickup.php:951
 msgid "Usually ready in 2 hours."
 msgstr "عادة ما تكون جاهزة في غضون ساعتين."
 
-#: includes/Features/LocalPickup.php:936
+#: includes/Features/LocalPickup.php:952
 msgid "Usually ready in 4 hours."
 msgstr "عادة ما تكون جاهزة في غضون 4 ساعات."
 
-#: includes/Features/LocalPickup.php:937
+#: includes/Features/LocalPickup.php:953
 msgid "Usually ready in 24 hours."
 msgstr "عادة ما تكون جاهزة في غضون 24 ساعة."
 
-#: includes/Features/LocalPickup.php:938
+#: includes/Features/LocalPickup.php:954
 msgid "Usually ready in 2-4 days."
 msgstr "عادة ما تكون جاهزة في 2-4 أيام."
 
-#: includes/Features/LocalPickup.php:939
+#: includes/Features/LocalPickup.php:955
 msgid "Usually ready in 5+ days."
 msgstr "عادة ما تكون جاهزة في أكثر من 5 أيام."
 
-#: includes/Features/LocalPickup.php:1151
-#: includes/Features/LocalPickup.php:1178
+#: includes/Features/LocalPickup.php:1167
+#: includes/Features/LocalPickup.php:1194
 msgid "Pickup Instructions:"
 msgstr "تعليمات الاستلام:"
 
@@ -1552,85 +1560,85 @@ msgstr "أو أدخل العنوان يدويًا."
 msgid "Checkout is not available whilst your cart is empty."
 msgstr "لا يتوفر إتمام الشراء بينما سلتك فارغة."
 
-#: includes/Features/AbandonedCartRecovery.php:96
+#: includes/Features/AbandonedCartRecovery.php:102
 msgid "You have been unsubscribed from our cart reminder emails."
 msgstr "لقد تم إلغاء اشتراكك من رسائل التذكير الإلكترونية الخاصة بسلة التسوق."
 
-#: includes/Features/AbandonedCartRecovery.php:117
-#: includes/Features/AbandonedCartRecovery.php:119
+#: includes/Features/AbandonedCartRecovery.php:123
+#: includes/Features/AbandonedCartRecovery.php:125
 #: includes/Admin/Pages/AbandonedCartRecoveryAdminFree.php:27
 #: includes/Admin/Pages/Premium/AbandonedCartRecovery.php:36
 msgid "Emails"
 msgstr "البريد الإلكتروني"
 
-#: includes/Features/AbandonedCartRecovery.php:120
+#: includes/Features/AbandonedCartRecovery.php:126
 msgid "Add Email"
 msgstr "أضف بريدًا إلكترونيًا"
 
-#: includes/Features/AbandonedCartRecovery.php:121
+#: includes/Features/AbandonedCartRecovery.php:127
 msgid "Add New Email"
 msgstr "إضافة بريد إلكتروني جديد"
 
-#: includes/Features/AbandonedCartRecovery.php:123
+#: includes/Features/AbandonedCartRecovery.php:129
 msgid "Edit Email"
 msgstr "تعديل البريد الإلكتروني"
 
-#: includes/Features/AbandonedCartRecovery.php:124
+#: includes/Features/AbandonedCartRecovery.php:130
 msgid "New Email"
 msgstr "بريد إلكتروني جديد"
 
-#: includes/Features/AbandonedCartRecovery.php:125
+#: includes/Features/AbandonedCartRecovery.php:131
 msgid "View Emails"
 msgstr "عرض الرسائل الإلكترونية"
 
-#: includes/Features/AbandonedCartRecovery.php:126
+#: includes/Features/AbandonedCartRecovery.php:132
 msgid "View Email"
 msgstr "عرض البريد الإلكتروني"
 
-#: includes/Features/AbandonedCartRecovery.php:127
+#: includes/Features/AbandonedCartRecovery.php:133
 msgid "Search Emails"
 msgstr "بحث في الرسائل الإلكترونية"
 
-#: includes/Features/AbandonedCartRecovery.php:128
+#: includes/Features/AbandonedCartRecovery.php:134
 msgid "No Email found"
 msgstr "لم يتم العثور على بريد إلكتروني"
 
-#: includes/Features/AbandonedCartRecovery.php:129
+#: includes/Features/AbandonedCartRecovery.php:135
 msgid "No Emails found in trash"
 msgstr "لم يتم العثور على رسائل إلكترونية في المهملات"
 
-#: includes/Features/AbandonedCartRecovery.php:134
+#: includes/Features/AbandonedCartRecovery.php:140
 msgid "This is where you can add new Abandoned Cart Recovery Emails."
 msgstr "هنا يمكنك إضافة رسائل استرداد سلة مهجورة جديدة."
 
-#: includes/Features/AbandonedCartRecovery.php:738
+#: includes/Features/AbandonedCartRecovery.php:744
 msgid "Item"
 msgstr "العنصر"
 
-#: includes/Features/AbandonedCartRecovery.php:741
+#: includes/Features/AbandonedCartRecovery.php:747
 #: includes/Admin/Views/html-refund-offer.php:23
 #: client/ts/admin/Components/acr/carts.tsx:60
 msgid "Name"
 msgstr "الاسم"
 
-#: includes/Features/AbandonedCartRecovery.php:744
+#: includes/Features/AbandonedCartRecovery.php:750
 msgid "Quantity"
 msgstr "الكمية"
 
-#: includes/Features/AbandonedCartRecovery.php:747
+#: includes/Features/AbandonedCartRecovery.php:753
 msgid "Price"
 msgstr "السعر"
 
-#: includes/Features/AbandonedCartRecovery.php:867
-#: includes/Features/AbandonedCartRecovery.php:931
+#: includes/Features/AbandonedCartRecovery.php:873
+#: includes/Features/AbandonedCartRecovery.php:937
 msgid "This order was abandoned and subsequently recovered."
 msgstr "تم التخلي عن هذا الأمر واستعادته لاحقًا."
 
-#: includes/Features/AbandonedCartRecovery.php:1065
+#: includes/Features/AbandonedCartRecovery.php:1071
 msgid "CheckoutWC ACR only"
 msgstr "CheckoutWC ACR فقط"
 
-#: includes/Features/AbandonedCartRecovery.php:1066
+#: includes/Features/AbandonedCartRecovery.php:1072
 msgid "Check this box if the coupon can only be used by customers with an abandoned cart."
 msgstr "حدد هذا المربع إذا كان القسيمة يمكن استخدامها فقط من قبل العملاء الذين لديهم عربة مهجورة."
 
@@ -1640,7 +1648,7 @@ msgid "A/B Tests"
 msgstr "اختبارات A/B"
 
 #: includes/Features/ABTesting.php:146
-#: includes/Admin/Pages/Premium/OrderBumps.php:133
+#: includes/Admin/Pages/Premium/OrderBumps.php:135
 msgid "A/B Test"
 msgstr "اختبار A/B"
 
@@ -1712,7 +1720,7 @@ msgstr "الإضافة <strong>معقدة جدًا للتكوين.</strong>"
 #: includes/Admin/Pages/LocalPickupAdminFree.php:184
 #: includes/Admin/Pages/LocalPickupAdminFree.php:221
 #: includes/Admin/Pages/Premium/LocalPickupAdmin.php:225
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:118
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:176
 #: client/ts/admin/Components/Forms/AdvancedSettingsForm.tsx:104
 msgid "Other"
 msgstr "أخرى"
@@ -1879,15 +1887,15 @@ msgstr "تم رفض العرض."
 msgid "Guest (Not Logged In)"
 msgstr "ضيف (غير مسجل الدخول)"
 
-#: includes/API/ProductsAndVariationsSearchAPI.php:68
+#: includes/API/ProductsAndVariationsSearchAPI.php:75
 msgid "The date the last order for this product was placed, in the site's timezone."
 msgstr "التاريخ الذي تم تحديده لآخر طلب لهذا العنصر حسب النطاق الزمني للموقع."
 
-#: includes/API/ProductsAndVariationsSearchAPI.php:85
+#: includes/API/ProductsAndVariationsSearchAPI.php:92
 msgid "Limit result set to products that are low or out of stock. (Deprecated)"
 msgstr "تحديد النتائج المحددة للمنتجات التي تكون منخفضة أو غير متوفرة في المخزون. (إهمال)"
 
-#: includes/API/ProductsAndVariationsSearchAPI.php:91
+#: includes/API/ProductsAndVariationsSearchAPI.php:98
 msgid "Search by similar product name or sku."
 msgstr "البحث عن طريق اسم منتج مماثل أو رمز المنتج."
 
@@ -1995,54 +2003,54 @@ msgstr "نموذج عرض الطلب الإضافي"
 msgid "The form to accept or reject the bump offer."
 msgstr "النموذج لقبول أو رفض عرض الطلب الإضافي."
 
-#: includes/Model/Bumps/BumpAbstract.php:1013
-#: includes/Model/Bumps/BumpAbstract.php:1023
+#: includes/Model/Bumps/BumpAbstract.php:1034
+#: includes/Model/Bumps/BumpAbstract.php:1044
 #: includes/Model/ABTests/OrderBumpsABTest.php:30
 #: includes/Features/ABTesting/ABTestTypeRegistry.php:123
 #: includes/Admin/Pages/OrderBumpsAdminFree.php:17
 #: includes/Admin/Pages/OrderBumpsAdminFree.php:71
-#: includes/Admin/Pages/Premium/OrderBumps.php:46
+#: includes/Admin/Pages/Premium/OrderBumps.php:48
 #: client/ts/admin/Components/Forms/OrderBumpSettingsForm.tsx:45
-#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:294
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:309
 msgid "Order Bumps"
 msgstr "عروض الطلبات"
 
-#: includes/Model/Bumps/BumpAbstract.php:1014
+#: includes/Model/Bumps/BumpAbstract.php:1035
 #: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:193
 #: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:1614
 msgid "Order Bump"
 msgstr "عرض الطلب"
 
-#: includes/Model/Bumps/BumpAbstract.php:1015
+#: includes/Model/Bumps/BumpAbstract.php:1036
 msgid "Add New"
 msgstr "إضافة جديد"
 
-#: includes/Model/Bumps/BumpAbstract.php:1016
+#: includes/Model/Bumps/BumpAbstract.php:1037
 msgid "Add New Order Bump"
 msgstr "إضافة عرض طلب إضافي جديد"
 
-#: includes/Model/Bumps/BumpAbstract.php:1017
+#: includes/Model/Bumps/BumpAbstract.php:1038
 msgid "Edit Order Bump"
 msgstr "تعديل عرض الطلب الإضافي"
 
-#: includes/Model/Bumps/BumpAbstract.php:1018
+#: includes/Model/Bumps/BumpAbstract.php:1039
 #: client/ts/admin/Components/Metaboxes/OrderBumpsSetupModal.tsx:61
 msgid "New Order Bump"
 msgstr "عرض طلب إضافي جديد"
 
-#: includes/Model/Bumps/BumpAbstract.php:1019
+#: includes/Model/Bumps/BumpAbstract.php:1040
 msgid "View Order Bump"
 msgstr "عرض عرض الطلب"
 
-#: includes/Model/Bumps/BumpAbstract.php:1020
+#: includes/Model/Bumps/BumpAbstract.php:1041
 msgid "Find Order Bump"
 msgstr "البحث عن عرض الطلب"
 
-#: includes/Model/Bumps/BumpAbstract.php:1021
+#: includes/Model/Bumps/BumpAbstract.php:1042
 msgid "No order bumps were found."
 msgstr "لم يتم العثور على عروض طلب إضافي."
 
-#: includes/Model/Bumps/BumpAbstract.php:1022
+#: includes/Model/Bumps/BumpAbstract.php:1043
 msgid "Not found in trash"
 msgstr "غير موجود في المهملات"
 
@@ -2066,6 +2074,7 @@ msgid "You do not have permission to install plugin updates"
 msgstr "ليس لديك إذن لتثبيت تحديثات الإضافة"
 
 #: includes/Managers/Helpers/EDD_SL_Plugin_Updater.php:534
+#: client/ts/admin/Components/GooglePlacesKeyStatus.tsx:61
 msgid "Error"
 msgstr "خطأ"
 
@@ -2190,11 +2199,11 @@ msgstr "السماح لـ WooCommerce Checkout Field Editor بتعديل حقو�
 msgid "Full-width"
 msgstr "عرض كامل"
 
-#: includes/Compatibility/Plugins/WPRocket.php:116
+#: includes/Compatibility/Plugins/WPRocket.php:132
 msgid "Enable WP Rocket Delay JS Execution compatibility mode"
 msgstr "تمكين وضع التوافق مع تأخير تنفيذ JS لـ WP Rocket"
 
-#: includes/Compatibility/Plugins/WPRocket.php:117
+#: includes/Compatibility/Plugins/WPRocket.php:133
 msgid "By default, we exclude our scripts and script dependencies to prevent compatibility problems. Uncheck to allow CheckoutWC scripts to be delayed for maximum performance."
 msgstr "بشكل افتراضي، نستبعد سكريبتاتنا واعتمادات السكريبت لمنع مشاكل التوافق. قم بإلغاء التحديد للسماح بتأخير سكريبتات CheckoutWC لأقصى أداء."
 
@@ -2343,8 +2352,8 @@ msgstr "الخيارات العالمية"
 #: includes/Admin/Pages/TrustBadgesAdminFree.php:56
 #: includes/Admin/Pages/Premium/TrustBadges.php:16
 #: client/ts/admin/Components/Forms/TrustBadgeSettingsForm.tsx:150
-#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:348
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:544
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:384
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:552
 msgid "Trust Badges"
 msgstr "شارات الثقة"
 
@@ -2369,7 +2378,7 @@ msgstr "تمكين شارات الثقة على قوالب CheckoutWC. قم بإ
 
 #: includes/Admin/Pages/TrustBadgesAdminFree.php:43
 #: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:181
-#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:219
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:234
 msgid "Heading"
 msgstr "العنوان"
 
@@ -2410,9 +2419,9 @@ msgstr "العنوان الفرعي"
 #: includes/Admin/Pages/Appearance.php:32
 #: includes/Admin/Pages/Premium/AbandonedCartRecovery.php:462
 #: client/ts/admin/Components/TrustBadgeRow.tsx:117
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:105
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:114
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:118
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:111
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:120
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:124
 #: client/ts/admin/Components/CheckoutEditor/panels/DesignSettingsPanel.tsx:52
 msgid "Template"
 msgstr "القالب"
@@ -2452,7 +2461,7 @@ msgid "WYSIWYG"
 msgstr "WYSIWYG"
 
 #: includes/Admin/Pages/TrustBadgesAdminFree.php:111
-#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:428
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:464
 #: client/ts/admin/Components/CheckoutEditor/slots/CustomHtmlEditor.tsx:37
 #: client/ts/admin/Components/CheckoutEditor/slots/AssignedItem.tsx:73
 msgid "HTML"
@@ -2645,17 +2654,17 @@ msgid "Configure the Floating Side Cart Button"
 msgstr "تكوين زر عربة الجانب العائم"
 
 #: includes/Admin/Pages/PickupLocationsAdminFree.php:73
-#: includes/Admin/Pages/Premium/PickupLocations.php:74
+#: includes/Admin/Pages/Premium/PickupLocations.php:83
 msgid "Pickup Location Details"
 msgstr "تفاصيل موقع الاستلام"
 
 #: includes/Admin/Pages/PickupLocationsAdminFree.php:115
-#: includes/Admin/Pages/Premium/PickupLocations.php:114
+#: includes/Admin/Pages/Premium/PickupLocations.php:123
 msgid "Estimated Pickup Time"
 msgstr "الوقت المقدر للاستلام"
 
 #: includes/Admin/Pages/PickupLocationsAdminFree.php:131
-#: includes/Admin/Pages/Premium/PickupLocations.php:130
+#: includes/Admin/Pages/Premium/PickupLocations.php:139
 msgid "Pickup Instructions"
 msgstr "تعليمات الاستلام"
 
@@ -2677,8 +2686,8 @@ msgstr "هل تريد تجاهلها؟"
 
 #: includes/Admin/Pages/PageAbstract.php:136
 #: includes/Admin/Pages/PageAbstract.php:157
-#: client/ts/admin/Components/CheckoutEditor/EditorHeader.tsx:203
-#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:404
+#: client/ts/admin/Components/CheckoutEditor/EditorHeader.tsx:230
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:434
 msgid "Save Changes"
 msgstr "حفظ التغييرات"
 
@@ -2697,20 +2706,20 @@ msgid "This setting is currently programmatically overridden. To enable it remov
 msgstr "هذا الإعداد متجاوز برمجياً حالياً. لتمكينه، قم بإزالة الكود المخصص الخاص بك."
 
 #: includes/Admin/Pages/PageAbstract.php:333
-#: includes/Admin/Pages/Premium/OrderBumps.php:1034
+#: includes/Admin/Pages/Premium/OrderBumps.php:1067
 #: includes/Admin/Pages/Premium/AbandonedCartRecovery.php:850
 msgid "Upgrade Your Plan"
 msgstr "قم بترقية خطتك"
 
 # %1$s: Account URL, %2$s: Help URL
 #: includes/Admin/Pages/PageAbstract.php:350
-#: includes/Admin/Pages/Premium/OrderBumps.php:1044
+#: includes/Admin/Pages/Premium/OrderBumps.php:1077
 #: includes/Admin/Pages/Premium/AbandonedCartRecovery.php:869
 msgid "You can upgrade your license in <a class=\"text-blue-600 underline\" target=\"_blank\" href=\"%1$s\">Account</a>. For help upgrading your license, <a class=\"text-blue-600 underline\" target=\"_blank\" href=\"%2$s\">click here.</a>"
 msgstr "يمكنك ترقية ترخيصك في <a class=\"text-blue-600 underline\" target=\"_blank\" href=\"%1$s\">الحساب</a>. للمساعدة في ترقية الترخيص، <a class=\"text-blue-600 underline\" target=\"_blank\" href=\"%2$s\">انقر هنا.</a>"
 
 #: includes/Admin/Pages/OrderBumpsAdminFree.php:27
-#: includes/Admin/Pages/Premium/OrderBumps.php:60
+#: includes/Admin/Pages/Premium/OrderBumps.php:62
 msgid "Manage Bumps"
 msgstr "إدارة الإضافات"
 
@@ -2870,14 +2879,14 @@ msgstr "تعديل مواقع الاستلام"
 msgid "Submit"
 msgstr "إرسال"
 
-#: includes/Admin/Pages/Integrations.php:17
+#: includes/Admin/Pages/Integrations.php:18
 msgid "Integrations"
 msgstr "التكاملات"
 
 #: includes/Admin/Pages/General.php:40
 #: includes/Admin/Pages/General.php:41
-#: includes/Admin/Pages/CheckoutEditor.php:14
-#: client/ts/admin/Components/CheckoutEditor/EditorHeader.tsx:75
+#: includes/Admin/Pages/CheckoutEditor.php:16
+#: client/ts/admin/Components/CheckoutEditor/EditorHeader.tsx:92
 msgid "Checkout Editor"
 msgstr "محرر الدفع"
 
@@ -3014,13 +3023,13 @@ msgstr "سيتم تجاوز قالب CheckoutWC والوظائف مؤقتًا (�
 
 #: includes/Admin/Pages/ExpressCheckout.php:16
 #: client/ts/admin/Components/Forms/ExpressCheckoutSettingsForm.tsx:54
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:413
 #: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:419
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:425
 msgid "Express Checkout"
 msgstr "الدفع السريع"
 
 # 1: Admin page title, 2: Network or site name.
-#: includes/Admin/Pages/CheckoutEditor.php:50
+#: includes/Admin/Pages/CheckoutEditor.php:70
 msgid "%1$s ‹ %2$s — WordPress"
 msgstr "%1$s ‹ %2$s — ووردبريس"
 
@@ -3053,7 +3062,7 @@ msgid "System Font Stack (fastest)"
 msgstr "مجموعة خطوط النظام (الأسرع)"
 
 #: includes/Admin/Pages/Appearance.php:201
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:219
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:225
 msgid "Body"
 msgstr "النص الأساسي"
 
@@ -3068,8 +3077,8 @@ msgstr "الخلفية"
 #: includes/Admin/Pages/Appearance.php:219
 #: includes/Admin/Pages/Appearance.php:231
 #: includes/Admin/Pages/Appearance.php:241
-#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:429
-#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:247
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:459
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:262
 msgid "Text"
 msgstr "النص"
 
@@ -3079,21 +3088,21 @@ msgid "Link"
 msgstr "الرابط"
 
 #: includes/Admin/Pages/Appearance.php:211
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:223
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:229
 msgid "Header"
 msgstr "رأس الصفحة"
 
 #: includes/Admin/Pages/Appearance.php:223
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:224
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:627
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:230
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:635
 msgid "Footer"
 msgstr "تذييل الصفحة"
 
 #: includes/Admin/Pages/Appearance.php:235
 #: client/ts/admin/Components/Forms/WooCommercePagesGlobalOptionsSettingsForm.tsx:48
 #: client/ts/admin/Components/Forms/CheckoutSettingsForm.tsx:569
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:222
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:434
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:228
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:440
 #: client/ts/admin/Components/CheckoutEditor/panels/CheckoutSettingsPanel.tsx:305
 msgid "Cart Summary"
 msgstr "ملخص السلة"
@@ -3111,7 +3120,7 @@ msgid "Quantity Bubble Text"
 msgstr "نص فقاعة الكمية"
 
 #: includes/Admin/Pages/Appearance.php:253
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:221
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:227
 msgid "Breadcrumbs"
 msgstr "مسار التنقل"
 
@@ -3140,7 +3149,7 @@ msgid "Next Accent"
 msgstr "التأكيد التالي"
 
 #: includes/Admin/Pages/Appearance.php:267
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:220
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:226
 msgid "Buttons"
 msgstr "الأزرار"
 
@@ -3182,7 +3191,7 @@ msgstr "ألوان خاصة بالقالب"
 
 #: includes/Admin/Pages/Advanced.php:20
 #: includes/Admin/Pages/Advanced.php:28
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:645
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:653
 msgid "Advanced"
 msgstr "متقدم"
 
@@ -3727,9 +3736,9 @@ msgstr "عنوان الخطوة 3. مثال: تم استلام الطلب"
 msgid "Order Bump Preview"
 msgstr "معاينة عرض الطلب الإضافي"
 
-#: client/ts/admin/order-bumps-editor.tsx:172
-msgid "Note: This is just a preview. The price shown will not be properly discounted in this context."
-msgstr "ملاحظة: هذه مجرد معاينة. السعر المعروض لن يتم خصمه بشكل صحيح في هذا السياق."
+#: client/ts/admin/order-bumps-editor.tsx:152
+msgid "Preview only — configure this bump in the order bump settings sidebar on the right. The price shown here is not discounted."
+msgstr "للمعاينة فقط — قم بتكوين هذه الإضافة في الشريط الجانبي لإعدادات إضافة الطلب على اليمين. السعر المعروض هنا غير مخفّض."
 
 #: client/ts/admin/admin.ts:116
 #: client/ts/admin/Components/SettingsImporterButton.ts:12
@@ -3757,7 +3766,7 @@ msgid "Are you sure you want to clear all tracked carts and reset all recovery s
 msgstr "هل أنت متأكد أنك تريد مسح جميع العربات المتعقبة وإعادة تعيين جميع إحصائيات الاسترداد؟ لا يمكن التراجع عن هذا."
 
 #: client/ts/admin/admin.ts:178
-#: client/ts/admin/Components/CheckoutEditor/EditorApp.tsx:177
+#: client/ts/admin/Components/CheckoutEditor/EditorApp.tsx:188
 msgid "Are you sure you want to discard all unsaved changes?"
 msgstr "هل أنت متأكد أنك تريد تجاهل جميع التغييرات غير المحفوظة؟"
 
@@ -3792,8 +3801,8 @@ msgid "Select the order bump to test variants against."
 msgstr "اختر عرض الطلب لاختبار الأنواع ضده."
 
 #: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:252
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2000
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2090
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2075
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2165
 msgid "Select an order bump to view and manage variants."
 msgstr "اختر عرض طلب لعرض وإدارة الأنواع."
 
@@ -3827,6 +3836,7 @@ msgstr "أدخل النسب المئوية لعرض الطلب الأصلي ول
 
 #: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:531
 #: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:590
+#: client/ts/admin/Components/Metaboxes/ProductsAndVariationsCompleter.tsx:31
 msgid "Draft"
 msgstr "مسودة"
 
@@ -3843,28 +3853,28 @@ msgstr "أصلي"
 #: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:541
 #: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:606
 #: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:1562
-#: includes/Admin/Pages/Premium/OrderBumps.php:126
+#: includes/Admin/Pages/Premium/OrderBumps.php:128
 msgid "Conversion Rate"
 msgstr "معدل التحويل"
 
 #: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:545
 #: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:610
 #: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:1566
-#: includes/Admin/Pages/Premium/OrderBumps.php:127
+#: includes/Admin/Pages/Premium/OrderBumps.php:129
 msgid "Revenue"
 msgstr "الإيرادات"
 
 #: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:551
 #: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:619
 #: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:1576
-#: includes/Admin/Pages/Premium/OrderBumps.php:128
+#: includes/Admin/Pages/Premium/OrderBumps.php:130
 msgid "Location"
 msgstr "الموقع"
 
 #: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:555
 #: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:623
 #: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:1586
-#: includes/Admin/Pages/Premium/OrderBumps.php:129
+#: includes/Admin/Pages/Premium/OrderBumps.php:131
 #: client/ts/admin/Components/Metaboxes/OrderBumpsSetupModal.tsx:77
 #: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:31
 msgid "Offer Product"
@@ -3875,15 +3885,15 @@ msgid "Delete variant"
 msgstr "حذف النوع"
 
 #: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:630
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2305
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2323
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2380
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2398
 msgid "Select Winner"
 msgstr "تحديد الفائز"
 
 #: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:650
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2268
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2272
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2278
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2343
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2347
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2353
 msgid "Create Variant"
 msgstr "إنشاء نوع"
 
@@ -3908,7 +3918,7 @@ msgid "Variant does not belong to the specified order bump."
 msgstr "النوع لا ينتمي إلى عرض الطلب المحدد."
 
 #: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:940
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2158
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2233
 msgid "Failed to delete variant."
 msgstr "فشل في حذف النوع."
 
@@ -3938,7 +3948,7 @@ msgid "Order bump not found."
 msgstr "عرض الطلب غير موجود."
 
 #: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:1156
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2270
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2345
 msgid "Failed to create variant."
 msgstr "فشل في إنشاء النوع."
 
@@ -4022,77 +4032,77 @@ msgstr "حذف هذا الاختبار"
 msgid "To create a new A/B test for the \"%1$s\" order bump, %2$s."
 msgstr "لإنشاء اختبار A/B جديد لـ \"%1$s\" في الزيادة على الطلب، %2$s."
 
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:1817
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:1892
 msgid "Existing Test:"
 msgstr "الاختبار الحالي:"
 
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:1854
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:1929
 msgid "Search for an order bump..."
 msgstr "ابحث عن زيادة على الطلب..."
 
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:1959
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2034
 msgid "You have not yet created any order bumps."
 msgstr "لم تقم بإنشاء أي زيادات على الطلب بعد."
 
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:1961
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2036
 msgid "Create an order bump"
 msgstr "إنشاء زيادة على الطلب"
 
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2021
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2096
 msgid "Loading variants..."
 msgstr "جارٍ تحميل المتغيرات..."
 
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2057
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2063
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2132
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2138
 msgid "Error loading variants."
 msgstr "حدث خطأ أثناء تحميل المتغيرات."
 
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2109
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2184
 msgid "Are you sure you want to delete this variant? This action cannot be undone. If using a custom traffic split, the traffic percentages will be redistributed proportionally across the remaining variants."
 msgstr "هل أنت متأكد من رغبتك في حذف هذا المتغير؟ لا يمكن التراجع عن هذا الإجراء. إذا كنت تستخدم تقسيم حركة مرور مخصص، فسيتم إعادة توزيع نسب الحركة بشكل متناسب عبر المتغيرات المتبقية."
 
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2163
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2238
 msgid "An error occurred while deleting the variant."
 msgstr "حدث خطأ أثناء حذف المتغير."
 
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2188
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2262
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2263
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2337
 msgid "Edit Variant"
 msgstr "تعديل المتغير"
 
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2222
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2297
 msgid "Enter a title for this variant:"
 msgstr "أدخل عنوانًا لهذا المتغير:"
 
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2230
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2305
 msgid "Creating..."
 msgstr "جارٍ الإنشاء..."
 
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2276
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2351
 msgid "An error occurred while creating the variant."
 msgstr "حدث خطأ أثناء إنشاء المتغير."
 
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2296
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2371
 msgid "Selecting this variant as the winner will update the original order bump to match it and delete variants."
 msgstr "اختيار هذا المتغير كفائز سيقوم بتحديث الزيادة الأصلية على الطلب لتطابقه وحذف المتغيرات الأخرى."
 
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2300
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2375
 msgid "Apply this variant\\'s conversion stats to the original order bump."
 msgstr "تطبيق إحصائيات التحويل لهذا المتغير على الزيادة الأصلية على الطلب."
 
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2358
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2433
 msgid "Failed to select winner."
 msgstr "فشل في اختيار الفائز."
 
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2363
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2438
 msgid "An error occurred while setting the winner."
 msgstr "حدث خطأ أثناء تعيين الفائز."
 
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2396
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2471
 msgid "Traffic split percentages must total exactly 100%. Please adjust your percentages before saving."
 msgstr "يجب أن يكون مجموع نسب تقسيم الحركة 100% بالضبط. يرجى تعديل النسب قبل الحفظ."
 
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2483
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2558
 msgid "(Original)"
 msgstr "(الأصلي)"
 
@@ -4120,27 +4130,32 @@ msgstr "CheckoutWC: بعد إجماليات العربة الجانبية"
 msgid "CheckoutWC: After Side Cart Buttons"
 msgstr "CheckoutWC: بعد أزرار العربة الجانبية"
 
-#: includes/Admin/Pages/Premium/OrderBumps.php:125
+#: includes/Admin/Pages/Premium/PickupLocations.php:203
+#: includes/Admin/Pages/Premium/PickupLocations.php:210
+msgid "Order"
+msgstr "الطلب"
+
+#: includes/Admin/Pages/Premium/OrderBumps.php:127
 msgid "ID"
 msgstr "المعرف"
 
-#: includes/Admin/Pages/Premium/OrderBumps.php:126
+#: includes/Admin/Pages/Premium/OrderBumps.php:128
 msgid "Conversion Rate tracks how often a bump is added to an actual completed purchase. If 20 orders are placed and a bump was displayed on 10 of those orders and the bump was purchased 5 times, the conversion rate is 50%."
 msgstr "يتتبع معدل التحويل عدد المرات التي تمت فيها إضافة العرض الإضافي إلى عملية شراء مكتملة فعلية. إذا تم تقديم 20 طلبًا وعُرض العرض الإضافي في 10 من تلك الطلبات وتم شراء العرض 5 مرات، فإن معدل التحويل هو 50%."
 
-#: includes/Admin/Pages/Premium/OrderBumps.php:127
+#: includes/Admin/Pages/Premium/OrderBumps.php:129
 msgid "The additional revenue that an Order Bump has captured. When configured as an upsell, it calculates the relative value between the offer product and the product being replaced. Revenues incurred before version 6.1.4 are estimated."
 msgstr "الإيرادات الإضافية التي حققها العرض الإضافي للطلب. عند تكوينه كعرض ترقية، يحسب القيمة النسبية بين منتج العرض والمنتج الذي يتم استبداله. الإيرادات التي تم تحقيقها قبل الإصدار 6.1.4 هي تقديرية."
 
-#: includes/Admin/Pages/Premium/OrderBumps.php:232
+#: includes/Admin/Pages/Premium/OrderBumps.php:238
 msgid "View Test"
 msgstr "عرض الاختبار"
 
-#: includes/Admin/Pages/Premium/OrderBumps.php:242
+#: includes/Admin/Pages/Premium/OrderBumps.php:248
 msgid "Add Test"
 msgstr "إضافة اختبار"
 
-#: includes/Admin/Pages/Premium/OrderBumps.php:327
+#: includes/Admin/Pages/Premium/OrderBumps.php:333
 msgid "All <span class=\"count\">(%s)</span>"
 msgid_plural "All <span class=\"count\">(%s)</span>"
 msgstr[0] "الكل <span class=\"count\">(%s)</span>"
@@ -4150,18 +4165,27 @@ msgstr[3] ""
 msgstr[4] ""
 msgstr[5] ""
 
-#: includes/Admin/Pages/Premium/OrderBumps.php:535
+#: includes/Admin/Pages/Premium/OrderBumps.php:541
 msgid "Reset Order Bump Conversion Stats"
 msgstr "إعادة تعيين إحصائيات تحويل عروض الطلب"
 
 # %1$d: Allowed bump count, %2$d: Used bump count
-#: includes/Admin/Pages/Premium/OrderBumps.php:1037
+#: includes/Admin/Pages/Premium/OrderBumps.php:1070
 msgid "Your CheckoutWC plan allows you to create %1$d Order Bumps. You have used %2$d."
 msgstr "تسمح لك خطة CheckoutWC الخاصة بك بإنشاء %1$d عروض طلب. لقد استخدمت %2$d."
 
-#: includes/Admin/Pages/Premium/OrderBumps.php:1040
+#: includes/Admin/Pages/Premium/OrderBumps.php:1073
 msgid "You cannot create or publish new Order Bumps if you are over the limit."
 msgstr "لا يمكنك إنشاء أو نشر عروض طلب جديدة إذا تجاوزت الحد."
+
+#: includes/Admin/Pages/Premium/OrderBumps.php:1174
+msgid "This order bump is part of an A/B test. Changes you make here affect the test results."
+msgstr "هذه الإضافة الخاصة بالطلب جزء من اختبار A/B. التغييرات التي تجريها هنا تؤثر في نتائج الاختبار."
+
+# %s: display location name, e.g. "Place Order Click (Checkout)"
+#: includes/Admin/Pages/Premium/OrderBumps.php:1198
+msgid "%s is not a checkout slot. If you save this, the bump will no longer appear in the checkout editor — manage it from the Order Bumps page instead."
+msgstr "%s ليست خانة دفع. إذا حفظت هذا، فلن تظهر الإضافة بعد الآن في محرر الدفع — أدرها من صفحة إضافات الطلب بدلًا من ذلك."
 
 #: includes/Admin/Pages/Premium/AbandonedCartRecovery.php:99
 #: includes/Admin/Pages/Premium/AbandonedCartRecovery.php:389
@@ -4179,8 +4203,8 @@ msgid "Send this long after cart has been abandoned."
 msgstr "أرسل هذا بعد فترة طويلة من ترك العربة مهجورة."
 
 #: includes/Admin/Pages/Premium/AbandonedCartRecovery.php:101
-#: includes/Admin/Pages/Premium/ABTestingAdmin.php:211
-#: includes/Admin/Pages/Premium/ABTestingAdmin.php:819
+#: includes/Admin/Pages/Premium/ABTestingAdmin.php:218
+#: includes/Admin/Pages/Premium/ABTestingAdmin.php:826
 #: client/ts/admin/Components/CheckoutEditor/panels/DesignSettingsPanel.tsx:82
 msgid "Active"
 msgstr "نشط"
@@ -4275,7 +4299,7 @@ msgid "Unsubscribe Link"
 msgstr "رابط إلغاء الاشتراك"
 
 #: includes/Admin/Pages/Premium/AbandonedCartRecovery.php:642
-#: includes/Admin/Pages/Premium/ABTestingAdmin.php:315
+#: includes/Admin/Pages/Premium/ABTestingAdmin.php:322
 msgid "Permission denied."
 msgstr "تم رفض الإذن."
 
@@ -4300,84 +4324,68 @@ msgstr "لا يمكنك إنشاء أو نشر رسائل استرداد سلة 
 msgid "Manage Tests"
 msgstr "إدارة الاختبارات"
 
-#: includes/Admin/Pages/Premium/ABTestingAdmin.php:170
-#: includes/Admin/Pages/Premium/ABTestingAdmin.php:786
+#: includes/Admin/Pages/Premium/ABTestingAdmin.php:177
+#: includes/Admin/Pages/Premium/ABTestingAdmin.php:793
 msgid "Type"
 msgstr "النوع"
 
-#: includes/Admin/Pages/Premium/ABTestingAdmin.php:172
+#: includes/Admin/Pages/Premium/ABTestingAdmin.php:179
 msgid "Duration"
 msgstr "المدة"
 
-#: includes/Admin/Pages/Premium/ABTestingAdmin.php:212
-#: includes/Admin/Pages/Premium/ABTestingAdmin.php:820
+#: includes/Admin/Pages/Premium/ABTestingAdmin.php:219
+#: includes/Admin/Pages/Premium/ABTestingAdmin.php:827
 msgid "Paused"
 msgstr "موقوف مؤقتًا"
 
-#: includes/Admin/Pages/Premium/ABTestingAdmin.php:213
-#: includes/Admin/Pages/Premium/ABTestingAdmin.php:821
+#: includes/Admin/Pages/Premium/ABTestingAdmin.php:220
+#: includes/Admin/Pages/Premium/ABTestingAdmin.php:828
 msgid "Complete"
 msgstr "مكتمل"
 
-#: includes/Admin/Pages/Premium/ABTestingAdmin.php:237
+#: includes/Admin/Pages/Premium/ABTestingAdmin.php:244
 msgid "Finished"
 msgstr "منتهي"
 
-#: includes/Admin/Pages/Premium/ABTestingAdmin.php:246
+#: includes/Admin/Pages/Premium/ABTestingAdmin.php:253
 msgid "Ongoing"
 msgstr "جارٍ التنفيذ"
 
-#: includes/Admin/Pages/Premium/ABTestingAdmin.php:321
+#: includes/Admin/Pages/Premium/ABTestingAdmin.php:328
 msgid "Invalid test type."
 msgstr "نوع اختبار غير صالح."
 
-#: includes/Admin/Pages/Premium/ABTestingAdmin.php:331
+#: includes/Admin/Pages/Premium/ABTestingAdmin.php:338
 msgid "Test type does not support UI operations."
 msgstr "نوع الاختبار لا يدعم عمليات واجهة المستخدم."
 
-#: includes/Admin/Pages/Premium/ABTestingAdmin.php:703
+#: includes/Admin/Pages/Premium/ABTestingAdmin.php:710
 msgid "Test"
 msgstr "اختبار"
 
-#: includes/Admin/Pages/Premium/ABTestingAdmin.php:824
+#: includes/Admin/Pages/Premium/ABTestingAdmin.php:831
 msgid "The current status of this A/B test."
 msgstr "الحالة الحالية لهذا الاختبار A/B."
 
-#: includes/Admin/Pages/Premium/ABTestingAdmin.php:837
+#: includes/Admin/Pages/Premium/ABTestingAdmin.php:844
 msgid "Start Date"
 msgstr "تاريخ البدء"
 
-#: includes/Admin/Pages/Premium/ABTestingAdmin.php:849
+#: includes/Admin/Pages/Premium/ABTestingAdmin.php:856
 msgid "The date when the A/B test should start. Leave empty to start immediately."
 msgstr "التاريخ الذي يجب أن يبدأ فيه اختبار A/B. اتركه فارغًا للبدء فورًا."
 
-#: includes/Admin/Pages/Premium/ABTestingAdmin.php:855
+#: includes/Admin/Pages/Premium/ABTestingAdmin.php:862
 msgid "End Date"
 msgstr "تاريخ الانتهاء"
 
-#: includes/Admin/Pages/Premium/ABTestingAdmin.php:867
+#: includes/Admin/Pages/Premium/ABTestingAdmin.php:874
 msgid "The date when the A/B test should end. After this date, the original variant will be displayed. Leave empty for no end date."
 msgstr "التاريخ الذي يجب أن ينتهي فيه اختبار A/B. بعد هذا التاريخ، سيتم عرض المتغير الأصلي. اتركه فارغًا لعدم وجود تاريخ انتهاء."
 
-#: includes/Admin/Pages/Premium/ABTestingAdmin.php:1174
+#: includes/Admin/Pages/Premium/ABTestingAdmin.php:1190
 msgid "Traffic split percentages must total 100%. Please adjust your percentages."
 msgstr "يجب أن يكون مجموع نسب تقسيم الحركة 100%. يرجى تعديل النسب."
-
-#: client/ts/frontend/Components/TermsAndConditions.ts:29
-msgid "Terms and Conditions"
-msgstr "الشروط والأحكام"
-
-#: client/ts/frontend/Components/TermsAndConditions.ts:35
-msgid "Privacy Policy"
-msgstr "سياسة الخصوصية"
-
-#: client/ts/frontend/Components/SideCartComponent.tsx:38
-msgid "Close Cart"
-msgstr "إغلاق العربة"
-
-#: client/ts/frontend/Components/FreeShippingProgressBar.tsx:232
-msgid "Unlocked"
-msgstr "تم الفتح"
 
 #: client/ts/frontend/Actions/CompleteOrderAction.ts:196
 msgid "Could not connect to server. Please refresh and try again or contact site administrator."
@@ -4403,6 +4411,22 @@ msgstr "انتهت مهلة الخادم أثناء معالجة طلبك. ير�
 msgid "Request was aborted. Please contact site administrator."
 msgstr "تم إلغاء الطلب. يرجى الاتصال بمسؤول الموقع."
 
+#: client/ts/frontend/Components/TermsAndConditions.ts:29
+msgid "Terms and Conditions"
+msgstr "الشروط والأحكام"
+
+#: client/ts/frontend/Components/TermsAndConditions.ts:35
+msgid "Privacy Policy"
+msgstr "سياسة الخصوصية"
+
+#: client/ts/frontend/Components/SideCartComponent.tsx:38
+msgid "Close Cart"
+msgstr "إغلاق العربة"
+
+#: client/ts/frontend/Components/FreeShippingProgressBar.tsx:232
+msgid "Unlocked"
+msgstr "تم الفتح"
+
 #: client/ts/admin/Components/TrustBadgeRow.tsx:151
 msgid "Slot"
 msgstr "خانة"
@@ -4416,8 +4440,10 @@ msgid "Determine when this Trust Badge should be displayed."
 msgstr "حدد متى يجب عرض شارة الثقة هذه."
 
 #: client/ts/admin/Components/TrustBadgeRow.tsx:214
-#: client/ts/admin/Components/CheckoutEditor/EditorHeader.tsx:61
-#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:207
+#: client/ts/admin/Components/CheckoutEditor/PreviewCartControl.tsx:208
+#: client/ts/admin/Components/CheckoutEditor/EditorHeader.tsx:78
+#: client/ts/admin/Components/CheckoutEditor/BumpEditorModal.tsx:101
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:222
 msgid "Close"
 msgstr "إغلاق"
 
@@ -4467,7 +4493,7 @@ msgid "Yes, replace my settings!"
 msgstr "نعم، استبدل إعداداتي!"
 
 #: client/ts/admin/Components/SettingsFormContainer.tsx:27
-#: client/ts/admin/Components/CheckoutEditor/EditorApp.tsx:168
+#: client/ts/admin/Components/CheckoutEditor/EditorApp.tsx:179
 msgid "Failed to save settings. Error: %s"
 msgstr "فشل في حفظ الإعدادات. الخطأ: %s"
 
@@ -4504,6 +4530,157 @@ msgstr "افتح مع النسخة المميزة"
 #: client/ts/admin/Components/LockedFieldWrapper.tsx:60
 msgid "A %s plan is required to access these features."
 msgstr "مطلوب خطة %s للوصول إلى هذه الميزات."
+
+#: client/ts/admin/Components/GooglePlacesKeyStatus.tsx:46
+#: client/ts/admin/Components/GooglePlacesKeyStatus.tsx:53
+msgid "Places API (New)"
+msgstr "واجهة برمجة تطبيقات الأماكن (الجديدة)"
+
+#: client/ts/admin/Components/GooglePlacesKeyStatus.tsx:47
+#: client/ts/admin/Components/GooglePlacesKeyStatus.tsx:54
+#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:225
+msgid "Places API (Legacy)"
+msgstr "واجهة برمجة تطبيقات الأماكن (القديمة)"
+
+#: client/ts/admin/Components/GooglePlacesKeyStatus.tsx:48
+msgid "Geocoding API - Thank You Page Map"
+msgstr "واجهة برمجة تطبيقات الترميز الجغرافي - خريطة صفحة الشكر"
+
+#: client/ts/admin/Components/GooglePlacesKeyStatus.tsx:55
+msgid "Geocoding API"
+msgstr "واجهة برمجة تطبيقات الترميز الجغرافي"
+
+#: client/ts/admin/Components/GooglePlacesKeyStatus.tsx:59
+msgid "Working"
+msgstr "يعمل"
+
+#: client/ts/admin/Components/GooglePlacesKeyStatus.tsx:60
+msgid "Not Available"
+msgstr "غير متاح"
+
+#: client/ts/admin/Components/GooglePlacesKeyStatus.tsx:154
+msgid "Google closed Places API (Legacy) to projects created after 1 March 2025, so it cannot be enabled on a newer project."
+msgstr "أغلقت Google واجهة برمجة تطبيقات الأماكن (القديمة) أمام المشاريع التي أُنشئت بعد 1 مارس 2025، لذلك لا يمكن تفعيلها في مشروع أحدث."
+
+#: client/ts/admin/Components/GooglePlacesKeyStatus.tsx:157
+msgid "Nothing to do - this project uses Places API (New)."
+msgstr "لا شيء للقيام به - يستخدم هذا المشروع واجهة برمجة تطبيقات الأماكن (الجديدة)."
+
+# %s is the name of a Google API, for example Geocoding API.
+#: client/ts/admin/Components/GooglePlacesKeyStatus.tsx:169
+msgid "Either %s is not enabled on your Google Cloud project, or it is not in this key\\'s list of allowed APIs."
+msgstr "إما أن %s غير مفعّلة في مشروعك على Google Cloud، أو أنها ليست ضمن قائمة واجهات برمجة التطبيقات المسموح بها لهذه المفتاح."
+
+# %s is the name of a Google API that responded successfully.
+#: client/ts/admin/Components/GooglePlacesKeyStatus.tsx:182
+msgid "%s answered for this key, so the key\\'s website restrictions are not the cause."
+msgstr "%s استجاب لهذا المفتاح، لذلك فقيود موقع الويب الخاصة بالمفتاح ليست هي السبب."
+
+#: client/ts/admin/Components/GooglePlacesKeyStatus.tsx:196
+msgid "Another plugin has already loaded Google Maps on this screen, so this key could not be tested. Deactivate it, or test on a clean screen."
+msgstr "لقد حمّل مكوّن إضافي آخر خرائط Google بالفعل في هذه الشاشة، لذلك تعذّر اختبار هذا المفتاح. عطّله، أو اختبره على شاشة نظيفة."
+
+#: client/ts/admin/Components/GooglePlacesKeyStatus.tsx:203
+msgid "Refresh this page before testing a different key. Google Maps can only be loaded once per page."
+msgstr "حدّث هذه الصفحة قبل اختبار مفتاح مختلف. لا يمكن تحميل خرائط Google إلا مرة واحدة لكل صفحة."
+
+#: client/ts/admin/Components/GooglePlacesKeyStatus.tsx:210
+msgid "Google refused this key for this site. Check the key itself, and any website restrictions on it in the Google Cloud console."
+msgstr "رفضت Google هذا المفتاح لهذا الموقع. تحقّق من المفتاح نفسه، وأي قيود على مواقع الويب مرتبطة به في وحدة تحكّم Google Cloud."
+
+#: client/ts/admin/Components/GooglePlacesKeyStatus.tsx:223
+msgid "Places API (New) works with this key, and address autocomplete is using it."
+msgstr "تعمل واجهة برمجة تطبيقات الأماكن (الجديدة) مع هذا المفتاح، ويستخدمها الإكمال التلقائي للعناوين."
+
+#: client/ts/admin/Components/GooglePlacesKeyStatus.tsx:232
+msgid "Address autocomplete is using Places API (Legacy), which Google froze in March 2025 and will retire once it gives 12 months notice. Places API (New) also works with this key, so consider switching the version above to New."
+msgstr "يستخدم الإكمال التلقائي للعناوين واجهة برمجة تطبيقات الأماكن (القديمة)، التي جمّدتْها Google في مارس 2025 وستُوقَف بعد إشعار مدته 12 شهرًا. كما أن واجهة برمجة تطبيقات الأماكن (الجديدة) تعمل مع هذا المفتاح أيضًا، لذا فكّر في التبديل إلى الإصدار الجديد أعلاه."
+
+#: client/ts/admin/Components/GooglePlacesKeyStatus.tsx:239
+msgid "Address autocomplete is using Places API (Legacy), which Google froze in March 2025 and will retire once it gives 12 months notice. Places API (New) is not enabled on this project yet, so there is nothing to move to."
+msgstr "الإكمال التلقائي للعنوان يستخدم Places API (Legacy)، الذي جمدته Google في مارس 2025 وسيتم إيقافه بعد منح إشعار مسبق بـ 12 شهرًا. لم يتم تمكين Places API (New) بعد في هذا المشروع، لذا لا يوجد ما يمكن الانتقال إليه."
+
+#: client/ts/admin/Components/GooglePlacesKeyStatus.tsx:249
+msgid "Places API (New) is not enabled on this project, so address autocomplete is not working. Enable it in the Google Cloud console, or switch the version above to Legacy."
+msgstr "لم يتم تمكين Places API (New) في هذا المشروع، لذا لا يعمل الإكمال التلقائي للعنوان. فعِّله في وحدة تحكم Google Cloud، أو بدّل الإصدار أعلاه إلى Legacy."
+
+#: client/ts/admin/Components/GooglePlacesKeyStatus.tsx:256
+msgid "This project supports Places API (New) only, so address autocomplete is not working. Switch the version above to New."
+msgstr "هذا المشروع يدعم Places API (New) فقط، لذا لا يعمل الإكمال التلقائي للعنوان. بدّل الإصدار أعلاه إلى New."
+
+#: client/ts/admin/Components/GooglePlacesKeyStatus.tsx:262
+msgid "Neither version answered for this key, so address autocomplete is not working. Check that a Places API is enabled on the project and that billing is active."
+msgstr "لم يرد أيٌّ من الإصدارين على هذا المفتاح، لذا لا يعمل الإكمال التلقائي للعنوان. تحقّق من تمكين Places API في المشروع ومن أن الفوترة نشطة."
+
+# %s is a link to the settings page where the feature is enabled.
+#: client/ts/admin/Components/GooglePlacesKeyStatus.tsx:282
+msgid "Address autocomplete is switched off, so this key is not being used for it yet. %s."
+msgstr "الإكمال التلقائي للعنوان متوقف، لذا لا يُستخدم هذا المفتاح له بعد. %s."
+
+#: client/ts/admin/Components/GooglePlacesKeyStatus.tsx:283
+#: client/ts/admin/Components/Forms/CheckoutSettingsForm.tsx:493
+#: client/ts/admin/Components/CheckoutEditor/panels/CheckoutSettingsPanel.tsx:256
+msgid "Enable Google Address Autocomplete"
+msgstr "تفعيل الإكمال التلقائي لعناوين جوجل"
+
+# %s is a link to the settings page where the feature is enabled.
+#: client/ts/admin/Components/GooglePlacesKeyStatus.tsx:295
+msgid "The thank you page map is switched off, so this key is not being used for it. %s."
+msgstr "خريطة صفحة الشكر متوقفة، لذا لا يُستخدم هذا المفتاح لها. %s."
+
+#: client/ts/admin/Components/GooglePlacesKeyStatus.tsx:296
+msgid "Enable Thank You Page Map"
+msgstr "تمكين خريطة صفحة الشكر"
+
+# %s is a link to the documentation explaining the conflict.
+#: client/ts/admin/Components/GooglePlacesKeyStatus.tsx:306
+msgid "Separate Address Fields is switched on, which turns Google address autocomplete off. %s."
+msgstr "حقل العنوان المنفصل مفعّل، وهذا يؤدي إلى إيقاف الإكمال التلقائي لعنوان Google. %s."
+
+#: client/ts/admin/Components/GooglePlacesKeyStatus.tsx:307
+msgid "Learn more"
+msgstr "تعرّف على المزيد"
+
+# %s is a link to the settings page where the services are enabled.
+#: client/ts/admin/Components/GooglePlacesKeyStatus.tsx:317
+msgid "Fetchify address autocomplete is also switched on. Only one address autocomplete service can run at a time. %s."
+msgstr "الإكمال التلقائي لعنوان Fetchify مفعّل أيضًا. يمكن تشغيل خدمة إكمال تلقائي واحدة فقط للعنوان في كل مرة. %s."
+
+#: client/ts/admin/Components/GooglePlacesKeyStatus.tsx:318
+msgid "Review autocomplete settings"
+msgstr "مراجعة إعدادات الإكمال التلقائي"
+
+#: client/ts/admin/Components/GooglePlacesKeyStatus.tsx:345
+msgid "The check could not be completed."
+msgstr "تعذّر إكمال التحقق."
+
+#: client/ts/admin/Components/GooglePlacesKeyStatus.tsx:367
+msgid "Checking…"
+msgstr "جارٍ التحقق…"
+
+#: client/ts/admin/Components/GooglePlacesKeyStatus.tsx:367
+msgid "Check Key"
+msgstr "التحقق من المفتاح"
+
+#: client/ts/admin/Components/GooglePlacesKeyStatus.tsx:372
+msgid "Add your Google API key to test it."
+msgstr "أضِف مفتاح Google API الخاص بك لاختباره."
+
+#: client/ts/admin/Components/GooglePlacesKeyStatus.tsx:373
+msgid "Tests this key from your browser, the same way the checkout uses it."
+msgstr "يختبر هذا المفتاح من متصفحك، بالطريقة نفسها التي تستخدمه بها صفحة الدفع."
+
+#: client/ts/admin/Components/GooglePlacesKeyStatus.tsx:391
+msgid "What was checked"
+msgstr "ما الذي تم التحقق منه"
+
+#: client/ts/admin/Components/GooglePlacesKeyStatus.tsx:412
+msgid "Response:"
+msgstr "الاستجابة:"
+
+#: client/ts/admin/Components/GooglePlacesKeyStatus.tsx:425
+msgid "Open the Google Cloud console"
+msgstr "فتح وحدة تحكم Google Cloud"
 
 #: client/ts/admin/Components/FreeShippingTierRow.tsx:49
 msgid "You don't have a Free Shipping method set up, so reaching this tier won't actually make shipping free — the bar only shows progress. Add one in WooCommerce shipping settings."
@@ -4661,9 +4838,36 @@ msgstr "جارٍ التحميل..."
 msgid "Tracked Carts"
 msgstr "السلال المتتبعة"
 
+#: client/ts/admin/Components/Metaboxes/ProductsAndVariationsCompleter.tsx:30
+msgid "Private"
+msgstr "خاص"
+
+#: client/ts/admin/Components/Metaboxes/ProductsAndVariationsCompleter.tsx:32
+msgid "Pending"
+msgstr "قيد الانتظار"
+
+#: client/ts/admin/Components/Metaboxes/ProductsAndVariationsCompleter.tsx:33
+msgid "Scheduled"
+msgstr "مجدول"
+
 #: client/ts/admin/Components/Metaboxes/ProductsAndVariationsCompleter.tsx:44
+#: client/ts/admin/Components/Forms/CheckoutSettingsForm.tsx:237
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:379
+#: client/ts/admin/Components/CheckoutEditor/panels/CheckoutSettingsPanel.tsx:110
+msgid "Hidden"
+msgstr "مخفي"
+
+#: client/ts/admin/Components/Metaboxes/ProductsAndVariationsCompleter.tsx:46
+msgid "Search only"
+msgstr "بحث فقط"
+
+#: client/ts/admin/Components/Metaboxes/ProductsAndVariationsCompleter.tsx:80
 msgid "All products with titles that include {{query /}}"
 msgstr "جميع المنتجات التي تحتوي عناوينها على {{query /}}"
+
+#: client/ts/admin/Components/Metaboxes/ProductsAndVariationsCompleter.tsx:130
+msgid "Variation"
+msgstr "الاختلاف"
 
 #: client/ts/admin/Components/Metaboxes/ProductTagCompleter.tsx:44
 msgid "All product tags that include {{query /}}"
@@ -4910,46 +5114,70 @@ msgstr "أي منتج تستبدله هذه الترقية في السلة؟"
 msgid "This product must be in the cart for this order bump to be shown."
 msgstr "يجب أن يكون هذا المنتج في السلة ليتم عرض دفعة الطلب هذه."
 
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:31
-msgid "Block Editor is only used for Full Screen Order Bumps (Configurable for Place Order and Post Purchase One-Click bumps). Blocks are ignored for other configurations."
-msgstr "يُستخدم محرر الكتل فقط لزيادات الطلب بملء الشاشة (قابل للتكوين لزيادات تقديم الطلب ونقرة الشراء بنقرة واحدة بعد الشراء). يتم تجاهل الكتل في التكوينات الأخرى."
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:44
+msgid "Blocks are only used by full screen offers. Enable Full Screen Landing Page in the Display Location panel, then add the Order Bump Offer Form block where the offer form should go."
+msgstr "تُستخدم الكتل فقط لعروض ملء الشاشة. فعِّل صفحة الهبوط بملء الشاشة في لوحة موقع العرض، ثم أضف كتلة نموذج عرض الزيادة الإضافية حيث يجب أن يظهر نموذج العرض."
 
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:47
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:45
+msgid "Blocks are only used by full screen offers, available on Place Order Click and Post Purchase One-Click bumps. This bump uses the built-in layout."
+msgstr "تُستخدم الكتل فقط لعروض ملء الشاشة، والمتاحة في النقر على إتمام الطلب والزيادات الإضافية بنقرة واحدة بعد الشراء. تستخدم هذه الزيادة التخطيط المدمج."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:61
 msgid "Post Purchase One-Click bumps require a compatible payment gateway. We recommend using Place Order bumps when using non-compatible gateways."
 msgstr "تتطلب زيادات نقرة الشراء بنقرة واحدة بعد الشراء بوابة دفع متوافقة. نوصي باستخدام زيادات تقديم الطلب عند استخدام بوابات غير متوافقة."
 
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:53
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:67
 msgid "Learn more about supported gateways"
 msgstr "تعرف على المزيد حول البوابات المدعومة"
 
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:60
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:74
 msgid "Read our Order Bumps documentation"
 msgstr "اقرأ وثائق عروض الطلبات الخاصة بنا"
 
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:83
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:90
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:104
+msgid "This bump will not appear anywhere because the side cart is disabled."
+msgstr "لن يظهر هذا العرض الإضافي في أي مكان لأن سلة الجانب معطلة."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:105
+msgid "This bump will not appear anywhere because order bumps are disabled in the side cart."
+msgstr "لن يظهر هذا العرض الإضافي في أي مكان لأن العروض الإضافية للطلب معطلة في سلة الجانب."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:108
+msgid "This bump will appear on checkout but not in the side cart because the side cart is disabled."
+msgstr "سيظهر هذا العرض الإضافي عند إتمام الشراء ولكن ليس في سلة الجانب لأن سلة الجانب معطلة."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:109
+msgid "This bump will appear on checkout but not in the side cart because order bumps are disabled in the side cart."
+msgstr "سيظهر هذا العرض الإضافي عند إتمام الشراء ولكن ليس في سلة الجانب لأن العروض الإضافية للطلب معطلة في سلة الجانب."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:120
+msgid "Open side cart settings"
+msgstr "افتح إعدادات سلة الجانب"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:141
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:148
 msgid "Display Location"
 msgstr "موقع العرض"
 
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:99
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:157
 msgid "Checkout Slot"
 msgstr "خانة الدفع"
 
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:129
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:187
 msgid "Displays in a popup when Place Order is clicked, before the order is submitted"
 msgstr "يظهر في نافذة منبثقة عند النقر على \"إتمام الطلب\"، قبل تقديم الطلب"
 
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:132
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:190
 msgid "Displays in a popup on the Thank You page."
 msgstr "يظهر في نافذة منبثقة في صفحة الشكر."
 
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:136
-msgid "Full Screen Landing Page (Use Block Editor To Design)"
-msgstr "صفحة هبوط بملء الشاشة (استخدم محرر الكتل للتصميم)"
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:194
+msgid "Full Screen Landing Page"
+msgstr "صفحة هبوط بملء الشاشة"
 
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:137
-msgid "If checked, the bump offer will be displayed full screen. Use Order Bump Offer Form block to design the offer."
-msgstr "إذا تم التحديد، سيتم عرض عرض الدفعة بملء الشاشة. استخدم كتلة نموذج عرض دفعة الطلب لتصميم العرض."
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:195
+msgid "Design the offer with blocks instead of the built-in layout. Add the Order Bump Offer Form block where the offer form should go."
+msgstr "صمّم العرض باستخدام الكتل بدلًا من التخطيط المدمج. أضف كتلة نموذج عرض الزيادة الإضافية حيث يجب أن يظهر نموذج العرض."
 
 #: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayConditions.tsx:26
 msgid "Show Bump When These Conditions Are True:"
@@ -5006,7 +5234,7 @@ msgid "Enable sale price under on cart item labels at checkout. Example: <s>$10.
 msgstr "تمكين سعر البيع تحت تسميات عناصر السلة عند الدفع. مثال: <s>$10.00</s> $5.00"
 
 #: client/ts/admin/Components/Forms/WooCommercePagesGlobalOptionsSettingsForm.tsx:61
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:477
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:483
 msgid "Cart Item Links"
 msgstr "روابط عناصر السلة"
 
@@ -5023,7 +5251,7 @@ msgid "Do not link cart items to single product page. (Recommended)"
 msgstr "عدم ربط عناصر السلة بصفحة المنتج الفردي. (موصى به)"
 
 #: client/ts/admin/Components/Forms/WooCommercePagesGlobalOptionsSettingsForm.tsx:71
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:481
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:487
 msgid "Enabled"
 msgstr "مفعل"
 
@@ -5040,7 +5268,7 @@ msgid "Open cart item links in a new window."
 msgstr "فتح روابط عناصر السلة في نافذة جديدة."
 
 #: client/ts/admin/Components/Forms/WooCommercePagesGlobalOptionsSettingsForm.tsx:89
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:486
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:492
 msgid "Cart Item Data Display"
 msgstr "عرض بيانات عنصر السلة"
 
@@ -5059,7 +5287,7 @@ msgstr "عرض قيم التباين فقط. على سبيل المثال، ال
 #: client/ts/admin/Components/Forms/WooCommercePagesGlobalOptionsSettingsForm.tsx:99
 #: client/ts/admin/Components/Forms/CheckoutSettingsForm.tsx:191
 #: client/ts/admin/Components/Forms/CheckoutSettingsForm.tsx:212
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:490
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:496
 #: client/ts/admin/Components/CheckoutEditor/panels/CheckoutSettingsPanel.tsx:85
 #: client/ts/admin/Components/CheckoutEditor/panels/CheckoutSettingsPanel.tsx:97
 msgid "WooCommerce Default"
@@ -5123,22 +5351,22 @@ msgid "Choose which reviews to prioritize for display."
 msgstr "اختر المراجعات التي تريد إعطاؤها أولوية للعرض."
 
 #: client/ts/admin/Components/Forms/TrustBadgeSettingsForm.tsx:111
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:578
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:586
 msgid "Cart products only"
 msgstr "منتجات السلة فقط"
 
 #: client/ts/admin/Components/Forms/TrustBadgeSettingsForm.tsx:112
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:579
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:587
 msgid "Cart products first, then site-wide"
 msgstr "منتجات السلة أولاً، ثم الموقع بأكمله"
 
 #: client/ts/admin/Components/Forms/TrustBadgeSettingsForm.tsx:113
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:580
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:588
 msgid "Any product reviews"
 msgstr "أي مراجعات منتجات"
 
 #: client/ts/admin/Components/Forms/TrustBadgeSettingsForm.tsx:120
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:585
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:593
 msgid "Minimum Star Rating"
 msgstr "الحد الأدنى لتقييم النجوم"
 
@@ -5147,22 +5375,22 @@ msgid "Only show reviews with this rating or higher."
 msgstr "عرض المراجعات التي تحمل هذا التقييم أو أعلى فقط."
 
 #: client/ts/admin/Components/Forms/TrustBadgeSettingsForm.tsx:123
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:588
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:596
 msgid "3+ stars"
 msgstr "3+ نجوم"
 
 #: client/ts/admin/Components/Forms/TrustBadgeSettingsForm.tsx:124
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:589
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:597
 msgid "4+ stars"
 msgstr "4+ نجوم"
 
 #: client/ts/admin/Components/Forms/TrustBadgeSettingsForm.tsx:125
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:590
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:598
 msgid "5 stars only"
 msgstr "5 نجوم فقط"
 
 #: client/ts/admin/Components/Forms/TrustBadgeSettingsForm.tsx:132
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:595
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:603
 msgid "Maximum Reviews to Show"
 msgstr "الحد الأقصى لعدد المراجعات للعرض"
 
@@ -5445,182 +5673,199 @@ msgstr "تفعيل التعبيرات النمطية"
 msgid "Match local shipping method name with regex."
 msgstr "مطابقة اسم طريقة الشحن المحلية باستخدام التعبيرات النمطية."
 
-#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:65
+#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:79
 msgid "Configure Cloudflare Turnstile CAPTCHA protection for your checkout and account pages."
 msgstr "قم بتكوين حماية CAPTCHA من Cloudflare Turnstile لصفحات الدفع وحسابك."
 
-#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:71
+#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:85
 msgid "Enable Cloudflare Turnstile"
 msgstr "تفعيل Cloudflare Turnstile"
 
-#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:72
+#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:86
 msgid "Enable Cloudflare Turnstile CAPTCHA protection"
 msgstr "تفعيل حماية CAPTCHA من Cloudflare Turnstile"
 
-#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:86
+#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:100
 msgid "Site Key"
 msgstr "مفتاح الموقع"
 
-#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:87
+#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:101
 msgid "Your Cloudflare Turnstile site key"
 msgstr "مفتاح موقع Cloudflare Turnstile الخاص بك"
 
-#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:93
+#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:107
 msgid "Secret Key"
 msgstr "المفتاح السري"
 
-#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:95
+#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:109
 msgid "Your Cloudflare Turnstile secret key"
 msgstr "المفتاح السري لـ Cloudflare Turnstile الخاص بك"
 
-#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:101
+#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:115
 msgid "Enable on Checkout"
 msgstr "التفعيل عند الدفع"
 
-#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:102
+#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:116
 msgid "Show Turnstile on the checkout page"
 msgstr "عرض Turnstile في صفحة الدفع"
 
-#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:108
+#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:122
 msgid "Enable on Order Pay"
 msgstr "التفعيل عند دفع الطلب"
 
-#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:109
+#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:123
 msgid "Show Turnstile on the order pay page"
 msgstr "عرض Turnstile في صفحة دفع الطلب"
 
-#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:115
+#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:129
 msgid "Enable on Login"
 msgstr "التفعيل عند تسجيل الدخول"
 
-#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:116
+#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:130
 msgid "Show Turnstile on the My Account login form"
 msgstr "عرض Turnstile في نموذج تسجيل الدخول إلى حسابي"
 
-#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:122
+#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:136
 msgid "Enable on Registration"
 msgstr "التفعيل عند التسجيل"
 
-#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:123
+#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:137
 msgid "Show Turnstile on the My Account registration form"
 msgstr "عرض Turnstile في نموذج تسجيل حسابي"
 
-#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:129
+#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:143
 msgid "Position on Checkout"
 msgstr "الموضع في صفحة الدفع"
 
-#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:130
+#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:144
 msgid "Where to display the Turnstile widget on checkout"
 msgstr "مكان عرض أداة Turnstile في صفحة الدفع"
 
-#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:134
+#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:148
 msgid "Before Place Order Button"
 msgstr "قبل زر تأكيد الطلب"
 
-#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:135
+#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:149
 msgid "Display just before the place order button"
 msgstr "العرض مباشرة قبل زر تأكيد الطلب"
 
-#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:139
+#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:153
 msgid "Before Payment Methods"
 msgstr "قبل طرق الدفع"
 
-#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:140
+#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:154
 msgid "Display before payment method selection"
 msgstr "العرض قبل اختيار طريقة الدفع"
 
-#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:145
+#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:159
 msgid "Display after payment method selection"
 msgstr "العرض بعد اختيار طريقة الدفع"
 
-#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:153
+#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:167
 msgid "Theme"
 msgstr "السمة"
 
-#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:154
+#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:168
 msgid "Visual theme for the Turnstile widget"
 msgstr "السمة البصرية لأداة Turnstile"
 
-#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:156
+#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:170
 msgid "Light"
 msgstr "فاتح"
 
-#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:156
+#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:170
 msgid "Light theme"
 msgstr "السمة الفاتحة"
 
-#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:157
+#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:171
 msgid "Dark"
 msgstr "داكن"
 
-#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:157
+#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:171
 msgid "Dark theme"
 msgstr "السمة الداكنة"
 
-#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:158
+#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:172
 msgid "Auto"
 msgstr "تلقائي"
 
-#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:158
+#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:172
 msgid "Automatic based on user preference"
 msgstr "تلقائي بناءً على تفضيل المستخدم"
 
-#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:165
+#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:179
 msgid "Size"
 msgstr "الحجم"
 
-#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:166
+#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:180
 msgid "Size of the Turnstile widget"
 msgstr "حجم أداة Turnstile"
 
-#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:168
+#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:182
 #: client/ts/admin/Components/Forms/AppearanceDesignSettingsForm.tsx:84
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:365
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:371
 #: client/ts/admin/Components/CheckoutEditor/panels/DesignSettingsPanel.tsx:131
 msgid "Normal"
 msgstr "عادي"
 
-#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:168
+#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:182
 msgid "Standard size widget"
 msgstr "أداة بحجم قياسي"
 
-#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:169
+#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:183
 msgid "Compact"
 msgstr "مضغوط"
 
-#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:169
+#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:183
 msgid "Smaller widget size"
 msgstr "حجم أداة أصغر"
 
-#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:176
+#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:190
 msgid "Guest Users Only"
 msgstr "للمستخدمين الضيوف فقط"
 
-#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:177
+#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:191
 msgid "Only show Turnstile for guest (non-logged-in) users"
 msgstr "عرض Turnstile فقط للمستخدمين الضيوف (غير المسجلين)"
 
-#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:187
+#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:201
 msgid "Google API"
 msgstr "واجهة برمجة تطبيقات Google"
 
-#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:188
+#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:202
 msgid "Used for the maps embed on the thank you page as well as Google Address Autocomplete."
 msgstr "تُستخدم لتضمين الخرائط في صفحة الشكر وكذلك لإكمال العنوان تلقائيًا من Google."
 
-#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:193
+#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:207
 msgid "Google API Key"
 msgstr "مفتاح API الخاص بـ Google"
 
-#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:194
+#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:208
 msgid "Used by Address Autocomplete and Thank You Page Maps Embed."
 msgstr "يُستخدم بواسطة إكمال العنوان تلقائيًا وتضمين خرائط صفحة الشكر."
 
-#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:206
+#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:214
+msgid "Google Places API Version"
+msgstr "إصدار Google Places API"
+
+# %s is a link to the Google Cloud console, reading "Google Cloud project".
+#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:217
+msgid "Which Places API address autocomplete uses. The same key works for both, but the chosen API must be enabled on your %s. Google closed the legacy API to new projects on 1 March 2025."
+msgstr "أي واجهة برمجة تطبيقات Places يستخدمها الإكمال التلقائي للعناوين. يعمل المفتاح نفسه مع كليهما، لكن يجب أن تكون واجهة برمجة التطبيقات المختارة مفعلة على %s. أغلقت Google واجهة برمجة التطبيقات القديمة أمام المشاريع الجديدة في 1 مارس 2025."
+
+#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:221
+msgid "Google Cloud project"
+msgstr "مشروع Google Cloud"
+
+#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:224
+msgid "Places API (New) - recommended"
+msgstr "Places API (الجديد) - موصى به"
+
+#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:240
 msgid "Themes and Plugins"
 msgstr "الثيمات والإضافات"
 
-#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:207
+#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:241
 msgid "Integrations with 3rd party themes and plugins."
 msgstr "التكامل مع الثيمات والإضافات الخارجية."
 
@@ -5662,7 +5907,7 @@ msgid "See our recommended Express Checkout gateways here."
 msgstr "شاهد بوابات الدفع السريع الموصى بها هنا."
 
 #: client/ts/admin/Components/Forms/CheckoutSettingsForm.tsx:109
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:256
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:262
 #: client/ts/admin/Components/CheckoutEditor/panels/CheckoutSettingsPanel.tsx:29
 msgid "Steps"
 msgstr "الخطوات"
@@ -5802,7 +6047,7 @@ msgid "Control how different checkout fields appear."
 msgstr "التحكم في كيفية ظهور حقول الدفع المختلفة."
 
 #: client/ts/admin/Components/Forms/CheckoutSettingsForm.tsx:232
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:370
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:376
 #: client/ts/admin/Components/CheckoutEditor/panels/CheckoutSettingsPanel.tsx:107
 msgid "Phone Field"
 msgstr "حقل الهاتف"
@@ -5812,20 +6057,14 @@ msgstr "حقل الهاتف"
 msgid "Determines whether the WooCommerce native phone field is enabled."
 msgstr "يحدد ما إذا كان حقل الهاتف الأصلي في WooCommerce مفعلًا."
 
-#: client/ts/admin/Components/Forms/CheckoutSettingsForm.tsx:237
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:373
-#: client/ts/admin/Components/CheckoutEditor/panels/CheckoutSettingsPanel.tsx:110
-msgid "Hidden"
-msgstr "مخفي"
-
 #: client/ts/admin/Components/Forms/CheckoutSettingsForm.tsx:241
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:374
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:380
 #: client/ts/admin/Components/CheckoutEditor/panels/CheckoutSettingsPanel.tsx:111
 msgid "Optional"
 msgstr "اختياري"
 
 #: client/ts/admin/Components/Forms/CheckoutSettingsForm.tsx:245
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:375
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:381
 #: client/ts/admin/Components/CheckoutEditor/panels/CheckoutSettingsPanel.tsx:112
 msgid "Required"
 msgstr "مطلوب"
@@ -5840,7 +6079,7 @@ msgid "Enable or disable WooCommerce Order Notes field. (Default: Disabled)"
 msgstr "تمكين أو تعطيل حقل ملاحظات الطلب في WooCommerce. (الافتراضي: معطل)"
 
 #: client/ts/admin/Components/Forms/CheckoutSettingsForm.tsx:260
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:357
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:363
 #: client/ts/admin/Components/CheckoutEditor/panels/CheckoutSettingsPanel.tsx:124
 msgid "Order Notes field is being controlled by a filter or a plugin."
 msgstr "يتم التحكم في حقل ملاحظات الطلب بواسطة فلتر أو إضافة."
@@ -5874,7 +6113,7 @@ msgid "Values are combined into a single address_1 field based on country select
 msgstr "يتم دمج القيم في حقل address_1 واحد بناءً على البلد الذي يختاره العميل."
 
 #: client/ts/admin/Components/Forms/CheckoutSettingsForm.tsx:298
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:314
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:320
 #: client/ts/admin/Components/CheckoutEditor/panels/CheckoutSettingsPanel.tsx:155
 msgid "Separate Address Fields Display Order"
 msgstr "ترتيب عرض حقول العنوان المنفصلة"
@@ -5884,7 +6123,7 @@ msgid "Choose how display separate address 1 fields."
 msgstr "اختر كيفية عرض حقول العنوان 1 المنفصلة."
 
 #: client/ts/admin/Components/Forms/CheckoutSettingsForm.tsx:304
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:318
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:324
 #: client/ts/admin/Components/CheckoutEditor/panels/CheckoutSettingsPanel.tsx:159
 msgid "[House Number] [Street Name]"
 msgstr "[رقم المنزل] [اسم الشارع]"
@@ -5894,7 +6133,7 @@ msgid "Display the House Number before the Street Name. (Default)"
 msgstr "عرض رقم المنزل قبل اسم الشارع. (افتراضي)"
 
 #: client/ts/admin/Components/Forms/CheckoutSettingsForm.tsx:309
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:319
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:325
 #: client/ts/admin/Components/CheckoutEditor/panels/CheckoutSettingsPanel.tsx:160
 msgid "[Street Name] [House Number]"
 msgstr "[اسم الشارع] [رقم المنزل]"
@@ -5926,8 +6165,8 @@ msgid "Promote selected countries to the top of the countries list in country dr
 msgstr "ترقية الدول المحددة إلى أعلى قائمة الدول في قوائم اختيار الدولة."
 
 #: client/ts/admin/Components/Forms/CheckoutSettingsForm.tsx:344
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:335
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:344
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:341
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:350
 #: client/ts/admin/Components/CheckoutEditor/panels/CheckoutSettingsPanel.tsx:185
 msgid "Highlighted Countries"
 msgstr "الدول المميزة"
@@ -6010,7 +6249,7 @@ msgid "Control address fields."
 msgstr "التحكم في حقول العنوان."
 
 #: client/ts/admin/Components/Forms/CheckoutSettingsForm.tsx:412
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:388
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:394
 #: client/ts/admin/Components/CheckoutEditor/panels/CheckoutSettingsPanel.tsx:222
 msgid "Force Different Billing Address"
 msgstr "فرض عنوان فواتير مختلف"
@@ -6040,43 +6279,43 @@ msgid "Choose which billing address fields are visible for customers."
 msgstr "اختر حقول عنوان الفوترة التي تظهر للعملاء."
 
 #: client/ts/admin/Components/Forms/CheckoutSettingsForm.tsx:431
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:397
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:403
 #: client/ts/admin/Components/CheckoutEditor/panels/CheckoutSettingsPanel.tsx:237
 msgid "First Name"
 msgstr "الاسم الأول"
 
 #: client/ts/admin/Components/Forms/CheckoutSettingsForm.tsx:435
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:398
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:404
 #: client/ts/admin/Components/CheckoutEditor/panels/CheckoutSettingsPanel.tsx:238
 msgid "Last Name"
 msgstr "اسم العائلة"
 
 #: client/ts/admin/Components/Forms/CheckoutSettingsForm.tsx:439
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:399
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:405
 #: client/ts/admin/Components/CheckoutEditor/panels/CheckoutSettingsPanel.tsx:239
 msgid "Address 1"
 msgstr "العنوان 1"
 
 #: client/ts/admin/Components/Forms/CheckoutSettingsForm.tsx:443
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:400
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:406
 #: client/ts/admin/Components/CheckoutEditor/panels/CheckoutSettingsPanel.tsx:240
 msgid "Address 2"
 msgstr "العنوان 2"
 
 #: client/ts/admin/Components/Forms/CheckoutSettingsForm.tsx:447
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:401
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:407
 #: client/ts/admin/Components/CheckoutEditor/panels/CheckoutSettingsPanel.tsx:241
 msgid "Company"
 msgstr "الشركة"
 
 #: client/ts/admin/Components/Forms/CheckoutSettingsForm.tsx:451
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:402
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:408
 #: client/ts/admin/Components/CheckoutEditor/panels/CheckoutSettingsPanel.tsx:242
 msgid "Country"
 msgstr "البلد"
 
 #: client/ts/admin/Components/Forms/CheckoutSettingsForm.tsx:463
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:405
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:411
 #: client/ts/admin/Components/CheckoutEditor/panels/CheckoutSettingsPanel.tsx:245
 msgid "City"
 msgstr "المدينة"
@@ -6093,11 +6332,6 @@ msgstr "إكمال العنوان والتحقق منه"
 #: client/ts/admin/Components/Forms/CheckoutSettingsForm.tsx:487
 msgid "Control some mobile only checkout behaviors."
 msgstr "التحكم في بعض سلوكيات الدفع الخاصة بالهواتف المحمولة فقط."
-
-#: client/ts/admin/Components/Forms/CheckoutSettingsForm.tsx:493
-#: client/ts/admin/Components/CheckoutEditor/panels/CheckoutSettingsPanel.tsx:256
-msgid "Enable Google Address Autocomplete"
-msgstr "تفعيل الإكمال التلقائي لعناوين جوجل"
 
 #: client/ts/admin/Components/Forms/CheckoutSettingsForm.tsx:501
 msgid "Google Address Autocomplete cannot be used with Separate Address Fields. <a target=\"_blank\" class=\"text-blue-600 underline\" href=\"https://www.checkoutwc.com/documentation/google-address-autocomplete-and-discreet-house-number-and-street-name-address-fields/\">Learn More</a>"
@@ -6279,8 +6513,8 @@ msgid "Configure your template."
 msgstr "قم بتكوين القالب الخاص بك."
 
 #: client/ts/admin/Components/Forms/AppearanceDesignSettingsForm.tsx:66
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:174
 #: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:180
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:186
 #: client/ts/admin/Components/CheckoutEditor/panels/DesignSettingsPanel.tsx:119
 msgid "Logo"
 msgstr "الشعار"
@@ -6290,7 +6524,7 @@ msgid "Choose the logo you wish to display in the header. If you do not choose a
 msgstr "اختر الشعار الذي ترغب في عرضه في الرأس. إذا لم تختر شعارًا، سنستخدم اسم موقعك."
 
 #: client/ts/admin/Components/Forms/AppearanceDesignSettingsForm.tsx:74
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:361
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:367
 #: client/ts/admin/Components/CheckoutEditor/panels/DesignSettingsPanel.tsx:127
 msgid "Field Label Style"
 msgstr "نمط تسمية الحقل"
@@ -6301,7 +6535,7 @@ msgid "Choose how you want form labels styled."
 msgstr "اختر كيف تريد تنسيق تسميات النموذج."
 
 #: client/ts/admin/Components/Forms/AppearanceDesignSettingsForm.tsx:79
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:364
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:370
 #: client/ts/admin/Components/CheckoutEditor/panels/DesignSettingsPanel.tsx:130
 msgid "Floating (Recommended)"
 msgstr "عائم (موصى به)"
@@ -6316,7 +6550,7 @@ msgid "Labels appear above each field at all times."
 msgstr "تظهر التسميات فوق كل حقل في جميع الأوقات."
 
 #: client/ts/admin/Components/Forms/AppearanceDesignSettingsForm.tsx:105
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:189
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:195
 #: client/ts/admin/Components/CheckoutEditor/panels/DesignSettingsPanel.tsx:149
 msgid "Typography"
 msgstr "الطباعة"
@@ -6326,7 +6560,7 @@ msgid "Configure fonts."
 msgstr "تكوين الخطوط."
 
 #: client/ts/admin/Components/Forms/AppearanceDesignSettingsForm.tsx:111
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:195
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:201
 #: client/ts/admin/Components/CheckoutEditor/panels/DesignSettingsPanel.tsx:152
 msgid "Body Font"
 msgstr "خط النص الأساسي"
@@ -6337,7 +6571,7 @@ msgid "Choose the font for the body text."
 msgstr "اختر الخط لنص الجسم."
 
 #: client/ts/admin/Components/Forms/AppearanceDesignSettingsForm.tsx:119
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:201
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:207
 #: client/ts/admin/Components/CheckoutEditor/panels/DesignSettingsPanel.tsx:159
 msgid "Heading Font"
 msgstr "خط العناوين"
@@ -6348,7 +6582,7 @@ msgid "Choose the font for the headings."
 msgstr "اختر الخط للعناوين."
 
 #: client/ts/admin/Components/Forms/AppearanceDesignSettingsForm.tsx:131
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:209
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:215
 #: client/ts/admin/Components/CheckoutEditor/panels/DesignSettingsPanel.tsx:166
 msgid "Colors"
 msgstr "الألوان"
@@ -6534,53 +6768,104 @@ msgstr "حدد أي دور مستخدم يجب استبعاده من رسائل 
 msgid "Are you sure you want to delete all tracked carts?"
 msgstr "هل أنت متأكد أنك تريد حذف جميع العربات المتعقبة؟"
 
-#: client/ts/admin/Components/CheckoutEditor/EditorPreview.tsx:98
+#: client/ts/admin/Components/CheckoutEditor/PreviewCartControl.tsx:186
+#: client/ts/admin/Components/CheckoutEditor/PreviewCartControl.tsx:198
+msgid "Preview Cart"
+msgstr "معاينة السلة"
+
+#: client/ts/admin/Components/CheckoutEditor/PreviewCartControl.tsx:202
+msgid "Preview Cart Products"
+msgstr "معاينة منتجات السلة"
+
+# %d is the maximum number of products.
+#: client/ts/admin/Components/CheckoutEditor/PreviewCartControl.tsx:227
+msgid "Limit of %d products reached"
+msgstr "تم الوصول إلى حد %d من المنتجات"
+
+#: client/ts/admin/Components/CheckoutEditor/PreviewCartControl.tsx:230
+msgid "Add a product"
+msgstr "إضافة منتج"
+
+#: client/ts/admin/Components/CheckoutEditor/PreviewCartControl.tsx:232
+msgid "Type to search products"
+msgstr "اكتب للبحث عن المنتجات"
+
+#: client/ts/admin/Components/CheckoutEditor/PreviewCartControl.tsx:233
+msgid "No products found"
+msgstr "لم يتم العثور على منتجات"
+
+#: client/ts/admin/Components/CheckoutEditor/PreviewCartControl.tsx:254
+msgid "The preview needs at least one product"
+msgstr "تحتاج المعاينة إلى منتج واحد على الأقل"
+
+# %s is a product name.
+#: client/ts/admin/Components/CheckoutEditor/PreviewCartControl.tsx:257
+msgid "Remove %s"
+msgstr "إزالة %s"
+
+#: client/ts/admin/Components/CheckoutEditor/PreviewCartControl.tsx:270
+msgid "Loading the products in the preview…"
+msgstr "جارٍ تحميل المنتجات في المعاينة…"
+
+#: client/ts/admin/Components/CheckoutEditor/PreviewCartControl.tsx:271
+msgid "The Preview Cart is empty."
+msgstr "سلة المعاينة فارغة."
+
+#: client/ts/admin/Components/CheckoutEditor/PreviewCartControl.tsx:276
+msgid "Change the products to see how your checkout reacts, for example digital-only versus shipped products, or making sure an order bump\\'s trigger product is in the cart."
+msgstr "غيّر المنتجات لترى كيف يتفاعل الدفع الخاص بك، على سبيل المثال المنتجات الرقمية فقط مقابل المنتجات المشحونة، أو للتأكد من أن منتج التشغيل الخاص بإضافة الطلب موجود في السلة."
+
+#: client/ts/admin/Components/CheckoutEditor/PreviewCartControl.tsx:280
+msgid "The preview needs at least one product. If you empty the cart, a product is added back automatically."
+msgstr "تحتاج المعاينة إلى منتج واحد على الأقل. إذا أفرغت السلة، فسيتم إضافة منتج مرة أخرى تلقائيًا."
+
+#: client/ts/admin/Components/CheckoutEditor/EditorPreview.tsx:145
 msgid "No products can be found to show in the editor. Ensure you have products which are published and in stock."
 msgstr "لا يمكن العثور على منتجات للعرض في المحرر. تأكد من وجود منتجات منشورة ومتوفرة في المخزون."
 
-#: client/ts/admin/Components/CheckoutEditor/EditorPreview.tsx:148
+#: client/ts/admin/Components/CheckoutEditor/EditorPreview.tsx:195
 msgid "Updating preview…"
 msgstr "جارٍ تحديث المعاينة…"
 
-#: client/ts/admin/Components/CheckoutEditor/EditorPreview.tsx:157
+#: client/ts/admin/Components/CheckoutEditor/EditorPreview.tsx:204
 msgid "Checkout Preview"
 msgstr "معاينة الدفع"
 
-#: client/ts/admin/Components/CheckoutEditor/EditorHeader.tsx:38
-#: client/ts/admin/Components/CheckoutEditor/EditorHeader.tsx:116
+#: client/ts/admin/Components/CheckoutEditor/EditorHeader.tsx:55
+#: client/ts/admin/Components/CheckoutEditor/EditorHeader.tsx:133
 msgid "Live"
 msgstr "مباشر"
 
-#: client/ts/admin/Components/CheckoutEditor/EditorHeader.tsx:38
-#: client/ts/admin/Components/CheckoutEditor/EditorHeader.tsx:128
+#: client/ts/admin/Components/CheckoutEditor/EditorHeader.tsx:55
+#: client/ts/admin/Components/CheckoutEditor/EditorHeader.tsx:145
 msgid "Preview"
 msgstr "معاينة"
 
-#: client/ts/admin/Components/CheckoutEditor/EditorHeader.tsx:132
+#: client/ts/admin/Components/CheckoutEditor/EditorHeader.tsx:149
 msgid "Set the checkout to live and save your changes to make it available to customers. Please note that a valid, active license key is required to go live."
 msgstr "قم بتعيين الدفع ليكون مباشرًا واحفظ التغييرات لجعله متاحًا للعملاء. يرجى ملاحظة أنه يلزم وجود مفتاح ترخيص صالح ونشط للبدء بالبث المباشر."
 
-#: client/ts/admin/Components/CheckoutEditor/EditorHeader.tsx:147
+#: client/ts/admin/Components/CheckoutEditor/EditorHeader.tsx:164
 msgid "Unsaved changes"
 msgstr "تغييرات غير محفوظة"
 
-#: client/ts/admin/Components/CheckoutEditor/EditorHeader.tsx:156
+#: client/ts/admin/Components/CheckoutEditor/EditorHeader.tsx:173
 msgid "Desktop"
 msgstr "سطح المكتب"
 
-#: client/ts/admin/Components/CheckoutEditor/EditorHeader.tsx:166
+#: client/ts/admin/Components/CheckoutEditor/EditorHeader.tsx:183
 msgid "Tablet"
 msgstr "الجهاز اللوحي"
 
-#: client/ts/admin/Components/CheckoutEditor/EditorHeader.tsx:176
+#: client/ts/admin/Components/CheckoutEditor/EditorHeader.tsx:193
 msgid "Mobile"
 msgstr "الهاتف المحمول"
 
-#: client/ts/admin/Components/CheckoutEditor/EditorHeader.tsx:193
+#: client/ts/admin/Components/CheckoutEditor/EditorHeader.tsx:220
 msgid "Discard Changes"
 msgstr "تجاهل التغييرات"
 
-#: client/ts/admin/Components/CheckoutEditor/EditorHeader.tsx:203
+#: client/ts/admin/Components/CheckoutEditor/EditorHeader.tsx:230
 msgid "Saving..."
 msgstr "جارٍ الحفظ..."
 
@@ -6595,13 +6880,25 @@ msgstr "على"
 msgid "Off"
 msgstr "إيقاف"
 
-#: client/ts/admin/Components/CheckoutEditor/EditorApp.tsx:99
+#: client/ts/admin/Components/CheckoutEditor/EditorApp.tsx:110
 msgid "You have unsaved changes. Are you sure you want to leave?"
 msgstr "لديك تغييرات غير محفوظة. هل أنت متأكد أنك تريد المغادرة؟"
 
-#: client/ts/admin/Components/CheckoutEditor/EditorApp.tsx:204
+#: client/ts/admin/Components/CheckoutEditor/EditorApp.tsx:215
 msgid "Changing templates will update the logo, typography, colors, field label style, and footer text to those defined by the selected template. Are you sure you want to continue?"
 msgstr "تغيير القوالب سيحدث الشعار والطباعة والألوان وأسلوب تسمية الحقول ونص التذييل إلى تلك المعرفة بواسطة القالب المحدد. هل أنت متأكد أنك تريد المتابعة؟"
+
+#: client/ts/admin/Components/CheckoutEditor/BumpEditorModal.tsx:35
+msgid "This order bump has unsaved changes. Close anyway?"
+msgstr "توجد تغييرات غير محفوظة في إضافة الطلب هذه. هل تريد الإغلاق على أي حال؟"
+
+#: client/ts/admin/Components/CheckoutEditor/BumpEditorModal.tsx:101
+msgid "Done"
+msgstr "تم"
+
+#: client/ts/admin/Components/CheckoutEditor/BumpEditorModal.tsx:108
+msgid "Loading order bump editor…"
+msgstr "جارٍ تحميل محرر إضافة الطلب…"
 
 # %s: item type e.g. "order bump"
 #: client/ts/admin/Components/CheckoutEditor/slots/UnsavedChangesDialog.tsx:37
@@ -6618,173 +6915,196 @@ msgstr "سيفتح تبويب جديد حيث يمكنك إنشاء %s الخا�
 msgid "Create %s"
 msgstr "أنشئ %s"
 
-#: client/ts/admin/Components/CheckoutEditor/slots/SlotsPanel.tsx:161
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotsPanel.tsx:171
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:519
+msgid "Edit order bump"
+msgstr "تعديل إضافة الطلب"
+
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotsPanel.tsx:181
+msgid "New order bump"
+msgstr "إضافة طلب جديدة"
+
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotsPanel.tsx:361
 msgid "No slots available."
 msgstr "لا توجد خانات متاحة."
 
-#: client/ts/admin/Components/CheckoutEditor/slots/SlotsPanel.tsx:198
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotsPanel.tsx:397
 msgid "Order bumps are assigned to slots but the feature is disabled. Enable order bumps in"
 msgstr "تم تعيين العروض الإضافية إلى الخانات ولكن الميزة معطلة. قم بتمكين العروض الإضافية في"
 
-#: client/ts/admin/Components/CheckoutEditor/slots/SlotsPanel.tsx:204
-#: client/ts/admin/Components/CheckoutEditor/slots/SlotsPanel.tsx:224
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotsPanel.tsx:403
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotsPanel.tsx:423
 msgid "order bumps"
 msgstr "العروض الإضافية"
 
-#: client/ts/admin/Components/CheckoutEditor/slots/SlotsPanel.tsx:218
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotsPanel.tsx:417
 msgid "One or more slots exceed the maximum order bumps per slot. Increase the limit in"
 msgstr "تجاوزت خانة أو أكثر الحد الأقصى للعروض الإضافية لكل خانة. قم بزيادة الحد في"
 
-#: client/ts/admin/Components/CheckoutEditor/slots/SlotsPanel.tsx:238
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotsPanel.tsx:437
 msgid "Trust badges are assigned to slots but the feature is disabled. Enable trust badges in"
 msgstr "تم تعيين شارات الثقة للفتحات ولكن الميزة معطلة. قم بتمكين شارات الثقة في"
 
-#: client/ts/admin/Components/CheckoutEditor/slots/SlotsPanel.tsx:244
-#: client/ts/admin/Components/CheckoutEditor/slots/SlotsPanel.tsx:264
-#: client/ts/admin/Components/CheckoutEditor/slots/SlotsPanel.tsx:313
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotsPanel.tsx:443
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotsPanel.tsx:463
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotsPanel.tsx:525
 msgid "badges"
 msgstr "الشارات"
 
-#: client/ts/admin/Components/CheckoutEditor/slots/SlotsPanel.tsx:258
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotsPanel.tsx:457
 msgid "Customer reviews are assigned to slots but the feature is disabled. Enable customer reviews in"
 msgstr "تم تعيين تقييمات العملاء للفتحات ولكن الميزة معطلة. قم بتمكين تقييمات العملاء في"
 
-#: client/ts/admin/Components/CheckoutEditor/slots/SlotsPanel.tsx:307
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotsPanel.tsx:519
 msgid "Column settings for badges are configured in"
 msgstr "يتم تكوين إعدادات الأعمدة للشارات في"
 
-#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:83
-#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:84
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:99
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:100
 msgid "Not shown for orders that don\\'t need shipping (e.g. digital products or pickup)."
 msgstr "غير معروض للطلبات التي لا تحتاج إلى شحن (مثل المنتجات الرقمية أو الاستلام)."
 
-#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:118
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:145
 msgid "This order bump is part of an active A/B test. It cannot be removed while the test is running."
 msgstr "هذا العرض الإضافي للطلب جزء من اختبار A/B نشط. لا يمكن إزالته أثناء تشغيل الاختبار."
 
-#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:122
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:149
 msgid "Remove this item from the slot?"
 msgstr "هل تريد إزالة هذا العنصر من الفتحة؟"
 
-#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:211
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:238
 msgid "Assign item to slot"
 msgstr "تعيين العنصر للفتحة"
 
-#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:261
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:290
 msgid "On mobile and tablets, this slot is inside the \"Show order summary\" section."
 msgstr "على الهواتف المحمولة والأجهزة اللوحية، تقع هذه الفتحة داخل قسم \"عرض ملخص الطلب\"."
 
-#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:280
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:309
 msgid "On mobile and tablets, the cart collapses and order bumps in this slot will move to the Above Terms & Conditions slot."
 msgstr "على الهواتف المحمولة والأجهزة اللوحية، ينهار سلة التسوق وتنتقل العروض الإضافية في هذه الفتحة إلى فتحة \"فوق الشروط والأحكام\"."
 
-#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:320
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:350
 msgid "Release to drop here"
 msgstr "حرر لإسقاط هنا"
 
-#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:323
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:353
 msgid "No items assigned."
 msgstr "لا توجد عناصر مخصصة."
 
-#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:330
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:360
 msgid "Add item"
 msgstr "إضافة عنصر"
 
-#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:415
-#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:233
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:445
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:248
 msgid "Level"
 msgstr "المستوى"
 
-#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:434
-#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:252
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:464
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:267
 msgid "e.g. Why choose us?"
 msgstr "مثال: لماذا تختارنا؟"
 
-#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:442
-#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:476
-#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:260
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:472
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:529
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:275
 msgid "Margin"
 msgstr "الهامش"
 
-#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:447
-#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:481
-#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:265
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:477
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:534
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:280
 msgid "e.g., 10px 0 20px 0"
 msgstr "مثال: 10px 0 20px 0"
 
-#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:465
-#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:500
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:495
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:553
 msgid "Save"
 msgstr "حفظ"
 
-#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:27
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:126
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:140
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:509
+msgid "Order bump"
+msgstr "إضافة الطلب"
+
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:523
+msgid "Edits in bump editor save immediately."
+msgstr "يتم حفظ التعديلات في محرر الإضافة فورًا."
+
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:28
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:132
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:146
 #: client/ts/admin/Components/CheckoutEditor/panels/DesignSettingsPanel.tsx:86
 msgid "Paid plan required"
 msgstr "مطلوب خطة مدفوعة"
 
-#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:201
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:216
 msgid "Add Item"
 msgstr "إضافة عنصر"
 
-#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:227
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:242
 msgid "+ New heading"
 msgstr "+ عنوان جديد"
 
-#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:284
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:299
 #: client/ts/admin/Components/CheckoutEditor/slots/CustomHtmlEditor.tsx:40
 msgid "Add"
 msgstr "إضافة"
 
-#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:302
-#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:371
-#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:419
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:317
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:407
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:455
 msgid "(in slot)"
 msgstr "(في الخانة)"
 
-#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:303
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:318
 msgid "(in other slot)"
 msgstr "(في خانة أخرى)"
 
-#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:329
-#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:340
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:344
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:363
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:376
 msgid "+ New order bump"
 msgstr "+ إضافة عرض جديد"
 
-#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:336
+# %d: number of order bumps allowed by the current plan
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:350
+msgid "Your plan allows %d published order bumps. Upgrade or unpublish one to create another."
+msgstr "تسمح خطتك بـ %d من إضافات الطلب المنشورة. قم بالترقية أو بإلغاء نشر واحدة لإنشاء أخرى."
+
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:372
 msgid "order bump"
 msgstr "عرض إضافي"
 
-#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:337
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:373
 msgid "A new tab will open where you can create your order bump. When you\\'ve saved it, close that tab and return here — it will be added to your chosen slot automatically."
 msgstr "سيفتح تبويب جديد حيث يمكنك إنشاء عرضك الإضافي. عند حفظه، أغلق ذلك التبويب وارجع إلى هنا — سيتم إضافته إلى الخانة التي اخترتها تلقائيًا."
 
-#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:379
-#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:390
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:415
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:426
 msgid "+ New trust badge"
 msgstr "+ شارة ثقة جديدة"
 
-#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:386
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:422
 msgid "trust badge"
 msgstr "شارة ثقة"
 
-#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:387
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:423
 msgid "A new tab will open where you can create your trust badge. When you\\'ve saved it, close that tab and return here — it will appear in this list ready to assign."
 msgstr "سيفتح تبويب جديد حيث يمكنك إنشاء شارة الثقة الخاصة بك. عند حفظها، أغلق ذلك التبويب وارجع إلى هنا — ستظهر في هذه القائمة جاهزة للتعيين."
 
-#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:399
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:435
 msgid "Review Badges"
 msgstr "مراجعة الشارات"
 
-#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:402
-#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:418
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:438
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:454
 #: client/ts/admin/Components/CheckoutEditor/slots/AssignedItem.tsx:64
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:604
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:612
 msgid "Customer Reviews"
 msgstr "مراجعات العملاء"
 
-#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:436
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:472
 msgid "+ New HTML"
 msgstr "+ HTML جديد"
 
@@ -6804,164 +7124,192 @@ msgstr "محتوى HTML"
 msgid "(empty heading)"
 msgstr "(عنوان فارغ)"
 
-#: client/ts/admin/Components/CheckoutEditor/slots/AssignedItem.tsx:148
+#: client/ts/admin/Components/CheckoutEditor/slots/AssignedItem.tsx:175
 msgid "This order bump has an A/B test associated with it and cannot be moved or removed. Delete the test to unlock it."
 msgstr "هذه الإضافة للطلب مرتبطة باختبار A/B ولا يمكن نقلها أو إزالتها. احذف الاختبار لفتحها."
 
-#: client/ts/admin/Components/CheckoutEditor/slots/AssignedItem.tsx:151
+#: client/ts/admin/Components/CheckoutEditor/slots/AssignedItem.tsx:178
 msgid "This bump is placed here automatically by its Checkout and Side Cart display location. It also appears in the side cart and isn\\'t counted toward this slot\\'s order bump limit."
 msgstr "تم وضع هذا العرض هنا تلقائيًا بواسطة موقع عرضه في صفحة الدفع وعربة التسوق الجانبية. كما يظهر في العربة الجانبية ولا يُحتسب ضمن حد عروض هذه الخانة."
 
-#: client/ts/admin/Components/CheckoutEditor/slots/AssignedItem.tsx:154
+#: client/ts/admin/Components/CheckoutEditor/slots/AssignedItem.tsx:181
+msgid "The offer product for this bump no longer exists, so the bump will not display. Choose a new offer product."
+msgstr "لم يعد منتج العرض لهذه الإضافة موجودًا، لذلك لن تظهر الإضافة. اختر منتج عرض جديدًا."
+
+#: client/ts/admin/Components/CheckoutEditor/slots/AssignedItem.tsx:184
+msgid "The offer product for this bump is not published, so the bump appears for you but never for customers."
+msgstr "منتج العرض لهذه الإضافة غير منشور، لذلك تظهر لك الإضافة ولكن لا تظهر أبدًا للعملاء."
+
+#: client/ts/admin/Components/CheckoutEditor/slots/AssignedItem.tsx:187
+msgid "The offer product for this bump has no price, so the bump will not display."
+msgstr "لا يوجد سعر لمنتج العرض لهذه الإضافة، لذلك لن تظهر الإضافة."
+
+#: client/ts/admin/Components/CheckoutEditor/slots/AssignedItem.tsx:190
+msgid "The offer product for this bump is out of stock, so the bump will not display until it is back in stock."
+msgstr "منتج العرض لهذا العنصر الإضافي غير متوفر حاليًا، لذا لن يظهر العنصر الإضافي حتى يعود إلى المخزون."
+
+#: client/ts/admin/Components/CheckoutEditor/slots/AssignedItem.tsx:193
+msgid "The product this bump replaces in the cart no longer exists, so the bump will not display."
+msgstr "المنتج الذي يستبدله هذا العنصر الإضافي في سلة التسوق لم يعد موجودًا، لذا لن يظهر العنصر الإضافي."
+
+#: client/ts/admin/Components/CheckoutEditor/slots/AssignedItem.tsx:196
+msgid "This bump replaces a product in the cart, so it only appears once that product has been added."
+msgstr "هذا العنصر الإضافي يستبدل منتجًا في سلة التسوق، لذا لن يظهر إلا بعد إضافة ذلك المنتج."
+
+#: client/ts/admin/Components/CheckoutEditor/slots/AssignedItem.tsx:199
 msgid "This item has display conditions. It will only appear to customers who meet the configured criteria and may not be visible on every checkout."
 msgstr "هذا العنصر له شروط عرض. سيظهر فقط للعملاء الذين يستوفون المعايير المُكونة وقد لا يكون مرئيًا في كل عملية دفع."
 
-#: client/ts/admin/Components/CheckoutEditor/slots/AssignedItem.tsx:157
+#: client/ts/admin/Components/CheckoutEditor/slots/AssignedItem.tsx:202
+msgid "The offer product for this bump is hidden from the shop catalog, so this bump is the only place customers will see it."
+msgstr "منتج العرض لهذا العنصر الإضافي مخفي من كتالوج المتجر، لذا فهذا العنصر الإضافي هو المكان الوحيد الذي سيراه فيه العملاء."
+
+#: client/ts/admin/Components/CheckoutEditor/slots/AssignedItem.tsx:205
 msgid "The offer product for this bump is already in the preview cart, so it may not be visible in the preview."
 msgstr "منتج العرض لهذا العرض الإضافي موجود بالفعل في عربة المعاينة، لذلك قد لا يكون مرئيًا في المعاينة."
 
-#: client/ts/admin/Components/CheckoutEditor/slots/AssignedItem.tsx:168
+#: client/ts/admin/Components/CheckoutEditor/slots/AssignedItem.tsx:215
 msgid "Drag to reorder"
 msgstr "اسحب لإعادة الترتيب"
 
-#: client/ts/admin/Components/CheckoutEditor/slots/AssignedItem.tsx:241
+#: client/ts/admin/Components/CheckoutEditor/slots/AssignedItem.tsx:297
 msgid "Remove"
 msgstr "إزالة"
 
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:79
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:85
 msgid "Step"
 msgstr "الخطوة"
 
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:162
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:168
 #: client/ts/admin/Components/CheckoutEditor/panels/DesignSettingsPanel.tsx:108
 msgid "A Basic, Plus, Pro, or Agency plan is required to access all templates."
 msgstr "مطلوب خطة Basic أو Plus أو Pro أو Agency للوصول إلى جميع القوالب."
 
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:228
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:234
 msgid "Misc"
 msgstr "متنوع"
 
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:262
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:268
 msgid "Shipping Methods"
 msgstr "طرق الشحن"
 
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:271
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:277
 msgid "Order Review"
 msgstr "مراجعة الطلب"
 
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:279
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:285
 msgid "One Page Checkout"
 msgstr "الدفع في صفحة واحدة"
 
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:289
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:295
 msgid "Fields"
 msgstr "الحقول"
 
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:295
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:301
 msgid "Address Fields Link"
 msgstr "رابط حقول العنوان"
 
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:300
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:306
 msgid "Coupon Code Link"
 msgstr "رابط رمز القسيمة"
 
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:306
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:312
 msgid "Full Name Field"
 msgstr "حقل الاسم الكامل"
 
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:326
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:332
 msgid "Separate House Number/Street Name"
 msgstr "فصل رقم المنزل/اسم الشارع"
 
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:336
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:342
 #: client/ts/admin/Components/CheckoutEditor/panels/CheckoutSettingsPanel.tsx:186
 msgid "Countries selected here will appear at the top of the billing and shipping country dropdowns, making them quicker for customers to find."
 msgstr "الدول المحددة هنا ستظهر في أعلى قوائم الدول للفوترة والشحن، مما يجعلها أسرع للعملاء للعثور عليها."
 
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:352
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:358
 msgid "Order Notes"
 msgstr "ملاحظات الطلب"
 
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:382
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:388
 msgid "Addresses"
 msgstr "العناوين"
 
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:393
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:399
 msgid "Billing Address Fields"
 msgstr "حقول عنوان الفواتير"
 
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:426
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:432
 msgid "No supported gateways detected.<br><a class=\"text-blue-600 hover:text-blue-800\" target=\"_blank\" href=\"https://www.checkoutwc.com/documentation/supported-express-payment-gateways/\">See our recommendations.</a>"
 msgstr "لم يتم اكتشاف بوابات مدعومة.<br><a class=\"text-blue-600 hover:text-blue-800\" target=\"_blank\" href=\"https://www.checkoutwc.com/documentation/supported-express-payment-gateways/\">شاهد توصياتنا.</a>"
 
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:444
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:450
 msgid "Variation Edits"
 msgstr "تعديلات التباين"
 
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:450
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:456
 msgid "Item Remove"
 msgstr "إزالة العنصر"
 
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:459
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:465
 msgid "Cart Editing"
 msgstr "تحرير السلة"
 
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:467
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:473
 msgid "Sale Prices"
 msgstr "أسعار البيع"
 
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:472
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:478
 msgid "Sticky Cart on Scroll"
 msgstr "سلة ثابتة عند التمرير"
 
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:480
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:486
 msgid "Disabled"
 msgstr "معطل"
 
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:489
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:495
 msgid "Short"
 msgstr "قصير"
 
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:497
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:503
 msgid "Slots"
 msgstr "فتحات"
 
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:513
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:521
 msgid "Badges"
 msgstr "الشارات"
 
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:523
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:557
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:531
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:565
 msgid "Checkout Area Columns"
 msgstr "أعمدة منطقة الدفع"
 
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:529
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:563
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:537
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:571
 msgid "Cart Summary Area Columns"
 msgstr "أعمدة منطقة ملخص العربة"
 
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:535
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:569
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:543
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:577
 msgid "Mobile Columns"
 msgstr "أعمدة الجوال"
 
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:575
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:583
 msgid "Priority"
 msgstr "الأولوية"
 
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:613
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:621
 msgid "Add badges to your checkout layout in"
 msgstr "أضف شارات إلى تخطيط الدفع الخاص بك في"
 
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:619
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:627
 msgid "slots"
 msgstr "الفتحات"
 
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:633
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:641
 msgid "Footer Text"
 msgstr "نص التذييل"
 
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:650
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:658
 msgid "The settings in this editor cover the most commonly used options for most stores. However, many additional settings are available. Once you\\'ve saved any changes, head over to the CheckoutWC menu in your WordPress dashboard to explore more options."
 msgstr "الإعدادات في هذا المحرر تغطي الخيارات الأكثر استخدامًا لمعظم المتاجر. ومع ذلك، تتوفر العديد من الإعدادات الإضافية. بمجرد حفظ أي تغييرات، توجه إلى قائمة CheckoutWC في لوحة تحكم ووردبريس لاستكشاف المزيد من الخيارات."
 
@@ -7374,8 +7722,8 @@ msgid "Delete Rule"
 msgstr "حذف القاعدة"
 
 # %d: shipping package number
-#: functions/functions.php:384
-#: functions/functions.php:3451
+#: functions/functions.php:385
+#: functions/functions.php:3454
 msgctxt "shipping packages"
 msgid "Shipping"
 msgid_plural "Shipping %d"

@@ -23,3 +23,6 @@ delete_option( 'cfw_license_price_id' );
 delete_option( 'cfw_v80_data_migrated' );
 delete_option( 'cfw_license' );
 delete_option( 'cfw_license_data' );
+
+// Remove per-user editor preferences
+delete_metadata( 'user', 0, '_cfw_editor_preview_cart', '', true );

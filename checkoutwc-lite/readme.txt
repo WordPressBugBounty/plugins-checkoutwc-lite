@@ -3,8 +3,8 @@ Contributors: kestrelwp, clifgriffin
 Donate link: https://www.checkoutwc.com
 Tags: checkout, woocommerce-checkout, express-checkout, checkout-optimization, cart-abandonment
 Requires at least: 5.2
-Tested up to: 7.0.2
-Stable tag: 11.3.0
+Tested up to: 7.0.4
+Stable tag: 11.3.1
 Requires PHP: 7.4
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
@@ -205,6 +205,18 @@ Use your payment gateway's test mode to process test transactions without chargi
 == Changelog ==
 
 Free version updates are non-sequential due to the unified development branch we use with the premium versions.
+
+= Version 11.3.1 =
+
+- Feature - Checkout Editor: choose the products in the preview from the new Preview Cart control in the editor header, so you can see how checkout reacts to a digital-only, mixed or shipped cart
+- Fix - Checkout Editor: the preview no longer adds to, or leaves items in, your own cart - it now runs on a cart of its own
+- Fix - Integrations: the page no longer errors when a theme or plugin with its own CheckoutWC setting is active, such as Astra or Elementor Pro
+- Fix - Shipping methods: switching quickly between two methods no longer reverts the selection
+- Fix - Shipping: a shipping package without any rates no longer triggers a PHP warning while checking whether every package has an available shipping method
+- Fix - Stripe: checkout no longer fails with a critical error when the WooCommerce Stripe Gateway is active but has switched itself off because it needs a newer version of WooCommerce
+- Fix - Stripe: checkout no longer fails with a critical error when the WooCommerce Stripe Gateway is active but its express checkout button locations have never been set
+- Fix - WooPayments: express checkout button rendering and compatibility improvements
+- Fix - WPML and Polylang: a store policy link now opens the connected translation of its page, and shows that page's title unless you gave the link custom text
 
 = Version 11.3.0 =
 

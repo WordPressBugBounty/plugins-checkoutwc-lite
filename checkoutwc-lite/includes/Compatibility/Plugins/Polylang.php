@@ -3,10 +3,36 @@
 namespace Objectiv\Plugins\Checkout\Compatibility\Plugins;
 
 use Objectiv\Plugins\Checkout\Compatibility\CompatibilityAbstract;
+use Objectiv\Plugins\Checkout\Compatibility\Traits\TranslatesStorePoliciesTrait;
 
 class Polylang extends CompatibilityAbstract {
+	use TranslatesStorePoliciesTrait;
+
 	public function is_available(): bool {
 		return defined( 'POLYLANG_VERSION' );
+	}
+
+	/**
+	 * Register front end filters
+	 */
+	public function run_immediately() {
+		add_filter( 'cfw_event_object', [ $this, 'translate_store_policies' ] );
+	}
+
+	/**
+	 * Get the ID of the page in the active language
+	 *
+	 * @param int $page_id The configured page ID.
+	 * @return int
+	 */
+	protected function get_translated_page_id( int $page_id ): int {
+		if ( ! function_exists( 'pll_get_post' ) ) {
+			return $page_id;
+		}
+
+		$translated_id = pll_get_post( $page_id );
+
+		return empty( $translated_id ) ? $page_id : (int) $translated_id;
 	}
 
 	public function pre_init() {

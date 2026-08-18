@@ -3618,6 +3618,39 @@
             "args": 1
         },
         {
+            "name": "cfw_admin_product_search_post_statuses",
+            "file": "API/ProductsAndVariationsSearchAPI.php",
+            "type": "filter",
+            "doc": {
+                "description": "Filters the post statuses returned by the admin product search endpoint.",
+                "long_description": "Defaults to published products only, since a draft, pending, scheduled or private product is not purchasable by customers, and a private one is purchasable for the logged in administrator alone. Widen this to include statuses such as `private` when unpublished products need to be selectable in the admin product pickers: the order bump offer pickers and the Checkout Editor preview cart.",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "11.3.1"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Post statuses to include in the results.",
+                        "types": [
+                            "string[]"
+                        ],
+                        "variable": "$post_statuses"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Request data.",
+                        "types": [
+                            "\\WP_REST_Request"
+                        ],
+                        "variable": "$request"
+                    }
+                ],
+                "long_description_html": "<p>Defaults to published products only, since a draft, pending, scheduled or private product is not purchasable by customers, and a private one is purchasable for the logged in administrator alone. Widen this to include statuses such as <code>private</code> when unpublished products need to be selectable in the admin product pickers: the order bump offer pickers and the Checkout Editor preview cart.</p>"
+            },
+            "args": 2
+        },
+        {
             "name": "cfw_allow_html_in_formatted_item_data_value",
             "file": "Model/CartItem.php",
             "type": "filter",

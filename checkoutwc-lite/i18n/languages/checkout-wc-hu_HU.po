@@ -8,7 +8,7 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "POT-Creation-Date: 2025-07-25 09:22-0400\n"
-"PO-Revision-Date: 2026-07-22T14:04:54+00:00\n"
+"PO-Revision-Date: 2026-08-18T15:55:05+00:00\n"
 "Language: hu-HU\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Poedit 3.6\n"
@@ -21,11 +21,11 @@ msgstr ""
 #: includes/Admin/Pages/PickupLocationsAdminFree.php:218
 #: includes/Admin/Pages/PageAbstract.php:106
 #: includes/Admin/Pages/General.php:341
-#: includes/Admin/Pages/Premium/PickupLocations.php:217
-#: includes/Admin/Pages/Premium/OrderBumps.php:444
+#: includes/Admin/Pages/Premium/PickupLocations.php:317
+#: includes/Admin/Pages/Premium/OrderBumps.php:450
 #: includes/Admin/Pages/Premium/LocalPickupAdmin.php:165
 #: includes/Admin/Pages/Premium/AbandonedCartRecovery.php:243
-#: includes/Admin/Pages/Premium/ABTestingAdmin.php:634
+#: includes/Admin/Pages/Premium/ABTestingAdmin.php:641
 msgid "CheckoutWC"
 msgstr "CheckoutWC"
 
@@ -118,7 +118,7 @@ msgstr "Lakás, lakrész, egység stb."
 #: includes/Admin/ShippingPhoneController.php:43
 #: client/ts/admin/Components/acr/carts.tsx:70
 #: client/ts/admin/Components/Forms/CheckoutSettingsForm.tsx:467
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:406
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:412
 #: client/ts/admin/Components/CheckoutEditor/panels/CheckoutSettingsPanel.tsx:246
 msgid "Phone"
 msgstr "Telefon"
@@ -156,8 +156,8 @@ msgid "Postcode / ZIP"
 msgstr "Irányítószám"
 
 #: includes/AddressFieldsAugmenter.php:458
-#: functions/functions.php:4206
-#: functions/functions.php:4207
+#: functions/functions.php:4214
+#: functions/functions.php:4215
 msgid "Email address"
 msgstr "E-mail cím"
 
@@ -207,7 +207,7 @@ msgstr "Irányítószám"
 
 #: includes/AddressFieldsAugmenter.php:472
 #: client/ts/admin/Components/Forms/CheckoutSettingsForm.tsx:455
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:403
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:409
 #: client/ts/admin/Components/CheckoutEditor/panels/CheckoutSettingsPanel.tsx:243
 msgid "Postcode"
 msgstr "Irányítószám"
@@ -226,7 +226,7 @@ msgstr "Régió"
 
 #: includes/AddressFieldsAugmenter.php:476
 #: client/ts/admin/Components/Forms/CheckoutSettingsForm.tsx:459
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:404
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:410
 #: client/ts/admin/Components/CheckoutEditor/panels/CheckoutSettingsPanel.tsx:244
 msgid "State"
 msgstr "Állam"
@@ -360,15 +360,15 @@ msgstr "Kosarad"
 #: functions/template-functions.php:1036
 #: functions/template-functions.php:1974
 #: functions/template-functions.php:2248
-#: functions/functions.php:3465
+#: functions/functions.php:3468
 msgid "Shipping"
 msgstr "Szállítás"
 
 #: functions/template-functions.php:1054
 #: functions/template-functions.php:1914
 #: functions/template-functions.php:2269
-#: functions/functions.php:1023
-#: functions/functions.php:1038
+#: functions/functions.php:1024
+#: functions/functions.php:1039
 #: client/ts/frontend/Components/ReviewPane/OrderReviewStepReviewPane.tsx:47
 msgid "Payment"
 msgstr "Fizetés"
@@ -382,7 +382,7 @@ msgid "Review"
 msgstr "Felülvizsgálat"
 
 #: functions/template-functions.php:1073
-#: includes/Features/SideCart.php:1180
+#: includes/Features/SideCart.php:1207
 msgid "Free"
 msgstr "Ingyenes"
 
@@ -453,24 +453,24 @@ msgid "Pay for order"
 msgstr "Fizetés a rendelésért"
 
 #: functions/template-functions.php:2052
-#: includes/Features/AbandonedCartRecovery.php:118
+#: includes/Features/AbandonedCartRecovery.php:124
 #: client/ts/admin/Components/acr/carts.tsx:64
 msgid "Email"
 msgstr "E-mail"
 
 #: functions/template-functions.php:2062
-#: functions/functions.php:4124
-#: functions/functions.php:4125
+#: functions/functions.php:4132
+#: functions/functions.php:4133
 msgid "Password"
 msgstr "Jelszó"
 
 #: functions/template-functions.php:2078
-#: functions/functions.php:4164
+#: functions/functions.php:4172
 msgid "Login"
 msgstr "Bejelentkezés"
 
 #: functions/template-functions.php:2081
-#: functions/functions.php:4157
+#: functions/functions.php:4165
 msgid "Lost your password?"
 msgstr "Elvesztette a jelszavát?"
 
@@ -478,393 +478,393 @@ msgstr "Elvesztette a jelszavát?"
 msgid "Your Cart is Empty"
 msgstr "A kosár üres"
 
-#: functions/premium-init.php:341
+#: functions/premium-init.php:340
 msgid "CheckoutWC Templates Deactivated"
 msgstr "CheckoutWC sablonok deaktiválva"
 
 # %1$s: "Settings" text, %2$s: "Start Here" text, %3$s: "Activate CheckoutWC Templates" text
-#: functions/premium-init.php:344
+#: functions/premium-init.php:343
 msgid "Your license is valid and activated for this site but CheckoutWC is disabled for normal customers. To fix this, go to %1$s > %2$s and toggle \"%3$s\"."
 msgstr "Az Ön licenc érvényes és aktiválva van ezen a webhelyen, de a CheckoutWC le van tiltva a normál vásárlók számára. Ennek javításához lépjen a %1$s > %2$s menüpontra, és kapcsolja be a \"%3$s\" opciót."
 
-#: functions/premium-init.php:345
+#: functions/premium-init.php:344
 #: includes/Admin/AdminPluginsPageManager.php:40
 #: includes/Admin/Pages/OrderBumpsAdminFree.php:25
 #: includes/Admin/Pages/LocalPickupAdminFree.php:27
 #: includes/Admin/Pages/AbandonedCartRecoveryAdminFree.php:27
-#: includes/Admin/Pages/Premium/OrderBumps.php:58
+#: includes/Admin/Pages/Premium/OrderBumps.php:60
 #: includes/Admin/Pages/Premium/LocalPickupAdmin.php:28
 #: includes/Admin/Pages/Premium/AbandonedCartRecovery.php:34
 #: includes/Admin/Pages/Premium/ABTestingAdmin.php:56
 msgid "Settings"
 msgstr "Beállítások"
 
-#: functions/premium-init.php:346
+#: functions/premium-init.php:345
 #: includes/Admin/Pages/General.php:25
 #: includes/Admin/Notices/InactiveLicenseNotice.php:13
 msgid "Start Here"
 msgstr "Itt kezdje"
 
-#: functions/premium-init.php:347
+#: functions/premium-init.php:346
 #: includes/Admin/Pages/General.php:195
 msgid "Activate CheckoutWC Templates"
 msgstr "CheckoutWC sablonok aktiválása"
 
-#: functions/premium-init.php:354
+#: functions/premium-init.php:353
 msgid "Invalid CheckoutWC License"
 msgstr "Érvénytelen CheckoutWC licenc"
 
 # %1$s: Pricing URL, %2$s: "purchase a license" link text
-#: functions/premium-init.php:357
+#: functions/premium-init.php:356
 msgid "Your license key is missing or invalid. Please verify that your license key is valid or <a target=\"_blank\" href=\"%1$s\">%2$s</a> to restore full functionality."
 msgstr "A licenckulcs hiányzik vagy érvénytelen. Kérjük, ellenőrizze, hogy a licenckulcs érvényes-e, vagy <a target=\"_blank\" href=\"%1$s\">%2$s</a> a teljes funkcionalitás visszaállításához."
 
-#: functions/premium-init.php:359
+#: functions/premium-init.php:358
 msgid "purchase a license"
 msgstr "licenc vásárlása"
 
-#: functions/premium-init.php:375
+#: functions/premium-init.php:374
 msgid "New Feature: Cloudflare Turnstile Bot Protection"
 msgstr "Új funkció: Cloudflare Turnstile botvédelem"
 
 # 1: Cloudflare Turnstile name wrapped in strong tags, 2: Setup link
-#: functions/premium-init.php:378
+#: functions/premium-init.php:377
 msgid "CheckoutWC now supports %1$s - a privacy-first, CAPTCHA-free way to protect your checkout from bots and spam orders. %2$s"
 msgstr "A CheckoutWC mostantól támogatja a %1$s - egy adatvédelmi szempontból elsődleges, CAPTCHA-mentes módot, amellyel megvédheti a fizetési folyamatot a botoktól és a spam rendelések ellen. %2$s"
 
 # The name of the Cloudflare Turnstile service
-#: functions/premium-init.php:382
-#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:64
+#: functions/premium-init.php:381
+#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:78
 msgid "Cloudflare Turnstile"
 msgstr "Cloudflare Turnstile"
 
-#: functions/premium-init.php:388
+#: functions/premium-init.php:387
 msgid "Setup Cloudflare Turnstile now"
 msgstr "Cloudflare Turnstile beállítása most"
 
-#: functions/premium-init.php:393
+#: functions/premium-init.php:392
 msgid "Upgrade your plan now to access"
 msgstr "Frissítse most a csomagját a hozzáféréshez"
 
-#: functions/premium-init.php:406
+#: functions/premium-init.php:405
 msgid "Abandoned Cart Recovery Tracking Disabled"
 msgstr "Elhagyott kosár visszanyerés követés letiltva"
 
 # %1$s: Gist URL, %2$s: "Learn More" link text
-#: functions/premium-init.php:409
+#: functions/premium-init.php:408
 msgid "You have enabled Abandoned Cart Recovery tracking, but you do not have any emails published. To track carts, you need to publish emails or use this dev filter: <a target=\"_blank\" href=\"%1$s\">%2$s</a>."
 msgstr "Engedélyezte az Elhagyott kosár visszanyerés követését, de nincs közzétett e-mailje. A kosarak követéséhez e-maileket kell közzétennie, vagy használja ezt a fejlesztői szűrőt: <a target=\"_blank\" href=\"%1$s\">%2$s</a>."
 
-#: functions/premium-init.php:411
+#: functions/premium-init.php:410
 #: includes/Admin/Pages/AbandonedCartRecoveryAdminFree.php:82
 msgid "Learn More"
 msgstr "Tudjon meg többet"
 
-#: functions/init.php:378
-#: functions/init.php:379
+#: functions/init.php:390
+#: functions/init.php:391
 msgid "Upgrade to Premium"
 msgstr "Frissítés Prémium verzióra"
 
-#: functions/init.php:779
+#: functions/init.php:752
 msgid "CheckoutWC: Footer"
 msgstr "CheckoutWC: Lábléc"
 
-#: functions/init.php:823
-#: functions/init.php:828
+#: functions/init.php:796
+#: functions/init.php:801
 msgid "Configure Avada to Work With CheckoutWC"
 msgstr "Avada konfigurálása a CheckoutWC-vel való működéshez"
 
 # %1$s: Guide URL, %2$s: Guide link text
-#: functions/init.php:826
+#: functions/init.php:799
 msgid "CheckoutWC and Avada work great together, but you will need to adjust a couple of theme settings. Please see our guide here: <a target=\"_blank\" href=\"%1$s\">%2$s</a>"
 msgstr "A CheckoutWC és az Avada jól működnek együtt, de néhány téma beállítást módosítania kell. Kérjük, tekintse meg útmutatónkat itt: <a target=\"_blank\" href=\"%1$s\">%2$s</a>"
 
-#: functions/init.php:835
+#: functions/init.php:808
 msgid "Incompatible Plugin: Please Deactivate The Bluehost Plugin"
 msgstr "Nem kompatibilis bővítmény: Kérjük, tiltsa le a Bluehost bővítményt"
 
 # %1$s: Help URL, %2$s: Help link text
-#: functions/init.php:838
+#: functions/init.php:811
 msgid "CheckoutWC and Bluehost work great together, but you must deactivate The Bluehost Plugin to prevent problems. More info here: <a target=\"_blank\" href=\"%1$s\">%2$s</a>"
 msgstr "A CheckoutWC és a Bluehost jól működnek együtt, de a problémák elkerülése érdekében le kell tiltania a Bluehost bővítményt. További információ itt: <a target=\"_blank\" href=\"%1$s\">%2$s</a>"
 
-#: functions/init.php:840
+#: functions/init.php:813
 msgid "How To Fix Problems With The Bluehost Plugin"
 msgstr "Hogyan javítsuk ki a Bluehost bővítmény problémáit"
 
-#: functions/init.php:850
+#: functions/init.php:823
 msgid "Configure Divi to Work With CheckoutWC"
 msgstr "Állítsa be a Divi-t a CheckoutWC-vel való működéshez"
 
 # %1$s: Guide URL, %2$s: Guide link text
-#: functions/init.php:853
+#: functions/init.php:826
 msgid "CheckoutWC and Divi work great together, but you will need to adjust a couple of settings. Please see our guide here: <a target=\"_blank\" href=\"%1$s\">%2$s</a>"
 msgstr "A CheckoutWC és a Divi nagyszerűen működnek együtt, de néhány beállítást módosítania kell. Kérjük, tekintse meg útmutatónkat itt: <a target=\"_blank\" href=\"%1$s\">%2$s</a>"
 
-#: functions/init.php:855
+#: functions/init.php:828
 msgid "How To Fix Styling Issues With Divi Theme"
 msgstr "Hogyan javítsuk ki a Divi téma stílusproblémáit"
 
-#: functions/init.php:862
+#: functions/init.php:835
 msgid "Configure Porto to Work With CheckoutWC"
 msgstr "Állítsa be a Porto-t a CheckoutWC-vel való működéshez"
 
 # %1$s: Guide URL, %2$s: Guide link text
-#: functions/init.php:865
+#: functions/init.php:838
 msgid "CheckoutWC and Porto work great together, but you will need to adjust a couple of settings. Please see our guide here: <a target=\"_blank\" href=\"%1$s\">%2$s</a>"
 msgstr "A CheckoutWC és a Porto nagyszerűen működnek együtt, de néhány beállítást módosítania kell. Kérjük, tekintse meg útmutatónkat itt: <a target=\"_blank\" href=\"%1$s\">%2$s</a>"
 
-#: functions/init.php:867
+#: functions/init.php:840
 msgid "Fix Problems With Porto Theme"
 msgstr "Hibák javítása a Porto témával"
 
-#: functions/init.php:874
+#: functions/init.php:847
 msgid "Configure Astra Pro to Work With CheckoutWC"
 msgstr "Állítsa be az Astra Pro-t a CheckoutWC-vel való működéshez"
 
 # %1$s: Info URL, %2$s: Info link text
-#: functions/init.php:877
+#: functions/init.php:850
 msgid "CheckoutWC and Astra Pro work great together, but there is one setting you should check. More info here: <a target=\"_blank\" href=\"%1$s\">%2$s</a>"
 msgstr "A CheckoutWC és az Astra Pro nagyszerűen működnek együtt, de van egy beállítás, amit ellenőriznie kell. További információ itt: <a target=\"_blank\" href=\"%1$s\">%2$s</a>"
 
-#: functions/init.php:879
+#: functions/init.php:852
 msgid "Fix Layout Issues with Astra Pro"
 msgstr "Hibák javítása az Astra Pro elrendezésében"
 
-#: functions/init.php:886
+#: functions/init.php:859
 msgid "Configure Woostify to Work With CheckoutWC"
 msgstr "Állítsa be a Woostify-t a CheckoutWC-vel való működéshez"
 
 # %1$s: Info URL, %2$s: Info link text
-#: functions/init.php:889
+#: functions/init.php:862
 msgid "CheckoutWC and Woostify work great together, but there is one setting you should check. More info here: <a target=\"_blank\" href=\"%1$s\">%2$s</a>"
 msgstr "A CheckoutWC és a Woostify nagyszerűen működnek együtt, de van egy beállítás, amit ellenőriznie kell. További információ itt: <a target=\"_blank\" href=\"%1$s\">%2$s</a>"
 
-#: functions/init.php:891
+#: functions/init.php:864
 msgid "Fix AJAX Add To Cart with Woostify and CheckoutWC Side Cart"
 msgstr "AJAX kosárba helyezés javítása Woostify és CheckoutWC oldalsó kosár esetén"
 
-#: functions/init.php:1086
+#: functions/init.php:1059
 msgid "Admin Preview Mode: CheckoutWC templates are disabled for normal users. To fix this, please activate templates here: WP Admin > CheckoutWC > Start Here"
 msgstr "Admin előnézeti mód: A CheckoutWC sablonok le vannak tiltva a normál felhasználók számára. Ennek javításához aktiválja a sablonokat itt: WP Admin > CheckoutWC > Start Here"
 
-#: functions/functions.php:228
+#: functions/functions.php:229
 msgid "Ship to"
 msgstr "Kiszállítás"
 
-#: functions/functions.php:230
-#: includes/Features/LocalPickup.php:758
+#: functions/functions.php:231
+#: includes/Features/LocalPickup.php:768
 #: includes/Admin/Pages/PickupLocationsAdminFree.php:93
-#: includes/Admin/Pages/Premium/PickupLocations.php:92
+#: includes/Admin/Pages/Premium/PickupLocations.php:101
 msgid "Address"
 msgstr "Cím"
 
-#: functions/functions.php:623
+#: functions/functions.php:624
 msgid "Sorry, it seems that there are no available payment methods for your location. Please contact us if you require assistance or wish to make alternate arrangements."
 msgstr "Sajnáljuk, úgy tűnik, hogy az Ön helyére nincs elérhető fizetési mód. Kérjük, lépjen kapcsolatba velünk, ha segítségre van szüksége vagy alternatív megoldást szeretne."
 
-#: functions/functions.php:785
-#: includes/Features/LocalPickup.php:1079
+#: functions/functions.php:786
+#: includes/Features/LocalPickup.php:1095
 msgid "Shipping costs are calculated during checkout."
 msgstr "A szállítási költségek a fizetés során kerülnek kiszámításra."
 
-#: functions/functions.php:785
+#: functions/functions.php:786
 msgid "Enter your address to view shipping options."
 msgstr "Adja meg a címét a szállítási lehetőségek megtekintéséhez."
 
-#: functions/functions.php:796
+#: functions/functions.php:797
 msgid "No shipping methods available"
 msgstr "Nincs szállítási módszer"
 
-#: functions/functions.php:824
-#: includes/Model/Bumps/BumpAbstract.php:814
+#: functions/functions.php:825
+#: includes/Model/Bumps/BumpAbstract.php:835
 msgid "Free!"
 msgstr "Ingyenes!"
 
-#: functions/functions.php:960
-#: includes/Features/AbandonedCartRecovery.php:695
+#: functions/functions.php:961
+#: includes/Features/AbandonedCartRecovery.php:701
 msgid "Complete Order"
 msgstr "Vásárlás befejezése"
 
-#: functions/functions.php:1064
+#: functions/functions.php:1065
 msgid "All transactions are secure and encrypted."
 msgstr "Minden tranzakció biztonságos és titkosított."
 
-#: functions/functions.php:1087
+#: functions/functions.php:1088
 msgid "Your order is free. No payment is required."
 msgstr "A vásárlás összege 0 Ft, nincs szükség fizetésre."
 
-#: functions/functions.php:1131
+#: functions/functions.php:1132
 msgid "Same as shipping address"
 msgstr "Ugyanaz mint a szállítási cím"
 
-#: functions/functions.php:1140
+#: functions/functions.php:1141
 msgid "Use a different billing address"
 msgstr "Más számlázási címet adok meg"
 
 # %1$s: Old order status, %2$s: New order status
-#: functions/functions.php:1272
+#: functions/functions.php:1273
 msgid "Order status changed from %1$s to %2$s."
 msgstr "A rendelés állapota megváltozott %1$s-ról %2$s-ra."
 
-#: functions/functions.php:1297
+#: functions/functions.php:1298
 msgid "Tracking Number:"
 msgstr "Követési szám:"
 
-#: functions/functions.php:1384
+#: functions/functions.php:1385
 msgid "Return to cart"
 msgstr "Vissza a kosárhoz"
 
-#: functions/functions.php:1421
+#: functions/functions.php:1422
 msgid "Continue to shipping"
 msgstr "Folytassa a szállítással"
 
-#: functions/functions.php:1447
+#: functions/functions.php:1448
 msgid "Continue to payment"
 msgstr "Tovább a fizetéshez"
 
-#: functions/functions.php:1447
-#: functions/functions.php:1487
+#: functions/functions.php:1448
+#: functions/functions.php:1488
 msgid "Review order"
 msgstr "Rendelés áttekintése"
 
-#: functions/functions.php:1511
+#: functions/functions.php:1512
 msgid "Return to information"
 msgstr "Vissza az információkhoz"
 
-#: functions/functions.php:1531
+#: functions/functions.php:1532
 msgid "Return to shipping"
 msgstr "Vissza a szállításhoz"
 
-#: functions/functions.php:1551
+#: functions/functions.php:1552
 msgid "Return to payment"
 msgstr "Vissza a fizetéshez"
 
-#: functions/functions.php:1598
-#: includes/Features/SideCart.php:276
+#: functions/functions.php:1599
+#: includes/Features/SideCart.php:288
 msgid "Cart"
 msgstr "Kosár"
 
-#: functions/functions.php:1871
+#: functions/functions.php:1872
 msgid "CheckoutWC: Error matching %1$d to customer %2$d"
 msgstr "CheckoutWC: Hiba történt a(z) %1$d és a(z) %2$d ügyfél egyeztetésekor"
 
-#: functions/functions.php:2160
+#: functions/functions.php:2161
 msgid "Or"
 msgstr "Vagy"
 
-#: functions/functions.php:2245
+#: functions/functions.php:2246
 msgid "You can only have 1 %s in your cart."
 msgstr "Csak 1 %s lehet a kosarában."
 
-#: functions/functions.php:2395
+#: functions/functions.php:2396
 #: client/ts/frontend/Components/CartItemQuantityControl.tsx:55
 msgid "Decrement"
 msgstr "Csökkentés"
 
-#: functions/functions.php:2404
+#: functions/functions.php:2405
 #: includes/Managers/AssetManager.php:727
 #: includes/Managers/AssetManager.php:848
-#: includes/Features/LocalPickup.php:502
-#: includes/Features/AbandonedCartRecovery.php:122
+#: includes/Features/LocalPickup.php:510
+#: includes/Features/AbandonedCartRecovery.php:128
 #: includes/Features/ABTesting.php:150
 #: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:633
 #: client/ts/frontend/Components/CartItemQuantityControl.tsx:63
-#: client/ts/admin/Components/CheckoutEditor/slots/AssignedItem.tsx:227
+#: client/ts/admin/Components/CheckoutEditor/slots/AssignedItem.tsx:283
 msgid "Edit"
 msgstr "Szerkesztés"
 
-#: functions/functions.php:2407
+#: functions/functions.php:2408
 #: client/ts/frontend/Components/CartItemQuantityControl.tsx:70
 msgid "Increment"
 msgstr "Növekmény"
 
-#: functions/functions.php:3121
+#: functions/functions.php:3122
 msgid "Unsubscribe"
 msgstr "Leiratkozás"
 
-#: functions/functions.php:3491
-#: includes/Features/AbandonedCartRecovery.php:750
+#: functions/functions.php:3494
+#: includes/Features/AbandonedCartRecovery.php:756
 #: client/ts/admin/Components/acr/carts.tsx:74
 msgid "Subtotal"
 msgstr "Részösszeg"
 
-#: functions/functions.php:3495
+#: functions/functions.php:3498
 #: includes/Admin/Views/html-refund-offer.php:25
 msgid "Total"
 msgstr "Összesen"
 
-#: functions/functions.php:3548
+#: functions/functions.php:3551
 msgid "There are no shipping options available. Please ensure that your address has been entered correctly, or contact us if you need any help."
 msgstr "Nincsenek elérhető szállítási lehetőségek. Kérjük, győződjön meg róla, hogy helyesen adta meg a címét, vagy lépjen kapcsolatba velünk, ha segítségre van szüksége."
 
-#: functions/functions.php:3897
+#: functions/functions.php:3905
 #: includes/Admin/Pages/AbandonedCartRecoveryAdminFree.php:73
 msgid "SendWP - Transactional Email"
 msgstr "SendWP - Tranzakciós e-mail"
 
-#: functions/functions.php:3902
+#: functions/functions.php:3910
 #: includes/Admin/Pages/AbandonedCartRecoveryAdminFree.php:77
 msgid "SendWP makes getting emails delivered as simple as a few clicks. So you can relax know those important emails are being delivered on time."
 msgstr "A SendWP segítségével az e-mailek kézbesítése néhány kattintással egyszerű. Így nyugodtan tudhatja, hogy a fontos e-mailek időben megérkeznek."
 
-#: functions/functions.php:3905
+#: functions/functions.php:3913
 #: includes/Admin/Pages/AbandonedCartRecoveryAdminFree.php:79
 msgid "Try SendWP now and <strong>get your first month for just $1.</strong>"
 msgstr "Próbálja ki most a SendWP-t, és <strong>szerezze meg az első hónapot mindössze 1 dollárért.</strong>"
 
-#: functions/functions.php:3915
+#: functions/functions.php:3923
 #: includes/Admin/Pages/AbandonedCartRecoveryAdminFree.php:87
 msgid "Note: SendWP is optional. You can use any transactional email service you prefer."
 msgstr "Megjegyzés: A SendWP opcionális. Bármilyen tranzakciós e-mail szolgáltatást használhat, amelyet preferál."
 
-#: functions/functions.php:3924
+#: functions/functions.php:3932
 #: includes/Admin/Pages/AbandonedCartRecoveryAdminFree.php:94
 msgid "Connect to SendWP"
 msgstr "Csatlakozás a SendWP-hez"
 
-#: functions/functions.php:4072
+#: functions/functions.php:4080
 msgid "Welcome back"
 msgstr "Köszöntünk a fiókodban"
 
-#: functions/functions.php:4086
+#: functions/functions.php:4094
 msgid "It looks like you already have an account. Please enter your login details below."
 msgstr "Úgy tűnik, már van fiókja. Kérjük, adja meg a bejelentkezési adatait az alábbiakban."
 
-#: functions/functions.php:4100
+#: functions/functions.php:4108
 msgid "If you have shopped with us before, please enter your login details below."
 msgstr "Ha már vásárolt nálunk korábban, kérjük, adja meg bejelentkezési adatait az alábbiakban."
 
-#: functions/functions.php:4110
-#: functions/functions.php:4111
+#: functions/functions.php:4118
+#: functions/functions.php:4119
 msgid "Username or email address"
 msgstr "Felhasználónév vagy e-mail cím"
 
-#: functions/functions.php:4145
+#: functions/functions.php:4153
 msgid "Remember me"
 msgstr "Emlékezz rám"
 
-#: functions/functions.php:4176
+#: functions/functions.php:4184
 msgid "Or continue as guest"
 msgstr "Vagy folytassa vendégként"
 
-#: functions/functions.php:4196
+#: functions/functions.php:4204
 msgid "Lost your password? Please enter your username or email address. You will receive a link to create a new password via email."
 msgstr "Elvesztette a jelszavát? Kérjük, adja meg felhasználónevét vagy e-mail címét. E-mailben kap egy linket az új jelszó létrehozásához."
 
-#: functions/functions.php:4219
+#: functions/functions.php:4227
 msgid "Reset password"
 msgstr "Jelszó visszaállítása"
 
-#: functions/functions.php:4234
+#: functions/functions.php:4242
 #: includes/API/OrderBumpPreviewAPI.php:57
 #: includes/API/OrderBumpOfferFormPreviewAPI.php:46
 #: includes/API/GetVariationFormAPI.php:33
 msgid "Product not found"
 msgstr "A termék nem található"
 
-#: functions/functions.php:4250
-#: functions/functions.php:4395
+#: functions/functions.php:4258
+#: functions/functions.php:4416
 #: includes/API/PostPurchaseBumpProductFormAPI.php:24
 msgid "No thanks"
 msgstr "Köszönöm, nem"
@@ -955,200 +955,204 @@ msgstr "A licenckulcsa a <code>CFW_LICENSE_KEY</code> konstansban van beállítv
 msgid "License Holder"
 msgstr "Licenc birtokosa"
 
-#: includes/Managers/UpdatesManager.php:440
+#: includes/Managers/UpdatesManager.php:441
 msgid "Plan"
 msgstr "Terv"
 
-#: includes/Managers/UpdatesManager.php:448
+#: includes/Managers/UpdatesManager.php:449
 msgid "Activation Limit"
 msgstr "Aktiválási határérték"
 
-#: includes/Managers/UpdatesManager.php:456
-#: includes/Admin/Pages/Premium/ABTestingAdmin.php:171
-#: includes/Admin/Pages/Premium/ABTestingAdmin.php:812
+#: includes/Managers/UpdatesManager.php:457
+#: includes/Admin/Pages/Premium/ABTestingAdmin.php:178
+#: includes/Admin/Pages/Premium/ABTestingAdmin.php:819
 #: client/ts/admin/Components/acr/carts.tsx:80
 msgid "Status"
 msgstr "Állapot"
 
-#: includes/Managers/UpdatesManager.php:463
+#: includes/Managers/UpdatesManager.php:464
 msgid "Refresh License Info"
 msgstr "Licencadatok frissítése"
 
-#: includes/Managers/UpdatesManager.php:509
+#: includes/Managers/UpdatesManager.php:512
 msgid "Please enter your license key."
 msgstr "Kérjük, adja meg a licenckulcsát."
 
-#: includes/Managers/UpdatesManager.php:512
+#: includes/Managers/UpdatesManager.php:515
+#: includes/Managers/UpdatesManager.php:523
 msgid "Activate Site"
 msgstr "Oldal aktiválása"
 
-#: includes/Managers/UpdatesManager.php:515
+#: includes/Managers/UpdatesManager.php:518
 msgid "Deactivate Site"
 msgstr "Oldal deaktiválása"
 
 # Debug error message logged when license check reaches unexpected state
-#: includes/Managers/UpdatesManager.php:685
+#: includes/Managers/UpdatesManager.php:704
 msgid "License Check Error: You should not be able to get here. I am kind of freaked out."
 msgstr "Licenc ellenőrzési hiba: Ide nem kellene eljutnia. Kicsit meg vagyok rémülve."
 
 # %1$d: failure count, %2$d: max failures, %3$s: time since last failure
-#: includes/Managers/UpdatesManager.php:944
+#: includes/Managers/UpdatesManager.php:963
 msgid "Unable to verify CheckoutWC license (%1$d/%2$d attempts failed). Using cached license data. Last attempt: %3$s ago."
 msgstr "Nem sikerült ellenőrizni a CheckoutWC licencet (%1$d/%2$d próbálkozás sikertelen). Gyorsítótárazott licencadatok használata. Utolsó próbálkozás: %3$s ezelőtt."
 
-#: includes/Managers/UpdatesManager.php:967
+#: includes/Managers/UpdatesManager.php:986
 msgid "%s license activation was not successful. Please check your key status below for more information."
 msgstr "%s licenc aktiválása nem volt sikeres. Kérjük, ellenőrizze az alábbi kulcs állapotát további információkért."
 
-#: includes/Managers/UpdatesManager.php:985
+#: includes/Managers/UpdatesManager.php:1004
 msgid "%s license successfully activated."
 msgstr "%s licenc sikeresen aktiválva."
 
-#: includes/Managers/UpdatesManager.php:1003
+#: includes/Managers/UpdatesManager.php:1022
 msgid "%s license deactivation failed. Please try again, or contact support."
 msgstr "%s licenc deaktiválása sikertelen. Kérjük, próbálja újra, vagy lépjen kapcsolatba a támogatással."
 
-#: includes/Managers/UpdatesManager.php:1021
+#: includes/Managers/UpdatesManager.php:1040
 msgid "%s license deactivated successfully."
 msgstr "%s licenc sikeresen deaktiválva."
 
-#: includes/Managers/UpdatesManager.php:1039
+#: includes/Managers/UpdatesManager.php:1058
 msgid "%s license settings saved successfully."
 msgstr "%s licenc beállításai sikeresen elmentve."
 
-#: includes/Managers/UpdatesManager.php:1057
+#: includes/Managers/UpdatesManager.php:1076
 msgid "%1$s license activation failed: %2$s"
 msgstr "%1$s licenc aktiválása sikertelen: %2$s"
 
-#: includes/Managers/UpdatesManager.php:1075
+#: includes/Managers/UpdatesManager.php:1094
 msgid "%s license activation failed: Unable to connect to license server. Please check your internet connection or try again later."
 msgstr "%s licenc aktiválása sikertelen: Nem sikerült csatlakozni a licenc szerverhez. Kérjük, ellenőrizze internetkapcsolatát, vagy próbálkozzon később újra."
 
-#: includes/Managers/UpdatesManager.php:1093
+#: includes/Managers/UpdatesManager.php:1112
 msgid "%s: License deactivated locally. The license server could not be reached, but the license has been deactivated on this site."
 msgstr "%s: Licenc helyileg deaktiválva. A licenc szerver nem volt elérhető, de a licenc ezen az oldalon deaktiválva lett."
 
-#: includes/Managers/UpdatesManager.php:1242
+#: includes/Managers/UpdatesManager.php:1261
 msgid "Unable to verify your CheckoutWC license — the license server could not be reached. Your license and checkout are unaffected; only plugin updates are paused until the connection is restored."
 msgstr "Nem sikerült ellenőrizni a CheckoutWC licencét — a licencszerver nem volt elérhető. A licenc és a fizetés érintetlen marad; csak a bővítményfrissítések szünetelnek, amíg a kapcsolat helyre nem áll."
 
 # %1$d: failure count, %2$d: max failures, %3$s: time since last failure
-#: includes/Managers/UpdatesManager.php:1289
+#: includes/Managers/UpdatesManager.php:1308
 msgid "Unable to verify license online (%1$d/%2$d attempts failed). Using cached license data. Last attempt: %3$s ago."
 msgstr "Nem sikerült online ellenőrizni a licencet (%1$d/%2$d próbálkozás sikertelen). Gyorsítótárazott licencadatok használata. Utolsó próbálkozás: %3$s ezelőtt."
 
-#: includes/Managers/UpdatesManager.php:1295
+#: includes/Managers/UpdatesManager.php:1314
 msgid "License verified successfully."
 msgstr "Licenc sikeresen ellenőrizve."
 
-#: includes/Managers/SlotManager.php:80
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:101
+#: includes/Managers/SlotManager.php:83
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:159
 msgid "Before Express Checkout"
 msgstr "Express Checkout előtt"
 
-#: includes/Managers/SlotManager.php:85
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:102
+#: includes/Managers/SlotManager.php:88
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:160
 msgid "After Customer Account"
 msgstr "Ügyfélfiók után"
 
-#: includes/Managers/SlotManager.php:90
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:103
+#: includes/Managers/SlotManager.php:93
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:161
 msgid "After Delivery Method"
 msgstr "Szállítási mód után"
 
-#: includes/Managers/SlotManager.php:95
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:104
+#: includes/Managers/SlotManager.php:98
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:162
 msgid "After Shipping Address"
 msgstr "Szállítási cím után"
 
-#: includes/Managers/SlotManager.php:100
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:105
+#: includes/Managers/SlotManager.php:103
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:163
 msgid "After Shipping Methods"
 msgstr "Szállítási módok után"
 
-#: includes/Managers/SlotManager.php:105
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:106
-#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:144
+#: includes/Managers/SlotManager.php:108
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:164
+#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:158
 msgid "After Payment Methods"
 msgstr "Fizetési módok után"
 
-#: includes/Managers/SlotManager.php:110
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:107
+#: includes/Managers/SlotManager.php:113
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:165
 msgid "After Billing Address"
 msgstr "Számlázási cím után"
 
-#: includes/Managers/SlotManager.php:115
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:108
+#: includes/Managers/SlotManager.php:118
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:166
 msgid "Before Terms & Conditions"
 msgstr "Általános Szerződési Feltételek előtt"
 
-#: includes/Managers/SlotManager.php:120
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:109
+#: includes/Managers/SlotManager.php:123
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:167
 msgid "After Terms & Conditions"
 msgstr "Általános Szerződési Feltételek után"
 
-#: includes/Managers/SlotManager.php:125
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:110
+#: includes/Managers/SlotManager.php:128
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:168
 msgid "After Complete Order"
 msgstr "Rendelés befejezése után"
 
-#: includes/Managers/SlotManager.php:130
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:111
+#: includes/Managers/SlotManager.php:133
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:169
 msgid "Before Cart Summary Items"
 msgstr "Kosár összegzése tételek előtt"
 
-#: includes/Managers/SlotManager.php:135
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:112
+#: includes/Managers/SlotManager.php:138
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:170
 msgid "After Cart Summary Items"
 msgstr "Kosár összegzése tételek után"
 
-#: includes/Managers/SlotManager.php:140
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:113
+#: includes/Managers/SlotManager.php:143
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:171
 msgid "Before Cart Summary Totals"
 msgstr "Kosár összegzése végösszegek előtt"
 
-#: includes/Managers/SlotManager.php:145
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:114
+#: includes/Managers/SlotManager.php:148
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:172
 msgid "After Cart Summary Totals"
 msgstr "Kosár összegzése végösszegek után"
 
-#: includes/Managers/SlotManager.php:150
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:115
+#: includes/Managers/SlotManager.php:153
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:173
 msgid "Before Footer"
 msgstr "Lábléc előtt"
 
-#: includes/Managers/SlotManager.php:155
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:116
+#: includes/Managers/SlotManager.php:158
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:174
 msgid "After Footer"
 msgstr "Lábléc után"
 
-#: includes/Managers/SlotManager.php:173
+#: includes/Managers/SlotManager.php:176
 #: client/ts/admin/Components/TrustBadgeRow.tsx:166
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:100
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:158
 msgid "— No Slot Assigned —"
 msgstr "— Nincs hozzárendelt hely —"
 
-#: includes/Managers/SlotManager.php:178
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:119
+#: includes/Managers/SlotManager.php:181
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:177
 msgid "After Cart Summary Items (Checkout and Side Cart)"
 msgstr "Kosár összegzése tételek után (Pénztár és Oldalsó kosár)"
 
-#: includes/Managers/SlotManager.php:179
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:120
+#: includes/Managers/SlotManager.php:182
+#: includes/Admin/Pages/Premium/OrderBumps.php:1191
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:178
 msgid "After Cart Summary Items (Side Cart Only)"
 msgstr "Kosár összegzése tételek után (Csak oldalsó kosár)"
 
-#: includes/Managers/SlotManager.php:180
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:121
+#: includes/Managers/SlotManager.php:183
+#: includes/Admin/Pages/Premium/OrderBumps.php:1192
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:179
 msgid "Place Order Click (Checkout)"
 msgstr "Rendelés leadás kattintás (Fizetés)"
 
-#: includes/Managers/SlotManager.php:181
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:122
+#: includes/Managers/SlotManager.php:184
+#: includes/Admin/Pages/Premium/OrderBumps.php:1193
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:180
 msgid "Post Purchase One-Click (Thank You)"
 msgstr "Vásárlás utáni egykattintásos (Köszönjük)"
 
-#: includes/Managers/SlotManager.php:441
+#: includes/Managers/SlotManager.php:454
 msgid "Badge %d"
 msgstr "Jelvény %d"
 
@@ -1213,7 +1217,7 @@ msgid "Please enter a valid postcode / ZIP."
 msgstr "Valós irányítószámot kell megadni."
 
 #: includes/Managers/AssetManager.php:706
-#: includes/Features/LocalPickup.php:626
+#: includes/Features/LocalPickup.php:636
 msgid "Pickup"
 msgstr "Elvitel"
 
@@ -1234,11 +1238,11 @@ msgstr "Kosárba tesz"
 
 #: includes/Managers/AssetManager.php:710
 #: includes/Managers/AssetManager.php:844
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2308
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2383
 #: client/ts/admin/Components/CheckoutEditor/slots/UnsavedChangesDialog.tsx:51
-#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:458
-#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:493
-#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:276
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:488
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:546
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:291
 #: client/ts/admin/Components/CheckoutEditor/slots/CustomHtmlEditor.tsx:76
 msgid "Cancel"
 msgstr "Mégse"
@@ -1332,66 +1336,66 @@ msgid "We have detected that Simple Cloudflare Turnstile is active. To enable Ch
 msgstr "Észleltük, hogy a Simple Cloudflare Turnstile aktív. A CheckoutWC Turnstile funkció engedélyezéséhez kérjük, tiltsa le a Simple Cloudflare Turnstile-t."
 
 # %s is a comma-separated list of product names
-#: includes/Features/SideCart.php:783
+#: includes/Features/SideCart.php:795
 msgid "These rewards-bar gift products can\\'t be auto-added because they are not simple products — please choose a simple product instead: %s"
 msgstr "Ezek a jutalom-sáv ajándéktermékek nem adhatók automatikusan hozzá, mert nem egyszerű termékek — kérjük, válasszon helyette egyszerű terméket: %s"
 
 # %s is the gift product name
-#: includes/Features/SideCart.php:1246
+#: includes/Features/SideCart.php:1273
 msgid "Auto-managed free gift: %s — created by the Side Cart rewards bar, do not edit"
 msgstr "Automatikusan kezelt ingyenes ajándék: %s — a Side Cart jutalom sáv hozta létre, ne szerkessze"
 
-#: includes/Features/SideCart.php:1481
-#: includes/Features/SideCart.php:1538
+#: includes/Features/SideCart.php:1508
+#: includes/Features/SideCart.php:1565
 #: client/ts/admin/Components/FreeShippingTierRow.tsx:87
 msgid "Congrats! You get free standard shipping."
 msgstr "Gratulálok! Ingyenes standard szállítást kapsz."
 
-#: includes/Features/SideCart.php:1495
+#: includes/Features/SideCart.php:1522
 msgid "You\\'re %s away from free shipping!"
 msgstr "Még %s hiányzik az ingyenes szállításhoz!"
 
-#: includes/Features/SideCart.php:1539
+#: includes/Features/SideCart.php:1566
 #: client/ts/admin/Components/FreeShippingTierRow.tsx:88
 #: client/ts/admin/Components/FreeShippingTierRow.tsx:89
 msgid "Reward unlocked!"
 msgstr "Jutalom feloldva!"
 
-#: includes/Features/SideCart.php:1547
+#: includes/Features/SideCart.php:1574
 #: client/ts/admin/Components/FreeShippingTierRow.tsx:94
 msgid "You're %s away from free shipping!"
 msgstr "Már csak %s van az ingyenes szállításig!"
 
-#: includes/Features/SideCart.php:1549
+#: includes/Features/SideCart.php:1576
 #: client/ts/admin/Components/FreeShippingTierRow.tsx:96
 #: client/ts/admin/Components/FreeShippingTierRow.tsx:98
 msgid "You're %s away from your next reward!"
 msgstr "Még %s hiányzik a következő jutalomhoz!"
 
-#: includes/Features/SideCart.php:1556
+#: includes/Features/SideCart.php:1583
 #: client/ts/admin/Components/FreeShippingTierRow.tsx:113
 msgid "Free shipping"
 msgstr "Ingyenes szállítás"
 
-#: includes/Features/SideCart.php:1557
+#: includes/Features/SideCart.php:1584
 #: client/ts/frontend/Components/CheckoutCartTableRow.tsx:48
 #: client/ts/frontend/Components/CartTableRow.tsx:48
 #: client/ts/admin/Components/FreeShippingTierRow.tsx:114
 msgid "Free gift"
 msgstr "Ingyenes ajándék"
 
-#: includes/Features/SideCart.php:1558
+#: includes/Features/SideCart.php:1585
 #: client/ts/admin/Components/FreeShippingTierRow.tsx:170
 msgid "Reward"
 msgstr "Jutalom"
 
-#: includes/Features/SideCart.php:1682
+#: includes/Features/SideCart.php:1709
 #: includes/Admin/WooCommerceAdminScreenAugmenter.php:24
 #: includes/Admin/WooCommerceAdminScreenAugmenter.php:45
 msgid "CheckoutWC:"
 msgstr "CheckoutWC:"
 
-#: includes/Features/SideCart.php:1683
+#: includes/Features/SideCart.php:1710
 msgid "Settings marked with asterisks (**) may be overridden based on your Side Cart settings. (CheckoutWC > Side Cart)"
 msgstr "A csillaggal (**) jelölt beállítások felülírhatók a Side Cart beállításai alapján. (CheckoutWC > Side Cart)"
 
@@ -1408,115 +1412,119 @@ msgstr "Tartalmaz bármilyen rendelésbővítést"
 msgid "Has Bump: %s"
 msgstr "Bővítés: %s"
 
-#: includes/Features/LocalPickup.php:124
-#: includes/Features/LocalPickup.php:128
+#: includes/Features/LocalPickup.php:127
+#: includes/Features/LocalPickup.php:131
 msgid "Delivery method"
 msgstr "Szállítási mód"
 
-#: includes/Features/LocalPickup.php:178
+#: includes/Features/LocalPickup.php:181
 msgid "Pick up"
 msgstr "Vedd fel"
 
-#: includes/Features/LocalPickup.php:197
+#: includes/Features/LocalPickup.php:200
 msgid "Ship"
 msgstr "Behajóz"
 
-#: includes/Features/LocalPickup.php:300
+#: includes/Features/LocalPickup.php:308
 msgid "Pickup locations"
 msgstr "Átvételi helyek"
 
-#: includes/Features/LocalPickup.php:497
-#: includes/Features/LocalPickup.php:499
+#: includes/Features/LocalPickup.php:505
+#: includes/Features/LocalPickup.php:507
 #: includes/Admin/Pages/PickupLocationsAdminFree.php:21
-#: includes/Admin/Pages/Premium/PickupLocations.php:22
+#: includes/Admin/Pages/Premium/PickupLocations.php:23
 msgid "Pickup Locations"
 msgstr "Átvételi helyek"
 
-#: includes/Features/LocalPickup.php:498
-#: includes/Features/LocalPickup.php:684
-#: includes/Features/LocalPickup.php:772
-#: includes/Features/LocalPickup.php:814
-#: includes/Features/LocalPickup.php:1142
-#: includes/Features/LocalPickup.php:1167
+#: includes/Features/LocalPickup.php:506
+#: includes/Features/LocalPickup.php:694
+#: includes/Features/LocalPickup.php:782
+#: includes/Features/LocalPickup.php:830
+#: includes/Features/LocalPickup.php:1158
+#: includes/Features/LocalPickup.php:1183
 msgid "Pickup Location"
 msgstr "Átvétel helyszíne"
 
-#: includes/Features/LocalPickup.php:500
+#: includes/Features/LocalPickup.php:508
 msgid "Add Pickup Location"
 msgstr "Átvételi hely hozzáadása"
 
-#: includes/Features/LocalPickup.php:501
+#: includes/Features/LocalPickup.php:509
 msgid "Add New Pickup Location"
 msgstr "Új átvételi hely hozzáadása"
 
-#: includes/Features/LocalPickup.php:503
+#: includes/Features/LocalPickup.php:511
 msgid "Edit Pickup Location"
 msgstr "Átvételi hely szerkesztése"
 
-#: includes/Features/LocalPickup.php:504
+#: includes/Features/LocalPickup.php:512
 msgid "New Pickup Location"
 msgstr "Új átvételi hely"
 
-#: includes/Features/LocalPickup.php:505
+#: includes/Features/LocalPickup.php:513
 msgid "View Pickup Locations"
 msgstr "Átvételi helyek megtekintése"
 
-#: includes/Features/LocalPickup.php:506
+#: includes/Features/LocalPickup.php:514
 msgid "View Pickup Location"
 msgstr "Átvételi hely megtekintése"
 
-#: includes/Features/LocalPickup.php:507
+#: includes/Features/LocalPickup.php:515
 msgid "Search Pickup Locations"
 msgstr "Átvételi helyek keresése"
 
-#: includes/Features/LocalPickup.php:508
+#: includes/Features/LocalPickup.php:516
 msgid "No Pickup Location found"
 msgstr "Nem található átvételi hely"
 
-#: includes/Features/LocalPickup.php:509
+#: includes/Features/LocalPickup.php:517
 msgid "No Pickup Locations found in trash"
 msgstr "Nem találhatók átvételi helyek a kukában"
 
-#: includes/Features/LocalPickup.php:514
+#: includes/Features/LocalPickup.php:518
+msgid "Attributes"
+msgstr "Attribútumok"
+
+#: includes/Features/LocalPickup.php:523
 msgid "This is where you can add new Pickup Locations."
 msgstr "Itt adhat hozzá új átvételi helyeket."
 
-#: includes/Features/LocalPickup.php:591
+#: includes/Features/LocalPickup.php:601
 #: client/ts/frontend/Components/ReviewPane/PaymentMethodReviewPane.tsx:37
 #: client/ts/frontend/Components/ReviewPane/OrderReviewStepReviewPane.tsx:37
 msgid "Method"
 msgstr "Módszer"
 
-#: includes/Features/LocalPickup.php:744
+#: includes/Features/LocalPickup.php:754
 msgid "Pickup instructions"
 msgstr "Átvételi utasítások"
 
-#: includes/Features/LocalPickup.php:934
+#: includes/Features/LocalPickup.php:950
 msgid "Usually ready in 1 hour."
 msgstr "Általában 1 óra alatt kész."
 
-#: includes/Features/LocalPickup.php:935
+#: includes/Features/LocalPickup.php:951
 msgid "Usually ready in 2 hours."
 msgstr "Általában 2 óra alatt kész."
 
-#: includes/Features/LocalPickup.php:936
+#: includes/Features/LocalPickup.php:952
 msgid "Usually ready in 4 hours."
 msgstr "Általában 4 óra alatt kész."
 
-#: includes/Features/LocalPickup.php:937
+#: includes/Features/LocalPickup.php:953
 msgid "Usually ready in 24 hours."
 msgstr "Általában 24 órán belül kész."
 
-#: includes/Features/LocalPickup.php:938
+#: includes/Features/LocalPickup.php:954
 msgid "Usually ready in 2-4 days."
 msgstr "Általában 2-4 nap alatt kész."
 
-#: includes/Features/LocalPickup.php:939
+#: includes/Features/LocalPickup.php:955
 msgid "Usually ready in 5+ days."
 msgstr "Általában 5+ nap alatt kész."
 
-#: includes/Features/LocalPickup.php:1151
-#: includes/Features/LocalPickup.php:1178
+#: includes/Features/LocalPickup.php:1167
+#: includes/Features/LocalPickup.php:1194
 msgid "Pickup Instructions:"
 msgstr "Átvételi utasítások:"
 
@@ -1544,85 +1552,85 @@ msgstr "Vagy adja meg a címet kézzel."
 msgid "Checkout is not available whilst your cart is empty."
 msgstr "A fizetés nem elérhető, amíg a kosara üres."
 
-#: includes/Features/AbandonedCartRecovery.php:96
+#: includes/Features/AbandonedCartRecovery.php:102
 msgid "You have been unsubscribed from our cart reminder emails."
 msgstr "Önt leiratkozott a kosárra emlékeztető e-mailjeinkről."
 
-#: includes/Features/AbandonedCartRecovery.php:117
-#: includes/Features/AbandonedCartRecovery.php:119
+#: includes/Features/AbandonedCartRecovery.php:123
+#: includes/Features/AbandonedCartRecovery.php:125
 #: includes/Admin/Pages/AbandonedCartRecoveryAdminFree.php:27
 #: includes/Admin/Pages/Premium/AbandonedCartRecovery.php:36
 msgid "Emails"
 msgstr "E-mailek"
 
-#: includes/Features/AbandonedCartRecovery.php:120
+#: includes/Features/AbandonedCartRecovery.php:126
 msgid "Add Email"
 msgstr "E-mail hozzáadása"
 
-#: includes/Features/AbandonedCartRecovery.php:121
+#: includes/Features/AbandonedCartRecovery.php:127
 msgid "Add New Email"
 msgstr "Új e-mail hozzáadása"
 
-#: includes/Features/AbandonedCartRecovery.php:123
+#: includes/Features/AbandonedCartRecovery.php:129
 msgid "Edit Email"
 msgstr "E-mail szerkesztése"
 
-#: includes/Features/AbandonedCartRecovery.php:124
+#: includes/Features/AbandonedCartRecovery.php:130
 msgid "New Email"
 msgstr "Új e-mail"
 
-#: includes/Features/AbandonedCartRecovery.php:125
+#: includes/Features/AbandonedCartRecovery.php:131
 msgid "View Emails"
 msgstr "E-mailek megtekintése"
 
-#: includes/Features/AbandonedCartRecovery.php:126
+#: includes/Features/AbandonedCartRecovery.php:132
 msgid "View Email"
 msgstr "E-mail megtekintése"
 
-#: includes/Features/AbandonedCartRecovery.php:127
+#: includes/Features/AbandonedCartRecovery.php:133
 msgid "Search Emails"
 msgstr "E-mailek keresése"
 
-#: includes/Features/AbandonedCartRecovery.php:128
+#: includes/Features/AbandonedCartRecovery.php:134
 msgid "No Email found"
 msgstr "Nem található e-mail"
 
-#: includes/Features/AbandonedCartRecovery.php:129
+#: includes/Features/AbandonedCartRecovery.php:135
 msgid "No Emails found in trash"
 msgstr "Nem találhatók e-mailek a kukában"
 
-#: includes/Features/AbandonedCartRecovery.php:134
+#: includes/Features/AbandonedCartRecovery.php:140
 msgid "This is where you can add new Abandoned Cart Recovery Emails."
 msgstr "Itt adhat hozzá új elhagyott kosár visszaszerzési e-maileket."
 
-#: includes/Features/AbandonedCartRecovery.php:738
+#: includes/Features/AbandonedCartRecovery.php:744
 msgid "Item"
 msgstr "Elem"
 
-#: includes/Features/AbandonedCartRecovery.php:741
+#: includes/Features/AbandonedCartRecovery.php:747
 #: includes/Admin/Views/html-refund-offer.php:23
 #: client/ts/admin/Components/acr/carts.tsx:60
 msgid "Name"
 msgstr "Név"
 
-#: includes/Features/AbandonedCartRecovery.php:744
+#: includes/Features/AbandonedCartRecovery.php:750
 msgid "Quantity"
 msgstr "Mennyiség"
 
-#: includes/Features/AbandonedCartRecovery.php:747
+#: includes/Features/AbandonedCartRecovery.php:753
 msgid "Price"
 msgstr "Ár"
 
-#: includes/Features/AbandonedCartRecovery.php:867
-#: includes/Features/AbandonedCartRecovery.php:931
+#: includes/Features/AbandonedCartRecovery.php:873
+#: includes/Features/AbandonedCartRecovery.php:937
 msgid "This order was abandoned and subsequently recovered."
 msgstr "Ezt a megrendelést elvetették, és később visszaszerezték."
 
-#: includes/Features/AbandonedCartRecovery.php:1065
+#: includes/Features/AbandonedCartRecovery.php:1071
 msgid "CheckoutWC ACR only"
 msgstr "Csak CheckoutWC ACR"
 
-#: includes/Features/AbandonedCartRecovery.php:1066
+#: includes/Features/AbandonedCartRecovery.php:1072
 msgid "Check this box if the coupon can only be used by customers with an abandoned cart."
 msgstr "Jelölje be ezt a négyzetet, ha a kupont csak az elhagyott kosárral rendelkező vásárlók használhatják."
 
@@ -1632,7 +1640,7 @@ msgid "A/B Tests"
 msgstr "A/B tesztek"
 
 #: includes/Features/ABTesting.php:146
-#: includes/Admin/Pages/Premium/OrderBumps.php:133
+#: includes/Admin/Pages/Premium/OrderBumps.php:135
 msgid "A/B Test"
 msgstr "A/B teszt"
 
@@ -1704,7 +1712,7 @@ msgstr "A bővítmény <strong>túl bonyolult a beállításhoz.</strong>"
 #: includes/Admin/Pages/LocalPickupAdminFree.php:184
 #: includes/Admin/Pages/LocalPickupAdminFree.php:221
 #: includes/Admin/Pages/Premium/LocalPickupAdmin.php:225
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:118
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:176
 #: client/ts/admin/Components/Forms/AdvancedSettingsForm.tsx:104
 msgid "Other"
 msgstr "Egyéb"
@@ -1871,15 +1879,15 @@ msgstr "Ajánlat elutasítva."
 msgid "Guest (Not Logged In)"
 msgstr "Vendég (Nincs bejelentkezve)"
 
-#: includes/API/ProductsAndVariationsSearchAPI.php:68
+#: includes/API/ProductsAndVariationsSearchAPI.php:75
 msgid "The date the last order for this product was placed, in the site's timezone."
 msgstr "A termék utolsó megrendelésének dátuma a webhely időzónájában."
 
-#: includes/API/ProductsAndVariationsSearchAPI.php:85
+#: includes/API/ProductsAndVariationsSearchAPI.php:92
 msgid "Limit result set to products that are low or out of stock. (Deprecated)"
 msgstr "A keresés szűkítése azon termékekre, amelyeknél alacsony a készlet vagy elfogytak (Elavult)."
 
-#: includes/API/ProductsAndVariationsSearchAPI.php:91
+#: includes/API/ProductsAndVariationsSearchAPI.php:98
 msgid "Search by similar product name or sku."
 msgstr "Keresés hasonló terméknév vagy termékváltozat alapján."
 
@@ -1987,54 +1995,54 @@ msgstr "Rendelés Bump ajánlat űrlap"
 msgid "The form to accept or reject the bump offer."
 msgstr "Az űrlap az ajánlat elfogadásához vagy elutasításához."
 
-#: includes/Model/Bumps/BumpAbstract.php:1013
-#: includes/Model/Bumps/BumpAbstract.php:1023
+#: includes/Model/Bumps/BumpAbstract.php:1034
+#: includes/Model/Bumps/BumpAbstract.php:1044
 #: includes/Model/ABTests/OrderBumpsABTest.php:30
 #: includes/Features/ABTesting/ABTestTypeRegistry.php:123
 #: includes/Admin/Pages/OrderBumpsAdminFree.php:17
 #: includes/Admin/Pages/OrderBumpsAdminFree.php:71
-#: includes/Admin/Pages/Premium/OrderBumps.php:46
+#: includes/Admin/Pages/Premium/OrderBumps.php:48
 #: client/ts/admin/Components/Forms/OrderBumpSettingsForm.tsx:45
-#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:294
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:309
 msgid "Order Bumps"
 msgstr "Rendelés kiegészítők"
 
-#: includes/Model/Bumps/BumpAbstract.php:1014
+#: includes/Model/Bumps/BumpAbstract.php:1035
 #: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:193
 #: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:1614
 msgid "Order Bump"
 msgstr "Rendelés kiegészítő"
 
-#: includes/Model/Bumps/BumpAbstract.php:1015
+#: includes/Model/Bumps/BumpAbstract.php:1036
 msgid "Add New"
 msgstr "Új hozzáadása"
 
-#: includes/Model/Bumps/BumpAbstract.php:1016
+#: includes/Model/Bumps/BumpAbstract.php:1037
 msgid "Add New Order Bump"
 msgstr "Új Rendelés Bump hozzáadása"
 
-#: includes/Model/Bumps/BumpAbstract.php:1017
+#: includes/Model/Bumps/BumpAbstract.php:1038
 msgid "Edit Order Bump"
 msgstr "Rendelés Bump szerkesztése"
 
-#: includes/Model/Bumps/BumpAbstract.php:1018
+#: includes/Model/Bumps/BumpAbstract.php:1039
 #: client/ts/admin/Components/Metaboxes/OrderBumpsSetupModal.tsx:61
 msgid "New Order Bump"
 msgstr "Új Rendelés Bump"
 
-#: includes/Model/Bumps/BumpAbstract.php:1019
+#: includes/Model/Bumps/BumpAbstract.php:1040
 msgid "View Order Bump"
 msgstr "Rendelés kiegészítő megtekintése"
 
-#: includes/Model/Bumps/BumpAbstract.php:1020
+#: includes/Model/Bumps/BumpAbstract.php:1041
 msgid "Find Order Bump"
 msgstr "Rendelés kiegészítő keresése"
 
-#: includes/Model/Bumps/BumpAbstract.php:1021
+#: includes/Model/Bumps/BumpAbstract.php:1042
 msgid "No order bumps were found."
 msgstr "Nem található rendelés bump."
 
-#: includes/Model/Bumps/BumpAbstract.php:1022
+#: includes/Model/Bumps/BumpAbstract.php:1043
 msgid "Not found in trash"
 msgstr "Nem található a kukában"
 
@@ -2058,6 +2066,7 @@ msgid "You do not have permission to install plugin updates"
 msgstr "Nincs jogosultsága a bővítmény frissítések telepítéséhez"
 
 #: includes/Managers/Helpers/EDD_SL_Plugin_Updater.php:534
+#: client/ts/admin/Components/GooglePlacesKeyStatus.tsx:61
 msgid "Error"
 msgstr "Hiba"
 
@@ -2178,11 +2187,11 @@ msgstr "Engedélyezze a WooCommerce Checkout Field Editor számára a számláz�
 msgid "Full-width"
 msgstr "Teljes szélesség"
 
-#: includes/Compatibility/Plugins/WPRocket.php:116
+#: includes/Compatibility/Plugins/WPRocket.php:132
 msgid "Enable WP Rocket Delay JS Execution compatibility mode"
 msgstr "Engedélyezze a WP Rocket Delay JS Execution kompatibilitási módot"
 
-#: includes/Compatibility/Plugins/WPRocket.php:117
+#: includes/Compatibility/Plugins/WPRocket.php:133
 msgid "By default, we exclude our scripts and script dependencies to prevent compatibility problems. Uncheck to allow CheckoutWC scripts to be delayed for maximum performance."
 msgstr "Alapértelmezés szerint kizárjuk a szkripteinket és a szkriptfüggőségeket a kompatibilitási problémák elkerülése érdekében. Törölje a jelölést, hogy engedélyezze a CheckoutWC szkriptek késleltetését a maximális teljesítmény érdekében."
 
@@ -2331,8 +2340,8 @@ msgstr "Globális beállítások"
 #: includes/Admin/Pages/TrustBadgesAdminFree.php:56
 #: includes/Admin/Pages/Premium/TrustBadges.php:16
 #: client/ts/admin/Components/Forms/TrustBadgeSettingsForm.tsx:150
-#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:348
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:544
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:384
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:552
 msgid "Trust Badges"
 msgstr "Bizalmi jelvények"
 
@@ -2357,7 +2366,7 @@ msgstr "Engedélyezze a bizalmi jelvényeket a CheckoutWC sablonokon. Törölje 
 
 #: includes/Admin/Pages/TrustBadgesAdminFree.php:43
 #: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:181
-#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:219
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:234
 msgid "Heading"
 msgstr "Fejléc"
 
@@ -2398,9 +2407,9 @@ msgstr "Alcím"
 #: includes/Admin/Pages/Appearance.php:32
 #: includes/Admin/Pages/Premium/AbandonedCartRecovery.php:462
 #: client/ts/admin/Components/TrustBadgeRow.tsx:117
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:105
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:114
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:118
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:111
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:120
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:124
 #: client/ts/admin/Components/CheckoutEditor/panels/DesignSettingsPanel.tsx:52
 msgid "Template"
 msgstr "Sablon"
@@ -2440,7 +2449,7 @@ msgid "WYSIWYG"
 msgstr "WYSIWYG"
 
 #: includes/Admin/Pages/TrustBadgesAdminFree.php:111
-#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:428
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:464
 #: client/ts/admin/Components/CheckoutEditor/slots/CustomHtmlEditor.tsx:37
 #: client/ts/admin/Components/CheckoutEditor/slots/AssignedItem.tsx:73
 msgid "HTML"
@@ -2633,17 +2642,17 @@ msgid "Configure the Floating Side Cart Button"
 msgstr "Lebegő oldalsó kosár gomb konfigurálása"
 
 #: includes/Admin/Pages/PickupLocationsAdminFree.php:73
-#: includes/Admin/Pages/Premium/PickupLocations.php:74
+#: includes/Admin/Pages/Premium/PickupLocations.php:83
 msgid "Pickup Location Details"
 msgstr "Átvételi hely részletei"
 
 #: includes/Admin/Pages/PickupLocationsAdminFree.php:115
-#: includes/Admin/Pages/Premium/PickupLocations.php:114
+#: includes/Admin/Pages/Premium/PickupLocations.php:123
 msgid "Estimated Pickup Time"
 msgstr "Becsült átvételi idő"
 
 #: includes/Admin/Pages/PickupLocationsAdminFree.php:131
-#: includes/Admin/Pages/Premium/PickupLocations.php:130
+#: includes/Admin/Pages/Premium/PickupLocations.php:139
 msgid "Pickup Instructions"
 msgstr "Átvételi utasítások"
 
@@ -2665,8 +2674,8 @@ msgstr "Eldobja?"
 
 #: includes/Admin/Pages/PageAbstract.php:136
 #: includes/Admin/Pages/PageAbstract.php:157
-#: client/ts/admin/Components/CheckoutEditor/EditorHeader.tsx:203
-#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:404
+#: client/ts/admin/Components/CheckoutEditor/EditorHeader.tsx:230
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:434
 msgid "Save Changes"
 msgstr "Változtatások mentése"
 
@@ -2685,20 +2694,20 @@ msgid "This setting is currently programmatically overridden. To enable it remov
 msgstr "Ez a beállítás jelenleg programozottan felül van írva. Az engedélyezéshez távolítsa el az egyéni kódját."
 
 #: includes/Admin/Pages/PageAbstract.php:333
-#: includes/Admin/Pages/Premium/OrderBumps.php:1034
+#: includes/Admin/Pages/Premium/OrderBumps.php:1067
 #: includes/Admin/Pages/Premium/AbandonedCartRecovery.php:850
 msgid "Upgrade Your Plan"
 msgstr "Frissítse a tervét"
 
 # %1$s: Account URL, %2$s: Help URL
 #: includes/Admin/Pages/PageAbstract.php:350
-#: includes/Admin/Pages/Premium/OrderBumps.php:1044
+#: includes/Admin/Pages/Premium/OrderBumps.php:1077
 #: includes/Admin/Pages/Premium/AbandonedCartRecovery.php:869
 msgid "You can upgrade your license in <a class=\"text-blue-600 underline\" target=\"_blank\" href=\"%1$s\">Account</a>. For help upgrading your license, <a class=\"text-blue-600 underline\" target=\"_blank\" href=\"%2$s\">click here.</a>"
 msgstr "Licencét frissítheti az <a class=\"text-blue-600 underline\" target=\"_blank\" href=\"%1$s\">Fiók</a> oldalon. A licenc frissítéséhez kérjen segítséget, <a class=\"text-blue-600 underline\" target=\"_blank\" href=\"%2$s\">kattintson ide.</a>"
 
 #: includes/Admin/Pages/OrderBumpsAdminFree.php:27
-#: includes/Admin/Pages/Premium/OrderBumps.php:60
+#: includes/Admin/Pages/Premium/OrderBumps.php:62
 msgid "Manage Bumps"
 msgstr "Bumps kezelése"
 
@@ -2858,14 +2867,14 @@ msgstr "Átvételi helyek szerkesztése"
 msgid "Submit"
 msgstr "Beküldés"
 
-#: includes/Admin/Pages/Integrations.php:17
+#: includes/Admin/Pages/Integrations.php:18
 msgid "Integrations"
 msgstr "Integrációk"
 
 #: includes/Admin/Pages/General.php:40
 #: includes/Admin/Pages/General.php:41
-#: includes/Admin/Pages/CheckoutEditor.php:14
-#: client/ts/admin/Components/CheckoutEditor/EditorHeader.tsx:75
+#: includes/Admin/Pages/CheckoutEditor.php:16
+#: client/ts/admin/Components/CheckoutEditor/EditorHeader.tsx:92
 msgid "Checkout Editor"
 msgstr "Pénztár szerkesztő"
 
@@ -3002,13 +3011,13 @@ msgstr "A CheckoutWC sablon és funkciók ideiglenesen megkerülésre kerülnek 
 
 #: includes/Admin/Pages/ExpressCheckout.php:16
 #: client/ts/admin/Components/Forms/ExpressCheckoutSettingsForm.tsx:54
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:413
 #: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:419
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:425
 msgid "Express Checkout"
 msgstr "Gyors fizetés"
 
 # 1: Admin page title, 2: Network or site name.
-#: includes/Admin/Pages/CheckoutEditor.php:50
+#: includes/Admin/Pages/CheckoutEditor.php:70
 msgid "%1$s ‹ %2$s — WordPress"
 msgstr "%1$s ‹ %2$s — WordPress"
 
@@ -3041,7 +3050,7 @@ msgid "System Font Stack (fastest)"
 msgstr "Rendszer betűtípus halmaz (leggyorsabb)"
 
 #: includes/Admin/Pages/Appearance.php:201
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:219
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:225
 msgid "Body"
 msgstr "Törzs"
 
@@ -3056,8 +3065,8 @@ msgstr "Háttér"
 #: includes/Admin/Pages/Appearance.php:219
 #: includes/Admin/Pages/Appearance.php:231
 #: includes/Admin/Pages/Appearance.php:241
-#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:429
-#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:247
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:459
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:262
 msgid "Text"
 msgstr "Szöveg"
 
@@ -3067,21 +3076,21 @@ msgid "Link"
 msgstr "Link"
 
 #: includes/Admin/Pages/Appearance.php:211
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:223
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:229
 msgid "Header"
 msgstr "Fejléc"
 
 #: includes/Admin/Pages/Appearance.php:223
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:224
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:627
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:230
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:635
 msgid "Footer"
 msgstr "Lábléc"
 
 #: includes/Admin/Pages/Appearance.php:235
 #: client/ts/admin/Components/Forms/WooCommercePagesGlobalOptionsSettingsForm.tsx:48
 #: client/ts/admin/Components/Forms/CheckoutSettingsForm.tsx:569
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:222
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:434
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:228
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:440
 #: client/ts/admin/Components/CheckoutEditor/panels/CheckoutSettingsPanel.tsx:305
 msgid "Cart Summary"
 msgstr "Kosár összefoglaló"
@@ -3099,7 +3108,7 @@ msgid "Quantity Bubble Text"
 msgstr "Mennyiség Buborék Szöveg"
 
 #: includes/Admin/Pages/Appearance.php:253
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:221
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:227
 msgid "Breadcrumbs"
 msgstr "Morzsák"
 
@@ -3128,7 +3137,7 @@ msgid "Next Accent"
 msgstr "Következő Kiemelés"
 
 #: includes/Admin/Pages/Appearance.php:267
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:220
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:226
 msgid "Buttons"
 msgstr "Gombok"
 
@@ -3170,7 +3179,7 @@ msgstr "Téma specifikus színek"
 
 #: includes/Admin/Pages/Advanced.php:20
 #: includes/Admin/Pages/Advanced.php:28
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:645
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:653
 msgid "Advanced"
 msgstr "Haladó"
 
@@ -3715,9 +3724,9 @@ msgstr "A 3. lépés címe. Példa: Megrendelés fogadva"
 msgid "Order Bump Preview"
 msgstr "Rendelés Bump előnézet"
 
-#: client/ts/admin/order-bumps-editor.tsx:172
-msgid "Note: This is just a preview. The price shown will not be properly discounted in this context."
-msgstr "Megjegyzés: Ez csak előnézet. Az itt megjelenő ár nem lesz megfelelően kedvezményes ebben a kontextusban."
+#: client/ts/admin/order-bumps-editor.tsx:152
+msgid "Preview only — configure this bump in the order bump settings sidebar on the right. The price shown here is not discounted."
+msgstr "Csak előnézet — ezt a bumpot a jobb oldali rendelési bump beállítások oldalsávjában konfigurálhatja. Az itt megjelenített ár nem kedvezményes."
 
 #: client/ts/admin/admin.ts:116
 #: client/ts/admin/Components/SettingsImporterButton.ts:12
@@ -3745,7 +3754,7 @@ msgid "Are you sure you want to clear all tracked carts and reset all recovery s
 msgstr "Biztosan törölni szeretné az összes követett kosarat és visszaállítani az összes visszanyerési statisztikát? Ez nem vonható vissza."
 
 #: client/ts/admin/admin.ts:178
-#: client/ts/admin/Components/CheckoutEditor/EditorApp.tsx:177
+#: client/ts/admin/Components/CheckoutEditor/EditorApp.tsx:188
 msgid "Are you sure you want to discard all unsaved changes?"
 msgstr "Biztosan el szeretné vetni az összes mentetlen változtatást?"
 
@@ -3780,8 +3789,8 @@ msgid "Select the order bump to test variants against."
 msgstr "Válassza ki a tesztelendő rendelési felugró ablakot."
 
 #: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:252
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2000
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2090
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2075
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2165
 msgid "Select an order bump to view and manage variants."
 msgstr "Válasszon ki egy rendelési felugró ablakot a variánsok megtekintéséhez és kezeléséhez."
 
@@ -3815,6 +3824,7 @@ msgstr "Adja meg az eredeti rendelési felugró ablak és minden variáns száza
 
 #: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:531
 #: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:590
+#: client/ts/admin/Components/Metaboxes/ProductsAndVariationsCompleter.tsx:31
 msgid "Draft"
 msgstr "Vázlat"
 
@@ -3831,28 +3841,28 @@ msgstr "Eredeti"
 #: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:541
 #: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:606
 #: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:1562
-#: includes/Admin/Pages/Premium/OrderBumps.php:126
+#: includes/Admin/Pages/Premium/OrderBumps.php:128
 msgid "Conversion Rate"
 msgstr "Konverziós arány"
 
 #: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:545
 #: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:610
 #: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:1566
-#: includes/Admin/Pages/Premium/OrderBumps.php:127
+#: includes/Admin/Pages/Premium/OrderBumps.php:129
 msgid "Revenue"
 msgstr "Bevétel"
 
 #: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:551
 #: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:619
 #: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:1576
-#: includes/Admin/Pages/Premium/OrderBumps.php:128
+#: includes/Admin/Pages/Premium/OrderBumps.php:130
 msgid "Location"
 msgstr "Helyszín"
 
 #: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:555
 #: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:623
 #: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:1586
-#: includes/Admin/Pages/Premium/OrderBumps.php:129
+#: includes/Admin/Pages/Premium/OrderBumps.php:131
 #: client/ts/admin/Components/Metaboxes/OrderBumpsSetupModal.tsx:77
 #: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:31
 msgid "Offer Product"
@@ -3863,15 +3873,15 @@ msgid "Delete variant"
 msgstr "Variáns törlése"
 
 #: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:630
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2305
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2323
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2380
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2398
 msgid "Select Winner"
 msgstr "Győztes kiválasztása"
 
 #: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:650
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2268
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2272
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2278
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2343
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2347
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2353
 msgid "Create Variant"
 msgstr "Variáns létrehozása"
 
@@ -3896,7 +3906,7 @@ msgid "Variant does not belong to the specified order bump."
 msgstr "A variáns nem tartozik a megadott rendelési felugró ablakhoz."
 
 #: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:940
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2158
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2233
 msgid "Failed to delete variant."
 msgstr "Nem sikerült törölni a variánst."
 
@@ -3926,7 +3936,7 @@ msgid "Order bump not found."
 msgstr "Rendelési felugró ablak nem található."
 
 #: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:1156
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2270
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2345
 msgid "Failed to create variant."
 msgstr "Nem sikerült létrehozni a variánst."
 
@@ -4010,77 +4020,77 @@ msgstr "törölje ezt a tesztet"
 msgid "To create a new A/B test for the \"%1$s\" order bump, %2$s."
 msgstr "Új A/B teszt létrehozásához a(z) „%1$s” rendelési felugró ablakhoz, %2$s."
 
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:1817
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:1892
 msgid "Existing Test:"
 msgstr "Meglévő teszt:"
 
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:1854
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:1929
 msgid "Search for an order bump..."
 msgstr "Rendelési felugró ablak keresése..."
 
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:1959
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2034
 msgid "You have not yet created any order bumps."
 msgstr "Még nem hozott létre rendelési felugró ablakokat."
 
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:1961
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2036
 msgid "Create an order bump"
 msgstr "Hozzon létre rendelés kiegészítőt"
 
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2021
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2096
 msgid "Loading variants..."
 msgstr "Variánsok betöltése..."
 
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2057
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2063
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2132
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2138
 msgid "Error loading variants."
 msgstr "Hiba a variánsok betöltése közben."
 
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2109
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2184
 msgid "Are you sure you want to delete this variant? This action cannot be undone. If using a custom traffic split, the traffic percentages will be redistributed proportionally across the remaining variants."
 msgstr "Biztosan törölni szeretné ezt a variánst? Ez a művelet nem vonható vissza. Ha egyéni forgalommegosztást használ, a forgalmi százalékokat arányosan újraosztják a fennmaradó variánsok között."
 
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2163
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2238
 msgid "An error occurred while deleting the variant."
 msgstr "Hiba történt a variáns törlése közben."
 
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2188
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2262
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2263
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2337
 msgid "Edit Variant"
 msgstr "Variáns szerkesztése"
 
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2222
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2297
 msgid "Enter a title for this variant:"
 msgstr "Adjon meg egy címet ennek a variánsnak:"
 
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2230
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2305
 msgid "Creating..."
 msgstr "Létrehozás..."
 
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2276
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2351
 msgid "An error occurred while creating the variant."
 msgstr "Hiba történt a variáns létrehozása közben."
 
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2296
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2371
 msgid "Selecting this variant as the winner will update the original order bump to match it and delete variants."
 msgstr "Ennek a variánsnak a győztesként való kiválasztása frissíti az eredeti rendelés kiegészítőt, hogy az megegyezzen vele, és törli a variánsokat."
 
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2300
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2375
 msgid "Apply this variant\\'s conversion stats to the original order bump."
 msgstr "Alkalmazza ennek a variánsnak a konverziós statisztikáit az eredeti rendelés kiegészítőre."
 
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2358
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2433
 msgid "Failed to select winner."
 msgstr "Nem sikerült kiválasztani a győztest."
 
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2363
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2438
 msgid "An error occurred while setting the winner."
 msgstr "Hiba történt a győztes beállítása közben."
 
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2396
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2471
 msgid "Traffic split percentages must total exactly 100%. Please adjust your percentages before saving."
 msgstr "A forgalommegosztási százalékoknak pontosan 100%-ot kell elérniük. Kérjük, módosítsa a százalékokat a mentés előtt."
 
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2483
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2558
 msgid "(Original)"
 msgstr "(Eredeti)"
 
@@ -4108,44 +4118,58 @@ msgstr "CheckoutWC: Oldalsó kosár összesítés után"
 msgid "CheckoutWC: After Side Cart Buttons"
 msgstr "CheckoutWC: Oldalsó kosár gombok után"
 
-#: includes/Admin/Pages/Premium/OrderBumps.php:125
+#: includes/Admin/Pages/Premium/PickupLocations.php:203
+#: includes/Admin/Pages/Premium/PickupLocations.php:210
+msgid "Order"
+msgstr "Rendelés"
+
+#: includes/Admin/Pages/Premium/OrderBumps.php:127
 msgid "ID"
 msgstr "Azonosító"
 
-#: includes/Admin/Pages/Premium/OrderBumps.php:126
+#: includes/Admin/Pages/Premium/OrderBumps.php:128
 msgid "Conversion Rate tracks how often a bump is added to an actual completed purchase. If 20 orders are placed and a bump was displayed on 10 of those orders and the bump was purchased 5 times, the conversion rate is 50%."
 msgstr "A konverziós arány azt méri, hogy milyen gyakran adnak hozzá egy ajánlatot egy ténylegesen befejezett vásárláshoz. Ha 20 rendelés érkezik, és ezek közül 10 rendelésnél megjelent az ajánlat, és az ajánlatot 5 alkalommal megvásárolták, akkor a konverziós arány 50%."
 
-#: includes/Admin/Pages/Premium/OrderBumps.php:127
+#: includes/Admin/Pages/Premium/OrderBumps.php:129
 msgid "The additional revenue that an Order Bump has captured. When configured as an upsell, it calculates the relative value between the offer product and the product being replaced. Revenues incurred before version 6.1.4 are estimated."
 msgstr "Az az extra bevétel, amelyet egy rendelési ajánlat generált. Ha upsellként van beállítva, kiszámolja az ajánlat termék és a helyettesített termék relatív értékét. A 6.1.4 verzió előtti bevételek becsültek."
 
-#: includes/Admin/Pages/Premium/OrderBumps.php:232
+#: includes/Admin/Pages/Premium/OrderBumps.php:238
 msgid "View Test"
 msgstr "Teszt megtekintése"
 
-#: includes/Admin/Pages/Premium/OrderBumps.php:242
+#: includes/Admin/Pages/Premium/OrderBumps.php:248
 msgid "Add Test"
 msgstr "Teszt hozzáadása"
 
-#: includes/Admin/Pages/Premium/OrderBumps.php:327
+#: includes/Admin/Pages/Premium/OrderBumps.php:333
 msgid "All <span class=\"count\">(%s)</span>"
 msgid_plural "All <span class=\"count\">(%s)</span>"
 msgstr[0] "Összes <span class=\"count\">(%s)</span>"
 msgstr[1] ""
 
-#: includes/Admin/Pages/Premium/OrderBumps.php:535
+#: includes/Admin/Pages/Premium/OrderBumps.php:541
 msgid "Reset Order Bump Conversion Stats"
 msgstr "Rendelés rásegítés konverziós statisztikák visszaállítása"
 
 # %1$d: Allowed bump count, %2$d: Used bump count
-#: includes/Admin/Pages/Premium/OrderBumps.php:1037
+#: includes/Admin/Pages/Premium/OrderBumps.php:1070
 msgid "Your CheckoutWC plan allows you to create %1$d Order Bumps. You have used %2$d."
 msgstr "A CheckoutWC csomagja lehetővé teszi %1$d rendelés rásegítés létrehozását. Ebből %2$d-t használt fel."
 
-#: includes/Admin/Pages/Premium/OrderBumps.php:1040
+#: includes/Admin/Pages/Premium/OrderBumps.php:1073
 msgid "You cannot create or publish new Order Bumps if you are over the limit."
 msgstr "Nem hozhat létre vagy tehet közzé új rendelés rásegítéseket, ha túllépte a korlátot."
+
+#: includes/Admin/Pages/Premium/OrderBumps.php:1174
+msgid "This order bump is part of an A/B test. Changes you make here affect the test results."
+msgstr "Ez a rendelési bump egy A/B teszt része. Az itt végzett módosítások befolyásolják a teszt eredményeit."
+
+# %s: display location name, e.g. "Place Order Click (Checkout)"
+#: includes/Admin/Pages/Premium/OrderBumps.php:1198
+msgid "%s is not a checkout slot. If you save this, the bump will no longer appear in the checkout editor — manage it from the Order Bumps page instead."
+msgstr "%s nem egy checkout slot. Ha ezt elmenti, a bump többé nem fog megjelenni a checkout szerkesztőben — helyette az Order Bumps oldalon kezelje."
 
 #: includes/Admin/Pages/Premium/AbandonedCartRecovery.php:99
 #: includes/Admin/Pages/Premium/AbandonedCartRecovery.php:389
@@ -4163,8 +4187,8 @@ msgid "Send this long after cart has been abandoned."
 msgstr "Ezt akkor küldje el, amikor a kosarat már rég elhagyták."
 
 #: includes/Admin/Pages/Premium/AbandonedCartRecovery.php:101
-#: includes/Admin/Pages/Premium/ABTestingAdmin.php:211
-#: includes/Admin/Pages/Premium/ABTestingAdmin.php:819
+#: includes/Admin/Pages/Premium/ABTestingAdmin.php:218
+#: includes/Admin/Pages/Premium/ABTestingAdmin.php:826
 #: client/ts/admin/Components/CheckoutEditor/panels/DesignSettingsPanel.tsx:82
 msgid "Active"
 msgstr "Aktív"
@@ -4259,7 +4283,7 @@ msgid "Unsubscribe Link"
 msgstr "Leiratkozási link"
 
 #: includes/Admin/Pages/Premium/AbandonedCartRecovery.php:642
-#: includes/Admin/Pages/Premium/ABTestingAdmin.php:315
+#: includes/Admin/Pages/Premium/ABTestingAdmin.php:322
 msgid "Permission denied."
 msgstr "Engedély megtagadva."
 
@@ -4284,84 +4308,68 @@ msgstr "Nem hozhat létre vagy küldhet ki új Elhagyott Kosár Visszanyerő e-m
 msgid "Manage Tests"
 msgstr "Tesztelés kezelése"
 
-#: includes/Admin/Pages/Premium/ABTestingAdmin.php:170
-#: includes/Admin/Pages/Premium/ABTestingAdmin.php:786
+#: includes/Admin/Pages/Premium/ABTestingAdmin.php:177
+#: includes/Admin/Pages/Premium/ABTestingAdmin.php:793
 msgid "Type"
 msgstr "Típus"
 
-#: includes/Admin/Pages/Premium/ABTestingAdmin.php:172
+#: includes/Admin/Pages/Premium/ABTestingAdmin.php:179
 msgid "Duration"
 msgstr "Időtartam"
 
-#: includes/Admin/Pages/Premium/ABTestingAdmin.php:212
-#: includes/Admin/Pages/Premium/ABTestingAdmin.php:820
+#: includes/Admin/Pages/Premium/ABTestingAdmin.php:219
+#: includes/Admin/Pages/Premium/ABTestingAdmin.php:827
 msgid "Paused"
 msgstr "Szüneteltetve"
 
-#: includes/Admin/Pages/Premium/ABTestingAdmin.php:213
-#: includes/Admin/Pages/Premium/ABTestingAdmin.php:821
+#: includes/Admin/Pages/Premium/ABTestingAdmin.php:220
+#: includes/Admin/Pages/Premium/ABTestingAdmin.php:828
 msgid "Complete"
 msgstr "Befejezve"
 
-#: includes/Admin/Pages/Premium/ABTestingAdmin.php:237
+#: includes/Admin/Pages/Premium/ABTestingAdmin.php:244
 msgid "Finished"
 msgstr "Lezárva"
 
-#: includes/Admin/Pages/Premium/ABTestingAdmin.php:246
+#: includes/Admin/Pages/Premium/ABTestingAdmin.php:253
 msgid "Ongoing"
 msgstr "Folyamatban"
 
-#: includes/Admin/Pages/Premium/ABTestingAdmin.php:321
+#: includes/Admin/Pages/Premium/ABTestingAdmin.php:328
 msgid "Invalid test type."
 msgstr "Érvénytelen teszttípus."
 
-#: includes/Admin/Pages/Premium/ABTestingAdmin.php:331
+#: includes/Admin/Pages/Premium/ABTestingAdmin.php:338
 msgid "Test type does not support UI operations."
 msgstr "A teszttípus nem támogatja a felhasználói felület műveleteit."
 
-#: includes/Admin/Pages/Premium/ABTestingAdmin.php:703
+#: includes/Admin/Pages/Premium/ABTestingAdmin.php:710
 msgid "Test"
 msgstr "Teszt"
 
-#: includes/Admin/Pages/Premium/ABTestingAdmin.php:824
+#: includes/Admin/Pages/Premium/ABTestingAdmin.php:831
 msgid "The current status of this A/B test."
 msgstr "Az aktuális állapot ezen az A/B teszten."
 
-#: includes/Admin/Pages/Premium/ABTestingAdmin.php:837
+#: includes/Admin/Pages/Premium/ABTestingAdmin.php:844
 msgid "Start Date"
 msgstr "Kezdő dátum"
 
-#: includes/Admin/Pages/Premium/ABTestingAdmin.php:849
+#: includes/Admin/Pages/Premium/ABTestingAdmin.php:856
 msgid "The date when the A/B test should start. Leave empty to start immediately."
 msgstr "Az a dátum, amikor az A/B teszt elindul. Hagyja üresen az azonnali indításhoz."
 
-#: includes/Admin/Pages/Premium/ABTestingAdmin.php:855
+#: includes/Admin/Pages/Premium/ABTestingAdmin.php:862
 msgid "End Date"
 msgstr "Befejező dátum"
 
-#: includes/Admin/Pages/Premium/ABTestingAdmin.php:867
+#: includes/Admin/Pages/Premium/ABTestingAdmin.php:874
 msgid "The date when the A/B test should end. After this date, the original variant will be displayed. Leave empty for no end date."
 msgstr "Az a dátum, amikor az A/B teszt véget ér. Ezután az eredeti variáns jelenik meg. Hagyja üresen, ha nincs befejező dátum."
 
-#: includes/Admin/Pages/Premium/ABTestingAdmin.php:1174
+#: includes/Admin/Pages/Premium/ABTestingAdmin.php:1190
 msgid "Traffic split percentages must total 100%. Please adjust your percentages."
 msgstr "A forgalommegosztási százalékoknak 100%-ot kell elérniük. Kérjük, módosítsa a százalékokat."
-
-#: client/ts/frontend/Components/TermsAndConditions.ts:29
-msgid "Terms and Conditions"
-msgstr "Felhasználási feltételek"
-
-#: client/ts/frontend/Components/TermsAndConditions.ts:35
-msgid "Privacy Policy"
-msgstr "Adatvédelmi irányelvek"
-
-#: client/ts/frontend/Components/SideCartComponent.tsx:38
-msgid "Close Cart"
-msgstr "Kosár bezárása"
-
-#: client/ts/frontend/Components/FreeShippingProgressBar.tsx:232
-msgid "Unlocked"
-msgstr "Feloldva"
 
 #: client/ts/frontend/Actions/CompleteOrderAction.ts:196
 msgid "Could not connect to server. Please refresh and try again or contact site administrator."
@@ -4387,6 +4395,22 @@ msgstr "A kiszolgáló a kérés feldolgozása közben időtúllépett. Kérjük
 msgid "Request was aborted. Please contact site administrator."
 msgstr "A kérés megszakadt. Kérjük, lépjen kapcsolatba a webhely adminisztrátorával."
 
+#: client/ts/frontend/Components/TermsAndConditions.ts:29
+msgid "Terms and Conditions"
+msgstr "Felhasználási feltételek"
+
+#: client/ts/frontend/Components/TermsAndConditions.ts:35
+msgid "Privacy Policy"
+msgstr "Adatvédelmi irányelvek"
+
+#: client/ts/frontend/Components/SideCartComponent.tsx:38
+msgid "Close Cart"
+msgstr "Kosár bezárása"
+
+#: client/ts/frontend/Components/FreeShippingProgressBar.tsx:232
+msgid "Unlocked"
+msgstr "Feloldva"
+
 #: client/ts/admin/Components/TrustBadgeRow.tsx:151
 msgid "Slot"
 msgstr "Hely"
@@ -4400,8 +4424,10 @@ msgid "Determine when this Trust Badge should be displayed."
 msgstr "Határozza meg, hogy mikor jelenjen meg ez a bizalmi jelvény."
 
 #: client/ts/admin/Components/TrustBadgeRow.tsx:214
-#: client/ts/admin/Components/CheckoutEditor/EditorHeader.tsx:61
-#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:207
+#: client/ts/admin/Components/CheckoutEditor/PreviewCartControl.tsx:208
+#: client/ts/admin/Components/CheckoutEditor/EditorHeader.tsx:78
+#: client/ts/admin/Components/CheckoutEditor/BumpEditorModal.tsx:101
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:222
 msgid "Close"
 msgstr "Zárja be a"
 
@@ -4451,7 +4477,7 @@ msgid "Yes, replace my settings!"
 msgstr "Igen, cserélje le a beállításaimat!"
 
 #: client/ts/admin/Components/SettingsFormContainer.tsx:27
-#: client/ts/admin/Components/CheckoutEditor/EditorApp.tsx:168
+#: client/ts/admin/Components/CheckoutEditor/EditorApp.tsx:179
 msgid "Failed to save settings. Error: %s"
 msgstr "Nem sikerült menteni a beállításokat. Hiba: %s"
 
@@ -4488,6 +4514,157 @@ msgstr "Feloldás prémium verzióval"
 #: client/ts/admin/Components/LockedFieldWrapper.tsx:60
 msgid "A %s plan is required to access these features."
 msgstr "Ezekhez a funkciókhoz %s csomagra van szükség."
+
+#: client/ts/admin/Components/GooglePlacesKeyStatus.tsx:46
+#: client/ts/admin/Components/GooglePlacesKeyStatus.tsx:53
+msgid "Places API (New)"
+msgstr "Places API (új)"
+
+#: client/ts/admin/Components/GooglePlacesKeyStatus.tsx:47
+#: client/ts/admin/Components/GooglePlacesKeyStatus.tsx:54
+#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:225
+msgid "Places API (Legacy)"
+msgstr "Places API (örökölt)"
+
+#: client/ts/admin/Components/GooglePlacesKeyStatus.tsx:48
+msgid "Geocoding API - Thank You Page Map"
+msgstr "Geocoding API - Köszönőoldal térkép"
+
+#: client/ts/admin/Components/GooglePlacesKeyStatus.tsx:55
+msgid "Geocoding API"
+msgstr "Geocoding API"
+
+#: client/ts/admin/Components/GooglePlacesKeyStatus.tsx:59
+msgid "Working"
+msgstr "Működik"
+
+#: client/ts/admin/Components/GooglePlacesKeyStatus.tsx:60
+msgid "Not Available"
+msgstr "Nem elérhető"
+
+#: client/ts/admin/Components/GooglePlacesKeyStatus.tsx:154
+msgid "Google closed Places API (Legacy) to projects created after 1 March 2025, so it cannot be enabled on a newer project."
+msgstr "A Google 2025. március 1. után létrehozott projektek esetében lezárta a Places API (örökölt) szolgáltatást, ezért egy újabb projekten nem engedélyezhető."
+
+#: client/ts/admin/Components/GooglePlacesKeyStatus.tsx:157
+msgid "Nothing to do - this project uses Places API (New)."
+msgstr "Nincs teendő - ez a projekt a Places API (új) szolgáltatást használja."
+
+# %s is the name of a Google API, for example Geocoding API.
+#: client/ts/admin/Components/GooglePlacesKeyStatus.tsx:169
+msgid "Either %s is not enabled on your Google Cloud project, or it is not in this key\\'s list of allowed APIs."
+msgstr "Vagy a %s nincs engedélyezve a Google Cloud-projektjében, vagy nincs ebben a kulcs engedélyezett API-k listájában."
+
+# %s is the name of a Google API that responded successfully.
+#: client/ts/admin/Components/GooglePlacesKeyStatus.tsx:182
+msgid "%s answered for this key, so the key\\'s website restrictions are not the cause."
+msgstr "%s válaszolt ehhez a kulcshoz, így a kulcs webhelykorlátozásai nem az okok."
+
+#: client/ts/admin/Components/GooglePlacesKeyStatus.tsx:196
+msgid "Another plugin has already loaded Google Maps on this screen, so this key could not be tested. Deactivate it, or test on a clean screen."
+msgstr "Egy másik bővítmény már betöltötte a Google Térképet ezen a képernyőn, ezért ezt a kulcsot nem lehetett tesztelni. Kapcsolja ki, vagy tesztelje egy tiszta képernyőn."
+
+#: client/ts/admin/Components/GooglePlacesKeyStatus.tsx:203
+msgid "Refresh this page before testing a different key. Google Maps can only be loaded once per page."
+msgstr "Frissítse ezt az oldalt, mielőtt egy másik kulcsot tesztelne. A Google Térképet oldalanként csak egyszer lehet betölteni."
+
+#: client/ts/admin/Components/GooglePlacesKeyStatus.tsx:210
+msgid "Google refused this key for this site. Check the key itself, and any website restrictions on it in the Google Cloud console."
+msgstr "A Google elutasította ezt a kulcsot ehhez a webhelyhez. Ellenőrizze magát a kulcsot, valamint a Google Cloud konzolon beállított webhelykorlátozásokat."
+
+#: client/ts/admin/Components/GooglePlacesKeyStatus.tsx:223
+msgid "Places API (New) works with this key, and address autocomplete is using it."
+msgstr "A Places API (új) működik ezzel a kulccsal, és a címkiegészítés ezt használja."
+
+#: client/ts/admin/Components/GooglePlacesKeyStatus.tsx:232
+msgid "Address autocomplete is using Places API (Legacy), which Google froze in March 2025 and will retire once it gives 12 months notice. Places API (New) also works with this key, so consider switching the version above to New."
+msgstr "A címkiegészítés a Places API (örökölt) szolgáltatást használja, amelyet a Google 2025 márciusában befagyasztott, és 12 hónapos előzetes értesítés után megszüntet. A Places API (új) is működik ezzel a kulccsal, ezért érdemes fent az új verzióra váltani."
+
+#: client/ts/admin/Components/GooglePlacesKeyStatus.tsx:239
+msgid "Address autocomplete is using Places API (Legacy), which Google froze in March 2025 and will retire once it gives 12 months notice. Places API (New) is not enabled on this project yet, so there is nothing to move to."
+msgstr "A címkiegészítés a Places API (Legacy) szolgáltatást használja, amelyet a Google 2025 márciusában befagyasztott, és 12 hónapos előzetes értesítéssel von ki a forgalomból. A Places API (New) még nincs engedélyezve ezen a projekten, így nincs mire átállni."
+
+#: client/ts/admin/Components/GooglePlacesKeyStatus.tsx:249
+msgid "Places API (New) is not enabled on this project, so address autocomplete is not working. Enable it in the Google Cloud console, or switch the version above to Legacy."
+msgstr "A Places API (New) nincs engedélyezve ezen a projekten, ამიტომ a címkiegészítés nem működik. Engedélyezze a Google Cloud konzolban, vagy állítsa a fenti verziót Legacy-re."
+
+#: client/ts/admin/Components/GooglePlacesKeyStatus.tsx:256
+msgid "This project supports Places API (New) only, so address autocomplete is not working. Switch the version above to New."
+msgstr "Ez a projekt csak a Places API (New) verziót támogatja, তাই a címkiegészítés nem működik. Állítsa a fenti verziót New-ra."
+
+#: client/ts/admin/Components/GooglePlacesKeyStatus.tsx:262
+msgid "Neither version answered for this key, so address autocomplete is not working. Check that a Places API is enabled on the project and that billing is active."
+msgstr "Egyik verzió sem adott választ ehhez a kulcshoz, তাই a címkiegészítés nem működik. Ellenőrizze, hogy a projektben engedélyezve van-e a Places API, és hogy az elszámolás aktív-e."
+
+# %s is a link to the settings page where the feature is enabled.
+#: client/ts/admin/Components/GooglePlacesKeyStatus.tsx:282
+msgid "Address autocomplete is switched off, so this key is not being used for it yet. %s."
+msgstr "A címkiegészítés ki van kapcsolva, তাই ezt a kulcsot még nem használja ehhez. %s."
+
+#: client/ts/admin/Components/GooglePlacesKeyStatus.tsx:283
+#: client/ts/admin/Components/Forms/CheckoutSettingsForm.tsx:493
+#: client/ts/admin/Components/CheckoutEditor/panels/CheckoutSettingsPanel.tsx:256
+msgid "Enable Google Address Autocomplete"
+msgstr "Google cím automatikus kitöltés engedélyezése"
+
+# %s is a link to the settings page where the feature is enabled.
+#: client/ts/admin/Components/GooglePlacesKeyStatus.tsx:295
+msgid "The thank you page map is switched off, so this key is not being used for it. %s."
+msgstr "A köszönőoldal térképe ki van kapcsolva, তাই ezt a kulcsot nem használja ehhez. %s."
+
+#: client/ts/admin/Components/GooglePlacesKeyStatus.tsx:296
+msgid "Enable Thank You Page Map"
+msgstr "Köszönőoldal térképének engedélyezése"
+
+# %s is a link to the documentation explaining the conflict.
+#: client/ts/admin/Components/GooglePlacesKeyStatus.tsx:306
+msgid "Separate Address Fields is switched on, which turns Google address autocomplete off. %s."
+msgstr "A Külön címmezők be van kapcsolva, ami kikapcsolja a Google címkiegészítést. %s."
+
+#: client/ts/admin/Components/GooglePlacesKeyStatus.tsx:307
+msgid "Learn more"
+msgstr "További információ"
+
+# %s is a link to the settings page where the services are enabled.
+#: client/ts/admin/Components/GooglePlacesKeyStatus.tsx:317
+msgid "Fetchify address autocomplete is also switched on. Only one address autocomplete service can run at a time. %s."
+msgstr "A Fetchify címkiegészítés is be van kapcsolva. Egyszerre csak egy címkiegészítő szolgáltatás futhat. %s."
+
+#: client/ts/admin/Components/GooglePlacesKeyStatus.tsx:318
+msgid "Review autocomplete settings"
+msgstr "Címkiegészítési beállítások áttekintése"
+
+#: client/ts/admin/Components/GooglePlacesKeyStatus.tsx:345
+msgid "The check could not be completed."
+msgstr "Az ellenőrzést nem sikerült befejezni."
+
+#: client/ts/admin/Components/GooglePlacesKeyStatus.tsx:367
+msgid "Checking…"
+msgstr "Ellenőrzés…"
+
+#: client/ts/admin/Components/GooglePlacesKeyStatus.tsx:367
+msgid "Check Key"
+msgstr "Kulcs ellenőrzése"
+
+#: client/ts/admin/Components/GooglePlacesKeyStatus.tsx:372
+msgid "Add your Google API key to test it."
+msgstr "Adja hozzá a Google API-kulcsát a teszteléshez."
+
+#: client/ts/admin/Components/GooglePlacesKeyStatus.tsx:373
+msgid "Tests this key from your browser, the same way the checkout uses it."
+msgstr "Ezt a kulcsot a böngészőjéből teszteli, ugyanúgy, ahogy a pénztár használja."
+
+#: client/ts/admin/Components/GooglePlacesKeyStatus.tsx:391
+msgid "What was checked"
+msgstr "Mi lett ellenőrizve"
+
+#: client/ts/admin/Components/GooglePlacesKeyStatus.tsx:412
+msgid "Response:"
+msgstr "Válasz:"
+
+#: client/ts/admin/Components/GooglePlacesKeyStatus.tsx:425
+msgid "Open the Google Cloud console"
+msgstr "A Google Cloud konzol megnyitása"
 
 #: client/ts/admin/Components/FreeShippingTierRow.tsx:49
 msgid "You don't have a Free Shipping method set up, so reaching this tier won't actually make shipping free — the bar only shows progress. Add one in WooCommerce shipping settings."
@@ -4645,9 +4822,36 @@ msgstr "Betöltés..."
 msgid "Tracked Carts"
 msgstr "Követett kosarak"
 
+#: client/ts/admin/Components/Metaboxes/ProductsAndVariationsCompleter.tsx:30
+msgid "Private"
+msgstr "Privát"
+
+#: client/ts/admin/Components/Metaboxes/ProductsAndVariationsCompleter.tsx:32
+msgid "Pending"
+msgstr "Függőben"
+
+#: client/ts/admin/Components/Metaboxes/ProductsAndVariationsCompleter.tsx:33
+msgid "Scheduled"
+msgstr "Ütemezve"
+
 #: client/ts/admin/Components/Metaboxes/ProductsAndVariationsCompleter.tsx:44
+#: client/ts/admin/Components/Forms/CheckoutSettingsForm.tsx:237
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:379
+#: client/ts/admin/Components/CheckoutEditor/panels/CheckoutSettingsPanel.tsx:110
+msgid "Hidden"
+msgstr "Rejtett"
+
+#: client/ts/admin/Components/Metaboxes/ProductsAndVariationsCompleter.tsx:46
+msgid "Search only"
+msgstr "Csak keresés"
+
+#: client/ts/admin/Components/Metaboxes/ProductsAndVariationsCompleter.tsx:80
 msgid "All products with titles that include {{query /}}"
 msgstr "Minden termék, amelynek címe tartalmazza: {{query /}}"
+
+#: client/ts/admin/Components/Metaboxes/ProductsAndVariationsCompleter.tsx:130
+msgid "Variation"
+msgstr "Variáció"
 
 #: client/ts/admin/Components/Metaboxes/ProductTagCompleter.tsx:44
 msgid "All product tags that include {{query /}}"
@@ -4894,46 +5098,70 @@ msgstr "Melyik terméket helyettesíti ez az upsell a kosárban?"
 msgid "This product must be in the cart for this order bump to be shown."
 msgstr "Ennek a terméknek a kosárban kell lennie ahhoz, hogy ez a rendelés rántás megjelenjen."
 
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:31
-msgid "Block Editor is only used for Full Screen Order Bumps (Configurable for Place Order and Post Purchase One-Click bumps). Blocks are ignored for other configurations."
-msgstr "A blokk szerkesztő csak a teljes képernyős rendelés kiegészítőkhöz használatos (konfigurálható a Rendelés leadás és Vásárlás utáni egykattintásos kiegészítőkhöz). Más konfigurációknál a blokkok figyelmen kívül maradnak."
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:44
+msgid "Blocks are only used by full screen offers. Enable Full Screen Landing Page in the Display Location panel, then add the Order Bump Offer Form block where the offer form should go."
+msgstr "A blokkokat csak teljes képernyős ajánlatokhoz használjuk. Engedélyezze a Teljes képernyős landing oldalt a Megjelenítési hely panelen, majd adja hozzá az Rendelési felár ajánlat űrlap blokkot oda, ahol az ajánlat űrlapnak meg kell jelennie."
 
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:47
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:45
+msgid "Blocks are only used by full screen offers, available on Place Order Click and Post Purchase One-Click bumps. This bump uses the built-in layout."
+msgstr "A blokkokat csak teljes képernyős ajánlatokhoz használjuk, amelyek a Megrendelés leadása kattintásnál és a Vásárlás utáni egykattintásos feláraknál érhetők el. Ez a felár a beépített elrendezést használja."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:61
 msgid "Post Purchase One-Click bumps require a compatible payment gateway. We recommend using Place Order bumps when using non-compatible gateways."
 msgstr "A Vásárlás utáni egykattintásos kiegészítők kompatibilis fizetési átjárót igényelnek. Nem kompatibilis átjárók esetén javasoljuk a Rendelés leadás kiegészítők használatát."
 
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:53
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:67
 msgid "Learn more about supported gateways"
 msgstr "Tudjon meg többet a támogatott átjárókról"
 
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:60
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:74
 msgid "Read our Order Bumps documentation"
 msgstr "Olvassa el rendelés kiegészítő dokumentációnkat"
 
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:83
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:90
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:104
+msgid "This bump will not appear anywhere because the side cart is disabled."
+msgstr "Ez a felár sehol sem fog megjelenni, mert az oldalsó kosár le van tiltva."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:105
+msgid "This bump will not appear anywhere because order bumps are disabled in the side cart."
+msgstr "Ez a felár sehol sem fog megjelenni, mert az oldalsó kosárban a rendelési felárak le vannak tiltva."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:108
+msgid "This bump will appear on checkout but not in the side cart because the side cart is disabled."
+msgstr "Ez a felár megjelenik a pénztárnál, de nem jelenik meg az oldalsó kosárban, mert az oldalsó kosár le van tiltva."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:109
+msgid "This bump will appear on checkout but not in the side cart because order bumps are disabled in the side cart."
+msgstr "Ez a felár megjelenik a pénztárnál, de nem jelenik meg az oldalsó kosárban, mert az oldalsó kosárban a rendelési felárak le vannak tiltva."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:120
+msgid "Open side cart settings"
+msgstr "Oldalsó kosár beállításainak megnyitása"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:141
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:148
 msgid "Display Location"
 msgstr "Megjelenítési hely"
 
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:99
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:157
 msgid "Checkout Slot"
 msgstr "Fizetési hely"
 
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:129
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:187
 msgid "Displays in a popup when Place Order is clicked, before the order is submitted"
 msgstr "Megjelenik egy felugró ablakban, amikor a Rendelés leadás gombra kattintanak, mielőtt a rendelés elküldésre kerülne"
 
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:132
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:190
 msgid "Displays in a popup on the Thank You page."
 msgstr "Megjelenik egy felugró ablakban a Köszönő oldalon."
 
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:136
-msgid "Full Screen Landing Page (Use Block Editor To Design)"
-msgstr "Teljes képernyős kezdőlap (a blokk szerkesztővel tervezhető)"
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:194
+msgid "Full Screen Landing Page"
+msgstr "Teljes képernyős landing oldal"
 
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:137
-msgid "If checked, the bump offer will be displayed full screen. Use Order Bump Offer Form block to design the offer."
-msgstr "Ha be van jelölve, a rántás ajánlat teljes képernyőn jelenik meg. Az ajánlat tervezéséhez használja a Rendelés Rántás Ajánlat Űrlap blokkot."
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:195
+msgid "Design the offer with blocks instead of the built-in layout. Add the Order Bump Offer Form block where the offer form should go."
+msgstr "Tervezze meg az ajánlatot blokkokkal a beépített elrendezés helyett. Adja hozzá az Rendelési felár ajánlat űrlap blokkot oda, ahol az ajánlat űrlapnak meg kell jelennie."
 
 #: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayConditions.tsx:26
 msgid "Show Bump When These Conditions Are True:"
@@ -4990,7 +5218,7 @@ msgid "Enable sale price under on cart item labels at checkout. Example: <s>$10.
 msgstr "Engedélyezze az akciós ár megjelenítését a kosár tételek címkéi alatt a fizetésnél. Példa: <s>$10.00</s> $5.00"
 
 #: client/ts/admin/Components/Forms/WooCommercePagesGlobalOptionsSettingsForm.tsx:61
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:477
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:483
 msgid "Cart Item Links"
 msgstr "Kosár tétel linkek"
 
@@ -5007,7 +5235,7 @@ msgid "Do not link cart items to single product page. (Recommended)"
 msgstr "Ne linkelje a kosár tételeket az egyedi termékoldalra. (Ajánlott)"
 
 #: client/ts/admin/Components/Forms/WooCommercePagesGlobalOptionsSettingsForm.tsx:71
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:481
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:487
 msgid "Enabled"
 msgstr "Engedélyezve"
 
@@ -5024,7 +5252,7 @@ msgid "Open cart item links in a new window."
 msgstr "Nyissa meg a kosár tétel linkeket új ablakban."
 
 #: client/ts/admin/Components/Forms/WooCommercePagesGlobalOptionsSettingsForm.tsx:89
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:486
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:492
 msgid "Cart Item Data Display"
 msgstr "Kosár tétel adat megjelenítés"
 
@@ -5043,7 +5271,7 @@ msgstr "Csak a variáció értékeket jeleníti meg. Például: Méret: XL, Szí
 #: client/ts/admin/Components/Forms/WooCommercePagesGlobalOptionsSettingsForm.tsx:99
 #: client/ts/admin/Components/Forms/CheckoutSettingsForm.tsx:191
 #: client/ts/admin/Components/Forms/CheckoutSettingsForm.tsx:212
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:490
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:496
 #: client/ts/admin/Components/CheckoutEditor/panels/CheckoutSettingsPanel.tsx:85
 #: client/ts/admin/Components/CheckoutEditor/panels/CheckoutSettingsPanel.tsx:97
 msgid "WooCommerce Default"
@@ -5107,22 +5335,22 @@ msgid "Choose which reviews to prioritize for display."
 msgstr "Válassza ki, mely értékeléseket részesítse előnyben a megjelenítéshez."
 
 #: client/ts/admin/Components/Forms/TrustBadgeSettingsForm.tsx:111
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:578
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:586
 msgid "Cart products only"
 msgstr "Csak a kosárban lévő termékek"
 
 #: client/ts/admin/Components/Forms/TrustBadgeSettingsForm.tsx:112
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:579
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:587
 msgid "Cart products first, then site-wide"
 msgstr "Először a kosárban lévő termékek, majd az egész oldalról"
 
 #: client/ts/admin/Components/Forms/TrustBadgeSettingsForm.tsx:113
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:580
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:588
 msgid "Any product reviews"
 msgstr "Bármely termékértékelés"
 
 #: client/ts/admin/Components/Forms/TrustBadgeSettingsForm.tsx:120
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:585
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:593
 msgid "Minimum Star Rating"
 msgstr "Minimális csillagértékelés"
 
@@ -5131,22 +5359,22 @@ msgid "Only show reviews with this rating or higher."
 msgstr "Csak azokat az értékeléseket mutassa, amelyek ennél a minősítésnél vagy annál magasabbak."
 
 #: client/ts/admin/Components/Forms/TrustBadgeSettingsForm.tsx:123
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:588
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:596
 msgid "3+ stars"
 msgstr "3+ csillag"
 
 #: client/ts/admin/Components/Forms/TrustBadgeSettingsForm.tsx:124
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:589
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:597
 msgid "4+ stars"
 msgstr "4+ csillag"
 
 #: client/ts/admin/Components/Forms/TrustBadgeSettingsForm.tsx:125
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:590
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:598
 msgid "5 stars only"
 msgstr "Csak 5 csillag"
 
 #: client/ts/admin/Components/Forms/TrustBadgeSettingsForm.tsx:132
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:595
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:603
 msgid "Maximum Reviews to Show"
 msgstr "Maximális megjelenítendő értékelések száma"
 
@@ -5429,182 +5657,199 @@ msgstr "Regex engedélyezése"
 msgid "Match local shipping method name with regex."
 msgstr "Helyi szállítási mód nevének egyezése regex-szel."
 
-#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:65
+#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:79
 msgid "Configure Cloudflare Turnstile CAPTCHA protection for your checkout and account pages."
 msgstr "Konfigurálja a Cloudflare Turnstile CAPTCHA védelmet a fizetési és fiókoldalain."
 
-#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:71
+#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:85
 msgid "Enable Cloudflare Turnstile"
 msgstr "Cloudflare Turnstile engedélyezése"
 
-#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:72
+#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:86
 msgid "Enable Cloudflare Turnstile CAPTCHA protection"
 msgstr "Cloudflare Turnstile CAPTCHA védelem engedélyezése"
 
-#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:86
+#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:100
 msgid "Site Key"
 msgstr "Oldal kulcs"
 
-#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:87
+#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:101
 msgid "Your Cloudflare Turnstile site key"
 msgstr "Az Ön Cloudflare Turnstile oldal kulcsa"
 
-#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:93
+#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:107
 msgid "Secret Key"
 msgstr "Titkos kulcs"
 
-#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:95
+#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:109
 msgid "Your Cloudflare Turnstile secret key"
 msgstr "Az Ön Cloudflare Turnstile titkos kulcsa"
 
-#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:101
+#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:115
 msgid "Enable on Checkout"
 msgstr "Engedélyezés a fizetésnél"
 
-#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:102
+#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:116
 msgid "Show Turnstile on the checkout page"
 msgstr "Turnstile megjelenítése a fizetési oldalon"
 
-#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:108
+#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:122
 msgid "Enable on Order Pay"
 msgstr "Engedélyezés a rendelés fizetésénél"
 
-#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:109
+#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:123
 msgid "Show Turnstile on the order pay page"
 msgstr "Turnstile megjelenítése a rendelés fizetési oldalán"
 
-#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:115
+#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:129
 msgid "Enable on Login"
 msgstr "Engedélyezés bejelentkezéskor"
 
-#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:116
+#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:130
 msgid "Show Turnstile on the My Account login form"
 msgstr "Turnstile megjelenítése a Saját fiók bejelentkezési űrlapján"
 
-#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:122
+#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:136
 msgid "Enable on Registration"
 msgstr "Engedélyezés regisztrációnál"
 
-#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:123
+#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:137
 msgid "Show Turnstile on the My Account registration form"
 msgstr "Turnstile megjelenítése a Saját fiók regisztrációs űrlapján"
 
-#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:129
+#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:143
 msgid "Position on Checkout"
 msgstr "Pozíció a fizetésnél"
 
-#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:130
+#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:144
 msgid "Where to display the Turnstile widget on checkout"
 msgstr "Hol jelenjen meg a Turnstile widget a fizetésnél"
 
-#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:134
+#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:148
 msgid "Before Place Order Button"
 msgstr "A rendelés leadása gomb előtt"
 
-#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:135
+#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:149
 msgid "Display just before the place order button"
 msgstr "Megjelenítés közvetlenül a rendelés leadása gomb előtt"
 
-#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:139
+#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:153
 msgid "Before Payment Methods"
 msgstr "Fizetési módok előtt"
 
-#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:140
+#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:154
 msgid "Display before payment method selection"
 msgstr "Megjelenítés a fizetési mód kiválasztása előtt"
 
-#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:145
+#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:159
 msgid "Display after payment method selection"
 msgstr "Megjelenítés a fizetési mód kiválasztása után"
 
-#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:153
+#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:167
 msgid "Theme"
 msgstr "Téma"
 
-#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:154
+#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:168
 msgid "Visual theme for the Turnstile widget"
 msgstr "A Turnstile widget vizuális témája"
 
-#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:156
+#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:170
 msgid "Light"
 msgstr "Világos"
 
-#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:156
+#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:170
 msgid "Light theme"
 msgstr "Világos téma"
 
-#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:157
+#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:171
 msgid "Dark"
 msgstr "Sötét"
 
-#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:157
+#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:171
 msgid "Dark theme"
 msgstr "Sötét téma"
 
-#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:158
+#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:172
 msgid "Auto"
 msgstr "Automatikus"
 
-#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:158
+#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:172
 msgid "Automatic based on user preference"
 msgstr "Automatikus a felhasználó preferenciája alapján"
 
-#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:165
+#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:179
 msgid "Size"
 msgstr "Méret"
 
-#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:166
+#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:180
 msgid "Size of the Turnstile widget"
 msgstr "A Turnstile widget mérete"
 
-#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:168
+#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:182
 #: client/ts/admin/Components/Forms/AppearanceDesignSettingsForm.tsx:84
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:365
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:371
 #: client/ts/admin/Components/CheckoutEditor/panels/DesignSettingsPanel.tsx:131
 msgid "Normal"
 msgstr "Normál"
 
-#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:168
+#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:182
 msgid "Standard size widget"
 msgstr "Normál méretű widget"
 
-#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:169
+#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:183
 msgid "Compact"
 msgstr "Kompakt"
 
-#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:169
+#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:183
 msgid "Smaller widget size"
 msgstr "Kisebb méretű widget"
 
-#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:176
+#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:190
 msgid "Guest Users Only"
 msgstr "Csak vendég felhasználók"
 
-#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:177
+#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:191
 msgid "Only show Turnstile for guest (non-logged-in) users"
 msgstr "Turnstile megjelenítése csak vendég (nem bejelentkezett) felhasználók számára"
 
-#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:187
+#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:201
 msgid "Google API"
 msgstr "Google API"
 
-#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:188
+#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:202
 msgid "Used for the maps embed on the thank you page as well as Google Address Autocomplete."
 msgstr "Használatos a köszönőoldalon megjelenő térképekhez, valamint a Google cím automatikus kitöltéshez."
 
-#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:193
+#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:207
 msgid "Google API Key"
 msgstr "Google API kulcs"
 
-#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:194
+#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:208
 msgid "Used by Address Autocomplete and Thank You Page Maps Embed."
 msgstr "Használatos a cím automatikus kitöltéshez és a köszönőoldali térképek beágyazásához."
 
-#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:206
+#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:214
+msgid "Google Places API Version"
+msgstr "Google Places API verziója"
+
+# %s is a link to the Google Cloud console, reading "Google Cloud project".
+#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:217
+msgid "Which Places API address autocomplete uses. The same key works for both, but the chosen API must be enabled on your %s. Google closed the legacy API to new projects on 1 March 2025."
+msgstr "Hogy melyik Places API-t használja a címek automatikus kiegészítése. Ugyanaz a kulcs mindkettőhöz működik, de a kiválasztott API-nak engedélyezve kell lennie a %s fiókján. A Google 2025. március 1-jén lezárta a régi API-t az új projektek számára."
+
+#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:221
+msgid "Google Cloud project"
+msgstr "Google Cloud projekt"
+
+#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:224
+msgid "Places API (New) - recommended"
+msgstr "Places API (új) - ajánlott"
+
+#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:240
 msgid "Themes and Plugins"
 msgstr "Témák és bővítmények"
 
-#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:207
+#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:241
 msgid "Integrations with 3rd party themes and plugins."
 msgstr "Integrációk harmadik féltől származó témákkal és bővítményekkel."
 
@@ -5646,7 +5891,7 @@ msgid "See our recommended Express Checkout gateways here."
 msgstr "Tekintse meg itt az általunk ajánlott Express Checkout átjárókat."
 
 #: client/ts/admin/Components/Forms/CheckoutSettingsForm.tsx:109
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:256
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:262
 #: client/ts/admin/Components/CheckoutEditor/panels/CheckoutSettingsPanel.tsx:29
 msgid "Steps"
 msgstr "Lépések"
@@ -5786,7 +6031,7 @@ msgid "Control how different checkout fields appear."
 msgstr "Irányítsa, hogyan jelennek meg a különböző fizetési mezők."
 
 #: client/ts/admin/Components/Forms/CheckoutSettingsForm.tsx:232
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:370
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:376
 #: client/ts/admin/Components/CheckoutEditor/panels/CheckoutSettingsPanel.tsx:107
 msgid "Phone Field"
 msgstr "Telefon mező"
@@ -5796,20 +6041,14 @@ msgstr "Telefon mező"
 msgid "Determines whether the WooCommerce native phone field is enabled."
 msgstr "Meghatározza, hogy a WooCommerce natív telefon mező engedélyezve van-e."
 
-#: client/ts/admin/Components/Forms/CheckoutSettingsForm.tsx:237
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:373
-#: client/ts/admin/Components/CheckoutEditor/panels/CheckoutSettingsPanel.tsx:110
-msgid "Hidden"
-msgstr "Rejtett"
-
 #: client/ts/admin/Components/Forms/CheckoutSettingsForm.tsx:241
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:374
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:380
 #: client/ts/admin/Components/CheckoutEditor/panels/CheckoutSettingsPanel.tsx:111
 msgid "Optional"
 msgstr "Opcionális"
 
 #: client/ts/admin/Components/Forms/CheckoutSettingsForm.tsx:245
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:375
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:381
 #: client/ts/admin/Components/CheckoutEditor/panels/CheckoutSettingsPanel.tsx:112
 msgid "Required"
 msgstr "Kötelező"
@@ -5824,7 +6063,7 @@ msgid "Enable or disable WooCommerce Order Notes field. (Default: Disabled)"
 msgstr "Engedélyezze vagy tiltsa le a WooCommerce Rendelés megjegyzések mezőt. (Alapértelmezett: Letiltva)"
 
 #: client/ts/admin/Components/Forms/CheckoutSettingsForm.tsx:260
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:357
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:363
 #: client/ts/admin/Components/CheckoutEditor/panels/CheckoutSettingsPanel.tsx:124
 msgid "Order Notes field is being controlled by a filter or a plugin."
 msgstr "A rendelés megjegyzések mezőt egy szűrő vagy bővítmény vezérli."
@@ -5858,7 +6097,7 @@ msgid "Values are combined into a single address_1 field based on country select
 msgstr "Az értékek az ügyfél által kiválasztott ország alapján egyetlen address_1 mezőbe kerülnek összevonásra."
 
 #: client/ts/admin/Components/Forms/CheckoutSettingsForm.tsx:298
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:314
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:320
 #: client/ts/admin/Components/CheckoutEditor/panels/CheckoutSettingsPanel.tsx:155
 msgid "Separate Address Fields Display Order"
 msgstr "Külön címmezők megjelenítési sorrendje"
@@ -5868,7 +6107,7 @@ msgid "Choose how display separate address 1 fields."
 msgstr "Válassza ki, hogyan jelenjenek meg a külön address 1 mezők."
 
 #: client/ts/admin/Components/Forms/CheckoutSettingsForm.tsx:304
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:318
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:324
 #: client/ts/admin/Components/CheckoutEditor/panels/CheckoutSettingsPanel.tsx:159
 msgid "[House Number] [Street Name]"
 msgstr "[Házszám] [Utcanév]"
@@ -5878,7 +6117,7 @@ msgid "Display the House Number before the Street Name. (Default)"
 msgstr "A házszám megjelenítése az utcanév előtt. (Alapértelmezett)"
 
 #: client/ts/admin/Components/Forms/CheckoutSettingsForm.tsx:309
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:319
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:325
 #: client/ts/admin/Components/CheckoutEditor/panels/CheckoutSettingsPanel.tsx:160
 msgid "[Street Name] [House Number]"
 msgstr "[Utcanév] [Házszám]"
@@ -5910,8 +6149,8 @@ msgid "Promote selected countries to the top of the countries list in country dr
 msgstr "A kiválasztott országok előtérbe helyezése az ország legördülő listák tetején."
 
 #: client/ts/admin/Components/Forms/CheckoutSettingsForm.tsx:344
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:335
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:344
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:341
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:350
 #: client/ts/admin/Components/CheckoutEditor/panels/CheckoutSettingsPanel.tsx:185
 msgid "Highlighted Countries"
 msgstr "Kiemelt országok"
@@ -5994,7 +6233,7 @@ msgid "Control address fields."
 msgstr "Címmezők kezelése."
 
 #: client/ts/admin/Components/Forms/CheckoutSettingsForm.tsx:412
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:388
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:394
 #: client/ts/admin/Components/CheckoutEditor/panels/CheckoutSettingsPanel.tsx:222
 msgid "Force Different Billing Address"
 msgstr "Különböző számlázási cím kötelezővé tétele"
@@ -6024,43 +6263,43 @@ msgid "Choose which billing address fields are visible for customers."
 msgstr "Válassza ki, mely számlázási cím mezők legyenek láthatók az ügyfelek számára."
 
 #: client/ts/admin/Components/Forms/CheckoutSettingsForm.tsx:431
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:397
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:403
 #: client/ts/admin/Components/CheckoutEditor/panels/CheckoutSettingsPanel.tsx:237
 msgid "First Name"
 msgstr "Keresztnév"
 
 #: client/ts/admin/Components/Forms/CheckoutSettingsForm.tsx:435
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:398
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:404
 #: client/ts/admin/Components/CheckoutEditor/panels/CheckoutSettingsPanel.tsx:238
 msgid "Last Name"
 msgstr "Vezetéknév"
 
 #: client/ts/admin/Components/Forms/CheckoutSettingsForm.tsx:439
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:399
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:405
 #: client/ts/admin/Components/CheckoutEditor/panels/CheckoutSettingsPanel.tsx:239
 msgid "Address 1"
 msgstr "Cím 1"
 
 #: client/ts/admin/Components/Forms/CheckoutSettingsForm.tsx:443
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:400
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:406
 #: client/ts/admin/Components/CheckoutEditor/panels/CheckoutSettingsPanel.tsx:240
 msgid "Address 2"
 msgstr "Cím 2"
 
 #: client/ts/admin/Components/Forms/CheckoutSettingsForm.tsx:447
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:401
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:407
 #: client/ts/admin/Components/CheckoutEditor/panels/CheckoutSettingsPanel.tsx:241
 msgid "Company"
 msgstr "Cég"
 
 #: client/ts/admin/Components/Forms/CheckoutSettingsForm.tsx:451
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:402
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:408
 #: client/ts/admin/Components/CheckoutEditor/panels/CheckoutSettingsPanel.tsx:242
 msgid "Country"
 msgstr "Ország"
 
 #: client/ts/admin/Components/Forms/CheckoutSettingsForm.tsx:463
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:405
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:411
 #: client/ts/admin/Components/CheckoutEditor/panels/CheckoutSettingsPanel.tsx:245
 msgid "City"
 msgstr "Város"
@@ -6077,11 +6316,6 @@ msgstr "Cím kitöltése és ellenőrzése"
 #: client/ts/admin/Components/Forms/CheckoutSettingsForm.tsx:487
 msgid "Control some mobile only checkout behaviors."
 msgstr "Irányítsa a csak mobilon elérhető fizetési viselkedéseket."
-
-#: client/ts/admin/Components/Forms/CheckoutSettingsForm.tsx:493
-#: client/ts/admin/Components/CheckoutEditor/panels/CheckoutSettingsPanel.tsx:256
-msgid "Enable Google Address Autocomplete"
-msgstr "Google cím automatikus kitöltés engedélyezése"
 
 #: client/ts/admin/Components/Forms/CheckoutSettingsForm.tsx:501
 msgid "Google Address Autocomplete cannot be used with Separate Address Fields. <a target=\"_blank\" class=\"text-blue-600 underline\" href=\"https://www.checkoutwc.com/documentation/google-address-autocomplete-and-discreet-house-number-and-street-name-address-fields/\">Learn More</a>"
@@ -6263,8 +6497,8 @@ msgid "Configure your template."
 msgstr "Sablon konfigurálása."
 
 #: client/ts/admin/Components/Forms/AppearanceDesignSettingsForm.tsx:66
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:174
 #: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:180
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:186
 #: client/ts/admin/Components/CheckoutEditor/panels/DesignSettingsPanel.tsx:119
 msgid "Logo"
 msgstr "Logó"
@@ -6274,7 +6508,7 @@ msgid "Choose the logo you wish to display in the header. If you do not choose a
 msgstr "Válassza ki a fejlécben megjelenítendő logót. Ha nem választ logót, a webhely nevét használjuk."
 
 #: client/ts/admin/Components/Forms/AppearanceDesignSettingsForm.tsx:74
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:361
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:367
 #: client/ts/admin/Components/CheckoutEditor/panels/DesignSettingsPanel.tsx:127
 msgid "Field Label Style"
 msgstr "Mező címke stílusa"
@@ -6285,7 +6519,7 @@ msgid "Choose how you want form labels styled."
 msgstr "Válassza ki, hogyan szeretné a űrlap címkéket stílusozni."
 
 #: client/ts/admin/Components/Forms/AppearanceDesignSettingsForm.tsx:79
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:364
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:370
 #: client/ts/admin/Components/CheckoutEditor/panels/DesignSettingsPanel.tsx:130
 msgid "Floating (Recommended)"
 msgstr "Lebegő (Ajánlott)"
@@ -6300,7 +6534,7 @@ msgid "Labels appear above each field at all times."
 msgstr "A címkék mindig megjelennek minden mező felett."
 
 #: client/ts/admin/Components/Forms/AppearanceDesignSettingsForm.tsx:105
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:189
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:195
 #: client/ts/admin/Components/CheckoutEditor/panels/DesignSettingsPanel.tsx:149
 msgid "Typography"
 msgstr "Tipográfia"
@@ -6310,7 +6544,7 @@ msgid "Configure fonts."
 msgstr "Betűtípusok konfigurálása."
 
 #: client/ts/admin/Components/Forms/AppearanceDesignSettingsForm.tsx:111
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:195
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:201
 #: client/ts/admin/Components/CheckoutEditor/panels/DesignSettingsPanel.tsx:152
 msgid "Body Font"
 msgstr "Törzsszöveg betűtípusa"
@@ -6321,7 +6555,7 @@ msgid "Choose the font for the body text."
 msgstr "Válassza ki a törzsszöveg betűtípusát."
 
 #: client/ts/admin/Components/Forms/AppearanceDesignSettingsForm.tsx:119
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:201
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:207
 #: client/ts/admin/Components/CheckoutEditor/panels/DesignSettingsPanel.tsx:159
 msgid "Heading Font"
 msgstr "Címsor betűtípusa"
@@ -6332,7 +6566,7 @@ msgid "Choose the font for the headings."
 msgstr "Válassza ki a címsorok betűtípusát."
 
 #: client/ts/admin/Components/Forms/AppearanceDesignSettingsForm.tsx:131
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:209
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:215
 #: client/ts/admin/Components/CheckoutEditor/panels/DesignSettingsPanel.tsx:166
 msgid "Colors"
 msgstr "Színek"
@@ -6518,53 +6752,104 @@ msgstr "Jelölje be azokat a felhasználói szerepköröket, amelyeket ki kell z
 msgid "Are you sure you want to delete all tracked carts?"
 msgstr "Biztos benne, hogy törölni szeretné az összes követett kosarat?"
 
-#: client/ts/admin/Components/CheckoutEditor/EditorPreview.tsx:98
+#: client/ts/admin/Components/CheckoutEditor/PreviewCartControl.tsx:186
+#: client/ts/admin/Components/CheckoutEditor/PreviewCartControl.tsx:198
+msgid "Preview Cart"
+msgstr "Kosár előnézete"
+
+#: client/ts/admin/Components/CheckoutEditor/PreviewCartControl.tsx:202
+msgid "Preview Cart Products"
+msgstr "Kosártermékek előnézete"
+
+# %d is the maximum number of products.
+#: client/ts/admin/Components/CheckoutEditor/PreviewCartControl.tsx:227
+msgid "Limit of %d products reached"
+msgstr "Legfeljebb %d termék érhető el"
+
+#: client/ts/admin/Components/CheckoutEditor/PreviewCartControl.tsx:230
+msgid "Add a product"
+msgstr "Termék hozzáadása"
+
+#: client/ts/admin/Components/CheckoutEditor/PreviewCartControl.tsx:232
+msgid "Type to search products"
+msgstr "Gépelj a termékek kereséséhez"
+
+#: client/ts/admin/Components/CheckoutEditor/PreviewCartControl.tsx:233
+msgid "No products found"
+msgstr "Nem található termék"
+
+#: client/ts/admin/Components/CheckoutEditor/PreviewCartControl.tsx:254
+msgid "The preview needs at least one product"
+msgstr "Az előnézethez legalább egy termék szükséges"
+
+# %s is a product name.
+#: client/ts/admin/Components/CheckoutEditor/PreviewCartControl.tsx:257
+msgid "Remove %s"
+msgstr "Eltávolítás: %s"
+
+#: client/ts/admin/Components/CheckoutEditor/PreviewCartControl.tsx:270
+msgid "Loading the products in the preview…"
+msgstr "A termékek betöltése az előnézetben…"
+
+#: client/ts/admin/Components/CheckoutEditor/PreviewCartControl.tsx:271
+msgid "The Preview Cart is empty."
+msgstr "Az előnézeti kosár üres."
+
+#: client/ts/admin/Components/CheckoutEditor/PreviewCartControl.tsx:276
+msgid "Change the products to see how your checkout reacts, for example digital-only versus shipped products, or making sure an order bump\\'s trigger product is in the cart."
+msgstr "Módosítsd a termékeket, hogy lásd, hogyan reagál a pénztárad, például digitális termékek helyett kiszállítással rendelkező termékekre, vagy annak ellenőrzéséhez, hogy az order bump aktiváló terméke a kosárban van-e."
+
+#: client/ts/admin/Components/CheckoutEditor/PreviewCartControl.tsx:280
+msgid "The preview needs at least one product. If you empty the cart, a product is added back automatically."
+msgstr "Az előnézethez legalább egy termék szükséges. Ha kiüríted a kosarat, egy termék automatikusan vissza lesz adva."
+
+#: client/ts/admin/Components/CheckoutEditor/EditorPreview.tsx:145
 msgid "No products can be found to show in the editor. Ensure you have products which are published and in stock."
 msgstr "Nem található megjeleníthető termék a szerkesztőben. Győződjön meg róla, hogy vannak közzétett és készleten lévő termékei."
 
-#: client/ts/admin/Components/CheckoutEditor/EditorPreview.tsx:148
+#: client/ts/admin/Components/CheckoutEditor/EditorPreview.tsx:195
 msgid "Updating preview…"
 msgstr "Előnézet frissítése…"
 
-#: client/ts/admin/Components/CheckoutEditor/EditorPreview.tsx:157
+#: client/ts/admin/Components/CheckoutEditor/EditorPreview.tsx:204
 msgid "Checkout Preview"
 msgstr "Pénztár előnézet"
 
-#: client/ts/admin/Components/CheckoutEditor/EditorHeader.tsx:38
-#: client/ts/admin/Components/CheckoutEditor/EditorHeader.tsx:116
+#: client/ts/admin/Components/CheckoutEditor/EditorHeader.tsx:55
+#: client/ts/admin/Components/CheckoutEditor/EditorHeader.tsx:133
 msgid "Live"
 msgstr "Éles"
 
-#: client/ts/admin/Components/CheckoutEditor/EditorHeader.tsx:38
-#: client/ts/admin/Components/CheckoutEditor/EditorHeader.tsx:128
+#: client/ts/admin/Components/CheckoutEditor/EditorHeader.tsx:55
+#: client/ts/admin/Components/CheckoutEditor/EditorHeader.tsx:145
 msgid "Preview"
 msgstr "Előnézet"
 
-#: client/ts/admin/Components/CheckoutEditor/EditorHeader.tsx:132
+#: client/ts/admin/Components/CheckoutEditor/EditorHeader.tsx:149
 msgid "Set the checkout to live and save your changes to make it available to customers. Please note that a valid, active license key is required to go live."
 msgstr "Állítsa a pénztárt élesre, és mentse a módosításokat, hogy elérhetővé váljon a vásárlók számára. Kérjük, vegye figyelembe, hogy az élesítéshez érvényes, aktív licenckulcs szükséges."
 
-#: client/ts/admin/Components/CheckoutEditor/EditorHeader.tsx:147
+#: client/ts/admin/Components/CheckoutEditor/EditorHeader.tsx:164
 msgid "Unsaved changes"
 msgstr "Mentetlen módosítások"
 
-#: client/ts/admin/Components/CheckoutEditor/EditorHeader.tsx:156
+#: client/ts/admin/Components/CheckoutEditor/EditorHeader.tsx:173
 msgid "Desktop"
 msgstr "Asztali"
 
-#: client/ts/admin/Components/CheckoutEditor/EditorHeader.tsx:166
+#: client/ts/admin/Components/CheckoutEditor/EditorHeader.tsx:183
 msgid "Tablet"
 msgstr "Tablet"
 
-#: client/ts/admin/Components/CheckoutEditor/EditorHeader.tsx:176
+#: client/ts/admin/Components/CheckoutEditor/EditorHeader.tsx:193
 msgid "Mobile"
 msgstr "Mobil"
 
-#: client/ts/admin/Components/CheckoutEditor/EditorHeader.tsx:193
+#: client/ts/admin/Components/CheckoutEditor/EditorHeader.tsx:220
 msgid "Discard Changes"
 msgstr "Módosítások elvetése"
 
-#: client/ts/admin/Components/CheckoutEditor/EditorHeader.tsx:203
+#: client/ts/admin/Components/CheckoutEditor/EditorHeader.tsx:230
 msgid "Saving..."
 msgstr "Mentés..."
 
@@ -6579,13 +6864,25 @@ msgstr "A  oldalon."
 msgid "Off"
 msgstr "Ki"
 
-#: client/ts/admin/Components/CheckoutEditor/EditorApp.tsx:99
+#: client/ts/admin/Components/CheckoutEditor/EditorApp.tsx:110
 msgid "You have unsaved changes. Are you sure you want to leave?"
 msgstr "Mentetlen módosításai vannak. Biztosan el akarja hagyni?"
 
-#: client/ts/admin/Components/CheckoutEditor/EditorApp.tsx:204
+#: client/ts/admin/Components/CheckoutEditor/EditorApp.tsx:215
 msgid "Changing templates will update the logo, typography, colors, field label style, and footer text to those defined by the selected template. Are you sure you want to continue?"
 msgstr "A sablonok megváltoztatása frissíti a logót, tipográfiát, színeket, mezőcímke stílust és a lábléc szövegét a kiválasztott sablon szerint. Biztosan folytatni szeretné?"
+
+#: client/ts/admin/Components/CheckoutEditor/BumpEditorModal.tsx:35
+msgid "This order bump has unsaved changes. Close anyway?"
+msgstr "Ennek az order bumpnak vannak nem mentett módosításai. Mégis bezárod?"
+
+#: client/ts/admin/Components/CheckoutEditor/BumpEditorModal.tsx:101
+msgid "Done"
+msgstr "Kész"
+
+#: client/ts/admin/Components/CheckoutEditor/BumpEditorModal.tsx:108
+msgid "Loading order bump editor…"
+msgstr "Az order bump szerkesztő betöltése…"
 
 # %s: item type e.g. "order bump"
 #: client/ts/admin/Components/CheckoutEditor/slots/UnsavedChangesDialog.tsx:37
@@ -6602,173 +6899,196 @@ msgstr "Egy új fül nyílik meg, ahol létrehozhatod a %s-t. Ha elmented, zárd
 msgid "Create %s"
 msgstr "%s létrehozása"
 
-#: client/ts/admin/Components/CheckoutEditor/slots/SlotsPanel.tsx:161
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotsPanel.tsx:171
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:519
+msgid "Edit order bump"
+msgstr "Order bump szerkesztése"
+
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotsPanel.tsx:181
+msgid "New order bump"
+msgstr "Új order bump"
+
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotsPanel.tsx:361
 msgid "No slots available."
 msgstr "Nincsenek elérhető helyek."
 
-#: client/ts/admin/Components/CheckoutEditor/slots/SlotsPanel.tsx:198
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotsPanel.tsx:397
 msgid "Order bumps are assigned to slots but the feature is disabled. Enable order bumps in"
 msgstr "A rendelés-kiegészítők helyekhez vannak rendelve, de a funkció ki van kapcsolva. Kapcsold be a rendelés-kiegészítőket a"
 
-#: client/ts/admin/Components/CheckoutEditor/slots/SlotsPanel.tsx:204
-#: client/ts/admin/Components/CheckoutEditor/slots/SlotsPanel.tsx:224
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotsPanel.tsx:403
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotsPanel.tsx:423
 msgid "order bumps"
 msgstr "rendelés-kiegészítők"
 
-#: client/ts/admin/Components/CheckoutEditor/slots/SlotsPanel.tsx:218
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotsPanel.tsx:417
 msgid "One or more slots exceed the maximum order bumps per slot. Increase the limit in"
 msgstr "Egy vagy több hely túllépi a rendelés-kiegészítők maximális számát helyenként. Növeld a korlátot a"
 
-#: client/ts/admin/Components/CheckoutEditor/slots/SlotsPanel.tsx:238
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotsPanel.tsx:437
 msgid "Trust badges are assigned to slots but the feature is disabled. Enable trust badges in"
 msgstr "A bizalmi jelvényekhez helyek vannak rendelve, de a funkció ki van kapcsolva. Engedélyezze a bizalmi jelvényeket a következő helyen"
 
-#: client/ts/admin/Components/CheckoutEditor/slots/SlotsPanel.tsx:244
-#: client/ts/admin/Components/CheckoutEditor/slots/SlotsPanel.tsx:264
-#: client/ts/admin/Components/CheckoutEditor/slots/SlotsPanel.tsx:313
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotsPanel.tsx:443
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotsPanel.tsx:463
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotsPanel.tsx:525
 msgid "badges"
 msgstr "jelvények"
 
-#: client/ts/admin/Components/CheckoutEditor/slots/SlotsPanel.tsx:258
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotsPanel.tsx:457
 msgid "Customer reviews are assigned to slots but the feature is disabled. Enable customer reviews in"
 msgstr "Az ügyfélértékelésekhez helyek vannak rendelve, de a funkció ki van kapcsolva. Engedélyezze az ügyfélértékeléseket a következő helyen"
 
-#: client/ts/admin/Components/CheckoutEditor/slots/SlotsPanel.tsx:307
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotsPanel.tsx:519
 msgid "Column settings for badges are configured in"
 msgstr "A jelvények oszlopbeállításai a következőben vannak konfigurálva"
 
-#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:83
-#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:84
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:99
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:100
 msgid "Not shown for orders that don\\'t need shipping (e.g. digital products or pickup)."
 msgstr "Nem jelenik meg olyan rendelések esetén, amelyekhez nem szükséges szállítás (pl. digitális termékek vagy átvétel)."
 
-#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:118
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:145
 msgid "This order bump is part of an active A/B test. It cannot be removed while the test is running."
 msgstr "Ez a rendelésfelugró egy aktív A/B teszt része. A teszt futása közben nem távolítható el."
 
-#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:122
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:149
 msgid "Remove this item from the slot?"
 msgstr "Eltávolítja ezt az elemet a helyről?"
 
-#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:211
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:238
 msgid "Assign item to slot"
 msgstr "Elem hozzárendelése helyhez"
 
-#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:261
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:290
 msgid "On mobile and tablets, this slot is inside the \"Show order summary\" section."
 msgstr "Mobilon és táblagépeken ez a hely a „Rendelés összefoglaló megjelenítése” szakaszban található."
 
-#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:280
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:309
 msgid "On mobile and tablets, the cart collapses and order bumps in this slot will move to the Above Terms & Conditions slot."
 msgstr "Mobilon és táblagépeken a kosár összecsukódik, és az ebben a helyen lévő rendelésfelugrók az Általános Szerződési Feltételek feletti helyre kerülnek."
 
-#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:320
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:350
 msgid "Release to drop here"
 msgstr "Engedje el itt a dobáshoz"
 
-#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:323
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:353
 msgid "No items assigned."
 msgstr "Nincs hozzárendelt elem."
 
-#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:330
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:360
 msgid "Add item"
 msgstr "Elem hozzáadása"
 
-#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:415
-#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:233
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:445
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:248
 msgid "Level"
 msgstr "Szint"
 
-#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:434
-#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:252
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:464
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:267
 msgid "e.g. Why choose us?"
 msgstr "pl. Miért minket válasszon?"
 
-#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:442
-#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:476
-#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:260
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:472
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:529
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:275
 msgid "Margin"
 msgstr "Margó"
 
-#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:447
-#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:481
-#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:265
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:477
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:534
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:280
 msgid "e.g., 10px 0 20px 0"
 msgstr "pl. 10px 0 20px 0"
 
-#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:465
-#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:500
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:495
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:553
 msgid "Save"
 msgstr "Mentés"
 
-#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:27
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:126
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:140
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:509
+msgid "Order bump"
+msgstr "Order bump"
+
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:523
+msgid "Edits in bump editor save immediately."
+msgstr "A bump szerkesztőben végzett módosítások azonnal mentésre kerülnek."
+
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:28
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:132
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:146
 #: client/ts/admin/Components/CheckoutEditor/panels/DesignSettingsPanel.tsx:86
 msgid "Paid plan required"
 msgstr "Fizetős csomag szükséges"
 
-#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:201
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:216
 msgid "Add Item"
 msgstr "Elem hozzáadása"
 
-#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:227
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:242
 msgid "+ New heading"
 msgstr "+ Új cím"
 
-#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:284
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:299
 #: client/ts/admin/Components/CheckoutEditor/slots/CustomHtmlEditor.tsx:40
 msgid "Add"
 msgstr "Hozzáadás"
 
-#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:302
-#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:371
-#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:419
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:317
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:407
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:455
 msgid "(in slot)"
 msgstr "(helyen)"
 
-#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:303
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:318
 msgid "(in other slot)"
 msgstr "(másik helyen)"
 
-#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:329
-#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:340
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:344
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:363
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:376
 msgid "+ New order bump"
 msgstr "+ Új rendelési ajánlat"
 
-#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:336
+# %d: number of order bumps allowed by the current plan
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:350
+msgid "Your plan allows %d published order bumps. Upgrade or unpublish one to create another."
+msgstr "A csomagod %d közzétett order bumpot engedélyez. Frissítsd a csomagod, vagy tegyél közzé egyet vissza, hogy létrehozhass egy újat."
+
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:372
 msgid "order bump"
 msgstr "rendelési ajánlat"
 
-#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:337
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:373
 msgid "A new tab will open where you can create your order bump. When you\\'ve saved it, close that tab and return here — it will be added to your chosen slot automatically."
 msgstr "Megnyílik egy új fül, ahol létrehozhatod a rendelési ajánlatodat. Miután elmentetted, zárd be a fület, és térj vissza ide — automatikusan hozzáadódik a kiválasztott helyhez."
 
-#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:379
-#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:390
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:415
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:426
 msgid "+ New trust badge"
 msgstr "+ Új bizalmi jelzés"
 
-#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:386
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:422
 msgid "trust badge"
 msgstr "bizalmi jelzés"
 
-#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:387
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:423
 msgid "A new tab will open where you can create your trust badge. When you\\'ve saved it, close that tab and return here — it will appear in this list ready to assign."
 msgstr "Megnyílik egy új fül, ahol létrehozhatod a bizalmi jelzésedet. Miután elmentetted, zárd be a fület, és térj vissza ide — meg fog jelenni ezen a listán, készen az hozzárendelésre."
 
-#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:399
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:435
 msgid "Review Badges"
 msgstr "Értékelési jelvények"
 
-#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:402
-#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:418
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:438
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:454
 #: client/ts/admin/Components/CheckoutEditor/slots/AssignedItem.tsx:64
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:604
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:612
 msgid "Customer Reviews"
 msgstr "Vásárlói vélemények"
 
-#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:436
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:472
 msgid "+ New HTML"
 msgstr "+ Új HTML"
 
@@ -6788,164 +7108,192 @@ msgstr "HTML tartalom"
 msgid "(empty heading)"
 msgstr "(üres cím)"
 
-#: client/ts/admin/Components/CheckoutEditor/slots/AssignedItem.tsx:148
+#: client/ts/admin/Components/CheckoutEditor/slots/AssignedItem.tsx:175
 msgid "This order bump has an A/B test associated with it and cannot be moved or removed. Delete the test to unlock it."
 msgstr "Ehhez a rendelési ajánlathoz A/B teszt tartozik, ezért nem mozgatható vagy törölhető. A feloldáshoz töröld a tesztet."
 
-#: client/ts/admin/Components/CheckoutEditor/slots/AssignedItem.tsx:151
+#: client/ts/admin/Components/CheckoutEditor/slots/AssignedItem.tsx:178
 msgid "This bump is placed here automatically by its Checkout and Side Cart display location. It also appears in the side cart and isn\\'t counted toward this slot\\'s order bump limit."
 msgstr "Ezt az ajánlatot automatikusan helyezi el a Fizetés és Oldalsó kosár megjelenítési helye. Megjelenik az oldalsó kosárban is, és nem számít bele ebbe a helybe tartozó rendelési ajánlatok korlátjába."
 
-#: client/ts/admin/Components/CheckoutEditor/slots/AssignedItem.tsx:154
+#: client/ts/admin/Components/CheckoutEditor/slots/AssignedItem.tsx:181
+msgid "The offer product for this bump no longer exists, so the bump will not display. Choose a new offer product."
+msgstr "Ennek a bumpnak az ajánlati terméke már nem létezik, ezért a bump nem fog megjelenni. Válassz egy új ajánlati terméket."
+
+#: client/ts/admin/Components/CheckoutEditor/slots/AssignedItem.tsx:184
+msgid "The offer product for this bump is not published, so the bump appears for you but never for customers."
+msgstr "Ennek a bumpnak az ajánlati terméke nincs közzétéve, ezért neked megjelenik, de az ügyfeleknek soha."
+
+#: client/ts/admin/Components/CheckoutEditor/slots/AssignedItem.tsx:187
+msgid "The offer product for this bump has no price, so the bump will not display."
+msgstr "Ennek a bumpnak az ajánlati termékéhez nincs ár megadva, ezért a bump nem fog megjelenni."
+
+#: client/ts/admin/Components/CheckoutEditor/slots/AssignedItem.tsx:190
+msgid "The offer product for this bump is out of stock, so the bump will not display until it is back in stock."
+msgstr "A bumphez tartozó ajánlati termék nincs készleten, ezért a bump nem jelenik meg, amíg újra el nem érhető."
+
+#: client/ts/admin/Components/CheckoutEditor/slots/AssignedItem.tsx:193
+msgid "The product this bump replaces in the cart no longer exists, so the bump will not display."
+msgstr "A termék, amelyet ez a bump a kosárban helyettesít, már nem létezik, ამიტომ a bump nem jelenik meg."
+
+#: client/ts/admin/Components/CheckoutEditor/slots/AssignedItem.tsx:196
+msgid "This bump replaces a product in the cart, so it only appears once that product has been added."
+msgstr "Ez a bump egy terméket helyettesít a kosárban, ezért csak akkor jelenik meg, ha az a termék már hozzá lett adva."
+
+#: client/ts/admin/Components/CheckoutEditor/slots/AssignedItem.tsx:199
 msgid "This item has display conditions. It will only appear to customers who meet the configured criteria and may not be visible on every checkout."
 msgstr "Ennek a tételnek megjelenítési feltételei vannak. Csak azok a vásárlók fogják látni, akik megfelelnek a beállított kritériumoknak, és nem biztos, hogy minden fizetésnél látható."
 
-#: client/ts/admin/Components/CheckoutEditor/slots/AssignedItem.tsx:157
+#: client/ts/admin/Components/CheckoutEditor/slots/AssignedItem.tsx:202
+msgid "The offer product for this bump is hidden from the shop catalog, so this bump is the only place customers will see it."
+msgstr "A bumphez tartozó ajánlati termék rejtett az áruház katalógusában, ezért ez a bump az egyetlen hely, ahol a vásárlók látni fogják."
+
+#: client/ts/admin/Components/CheckoutEditor/slots/AssignedItem.tsx:205
 msgid "The offer product for this bump is already in the preview cart, so it may not be visible in the preview."
 msgstr "Az ajánlati termék már benne van az előnézeti kosárban, ezért előnézetben nem biztos, hogy látható."
 
-#: client/ts/admin/Components/CheckoutEditor/slots/AssignedItem.tsx:168
+#: client/ts/admin/Components/CheckoutEditor/slots/AssignedItem.tsx:215
 msgid "Drag to reorder"
 msgstr "Húzd az átrendezéshez"
 
-#: client/ts/admin/Components/CheckoutEditor/slots/AssignedItem.tsx:241
+#: client/ts/admin/Components/CheckoutEditor/slots/AssignedItem.tsx:297
 msgid "Remove"
 msgstr "Eltávolítás"
 
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:79
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:85
 msgid "Step"
 msgstr "Lépés"
 
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:162
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:168
 #: client/ts/admin/Components/CheckoutEditor/panels/DesignSettingsPanel.tsx:108
 msgid "A Basic, Plus, Pro, or Agency plan is required to access all templates."
 msgstr "Az összes sablon eléréséhez Basic, Plus, Pro vagy Agency csomag szükséges."
 
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:228
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:234
 msgid "Misc"
 msgstr "Vegyes"
 
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:262
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:268
 msgid "Shipping Methods"
 msgstr "Szállítási módok"
 
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:271
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:277
 msgid "Order Review"
 msgstr "Rendelés áttekintése"
 
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:279
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:285
 msgid "One Page Checkout"
 msgstr "Egylapos pénztár"
 
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:289
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:295
 msgid "Fields"
 msgstr "Mezők"
 
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:295
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:301
 msgid "Address Fields Link"
 msgstr "Cím mezők linkje"
 
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:300
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:306
 msgid "Coupon Code Link"
 msgstr "Kuponkód link"
 
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:306
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:312
 msgid "Full Name Field"
 msgstr "Teljes név mező"
 
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:326
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:332
 msgid "Separate House Number/Street Name"
 msgstr "Külön házszám/utcanév"
 
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:336
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:342
 #: client/ts/admin/Components/CheckoutEditor/panels/CheckoutSettingsPanel.tsx:186
 msgid "Countries selected here will appear at the top of the billing and shipping country dropdowns, making them quicker for customers to find."
 msgstr "Itt kiválasztott országok megjelennek a számlázási és szállítási ország legördülő listáinak tetején, így a vásárlók gyorsabban megtalálhatják őket."
 
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:352
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:358
 msgid "Order Notes"
 msgstr "Rendelési megjegyzések"
 
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:382
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:388
 msgid "Addresses"
 msgstr "Címek"
 
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:393
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:399
 msgid "Billing Address Fields"
 msgstr "Számlázási cím mezői"
 
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:426
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:432
 msgid "No supported gateways detected.<br><a class=\"text-blue-600 hover:text-blue-800\" target=\"_blank\" href=\"https://www.checkoutwc.com/documentation/supported-express-payment-gateways/\">See our recommendations.</a>"
 msgstr "Nem észlelhető támogatott fizetési átjáró.<br><a class=\"text-blue-600 hover:text-blue-800\" target=\"_blank\" href=\"https://www.checkoutwc.com/documentation/supported-express-payment-gateways/\">Tekintse meg ajánlásainkat.</a>"
 
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:444
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:450
 msgid "Variation Edits"
 msgstr "Variációs szerkesztések"
 
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:450
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:456
 msgid "Item Remove"
 msgstr "Tétel eltávolítása"
 
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:459
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:465
 msgid "Cart Editing"
 msgstr "Kosár szerkesztése"
 
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:467
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:473
 msgid "Sale Prices"
 msgstr "Akciós árak"
 
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:472
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:478
 msgid "Sticky Cart on Scroll"
 msgstr "Ragadós kosár görgetéskor"
 
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:480
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:486
 msgid "Disabled"
 msgstr "Letiltva"
 
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:489
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:495
 msgid "Short"
 msgstr "Rövid"
 
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:497
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:503
 msgid "Slots"
 msgstr "Helyek"
 
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:513
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:521
 msgid "Badges"
 msgstr "Jelvények"
 
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:523
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:557
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:531
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:565
 msgid "Checkout Area Columns"
 msgstr "Pénztár terület oszlopai"
 
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:529
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:563
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:537
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:571
 msgid "Cart Summary Area Columns"
 msgstr "Kosár összefoglaló terület oszlopai"
 
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:535
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:569
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:543
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:577
 msgid "Mobile Columns"
 msgstr "Mobil oszlopok"
 
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:575
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:583
 msgid "Priority"
 msgstr "Prioritás"
 
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:613
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:621
 msgid "Add badges to your checkout layout in"
 msgstr "Jelvények hozzáadása a pénztár elrendezésedhez"
 
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:619
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:627
 msgid "slots"
 msgstr "helyeken"
 
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:633
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:641
 msgid "Footer Text"
 msgstr "Lábléc szöveg"
 
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:650
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:658
 msgid "The settings in this editor cover the most commonly used options for most stores. However, many additional settings are available. Once you\\'ve saved any changes, head over to the CheckoutWC menu in your WordPress dashboard to explore more options."
 msgstr "Ennek a szerkesztőnek a beállításai a legtöbb boltban leggyakrabban használt opciókat fedik le. Azonban sok további beállítás is elérhető. Miután elmentette a módosításokat, lépjen a CheckoutWC menübe a WordPress vezérlőpultján, hogy további lehetőségeket fedezzen fel."
 
@@ -7358,8 +7706,8 @@ msgid "Delete Rule"
 msgstr "Szabály törlése"
 
 # %d: shipping package number
-#: functions/functions.php:384
-#: functions/functions.php:3451
+#: functions/functions.php:385
+#: functions/functions.php:3454
 msgctxt "shipping packages"
 msgid "Shipping"
 msgid_plural "Shipping %d"

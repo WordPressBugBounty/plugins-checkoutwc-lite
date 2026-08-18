@@ -2,6 +2,8 @@
 
 namespace Objectiv\Plugins\Checkout\Admin\Pages;
 
+use Objectiv\Plugins\Checkout\Admin\Pages\Premium\OrderBumps;
+use Objectiv\Plugins\Checkout\EditorPreviewCart;
 use Objectiv\Plugins\Checkout\Managers\SettingsManager;
 use Objectiv\Plugins\Checkout\Managers\SlotManager;
 use Objectiv\Plugins\Checkout\Managers\PlanManager;
@@ -17,9 +19,27 @@ class CheckoutEditor extends PageAbstract {
 	public function init() {
 		parent::init();
 
+		add_action( 'current_screen', [ $this, 'set_admin_page_title' ] );
 		add_filter( 'admin_body_class', [ $this, 'add_body_class' ] );
 		add_filter( 'show_admin_bar', [ $this, 'hide_admin_bar' ] );
 		add_filter( 'admin_title', [ $this, 'filter_admin_title' ], 10, 2 );
+	}
+
+	/**
+	 * Sets the admin page title global for the editor screen.
+	 *
+	 * The editor is registered as a submenu page with no parent, so WordPress cannot resolve its title and leaves the global unset, which makes admin-header.php pass null to strip_tags().
+	 *
+	 * @since 11.3.1
+	 *
+	 * @return void
+	 */
+	public function set_admin_page_title(): void {
+		if ( ! $this->is_current_page() ) {
+			return;
+		}
+
+		$GLOBALS['title'] = $this->title; // phpcs:ignore WordPress.WP.GlobalVariablesOverride.Prohibited
 	}
 
 	public function add_body_class( $classes ) {
@@ -294,49 +314,11 @@ class CheckoutEditor extends PageAbstract {
 			}
 		}
 
-		// Build preview URL: find a purchasable product for add-to-cart preview.
-		$preview_url = wc_get_checkout_url();
-		$product     = null;
-
-		$simple_query = new \WC_Product_Query(
-			[
-				'limit'        => 10,
-				'status'       => 'publish',
-				'stock_status' => 'instock',
-				'type'         => [ 'simple' ],
-			]
-		);
-		$candidates   = $simple_query->get_products();
-		foreach ( $candidates as $p ) {
-			if ( $p->is_purchasable() ) {
-				$product = $p;
-				break;
-			}
-		}
-
-		if ( ! $product ) {
-			$variation_query = new \WC_Product_Query(
-				[
-					'limit'        => 10,
-					'status'       => 'publish',
-					'stock_status' => 'instock',
-					'type'         => [ 'variation' ],
-				]
-			);
-			$candidates      = $variation_query->get_products();
-			foreach ( $candidates as $p ) {
-				if ( $p->is_purchasable() ) {
-					$product = $p;
-					break;
-				}
-			}
-		}
-
-		$has_products = $product !== null;
-
-		if ( $has_products ) {
-			$preview_url = add_query_arg( [ 'add-to-cart' => $product->get_id() ], $preview_url );
-		}
+		// The preview cart itself is built on the preview request — see EditorPreviewCart. All the editor needs to know
+		// is whether the store has anything to show, and what the merchant has chosen.
+		$preview_url       = wc_get_checkout_url();
+		$preview_selection = EditorPreviewCart::get_resolved_mirror();
+		$has_products      = ! empty( $preview_selection ) || null !== EditorPreviewCart::get_auto_selected_product();
 
 		$preview_nonce = wp_create_nonce( 'cfw-editor-preview' );
 		$preview_url   = add_query_arg(
@@ -407,16 +389,45 @@ class CheckoutEditor extends PageAbstract {
 				],
 				'preview_url'          => $preview_url,
 				'has_products'         => $has_products,
+				'preview_cart'         => [
+					'selection' => $preview_selection,
+					'max_items' => EditorPreviewCart::MAX_ITEMS,
+				],
 				'close_url'            => $close_url,
 				'editor_url'           => $editor_url,
 				'saved_active_template' => $saved_slug,
 				'admin_url'            => admin_url( 'admin.php' ),
 				'new_order_bump_url'   => admin_url( 'post-new.php?post_type=cfw_order_bumps' ),
+				'bump_editor'          => self::get_bump_editor_data(),
 				'new_trust_badge_url'  => admin_url( 'admin.php?page=cfw-settings-trust-badges' ),
 				'editor_logo_url' => CFW_PATH_URL_BASE . 'assets/images/cfw.svg',
 				'plan'            => $this->get_plan_data(),
 				'templates'       => $editor_templates,
 			]
 		);
+	}
+
+	/**
+	 * Data the editor needs to open the order bump editor in a modal.
+	 *
+	 * `available` is false in the lite build and on plans without order bumps, in which
+	 * case the editor falls back to its existing plan-locked treatment.
+	 *
+	 * Also served by SlotsAPI so the editor can refresh `can_create` after a bump is
+	 * created or trashed in the modal, without a page reload.
+	 *
+	 * @return array{available: bool, edit_url_template: string, new_url: string, can_create: bool, allowed_count: int, used_count: int}
+	 */
+	public static function get_bump_editor_data(): array {
+		$available = class_exists( OrderBumps::class ) && PlanManager::has_premium_plan_or_higher( 'plus' );
+
+		return [
+			'available'         => $available,
+			'edit_url_template' => admin_url( 'post.php?post=%d&action=edit&cfw_modal=1' ),
+			'new_url'           => admin_url( 'post-new.php?post_type=cfw_order_bumps&cfw_modal=1' ),
+			'can_create'        => $available && OrderBumps::can_create_bump(),
+			'allowed_count'     => $available ? OrderBumps::get_allowed_bump_count() : 0,
+			'used_count'        => $available ? OrderBumps::get_bumps_count() : 0,
+		];
 	}
 }

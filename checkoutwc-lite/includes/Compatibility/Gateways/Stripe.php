@@ -12,8 +12,19 @@ use WC_Stripe_Helper;
 
 class Stripe extends CompatibilityAbstract {
 
+	/**
+	 * Whether the Stripe gateway is present and has actually loaded.
+	 *
+	 * WC_STRIPE_VERSION is defined at file scope, before Stripe checks its own WooCommerce version
+	 * floor, so it stays defined even when the gateway bails out and loads none of its classes.
+	 * The class check is what tells the two apart.
+	 *
+	 * Stripe loads its classes on plugins_loaded at priority 10, so this only gives a meaningful
+	 * answer from that point on - callers running earlier must defer the check.
+	 */
 	public function is_available(): bool {
-		return defined( 'WC_STRIPE_VERSION' ) && version_compare( WC_STRIPE_VERSION, '4.0.0' ) >= 0;
+		return defined( 'WC_STRIPE_VERSION' ) && version_compare( WC_STRIPE_VERSION, '4.0.0' ) >= 0
+			&& class_exists( 'WC_Stripe_Helper' );
 	}
 
 	public function pre_init() {
@@ -28,13 +39,15 @@ class Stripe extends CompatibilityAbstract {
 			add_action( 'wc_ajax_wc_stripe_create_order', [ $this, 'process_payment_request_ajax_checkout' ], 1 );
 		}
 
-		if ( ! $this->is_available() ) {
-			return;
-		}
-
 		add_filter(
 			'cfw_detected_gateways',
 			function ( $gateways ) {
+				// Checked here rather than up front: pre_init() runs on plugins_loaded before Stripe
+				// has loaded its classes, whereas this filter only runs on admin screens.
+				if ( ! $this->is_available() ) {
+					return $gateways;
+				}
+
 				$gateways[] = new DetectedPaymentGateway(
 				'WooCommerce Stripe Gateway',
 				GatewaySupport::FULLY_SUPPORTED,
@@ -156,8 +169,13 @@ class Stripe extends CompatibilityAbstract {
 			return false;
 		}
 
-		// Check if ECE/UCE is enabled via feature flags
-		if ( class_exists( 'WC_Stripe_Feature_Flags' ) && ! WC_Stripe_Feature_Flags::is_uce_enabled() ) {
+		// Check if ECE is enabled via feature flags. Guarded on the method rather than the class:
+		// Stripe deprecated is_stripe_ece_enabled() in 10.0.0, where it always returns true, and
+		// has it slated for removal - once it goes, treat ECE as enabled rather than fatalling.
+		if (
+			method_exists( 'WC_Stripe_Feature_Flags', 'is_stripe_ece_enabled' )
+			&& ! WC_Stripe_Feature_Flags::is_stripe_ece_enabled()
+		) {
 			return false;
 		}
 

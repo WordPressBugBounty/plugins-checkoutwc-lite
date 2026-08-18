@@ -5,6 +5,18 @@ use Objectiv\Plugins\Checkout\Compatibility\CompatibilityAbstract;
 use Objectiv\Plugins\Checkout\Managers\SettingsManager;
 
 class WPRocket extends CompatibilityAbstract {
+	/**
+	 * Class families that only appear in the DOM after a JavaScript cart update.
+	 *
+	 * Remove Unused CSS builds its selector list from the page as rendered at scan time, so markup the
+	 * cart components inject after an add-to-cart is treated as unused and stripped.
+	 */
+	private const RUCSS_SAFELIST_SELECTORS = [
+		'cfw-side-cart-free-shipping(.*)',
+		'cfw-tier-(.*)',
+		'cfw-confetti(.*)',
+	];
+
 	public function is_available(): bool {
 		return defined( 'WP_ROCKET_VERSION' );
 	}
@@ -35,6 +47,10 @@ class WPRocket extends CompatibilityAbstract {
 
 	public function exclude_css( array $excluded_css ): array {
 		$excluded_css[] = str_ireplace( home_url(), '', trailingslashit( CFW_PATH_ASSETS ) . 'css/(.*).css' );
+
+		foreach ( self::RUCSS_SAFELIST_SELECTORS as $selector ) {
+			$excluded_css[] = $selector;
+		}
 
 		return $excluded_css;
 	}

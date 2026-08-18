@@ -18,6 +18,7 @@ use Objectiv\Plugins\Checkout\Model\CartItem;
 use Objectiv\Plugins\Checkout\Model\OrderItem;
 use Objectiv\Plugins\Checkout\Model\RulesProcessor;
 use Objectiv\Plugins\Checkout\Model\Template;
+use Objectiv\Plugins\Checkout\ProductNameFormatter;
 
 use function WordpressEnqueueChunksPlugin\registerScripts as cfwRegisterChunkedScripts;
 
@@ -754,7 +755,7 @@ function cfw_display_item_data( ItemInterface $item ) {
 function cfw_all_packages_have_available_shipping_methods( array $packages ) : bool {
 	foreach ( $packages as $i => $package ) {
 		/** Documented in cfw_get_cart_shipping_data() */
-		$package_rates = apply_filters( 'cfw_available_shipping_methods', $package['rates'], $package, $i ); // phpcs:ignore WooCommerce.Commenting.CommentHooks.MissingSinceComment
+		$package_rates = apply_filters( 'cfw_available_shipping_methods', $package['rates'] ?? [], $package, $i ); // phpcs:ignore WooCommerce.Commenting.CommentHooks.MissingSinceComment
 
 		if ( empty( $package_rates ) ) {
 			return false;
@@ -3331,6 +3332,8 @@ function cfw_get_cart_items_data() : array {
 			'min_quantity'                            => $item->get_min_quantity(),
 			'step'                                    => $item->get_step(),
 			'product_title'                           => $item->get_product()->get_title(),
+			// Plain text that identifies a variation, for anywhere the marked up title cannot be used.
+			'product_display_name'                    => ProductNameFormatter::get_display_name( $product ),
 			'product_sku'                             => $item->get_product()->get_sku(),
 			'product_id'                              => $item->get_product()->get_id(),
 			'product_parent_id'                       => $item->get_product()->get_parent_id(),
@@ -3700,7 +3703,6 @@ function cfw_get_order_bumps_data() : array {
 
 	$count            = 0;
 	$max_bumps        = (int) SettingsManager::instance()->get_setting( 'max_bumps' );
-	$link_wrap        = '<div class="cfw-order-bump-image"><a target="_blank" href="%s">%s</a></div>';
 	$auto_added_bumps = WC()->session->get( 'cfw_auto_added_bumps' ) ?? [];
 
 	if ( $max_bumps < 0 ) {
@@ -3749,12 +3751,20 @@ function cfw_get_order_bumps_data() : array {
 			$bump_id   = $bump->get_id();
 			$parent_id = (int) wp_get_post_parent_id( $bump_id );
 
+			// Which ID the slot properties below (sort_order, margin) are keyed under.
+			// For an A/B variant that is the parent's ID, since the variant itself is
+			// never assigned to a slot.
+			$slot_key = $bump_id;
+
 			if ( isset( $bump_slot_map[ $bump_id ] ) ) {
 				// Direct order_bump assignment.
 				$location = $bump_slot_map[ $bump_id ];
 			} elseif ( $parent_id && isset( $bump_slot_map[ $parent_id ] ) ) {
-				// Variant bump resolved from an A/B test – inherit the parent's slot.
+				// Variant bump resolved from an A/B test – inherit the parent's slot,
+				// along with its position and margin, so an active test does not move
+				// the bump within its slot or drop the configured spacing.
 				$location = $bump_slot_map[ $parent_id ];
+				$slot_key = $parent_id;
 			} else {
 				// Bump is not assigned to any slot — skip most cases.
 				// Any bump whose meta location is a known slot ID must be explicitly
@@ -3783,8 +3793,7 @@ function cfw_get_order_bumps_data() : array {
 			}
 
 			$offer_product    = $bump->get_offer_product();
-			$thumb            = $offer_product->get_image( 'cfw_order_bump_thumb' );
-			$wrapped_thumb    = $offer_product->is_visible() ? sprintf( $link_wrap, $offer_product->get_permalink(), $thumb ) : $thumb;
+			$wrapped_thumb    = $bump->get_offer_thumbnail_html();
 			$variation_parent = $offer_product->is_type( 'variable' ) && 0 === $offer_product->get_parent_id() && 'no' === get_post_meta( $bump_id, 'cfw_ob_enable_auto_match', true );
 
 			$data[] = [
@@ -3797,8 +3806,8 @@ function cfw_get_order_bumps_data() : array {
 				'variationParent'  => $variation_parent,
 				'selected'         => ! in_array( $bump_id, $auto_added_bumps, true ) && $bump->should_be_auto_added() && $bump->get_offer_product()->get_type() === 'variable',
 				'location'         => $location,
-				'sort_order'       => $bump_sort_order_map[ $bump_id ] ?? 0,
-				'margin'           => $bump_margin_map[ $bump_id ] ?? '',
+				'sort_order'       => $bump_sort_order_map[ $slot_key ] ?? 0,
+				'margin'           => $bump_margin_map[ $slot_key ] ?? '',
 			];
 
 			// Remember auto added bumps.
@@ -3839,8 +3848,7 @@ function cfw_get_order_bumps_data() : array {
 
 				$bump_id          = $bump->get_id();
 				$offer_product    = $bump->get_offer_product();
-				$thumb            = $offer_product->get_image( 'cfw_order_bump_thumb' );
-				$wrapped_thumb    = $offer_product->is_visible() ? sprintf( $link_wrap, $offer_product->get_permalink(), $thumb ) : $thumb;
+				$wrapped_thumb    = $bump->get_offer_thumbnail_html();
 				$variation_parent = $offer_product->is_type( 'variable' ) && 0 === $offer_product->get_parent_id() && 'no' === get_post_meta( $bump_id, 'cfw_ob_enable_auto_match', true );
 
 				$data[] = [
@@ -4354,7 +4362,20 @@ function cfw_get_order_bump_variable_product_form( WC_Product_Variable $variable
 			$product         = $variable_product;
 			?>
 			<div class="single_variation_wrap">
-				<?php cfw_do_action( 'woocommerce_single_variation' ); ?>
+				<?php
+				ob_start();
+				cfw_do_action( 'woocommerce_single_variation' );
+				$single_variation = ob_get_clean();
+
+				// WooCommerce triggers show_variation on .single_variation, and the modal needs that event to
+				// enable the offer button. Themes that render core's woocommerce_single_variation() output
+				// elsewhere leave us without the container, so guarantee it rather than trust the hook.
+				if ( ! preg_match( '/class=["\'][^"\']*\bsingle_variation\b/', $single_variation ) ) {
+					$single_variation = '<div class="woocommerce-variation single_variation"></div>' . $single_variation;
+				}
+
+				echo $single_variation; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+				?>
 			</div>
 			<?php
 			woocommerce_quantity_input(

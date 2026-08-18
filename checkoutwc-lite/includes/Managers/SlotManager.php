@@ -4,7 +4,10 @@ namespace Objectiv\Plugins\Checkout\Managers;
 
 use Objectiv\Plugins\Checkout\Factories\BumpFactory;
 use Objectiv\Plugins\Checkout\Features\ABTesting;
+use Objectiv\Plugins\Checkout\Interfaces\BumpInterface;
 use Objectiv\Plugins\Checkout\SingletonAbstract;
+use WC_Product;
+use WC_Product_Variation;
 
 /**
  * Manages the Checkout Editor slot system.
@@ -407,12 +410,22 @@ class SlotManager extends SingletonAbstract {
 				}
 			}
 
+			$is_upsell   = 'yes' === get_post_meta( $bump_id, 'cfw_ob_upsell', true );
+			$offer_flags = $this->get_offer_product_flags( $bump );
+
 			$bump_entry = [
-				'id'               => $bump_id,
-				'title'            => get_the_title( $bump_id ),
-				'has_conditions'   => ! empty( $rules ),
-				'offer_product_ids' => $offer_ids,
-				'display_location' => $location,
+				'id'                         => $bump_id,
+				'title'                      => get_the_title( $bump_id ),
+				'has_conditions'             => ! empty( $rules ),
+				'offer_product_ids'          => $offer_ids,
+				'offer_product_missing'      => ! empty( $offer_flags['missing'] ),
+				'offer_product_unpublished'  => ! empty( $offer_flags['unpublished'] ),
+				'offer_product_no_price'     => ! empty( $offer_flags['no_price'] ),
+				'offer_product_out_of_stock' => ! empty( $offer_flags['out_of_stock'] ),
+				'offer_product_hidden'       => ! empty( $offer_flags['hidden'] ),
+				'is_upsell'                  => $is_upsell,
+				'upsell_product_missing'     => $is_upsell && ! $bump->get_upsell_product(),
+				'display_location'           => $location,
 			];
 			if ( isset( $bump_to_ab_test[ $bump_id ] ) ) {
 				$bump_entry['ab_test_id']     = $bump_to_ab_test[ $bump_id ]['id'];
@@ -451,6 +464,69 @@ class SlotManager extends SingletonAbstract {
 			'review_badges_enabled' => $settings->get_setting( 'enable_wc_review_badges' ) === 'yes',
 			'custom_html_blocks'    => $this->get_custom_html_blocks(),
 		];
+	}
+
+	/**
+	 * Reasons a bump's offer product may stop it reaching customers.
+	 *
+	 * Mirrors `BumpAbstract::can_offer_product_be_added_to_the_cart()`, which requires the product to
+	 * exist, be purchasable ( published, with a price ) and be in stock. Only the most fundamental
+	 * blocking reason is returned, since a missing product makes the rest moot and the editor stacks
+	 * one line per reason.
+	 *
+	 * `hidden` is reported alongside rather than instead: catalog visibility does not block the bump,
+	 * it only means customers cannot find the product anywhere else. `catalog` visibility ( shop only )
+	 * is still in the catalog and is not reported at all.
+	 *
+	 * Read through the bump rather than the raw meta IDs so this matches the product the bump would
+	 * actually offer — `BumpAbstract::get_offer_product()` resolves nothing when the meta holds more
+	 * than one product.
+	 *
+	 * @param BumpInterface $bump Bump to inspect.
+	 *
+	 * @return array<string, bool>
+	 */
+	private function get_offer_product_flags( BumpInterface $bump ): array {
+		$product = $bump->get_offer_product();
+
+		if ( ! $product ) {
+			return [ 'missing' => true ];
+		}
+
+		$flags = [];
+
+		if ( $this->product_is_unpublished( $product ) ) {
+			$flags['unpublished'] = true;
+		} elseif ( '' === (string) $product->get_price() ) {
+			$flags['no_price'] = true;
+		} elseif ( ! $product->is_in_stock() && ! $product->backorders_allowed() ) {
+			$flags['out_of_stock'] = true;
+		}
+
+		// Variations report their parent's catalog visibility, so both are covered here.
+		if ( in_array( $product->get_catalog_visibility(), [ 'hidden', 'search' ], true ) ) {
+			$flags['hidden'] = true;
+		}
+
+		return $flags;
+	}
+
+	/**
+	 * Whether a product is unpublished for customers.
+	 *
+	 * A variation carries its own post status but is only purchasable while its parent is published
+	 * too, per `WC_Product_Variation::is_purchasable()`, so both are checked.
+	 *
+	 * @param WC_Product $product Product or variation.
+	 *
+	 * @return bool
+	 */
+	private function product_is_unpublished( WC_Product $product ): bool {
+		if ( 'publish' !== $product->get_status() ) {
+			return true;
+		}
+
+		return $product instanceof WC_Product_Variation && 'publish' !== get_post_status( $product->get_parent_id() );
 	}
 
 	// ------------------------------------------------------------------

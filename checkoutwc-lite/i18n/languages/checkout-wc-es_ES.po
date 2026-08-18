@@ -8,7 +8,7 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "POT-Creation-Date: 2025-07-25 09:22-0400\n"
-"PO-Revision-Date: 2026-07-22T14:04:55+00:00\n"
+"PO-Revision-Date: 2026-08-18T15:55:05+00:00\n"
 "Language: es-ES\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 3.6\n"
@@ -27,11 +27,11 @@ msgstr ""
 #: includes/Admin/Pages/PickupLocationsAdminFree.php:218
 #: includes/Admin/Pages/PageAbstract.php:106
 #: includes/Admin/Pages/General.php:341
-#: includes/Admin/Pages/Premium/PickupLocations.php:217
-#: includes/Admin/Pages/Premium/OrderBumps.php:444
+#: includes/Admin/Pages/Premium/PickupLocations.php:317
+#: includes/Admin/Pages/Premium/OrderBumps.php:450
 #: includes/Admin/Pages/Premium/LocalPickupAdmin.php:165
 #: includes/Admin/Pages/Premium/AbandonedCartRecovery.php:243
-#: includes/Admin/Pages/Premium/ABTestingAdmin.php:634
+#: includes/Admin/Pages/Premium/ABTestingAdmin.php:641
 msgid "CheckoutWC"
 msgstr "CheckoutWC"
 
@@ -124,7 +124,7 @@ msgstr "Apartamento, suite, unidad, etc."
 #: includes/Admin/ShippingPhoneController.php:43
 #: client/ts/admin/Components/acr/carts.tsx:70
 #: client/ts/admin/Components/Forms/CheckoutSettingsForm.tsx:467
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:406
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:412
 #: client/ts/admin/Components/CheckoutEditor/panels/CheckoutSettingsPanel.tsx:246
 msgid "Phone"
 msgstr "Teléfono"
@@ -162,8 +162,8 @@ msgid "Postcode / ZIP"
 msgstr "Código postal / ZIP"
 
 #: includes/AddressFieldsAugmenter.php:458
-#: functions/functions.php:4206
-#: functions/functions.php:4207
+#: functions/functions.php:4214
+#: functions/functions.php:4215
 msgid "Email address"
 msgstr "Dirección de correo electrónico"
 
@@ -213,7 +213,7 @@ msgstr "Código postal"
 
 #: includes/AddressFieldsAugmenter.php:472
 #: client/ts/admin/Components/Forms/CheckoutSettingsForm.tsx:455
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:403
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:409
 #: client/ts/admin/Components/CheckoutEditor/panels/CheckoutSettingsPanel.tsx:243
 msgid "Postcode"
 msgstr "Código postal"
@@ -232,7 +232,7 @@ msgstr "Región"
 
 #: includes/AddressFieldsAugmenter.php:476
 #: client/ts/admin/Components/Forms/CheckoutSettingsForm.tsx:459
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:404
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:410
 #: client/ts/admin/Components/CheckoutEditor/panels/CheckoutSettingsPanel.tsx:244
 msgid "State"
 msgstr "Estado"
@@ -366,15 +366,15 @@ msgstr "Tu carrito"
 #: functions/template-functions.php:1036
 #: functions/template-functions.php:1974
 #: functions/template-functions.php:2248
-#: functions/functions.php:3465
+#: functions/functions.php:3468
 msgid "Shipping"
 msgstr "Envío"
 
 #: functions/template-functions.php:1054
 #: functions/template-functions.php:1914
 #: functions/template-functions.php:2269
-#: functions/functions.php:1023
-#: functions/functions.php:1038
+#: functions/functions.php:1024
+#: functions/functions.php:1039
 #: client/ts/frontend/Components/ReviewPane/OrderReviewStepReviewPane.tsx:47
 msgid "Payment"
 msgstr "Pago"
@@ -388,7 +388,7 @@ msgid "Review"
 msgstr "Reseña"
 
 #: functions/template-functions.php:1073
-#: includes/Features/SideCart.php:1180
+#: includes/Features/SideCart.php:1207
 msgid "Free"
 msgstr "Gratis"
 
@@ -459,24 +459,24 @@ msgid "Pay for order"
 msgstr "Pagar pedido"
 
 #: functions/template-functions.php:2052
-#: includes/Features/AbandonedCartRecovery.php:118
+#: includes/Features/AbandonedCartRecovery.php:124
 #: client/ts/admin/Components/acr/carts.tsx:64
 msgid "Email"
 msgstr "Correo electrónico"
 
 #: functions/template-functions.php:2062
-#: functions/functions.php:4124
-#: functions/functions.php:4125
+#: functions/functions.php:4132
+#: functions/functions.php:4133
 msgid "Password"
 msgstr "Contraseña"
 
 #: functions/template-functions.php:2078
-#: functions/functions.php:4164
+#: functions/functions.php:4172
 msgid "Login"
 msgstr "Entrar"
 
 #: functions/template-functions.php:2081
-#: functions/functions.php:4157
+#: functions/functions.php:4165
 msgid "Lost your password?"
 msgstr "¿Perdió su contraseña?"
 
@@ -484,393 +484,393 @@ msgstr "¿Perdió su contraseña?"
 msgid "Your Cart is Empty"
 msgstr "Tu carrito esta vacío"
 
-#: functions/premium-init.php:341
+#: functions/premium-init.php:340
 msgid "CheckoutWC Templates Deactivated"
 msgstr "Plantillas de CheckoutWC desactivadas"
 
 # %1$s: "Settings" text, %2$s: "Start Here" text, %3$s: "Activate CheckoutWC Templates" text
-#: functions/premium-init.php:344
+#: functions/premium-init.php:343
 msgid "Your license is valid and activated for this site but CheckoutWC is disabled for normal customers. To fix this, go to %1$s > %2$s and toggle \"%3$s\"."
 msgstr "Su licencia es válida y está activada para este sitio, pero CheckoutWC está deshabilitado para clientes normales. Para solucionar esto, vaya a %1$s > %2$s y active \"%3$s\"."
 
-#: functions/premium-init.php:345
+#: functions/premium-init.php:344
 #: includes/Admin/AdminPluginsPageManager.php:40
 #: includes/Admin/Pages/OrderBumpsAdminFree.php:25
 #: includes/Admin/Pages/LocalPickupAdminFree.php:27
 #: includes/Admin/Pages/AbandonedCartRecoveryAdminFree.php:27
-#: includes/Admin/Pages/Premium/OrderBumps.php:58
+#: includes/Admin/Pages/Premium/OrderBumps.php:60
 #: includes/Admin/Pages/Premium/LocalPickupAdmin.php:28
 #: includes/Admin/Pages/Premium/AbandonedCartRecovery.php:34
 #: includes/Admin/Pages/Premium/ABTestingAdmin.php:56
 msgid "Settings"
 msgstr "Configuración"
 
-#: functions/premium-init.php:346
+#: functions/premium-init.php:345
 #: includes/Admin/Pages/General.php:25
 #: includes/Admin/Notices/InactiveLicenseNotice.php:13
 msgid "Start Here"
 msgstr "Comenzar aquí"
 
-#: functions/premium-init.php:347
+#: functions/premium-init.php:346
 #: includes/Admin/Pages/General.php:195
 msgid "Activate CheckoutWC Templates"
 msgstr "Activar plantillas de CheckoutWC"
 
-#: functions/premium-init.php:354
+#: functions/premium-init.php:353
 msgid "Invalid CheckoutWC License"
 msgstr "Licencia de CheckoutWC inválida"
 
 # %1$s: Pricing URL, %2$s: "purchase a license" link text
-#: functions/premium-init.php:357
+#: functions/premium-init.php:356
 msgid "Your license key is missing or invalid. Please verify that your license key is valid or <a target=\"_blank\" href=\"%1$s\">%2$s</a> to restore full functionality."
 msgstr "Su clave de licencia falta o es inválida. Por favor, verifique que su clave de licencia sea válida o <a target=\"_blank\" href=\"%1$s\">%2$s</a> para restaurar la funcionalidad completa."
 
-#: functions/premium-init.php:359
+#: functions/premium-init.php:358
 msgid "purchase a license"
 msgstr "comprar una licencia"
 
-#: functions/premium-init.php:375
+#: functions/premium-init.php:374
 msgid "New Feature: Cloudflare Turnstile Bot Protection"
 msgstr "Nueva función: Protección contra bots Cloudflare Turnstile"
 
 # 1: Cloudflare Turnstile name wrapped in strong tags, 2: Setup link
-#: functions/premium-init.php:378
+#: functions/premium-init.php:377
 msgid "CheckoutWC now supports %1$s - a privacy-first, CAPTCHA-free way to protect your checkout from bots and spam orders. %2$s"
 msgstr "CheckoutWC ahora soporta %1$s - una forma centrada en la privacidad y sin CAPTCHA para proteger tu proceso de pago de bots y pedidos spam. %2$s"
 
 # The name of the Cloudflare Turnstile service
-#: functions/premium-init.php:382
-#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:64
+#: functions/premium-init.php:381
+#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:78
 msgid "Cloudflare Turnstile"
 msgstr "Cloudflare Turnstile"
 
-#: functions/premium-init.php:388
+#: functions/premium-init.php:387
 msgid "Setup Cloudflare Turnstile now"
 msgstr "Configurar Cloudflare Turnstile ahora"
 
-#: functions/premium-init.php:393
+#: functions/premium-init.php:392
 msgid "Upgrade your plan now to access"
 msgstr "Actualice su plan ahora para acceder"
 
-#: functions/premium-init.php:406
+#: functions/premium-init.php:405
 msgid "Abandoned Cart Recovery Tracking Disabled"
 msgstr "Seguimiento de recuperación de carrito abandonado deshabilitado"
 
 # %1$s: Gist URL, %2$s: "Learn More" link text
-#: functions/premium-init.php:409
+#: functions/premium-init.php:408
 msgid "You have enabled Abandoned Cart Recovery tracking, but you do not have any emails published. To track carts, you need to publish emails or use this dev filter: <a target=\"_blank\" href=\"%1$s\">%2$s</a>."
 msgstr "Ha habilitado el seguimiento de recuperación de carrito abandonado, pero no tiene correos electrónicos publicados. Para rastrear carritos, necesita publicar correos electrónicos o usar este filtro de desarrollo: <a target=\"_blank\" href=\"%1$s\">%2$s</a>."
 
-#: functions/premium-init.php:411
+#: functions/premium-init.php:410
 #: includes/Admin/Pages/AbandonedCartRecoveryAdminFree.php:82
 msgid "Learn More"
 msgstr "Aprender más"
 
-#: functions/init.php:378
-#: functions/init.php:379
+#: functions/init.php:390
+#: functions/init.php:391
 msgid "Upgrade to Premium"
 msgstr "Actualizar a Premium"
 
-#: functions/init.php:779
+#: functions/init.php:752
 msgid "CheckoutWC: Footer"
 msgstr "CheckoutWC: Pie de página"
 
-#: functions/init.php:823
-#: functions/init.php:828
+#: functions/init.php:796
+#: functions/init.php:801
 msgid "Configure Avada to Work With CheckoutWC"
 msgstr "Configurar Avada para trabajar con CheckoutWC"
 
 # %1$s: Guide URL, %2$s: Guide link text
-#: functions/init.php:826
+#: functions/init.php:799
 msgid "CheckoutWC and Avada work great together, but you will need to adjust a couple of theme settings. Please see our guide here: <a target=\"_blank\" href=\"%1$s\">%2$s</a>"
 msgstr "CheckoutWC y Avada funcionan muy bien juntos, pero necesitará ajustar un par de configuraciones del tema. Por favor, consulte nuestra guía aquí: <a target=\"_blank\" href=\"%1$s\">%2$s</a>"
 
-#: functions/init.php:835
+#: functions/init.php:808
 msgid "Incompatible Plugin: Please Deactivate The Bluehost Plugin"
 msgstr "Plugin incompatible: Por favor, desactive el plugin de Bluehost"
 
 # %1$s: Help URL, %2$s: Help link text
-#: functions/init.php:838
+#: functions/init.php:811
 msgid "CheckoutWC and Bluehost work great together, but you must deactivate The Bluehost Plugin to prevent problems. More info here: <a target=\"_blank\" href=\"%1$s\">%2$s</a>"
 msgstr "CheckoutWC y Bluehost funcionan muy bien juntos, pero debe desactivar el plugin de Bluehost para evitar problemas. Más información aquí: <a target=\"_blank\" href=\"%1$s\">%2$s</a>"
 
-#: functions/init.php:840
+#: functions/init.php:813
 msgid "How To Fix Problems With The Bluehost Plugin"
 msgstr "Cómo solucionar problemas con el plugin de Bluehost"
 
-#: functions/init.php:850
+#: functions/init.php:823
 msgid "Configure Divi to Work With CheckoutWC"
 msgstr "Configurar Divi para funcionar con CheckoutWC"
 
 # %1$s: Guide URL, %2$s: Guide link text
-#: functions/init.php:853
+#: functions/init.php:826
 msgid "CheckoutWC and Divi work great together, but you will need to adjust a couple of settings. Please see our guide here: <a target=\"_blank\" href=\"%1$s\">%2$s</a>"
 msgstr "CheckoutWC y Divi funcionan muy bien juntos, pero necesitarás ajustar un par de configuraciones. Por favor, consulta nuestra guía aquí: <a target=\"_blank\" href=\"%1$s\">%2$s</a>"
 
-#: functions/init.php:855
+#: functions/init.php:828
 msgid "How To Fix Styling Issues With Divi Theme"
 msgstr "Cómo solucionar problemas de estilo con el tema Divi"
 
-#: functions/init.php:862
+#: functions/init.php:835
 msgid "Configure Porto to Work With CheckoutWC"
 msgstr "Configurar Porto para funcionar con CheckoutWC"
 
 # %1$s: Guide URL, %2$s: Guide link text
-#: functions/init.php:865
+#: functions/init.php:838
 msgid "CheckoutWC and Porto work great together, but you will need to adjust a couple of settings. Please see our guide here: <a target=\"_blank\" href=\"%1$s\">%2$s</a>"
 msgstr "CheckoutWC y Porto funcionan muy bien juntos, pero necesitarás ajustar un par de configuraciones. Por favor, consulta nuestra guía aquí: <a target=\"_blank\" href=\"%1$s\">%2$s</a>"
 
-#: functions/init.php:867
+#: functions/init.php:840
 msgid "Fix Problems With Porto Theme"
 msgstr "Solucionar problemas con el tema Porto"
 
-#: functions/init.php:874
+#: functions/init.php:847
 msgid "Configure Astra Pro to Work With CheckoutWC"
 msgstr "Configurar Astra Pro para funcionar con CheckoutWC"
 
 # %1$s: Info URL, %2$s: Info link text
-#: functions/init.php:877
+#: functions/init.php:850
 msgid "CheckoutWC and Astra Pro work great together, but there is one setting you should check. More info here: <a target=\"_blank\" href=\"%1$s\">%2$s</a>"
 msgstr "CheckoutWC y Astra Pro funcionan muy bien juntos, pero hay una configuración que deberías revisar. Más información aquí: <a target=\"_blank\" href=\"%1$s\">%2$s</a>"
 
-#: functions/init.php:879
+#: functions/init.php:852
 msgid "Fix Layout Issues with Astra Pro"
 msgstr "Solucionar problemas de diseño con Astra Pro"
 
-#: functions/init.php:886
+#: functions/init.php:859
 msgid "Configure Woostify to Work With CheckoutWC"
 msgstr "Configurar Woostify para funcionar con CheckoutWC"
 
 # %1$s: Info URL, %2$s: Info link text
-#: functions/init.php:889
+#: functions/init.php:862
 msgid "CheckoutWC and Woostify work great together, but there is one setting you should check. More info here: <a target=\"_blank\" href=\"%1$s\">%2$s</a>"
 msgstr "CheckoutWC y Woostify funcionan muy bien juntos, pero hay una configuración que deberías revisar. Más información aquí: <a target=\"_blank\" href=\"%1$s\">%2$s</a>"
 
-#: functions/init.php:891
+#: functions/init.php:864
 msgid "Fix AJAX Add To Cart with Woostify and CheckoutWC Side Cart"
 msgstr "Solucionar el problema de AJAX Añadir al carrito con Woostify y el carrito lateral de CheckoutWC"
 
-#: functions/init.php:1086
+#: functions/init.php:1059
 msgid "Admin Preview Mode: CheckoutWC templates are disabled for normal users. To fix this, please activate templates here: WP Admin > CheckoutWC > Start Here"
 msgstr "Modo de vista previa de administrador: Las plantillas de CheckoutWC están deshabilitadas para usuarios normales. Para solucionarlo, active las plantillas aquí: WP Admin > CheckoutWC > Comenzar aquí"
 
-#: functions/functions.php:228
+#: functions/functions.php:229
 msgid "Ship to"
 msgstr "Envíar a"
 
-#: functions/functions.php:230
-#: includes/Features/LocalPickup.php:758
+#: functions/functions.php:231
+#: includes/Features/LocalPickup.php:768
 #: includes/Admin/Pages/PickupLocationsAdminFree.php:93
-#: includes/Admin/Pages/Premium/PickupLocations.php:92
+#: includes/Admin/Pages/Premium/PickupLocations.php:101
 msgid "Address"
 msgstr "Dirección"
 
-#: functions/functions.php:623
+#: functions/functions.php:624
 msgid "Sorry, it seems that there are no available payment methods for your location. Please contact us if you require assistance or wish to make alternate arrangements."
 msgstr "Lo sentimos, parece que no hay métodos de pago disponibles para tu ubicación. Por favor, contáctanos si necesitas ayuda o deseas hacer arreglos alternativos."
 
-#: functions/functions.php:785
-#: includes/Features/LocalPickup.php:1079
+#: functions/functions.php:786
+#: includes/Features/LocalPickup.php:1095
 msgid "Shipping costs are calculated during checkout."
 msgstr "Los costes de envío se calculan durante el pago."
 
-#: functions/functions.php:785
+#: functions/functions.php:786
 msgid "Enter your address to view shipping options."
 msgstr "Introduzca su dirección para ver las opciones de envío."
 
-#: functions/functions.php:796
+#: functions/functions.php:797
 msgid "No shipping methods available"
 msgstr "No hay métodos de envío disponibles"
 
-#: functions/functions.php:824
-#: includes/Model/Bumps/BumpAbstract.php:814
+#: functions/functions.php:825
+#: includes/Model/Bumps/BumpAbstract.php:835
 msgid "Free!"
 msgstr "¡Gratis!"
 
-#: functions/functions.php:960
-#: includes/Features/AbandonedCartRecovery.php:695
+#: functions/functions.php:961
+#: includes/Features/AbandonedCartRecovery.php:701
 msgid "Complete Order"
 msgstr "Finalizar Compra"
 
-#: functions/functions.php:1064
+#: functions/functions.php:1065
 msgid "All transactions are secure and encrypted."
 msgstr "Todas las transacciones son seguras y están cifradas."
 
-#: functions/functions.php:1087
+#: functions/functions.php:1088
 msgid "Your order is free. No payment is required."
 msgstr "Tu compra es gratuita. No se requiere pago."
 
-#: functions/functions.php:1131
+#: functions/functions.php:1132
 msgid "Same as shipping address"
 msgstr "Utilizar la dirección de envío"
 
-#: functions/functions.php:1140
+#: functions/functions.php:1141
 msgid "Use a different billing address"
 msgstr "Utilizar una dirección de facturación diferente"
 
 # %1$s: Old order status, %2$s: New order status
-#: functions/functions.php:1272
+#: functions/functions.php:1273
 msgid "Order status changed from %1$s to %2$s."
 msgstr "El estado del pedido cambió de %1$s a %2$s."
 
-#: functions/functions.php:1297
+#: functions/functions.php:1298
 msgid "Tracking Number:"
 msgstr "Número de seguimiento:"
 
-#: functions/functions.php:1384
+#: functions/functions.php:1385
 msgid "Return to cart"
 msgstr "Volver al carrito"
 
-#: functions/functions.php:1421
+#: functions/functions.php:1422
 msgid "Continue to shipping"
 msgstr "Continuar con el envío"
 
-#: functions/functions.php:1447
+#: functions/functions.php:1448
 msgid "Continue to payment"
 msgstr "Continuar con el pago"
 
-#: functions/functions.php:1447
-#: functions/functions.php:1487
+#: functions/functions.php:1448
+#: functions/functions.php:1488
 msgid "Review order"
 msgstr "Revisar pedido"
 
-#: functions/functions.php:1511
+#: functions/functions.php:1512
 msgid "Return to information"
 msgstr "Volver a la información"
 
-#: functions/functions.php:1531
+#: functions/functions.php:1532
 msgid "Return to shipping"
 msgstr "Regresar al envío"
 
-#: functions/functions.php:1551
+#: functions/functions.php:1552
 msgid "Return to payment"
 msgstr "Volver al pago"
 
-#: functions/functions.php:1598
-#: includes/Features/SideCart.php:276
+#: functions/functions.php:1599
+#: includes/Features/SideCart.php:288
 msgid "Cart"
 msgstr "Carrito"
 
-#: functions/functions.php:1871
+#: functions/functions.php:1872
 msgid "CheckoutWC: Error matching %1$d to customer %2$d"
 msgstr "CheckoutWC: Error al asignar %1$d al cliente %2$d"
 
-#: functions/functions.php:2160
+#: functions/functions.php:2161
 msgid "Or"
 msgstr "O"
 
-#: functions/functions.php:2245
+#: functions/functions.php:2246
 msgid "You can only have 1 %s in your cart."
 msgstr "Solo puedes tener 1 %s en tu carrito."
 
-#: functions/functions.php:2395
+#: functions/functions.php:2396
 #: client/ts/frontend/Components/CartItemQuantityControl.tsx:55
 msgid "Decrement"
 msgstr "Disminución"
 
-#: functions/functions.php:2404
+#: functions/functions.php:2405
 #: includes/Managers/AssetManager.php:727
 #: includes/Managers/AssetManager.php:848
-#: includes/Features/LocalPickup.php:502
-#: includes/Features/AbandonedCartRecovery.php:122
+#: includes/Features/LocalPickup.php:510
+#: includes/Features/AbandonedCartRecovery.php:128
 #: includes/Features/ABTesting.php:150
 #: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:633
 #: client/ts/frontend/Components/CartItemQuantityControl.tsx:63
-#: client/ts/admin/Components/CheckoutEditor/slots/AssignedItem.tsx:227
+#: client/ts/admin/Components/CheckoutEditor/slots/AssignedItem.tsx:283
 msgid "Edit"
 msgstr "Editar"
 
-#: functions/functions.php:2407
+#: functions/functions.php:2408
 #: client/ts/frontend/Components/CartItemQuantityControl.tsx:70
 msgid "Increment"
 msgstr "Incremento"
 
-#: functions/functions.php:3121
+#: functions/functions.php:3122
 msgid "Unsubscribe"
 msgstr "Darse de baja"
 
-#: functions/functions.php:3491
-#: includes/Features/AbandonedCartRecovery.php:750
+#: functions/functions.php:3494
+#: includes/Features/AbandonedCartRecovery.php:756
 #: client/ts/admin/Components/acr/carts.tsx:74
 msgid "Subtotal"
 msgstr "Subtotal"
 
-#: functions/functions.php:3495
+#: functions/functions.php:3498
 #: includes/Admin/Views/html-refund-offer.php:25
 msgid "Total"
 msgstr "Total"
 
-#: functions/functions.php:3548
+#: functions/functions.php:3551
 msgid "There are no shipping options available. Please ensure that your address has been entered correctly, or contact us if you need any help."
 msgstr "No hay opciones de envío disponibles. Por favor, asegúrate de que tu dirección ha sido ingresada correctamente o contáctanos si necesitas ayuda."
 
-#: functions/functions.php:3897
+#: functions/functions.php:3905
 #: includes/Admin/Pages/AbandonedCartRecoveryAdminFree.php:73
 msgid "SendWP - Transactional Email"
 msgstr "SendWP - Correo electrónico transaccional"
 
-#: functions/functions.php:3902
+#: functions/functions.php:3910
 #: includes/Admin/Pages/AbandonedCartRecoveryAdminFree.php:77
 msgid "SendWP makes getting emails delivered as simple as a few clicks. So you can relax know those important emails are being delivered on time."
 msgstr "SendWP hace que enviar correos electrónicos sea tan simple como unos pocos clics. Así puedes relajarte sabiendo que esos correos importantes se entregan a tiempo."
 
-#: functions/functions.php:3905
+#: functions/functions.php:3913
 #: includes/Admin/Pages/AbandonedCartRecoveryAdminFree.php:79
 msgid "Try SendWP now and <strong>get your first month for just $1.</strong>"
 msgstr "Prueba SendWP ahora y <strong>obtén tu primer mes por solo $1.</strong>"
 
-#: functions/functions.php:3915
+#: functions/functions.php:3923
 #: includes/Admin/Pages/AbandonedCartRecoveryAdminFree.php:87
 msgid "Note: SendWP is optional. You can use any transactional email service you prefer."
 msgstr "Nota: SendWP es opcional. Puedes usar cualquier servicio de correo electrónico transaccional que prefieras."
 
-#: functions/functions.php:3924
+#: functions/functions.php:3932
 #: includes/Admin/Pages/AbandonedCartRecoveryAdminFree.php:94
 msgid "Connect to SendWP"
 msgstr "Conectar con SendWP"
 
-#: functions/functions.php:4072
+#: functions/functions.php:4080
 msgid "Welcome back"
 msgstr "Bienvenido de nuevo"
 
-#: functions/functions.php:4086
+#: functions/functions.php:4094
 msgid "It looks like you already have an account. Please enter your login details below."
 msgstr "Parece que ya tienes una cuenta. Por favor, introduzca sus datos de acceso a continuación."
 
-#: functions/functions.php:4100
+#: functions/functions.php:4108
 msgid "If you have shopped with us before, please enter your login details below."
 msgstr "Si ya ha comprado con nosotros, introduzca sus datos de acceso a continuación."
 
-#: functions/functions.php:4110
-#: functions/functions.php:4111
+#: functions/functions.php:4118
+#: functions/functions.php:4119
 msgid "Username or email address"
 msgstr "Nombre de usuario o dirección de correo electrónico"
 
-#: functions/functions.php:4145
+#: functions/functions.php:4153
 msgid "Remember me"
 msgstr "Recuérdame"
 
-#: functions/functions.php:4176
+#: functions/functions.php:4184
 msgid "Or continue as guest"
 msgstr "O bien, continúe como invitado"
 
-#: functions/functions.php:4196
+#: functions/functions.php:4204
 msgid "Lost your password? Please enter your username or email address. You will receive a link to create a new password via email."
 msgstr "¿Perdiste tu contraseña? Por favor, introduce tu nombre de usuario o dirección de correo electrónico. Recibirás un enlace para crear una nueva contraseña por correo electrónico."
 
-#: functions/functions.php:4219
+#: functions/functions.php:4227
 msgid "Reset password"
 msgstr "Restablecer contraseña"
 
-#: functions/functions.php:4234
+#: functions/functions.php:4242
 #: includes/API/OrderBumpPreviewAPI.php:57
 #: includes/API/OrderBumpOfferFormPreviewAPI.php:46
 #: includes/API/GetVariationFormAPI.php:33
 msgid "Product not found"
 msgstr "Producto no encontrado"
 
-#: functions/functions.php:4250
-#: functions/functions.php:4395
+#: functions/functions.php:4258
+#: functions/functions.php:4416
 #: includes/API/PostPurchaseBumpProductFormAPI.php:24
 msgid "No thanks"
 msgstr "No gracias"
@@ -961,200 +961,204 @@ msgstr "Tu clave de licencia está configurada con la constante <code>CFW_LICENS
 msgid "License Holder"
 msgstr "Titular de licencia"
 
-#: includes/Managers/UpdatesManager.php:440
+#: includes/Managers/UpdatesManager.php:441
 msgid "Plan"
 msgstr "Plan"
 
-#: includes/Managers/UpdatesManager.php:448
+#: includes/Managers/UpdatesManager.php:449
 msgid "Activation Limit"
 msgstr "Límite de activación"
 
-#: includes/Managers/UpdatesManager.php:456
-#: includes/Admin/Pages/Premium/ABTestingAdmin.php:171
-#: includes/Admin/Pages/Premium/ABTestingAdmin.php:812
+#: includes/Managers/UpdatesManager.php:457
+#: includes/Admin/Pages/Premium/ABTestingAdmin.php:178
+#: includes/Admin/Pages/Premium/ABTestingAdmin.php:819
 #: client/ts/admin/Components/acr/carts.tsx:80
 msgid "Status"
 msgstr "Estado"
 
-#: includes/Managers/UpdatesManager.php:463
+#: includes/Managers/UpdatesManager.php:464
 msgid "Refresh License Info"
 msgstr "Actualizar información de licencia"
 
-#: includes/Managers/UpdatesManager.php:509
+#: includes/Managers/UpdatesManager.php:512
 msgid "Please enter your license key."
 msgstr "Por favor, introduzca su clave de licencia."
 
-#: includes/Managers/UpdatesManager.php:512
+#: includes/Managers/UpdatesManager.php:515
+#: includes/Managers/UpdatesManager.php:523
 msgid "Activate Site"
 msgstr "Activar sitio"
 
-#: includes/Managers/UpdatesManager.php:515
+#: includes/Managers/UpdatesManager.php:518
 msgid "Deactivate Site"
 msgstr "Desactivar sitio"
 
 # Debug error message logged when license check reaches unexpected state
-#: includes/Managers/UpdatesManager.php:685
+#: includes/Managers/UpdatesManager.php:704
 msgid "License Check Error: You should not be able to get here. I am kind of freaked out."
 msgstr "Error de verificación de licencia: No deberías poder llegar aquí. Estoy un poco preocupado."
 
 # %1$d: failure count, %2$d: max failures, %3$s: time since last failure
-#: includes/Managers/UpdatesManager.php:944
+#: includes/Managers/UpdatesManager.php:963
 msgid "Unable to verify CheckoutWC license (%1$d/%2$d attempts failed). Using cached license data. Last attempt: %3$s ago."
 msgstr "No se pudo verificar la licencia de CheckoutWC (%1$d/%2$d intentos fallidos). Usando datos de licencia en caché. Último intento: hace %3$s."
 
-#: includes/Managers/UpdatesManager.php:967
+#: includes/Managers/UpdatesManager.php:986
 msgid "%s license activation was not successful. Please check your key status below for more information."
 msgstr "La activación de la licencia %s no fue exitosa. Por favor, revise el estado de su clave a continuación para más información."
 
-#: includes/Managers/UpdatesManager.php:985
+#: includes/Managers/UpdatesManager.php:1004
 msgid "%s license successfully activated."
 msgstr "Licencia %s activada con éxito."
 
-#: includes/Managers/UpdatesManager.php:1003
+#: includes/Managers/UpdatesManager.php:1022
 msgid "%s license deactivation failed. Please try again, or contact support."
 msgstr "La desactivación de la licencia %s falló. Por favor, inténtelo de nuevo o contacte con soporte."
 
-#: includes/Managers/UpdatesManager.php:1021
+#: includes/Managers/UpdatesManager.php:1040
 msgid "%s license deactivated successfully."
 msgstr "Licencia %s desactivada con éxito."
 
-#: includes/Managers/UpdatesManager.php:1039
+#: includes/Managers/UpdatesManager.php:1058
 msgid "%s license settings saved successfully."
 msgstr "Configuración de la licencia %s guardada con éxito."
 
-#: includes/Managers/UpdatesManager.php:1057
+#: includes/Managers/UpdatesManager.php:1076
 msgid "%1$s license activation failed: %2$s"
 msgstr "La activación de la licencia %1$s falló: %2$s"
 
-#: includes/Managers/UpdatesManager.php:1075
+#: includes/Managers/UpdatesManager.php:1094
 msgid "%s license activation failed: Unable to connect to license server. Please check your internet connection or try again later."
 msgstr "La activación de la licencia %s falló: No se pudo conectar con el servidor de licencias. Por favor, revise su conexión a internet o inténtelo más tarde."
 
-#: includes/Managers/UpdatesManager.php:1093
+#: includes/Managers/UpdatesManager.php:1112
 msgid "%s: License deactivated locally. The license server could not be reached, but the license has been deactivated on this site."
 msgstr "%s: Licencia desactivada localmente. No se pudo contactar con el servidor de licencias, pero la licencia ha sido desactivada en este sitio."
 
-#: includes/Managers/UpdatesManager.php:1242
+#: includes/Managers/UpdatesManager.php:1261
 msgid "Unable to verify your CheckoutWC license — the license server could not be reached. Your license and checkout are unaffected; only plugin updates are paused until the connection is restored."
 msgstr "No se pudo verificar su licencia de CheckoutWC — no se pudo conectar con el servidor de licencias. Su licencia y proceso de compra no se ven afectados; solo las actualizaciones del plugin están pausadas hasta que se restablezca la conexión."
 
 # %1$d: failure count, %2$d: max failures, %3$s: time since last failure
-#: includes/Managers/UpdatesManager.php:1289
+#: includes/Managers/UpdatesManager.php:1308
 msgid "Unable to verify license online (%1$d/%2$d attempts failed). Using cached license data. Last attempt: %3$s ago."
 msgstr "No se pudo verificar la licencia en línea (%1$d/%2$d intentos fallidos). Usando datos de licencia en caché. Último intento: hace %3$s."
 
-#: includes/Managers/UpdatesManager.php:1295
+#: includes/Managers/UpdatesManager.php:1314
 msgid "License verified successfully."
 msgstr "Licencia verificada con éxito."
 
-#: includes/Managers/SlotManager.php:80
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:101
+#: includes/Managers/SlotManager.php:83
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:159
 msgid "Before Express Checkout"
 msgstr "Antes del Pago Exprés"
 
-#: includes/Managers/SlotManager.php:85
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:102
+#: includes/Managers/SlotManager.php:88
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:160
 msgid "After Customer Account"
 msgstr "Después de la Cuenta del Cliente"
 
-#: includes/Managers/SlotManager.php:90
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:103
+#: includes/Managers/SlotManager.php:93
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:161
 msgid "After Delivery Method"
 msgstr "Después del Método de Entrega"
 
-#: includes/Managers/SlotManager.php:95
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:104
+#: includes/Managers/SlotManager.php:98
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:162
 msgid "After Shipping Address"
 msgstr "Después de la Dirección de Envío"
 
-#: includes/Managers/SlotManager.php:100
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:105
+#: includes/Managers/SlotManager.php:103
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:163
 msgid "After Shipping Methods"
 msgstr "Después de los Métodos de Envío"
 
-#: includes/Managers/SlotManager.php:105
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:106
-#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:144
+#: includes/Managers/SlotManager.php:108
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:164
+#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:158
 msgid "After Payment Methods"
 msgstr "Después de los métodos de pago"
 
-#: includes/Managers/SlotManager.php:110
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:107
+#: includes/Managers/SlotManager.php:113
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:165
 msgid "After Billing Address"
 msgstr "Después de la Dirección de Facturación"
 
-#: includes/Managers/SlotManager.php:115
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:108
+#: includes/Managers/SlotManager.php:118
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:166
 msgid "Before Terms & Conditions"
 msgstr "Antes de Términos y Condiciones"
 
-#: includes/Managers/SlotManager.php:120
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:109
+#: includes/Managers/SlotManager.php:123
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:167
 msgid "After Terms & Conditions"
 msgstr "Después de Términos y Condiciones"
 
-#: includes/Managers/SlotManager.php:125
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:110
+#: includes/Managers/SlotManager.php:128
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:168
 msgid "After Complete Order"
 msgstr "Después de Completar Pedido"
 
-#: includes/Managers/SlotManager.php:130
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:111
+#: includes/Managers/SlotManager.php:133
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:169
 msgid "Before Cart Summary Items"
 msgstr "Antes del Resumen del Carrito (Artículos)"
 
-#: includes/Managers/SlotManager.php:135
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:112
+#: includes/Managers/SlotManager.php:138
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:170
 msgid "After Cart Summary Items"
 msgstr "Después del Resumen del Carrito (Artículos)"
 
-#: includes/Managers/SlotManager.php:140
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:113
+#: includes/Managers/SlotManager.php:143
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:171
 msgid "Before Cart Summary Totals"
 msgstr "Antes del Resumen del Carrito (Totales)"
 
-#: includes/Managers/SlotManager.php:145
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:114
+#: includes/Managers/SlotManager.php:148
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:172
 msgid "After Cart Summary Totals"
 msgstr "Después del Resumen del Carrito (Totales)"
 
-#: includes/Managers/SlotManager.php:150
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:115
+#: includes/Managers/SlotManager.php:153
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:173
 msgid "Before Footer"
 msgstr "Antes del Pie de página"
 
-#: includes/Managers/SlotManager.php:155
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:116
+#: includes/Managers/SlotManager.php:158
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:174
 msgid "After Footer"
 msgstr "Después del Pie de página"
 
-#: includes/Managers/SlotManager.php:173
+#: includes/Managers/SlotManager.php:176
 #: client/ts/admin/Components/TrustBadgeRow.tsx:166
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:100
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:158
 msgid "— No Slot Assigned —"
 msgstr "— Sin ranura asignada —"
 
-#: includes/Managers/SlotManager.php:178
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:119
+#: includes/Managers/SlotManager.php:181
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:177
 msgid "After Cart Summary Items (Checkout and Side Cart)"
 msgstr "Después del Resumen del Carrito (Artículos) (Pago y Carrito lateral)"
 
-#: includes/Managers/SlotManager.php:179
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:120
+#: includes/Managers/SlotManager.php:182
+#: includes/Admin/Pages/Premium/OrderBumps.php:1191
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:178
 msgid "After Cart Summary Items (Side Cart Only)"
 msgstr "Después del Resumen del Carrito (Artículos) (Solo Carrito lateral)"
 
-#: includes/Managers/SlotManager.php:180
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:121
+#: includes/Managers/SlotManager.php:183
+#: includes/Admin/Pages/Premium/OrderBumps.php:1192
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:179
 msgid "Place Order Click (Checkout)"
 msgstr "Clic en realizar pedido (Checkout)"
 
-#: includes/Managers/SlotManager.php:181
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:122
+#: includes/Managers/SlotManager.php:184
+#: includes/Admin/Pages/Premium/OrderBumps.php:1193
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:180
 msgid "Post Purchase One-Click (Thank You)"
 msgstr "Compra con un clic post-compra (Gracias)"
 
-#: includes/Managers/SlotManager.php:441
+#: includes/Managers/SlotManager.php:454
 msgid "Badge %d"
 msgstr "Insignia %d"
 
@@ -1219,7 +1223,7 @@ msgid "Please enter a valid postcode / ZIP."
 msgstr "Por favor ingresa un código postal válido."
 
 #: includes/Managers/AssetManager.php:706
-#: includes/Features/LocalPickup.php:626
+#: includes/Features/LocalPickup.php:636
 msgid "Pickup"
 msgstr "Recoger"
 
@@ -1240,11 +1244,11 @@ msgstr "Añadir al carrito"
 
 #: includes/Managers/AssetManager.php:710
 #: includes/Managers/AssetManager.php:844
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2308
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2383
 #: client/ts/admin/Components/CheckoutEditor/slots/UnsavedChangesDialog.tsx:51
-#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:458
-#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:493
-#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:276
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:488
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:546
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:291
 #: client/ts/admin/Components/CheckoutEditor/slots/CustomHtmlEditor.tsx:76
 msgid "Cancel"
 msgstr "Cancelar"
@@ -1338,66 +1342,66 @@ msgid "We have detected that Simple Cloudflare Turnstile is active. To enable Ch
 msgstr "Hemos detectado que Simple Cloudflare Turnstile está activo. Para habilitar la funcionalidad Turnstile de CheckoutWC, desactiva Simple Cloudflare Turnstile."
 
 # %s is a comma-separated list of product names
-#: includes/Features/SideCart.php:783
+#: includes/Features/SideCart.php:795
 msgid "These rewards-bar gift products can\\'t be auto-added because they are not simple products — please choose a simple product instead: %s"
 msgstr "Estos productos de regalo de la barra de recompensas no se pueden añadir automáticamente porque no son productos simples — por favor, elige un producto simple en su lugar: %s"
 
 # %s is the gift product name
-#: includes/Features/SideCart.php:1246
+#: includes/Features/SideCart.php:1273
 msgid "Auto-managed free gift: %s — created by the Side Cart rewards bar, do not edit"
 msgstr "Regalo gratuito gestionado automáticamente: %s — creado por la barra de recompensas del carrito lateral, no editar"
 
-#: includes/Features/SideCart.php:1481
-#: includes/Features/SideCart.php:1538
+#: includes/Features/SideCart.php:1508
+#: includes/Features/SideCart.php:1565
 #: client/ts/admin/Components/FreeShippingTierRow.tsx:87
 msgid "Congrats! You get free standard shipping."
 msgstr "Felicidades Tienes el envío estándar gratis."
 
-#: includes/Features/SideCart.php:1495
+#: includes/Features/SideCart.php:1522
 msgid "You\\'re %s away from free shipping!"
 msgstr "¡Te faltan %s para el envío gratis!"
 
-#: includes/Features/SideCart.php:1539
+#: includes/Features/SideCart.php:1566
 #: client/ts/admin/Components/FreeShippingTierRow.tsx:88
 #: client/ts/admin/Components/FreeShippingTierRow.tsx:89
 msgid "Reward unlocked!"
 msgstr "¡Recompensa desbloqueada!"
 
-#: includes/Features/SideCart.php:1547
+#: includes/Features/SideCart.php:1574
 #: client/ts/admin/Components/FreeShippingTierRow.tsx:94
 msgid "You're %s away from free shipping!"
 msgstr "¡Estás a %s del envío gratuito!"
 
-#: includes/Features/SideCart.php:1549
+#: includes/Features/SideCart.php:1576
 #: client/ts/admin/Components/FreeShippingTierRow.tsx:96
 #: client/ts/admin/Components/FreeShippingTierRow.tsx:98
 msgid "You're %s away from your next reward!"
 msgstr "¡Te faltan %s para tu próxima recompensa!"
 
-#: includes/Features/SideCart.php:1556
+#: includes/Features/SideCart.php:1583
 #: client/ts/admin/Components/FreeShippingTierRow.tsx:113
 msgid "Free shipping"
 msgstr "Envío gratuito"
 
-#: includes/Features/SideCart.php:1557
+#: includes/Features/SideCart.php:1584
 #: client/ts/frontend/Components/CheckoutCartTableRow.tsx:48
 #: client/ts/frontend/Components/CartTableRow.tsx:48
 #: client/ts/admin/Components/FreeShippingTierRow.tsx:114
 msgid "Free gift"
 msgstr "Regalo gratuito"
 
-#: includes/Features/SideCart.php:1558
+#: includes/Features/SideCart.php:1585
 #: client/ts/admin/Components/FreeShippingTierRow.tsx:170
 msgid "Reward"
 msgstr "Recompensa"
 
-#: includes/Features/SideCart.php:1682
+#: includes/Features/SideCart.php:1709
 #: includes/Admin/WooCommerceAdminScreenAugmenter.php:24
 #: includes/Admin/WooCommerceAdminScreenAugmenter.php:45
 msgid "CheckoutWC:"
 msgstr "CheckoutWC:"
 
-#: includes/Features/SideCart.php:1683
+#: includes/Features/SideCart.php:1710
 msgid "Settings marked with asterisks (**) may be overridden based on your Side Cart settings. (CheckoutWC > Side Cart)"
 msgstr "Las configuraciones marcadas con asteriscos (**) pueden ser anuladas según tus configuraciones del Carrito Lateral. (CheckoutWC > Carrito Lateral)"
 
@@ -1414,115 +1418,119 @@ msgstr "Contiene cualquier Order Bump"
 msgid "Has Bump: %s"
 msgstr "Tiene Bump: %s"
 
-#: includes/Features/LocalPickup.php:124
-#: includes/Features/LocalPickup.php:128
+#: includes/Features/LocalPickup.php:127
+#: includes/Features/LocalPickup.php:131
 msgid "Delivery method"
 msgstr "Método de entrega"
 
-#: includes/Features/LocalPickup.php:178
+#: includes/Features/LocalPickup.php:181
 msgid "Pick up"
 msgstr "Recoger"
 
-#: includes/Features/LocalPickup.php:197
+#: includes/Features/LocalPickup.php:200
 msgid "Ship"
 msgstr "Enviar"
 
-#: includes/Features/LocalPickup.php:300
+#: includes/Features/LocalPickup.php:308
 msgid "Pickup locations"
 msgstr "Lugares de recogida"
 
-#: includes/Features/LocalPickup.php:497
-#: includes/Features/LocalPickup.php:499
+#: includes/Features/LocalPickup.php:505
+#: includes/Features/LocalPickup.php:507
 #: includes/Admin/Pages/PickupLocationsAdminFree.php:21
-#: includes/Admin/Pages/Premium/PickupLocations.php:22
+#: includes/Admin/Pages/Premium/PickupLocations.php:23
 msgid "Pickup Locations"
 msgstr "Puntos de recogida"
 
-#: includes/Features/LocalPickup.php:498
-#: includes/Features/LocalPickup.php:684
-#: includes/Features/LocalPickup.php:772
-#: includes/Features/LocalPickup.php:814
-#: includes/Features/LocalPickup.php:1142
-#: includes/Features/LocalPickup.php:1167
+#: includes/Features/LocalPickup.php:506
+#: includes/Features/LocalPickup.php:694
+#: includes/Features/LocalPickup.php:782
+#: includes/Features/LocalPickup.php:830
+#: includes/Features/LocalPickup.php:1158
+#: includes/Features/LocalPickup.php:1183
 msgid "Pickup Location"
 msgstr "Lugar de recogida"
 
-#: includes/Features/LocalPickup.php:500
+#: includes/Features/LocalPickup.php:508
 msgid "Add Pickup Location"
 msgstr "Añadir punto de recogida"
 
-#: includes/Features/LocalPickup.php:501
+#: includes/Features/LocalPickup.php:509
 msgid "Add New Pickup Location"
 msgstr "Añadir nuevo punto de recogida"
 
-#: includes/Features/LocalPickup.php:503
+#: includes/Features/LocalPickup.php:511
 msgid "Edit Pickup Location"
 msgstr "Editar punto de recogida"
 
-#: includes/Features/LocalPickup.php:504
+#: includes/Features/LocalPickup.php:512
 msgid "New Pickup Location"
 msgstr "Nuevo punto de recogida"
 
-#: includes/Features/LocalPickup.php:505
+#: includes/Features/LocalPickup.php:513
 msgid "View Pickup Locations"
 msgstr "Ver puntos de recogida"
 
-#: includes/Features/LocalPickup.php:506
+#: includes/Features/LocalPickup.php:514
 msgid "View Pickup Location"
 msgstr "Ver punto de recogida"
 
-#: includes/Features/LocalPickup.php:507
+#: includes/Features/LocalPickup.php:515
 msgid "Search Pickup Locations"
 msgstr "Buscar puntos de recogida"
 
-#: includes/Features/LocalPickup.php:508
+#: includes/Features/LocalPickup.php:516
 msgid "No Pickup Location found"
 msgstr "No se encontró ningún punto de recogida"
 
-#: includes/Features/LocalPickup.php:509
+#: includes/Features/LocalPickup.php:517
 msgid "No Pickup Locations found in trash"
 msgstr "No se encontraron puntos de recogida en la papelera"
 
-#: includes/Features/LocalPickup.php:514
+#: includes/Features/LocalPickup.php:518
+msgid "Attributes"
+msgstr "Atributos"
+
+#: includes/Features/LocalPickup.php:523
 msgid "This is where you can add new Pickup Locations."
 msgstr "Aquí puedes agregar nuevas ubicaciones de recogida."
 
-#: includes/Features/LocalPickup.php:591
+#: includes/Features/LocalPickup.php:601
 #: client/ts/frontend/Components/ReviewPane/PaymentMethodReviewPane.tsx:37
 #: client/ts/frontend/Components/ReviewPane/OrderReviewStepReviewPane.tsx:37
 msgid "Method"
 msgstr "Método"
 
-#: includes/Features/LocalPickup.php:744
+#: includes/Features/LocalPickup.php:754
 msgid "Pickup instructions"
 msgstr "Instrucciones de recogida"
 
-#: includes/Features/LocalPickup.php:934
+#: includes/Features/LocalPickup.php:950
 msgid "Usually ready in 1 hour."
 msgstr "Suele estar listo en 1 hora."
 
-#: includes/Features/LocalPickup.php:935
+#: includes/Features/LocalPickup.php:951
 msgid "Usually ready in 2 hours."
 msgstr "Suele estar listo en 2 horas."
 
-#: includes/Features/LocalPickup.php:936
+#: includes/Features/LocalPickup.php:952
 msgid "Usually ready in 4 hours."
 msgstr "Suele estar listo en 4 horas."
 
-#: includes/Features/LocalPickup.php:937
+#: includes/Features/LocalPickup.php:953
 msgid "Usually ready in 24 hours."
 msgstr "Normalmente está listo en 24 horas."
 
-#: includes/Features/LocalPickup.php:938
+#: includes/Features/LocalPickup.php:954
 msgid "Usually ready in 2-4 days."
 msgstr "Suele estar listo en 2-4 días."
 
-#: includes/Features/LocalPickup.php:939
+#: includes/Features/LocalPickup.php:955
 msgid "Usually ready in 5+ days."
 msgstr "Suele estar listo en más de 5 días."
 
-#: includes/Features/LocalPickup.php:1151
-#: includes/Features/LocalPickup.php:1178
+#: includes/Features/LocalPickup.php:1167
+#: includes/Features/LocalPickup.php:1194
 msgid "Pickup Instructions:"
 msgstr "Instrucciones de recogida:"
 
@@ -1550,85 +1558,85 @@ msgstr "O introduzca la dirección manualmente."
 msgid "Checkout is not available whilst your cart is empty."
 msgstr "El pago no está disponible mientras tu carrito esté vacío."
 
-#: includes/Features/AbandonedCartRecovery.php:96
+#: includes/Features/AbandonedCartRecovery.php:102
 msgid "You have been unsubscribed from our cart reminder emails."
 msgstr "Se ha dado de baja de nuestros correos electrónicos de recordatorio de carrito."
 
-#: includes/Features/AbandonedCartRecovery.php:117
-#: includes/Features/AbandonedCartRecovery.php:119
+#: includes/Features/AbandonedCartRecovery.php:123
+#: includes/Features/AbandonedCartRecovery.php:125
 #: includes/Admin/Pages/AbandonedCartRecoveryAdminFree.php:27
 #: includes/Admin/Pages/Premium/AbandonedCartRecovery.php:36
 msgid "Emails"
 msgstr "Correos electrónicos"
 
-#: includes/Features/AbandonedCartRecovery.php:120
+#: includes/Features/AbandonedCartRecovery.php:126
 msgid "Add Email"
 msgstr "Añadir correo electrónico"
 
-#: includes/Features/AbandonedCartRecovery.php:121
+#: includes/Features/AbandonedCartRecovery.php:127
 msgid "Add New Email"
 msgstr "Agregar nuevo correo electrónico"
 
-#: includes/Features/AbandonedCartRecovery.php:123
+#: includes/Features/AbandonedCartRecovery.php:129
 msgid "Edit Email"
 msgstr "Editar correo electrónico"
 
-#: includes/Features/AbandonedCartRecovery.php:124
+#: includes/Features/AbandonedCartRecovery.php:130
 msgid "New Email"
 msgstr "Nuevo correo electrónico"
 
-#: includes/Features/AbandonedCartRecovery.php:125
+#: includes/Features/AbandonedCartRecovery.php:131
 msgid "View Emails"
 msgstr "Ver correos electrónicos"
 
-#: includes/Features/AbandonedCartRecovery.php:126
+#: includes/Features/AbandonedCartRecovery.php:132
 msgid "View Email"
 msgstr "Ver correo electrónico"
 
-#: includes/Features/AbandonedCartRecovery.php:127
+#: includes/Features/AbandonedCartRecovery.php:133
 msgid "Search Emails"
 msgstr "Buscar correos electrónicos"
 
-#: includes/Features/AbandonedCartRecovery.php:128
+#: includes/Features/AbandonedCartRecovery.php:134
 msgid "No Email found"
 msgstr "No se encontró correo electrónico"
 
-#: includes/Features/AbandonedCartRecovery.php:129
+#: includes/Features/AbandonedCartRecovery.php:135
 msgid "No Emails found in trash"
 msgstr "No se encontraron correos electrónicos en la papelera"
 
-#: includes/Features/AbandonedCartRecovery.php:134
+#: includes/Features/AbandonedCartRecovery.php:140
 msgid "This is where you can add new Abandoned Cart Recovery Emails."
 msgstr "Aquí puedes agregar nuevos correos electrónicos de recuperación de carrito abandonado."
 
-#: includes/Features/AbandonedCartRecovery.php:738
+#: includes/Features/AbandonedCartRecovery.php:744
 msgid "Item"
 msgstr "Artículo"
 
-#: includes/Features/AbandonedCartRecovery.php:741
+#: includes/Features/AbandonedCartRecovery.php:747
 #: includes/Admin/Views/html-refund-offer.php:23
 #: client/ts/admin/Components/acr/carts.tsx:60
 msgid "Name"
 msgstr "Nombre"
 
-#: includes/Features/AbandonedCartRecovery.php:744
+#: includes/Features/AbandonedCartRecovery.php:750
 msgid "Quantity"
 msgstr "Cantidad"
 
-#: includes/Features/AbandonedCartRecovery.php:747
+#: includes/Features/AbandonedCartRecovery.php:753
 msgid "Price"
 msgstr "Precio"
 
-#: includes/Features/AbandonedCartRecovery.php:867
-#: includes/Features/AbandonedCartRecovery.php:931
+#: includes/Features/AbandonedCartRecovery.php:873
+#: includes/Features/AbandonedCartRecovery.php:937
 msgid "This order was abandoned and subsequently recovered."
 msgstr "Esta orden fue abandonada y posteriormente recuperada."
 
-#: includes/Features/AbandonedCartRecovery.php:1065
+#: includes/Features/AbandonedCartRecovery.php:1071
 msgid "CheckoutWC ACR only"
 msgstr "Solo ACR de CheckoutWC"
 
-#: includes/Features/AbandonedCartRecovery.php:1066
+#: includes/Features/AbandonedCartRecovery.php:1072
 msgid "Check this box if the coupon can only be used by customers with an abandoned cart."
 msgstr "Marque esta casilla si el cupón solo puede ser usado por clientes con un carrito abandonado."
 
@@ -1638,7 +1646,7 @@ msgid "A/B Tests"
 msgstr "Pruebas A/B"
 
 #: includes/Features/ABTesting.php:146
-#: includes/Admin/Pages/Premium/OrderBumps.php:133
+#: includes/Admin/Pages/Premium/OrderBumps.php:135
 msgid "A/B Test"
 msgstr "Prueba A/B"
 
@@ -1710,7 +1718,7 @@ msgstr "El plugin es <strong>demasiado complicado de configurar.</strong>"
 #: includes/Admin/Pages/LocalPickupAdminFree.php:184
 #: includes/Admin/Pages/LocalPickupAdminFree.php:221
 #: includes/Admin/Pages/Premium/LocalPickupAdmin.php:225
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:118
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:176
 #: client/ts/admin/Components/Forms/AdvancedSettingsForm.tsx:104
 msgid "Other"
 msgstr "Otro"
@@ -1877,15 +1885,15 @@ msgstr "Oferta rechazada."
 msgid "Guest (Not Logged In)"
 msgstr "Invitado (No conectado)"
 
-#: includes/API/ProductsAndVariationsSearchAPI.php:68
+#: includes/API/ProductsAndVariationsSearchAPI.php:75
 msgid "The date the last order for this product was placed, in the site's timezone."
 msgstr "La fecha en que se realizó el último pedido de este producto, en la zona horaria del sitio."
 
-#: includes/API/ProductsAndVariationsSearchAPI.php:85
+#: includes/API/ProductsAndVariationsSearchAPI.php:92
 msgid "Limit result set to products that are low or out of stock. (Deprecated)"
 msgstr "Limitar el conjunto de resultados a los productos que están bajos o agotados. (obsoleto)"
 
-#: includes/API/ProductsAndVariationsSearchAPI.php:91
+#: includes/API/ProductsAndVariationsSearchAPI.php:98
 msgid "Search by similar product name or sku."
 msgstr "Buscar por nombre de producto o sku similar."
 
@@ -1993,54 +2001,54 @@ msgstr "Formulario de oferta de Order Bump"
 msgid "The form to accept or reject the bump offer."
 msgstr "El formulario para aceptar o rechazar la oferta de bump."
 
-#: includes/Model/Bumps/BumpAbstract.php:1013
-#: includes/Model/Bumps/BumpAbstract.php:1023
+#: includes/Model/Bumps/BumpAbstract.php:1034
+#: includes/Model/Bumps/BumpAbstract.php:1044
 #: includes/Model/ABTests/OrderBumpsABTest.php:30
 #: includes/Features/ABTesting/ABTestTypeRegistry.php:123
 #: includes/Admin/Pages/OrderBumpsAdminFree.php:17
 #: includes/Admin/Pages/OrderBumpsAdminFree.php:71
-#: includes/Admin/Pages/Premium/OrderBumps.php:46
+#: includes/Admin/Pages/Premium/OrderBumps.php:48
 #: client/ts/admin/Components/Forms/OrderBumpSettingsForm.tsx:45
-#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:294
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:309
 msgid "Order Bumps"
 msgstr "Ofertas adicionales en el pedido"
 
-#: includes/Model/Bumps/BumpAbstract.php:1014
+#: includes/Model/Bumps/BumpAbstract.php:1035
 #: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:193
 #: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:1614
 msgid "Order Bump"
 msgstr "Oferta adicional en el pedido"
 
-#: includes/Model/Bumps/BumpAbstract.php:1015
+#: includes/Model/Bumps/BumpAbstract.php:1036
 msgid "Add New"
 msgstr "Agregar nuevo"
 
-#: includes/Model/Bumps/BumpAbstract.php:1016
+#: includes/Model/Bumps/BumpAbstract.php:1037
 msgid "Add New Order Bump"
 msgstr "Agregar nuevo Order Bump"
 
-#: includes/Model/Bumps/BumpAbstract.php:1017
+#: includes/Model/Bumps/BumpAbstract.php:1038
 msgid "Edit Order Bump"
 msgstr "Editar Order Bump"
 
-#: includes/Model/Bumps/BumpAbstract.php:1018
+#: includes/Model/Bumps/BumpAbstract.php:1039
 #: client/ts/admin/Components/Metaboxes/OrderBumpsSetupModal.tsx:61
 msgid "New Order Bump"
 msgstr "Nuevo Order Bump"
 
-#: includes/Model/Bumps/BumpAbstract.php:1019
+#: includes/Model/Bumps/BumpAbstract.php:1040
 msgid "View Order Bump"
 msgstr "Ver oferta adicional en el pedido"
 
-#: includes/Model/Bumps/BumpAbstract.php:1020
+#: includes/Model/Bumps/BumpAbstract.php:1041
 msgid "Find Order Bump"
 msgstr "Buscar oferta adicional en el pedido"
 
-#: includes/Model/Bumps/BumpAbstract.php:1021
+#: includes/Model/Bumps/BumpAbstract.php:1042
 msgid "No order bumps were found."
 msgstr "No se encontraron order bumps."
 
-#: includes/Model/Bumps/BumpAbstract.php:1022
+#: includes/Model/Bumps/BumpAbstract.php:1043
 msgid "Not found in trash"
 msgstr "No encontrado en la papelera"
 
@@ -2064,6 +2072,7 @@ msgid "You do not have permission to install plugin updates"
 msgstr "No tiene permiso para instalar actualizaciones de plugins"
 
 #: includes/Managers/Helpers/EDD_SL_Plugin_Updater.php:534
+#: client/ts/admin/Components/GooglePlacesKeyStatus.tsx:61
 msgid "Error"
 msgstr "Error"
 
@@ -2184,11 +2193,11 @@ msgstr "Permitir que WooCommerce Checkout Field Editor modifique los campos de d
 msgid "Full-width"
 msgstr "Ancho completo"
 
-#: includes/Compatibility/Plugins/WPRocket.php:116
+#: includes/Compatibility/Plugins/WPRocket.php:132
 msgid "Enable WP Rocket Delay JS Execution compatibility mode"
 msgstr "Habilitar modo de compatibilidad con WP Rocket Delay JS Execution"
 
-#: includes/Compatibility/Plugins/WPRocket.php:117
+#: includes/Compatibility/Plugins/WPRocket.php:133
 msgid "By default, we exclude our scripts and script dependencies to prevent compatibility problems. Uncheck to allow CheckoutWC scripts to be delayed for maximum performance."
 msgstr "Por defecto, excluimos nuestros scripts y dependencias para evitar problemas de compatibilidad. Desmarca para permitir que los scripts de CheckoutWC se retrasen para un rendimiento máximo."
 
@@ -2337,8 +2346,8 @@ msgstr "Opciones globales"
 #: includes/Admin/Pages/TrustBadgesAdminFree.php:56
 #: includes/Admin/Pages/Premium/TrustBadges.php:16
 #: client/ts/admin/Components/Forms/TrustBadgeSettingsForm.tsx:150
-#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:348
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:544
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:384
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:552
 msgid "Trust Badges"
 msgstr "Insignias de confianza"
 
@@ -2363,7 +2372,7 @@ msgstr "Habilite las insignias de confianza en las plantillas de CheckoutWC. Des
 
 #: includes/Admin/Pages/TrustBadgesAdminFree.php:43
 #: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:181
-#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:219
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:234
 msgid "Heading"
 msgstr "Encabezado"
 
@@ -2404,9 +2413,9 @@ msgstr "Subtítulo"
 #: includes/Admin/Pages/Appearance.php:32
 #: includes/Admin/Pages/Premium/AbandonedCartRecovery.php:462
 #: client/ts/admin/Components/TrustBadgeRow.tsx:117
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:105
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:114
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:118
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:111
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:120
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:124
 #: client/ts/admin/Components/CheckoutEditor/panels/DesignSettingsPanel.tsx:52
 msgid "Template"
 msgstr "Plantilla"
@@ -2446,7 +2455,7 @@ msgid "WYSIWYG"
 msgstr "WYSIWYG"
 
 #: includes/Admin/Pages/TrustBadgesAdminFree.php:111
-#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:428
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:464
 #: client/ts/admin/Components/CheckoutEditor/slots/CustomHtmlEditor.tsx:37
 #: client/ts/admin/Components/CheckoutEditor/slots/AssignedItem.tsx:73
 msgid "HTML"
@@ -2639,17 +2648,17 @@ msgid "Configure the Floating Side Cart Button"
 msgstr "Configurar el botón flotante del carrito lateral"
 
 #: includes/Admin/Pages/PickupLocationsAdminFree.php:73
-#: includes/Admin/Pages/Premium/PickupLocations.php:74
+#: includes/Admin/Pages/Premium/PickupLocations.php:83
 msgid "Pickup Location Details"
 msgstr "Detalles del punto de recogida"
 
 #: includes/Admin/Pages/PickupLocationsAdminFree.php:115
-#: includes/Admin/Pages/Premium/PickupLocations.php:114
+#: includes/Admin/Pages/Premium/PickupLocations.php:123
 msgid "Estimated Pickup Time"
 msgstr "Tiempo estimado de recogida"
 
 #: includes/Admin/Pages/PickupLocationsAdminFree.php:131
-#: includes/Admin/Pages/Premium/PickupLocations.php:130
+#: includes/Admin/Pages/Premium/PickupLocations.php:139
 msgid "Pickup Instructions"
 msgstr "Instrucciones de recogida"
 
@@ -2671,8 +2680,8 @@ msgstr "¿Descartar?"
 
 #: includes/Admin/Pages/PageAbstract.php:136
 #: includes/Admin/Pages/PageAbstract.php:157
-#: client/ts/admin/Components/CheckoutEditor/EditorHeader.tsx:203
-#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:404
+#: client/ts/admin/Components/CheckoutEditor/EditorHeader.tsx:230
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:434
 msgid "Save Changes"
 msgstr "Guardar cambios"
 
@@ -2691,20 +2700,20 @@ msgid "This setting is currently programmatically overridden. To enable it remov
 msgstr "Esta configuración está actualmente anulada programáticamente. Para habilitarla, elimina tu código personalizado."
 
 #: includes/Admin/Pages/PageAbstract.php:333
-#: includes/Admin/Pages/Premium/OrderBumps.php:1034
+#: includes/Admin/Pages/Premium/OrderBumps.php:1067
 #: includes/Admin/Pages/Premium/AbandonedCartRecovery.php:850
 msgid "Upgrade Your Plan"
 msgstr "Actualiza tu plan"
 
 # %1$s: Account URL, %2$s: Help URL
 #: includes/Admin/Pages/PageAbstract.php:350
-#: includes/Admin/Pages/Premium/OrderBumps.php:1044
+#: includes/Admin/Pages/Premium/OrderBumps.php:1077
 #: includes/Admin/Pages/Premium/AbandonedCartRecovery.php:869
 msgid "You can upgrade your license in <a class=\"text-blue-600 underline\" target=\"_blank\" href=\"%1$s\">Account</a>. For help upgrading your license, <a class=\"text-blue-600 underline\" target=\"_blank\" href=\"%2$s\">click here.</a>"
 msgstr "Puedes actualizar tu licencia en <a class=\"text-blue-600 underline\" target=\"_blank\" href=\"%1$s\">Cuenta</a>. Para ayuda con la actualización de tu licencia, <a class=\"text-blue-600 underline\" target=\"_blank\" href=\"%2$s\">haz clic aquí.</a>"
 
 #: includes/Admin/Pages/OrderBumpsAdminFree.php:27
-#: includes/Admin/Pages/Premium/OrderBumps.php:60
+#: includes/Admin/Pages/Premium/OrderBumps.php:62
 msgid "Manage Bumps"
 msgstr "Gestionar impulsos"
 
@@ -2864,14 +2873,14 @@ msgstr "Editar ubicaciones de recogida"
 msgid "Submit"
 msgstr "Enviar"
 
-#: includes/Admin/Pages/Integrations.php:17
+#: includes/Admin/Pages/Integrations.php:18
 msgid "Integrations"
 msgstr "Integraciones"
 
 #: includes/Admin/Pages/General.php:40
 #: includes/Admin/Pages/General.php:41
-#: includes/Admin/Pages/CheckoutEditor.php:14
-#: client/ts/admin/Components/CheckoutEditor/EditorHeader.tsx:75
+#: includes/Admin/Pages/CheckoutEditor.php:16
+#: client/ts/admin/Components/CheckoutEditor/EditorHeader.tsx:92
 msgid "Checkout Editor"
 msgstr "Editor de Pago"
 
@@ -3008,13 +3017,13 @@ msgstr "La plantilla y funcionalidad de CheckoutWC serán temporalmente ignorada
 
 #: includes/Admin/Pages/ExpressCheckout.php:16
 #: client/ts/admin/Components/Forms/ExpressCheckoutSettingsForm.tsx:54
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:413
 #: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:419
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:425
 msgid "Express Checkout"
 msgstr "Pago exprés"
 
 # 1: Admin page title, 2: Network or site name.
-#: includes/Admin/Pages/CheckoutEditor.php:50
+#: includes/Admin/Pages/CheckoutEditor.php:70
 msgid "%1$s ‹ %2$s — WordPress"
 msgstr "%1$s ‹ %2$s — WordPress"
 
@@ -3047,7 +3056,7 @@ msgid "System Font Stack (fastest)"
 msgstr "Pila de fuentes del sistema (más rápido)"
 
 #: includes/Admin/Pages/Appearance.php:201
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:219
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:225
 msgid "Body"
 msgstr "Cuerpo"
 
@@ -3062,8 +3071,8 @@ msgstr "Fondo"
 #: includes/Admin/Pages/Appearance.php:219
 #: includes/Admin/Pages/Appearance.php:231
 #: includes/Admin/Pages/Appearance.php:241
-#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:429
-#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:247
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:459
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:262
 msgid "Text"
 msgstr "Texto"
 
@@ -3073,21 +3082,21 @@ msgid "Link"
 msgstr "Enlace"
 
 #: includes/Admin/Pages/Appearance.php:211
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:223
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:229
 msgid "Header"
 msgstr "Encabezado"
 
 #: includes/Admin/Pages/Appearance.php:223
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:224
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:627
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:230
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:635
 msgid "Footer"
 msgstr "Pie de página"
 
 #: includes/Admin/Pages/Appearance.php:235
 #: client/ts/admin/Components/Forms/WooCommercePagesGlobalOptionsSettingsForm.tsx:48
 #: client/ts/admin/Components/Forms/CheckoutSettingsForm.tsx:569
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:222
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:434
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:228
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:440
 #: client/ts/admin/Components/CheckoutEditor/panels/CheckoutSettingsPanel.tsx:305
 msgid "Cart Summary"
 msgstr "Resumen del carrito"
@@ -3105,7 +3114,7 @@ msgid "Quantity Bubble Text"
 msgstr "Texto de Burbuja de Cantidad"
 
 #: includes/Admin/Pages/Appearance.php:253
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:221
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:227
 msgid "Breadcrumbs"
 msgstr "Migas de pan"
 
@@ -3134,7 +3143,7 @@ msgid "Next Accent"
 msgstr "Acento Siguiente"
 
 #: includes/Admin/Pages/Appearance.php:267
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:220
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:226
 msgid "Buttons"
 msgstr "Botones"
 
@@ -3176,7 +3185,7 @@ msgstr "Colores específicos del tema"
 
 #: includes/Admin/Pages/Advanced.php:20
 #: includes/Admin/Pages/Advanced.php:28
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:645
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:653
 msgid "Advanced"
 msgstr "Avanzado"
 
@@ -3721,9 +3730,9 @@ msgstr "El título del paso 3. Ejemplo: Pedido recibido"
 msgid "Order Bump Preview"
 msgstr "Vista previa de Order Bump"
 
-#: client/ts/admin/order-bumps-editor.tsx:172
-msgid "Note: This is just a preview. The price shown will not be properly discounted in this context."
-msgstr "Nota: Esto es solo una vista previa. El precio mostrado no se descontará correctamente en este contexto."
+#: client/ts/admin/order-bumps-editor.tsx:152
+msgid "Preview only — configure this bump in the order bump settings sidebar on the right. The price shown here is not discounted."
+msgstr "Solo vista previa — configura este bump en la barra lateral de ajustes de order bump de la derecha. El precio que se muestra aquí no tiene descuento."
 
 #: client/ts/admin/admin.ts:116
 #: client/ts/admin/Components/SettingsImporterButton.ts:12
@@ -3751,7 +3760,7 @@ msgid "Are you sure you want to clear all tracked carts and reset all recovery s
 msgstr "¿Está seguro de que desea borrar todos los carritos rastreados y restablecer todas las estadísticas de recuperación? Esto no se puede deshacer."
 
 #: client/ts/admin/admin.ts:178
-#: client/ts/admin/Components/CheckoutEditor/EditorApp.tsx:177
+#: client/ts/admin/Components/CheckoutEditor/EditorApp.tsx:188
 msgid "Are you sure you want to discard all unsaved changes?"
 msgstr "¿Está seguro de que desea descartar todos los cambios no guardados?"
 
@@ -3786,8 +3795,8 @@ msgid "Select the order bump to test variants against."
 msgstr "Seleccione el order bump para probar variantes contra él."
 
 #: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:252
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2000
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2090
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2075
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2165
 msgid "Select an order bump to view and manage variants."
 msgstr "Seleccione un order bump para ver y gestionar variantes."
 
@@ -3821,6 +3830,7 @@ msgstr "Introduzca los porcentajes para el order bump original y cada variante. 
 
 #: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:531
 #: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:590
+#: client/ts/admin/Components/Metaboxes/ProductsAndVariationsCompleter.tsx:31
 msgid "Draft"
 msgstr "Borrador"
 
@@ -3837,28 +3847,28 @@ msgstr "Original"
 #: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:541
 #: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:606
 #: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:1562
-#: includes/Admin/Pages/Premium/OrderBumps.php:126
+#: includes/Admin/Pages/Premium/OrderBumps.php:128
 msgid "Conversion Rate"
 msgstr "Tasa de conversión"
 
 #: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:545
 #: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:610
 #: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:1566
-#: includes/Admin/Pages/Premium/OrderBumps.php:127
+#: includes/Admin/Pages/Premium/OrderBumps.php:129
 msgid "Revenue"
 msgstr "Ingresos"
 
 #: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:551
 #: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:619
 #: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:1576
-#: includes/Admin/Pages/Premium/OrderBumps.php:128
+#: includes/Admin/Pages/Premium/OrderBumps.php:130
 msgid "Location"
 msgstr "Ubicación"
 
 #: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:555
 #: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:623
 #: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:1586
-#: includes/Admin/Pages/Premium/OrderBumps.php:129
+#: includes/Admin/Pages/Premium/OrderBumps.php:131
 #: client/ts/admin/Components/Metaboxes/OrderBumpsSetupModal.tsx:77
 #: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:31
 msgid "Offer Product"
@@ -3869,15 +3879,15 @@ msgid "Delete variant"
 msgstr "Eliminar variante"
 
 #: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:630
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2305
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2323
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2380
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2398
 msgid "Select Winner"
 msgstr "Seleccionar ganador"
 
 #: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:650
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2268
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2272
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2278
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2343
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2347
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2353
 msgid "Create Variant"
 msgstr "Crear variante"
 
@@ -3902,7 +3912,7 @@ msgid "Variant does not belong to the specified order bump."
 msgstr "La variante no pertenece al order bump especificado."
 
 #: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:940
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2158
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2233
 msgid "Failed to delete variant."
 msgstr "Error al eliminar la variante."
 
@@ -3932,7 +3942,7 @@ msgid "Order bump not found."
 msgstr "Order bump no encontrado."
 
 #: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:1156
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2270
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2345
 msgid "Failed to create variant."
 msgstr "Error al crear la variante."
 
@@ -4016,77 +4026,77 @@ msgstr "eliminar esta prueba"
 msgid "To create a new A/B test for the \"%1$s\" order bump, %2$s."
 msgstr "Para crear una nueva prueba A/B para el complemento de pedido \"%1$s\", %2$s."
 
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:1817
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:1892
 msgid "Existing Test:"
 msgstr "Prueba existente:"
 
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:1854
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:1929
 msgid "Search for an order bump..."
 msgstr "Buscar un complemento de pedido..."
 
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:1959
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2034
 msgid "You have not yet created any order bumps."
 msgstr "Aún no has creado ningún complemento de pedido."
 
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:1961
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2036
 msgid "Create an order bump"
 msgstr "Crear un complemento de pedido"
 
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2021
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2096
 msgid "Loading variants..."
 msgstr "Cargando variantes..."
 
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2057
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2063
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2132
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2138
 msgid "Error loading variants."
 msgstr "Error al cargar variantes."
 
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2109
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2184
 msgid "Are you sure you want to delete this variant? This action cannot be undone. If using a custom traffic split, the traffic percentages will be redistributed proportionally across the remaining variants."
 msgstr "¿Estás seguro de que deseas eliminar esta variante? Esta acción no se puede deshacer. Si usas una división de tráfico personalizada, los porcentajes de tráfico se redistribuirán proporcionalmente entre las variantes restantes."
 
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2163
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2238
 msgid "An error occurred while deleting the variant."
 msgstr "Ocurrió un error al eliminar la variante."
 
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2188
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2262
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2263
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2337
 msgid "Edit Variant"
 msgstr "Editar variante"
 
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2222
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2297
 msgid "Enter a title for this variant:"
 msgstr "Introduce un título para esta variante:"
 
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2230
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2305
 msgid "Creating..."
 msgstr "Creando..."
 
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2276
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2351
 msgid "An error occurred while creating the variant."
 msgstr "Ocurrió un error al crear la variante."
 
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2296
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2371
 msgid "Selecting this variant as the winner will update the original order bump to match it and delete variants."
 msgstr "Seleccionar esta variante como ganadora actualizará el complemento de pedido original para que coincida y eliminará variantes."
 
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2300
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2375
 msgid "Apply this variant\\'s conversion stats to the original order bump."
 msgstr "Aplicar las estadísticas de conversión de esta variante al complemento de pedido original."
 
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2358
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2433
 msgid "Failed to select winner."
 msgstr "Error al seleccionar ganador."
 
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2363
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2438
 msgid "An error occurred while setting the winner."
 msgstr "Ocurrió un error al establecer el ganador."
 
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2396
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2471
 msgid "Traffic split percentages must total exactly 100%. Please adjust your percentages before saving."
 msgstr "Los porcentajes de división de tráfico deben sumar exactamente 100%. Por favor, ajusta tus porcentajes antes de guardar."
 
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2483
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2558
 msgid "(Original)"
 msgstr "(Original)"
 
@@ -4114,44 +4124,58 @@ msgstr "CheckoutWC: Después de los totales del carrito lateral"
 msgid "CheckoutWC: After Side Cart Buttons"
 msgstr "CheckoutWC: Después de los botones del carrito lateral"
 
-#: includes/Admin/Pages/Premium/OrderBumps.php:125
+#: includes/Admin/Pages/Premium/PickupLocations.php:203
+#: includes/Admin/Pages/Premium/PickupLocations.php:210
+msgid "Order"
+msgstr "Pedido"
+
+#: includes/Admin/Pages/Premium/OrderBumps.php:127
 msgid "ID"
 msgstr "ID"
 
-#: includes/Admin/Pages/Premium/OrderBumps.php:126
+#: includes/Admin/Pages/Premium/OrderBumps.php:128
 msgid "Conversion Rate tracks how often a bump is added to an actual completed purchase. If 20 orders are placed and a bump was displayed on 10 of those orders and the bump was purchased 5 times, the conversion rate is 50%."
 msgstr "La tasa de conversión mide con qué frecuencia se añade un bump a una compra completada. Si se realizan 20 pedidos, se muestra un bump en 10 de ellos y se compra el bump 5 veces, la tasa de conversión es del 50%."
 
-#: includes/Admin/Pages/Premium/OrderBumps.php:127
+#: includes/Admin/Pages/Premium/OrderBumps.php:129
 msgid "The additional revenue that an Order Bump has captured. When configured as an upsell, it calculates the relative value between the offer product and the product being replaced. Revenues incurred before version 6.1.4 are estimated."
 msgstr "Los ingresos adicionales que ha capturado un Order Bump. Cuando se configura como upsell, calcula el valor relativo entre el producto de la oferta y el producto que se reemplaza. Los ingresos generados antes de la versión 6.1.4 son estimados."
 
-#: includes/Admin/Pages/Premium/OrderBumps.php:232
+#: includes/Admin/Pages/Premium/OrderBumps.php:238
 msgid "View Test"
 msgstr "Ver prueba"
 
-#: includes/Admin/Pages/Premium/OrderBumps.php:242
+#: includes/Admin/Pages/Premium/OrderBumps.php:248
 msgid "Add Test"
 msgstr "Agregar prueba"
 
-#: includes/Admin/Pages/Premium/OrderBumps.php:327
+#: includes/Admin/Pages/Premium/OrderBumps.php:333
 msgid "All <span class=\"count\">(%s)</span>"
 msgid_plural "All <span class=\"count\">(%s)</span>"
 msgstr[0] "Todos <span class=\"count\">(%s)</span>"
 msgstr[1] ""
 
-#: includes/Admin/Pages/Premium/OrderBumps.php:535
+#: includes/Admin/Pages/Premium/OrderBumps.php:541
 msgid "Reset Order Bump Conversion Stats"
 msgstr "Restablecer estadísticas de conversión de Order Bump"
 
 # %1$d: Allowed bump count, %2$d: Used bump count
-#: includes/Admin/Pages/Premium/OrderBumps.php:1037
+#: includes/Admin/Pages/Premium/OrderBumps.php:1070
 msgid "Your CheckoutWC plan allows you to create %1$d Order Bumps. You have used %2$d."
 msgstr "Su plan de CheckoutWC le permite crear %1$d Order Bumps. Ha usado %2$d."
 
-#: includes/Admin/Pages/Premium/OrderBumps.php:1040
+#: includes/Admin/Pages/Premium/OrderBumps.php:1073
 msgid "You cannot create or publish new Order Bumps if you are over the limit."
 msgstr "No puede crear o publicar nuevos Order Bumps si supera el límite."
+
+#: includes/Admin/Pages/Premium/OrderBumps.php:1174
+msgid "This order bump is part of an A/B test. Changes you make here affect the test results."
+msgstr "Este order bump forma parte de una prueba A/B. Los cambios que realices aquí afectan a los resultados de la prueba."
+
+# %s: display location name, e.g. "Place Order Click (Checkout)"
+#: includes/Admin/Pages/Premium/OrderBumps.php:1198
+msgid "%s is not a checkout slot. If you save this, the bump will no longer appear in the checkout editor — manage it from the Order Bumps page instead."
+msgstr "%s no es una ranura de pago. Si guardas esto, el bump dejará de aparecer en el editor de pago; en su lugar, gestionalo desde la página de Order Bumps."
 
 #: includes/Admin/Pages/Premium/AbandonedCartRecovery.php:99
 #: includes/Admin/Pages/Premium/AbandonedCartRecovery.php:389
@@ -4169,8 +4193,8 @@ msgid "Send this long after cart has been abandoned."
 msgstr "Enviar esto mucho después de que el carrito haya sido abandonado."
 
 #: includes/Admin/Pages/Premium/AbandonedCartRecovery.php:101
-#: includes/Admin/Pages/Premium/ABTestingAdmin.php:211
-#: includes/Admin/Pages/Premium/ABTestingAdmin.php:819
+#: includes/Admin/Pages/Premium/ABTestingAdmin.php:218
+#: includes/Admin/Pages/Premium/ABTestingAdmin.php:826
 #: client/ts/admin/Components/CheckoutEditor/panels/DesignSettingsPanel.tsx:82
 msgid "Active"
 msgstr "Activo"
@@ -4265,7 +4289,7 @@ msgid "Unsubscribe Link"
 msgstr "Enlace para darse de baja"
 
 #: includes/Admin/Pages/Premium/AbandonedCartRecovery.php:642
-#: includes/Admin/Pages/Premium/ABTestingAdmin.php:315
+#: includes/Admin/Pages/Premium/ABTestingAdmin.php:322
 msgid "Permission denied."
 msgstr "Permiso denegado."
 
@@ -4290,84 +4314,68 @@ msgstr "No puede crear ni publicar nuevos correos electrónicos de Recuperación
 msgid "Manage Tests"
 msgstr "Gestionar pruebas"
 
-#: includes/Admin/Pages/Premium/ABTestingAdmin.php:170
-#: includes/Admin/Pages/Premium/ABTestingAdmin.php:786
+#: includes/Admin/Pages/Premium/ABTestingAdmin.php:177
+#: includes/Admin/Pages/Premium/ABTestingAdmin.php:793
 msgid "Type"
 msgstr "Tipo"
 
-#: includes/Admin/Pages/Premium/ABTestingAdmin.php:172
+#: includes/Admin/Pages/Premium/ABTestingAdmin.php:179
 msgid "Duration"
 msgstr "Duración"
 
-#: includes/Admin/Pages/Premium/ABTestingAdmin.php:212
-#: includes/Admin/Pages/Premium/ABTestingAdmin.php:820
+#: includes/Admin/Pages/Premium/ABTestingAdmin.php:219
+#: includes/Admin/Pages/Premium/ABTestingAdmin.php:827
 msgid "Paused"
 msgstr "Pausado"
 
-#: includes/Admin/Pages/Premium/ABTestingAdmin.php:213
-#: includes/Admin/Pages/Premium/ABTestingAdmin.php:821
+#: includes/Admin/Pages/Premium/ABTestingAdmin.php:220
+#: includes/Admin/Pages/Premium/ABTestingAdmin.php:828
 msgid "Complete"
 msgstr "Completo"
 
-#: includes/Admin/Pages/Premium/ABTestingAdmin.php:237
+#: includes/Admin/Pages/Premium/ABTestingAdmin.php:244
 msgid "Finished"
 msgstr "Finalizado"
 
-#: includes/Admin/Pages/Premium/ABTestingAdmin.php:246
+#: includes/Admin/Pages/Premium/ABTestingAdmin.php:253
 msgid "Ongoing"
 msgstr "En curso"
 
-#: includes/Admin/Pages/Premium/ABTestingAdmin.php:321
+#: includes/Admin/Pages/Premium/ABTestingAdmin.php:328
 msgid "Invalid test type."
 msgstr "Tipo de prueba inválido."
 
-#: includes/Admin/Pages/Premium/ABTestingAdmin.php:331
+#: includes/Admin/Pages/Premium/ABTestingAdmin.php:338
 msgid "Test type does not support UI operations."
 msgstr "El tipo de prueba no admite operaciones de interfaz de usuario."
 
-#: includes/Admin/Pages/Premium/ABTestingAdmin.php:703
+#: includes/Admin/Pages/Premium/ABTestingAdmin.php:710
 msgid "Test"
 msgstr "Prueba"
 
-#: includes/Admin/Pages/Premium/ABTestingAdmin.php:824
+#: includes/Admin/Pages/Premium/ABTestingAdmin.php:831
 msgid "The current status of this A/B test."
 msgstr "El estado actual de esta prueba A/B."
 
-#: includes/Admin/Pages/Premium/ABTestingAdmin.php:837
+#: includes/Admin/Pages/Premium/ABTestingAdmin.php:844
 msgid "Start Date"
 msgstr "Fecha de inicio"
 
-#: includes/Admin/Pages/Premium/ABTestingAdmin.php:849
+#: includes/Admin/Pages/Premium/ABTestingAdmin.php:856
 msgid "The date when the A/B test should start. Leave empty to start immediately."
 msgstr "La fecha en que la prueba A/B debe comenzar. Deja vacío para comenzar inmediatamente."
 
-#: includes/Admin/Pages/Premium/ABTestingAdmin.php:855
+#: includes/Admin/Pages/Premium/ABTestingAdmin.php:862
 msgid "End Date"
 msgstr "Fecha de finalización"
 
-#: includes/Admin/Pages/Premium/ABTestingAdmin.php:867
+#: includes/Admin/Pages/Premium/ABTestingAdmin.php:874
 msgid "The date when the A/B test should end. After this date, the original variant will be displayed. Leave empty for no end date."
 msgstr "La fecha en que la prueba A/B debe finalizar. Después de esta fecha, se mostrará la variante original. Deja vacío para no tener fecha de finalización."
 
-#: includes/Admin/Pages/Premium/ABTestingAdmin.php:1174
+#: includes/Admin/Pages/Premium/ABTestingAdmin.php:1190
 msgid "Traffic split percentages must total 100%. Please adjust your percentages."
 msgstr "Los porcentajes de división de tráfico deben sumar 100%. Por favor, ajusta tus porcentajes."
-
-#: client/ts/frontend/Components/TermsAndConditions.ts:29
-msgid "Terms and Conditions"
-msgstr "Términos y Condiciones"
-
-#: client/ts/frontend/Components/TermsAndConditions.ts:35
-msgid "Privacy Policy"
-msgstr "Política de Privacidad"
-
-#: client/ts/frontend/Components/SideCartComponent.tsx:38
-msgid "Close Cart"
-msgstr "Cerrar carrito"
-
-#: client/ts/frontend/Components/FreeShippingProgressBar.tsx:232
-msgid "Unlocked"
-msgstr "Desbloqueado"
 
 #: client/ts/frontend/Actions/CompleteOrderAction.ts:196
 msgid "Could not connect to server. Please refresh and try again or contact site administrator."
@@ -4393,6 +4401,22 @@ msgstr "El servidor no puede procesar su solicitud. Actualice e inténtelo de nu
 msgid "Request was aborted. Please contact site administrator."
 msgstr "Solicitud abortada. Póngase en contacto con el administrador del sitio."
 
+#: client/ts/frontend/Components/TermsAndConditions.ts:29
+msgid "Terms and Conditions"
+msgstr "Términos y Condiciones"
+
+#: client/ts/frontend/Components/TermsAndConditions.ts:35
+msgid "Privacy Policy"
+msgstr "Política de Privacidad"
+
+#: client/ts/frontend/Components/SideCartComponent.tsx:38
+msgid "Close Cart"
+msgstr "Cerrar carrito"
+
+#: client/ts/frontend/Components/FreeShippingProgressBar.tsx:232
+msgid "Unlocked"
+msgstr "Desbloqueado"
+
 #: client/ts/admin/Components/TrustBadgeRow.tsx:151
 msgid "Slot"
 msgstr "Espacio"
@@ -4406,8 +4430,10 @@ msgid "Determine when this Trust Badge should be displayed."
 msgstr "Determina cuándo debe mostrarse este distintivo de confianza."
 
 #: client/ts/admin/Components/TrustBadgeRow.tsx:214
-#: client/ts/admin/Components/CheckoutEditor/EditorHeader.tsx:61
-#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:207
+#: client/ts/admin/Components/CheckoutEditor/PreviewCartControl.tsx:208
+#: client/ts/admin/Components/CheckoutEditor/EditorHeader.tsx:78
+#: client/ts/admin/Components/CheckoutEditor/BumpEditorModal.tsx:101
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:222
 msgid "Close"
 msgstr "Cerrar"
 
@@ -4457,7 +4483,7 @@ msgid "Yes, replace my settings!"
 msgstr "¡Sí, reemplazar mi configuración!"
 
 #: client/ts/admin/Components/SettingsFormContainer.tsx:27
-#: client/ts/admin/Components/CheckoutEditor/EditorApp.tsx:168
+#: client/ts/admin/Components/CheckoutEditor/EditorApp.tsx:179
 msgid "Failed to save settings. Error: %s"
 msgstr "Error al guardar la configuración. Error: %s"
 
@@ -4494,6 +4520,157 @@ msgstr "Desbloquear con Premium"
 #: client/ts/admin/Components/LockedFieldWrapper.tsx:60
 msgid "A %s plan is required to access these features."
 msgstr "Se requiere un plan %s para acceder a estas funciones."
+
+#: client/ts/admin/Components/GooglePlacesKeyStatus.tsx:46
+#: client/ts/admin/Components/GooglePlacesKeyStatus.tsx:53
+msgid "Places API (New)"
+msgstr "Places API (Nueva)"
+
+#: client/ts/admin/Components/GooglePlacesKeyStatus.tsx:47
+#: client/ts/admin/Components/GooglePlacesKeyStatus.tsx:54
+#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:225
+msgid "Places API (Legacy)"
+msgstr "Places API (Legado)"
+
+#: client/ts/admin/Components/GooglePlacesKeyStatus.tsx:48
+msgid "Geocoding API - Thank You Page Map"
+msgstr "Geocoding API - Mapa de la página de agradecimiento"
+
+#: client/ts/admin/Components/GooglePlacesKeyStatus.tsx:55
+msgid "Geocoding API"
+msgstr "Geocoding API"
+
+#: client/ts/admin/Components/GooglePlacesKeyStatus.tsx:59
+msgid "Working"
+msgstr "Funciona"
+
+#: client/ts/admin/Components/GooglePlacesKeyStatus.tsx:60
+msgid "Not Available"
+msgstr "No disponible"
+
+#: client/ts/admin/Components/GooglePlacesKeyStatus.tsx:154
+msgid "Google closed Places API (Legacy) to projects created after 1 March 2025, so it cannot be enabled on a newer project."
+msgstr "Google cerró Places API (Legado) para los proyectos creados después del 1 de marzo de 2025, por lo que no puede habilitarse en un proyecto más reciente."
+
+#: client/ts/admin/Components/GooglePlacesKeyStatus.tsx:157
+msgid "Nothing to do - this project uses Places API (New)."
+msgstr "No hay nada que hacer: este proyecto usa Places API (Nueva)."
+
+# %s is the name of a Google API, for example Geocoding API.
+#: client/ts/admin/Components/GooglePlacesKeyStatus.tsx:169
+msgid "Either %s is not enabled on your Google Cloud project, or it is not in this key\\'s list of allowed APIs."
+msgstr "O bien %s no está habilitada en tu proyecto de Google Cloud, o no está en la lista de APIs permitidas de esta clave."
+
+# %s is the name of a Google API that responded successfully.
+#: client/ts/admin/Components/GooglePlacesKeyStatus.tsx:182
+msgid "%s answered for this key, so the key\\'s website restrictions are not the cause."
+msgstr "%s respondió para esta clave, así que las restricciones de sitio web de la clave no son la causa."
+
+#: client/ts/admin/Components/GooglePlacesKeyStatus.tsx:196
+msgid "Another plugin has already loaded Google Maps on this screen, so this key could not be tested. Deactivate it, or test on a clean screen."
+msgstr "Otro plugin ya ha cargado Google Maps en esta pantalla, por lo que no se pudo probar esta clave. Desactívalo o prueba en una pantalla limpia."
+
+#: client/ts/admin/Components/GooglePlacesKeyStatus.tsx:203
+msgid "Refresh this page before testing a different key. Google Maps can only be loaded once per page."
+msgstr "Actualiza esta página antes de probar una clave diferente. Google Maps solo puede cargarse una vez por página."
+
+#: client/ts/admin/Components/GooglePlacesKeyStatus.tsx:210
+msgid "Google refused this key for this site. Check the key itself, and any website restrictions on it in the Google Cloud console."
+msgstr "Google rechazó esta clave para este sitio. Comprueba la propia clave y cualquier restricción de sitio web que tenga en la consola de Google Cloud."
+
+#: client/ts/admin/Components/GooglePlacesKeyStatus.tsx:223
+msgid "Places API (New) works with this key, and address autocomplete is using it."
+msgstr "Places API (Nueva) funciona con esta clave, y el autocompletado de direcciones la está usando."
+
+#: client/ts/admin/Components/GooglePlacesKeyStatus.tsx:232
+msgid "Address autocomplete is using Places API (Legacy), which Google froze in March 2025 and will retire once it gives 12 months notice. Places API (New) also works with this key, so consider switching the version above to New."
+msgstr "El autocompletado de direcciones está usando Places API (Legado), que Google congeló en marzo de 2025 y retirará cuando avise con 12 meses de antelación. Places API (Nueva) también funciona con esta clave, así que considera cambiar la versión anterior a Nueva."
+
+#: client/ts/admin/Components/GooglePlacesKeyStatus.tsx:239
+msgid "Address autocomplete is using Places API (Legacy), which Google froze in March 2025 and will retire once it gives 12 months notice. Places API (New) is not enabled on this project yet, so there is nothing to move to."
+msgstr "El autocompletado de direcciones está usando Places API (Legacy), que Google congeló en marzo de 2025 y retirará cuando avise con 12 meses de antelación. Places API (New) aún no está habilitada en este proyecto, así que no hay a qué migrar."
+
+#: client/ts/admin/Components/GooglePlacesKeyStatus.tsx:249
+msgid "Places API (New) is not enabled on this project, so address autocomplete is not working. Enable it in the Google Cloud console, or switch the version above to Legacy."
+msgstr "Places API (New) no está habilitada en este proyecto, así que el autocompletado de direcciones no funciona. Actívala en la consola de Google Cloud o cambia la versión anterior a Legacy."
+
+#: client/ts/admin/Components/GooglePlacesKeyStatus.tsx:256
+msgid "This project supports Places API (New) only, so address autocomplete is not working. Switch the version above to New."
+msgstr "Este proyecto solo admite Places API (New), así que el autocompletado de direcciones no funciona. Cambia la versión anterior a New."
+
+#: client/ts/admin/Components/GooglePlacesKeyStatus.tsx:262
+msgid "Neither version answered for this key, so address autocomplete is not working. Check that a Places API is enabled on the project and that billing is active."
+msgstr "Ninguna de las dos versiones respondió para esta clave, así que el autocompletado de direcciones no funciona. Comprueba que hay una Places API habilitada en el proyecto y que la facturación está activa."
+
+# %s is a link to the settings page where the feature is enabled.
+#: client/ts/admin/Components/GooglePlacesKeyStatus.tsx:282
+msgid "Address autocomplete is switched off, so this key is not being used for it yet. %s."
+msgstr "El autocompletado de direcciones está desactivado, así que esta clave aún no se está usando para ello. %s."
+
+#: client/ts/admin/Components/GooglePlacesKeyStatus.tsx:283
+#: client/ts/admin/Components/Forms/CheckoutSettingsForm.tsx:493
+#: client/ts/admin/Components/CheckoutEditor/panels/CheckoutSettingsPanel.tsx:256
+msgid "Enable Google Address Autocomplete"
+msgstr "Habilitar Autocompletado de Dirección de Google"
+
+# %s is a link to the settings page where the feature is enabled.
+#: client/ts/admin/Components/GooglePlacesKeyStatus.tsx:295
+msgid "The thank you page map is switched off, so this key is not being used for it. %s."
+msgstr "El mapa de la página de agradecimiento está desactivado, así que esta clave aún no se está usando para ello. %s."
+
+#: client/ts/admin/Components/GooglePlacesKeyStatus.tsx:296
+msgid "Enable Thank You Page Map"
+msgstr "Habilitar mapa de la página de agradecimiento"
+
+# %s is a link to the documentation explaining the conflict.
+#: client/ts/admin/Components/GooglePlacesKeyStatus.tsx:306
+msgid "Separate Address Fields is switched on, which turns Google address autocomplete off. %s."
+msgstr "Los campos de dirección separados están activados, lo que desactiva el autocompletado de direcciones de Google. %s."
+
+#: client/ts/admin/Components/GooglePlacesKeyStatus.tsx:307
+msgid "Learn more"
+msgstr "Más información"
+
+# %s is a link to the settings page where the services are enabled.
+#: client/ts/admin/Components/GooglePlacesKeyStatus.tsx:317
+msgid "Fetchify address autocomplete is also switched on. Only one address autocomplete service can run at a time. %s."
+msgstr "El autocompletado de direcciones de Fetchify también está activado. Solo puede ejecutarse un servicio de autocompletado de direcciones a la vez. %s."
+
+#: client/ts/admin/Components/GooglePlacesKeyStatus.tsx:318
+msgid "Review autocomplete settings"
+msgstr "Revisar la configuración del autocompletado"
+
+#: client/ts/admin/Components/GooglePlacesKeyStatus.tsx:345
+msgid "The check could not be completed."
+msgstr "No se pudo completar la comprobación."
+
+#: client/ts/admin/Components/GooglePlacesKeyStatus.tsx:367
+msgid "Checking…"
+msgstr "Comprobando…"
+
+#: client/ts/admin/Components/GooglePlacesKeyStatus.tsx:367
+msgid "Check Key"
+msgstr "Comprobar clave"
+
+#: client/ts/admin/Components/GooglePlacesKeyStatus.tsx:372
+msgid "Add your Google API key to test it."
+msgstr "Añade tu clave de API de Google para probarla."
+
+#: client/ts/admin/Components/GooglePlacesKeyStatus.tsx:373
+msgid "Tests this key from your browser, the same way the checkout uses it."
+msgstr "Prueba esta clave desde tu navegador, igual que la usa el proceso de compra."
+
+#: client/ts/admin/Components/GooglePlacesKeyStatus.tsx:391
+msgid "What was checked"
+msgstr "Qué se comprobó"
+
+#: client/ts/admin/Components/GooglePlacesKeyStatus.tsx:412
+msgid "Response:"
+msgstr "Respuesta:"
+
+#: client/ts/admin/Components/GooglePlacesKeyStatus.tsx:425
+msgid "Open the Google Cloud console"
+msgstr "Abrir la consola de Google Cloud"
 
 #: client/ts/admin/Components/FreeShippingTierRow.tsx:49
 msgid "You don't have a Free Shipping method set up, so reaching this tier won't actually make shipping free — the bar only shows progress. Add one in WooCommerce shipping settings."
@@ -4651,9 +4828,36 @@ msgstr "Cargando..."
 msgid "Tracked Carts"
 msgstr "Carritos rastreados"
 
+#: client/ts/admin/Components/Metaboxes/ProductsAndVariationsCompleter.tsx:30
+msgid "Private"
+msgstr "Privado"
+
+#: client/ts/admin/Components/Metaboxes/ProductsAndVariationsCompleter.tsx:32
+msgid "Pending"
+msgstr "Pendiente"
+
+#: client/ts/admin/Components/Metaboxes/ProductsAndVariationsCompleter.tsx:33
+msgid "Scheduled"
+msgstr "Programado"
+
 #: client/ts/admin/Components/Metaboxes/ProductsAndVariationsCompleter.tsx:44
+#: client/ts/admin/Components/Forms/CheckoutSettingsForm.tsx:237
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:379
+#: client/ts/admin/Components/CheckoutEditor/panels/CheckoutSettingsPanel.tsx:110
+msgid "Hidden"
+msgstr "Oculto"
+
+#: client/ts/admin/Components/Metaboxes/ProductsAndVariationsCompleter.tsx:46
+msgid "Search only"
+msgstr "Solo búsqueda"
+
+#: client/ts/admin/Components/Metaboxes/ProductsAndVariationsCompleter.tsx:80
 msgid "All products with titles that include {{query /}}"
 msgstr "Todos los productos con títulos que incluyen {{query /}}"
+
+#: client/ts/admin/Components/Metaboxes/ProductsAndVariationsCompleter.tsx:130
+msgid "Variation"
+msgstr "Variación"
 
 #: client/ts/admin/Components/Metaboxes/ProductTagCompleter.tsx:44
 msgid "All product tags that include {{query /}}"
@@ -4900,46 +5104,70 @@ msgstr "¿Qué producto reemplaza esta venta adicional en el carrito?"
 msgid "This product must be in the cart for this order bump to be shown."
 msgstr "Este producto debe estar en el carrito para que se muestre este Order Bump."
 
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:31
-msgid "Block Editor is only used for Full Screen Order Bumps (Configurable for Place Order and Post Purchase One-Click bumps). Blocks are ignored for other configurations."
-msgstr "El editor de bloques solo se usa para complementos de pedido a pantalla completa (configurable para complementos de realizar pedido y compra con un clic post-compra). Los bloques se ignoran para otras configuraciones."
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:44
+msgid "Blocks are only used by full screen offers. Enable Full Screen Landing Page in the Display Location panel, then add the Order Bump Offer Form block where the offer form should go."
+msgstr "Los bloques solo se usan en ofertas de pantalla completa. Activa la página de destino a pantalla completa en el panel de Ubicación de visualización y, a continuación, añade el bloque Formulario de oferta de order bump donde deba ir el formulario de la oferta."
 
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:47
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:45
+msgid "Blocks are only used by full screen offers, available on Place Order Click and Post Purchase One-Click bumps. This bump uses the built-in layout."
+msgstr "Los bloques solo se usan en ofertas de pantalla completa, disponibles en los bumps de Hacer clic para realizar el pedido y de postcompra con un solo clic. Este bump usa el diseño integrado."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:61
 msgid "Post Purchase One-Click bumps require a compatible payment gateway. We recommend using Place Order bumps when using non-compatible gateways."
 msgstr "Los complementos de compra con un clic post-compra requieren una pasarela de pago compatible. Recomendamos usar complementos de realizar pedido cuando se usan pasarelas no compatibles."
 
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:53
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:67
 msgid "Learn more about supported gateways"
 msgstr "Aprende más sobre las pasarelas compatibles"
 
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:60
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:74
 msgid "Read our Order Bumps documentation"
 msgstr "Lea nuestra documentación de Order Bumps"
 
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:83
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:90
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:104
+msgid "This bump will not appear anywhere because the side cart is disabled."
+msgstr "Este bump no aparecerá en ningún sitio porque el carrito lateral está desactivado."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:105
+msgid "This bump will not appear anywhere because order bumps are disabled in the side cart."
+msgstr "Este bump no aparecerá en ningún sitio porque los order bumps están desactivados en el carrito lateral."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:108
+msgid "This bump will appear on checkout but not in the side cart because the side cart is disabled."
+msgstr "Este bump aparecerá en el proceso de compra, pero no en el carrito lateral porque el carrito lateral está desactivado."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:109
+msgid "This bump will appear on checkout but not in the side cart because order bumps are disabled in the side cart."
+msgstr "Este bump aparecerá en el proceso de compra, pero no en el carrito lateral porque los order bumps están desactivados en el carrito lateral."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:120
+msgid "Open side cart settings"
+msgstr "Abrir ajustes del carrito lateral"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:141
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:148
 msgid "Display Location"
 msgstr "Ubicación de visualización"
 
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:99
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:157
 msgid "Checkout Slot"
 msgstr "Espacio de pago"
 
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:129
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:187
 msgid "Displays in a popup when Place Order is clicked, before the order is submitted"
 msgstr "Se muestra en una ventana emergente cuando se hace clic en Realizar pedido, antes de enviar el pedido"
 
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:132
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:190
 msgid "Displays in a popup on the Thank You page."
 msgstr "Se muestra en una ventana emergente en la página de Gracias."
 
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:136
-msgid "Full Screen Landing Page (Use Block Editor To Design)"
-msgstr "Página de aterrizaje a pantalla completa (usar Editor de Bloques para diseñar)"
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:194
+msgid "Full Screen Landing Page"
+msgstr "Página de destino a pantalla completa"
 
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:137
-msgid "If checked, the bump offer will be displayed full screen. Use Order Bump Offer Form block to design the offer."
-msgstr "Si está marcado, la oferta bump se mostrará a pantalla completa. Use el bloque Formulario de Oferta Order Bump para diseñar la oferta."
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:195
+msgid "Design the offer with blocks instead of the built-in layout. Add the Order Bump Offer Form block where the offer form should go."
+msgstr "Diseña la oferta con bloques en lugar del diseño integrado. Añade el bloque Formulario de oferta de order bump donde deba ir el formulario de la oferta."
 
 #: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayConditions.tsx:26
 msgid "Show Bump When These Conditions Are True:"
@@ -4996,7 +5224,7 @@ msgid "Enable sale price under on cart item labels at checkout. Example: <s>$10.
 msgstr "Habilite el precio de oferta debajo de las etiquetas de los artículos del carrito en el pago. Ejemplo: <s>$10.00</s> $5.00"
 
 #: client/ts/admin/Components/Forms/WooCommercePagesGlobalOptionsSettingsForm.tsx:61
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:477
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:483
 msgid "Cart Item Links"
 msgstr "Enlaces de artículos del carrito"
 
@@ -5013,7 +5241,7 @@ msgid "Do not link cart items to single product page. (Recommended)"
 msgstr "No enlazar los artículos del carrito a la página del producto individual. (Recomendado)"
 
 #: client/ts/admin/Components/Forms/WooCommercePagesGlobalOptionsSettingsForm.tsx:71
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:481
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:487
 msgid "Enabled"
 msgstr "Habilitado"
 
@@ -5030,7 +5258,7 @@ msgid "Open cart item links in a new window."
 msgstr "Abrir los enlaces de los artículos del carrito en una nueva ventana."
 
 #: client/ts/admin/Components/Forms/WooCommercePagesGlobalOptionsSettingsForm.tsx:89
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:486
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:492
 msgid "Cart Item Data Display"
 msgstr "Visualización de datos del artículo del carrito"
 
@@ -5049,7 +5277,7 @@ msgstr "Mostrar solo los valores de variación. Por ejemplo, Talla: XL, Color: R
 #: client/ts/admin/Components/Forms/WooCommercePagesGlobalOptionsSettingsForm.tsx:99
 #: client/ts/admin/Components/Forms/CheckoutSettingsForm.tsx:191
 #: client/ts/admin/Components/Forms/CheckoutSettingsForm.tsx:212
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:490
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:496
 #: client/ts/admin/Components/CheckoutEditor/panels/CheckoutSettingsPanel.tsx:85
 #: client/ts/admin/Components/CheckoutEditor/panels/CheckoutSettingsPanel.tsx:97
 msgid "WooCommerce Default"
@@ -5113,22 +5341,22 @@ msgid "Choose which reviews to prioritize for display."
 msgstr "Elige qué reseñas priorizar para mostrar."
 
 #: client/ts/admin/Components/Forms/TrustBadgeSettingsForm.tsx:111
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:578
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:586
 msgid "Cart products only"
 msgstr "Solo productos del carrito"
 
 #: client/ts/admin/Components/Forms/TrustBadgeSettingsForm.tsx:112
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:579
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:587
 msgid "Cart products first, then site-wide"
 msgstr "Primero productos del carrito, luego de todo el sitio"
 
 #: client/ts/admin/Components/Forms/TrustBadgeSettingsForm.tsx:113
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:580
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:588
 msgid "Any product reviews"
 msgstr "Cualquier reseña de producto"
 
 #: client/ts/admin/Components/Forms/TrustBadgeSettingsForm.tsx:120
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:585
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:593
 msgid "Minimum Star Rating"
 msgstr "Calificación mínima de estrellas"
 
@@ -5137,22 +5365,22 @@ msgid "Only show reviews with this rating or higher."
 msgstr "Mostrar solo reseñas con esta calificación o superior."
 
 #: client/ts/admin/Components/Forms/TrustBadgeSettingsForm.tsx:123
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:588
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:596
 msgid "3+ stars"
 msgstr "3+ estrellas"
 
 #: client/ts/admin/Components/Forms/TrustBadgeSettingsForm.tsx:124
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:589
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:597
 msgid "4+ stars"
 msgstr "4+ estrellas"
 
 #: client/ts/admin/Components/Forms/TrustBadgeSettingsForm.tsx:125
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:590
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:598
 msgid "5 stars only"
 msgstr "Solo 5 estrellas"
 
 #: client/ts/admin/Components/Forms/TrustBadgeSettingsForm.tsx:132
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:595
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:603
 msgid "Maximum Reviews to Show"
 msgstr "Máximo de reseñas a mostrar"
 
@@ -5435,182 +5663,199 @@ msgstr "Habilitar Regex"
 msgid "Match local shipping method name with regex."
 msgstr "Coincidir el nombre del método de envío local con regex."
 
-#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:65
+#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:79
 msgid "Configure Cloudflare Turnstile CAPTCHA protection for your checkout and account pages."
 msgstr "Configure la protección CAPTCHA de Cloudflare Turnstile para sus páginas de pago y cuenta."
 
-#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:71
+#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:85
 msgid "Enable Cloudflare Turnstile"
 msgstr "Habilitar Cloudflare Turnstile"
 
-#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:72
+#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:86
 msgid "Enable Cloudflare Turnstile CAPTCHA protection"
 msgstr "Habilitar la protección CAPTCHA de Cloudflare Turnstile"
 
-#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:86
+#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:100
 msgid "Site Key"
 msgstr "Clave del sitio"
 
-#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:87
+#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:101
 msgid "Your Cloudflare Turnstile site key"
 msgstr "Su clave del sitio de Cloudflare Turnstile"
 
-#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:93
+#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:107
 msgid "Secret Key"
 msgstr "Clave secreta"
 
-#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:95
+#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:109
 msgid "Your Cloudflare Turnstile secret key"
 msgstr "Su clave secreta de Cloudflare Turnstile"
 
-#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:101
+#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:115
 msgid "Enable on Checkout"
 msgstr "Habilitar en el pago"
 
-#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:102
+#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:116
 msgid "Show Turnstile on the checkout page"
 msgstr "Mostrar Turnstile en la página de pago"
 
-#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:108
+#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:122
 msgid "Enable on Order Pay"
 msgstr "Habilitar en el pago del pedido"
 
-#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:109
+#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:123
 msgid "Show Turnstile on the order pay page"
 msgstr "Mostrar Turnstile en la página de pago del pedido"
 
-#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:115
+#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:129
 msgid "Enable on Login"
 msgstr "Habilitar en el inicio de sesión"
 
-#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:116
+#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:130
 msgid "Show Turnstile on the My Account login form"
 msgstr "Mostrar Turnstile en el formulario de inicio de sesión de Mi Cuenta"
 
-#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:122
+#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:136
 msgid "Enable on Registration"
 msgstr "Habilitar en el registro"
 
-#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:123
+#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:137
 msgid "Show Turnstile on the My Account registration form"
 msgstr "Mostrar Turnstile en el formulario de registro de Mi Cuenta"
 
-#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:129
+#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:143
 msgid "Position on Checkout"
 msgstr "Posición en el pago"
 
-#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:130
+#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:144
 msgid "Where to display the Turnstile widget on checkout"
 msgstr "Dónde mostrar el widget Turnstile en el pago"
 
-#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:134
+#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:148
 msgid "Before Place Order Button"
 msgstr "Antes del botón de realizar pedido"
 
-#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:135
+#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:149
 msgid "Display just before the place order button"
 msgstr "Mostrar justo antes del botón de realizar pedido"
 
-#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:139
+#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:153
 msgid "Before Payment Methods"
 msgstr "Antes de los métodos de pago"
 
-#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:140
+#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:154
 msgid "Display before payment method selection"
 msgstr "Mostrar antes de la selección del método de pago"
 
-#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:145
+#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:159
 msgid "Display after payment method selection"
 msgstr "Mostrar después de la selección del método de pago"
 
-#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:153
+#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:167
 msgid "Theme"
 msgstr "Tema"
 
-#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:154
+#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:168
 msgid "Visual theme for the Turnstile widget"
 msgstr "Tema visual para el widget Turnstile"
 
-#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:156
+#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:170
 msgid "Light"
 msgstr "Claro"
 
-#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:156
+#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:170
 msgid "Light theme"
 msgstr "Tema claro"
 
-#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:157
+#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:171
 msgid "Dark"
 msgstr "Oscuro"
 
-#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:157
+#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:171
 msgid "Dark theme"
 msgstr "Tema oscuro"
 
-#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:158
+#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:172
 msgid "Auto"
 msgstr "Automático"
 
-#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:158
+#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:172
 msgid "Automatic based on user preference"
 msgstr "Automático según la preferencia del usuario"
 
-#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:165
+#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:179
 msgid "Size"
 msgstr "Tamaño"
 
-#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:166
+#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:180
 msgid "Size of the Turnstile widget"
 msgstr "Tamaño del widget Turnstile"
 
-#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:168
+#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:182
 #: client/ts/admin/Components/Forms/AppearanceDesignSettingsForm.tsx:84
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:365
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:371
 #: client/ts/admin/Components/CheckoutEditor/panels/DesignSettingsPanel.tsx:131
 msgid "Normal"
 msgstr "Normal"
 
-#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:168
+#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:182
 msgid "Standard size widget"
 msgstr "Widget de tamaño estándar"
 
-#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:169
+#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:183
 msgid "Compact"
 msgstr "Compacto"
 
-#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:169
+#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:183
 msgid "Smaller widget size"
 msgstr "Widget de tamaño más pequeño"
 
-#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:176
+#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:190
 msgid "Guest Users Only"
 msgstr "Solo usuarios invitados"
 
-#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:177
+#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:191
 msgid "Only show Turnstile for guest (non-logged-in) users"
 msgstr "Mostrar Turnstile solo para usuarios invitados (no conectados)"
 
-#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:187
+#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:201
 msgid "Google API"
 msgstr "API de Google"
 
-#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:188
+#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:202
 msgid "Used for the maps embed on the thank you page as well as Google Address Autocomplete."
 msgstr "Se usa para la inserción de mapas en la página de agradecimiento, así como para la Autocompletación de direcciones de Google."
 
-#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:193
+#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:207
 msgid "Google API Key"
 msgstr "Clave API de Google"
 
-#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:194
+#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:208
 msgid "Used by Address Autocomplete and Thank You Page Maps Embed."
 msgstr "Usada por la Autocompletación de direcciones y la inserción de mapas en la página de agradecimiento."
 
-#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:206
+#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:214
+msgid "Google Places API Version"
+msgstr "Versión de la API de Google Places"
+
+# %s is a link to the Google Cloud console, reading "Google Cloud project".
+#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:217
+msgid "Which Places API address autocomplete uses. The same key works for both, but the chosen API must be enabled on your %s. Google closed the legacy API to new projects on 1 March 2025."
+msgstr "Qué usa la autocompleción de direcciones de la API de Places. La misma clave funciona para ambas, pero la API elegida debe estar habilitada en tu %s. Google cerró la API heredada a los nuevos proyectos el 1 de marzo de 2025."
+
+#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:221
+msgid "Google Cloud project"
+msgstr "Proyecto de Google Cloud"
+
+#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:224
+msgid "Places API (New) - recommended"
+msgstr "API de Places (nueva) - recomendada"
+
+#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:240
 msgid "Themes and Plugins"
 msgstr "Temas y plugins"
 
-#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:207
+#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:241
 msgid "Integrations with 3rd party themes and plugins."
 msgstr "Integraciones con temas y plugins de terceros."
 
@@ -5652,7 +5897,7 @@ msgid "See our recommended Express Checkout gateways here."
 msgstr "Vea nuestras pasarelas recomendadas de Pago Exprés aquí."
 
 #: client/ts/admin/Components/Forms/CheckoutSettingsForm.tsx:109
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:256
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:262
 #: client/ts/admin/Components/CheckoutEditor/panels/CheckoutSettingsPanel.tsx:29
 msgid "Steps"
 msgstr "Pasos"
@@ -5792,7 +6037,7 @@ msgid "Control how different checkout fields appear."
 msgstr "Controla cómo aparecen los diferentes campos del pago."
 
 #: client/ts/admin/Components/Forms/CheckoutSettingsForm.tsx:232
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:370
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:376
 #: client/ts/admin/Components/CheckoutEditor/panels/CheckoutSettingsPanel.tsx:107
 msgid "Phone Field"
 msgstr "Campo de teléfono"
@@ -5802,20 +6047,14 @@ msgstr "Campo de teléfono"
 msgid "Determines whether the WooCommerce native phone field is enabled."
 msgstr "Determina si el campo de teléfono nativo de WooCommerce está habilitado."
 
-#: client/ts/admin/Components/Forms/CheckoutSettingsForm.tsx:237
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:373
-#: client/ts/admin/Components/CheckoutEditor/panels/CheckoutSettingsPanel.tsx:110
-msgid "Hidden"
-msgstr "Oculto"
-
 #: client/ts/admin/Components/Forms/CheckoutSettingsForm.tsx:241
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:374
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:380
 #: client/ts/admin/Components/CheckoutEditor/panels/CheckoutSettingsPanel.tsx:111
 msgid "Optional"
 msgstr "Opcional"
 
 #: client/ts/admin/Components/Forms/CheckoutSettingsForm.tsx:245
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:375
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:381
 #: client/ts/admin/Components/CheckoutEditor/panels/CheckoutSettingsPanel.tsx:112
 msgid "Required"
 msgstr "Obligatorio"
@@ -5830,7 +6069,7 @@ msgid "Enable or disable WooCommerce Order Notes field. (Default: Disabled)"
 msgstr "Activa o desactiva el campo de notas del pedido de WooCommerce. (Por defecto: Desactivado)"
 
 #: client/ts/admin/Components/Forms/CheckoutSettingsForm.tsx:260
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:357
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:363
 #: client/ts/admin/Components/CheckoutEditor/panels/CheckoutSettingsPanel.tsx:124
 msgid "Order Notes field is being controlled by a filter or a plugin."
 msgstr "El campo de notas del pedido está siendo controlado por un filtro o un plugin."
@@ -5864,7 +6103,7 @@ msgid "Values are combined into a single address_1 field based on country select
 msgstr "Los valores se combinan en un solo campo address_1 según el país seleccionado por el cliente."
 
 #: client/ts/admin/Components/Forms/CheckoutSettingsForm.tsx:298
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:314
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:320
 #: client/ts/admin/Components/CheckoutEditor/panels/CheckoutSettingsPanel.tsx:155
 msgid "Separate Address Fields Display Order"
 msgstr "Orden de visualización de campos de dirección separados"
@@ -5874,7 +6113,7 @@ msgid "Choose how display separate address 1 fields."
 msgstr "Elija cómo mostrar los campos separados de address 1."
 
 #: client/ts/admin/Components/Forms/CheckoutSettingsForm.tsx:304
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:318
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:324
 #: client/ts/admin/Components/CheckoutEditor/panels/CheckoutSettingsPanel.tsx:159
 msgid "[House Number] [Street Name]"
 msgstr "[Número de casa] [Nombre de la calle]"
@@ -5884,7 +6123,7 @@ msgid "Display the House Number before the Street Name. (Default)"
 msgstr "Mostrar el número de casa antes del nombre de la calle. (Predeterminado)"
 
 #: client/ts/admin/Components/Forms/CheckoutSettingsForm.tsx:309
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:319
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:325
 #: client/ts/admin/Components/CheckoutEditor/panels/CheckoutSettingsPanel.tsx:160
 msgid "[Street Name] [House Number]"
 msgstr "[Nombre de la calle] [Número de casa]"
@@ -5916,8 +6155,8 @@ msgid "Promote selected countries to the top of the countries list in country dr
 msgstr "Promover los países seleccionados a la parte superior de la lista de países en los menús desplegables."
 
 #: client/ts/admin/Components/Forms/CheckoutSettingsForm.tsx:344
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:335
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:344
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:341
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:350
 #: client/ts/admin/Components/CheckoutEditor/panels/CheckoutSettingsPanel.tsx:185
 msgid "Highlighted Countries"
 msgstr "Países destacados"
@@ -6000,7 +6239,7 @@ msgid "Control address fields."
 msgstr "Controlar los campos de dirección."
 
 #: client/ts/admin/Components/Forms/CheckoutSettingsForm.tsx:412
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:388
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:394
 #: client/ts/admin/Components/CheckoutEditor/panels/CheckoutSettingsPanel.tsx:222
 msgid "Force Different Billing Address"
 msgstr "Forzar dirección de facturación diferente"
@@ -6030,43 +6269,43 @@ msgid "Choose which billing address fields are visible for customers."
 msgstr "Elija qué campos de la dirección de facturación son visibles para los clientes."
 
 #: client/ts/admin/Components/Forms/CheckoutSettingsForm.tsx:431
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:397
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:403
 #: client/ts/admin/Components/CheckoutEditor/panels/CheckoutSettingsPanel.tsx:237
 msgid "First Name"
 msgstr "Nombre"
 
 #: client/ts/admin/Components/Forms/CheckoutSettingsForm.tsx:435
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:398
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:404
 #: client/ts/admin/Components/CheckoutEditor/panels/CheckoutSettingsPanel.tsx:238
 msgid "Last Name"
 msgstr "Apellido"
 
 #: client/ts/admin/Components/Forms/CheckoutSettingsForm.tsx:439
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:399
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:405
 #: client/ts/admin/Components/CheckoutEditor/panels/CheckoutSettingsPanel.tsx:239
 msgid "Address 1"
 msgstr "Dirección 1"
 
 #: client/ts/admin/Components/Forms/CheckoutSettingsForm.tsx:443
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:400
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:406
 #: client/ts/admin/Components/CheckoutEditor/panels/CheckoutSettingsPanel.tsx:240
 msgid "Address 2"
 msgstr "Dirección 2"
 
 #: client/ts/admin/Components/Forms/CheckoutSettingsForm.tsx:447
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:401
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:407
 #: client/ts/admin/Components/CheckoutEditor/panels/CheckoutSettingsPanel.tsx:241
 msgid "Company"
 msgstr "Empresa"
 
 #: client/ts/admin/Components/Forms/CheckoutSettingsForm.tsx:451
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:402
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:408
 #: client/ts/admin/Components/CheckoutEditor/panels/CheckoutSettingsPanel.tsx:242
 msgid "Country"
 msgstr "País"
 
 #: client/ts/admin/Components/Forms/CheckoutSettingsForm.tsx:463
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:405
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:411
 #: client/ts/admin/Components/CheckoutEditor/panels/CheckoutSettingsPanel.tsx:245
 msgid "City"
 msgstr "Ciudad"
@@ -6083,11 +6322,6 @@ msgstr "Finalización y Validación de Dirección"
 #: client/ts/admin/Components/Forms/CheckoutSettingsForm.tsx:487
 msgid "Control some mobile only checkout behaviors."
 msgstr "Controle algunos comportamientos de pago solo para móviles."
-
-#: client/ts/admin/Components/Forms/CheckoutSettingsForm.tsx:493
-#: client/ts/admin/Components/CheckoutEditor/panels/CheckoutSettingsPanel.tsx:256
-msgid "Enable Google Address Autocomplete"
-msgstr "Habilitar Autocompletado de Dirección de Google"
 
 #: client/ts/admin/Components/Forms/CheckoutSettingsForm.tsx:501
 msgid "Google Address Autocomplete cannot be used with Separate Address Fields. <a target=\"_blank\" class=\"text-blue-600 underline\" href=\"https://www.checkoutwc.com/documentation/google-address-autocomplete-and-discreet-house-number-and-street-name-address-fields/\">Learn More</a>"
@@ -6269,8 +6503,8 @@ msgid "Configure your template."
 msgstr "Configura tu plantilla."
 
 #: client/ts/admin/Components/Forms/AppearanceDesignSettingsForm.tsx:66
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:174
 #: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:180
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:186
 #: client/ts/admin/Components/CheckoutEditor/panels/DesignSettingsPanel.tsx:119
 msgid "Logo"
 msgstr "Logo"
@@ -6280,7 +6514,7 @@ msgid "Choose the logo you wish to display in the header. If you do not choose a
 msgstr "Elige el logo que deseas mostrar en el encabezado. Si no eliges un logo, usaremos el nombre de tu sitio."
 
 #: client/ts/admin/Components/Forms/AppearanceDesignSettingsForm.tsx:74
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:361
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:367
 #: client/ts/admin/Components/CheckoutEditor/panels/DesignSettingsPanel.tsx:127
 msgid "Field Label Style"
 msgstr "Estilo de etiqueta de campo"
@@ -6291,7 +6525,7 @@ msgid "Choose how you want form labels styled."
 msgstr "Elige cómo quieres que se estilicen las etiquetas del formulario."
 
 #: client/ts/admin/Components/Forms/AppearanceDesignSettingsForm.tsx:79
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:364
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:370
 #: client/ts/admin/Components/CheckoutEditor/panels/DesignSettingsPanel.tsx:130
 msgid "Floating (Recommended)"
 msgstr "Flotante (Recomendado)"
@@ -6306,7 +6540,7 @@ msgid "Labels appear above each field at all times."
 msgstr "Las etiquetas aparecen encima de cada campo en todo momento."
 
 #: client/ts/admin/Components/Forms/AppearanceDesignSettingsForm.tsx:105
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:189
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:195
 #: client/ts/admin/Components/CheckoutEditor/panels/DesignSettingsPanel.tsx:149
 msgid "Typography"
 msgstr "Tipografía"
@@ -6316,7 +6550,7 @@ msgid "Configure fonts."
 msgstr "Configura las fuentes."
 
 #: client/ts/admin/Components/Forms/AppearanceDesignSettingsForm.tsx:111
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:195
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:201
 #: client/ts/admin/Components/CheckoutEditor/panels/DesignSettingsPanel.tsx:152
 msgid "Body Font"
 msgstr "Fuente del cuerpo"
@@ -6327,7 +6561,7 @@ msgid "Choose the font for the body text."
 msgstr "Elige la fuente para el texto del cuerpo."
 
 #: client/ts/admin/Components/Forms/AppearanceDesignSettingsForm.tsx:119
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:201
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:207
 #: client/ts/admin/Components/CheckoutEditor/panels/DesignSettingsPanel.tsx:159
 msgid "Heading Font"
 msgstr "Fuente de encabezado"
@@ -6338,7 +6572,7 @@ msgid "Choose the font for the headings."
 msgstr "Elige la fuente para los encabezados."
 
 #: client/ts/admin/Components/Forms/AppearanceDesignSettingsForm.tsx:131
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:209
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:215
 #: client/ts/admin/Components/CheckoutEditor/panels/DesignSettingsPanel.tsx:166
 msgid "Colors"
 msgstr "Colores"
@@ -6524,53 +6758,104 @@ msgstr "Marque cualquier rol de usuario que deba ser excluido de los correos ele
 msgid "Are you sure you want to delete all tracked carts?"
 msgstr "¿Está seguro de que desea eliminar todos los carritos rastreados?"
 
-#: client/ts/admin/Components/CheckoutEditor/EditorPreview.tsx:98
+#: client/ts/admin/Components/CheckoutEditor/PreviewCartControl.tsx:186
+#: client/ts/admin/Components/CheckoutEditor/PreviewCartControl.tsx:198
+msgid "Preview Cart"
+msgstr "Vista previa del carrito"
+
+#: client/ts/admin/Components/CheckoutEditor/PreviewCartControl.tsx:202
+msgid "Preview Cart Products"
+msgstr "Vista previa de los productos del carrito"
+
+# %d is the maximum number of products.
+#: client/ts/admin/Components/CheckoutEditor/PreviewCartControl.tsx:227
+msgid "Limit of %d products reached"
+msgstr "Límite de %d productos alcanzado"
+
+#: client/ts/admin/Components/CheckoutEditor/PreviewCartControl.tsx:230
+msgid "Add a product"
+msgstr "Añadir un producto"
+
+#: client/ts/admin/Components/CheckoutEditor/PreviewCartControl.tsx:232
+msgid "Type to search products"
+msgstr "Escribe para buscar productos"
+
+#: client/ts/admin/Components/CheckoutEditor/PreviewCartControl.tsx:233
+msgid "No products found"
+msgstr "No se han encontrado productos"
+
+#: client/ts/admin/Components/CheckoutEditor/PreviewCartControl.tsx:254
+msgid "The preview needs at least one product"
+msgstr "La vista previa necesita al menos un producto"
+
+# %s is a product name.
+#: client/ts/admin/Components/CheckoutEditor/PreviewCartControl.tsx:257
+msgid "Remove %s"
+msgstr "Eliminar %s"
+
+#: client/ts/admin/Components/CheckoutEditor/PreviewCartControl.tsx:270
+msgid "Loading the products in the preview…"
+msgstr "Cargando los productos en la vista previa…"
+
+#: client/ts/admin/Components/CheckoutEditor/PreviewCartControl.tsx:271
+msgid "The Preview Cart is empty."
+msgstr "El carrito de vista previa está vacío."
+
+#: client/ts/admin/Components/CheckoutEditor/PreviewCartControl.tsx:276
+msgid "Change the products to see how your checkout reacts, for example digital-only versus shipped products, or making sure an order bump\\'s trigger product is in the cart."
+msgstr "Cambia los productos para ver cómo reacciona tu proceso de pago, por ejemplo con productos solo digitales frente a productos enviados, o asegurándote de que el producto desencadenante de un incremento de pedido esté en el carrito."
+
+#: client/ts/admin/Components/CheckoutEditor/PreviewCartControl.tsx:280
+msgid "The preview needs at least one product. If you empty the cart, a product is added back automatically."
+msgstr "La vista previa necesita al menos un producto. Si vacías el carrito, se añadirá automáticamente un producto de nuevo."
+
+#: client/ts/admin/Components/CheckoutEditor/EditorPreview.tsx:145
 msgid "No products can be found to show in the editor. Ensure you have products which are published and in stock."
 msgstr "No se pueden encontrar productos para mostrar en el editor. Asegúrese de tener productos publicados y en stock."
 
-#: client/ts/admin/Components/CheckoutEditor/EditorPreview.tsx:148
+#: client/ts/admin/Components/CheckoutEditor/EditorPreview.tsx:195
 msgid "Updating preview…"
 msgstr "Actualizando vista previa…"
 
-#: client/ts/admin/Components/CheckoutEditor/EditorPreview.tsx:157
+#: client/ts/admin/Components/CheckoutEditor/EditorPreview.tsx:204
 msgid "Checkout Preview"
 msgstr "Vista previa del pago"
 
-#: client/ts/admin/Components/CheckoutEditor/EditorHeader.tsx:38
-#: client/ts/admin/Components/CheckoutEditor/EditorHeader.tsx:116
+#: client/ts/admin/Components/CheckoutEditor/EditorHeader.tsx:55
+#: client/ts/admin/Components/CheckoutEditor/EditorHeader.tsx:133
 msgid "Live"
 msgstr "En vivo"
 
-#: client/ts/admin/Components/CheckoutEditor/EditorHeader.tsx:38
-#: client/ts/admin/Components/CheckoutEditor/EditorHeader.tsx:128
+#: client/ts/admin/Components/CheckoutEditor/EditorHeader.tsx:55
+#: client/ts/admin/Components/CheckoutEditor/EditorHeader.tsx:145
 msgid "Preview"
 msgstr "Vista previa"
 
-#: client/ts/admin/Components/CheckoutEditor/EditorHeader.tsx:132
+#: client/ts/admin/Components/CheckoutEditor/EditorHeader.tsx:149
 msgid "Set the checkout to live and save your changes to make it available to customers. Please note that a valid, active license key is required to go live."
 msgstr "Configure el pago para que esté en vivo y guarde sus cambios para que estén disponibles para los clientes. Tenga en cuenta que se requiere una clave de licencia válida y activa para activar."
 
-#: client/ts/admin/Components/CheckoutEditor/EditorHeader.tsx:147
+#: client/ts/admin/Components/CheckoutEditor/EditorHeader.tsx:164
 msgid "Unsaved changes"
 msgstr "Cambios no guardados"
 
-#: client/ts/admin/Components/CheckoutEditor/EditorHeader.tsx:156
+#: client/ts/admin/Components/CheckoutEditor/EditorHeader.tsx:173
 msgid "Desktop"
 msgstr "Escritorio"
 
-#: client/ts/admin/Components/CheckoutEditor/EditorHeader.tsx:166
+#: client/ts/admin/Components/CheckoutEditor/EditorHeader.tsx:183
 msgid "Tablet"
 msgstr "Tableta"
 
-#: client/ts/admin/Components/CheckoutEditor/EditorHeader.tsx:176
+#: client/ts/admin/Components/CheckoutEditor/EditorHeader.tsx:193
 msgid "Mobile"
 msgstr "Móvil"
 
-#: client/ts/admin/Components/CheckoutEditor/EditorHeader.tsx:193
+#: client/ts/admin/Components/CheckoutEditor/EditorHeader.tsx:220
 msgid "Discard Changes"
 msgstr "Descartar cambios"
 
-#: client/ts/admin/Components/CheckoutEditor/EditorHeader.tsx:203
+#: client/ts/admin/Components/CheckoutEditor/EditorHeader.tsx:230
 msgid "Saving..."
 msgstr "Guardando..."
 
@@ -6585,13 +6870,25 @@ msgstr "En"
 msgid "Off"
 msgstr "Desactivado"
 
-#: client/ts/admin/Components/CheckoutEditor/EditorApp.tsx:99
+#: client/ts/admin/Components/CheckoutEditor/EditorApp.tsx:110
 msgid "You have unsaved changes. Are you sure you want to leave?"
 msgstr "Tiene cambios no guardados. ¿Está seguro de que desea salir?"
 
-#: client/ts/admin/Components/CheckoutEditor/EditorApp.tsx:204
+#: client/ts/admin/Components/CheckoutEditor/EditorApp.tsx:215
 msgid "Changing templates will update the logo, typography, colors, field label style, and footer text to those defined by the selected template. Are you sure you want to continue?"
 msgstr "Cambiar plantillas actualizará el logo, la tipografía, los colores, el estilo de la etiqueta de campo y el texto del pie de página según lo definido por la plantilla seleccionada. ¿Está seguro de que desea continuar?"
+
+#: client/ts/admin/Components/CheckoutEditor/BumpEditorModal.tsx:35
+msgid "This order bump has unsaved changes. Close anyway?"
+msgstr "Este incremento de pedido tiene cambios sin guardar. ¿Cerrar de todos modos?"
+
+#: client/ts/admin/Components/CheckoutEditor/BumpEditorModal.tsx:101
+msgid "Done"
+msgstr "Hecho"
+
+#: client/ts/admin/Components/CheckoutEditor/BumpEditorModal.tsx:108
+msgid "Loading order bump editor…"
+msgstr "Cargando el editor de incremento de pedido…"
 
 # %s: item type e.g. "order bump"
 #: client/ts/admin/Components/CheckoutEditor/slots/UnsavedChangesDialog.tsx:37
@@ -6608,173 +6905,196 @@ msgstr "Se abrirá una nueva pestaña donde podrá crear su %s. Cuando lo haya g
 msgid "Create %s"
 msgstr "Crear %s"
 
-#: client/ts/admin/Components/CheckoutEditor/slots/SlotsPanel.tsx:161
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotsPanel.tsx:171
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:519
+msgid "Edit order bump"
+msgstr "Editar incremento de pedido"
+
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotsPanel.tsx:181
+msgid "New order bump"
+msgstr "Nuevo incremento de pedido"
+
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotsPanel.tsx:361
 msgid "No slots available."
 msgstr "No hay espacios disponibles."
 
-#: client/ts/admin/Components/CheckoutEditor/slots/SlotsPanel.tsx:198
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotsPanel.tsx:397
 msgid "Order bumps are assigned to slots but the feature is disabled. Enable order bumps in"
 msgstr "Los order bumps están asignados a espacios pero la función está deshabilitada. Habilite order bumps en"
 
-#: client/ts/admin/Components/CheckoutEditor/slots/SlotsPanel.tsx:204
-#: client/ts/admin/Components/CheckoutEditor/slots/SlotsPanel.tsx:224
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotsPanel.tsx:403
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotsPanel.tsx:423
 msgid "order bumps"
 msgstr "order bumps"
 
-#: client/ts/admin/Components/CheckoutEditor/slots/SlotsPanel.tsx:218
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotsPanel.tsx:417
 msgid "One or more slots exceed the maximum order bumps per slot. Increase the limit in"
 msgstr "Uno o más espacios superan el máximo de order bumps por espacio. Aumente el límite en"
 
-#: client/ts/admin/Components/CheckoutEditor/slots/SlotsPanel.tsx:238
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotsPanel.tsx:437
 msgid "Trust badges are assigned to slots but the feature is disabled. Enable trust badges in"
 msgstr "Las insignias de confianza están asignadas a los espacios, pero la función está desactivada. Activa las insignias de confianza en"
 
-#: client/ts/admin/Components/CheckoutEditor/slots/SlotsPanel.tsx:244
-#: client/ts/admin/Components/CheckoutEditor/slots/SlotsPanel.tsx:264
-#: client/ts/admin/Components/CheckoutEditor/slots/SlotsPanel.tsx:313
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotsPanel.tsx:443
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotsPanel.tsx:463
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotsPanel.tsx:525
 msgid "badges"
 msgstr "insignias"
 
-#: client/ts/admin/Components/CheckoutEditor/slots/SlotsPanel.tsx:258
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotsPanel.tsx:457
 msgid "Customer reviews are assigned to slots but the feature is disabled. Enable customer reviews in"
 msgstr "Las opiniones de los clientes están asignadas a los espacios, pero la función está desactivada. Activa las opiniones de los clientes en"
 
-#: client/ts/admin/Components/CheckoutEditor/slots/SlotsPanel.tsx:307
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotsPanel.tsx:519
 msgid "Column settings for badges are configured in"
 msgstr "La configuración de columnas para las insignias se realiza en"
 
-#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:83
-#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:84
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:99
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:100
 msgid "Not shown for orders that don\\'t need shipping (e.g. digital products or pickup)."
 msgstr "No se muestra para pedidos que no requieren envío (por ejemplo, productos digitales o recogida)."
 
-#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:118
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:145
 msgid "This order bump is part of an active A/B test. It cannot be removed while the test is running."
 msgstr "Este complemento de pedido forma parte de una prueba A/B activa. No se puede eliminar mientras la prueba esté en curso."
 
-#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:122
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:149
 msgid "Remove this item from the slot?"
 msgstr "¿Eliminar este artículo del espacio?"
 
-#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:211
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:238
 msgid "Assign item to slot"
 msgstr "Asignar artículo al espacio"
 
-#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:261
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:290
 msgid "On mobile and tablets, this slot is inside the \"Show order summary\" section."
 msgstr "En móviles y tabletas, este espacio está dentro de la sección \"Mostrar resumen del pedido\"."
 
-#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:280
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:309
 msgid "On mobile and tablets, the cart collapses and order bumps in this slot will move to the Above Terms & Conditions slot."
 msgstr "En móviles y tabletas, el carrito se colapsa y los complementos de pedido en este espacio se moverán al espacio \"Por encima de Términos y Condiciones\"."
 
-#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:320
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:350
 msgid "Release to drop here"
 msgstr "Suelta para colocar aquí"
 
-#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:323
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:353
 msgid "No items assigned."
 msgstr "No hay artículos asignados."
 
-#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:330
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:360
 msgid "Add item"
 msgstr "Agregar artículo"
 
-#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:415
-#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:233
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:445
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:248
 msgid "Level"
 msgstr "Nivel"
 
-#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:434
-#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:252
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:464
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:267
 msgid "e.g. Why choose us?"
 msgstr "p. ej. ¿Por qué elegirnos?"
 
-#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:442
-#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:476
-#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:260
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:472
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:529
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:275
 msgid "Margin"
 msgstr "Margen"
 
-#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:447
-#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:481
-#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:265
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:477
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:534
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:280
 msgid "e.g., 10px 0 20px 0"
 msgstr "p. ej., 10px 0 20px 0"
 
-#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:465
-#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:500
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:495
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:553
 msgid "Save"
 msgstr "Guardar"
 
-#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:27
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:126
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:140
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:509
+msgid "Order bump"
+msgstr "Incremento de pedido"
+
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:523
+msgid "Edits in bump editor save immediately."
+msgstr "Los cambios en el editor de incrementos se guardan al instante."
+
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:28
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:132
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:146
 #: client/ts/admin/Components/CheckoutEditor/panels/DesignSettingsPanel.tsx:86
 msgid "Paid plan required"
 msgstr "Se requiere plan de pago"
 
-#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:201
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:216
 msgid "Add Item"
 msgstr "Agregar artículo"
 
-#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:227
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:242
 msgid "+ New heading"
 msgstr "+ Nuevo encabezado"
 
-#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:284
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:299
 #: client/ts/admin/Components/CheckoutEditor/slots/CustomHtmlEditor.tsx:40
 msgid "Add"
 msgstr "Añadir"
 
-#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:302
-#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:371
-#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:419
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:317
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:407
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:455
 msgid "(in slot)"
 msgstr "(en la ranura)"
 
-#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:303
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:318
 msgid "(in other slot)"
 msgstr "(en otra ranura)"
 
-#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:329
-#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:340
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:344
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:363
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:376
 msgid "+ New order bump"
 msgstr "+ Nuevo order bump"
 
-#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:336
+# %d: number of order bumps allowed by the current plan
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:350
+msgid "Your plan allows %d published order bumps. Upgrade or unpublish one to create another."
+msgstr "Tu plan permite %d incrementos de pedido publicados. Actualiza el plan o despublica uno para crear otro."
+
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:372
 msgid "order bump"
 msgstr "order bump"
 
-#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:337
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:373
 msgid "A new tab will open where you can create your order bump. When you\\'ve saved it, close that tab and return here — it will be added to your chosen slot automatically."
 msgstr "Se abrirá una nueva pestaña donde podrás crear tu order bump. Cuando lo hayas guardado, cierra esa pestaña y vuelve aquí — se añadirá automáticamente a la ranura que hayas elegido."
 
-#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:379
-#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:390
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:415
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:426
 msgid "+ New trust badge"
 msgstr "+ Nuevo distintivo de confianza"
 
-#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:386
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:422
 msgid "trust badge"
 msgstr "distintivo de confianza"
 
-#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:387
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:423
 msgid "A new tab will open where you can create your trust badge. When you\\'ve saved it, close that tab and return here — it will appear in this list ready to assign."
 msgstr "Se abrirá una nueva pestaña donde podrás crear tu distintivo de confianza. Cuando lo hayas guardado, cierra esa pestaña y vuelve aquí — aparecerá en esta lista listo para asignar."
 
-#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:399
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:435
 msgid "Review Badges"
 msgstr "Revisar insignias"
 
-#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:402
-#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:418
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:438
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:454
 #: client/ts/admin/Components/CheckoutEditor/slots/AssignedItem.tsx:64
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:604
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:612
 msgid "Customer Reviews"
 msgstr "Opiniones de clientes"
 
-#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:436
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:472
 msgid "+ New HTML"
 msgstr "+ Nuevo HTML"
 
@@ -6794,164 +7114,192 @@ msgstr "Contenido HTML"
 msgid "(empty heading)"
 msgstr "(título vacío)"
 
-#: client/ts/admin/Components/CheckoutEditor/slots/AssignedItem.tsx:148
+#: client/ts/admin/Components/CheckoutEditor/slots/AssignedItem.tsx:175
 msgid "This order bump has an A/B test associated with it and cannot be moved or removed. Delete the test to unlock it."
 msgstr "Este complemento de pedido tiene una prueba A/B asociada y no se puede mover ni eliminar. Elimina la prueba para desbloquearlo."
 
-#: client/ts/admin/Components/CheckoutEditor/slots/AssignedItem.tsx:151
+#: client/ts/admin/Components/CheckoutEditor/slots/AssignedItem.tsx:178
 msgid "This bump is placed here automatically by its Checkout and Side Cart display location. It also appears in the side cart and isn\\'t counted toward this slot\\'s order bump limit."
 msgstr "Este bump se coloca aquí automáticamente por su ubicación de visualización en el Checkout y el carrito lateral. También aparece en el carrito lateral y no cuenta para el límite de order bumps de esta ranura."
 
-#: client/ts/admin/Components/CheckoutEditor/slots/AssignedItem.tsx:154
+#: client/ts/admin/Components/CheckoutEditor/slots/AssignedItem.tsx:181
+msgid "The offer product for this bump no longer exists, so the bump will not display. Choose a new offer product."
+msgstr "El producto de oferta para este incremento ya no existe, por lo que el incremento no se mostrará. Elige un nuevo producto de oferta."
+
+#: client/ts/admin/Components/CheckoutEditor/slots/AssignedItem.tsx:184
+msgid "The offer product for this bump is not published, so the bump appears for you but never for customers."
+msgstr "El producto de oferta para este incremento no está publicado, por lo que el incremento te aparece a ti, pero nunca a los clientes."
+
+#: client/ts/admin/Components/CheckoutEditor/slots/AssignedItem.tsx:187
+msgid "The offer product for this bump has no price, so the bump will not display."
+msgstr "El producto de oferta para este incremento no tiene precio, por lo que el incremento no se mostrará."
+
+#: client/ts/admin/Components/CheckoutEditor/slots/AssignedItem.tsx:190
+msgid "The offer product for this bump is out of stock, so the bump will not display until it is back in stock."
+msgstr "El producto de oferta de este bump está agotado, por lo que el bump no se mostrará hasta que vuelva a estar disponible."
+
+#: client/ts/admin/Components/CheckoutEditor/slots/AssignedItem.tsx:193
+msgid "The product this bump replaces in the cart no longer exists, so the bump will not display."
+msgstr "El producto que este bump reemplaza en el carrito ya no existe, por lo que el bump no se mostrará."
+
+#: client/ts/admin/Components/CheckoutEditor/slots/AssignedItem.tsx:196
+msgid "This bump replaces a product in the cart, so it only appears once that product has been added."
+msgstr "Este bump reemplaza un producto del carrito, por lo que solo aparece una vez que ese producto se ha añadido."
+
+#: client/ts/admin/Components/CheckoutEditor/slots/AssignedItem.tsx:199
 msgid "This item has display conditions. It will only appear to customers who meet the configured criteria and may not be visible on every checkout."
 msgstr "Este elemento tiene condiciones de visualización. Solo aparecerá a los clientes que cumplan los criterios configurados y puede que no sea visible en todos los checkouts."
 
-#: client/ts/admin/Components/CheckoutEditor/slots/AssignedItem.tsx:157
+#: client/ts/admin/Components/CheckoutEditor/slots/AssignedItem.tsx:202
+msgid "The offer product for this bump is hidden from the shop catalog, so this bump is the only place customers will see it."
+msgstr "El producto de oferta de este bump está oculto en el catálogo de la tienda, por lo que este bump es el único lugar donde los clientes lo verán."
+
+#: client/ts/admin/Components/CheckoutEditor/slots/AssignedItem.tsx:205
 msgid "The offer product for this bump is already in the preview cart, so it may not be visible in the preview."
 msgstr "El producto de oferta para este bump ya está en el carrito de vista previa, por lo que puede que no sea visible en la vista previa."
 
-#: client/ts/admin/Components/CheckoutEditor/slots/AssignedItem.tsx:168
+#: client/ts/admin/Components/CheckoutEditor/slots/AssignedItem.tsx:215
 msgid "Drag to reorder"
 msgstr "Arrastrar para reordenar"
 
-#: client/ts/admin/Components/CheckoutEditor/slots/AssignedItem.tsx:241
+#: client/ts/admin/Components/CheckoutEditor/slots/AssignedItem.tsx:297
 msgid "Remove"
 msgstr "Quitar"
 
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:79
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:85
 msgid "Step"
 msgstr "Paso"
 
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:162
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:168
 #: client/ts/admin/Components/CheckoutEditor/panels/DesignSettingsPanel.tsx:108
 msgid "A Basic, Plus, Pro, or Agency plan is required to access all templates."
 msgstr "Se requiere un plan Básico, Plus, Pro o Agencia para acceder a todas las plantillas."
 
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:228
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:234
 msgid "Misc"
 msgstr "Misceláneo"
 
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:262
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:268
 msgid "Shipping Methods"
 msgstr "Métodos de envío"
 
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:271
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:277
 msgid "Order Review"
 msgstr "Revisión del pedido"
 
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:279
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:285
 msgid "One Page Checkout"
 msgstr "Pago en una página"
 
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:289
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:295
 msgid "Fields"
 msgstr "Campos"
 
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:295
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:301
 msgid "Address Fields Link"
 msgstr "Enlace de campos de dirección"
 
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:300
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:306
 msgid "Coupon Code Link"
 msgstr "Enlace de código de cupón"
 
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:306
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:312
 msgid "Full Name Field"
 msgstr "Campo de nombre completo"
 
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:326
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:332
 msgid "Separate House Number/Street Name"
 msgstr "Número de casa/nombre de calle separado"
 
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:336
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:342
 #: client/ts/admin/Components/CheckoutEditor/panels/CheckoutSettingsPanel.tsx:186
 msgid "Countries selected here will appear at the top of the billing and shipping country dropdowns, making them quicker for customers to find."
 msgstr "Los países seleccionados aquí aparecerán en la parte superior de los desplegables de país de facturación y envío, facilitando que los clientes los encuentren más rápido."
 
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:352
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:358
 msgid "Order Notes"
 msgstr "Notas del pedido"
 
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:382
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:388
 msgid "Addresses"
 msgstr "Direcciones"
 
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:393
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:399
 msgid "Billing Address Fields"
 msgstr "Campos de dirección de facturación"
 
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:426
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:432
 msgid "No supported gateways detected.<br><a class=\"text-blue-600 hover:text-blue-800\" target=\"_blank\" href=\"https://www.checkoutwc.com/documentation/supported-express-payment-gateways/\">See our recommendations.</a>"
 msgstr "No se detectaron pasarelas compatibles.<br><a class=\"text-blue-600 hover:text-blue-800\" target=\"_blank\" href=\"https://www.checkoutwc.com/documentation/supported-express-payment-gateways/\">Vea nuestras recomendaciones.</a>"
 
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:444
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:450
 msgid "Variation Edits"
 msgstr "Ediciones de variación"
 
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:450
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:456
 msgid "Item Remove"
 msgstr "Eliminar artículo"
 
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:459
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:465
 msgid "Cart Editing"
 msgstr "Edición del carrito"
 
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:467
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:473
 msgid "Sale Prices"
 msgstr "Precios en oferta"
 
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:472
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:478
 msgid "Sticky Cart on Scroll"
 msgstr "Carrito fijo al desplazarse"
 
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:480
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:486
 msgid "Disabled"
 msgstr "Desactivado"
 
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:489
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:495
 msgid "Short"
 msgstr "Corto"
 
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:497
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:503
 msgid "Slots"
 msgstr "Ranuras"
 
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:513
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:521
 msgid "Badges"
 msgstr "Insignias"
 
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:523
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:557
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:531
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:565
 msgid "Checkout Area Columns"
 msgstr "Columnas del área de pago"
 
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:529
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:563
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:537
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:571
 msgid "Cart Summary Area Columns"
 msgstr "Columnas del área resumen del carrito"
 
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:535
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:569
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:543
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:577
 msgid "Mobile Columns"
 msgstr "Columnas para móvil"
 
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:575
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:583
 msgid "Priority"
 msgstr "Prioridad"
 
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:613
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:621
 msgid "Add badges to your checkout layout in"
 msgstr "Añade distintivos a tu diseño de pago en"
 
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:619
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:627
 msgid "slots"
 msgstr "ranuras"
 
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:633
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:641
 msgid "Footer Text"
 msgstr "Texto del pie de página"
 
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:650
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:658
 msgid "The settings in this editor cover the most commonly used options for most stores. However, many additional settings are available. Once you\\'ve saved any changes, head over to the CheckoutWC menu in your WordPress dashboard to explore more options."
 msgstr "La configuración en este editor cubre las opciones más comúnmente usadas para la mayoría de las tiendas. Sin embargo, hay muchas configuraciones adicionales disponibles. Una vez que haya guardado los cambios, diríjase al menú CheckoutWC en su panel de WordPress para explorar más opciones."
 
@@ -7364,8 +7712,8 @@ msgid "Delete Rule"
 msgstr "Eliminar regla"
 
 # %d: shipping package number
-#: functions/functions.php:384
-#: functions/functions.php:3451
+#: functions/functions.php:385
+#: functions/functions.php:3454
 msgctxt "shipping packages"
 msgid "Shipping"
 msgid_plural "Shipping %d"

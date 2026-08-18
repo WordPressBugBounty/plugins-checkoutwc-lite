@@ -114,17 +114,21 @@ class WooCommercePayments extends CompatibilityAbstract {
 
 		global $wp_scripts;
 
-		if ( ! isset( $wp_scripts->registered['WCPAY_PAYMENT_REQUEST'] ) ) {
-			return;
+		// WooPayments localizes the button settings to the legacy payment request handle, or to the Express Checkout Element handle once it moved to Stripe's ECE.
+		foreach ( [ 'WCPAY_PAYMENT_REQUEST', 'WCPAY_EXPRESS_CHECKOUT_ECE' ] as $handle ) {
+			if ( ! isset( $wp_scripts->registered[ $handle ]->extra['data'] ) ) {
+				continue;
+			}
+
+			$data = $wp_scripts->registered[ $handle ]->extra['data'];
+
+			$data = str_replace( '"height":"40"', '"height":"42"', $data );
+			$data = str_replace( '"height":"48"', '"height":"42"', $data );
+			$data = str_replace( '"height":"55"', '"height":"42"', $data );
+			$data = str_replace( '"height":"56"', '"height":"42"', $data );
+
+			$wp_scripts->registered[ $handle ]->extra['data'] = $data;
 		}
-
-		$data = $wp_scripts->registered['WCPAY_PAYMENT_REQUEST']->extra['data'];
-
-		$data = str_replace( '"height":"40"', '"height":"42"', $data );
-		$data = str_replace( '"height":"48"', '"height":"42"', $data );
-		$data = str_replace( '"height":"56"', '"height":"42"', $data );
-
-		$wp_scripts->registered['WCPAY_PAYMENT_REQUEST']->extra['data'] = $data;
 	}
 
 	public function typescript_class_and_params( array $compatibility ): array {

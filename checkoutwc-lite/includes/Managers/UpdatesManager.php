@@ -429,7 +429,8 @@ class UpdatesManager extends SingletonAbstract {
 						</dt>
 						<dd class="text-sm leading-6 text-gray-700 col-span-2">
 							<?php
-							if ( $license_data->customer_name && $license_data->customer_email ) {
+							// Clearing the license key stores an empty option, so the license data is not always an object.
+							if ( ! empty( $license_data->customer_name ) && ! empty( $license_data->customer_email ) ) {
 								echo wp_kses_post( $license_data->customer_name . ' (' . $license_data->customer_email . ')' );
 							}
 							?>
@@ -502,6 +503,8 @@ class UpdatesManager extends SingletonAbstract {
 	public function admin_page_activation_status_button() {
 		$key_status = $this->get_field_value( 'key_status' );
 		$license    = $this->get_field_value( 'license_key' );
+		// A license check that cannot reach the server stores an empty status, and unrecognized statuses can come back from the API.
+		$status_message = $this->key_statuses[ $key_status ] ?? '';
 		?>
 		<div id="cfw-activation-control" class="cfw-admin-field-container">
 			<?php if ( empty( $license ) ) : ?>
@@ -510,12 +513,14 @@ class UpdatesManager extends SingletonAbstract {
 				</p>
 			<?php elseif ( 'inactive' === $key_status || 'site_inactive' === $key_status ) : ?>
 				<input type="submit" name="activate_key" class="button-secondary" value="<?php esc_attr_e( 'Activate Site', 'checkout-wc' ); ?>" />
-				<p class="mt-2 text-sm leading-6 col-span-2 text-red-600"><?php echo esc_html( $this->key_statuses[ $key_status ] ); ?></p>
+				<p class="mt-2 text-sm leading-6 col-span-2 text-red-600"><?php echo esc_html( $status_message ); ?></p>
 			<?php elseif ( 'valid' === $key_status ) : ?>
 				<input type="submit" name="deactivate_key" class="button-secondary" value="<?php esc_attr_e( 'Deactivate Site', 'checkout-wc' ); ?>" />
-				<p class="mt-2 text-sm leading-6 col-span-2 text-green-600" style="color:green;"><?php echo esc_html( $this->key_statuses[ $key_status ] ); ?></p>
+				<p class="mt-2 text-sm leading-6 col-span-2 text-green-600" style="color:green;"><?php echo esc_html( $status_message ); ?></p>
+			<?php elseif ( ! empty( $status_message ) ) : ?>
+				<p style="color:red;"><?php echo esc_html( $status_message ); ?></p>
 			<?php else : ?>
-				<p style="color:red;"><?php echo esc_html( $this->key_statuses[ $key_status ] ); ?></p>
+				<input type="submit" name="activate_key" class="button-secondary" value="<?php esc_attr_e( 'Activate Site', 'checkout-wc' ); ?>" />
 			<?php endif; ?>
 		</div>
 		<?php
@@ -642,6 +647,20 @@ class UpdatesManager extends SingletonAbstract {
 
 		// decode the license data
 		$license_data = json_decode( wp_remote_retrieve_body( $response ) );
+
+		// A body that does not decode means the server confirmed nothing, so don't report the activation or deactivation as done.
+		if ( ! is_object( $license_data ) ) {
+			wc_get_logger()->warning(
+				sprintf( 'License %s error: unexpected response from the license server', $action ),
+				[ 'source' => 'checkout-wc-license' ]
+			);
+
+			$notice = 'activate_license' === $action ? 'notice_license_invalid' : 'notice_license_deactivate_failed';
+
+			add_action( 'admin_notices', [ $this, $notice ] );
+
+			return;
+		}
 
 		if ( 'activate_license' === $action ) {
 			// Front end notice only

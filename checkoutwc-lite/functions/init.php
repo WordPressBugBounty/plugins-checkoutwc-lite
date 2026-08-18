@@ -45,7 +45,9 @@ use Objectiv\Plugins\Checkout\Admin\Pages\WooCommercePages;
 use Objectiv\Plugins\Checkout\Admin\ShippingPhoneController;
 use Objectiv\Plugins\Checkout\Admin\WelcomeScreenActivationRedirector;
 use Objectiv\Plugins\Checkout\Admin\WooCommerceAdminScreenAugmenter;
+use Objectiv\Plugins\Checkout\API\PreviewCartAPI;
 use Objectiv\Plugins\Checkout\API\PreviewSettingsAPI;
+use Objectiv\Plugins\Checkout\API\ProductsAndVariationsSearchAPI;
 use Objectiv\Plugins\Checkout\API\SettingsAPI;
 use Objectiv\Plugins\Checkout\API\SlotsAPI;
 use Objectiv\Plugins\Checkout\API\UserRolesAPI;
@@ -248,6 +250,7 @@ use Objectiv\Plugins\Checkout\Compatibility\Themes\Verso;
 use Objectiv\Plugins\Checkout\Compatibility\Themes\Woodmart;
 use Objectiv\Plugins\Checkout\Compatibility\Themes\Zidane;
 use Objectiv\Plugins\Checkout\DatabaseUpdatesManager;
+use Objectiv\Plugins\Checkout\EditorPreviewCart;
 use Objectiv\Plugins\Checkout\EditorPreviewSettingsOverride;
 use Objectiv\Plugins\Checkout\FormFieldAugmenter;
 use Objectiv\Plugins\Checkout\Install;
@@ -292,7 +295,16 @@ add_filter(
 ( new SettingsAPI() );
 ( new UserRolesAPI() );
 ( new PreviewSettingsAPI() );
+( new PreviewCartAPI() );
 ( new SlotsAPI() );
+
+// Registered on rest_api_init because the controller extends a WooCommerce REST class that is not loaded yet.
+add_action(
+	'rest_api_init',
+	function() {
+		( new ProductsAndVariationsSearchAPI() )->register_routes();
+	}
+);
 
 // Slot system - migration runs once on init, renderer registers hooks.
 add_action(
@@ -385,54 +397,15 @@ if ( ! PlanManager::has_premium_plan_or_higher() ) {
 	);
 }
 
-// Editor preview settings override — must run on init so filters are in place before wc-ajax (template_redirect priority 0) runs and exits.
+// Editor preview settings override and preview cart — must run on init so filters and the swapped-in cart are in
+// place before wc-ajax (template_redirect priority 0) runs and exits, and before the cart loads on wp_loaded.
 add_action(
 	'init',
 	function() {
 		( new EditorPreviewSettingsOverride() )->init();
+		( new EditorPreviewCart() )->init();
 	},
 	999
-);
-
-/**
- * Prevent duplicate add-to-cart actions in the Checkout Editor preview.
- *
- * This lives in global bootstrap (`init.php`) because it must run on frontend preview/`wc-ajax` requests, not only admin page hooks.
- * When the editor preview URL includes an add-to-cart parameter, refreshing the page
- * would normally keep re-adding the same product to the cart on every load.
- * In the special context of the editor preview iframe we instead detect if the
- * product is already present in the cart and, if so, skip the add-to-cart.
- */
-add_action(
-	'init',
-	function() {
-		if ( ! function_exists( 'cfw_is_editor_preview' ) || ! cfw_is_editor_preview() ) {
-			return;
-		}
-
-		add_filter(
-			'woocommerce_add_to_cart_validation',
-			function( $passed, $product_id, $quantity ) { // phpcs:ignore VariableAnalysis.CodeAnalysis.VariableAnalysis.UnusedVariable
-				if ( null === WC()->cart ) {
-					return $passed;
-				}
-
-				foreach ( WC()->cart->get_cart() as $cart_item ) {
-					$cart_product_id   = isset( $cart_item['product_id'] ) ? (int) $cart_item['product_id'] : 0;
-					$cart_variation_id = isset( $cart_item['variation_id'] ) ? (int) $cart_item['variation_id'] : 0;
-
-					if ( $cart_product_id === (int) $product_id || $cart_variation_id === (int) $product_id ) {
-						return false;
-					}
-				}
-
-				return $passed;
-			},
-			10,
-			3
-		);
-	},
-	1
 );
 
 /**
@@ -1231,7 +1204,7 @@ add_action(
 						// processing registration form
 						|| isset( $_POST['register'] ) // phpcs:ignore WordPress.Security.NonceVerification.Missing
 						|| ( did_action( 'wp' ) && ! cfw_is_checkout() ) // not on checkout when we can know we should be on checkout
-					) {
+) {
 						return false;
 					}
 
@@ -1249,7 +1222,7 @@ add_action(
 						// processing registration form
 						|| isset( $_POST['register'] ) // phpcs:ignore WordPress.Security.NonceVerification.Missing
 						|| ( did_action( 'wp' ) && ! cfw_is_checkout() ) // not on checkout when we can know we should be on checkout
-					) {
+) {
 						return false;
 					}
 

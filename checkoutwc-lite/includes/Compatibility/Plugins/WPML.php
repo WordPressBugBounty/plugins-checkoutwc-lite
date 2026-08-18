@@ -3,10 +3,32 @@
 namespace Objectiv\Plugins\Checkout\Compatibility\Plugins;
 
 use Objectiv\Plugins\Checkout\Compatibility\CompatibilityAbstract;
+use Objectiv\Plugins\Checkout\Compatibility\Traits\TranslatesStorePoliciesTrait;
 
 class WPML extends CompatibilityAbstract {
+	use TranslatesStorePoliciesTrait;
+
 	public function is_available(): bool {
 		return defined( 'ICL_SITEPRESS_VERSION' );
+	}
+
+	/**
+	 * Register front end filters
+	 */
+	public function run_immediately() {
+		add_filter( 'cfw_event_object', [ $this, 'translate_store_policies' ] );
+	}
+
+	/**
+	 * Get the ID of the page in the active language
+	 *
+	 * @param int $page_id The configured page ID.
+	 * @return int
+	 */
+	protected function get_translated_page_id( int $page_id ): int {
+		$translated_id = cfw_apply_filters( 'wpml_object_id', $page_id, 'page', true );
+
+		return empty( $translated_id ) ? $page_id : (int) $translated_id;
 	}
 
 	public function run() {

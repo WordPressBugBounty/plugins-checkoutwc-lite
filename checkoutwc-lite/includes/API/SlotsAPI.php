@@ -2,6 +2,7 @@
 
 namespace Objectiv\Plugins\Checkout\API;
 
+use Objectiv\Plugins\Checkout\Admin\Pages\CheckoutEditor;
 use Objectiv\Plugins\Checkout\Managers\SlotManager;
 use WP_REST_Request;
 use WP_REST_Response;
@@ -71,6 +72,9 @@ class SlotsAPI {
 				'assignments'        => $manager->get_slots(),
 				'custom_html_blocks' => $manager->get_custom_html_blocks(),
 				'available_items'  => $manager->get_available_items(),
+				// Re-sent on every read so the editor's "can I create another bump?" guard
+				// keeps up with bumps published or trashed in the bump editor modal.
+				'bump_editor'        => CheckoutEditor::get_bump_editor_data(),
 			]
 		);
 	}

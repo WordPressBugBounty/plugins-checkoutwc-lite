@@ -400,6 +400,27 @@ Filter the admin preview message.
 
 Source: `init.php`
 
+## `cfw_admin_product_search_post_statuses`
+
+Filters the post statuses returned by the admin product search endpoint.
+
+Defaults to published products only, since a draft, pending, scheduled or private product is not purchasable by customers, and a private one is purchasable for the logged in administrator alone. Widen this to include statuses such as `private` when unpublished products need to be selectable in the admin product pickers: the order bump offer pickers and the Checkout Editor preview cart.
+
+**Parameters**
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| `$post_statuses` | `string[]` | Post statuses to include in the results. |
+| `$request` | `\WP_REST_Request` | Request data. |
+
+**Changelog**
+
+| Version | Description |
+| ------- | ----------- |
+| `11.3.1` | Introduced. |
+
+Source: `API/ProductsAndVariationsSearchAPI.php`
+
 ## `cfw_allow_html_in_formatted_item_data_value`
 
 Filter whether to allow HTML in formatted item data value.

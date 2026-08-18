@@ -56,6 +56,10 @@ class Install {
 		// For fresh installations only
 		if ( ! $version ) {
 			SettingsManager::instance()->add_setting( 'installed', gmdate( 'Y-m-d H:i:s' ) );
+
+			// Google Cloud projects created after March 1st, 2025 can only enable Places API (New),
+			// so fresh installations default to it. Existing installations default to legacy below.
+			SettingsManager::instance()->add_setting( 'google_places_api_version', 'new' );
 		}
 
 		SettingsManager::instance()->add_setting( 'enable', 'no' );
@@ -85,6 +89,7 @@ class Install {
 		SettingsManager::instance()->add_setting( 'enable_map_embed', 'no' );
 		SettingsManager::instance()->add_setting( 'override_view_order_template', 'no' );
 		SettingsManager::instance()->add_setting( 'google_places_api_key', '' );
+		SettingsManager::instance()->add_setting( 'google_places_api_version', 'legacy' );
 		SettingsManager::instance()->add_setting( 'user_matching', 'enabled' );
 		SettingsManager::instance()->add_setting( 'hide_optional_address_fields_behind_link', 'yes' );
 		SettingsManager::instance()->add_setting( 'enable_pickup_ship_option', 'yes' );
