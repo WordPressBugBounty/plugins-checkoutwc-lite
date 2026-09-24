@@ -231,9 +231,8 @@ class LocalPickupAdminFree extends PageAbstract {
 		$shipping_methods = $this->get_shipping_methods();
 		$pickup_methods   = (array) SettingsManager::instance()->get_setting( 'pickup_methods' );
 
-		// Only include pickup methods that are valid shipping methods
-		$pickup_methods = array_intersect_key( array_flip( $pickup_methods ), $shipping_methods );
-		$pickup_methods = array_flip( $pickup_methods );
+		// Only include pickup methods that are valid shipping methods. array_values keeps it a JSON array for the settings form.
+		$pickup_methods = array_values( array_intersect( $pickup_methods, array_keys( $shipping_methods ) ) );
 
 		$this->set_script_data(
 			[

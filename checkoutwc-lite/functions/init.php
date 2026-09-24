@@ -157,6 +157,7 @@ use Objectiv\Plugins\Checkout\Compatibility\Plugins\SalientWPBakery;
 use Objectiv\Plugins\Checkout\Compatibility\Plugins\SavedAddressesForWooCommerce;
 use Objectiv\Plugins\Checkout\Compatibility\Plugins\SendCloud;
 use Objectiv\Plugins\Checkout\Compatibility\Plugins\ShipMondo;
+use Objectiv\Plugins\Checkout\Compatibility\Plugins\SiteGroundOptimizer;
 use Objectiv\Plugins\Checkout\Compatibility\Plugins\SkyVergeCheckoutAddons;
 use Objectiv\Plugins\Checkout\Compatibility\Plugins\StrollikCore;
 use Objectiv\Plugins\Checkout\Compatibility\Plugins\SUMOPaymentPlans;
@@ -252,6 +253,7 @@ use Objectiv\Plugins\Checkout\Compatibility\Themes\Zidane;
 use Objectiv\Plugins\Checkout\DatabaseUpdatesManager;
 use Objectiv\Plugins\Checkout\EditorPreviewCart;
 use Objectiv\Plugins\Checkout\EditorPreviewSettingsOverride;
+use Objectiv\Plugins\Checkout\Features\CustomFields;
 use Objectiv\Plugins\Checkout\FormFieldAugmenter;
 use Objectiv\Plugins\Checkout\Install;
 use Objectiv\Plugins\Checkout\Managers\NoticesManager;
@@ -312,6 +314,10 @@ add_action(
 	function() {
 		SlotManager::instance()->maybe_migrate();
 		SlotRenderer::instance()->init();
+
+		// Merchant-authored custom fields render into slots, so they follow the slot renderer.
+		// Not plan-gated: creating a field is a paid feature, rendering an existing one is not.
+		( new CustomFields() )->init();
 
 		// Auto-assign bumps to their slot when saved via classic editor / wp-admin.
 		add_action( 'save_post_cfw_order_bumps', [ SlotManager::instance(), 'maybe_auto_assign_bump_to_slot' ], 20, 3 );
@@ -547,6 +553,7 @@ $compatibility_modules = [
 	IgniteWooGiftCertificatesPro::instance(),
 	EUVATAssistant::instance(),
 	WPRocket::instance(),
+	SiteGroundOptimizer::instance(),
 	FreeGiftsforWooCommerce::instance(),
 	NexcessMU::instance(),
 	YITHCompositeProducts::instance(),

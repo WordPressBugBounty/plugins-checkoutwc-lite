@@ -42,7 +42,7 @@ do_action( 'cfw_checkout_before_main_container', WC()->checkout() ); ?>
 			do_action( 'cfw_checkout_before_order_review_container' );
 			?>
 
-			<div id="order_review" class="col-lg-7 cfw-rp" role="main">
+			<div id="order_review" class="col-lg-7 cfw-rp">
 				<?php
 				/**
 				 * Fires at the top of the #order_review container

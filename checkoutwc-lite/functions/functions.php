@@ -11,6 +11,7 @@ use Objectiv\Plugins\Checkout\Interfaces\ItemInterface;
 use Objectiv\Plugins\Checkout\Loaders\Content;
 use Objectiv\Plugins\Checkout\Loaders\Redirect;
 use Objectiv\Plugins\Checkout\Managers\AssetManager;
+use Objectiv\Plugins\Checkout\Managers\BadgeIconRegistry;
 use Objectiv\Plugins\Checkout\Managers\PlanManager;
 use Objectiv\Plugins\Checkout\Managers\SettingsManager;
 use Objectiv\Plugins\Checkout\Managers\SlotManager;
@@ -1834,7 +1835,7 @@ function cfw_is_enabled() : bool {
  * @return bool
  */
 function cfw_is_phone_fields_enabled() : bool {
-	return 'hidden' !== get_option( 'woocommerce_checkout_phone_field', 'required' );
+	return ! \Objectiv\Plugins\Checkout\WooFieldVisibility::is_hidden( \Objectiv\Plugins\Checkout\WooFieldVisibility::PHONE );
 }
 
 /**
@@ -4548,11 +4549,19 @@ function cfw_get_trust_badges( bool $apply_rules = true ) : array {
 
 	$badges = [];
 
-	foreach ( $trust_badges as $badge ) {
+	foreach ( $trust_badges as $index => $badge ) {
 		$sanitized_badge = array_merge( $badge_template, $badge );
 
 		if ( $sanitized_badge === $badge_template ) {
 			continue;
+		}
+
+		// Badges saved before IDs were minted have none of their own, so fall back to the stored
+		// position, matching SlotManager. A badge that already has an ID keeps it: slot assignments
+		// reference these IDs, and re-deriving them from the position would repoint an assignment
+		// at a different badge as soon as one is deleted from the middle of the list.
+		if ( empty( $sanitized_badge['id'] ) ) {
+			$sanitized_badge['id'] = 'tb-' . $index;
 		}
 
 		if ( ! isset( $badge['rules'] ) || ! is_array( $badge['rules'] ) ) {
@@ -4562,6 +4571,13 @@ function cfw_get_trust_badges( bool $apply_rules = true ) : array {
 		$rules_processor = new RulesProcessor( $badge['rules'] );
 
 		if ( $apply_rules && ! $rules_processor->evaluate() ) {
+			continue;
+		}
+
+		// Collections need a higher plan than badges do. $apply_rules is this function's existing proxy
+		// for "a frontend request" - it is forced false in the admin - so a plan-locked collection stops
+		// rendering while the editor can still show it read-only rather than losing it.
+		if ( $apply_rules && 'collection' === $sanitized_badge['template'] && ! BadgeIconRegistry::collections_are_available() ) {
 			continue;
 		}
 
@@ -4579,6 +4595,42 @@ function cfw_get_trust_badges( bool $apply_rules = true ) : array {
 	$badges = apply_filters( 'cfw_trust_badges', $badges, $apply_rules );
 
 	return $badges;
+}
+
+/**
+ * Resolves the icons referenced by any badge collections in a list of badges.
+ *
+ * Returned as a flat map so the front end can look an icon up by ID and keep each collection's own
+ * ordering. Deliberately separate from cfw_get_trust_badges(): the Checkout Editor posts the badge
+ * array straight back to the option, so anything merged onto a badge there would be persisted - and a
+ * stored absolute URL breaks as soon as the site changes domain.
+ *
+ * IDs that are not in the registry are dropped rather than resolved, so an icon retired from the set
+ * leaves a gap instead of a broken image.
+ *
+ * @since 11.4.0
+ *
+ * @param array $badges Badges as returned by cfw_get_trust_badges().
+ * @return array<string, array{label: string, url: string, recolorable: bool}>
+ */
+function cfw_get_trust_badge_icons( array $badges ) : array {
+	$icons = [];
+
+	foreach ( $badges as $badge ) {
+		if ( ( $badge['template'] ?? '' ) !== 'collection' ) {
+			continue;
+		}
+
+		foreach ( BadgeIconRegistry::resolve( (array) ( $badge['icons'] ?? [] ) ) as $icon ) {
+			$icons[ $icon['id'] ] = [
+				'label'       => $icon['label'],
+				'url'         => $icon['url'],
+				'recolorable' => $icon['recolorable'],
+			];
+		}
+	}
+
+	return $icons;
 }
 
 function cfw_get_product_information_from_orders( $orders ) : array {

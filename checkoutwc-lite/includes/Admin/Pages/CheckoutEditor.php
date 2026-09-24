@@ -4,10 +4,15 @@ namespace Objectiv\Plugins\Checkout\Admin\Pages;
 
 use Objectiv\Plugins\Checkout\Admin\Pages\Premium\OrderBumps;
 use Objectiv\Plugins\Checkout\EditorPreviewCart;
+use Objectiv\Plugins\Checkout\Managers\BadgeIconRegistry;
+use Objectiv\Plugins\Checkout\Managers\CustomFieldManager;
 use Objectiv\Plugins\Checkout\Managers\SettingsManager;
 use Objectiv\Plugins\Checkout\Managers\SlotManager;
 use Objectiv\Plugins\Checkout\Managers\PlanManager;
 use Objectiv\Plugins\Checkout\Model\Template;
+use Objectiv\Plugins\Checkout\WooFieldVisibility;
+use Automattic\WooCommerce\Internal\DataStores\Orders\CustomOrdersTableController;
+use WC_Tax;
 use function WordpressEnqueueChunksPlugin\get as cfwChunkedScriptsConfigGet;
 
 class CheckoutEditor extends PageAbstract {
@@ -135,7 +140,7 @@ class CheckoutEditor extends PageAbstract {
 		$all_slugs      = array_keys( Template::get_all_available() );
 		$template_slug  = ( $requested_slug && in_array( $requested_slug, $all_slugs, true ) ) ? $requested_slug : $saved_slug;
 
-		// Editor-only settings: only the keys used by the editor sections (Template, Logo, Typography, Colors, Steps, Fields, Addresses, Cart Summary, Footer).
+		// Editor-only settings: only the keys used by the editor sections (Template, Logo, Typography, Colors, Steps, Addresses, Cart Summary, Other).
 		$editor_settings = [];
 
 		// When the editor is previewing a template other than the saved active one, always show that
@@ -146,8 +151,14 @@ class CheckoutEditor extends PageAbstract {
 		$template_defaults  = $template->get_default_settings();
 		$is_active_template = ( $template_slug === $saved_slug );
 
-		// Logo (template-scoped).
-		$editor_settings[ $settings_manager->add_suffix( 'logo_attachment_id', [ $template_slug ] ) ] = $settings_manager->get_setting( 'logo_attachment_id', [ $template_slug ] );
+		// Logo (template-scoped). An unset logo reads as false, and the editor's save formatter
+		// turns a boolean into the string 'no' - which is truthy, so the UI then behaves as though
+		// a logo were set. Normalize to an ID string or an empty string so that cannot happen.
+		$logo_attachment_id = (int) $settings_manager->get_setting( 'logo_attachment_id', [ $template_slug ] );
+
+		$editor_settings[ $settings_manager->add_suffix( 'logo_attachment_id', [ $template_slug ] ) ] = $logo_attachment_id > 0 ? (string) $logo_attachment_id : '';
+		$editor_settings[ $settings_manager->add_suffix( 'logo_size', [ $template_slug ] ) ]          = $settings_manager->get_setting( 'logo_size', [ $template_slug ] ) ?: '';
+		$editor_settings[ $settings_manager->add_suffix( 'logo_margin', [ $template_slug ] ) ]        = $settings_manager->get_setting( 'logo_margin', [ $template_slug ] ) ?: '';
 
 		// Typography (template-scoped).
 		if ( $is_active_template ) {
@@ -159,6 +170,9 @@ class CheckoutEditor extends PageAbstract {
 			$editor_settings[ $settings_manager->add_suffix( 'body_font', [ $template_slug ] ) ]    = $template_defaults['body_font'] ?? '';
 			$editor_settings[ $settings_manager->add_suffix( 'heading_font', [ $template_slug ] ) ] = $template_defaults['heading_font'] ?? '';
 		}
+
+		// Field label style (template-scoped, shown in the Typography section). Templates don't define a default, so the saved value always applies.
+		$editor_settings[ $settings_manager->add_suffix( 'label_style', [ $template_slug ] ) ] = $settings_manager->get_setting( 'label_style', [ $template_slug ] );
 
 		// Colors (template-scoped). active_theme_colors holds per-template settings (e.g. Glass accent color).
 		$color_section_ids  = [ 'body', 'buttons', 'breadcrumbs', 'cart_summary', 'header', 'footer', 'active_theme_colors' ];
@@ -182,24 +196,25 @@ class CheckoutEditor extends PageAbstract {
 		$editor_settings['enable_order_review_step'] = $settings_manager->get_setting( 'enable_order_review_step' ) === 'yes';
 		$editor_settings['enable_one_page_checkout'] = $settings_manager->get_setting( 'enable_one_page_checkout' ) === 'yes';
 
-		// Fields (template-scoped: label_style; rest global).
-		$editor_settings[ $settings_manager->add_suffix( 'label_style', [ $template_slug ] ) ] = $settings_manager->get_setting( 'label_style', [ $template_slug ] );
-		$editor_settings['wp_option/woocommerce_checkout_phone_field'] = get_option( 'woocommerce_checkout_phone_field', 'required' );
-		$editor_settings['enable_order_notes']      = $settings_manager->get_setting( 'enable_order_notes' ) === 'yes';
-		$editor_settings['enable_coupon_code_link'] = $settings_manager->get_setting( 'enable_coupon_code_link' ) === 'yes';
-		$editor_settings['hide_optional_address_fields_behind_link'] = $settings_manager->get_setting( 'hide_optional_address_fields_behind_link' ) === 'yes';
-		$editor_settings['enable_discreet_address_1_fields']         = $settings_manager->get_setting( 'enable_discreet_address_1_fields' ) === 'yes';
-		$editor_settings['discreet_address_1_fields_order']          = $settings_manager->get_setting( 'discreet_address_1_fields_order' );
-		$editor_settings['use_fullname_field']           = $settings_manager->get_setting( 'use_fullname_field' ) === 'yes';
-		$editor_settings['enable_highlighted_countries'] = $settings_manager->get_setting( 'enable_highlighted_countries' ) === 'yes';
-		$editor_settings['highlighted_countries']        = $settings_manager->get_setting( 'highlighted_countries' );
-
 		// Addresses.
-		$editor_settings['force_different_billing_address'] = $settings_manager->get_setting( 'force_different_billing_address' ) === 'yes';
-		$editor_settings['enabled_billing_address_fields']  = $settings_manager->get_setting( 'enabled_billing_address_fields' );
+		$editor_settings['use_fullname_field']               = $settings_manager->get_setting( 'use_fullname_field' ) === 'yes';
+		$editor_settings['enable_discreet_address_1_fields'] = $settings_manager->get_setting( 'enable_discreet_address_1_fields' ) === 'yes';
+		$editor_settings['discreet_address_1_fields_order']  = $settings_manager->get_setting( 'discreet_address_1_fields_order' );
+		$editor_settings['enable_highlighted_countries']     = $settings_manager->get_setting( 'enable_highlighted_countries' ) === 'yes';
+		$editor_settings['highlighted_countries']            = $settings_manager->get_setting( 'highlighted_countries' );
+		// WooCommerce owns the visibility of these three and drops them from billing and shipping alike
+		// when one is hidden. Surfaced here so the merchant can see and change the setting that decides
+		// whether the matching billing toggle means anything.
+		$editor_settings['wp_option/woocommerce_checkout_phone_field']     = WooFieldVisibility::get( WooFieldVisibility::PHONE );
+		$editor_settings['wp_option/woocommerce_checkout_company_field']   = WooFieldVisibility::get( WooFieldVisibility::COMPANY );
+		$editor_settings['wp_option/woocommerce_checkout_address_2_field'] = WooFieldVisibility::get( WooFieldVisibility::ADDRESS_2 );
+		$editor_settings['hide_optional_address_fields_behind_link']       = $settings_manager->get_setting( 'hide_optional_address_fields_behind_link' ) === 'yes';
+		$editor_settings['force_different_billing_address']                = $settings_manager->get_setting( 'force_different_billing_address' ) === 'yes';
+		$editor_settings['enabled_billing_address_fields']                 = $settings_manager->get_setting( 'enabled_billing_address_fields' );
 
 		// Cart Summary.
-		$editor_settings['enable_cart_editing'] = $settings_manager->get_setting( 'enable_cart_editing' ) === 'yes';
+		$editor_settings['enable_coupon_code_link'] = $settings_manager->get_setting( 'enable_coupon_code_link' ) === 'yes';
+		$editor_settings['enable_cart_editing']     = $settings_manager->get_setting( 'enable_cart_editing' ) === 'yes';
 		$editor_settings['allow_checkout_cart_item_variation_changes'] = $settings_manager->get_setting( 'allow_checkout_cart_item_variation_changes' ) === 'yes';
 		$editor_settings['show_item_remove_button']                    = $settings_manager->get_setting( 'show_item_remove_button' ) === 'yes';
 		$editor_settings['cart_edit_empty_cart_redirect']              = $settings_manager->get_setting( 'cart_edit_empty_cart_redirect' );
@@ -217,6 +232,7 @@ class CheckoutEditor extends PageAbstract {
 		$editor_settings['enable_trust_badges']         = $settings_manager->get_setting( 'enable_trust_badges' ) === 'yes';
 		$editor_settings['trust_badge_position']        = $settings_manager->get_setting( 'trust_badge_position' );
 		$editor_settings['trust_badges_title']          = $settings_manager->get_setting( 'trust_badges_title' );
+		$editor_settings['trust_badges']                = self::get_editor_trust_badges();
 		$editor_settings['trust_badge_columns']         = max( 1, (int) ( $settings_manager->get_setting( 'trust_badge_columns' ) ?: 3 ) );
 		$editor_settings['trust_badge_cart_columns']    = max( 1, (int) ( $settings_manager->get_setting( 'trust_badge_cart_columns' ) ?: 2 ) );
 		$editor_settings['trust_badge_mobile_columns']  = max( 1, (int) ( $settings_manager->get_setting( 'trust_badge_mobile_columns' ) ?: 1 ) );
@@ -228,7 +244,8 @@ class CheckoutEditor extends PageAbstract {
 		$editor_settings['review_badge_cart_columns']   = max( 1, (int) ( $settings_manager->get_setting( 'review_badge_cart_columns' ) ?: 2 ) );
 		$editor_settings['review_badge_mobile_columns'] = max( 1, (int) ( $settings_manager->get_setting( 'review_badge_mobile_columns' ) ?: 1 ) );
 
-		// Footer (template-scoped + mode).
+		// Other (footer text is template-scoped).
+		$editor_settings['enable_order_notes'] = $settings_manager->get_setting( 'enable_order_notes' ) === 'yes';
 		$editor_settings[ $settings_manager->add_suffix( 'footer_text', [ $template_slug ] ) ] = $settings_manager->get_setting( 'footer_text', [ $template_slug ] );
 		$editor_settings['footer_text_editor_mode'] = $settings_manager->get_setting( 'footer_text_editor_mode' );
 
@@ -236,7 +253,8 @@ class CheckoutEditor extends PageAbstract {
 		$editor_settings['enable'] = $settings_manager->get_setting( 'enable' ) === 'yes';
 
 		// Express Checkout (same as CheckoutWC > Express Checkout page).
-		$editor_settings['disable_express_checkout'] = $settings_manager->get_setting( 'disable_express_checkout' ) === 'yes';
+		$editor_settings['disable_express_checkout']              = $settings_manager->get_setting( 'disable_express_checkout' ) === 'yes';
+		$editor_settings['allow_express_without_required_custom_fields'] = $settings_manager->get_setting( 'allow_express_without_required_custom_fields' ) === 'yes';
 
 		// Color defaults for reset/preview.
 		$all_color_defaults      = Appearance::get_theme_color_settings_defaults( $template_slug );
@@ -259,8 +277,9 @@ class CheckoutEditor extends PageAbstract {
 		$slot_manager_early = SlotManager::instance();
 
 		$preview_transient = [
-			SlotManager::SLOTS_OPTION       => $slot_manager_early->get_slots(),
-			SlotManager::HTML_BLOCKS_OPTION => $slot_manager_early->get_custom_html_blocks(),
+			SlotManager::SLOTS_OPTION         => $slot_manager_early->get_slots(),
+			SlotManager::HTML_BLOCKS_OPTION   => $slot_manager_early->get_custom_html_blocks(),
+			CustomFieldManager::FIELDS_OPTION => CustomFieldManager::instance()->get_definitions(),
 		];
 
 		if ( ! $is_active_template ) {
@@ -375,8 +394,18 @@ class CheckoutEditor extends PageAbstract {
 						'logo_preview_url'          => wp_get_attachment_url( $settings_manager->get_setting( 'logo_attachment_id', [ $template_slug ] ) ),
 						'countries'                => $countries,
 						'conditional_settings'      => [
-							'order_notes_enable' => ! has_filter( 'woocommerce_enable_order_notes_field' ) || ( $settings_manager->get_setting( 'enable_order_notes' ) === 'yes' && 1 === cfw_count_filters( 'woocommerce_enable_order_notes_field' ) ),
+							'order_notes_enable'            => ! has_filter( 'woocommerce_enable_order_notes_field' ) || ( $settings_manager->get_setting( 'enable_order_notes' ) === 'yes' && 1 === cfw_count_filters( 'woocommerce_enable_order_notes_field' ) ),
+							// Both providers write the selected address into address_1, which separate address fields hide and overwrite.
+							'address_autocomplete_enabled'  => PlanManager::can_access_feature( 'enable_address_autocomplete' ),
+							'fetchify_autocomplete_enabled' => PlanManager::can_access_feature( 'enable_fetchify_address_autocomplete' ),
 						],
+						'tax_classes'               => self::get_tax_class_options(),
+						// The editor hides every tax control when tax is off in WooCommerce, and needs
+						// to know how prices are entered to describe what a taxable fee will charge.
+						'tax_enabled'               => wc_tax_enabled(),
+						'prices_include_tax'        => wc_prices_include_tax(),
+						'currency_symbol'           => html_entity_decode( get_woocommerce_currency_symbol() ),
+						'price_decimals'            => wc_get_price_decimals(),
 						'express_checkout_gateways' => apply_filters( 'cfw_detected_gateways', [] ),
 						'requires_license'          => defined( 'CFW_PREMIUM_PLAN_IDS' ),
 					],
@@ -385,6 +414,7 @@ class CheckoutEditor extends PageAbstract {
 					'slot_definitions'   => SlotManager::get_slot_hook_map(),
 					'assignments'        => $slot_manager->get_slots(),
 					'custom_html_blocks' => $slot_manager->get_custom_html_blocks(),
+					'custom_fields'      => CustomFieldManager::instance()->get_definitions(),
 					'available_items'  => $slot_manager->get_available_items(),
 				],
 				'preview_url'          => $preview_url,
@@ -398,9 +428,10 @@ class CheckoutEditor extends PageAbstract {
 				'saved_active_template' => $saved_slug,
 				'admin_url'            => admin_url( 'admin.php' ),
 				'new_order_bump_url'   => admin_url( 'post-new.php?post_type=cfw_order_bumps' ),
+				'order_edit_url'       => self::get_order_edit_url_template(),
 				'bump_editor'          => self::get_bump_editor_data(),
-				'new_trust_badge_url'  => admin_url( 'admin.php?page=cfw-settings-trust-badges' ),
 				'editor_logo_url' => CFW_PATH_URL_BASE . 'assets/images/cfw.svg',
+				'badge_icons'     => BadgeIconRegistry::get_picker_icons(),
 				'plan'            => $this->get_plan_data(),
 				'templates'       => $editor_templates,
 			]
@@ -429,5 +460,82 @@ class CheckoutEditor extends PageAbstract {
 			'allowed_count'     => $available ? OrderBumps::get_allowed_bump_count() : 0,
 			'used_count'        => $available ? OrderBumps::get_bumps_count() : 0,
 		];
+	}
+
+	/**
+	 * Returns the admin URL for editing an order, with `%d` standing in for the order ID.
+	 *
+	 * The editor links to an order placed from inside its preview, and only learns which order that was
+	 * from the URL the preview landed on, so it builds the link itself. Which screen edits an order
+	 * depends on whether the store keeps orders in their own tables or as posts.
+	 *
+	 * @since 11.4.0
+	 *
+	 * @return string
+	 */
+	private static function get_order_edit_url_template(): string {
+		$hpos = wc_get_container()->get( CustomOrdersTableController::class )->custom_orders_table_usage_is_enabled();
+
+		return $hpos
+			? admin_url( 'admin.php?page=wc-orders&action=edit&id=%d' )
+			: admin_url( 'post.php?post=%d&action=edit' );
+	}
+
+	/**
+	 * Returns the trust badges for the editor's form state.
+	 *
+	 * The editor edits badges through the same settings save as every other setting, so this array
+	 * is posted straight back to `_cfw_trust_badges`. The settings page's transient `slot` key is
+	 * dropped on the way in: the editor places badges through the slot registry, and leaving the key
+	 * on would have SlotManager::reconcile_trust_badge_slots() rewrite those same assignments.
+	 *
+	 * @since 11.4.0
+	 *
+	 * @return array<int, array<string, mixed>>
+	 */
+	public static function get_editor_trust_badges(): array {
+		$badges = [];
+
+		foreach ( cfw_get_trust_badges( false ) as $badge ) {
+			unset( $badge['slot'] );
+
+			$badges[] = $badge;
+		}
+
+		return $badges;
+	}
+
+	/**
+	 * Returns the WooCommerce tax classes as slug/name pairs for the custom field editor.
+	 *
+	 * Slugs are what WooCommerce validates a fee's tax class against, and an unrecognised slug
+	 * silently bills at the standard rate — so the picker only ever offers slugs that exist.
+	 *
+	 * @since 11.4.0
+	 *
+	 * @return array<int, array{slug: string, name: string}>
+	 */
+	public static function get_tax_class_options(): array {
+		$options = [
+			[
+				'slug' => '',
+				'name' => __( 'Standard rate', 'checkout-wc' ),
+			],
+		];
+
+		foreach ( WC_Tax::get_tax_classes() as $name ) {
+			$slug = sanitize_title( $name );
+
+			if ( '' === $slug ) {
+				continue;
+			}
+
+			$options[] = [
+				'slug' => $slug,
+				'name' => $name,
+			];
+		}
+
+		return $options;
 	}
 }

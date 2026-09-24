@@ -217,8 +217,8 @@ class General extends PageAbstract {
 		ob_start();
 		?>
 		<div class="flex flex-row items-center">
-			<a href="https://www.checkoutwc.com/lite-upgrade/?utm_campaign=liteplugin&utm_medium=start-here-step1&utm_source=WordPress&utm_content=Upgrade%20to%20CheckoutWC%20Premium%20Now%20-%20Save%2025" target="_blank" class="inline-flex items-center px-4 py-2 border border-gray-300 shadow-sm text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
-				<?php _e( 'Upgrade to CheckoutWC Premium Now - Save 25%', 'checkout-wc' ); ?>
+			<a href="https://www.checkoutwc.com/lite-upgrade/?utm_campaign=liteplugin&utm_medium=start-here-step1&utm_source=WordPress&utm_content=Upgrade%20to%20CheckoutWC%20Premium%20-%20Save%2020%20on%20your%20first%20year" target="_blank" class="inline-flex items-center px-4 py-2 border border-gray-300 shadow-sm text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+				<?php esc_html_e( 'Upgrade to CheckoutWC Premium - Save 20% on your first year', 'checkout-wc' ); ?>
 			</a>
 			<svg xmlns="http://www.w3.org/2000/svg" class="ml-2 h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-label="<?php _e( 'Opens in new tab' ); ?>">
 				<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />

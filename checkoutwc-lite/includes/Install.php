@@ -153,6 +153,7 @@ class Install {
 		SettingsManager::instance()->add_setting( 'trust_badges', [] );
 		SettingsManager::instance()->add_setting( 'trust_badges_title', '' );
 		SettingsManager::instance()->add_setting( 'disable_express_checkout', 'no' );
+		SettingsManager::instance()->add_setting( 'allow_express_without_required_custom_fields', 'yes' );
 		SettingsManager::instance()->add_setting( 'allow_checkout_cart_item_variation_changes', 'no' );
 		SettingsManager::instance()->add_setting( 'allow_side_cart_item_variation_changes', 'no' );
 		SettingsManager::instance()->add_setting( 'enable_astra_support', 'no' );

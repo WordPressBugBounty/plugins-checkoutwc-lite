@@ -667,6 +667,10 @@ class AssetManager {
 							'#_sumo_pp_enable_order_payment_plan',
 							'.gift-certificate-show-form input',
 							'.cfw_order_bump_check',
+							// Custom fields can carry a fee, so a restored value would charge the next order for it.
+							'.cfw-custom-field input',
+							'.cfw-custom-field select',
+							'.cfw-custom-field textarea',
 							'#shipping_fetchify_search',
 							'#billing_fetchify_search',
 							'#terms',
@@ -882,6 +886,8 @@ class AssetManager {
 		WC()->cart->calculate_totals();
 		cfw_do_action( 'woocommerce_check_cart_items' );
 
+		$trust_badges = PlanManager::can_access_feature( 'enable_trust_badges' ) ? array_values( cfw_get_trust_badges() ) : [];
+
 		$data = [
 			'cart'         => [
 				'isEmpty'       => WC()->cart && WC()->cart->is_empty(),
@@ -899,7 +905,12 @@ class AssetManager {
 				'shipping'      => cfw_get_cart_shipping_data(),
 			],
 			'bumps'        => [], // placeholder to prevent errors
-			'trust_badges' => PlanManager::can_access_feature( 'enable_trust_badges' ) ? array_values( cfw_get_trust_badges() ) : [],
+			'trust_badges' => $trust_badges,
+			// Collection icons resolved to URLs here rather than on the badge itself: the editor posts the
+			// badge array straight back to the option, so anything added to a badge gets persisted, and
+			// stored absolute URLs would break the moment the site moved domain. Derived from the badge
+			// list just built so the editor preview's unsaved collections resolve too.
+			'trust_badge_icons' => cfw_get_trust_badge_icons( $trust_badges ),
 			'review'       => cfw_get_review_data(),
 		];
 
@@ -961,6 +972,7 @@ class AssetManager {
 			],
 			'bumps'        => [],
 			'trust_badges' => [],
+			'trust_badge_icons' => [],
 			'side_cart'    => [
 				'free_shipping_progress_bar' => [
 					'has_free_shipping'        => false,

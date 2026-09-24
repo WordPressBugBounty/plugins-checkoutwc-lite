@@ -2,6 +2,7 @@
 
 namespace Objectiv\Plugins\Checkout\Renderers;
 
+use Objectiv\Plugins\Checkout\Managers\CustomFieldManager;
 use Objectiv\Plugins\Checkout\Managers\SlotManager;
 use Objectiv\Plugins\Checkout\Managers\SettingsManager;
 use Objectiv\Plugins\Checkout\SingletonAbstract;
@@ -33,6 +34,13 @@ class SlotRenderer extends SingletonAbstract {
 	 * no-shipping (e.g. digital) carts where billing is collected up front.
 	 */
 	const INFO_STEP_BILLING_HOOK = 'cfw_checkout_after_billing_address';
+
+	/**
+	 * Badge ID => template, built on first use. Null until then.
+	 *
+	 * @var array<string, string>|null
+	 */
+	private $badge_templates = null;
 
 	/**
 	 * Registers the WordPress action hooks for all non-empty slots.
@@ -169,12 +177,29 @@ class SlotRenderer extends SingletonAbstract {
 
 			// Group consecutive individual trust-badge items that share the same margin into one container.
 			// A margin change breaks the group so each badge can have its own spacing.
+			//
+			// A collection never joins a run and never absorbs one: it lays its icons out by wrapping
+			// rather than on the column grid the group container applies, so it has to end up alone in
+			// its own container. It still renders through the same group markup with a single ID -
+			// the React side decides the layout from the badge's template.
 			if ( 'trust_badges' === $type && ! empty( $item['id'] ) ) {
 				$run_ids      = [];
 				$group_margin = $margin;
+				$run_started  = false;
 				while ( $i < $count && ( $slot_items[ $i ]['type'] ?? '' ) === 'trust_badges' && ! empty( $slot_items[ $i ]['id'] ) && sanitize_text_field( $slot_items[ $i ]['margin'] ?? '' ) === $group_margin ) {
-					$run_ids[] = (string) $slot_items[ $i ]['id'];
+					$is_collection = $this->is_collection_badge( (string) $slot_items[ $i ]['id'] );
+
+					if ( $run_started && $is_collection ) {
+						break; // A collection cannot be appended to a run already under way.
+					}
+
+					$run_ids[]   = (string) $slot_items[ $i ]['id'];
+					$run_started = true;
 					$i++;
+
+					if ( $is_collection ) {
+						break; // Nor can anything be appended after one.
+					}
 				}
 				if ( ! empty( $run_ids ) ) {
 					if ( $group_margin ) {
@@ -185,6 +210,24 @@ class SlotRenderer extends SingletonAbstract {
 						echo '</div>';
 					}
 					$group_idx++;
+				}
+				continue;
+			}
+
+			// Group consecutive custom fields into one grid row. WooCommerce stamps each field with
+			// a col-lg-* class, and those need a flex .row parent to pick up the grid gutters —
+			// without it a field renders mis-guttered and two half-width fields never sit side by side.
+			//
+			// Margins are carried along per field rather than wrapping the run, so each field keeps
+			// its own spacing. Keyed by field ID: the same field twice in one slot is one field.
+			if ( 'custom_field' === $type && ! empty( $item['id'] ) ) {
+				$run_margins = [];
+				while ( $i < $count && ( $slot_items[ $i ]['type'] ?? '' ) === 'custom_field' && ! empty( $slot_items[ $i ]['id'] ) ) {
+					$run_margins[ (string) $slot_items[ $i ]['id'] ] = sanitize_text_field( $slot_items[ $i ]['margin'] ?? '' );
+					$i++;
+				}
+				if ( ! empty( $run_margins ) ) {
+					$this->render_custom_field_row( $run_margins, $slot_id );
 				}
 				continue;
 			}
@@ -265,13 +308,39 @@ class SlotRenderer extends SingletonAbstract {
 	}
 
 	/**
+	 * Whether a badge ID belongs to a collection.
+	 *
+	 * Slot items carry only type, id, sort_order and margin, so the badge's template has to be looked
+	 * up. Memoised because render_slot() runs once per slot and the badge list is the same every time.
+	 *
+	 * @since 11.4.0
+	 *
+	 * @param string $badge_id The badge ID from a slot item.
+	 * @return bool
+	 */
+	private function is_collection_badge( string $badge_id ): bool {
+		if ( null === $this->badge_templates ) {
+			$this->badge_templates = [];
+
+			foreach ( cfw_get_trust_badges( false ) as $badge ) {
+				if ( ! empty( $badge['id'] ) ) {
+					$this->badge_templates[ (string) $badge['id'] ] = $badge['template'] ?? '';
+				}
+			}
+		}
+
+		return ( $this->badge_templates[ $badge_id ] ?? '' ) === 'collection';
+	}
+
+	/**
 	 * Outputs a single grouped container for a consecutive run of individually-
 	 * assigned trust badges in a slot.  checkout.tsx mounts one TrustBadges
 	 * component here and passes the badge-ID array so all badges share the same
 	 * CSS grid, producing the correct multi-column layout.
 	 *
 	 * Multiple non-consecutive runs within the same slot each get a unique mount
-	 * ID via $group_idx (0 = first run, 1 = second, …).
+	 * ID via $group_idx (0 = first run, 1 = second, …). A badge collection always
+	 * arrives here alone, and lays its own icons out rather than using the grid.
 	 *
 	 * @param string   $slot_id   The slot this block is being rendered in.
 	 * @param string[] $badge_ids Ordered list of badge IDs in this run.
@@ -345,6 +414,115 @@ class SlotRenderer extends SingletonAbstract {
 		$tag   = 'h' . $level;
 		// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- tag is validated above
 		echo '<' . $tag . ' class="cfw-trust-badges-list-title">' . wp_kses_post( do_shortcode( $text ) ) . '</' . $tag . '>';
+	}
+
+	/**
+	 * Renders a run of merchant-authored custom fields inside a single grid row.
+	 *
+	 * Fields go through core's woocommerce_form_field() rather than the cfw_output_fieldset path,
+	 * so they pick up CheckoutWC's field augmentation (grid width, floating labels, validation
+	 * attributes) from the woocommerce_form_field_args filter without belonging to any WooCommerce
+	 * fieldset.
+	 *
+	 * @since 11.4.0
+	 *
+	 * @param array<string, string> $field_margins Field ID => the margin set for it in this slot, if any.
+	 * @param string                $slot_id       The slot being rendered, which decides mobile repositioning.
+	 *
+	 * @return void
+	 */
+	private function render_custom_field_row( array $field_margins, string $slot_id ): void {
+		// The footer slots render outside the checkout form, so a field there would be visible but
+		// never submitted — the customer's answer would be discarded silently. get_active_fields()
+		// already refuses to treat those as active, so skip the markup as well rather than show an
+		// input that does nothing.
+		if ( in_array( $slot_id, CustomFieldManager::UNSUPPORTED_SLOTS, true ) ) {
+			return;
+		}
+
+		$manager  = CustomFieldManager::instance();
+		$fields   = $manager->get_fields();
+		$slot_map = $manager->get_field_slot_map();
+		$render   = [];
+
+		foreach ( $field_margins as $field_id => $margin ) {
+			if ( ! isset( $fields[ $field_id ] ) ) {
+				continue;
+			}
+
+			// Rendering reads get_fields() rather than get_active_fields(), so the plan check that
+			// keeps a locked type out of validation and fees has to be repeated here — otherwise a
+			// downgraded store shows an input nothing behind it will accept.
+			if ( ! CustomFieldManager::type_is_available( $fields[ $field_id ]->get_type() ) ) {
+				continue;
+			}
+
+			// A field belongs to one slot. The editor enforces that, but a configuration saved before
+			// it did could hold the same field twice, and rendering it twice would put two inputs
+			// sharing a name and an element ID in the form. get_field_slot_map() already resolves a
+			// duplicate to the first slot that claims it, so defer to that and skip the rest.
+			if ( isset( $slot_map[ $field_id ] ) && $slot_map[ $field_id ] !== $slot_id ) {
+				continue;
+			}
+
+			$render[] = [ $fields[ $field_id ], $margin ];
+		}
+
+		if ( empty( $render ) ) {
+			return;
+		}
+
+		// Cart-summary slots sit inside the order summary, which collapses on small screens. Mark
+		// these fields so the frontend can move them into the payment step on mobile, the same
+		// position order bumps in these slots move to.
+		$in_cart_summary = in_array( $slot_id, CustomFieldManager::CART_SUMMARY_SLOTS, true );
+
+		// Those slots render outside the step loop, so the field would inherit no validation group and
+		// a required value would never be checked in the browser. Assign both submitting steps as a
+		// JSON group list: on mobile the field has been moved into the payment step, on desktop the
+		// summary is always visible, and either way it is validated when the order is submitted.
+		$parsley_group = $in_cart_summary ? wp_json_encode( [ 'cfw-payment-method', 'cfw-order-review' ] ) : '';
+
+		echo '<div class="row cfw-input-wrap-row">';
+
+		foreach ( $render as list( $field, $margin ) ) {
+			$key = $field->get_input_name();
+
+			// Fields whose conditions do not currently match are still rendered, but hidden and
+			// disabled. The frontend flips that state when the cart changes, which it could not do if
+			// the markup were absent — and re-rendering the markup instead would wipe the customer's
+			// input, since checkout refreshes never replace field markup.
+			//
+			// The editor preview is treated exactly like a real checkout here, so the merchant sees
+			// what a customer with that preview cart sees. A conditional field is instead flagged on
+			// its slot row in the editor, which also covers the conditions a preview can never
+			// reproduce — user role, order history, an address not yet entered.
+			$args = $field->get_form_field_args( $manager->field_is_eligible( $field ), $parsley_group );
+
+			if ( $in_cart_summary ) {
+				$args['class'][] = 'cfw-custom-field--repositions-on-mobile';
+			}
+
+			if ( '' === $margin ) {
+				woocommerce_form_field( $key, $args, WC()->checkout()->get_value( $key ) );
+				continue;
+			}
+
+			// The margin belongs on the field's own row, and WooCommerce offers no argument for it —
+			// the container markup is built from a hardcoded format string. Take the markup back and
+			// add the style to that element rather than wrapping the field in a div: the row is a grid
+			// column, and a wrapper between it and .row would cost it the grid's gutters.
+			$args['return'] = true;
+			$html           = (string) woocommerce_form_field( $key, $args, WC()->checkout()->get_value( $key ) );
+
+			echo str_replace( // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- woocommerce_form_field() escapes its own markup; the margin is escaped here.
+				'<p class="form-row',
+				'<p style="margin: ' . esc_attr( $margin ) . '" class="form-row',
+				$html
+			);
+		}
+
+		echo '</div>';
 	}
 
 	/**

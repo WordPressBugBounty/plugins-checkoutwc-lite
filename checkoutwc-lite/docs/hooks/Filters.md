@@ -1429,6 +1429,67 @@ Filter the CSS custom property overrides
 
 Source: `Managers/StyleManager.php`
 
+## `cfw_custom_field_fee_amount`
+
+Filters a custom field's fee amount.
+
+The fee API exposes no amount filter of its own. Both the charge and the label the customer reads before choosing pass through here, so an integration cannot adjust one and leave the other showing a different number.
+
+**Parameters**
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| `$amount` | `float` |  |
+| `$field` | `\CustomField` |  |
+
+**Changelog**
+
+| Version | Description |
+| ------- | ----------- |
+| `11.4.0` | Introduced. |
+
+Source: `Model/CustomField.php`
+
+## `cfw_custom_field_fee_label`
+
+Filters the label a custom field's fee appears under.
+
+**Parameters**
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| `$label` | `string` |  |
+| `$field` | `\CustomField` |  |
+| `$value` | `string` |  |
+
+**Changelog**
+
+| Version | Description |
+| ------- | ----------- |
+| `11.4.0` | Introduced. |
+
+Source: `Features/CustomFields/FeeApplicator.php`
+
+## `cfw_custom_field_fees_enabled`
+
+Filters whether custom field fees are applied at all.
+
+A kill switch for support: it disables pricing without touching the merchant's field configuration.
+
+**Parameters**
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| `$enabled` | `bool` |  |
+
+**Changelog**
+
+| Version | Description |
+| ------- | ----------- |
+| `11.4.0` | Introduced. |
+
+Source: `Features/CustomFields/FeeApplicator.php`
+
 ## `cfw_customer_information_heading`
 
 Filters customer info tab heading
@@ -4888,6 +4949,25 @@ Filter to determine if cart item pricing should be skipped
 | `10.2.0` | Introduced. |
 
 Source: `Features/OrderBumps.php`
+
+## `cfw_slot_is_active`
+
+Filters whether a checkout slot reaches the customer for the current cart.
+
+**Parameters**
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| `$active` | `bool` | Whether the slot is active. |
+| `$slot_id` | `string` | The slot identifier. |
+
+**Changelog**
+
+| Version | Description |
+| ------- | ----------- |
+| `11.4.0` | Introduced. |
+
+Source: `Managers/SlotManager.php`
 
 ## `cfw_smarty_address_validation_address`
 

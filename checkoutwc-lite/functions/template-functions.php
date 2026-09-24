@@ -4,6 +4,7 @@ if ( ! defined( 'WPINC' ) ) {
 	die;
 }
 
+use Objectiv\Plugins\Checkout\Managers\CustomFieldManager;
 use Objectiv\Plugins\Checkout\Managers\PlanManager;
 use Objectiv\Plugins\Checkout\Managers\SettingsManager;
 
@@ -294,6 +295,14 @@ function cfw_payment_request_buttons() {
 	}
 
 	if ( ! has_action( 'cfw_payment_request_buttons' ) ) {
+		return;
+	}
+
+	// Nothing is rendered rather than rendered and hidden: the separator below is guarded by a
+	// define(), so emitting it here would consume the one separator the page gets and leave a
+	// stray "Or" above the first step. CustomFieldService re-applies this on every refresh, for a
+	// required field whose display conditions only start matching mid-checkout.
+	if ( CustomFieldManager::instance()->express_checkout_is_suppressed() ) {
 		return;
 	}
 
@@ -935,6 +944,8 @@ function cfw_mobile_cart_summary() {
 				<?php esc_html_e( 'Your Cart', 'checkout-wc' ); ?>
 			</h3>
 
+			<?php cfw_free_shipping_progress_bar_html( 'cfw-mobile-free-shipping-progress-bar' ); ?>
+
 			<div id="cfw-mobile-cart-table"></div>
 			<div id="cfw-mobile-cart-coupons"></div>
 			<div id="cfw-mobile-cart-summary-totals"></div>
@@ -1246,18 +1257,22 @@ function cfw_payment_tab_content_billing_address() {
  * This also handles any custom fields attached to order notes area
  */
 function cfw_payment_tab_content_order_notes() {
+	$order_fields = (array) WC()->checkout()->get_checkout_fields( 'order' );
+
+	// The Order Notes setting governs the note itself, not other plugins' fields in the same fieldset.
+	if ( ! cfw_apply_filters( 'woocommerce_enable_order_notes_field', false ) ) {
+		unset( $order_fields['order_comments'] );
+	}
 	?>
 	<div class="cfw-order-notes-container">
 		<?php cfw_do_action( 'woocommerce_before_order_notes', WC()->checkout() ); ?>
 
-		<?php if ( cfw_apply_filters( 'woocommerce_enable_order_notes_field', false ) ) : ?>
+		<?php if ( ! empty( $order_fields ) ) : ?>
 
 			<div class="cfw-order-notes-wrap">
 				<?php
 				/** Documented in functions.php */
-				do_action( 'cfw_output_fieldset', WC()->checkout()->get_checkout_fields( 'order' ) );
-
- // phpcs:ignore WooCommerce.Commenting.CommentHooks.MissingSinceComment
+				do_action( 'cfw_output_fieldset', $order_fields ); // phpcs:ignore WooCommerce.Commenting.CommentHooks.MissingSinceComment
 				?>
 			</div>
 
@@ -1438,6 +1453,30 @@ function cfw_order_review_tab_nav() {
  */
 function cfw_payment_tab_nav_one_page_checkout() {
 	cfw_payment_tab_nav( true );
+}
+
+/**
+ * Free shipping & rewards bar mount point.
+ *
+ * The bar is a React component, mounted here rather than inside the cart table so that anything
+ * assigned to the "Before Cart Summary Items" slot lands between the bar and the first cart item.
+ *
+ * @since 11.4.0
+ *
+ * @param string $id The container ID to mount into, which differs between the cart summary and its mobile copy.
+ *
+ * @return void
+ */
+function cfw_free_shipping_progress_bar_html( string $id = 'cfw-free-shipping-progress-bar' ) {
+	if ( SettingsManager::instance()->get_setting( 'enable_free_shipping_progress_bar' ) !== 'yes' ) {
+		return;
+	}
+
+	if ( SettingsManager::instance()->get_setting( 'enable_free_shipping_progress_bar_at_checkout' ) !== 'yes' ) {
+		return;
+	}
+
+	echo '<div id="' . esc_attr( $id ) . '"></div>';
 }
 
 /**
@@ -2304,6 +2343,10 @@ function cfw_output_checkout_tabs() {
 		</div>
 	<?php endforeach; ?>
 	<?php
+	// Clear the current tab so anything rendered after the tabs — the cart summary and the footer —
+	// is not mistaken for tab content. Fields there would otherwise inherit the last tab's
+	// validation group and be validated as part of a step they do not appear in.
+	cfw_set_current_tab( '' );
 }
 
 function cfw_set_current_tab( string $tab ) {

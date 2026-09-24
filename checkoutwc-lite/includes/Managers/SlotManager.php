@@ -212,6 +212,78 @@ class SlotManager extends SingletonAbstract {
 	}
 
 	// ------------------------------------------------------------------
+	// Slot availability
+	// ------------------------------------------------------------------
+
+	/**
+	 * Returns whether a slot actually reaches the customer for the current cart.
+	 *
+	 * A slot can fail to reach the customer in two different ways, and both matter to anything
+	 * that collects input: the hook may never fire (no-shipping carts skip the shipping address
+	 * hook entirely), or it may fire into markup that is hidden with `display: none` (the shipping
+	 * step under `cfw-hide-shipping`, the information step under `cfw-force-hidden`). Callers that
+	 * require a value — validation, fee calculation — must treat both as inactive, or a required
+	 * field the customer cannot see will block checkout.
+	 *
+	 * Recompute this per request rather than caching it: local pickup flips the shipping step on
+	 * and off mid-session with no page reload.
+	 *
+	 * @since 11.4.0
+	 *
+	 * @param string $slot_id
+	 *
+	 * @return bool
+	 */
+	public function slot_is_active( string $slot_id ): bool {
+		if ( ! array_key_exists( $slot_id, self::get_slot_hook_map() ) ) {
+			return false;
+		}
+
+		$cart = WC()->cart;
+
+		if ( ! $cart ) {
+			return false;
+		}
+
+		switch ( $slot_id ) {
+			// The hook itself is inside a needs_shipping() branch, so it never fires otherwise.
+			case 'after_shipping_address':
+				$active = $cart->needs_shipping();
+				break;
+
+			// The hook fires, but the whole shipping panel is hidden when the step is skipped
+			// or local pickup is selected.
+			case 'after_shipping_methods':
+				$active = function_exists( 'cfw_show_shipping_tab' ) && cfw_show_shipping_tab();
+				break;
+
+			// The information step is force-hidden by some express-checkout gateways, while its
+			// display callback still runs.
+			case 'before_express_checkout':
+			case 'after_customer_account':
+			case 'after_delivery_method':
+				$active = ! function_exists( 'cfw_show_customer_information_tab' ) || cfw_show_customer_information_tab();
+				break;
+
+			// Everything else always reaches the customer. The billing slot is registered twice,
+			// once per cart type, so it is reachable on both.
+			default:
+				$active = true;
+				break;
+		}
+
+		/**
+		 * Filters whether a checkout slot reaches the customer for the current cart.
+		 *
+		 * @since 11.4.0
+		 *
+		 * @param bool $active Whether the slot is active.
+		 * @param string $slot_id The slot identifier.
+		 */
+		return (bool) apply_filters( 'cfw_slot_is_active', $active, $slot_id );
+	}
+
+	// ------------------------------------------------------------------
 	// Reading / writing slot assignments
 	// ------------------------------------------------------------------
 
@@ -224,14 +296,30 @@ class SlotManager extends SingletonAbstract {
 	 * @return array<string, list<array{type: string, id?: int|string, sort_order: int, name?: string, content?: string}>>
 	 */
 	public function get_slots(): array {
+		return $this->get_overlaid_json_option( self::SLOTS_OPTION );
+	}
+
+	/**
+	 * Returns a JSON-encoded array option, overlaid by the editor preview transient when one applies.
+	 *
+	 * Shared by every slot-adjacent store (assignments, custom HTML blocks, custom fields) so the
+	 * preview-mode detection and JSON decoding exist in exactly one place.
+	 *
+	 * @since 11.4.0
+	 *
+	 * @param string $option_key
+	 *
+	 * @return array<mixed>
+	 */
+	public function get_overlaid_json_option( string $option_key ): array {
 		if ( $this->is_preview_mode() ) {
 			$transient = $this->get_preview_transient();
-			if ( isset( $transient[ self::SLOTS_OPTION ] ) && is_array( $transient[ self::SLOTS_OPTION ] ) ) {
-				return $transient[ self::SLOTS_OPTION ];
+			if ( isset( $transient[ $option_key ] ) && is_array( $transient[ $option_key ] ) ) {
+				return $transient[ $option_key ];
 			}
 		}
 
-		$raw = get_option( self::SLOTS_OPTION, null );
+		$raw = get_option( $option_key, null );
 
 		if ( null === $raw ) {
 			return [];
@@ -264,25 +352,7 @@ class SlotManager extends SingletonAbstract {
 	 * @return array<string, array{name: string, content: string}>
 	 */
 	public function get_custom_html_blocks(): array {
-		if ( $this->is_preview_mode() ) {
-			$transient = $this->get_preview_transient();
-			if ( isset( $transient[ self::HTML_BLOCKS_OPTION ] ) && is_array( $transient[ self::HTML_BLOCKS_OPTION ] ) ) {
-				return $transient[ self::HTML_BLOCKS_OPTION ];
-			}
-		}
-
-		$raw = get_option( self::HTML_BLOCKS_OPTION, null );
-
-		if ( null === $raw ) {
-			return [];
-		}
-
-		if ( is_string( $raw ) ) {
-			$decoded = json_decode( $raw, true );
-			return is_array( $decoded ) ? $decoded : [];
-		}
-
-		return is_array( $raw ) ? $raw : [];
+		return $this->get_overlaid_json_option( self::HTML_BLOCKS_OPTION );
 	}
 
 	/**
@@ -355,7 +425,6 @@ class SlotManager extends SingletonAbstract {
 	 *
 	 * @return array{
 	 *   order_bumps:           list<array{id: int, title: string, display_location: string}>,
-	 *   trust_badges:          list<array{id: string, title: string}>,
 	 *   review_badges_enabled: bool,
 	 *   custom_html_blocks:    array<string, array{name: string, content: string}>
 	 * }
@@ -434,33 +503,10 @@ class SlotManager extends SingletonAbstract {
 			$bump_items[] = $bump_entry;
 		}
 
-		// Individual trust badges (empty when feature is disabled).
-		// WC customer review badges are injected dynamically via the cfw_trust_badges filter
-		// (their IDs start with "wc_review_") and cannot be individually placed in slots — exclude them.
-		$trust_badges_list = [];
-		if ( $settings->get_setting( 'enable_trust_badges' ) === 'yes' ) {
-			$raw_badges = cfw_get_trust_badges( false );
-			foreach ( $raw_badges as $index => $badge ) {
-				$badge_id = ( isset( $badge['id'] ) && $badge['id'] && $badge['id'] !== 0 )
-					? (string) $badge['id']
-					: 'tb-' . $index;
-				// Skip dynamically-injected WC customer reviews.
-				if ( str_starts_with( $badge_id, 'wc_review_' ) ) {
-					continue;
-				}
-				$trust_badges_list[] = [
-					'id'             => $badge_id,
-					/* translators: %d is the badge number */
-					'title'          => ( $badge['title'] ?? '' ) ?: sprintf( __( 'Badge %d', 'checkout-wc' ), $index + 1 ),
-					'template'       => $badge['template'] ?? 'guarantee',
-					'has_conditions' => ! empty( $badge['rules'] ),
-				];
-			}
-		}
-
+		// Trust badges are not listed here: the editor carries them in its own form values, so a badge
+		// created or renamed in the badge dialog is offered by the picker before anything is saved.
 		return [
 			'order_bumps'           => $bump_items,
-			'trust_badges'          => $trust_badges_list,
 			'review_badges_enabled' => $settings->get_setting( 'enable_wc_review_badges' ) === 'yes',
 			'custom_html_blocks'    => $this->get_custom_html_blocks(),
 		];
@@ -551,10 +597,7 @@ class SlotManager extends SingletonAbstract {
 		// Build the set of IDs present in the new badge list.
 		$new_badge_ids = [];
 		foreach ( $new_badges as $index => $badge ) {
-			$badge_id        = ( isset( $badge['id'] ) && $badge['id'] && $badge['id'] !== 0 )
-				? (string) $badge['id']
-				: 'tb-' . $index;
-			$new_badge_ids[] = $badge_id;
+			$new_badge_ids[] = $this->trust_badge_id_for_index( $badge, $index );
 		}
 
 		$slots   = $this->get_slots();
@@ -642,9 +685,16 @@ class SlotManager extends SingletonAbstract {
 	 *
 	 * Hooked to cfw_updated_setting__cfw_trust_badges. Each badge may carry a
 	 * transient `slot` key set by the settings UI. Each badge's individual items are
-	 * moved to its chosen slot (or removed when no slot is selected). Locked
-	 * multi-slot badges are left to the editor. Runs only when badges actually carry
-	 * slot data.
+	 * moved to its chosen slot (or removed when no slot is selected).
+	 *
+	 * The slot registry is authoritative: the dropdown is only a view of it, seeded by
+	 * get_trust_badge_slot_assignments(), so a badge is only touched when the posted value
+	 * differs from what that same derivation says now. A badge the registry resolves to more
+	 * than one slot is left alone entirely — its dropdown is disabled, so a single slot can
+	 * only have been posted by a settings page that loaded before the editor moved it.
+	 *
+	 * The Checkout Editor saves badges without a `slot` key at all, which short-circuits this
+	 * method so it can never fight the assignments the editor is saving in the same breath.
 	 *
 	 * @param mixed $new_badges The incoming trust badges array.
 	 * @param mixed $old_badges The previous value (unused).
@@ -668,6 +718,9 @@ class SlotManager extends SingletonAbstract {
 		$slots       = $this->get_slots();
 		$valid_slots = array_keys( self::get_slot_hook_map() );
 
+		// What the dropdown was seeded from, and the only thing a posted value is measured against.
+		$current_assignments = $this->get_trust_badge_slot_assignments( $new_badges );
+
 		$changed = false;
 
 		foreach ( $new_badges as $index => $badge ) {
@@ -686,20 +739,11 @@ class SlotManager extends SingletonAbstract {
 			}
 
 			$badge_id = $this->trust_badge_id_for_index( $badge, $index );
+			$current  = $current_assignments[ $badge_id ] ?? '';
 
-			// Where is this badge currently placed (individual items only)?
-			$current = [];
-			foreach ( $slots as $slot_id => $items ) {
-				foreach ( $items as $item ) {
-					if ( ( $item['type'] ?? '' ) === 'trust_badges' && ! empty( $item['id'] ) && (string) $item['id'] === $badge_id ) {
-						$current[] = $slot_id;
-					}
-				}
-			}
-			$current = array_values( array_unique( $current ) );
-
-			// No change needed — preserves existing order for untouched badges.
-			if ( ( '' === $desired && empty( $current ) ) || ( [ $desired ] === $current ) ) {
+			// Unchanged, or a stale page posting a single slot for a badge the editor has since
+			// placed in several. Either way the registry already says what the merchant wanted.
+			if ( $desired === $current || self::TRUST_BADGE_MULTIPLE_SLOT === $current ) {
 				continue;
 			}
 

@@ -1,10 +1,10 @@
 === CheckoutWC Lite – Conversion optimized WooCommerce checkout ===
 Contributors: kestrelwp, clifgriffin
 Donate link: https://www.checkoutwc.com
-Tags: checkout, woocommerce-checkout, express-checkout, checkout-optimization, cart-abandonment
+Tags: woocommerce checkout, checkout field editor, express checkout, one page checkout, cart abandonment
 Requires at least: 5.2
-Tested up to: 7.0.4
-Stable tag: 11.3.1
+Tested up to: 7.1.2
+Stable tag: 11.4.0
 Requires PHP: 7.4
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
@@ -53,7 +53,7 @@ CheckoutWC takes over the checkout without a page builder, so it fits your exist
 
 "CheckoutWC makes customizing the checkout page easy and the process for customers even easier. A more pleasant experience for them, and more sales for me." - Joe Casabona, How I Built It
 
-### How it works
+### How to set up your WooCommerce checkout
 
 1. Install and activate - CheckoutWC takes over your WooCommerce checkout with sensible defaults.
 2. Set your logo, colors, and layout in the CheckoutWC settings.
@@ -67,17 +67,23 @@ CheckoutWC takes over the checkout without a page builder, so it fits your exist
 - <strong>Smart inline validation</strong> that catches errors before they cost you the order
 - <strong>Mobile-first design</strong> that's 100% responsive on phones, tablets, and desktops
 - <strong>Customizable branding</strong>: set your logo and colors to match your store
+- <strong>Checkout field editor</strong>: add your own text fields anywhere on the checkout, with optional fees and display conditions
 - <strong>Universal compatibility</strong>: works with all WooCommerce themes and payment gateways
 
 If it works with WooCommerce's default checkout, it works with CheckoutWC.
 
-### Want even more?
+### Premium WooCommerce checkout features
 
 Unlock more features when you need them with a paid plan.
 
+<a href="https://www.checkoutwc.com/demos/">See the templates in a live demo →</a>
+<a href="https://www.checkoutwc.com/pricing/">Compare plans and pricing →</a>
+
+*All paid plans include a 30-day money-back guarantee.*
+
 <strong>Premium checkout templates</strong>
 
-Shopify-style one-page and multi-step layouts like Glass, Futurist, Copify, and Groove - all mobile-optimized and built for higher conversion rates, with inline editing and returning-customer matching.
+Shopify-style multi-step layouts like Glass, Futurist, Copify, and Groove - all mobile-optimized and built for higher conversion rates, with inline editing and returning-customer matching. Switch any of them to one-page checkout if you would rather show contact, shipping, and payment on a single screen.
 
 <strong>Side cart and order bumps</strong>
 
@@ -91,9 +97,17 @@ Capture customer emails early and send automated recovery emails with discounts 
 
 Trust badges, Google Maps address autocomplete, Cloudflare Turnstile spam protection, local pickup, A/B testing for order bumps, and PHP snippets for developers.
 
-<strong>Place badges and bumps exactly where you want</strong>
+<strong>Custom checkout fields</strong>
 
-Drop order bumps, trust badges, and reviews into named positions across your checkout, then drag them into the exact order you want - all in the visual editor, no code required. See how this works in the video below.
+A full checkout field editor: ask for a gift message, delivery instructions or anything else you need with text area, dropdown, radio button and checkbox fields, on top of the text fields in the free version. Drop them into any checkout slot, mark them required, show them only to the carts and customers you choose, and add a fixed or percentage fee per field or per option. What the customer enters is saved to the order and shown on the order screen and in your order emails.
+
+<strong>Trust badge collections</strong>
+
+Show a row of ready-made icons as a single badge - payment logos, security marks, and guarantees like 30-day money back, free shipping and free returns. Drag them into the order you want, set their size, and recolor the ones we draw so they match your checkout.
+
+<strong>Build your own badges and place them anywhere</strong>
+
+Create your own trust badges with your own image, title and supporting text, or show product reviews instead. Then drop them - along with your order bumps - into named positions across your checkout and drag them into the exact order you want, all in the visual editor with no code required. See how this works in the video below.
 
 [youtube https://www.youtube.com/watch?v=V9B3HGhS-7I]
 
@@ -103,9 +117,10 @@ Stack up to three spend-to-unlock tiers in a single progress bar - free shipping
 
 [youtube https://www.youtube.com/watch?v=afWIbQCETlc]
 
+<a href="https://www.checkoutwc.com/demos/">See the templates in a live demo →</a>
 <a href="https://www.checkoutwc.com/pricing/">Compare plans and pricing →</a>
 
-All paid plans include a 30-day money-back guarantee.
+*All paid plans include a 30-day money-back guarantee.*
 
 ### Integrations
 
@@ -147,7 +162,23 @@ CheckoutWC optionally connects to the Google Fonts API to load web fonts for you
 
 = Is CheckoutWC Lite really free? =
 
-Yes. CheckoutWC Lite is free on WordPress.org and includes the Shopify-style multi-step checkout, express payments (Apple Pay, Google Pay, PayPal), ZIP/postal address autocomplete, smart validation, and mobile-first design. Premium templates, side cart, order bumps, abandoned cart recovery, and other advanced tools are available on a paid plan.
+Yes. CheckoutWC Lite is free on WordPress.org and includes the Shopify-style multi-step checkout, express payments (Apple Pay, Google Pay, PayPal), ZIP/postal address autocomplete, smart validation, custom text fields, and mobile-first design. Premium templates, side cart, order bumps, abandoned cart recovery, and other advanced tools are available on a paid plan.
+
+= Can I add or remove checkout fields? =
+
+Yes. CheckoutWC Lite includes a checkout field editor: add your own text fields to any position on the checkout, mark them required, cap their length, and show them only for the carts and customers you choose. You can also hide the fields WooCommerce controls, such as company, phone, and address line 2. Text area, dropdown, radio button, and checkbox fields, and charging a fee for a field or an option, need a paid plan.
+
+= Does CheckoutWC support one-page checkout? =
+
+Yes, on a paid plan. Any premium template can be switched to one-page checkout, which shows contact, shipping, and payment on a single screen. CheckoutWC Lite uses the multi-step flow.
+
+= Is CheckoutWC compatible with HPOS? =
+
+Yes. CheckoutWC declares compatibility with High-Performance Order Storage (custom order tables) and works on stores using either HPOS or the legacy post-based order storage.
+
+= Does it work with WooCommerce Subscriptions? =
+
+Yes. CheckoutWC supports WooCommerce Subscriptions, including free trials, sign-up fees, and recurring totals in the order summary, as well as Memberships and Constellation by Kestrel.
 
 = Will it work with my theme and gateway? =
 
@@ -205,6 +236,39 @@ Use your payment gateway's test mode to process test transactions without chargi
 == Changelog ==
 
 Free version updates are non-sequential due to the unified development branch we use with the premium versions.
+
+= Version 11.4.0 =
+
+- Feature - Custom fields: add your own text fields to any checkout slot from the Checkout Editor - text area, dropdown, radio button and checkbox fields are available on a paid plan
+- Feature - Custom fields: mark a field required, cap how many characters it accepts, and show it only for the carts and customers you choose with display conditions
+- Feature - Custom fields: add a fixed or percentage fee to a field, charged when the customer fills it in - shown in the label and added to the order
+- Feature - Custom fields: what the customer entered is saved to the order, and shown on the order screen, in their order details and in order emails
+- Tweak - Checkout Editor: the Fields, Footer and Advanced sections are gone - their settings now sit under Typography, Addresses, Cart Summary and a new Other section
+- Tweak - Checkout Editor: settings now use standard checkboxes rather than eye on and off toggles, which stay for showing and hiding billing address fields
+- Tweak - Checkout Editor: every settings section now has an icon, and a warning about a setting appears directly beneath that setting
+- Tweak - Checkout Editor: the Billing Address Fields setting now links to an explanation of what removing a field does to the order before you turn one off
+- Tweak - Checkout Editor: new Company Field and Address 2 Field settings, alongside the existing Phone Field, for the three fields WooCommerce controls itself
+- Tweak - Checkout Editor: a billing field WooCommerce has hidden is no longer listed under Billing Address Fields, where its toggle could not do anything
+- Tweak - Checkout Editor: turning off a billing field that WooCommerce requires, or one a payment gateway checks the card against, now flags the field and explains what it costs
+- Tweak - Checkout Editor: set the size of your header logo, and the space around it, in the new Logo section
+- Tweak - Checkout Editor: the Add item menu on a slot is now larger and can be searched, so finding a field no longer means scrolling
+- Tweak - Checkout Editor: an open settings section now stands apart from the ones around it, and the lines between individual settings are lighter
+- Tweak - Checkout Editor: a heading added to a slot now starts at H2 rather than H4
+- Tweak - Checkout Editor: the Live and Preview menu now explains that a checkout in preview is only shown to logged-in administrators
+- Accessibility - Checkout, order pay and thank you pages no longer expose a second main landmark on the order review column
+- Localization - Added Icelandic (is_IS) translations
+- Fix - Cart summary: the remove button, when enabled, now sits in its own column after the price, so every item price lines up - an item a plugin makes non-removable no longer sits out of line
+- Fix - Cart summary: the remove button, when enabled, is always visible rather than appearing on hover, so it can be reached by keyboard and on touch devices
+- Fix - Checkout: the phone field is now optional where WooCommerce says it is optional - previously it was treated as required whenever the WooCommerce setting had never been saved
+- Fix - Checkout Editor: the first item you add to a slot in a session now stays where you put it - previously it could be silently dropped if the editor refreshed its slots at the same moment
+- Fix - Checkout Editor: the preview now scrolls to the slot you just changed after saving an item in its modal, instead of reloading back at the top
+- Fix - Checkout Editor: the logo thumbnail in the settings panel now updates as soon as you choose a new logo, and no longer reverts to the previous one after saving
+- Fix - Checkout Editor: opening the Add item menu on one slot now closes the menu already open on another, instead of leaving the two overlapping
+- Fix - Checkout Editor: placing an order from the preview now returns you to your checkout, and the editor points out the real order that was created
+- Fix - Checkout slots: a field in the After Delivery Method slot no longer loses keyboard focus every time the checkout totals refresh
+- Fix - Order summary: what a customer types into the promo code field, or into a field placed in an order summary slot, no longer overlaps the field's label
+- Fix - SiteGround Speed Optimizer: the checkout, order pay and thank you pages no longer lose their form or styling when JavaScript or CSS optimization is on - Speed Optimizer names its optimized copies after the asset handle, so another page on your store could leave the wrong file cached under ours
+- Fix - Turning off Order Notes now removes only the notes field, instead of also hiding checkout fields other plugins add to that section, such as a VAT ID field
 
 = Version 11.3.1 =
 

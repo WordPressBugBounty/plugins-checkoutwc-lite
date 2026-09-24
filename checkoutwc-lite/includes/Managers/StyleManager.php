@@ -135,6 +135,12 @@ class StyleManager {
 		$breadcrumb_next_accent_color      = $settings_manager->get_setting( 'breadcrumb_next_accent_color', [ $active_theme ] );
 		$logo_url = cfw_get_logo_url();
 
+		// Merchant-controlled logo dimensions. Both are sanitized here rather than on save
+		// because the settings REST API stores values verbatim and this method interpolates
+		// them straight into a style block.
+		$logo_size   = max( 0, (int) $settings_manager->get_setting( 'logo_size', [ $active_theme ] ) );
+		$logo_margin = preg_replace( '/[^0-9a-zA-Z .%\s\-]/', '', (string) $settings_manager->get_setting( 'logo_margin', [ $active_theme ] ) );
+
 		if ( in_array( $body_font, self::$excluded_fonts, true ) ) {
 			switch ( $body_font ) {
 				case 'inter-cfw':
@@ -198,6 +204,9 @@ class StyleManager {
 				'--cfw-breadcrumb-current-accent-color'    => $breadcrumb_current_accent_color,
 				'--cfw-breadcrumb-next-accent-color'       => $breadcrumb_next_accent_color,
 				'--cfw-logo-url'                           => "url({$logo_url})",
+				'--cfw-logo-size'                          => $logo_size > 0 ? "{$logo_size}px" : false,
+				'--cfw-logo-max-width'                     => $logo_size > 0 ? '100%' : false,
+				'--cfw-logo-margin'                        => $logo_margin,
 			]
 		);
 

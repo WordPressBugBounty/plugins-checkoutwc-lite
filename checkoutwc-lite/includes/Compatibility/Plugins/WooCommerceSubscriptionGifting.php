@@ -19,7 +19,7 @@ class WooCommerceSubscriptionGifting extends CompatibilityAbstract {
 	public function maybe_display_gifting_information( $cart_item, $cart_item_key ) {
 		?>
 		<tr class="cfw-woocommerce-subscription-gifting">
-			<td colspan="4">
+			<td colspan="5">
 				<?php WCSG_Cart::maybe_display_gifting_information( $cart_item, $cart_item_key, 'print' ); ?>
 			</td>
 		</tr>

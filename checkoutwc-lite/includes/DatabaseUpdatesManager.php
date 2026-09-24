@@ -84,6 +84,7 @@ class DatabaseUpdatesManager extends SingletonAbstract {
 			'11.0.1'  => [ $this, 'update_1101' ],
 			'11.0.3'  => [ $this, 'update_1103' ],
 			'11.3.0'  => [ $this, 'update_1130' ],
+			'11.4.0'  => [ $this, 'update_1140' ],
 			// TODO: For future updates, bifurcate pro and lite versions?
 		];
 	}
@@ -1271,6 +1272,18 @@ class DatabaseUpdatesManager extends SingletonAbstract {
 		];
 
 		SettingsManager::instance()->update_setting( 'side_cart_free_shipping_tiers', $tiers );
+	}
+
+	/**
+	 * Register the express checkout setting custom fields introduced.
+	 *
+	 * Added as 'yes', which keeps express checkout exactly as the merchant has it today: no store
+	 * upgrading into this release finds express missing from a checkout that was working. Custom
+	 * fields ship in the same release, so nobody has a required one yet, and a merchant who adds one
+	 * is warned where the decision is actually being made — on the field itself.
+	 */
+	public function update_1140() {
+		SettingsManager::instance()->add_setting( 'allow_express_without_required_custom_fields', 'yes' );
 	}
 
 	private function regenerate_order_bump_thumbnail( int $attachment_id ) {

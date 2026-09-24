@@ -64,10 +64,14 @@ class SettingsAPI {
 		}
 
 		if ( stripos( $key, 'wp_option/' ) === 0 ) {
+			// The prefix has to come off before the lookup as well as off the key echoed back, or every
+			// wp_option-backed setting reads as null through this endpoint.
+			$option_name = str_replace( 'wp_option/', '', $key );
+
 			return rest_ensure_response(
 				[
-					'key'   => str_replace( 'wp_option/', '', $key ),
-					'value' => get_option( $key ),
+					'key'   => $option_name,
+					'value' => get_option( $option_name ),
 				]
 			);
 		}

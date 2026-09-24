@@ -79,6 +79,9 @@ class EditorPreviewCart {
 		'removed_cart_contents',
 		'chosen_shipping_methods',
 		'shipping_method_counts',
+		// Custom field values drive fees, so the preview must not inherit the merchant's own
+		// selections — they would show as a phantom fee in the preview totals.
+		'cfw_custom_field_values',
 	];
 
 	/**
@@ -196,8 +199,15 @@ class EditorPreviewCart {
 		}
 
 		$products = $build ? self::get_products_to_build() : self::get_products( $stored['add'] );
+		$in_cart  = self::get_cart_product_ids( WC()->cart->get_cart() );
 
 		foreach ( $products as $product ) {
+			// Adding a product already in the cart would raise its quantity. That happens when the editor restores the
+			// cart after an order placed in the preview, which does not always empty it first.
+			if ( in_array( $product->get_id(), $in_cart, true ) ) {
+				continue;
+			}
+
 			self::add_to_cart( $product );
 		}
 

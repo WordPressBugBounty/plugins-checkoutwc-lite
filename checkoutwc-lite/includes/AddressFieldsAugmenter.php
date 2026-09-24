@@ -323,7 +323,7 @@ class AddressFieldsAugmenter extends SingletonAbstract {
 				'type'              => 'tel',
 				'label'             => $this->translate_address_string( __( 'Phone', 'woocommerce' ) ),
 				'placeholder'       => $this->translate_address_string( __( 'Phone', 'woocommerce' ) ),
-				'required'          => 'required' === get_option( 'woocommerce_checkout_phone_field', 'required' ),
+				'required'          => WooFieldVisibility::is_required( WooFieldVisibility::PHONE ),
 				'autocomplete'      => 'tel',
 				'input_class'       => [],
 				'priority'          => $this->priorities['phone'],

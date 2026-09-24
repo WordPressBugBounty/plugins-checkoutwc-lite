@@ -4492,6 +4492,105 @@
             "args": 1
         },
         {
+            "name": "cfw_custom_field_fee_amount",
+            "file": "Model/CustomField.php",
+            "type": "filter",
+            "doc": {
+                "description": "Filters a custom field's fee amount.",
+                "long_description": "The fee API exposes no amount filter of its own. Both the charge and the label the customer reads before choosing pass through here, so an integration cannot adjust one and leave the other showing a different number.",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "11.4.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "",
+                        "types": [
+                            "float"
+                        ],
+                        "variable": "$amount"
+                    },
+                    {
+                        "name": "param",
+                        "content": "",
+                        "types": [
+                            "\\CustomField"
+                        ],
+                        "variable": "$field"
+                    }
+                ],
+                "long_description_html": "<p>The fee API exposes no amount filter of its own. Both the charge and the label the customer reads before choosing pass through here, so an integration cannot adjust one and leave the other showing a different number.</p>"
+            },
+            "args": 2
+        },
+        {
+            "name": "cfw_custom_field_fee_label",
+            "file": "Features/CustomFields/FeeApplicator.php",
+            "type": "filter",
+            "doc": {
+                "description": "Filters the label a custom field's fee appears under.",
+                "long_description": "",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "11.4.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "",
+                        "types": [
+                            "string"
+                        ],
+                        "variable": "$label"
+                    },
+                    {
+                        "name": "param",
+                        "content": "",
+                        "types": [
+                            "\\CustomField"
+                        ],
+                        "variable": "$field"
+                    },
+                    {
+                        "name": "param",
+                        "content": "",
+                        "types": [
+                            "string"
+                        ],
+                        "variable": "$value"
+                    }
+                ],
+                "long_description_html": ""
+            },
+            "args": 3
+        },
+        {
+            "name": "cfw_custom_field_fees_enabled",
+            "file": "Features/CustomFields/FeeApplicator.php",
+            "type": "filter",
+            "doc": {
+                "description": "Filters whether custom field fees are applied at all.",
+                "long_description": "A kill switch for support: it disables pricing without touching the merchant's field configuration.",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "11.4.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "",
+                        "types": [
+                            "bool"
+                        ],
+                        "variable": "$enabled"
+                    }
+                ],
+                "long_description_html": "<p>A kill switch for support: it disables pricing without touching the merchant's field configuration.</p>"
+            },
+            "args": 1
+        },
+        {
             "name": "cfw_detected_gateways",
             "file": "Admin/Pages/ExpressCheckout.php",
             "type": "filter",
@@ -7598,6 +7697,39 @@
                     {
                         "name": "since",
                         "content": "10.2.0"
+                    }
+                ],
+                "long_description_html": ""
+            },
+            "args": 2
+        },
+        {
+            "name": "cfw_slot_is_active",
+            "file": "Managers/SlotManager.php",
+            "type": "filter",
+            "doc": {
+                "description": "Filters whether a checkout slot reaches the customer for the current cart.",
+                "long_description": "",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "11.4.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Whether the slot is active.",
+                        "types": [
+                            "bool"
+                        ],
+                        "variable": "$active"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The slot identifier.",
+                        "types": [
+                            "string"
+                        ],
+                        "variable": "$slot_id"
                     }
                 ],
                 "long_description_html": ""

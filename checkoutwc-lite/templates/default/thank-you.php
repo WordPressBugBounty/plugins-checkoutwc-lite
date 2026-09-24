@@ -26,7 +26,7 @@ do_action( 'cfw_thank_you_before_main_container', $order ); ?>
 	<?php if ( ! empty( $order ) ) : ?>
 		<div class="row">
 			<!-- Order Review -->
-			<div id="order_review" class="col-lg-7 cfw-rp" role="main">
+			<div id="order_review" class="col-lg-7 cfw-rp">
 				<?php
 				/**
 				 * Fires at top of #order_review on thank you page

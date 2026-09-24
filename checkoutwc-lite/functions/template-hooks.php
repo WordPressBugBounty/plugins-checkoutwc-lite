@@ -108,6 +108,7 @@ add_action( 'cfw_checkout_payment_method_tab', 'cfw_payment_tab_nav', 50, 0 );
 add_action( 'cfw_checkout_cart_summary', 'cfw_cart_summary_mobile_header', 10 );
 add_action( 'cfw_checkout_cart_summary', 'cfw_cart_summary_content_open_wrap', 20 ); // Div open
 add_action( 'cfw_checkout_cart_summary', 'cfw_cart_summary_before_order_review', 30 );
+add_action( 'cfw_checkout_cart_summary', 'cfw_free_shipping_progress_bar_html', 32, 0 ); // Above the "Before Cart Summary Items" slot, which SlotRenderer registers at 35.
 add_action( 'cfw_checkout_cart_summary', 'cfw_cart_html', 40 );
 add_action( 'cfw_checkout_cart_summary', 'cfw_coupon_module', 50 );
 add_action( 'cfw_checkout_cart_summary', 'cfw_cart_summary_after_order_review', 60 );

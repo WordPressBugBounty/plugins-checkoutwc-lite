@@ -26,7 +26,7 @@ do_action( 'cfw_order_pay_before_main_container', $order ); ?>
 	<?php if ( ! empty( $order ) ) : ?>
 		<div class="row">
 			<!-- Order Review -->
-			<div id="cfw-order-review" class="col-lg-7 cfw-rp" role="main">
+			<div id="cfw-order-review" class="col-lg-7 cfw-rp">
 				<?php
 				/**
 				 * Fires at top of #order_review on order pay page

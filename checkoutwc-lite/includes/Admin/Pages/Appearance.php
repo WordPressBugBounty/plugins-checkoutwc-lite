@@ -324,9 +324,14 @@ class Appearance extends PageAbstract {
 			return;
 		}
 
+		// The logo ID is cast because an unset logo reads as false, which the save formatter turns
+		// into the string 'no' - see CheckoutEditor::maybe_set_script_data().
 		$template_slug      = cfw_get_active_template()->get_slug();
+		$logo_attachment_id = (int) SettingsManager::instance()->get_setting( 'logo_attachment_id', [ $template_slug ] );
 		$settings           = [
-			SettingsManager::instance()->add_suffix( 'logo_attachment_id', [ $template_slug ] ) => SettingsManager::instance()->get_setting( 'logo_attachment_id', [ $template_slug ] ),
+			SettingsManager::instance()->add_suffix( 'logo_attachment_id', [ $template_slug ] ) => $logo_attachment_id > 0 ? (string) $logo_attachment_id : '',
+			SettingsManager::instance()->add_suffix( 'logo_size', [ $template_slug ] )          => SettingsManager::instance()->get_setting( 'logo_size', [ $template_slug ] ) ?: '',
+			SettingsManager::instance()->add_suffix( 'logo_margin', [ $template_slug ] )        => SettingsManager::instance()->get_setting( 'logo_margin', [ $template_slug ] ) ?: '',
 			SettingsManager::instance()->add_suffix( 'label_style', [ $template_slug ] )        => SettingsManager::instance()->get_setting( 'label_style', [ $template_slug ] ),
 			SettingsManager::instance()->add_suffix( 'footer_text', [ $template_slug ] )        => SettingsManager::instance()->get_setting( 'footer_text', [ $template_slug ] ),
 			SettingsManager::instance()->add_suffix( 'custom_css', [ $template_slug ] )        => SettingsManager::instance()->get_setting( 'custom_css', [ $template_slug ] ),
