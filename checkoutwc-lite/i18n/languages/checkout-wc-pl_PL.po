@@ -8,7 +8,7 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "POT-Creation-Date: 2025-07-25 09:22-0400\n"
-"PO-Revision-Date: 2026-09-24T21:25:15+00:00\n"
+"PO-Revision-Date: 2026-10-12T15:20:32+00:00\n"
 "Language: pl-PL\n"
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
 "X-Generator: Poedit 3.6\n"
@@ -164,8 +164,8 @@ msgid "Postcode / ZIP"
 msgstr "Kod pocztowy"
 
 #: includes/AddressFieldsAugmenter.php:458
-#: functions/functions.php:4215
-#: functions/functions.php:4216
+#: functions/functions.php:4224
+#: functions/functions.php:4225
 msgid "Email address"
 msgstr "Adres e-mail"
 
@@ -302,7 +302,7 @@ msgid "Log in."
 msgstr "Zaloguj się."
 
 #: functions/template-functions.php:489
-#: includes/Managers/AssetManager.php:705
+#: includes/Managers/AssetManager.php:709
 msgid "An account is already registered with your email address. <a href=\"#\" class=\"showlogin\">Please log in.</a>"
 msgstr "Konto jest już zarejestrowane na Twój adres e-mail. <a href=\"#\" class=\"showlogin\">Proszę się zalogować.</a>"
 
@@ -355,7 +355,7 @@ msgstr "Dane kupującego"
 #: functions/template-functions.php:768
 #: functions/template-functions.php:806
 #: functions/template-functions.php:1981
-#: includes/Managers/AssetManager.php:701
+#: includes/Managers/AssetManager.php:705
 msgid "Shipping address"
 msgstr "Adres wysyłki"
 
@@ -368,7 +368,7 @@ msgstr "Twój koszyk"
 #: functions/template-functions.php:1047
 #: functions/template-functions.php:2013
 #: functions/template-functions.php:2287
-#: functions/functions.php:3469
+#: functions/functions.php:3478
 msgid "Shipping"
 msgstr "Wysyłka"
 
@@ -451,7 +451,7 @@ msgid "N/A"
 msgstr "N/D"
 
 #: functions/template-functions.php:2043
-#: includes/Managers/AssetManager.php:851
+#: includes/Managers/AssetManager.php:855
 msgid "Continue shopping"
 msgstr "Kontynuuj zakupy"
 
@@ -467,18 +467,18 @@ msgid "Email"
 msgstr "E-mail"
 
 #: functions/template-functions.php:2101
-#: functions/functions.php:4133
-#: functions/functions.php:4134
+#: functions/functions.php:4142
+#: functions/functions.php:4143
 msgid "Password"
 msgstr "Hasło"
 
 #: functions/template-functions.php:2117
-#: functions/functions.php:4173
+#: functions/functions.php:4182
 msgid "Login"
 msgstr "Zaloguj się"
 
 #: functions/template-functions.php:2120
-#: functions/functions.php:4166
+#: functions/functions.php:4175
 msgid "Lost your password?"
 msgstr "Zapomniałeś hasła?"
 
@@ -486,16 +486,16 @@ msgstr "Zapomniałeś hasła?"
 msgid "Your Cart is Empty"
 msgstr "Twój koszyk jest pusty"
 
-#: functions/premium-init.php:340
+#: functions/premium-init.php:342
 msgid "CheckoutWC Templates Deactivated"
 msgstr "Szablony CheckoutWC wyłączone"
 
 # %1$s: "Settings" text, %2$s: "Start Here" text, %3$s: "Activate CheckoutWC Templates" text
-#: functions/premium-init.php:343
+#: functions/premium-init.php:345
 msgid "Your license is valid and activated for this site but CheckoutWC is disabled for normal customers. To fix this, go to %1$s > %2$s and toggle \"%3$s\"."
 msgstr "Twoja licencja jest ważna i aktywna dla tej strony, ale CheckoutWC jest wyłączony dla zwykłych klientów. Aby to naprawić, przejdź do %1$s > %2$s i przełącz \"%3$s\"."
 
-#: functions/premium-init.php:344
+#: functions/premium-init.php:346
 #: includes/Admin/AdminPluginsPageManager.php:40
 #: includes/Admin/Pages/OrderBumpsAdminFree.php:25
 #: includes/Admin/Pages/LocalPickupAdminFree.php:27
@@ -507,66 +507,71 @@ msgstr "Twoja licencja jest ważna i aktywna dla tej strony, ale CheckoutWC jest
 msgid "Settings"
 msgstr "Ustawienia"
 
-#: functions/premium-init.php:345
+#: functions/premium-init.php:347
+#: functions/premium-init.php:360
 #: includes/Admin/Pages/General.php:25
-#: includes/Admin/Notices/InactiveLicenseNotice.php:13
 msgid "Start Here"
 msgstr "Zacznij tutaj"
 
-#: functions/premium-init.php:346
+#: functions/premium-init.php:348
 #: includes/Admin/Pages/General.php:195
 msgid "Activate CheckoutWC Templates"
 msgstr "Aktywuj szablony CheckoutWC"
 
-#: functions/premium-init.php:353
-msgid "Invalid CheckoutWC License"
-msgstr "Nieprawidłowa licencja CheckoutWC"
+#: functions/premium-init.php:355
+msgid "CheckoutWC license invalid"
+msgstr "Licencja CheckoutWC jest nieprawidłowa"
 
-# %1$s: Pricing URL, %2$s: "purchase a license" link text
-#: functions/premium-init.php:356
-msgid "Your license key is missing or invalid. Please verify that your license key is valid or <a target=\"_blank\" href=\"%1$s\">%2$s</a> to restore full functionality."
-msgstr "Brakuje klucza licencyjnego lub jest on nieprawidłowy. Proszę zweryfikować ważność klucza lub <a target=\"_blank\" href=\"%1$s\">%2$s</a>, aby przywrócić pełną funkcjonalność."
-
+# %1$s: URL to license settings page, %2$s: "Start Here" link text, %3$s: Pricing URL, %4$s: "buy a license" link text
 #: functions/premium-init.php:358
-msgid "purchase a license"
+msgid "Premium features are off because your license key is missing or invalid. Check your key on <a href=\"%1$s\">%2$s</a> or <a target=\"_blank\" href=\"%3$s\">%4$s</a>."
+msgstr "Funkcje premium są wyłączone, ponieważ Twój klucz licencyjny jest brakujący lub nieprawidłowy. Sprawdź swój klucz na <a href=\"%1$s\">%2$s</a> lub <a target=\"_blank\" href=\"%3$s\">%4$s</a>."
+
+#: functions/premium-init.php:362
+#: includes/Admin/Notices/InactiveLicenseNotice.php:15
+msgid "buy a license"
 msgstr "kup licencję"
 
-#: functions/premium-init.php:374
+#: functions/premium-init.php:382
 msgid "New Feature: Cloudflare Turnstile Bot Protection"
 msgstr "Nowa funkcja: Ochrona przed botami Cloudflare Turnstile"
 
 # 1: Cloudflare Turnstile name wrapped in strong tags, 2: Setup link
-#: functions/premium-init.php:377
+#: functions/premium-init.php:385
 msgid "CheckoutWC now supports %1$s - a privacy-first, CAPTCHA-free way to protect your checkout from bots and spam orders. %2$s"
 msgstr "CheckoutWC teraz obsługuje %1$s - sposób ochrony Twojej kasy przed botami i spamem, który stawia na prywatność i nie wymaga CAPTCHA. %2$s"
 
 # The name of the Cloudflare Turnstile service
-#: functions/premium-init.php:381
+#: functions/premium-init.php:389
 #: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:78
 msgid "Cloudflare Turnstile"
 msgstr "Cloudflare Turnstile"
 
-#: functions/premium-init.php:387
+#: functions/premium-init.php:395
 msgid "Setup Cloudflare Turnstile now"
 msgstr "Skonfiguruj Cloudflare Turnstile teraz"
 
-#: functions/premium-init.php:392
+#: functions/premium-init.php:400
 msgid "Upgrade your plan now to access"
 msgstr "Ulepsz swój plan teraz, aby uzyskać dostęp"
 
-#: functions/premium-init.php:405
+#: functions/premium-init.php:413
 msgid "Abandoned Cart Recovery Tracking Disabled"
 msgstr "Śledzenie odzyskiwania porzuconych koszyków wyłączone"
 
 # %1$s: Gist URL, %2$s: "Learn More" link text
-#: functions/premium-init.php:408
+#: functions/premium-init.php:416
 msgid "You have enabled Abandoned Cart Recovery tracking, but you do not have any emails published. To track carts, you need to publish emails or use this dev filter: <a target=\"_blank\" href=\"%1$s\">%2$s</a>."
 msgstr "Włączyłeś śledzenie odzyskiwania porzuconych koszyków, ale nie masz opublikowanych żadnych e-maili. Aby śledzić koszyki, musisz opublikować e-maile lub użyć tego filtra deweloperskiego: <a target=\"_blank\" href=\"%1$s\">%2$s</a>."
 
-#: functions/premium-init.php:410
+#: functions/premium-init.php:418
 #: includes/Admin/Pages/AbandonedCartRecoveryAdminFree.php:82
 msgid "Learn More"
 msgstr "Dowiedz się więcej"
+
+#: functions/premium-init.php:477
+msgid "Admin preview: your CheckoutWC license isn\\'t valid for this site, so premium features are off. Check your license here: WP Admin > CheckoutWC > Start Here."
+msgstr "Podgląd administratora: Twoja licencja CheckoutWC nie jest ważna dla tej witryny, więc funkcje premium są wyłączone. Sprawdź swoją licencję tutaj: WP Admin > CheckoutWC > Start Here."
 
 #: functions/init.php:396
 #: functions/init.php:397
@@ -685,7 +690,7 @@ msgid "No shipping methods available"
 msgstr "Brak dostępnych metod wysyłki"
 
 #: functions/functions.php:826
-#: includes/Model/Bumps/BumpAbstract.php:835
+#: includes/Model/Bumps/BumpAbstract.php:882
 msgid "Free!"
 msgstr "Darmowe!"
 
@@ -757,22 +762,22 @@ msgstr "Koszyk"
 msgid "CheckoutWC: Error matching %1$d to customer %2$d"
 msgstr "CheckoutWC: Błąd dopasowania %1$d do klienta %2$d"
 
-#: functions/functions.php:2162
+#: functions/functions.php:2171
 msgid "Or"
 msgstr "Lub"
 
-#: functions/functions.php:2247
+#: functions/functions.php:2256
 msgid "You can only have 1 %s in your cart."
 msgstr "Możesz mieć tylko 1 %s w swoim koszyku."
 
-#: functions/functions.php:2397
+#: functions/functions.php:2406
 #: client/ts/frontend/Components/CartItemQuantityControl.tsx:55
 msgid "Decrement"
 msgstr "Zmniejszenie"
 
-#: functions/functions.php:2406
-#: includes/Managers/AssetManager.php:731
-#: includes/Managers/AssetManager.php:852
+#: functions/functions.php:2415
+#: includes/Managers/AssetManager.php:735
+#: includes/Managers/AssetManager.php:856
 #: includes/Features/LocalPickup.php:510
 #: includes/Features/AbandonedCartRecovery.php:128
 #: includes/Features/ABTesting.php:150
@@ -782,97 +787,97 @@ msgstr "Zmniejszenie"
 msgid "Edit"
 msgstr "Edytuj"
 
-#: functions/functions.php:2409
+#: functions/functions.php:2418
 #: client/ts/frontend/Components/CartItemQuantityControl.tsx:70
 msgid "Increment"
 msgstr "Przyrost"
 
-#: functions/functions.php:3123
+#: functions/functions.php:3132
 msgid "Unsubscribe"
 msgstr "Wypisz się"
 
-#: functions/functions.php:3495
+#: functions/functions.php:3504
 #: includes/Features/AbandonedCartRecovery.php:756
 #: client/ts/admin/Components/acr/carts.tsx:74
 msgid "Subtotal"
 msgstr "Suma częściowa"
 
-#: functions/functions.php:3499
+#: functions/functions.php:3508
 #: includes/Admin/Views/html-refund-offer.php:25
 msgid "Total"
 msgstr "Razem"
 
-#: functions/functions.php:3552
+#: functions/functions.php:3561
 msgid "There are no shipping options available. Please ensure that your address has been entered correctly, or contact us if you need any help."
 msgstr "Brak dostępnych opcji wysyłki. Proszę upewnij się, że Twój adres został poprawnie wprowadzony lub skontaktuj się z nami, jeśli potrzebujesz pomocy."
 
-#: functions/functions.php:3906
+#: functions/functions.php:3915
 #: includes/Admin/Pages/AbandonedCartRecoveryAdminFree.php:73
 msgid "SendWP - Transactional Email"
 msgstr "SendWP - Email transakcyjny"
 
-#: functions/functions.php:3911
+#: functions/functions.php:3920
 #: includes/Admin/Pages/AbandonedCartRecoveryAdminFree.php:77
 msgid "SendWP makes getting emails delivered as simple as a few clicks. So you can relax know those important emails are being delivered on time."
 msgstr "SendWP sprawia, że wysyłanie e-maili jest tak proste jak kilka kliknięć. Możesz więc spokojnie wiedząc, że ważne e-maile są dostarczane na czas."
 
-#: functions/functions.php:3914
+#: functions/functions.php:3923
 #: includes/Admin/Pages/AbandonedCartRecoveryAdminFree.php:79
 msgid "Try SendWP now and <strong>get your first month for just $1.</strong>"
 msgstr "Wypróbuj SendWP teraz i <strong>otrzymaj pierwszy miesiąc za jedyne 1$.</strong>"
 
-#: functions/functions.php:3924
+#: functions/functions.php:3933
 #: includes/Admin/Pages/AbandonedCartRecoveryAdminFree.php:87
 msgid "Note: SendWP is optional. You can use any transactional email service you prefer."
 msgstr "Uwaga: SendWP jest opcjonalny. Możesz używać dowolnej usługi e-mail transakcyjnego, którą preferujesz."
 
-#: functions/functions.php:3933
+#: functions/functions.php:3942
 #: includes/Admin/Pages/AbandonedCartRecoveryAdminFree.php:94
 msgid "Connect to SendWP"
 msgstr "Połącz z SendWP"
 
-#: functions/functions.php:4081
+#: functions/functions.php:4090
 msgid "Welcome back"
 msgstr "Witaj ponownie"
 
-#: functions/functions.php:4095
+#: functions/functions.php:4104
 msgid "It looks like you already have an account. Please enter your login details below."
 msgstr "Wygląda na to, że masz już konto. Proszę wpisać poniżej swoje dane logowania."
 
-#: functions/functions.php:4109
+#: functions/functions.php:4118
 msgid "If you have shopped with us before, please enter your login details below."
 msgstr "Jeśli robiłeś już u nas zakupy, wpisz poniżej swoje dane logowania."
 
-#: functions/functions.php:4119
-#: functions/functions.php:4120
+#: functions/functions.php:4128
+#: functions/functions.php:4129
 msgid "Username or email address"
 msgstr "Nazwa użytkownika lub adres e-mail"
 
-#: functions/functions.php:4154
+#: functions/functions.php:4163
 msgid "Remember me"
 msgstr "Zapamiętaj mnie"
 
-#: functions/functions.php:4185
+#: functions/functions.php:4194
 msgid "Or continue as guest"
 msgstr "Lub kontynuuj jako gość"
 
-#: functions/functions.php:4205
+#: functions/functions.php:4214
 msgid "Lost your password? Please enter your username or email address. You will receive a link to create a new password via email."
 msgstr "Zapomniałeś hasła? Wprowadź swoją nazwę użytkownika lub adres e-mail. Otrzymasz link do utworzenia nowego hasła na e-mail."
 
-#: functions/functions.php:4228
+#: functions/functions.php:4237
 msgid "Reset password"
 msgstr "Resetuj hasło"
 
-#: functions/functions.php:4243
+#: functions/functions.php:4252
 #: includes/API/OrderBumpPreviewAPI.php:57
 #: includes/API/OrderBumpOfferFormPreviewAPI.php:46
 #: includes/API/GetVariationFormAPI.php:33
 msgid "Product not found"
 msgstr "Nie znaleziono produktu"
 
-#: functions/functions.php:4259
-#: functions/functions.php:4417
+#: functions/functions.php:4268
+#: functions/functions.php:4426
 #: includes/API/PostPurchaseBumpProductFormAPI.php:24
 msgid "No thanks"
 msgstr "Nie, dziękuję"
@@ -951,102 +956,98 @@ msgstr "Odbiór lokalny"
 msgid "Allow customers to pick up orders themselves. This version does not require shipping zones."
 msgstr "Pozwól klientom na samodzielne odbieranie zamówień. Ta wersja nie wymaga stref wysyłki."
 
-#: includes/Managers/UpdatesManager.php:416
+#: includes/Managers/UpdatesManager.php:436
 msgid "CheckoutWC License Key"
 msgstr "Klucz licencyjny CheckoutWC"
 
-#: includes/Managers/UpdatesManager.php:421
+#: includes/Managers/UpdatesManager.php:441
 msgid "Your license key is set with the constant <code>CFW_LICENSE_KEY</code>."
 msgstr "Twój klucz licencyjny jest ustawiony za pomocą stałej <code>CFW_LICENSE_KEY</code>."
 
-#: includes/Managers/UpdatesManager.php:428
+#: includes/Managers/UpdatesManager.php:448
 msgid "License Holder"
 msgstr "Posiadacz licencji"
 
-#: includes/Managers/UpdatesManager.php:441
+#: includes/Managers/UpdatesManager.php:461
 msgid "Plan"
 msgstr "Plan"
 
-#: includes/Managers/UpdatesManager.php:449
+#: includes/Managers/UpdatesManager.php:469
 msgid "Activation Limit"
 msgstr "Limit aktywacji"
 
-#: includes/Managers/UpdatesManager.php:457
+#: includes/Managers/UpdatesManager.php:477
 #: includes/Admin/Pages/Premium/ABTestingAdmin.php:178
 #: includes/Admin/Pages/Premium/ABTestingAdmin.php:819
 #: client/ts/admin/Components/acr/carts.tsx:80
 msgid "Status"
 msgstr "Status"
 
-#: includes/Managers/UpdatesManager.php:464
+#: includes/Managers/UpdatesManager.php:484
 msgid "Refresh License Info"
 msgstr "Odśwież informacje o licencji"
 
-#: includes/Managers/UpdatesManager.php:512
+#: includes/Managers/UpdatesManager.php:532
 msgid "Please enter your license key."
 msgstr "Proszę wprowadzić swój klucz licencyjny."
 
-#: includes/Managers/UpdatesManager.php:515
-#: includes/Managers/UpdatesManager.php:523
+#: includes/Managers/UpdatesManager.php:535
+#: includes/Managers/UpdatesManager.php:543
 msgid "Activate Site"
 msgstr "Aktywuj witrynę"
 
-#: includes/Managers/UpdatesManager.php:518
+#: includes/Managers/UpdatesManager.php:538
 msgid "Deactivate Site"
 msgstr "Dezaktywuj witrynę"
 
 # Debug error message logged when license check reaches unexpected state
-#: includes/Managers/UpdatesManager.php:704
+#: includes/Managers/UpdatesManager.php:724
 msgid "License Check Error: You should not be able to get here. I am kind of freaked out."
 msgstr "Błąd sprawdzania licencji: Nie powinieneś tu trafiać. Trochę się przestraszyłem."
 
 # %1$d: failure count, %2$d: max failures, %3$s: time since last failure
-#: includes/Managers/UpdatesManager.php:963
+#: includes/Managers/UpdatesManager.php:983
 msgid "Unable to verify CheckoutWC license (%1$d/%2$d attempts failed). Using cached license data. Last attempt: %3$s ago."
 msgstr "Nie można zweryfikować licencji CheckoutWC (%1$d/%2$d nieudanych prób). Używanie danych licencji z pamięci podręcznej. Ostatnia próba: %3$s temu."
 
-#: includes/Managers/UpdatesManager.php:986
+#: includes/Managers/UpdatesManager.php:1006
 msgid "%s license activation was not successful. Please check your key status below for more information."
 msgstr "Aktywacja licencji %s nie powiodła się. Proszę sprawdzić status klucza poniżej, aby uzyskać więcej informacji."
 
-#: includes/Managers/UpdatesManager.php:1004
+#: includes/Managers/UpdatesManager.php:1024
 msgid "%s license successfully activated."
 msgstr "Licencja %s została pomyślnie aktywowana."
 
-#: includes/Managers/UpdatesManager.php:1022
+#: includes/Managers/UpdatesManager.php:1042
 msgid "%s license deactivation failed. Please try again, or contact support."
 msgstr "Dezaktywacja licencji %s nie powiodła się. Proszę spróbować ponownie lub skontaktować się z pomocą techniczną."
 
-#: includes/Managers/UpdatesManager.php:1040
+#: includes/Managers/UpdatesManager.php:1060
 msgid "%s license deactivated successfully."
 msgstr "Licencja %s została pomyślnie dezaktywowana."
 
-#: includes/Managers/UpdatesManager.php:1058
+#: includes/Managers/UpdatesManager.php:1078
 msgid "%s license settings saved successfully."
 msgstr "Ustawienia licencji %s zostały pomyślnie zapisane."
 
-#: includes/Managers/UpdatesManager.php:1076
+#: includes/Managers/UpdatesManager.php:1096
 msgid "%1$s license activation failed: %2$s"
 msgstr "Aktywacja licencji %1$s nie powiodła się: %2$s"
 
-#: includes/Managers/UpdatesManager.php:1094
+#: includes/Managers/UpdatesManager.php:1114
 msgid "%s license activation failed: Unable to connect to license server. Please check your internet connection or try again later."
 msgstr "Aktywacja licencji %s nie powiodła się: Nie można połączyć się z serwerem licencji. Proszę sprawdzić połączenie internetowe lub spróbować ponownie później."
 
-#: includes/Managers/UpdatesManager.php:1112
+#: includes/Managers/UpdatesManager.php:1132
 msgid "%s: License deactivated locally. The license server could not be reached, but the license has been deactivated on this site."
 msgstr "%s: Licencja dezaktywowana lokalnie. Nie udało się połączyć z serwerem licencji, ale licencja została dezaktywowana na tej stronie."
 
-#: includes/Managers/UpdatesManager.php:1261
-msgid "Unable to verify your CheckoutWC license — the license server could not be reached. Your license and checkout are unaffected; only plugin updates are paused until the connection is restored."
-msgstr "Nie można zweryfikować Twojej licencji CheckoutWC — serwer licencji jest niedostępny. Twoja licencja i proces realizacji zamówienia nie zostały naruszone; jedynie aktualizacje wtyczki są wstrzymane do czasu przywrócenia połączenia."
-
 # %1$d: failure count, %2$d: max failures, %3$s: time since last failure
-#: includes/Managers/UpdatesManager.php:1308
+#: includes/Managers/UpdatesManager.php:1402
 msgid "Unable to verify license online (%1$d/%2$d attempts failed). Using cached license data. Last attempt: %3$s ago."
 msgstr "Nie można zweryfikować licencji online (%1$d/%2$d nieudanych prób). Używanie danych licencji z pamięci podręcznej. Ostatnia próba: %3$s temu."
 
-#: includes/Managers/UpdatesManager.php:1314
+#: includes/Managers/UpdatesManager.php:1408
 msgid "License verified successfully."
 msgstr "Licencja została pomyślnie zweryfikowana."
 
@@ -1076,8 +1077,8 @@ msgid "After Shipping Methods"
 msgstr "Po metodach wysyłki"
 
 #: includes/Managers/SlotManager.php:108
-#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:158
 #: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:164
+#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:158
 msgid "After Payment Methods"
 msgstr "Po metodach płatności"
 
@@ -1231,69 +1232,69 @@ msgstr "Kod promocyjny"
 msgid "Enter Promo Code"
 msgstr "Wprowadź kod promocyjny"
 
-#: includes/Managers/AssetManager.php:690
+#: includes/Managers/AssetManager.php:694
 msgid "Please enter a valid phone number."
 msgstr "Proszę wprowadzić poprawny numer telefonu."
 
-#: includes/Managers/AssetManager.php:699
+#: includes/Managers/AssetManager.php:703
 msgid "Please enter your first and last name."
 msgstr "Proszę wpisać swoje imię i nazwisko."
 
-#: includes/Managers/AssetManager.php:700
+#: includes/Managers/AssetManager.php:704
 msgid "Please enter a name, not an email address."
 msgstr "Proszę podać nazwę, a nie adres e-mail."
 
-#: includes/Managers/AssetManager.php:702
-#: includes/Managers/AssetManager.php:843
+#: includes/Managers/AssetManager.php:706
+#: includes/Managers/AssetManager.php:847
 msgid "Please enter a new quantity:"
 msgstr "Proszę wprowadzić nową ilość:"
 
-#: includes/Managers/AssetManager.php:703
+#: includes/Managers/AssetManager.php:707
 msgid "3-digit security code usually found on the back of your card. American Express cards have a 4-digit code located on the front."
 msgstr "3-cyfrowy kod bezpieczeństwa zwykle znajduje się na tylnej stronie karty. Karty American Express mają 4-cyfrowy kod umieszczony na przedniej stronie."
 
-#: includes/Managers/AssetManager.php:704
-#: includes/Managers/AssetManager.php:844
+#: includes/Managers/AssetManager.php:708
+#: includes/Managers/AssetManager.php:848
 msgid "Are you sure you want to remove this item from your cart?"
 msgstr "Czy na pewno chcesz usunąć ten przedmiot z koszyka?"
 
 # %s: Field name
 # %s: field label
-#: includes/Managers/AssetManager.php:707
+#: includes/Managers/AssetManager.php:711
 #: includes/Features/CustomFields.php:238
 msgid "%s is a required field."
 msgstr "%s jest polem wymaganym."
 
-#: includes/Managers/AssetManager.php:708
+#: includes/Managers/AssetManager.php:712
 msgid "There was a problem checking out. Please try again. If the problem persists, please get in touch with us so we can assist."
 msgstr "Wystąpił problem podczas finalizacji zamówienia. Proszę spróbuj ponownie. Jeśli problem będzie się powtarzał, skontaktuj się z nami, abyśmy mogli pomóc."
 
-#: includes/Managers/AssetManager.php:709
+#: includes/Managers/AssetManager.php:713
 msgid "Please enter a valid postcode / ZIP."
 msgstr "Proszę podać poprawny kod pocztowy."
 
-#: includes/Managers/AssetManager.php:710
+#: includes/Managers/AssetManager.php:714
 #: includes/Features/LocalPickup.php:636
 msgid "Pickup"
 msgstr "Odbiór"
 
-#: includes/Managers/AssetManager.php:711
+#: includes/Managers/AssetManager.php:715
 msgid "Continue to pickup"
 msgstr "Kontynuuj odbiór"
 
-#: includes/Managers/AssetManager.php:712
-#: includes/Managers/AssetManager.php:846
+#: includes/Managers/AssetManager.php:716
+#: includes/Managers/AssetManager.php:850
 msgid "Update"
 msgstr "Aktualizuj"
 
-#: includes/Managers/AssetManager.php:713
-#: includes/Managers/AssetManager.php:847
+#: includes/Managers/AssetManager.php:717
+#: includes/Managers/AssetManager.php:851
 #: includes/API/GetVariationFormAPI.php:150
 msgid "Add to cart"
 msgstr "Dodaj do koszyka"
 
-#: includes/Managers/AssetManager.php:714
-#: includes/Managers/AssetManager.php:848
+#: includes/Managers/AssetManager.php:718
+#: includes/Managers/AssetManager.php:852
 #: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2383
 #: client/ts/admin/Components/CheckoutEditor/slots/UnsavedChangesDialog.tsx:51
 #: client/ts/admin/Components/CheckoutEditor/slots/TrustBadgeEditor.tsx:309
@@ -1305,36 +1306,36 @@ msgstr "Dodaj do koszyka"
 msgid "Cancel"
 msgstr "Anuluj"
 
-#: includes/Managers/AssetManager.php:722
+#: includes/Managers/AssetManager.php:726
 msgid "Start with post/zip code or street"
 msgstr "Rozpocznij od kodu pocztowego/hipotecznego lub ulicy"
 
-#: includes/Managers/AssetManager.php:730
+#: includes/Managers/AssetManager.php:734
 msgid "Shipping method"
 msgstr "Metoda dostawy"
 
-#: includes/Managers/AssetManager.php:744
+#: includes/Managers/AssetManager.php:748
 msgid "Error processing checkout. Please try again."
 msgstr "Błąd podczas przetwarzania zamówienia. Proszę spróbuj ponownie."
 
-#: includes/Managers/AssetManager.php:770
+#: includes/Managers/AssetManager.php:774
 msgid "You may also like&hellip;"
 msgstr "Może Ci się również spodobać&hellip;"
 
-#: includes/Managers/AssetManager.php:845
+#: includes/Managers/AssetManager.php:849
 #: client/ts/frontend/Components/SideCartFloatingButton.tsx:26
 msgid "View cart"
 msgstr "Zobacz koszyk"
 
-#: includes/Managers/AssetManager.php:849
+#: includes/Managers/AssetManager.php:853
 msgid "Remove %s from cart"
 msgstr "Usuń %s z koszyka"
 
-#: includes/Managers/AssetManager.php:850
+#: includes/Managers/AssetManager.php:854
 msgid "Proceed to checkout"
 msgstr "Przejdź do płatności"
 
-#: includes/Managers/AssetManager.php:853
+#: includes/Managers/AssetManager.php:857
 msgid "View Product"
 msgstr "Zobacz produkt"
 
@@ -1452,16 +1453,16 @@ msgstr "CheckoutWC:"
 msgid "Settings marked with asterisks (**) may be overridden based on your Side Cart settings. (CheckoutWC > Side Cart)"
 msgstr "Ustawienia oznaczone gwiazdkami (**) mogą być nadpisane na podstawie ustawień Side Cart. (CheckoutWC > Side Cart)"
 
-#: includes/Features/OrderBumps.php:610
+#: includes/Features/OrderBumps.php:647
 msgid "All orders"
 msgstr "Wszystkie zamówienia"
 
-#: includes/Features/OrderBumps.php:613
+#: includes/Features/OrderBumps.php:650
 msgid "Contains Any Order Bump"
 msgstr "Zawiera dowolny Order Bump"
 
 # %s: Order bump title
-#: includes/Features/OrderBumps.php:619
+#: includes/Features/OrderBumps.php:656
 msgid "Has Bump: %s"
 msgstr "Ma Bump: %s"
 
@@ -1770,8 +1771,8 @@ msgstr "Wtyczka jest <strong>zbyt skomplikowana do skonfigurowania.</strong>"
 #: includes/Admin/Pages/LocalPickupAdminFree.php:184
 #: includes/Admin/Pages/LocalPickupAdminFree.php:221
 #: includes/Admin/Pages/Premium/LocalPickupAdmin.php:225
-#: client/ts/admin/Components/Forms/AdvancedSettingsForm.tsx:104
 #: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:176
+#: client/ts/admin/Components/Forms/AdvancedSettingsForm.tsx:104
 #: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:938
 msgid "Other"
 msgstr "Inne"
@@ -2058,6 +2059,62 @@ msgstr "Formularz oferty Order Bump"
 msgid "The form to accept or reject the bump offer."
 msgstr "Formularz do zaakceptowania lub odrzucenia oferty bump."
 
+#: includes/Model/Bumps/BumpAbstract.php:1081
+#: includes/Model/Bumps/BumpAbstract.php:1091
+#: includes/Model/ABTests/OrderBumpsABTest.php:30
+#: includes/Features/ABTesting/ABTestTypeRegistry.php:123
+#: includes/Admin/Pages/OrderBumpsAdminFree.php:17
+#: includes/Admin/Pages/OrderBumpsAdminFree.php:71
+#: includes/Admin/Pages/Premium/OrderBumps.php:50
+#: client/ts/admin/Components/Forms/OrderBumpSettingsForm.tsx:45
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:408
+msgid "Order Bumps"
+msgstr "Dodatki do zamówienia"
+
+#: includes/Model/Bumps/BumpAbstract.php:1082
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:193
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:1614
+msgid "Order Bump"
+msgstr "Dodatek do zamówienia"
+
+#: includes/Model/Bumps/BumpAbstract.php:1083
+msgid "Add New"
+msgstr "Dodaj nowy"
+
+#: includes/Model/Bumps/BumpAbstract.php:1084
+msgid "Add New Order Bump"
+msgstr "Dodaj nowy Order Bump"
+
+#: includes/Model/Bumps/BumpAbstract.php:1085
+msgid "Edit Order Bump"
+msgstr "Edytuj Order Bump"
+
+#: includes/Model/Bumps/BumpAbstract.php:1086
+#: client/ts/admin/Components/Metaboxes/OrderBumpsSetupModal.tsx:61
+msgid "New Order Bump"
+msgstr "Nowy Order Bump"
+
+#: includes/Model/Bumps/BumpAbstract.php:1087
+msgid "View Order Bump"
+msgstr "Zobacz dodatek do zamówienia"
+
+#: includes/Model/Bumps/BumpAbstract.php:1088
+msgid "Find Order Bump"
+msgstr "Znajdź dodatek do zamówienia"
+
+#: includes/Model/Bumps/BumpAbstract.php:1089
+msgid "No order bumps were found."
+msgstr "Nie znaleziono żadnych order bumpów."
+
+#: includes/Model/Bumps/BumpAbstract.php:1090
+msgid "Not found in trash"
+msgstr "Nie znaleziono w koszu"
+
+#: includes/Model/ABTests/OrderBumpsABTest.php:31
+#: includes/Features/ABTesting/ABTestTypeRegistry.php:124
+msgid "Test different variations of order bumps to see which performs better."
+msgstr "Testuj różne warianty dodatków do zamówienia, aby zobaczyć, który działa lepiej."
+
 # %1$s: Plugin name, %2$s: Link opening tag, %3$s: Version number, %4$s: Link closing tag
 #: includes/Managers/Helpers/EDD_SL_Plugin_Updater.php:281
 msgid "There is a new version of %1$s available. %2$sView version %3$s details%4$s."
@@ -2076,62 +2133,6 @@ msgstr "Nie masz uprawnień do instalowania aktualizacji wtyczek"
 #: client/ts/admin/Components/GooglePlacesKeyStatus.tsx:61
 msgid "Error"
 msgstr "Błąd"
-
-#: includes/Model/Bumps/BumpAbstract.php:1034
-#: includes/Model/Bumps/BumpAbstract.php:1044
-#: includes/Model/ABTests/OrderBumpsABTest.php:30
-#: includes/Features/ABTesting/ABTestTypeRegistry.php:123
-#: includes/Admin/Pages/OrderBumpsAdminFree.php:17
-#: includes/Admin/Pages/OrderBumpsAdminFree.php:71
-#: includes/Admin/Pages/Premium/OrderBumps.php:50
-#: client/ts/admin/Components/Forms/OrderBumpSettingsForm.tsx:45
-#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:408
-msgid "Order Bumps"
-msgstr "Dodatki do zamówienia"
-
-#: includes/Model/Bumps/BumpAbstract.php:1035
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:193
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:1614
-msgid "Order Bump"
-msgstr "Dodatek do zamówienia"
-
-#: includes/Model/Bumps/BumpAbstract.php:1036
-msgid "Add New"
-msgstr "Dodaj nowy"
-
-#: includes/Model/Bumps/BumpAbstract.php:1037
-msgid "Add New Order Bump"
-msgstr "Dodaj nowy Order Bump"
-
-#: includes/Model/Bumps/BumpAbstract.php:1038
-msgid "Edit Order Bump"
-msgstr "Edytuj Order Bump"
-
-#: includes/Model/Bumps/BumpAbstract.php:1039
-#: client/ts/admin/Components/Metaboxes/OrderBumpsSetupModal.tsx:61
-msgid "New Order Bump"
-msgstr "Nowy Order Bump"
-
-#: includes/Model/Bumps/BumpAbstract.php:1040
-msgid "View Order Bump"
-msgstr "Zobacz dodatek do zamówienia"
-
-#: includes/Model/Bumps/BumpAbstract.php:1041
-msgid "Find Order Bump"
-msgstr "Znajdź dodatek do zamówienia"
-
-#: includes/Model/Bumps/BumpAbstract.php:1042
-msgid "No order bumps were found."
-msgstr "Nie znaleziono żadnych order bumpów."
-
-#: includes/Model/Bumps/BumpAbstract.php:1043
-msgid "Not found in trash"
-msgstr "Nie znaleziono w koszu"
-
-#: includes/Model/ABTests/OrderBumpsABTest.php:31
-#: includes/Features/ABTesting/ABTestTypeRegistry.php:124
-msgid "Test different variations of order bumps to see which performs better."
-msgstr "Testuj różne warianty dodatków do zamówienia, aby zobaczyć, który działa lepiej."
 
 #: includes/Features/OneClick/OrderStatusManager.php:52
 msgid "Pending Offer <span class=\"count\">(%s)</span>"
@@ -3025,8 +3026,8 @@ msgid "Step 1: Try CheckoutWC Premium Free For 7 Days"
 msgstr "Krok 1: Wypróbuj CheckoutWC Premium za darmo przez 7 dni"
 
 #: includes/Admin/Pages/General.php:150
-msgid "Enter your license key. An active license is required for all functionality."
-msgstr "Wprowadź swój klucz licencyjny. Aktywna licencja jest wymagana do pełnej funkcjonalności."
+msgid "Enter your license key and activate it for this site to turn on premium features."
+msgstr "Wpisz swój klucz licencyjny i aktywuj go dla tej witryny, aby włączyć funkcje premium."
 
 #: includes/Admin/Pages/General.php:150
 msgid "Supercharge your WooCommerce store."
@@ -3598,23 +3599,67 @@ msgstr "Niewystarczające uprawnienia."
 msgid "Notice dismissed."
 msgstr "Powiadomienie odrzucone."
 
-# %1$s: URL to pricing page, %2$s: "purchase a new license" link text, %3$s: Support email URL, %4$s: "please contact support" link text
-#: includes/Admin/Notices/InvalidLicenseKeyNotice.php:15
-msgid "Your license key appears to have expired. Please <a href=\"%1$s\" target=\"_blank\">%2$s</a> to restore functionality. If you believe this is in error, <a href=\"%3$s\">%4$s</a>."
-msgstr "Wygląda na to, że Twój klucz licencyjny wygasł. Proszę <a href=\"%1$s\" target=\"_blank\">%2$s</a>, aby przywrócić funkcjonalność. Jeśli uważasz, że to błąd, <a href=\"%3$s\">%4$s</a>."
+# %1$d: Number of days, %2$s: Pricing URL, %3$s: "renew it here" link text
+#: includes/Admin/Notices/LicenseUnverifiedNotice.php:25
+msgid "Premium features are off because we haven\\'t been able to check your license with checkoutwc.com for %1$d days. Make sure your server can connect to checkoutwc.com. If your license has expired, <a href=\"%2$s\" target=\"_blank\">%3$s</a>."
+msgstr "Funkcje premium są wyłączone, ponieważ nie udało nam się sprawdzić Twojej licencji w checkoutwc.com przez %1$d dni. Upewnij się, że Twój serwer może połączyć się z checkoutwc.com. Jeśli Twoja licencja wygasła, <a href=\"%2$s\" target=\"_blank\">%3$s</a>."
 
-#: includes/Admin/Notices/InvalidLicenseKeyNotice.php:17
-msgid "purchase a new license"
-msgstr "kup nową licencję"
+#: includes/Admin/Notices/LicenseUnverifiedNotice.php:28
+msgid "renew it here"
+msgstr "odnów ją tutaj"
 
-#: includes/Admin/Notices/InvalidLicenseKeyNotice.php:19
-msgid "please contact support"
+#: includes/Admin/Notices/LicenseUnverifiedNotice.php:33
+msgid "CheckoutWC can\\'t verify your license"
+msgstr "CheckoutWC nie może zweryfikować Twojej licencji"
+
+# %1$s: Date premium features turn off, %2$s: Support email URL, %3$s: "Contact support" link text
+#: includes/Admin/Notices/LicenseServerUnreachableNotice.php:28
+msgid "We couldn\\'t check your license with checkoutwc.com. Premium features will turn off on %1$s unless the connection is restored. <a href=\"%2$s\">%3$s</a> if this keeps happening."
+msgstr "Nie udało nam się sprawdzić Twojej licencji w checkoutwc.com. Funkcje premium zostaną wyłączone dnia %1$s, chyba że połączenie zostanie przywrócone. <a href=\"%2$s\">%3$s</a>, jeśli to nadal będzie się powtarzać."
+
+#: includes/Admin/Notices/LicenseServerUnreachableNotice.php:31
+#: includes/Admin/Notices/LicenseServerUnreachableNotice.php:38
+msgid "Contact support"
+msgstr "Skontaktuj się z pomocą techniczną"
+
+# %1$s: Support email URL, %2$s: "Contact support" link text
+#: includes/Admin/Notices/LicenseServerUnreachableNotice.php:36
+msgid "We couldn\\'t check your license with checkoutwc.com. Make sure your server can connect to checkoutwc.com. <a href=\"%1$s\">%2$s</a> if this keeps happening."
+msgstr "Nie udało nam się sprawdzić Twojej licencji w checkoutwc.com. Upewnij się, że Twój serwer może połączyć się z checkoutwc.com. <a href=\"%1$s\">%2$s</a>, jeśli to nadal będzie się powtarzać."
+
+#: includes/Admin/Notices/LicenseServerUnreachableNotice.php:45
+msgid "CheckoutWC can\\'t reach the license server"
+msgstr "CheckoutWC nie może połączyć się z serwerem licencji"
+
+#: includes/Admin/Notices/InvalidLicenseKeyNotice.php:13
+msgid "CheckoutWC license expired"
+msgstr "Licencja CheckoutWC wygasła"
+
+# %1$s: URL to pricing page, %2$s: "Renew your license" link text, %3$s: Support email URL, %4$s: "contact support" link text
+#: includes/Admin/Notices/InvalidLicenseKeyNotice.php:16
+msgid "Premium features are off because your license has expired. <a href=\"%1$s\" target=\"_blank\">%2$s</a> to turn them back on. If you think this is a mistake, <a href=\"%3$s\">%4$s</a>."
+msgstr "Funkcje premium są wyłączone, ponieważ Twoja licencja wygasła. <a href=\"%1$s\" target=\"_blank\">%2$s</a>, aby je ponownie włączyć. Jeśli uważasz, że to pomyłka, <a href=\"%3$s\">%4$s</a>."
+
+#: includes/Admin/Notices/InvalidLicenseKeyNotice.php:18
+msgid "Renew your license"
+msgstr "Odnów swoją licencję"
+
+#: includes/Admin/Notices/InvalidLicenseKeyNotice.php:20
+msgid "contact support"
 msgstr "skontaktuj się z pomocą techniczną"
 
-# %1$s: URL to activation page, %2$s: "Start Here" link text
+# %1$s: URL to activation page, %2$s: "Activate your license" link text, %3$s: Pricing URL, %4$s: "buy a license" link text
 #: includes/Admin/Notices/InactiveLicenseNotice.php:11
-msgid "Your license key is not active for this site. Please visit <a href=\"%1$s\">%2$s</a> to activate your license and restore functionality."
-msgstr "Twój klucz licencyjny nie jest aktywny dla tej strony. Odwiedź <a href=\"%1$s\">%2$s</a>, aby aktywować licencję i przywrócić funkcjonalność."
+msgid "Premium features are off because your license isn\\'t activated on this site. <a href=\"%1$s\">%2$s</a> or <a href=\"%3$s\" target=\"_blank\">%4$s</a> for this site."
+msgstr "Funkcje premium są wyłączone, ponieważ Twoja licencja nie jest aktywowana dla tej witryny. <a href=\"%1$s\">%2$s</a> lub <a href=\"%3$s\" target=\"_blank\">%4$s</a> dla tej witryny."
+
+#: includes/Admin/Notices/InactiveLicenseNotice.php:13
+msgid "Activate your license"
+msgstr "Aktywuj swoją licencję"
+
+#: includes/Admin/Notices/InactiveLicenseNotice.php:20
+msgid "CheckoutWC license not activated"
+msgstr "Licencja CheckoutWC nie jest aktywowana"
 
 #: includes/Admin/Notices/BFNotice.php:13
 msgid "Black Friday Sale - 40% Off"
@@ -4466,22 +4511,6 @@ msgstr "Data zakończenia testu A/B. Po tej dacie wyświetlany będzie oryginaln
 msgid "Traffic split percentages must total 100%. Please adjust your percentages."
 msgstr "Procenty podziału ruchu muszą sumować się do 100%. Proszę dostosować procenty."
 
-#: client/ts/frontend/Components/TermsAndConditions.ts:29
-msgid "Terms and Conditions"
-msgstr "Regulamin"
-
-#: client/ts/frontend/Components/TermsAndConditions.ts:35
-msgid "Privacy Policy"
-msgstr "Polityka prywatności"
-
-#: client/ts/frontend/Components/SideCartComponent.tsx:39
-msgid "Close Cart"
-msgstr "Zamknij koszyk"
-
-#: client/ts/frontend/Components/FreeShippingProgressBar.tsx:245
-msgid "Unlocked"
-msgstr "Odblokowano"
-
 #: client/ts/frontend/Actions/CompleteOrderAction.ts:196
 msgid "Could not connect to server. Please refresh and try again or contact site administrator."
 msgstr "Nie można połączyć się z serwerem. Odśwież i spróbuj ponownie lub skontaktuj się z administratorem strony."
@@ -4505,6 +4534,22 @@ msgstr "Serwer przekroczył limit czasu podczas przetwarzania żądania. Odświe
 #: client/ts/frontend/Actions/CompleteOrderAction.ts:206
 msgid "Request was aborted. Please contact site administrator."
 msgstr "Żądanie zostało przerwane. Prosimy o kontakt z administratorem strony."
+
+#: client/ts/frontend/Components/TermsAndConditions.ts:29
+msgid "Terms and Conditions"
+msgstr "Regulamin"
+
+#: client/ts/frontend/Components/TermsAndConditions.ts:35
+msgid "Privacy Policy"
+msgstr "Polityka prywatności"
+
+#: client/ts/frontend/Components/SideCartComponent.tsx:39
+msgid "Close Cart"
+msgstr "Zamknij koszyk"
+
+#: client/ts/frontend/Components/FreeShippingProgressBar.tsx:245
+msgid "Unlocked"
+msgstr "Odblokowano"
 
 # %d is the number of icons in the collection
 #: client/ts/admin/Components/trustBadges.ts:85
@@ -4941,6 +4986,403 @@ msgstr "Ładowanie..."
 #: client/ts/admin/Components/acr/carts.tsx:239
 msgid "Tracked Carts"
 msgstr "Śledzone koszyki"
+
+#: client/ts/admin/Components/Metaboxes/ProductsAndVariationsCompleter.tsx:30
+msgid "Private"
+msgstr "Prywatne"
+
+#: client/ts/admin/Components/Metaboxes/ProductsAndVariationsCompleter.tsx:32
+msgid "Pending"
+msgstr "Oczekuje"
+
+#: client/ts/admin/Components/Metaboxes/ProductsAndVariationsCompleter.tsx:33
+msgid "Scheduled"
+msgstr "Zaplanowane"
+
+#: client/ts/admin/Components/Metaboxes/ProductsAndVariationsCompleter.tsx:44
+#: client/ts/admin/Components/Forms/CheckoutSettingsForm.tsx:237
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:850
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:863
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:873
+#: client/ts/admin/Components/CheckoutEditor/panels/CheckoutSettingsPanel.tsx:110
+msgid "Hidden"
+msgstr "Ukryte"
+
+#: client/ts/admin/Components/Metaboxes/ProductsAndVariationsCompleter.tsx:46
+msgid "Search only"
+msgstr "Tylko wyszukiwanie"
+
+#: client/ts/admin/Components/Metaboxes/ProductsAndVariationsCompleter.tsx:80
+msgid "All products with titles that include {{query /}}"
+msgstr "Wszystkie produkty z tytułami zawierającymi {{query /}}"
+
+#: client/ts/admin/Components/Metaboxes/ProductsAndVariationsCompleter.tsx:130
+msgid "Variation"
+msgstr "Wariant"
+
+#: client/ts/admin/Components/Metaboxes/ProductTagCompleter.tsx:44
+msgid "All product tags that include {{query /}}"
+msgstr "Wszystkie tagi produktów zawierające {{query /}}"
+
+#: client/ts/admin/Components/Metaboxes/ProductAttributeTermsCompleter.tsx:99
+msgid "All attribute terms that include {{query /}}"
+msgstr "Wszystkie terminy atrybutów, które zawierają {{query /}}"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsSetupModal.tsx:62
+msgid "Let\\'s configure a few things to get you started quickly."
+msgstr "Skonfigurujmy kilka rzeczy, aby szybko zacząć."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsSetupModal.tsx:66
+msgid "Give your new Order Bump a name. This is just for admins - it won\\'t be displayed to customers."
+msgstr "Nadaj nazwę swojemu nowemu Order Bump. Jest ona przeznaczona tylko dla administratorów - nie będzie wyświetlana klientom."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsSetupModal.tsx:78
+msgid "Which product should be added to the cart when this Order Bump is accepted?"
+msgstr "Który produkt powinien zostać dodany do koszyka po zaakceptowaniu Order Bump?"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsSetupModal.tsx:80
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:33
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:92
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:130
+#: client/ts/admin/Components/Metaboxes/OrderBumpsGeneralPanel.tsx:44
+msgid "Search for product"
+msgstr "Wyszukiwanie produktu"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsSetupModal.tsx:91
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferDiscountPanel.tsx:19
+msgid "Discount Type"
+msgstr "Typ rabatu"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsSetupModal.tsx:94
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferDiscountPanel.tsx:23
+msgid "Percent Off"
+msgstr "Procent wyłączenia"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsSetupModal.tsx:95
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferDiscountPanel.tsx:24
+msgid "Amount Off"
+msgstr "Kwota wyłączona"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsSetupModal.tsx:105
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferDiscountPanel.tsx:34
+msgid "Discount"
+msgstr "Zniżka"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsSetupModal.tsx:106
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferDiscountPanel.tsx:35
+msgid "The amount or percentage applied as a discount to the Offer Product. Leave blank or enter 0 to charge full price."
+msgstr "Kwota lub wartość procentowa zastosowana jako rabat dla oferowanego produktu. Pozostaw puste lub wprowadź 0, aby pobrać pełną cenę."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsSetupModal.tsx:117
+msgid "Continue"
+msgstr "Kontynuuj"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsSetupModal.tsx:122
+msgid "Continue to review your order bump, optionally add display conditions, and publish."
+msgstr "Kontynuuj, aby przejrzeć liczbę zamówień, opcjonalnie dodaj warunki wyświetlania i opublikuj."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:19
+msgid "You must select an offer product."
+msgstr "Musisz wybrać produkt oferty."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:26
+msgid "Offer"
+msgstr "Oferta"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:44
+msgid "Auto Add Order Bump to Cart"
+msgstr "Automatyczne dodawanie Order Bump do koszyka"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:45
+msgid "If conditions are satisfied, automatically add this order bump to the cart. Useful for free gifts or other offers that don\\'t require customer action."
+msgstr "Jeśli warunki są spełnione, automatycznie dodaj ten Order Bump do koszyka. Przydatne dla darmowych prezentów lub innych ofert, które nie wymagają działania klienta."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:56
+msgid "Auto Match Variations Between Search and Offer Product"
+msgstr "Automatyczne dopasowanie wariantów między produktem wyszukiwania a produktem oferty"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:61
+msgid "Add offer product to the cart with the same variable configuration as the product below."
+msgstr "Dodaj produkt oferty do koszyka z taką samą konfiguracją wariantów jak poniższy produkt."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:65
+msgid "Only applies when Auto Match Cart Product and Offer Product are variable products with matching variation attributes (Size, Color, etc)"
+msgstr "Dotyczy tylko wtedy, gdy Automatyczne dopasowanie produktu w koszyku i produktu oferty to produkty zmienne z pasującymi atrybutami wariantów (Rozmiar, Kolor itp.)"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:69
+msgid "Leave unchecked to have customers to select variation options in a modal window."
+msgstr "Pozostaw niezaznaczone, aby klienci mogli wybrać opcje wariantów w oknie modalnym."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:73
+msgid "If offer product is not variable, this option is ignored."
+msgstr "Jeśli produkt oferty nie jest zmienny, ta opcja jest ignorowana."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:90
+msgid "Auto Match Variations Cart Product"
+msgstr "Automatyczne dopasowanie wariantów produktu w koszyku"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:98
+msgid "The product in the cart to match the Order Bump variations to."
+msgstr "Produkt w koszyku, do którego mają być dopasowane warianty Order Bump."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:113
+msgid "Match Quantity of Offer Product to Display Condition Product"
+msgstr "Dopasuj ilość produktu oferty do produktu warunku wyświetlania"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:114
+msgid "If customer has two of the display condition product in the cart, two of the offer product will be added to the cart."
+msgstr "Jeśli klient ma dwa produkty warunku wyświetlania w koszyku, do koszyka zostaną dodane dwa produkty oferty."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:128
+msgid "Match Quantity Cart Product"
+msgstr "Dopasuj ilość produktu w koszyku"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:136
+msgid "The product in the cart to match the Order Bump quantity to."
+msgstr "Produkt w koszyku, do którego ma być dopasowana ilość Order Bump."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:151
+msgid "Quantity of Offer Product To Add"
+msgstr "Ilość produktu oferty do dodania"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:152
+msgid "The quantity to add to the cart when offer is accepted."
+msgstr "Ilość do dodania do koszyka po zaakceptowaniu oferty."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:161
+msgid "Allow Customer To Change Quantity In Cart"
+msgstr "Pozwól klientowi zmieniać ilość w koszyku"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:162
+msgid "Allow customer to change the quantity of this order bump in the cart."
+msgstr "Pozwól klientowi zmieniać ilość tego Order Bump w koszyku."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:22
+msgid "Offer Language"
+msgstr "Język oferty"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:29
+msgid "Place Order Modal Heading"
+msgstr "Nagłówek modalu złożenia zamówienia"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:30
+msgid "Default if blank: Your order is almost complete..."
+msgstr "Domyślnie, jeśli puste: Twoje zamówienie jest prawie gotowe..."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:30
+msgid "Wait %s! Here\\'s an exclusive offer to compliment your order!"
+msgstr "Poczekaj %s! Oto ekskluzywna oferta, która uzupełni Twoje zamówienie!"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:39
+msgid "Place Order Modal Subheading"
+msgstr "Podtytuł modalu złożenia zamówienia"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:40
+msgid "Default if blank: Add this offer to your order and save!"
+msgstr "Domyślnie, jeśli puste: Dodaj tę ofertę do swojego zamówienia i zaoszczędź!"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:52
+msgid "Offer Acceptance Checkbox Label"
+msgstr "Etykieta pola wyboru akceptacji oferty"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:52
+msgid "Offer Acceptance Button Label"
+msgstr "Etykieta przycisku akceptacji oferty"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:53
+msgid "Example: Yes! Please add this offer to my order"
+msgstr "Przykład: Tak! Proszę dodać tę ofertę do mojego zamówienia"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:63
+msgid "Offer Description"
+msgstr "Opis oferty"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:64
+msgid "Example: Limited time offer! Get an EXCLUSIVE discount right now! Click the checkbox above to add this product to your order now."
+msgstr "Przykład: Oferta ograniczona czasowo! Zdobądź EKSKLUZYWNY rabat już teraz! Zaznacz powyższe pole, aby dodać ten produkt do swojego zamówienia."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:74
+msgid "Modal Offer Rejection Link Text"
+msgstr "Tekst linku odrzucenia oferty w modalu"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:78
+msgid "Displays in modal version of Order Bump, such as Place Order bumps or when the Offer Product is a variable product (as opposed to a specific variation)."
+msgstr "Wyświetla się w modalnej wersji dodatku do zamówienia, takiej jak dodatki Place Order lub gdy produkt oferty jest produktem zmiennym (w przeciwieństwie do konkretnej wariacji)."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:83
+msgid "Default if blank: No thanks, just complete my order"
+msgstr "Domyślnie, jeśli puste: Nie, dziękuję, po prostu zakończ moje zamówienie"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:85
+msgid "Default if blank: No thanks"
+msgstr "Domyślnie, jeśli puste: Nie, dziękuję"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferDiscountPanel.tsx:15
+msgid "Offer Discount"
+msgstr "Zniżka na ofertę"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferDiscountPanel.tsx:20
+msgid "Amount Off: Remove fixed amount from the product price. Percent Off: Discount product by specified percentage."
+msgstr "Kwota wyłączona: Usuwa ustaloną kwotę z ceny produktu. Percent Off: Zniżka na produkt o określoną wartość procentową."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferDiscountPanel.tsx:46
+msgid "Item Removal Behavior"
+msgstr "Zachowanie podczas usuwania przedmiotów"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferDiscountPanel.tsx:47
+msgid "What happens when the display for product is removed from the cart. Default: Order Bump remains in the cart but bump specific discounts are removed."
+msgstr "Co się stanie, gdy wyświetlany produkt zostanie usunięty z koszyka. Domyślnie: Order Bump pozostaje w koszyku, ale rabaty specyficzne dla bump są usuwane."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferDiscountPanel.tsx:50
+msgid "Leave In Cart With Normal Price"
+msgstr "Pozostaw w koszyku z normalną ceną"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferDiscountPanel.tsx:51
+msgid "Remove Order Bump From Cart"
+msgstr "Usuń wzrost zamówienia z koszyka"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsGeneralPanel.tsx:13
+msgid "You must set an upsell replacement product."
+msgstr "Musisz ustawić produkt zastępczy upsell."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsGeneralPanel.tsx:20
+msgid "Offer Type"
+msgstr "Typ oferty"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsGeneralPanel.tsx:24
+msgid "Use Order Bump As Upsell"
+msgstr "Użyj Order Bump jako Upsell"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsGeneralPanel.tsx:28
+msgid "Replace a cart item with offer product when this Order Bump is taken."
+msgstr "Zamień produkt w koszyku na produkt oferty, gdy ten Order Bump zostanie wybrany."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsGeneralPanel.tsx:42
+msgid "Which product does this upsell replace in the cart?"
+msgstr "Który produkt ten upsell zastępuje w koszyku?"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsGeneralPanel.tsx:50
+msgid "This product must be in the cart for this order bump to be shown."
+msgstr "Ten produkt musi znajdować się w koszyku, aby ten order bump był wyświetlany."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:44
+msgid "Blocks are only used by full screen offers. Enable Full Screen Landing Page in the Display Location panel, then add the Order Bump Offer Form block where the offer form should go."
+msgstr "Bloki są używane tylko w ofertach pełnoekranowych. Włącz Pełnoekranową stronę docelową w panelu Lokalizacja wyświetlania, a następnie dodaj blok Formularz oferty Order Bump tam, gdzie powinien znajdować się formularz oferty."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:45
+msgid "Blocks are only used by full screen offers, available on Place Order Click and Post Purchase One-Click bumps. This bump uses the built-in layout."
+msgstr "Bloki są używane tylko w ofertach pełnoekranowych, dostępnych w przypadku Kliknięcia przy składaniu zamówienia oraz jednego kliknięcia po zakupie. Ten bump używa wbudowanego układu."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:61
+msgid "Post Purchase One-Click bumps require a compatible payment gateway. We recommend using Place Order bumps when using non-compatible gateways."
+msgstr "Dodatki Post Purchase One-Click wymagają kompatybilnej bramki płatności. Zalecamy używanie dodatków Place Order przy korzystaniu z bramek niekompatybilnych."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:67
+msgid "Learn more about supported gateways"
+msgstr "Dowiedz się więcej o obsługiwanych bramkach"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:74
+msgid "Read our Order Bumps documentation"
+msgstr "Przeczytaj naszą dokumentację dotyczącą Order Bumps"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:104
+msgid "This bump will not appear anywhere because the side cart is disabled."
+msgstr "Ten bump nie pojawi się nigdzie, ponieważ koszyk boczny jest wyłączony."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:105
+msgid "This bump will not appear anywhere because order bumps are disabled in the side cart."
+msgstr "Ten bump nie pojawi się nigdzie, ponieważ bumpy zamówienia są wyłączone w koszyku bocznym."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:108
+msgid "This bump will appear on checkout but not in the side cart because the side cart is disabled."
+msgstr "Ten bump pojawi się przy finalizacji zakupu, ale nie w koszyku bocznym, ponieważ koszyk boczny jest wyłączony."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:109
+msgid "This bump will appear on checkout but not in the side cart because order bumps are disabled in the side cart."
+msgstr "Ten bump pojawi się przy finalizacji zakupu, ale nie w koszyku bocznym, ponieważ bumpy zamówienia są wyłączone w koszyku bocznym."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:120
+msgid "Open side cart settings"
+msgstr "Otwórz ustawienia koszyka bocznego"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:141
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:148
+msgid "Display Location"
+msgstr "Miejsce wyświetlania"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:157
+msgid "Checkout Slot"
+msgstr "Slot kasy"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:187
+msgid "Displays in a popup when Place Order is clicked, before the order is submitted"
+msgstr "Wyświetla się w wyskakującym okienku po kliknięciu Zamów, przed złożeniem zamówienia"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:190
+msgid "Displays in a popup on the Thank You page."
+msgstr "Wyświetla się w wyskakującym okienku na stronie podziękowania."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:194
+msgid "Full Screen Landing Page"
+msgstr "Pełnoekranowa strona docelowa"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:195
+msgid "Design the offer with blocks instead of the built-in layout. Add the Order Bump Offer Form block where the offer form should go."
+msgstr "Zaprojektuj ofertę za pomocą bloków zamiast wbudowanego układu. Dodaj blok Formularz oferty Order Bump tam, gdzie powinien znajdować się formularz oferty."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayConditions.tsx:26
+msgid "Show Bump When These Conditions Are True:"
+msgstr "Pokaż Bump, gdy spełnione są następujące warunki:"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayConditions.tsx:29
+msgid "This bump will be shown when the correct upsell product is in the cart and the Offer Product is not in the cart. To further limit when this bump is shown, add a rule below."
+msgstr "Ten bump będzie wyświetlany, gdy w koszyku znajduje się odpowiedni produkt upsell, a Produkt Oferty nie jest w koszyku. Aby dodatkowo ograniczyć wyświetlanie tego bumpa, dodaj poniżej regułę."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayConditions.tsx:31
+msgid "This bump will always be shown when the Offer Product is not in the cart. To limit when this bump is shown, add a rule below."
+msgstr "Ten bump będzie zawsze wyświetlany, gdy Produkt Oferty nie jest w koszyku. Aby ograniczyć wyświetlanie tego bumpa, dodaj poniżej regułę."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsActionsPanel.tsx:15
+msgid "Actions"
+msgstr "Akcje"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsActionsPanel.tsx:21
+msgid "Remove These Products From The Cart"
+msgstr "Usuń te produkty z koszyka"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsActionsPanel.tsx:23
+msgid "If any of these products are in the cart, remove them when this bump is added to the cart."
+msgstr "Jeśli którykolwiek z tych produktów znajduje się w koszyku, usuń je, gdy ten bump zostanie dodany do koszyka."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsActionsPanel.tsx:24
+msgid "Search for products"
+msgstr "Wyszukaj produkty"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsActionsPanel.tsx:35
+msgid "Apply Free Shipping"
+msgstr "Zastosuj darmową wysyłkę"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsActionsPanel.tsx:36
+msgid "When this bump is added to the cart, apply free shipping to the cart."
+msgstr "Gdy ten bump zostanie dodany do koszyka, zastosuj darmową wysyłkę do koszyka."
+
+#: client/ts/admin/Components/Metaboxes/CategoryCompleter.tsx:46
+msgid "All categories with titles that include {{query /}}"
+msgstr "Wszystkie kategorie z tytułami zawierającymi {{query /}}"
+
+#: client/ts/admin/Components/Fields/WPMediaUploadButton.tsx:69
+msgid "Select or Upload a Logo"
+msgstr "Wybierz lub prześlij logo"
+
+#: client/ts/admin/Components/Fields/RangeControl.tsx:97
+#: client/ts/admin/Components/Fields/ColorControl.tsx:137
+msgid "Reset"
+msgstr "Resetuj"
+
+#: client/ts/admin/Components/Fields/ColorControl.tsx:173
+#: client/ts/admin/Components/CheckoutEditor/BumpEditorModal.tsx:101
+msgid "Done"
+msgstr "Gotowe"
 
 #: client/ts/admin/Components/Forms/WooCommercePagesGlobalOptionsSettingsForm.tsx:49
 #: client/ts/admin/Components/Forms/CheckoutSettingsForm.tsx:570
@@ -5783,15 +6225,6 @@ msgstr "Pole telefonu"
 msgid "Determines whether the WooCommerce native phone field is enabled."
 msgstr "Określa, czy natywne pole telefonu WooCommerce jest włączone."
 
-#: client/ts/admin/Components/Forms/CheckoutSettingsForm.tsx:237
-#: client/ts/admin/Components/Metaboxes/ProductsAndVariationsCompleter.tsx:44
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:850
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:863
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:873
-#: client/ts/admin/Components/CheckoutEditor/panels/CheckoutSettingsPanel.tsx:110
-msgid "Hidden"
-msgstr "Ukryte"
-
 #: client/ts/admin/Components/Forms/CheckoutSettingsForm.tsx:241
 #: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:851
 #: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:864
@@ -6540,394 +6973,6 @@ msgstr "Zaznacz role użytkowników, które powinny być wykluczone z e-maili do
 #: client/ts/admin/Components/Forms/ACRSettingsForm.tsx:172
 msgid "Are you sure you want to delete all tracked carts?"
 msgstr "Czy na pewno chcesz usunąć wszystkie śledzone koszyki?"
-
-#: client/ts/admin/Components/Metaboxes/ProductsAndVariationsCompleter.tsx:30
-msgid "Private"
-msgstr "Prywatne"
-
-#: client/ts/admin/Components/Metaboxes/ProductsAndVariationsCompleter.tsx:32
-msgid "Pending"
-msgstr "Oczekuje"
-
-#: client/ts/admin/Components/Metaboxes/ProductsAndVariationsCompleter.tsx:33
-msgid "Scheduled"
-msgstr "Zaplanowane"
-
-#: client/ts/admin/Components/Metaboxes/ProductsAndVariationsCompleter.tsx:46
-msgid "Search only"
-msgstr "Tylko wyszukiwanie"
-
-#: client/ts/admin/Components/Metaboxes/ProductsAndVariationsCompleter.tsx:80
-msgid "All products with titles that include {{query /}}"
-msgstr "Wszystkie produkty z tytułami zawierającymi {{query /}}"
-
-#: client/ts/admin/Components/Metaboxes/ProductsAndVariationsCompleter.tsx:130
-msgid "Variation"
-msgstr "Wariant"
-
-#: client/ts/admin/Components/Metaboxes/ProductTagCompleter.tsx:44
-msgid "All product tags that include {{query /}}"
-msgstr "Wszystkie tagi produktów zawierające {{query /}}"
-
-#: client/ts/admin/Components/Metaboxes/ProductAttributeTermsCompleter.tsx:99
-msgid "All attribute terms that include {{query /}}"
-msgstr "Wszystkie terminy atrybutów, które zawierają {{query /}}"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsSetupModal.tsx:62
-msgid "Let\\'s configure a few things to get you started quickly."
-msgstr "Skonfigurujmy kilka rzeczy, aby szybko zacząć."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsSetupModal.tsx:66
-msgid "Give your new Order Bump a name. This is just for admins - it won\\'t be displayed to customers."
-msgstr "Nadaj nazwę swojemu nowemu Order Bump. Jest ona przeznaczona tylko dla administratorów - nie będzie wyświetlana klientom."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsSetupModal.tsx:78
-msgid "Which product should be added to the cart when this Order Bump is accepted?"
-msgstr "Który produkt powinien zostać dodany do koszyka po zaakceptowaniu Order Bump?"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsSetupModal.tsx:80
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:33
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:92
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:130
-#: client/ts/admin/Components/Metaboxes/OrderBumpsGeneralPanel.tsx:44
-msgid "Search for product"
-msgstr "Wyszukiwanie produktu"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsSetupModal.tsx:91
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferDiscountPanel.tsx:19
-msgid "Discount Type"
-msgstr "Typ rabatu"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsSetupModal.tsx:94
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferDiscountPanel.tsx:23
-msgid "Percent Off"
-msgstr "Procent wyłączenia"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsSetupModal.tsx:95
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferDiscountPanel.tsx:24
-msgid "Amount Off"
-msgstr "Kwota wyłączona"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsSetupModal.tsx:105
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferDiscountPanel.tsx:34
-msgid "Discount"
-msgstr "Zniżka"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsSetupModal.tsx:106
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferDiscountPanel.tsx:35
-msgid "The amount or percentage applied as a discount to the Offer Product. Leave blank or enter 0 to charge full price."
-msgstr "Kwota lub wartość procentowa zastosowana jako rabat dla oferowanego produktu. Pozostaw puste lub wprowadź 0, aby pobrać pełną cenę."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsSetupModal.tsx:117
-msgid "Continue"
-msgstr "Kontynuuj"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsSetupModal.tsx:122
-msgid "Continue to review your order bump, optionally add display conditions, and publish."
-msgstr "Kontynuuj, aby przejrzeć liczbę zamówień, opcjonalnie dodaj warunki wyświetlania i opublikuj."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:19
-msgid "You must select an offer product."
-msgstr "Musisz wybrać produkt oferty."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:26
-msgid "Offer"
-msgstr "Oferta"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:44
-msgid "Auto Add Order Bump to Cart"
-msgstr "Automatyczne dodawanie Order Bump do koszyka"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:45
-msgid "If conditions are satisfied, automatically add this order bump to the cart. Useful for free gifts or other offers that don\\'t require customer action."
-msgstr "Jeśli warunki są spełnione, automatycznie dodaj ten Order Bump do koszyka. Przydatne dla darmowych prezentów lub innych ofert, które nie wymagają działania klienta."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:56
-msgid "Auto Match Variations Between Search and Offer Product"
-msgstr "Automatyczne dopasowanie wariantów między produktem wyszukiwania a produktem oferty"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:61
-msgid "Add offer product to the cart with the same variable configuration as the product below."
-msgstr "Dodaj produkt oferty do koszyka z taką samą konfiguracją wariantów jak poniższy produkt."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:65
-msgid "Only applies when Auto Match Cart Product and Offer Product are variable products with matching variation attributes (Size, Color, etc)"
-msgstr "Dotyczy tylko wtedy, gdy Automatyczne dopasowanie produktu w koszyku i produktu oferty to produkty zmienne z pasującymi atrybutami wariantów (Rozmiar, Kolor itp.)"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:69
-msgid "Leave unchecked to have customers to select variation options in a modal window."
-msgstr "Pozostaw niezaznaczone, aby klienci mogli wybrać opcje wariantów w oknie modalnym."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:73
-msgid "If offer product is not variable, this option is ignored."
-msgstr "Jeśli produkt oferty nie jest zmienny, ta opcja jest ignorowana."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:90
-msgid "Auto Match Variations Cart Product"
-msgstr "Automatyczne dopasowanie wariantów produktu w koszyku"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:98
-msgid "The product in the cart to match the Order Bump variations to."
-msgstr "Produkt w koszyku, do którego mają być dopasowane warianty Order Bump."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:113
-msgid "Match Quantity of Offer Product to Display Condition Product"
-msgstr "Dopasuj ilość produktu oferty do produktu warunku wyświetlania"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:114
-msgid "If customer has two of the display condition product in the cart, two of the offer product will be added to the cart."
-msgstr "Jeśli klient ma dwa produkty warunku wyświetlania w koszyku, do koszyka zostaną dodane dwa produkty oferty."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:128
-msgid "Match Quantity Cart Product"
-msgstr "Dopasuj ilość produktu w koszyku"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:136
-msgid "The product in the cart to match the Order Bump quantity to."
-msgstr "Produkt w koszyku, do którego ma być dopasowana ilość Order Bump."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:151
-msgid "Quantity of Offer Product To Add"
-msgstr "Ilość produktu oferty do dodania"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:152
-msgid "The quantity to add to the cart when offer is accepted."
-msgstr "Ilość do dodania do koszyka po zaakceptowaniu oferty."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:161
-msgid "Allow Customer To Change Quantity In Cart"
-msgstr "Pozwól klientowi zmieniać ilość w koszyku"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:162
-msgid "Allow customer to change the quantity of this order bump in the cart."
-msgstr "Pozwól klientowi zmieniać ilość tego Order Bump w koszyku."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:22
-msgid "Offer Language"
-msgstr "Język oferty"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:29
-msgid "Place Order Modal Heading"
-msgstr "Nagłówek modalu złożenia zamówienia"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:30
-msgid "Default if blank: Your order is almost complete..."
-msgstr "Domyślnie, jeśli puste: Twoje zamówienie jest prawie gotowe..."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:30
-msgid "Wait %s! Here\\'s an exclusive offer to compliment your order!"
-msgstr "Poczekaj %s! Oto ekskluzywna oferta, która uzupełni Twoje zamówienie!"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:39
-msgid "Place Order Modal Subheading"
-msgstr "Podtytuł modalu złożenia zamówienia"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:40
-msgid "Default if blank: Add this offer to your order and save!"
-msgstr "Domyślnie, jeśli puste: Dodaj tę ofertę do swojego zamówienia i zaoszczędź!"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:52
-msgid "Offer Acceptance Checkbox Label"
-msgstr "Etykieta pola wyboru akceptacji oferty"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:52
-msgid "Offer Acceptance Button Label"
-msgstr "Etykieta przycisku akceptacji oferty"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:53
-msgid "Example: Yes! Please add this offer to my order"
-msgstr "Przykład: Tak! Proszę dodać tę ofertę do mojego zamówienia"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:63
-msgid "Offer Description"
-msgstr "Opis oferty"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:64
-msgid "Example: Limited time offer! Get an EXCLUSIVE discount right now! Click the checkbox above to add this product to your order now."
-msgstr "Przykład: Oferta ograniczona czasowo! Zdobądź EKSKLUZYWNY rabat już teraz! Zaznacz powyższe pole, aby dodać ten produkt do swojego zamówienia."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:74
-msgid "Modal Offer Rejection Link Text"
-msgstr "Tekst linku odrzucenia oferty w modalu"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:78
-msgid "Displays in modal version of Order Bump, such as Place Order bumps or when the Offer Product is a variable product (as opposed to a specific variation)."
-msgstr "Wyświetla się w modalnej wersji dodatku do zamówienia, takiej jak dodatki Place Order lub gdy produkt oferty jest produktem zmiennym (w przeciwieństwie do konkretnej wariacji)."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:83
-msgid "Default if blank: No thanks, just complete my order"
-msgstr "Domyślnie, jeśli puste: Nie, dziękuję, po prostu zakończ moje zamówienie"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:85
-msgid "Default if blank: No thanks"
-msgstr "Domyślnie, jeśli puste: Nie, dziękuję"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferDiscountPanel.tsx:15
-msgid "Offer Discount"
-msgstr "Zniżka na ofertę"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferDiscountPanel.tsx:20
-msgid "Amount Off: Remove fixed amount from the product price. Percent Off: Discount product by specified percentage."
-msgstr "Kwota wyłączona: Usuwa ustaloną kwotę z ceny produktu. Percent Off: Zniżka na produkt o określoną wartość procentową."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferDiscountPanel.tsx:46
-msgid "Item Removal Behavior"
-msgstr "Zachowanie podczas usuwania przedmiotów"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferDiscountPanel.tsx:47
-msgid "What happens when the display for product is removed from the cart. Default: Order Bump remains in the cart but bump specific discounts are removed."
-msgstr "Co się stanie, gdy wyświetlany produkt zostanie usunięty z koszyka. Domyślnie: Order Bump pozostaje w koszyku, ale rabaty specyficzne dla bump są usuwane."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferDiscountPanel.tsx:50
-msgid "Leave In Cart With Normal Price"
-msgstr "Pozostaw w koszyku z normalną ceną"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferDiscountPanel.tsx:51
-msgid "Remove Order Bump From Cart"
-msgstr "Usuń wzrost zamówienia z koszyka"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsGeneralPanel.tsx:13
-msgid "You must set an upsell replacement product."
-msgstr "Musisz ustawić produkt zastępczy upsell."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsGeneralPanel.tsx:20
-msgid "Offer Type"
-msgstr "Typ oferty"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsGeneralPanel.tsx:24
-msgid "Use Order Bump As Upsell"
-msgstr "Użyj Order Bump jako Upsell"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsGeneralPanel.tsx:28
-msgid "Replace a cart item with offer product when this Order Bump is taken."
-msgstr "Zamień produkt w koszyku na produkt oferty, gdy ten Order Bump zostanie wybrany."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsGeneralPanel.tsx:42
-msgid "Which product does this upsell replace in the cart?"
-msgstr "Który produkt ten upsell zastępuje w koszyku?"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsGeneralPanel.tsx:50
-msgid "This product must be in the cart for this order bump to be shown."
-msgstr "Ten produkt musi znajdować się w koszyku, aby ten order bump był wyświetlany."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:44
-msgid "Blocks are only used by full screen offers. Enable Full Screen Landing Page in the Display Location panel, then add the Order Bump Offer Form block where the offer form should go."
-msgstr "Bloki są używane tylko w ofertach pełnoekranowych. Włącz Pełnoekranową stronę docelową w panelu Lokalizacja wyświetlania, a następnie dodaj blok Formularz oferty Order Bump tam, gdzie powinien znajdować się formularz oferty."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:45
-msgid "Blocks are only used by full screen offers, available on Place Order Click and Post Purchase One-Click bumps. This bump uses the built-in layout."
-msgstr "Bloki są używane tylko w ofertach pełnoekranowych, dostępnych w przypadku Kliknięcia przy składaniu zamówienia oraz jednego kliknięcia po zakupie. Ten bump używa wbudowanego układu."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:61
-msgid "Post Purchase One-Click bumps require a compatible payment gateway. We recommend using Place Order bumps when using non-compatible gateways."
-msgstr "Dodatki Post Purchase One-Click wymagają kompatybilnej bramki płatności. Zalecamy używanie dodatków Place Order przy korzystaniu z bramek niekompatybilnych."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:67
-msgid "Learn more about supported gateways"
-msgstr "Dowiedz się więcej o obsługiwanych bramkach"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:74
-msgid "Read our Order Bumps documentation"
-msgstr "Przeczytaj naszą dokumentację dotyczącą Order Bumps"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:104
-msgid "This bump will not appear anywhere because the side cart is disabled."
-msgstr "Ten bump nie pojawi się nigdzie, ponieważ koszyk boczny jest wyłączony."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:105
-msgid "This bump will not appear anywhere because order bumps are disabled in the side cart."
-msgstr "Ten bump nie pojawi się nigdzie, ponieważ bumpy zamówienia są wyłączone w koszyku bocznym."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:108
-msgid "This bump will appear on checkout but not in the side cart because the side cart is disabled."
-msgstr "Ten bump pojawi się przy finalizacji zakupu, ale nie w koszyku bocznym, ponieważ koszyk boczny jest wyłączony."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:109
-msgid "This bump will appear on checkout but not in the side cart because order bumps are disabled in the side cart."
-msgstr "Ten bump pojawi się przy finalizacji zakupu, ale nie w koszyku bocznym, ponieważ bumpy zamówienia są wyłączone w koszyku bocznym."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:120
-msgid "Open side cart settings"
-msgstr "Otwórz ustawienia koszyka bocznego"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:141
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:148
-msgid "Display Location"
-msgstr "Miejsce wyświetlania"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:157
-msgid "Checkout Slot"
-msgstr "Slot kasy"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:187
-msgid "Displays in a popup when Place Order is clicked, before the order is submitted"
-msgstr "Wyświetla się w wyskakującym okienku po kliknięciu Zamów, przed złożeniem zamówienia"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:190
-msgid "Displays in a popup on the Thank You page."
-msgstr "Wyświetla się w wyskakującym okienku na stronie podziękowania."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:194
-msgid "Full Screen Landing Page"
-msgstr "Pełnoekranowa strona docelowa"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:195
-msgid "Design the offer with blocks instead of the built-in layout. Add the Order Bump Offer Form block where the offer form should go."
-msgstr "Zaprojektuj ofertę za pomocą bloków zamiast wbudowanego układu. Dodaj blok Formularz oferty Order Bump tam, gdzie powinien znajdować się formularz oferty."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayConditions.tsx:26
-msgid "Show Bump When These Conditions Are True:"
-msgstr "Pokaż Bump, gdy spełnione są następujące warunki:"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayConditions.tsx:29
-msgid "This bump will be shown when the correct upsell product is in the cart and the Offer Product is not in the cart. To further limit when this bump is shown, add a rule below."
-msgstr "Ten bump będzie wyświetlany, gdy w koszyku znajduje się odpowiedni produkt upsell, a Produkt Oferty nie jest w koszyku. Aby dodatkowo ograniczyć wyświetlanie tego bumpa, dodaj poniżej regułę."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayConditions.tsx:31
-msgid "This bump will always be shown when the Offer Product is not in the cart. To limit when this bump is shown, add a rule below."
-msgstr "Ten bump będzie zawsze wyświetlany, gdy Produkt Oferty nie jest w koszyku. Aby ograniczyć wyświetlanie tego bumpa, dodaj poniżej regułę."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsActionsPanel.tsx:15
-msgid "Actions"
-msgstr "Akcje"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsActionsPanel.tsx:21
-msgid "Remove These Products From The Cart"
-msgstr "Usuń te produkty z koszyka"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsActionsPanel.tsx:23
-msgid "If any of these products are in the cart, remove them when this bump is added to the cart."
-msgstr "Jeśli którykolwiek z tych produktów znajduje się w koszyku, usuń je, gdy ten bump zostanie dodany do koszyka."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsActionsPanel.tsx:24
-msgid "Search for products"
-msgstr "Wyszukaj produkty"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsActionsPanel.tsx:35
-msgid "Apply Free Shipping"
-msgstr "Zastosuj darmową wysyłkę"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsActionsPanel.tsx:36
-msgid "When this bump is added to the cart, apply free shipping to the cart."
-msgstr "Gdy ten bump zostanie dodany do koszyka, zastosuj darmową wysyłkę do koszyka."
-
-#: client/ts/admin/Components/Metaboxes/CategoryCompleter.tsx:46
-msgid "All categories with titles that include {{query /}}"
-msgstr "Wszystkie kategorie z tytułami zawierającymi {{query /}}"
-
-#: client/ts/admin/Components/Fields/WPMediaUploadButton.tsx:69
-msgid "Select or Upload a Logo"
-msgstr "Wybierz lub prześlij logo"
-
-#: client/ts/admin/Components/Fields/RangeControl.tsx:97
-#: client/ts/admin/Components/Fields/ColorControl.tsx:137
-msgid "Reset"
-msgstr "Resetuj"
-
-#: client/ts/admin/Components/Fields/ColorControl.tsx:173
-#: client/ts/admin/Components/CheckoutEditor/BumpEditorModal.tsx:101
-msgid "Done"
-msgstr "Gotowe"
 
 #: client/ts/admin/Components/CheckoutEditor/ScrollableRegion.tsx:74
 msgid "Scroll down for more items"
@@ -8503,7 +8548,7 @@ msgstr "Usuń regułę"
 
 # %d: shipping package number
 #: functions/functions.php:386
-#: functions/functions.php:3455
+#: functions/functions.php:3464
 msgctxt "shipping packages"
 msgid "Shipping"
 msgid_plural "Shipping %d"

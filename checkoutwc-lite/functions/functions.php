@@ -1927,7 +1927,15 @@ function cfw_get_user_template_path() : string {
 	return get_stylesheet_directory() . '/checkout-wc';
 }
 
-function cfw_get_active_template() : Template {
+/**
+ * Gets the active checkout template.
+ *
+ * Without an activated license the storefront falls back to the default template. Admin configuration screens pass $for_admin so they read and save the merchant's real choice instead.
+ *
+ * @param bool $for_admin Whether to resolve for admin configuration rather than for the storefront.
+ * @return Template
+ */
+function cfw_get_active_template( bool $for_admin = false ) : Template {
 	$cfw_preview = null;
 
 	// phpcs:ignore WordPress.Security.NonceVerification.Recommended
@@ -1940,7 +1948,8 @@ function cfw_get_active_template() : Template {
 	$active_template_slug = sanitize_text_field( $cfw_preview ?? SettingsManager::instance()->get_setting( 'active_template' ) ); // phpcs:ignore WordPress.Security.NonceVerification.Recommended
 	$templates            = cfw_get_available_templates();
 
-	$slug = ! isset( $templates[ $active_template_slug ] ) || ! PlanManager::has_premium_plan_or_higher() ? 'default' : $active_template_slug;
+	$has_plan = $for_admin ? PlanManager::has_admin_plan_or_higher() : PlanManager::has_premium_plan_or_higher();
+	$slug     = ! isset( $templates[ $active_template_slug ] ) || ! $has_plan ? 'default' : $active_template_slug;
 
 	return new Template( $slug );
 }

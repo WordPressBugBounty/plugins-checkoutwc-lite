@@ -8,7 +8,7 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "POT-Creation-Date: 2025-07-25 09:22-0400\n"
-"PO-Revision-Date: 2026-09-24T21:25:15+00:00\n"
+"PO-Revision-Date: 2026-10-12T15:20:31+00:00\n"
 "Language: ca\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 3.8\n"
@@ -164,8 +164,8 @@ msgid "Postcode / ZIP"
 msgstr "Codi postal"
 
 #: includes/AddressFieldsAugmenter.php:458
-#: functions/functions.php:4215
-#: functions/functions.php:4216
+#: functions/functions.php:4224
+#: functions/functions.php:4225
 msgid "Email address"
 msgstr "Adreça de correu electrònic"
 
@@ -302,7 +302,7 @@ msgid "Log in."
 msgstr "Inicia sessió."
 
 #: functions/template-functions.php:489
-#: includes/Managers/AssetManager.php:705
+#: includes/Managers/AssetManager.php:709
 msgid "An account is already registered with your email address. <a href=\"#\" class=\"showlogin\">Please log in.</a>"
 msgstr "Ja hi ha un compte registrat amb la vostra adreça de correu electrònic. <a href=\"#\" class=\"showlogin\">Si us plau, inicieu sessió.</a>"
 
@@ -355,7 +355,7 @@ msgstr "Adreça de facturació"
 #: functions/template-functions.php:768
 #: functions/template-functions.php:806
 #: functions/template-functions.php:1981
-#: includes/Managers/AssetManager.php:701
+#: includes/Managers/AssetManager.php:705
 msgid "Shipping address"
 msgstr "Adreça d'enviament"
 
@@ -368,7 +368,7 @@ msgstr "La vostra cistella"
 #: functions/template-functions.php:1047
 #: functions/template-functions.php:2013
 #: functions/template-functions.php:2287
-#: functions/functions.php:3469
+#: functions/functions.php:3478
 msgid "Shipping"
 msgstr "Enviament"
 
@@ -451,7 +451,7 @@ msgid "N/A"
 msgstr "N/D"
 
 #: functions/template-functions.php:2043
-#: includes/Managers/AssetManager.php:851
+#: includes/Managers/AssetManager.php:855
 msgid "Continue shopping"
 msgstr "Continua comprant"
 
@@ -467,18 +467,18 @@ msgid "Email"
 msgstr "Correu electrònic"
 
 #: functions/template-functions.php:2101
-#: functions/functions.php:4133
-#: functions/functions.php:4134
+#: functions/functions.php:4142
+#: functions/functions.php:4143
 msgid "Password"
 msgstr "Contrasenya"
 
 #: functions/template-functions.php:2117
-#: functions/functions.php:4173
+#: functions/functions.php:4182
 msgid "Login"
 msgstr "Inicia sessió"
 
 #: functions/template-functions.php:2120
-#: functions/functions.php:4166
+#: functions/functions.php:4175
 msgid "Lost your password?"
 msgstr "Heu perdut la contrasenya?"
 
@@ -486,16 +486,16 @@ msgstr "Heu perdut la contrasenya?"
 msgid "Your Cart is Empty"
 msgstr "La vostra cistella està buida"
 
-#: functions/premium-init.php:340
+#: functions/premium-init.php:342
 msgid "CheckoutWC Templates Deactivated"
 msgstr "Plantilles de CheckoutWC desactivades"
 
 # %1$s: "Settings" text, %2$s: "Start Here" text, %3$s: "Activate CheckoutWC Templates" text
-#: functions/premium-init.php:343
+#: functions/premium-init.php:345
 msgid "Your license is valid and activated for this site but CheckoutWC is disabled for normal customers. To fix this, go to %1$s > %2$s and toggle \"%3$s\"."
 msgstr "La vostra llicència és vàlida i està activada per a aquest lloc, però CheckoutWC està desactivat per als clients normals. Per solucionar-ho, aneu a %1$s > %2$s i activeu \"%3$s\"."
 
-#: functions/premium-init.php:344
+#: functions/premium-init.php:346
 #: includes/Admin/AdminPluginsPageManager.php:40
 #: includes/Admin/Pages/OrderBumpsAdminFree.php:25
 #: includes/Admin/Pages/LocalPickupAdminFree.php:27
@@ -507,66 +507,71 @@ msgstr "La vostra llicència és vàlida i està activada per a aquest lloc, per
 msgid "Settings"
 msgstr "Configuració"
 
-#: functions/premium-init.php:345
+#: functions/premium-init.php:347
+#: functions/premium-init.php:360
 #: includes/Admin/Pages/General.php:25
-#: includes/Admin/Notices/InactiveLicenseNotice.php:13
 msgid "Start Here"
 msgstr "Comenceu aquí"
 
-#: functions/premium-init.php:346
+#: functions/premium-init.php:348
 #: includes/Admin/Pages/General.php:195
 msgid "Activate CheckoutWC Templates"
 msgstr "Activa les plantilles de CheckoutWC"
 
-#: functions/premium-init.php:353
-msgid "Invalid CheckoutWC License"
+#: functions/premium-init.php:355
+msgid "CheckoutWC license invalid"
 msgstr "Llicència de CheckoutWC no vàlida"
 
-# %1$s: Pricing URL, %2$s: "purchase a license" link text
-#: functions/premium-init.php:356
-msgid "Your license key is missing or invalid. Please verify that your license key is valid or <a target=\"_blank\" href=\"%1$s\">%2$s</a> to restore full functionality."
-msgstr "La vostra clau de llicència falta o no és vàlida. Si us plau, verifiqueu que la vostra clau de llicència sigui vàlida o <a target=\"_blank\" href=\"%1$s\">%2$s</a> per restaurar la funcionalitat completa."
-
+# %1$s: URL to license settings page, %2$s: "Start Here" link text, %3$s: Pricing URL, %4$s: "buy a license" link text
 #: functions/premium-init.php:358
-msgid "purchase a license"
+msgid "Premium features are off because your license key is missing or invalid. Check your key on <a href=\"%1$s\">%2$s</a> or <a target=\"_blank\" href=\"%3$s\">%4$s</a>."
+msgstr "Les funcions premium estan desactivades perquè falta la clau de llicència o no és vàlida. Comprova la teva clau a <a href=\"%1$s\">%2$s</a> o <a target=\"_blank\" href=\"%3$s\">%4$s</a>."
+
+#: functions/premium-init.php:362
+#: includes/Admin/Notices/InactiveLicenseNotice.php:15
+msgid "buy a license"
 msgstr "compra una llicència"
 
-#: functions/premium-init.php:374
+#: functions/premium-init.php:382
 msgid "New Feature: Cloudflare Turnstile Bot Protection"
 msgstr "Nova funció: Protecció contra bots Cloudflare Turnstile"
 
 # 1: Cloudflare Turnstile name wrapped in strong tags, 2: Setup link
-#: functions/premium-init.php:377
+#: functions/premium-init.php:385
 msgid "CheckoutWC now supports %1$s - a privacy-first, CAPTCHA-free way to protect your checkout from bots and spam orders. %2$s"
 msgstr "CheckoutWC ara admet %1$s: una manera centrada en la privadesa i sense CAPTCHA per protegir el vostre procés de compra contra bots i comandes de correu brossa. %2$s"
 
 # The name of the Cloudflare Turnstile service
-#: functions/premium-init.php:381
+#: functions/premium-init.php:389
 #: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:78
 msgid "Cloudflare Turnstile"
 msgstr "Cloudflare Turnstile"
 
-#: functions/premium-init.php:387
+#: functions/premium-init.php:395
 msgid "Setup Cloudflare Turnstile now"
 msgstr "Configureu Cloudflare Turnstile ara"
 
-#: functions/premium-init.php:392
+#: functions/premium-init.php:400
 msgid "Upgrade your plan now to access"
 msgstr "Actualitzeu el vostre pla ara per accedir a"
 
-#: functions/premium-init.php:405
+#: functions/premium-init.php:413
 msgid "Abandoned Cart Recovery Tracking Disabled"
 msgstr "Seguiment de recuperació de carret abandonat desactivat"
 
 # %1$s: Gist URL, %2$s: "Learn More" link text
-#: functions/premium-init.php:408
+#: functions/premium-init.php:416
 msgid "You have enabled Abandoned Cart Recovery tracking, but you do not have any emails published. To track carts, you need to publish emails or use this dev filter: <a target=\"_blank\" href=\"%1$s\">%2$s</a>."
 msgstr "Heu activat el seguiment de recuperació de carret abandonat, però no teniu cap correu electrònic publicat. Per fer el seguiment dels carrets, heu de publicar correus electrònics o utilitzar aquest filtre de desenvolupament: <a target=\"_blank\" href=\"%1$s\">%2$s</a>."
 
-#: functions/premium-init.php:410
+#: functions/premium-init.php:418
 #: includes/Admin/Pages/AbandonedCartRecoveryAdminFree.php:82
 msgid "Learn More"
 msgstr "Més informació"
+
+#: functions/premium-init.php:477
+msgid "Admin preview: your CheckoutWC license isn\\'t valid for this site, so premium features are off. Check your license here: WP Admin > CheckoutWC > Start Here."
+msgstr "Previsualització d’administració: la teva llicència de CheckoutWC no és vàlida per a aquest lloc, així que les funcions premium estan desactivades. Comprova la teva llicència aquí: WP Admin > CheckoutWC > Start Here."
 
 #: functions/init.php:396
 #: functions/init.php:397
@@ -685,7 +690,7 @@ msgid "No shipping methods available"
 msgstr "No hi ha mètodes d'enviament disponibles"
 
 #: functions/functions.php:826
-#: includes/Model/Bumps/BumpAbstract.php:835
+#: includes/Model/Bumps/BumpAbstract.php:882
 msgid "Free!"
 msgstr "Gratuït!"
 
@@ -757,22 +762,22 @@ msgstr "Carret"
 msgid "CheckoutWC: Error matching %1$d to customer %2$d"
 msgstr "CheckoutWC: Error en coincidir %1$d amb el client %2$d"
 
-#: functions/functions.php:2162
+#: functions/functions.php:2171
 msgid "Or"
 msgstr "O"
 
-#: functions/functions.php:2247
+#: functions/functions.php:2256
 msgid "You can only have 1 %s in your cart."
 msgstr "Només podeu tenir 1 %s al vostre carret."
 
-#: functions/functions.php:2397
+#: functions/functions.php:2406
 #: client/ts/frontend/Components/CartItemQuantityControl.tsx:55
 msgid "Decrement"
 msgstr "Disminuir"
 
-#: functions/functions.php:2406
-#: includes/Managers/AssetManager.php:731
-#: includes/Managers/AssetManager.php:852
+#: functions/functions.php:2415
+#: includes/Managers/AssetManager.php:735
+#: includes/Managers/AssetManager.php:856
 #: includes/Features/LocalPickup.php:510
 #: includes/Features/AbandonedCartRecovery.php:128
 #: includes/Features/ABTesting.php:150
@@ -782,97 +787,97 @@ msgstr "Disminuir"
 msgid "Edit"
 msgstr "Editar"
 
-#: functions/functions.php:2409
+#: functions/functions.php:2418
 #: client/ts/frontend/Components/CartItemQuantityControl.tsx:70
 msgid "Increment"
 msgstr "Incrementar"
 
-#: functions/functions.php:3123
+#: functions/functions.php:3132
 msgid "Unsubscribe"
 msgstr "Cancel·lar subscripció"
 
-#: functions/functions.php:3495
+#: functions/functions.php:3504
 #: includes/Features/AbandonedCartRecovery.php:756
 #: client/ts/admin/Components/acr/carts.tsx:74
 msgid "Subtotal"
 msgstr "Subtotal"
 
-#: functions/functions.php:3499
+#: functions/functions.php:3508
 #: includes/Admin/Views/html-refund-offer.php:25
 msgid "Total"
 msgstr "Total"
 
-#: functions/functions.php:3552
+#: functions/functions.php:3561
 msgid "There are no shipping options available. Please ensure that your address has been entered correctly, or contact us if you need any help."
 msgstr "No hi ha opcions d'enviament disponibles. Assegureu-vos que la vostra adreça s'ha introduït correctament o poseu-vos en contacte amb nosaltres si necessiteu ajuda."
 
-#: functions/functions.php:3906
+#: functions/functions.php:3915
 #: includes/Admin/Pages/AbandonedCartRecoveryAdminFree.php:73
 msgid "SendWP - Transactional Email"
 msgstr "SendWP - Correu electrònic transaccional"
 
-#: functions/functions.php:3911
+#: functions/functions.php:3920
 #: includes/Admin/Pages/AbandonedCartRecoveryAdminFree.php:77
 msgid "SendWP makes getting emails delivered as simple as a few clicks. So you can relax know those important emails are being delivered on time."
 msgstr "SendWP fa que enviar correus electrònics sigui tan senzill com uns pocs clics. Així podeu estar tranquils sabent que aquests correus importants s'envien a temps."
 
-#: functions/functions.php:3914
+#: functions/functions.php:3923
 #: includes/Admin/Pages/AbandonedCartRecoveryAdminFree.php:79
 msgid "Try SendWP now and <strong>get your first month for just $1.</strong>"
 msgstr "Proveu SendWP ara i <strong>obteniu el vostre primer mes per només 1 $.</strong>"
 
-#: functions/functions.php:3924
+#: functions/functions.php:3933
 #: includes/Admin/Pages/AbandonedCartRecoveryAdminFree.php:87
 msgid "Note: SendWP is optional. You can use any transactional email service you prefer."
 msgstr "Nota: SendWP és opcional. Podeu utilitzar qualsevol servei de correu electrònic transaccional que preferiu."
 
-#: functions/functions.php:3933
+#: functions/functions.php:3942
 #: includes/Admin/Pages/AbandonedCartRecoveryAdminFree.php:94
 msgid "Connect to SendWP"
 msgstr "Connectar amb SendWP"
 
-#: functions/functions.php:4081
+#: functions/functions.php:4090
 msgid "Welcome back"
 msgstr "Benvingut de nou"
 
-#: functions/functions.php:4095
+#: functions/functions.php:4104
 msgid "It looks like you already have an account. Please enter your login details below."
 msgstr "Sembla que ja teniu un compte. Introduïu les vostres dades d'inici de sessió a continuació."
 
-#: functions/functions.php:4109
+#: functions/functions.php:4118
 msgid "If you have shopped with us before, please enter your login details below."
 msgstr "Si heu comprat amb nosaltres abans, introduïu les vostres dades d'inici de sessió a continuació."
 
-#: functions/functions.php:4119
-#: functions/functions.php:4120
+#: functions/functions.php:4128
+#: functions/functions.php:4129
 msgid "Username or email address"
 msgstr "Nom d'usuari o adreça de correu electrònic"
 
-#: functions/functions.php:4154
+#: functions/functions.php:4163
 msgid "Remember me"
 msgstr "Recorda'm"
 
-#: functions/functions.php:4185
+#: functions/functions.php:4194
 msgid "Or continue as guest"
 msgstr "O continuar com a convidat"
 
-#: functions/functions.php:4205
+#: functions/functions.php:4214
 msgid "Lost your password? Please enter your username or email address. You will receive a link to create a new password via email."
 msgstr "Heu perdut la contrasenya? Introduïu el vostre nom d'usuari o adreça de correu electrònic. Rebreu un enllaç per crear una nova contrasenya per correu electrònic."
 
-#: functions/functions.php:4228
+#: functions/functions.php:4237
 msgid "Reset password"
 msgstr "Restablir la contrasenya"
 
-#: functions/functions.php:4243
+#: functions/functions.php:4252
 #: includes/API/OrderBumpPreviewAPI.php:57
 #: includes/API/OrderBumpOfferFormPreviewAPI.php:46
 #: includes/API/GetVariationFormAPI.php:33
 msgid "Product not found"
 msgstr "Producte no trobat"
 
-#: functions/functions.php:4259
-#: functions/functions.php:4417
+#: functions/functions.php:4268
+#: functions/functions.php:4426
 #: includes/API/PostPurchaseBumpProductFormAPI.php:24
 msgid "No thanks"
 msgstr "No, gràcies"
@@ -951,102 +956,98 @@ msgstr "Recollida local"
 msgid "Allow customers to pick up orders themselves. This version does not require shipping zones."
 msgstr "Permetre als clients recollir les comandes ells mateixos. Aquesta versió no requereix zones d'enviament."
 
-#: includes/Managers/UpdatesManager.php:416
+#: includes/Managers/UpdatesManager.php:436
 msgid "CheckoutWC License Key"
 msgstr "Clau de llicència de CheckoutWC"
 
-#: includes/Managers/UpdatesManager.php:421
+#: includes/Managers/UpdatesManager.php:441
 msgid "Your license key is set with the constant <code>CFW_LICENSE_KEY</code>."
 msgstr "La vostra clau de llicència està configurada amb la constant <code>CFW_LICENSE_KEY</code>."
 
-#: includes/Managers/UpdatesManager.php:428
+#: includes/Managers/UpdatesManager.php:448
 msgid "License Holder"
 msgstr "Titular de la llicència"
 
-#: includes/Managers/UpdatesManager.php:441
+#: includes/Managers/UpdatesManager.php:461
 msgid "Plan"
 msgstr "Pla"
 
-#: includes/Managers/UpdatesManager.php:449
+#: includes/Managers/UpdatesManager.php:469
 msgid "Activation Limit"
 msgstr "Límit d'activació"
 
-#: includes/Managers/UpdatesManager.php:457
+#: includes/Managers/UpdatesManager.php:477
 #: includes/Admin/Pages/Premium/ABTestingAdmin.php:178
 #: includes/Admin/Pages/Premium/ABTestingAdmin.php:819
 #: client/ts/admin/Components/acr/carts.tsx:80
 msgid "Status"
 msgstr "Estat"
 
-#: includes/Managers/UpdatesManager.php:464
+#: includes/Managers/UpdatesManager.php:484
 msgid "Refresh License Info"
 msgstr "Actualitzar informació de la llicència"
 
-#: includes/Managers/UpdatesManager.php:512
+#: includes/Managers/UpdatesManager.php:532
 msgid "Please enter your license key."
 msgstr "Si us plau, introduïu la vostra clau de llicència."
 
-#: includes/Managers/UpdatesManager.php:515
-#: includes/Managers/UpdatesManager.php:523
+#: includes/Managers/UpdatesManager.php:535
+#: includes/Managers/UpdatesManager.php:543
 msgid "Activate Site"
 msgstr "Activar lloc"
 
-#: includes/Managers/UpdatesManager.php:518
+#: includes/Managers/UpdatesManager.php:538
 msgid "Deactivate Site"
 msgstr "Desactivar lloc"
 
 # Debug error message logged when license check reaches unexpected state
-#: includes/Managers/UpdatesManager.php:704
+#: includes/Managers/UpdatesManager.php:724
 msgid "License Check Error: You should not be able to get here. I am kind of freaked out."
 msgstr "Error de comprovació de la llicència: No hauríeu d'arribar aquí. Estic una mica espantat."
 
 # %1$d: failure count, %2$d: max failures, %3$s: time since last failure
-#: includes/Managers/UpdatesManager.php:963
+#: includes/Managers/UpdatesManager.php:983
 msgid "Unable to verify CheckoutWC license (%1$d/%2$d attempts failed). Using cached license data. Last attempt: %3$s ago."
 msgstr "No s'ha pogut verificar la llicència de CheckoutWC (%1$d/%2$d intents fallits). S'estan utilitzant dades de llicència emmagatzemades. Últim intent: fa %3$s."
 
-#: includes/Managers/UpdatesManager.php:986
+#: includes/Managers/UpdatesManager.php:1006
 msgid "%s license activation was not successful. Please check your key status below for more information."
 msgstr "L'activació de la llicència %s no ha tingut èxit. Si us plau, comproveu l'estat de la vostra clau a continuació per a més informació."
 
-#: includes/Managers/UpdatesManager.php:1004
+#: includes/Managers/UpdatesManager.php:1024
 msgid "%s license successfully activated."
 msgstr "Llicència %s activada amb èxit."
 
-#: includes/Managers/UpdatesManager.php:1022
+#: includes/Managers/UpdatesManager.php:1042
 msgid "%s license deactivation failed. Please try again, or contact support."
 msgstr "La desactivació de la llicència %s ha fallat. Torneu-ho a provar o contacteu amb el suport."
 
-#: includes/Managers/UpdatesManager.php:1040
+#: includes/Managers/UpdatesManager.php:1060
 msgid "%s license deactivated successfully."
 msgstr "Llicència %s desactivada amb èxit."
 
-#: includes/Managers/UpdatesManager.php:1058
+#: includes/Managers/UpdatesManager.php:1078
 msgid "%s license settings saved successfully."
 msgstr "Configuració de la llicència %s desada amb èxit."
 
-#: includes/Managers/UpdatesManager.php:1076
+#: includes/Managers/UpdatesManager.php:1096
 msgid "%1$s license activation failed: %2$s"
 msgstr "L'activació de la llicència %1$s ha fallat: %2$s"
 
-#: includes/Managers/UpdatesManager.php:1094
+#: includes/Managers/UpdatesManager.php:1114
 msgid "%s license activation failed: Unable to connect to license server. Please check your internet connection or try again later."
 msgstr "L'activació de la llicència %s ha fallat: No s'ha pogut connectar amb el servidor de llicències. Si us plau, comproveu la vostra connexió a Internet o torneu-ho a provar més tard."
 
-#: includes/Managers/UpdatesManager.php:1112
+#: includes/Managers/UpdatesManager.php:1132
 msgid "%s: License deactivated locally. The license server could not be reached, but the license has been deactivated on this site."
 msgstr "%s: Llicència desactivada localment. No s'ha pogut contactar amb el servidor de llicències, però la llicència s'ha desactivat en aquest lloc."
 
-#: includes/Managers/UpdatesManager.php:1261
-msgid "Unable to verify your CheckoutWC license — the license server could not be reached. Your license and checkout are unaffected; only plugin updates are paused until the connection is restored."
-msgstr "No s'ha pogut verificar la vostra llicència de CheckoutWC — no s'ha pogut contactar amb el servidor de llicències. La vostra llicència i el procés de compra no es veuen afectats; només les actualitzacions del plugin estan en pausa fins que es restableixi la connexió."
-
 # %1$d: failure count, %2$d: max failures, %3$s: time since last failure
-#: includes/Managers/UpdatesManager.php:1308
+#: includes/Managers/UpdatesManager.php:1402
 msgid "Unable to verify license online (%1$d/%2$d attempts failed). Using cached license data. Last attempt: %3$s ago."
 msgstr "No s'ha pogut verificar la llicència en línia (%1$d/%2$d intents fallits). S'estan utilitzant dades de llicència emmagatzemades. Últim intent: fa %3$s."
 
-#: includes/Managers/UpdatesManager.php:1314
+#: includes/Managers/UpdatesManager.php:1408
 msgid "License verified successfully."
 msgstr "Llicència verificada amb èxit."
 
@@ -1076,8 +1077,8 @@ msgid "After Shipping Methods"
 msgstr "Després dels Mètodes d'Enviament"
 
 #: includes/Managers/SlotManager.php:108
-#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:158
 #: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:164
+#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:158
 msgid "After Payment Methods"
 msgstr "Després dels mètodes de pagament"
 
@@ -1231,69 +1232,69 @@ msgstr "Codi promocional"
 msgid "Enter Promo Code"
 msgstr "Introduïu el codi promocional"
 
-#: includes/Managers/AssetManager.php:690
+#: includes/Managers/AssetManager.php:694
 msgid "Please enter a valid phone number."
 msgstr "Si us plau, introduïu un número de telèfon vàlid."
 
-#: includes/Managers/AssetManager.php:699
+#: includes/Managers/AssetManager.php:703
 msgid "Please enter your first and last name."
 msgstr "Si us plau, introduïu el vostre nom i cognoms."
 
-#: includes/Managers/AssetManager.php:700
+#: includes/Managers/AssetManager.php:704
 msgid "Please enter a name, not an email address."
 msgstr "Si us plau, introduïu un nom, no una adreça de correu electrònic."
 
-#: includes/Managers/AssetManager.php:702
-#: includes/Managers/AssetManager.php:843
+#: includes/Managers/AssetManager.php:706
+#: includes/Managers/AssetManager.php:847
 msgid "Please enter a new quantity:"
 msgstr "Si us plau, introduïu una nova quantitat:"
 
-#: includes/Managers/AssetManager.php:703
+#: includes/Managers/AssetManager.php:707
 msgid "3-digit security code usually found on the back of your card. American Express cards have a 4-digit code located on the front."
 msgstr "Codi de seguretat de 3 dígits que normalment es troba a la part posterior de la vostra targeta. Les targetes American Express tenen un codi de 4 dígits situat a la part frontal."
 
-#: includes/Managers/AssetManager.php:704
-#: includes/Managers/AssetManager.php:844
+#: includes/Managers/AssetManager.php:708
+#: includes/Managers/AssetManager.php:848
 msgid "Are you sure you want to remove this item from your cart?"
 msgstr "Esteu segur que voleu eliminar aquest article de la vostra cistella?"
 
 # %s: Field name
 # %s: field label
-#: includes/Managers/AssetManager.php:707
+#: includes/Managers/AssetManager.php:711
 #: includes/Features/CustomFields.php:238
 msgid "%s is a required field."
 msgstr "%s és un camp obligatori."
 
-#: includes/Managers/AssetManager.php:708
+#: includes/Managers/AssetManager.php:712
 msgid "There was a problem checking out. Please try again. If the problem persists, please get in touch with us so we can assist."
 msgstr "Hi ha hagut un problema en finalitzar la compra. Torneu-ho a provar. Si el problema persisteix, poseu-vos en contacte amb nosaltres perquè us puguem ajudar."
 
-#: includes/Managers/AssetManager.php:709
+#: includes/Managers/AssetManager.php:713
 msgid "Please enter a valid postcode / ZIP."
 msgstr "Si us plau, introdueix un codi postal / ZIP vàlid."
 
-#: includes/Managers/AssetManager.php:710
+#: includes/Managers/AssetManager.php:714
 #: includes/Features/LocalPickup.php:636
 msgid "Pickup"
 msgstr "Recollida"
 
-#: includes/Managers/AssetManager.php:711
+#: includes/Managers/AssetManager.php:715
 msgid "Continue to pickup"
 msgstr "Continuar amb la recollida"
 
-#: includes/Managers/AssetManager.php:712
-#: includes/Managers/AssetManager.php:846
+#: includes/Managers/AssetManager.php:716
+#: includes/Managers/AssetManager.php:850
 msgid "Update"
 msgstr "Actualitzar"
 
-#: includes/Managers/AssetManager.php:713
-#: includes/Managers/AssetManager.php:847
+#: includes/Managers/AssetManager.php:717
+#: includes/Managers/AssetManager.php:851
 #: includes/API/GetVariationFormAPI.php:150
 msgid "Add to cart"
 msgstr "Afegir al carret"
 
-#: includes/Managers/AssetManager.php:714
-#: includes/Managers/AssetManager.php:848
+#: includes/Managers/AssetManager.php:718
+#: includes/Managers/AssetManager.php:852
 #: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2383
 #: client/ts/admin/Components/CheckoutEditor/slots/UnsavedChangesDialog.tsx:51
 #: client/ts/admin/Components/CheckoutEditor/slots/TrustBadgeEditor.tsx:309
@@ -1305,36 +1306,36 @@ msgstr "Afegir al carret"
 msgid "Cancel"
 msgstr "Cancel·lar"
 
-#: includes/Managers/AssetManager.php:722
+#: includes/Managers/AssetManager.php:726
 msgid "Start with post/zip code or street"
 msgstr "Comença amb codi postal o carrer"
 
-#: includes/Managers/AssetManager.php:730
+#: includes/Managers/AssetManager.php:734
 msgid "Shipping method"
 msgstr "Mètode d'enviament"
 
-#: includes/Managers/AssetManager.php:744
+#: includes/Managers/AssetManager.php:748
 msgid "Error processing checkout. Please try again."
 msgstr "Error en processar la compra. Si us plau, torna-ho a intentar."
 
-#: includes/Managers/AssetManager.php:770
+#: includes/Managers/AssetManager.php:774
 msgid "You may also like&hellip;"
 msgstr "També et pot interessar&hellip;"
 
-#: includes/Managers/AssetManager.php:845
+#: includes/Managers/AssetManager.php:849
 #: client/ts/frontend/Components/SideCartFloatingButton.tsx:26
 msgid "View cart"
 msgstr "Veure carret"
 
-#: includes/Managers/AssetManager.php:849
+#: includes/Managers/AssetManager.php:853
 msgid "Remove %s from cart"
 msgstr "Eliminar %s del carret"
 
-#: includes/Managers/AssetManager.php:850
+#: includes/Managers/AssetManager.php:854
 msgid "Proceed to checkout"
 msgstr "Procedir al pagament"
 
-#: includes/Managers/AssetManager.php:853
+#: includes/Managers/AssetManager.php:857
 msgid "View Product"
 msgstr "Veure producte"
 
@@ -1452,16 +1453,16 @@ msgstr "CheckoutWC:"
 msgid "Settings marked with asterisks (**) may be overridden based on your Side Cart settings. (CheckoutWC > Side Cart)"
 msgstr "Les configuracions marcades amb asteriscs (**) poden ser sobreescrites segons la configuració del teu Carret Lateral. (CheckoutWC > Carret Lateral)"
 
-#: includes/Features/OrderBumps.php:610
+#: includes/Features/OrderBumps.php:647
 msgid "All orders"
 msgstr "Totes les comandes"
 
-#: includes/Features/OrderBumps.php:613
+#: includes/Features/OrderBumps.php:650
 msgid "Contains Any Order Bump"
 msgstr "Conté qualsevol complement de comanda"
 
 # %s: Order bump title
-#: includes/Features/OrderBumps.php:619
+#: includes/Features/OrderBumps.php:656
 msgid "Has Bump: %s"
 msgstr "Té complement: %s"
 
@@ -1770,8 +1771,8 @@ msgstr "El plugin és <strong>massa complicat de configurar.</strong>"
 #: includes/Admin/Pages/LocalPickupAdminFree.php:184
 #: includes/Admin/Pages/LocalPickupAdminFree.php:221
 #: includes/Admin/Pages/Premium/LocalPickupAdmin.php:225
-#: client/ts/admin/Components/Forms/AdvancedSettingsForm.tsx:104
 #: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:176
+#: client/ts/admin/Components/Forms/AdvancedSettingsForm.tsx:104
 #: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:938
 msgid "Other"
 msgstr "Altres"
@@ -2058,6 +2059,62 @@ msgstr "Formulari d'oferta d'Order Bump"
 msgid "The form to accept or reject the bump offer."
 msgstr "El formulari per acceptar o rebutjar l'oferta bump."
 
+#: includes/Model/Bumps/BumpAbstract.php:1081
+#: includes/Model/Bumps/BumpAbstract.php:1091
+#: includes/Model/ABTests/OrderBumpsABTest.php:30
+#: includes/Features/ABTesting/ABTestTypeRegistry.php:123
+#: includes/Admin/Pages/OrderBumpsAdminFree.php:17
+#: includes/Admin/Pages/OrderBumpsAdminFree.php:71
+#: includes/Admin/Pages/Premium/OrderBumps.php:50
+#: client/ts/admin/Components/Forms/OrderBumpSettingsForm.tsx:45
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:408
+msgid "Order Bumps"
+msgstr "Suports de Comanda"
+
+#: includes/Model/Bumps/BumpAbstract.php:1082
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:193
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:1614
+msgid "Order Bump"
+msgstr "Suport de Comanda"
+
+#: includes/Model/Bumps/BumpAbstract.php:1083
+msgid "Add New"
+msgstr "Afegeix Nou"
+
+#: includes/Model/Bumps/BumpAbstract.php:1084
+msgid "Add New Order Bump"
+msgstr "Afegeix Nou Suport de Comanda"
+
+#: includes/Model/Bumps/BumpAbstract.php:1085
+msgid "Edit Order Bump"
+msgstr "Edita Suport de Comanda"
+
+#: includes/Model/Bumps/BumpAbstract.php:1086
+#: client/ts/admin/Components/Metaboxes/OrderBumpsSetupModal.tsx:61
+msgid "New Order Bump"
+msgstr "Nou Suport de Comanda"
+
+#: includes/Model/Bumps/BumpAbstract.php:1087
+msgid "View Order Bump"
+msgstr "Veure Suport de Comanda"
+
+#: includes/Model/Bumps/BumpAbstract.php:1088
+msgid "Find Order Bump"
+msgstr "Troba Suport de Comanda"
+
+#: includes/Model/Bumps/BumpAbstract.php:1089
+msgid "No order bumps were found."
+msgstr "No s'han trobat suports de comanda."
+
+#: includes/Model/Bumps/BumpAbstract.php:1090
+msgid "Not found in trash"
+msgstr "No trobat a la paperera"
+
+#: includes/Model/ABTests/OrderBumpsABTest.php:31
+#: includes/Features/ABTesting/ABTestTypeRegistry.php:124
+msgid "Test different variations of order bumps to see which performs better."
+msgstr "Prova diferents variants de suports de comanda per veure quin funciona millor."
+
 # %1$s: Plugin name, %2$s: Link opening tag, %3$s: Version number, %4$s: Link closing tag
 #: includes/Managers/Helpers/EDD_SL_Plugin_Updater.php:281
 msgid "There is a new version of %1$s available. %2$sView version %3$s details%4$s."
@@ -2076,62 +2133,6 @@ msgstr "No tens permís per instal·lar actualitzacions de plugins"
 #: client/ts/admin/Components/GooglePlacesKeyStatus.tsx:61
 msgid "Error"
 msgstr "Error"
-
-#: includes/Model/Bumps/BumpAbstract.php:1034
-#: includes/Model/Bumps/BumpAbstract.php:1044
-#: includes/Model/ABTests/OrderBumpsABTest.php:30
-#: includes/Features/ABTesting/ABTestTypeRegistry.php:123
-#: includes/Admin/Pages/OrderBumpsAdminFree.php:17
-#: includes/Admin/Pages/OrderBumpsAdminFree.php:71
-#: includes/Admin/Pages/Premium/OrderBumps.php:50
-#: client/ts/admin/Components/Forms/OrderBumpSettingsForm.tsx:45
-#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:408
-msgid "Order Bumps"
-msgstr "Suports de Comanda"
-
-#: includes/Model/Bumps/BumpAbstract.php:1035
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:193
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:1614
-msgid "Order Bump"
-msgstr "Suport de Comanda"
-
-#: includes/Model/Bumps/BumpAbstract.php:1036
-msgid "Add New"
-msgstr "Afegeix Nou"
-
-#: includes/Model/Bumps/BumpAbstract.php:1037
-msgid "Add New Order Bump"
-msgstr "Afegeix Nou Suport de Comanda"
-
-#: includes/Model/Bumps/BumpAbstract.php:1038
-msgid "Edit Order Bump"
-msgstr "Edita Suport de Comanda"
-
-#: includes/Model/Bumps/BumpAbstract.php:1039
-#: client/ts/admin/Components/Metaboxes/OrderBumpsSetupModal.tsx:61
-msgid "New Order Bump"
-msgstr "Nou Suport de Comanda"
-
-#: includes/Model/Bumps/BumpAbstract.php:1040
-msgid "View Order Bump"
-msgstr "Veure Suport de Comanda"
-
-#: includes/Model/Bumps/BumpAbstract.php:1041
-msgid "Find Order Bump"
-msgstr "Troba Suport de Comanda"
-
-#: includes/Model/Bumps/BumpAbstract.php:1042
-msgid "No order bumps were found."
-msgstr "No s'han trobat suports de comanda."
-
-#: includes/Model/Bumps/BumpAbstract.php:1043
-msgid "Not found in trash"
-msgstr "No trobat a la paperera"
-
-#: includes/Model/ABTests/OrderBumpsABTest.php:31
-#: includes/Features/ABTesting/ABTestTypeRegistry.php:124
-msgid "Test different variations of order bumps to see which performs better."
-msgstr "Prova diferents variants de suports de comanda per veure quin funciona millor."
 
 #: includes/Features/OneClick/OrderStatusManager.php:52
 msgid "Pending Offer <span class=\"count\">(%s)</span>"
@@ -3024,8 +3025,8 @@ msgid "Step 1: Try CheckoutWC Premium Free For 7 Days"
 msgstr "Pas 1: Prova CheckoutWC Premium gratuïtament durant 7 dies"
 
 #: includes/Admin/Pages/General.php:150
-msgid "Enter your license key. An active license is required for all functionality."
-msgstr "Introdueix la teva clau de llicència. Es requereix una llicència activa per a totes les funcionalitats."
+msgid "Enter your license key and activate it for this site to turn on premium features."
+msgstr "Introdueix la teva clau de llicència i activa-la per a aquest lloc per activar les funcions premium."
 
 #: includes/Admin/Pages/General.php:150
 msgid "Supercharge your WooCommerce store."
@@ -3597,23 +3598,67 @@ msgstr "Permisos insuficients."
 msgid "Notice dismissed."
 msgstr "Avís descartat."
 
-# %1$s: URL to pricing page, %2$s: "purchase a new license" link text, %3$s: Support email URL, %4$s: "please contact support" link text
-#: includes/Admin/Notices/InvalidLicenseKeyNotice.php:15
-msgid "Your license key appears to have expired. Please <a href=\"%1$s\" target=\"_blank\">%2$s</a> to restore functionality. If you believe this is in error, <a href=\"%3$s\">%4$s</a>."
-msgstr "La teva clau de llicència sembla que ha caducat. Si us plau, <a href=\"%1$s\" target=\"_blank\">%2$s</a> per restaurar la funcionalitat. Si creus que és un error, <a href=\"%3$s\">%4$s</a>."
+# %1$d: Number of days, %2$s: Pricing URL, %3$s: "renew it here" link text
+#: includes/Admin/Notices/LicenseUnverifiedNotice.php:25
+msgid "Premium features are off because we haven\\'t been able to check your license with checkoutwc.com for %1$d days. Make sure your server can connect to checkoutwc.com. If your license has expired, <a href=\"%2$s\" target=\"_blank\">%3$s</a>."
+msgstr "Les funcions premium estan desactivades perquè no hem pogut comprovar la teva llicència amb checkoutwc.com durant %1$d dies. Assegura’t que el teu servidor es pot connectar a checkoutwc.com. Si la teva llicència ha caducat, <a href=\"%2$s\" target=\"_blank\">%3$s</a>."
 
-#: includes/Admin/Notices/InvalidLicenseKeyNotice.php:17
-msgid "purchase a new license"
-msgstr "compra una nova llicència"
+#: includes/Admin/Notices/LicenseUnverifiedNotice.php:28
+msgid "renew it here"
+msgstr "renova-la aquí"
 
-#: includes/Admin/Notices/InvalidLicenseKeyNotice.php:19
-msgid "please contact support"
-msgstr "si us plau contacta amb el suport"
+#: includes/Admin/Notices/LicenseUnverifiedNotice.php:33
+msgid "CheckoutWC can\\'t verify your license"
+msgstr "CheckoutWC no pot verificar la teva llicència"
 
-# %1$s: URL to activation page, %2$s: "Start Here" link text
+# %1$s: Date premium features turn off, %2$s: Support email URL, %3$s: "Contact support" link text
+#: includes/Admin/Notices/LicenseServerUnreachableNotice.php:28
+msgid "We couldn\\'t check your license with checkoutwc.com. Premium features will turn off on %1$s unless the connection is restored. <a href=\"%2$s\">%3$s</a> if this keeps happening."
+msgstr "No hem pogut comprovar la teva llicència amb checkoutwc.com. Les funcions premium es desactivaran el %1$s tret que es restableixi la connexió. <a href=\"%2$s\">%3$s</a> si això continua passant."
+
+#: includes/Admin/Notices/LicenseServerUnreachableNotice.php:31
+#: includes/Admin/Notices/LicenseServerUnreachableNotice.php:38
+msgid "Contact support"
+msgstr "Contacta amb el suport"
+
+# %1$s: Support email URL, %2$s: "Contact support" link text
+#: includes/Admin/Notices/LicenseServerUnreachableNotice.php:36
+msgid "We couldn\\'t check your license with checkoutwc.com. Make sure your server can connect to checkoutwc.com. <a href=\"%1$s\">%2$s</a> if this keeps happening."
+msgstr "No hem pogut comprovar la teva llicència amb checkoutwc.com. Assegura’t que el teu servidor es pot connectar a checkoutwc.com. <a href=\"%1$s\">%2$s</a> si això continua passant."
+
+#: includes/Admin/Notices/LicenseServerUnreachableNotice.php:45
+msgid "CheckoutWC can\\'t reach the license server"
+msgstr "CheckoutWC no pot arribar al servidor de llicències"
+
+#: includes/Admin/Notices/InvalidLicenseKeyNotice.php:13
+msgid "CheckoutWC license expired"
+msgstr "La llicència de CheckoutWC ha caducat"
+
+# %1$s: URL to pricing page, %2$s: "Renew your license" link text, %3$s: Support email URL, %4$s: "contact support" link text
+#: includes/Admin/Notices/InvalidLicenseKeyNotice.php:16
+msgid "Premium features are off because your license has expired. <a href=\"%1$s\" target=\"_blank\">%2$s</a> to turn them back on. If you think this is a mistake, <a href=\"%3$s\">%4$s</a>."
+msgstr "Les funcions premium estan desactivades perquè la teva llicència ha caducat. <a href=\"%1$s\" target=\"_blank\">%2$s</a> per tornar-les a activar. Si creus que es tracta d’un error, <a href=\"%3$s\">%4$s</a>."
+
+#: includes/Admin/Notices/InvalidLicenseKeyNotice.php:18
+msgid "Renew your license"
+msgstr "Renova la teva llicència"
+
+#: includes/Admin/Notices/InvalidLicenseKeyNotice.php:20
+msgid "contact support"
+msgstr "contacta amb el suport"
+
+# %1$s: URL to activation page, %2$s: "Activate your license" link text, %3$s: Pricing URL, %4$s: "buy a license" link text
 #: includes/Admin/Notices/InactiveLicenseNotice.php:11
-msgid "Your license key is not active for this site. Please visit <a href=\"%1$s\">%2$s</a> to activate your license and restore functionality."
-msgstr "La teva clau de llicència no està activa per a aquest lloc. Si us plau, visita <a href=\"%1$s\">%2$s</a> per activar la teva llicència i restaurar la funcionalitat."
+msgid "Premium features are off because your license isn\\'t activated on this site. <a href=\"%1$s\">%2$s</a> or <a href=\"%3$s\" target=\"_blank\">%4$s</a> for this site."
+msgstr "Les funcions premium estan desactivades perquè la teva llicència no està activada en aquest lloc. <a href=\"%1$s\">%2$s</a> o <a href=\"%3$s\" target=\"_blank\">%4$s</a> per a aquest lloc."
+
+#: includes/Admin/Notices/InactiveLicenseNotice.php:13
+msgid "Activate your license"
+msgstr "Activa la teva llicència"
+
+#: includes/Admin/Notices/InactiveLicenseNotice.php:20
+msgid "CheckoutWC license not activated"
+msgstr "Llicència de CheckoutWC no activada"
 
 #: includes/Admin/Notices/BFNotice.php:13
 msgid "Black Friday Sale - 40% Off"
@@ -4464,22 +4509,6 @@ msgstr "La data en què hauria de finalitzar la prova A/B. Després d'aquesta da
 msgid "Traffic split percentages must total 100%. Please adjust your percentages."
 msgstr "Els percentatges de repartiment del trànsit han de sumar el 100%. Ajusta els teus percentatges, si us plau."
 
-#: client/ts/frontend/Components/TermsAndConditions.ts:29
-msgid "Terms and Conditions"
-msgstr "Termes i condicions"
-
-#: client/ts/frontend/Components/TermsAndConditions.ts:35
-msgid "Privacy Policy"
-msgstr "Política de privacitat"
-
-#: client/ts/frontend/Components/SideCartComponent.tsx:39
-msgid "Close Cart"
-msgstr "Tancar la cistella"
-
-#: client/ts/frontend/Components/FreeShippingProgressBar.tsx:245
-msgid "Unlocked"
-msgstr "Desbloquejat"
-
 #: client/ts/frontend/Actions/CompleteOrderAction.ts:196
 msgid "Could not connect to server. Please refresh and try again or contact site administrator."
 msgstr "No s'ha pogut connectar amb el servidor. Actualitzeu la pàgina i torneu-ho a provar o contacteu amb l'administrador del lloc."
@@ -4503,6 +4532,22 @@ msgstr "El servidor ha superat el temps d'espera mentre processava la vostra sol
 #: client/ts/frontend/Actions/CompleteOrderAction.ts:206
 msgid "Request was aborted. Please contact site administrator."
 msgstr "La sol·licitud ha estat abortada. Contacteu amb l'administrador del lloc."
+
+#: client/ts/frontend/Components/TermsAndConditions.ts:29
+msgid "Terms and Conditions"
+msgstr "Termes i condicions"
+
+#: client/ts/frontend/Components/TermsAndConditions.ts:35
+msgid "Privacy Policy"
+msgstr "Política de privacitat"
+
+#: client/ts/frontend/Components/SideCartComponent.tsx:39
+msgid "Close Cart"
+msgstr "Tancar la cistella"
+
+#: client/ts/frontend/Components/FreeShippingProgressBar.tsx:245
+msgid "Unlocked"
+msgstr "Desbloquejat"
 
 # %d is the number of icons in the collection
 #: client/ts/admin/Components/trustBadges.ts:85
@@ -4938,6 +4983,403 @@ msgstr "Carregant..."
 #: client/ts/admin/Components/acr/carts.tsx:239
 msgid "Tracked Carts"
 msgstr "Carrets seguits"
+
+#: client/ts/admin/Components/Metaboxes/ProductsAndVariationsCompleter.tsx:30
+msgid "Private"
+msgstr "Privat"
+
+#: client/ts/admin/Components/Metaboxes/ProductsAndVariationsCompleter.tsx:32
+msgid "Pending"
+msgstr "Pendent"
+
+#: client/ts/admin/Components/Metaboxes/ProductsAndVariationsCompleter.tsx:33
+msgid "Scheduled"
+msgstr "Programat"
+
+#: client/ts/admin/Components/Metaboxes/ProductsAndVariationsCompleter.tsx:44
+#: client/ts/admin/Components/Forms/CheckoutSettingsForm.tsx:237
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:850
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:863
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:873
+#: client/ts/admin/Components/CheckoutEditor/panels/CheckoutSettingsPanel.tsx:110
+msgid "Hidden"
+msgstr "Amagat"
+
+#: client/ts/admin/Components/Metaboxes/ProductsAndVariationsCompleter.tsx:46
+msgid "Search only"
+msgstr "Només cerca"
+
+#: client/ts/admin/Components/Metaboxes/ProductsAndVariationsCompleter.tsx:80
+msgid "All products with titles that include {{query /}}"
+msgstr "Tots els productes amb títols que inclouen {{query /}}"
+
+#: client/ts/admin/Components/Metaboxes/ProductsAndVariationsCompleter.tsx:130
+msgid "Variation"
+msgstr "Variació"
+
+#: client/ts/admin/Components/Metaboxes/ProductTagCompleter.tsx:44
+msgid "All product tags that include {{query /}}"
+msgstr "Totes les etiquetes de producte que inclouen {{query /}}"
+
+#: client/ts/admin/Components/Metaboxes/ProductAttributeTermsCompleter.tsx:99
+msgid "All attribute terms that include {{query /}}"
+msgstr "Tots els termes d'atribut que inclouen {{query /}}"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsSetupModal.tsx:62
+msgid "Let\\'s configure a few things to get you started quickly."
+msgstr "Configurem algunes coses per començar ràpidament."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsSetupModal.tsx:66
+msgid "Give your new Order Bump a name. This is just for admins - it won\\'t be displayed to customers."
+msgstr "Dóna un nom al teu nou Order Bump. Això és només per a administradors, no es mostrarà als clients."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsSetupModal.tsx:78
+msgid "Which product should be added to the cart when this Order Bump is accepted?"
+msgstr "Quin producte s'ha d'afegir al carret quan s'accepti aquest Order Bump?"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsSetupModal.tsx:80
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:33
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:92
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:130
+#: client/ts/admin/Components/Metaboxes/OrderBumpsGeneralPanel.tsx:44
+msgid "Search for product"
+msgstr "Cerca producte"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsSetupModal.tsx:91
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferDiscountPanel.tsx:19
+msgid "Discount Type"
+msgstr "Tipus de descompte"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsSetupModal.tsx:94
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferDiscountPanel.tsx:23
+msgid "Percent Off"
+msgstr "Percentatge de descompte"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsSetupModal.tsx:95
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferDiscountPanel.tsx:24
+msgid "Amount Off"
+msgstr "Quantitat de descompte"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsSetupModal.tsx:105
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferDiscountPanel.tsx:34
+msgid "Discount"
+msgstr "Descompte"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsSetupModal.tsx:106
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferDiscountPanel.tsx:35
+msgid "The amount or percentage applied as a discount to the Offer Product. Leave blank or enter 0 to charge full price."
+msgstr "La quantitat o percentatge aplicat com a descompte al producte de l'oferta. Deixa-ho en blanc o introdueix 0 per cobrar el preu complet."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsSetupModal.tsx:117
+msgid "Continue"
+msgstr "Continua"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsSetupModal.tsx:122
+msgid "Continue to review your order bump, optionally add display conditions, and publish."
+msgstr "Continua per revisar el teu order bump, afegir condicions de visualització opcionalment i publicar."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:19
+msgid "You must select an offer product."
+msgstr "Has de seleccionar un producte d'oferta."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:26
+msgid "Offer"
+msgstr "Oferta"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:44
+msgid "Auto Add Order Bump to Cart"
+msgstr "Afegir automàticament l'Order Bump al carret"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:45
+msgid "If conditions are satisfied, automatically add this order bump to the cart. Useful for free gifts or other offers that don\\'t require customer action."
+msgstr "Si es compleixen les condicions, afegeix automàticament aquest order bump al carret. Útil per a regals gratuïts o altres ofertes que no requereixen acció del client."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:56
+msgid "Auto Match Variations Between Search and Offer Product"
+msgstr "Coincidència automàtica de variacions entre el producte de cerca i l'oferta"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:61
+msgid "Add offer product to the cart with the same variable configuration as the product below."
+msgstr "Afegeix el producte d'oferta al carret amb la mateixa configuració variable que el producte següent."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:65
+msgid "Only applies when Auto Match Cart Product and Offer Product are variable products with matching variation attributes (Size, Color, etc)"
+msgstr "S'aplica només quan el producte del carret de coincidència automàtica i el producte d'oferta són productes variables amb atributs de variació coincidents (mida, color, etc.)"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:69
+msgid "Leave unchecked to have customers to select variation options in a modal window."
+msgstr "Deixa sense marcar perquè els clients puguin seleccionar opcions de variació en una finestra modal."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:73
+msgid "If offer product is not variable, this option is ignored."
+msgstr "Si el producte d'oferta no és variable, aquesta opció s'ignora."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:90
+msgid "Auto Match Variations Cart Product"
+msgstr "Coincidència automàtica de variacions del producte del carret"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:98
+msgid "The product in the cart to match the Order Bump variations to."
+msgstr "El producte del carret amb què coincidir les variacions de l'Order Bump."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:113
+msgid "Match Quantity of Offer Product to Display Condition Product"
+msgstr "Coincidir la quantitat del producte d'oferta amb el producte de la condició de visualització"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:114
+msgid "If customer has two of the display condition product in the cart, two of the offer product will be added to the cart."
+msgstr "Si el client té dos del producte de la condició de visualització al carret, s'afegiran dos productes d'oferta al carret."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:128
+msgid "Match Quantity Cart Product"
+msgstr "Coincidir la quantitat del producte del carret"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:136
+msgid "The product in the cart to match the Order Bump quantity to."
+msgstr "El producte del carret amb què coincidir la quantitat de l'Order Bump."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:151
+msgid "Quantity of Offer Product To Add"
+msgstr "Quantitat de producte d'oferta per afegir"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:152
+msgid "The quantity to add to the cart when offer is accepted."
+msgstr "La quantitat a afegir al carret quan s'accepta l'oferta."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:161
+msgid "Allow Customer To Change Quantity In Cart"
+msgstr "Permetre al client canviar la quantitat al carret"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:162
+msgid "Allow customer to change the quantity of this order bump in the cart."
+msgstr "Permetre al client canviar la quantitat d'aquest order bump al carret."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:22
+msgid "Offer Language"
+msgstr "Idioma de l'oferta"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:29
+msgid "Place Order Modal Heading"
+msgstr "Títol del modal de realització de la comanda"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:30
+msgid "Default if blank: Your order is almost complete..."
+msgstr "Per defecte si està buit: La teva comanda està gairebé completa..."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:30
+msgid "Wait %s! Here\\'s an exclusive offer to compliment your order!"
+msgstr "Espera %s! Aquí tens una oferta exclusiva per complementar la teva comanda!"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:39
+msgid "Place Order Modal Subheading"
+msgstr "Subtítol del modal de realització de la comanda"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:40
+msgid "Default if blank: Add this offer to your order and save!"
+msgstr "Per defecte si està buit: Afegeix aquesta oferta a la teva comanda i estalvia!"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:52
+msgid "Offer Acceptance Checkbox Label"
+msgstr "Etiqueta de la casella d'acceptació de l'oferta"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:52
+msgid "Offer Acceptance Button Label"
+msgstr "Etiqueta del botó d'acceptació de l'oferta"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:53
+msgid "Example: Yes! Please add this offer to my order"
+msgstr "Exemple: Sí! Si us plau, afegeix aquesta oferta a la meva comanda"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:63
+msgid "Offer Description"
+msgstr "Descripció de l'oferta"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:64
+msgid "Example: Limited time offer! Get an EXCLUSIVE discount right now! Click the checkbox above to add this product to your order now."
+msgstr "Exemple: Oferta per temps limitat! Obteniu un descompte EXCLUSIU ara mateix! Fes clic a la casella de selecció anterior per afegir aquest producte a la teva comanda ara."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:74
+msgid "Modal Offer Rejection Link Text"
+msgstr "Text de l'enllaç de rebuig de l'oferta modal"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:78
+msgid "Displays in modal version of Order Bump, such as Place Order bumps or when the Offer Product is a variable product (as opposed to a specific variation)."
+msgstr "Es mostra en la versió modal de l'Order Bump, com ara els bumps de realització de la comanda o quan el producte d'oferta és un producte variable (en lloc d'una variació específica)."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:83
+msgid "Default if blank: No thanks, just complete my order"
+msgstr "Per defecte si està buit: No, gràcies, només completa la meva comanda"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:85
+msgid "Default if blank: No thanks"
+msgstr "Per defecte si està buit: No, gràcies"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferDiscountPanel.tsx:15
+msgid "Offer Discount"
+msgstr "Descompte de l'oferta"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferDiscountPanel.tsx:20
+msgid "Amount Off: Remove fixed amount from the product price. Percent Off: Discount product by specified percentage."
+msgstr "Import de descompte: elimina una quantitat fixa del preu del producte. Percentatge de descompte: descompta el producte pel percentatge especificat."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferDiscountPanel.tsx:46
+msgid "Item Removal Behavior"
+msgstr "Comportament en eliminar l'article"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferDiscountPanel.tsx:47
+msgid "What happens when the display for product is removed from the cart. Default: Order Bump remains in the cart but bump specific discounts are removed."
+msgstr "Què passa quan es elimina la visualització del producte del carret. Per defecte: l'Order Bump roman al carret però es retiren els descomptes específics del bump."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferDiscountPanel.tsx:50
+msgid "Leave In Cart With Normal Price"
+msgstr "Deixar al carret amb preu normal"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferDiscountPanel.tsx:51
+msgid "Remove Order Bump From Cart"
+msgstr "Eliminar l'Order Bump del carret"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsGeneralPanel.tsx:13
+msgid "You must set an upsell replacement product."
+msgstr "Heu de configurar un producte de substitució per a l'upsell."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsGeneralPanel.tsx:20
+msgid "Offer Type"
+msgstr "Tipus d'oferta"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsGeneralPanel.tsx:24
+msgid "Use Order Bump As Upsell"
+msgstr "Utilitzar Order Bump com a Upsell"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsGeneralPanel.tsx:28
+msgid "Replace a cart item with offer product when this Order Bump is taken."
+msgstr "Substituir un article del carret pel producte de l'oferta quan s'accepta aquest Order Bump."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsGeneralPanel.tsx:42
+msgid "Which product does this upsell replace in the cart?"
+msgstr "Quin producte substitueix aquest upsell al carret?"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsGeneralPanel.tsx:50
+msgid "This product must be in the cart for this order bump to be shown."
+msgstr "Aquest producte ha d'estar al carret perquè es mostri aquest order bump."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:44
+msgid "Blocks are only used by full screen offers. Enable Full Screen Landing Page in the Display Location panel, then add the Order Bump Offer Form block where the offer form should go."
+msgstr "Els blocs només s'utilitzen per a ofertes de pantalla completa. सक्रियa la Pàgina de destinació a pantalla completa al tauler de la ubicació de visualització i, després, afegeix el bloc Formulari de l'oferta de bump de comanda on hagi d'anar el formulari de l'oferta."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:45
+msgid "Blocks are only used by full screen offers, available on Place Order Click and Post Purchase One-Click bumps. This bump uses the built-in layout."
+msgstr "Els blocs només s'utilitzen per a ofertes de pantalla completa, disponibles a Place Order Click i als bumps Post Purchase One-Click. Aquest bump utilitza el disseny integrat."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:61
+msgid "Post Purchase One-Click bumps require a compatible payment gateway. We recommend using Place Order bumps when using non-compatible gateways."
+msgstr "Els Post Purchase One-Click bumps requereixen una passarel·la de pagament compatible. Recomanem utilitzar Place Order bumps quan s'utilitzen passarel·les no compatibles."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:67
+msgid "Learn more about supported gateways"
+msgstr "Més informació sobre les passarel·les compatibles"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:74
+msgid "Read our Order Bumps documentation"
+msgstr "Llegiu la nostra documentació sobre Order Bumps"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:104
+msgid "This bump will not appear anywhere because the side cart is disabled."
+msgstr "Aquest bump no apareixerà enlloc perquè el carret lateral està desactivat."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:105
+msgid "This bump will not appear anywhere because order bumps are disabled in the side cart."
+msgstr "Aquest bump no apareixerà enlloc perquè els bumps de comanda estan desactivats al carret lateral."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:108
+msgid "This bump will appear on checkout but not in the side cart because the side cart is disabled."
+msgstr "Aquest bump apareixerà al procés de pagament però no al carret lateral perquè el carret lateral està desactivat."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:109
+msgid "This bump will appear on checkout but not in the side cart because order bumps are disabled in the side cart."
+msgstr "Aquest bump apareixerà al procés de pagament però no al carret lateral perquè els bumps de comanda estan desactivats al carret lateral."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:120
+msgid "Open side cart settings"
+msgstr "Obre la configuració del carret lateral"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:141
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:148
+msgid "Display Location"
+msgstr "Ubicació de la visualització"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:157
+msgid "Checkout Slot"
+msgstr "Espai de la caixa"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:187
+msgid "Displays in a popup when Place Order is clicked, before the order is submitted"
+msgstr "Es mostra en una finestra emergent quan es fa clic a Place Order, abans d'enviar la comanda"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:190
+msgid "Displays in a popup on the Thank You page."
+msgstr "Es mostra en una finestra emergent a la pàgina de gràcies."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:194
+msgid "Full Screen Landing Page"
+msgstr "Pàgina de destinació a pantalla completa"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:195
+msgid "Design the offer with blocks instead of the built-in layout. Add the Order Bump Offer Form block where the offer form should go."
+msgstr "Dissenya l'oferta amb blocs en lloc del disseny integrat. Afegeix el bloc Formulari de l'oferta de bump de comanda on hagi d'anar el formulari de l'oferta."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayConditions.tsx:26
+msgid "Show Bump When These Conditions Are True:"
+msgstr "Mostra el bump quan aquestes condicions són certes:"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayConditions.tsx:29
+msgid "This bump will be shown when the correct upsell product is in the cart and the Offer Product is not in the cart. To further limit when this bump is shown, add a rule below."
+msgstr "Aquest bump es mostrarà quan el producte d'upsell correcte estigui al carret i el producte de l'oferta no hi sigui. Per limitar encara més quan es mostra aquest bump, afegiu una regla a continuació."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayConditions.tsx:31
+msgid "This bump will always be shown when the Offer Product is not in the cart. To limit when this bump is shown, add a rule below."
+msgstr "Aquest bump sempre es mostrarà quan el producte de l'oferta no estigui al carret. Per limitar quan es mostra aquest bump, afegiu una regla a continuació."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsActionsPanel.tsx:15
+msgid "Actions"
+msgstr "Accions"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsActionsPanel.tsx:21
+msgid "Remove These Products From The Cart"
+msgstr "Elimina aquests productes del carret"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsActionsPanel.tsx:23
+msgid "If any of these products are in the cart, remove them when this bump is added to the cart."
+msgstr "Si algun d'aquests productes està al carret, elimina'ls quan s'afegeixi aquest bump al carret."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsActionsPanel.tsx:24
+msgid "Search for products"
+msgstr "Cerca de productes"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsActionsPanel.tsx:35
+msgid "Apply Free Shipping"
+msgstr "Aplica enviament gratuït"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsActionsPanel.tsx:36
+msgid "When this bump is added to the cart, apply free shipping to the cart."
+msgstr "Quan s'afegeixi aquest bump al carret, aplica enviament gratuït al carret."
+
+#: client/ts/admin/Components/Metaboxes/CategoryCompleter.tsx:46
+msgid "All categories with titles that include {{query /}}"
+msgstr "Totes les categories amb títols que inclouen {{query /}}"
+
+#: client/ts/admin/Components/Fields/WPMediaUploadButton.tsx:69
+msgid "Select or Upload a Logo"
+msgstr "Selecciona o puja un logotip"
+
+#: client/ts/admin/Components/Fields/RangeControl.tsx:97
+#: client/ts/admin/Components/Fields/ColorControl.tsx:137
+msgid "Reset"
+msgstr "Reinicia"
+
+#: client/ts/admin/Components/Fields/ColorControl.tsx:173
+#: client/ts/admin/Components/CheckoutEditor/BumpEditorModal.tsx:101
+msgid "Done"
+msgstr "Fet"
 
 #: client/ts/admin/Components/Forms/WooCommercePagesGlobalOptionsSettingsForm.tsx:49
 #: client/ts/admin/Components/Forms/CheckoutSettingsForm.tsx:570
@@ -5780,15 +6222,6 @@ msgstr "Camp de telèfon"
 msgid "Determines whether the WooCommerce native phone field is enabled."
 msgstr "Determina si el camp de telèfon natiu de WooCommerce està habilitat."
 
-#: client/ts/admin/Components/Forms/CheckoutSettingsForm.tsx:237
-#: client/ts/admin/Components/Metaboxes/ProductsAndVariationsCompleter.tsx:44
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:850
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:863
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:873
-#: client/ts/admin/Components/CheckoutEditor/panels/CheckoutSettingsPanel.tsx:110
-msgid "Hidden"
-msgstr "Amagat"
-
 #: client/ts/admin/Components/Forms/CheckoutSettingsForm.tsx:241
 #: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:851
 #: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:864
@@ -6537,394 +6970,6 @@ msgstr "Marqueu qualsevol rol d'usuari que s'hauria d'excloure dels correus elec
 #: client/ts/admin/Components/Forms/ACRSettingsForm.tsx:172
 msgid "Are you sure you want to delete all tracked carts?"
 msgstr "Esteu segur que voleu eliminar tots els carretons seguits?"
-
-#: client/ts/admin/Components/Metaboxes/ProductsAndVariationsCompleter.tsx:30
-msgid "Private"
-msgstr "Privat"
-
-#: client/ts/admin/Components/Metaboxes/ProductsAndVariationsCompleter.tsx:32
-msgid "Pending"
-msgstr "Pendent"
-
-#: client/ts/admin/Components/Metaboxes/ProductsAndVariationsCompleter.tsx:33
-msgid "Scheduled"
-msgstr "Programat"
-
-#: client/ts/admin/Components/Metaboxes/ProductsAndVariationsCompleter.tsx:46
-msgid "Search only"
-msgstr "Només cerca"
-
-#: client/ts/admin/Components/Metaboxes/ProductsAndVariationsCompleter.tsx:80
-msgid "All products with titles that include {{query /}}"
-msgstr "Tots els productes amb títols que inclouen {{query /}}"
-
-#: client/ts/admin/Components/Metaboxes/ProductsAndVariationsCompleter.tsx:130
-msgid "Variation"
-msgstr "Variació"
-
-#: client/ts/admin/Components/Metaboxes/ProductTagCompleter.tsx:44
-msgid "All product tags that include {{query /}}"
-msgstr "Totes les etiquetes de producte que inclouen {{query /}}"
-
-#: client/ts/admin/Components/Metaboxes/ProductAttributeTermsCompleter.tsx:99
-msgid "All attribute terms that include {{query /}}"
-msgstr "Tots els termes d'atribut que inclouen {{query /}}"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsSetupModal.tsx:62
-msgid "Let\\'s configure a few things to get you started quickly."
-msgstr "Configurem algunes coses per començar ràpidament."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsSetupModal.tsx:66
-msgid "Give your new Order Bump a name. This is just for admins - it won\\'t be displayed to customers."
-msgstr "Dóna un nom al teu nou Order Bump. Això és només per a administradors, no es mostrarà als clients."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsSetupModal.tsx:78
-msgid "Which product should be added to the cart when this Order Bump is accepted?"
-msgstr "Quin producte s'ha d'afegir al carret quan s'accepti aquest Order Bump?"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsSetupModal.tsx:80
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:33
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:92
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:130
-#: client/ts/admin/Components/Metaboxes/OrderBumpsGeneralPanel.tsx:44
-msgid "Search for product"
-msgstr "Cerca producte"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsSetupModal.tsx:91
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferDiscountPanel.tsx:19
-msgid "Discount Type"
-msgstr "Tipus de descompte"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsSetupModal.tsx:94
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferDiscountPanel.tsx:23
-msgid "Percent Off"
-msgstr "Percentatge de descompte"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsSetupModal.tsx:95
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferDiscountPanel.tsx:24
-msgid "Amount Off"
-msgstr "Quantitat de descompte"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsSetupModal.tsx:105
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferDiscountPanel.tsx:34
-msgid "Discount"
-msgstr "Descompte"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsSetupModal.tsx:106
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferDiscountPanel.tsx:35
-msgid "The amount or percentage applied as a discount to the Offer Product. Leave blank or enter 0 to charge full price."
-msgstr "La quantitat o percentatge aplicat com a descompte al producte de l'oferta. Deixa-ho en blanc o introdueix 0 per cobrar el preu complet."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsSetupModal.tsx:117
-msgid "Continue"
-msgstr "Continua"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsSetupModal.tsx:122
-msgid "Continue to review your order bump, optionally add display conditions, and publish."
-msgstr "Continua per revisar el teu order bump, afegir condicions de visualització opcionalment i publicar."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:19
-msgid "You must select an offer product."
-msgstr "Has de seleccionar un producte d'oferta."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:26
-msgid "Offer"
-msgstr "Oferta"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:44
-msgid "Auto Add Order Bump to Cart"
-msgstr "Afegir automàticament l'Order Bump al carret"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:45
-msgid "If conditions are satisfied, automatically add this order bump to the cart. Useful for free gifts or other offers that don\\'t require customer action."
-msgstr "Si es compleixen les condicions, afegeix automàticament aquest order bump al carret. Útil per a regals gratuïts o altres ofertes que no requereixen acció del client."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:56
-msgid "Auto Match Variations Between Search and Offer Product"
-msgstr "Coincidència automàtica de variacions entre el producte de cerca i l'oferta"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:61
-msgid "Add offer product to the cart with the same variable configuration as the product below."
-msgstr "Afegeix el producte d'oferta al carret amb la mateixa configuració variable que el producte següent."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:65
-msgid "Only applies when Auto Match Cart Product and Offer Product are variable products with matching variation attributes (Size, Color, etc)"
-msgstr "S'aplica només quan el producte del carret de coincidència automàtica i el producte d'oferta són productes variables amb atributs de variació coincidents (mida, color, etc.)"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:69
-msgid "Leave unchecked to have customers to select variation options in a modal window."
-msgstr "Deixa sense marcar perquè els clients puguin seleccionar opcions de variació en una finestra modal."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:73
-msgid "If offer product is not variable, this option is ignored."
-msgstr "Si el producte d'oferta no és variable, aquesta opció s'ignora."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:90
-msgid "Auto Match Variations Cart Product"
-msgstr "Coincidència automàtica de variacions del producte del carret"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:98
-msgid "The product in the cart to match the Order Bump variations to."
-msgstr "El producte del carret amb què coincidir les variacions de l'Order Bump."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:113
-msgid "Match Quantity of Offer Product to Display Condition Product"
-msgstr "Coincidir la quantitat del producte d'oferta amb el producte de la condició de visualització"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:114
-msgid "If customer has two of the display condition product in the cart, two of the offer product will be added to the cart."
-msgstr "Si el client té dos del producte de la condició de visualització al carret, s'afegiran dos productes d'oferta al carret."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:128
-msgid "Match Quantity Cart Product"
-msgstr "Coincidir la quantitat del producte del carret"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:136
-msgid "The product in the cart to match the Order Bump quantity to."
-msgstr "El producte del carret amb què coincidir la quantitat de l'Order Bump."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:151
-msgid "Quantity of Offer Product To Add"
-msgstr "Quantitat de producte d'oferta per afegir"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:152
-msgid "The quantity to add to the cart when offer is accepted."
-msgstr "La quantitat a afegir al carret quan s'accepta l'oferta."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:161
-msgid "Allow Customer To Change Quantity In Cart"
-msgstr "Permetre al client canviar la quantitat al carret"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:162
-msgid "Allow customer to change the quantity of this order bump in the cart."
-msgstr "Permetre al client canviar la quantitat d'aquest order bump al carret."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:22
-msgid "Offer Language"
-msgstr "Idioma de l'oferta"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:29
-msgid "Place Order Modal Heading"
-msgstr "Títol del modal de realització de la comanda"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:30
-msgid "Default if blank: Your order is almost complete..."
-msgstr "Per defecte si està buit: La teva comanda està gairebé completa..."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:30
-msgid "Wait %s! Here\\'s an exclusive offer to compliment your order!"
-msgstr "Espera %s! Aquí tens una oferta exclusiva per complementar la teva comanda!"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:39
-msgid "Place Order Modal Subheading"
-msgstr "Subtítol del modal de realització de la comanda"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:40
-msgid "Default if blank: Add this offer to your order and save!"
-msgstr "Per defecte si està buit: Afegeix aquesta oferta a la teva comanda i estalvia!"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:52
-msgid "Offer Acceptance Checkbox Label"
-msgstr "Etiqueta de la casella d'acceptació de l'oferta"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:52
-msgid "Offer Acceptance Button Label"
-msgstr "Etiqueta del botó d'acceptació de l'oferta"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:53
-msgid "Example: Yes! Please add this offer to my order"
-msgstr "Exemple: Sí! Si us plau, afegeix aquesta oferta a la meva comanda"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:63
-msgid "Offer Description"
-msgstr "Descripció de l'oferta"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:64
-msgid "Example: Limited time offer! Get an EXCLUSIVE discount right now! Click the checkbox above to add this product to your order now."
-msgstr "Exemple: Oferta per temps limitat! Obteniu un descompte EXCLUSIU ara mateix! Fes clic a la casella de selecció anterior per afegir aquest producte a la teva comanda ara."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:74
-msgid "Modal Offer Rejection Link Text"
-msgstr "Text de l'enllaç de rebuig de l'oferta modal"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:78
-msgid "Displays in modal version of Order Bump, such as Place Order bumps or when the Offer Product is a variable product (as opposed to a specific variation)."
-msgstr "Es mostra en la versió modal de l'Order Bump, com ara els bumps de realització de la comanda o quan el producte d'oferta és un producte variable (en lloc d'una variació específica)."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:83
-msgid "Default if blank: No thanks, just complete my order"
-msgstr "Per defecte si està buit: No, gràcies, només completa la meva comanda"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:85
-msgid "Default if blank: No thanks"
-msgstr "Per defecte si està buit: No, gràcies"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferDiscountPanel.tsx:15
-msgid "Offer Discount"
-msgstr "Descompte de l'oferta"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferDiscountPanel.tsx:20
-msgid "Amount Off: Remove fixed amount from the product price. Percent Off: Discount product by specified percentage."
-msgstr "Import de descompte: elimina una quantitat fixa del preu del producte. Percentatge de descompte: descompta el producte pel percentatge especificat."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferDiscountPanel.tsx:46
-msgid "Item Removal Behavior"
-msgstr "Comportament en eliminar l'article"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferDiscountPanel.tsx:47
-msgid "What happens when the display for product is removed from the cart. Default: Order Bump remains in the cart but bump specific discounts are removed."
-msgstr "Què passa quan es elimina la visualització del producte del carret. Per defecte: l'Order Bump roman al carret però es retiren els descomptes específics del bump."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferDiscountPanel.tsx:50
-msgid "Leave In Cart With Normal Price"
-msgstr "Deixar al carret amb preu normal"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferDiscountPanel.tsx:51
-msgid "Remove Order Bump From Cart"
-msgstr "Eliminar l'Order Bump del carret"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsGeneralPanel.tsx:13
-msgid "You must set an upsell replacement product."
-msgstr "Heu de configurar un producte de substitució per a l'upsell."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsGeneralPanel.tsx:20
-msgid "Offer Type"
-msgstr "Tipus d'oferta"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsGeneralPanel.tsx:24
-msgid "Use Order Bump As Upsell"
-msgstr "Utilitzar Order Bump com a Upsell"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsGeneralPanel.tsx:28
-msgid "Replace a cart item with offer product when this Order Bump is taken."
-msgstr "Substituir un article del carret pel producte de l'oferta quan s'accepta aquest Order Bump."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsGeneralPanel.tsx:42
-msgid "Which product does this upsell replace in the cart?"
-msgstr "Quin producte substitueix aquest upsell al carret?"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsGeneralPanel.tsx:50
-msgid "This product must be in the cart for this order bump to be shown."
-msgstr "Aquest producte ha d'estar al carret perquè es mostri aquest order bump."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:44
-msgid "Blocks are only used by full screen offers. Enable Full Screen Landing Page in the Display Location panel, then add the Order Bump Offer Form block where the offer form should go."
-msgstr "Els blocs només s'utilitzen per a ofertes de pantalla completa. सक्रियa la Pàgina de destinació a pantalla completa al tauler de la ubicació de visualització i, després, afegeix el bloc Formulari de l'oferta de bump de comanda on hagi d'anar el formulari de l'oferta."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:45
-msgid "Blocks are only used by full screen offers, available on Place Order Click and Post Purchase One-Click bumps. This bump uses the built-in layout."
-msgstr "Els blocs només s'utilitzen per a ofertes de pantalla completa, disponibles a Place Order Click i als bumps Post Purchase One-Click. Aquest bump utilitza el disseny integrat."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:61
-msgid "Post Purchase One-Click bumps require a compatible payment gateway. We recommend using Place Order bumps when using non-compatible gateways."
-msgstr "Els Post Purchase One-Click bumps requereixen una passarel·la de pagament compatible. Recomanem utilitzar Place Order bumps quan s'utilitzen passarel·les no compatibles."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:67
-msgid "Learn more about supported gateways"
-msgstr "Més informació sobre les passarel·les compatibles"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:74
-msgid "Read our Order Bumps documentation"
-msgstr "Llegiu la nostra documentació sobre Order Bumps"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:104
-msgid "This bump will not appear anywhere because the side cart is disabled."
-msgstr "Aquest bump no apareixerà enlloc perquè el carret lateral està desactivat."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:105
-msgid "This bump will not appear anywhere because order bumps are disabled in the side cart."
-msgstr "Aquest bump no apareixerà enlloc perquè els bumps de comanda estan desactivats al carret lateral."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:108
-msgid "This bump will appear on checkout but not in the side cart because the side cart is disabled."
-msgstr "Aquest bump apareixerà al procés de pagament però no al carret lateral perquè el carret lateral està desactivat."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:109
-msgid "This bump will appear on checkout but not in the side cart because order bumps are disabled in the side cart."
-msgstr "Aquest bump apareixerà al procés de pagament però no al carret lateral perquè els bumps de comanda estan desactivats al carret lateral."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:120
-msgid "Open side cart settings"
-msgstr "Obre la configuració del carret lateral"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:141
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:148
-msgid "Display Location"
-msgstr "Ubicació de la visualització"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:157
-msgid "Checkout Slot"
-msgstr "Espai de la caixa"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:187
-msgid "Displays in a popup when Place Order is clicked, before the order is submitted"
-msgstr "Es mostra en una finestra emergent quan es fa clic a Place Order, abans d'enviar la comanda"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:190
-msgid "Displays in a popup on the Thank You page."
-msgstr "Es mostra en una finestra emergent a la pàgina de gràcies."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:194
-msgid "Full Screen Landing Page"
-msgstr "Pàgina de destinació a pantalla completa"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:195
-msgid "Design the offer with blocks instead of the built-in layout. Add the Order Bump Offer Form block where the offer form should go."
-msgstr "Dissenya l'oferta amb blocs en lloc del disseny integrat. Afegeix el bloc Formulari de l'oferta de bump de comanda on hagi d'anar el formulari de l'oferta."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayConditions.tsx:26
-msgid "Show Bump When These Conditions Are True:"
-msgstr "Mostra el bump quan aquestes condicions són certes:"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayConditions.tsx:29
-msgid "This bump will be shown when the correct upsell product is in the cart and the Offer Product is not in the cart. To further limit when this bump is shown, add a rule below."
-msgstr "Aquest bump es mostrarà quan el producte d'upsell correcte estigui al carret i el producte de l'oferta no hi sigui. Per limitar encara més quan es mostra aquest bump, afegiu una regla a continuació."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayConditions.tsx:31
-msgid "This bump will always be shown when the Offer Product is not in the cart. To limit when this bump is shown, add a rule below."
-msgstr "Aquest bump sempre es mostrarà quan el producte de l'oferta no estigui al carret. Per limitar quan es mostra aquest bump, afegiu una regla a continuació."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsActionsPanel.tsx:15
-msgid "Actions"
-msgstr "Accions"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsActionsPanel.tsx:21
-msgid "Remove These Products From The Cart"
-msgstr "Elimina aquests productes del carret"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsActionsPanel.tsx:23
-msgid "If any of these products are in the cart, remove them when this bump is added to the cart."
-msgstr "Si algun d'aquests productes està al carret, elimina'ls quan s'afegeixi aquest bump al carret."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsActionsPanel.tsx:24
-msgid "Search for products"
-msgstr "Cerca de productes"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsActionsPanel.tsx:35
-msgid "Apply Free Shipping"
-msgstr "Aplica enviament gratuït"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsActionsPanel.tsx:36
-msgid "When this bump is added to the cart, apply free shipping to the cart."
-msgstr "Quan s'afegeixi aquest bump al carret, aplica enviament gratuït al carret."
-
-#: client/ts/admin/Components/Metaboxes/CategoryCompleter.tsx:46
-msgid "All categories with titles that include {{query /}}"
-msgstr "Totes les categories amb títols que inclouen {{query /}}"
-
-#: client/ts/admin/Components/Fields/WPMediaUploadButton.tsx:69
-msgid "Select or Upload a Logo"
-msgstr "Selecciona o puja un logotip"
-
-#: client/ts/admin/Components/Fields/RangeControl.tsx:97
-#: client/ts/admin/Components/Fields/ColorControl.tsx:137
-msgid "Reset"
-msgstr "Reinicia"
-
-#: client/ts/admin/Components/Fields/ColorControl.tsx:173
-#: client/ts/admin/Components/CheckoutEditor/BumpEditorModal.tsx:101
-msgid "Done"
-msgstr "Fet"
 
 #: client/ts/admin/Components/CheckoutEditor/ScrollableRegion.tsx:74
 msgid "Scroll down for more items"
@@ -8498,7 +8543,7 @@ msgstr "Elimina regla"
 
 # %d: shipping package number
 #: functions/functions.php:386
-#: functions/functions.php:3455
+#: functions/functions.php:3464
 msgctxt "shipping packages"
 msgid "Shipping"
 msgid_plural "Shipping %d"

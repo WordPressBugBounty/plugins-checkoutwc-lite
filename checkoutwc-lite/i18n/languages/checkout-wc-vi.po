@@ -8,7 +8,7 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "POT-Creation-Date: 2025-07-25 09:22-0400\n"
-"PO-Revision-Date: 2026-09-24T21:25:15+00:00\n"
+"PO-Revision-Date: 2026-10-12T15:20:31+00:00\n"
 "Language: vi\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Poedit 3.6\n"
@@ -164,8 +164,8 @@ msgid "Postcode / ZIP"
 msgstr "Mã bưu điện"
 
 #: includes/AddressFieldsAugmenter.php:458
-#: functions/functions.php:4215
-#: functions/functions.php:4216
+#: functions/functions.php:4224
+#: functions/functions.php:4225
 msgid "Email address"
 msgstr "Địa chỉ email"
 
@@ -302,7 +302,7 @@ msgid "Log in."
 msgstr "Đăng nhập."
 
 #: functions/template-functions.php:489
-#: includes/Managers/AssetManager.php:705
+#: includes/Managers/AssetManager.php:709
 msgid "An account is already registered with your email address. <a href=\"#\" class=\"showlogin\">Please log in.</a>"
 msgstr "Đã có tài khoản đăng ký với địa chỉ email của bạn. <a href=\"#\" class=\"showlogin\">Vui lòng đăng nhập.</a>"
 
@@ -355,7 +355,7 @@ msgstr "Địa chỉ thanh toán"
 #: functions/template-functions.php:768
 #: functions/template-functions.php:806
 #: functions/template-functions.php:1981
-#: includes/Managers/AssetManager.php:701
+#: includes/Managers/AssetManager.php:705
 msgid "Shipping address"
 msgstr "Địa chỉ giao hàng"
 
@@ -368,7 +368,7 @@ msgstr "Giỏ hàng của bạn"
 #: functions/template-functions.php:1047
 #: functions/template-functions.php:2013
 #: functions/template-functions.php:2287
-#: functions/functions.php:3469
+#: functions/functions.php:3478
 msgid "Shipping"
 msgstr "Vận chuyển"
 
@@ -451,7 +451,7 @@ msgid "N/A"
 msgstr "Không áp dụng"
 
 #: functions/template-functions.php:2043
-#: includes/Managers/AssetManager.php:851
+#: includes/Managers/AssetManager.php:855
 msgid "Continue shopping"
 msgstr "Tiếp tục mua hàng"
 
@@ -467,18 +467,18 @@ msgid "Email"
 msgstr "Email"
 
 #: functions/template-functions.php:2101
-#: functions/functions.php:4133
-#: functions/functions.php:4134
+#: functions/functions.php:4142
+#: functions/functions.php:4143
 msgid "Password"
 msgstr "Mật khẩu"
 
 #: functions/template-functions.php:2117
-#: functions/functions.php:4173
+#: functions/functions.php:4182
 msgid "Login"
 msgstr "Đăng nhập"
 
 #: functions/template-functions.php:2120
-#: functions/functions.php:4166
+#: functions/functions.php:4175
 msgid "Lost your password?"
 msgstr "Quên mật khẩu?"
 
@@ -486,16 +486,16 @@ msgstr "Quên mật khẩu?"
 msgid "Your Cart is Empty"
 msgstr "Giỏ của bạn trống trơn"
 
-#: functions/premium-init.php:340
+#: functions/premium-init.php:342
 msgid "CheckoutWC Templates Deactivated"
 msgstr "Mẫu CheckoutWC Đã Bị Vô Hiệu Hóa"
 
 # %1$s: "Settings" text, %2$s: "Start Here" text, %3$s: "Activate CheckoutWC Templates" text
-#: functions/premium-init.php:343
+#: functions/premium-init.php:345
 msgid "Your license is valid and activated for this site but CheckoutWC is disabled for normal customers. To fix this, go to %1$s > %2$s and toggle \"%3$s\"."
 msgstr "Giấy phép của bạn hợp lệ và đã được kích hoạt cho trang web này nhưng CheckoutWC bị vô hiệu hóa cho khách hàng thông thường. Để khắc phục, hãy vào %1$s > %2$s và bật/tắt \"%3$s\"."
 
-#: functions/premium-init.php:344
+#: functions/premium-init.php:346
 #: includes/Admin/AdminPluginsPageManager.php:40
 #: includes/Admin/Pages/OrderBumpsAdminFree.php:25
 #: includes/Admin/Pages/LocalPickupAdminFree.php:27
@@ -507,66 +507,71 @@ msgstr "Giấy phép của bạn hợp lệ và đã được kích hoạt cho t
 msgid "Settings"
 msgstr "Cài đặt"
 
-#: functions/premium-init.php:345
+#: functions/premium-init.php:347
+#: functions/premium-init.php:360
 #: includes/Admin/Pages/General.php:25
-#: includes/Admin/Notices/InactiveLicenseNotice.php:13
 msgid "Start Here"
 msgstr "Bắt đầu tại đây"
 
-#: functions/premium-init.php:346
+#: functions/premium-init.php:348
 #: includes/Admin/Pages/General.php:195
 msgid "Activate CheckoutWC Templates"
 msgstr "Kích hoạt Mẫu CheckoutWC"
 
-#: functions/premium-init.php:353
-msgid "Invalid CheckoutWC License"
-msgstr "Giấy Phép CheckoutWC Không Hợp Lệ"
+#: functions/premium-init.php:355
+msgid "CheckoutWC license invalid"
+msgstr "Giấy phép CheckoutWC không hợp lệ"
 
-# %1$s: Pricing URL, %2$s: "purchase a license" link text
-#: functions/premium-init.php:356
-msgid "Your license key is missing or invalid. Please verify that your license key is valid or <a target=\"_blank\" href=\"%1$s\">%2$s</a> to restore full functionality."
-msgstr "Khóa giấy phép của bạn bị thiếu hoặc không hợp lệ. Vui lòng xác minh khóa giấy phép của bạn hợp lệ hoặc <a target=\"_blank\" href=\"%1$s\">%2$s</a> để khôi phục đầy đủ chức năng."
-
+# %1$s: URL to license settings page, %2$s: "Start Here" link text, %3$s: Pricing URL, %4$s: "buy a license" link text
 #: functions/premium-init.php:358
-msgid "purchase a license"
+msgid "Premium features are off because your license key is missing or invalid. Check your key on <a href=\"%1$s\">%2$s</a> or <a target=\"_blank\" href=\"%3$s\">%4$s</a>."
+msgstr "Các tính năng cao cấp đang tắt vì khóa giấy phép của bạn bị thiếu hoặc không hợp lệ. Kiểm tra khóa của bạn tại <a href=\"%1$s\">%2$s</a> hoặc <a target=\"_blank\" href=\"%3$s\">%4$s</a>."
+
+#: functions/premium-init.php:362
+#: includes/Admin/Notices/InactiveLicenseNotice.php:15
+msgid "buy a license"
 msgstr "mua giấy phép"
 
-#: functions/premium-init.php:374
+#: functions/premium-init.php:382
 msgid "New Feature: Cloudflare Turnstile Bot Protection"
 msgstr "Tính năng mới: Bảo vệ Bot Cloudflare Turnstile"
 
 # 1: Cloudflare Turnstile name wrapped in strong tags, 2: Setup link
-#: functions/premium-init.php:377
+#: functions/premium-init.php:385
 msgid "CheckoutWC now supports %1$s - a privacy-first, CAPTCHA-free way to protect your checkout from bots and spam orders. %2$s"
 msgstr "CheckoutWC hiện hỗ trợ %1$s - một cách bảo mật quyền riêng tư, không CAPTCHA để bảo vệ thanh toán của bạn khỏi bot và đơn hàng spam. %2$s"
 
 # The name of the Cloudflare Turnstile service
-#: functions/premium-init.php:381
+#: functions/premium-init.php:389
 #: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:78
 msgid "Cloudflare Turnstile"
 msgstr "Cloudflare Turnstile"
 
-#: functions/premium-init.php:387
+#: functions/premium-init.php:395
 msgid "Setup Cloudflare Turnstile now"
 msgstr "Thiết lập Cloudflare Turnstile ngay bây giờ"
 
-#: functions/premium-init.php:392
+#: functions/premium-init.php:400
 msgid "Upgrade your plan now to access"
 msgstr "Nâng cấp gói của bạn ngay để truy cập"
 
-#: functions/premium-init.php:405
+#: functions/premium-init.php:413
 msgid "Abandoned Cart Recovery Tracking Disabled"
 msgstr "Theo Dõi Khôi Phục Giỏ Hàng Bỏ Quên Đã Bị Tắt"
 
 # %1$s: Gist URL, %2$s: "Learn More" link text
-#: functions/premium-init.php:408
+#: functions/premium-init.php:416
 msgid "You have enabled Abandoned Cart Recovery tracking, but you do not have any emails published. To track carts, you need to publish emails or use this dev filter: <a target=\"_blank\" href=\"%1$s\">%2$s</a>."
 msgstr "Bạn đã bật theo dõi Khôi phục Giỏ hàng Bỏ quên, nhưng bạn chưa xuất bản email nào. Để theo dõi giỏ hàng, bạn cần xuất bản email hoặc sử dụng bộ lọc phát triển này: <a target=\"_blank\" href=\"%1$s\">%2$s</a>."
 
-#: functions/premium-init.php:410
+#: functions/premium-init.php:418
 #: includes/Admin/Pages/AbandonedCartRecoveryAdminFree.php:82
 msgid "Learn More"
 msgstr "Tìm Hiểu Thêm"
+
+#: functions/premium-init.php:477
+msgid "Admin preview: your CheckoutWC license isn\\'t valid for this site, so premium features are off. Check your license here: WP Admin > CheckoutWC > Start Here."
+msgstr "Xem trước quản trị: giấy phép CheckoutWC của bạn không hợp lệ cho trang web này, nên các tính năng cao cấp đang tắt. Kiểm tra giấy phép của bạn tại đây: WP Admin > CheckoutWC > Bắt đầu tại đây."
 
 #: functions/init.php:396
 #: functions/init.php:397
@@ -685,7 +690,7 @@ msgid "No shipping methods available"
 msgstr "Không có phương thức vận chuyển nào"
 
 #: functions/functions.php:826
-#: includes/Model/Bumps/BumpAbstract.php:835
+#: includes/Model/Bumps/BumpAbstract.php:882
 msgid "Free!"
 msgstr "Miễn phí!"
 
@@ -757,22 +762,22 @@ msgstr "Giỏ hàng"
 msgid "CheckoutWC: Error matching %1$d to customer %2$d"
 msgstr "CheckoutWC: Lỗi khi đối chiếu %1$d với khách hàng %2$d"
 
-#: functions/functions.php:2162
+#: functions/functions.php:2171
 msgid "Or"
 msgstr "Hoặc"
 
-#: functions/functions.php:2247
+#: functions/functions.php:2256
 msgid "You can only have 1 %s in your cart."
 msgstr "Bạn chỉ có thể có 1 %s trong giỏ hàng của mình."
 
-#: functions/functions.php:2397
+#: functions/functions.php:2406
 #: client/ts/frontend/Components/CartItemQuantityControl.tsx:55
 msgid "Decrement"
 msgstr "Giảm"
 
-#: functions/functions.php:2406
-#: includes/Managers/AssetManager.php:731
-#: includes/Managers/AssetManager.php:852
+#: functions/functions.php:2415
+#: includes/Managers/AssetManager.php:735
+#: includes/Managers/AssetManager.php:856
 #: includes/Features/LocalPickup.php:510
 #: includes/Features/AbandonedCartRecovery.php:128
 #: includes/Features/ABTesting.php:150
@@ -782,97 +787,97 @@ msgstr "Giảm"
 msgid "Edit"
 msgstr "Sửa"
 
-#: functions/functions.php:2409
+#: functions/functions.php:2418
 #: client/ts/frontend/Components/CartItemQuantityControl.tsx:70
 msgid "Increment"
 msgstr "Tăng"
 
-#: functions/functions.php:3123
+#: functions/functions.php:3132
 msgid "Unsubscribe"
 msgstr "Bỏ đăng ký"
 
-#: functions/functions.php:3495
+#: functions/functions.php:3504
 #: includes/Features/AbandonedCartRecovery.php:756
 #: client/ts/admin/Components/acr/carts.tsx:74
 msgid "Subtotal"
 msgstr "Tổng phụ"
 
-#: functions/functions.php:3499
+#: functions/functions.php:3508
 #: includes/Admin/Views/html-refund-offer.php:25
 msgid "Total"
 msgstr "Tổng cộng"
 
-#: functions/functions.php:3552
+#: functions/functions.php:3561
 msgid "There are no shipping options available. Please ensure that your address has been entered correctly, or contact us if you need any help."
 msgstr "Không có tùy chọn vận chuyển nào khả dụng. Vui lòng đảm bảo rằng địa chỉ của bạn đã được nhập chính xác, hoặc liên hệ với chúng tôi nếu bạn cần giúp đỡ."
 
-#: functions/functions.php:3906
+#: functions/functions.php:3915
 #: includes/Admin/Pages/AbandonedCartRecoveryAdminFree.php:73
 msgid "SendWP - Transactional Email"
 msgstr "SendWP - Email giao dịch"
 
-#: functions/functions.php:3911
+#: functions/functions.php:3920
 #: includes/Admin/Pages/AbandonedCartRecoveryAdminFree.php:77
 msgid "SendWP makes getting emails delivered as simple as a few clicks. So you can relax know those important emails are being delivered on time."
 msgstr "SendWP giúp việc gửi email trở nên đơn giản chỉ với vài cú nhấp chuột. Vì vậy bạn có thể yên tâm rằng những email quan trọng sẽ được gửi đúng hạn."
 
-#: functions/functions.php:3914
+#: functions/functions.php:3923
 #: includes/Admin/Pages/AbandonedCartRecoveryAdminFree.php:79
 msgid "Try SendWP now and <strong>get your first month for just $1.</strong>"
 msgstr "Hãy thử SendWP ngay và <strong>nhận tháng đầu tiên chỉ với $1.</strong>"
 
-#: functions/functions.php:3924
+#: functions/functions.php:3933
 #: includes/Admin/Pages/AbandonedCartRecoveryAdminFree.php:87
 msgid "Note: SendWP is optional. You can use any transactional email service you prefer."
 msgstr "Lưu ý: SendWP là tùy chọn. Bạn có thể sử dụng bất kỳ dịch vụ email giao dịch nào bạn thích."
 
-#: functions/functions.php:3933
+#: functions/functions.php:3942
 #: includes/Admin/Pages/AbandonedCartRecoveryAdminFree.php:94
 msgid "Connect to SendWP"
 msgstr "Kết nối với SendWP"
 
-#: functions/functions.php:4081
+#: functions/functions.php:4090
 msgid "Welcome back"
 msgstr "Chào mừng trở lại"
 
-#: functions/functions.php:4095
+#: functions/functions.php:4104
 msgid "It looks like you already have an account. Please enter your login details below."
 msgstr "Có vẻ như bạn đã có một tài khoản. Vui lòng nhập thông tin đăng nhập của bạn dưới đây."
 
-#: functions/functions.php:4109
+#: functions/functions.php:4118
 msgid "If you have shopped with us before, please enter your login details below."
 msgstr "Nếu bạn đã mua sắm với chúng tôi trước đây, vui lòng nhập thông tin đăng nhập của bạn vào bên dưới."
 
-#: functions/functions.php:4119
-#: functions/functions.php:4120
+#: functions/functions.php:4128
+#: functions/functions.php:4129
 msgid "Username or email address"
 msgstr "Tên đăng nhập hoặc địa chỉ email"
 
-#: functions/functions.php:4154
+#: functions/functions.php:4163
 msgid "Remember me"
 msgstr "Ghi nhớ tôi"
 
-#: functions/functions.php:4185
+#: functions/functions.php:4194
 msgid "Or continue as guest"
 msgstr "Hoặc tiếp tục với tư cách khách"
 
-#: functions/functions.php:4205
+#: functions/functions.php:4214
 msgid "Lost your password? Please enter your username or email address. You will receive a link to create a new password via email."
 msgstr "Quên mật khẩu? Vui lòng nhập tên đăng nhập hoặc địa chỉ email của bạn. Bạn sẽ nhận được liên kết để tạo mật khẩu mới qua email."
 
-#: functions/functions.php:4228
+#: functions/functions.php:4237
 msgid "Reset password"
 msgstr "Đặt lại mật khẩu"
 
-#: functions/functions.php:4243
+#: functions/functions.php:4252
 #: includes/API/OrderBumpPreviewAPI.php:57
 #: includes/API/OrderBumpOfferFormPreviewAPI.php:46
 #: includes/API/GetVariationFormAPI.php:33
 msgid "Product not found"
 msgstr "Không tim thấy sản phẩm"
 
-#: functions/functions.php:4259
-#: functions/functions.php:4417
+#: functions/functions.php:4268
+#: functions/functions.php:4426
 #: includes/API/PostPurchaseBumpProductFormAPI.php:24
 msgid "No thanks"
 msgstr "Không, cảm ơn"
@@ -951,102 +956,98 @@ msgstr "Nhận hàng tại chỗ"
 msgid "Allow customers to pick up orders themselves. This version does not require shipping zones."
 msgstr "Cho phép khách hàng tự lấy đơn hàng. Phiên bản này không yêu cầu vùng vận chuyển."
 
-#: includes/Managers/UpdatesManager.php:416
+#: includes/Managers/UpdatesManager.php:436
 msgid "CheckoutWC License Key"
 msgstr "Khóa bản quyền CheckoutWC"
 
-#: includes/Managers/UpdatesManager.php:421
+#: includes/Managers/UpdatesManager.php:441
 msgid "Your license key is set with the constant <code>CFW_LICENSE_KEY</code>."
 msgstr "Khóa giấy phép của bạn được đặt với hằng số <code>CFW_LICENSE_KEY</code>."
 
-#: includes/Managers/UpdatesManager.php:428
+#: includes/Managers/UpdatesManager.php:448
 msgid "License Holder"
 msgstr "Người giữ giấy phép"
 
-#: includes/Managers/UpdatesManager.php:441
+#: includes/Managers/UpdatesManager.php:461
 msgid "Plan"
 msgstr "Kế hoạch"
 
-#: includes/Managers/UpdatesManager.php:449
+#: includes/Managers/UpdatesManager.php:469
 msgid "Activation Limit"
 msgstr "Giới hạn kích hoạt"
 
-#: includes/Managers/UpdatesManager.php:457
+#: includes/Managers/UpdatesManager.php:477
 #: includes/Admin/Pages/Premium/ABTestingAdmin.php:178
 #: includes/Admin/Pages/Premium/ABTestingAdmin.php:819
 #: client/ts/admin/Components/acr/carts.tsx:80
 msgid "Status"
 msgstr "Trạng thái"
 
-#: includes/Managers/UpdatesManager.php:464
+#: includes/Managers/UpdatesManager.php:484
 msgid "Refresh License Info"
 msgstr "Làm mới thông tin giấy phép"
 
-#: includes/Managers/UpdatesManager.php:512
+#: includes/Managers/UpdatesManager.php:532
 msgid "Please enter your license key."
 msgstr "Vui lòng nhập khóa bản quyền của bạn."
 
-#: includes/Managers/UpdatesManager.php:515
-#: includes/Managers/UpdatesManager.php:523
+#: includes/Managers/UpdatesManager.php:535
+#: includes/Managers/UpdatesManager.php:543
 msgid "Activate Site"
 msgstr "Kích hoạt Trang web"
 
-#: includes/Managers/UpdatesManager.php:518
+#: includes/Managers/UpdatesManager.php:538
 msgid "Deactivate Site"
 msgstr "Hủy kích hoạt Trang web"
 
 # Debug error message logged when license check reaches unexpected state
-#: includes/Managers/UpdatesManager.php:704
+#: includes/Managers/UpdatesManager.php:724
 msgid "License Check Error: You should not be able to get here. I am kind of freaked out."
 msgstr "Lỗi kiểm tra giấy phép: Bạn không nên đến đây. Tôi hơi hoảng."
 
 # %1$d: failure count, %2$d: max failures, %3$s: time since last failure
-#: includes/Managers/UpdatesManager.php:963
+#: includes/Managers/UpdatesManager.php:983
 msgid "Unable to verify CheckoutWC license (%1$d/%2$d attempts failed). Using cached license data. Last attempt: %3$s ago."
 msgstr "Không thể xác minh giấy phép CheckoutWC (%1$d/%2$d lần thử thất bại). Đang sử dụng dữ liệu giấy phép đã lưu trong bộ nhớ đệm. Lần thử cuối: cách đây %3$s."
 
-#: includes/Managers/UpdatesManager.php:986
+#: includes/Managers/UpdatesManager.php:1006
 msgid "%s license activation was not successful. Please check your key status below for more information."
 msgstr "Kích hoạt giấy phép %s không thành công. Vui lòng kiểm tra trạng thái khóa của bạn bên dưới để biết thêm thông tin."
 
-#: includes/Managers/UpdatesManager.php:1004
+#: includes/Managers/UpdatesManager.php:1024
 msgid "%s license successfully activated."
 msgstr "Giấy phép %s đã được kích hoạt thành công."
 
-#: includes/Managers/UpdatesManager.php:1022
+#: includes/Managers/UpdatesManager.php:1042
 msgid "%s license deactivation failed. Please try again, or contact support."
 msgstr "Hủy kích hoạt giấy phép %s thất bại. Vui lòng thử lại hoặc liên hệ bộ phận hỗ trợ."
 
-#: includes/Managers/UpdatesManager.php:1040
+#: includes/Managers/UpdatesManager.php:1060
 msgid "%s license deactivated successfully."
 msgstr "Giấy phép %s đã được hủy kích hoạt thành công."
 
-#: includes/Managers/UpdatesManager.php:1058
+#: includes/Managers/UpdatesManager.php:1078
 msgid "%s license settings saved successfully."
 msgstr "Cài đặt giấy phép %s đã được lưu thành công."
 
-#: includes/Managers/UpdatesManager.php:1076
+#: includes/Managers/UpdatesManager.php:1096
 msgid "%1$s license activation failed: %2$s"
 msgstr "Kích hoạt giấy phép %1$s thất bại: %2$s"
 
-#: includes/Managers/UpdatesManager.php:1094
+#: includes/Managers/UpdatesManager.php:1114
 msgid "%s license activation failed: Unable to connect to license server. Please check your internet connection or try again later."
 msgstr "Kích hoạt giấy phép %s thất bại: Không thể kết nối với máy chủ giấy phép. Vui lòng kiểm tra kết nối internet hoặc thử lại sau."
 
-#: includes/Managers/UpdatesManager.php:1112
+#: includes/Managers/UpdatesManager.php:1132
 msgid "%s: License deactivated locally. The license server could not be reached, but the license has been deactivated on this site."
 msgstr "%s: Giấy phép đã được hủy kích hoạt cục bộ. Không thể kết nối với máy chủ giấy phép, nhưng giấy phép đã được hủy kích hoạt trên trang này."
 
-#: includes/Managers/UpdatesManager.php:1261
-msgid "Unable to verify your CheckoutWC license — the license server could not be reached. Your license and checkout are unaffected; only plugin updates are paused until the connection is restored."
-msgstr "Không thể xác minh giấy phép CheckoutWC của bạn — không thể kết nối đến máy chủ giấy phép. Giấy phép và quy trình thanh toán của bạn không bị ảnh hưởng; chỉ các bản cập nhật plugin bị tạm dừng cho đến khi kết nối được khôi phục."
-
 # %1$d: failure count, %2$d: max failures, %3$s: time since last failure
-#: includes/Managers/UpdatesManager.php:1308
+#: includes/Managers/UpdatesManager.php:1402
 msgid "Unable to verify license online (%1$d/%2$d attempts failed). Using cached license data. Last attempt: %3$s ago."
 msgstr "Không thể xác minh giấy phép trực tuyến (%1$d/%2$d lần thử thất bại). Đang sử dụng dữ liệu giấy phép đã lưu trong bộ nhớ đệm. Lần thử cuối: cách đây %3$s."
 
-#: includes/Managers/UpdatesManager.php:1314
+#: includes/Managers/UpdatesManager.php:1408
 msgid "License verified successfully."
 msgstr "Giấy phép đã được xác minh thành công."
 
@@ -1076,8 +1077,8 @@ msgid "After Shipping Methods"
 msgstr "Sau Các Phương Thức Vận Chuyển"
 
 #: includes/Managers/SlotManager.php:108
-#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:158
 #: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:164
+#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:158
 msgid "After Payment Methods"
 msgstr "Sau phương thức thanh toán"
 
@@ -1231,69 +1232,69 @@ msgstr "Mã khuyến mại"
 msgid "Enter Promo Code"
 msgstr "Nhập mã khuyến mãi"
 
-#: includes/Managers/AssetManager.php:690
+#: includes/Managers/AssetManager.php:694
 msgid "Please enter a valid phone number."
 msgstr "Xin vui lòng nhập một số điện thoại hợp lệ."
 
-#: includes/Managers/AssetManager.php:699
+#: includes/Managers/AssetManager.php:703
 msgid "Please enter your first and last name."
 msgstr "Vui lòng nhập họ và tên của bạn."
 
-#: includes/Managers/AssetManager.php:700
+#: includes/Managers/AssetManager.php:704
 msgid "Please enter a name, not an email address."
 msgstr "Vui lòng nhập tên, không phải địa chỉ email."
 
-#: includes/Managers/AssetManager.php:702
-#: includes/Managers/AssetManager.php:843
+#: includes/Managers/AssetManager.php:706
+#: includes/Managers/AssetManager.php:847
 msgid "Please enter a new quantity:"
 msgstr "Vui lòng nhập số lượng mới:"
 
-#: includes/Managers/AssetManager.php:703
+#: includes/Managers/AssetManager.php:707
 msgid "3-digit security code usually found on the back of your card. American Express cards have a 4-digit code located on the front."
 msgstr "Mã bảo mật 3 chữ số thường được tìm thấy ở mặt sau thẻ của bạn. Thẻ American Express có mã gồm 4 chữ số nằm ở mặt trước."
 
-#: includes/Managers/AssetManager.php:704
-#: includes/Managers/AssetManager.php:844
+#: includes/Managers/AssetManager.php:708
+#: includes/Managers/AssetManager.php:848
 msgid "Are you sure you want to remove this item from your cart?"
 msgstr "Bạn có chắc chắn muốn xóa mặt hàng này khỏi giỏ hàng của mình không?"
 
 # %s: Field name
 # %s: field label
-#: includes/Managers/AssetManager.php:707
+#: includes/Managers/AssetManager.php:711
 #: includes/Features/CustomFields.php:238
 msgid "%s is a required field."
 msgstr "%s là trường bắt buộc."
 
-#: includes/Managers/AssetManager.php:708
+#: includes/Managers/AssetManager.php:712
 msgid "There was a problem checking out. Please try again. If the problem persists, please get in touch with us so we can assist."
 msgstr "Đã xảy ra sự cố khi thanh toán. Vui lòng thử lại. Nếu sự cố vẫn tiếp diễn, vui lòng liên hệ với chúng tôi để được hỗ trợ."
 
-#: includes/Managers/AssetManager.php:709
+#: includes/Managers/AssetManager.php:713
 msgid "Please enter a valid postcode / ZIP."
 msgstr "Vui lòng nhập chính xác mã bưu điện."
 
-#: includes/Managers/AssetManager.php:710
+#: includes/Managers/AssetManager.php:714
 #: includes/Features/LocalPickup.php:636
 msgid "Pickup"
 msgstr "Lấy"
 
-#: includes/Managers/AssetManager.php:711
+#: includes/Managers/AssetManager.php:715
 msgid "Continue to pickup"
 msgstr "Tiếp tục đón"
 
-#: includes/Managers/AssetManager.php:712
-#: includes/Managers/AssetManager.php:846
+#: includes/Managers/AssetManager.php:716
+#: includes/Managers/AssetManager.php:850
 msgid "Update"
 msgstr "Cập nhật"
 
-#: includes/Managers/AssetManager.php:713
-#: includes/Managers/AssetManager.php:847
+#: includes/Managers/AssetManager.php:717
+#: includes/Managers/AssetManager.php:851
 #: includes/API/GetVariationFormAPI.php:150
 msgid "Add to cart"
 msgstr "Thêm vào giỏ hàng"
 
-#: includes/Managers/AssetManager.php:714
-#: includes/Managers/AssetManager.php:848
+#: includes/Managers/AssetManager.php:718
+#: includes/Managers/AssetManager.php:852
 #: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2383
 #: client/ts/admin/Components/CheckoutEditor/slots/UnsavedChangesDialog.tsx:51
 #: client/ts/admin/Components/CheckoutEditor/slots/TrustBadgeEditor.tsx:309
@@ -1305,36 +1306,36 @@ msgstr "Thêm vào giỏ hàng"
 msgid "Cancel"
 msgstr "Hủy"
 
-#: includes/Managers/AssetManager.php:722
+#: includes/Managers/AssetManager.php:726
 msgid "Start with post/zip code or street"
 msgstr "Bắt đầu bằng mã bưu điện/mã zip hoặc đường phố"
 
-#: includes/Managers/AssetManager.php:730
+#: includes/Managers/AssetManager.php:734
 msgid "Shipping method"
 msgstr "Phương thức giao hàng"
 
-#: includes/Managers/AssetManager.php:744
+#: includes/Managers/AssetManager.php:748
 msgid "Error processing checkout. Please try again."
 msgstr "Lỗi xử lý thanh toán. Vui lòng thử lại."
 
-#: includes/Managers/AssetManager.php:770
+#: includes/Managers/AssetManager.php:774
 msgid "You may also like&hellip;"
 msgstr "Bạn cũng có thể thích&hellip;"
 
-#: includes/Managers/AssetManager.php:845
+#: includes/Managers/AssetManager.php:849
 #: client/ts/frontend/Components/SideCartFloatingButton.tsx:26
 msgid "View cart"
 msgstr "Xem giỏ hàng"
 
-#: includes/Managers/AssetManager.php:849
+#: includes/Managers/AssetManager.php:853
 msgid "Remove %s from cart"
 msgstr "Xóa %s khỏi giỏ hàng"
 
-#: includes/Managers/AssetManager.php:850
+#: includes/Managers/AssetManager.php:854
 msgid "Proceed to checkout"
 msgstr "Tiến hành thanh toán"
 
-#: includes/Managers/AssetManager.php:853
+#: includes/Managers/AssetManager.php:857
 msgid "View Product"
 msgstr "Xem sản phẩm"
 
@@ -1452,16 +1453,16 @@ msgstr "CheckoutWC:"
 msgid "Settings marked with asterisks (**) may be overridden based on your Side Cart settings. (CheckoutWC > Side Cart)"
 msgstr "Các cài đặt được đánh dấu bằng dấu hoa thị (**) có thể bị ghi đè dựa trên cài đặt Giỏ hàng Bên của bạn. (CheckoutWC > Giỏ hàng Bên)"
 
-#: includes/Features/OrderBumps.php:610
+#: includes/Features/OrderBumps.php:647
 msgid "All orders"
 msgstr "Tất cả đơn hàng"
 
-#: includes/Features/OrderBumps.php:613
+#: includes/Features/OrderBumps.php:650
 msgid "Contains Any Order Bump"
 msgstr "Chứa Bất kỳ Đơn hàng Bump nào"
 
 # %s: Order bump title
-#: includes/Features/OrderBumps.php:619
+#: includes/Features/OrderBumps.php:656
 msgid "Has Bump: %s"
 msgstr "Có Bump: %s"
 
@@ -1770,8 +1771,8 @@ msgstr "Plugin <strong>quá phức tạp để cấu hình.</strong>"
 #: includes/Admin/Pages/LocalPickupAdminFree.php:184
 #: includes/Admin/Pages/LocalPickupAdminFree.php:221
 #: includes/Admin/Pages/Premium/LocalPickupAdmin.php:225
-#: client/ts/admin/Components/Forms/AdvancedSettingsForm.tsx:104
 #: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:176
+#: client/ts/admin/Components/Forms/AdvancedSettingsForm.tsx:104
 #: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:938
 msgid "Other"
 msgstr "Khác"
@@ -2058,6 +2059,62 @@ msgstr "Biểu mẫu Đề nghị Order Bump"
 msgid "The form to accept or reject the bump offer."
 msgstr "Biểu mẫu để chấp nhận hoặc từ chối đề nghị bump."
 
+#: includes/Model/Bumps/BumpAbstract.php:1081
+#: includes/Model/Bumps/BumpAbstract.php:1091
+#: includes/Model/ABTests/OrderBumpsABTest.php:30
+#: includes/Features/ABTesting/ABTestTypeRegistry.php:123
+#: includes/Admin/Pages/OrderBumpsAdminFree.php:17
+#: includes/Admin/Pages/OrderBumpsAdminFree.php:71
+#: includes/Admin/Pages/Premium/OrderBumps.php:50
+#: client/ts/admin/Components/Forms/OrderBumpSettingsForm.tsx:45
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:408
+msgid "Order Bumps"
+msgstr "Bump đơn hàng"
+
+#: includes/Model/Bumps/BumpAbstract.php:1082
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:193
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:1614
+msgid "Order Bump"
+msgstr "Bump đơn hàng"
+
+#: includes/Model/Bumps/BumpAbstract.php:1083
+msgid "Add New"
+msgstr "Thêm mới"
+
+#: includes/Model/Bumps/BumpAbstract.php:1084
+msgid "Add New Order Bump"
+msgstr "Thêm Order Bump mới"
+
+#: includes/Model/Bumps/BumpAbstract.php:1085
+msgid "Edit Order Bump"
+msgstr "Chỉnh sửa Order Bump"
+
+#: includes/Model/Bumps/BumpAbstract.php:1086
+#: client/ts/admin/Components/Metaboxes/OrderBumpsSetupModal.tsx:61
+msgid "New Order Bump"
+msgstr "Order Bump mới"
+
+#: includes/Model/Bumps/BumpAbstract.php:1087
+msgid "View Order Bump"
+msgstr "Xem bump đơn hàng"
+
+#: includes/Model/Bumps/BumpAbstract.php:1088
+msgid "Find Order Bump"
+msgstr "Tìm bump đơn hàng"
+
+#: includes/Model/Bumps/BumpAbstract.php:1089
+msgid "No order bumps were found."
+msgstr "Không tìm thấy order bumps nào."
+
+#: includes/Model/Bumps/BumpAbstract.php:1090
+msgid "Not found in trash"
+msgstr "Không tìm thấy trong thùng rác"
+
+#: includes/Model/ABTests/OrderBumpsABTest.php:31
+#: includes/Features/ABTesting/ABTestTypeRegistry.php:124
+msgid "Test different variations of order bumps to see which performs better."
+msgstr "Thử nghiệm các biến thể khác nhau của đề xuất bổ sung đơn hàng để xem cái nào hoạt động tốt hơn."
+
 # %1$s: Plugin name, %2$s: Link opening tag, %3$s: Version number, %4$s: Link closing tag
 #: includes/Managers/Helpers/EDD_SL_Plugin_Updater.php:281
 msgid "There is a new version of %1$s available. %2$sView version %3$s details%4$s."
@@ -2076,62 +2133,6 @@ msgstr "Bạn không có quyền cài đặt cập nhật plugin"
 #: client/ts/admin/Components/GooglePlacesKeyStatus.tsx:61
 msgid "Error"
 msgstr "Lỗi"
-
-#: includes/Model/Bumps/BumpAbstract.php:1034
-#: includes/Model/Bumps/BumpAbstract.php:1044
-#: includes/Model/ABTests/OrderBumpsABTest.php:30
-#: includes/Features/ABTesting/ABTestTypeRegistry.php:123
-#: includes/Admin/Pages/OrderBumpsAdminFree.php:17
-#: includes/Admin/Pages/OrderBumpsAdminFree.php:71
-#: includes/Admin/Pages/Premium/OrderBumps.php:50
-#: client/ts/admin/Components/Forms/OrderBumpSettingsForm.tsx:45
-#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:408
-msgid "Order Bumps"
-msgstr "Bump đơn hàng"
-
-#: includes/Model/Bumps/BumpAbstract.php:1035
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:193
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:1614
-msgid "Order Bump"
-msgstr "Bump đơn hàng"
-
-#: includes/Model/Bumps/BumpAbstract.php:1036
-msgid "Add New"
-msgstr "Thêm mới"
-
-#: includes/Model/Bumps/BumpAbstract.php:1037
-msgid "Add New Order Bump"
-msgstr "Thêm Order Bump mới"
-
-#: includes/Model/Bumps/BumpAbstract.php:1038
-msgid "Edit Order Bump"
-msgstr "Chỉnh sửa Order Bump"
-
-#: includes/Model/Bumps/BumpAbstract.php:1039
-#: client/ts/admin/Components/Metaboxes/OrderBumpsSetupModal.tsx:61
-msgid "New Order Bump"
-msgstr "Order Bump mới"
-
-#: includes/Model/Bumps/BumpAbstract.php:1040
-msgid "View Order Bump"
-msgstr "Xem bump đơn hàng"
-
-#: includes/Model/Bumps/BumpAbstract.php:1041
-msgid "Find Order Bump"
-msgstr "Tìm bump đơn hàng"
-
-#: includes/Model/Bumps/BumpAbstract.php:1042
-msgid "No order bumps were found."
-msgstr "Không tìm thấy order bumps nào."
-
-#: includes/Model/Bumps/BumpAbstract.php:1043
-msgid "Not found in trash"
-msgstr "Không tìm thấy trong thùng rác"
-
-#: includes/Model/ABTests/OrderBumpsABTest.php:31
-#: includes/Features/ABTesting/ABTestTypeRegistry.php:124
-msgid "Test different variations of order bumps to see which performs better."
-msgstr "Thử nghiệm các biến thể khác nhau của đề xuất bổ sung đơn hàng để xem cái nào hoạt động tốt hơn."
 
 #: includes/Features/OneClick/OrderStatusManager.php:52
 msgid "Pending Offer <span class=\"count\">(%s)</span>"
@@ -3023,8 +3024,8 @@ msgid "Step 1: Try CheckoutWC Premium Free For 7 Days"
 msgstr "Bước 1: Thử CheckoutWC Premium miễn phí trong 7 ngày"
 
 #: includes/Admin/Pages/General.php:150
-msgid "Enter your license key. An active license is required for all functionality."
-msgstr "Nhập khóa bản quyền của bạn. Một giấy phép hoạt động là bắt buộc cho tất cả các chức năng."
+msgid "Enter your license key and activate it for this site to turn on premium features."
+msgstr "Nhập khóa giấy phép của bạn và kích hoạt nó cho trang web này để bật các tính năng cao cấp."
 
 #: includes/Admin/Pages/General.php:150
 msgid "Supercharge your WooCommerce store."
@@ -3596,23 +3597,67 @@ msgstr "Không đủ quyền."
 msgid "Notice dismissed."
 msgstr "Thông báo đã được bỏ qua."
 
-# %1$s: URL to pricing page, %2$s: "purchase a new license" link text, %3$s: Support email URL, %4$s: "please contact support" link text
-#: includes/Admin/Notices/InvalidLicenseKeyNotice.php:15
-msgid "Your license key appears to have expired. Please <a href=\"%1$s\" target=\"_blank\">%2$s</a> to restore functionality. If you believe this is in error, <a href=\"%3$s\">%4$s</a>."
-msgstr "Khóa giấy phép của bạn dường như đã hết hạn. Vui lòng <a href=\"%1$s\" target=\"_blank\">%2$s</a> để khôi phục chức năng. Nếu bạn cho rằng đây là lỗi, <a href=\"%3$s\">%4$s</a>."
+# %1$d: Number of days, %2$s: Pricing URL, %3$s: "renew it here" link text
+#: includes/Admin/Notices/LicenseUnverifiedNotice.php:25
+msgid "Premium features are off because we haven\\'t been able to check your license with checkoutwc.com for %1$d days. Make sure your server can connect to checkoutwc.com. If your license has expired, <a href=\"%2$s\" target=\"_blank\">%3$s</a>."
+msgstr "Các tính năng cao cấp đang tắt vì chúng tôi chưa thể kiểm tra giấy phép của bạn với checkoutwc.com trong %1$d ngày. Hãy নিশ্চিত bảo máy chủ của bạn có thể kết nối với checkoutwc.com. Nếu giấy phép của bạn đã hết hạn, <a href=\"%2$s\" target=\"_blank\">%3$s</a>."
 
-#: includes/Admin/Notices/InvalidLicenseKeyNotice.php:17
-msgid "purchase a new license"
-msgstr "mua giấy phép mới"
+#: includes/Admin/Notices/LicenseUnverifiedNotice.php:28
+msgid "renew it here"
+msgstr "gia hạn tại đây"
 
-#: includes/Admin/Notices/InvalidLicenseKeyNotice.php:19
-msgid "please contact support"
-msgstr "vui lòng liên hệ hỗ trợ"
+#: includes/Admin/Notices/LicenseUnverifiedNotice.php:33
+msgid "CheckoutWC can\\'t verify your license"
+msgstr "CheckoutWC không thể xác minh giấy phép của bạn"
 
-# %1$s: URL to activation page, %2$s: "Start Here" link text
+# %1$s: Date premium features turn off, %2$s: Support email URL, %3$s: "Contact support" link text
+#: includes/Admin/Notices/LicenseServerUnreachableNotice.php:28
+msgid "We couldn\\'t check your license with checkoutwc.com. Premium features will turn off on %1$s unless the connection is restored. <a href=\"%2$s\">%3$s</a> if this keeps happening."
+msgstr "Chúng tôi không thể kiểm tra giấy phép của bạn với checkoutwc.com. Các tính năng cao cấp sẽ tắt vào %1$s trừ khi kết nối được khôi phục. <a href=\"%2$s\">%3$s</a> nếu tình trạng này tiếp diễn."
+
+#: includes/Admin/Notices/LicenseServerUnreachableNotice.php:31
+#: includes/Admin/Notices/LicenseServerUnreachableNotice.php:38
+msgid "Contact support"
+msgstr "Liên hệ hỗ trợ"
+
+# %1$s: Support email URL, %2$s: "Contact support" link text
+#: includes/Admin/Notices/LicenseServerUnreachableNotice.php:36
+msgid "We couldn\\'t check your license with checkoutwc.com. Make sure your server can connect to checkoutwc.com. <a href=\"%1$s\">%2$s</a> if this keeps happening."
+msgstr "Chúng tôi không thể kiểm tra giấy phép của bạn với checkoutwc.com. Hãy đảm bảo máy chủ của bạn có thể kết nối với checkoutwc.com. <a href=\"%1$s\">%2$s</a> nếu tình trạng này tiếp diễn."
+
+#: includes/Admin/Notices/LicenseServerUnreachableNotice.php:45
+msgid "CheckoutWC can\\'t reach the license server"
+msgstr "CheckoutWC không thể kết nối tới máy chủ giấy phép"
+
+#: includes/Admin/Notices/InvalidLicenseKeyNotice.php:13
+msgid "CheckoutWC license expired"
+msgstr "Giấy phép CheckoutWC đã hết hạn"
+
+# %1$s: URL to pricing page, %2$s: "Renew your license" link text, %3$s: Support email URL, %4$s: "contact support" link text
+#: includes/Admin/Notices/InvalidLicenseKeyNotice.php:16
+msgid "Premium features are off because your license has expired. <a href=\"%1$s\" target=\"_blank\">%2$s</a> to turn them back on. If you think this is a mistake, <a href=\"%3$s\">%4$s</a>."
+msgstr "Các tính năng cao cấp đang tắt vì giấy phép của bạn đã hết hạn. <a href=\"%1$s\" target=\"_blank\">%2$s</a> để bật lại chúng. Nếu bạn cho rằng đây là nhầm lẫn, <a href=\"%3$s\">%4$s</a>."
+
+#: includes/Admin/Notices/InvalidLicenseKeyNotice.php:18
+msgid "Renew your license"
+msgstr "Gia hạn giấy phép của bạn"
+
+#: includes/Admin/Notices/InvalidLicenseKeyNotice.php:20
+msgid "contact support"
+msgstr "liên hệ hỗ trợ"
+
+# %1$s: URL to activation page, %2$s: "Activate your license" link text, %3$s: Pricing URL, %4$s: "buy a license" link text
 #: includes/Admin/Notices/InactiveLicenseNotice.php:11
-msgid "Your license key is not active for this site. Please visit <a href=\"%1$s\">%2$s</a> to activate your license and restore functionality."
-msgstr "Khóa giấy phép của bạn không hoạt động cho trang này. Vui lòng truy cập <a href=\"%1$s\">%2$s</a> để kích hoạt giấy phép và khôi phục chức năng."
+msgid "Premium features are off because your license isn\\'t activated on this site. <a href=\"%1$s\">%2$s</a> or <a href=\"%3$s\" target=\"_blank\">%4$s</a> for this site."
+msgstr "Các tính năng cao cấp đang tắt vì giấy phép của bạn chưa được kích hoạt trên trang web này. <a href=\"%1$s\">%2$s</a> hoặc <a href=\"%3$s\" target=\"_blank\">%4$s</a> cho trang web này."
+
+#: includes/Admin/Notices/InactiveLicenseNotice.php:13
+msgid "Activate your license"
+msgstr "Kích hoạt giấy phép của bạn"
+
+#: includes/Admin/Notices/InactiveLicenseNotice.php:20
+msgid "CheckoutWC license not activated"
+msgstr "Giấy phép CheckoutWC chưa được kích hoạt"
 
 #: includes/Admin/Notices/BFNotice.php:13
 msgid "Black Friday Sale - 40% Off"
@@ -4462,22 +4507,6 @@ msgstr "Ngày kết thúc bài kiểm tra A/B. Sau ngày này, biến thể gố
 msgid "Traffic split percentages must total 100%. Please adjust your percentages."
 msgstr "Tổng tỷ lệ phần trăm phân chia lưu lượng phải là 100%. Vui lòng điều chỉnh tỷ lệ phần trăm của bạn."
 
-#: client/ts/frontend/Components/TermsAndConditions.ts:29
-msgid "Terms and Conditions"
-msgstr "Điều khoản và Điều kiện"
-
-#: client/ts/frontend/Components/TermsAndConditions.ts:35
-msgid "Privacy Policy"
-msgstr "Chính sách quyền riêng tư"
-
-#: client/ts/frontend/Components/SideCartComponent.tsx:39
-msgid "Close Cart"
-msgstr "Đóng giỏ hàng"
-
-#: client/ts/frontend/Components/FreeShippingProgressBar.tsx:245
-msgid "Unlocked"
-msgstr "Đã mở khóa"
-
 #: client/ts/frontend/Actions/CompleteOrderAction.ts:196
 msgid "Could not connect to server. Please refresh and try again or contact site administrator."
 msgstr "Không thể kết nối với máy chủ. Vui lòng làm mới và thử lại hoặc liên hệ với quản trị viên trang."
@@ -4501,6 +4530,22 @@ msgstr "Máy chủ hết thời gian xử lý yêu cầu của bạn. Vui lòng 
 #: client/ts/frontend/Actions/CompleteOrderAction.ts:206
 msgid "Request was aborted. Please contact site administrator."
 msgstr "Yêu cầu đã bị hủy. Vui lòng liên hệ với quản trị viên trang."
+
+#: client/ts/frontend/Components/TermsAndConditions.ts:29
+msgid "Terms and Conditions"
+msgstr "Điều khoản và Điều kiện"
+
+#: client/ts/frontend/Components/TermsAndConditions.ts:35
+msgid "Privacy Policy"
+msgstr "Chính sách quyền riêng tư"
+
+#: client/ts/frontend/Components/SideCartComponent.tsx:39
+msgid "Close Cart"
+msgstr "Đóng giỏ hàng"
+
+#: client/ts/frontend/Components/FreeShippingProgressBar.tsx:245
+msgid "Unlocked"
+msgstr "Đã mở khóa"
 
 # %d is the number of icons in the collection
 #: client/ts/admin/Components/trustBadges.ts:85
@@ -4935,6 +4980,403 @@ msgstr "Đang tải..."
 #: client/ts/admin/Components/acr/carts.tsx:239
 msgid "Tracked Carts"
 msgstr "Giỏ hàng được theo dõi"
+
+#: client/ts/admin/Components/Metaboxes/ProductsAndVariationsCompleter.tsx:30
+msgid "Private"
+msgstr "Riêng tư"
+
+#: client/ts/admin/Components/Metaboxes/ProductsAndVariationsCompleter.tsx:32
+msgid "Pending"
+msgstr "Đang chờ xử lý"
+
+#: client/ts/admin/Components/Metaboxes/ProductsAndVariationsCompleter.tsx:33
+msgid "Scheduled"
+msgstr "Đã lên lịch"
+
+#: client/ts/admin/Components/Metaboxes/ProductsAndVariationsCompleter.tsx:44
+#: client/ts/admin/Components/Forms/CheckoutSettingsForm.tsx:237
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:850
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:863
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:873
+#: client/ts/admin/Components/CheckoutEditor/panels/CheckoutSettingsPanel.tsx:110
+msgid "Hidden"
+msgstr "Ẩn"
+
+#: client/ts/admin/Components/Metaboxes/ProductsAndVariationsCompleter.tsx:46
+msgid "Search only"
+msgstr "Chỉ tìm kiếm"
+
+#: client/ts/admin/Components/Metaboxes/ProductsAndVariationsCompleter.tsx:80
+msgid "All products with titles that include {{query /}}"
+msgstr "Tất cả sản phẩm có tiêu đề bao gồm {{query /}}"
+
+#: client/ts/admin/Components/Metaboxes/ProductsAndVariationsCompleter.tsx:130
+msgid "Variation"
+msgstr "Biến thể"
+
+#: client/ts/admin/Components/Metaboxes/ProductTagCompleter.tsx:44
+msgid "All product tags that include {{query /}}"
+msgstr "Tất cả thẻ sản phẩm bao gồm {{query /}}"
+
+#: client/ts/admin/Components/Metaboxes/ProductAttributeTermsCompleter.tsx:99
+msgid "All attribute terms that include {{query /}}"
+msgstr "Tất cả các thuật ngữ thuộc tính bao gồm {{query /}}"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsSetupModal.tsx:62
+msgid "Let\\'s configure a few things to get you started quickly."
+msgstr "Hãy cấu hình một vài thứ để bạn bắt đầu nhanh chóng."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsSetupModal.tsx:66
+msgid "Give your new Order Bump a name. This is just for admins - it won\\'t be displayed to customers."
+msgstr "Đặt tên cho Order Bump mới của bạn. Điều này chỉ dành cho quản trị viên - sẽ không hiển thị với khách hàng."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsSetupModal.tsx:78
+msgid "Which product should be added to the cart when this Order Bump is accepted?"
+msgstr "Sản phẩm nào sẽ được thêm vào giỏ khi Order Bump này được chấp nhận?"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsSetupModal.tsx:80
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:33
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:92
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:130
+#: client/ts/admin/Components/Metaboxes/OrderBumpsGeneralPanel.tsx:44
+msgid "Search for product"
+msgstr "Tìm kiếm sản phẩm"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsSetupModal.tsx:91
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferDiscountPanel.tsx:19
+msgid "Discount Type"
+msgstr "Loại giảm giá"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsSetupModal.tsx:94
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferDiscountPanel.tsx:23
+msgid "Percent Off"
+msgstr "Giảm theo phần trăm"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsSetupModal.tsx:95
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferDiscountPanel.tsx:24
+msgid "Amount Off"
+msgstr "Giảm theo số tiền"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsSetupModal.tsx:105
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferDiscountPanel.tsx:34
+msgid "Discount"
+msgstr "Giảm giá"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsSetupModal.tsx:106
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferDiscountPanel.tsx:35
+msgid "The amount or percentage applied as a discount to the Offer Product. Leave blank or enter 0 to charge full price."
+msgstr "Số tiền hoặc phần trăm được áp dụng làm giảm giá cho Sản phẩm ưu đãi. Để trống hoặc nhập 0 để tính giá đầy đủ."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsSetupModal.tsx:117
+msgid "Continue"
+msgstr "Tiếp tục"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsSetupModal.tsx:122
+msgid "Continue to review your order bump, optionally add display conditions, and publish."
+msgstr "Tiếp tục để xem lại order bump của bạn, tùy chọn thêm điều kiện hiển thị và xuất bản."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:19
+msgid "You must select an offer product."
+msgstr "Bạn phải chọn một sản phẩm ưu đãi."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:26
+msgid "Offer"
+msgstr "Ưu đãi"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:44
+msgid "Auto Add Order Bump to Cart"
+msgstr "Tự động thêm Order Bump vào giỏ hàng"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:45
+msgid "If conditions are satisfied, automatically add this order bump to the cart. Useful for free gifts or other offers that don\\'t require customer action."
+msgstr "Nếu các điều kiện được thỏa mãn, tự động thêm order bump này vào giỏ hàng. Hữu ích cho quà tặng miễn phí hoặc các ưu đãi khác không yêu cầu hành động của khách hàng."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:56
+msgid "Auto Match Variations Between Search and Offer Product"
+msgstr "Tự động khớp biến thể giữa sản phẩm tìm kiếm và sản phẩm ưu đãi"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:61
+msgid "Add offer product to the cart with the same variable configuration as the product below."
+msgstr "Thêm sản phẩm ưu đãi vào giỏ hàng với cấu hình biến thể giống như sản phẩm bên dưới."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:65
+msgid "Only applies when Auto Match Cart Product and Offer Product are variable products with matching variation attributes (Size, Color, etc)"
+msgstr "Chỉ áp dụng khi Tự động khớp sản phẩm giỏ hàng và sản phẩm ưu đãi là sản phẩm biến thể với các thuộc tính biến thể khớp nhau (Kích thước, Màu sắc, v.v.)"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:69
+msgid "Leave unchecked to have customers to select variation options in a modal window."
+msgstr "Không chọn để khách hàng có thể chọn các tùy chọn biến thể trong cửa sổ modal."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:73
+msgid "If offer product is not variable, this option is ignored."
+msgstr "Nếu sản phẩm ưu đãi không phải là sản phẩm biến thể, tùy chọn này sẽ bị bỏ qua."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:90
+msgid "Auto Match Variations Cart Product"
+msgstr "Tự động khớp biến thể sản phẩm giỏ hàng"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:98
+msgid "The product in the cart to match the Order Bump variations to."
+msgstr "Sản phẩm trong giỏ hàng để khớp các biến thể Order Bump."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:113
+msgid "Match Quantity of Offer Product to Display Condition Product"
+msgstr "Khớp số lượng sản phẩm ưu đãi với sản phẩm điều kiện hiển thị"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:114
+msgid "If customer has two of the display condition product in the cart, two of the offer product will be added to the cart."
+msgstr "Nếu khách hàng có hai sản phẩm điều kiện hiển thị trong giỏ hàng, hai sản phẩm ưu đãi sẽ được thêm vào giỏ hàng."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:128
+msgid "Match Quantity Cart Product"
+msgstr "Khớp số lượng sản phẩm giỏ hàng"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:136
+msgid "The product in the cart to match the Order Bump quantity to."
+msgstr "Sản phẩm trong giỏ hàng để khớp số lượng Order Bump."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:151
+msgid "Quantity of Offer Product To Add"
+msgstr "Số lượng sản phẩm ưu đãi cần thêm"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:152
+msgid "The quantity to add to the cart when offer is accepted."
+msgstr "Số lượng cần thêm vào giỏ hàng khi ưu đãi được chấp nhận."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:161
+msgid "Allow Customer To Change Quantity In Cart"
+msgstr "Cho phép khách hàng thay đổi số lượng trong giỏ hàng"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:162
+msgid "Allow customer to change the quantity of this order bump in the cart."
+msgstr "Cho phép khách hàng thay đổi số lượng của order bump này trong giỏ hàng."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:22
+msgid "Offer Language"
+msgstr "Ngôn ngữ ưu đãi"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:29
+msgid "Place Order Modal Heading"
+msgstr "Tiêu đề cửa sổ đặt hàng"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:30
+msgid "Default if blank: Your order is almost complete..."
+msgstr "Mặc định nếu để trống: Đơn hàng của bạn gần hoàn tất..."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:30
+msgid "Wait %s! Here\\'s an exclusive offer to compliment your order!"
+msgstr "Chờ %s! Đây là ưu đãi độc quyền dành cho đơn hàng của bạn!"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:39
+msgid "Place Order Modal Subheading"
+msgstr "Phụ đề cửa sổ đặt hàng"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:40
+msgid "Default if blank: Add this offer to your order and save!"
+msgstr "Mặc định nếu để trống: Thêm ưu đãi này vào đơn hàng của bạn và tiết kiệm!"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:52
+msgid "Offer Acceptance Checkbox Label"
+msgstr "Nhãn hộp kiểm chấp nhận ưu đãi"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:52
+msgid "Offer Acceptance Button Label"
+msgstr "Nhãn nút chấp nhận ưu đãi"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:53
+msgid "Example: Yes! Please add this offer to my order"
+msgstr "Ví dụ: Vâng! Vui lòng thêm ưu đãi này vào đơn hàng của tôi"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:63
+msgid "Offer Description"
+msgstr "Mô tả ưu đãi"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:64
+msgid "Example: Limited time offer! Get an EXCLUSIVE discount right now! Click the checkbox above to add this product to your order now."
+msgstr "Ví dụ: Ưu đãi có thời hạn! Nhận giảm giá ĐỘC QUYỀN ngay bây giờ! Nhấp vào hộp kiểm ở trên để thêm sản phẩm này vào đơn hàng của bạn ngay."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:74
+msgid "Modal Offer Rejection Link Text"
+msgstr "Văn bản liên kết từ chối ưu đãi trong modal"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:78
+msgid "Displays in modal version of Order Bump, such as Place Order bumps or when the Offer Product is a variable product (as opposed to a specific variation)."
+msgstr "Hiển thị trong phiên bản cửa sổ của Order Bump, như các order bump Đặt hàng hoặc khi Sản phẩm Đề nghị là sản phẩm biến thể (không phải biến thể cụ thể)."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:83
+msgid "Default if blank: No thanks, just complete my order"
+msgstr "Mặc định nếu để trống: Không, cảm ơn, chỉ hoàn tất đơn hàng của tôi"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:85
+msgid "Default if blank: No thanks"
+msgstr "Mặc định nếu để trống: Không, cảm ơn"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferDiscountPanel.tsx:15
+msgid "Offer Discount"
+msgstr "Giảm giá ưu đãi"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferDiscountPanel.tsx:20
+msgid "Amount Off: Remove fixed amount from the product price. Percent Off: Discount product by specified percentage."
+msgstr "Số tiền giảm: Loại bỏ số tiền cố định khỏi giá sản phẩm. Phần trăm giảm: Giảm giá sản phẩm theo phần trăm đã chỉ định."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferDiscountPanel.tsx:46
+msgid "Item Removal Behavior"
+msgstr "Hành vi khi xóa mục"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferDiscountPanel.tsx:47
+msgid "What happens when the display for product is removed from the cart. Default: Order Bump remains in the cart but bump specific discounts are removed."
+msgstr "Điều gì xảy ra khi hiển thị sản phẩm bị xóa khỏi giỏ. Mặc định: Order Bump vẫn ở trong giỏ nhưng các giảm giá riêng cho bump sẽ bị loại bỏ."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferDiscountPanel.tsx:50
+msgid "Leave In Cart With Normal Price"
+msgstr "Giữ trong giỏ với giá bình thường"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferDiscountPanel.tsx:51
+msgid "Remove Order Bump From Cart"
+msgstr "Xóa Order Bump khỏi giỏ"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsGeneralPanel.tsx:13
+msgid "You must set an upsell replacement product."
+msgstr "Bạn phải đặt một sản phẩm thay thế upsell."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsGeneralPanel.tsx:20
+msgid "Offer Type"
+msgstr "Loại ưu đãi"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsGeneralPanel.tsx:24
+msgid "Use Order Bump As Upsell"
+msgstr "Sử dụng Order Bump làm Upsell"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsGeneralPanel.tsx:28
+msgid "Replace a cart item with offer product when this Order Bump is taken."
+msgstr "Thay thế một mặt hàng trong giỏ bằng sản phẩm ưu đãi khi Order Bump này được chọn."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsGeneralPanel.tsx:42
+msgid "Which product does this upsell replace in the cart?"
+msgstr "Sản phẩm nào mà upsell này thay thế trong giỏ hàng?"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsGeneralPanel.tsx:50
+msgid "This product must be in the cart for this order bump to be shown."
+msgstr "Sản phẩm này phải có trong giỏ để Order Bump này được hiển thị."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:44
+msgid "Blocks are only used by full screen offers. Enable Full Screen Landing Page in the Display Location panel, then add the Order Bump Offer Form block where the offer form should go."
+msgstr "Các khối chỉ được dùng cho các ưu đãi toàn màn hình. Bật Trang đích Toàn màn hình trong bảng Vị trí hiển thị, sau đó thêm khối Mẫu biểu Ưu đãi Bump Đơn hàng vào nơi biểu mẫu ưu đãi sẽ xuất hiện."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:45
+msgid "Blocks are only used by full screen offers, available on Place Order Click and Post Purchase One-Click bumps. This bump uses the built-in layout."
+msgstr "Các khối chỉ được dùng cho các ưu đãi toàn màn hình, có sẵn trên Place Order Click và các bump Post Purchase One-Click. Bump này sử dụng bố cục tích hợp sẵn."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:61
+msgid "Post Purchase One-Click bumps require a compatible payment gateway. We recommend using Place Order bumps when using non-compatible gateways."
+msgstr "Các order bump Mua một lần sau khi thanh toán yêu cầu cổng thanh toán tương thích. Chúng tôi khuyên bạn nên sử dụng các order bump Đặt hàng khi sử dụng các cổng không tương thích."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:67
+msgid "Learn more about supported gateways"
+msgstr "Tìm hiểu thêm về các cổng thanh toán được hỗ trợ"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:74
+msgid "Read our Order Bumps documentation"
+msgstr "Đọc tài liệu về Order Bumps của chúng tôi"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:104
+msgid "This bump will not appear anywhere because the side cart is disabled."
+msgstr "Bump này sẽ không xuất hiện ở bất kỳ đâu vì giỏ hàng bên hông đã bị tắt."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:105
+msgid "This bump will not appear anywhere because order bumps are disabled in the side cart."
+msgstr "Bump này sẽ không xuất hiện ở bất kỳ đâu vì các bump đơn hàng đã bị tắt trong giỏ hàng bên hông."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:108
+msgid "This bump will appear on checkout but not in the side cart because the side cart is disabled."
+msgstr "Bump này sẽ xuất hiện ở trang thanh toán nhưng không xuất hiện trong giỏ hàng bên hông vì giỏ hàng bên hông đã bị tắt."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:109
+msgid "This bump will appear on checkout but not in the side cart because order bumps are disabled in the side cart."
+msgstr "Bump này sẽ xuất hiện ở trang thanh toán nhưng không xuất hiện trong giỏ hàng bên hông vì các bump đơn hàng đã bị tắt trong giỏ hàng bên hông."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:120
+msgid "Open side cart settings"
+msgstr "Mở cài đặt giỏ hàng bên hông"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:141
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:148
+msgid "Display Location"
+msgstr "Vị trí hiển thị"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:157
+msgid "Checkout Slot"
+msgstr "Vị trí thanh toán"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:187
+msgid "Displays in a popup when Place Order is clicked, before the order is submitted"
+msgstr "Hiển thị trong một cửa sổ bật lên khi nhấn Đặt hàng, trước khi đơn hàng được gửi đi"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:190
+msgid "Displays in a popup on the Thank You page."
+msgstr "Hiển thị trong một cửa sổ bật lên trên trang Cảm ơn."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:194
+msgid "Full Screen Landing Page"
+msgstr "Trang đích toàn màn hình"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:195
+msgid "Design the offer with blocks instead of the built-in layout. Add the Order Bump Offer Form block where the offer form should go."
+msgstr "Thiết kế ưu đãi bằng các khối thay vì bố cục tích hợp sẵn. Thêm khối Mẫu biểu Ưu đãi Bump Đơn hàng vào nơi biểu mẫu ưu đãi sẽ xuất hiện."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayConditions.tsx:26
+msgid "Show Bump When These Conditions Are True:"
+msgstr "Hiển thị Bump Khi Các Điều Kiện Này Đúng:"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayConditions.tsx:29
+msgid "This bump will be shown when the correct upsell product is in the cart and the Offer Product is not in the cart. To further limit when this bump is shown, add a rule below."
+msgstr "Bump này sẽ được hiển thị khi sản phẩm upsell đúng có trong giỏ hàng và Sản phẩm Ưu Đãi không có trong giỏ hàng. Để giới hạn thêm khi bump này được hiển thị, hãy thêm quy tắc bên dưới."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayConditions.tsx:31
+msgid "This bump will always be shown when the Offer Product is not in the cart. To limit when this bump is shown, add a rule below."
+msgstr "Bump này sẽ luôn được hiển thị khi Sản phẩm Ưu Đãi không có trong giỏ hàng. Để giới hạn khi bump này được hiển thị, hãy thêm quy tắc bên dưới."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsActionsPanel.tsx:15
+msgid "Actions"
+msgstr "Hành động"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsActionsPanel.tsx:21
+msgid "Remove These Products From The Cart"
+msgstr "Xóa các sản phẩm này khỏi giỏ hàng"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsActionsPanel.tsx:23
+msgid "If any of these products are in the cart, remove them when this bump is added to the cart."
+msgstr "Nếu bất kỳ sản phẩm nào trong số này có trong giỏ, hãy xóa chúng khi bump này được thêm vào giỏ."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsActionsPanel.tsx:24
+msgid "Search for products"
+msgstr "Tìm kiếm sản phẩm"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsActionsPanel.tsx:35
+msgid "Apply Free Shipping"
+msgstr "Áp dụng miễn phí vận chuyển"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsActionsPanel.tsx:36
+msgid "When this bump is added to the cart, apply free shipping to the cart."
+msgstr "Khi bump này được thêm vào giỏ, áp dụng miễn phí vận chuyển cho giỏ hàng."
+
+#: client/ts/admin/Components/Metaboxes/CategoryCompleter.tsx:46
+msgid "All categories with titles that include {{query /}}"
+msgstr "Tất cả các danh mục có tiêu đề bao gồm {{query /}}"
+
+#: client/ts/admin/Components/Fields/WPMediaUploadButton.tsx:69
+msgid "Select or Upload a Logo"
+msgstr "Chọn hoặc tải lên logo"
+
+#: client/ts/admin/Components/Fields/RangeControl.tsx:97
+#: client/ts/admin/Components/Fields/ColorControl.tsx:137
+msgid "Reset"
+msgstr "Đặt lại"
+
+#: client/ts/admin/Components/Fields/ColorControl.tsx:173
+#: client/ts/admin/Components/CheckoutEditor/BumpEditorModal.tsx:101
+msgid "Done"
+msgstr "Xong"
 
 #: client/ts/admin/Components/Forms/WooCommercePagesGlobalOptionsSettingsForm.tsx:49
 #: client/ts/admin/Components/Forms/CheckoutSettingsForm.tsx:570
@@ -5777,15 +6219,6 @@ msgstr "Trường điện thoại"
 msgid "Determines whether the WooCommerce native phone field is enabled."
 msgstr "Xác định xem trường điện thoại gốc của WooCommerce có được bật hay không."
 
-#: client/ts/admin/Components/Forms/CheckoutSettingsForm.tsx:237
-#: client/ts/admin/Components/Metaboxes/ProductsAndVariationsCompleter.tsx:44
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:850
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:863
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:873
-#: client/ts/admin/Components/CheckoutEditor/panels/CheckoutSettingsPanel.tsx:110
-msgid "Hidden"
-msgstr "Ẩn"
-
 #: client/ts/admin/Components/Forms/CheckoutSettingsForm.tsx:241
 #: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:851
 #: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:864
@@ -6534,394 +6967,6 @@ msgstr "Chọn bất kỳ vai trò người dùng nào nên bị loại trừ kh
 #: client/ts/admin/Components/Forms/ACRSettingsForm.tsx:172
 msgid "Are you sure you want to delete all tracked carts?"
 msgstr "Bạn có chắc chắn muốn xóa tất cả các giỏ hàng được theo dõi không?"
-
-#: client/ts/admin/Components/Metaboxes/ProductsAndVariationsCompleter.tsx:30
-msgid "Private"
-msgstr "Riêng tư"
-
-#: client/ts/admin/Components/Metaboxes/ProductsAndVariationsCompleter.tsx:32
-msgid "Pending"
-msgstr "Đang chờ xử lý"
-
-#: client/ts/admin/Components/Metaboxes/ProductsAndVariationsCompleter.tsx:33
-msgid "Scheduled"
-msgstr "Đã lên lịch"
-
-#: client/ts/admin/Components/Metaboxes/ProductsAndVariationsCompleter.tsx:46
-msgid "Search only"
-msgstr "Chỉ tìm kiếm"
-
-#: client/ts/admin/Components/Metaboxes/ProductsAndVariationsCompleter.tsx:80
-msgid "All products with titles that include {{query /}}"
-msgstr "Tất cả sản phẩm có tiêu đề bao gồm {{query /}}"
-
-#: client/ts/admin/Components/Metaboxes/ProductsAndVariationsCompleter.tsx:130
-msgid "Variation"
-msgstr "Biến thể"
-
-#: client/ts/admin/Components/Metaboxes/ProductTagCompleter.tsx:44
-msgid "All product tags that include {{query /}}"
-msgstr "Tất cả thẻ sản phẩm bao gồm {{query /}}"
-
-#: client/ts/admin/Components/Metaboxes/ProductAttributeTermsCompleter.tsx:99
-msgid "All attribute terms that include {{query /}}"
-msgstr "Tất cả các thuật ngữ thuộc tính bao gồm {{query /}}"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsSetupModal.tsx:62
-msgid "Let\\'s configure a few things to get you started quickly."
-msgstr "Hãy cấu hình một vài thứ để bạn bắt đầu nhanh chóng."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsSetupModal.tsx:66
-msgid "Give your new Order Bump a name. This is just for admins - it won\\'t be displayed to customers."
-msgstr "Đặt tên cho Order Bump mới của bạn. Điều này chỉ dành cho quản trị viên - sẽ không hiển thị với khách hàng."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsSetupModal.tsx:78
-msgid "Which product should be added to the cart when this Order Bump is accepted?"
-msgstr "Sản phẩm nào sẽ được thêm vào giỏ khi Order Bump này được chấp nhận?"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsSetupModal.tsx:80
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:33
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:92
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:130
-#: client/ts/admin/Components/Metaboxes/OrderBumpsGeneralPanel.tsx:44
-msgid "Search for product"
-msgstr "Tìm kiếm sản phẩm"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsSetupModal.tsx:91
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferDiscountPanel.tsx:19
-msgid "Discount Type"
-msgstr "Loại giảm giá"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsSetupModal.tsx:94
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferDiscountPanel.tsx:23
-msgid "Percent Off"
-msgstr "Giảm theo phần trăm"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsSetupModal.tsx:95
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferDiscountPanel.tsx:24
-msgid "Amount Off"
-msgstr "Giảm theo số tiền"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsSetupModal.tsx:105
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferDiscountPanel.tsx:34
-msgid "Discount"
-msgstr "Giảm giá"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsSetupModal.tsx:106
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferDiscountPanel.tsx:35
-msgid "The amount or percentage applied as a discount to the Offer Product. Leave blank or enter 0 to charge full price."
-msgstr "Số tiền hoặc phần trăm được áp dụng làm giảm giá cho Sản phẩm ưu đãi. Để trống hoặc nhập 0 để tính giá đầy đủ."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsSetupModal.tsx:117
-msgid "Continue"
-msgstr "Tiếp tục"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsSetupModal.tsx:122
-msgid "Continue to review your order bump, optionally add display conditions, and publish."
-msgstr "Tiếp tục để xem lại order bump của bạn, tùy chọn thêm điều kiện hiển thị và xuất bản."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:19
-msgid "You must select an offer product."
-msgstr "Bạn phải chọn một sản phẩm ưu đãi."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:26
-msgid "Offer"
-msgstr "Ưu đãi"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:44
-msgid "Auto Add Order Bump to Cart"
-msgstr "Tự động thêm Order Bump vào giỏ hàng"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:45
-msgid "If conditions are satisfied, automatically add this order bump to the cart. Useful for free gifts or other offers that don\\'t require customer action."
-msgstr "Nếu các điều kiện được thỏa mãn, tự động thêm order bump này vào giỏ hàng. Hữu ích cho quà tặng miễn phí hoặc các ưu đãi khác không yêu cầu hành động của khách hàng."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:56
-msgid "Auto Match Variations Between Search and Offer Product"
-msgstr "Tự động khớp biến thể giữa sản phẩm tìm kiếm và sản phẩm ưu đãi"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:61
-msgid "Add offer product to the cart with the same variable configuration as the product below."
-msgstr "Thêm sản phẩm ưu đãi vào giỏ hàng với cấu hình biến thể giống như sản phẩm bên dưới."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:65
-msgid "Only applies when Auto Match Cart Product and Offer Product are variable products with matching variation attributes (Size, Color, etc)"
-msgstr "Chỉ áp dụng khi Tự động khớp sản phẩm giỏ hàng và sản phẩm ưu đãi là sản phẩm biến thể với các thuộc tính biến thể khớp nhau (Kích thước, Màu sắc, v.v.)"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:69
-msgid "Leave unchecked to have customers to select variation options in a modal window."
-msgstr "Không chọn để khách hàng có thể chọn các tùy chọn biến thể trong cửa sổ modal."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:73
-msgid "If offer product is not variable, this option is ignored."
-msgstr "Nếu sản phẩm ưu đãi không phải là sản phẩm biến thể, tùy chọn này sẽ bị bỏ qua."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:90
-msgid "Auto Match Variations Cart Product"
-msgstr "Tự động khớp biến thể sản phẩm giỏ hàng"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:98
-msgid "The product in the cart to match the Order Bump variations to."
-msgstr "Sản phẩm trong giỏ hàng để khớp các biến thể Order Bump."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:113
-msgid "Match Quantity of Offer Product to Display Condition Product"
-msgstr "Khớp số lượng sản phẩm ưu đãi với sản phẩm điều kiện hiển thị"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:114
-msgid "If customer has two of the display condition product in the cart, two of the offer product will be added to the cart."
-msgstr "Nếu khách hàng có hai sản phẩm điều kiện hiển thị trong giỏ hàng, hai sản phẩm ưu đãi sẽ được thêm vào giỏ hàng."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:128
-msgid "Match Quantity Cart Product"
-msgstr "Khớp số lượng sản phẩm giỏ hàng"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:136
-msgid "The product in the cart to match the Order Bump quantity to."
-msgstr "Sản phẩm trong giỏ hàng để khớp số lượng Order Bump."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:151
-msgid "Quantity of Offer Product To Add"
-msgstr "Số lượng sản phẩm ưu đãi cần thêm"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:152
-msgid "The quantity to add to the cart when offer is accepted."
-msgstr "Số lượng cần thêm vào giỏ hàng khi ưu đãi được chấp nhận."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:161
-msgid "Allow Customer To Change Quantity In Cart"
-msgstr "Cho phép khách hàng thay đổi số lượng trong giỏ hàng"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:162
-msgid "Allow customer to change the quantity of this order bump in the cart."
-msgstr "Cho phép khách hàng thay đổi số lượng của order bump này trong giỏ hàng."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:22
-msgid "Offer Language"
-msgstr "Ngôn ngữ ưu đãi"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:29
-msgid "Place Order Modal Heading"
-msgstr "Tiêu đề cửa sổ đặt hàng"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:30
-msgid "Default if blank: Your order is almost complete..."
-msgstr "Mặc định nếu để trống: Đơn hàng của bạn gần hoàn tất..."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:30
-msgid "Wait %s! Here\\'s an exclusive offer to compliment your order!"
-msgstr "Chờ %s! Đây là ưu đãi độc quyền dành cho đơn hàng của bạn!"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:39
-msgid "Place Order Modal Subheading"
-msgstr "Phụ đề cửa sổ đặt hàng"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:40
-msgid "Default if blank: Add this offer to your order and save!"
-msgstr "Mặc định nếu để trống: Thêm ưu đãi này vào đơn hàng của bạn và tiết kiệm!"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:52
-msgid "Offer Acceptance Checkbox Label"
-msgstr "Nhãn hộp kiểm chấp nhận ưu đãi"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:52
-msgid "Offer Acceptance Button Label"
-msgstr "Nhãn nút chấp nhận ưu đãi"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:53
-msgid "Example: Yes! Please add this offer to my order"
-msgstr "Ví dụ: Vâng! Vui lòng thêm ưu đãi này vào đơn hàng của tôi"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:63
-msgid "Offer Description"
-msgstr "Mô tả ưu đãi"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:64
-msgid "Example: Limited time offer! Get an EXCLUSIVE discount right now! Click the checkbox above to add this product to your order now."
-msgstr "Ví dụ: Ưu đãi có thời hạn! Nhận giảm giá ĐỘC QUYỀN ngay bây giờ! Nhấp vào hộp kiểm ở trên để thêm sản phẩm này vào đơn hàng của bạn ngay."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:74
-msgid "Modal Offer Rejection Link Text"
-msgstr "Văn bản liên kết từ chối ưu đãi trong modal"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:78
-msgid "Displays in modal version of Order Bump, such as Place Order bumps or when the Offer Product is a variable product (as opposed to a specific variation)."
-msgstr "Hiển thị trong phiên bản cửa sổ của Order Bump, như các order bump Đặt hàng hoặc khi Sản phẩm Đề nghị là sản phẩm biến thể (không phải biến thể cụ thể)."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:83
-msgid "Default if blank: No thanks, just complete my order"
-msgstr "Mặc định nếu để trống: Không, cảm ơn, chỉ hoàn tất đơn hàng của tôi"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:85
-msgid "Default if blank: No thanks"
-msgstr "Mặc định nếu để trống: Không, cảm ơn"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferDiscountPanel.tsx:15
-msgid "Offer Discount"
-msgstr "Giảm giá ưu đãi"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferDiscountPanel.tsx:20
-msgid "Amount Off: Remove fixed amount from the product price. Percent Off: Discount product by specified percentage."
-msgstr "Số tiền giảm: Loại bỏ số tiền cố định khỏi giá sản phẩm. Phần trăm giảm: Giảm giá sản phẩm theo phần trăm đã chỉ định."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferDiscountPanel.tsx:46
-msgid "Item Removal Behavior"
-msgstr "Hành vi khi xóa mục"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferDiscountPanel.tsx:47
-msgid "What happens when the display for product is removed from the cart. Default: Order Bump remains in the cart but bump specific discounts are removed."
-msgstr "Điều gì xảy ra khi hiển thị sản phẩm bị xóa khỏi giỏ. Mặc định: Order Bump vẫn ở trong giỏ nhưng các giảm giá riêng cho bump sẽ bị loại bỏ."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferDiscountPanel.tsx:50
-msgid "Leave In Cart With Normal Price"
-msgstr "Giữ trong giỏ với giá bình thường"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferDiscountPanel.tsx:51
-msgid "Remove Order Bump From Cart"
-msgstr "Xóa Order Bump khỏi giỏ"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsGeneralPanel.tsx:13
-msgid "You must set an upsell replacement product."
-msgstr "Bạn phải đặt một sản phẩm thay thế upsell."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsGeneralPanel.tsx:20
-msgid "Offer Type"
-msgstr "Loại ưu đãi"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsGeneralPanel.tsx:24
-msgid "Use Order Bump As Upsell"
-msgstr "Sử dụng Order Bump làm Upsell"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsGeneralPanel.tsx:28
-msgid "Replace a cart item with offer product when this Order Bump is taken."
-msgstr "Thay thế một mặt hàng trong giỏ bằng sản phẩm ưu đãi khi Order Bump này được chọn."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsGeneralPanel.tsx:42
-msgid "Which product does this upsell replace in the cart?"
-msgstr "Sản phẩm nào mà upsell này thay thế trong giỏ hàng?"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsGeneralPanel.tsx:50
-msgid "This product must be in the cart for this order bump to be shown."
-msgstr "Sản phẩm này phải có trong giỏ để Order Bump này được hiển thị."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:44
-msgid "Blocks are only used by full screen offers. Enable Full Screen Landing Page in the Display Location panel, then add the Order Bump Offer Form block where the offer form should go."
-msgstr "Các khối chỉ được dùng cho các ưu đãi toàn màn hình. Bật Trang đích Toàn màn hình trong bảng Vị trí hiển thị, sau đó thêm khối Mẫu biểu Ưu đãi Bump Đơn hàng vào nơi biểu mẫu ưu đãi sẽ xuất hiện."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:45
-msgid "Blocks are only used by full screen offers, available on Place Order Click and Post Purchase One-Click bumps. This bump uses the built-in layout."
-msgstr "Các khối chỉ được dùng cho các ưu đãi toàn màn hình, có sẵn trên Place Order Click và các bump Post Purchase One-Click. Bump này sử dụng bố cục tích hợp sẵn."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:61
-msgid "Post Purchase One-Click bumps require a compatible payment gateway. We recommend using Place Order bumps when using non-compatible gateways."
-msgstr "Các order bump Mua một lần sau khi thanh toán yêu cầu cổng thanh toán tương thích. Chúng tôi khuyên bạn nên sử dụng các order bump Đặt hàng khi sử dụng các cổng không tương thích."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:67
-msgid "Learn more about supported gateways"
-msgstr "Tìm hiểu thêm về các cổng thanh toán được hỗ trợ"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:74
-msgid "Read our Order Bumps documentation"
-msgstr "Đọc tài liệu về Order Bumps của chúng tôi"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:104
-msgid "This bump will not appear anywhere because the side cart is disabled."
-msgstr "Bump này sẽ không xuất hiện ở bất kỳ đâu vì giỏ hàng bên hông đã bị tắt."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:105
-msgid "This bump will not appear anywhere because order bumps are disabled in the side cart."
-msgstr "Bump này sẽ không xuất hiện ở bất kỳ đâu vì các bump đơn hàng đã bị tắt trong giỏ hàng bên hông."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:108
-msgid "This bump will appear on checkout but not in the side cart because the side cart is disabled."
-msgstr "Bump này sẽ xuất hiện ở trang thanh toán nhưng không xuất hiện trong giỏ hàng bên hông vì giỏ hàng bên hông đã bị tắt."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:109
-msgid "This bump will appear on checkout but not in the side cart because order bumps are disabled in the side cart."
-msgstr "Bump này sẽ xuất hiện ở trang thanh toán nhưng không xuất hiện trong giỏ hàng bên hông vì các bump đơn hàng đã bị tắt trong giỏ hàng bên hông."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:120
-msgid "Open side cart settings"
-msgstr "Mở cài đặt giỏ hàng bên hông"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:141
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:148
-msgid "Display Location"
-msgstr "Vị trí hiển thị"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:157
-msgid "Checkout Slot"
-msgstr "Vị trí thanh toán"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:187
-msgid "Displays in a popup when Place Order is clicked, before the order is submitted"
-msgstr "Hiển thị trong một cửa sổ bật lên khi nhấn Đặt hàng, trước khi đơn hàng được gửi đi"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:190
-msgid "Displays in a popup on the Thank You page."
-msgstr "Hiển thị trong một cửa sổ bật lên trên trang Cảm ơn."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:194
-msgid "Full Screen Landing Page"
-msgstr "Trang đích toàn màn hình"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:195
-msgid "Design the offer with blocks instead of the built-in layout. Add the Order Bump Offer Form block where the offer form should go."
-msgstr "Thiết kế ưu đãi bằng các khối thay vì bố cục tích hợp sẵn. Thêm khối Mẫu biểu Ưu đãi Bump Đơn hàng vào nơi biểu mẫu ưu đãi sẽ xuất hiện."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayConditions.tsx:26
-msgid "Show Bump When These Conditions Are True:"
-msgstr "Hiển thị Bump Khi Các Điều Kiện Này Đúng:"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayConditions.tsx:29
-msgid "This bump will be shown when the correct upsell product is in the cart and the Offer Product is not in the cart. To further limit when this bump is shown, add a rule below."
-msgstr "Bump này sẽ được hiển thị khi sản phẩm upsell đúng có trong giỏ hàng và Sản phẩm Ưu Đãi không có trong giỏ hàng. Để giới hạn thêm khi bump này được hiển thị, hãy thêm quy tắc bên dưới."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayConditions.tsx:31
-msgid "This bump will always be shown when the Offer Product is not in the cart. To limit when this bump is shown, add a rule below."
-msgstr "Bump này sẽ luôn được hiển thị khi Sản phẩm Ưu Đãi không có trong giỏ hàng. Để giới hạn khi bump này được hiển thị, hãy thêm quy tắc bên dưới."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsActionsPanel.tsx:15
-msgid "Actions"
-msgstr "Hành động"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsActionsPanel.tsx:21
-msgid "Remove These Products From The Cart"
-msgstr "Xóa các sản phẩm này khỏi giỏ hàng"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsActionsPanel.tsx:23
-msgid "If any of these products are in the cart, remove them when this bump is added to the cart."
-msgstr "Nếu bất kỳ sản phẩm nào trong số này có trong giỏ, hãy xóa chúng khi bump này được thêm vào giỏ."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsActionsPanel.tsx:24
-msgid "Search for products"
-msgstr "Tìm kiếm sản phẩm"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsActionsPanel.tsx:35
-msgid "Apply Free Shipping"
-msgstr "Áp dụng miễn phí vận chuyển"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsActionsPanel.tsx:36
-msgid "When this bump is added to the cart, apply free shipping to the cart."
-msgstr "Khi bump này được thêm vào giỏ, áp dụng miễn phí vận chuyển cho giỏ hàng."
-
-#: client/ts/admin/Components/Metaboxes/CategoryCompleter.tsx:46
-msgid "All categories with titles that include {{query /}}"
-msgstr "Tất cả các danh mục có tiêu đề bao gồm {{query /}}"
-
-#: client/ts/admin/Components/Fields/WPMediaUploadButton.tsx:69
-msgid "Select or Upload a Logo"
-msgstr "Chọn hoặc tải lên logo"
-
-#: client/ts/admin/Components/Fields/RangeControl.tsx:97
-#: client/ts/admin/Components/Fields/ColorControl.tsx:137
-msgid "Reset"
-msgstr "Đặt lại"
-
-#: client/ts/admin/Components/Fields/ColorControl.tsx:173
-#: client/ts/admin/Components/CheckoutEditor/BumpEditorModal.tsx:101
-msgid "Done"
-msgstr "Xong"
 
 #: client/ts/admin/Components/CheckoutEditor/ScrollableRegion.tsx:74
 msgid "Scroll down for more items"
@@ -8493,7 +8538,7 @@ msgstr "Xóa quy tắc"
 
 # %d: shipping package number
 #: functions/functions.php:386
-#: functions/functions.php:3455
+#: functions/functions.php:3464
 msgctxt "shipping packages"
 msgid "Shipping"
 msgid_plural "Shipping %d"

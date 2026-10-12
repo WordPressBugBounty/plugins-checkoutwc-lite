@@ -308,7 +308,7 @@ class SlotsAPI {
 			// the field out of the payload entirely, which never reaches this branch.
 			$stored_type = isset( $stored[ $field_id ]['type'] ) ? (string) $stored[ $field_id ]['type'] : null;
 
-			if ( null !== $stored_type && ! CustomFieldManager::type_is_available( $stored_type ) ) {
+			if ( null !== $stored_type && ! CustomFieldManager::type_is_editable( $stored_type ) ) {
 				$clean[ $field_id ] = $stored[ $field_id ];
 				continue;
 			}
@@ -323,7 +323,7 @@ class SlotsAPI {
 			// field or by switching an existing one over. An existing field keeps what it had; a new
 			// one is dropped rather than silently downgraded to text, which would put a field on the
 			// checkout the merchant did not ask for.
-			if ( ! CustomFieldManager::type_is_available( $type ) ) {
+			if ( ! CustomFieldManager::type_is_editable( $type ) ) {
 				if ( isset( $stored[ $field_id ] ) ) {
 					$clean[ $field_id ] = $stored[ $field_id ];
 				}

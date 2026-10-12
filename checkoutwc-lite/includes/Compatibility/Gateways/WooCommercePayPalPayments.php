@@ -44,4 +44,21 @@ class WooCommercePayPalPayments extends CompatibilityAbstract {
 
 		return (bool) $is_checkout;
 	}
+
+	/**
+	 * Loads the frontend shim that keeps the card fields button working after checkout updates.
+	 *
+	 * @since 11.4.1
+	 *
+	 * @param array $compatibility Array of compatibility classes and params.
+	 * @return array
+	 */
+	public function typescript_class_and_params( array $compatibility ): array {
+		$compatibility[] = [
+			'class'  => 'WooCommercePayPalPayments',
+			'params' => [],
+		];
+
+		return $compatibility;
+	}
 }

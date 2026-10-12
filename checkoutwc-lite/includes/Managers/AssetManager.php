@@ -674,6 +674,10 @@ class AssetManager {
 							'#shipping_fetchify_search',
 							'#billing_fetchify_search',
 							'#terms',
+							// Legal consent checkboxes must start unticked on every visit.
+							'p[data-checkbox] input[type="checkbox"]', // Germanized
+							'.german-market-checkbox-p input[type="checkbox"]',
+							'#widerruf-digital-acknowledgement', // German Market
 							'#ship-to-different-address-checkbox',
 							'[data-persist="false"]', // catch-all, used in cfw_form_field() for non-empty values
 						]

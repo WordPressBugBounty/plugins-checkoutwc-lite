@@ -38,6 +38,20 @@ class PlanManager {
 	}
 
 	/**
+	 * Determines whether the license unlocks the given plan on admin screens.
+	 *
+	 * Use for admin locks and upsells only, never to gate storefront features.
+	 *
+	 * @since 11.4.1
+	 *
+	 * @param string $required_plan The required plan.
+	 * @return bool
+	 */
+	public static function has_admin_plan_or_higher( string $required_plan = 'basic' ): bool {
+		return self::get_admin_plan_level() >= self::PLAN_HIERARCHY[ $required_plan ];
+	}
+
+	/**
 	 * Returns an English formatted list of plans
 	 *
 	 * Examples:
@@ -65,7 +79,7 @@ class PlanManager {
 	public static function get_english_list_of_required_plans_html( string $minimum_plan = 'basic' ): string {
 		// Get the hierarchy and starting level
 		$minimum_level   = self::PLAN_HIERARCHY[ $minimum_plan ] ?? 0;
-		$user_plan_level = self::get_user_plan_level();
+		$user_plan_level = self::get_admin_plan_level();
 
 		if ( $user_plan_level > $minimum_level ) {
 			return '';
@@ -95,15 +109,34 @@ class PlanManager {
 		return self::get_formatted_english_list( $plans );
 	}
 
+	/**
+	 * Gets the plan level that gates features, which requires a license activated on this site.
+	 *
+	 * @return int
+	 */
 	public static function get_user_plan_level(): int {
-		if ( ! UpdatesManager::instance()->is_license_good() && ! UpdatesManager::instance()->is_license_valid() ) {
+		if ( ! UpdatesManager::instance()->is_license_valid() ) {
 			return 0;
 		}
 
-		$plan_lookup = self::get_plan_lookup();
-		$price_id    = UpdatesManager::instance()->get_license_price_id();
+		return self::get_license_plan_level();
+	}
 
-		return isset( $plan_lookup[ $price_id ] ) ? self::PLAN_HIERARCHY[ $plan_lookup[ $price_id ] ] : 0;
+	/**
+	 * Gets the plan level for admin screens.
+	 *
+	 * A real license that isn't activated on this site still unlocks settings, so merchants can configure before activating.
+	 *
+	 * @since 11.4.1
+	 *
+	 * @return int
+	 */
+	public static function get_admin_plan_level(): int {
+		if ( ! UpdatesManager::instance()->is_license_good() ) {
+			return 0;
+		}
+
+		return self::get_license_plan_level();
 	}
 
 	/**
@@ -138,5 +171,19 @@ class PlanManager {
 		}
 
 		return self::$plan_lookup;
+	}
+
+	/**
+	 * Gets the plan level of the license's price ID.
+	 *
+	 * @since 11.4.1
+	 *
+	 * @return int
+	 */
+	private static function get_license_plan_level(): int {
+		$plan_lookup = self::get_plan_lookup();
+		$price_id    = UpdatesManager::instance()->get_license_price_id();
+
+		return isset( $plan_lookup[ $price_id ] ) ? self::PLAN_HIERARCHY[ $plan_lookup[ $price_id ] ] : 0;
 	}
 }

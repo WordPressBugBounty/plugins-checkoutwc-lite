@@ -8,7 +8,7 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "POT-Creation-Date: 2025-07-25 09:22-0400\n"
-"PO-Revision-Date: 2026-09-24T21:25:15+00:00\n"
+"PO-Revision-Date: 2026-10-12T15:20:31+00:00\n"
 "Language: zh-TW\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Poedit 3.6\n"
@@ -164,8 +164,8 @@ msgid "Postcode / ZIP"
 msgstr "郵遞區號"
 
 #: includes/AddressFieldsAugmenter.php:458
-#: functions/functions.php:4215
-#: functions/functions.php:4216
+#: functions/functions.php:4224
+#: functions/functions.php:4225
 msgid "Email address"
 msgstr "電子郵件地址"
 
@@ -302,7 +302,7 @@ msgid "Log in."
 msgstr "登入."
 
 #: functions/template-functions.php:489
-#: includes/Managers/AssetManager.php:705
+#: includes/Managers/AssetManager.php:709
 msgid "An account is already registered with your email address. <a href=\"#\" class=\"showlogin\">Please log in.</a>"
 msgstr "此電子郵件地址已註冊帳戶。<a href=\"#\" class=\"showlogin\">請登入。</a>"
 
@@ -355,7 +355,7 @@ msgstr "帳單地址"
 #: functions/template-functions.php:768
 #: functions/template-functions.php:806
 #: functions/template-functions.php:1981
-#: includes/Managers/AssetManager.php:701
+#: includes/Managers/AssetManager.php:705
 msgid "Shipping address"
 msgstr "運送地址"
 
@@ -368,7 +368,7 @@ msgstr "您的購物車"
 #: functions/template-functions.php:1047
 #: functions/template-functions.php:2013
 #: functions/template-functions.php:2287
-#: functions/functions.php:3469
+#: functions/functions.php:3478
 msgid "Shipping"
 msgstr "運送方式"
 
@@ -451,7 +451,7 @@ msgid "N/A"
 msgstr "不適用"
 
 #: functions/template-functions.php:2043
-#: includes/Managers/AssetManager.php:851
+#: includes/Managers/AssetManager.php:855
 msgid "Continue shopping"
 msgstr "繼續購物"
 
@@ -467,18 +467,18 @@ msgid "Email"
 msgstr "電子郵件"
 
 #: functions/template-functions.php:2101
-#: functions/functions.php:4133
-#: functions/functions.php:4134
+#: functions/functions.php:4142
+#: functions/functions.php:4143
 msgid "Password"
 msgstr "密碼"
 
 #: functions/template-functions.php:2117
-#: functions/functions.php:4173
+#: functions/functions.php:4182
 msgid "Login"
 msgstr "登入"
 
 #: functions/template-functions.php:2120
-#: functions/functions.php:4166
+#: functions/functions.php:4175
 msgid "Lost your password?"
 msgstr "忘記密碼？"
 
@@ -486,16 +486,16 @@ msgstr "忘記密碼？"
 msgid "Your Cart is Empty"
 msgstr "您的購物車是空的"
 
-#: functions/premium-init.php:340
+#: functions/premium-init.php:342
 msgid "CheckoutWC Templates Deactivated"
 msgstr "CheckoutWC 模板已停用"
 
 # %1$s: "Settings" text, %2$s: "Start Here" text, %3$s: "Activate CheckoutWC Templates" text
-#: functions/premium-init.php:343
+#: functions/premium-init.php:345
 msgid "Your license is valid and activated for this site but CheckoutWC is disabled for normal customers. To fix this, go to %1$s > %2$s and toggle \"%3$s\"."
 msgstr "您的授權在此網站有效且已啟用，但 CheckoutWC 對一般客戶已被禁用。要解決此問題，請前往 %1$s > %2$s 並切換「%3$s」。"
 
-#: functions/premium-init.php:344
+#: functions/premium-init.php:346
 #: includes/Admin/AdminPluginsPageManager.php:40
 #: includes/Admin/Pages/OrderBumpsAdminFree.php:25
 #: includes/Admin/Pages/LocalPickupAdminFree.php:27
@@ -507,66 +507,71 @@ msgstr "您的授權在此網站有效且已啟用，但 CheckoutWC 對一般客
 msgid "Settings"
 msgstr "設定"
 
-#: functions/premium-init.php:345
+#: functions/premium-init.php:347
+#: functions/premium-init.php:360
 #: includes/Admin/Pages/General.php:25
-#: includes/Admin/Notices/InactiveLicenseNotice.php:13
 msgid "Start Here"
 msgstr "從這裡開始"
 
-#: functions/premium-init.php:346
+#: functions/premium-init.php:348
 #: includes/Admin/Pages/General.php:195
 msgid "Activate CheckoutWC Templates"
 msgstr "啟用 CheckoutWC 模板"
 
-#: functions/premium-init.php:353
-msgid "Invalid CheckoutWC License"
-msgstr "無效的 CheckoutWC 授權"
+#: functions/premium-init.php:355
+msgid "CheckoutWC license invalid"
+msgstr "CheckoutWC 授權無效"
 
-# %1$s: Pricing URL, %2$s: "purchase a license" link text
-#: functions/premium-init.php:356
-msgid "Your license key is missing or invalid. Please verify that your license key is valid or <a target=\"_blank\" href=\"%1$s\">%2$s</a> to restore full functionality."
-msgstr "您的授權金鑰缺失或無效。請確認您的授權金鑰有效，或<a target=\"_blank\" href=\"%1$s\">%2$s</a>以恢復完整功能。"
-
+# %1$s: URL to license settings page, %2$s: "Start Here" link text, %3$s: Pricing URL, %4$s: "buy a license" link text
 #: functions/premium-init.php:358
-msgid "purchase a license"
+msgid "Premium features are off because your license key is missing or invalid. Check your key on <a href=\"%1$s\">%2$s</a> or <a target=\"_blank\" href=\"%3$s\">%4$s</a>."
+msgstr "由於您的授權金鑰遺失或無效，進階功能已關閉。請在 <a href=\"%1$s\">%2$s</a> 或 <a target=\"_blank\" href=\"%3$s\">%4$s</a> 檢查您的金鑰。"
+
+#: functions/premium-init.php:362
+#: includes/Admin/Notices/InactiveLicenseNotice.php:15
+msgid "buy a license"
 msgstr "購買授權"
 
-#: functions/premium-init.php:374
+#: functions/premium-init.php:382
 msgid "New Feature: Cloudflare Turnstile Bot Protection"
 msgstr "新功能：Cloudflare Turnstile 機器人防護"
 
 # 1: Cloudflare Turnstile name wrapped in strong tags, 2: Setup link
-#: functions/premium-init.php:377
+#: functions/premium-init.php:385
 msgid "CheckoutWC now supports %1$s - a privacy-first, CAPTCHA-free way to protect your checkout from bots and spam orders. %2$s"
 msgstr "CheckoutWC 現在支援 %1$s — 一種以隱私為先、無 CAPTCHA 的方式，保護您的結帳頁面免受機器人和垃圾訂單的侵擾。%2$s"
 
 # The name of the Cloudflare Turnstile service
-#: functions/premium-init.php:381
+#: functions/premium-init.php:389
 #: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:78
 msgid "Cloudflare Turnstile"
 msgstr "Cloudflare Turnstile"
 
-#: functions/premium-init.php:387
+#: functions/premium-init.php:395
 msgid "Setup Cloudflare Turnstile now"
 msgstr "立即設定 Cloudflare Turnstile"
 
-#: functions/premium-init.php:392
+#: functions/premium-init.php:400
 msgid "Upgrade your plan now to access"
 msgstr "立即升級您的方案以訪問"
 
-#: functions/premium-init.php:405
+#: functions/premium-init.php:413
 msgid "Abandoned Cart Recovery Tracking Disabled"
 msgstr "放棄購物車回復追蹤已停用"
 
 # %1$s: Gist URL, %2$s: "Learn More" link text
-#: functions/premium-init.php:408
+#: functions/premium-init.php:416
 msgid "You have enabled Abandoned Cart Recovery tracking, but you do not have any emails published. To track carts, you need to publish emails or use this dev filter: <a target=\"_blank\" href=\"%1$s\">%2$s</a>."
 msgstr "您已啟用放棄購物車回復追蹤，但尚未發布任何電子郵件。要追蹤購物車，您需要發布電子郵件或使用此開發過濾器：<a target=\"_blank\" href=\"%1$s\">%2$s</a>。"
 
-#: functions/premium-init.php:410
+#: functions/premium-init.php:418
 #: includes/Admin/Pages/AbandonedCartRecoveryAdminFree.php:82
 msgid "Learn More"
 msgstr "了解更多"
+
+#: functions/premium-init.php:477
+msgid "Admin preview: your CheckoutWC license isn\\'t valid for this site, so premium features are off. Check your license here: WP Admin > CheckoutWC > Start Here."
+msgstr "管理員預覽：您的 CheckoutWC 授權不適用於此網站，因此進階功能已關閉。請在此處檢查您的授權：WP 管理後台 > CheckoutWC > 開始使用。"
 
 #: functions/init.php:396
 #: functions/init.php:397
@@ -685,7 +690,7 @@ msgid "No shipping methods available"
 msgstr "沒有可用的送貨方式"
 
 #: functions/functions.php:826
-#: includes/Model/Bumps/BumpAbstract.php:835
+#: includes/Model/Bumps/BumpAbstract.php:882
 msgid "Free!"
 msgstr "免費！"
 
@@ -757,22 +762,22 @@ msgstr "購物車"
 msgid "CheckoutWC: Error matching %1$d to customer %2$d"
 msgstr "CheckoutWC：將 %1$d 與客戶 %2$d 匹配時出錯"
 
-#: functions/functions.php:2162
+#: functions/functions.php:2171
 msgid "Or"
 msgstr "或"
 
-#: functions/functions.php:2247
+#: functions/functions.php:2256
 msgid "You can only have 1 %s in your cart."
 msgstr "您的購物車中只能有 1 個 %s。"
 
-#: functions/functions.php:2397
+#: functions/functions.php:2406
 #: client/ts/frontend/Components/CartItemQuantityControl.tsx:55
 msgid "Decrement"
 msgstr "遞減"
 
-#: functions/functions.php:2406
-#: includes/Managers/AssetManager.php:731
-#: includes/Managers/AssetManager.php:852
+#: functions/functions.php:2415
+#: includes/Managers/AssetManager.php:735
+#: includes/Managers/AssetManager.php:856
 #: includes/Features/LocalPickup.php:510
 #: includes/Features/AbandonedCartRecovery.php:128
 #: includes/Features/ABTesting.php:150
@@ -782,97 +787,97 @@ msgstr "遞減"
 msgid "Edit"
 msgstr "編輯"
 
-#: functions/functions.php:2409
+#: functions/functions.php:2418
 #: client/ts/frontend/Components/CartItemQuantityControl.tsx:70
 msgid "Increment"
 msgstr "增量"
 
-#: functions/functions.php:3123
+#: functions/functions.php:3132
 msgid "Unsubscribe"
 msgstr "取消訂閱"
 
-#: functions/functions.php:3495
+#: functions/functions.php:3504
 #: includes/Features/AbandonedCartRecovery.php:756
 #: client/ts/admin/Components/acr/carts.tsx:74
 msgid "Subtotal"
 msgstr "小計"
 
-#: functions/functions.php:3499
+#: functions/functions.php:3508
 #: includes/Admin/Views/html-refund-offer.php:25
 msgid "Total"
 msgstr "總計"
 
-#: functions/functions.php:3552
+#: functions/functions.php:3561
 msgid "There are no shipping options available. Please ensure that your address has been entered correctly, or contact us if you need any help."
 msgstr "沒有可用的運送選項。請確認您的地址是否正確輸入，或如需協助請與我們聯絡。"
 
-#: functions/functions.php:3906
+#: functions/functions.php:3915
 #: includes/Admin/Pages/AbandonedCartRecoveryAdminFree.php:73
 msgid "SendWP - Transactional Email"
 msgstr "SendWP - 交易郵件"
 
-#: functions/functions.php:3911
+#: functions/functions.php:3920
 #: includes/Admin/Pages/AbandonedCartRecoveryAdminFree.php:77
 msgid "SendWP makes getting emails delivered as simple as a few clicks. So you can relax know those important emails are being delivered on time."
 msgstr "SendWP 讓郵件傳送變得簡單，只需幾個點擊。讓您放心重要郵件能準時送達。"
 
-#: functions/functions.php:3914
+#: functions/functions.php:3923
 #: includes/Admin/Pages/AbandonedCartRecoveryAdminFree.php:79
 msgid "Try SendWP now and <strong>get your first month for just $1.</strong>"
 msgstr "立即試用 SendWP，<strong>首月只要 1 美元。</strong>"
 
-#: functions/functions.php:3924
+#: functions/functions.php:3933
 #: includes/Admin/Pages/AbandonedCartRecoveryAdminFree.php:87
 msgid "Note: SendWP is optional. You can use any transactional email service you prefer."
 msgstr "注意：SendWP 是可選的。您可以使用任何您偏好的交易郵件服務。"
 
-#: functions/functions.php:3933
+#: functions/functions.php:3942
 #: includes/Admin/Pages/AbandonedCartRecoveryAdminFree.php:94
 msgid "Connect to SendWP"
 msgstr "連接到 SendWP"
 
-#: functions/functions.php:4081
+#: functions/functions.php:4090
 msgid "Welcome back"
 msgstr "歡迎回來"
 
-#: functions/functions.php:4095
+#: functions/functions.php:4104
 msgid "It looks like you already have an account. Please enter your login details below."
 msgstr "看起來您已經有一個帳戶。請在下面輸入您的登錄詳細信息。"
 
-#: functions/functions.php:4109
+#: functions/functions.php:4118
 msgid "If you have shopped with us before, please enter your login details below."
 msgstr "如果您以前在我們這裡購物過，請在下面輸入您的登錄信息。"
 
-#: functions/functions.php:4119
-#: functions/functions.php:4120
+#: functions/functions.php:4128
+#: functions/functions.php:4129
 msgid "Username or email address"
 msgstr "使用者名稱或電子郵件地址"
 
-#: functions/functions.php:4154
+#: functions/functions.php:4163
 msgid "Remember me"
 msgstr "記住我"
 
-#: functions/functions.php:4185
+#: functions/functions.php:4194
 msgid "Or continue as guest"
 msgstr "或以客人身份繼續"
 
-#: functions/functions.php:4205
+#: functions/functions.php:4214
 msgid "Lost your password? Please enter your username or email address. You will receive a link to create a new password via email."
 msgstr "忘記密碼了嗎？請輸入您的使用者名稱或電子郵件地址。我們會寄送連結讓您透過電子郵件建立新密碼。"
 
-#: functions/functions.php:4228
+#: functions/functions.php:4237
 msgid "Reset password"
 msgstr "重設密碼"
 
-#: functions/functions.php:4243
+#: functions/functions.php:4252
 #: includes/API/OrderBumpPreviewAPI.php:57
 #: includes/API/OrderBumpOfferFormPreviewAPI.php:46
 #: includes/API/GetVariationFormAPI.php:33
 msgid "Product not found"
 msgstr "未找到的產品"
 
-#: functions/functions.php:4259
-#: functions/functions.php:4417
+#: functions/functions.php:4268
+#: functions/functions.php:4426
 #: includes/API/PostPurchaseBumpProductFormAPI.php:24
 msgid "No thanks"
 msgstr "不用了，謝謝"
@@ -951,102 +956,98 @@ msgstr "本地取貨"
 msgid "Allow customers to pick up orders themselves. This version does not require shipping zones."
 msgstr "允許客戶自行取貨。此版本不需要運送區域。"
 
-#: includes/Managers/UpdatesManager.php:416
+#: includes/Managers/UpdatesManager.php:436
 msgid "CheckoutWC License Key"
 msgstr "CheckoutWC 授權金鑰"
 
-#: includes/Managers/UpdatesManager.php:421
+#: includes/Managers/UpdatesManager.php:441
 msgid "Your license key is set with the constant <code>CFW_LICENSE_KEY</code>."
 msgstr "您的授權金鑰已設定為常數 <code>CFW_LICENSE_KEY</code>。"
 
-#: includes/Managers/UpdatesManager.php:428
+#: includes/Managers/UpdatesManager.php:448
 msgid "License Holder"
 msgstr "许可证持有人"
 
-#: includes/Managers/UpdatesManager.php:441
+#: includes/Managers/UpdatesManager.php:461
 msgid "Plan"
 msgstr "计划"
 
-#: includes/Managers/UpdatesManager.php:449
+#: includes/Managers/UpdatesManager.php:469
 msgid "Activation Limit"
 msgstr "激活限制"
 
-#: includes/Managers/UpdatesManager.php:457
+#: includes/Managers/UpdatesManager.php:477
 #: includes/Admin/Pages/Premium/ABTestingAdmin.php:178
 #: includes/Admin/Pages/Premium/ABTestingAdmin.php:819
 #: client/ts/admin/Components/acr/carts.tsx:80
 msgid "Status"
 msgstr "狀態"
 
-#: includes/Managers/UpdatesManager.php:464
+#: includes/Managers/UpdatesManager.php:484
 msgid "Refresh License Info"
 msgstr "刷新许可证信息"
 
-#: includes/Managers/UpdatesManager.php:512
+#: includes/Managers/UpdatesManager.php:532
 msgid "Please enter your license key."
 msgstr "請輸入您的授權金鑰。"
 
-#: includes/Managers/UpdatesManager.php:515
-#: includes/Managers/UpdatesManager.php:523
+#: includes/Managers/UpdatesManager.php:535
+#: includes/Managers/UpdatesManager.php:543
 msgid "Activate Site"
 msgstr "啟用網站"
 
-#: includes/Managers/UpdatesManager.php:518
+#: includes/Managers/UpdatesManager.php:538
 msgid "Deactivate Site"
 msgstr "停用網站"
 
 # Debug error message logged when license check reaches unexpected state
-#: includes/Managers/UpdatesManager.php:704
+#: includes/Managers/UpdatesManager.php:724
 msgid "License Check Error: You should not be able to get here. I am kind of freaked out."
 msgstr "授權檢查錯誤：您不應該到達這裡。我有點慌了。"
 
 # %1$d: failure count, %2$d: max failures, %3$s: time since last failure
-#: includes/Managers/UpdatesManager.php:963
+#: includes/Managers/UpdatesManager.php:983
 msgid "Unable to verify CheckoutWC license (%1$d/%2$d attempts failed). Using cached license data. Last attempt: %3$s ago."
 msgstr "無法驗證 CheckoutWC 授權 (%1$d/%2$d 次嘗試失敗)。使用快取的授權資料。最後嘗試時間：%3$s 之前。"
 
-#: includes/Managers/UpdatesManager.php:986
+#: includes/Managers/UpdatesManager.php:1006
 msgid "%s license activation was not successful. Please check your key status below for more information."
 msgstr "%s 授權啟用未成功。請查看下方您的金鑰狀態以獲取更多資訊。"
 
-#: includes/Managers/UpdatesManager.php:1004
+#: includes/Managers/UpdatesManager.php:1024
 msgid "%s license successfully activated."
 msgstr "%s 授權已成功啟用。"
 
-#: includes/Managers/UpdatesManager.php:1022
+#: includes/Managers/UpdatesManager.php:1042
 msgid "%s license deactivation failed. Please try again, or contact support."
 msgstr "%s 授權停用失敗。請再試一次，或聯絡客服支援。"
 
-#: includes/Managers/UpdatesManager.php:1040
+#: includes/Managers/UpdatesManager.php:1060
 msgid "%s license deactivated successfully."
 msgstr "%s 授權已成功停用。"
 
-#: includes/Managers/UpdatesManager.php:1058
+#: includes/Managers/UpdatesManager.php:1078
 msgid "%s license settings saved successfully."
 msgstr "%s 授權設定已成功儲存。"
 
-#: includes/Managers/UpdatesManager.php:1076
+#: includes/Managers/UpdatesManager.php:1096
 msgid "%1$s license activation failed: %2$s"
 msgstr "%1$s 授權啟用失敗：%2$s"
 
-#: includes/Managers/UpdatesManager.php:1094
+#: includes/Managers/UpdatesManager.php:1114
 msgid "%s license activation failed: Unable to connect to license server. Please check your internet connection or try again later."
 msgstr "%s 授權啟用失敗：無法連接授權伺服器。請檢查您的網路連線或稍後再試。"
 
-#: includes/Managers/UpdatesManager.php:1112
+#: includes/Managers/UpdatesManager.php:1132
 msgid "%s: License deactivated locally. The license server could not be reached, but the license has been deactivated on this site."
 msgstr "%s：授權已在本地停用。無法連接授權伺服器，但授權已在此網站停用。"
 
-#: includes/Managers/UpdatesManager.php:1261
-msgid "Unable to verify your CheckoutWC license — the license server could not be reached. Your license and checkout are unaffected; only plugin updates are paused until the connection is restored."
-msgstr "無法驗證您的 CheckoutWC 授權 — 無法連接到授權伺服器。您的授權和結帳功能不受影響；只有外掛程式更新會暫停，直到連線恢復。"
-
 # %1$d: failure count, %2$d: max failures, %3$s: time since last failure
-#: includes/Managers/UpdatesManager.php:1308
+#: includes/Managers/UpdatesManager.php:1402
 msgid "Unable to verify license online (%1$d/%2$d attempts failed). Using cached license data. Last attempt: %3$s ago."
 msgstr "無法在線驗證授權 (%1$d/%2$d 次嘗試失敗)。使用快取的授權資料。最後嘗試時間：%3$s 之前。"
 
-#: includes/Managers/UpdatesManager.php:1314
+#: includes/Managers/UpdatesManager.php:1408
 msgid "License verified successfully."
 msgstr "授權驗證成功。"
 
@@ -1076,8 +1077,8 @@ msgid "After Shipping Methods"
 msgstr "運送方式之後"
 
 #: includes/Managers/SlotManager.php:108
-#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:158
 #: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:164
+#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:158
 msgid "After Payment Methods"
 msgstr "付款方式之後"
 
@@ -1231,69 +1232,69 @@ msgstr "促銷代碼"
 msgid "Enter Promo Code"
 msgstr "輸入促銷代碼"
 
-#: includes/Managers/AssetManager.php:690
+#: includes/Managers/AssetManager.php:694
 msgid "Please enter a valid phone number."
 msgstr "請輸入有效的電話號碼。"
 
-#: includes/Managers/AssetManager.php:699
+#: includes/Managers/AssetManager.php:703
 msgid "Please enter your first and last name."
 msgstr "請輸入您的名字和姓氏。"
 
-#: includes/Managers/AssetManager.php:700
+#: includes/Managers/AssetManager.php:704
 msgid "Please enter a name, not an email address."
 msgstr "請輸入名稱，而非電子郵件地址。"
 
-#: includes/Managers/AssetManager.php:702
-#: includes/Managers/AssetManager.php:843
+#: includes/Managers/AssetManager.php:706
+#: includes/Managers/AssetManager.php:847
 msgid "Please enter a new quantity:"
 msgstr "請輸入新的數量："
 
-#: includes/Managers/AssetManager.php:703
+#: includes/Managers/AssetManager.php:707
 msgid "3-digit security code usually found on the back of your card. American Express cards have a 4-digit code located on the front."
 msgstr "通常在您卡背面的3位安全碼。美國運通卡的正面有一個4位代碼。"
 
-#: includes/Managers/AssetManager.php:704
-#: includes/Managers/AssetManager.php:844
+#: includes/Managers/AssetManager.php:708
+#: includes/Managers/AssetManager.php:848
 msgid "Are you sure you want to remove this item from your cart?"
 msgstr "您確定要從購物車中刪除該物品嗎？"
 
 # %s: Field name
 # %s: field label
-#: includes/Managers/AssetManager.php:707
+#: includes/Managers/AssetManager.php:711
 #: includes/Features/CustomFields.php:238
 msgid "%s is a required field."
 msgstr "%s 是必填欄位。"
 
-#: includes/Managers/AssetManager.php:708
+#: includes/Managers/AssetManager.php:712
 msgid "There was a problem checking out. Please try again. If the problem persists, please get in touch with us so we can assist."
 msgstr "結帳時出現問題。請再試一次。如果問題持續，請與我們聯繫以便協助。"
 
-#: includes/Managers/AssetManager.php:709
+#: includes/Managers/AssetManager.php:713
 msgid "Please enter a valid postcode / ZIP."
 msgstr "請輸入有效的郵遞區號."
 
-#: includes/Managers/AssetManager.php:710
+#: includes/Managers/AssetManager.php:714
 #: includes/Features/LocalPickup.php:636
 msgid "Pickup"
 msgstr "捡起"
 
-#: includes/Managers/AssetManager.php:711
+#: includes/Managers/AssetManager.php:715
 msgid "Continue to pickup"
 msgstr "繼續取件"
 
-#: includes/Managers/AssetManager.php:712
-#: includes/Managers/AssetManager.php:846
+#: includes/Managers/AssetManager.php:716
+#: includes/Managers/AssetManager.php:850
 msgid "Update"
 msgstr "更新"
 
-#: includes/Managers/AssetManager.php:713
-#: includes/Managers/AssetManager.php:847
+#: includes/Managers/AssetManager.php:717
+#: includes/Managers/AssetManager.php:851
 #: includes/API/GetVariationFormAPI.php:150
 msgid "Add to cart"
 msgstr "加入購物車"
 
-#: includes/Managers/AssetManager.php:714
-#: includes/Managers/AssetManager.php:848
+#: includes/Managers/AssetManager.php:718
+#: includes/Managers/AssetManager.php:852
 #: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2383
 #: client/ts/admin/Components/CheckoutEditor/slots/UnsavedChangesDialog.tsx:51
 #: client/ts/admin/Components/CheckoutEditor/slots/TrustBadgeEditor.tsx:309
@@ -1305,36 +1306,36 @@ msgstr "加入購物車"
 msgid "Cancel"
 msgstr "取消"
 
-#: includes/Managers/AssetManager.php:722
+#: includes/Managers/AssetManager.php:726
 msgid "Start with post/zip code or street"
 msgstr "以郵編/郵政編碼或街道開頭"
 
-#: includes/Managers/AssetManager.php:730
+#: includes/Managers/AssetManager.php:734
 msgid "Shipping method"
 msgstr "運送方式"
 
-#: includes/Managers/AssetManager.php:744
+#: includes/Managers/AssetManager.php:748
 msgid "Error processing checkout. Please try again."
 msgstr "結帳處理錯誤。請再試一次。"
 
-#: includes/Managers/AssetManager.php:770
+#: includes/Managers/AssetManager.php:774
 msgid "You may also like&hellip;"
 msgstr "您可能也喜歡&hellip;"
 
-#: includes/Managers/AssetManager.php:845
+#: includes/Managers/AssetManager.php:849
 #: client/ts/frontend/Components/SideCartFloatingButton.tsx:26
 msgid "View cart"
 msgstr "查看購物車"
 
-#: includes/Managers/AssetManager.php:849
+#: includes/Managers/AssetManager.php:853
 msgid "Remove %s from cart"
 msgstr "從購物車中移除 %s"
 
-#: includes/Managers/AssetManager.php:850
+#: includes/Managers/AssetManager.php:854
 msgid "Proceed to checkout"
 msgstr "進行結帳"
 
-#: includes/Managers/AssetManager.php:853
+#: includes/Managers/AssetManager.php:857
 msgid "View Product"
 msgstr "查看產品"
 
@@ -1452,16 +1453,16 @@ msgstr "CheckoutWC："
 msgid "Settings marked with asterisks (**) may be overridden based on your Side Cart settings. (CheckoutWC > Side Cart)"
 msgstr "標有星號 (**) 的設定可能會根據您的側邊購物車設定被覆蓋。（CheckoutWC > 側邊購物車）"
 
-#: includes/Features/OrderBumps.php:610
+#: includes/Features/OrderBumps.php:647
 msgid "All orders"
 msgstr "所有訂單"
 
-#: includes/Features/OrderBumps.php:613
+#: includes/Features/OrderBumps.php:650
 msgid "Contains Any Order Bump"
 msgstr "包含任意加購商品"
 
 # %s: Order bump title
-#: includes/Features/OrderBumps.php:619
+#: includes/Features/OrderBumps.php:656
 msgid "Has Bump: %s"
 msgstr "有加購商品：%s"
 
@@ -1770,8 +1771,8 @@ msgstr "外掛程式 <strong>太複雜，無法設定。</strong>"
 #: includes/Admin/Pages/LocalPickupAdminFree.php:184
 #: includes/Admin/Pages/LocalPickupAdminFree.php:221
 #: includes/Admin/Pages/Premium/LocalPickupAdmin.php:225
-#: client/ts/admin/Components/Forms/AdvancedSettingsForm.tsx:104
 #: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:176
+#: client/ts/admin/Components/Forms/AdvancedSettingsForm.tsx:104
 #: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:938
 msgid "Other"
 msgstr "其他"
@@ -2058,6 +2059,62 @@ msgstr "訂單加購報價表單"
 msgid "The form to accept or reject the bump offer."
 msgstr "接受或拒絕加購報價的表單。"
 
+#: includes/Model/Bumps/BumpAbstract.php:1081
+#: includes/Model/Bumps/BumpAbstract.php:1091
+#: includes/Model/ABTests/OrderBumpsABTest.php:30
+#: includes/Features/ABTesting/ABTestTypeRegistry.php:123
+#: includes/Admin/Pages/OrderBumpsAdminFree.php:17
+#: includes/Admin/Pages/OrderBumpsAdminFree.php:71
+#: includes/Admin/Pages/Premium/OrderBumps.php:50
+#: client/ts/admin/Components/Forms/OrderBumpSettingsForm.tsx:45
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:408
+msgid "Order Bumps"
+msgstr "訂單加購"
+
+#: includes/Model/Bumps/BumpAbstract.php:1082
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:193
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:1614
+msgid "Order Bump"
+msgstr "訂單加購"
+
+#: includes/Model/Bumps/BumpAbstract.php:1083
+msgid "Add New"
+msgstr "新增"
+
+#: includes/Model/Bumps/BumpAbstract.php:1084
+msgid "Add New Order Bump"
+msgstr "新增訂單加購"
+
+#: includes/Model/Bumps/BumpAbstract.php:1085
+msgid "Edit Order Bump"
+msgstr "編輯訂單加購"
+
+#: includes/Model/Bumps/BumpAbstract.php:1086
+#: client/ts/admin/Components/Metaboxes/OrderBumpsSetupModal.tsx:61
+msgid "New Order Bump"
+msgstr "新訂單加購"
+
+#: includes/Model/Bumps/BumpAbstract.php:1087
+msgid "View Order Bump"
+msgstr "查看訂單加購"
+
+#: includes/Model/Bumps/BumpAbstract.php:1088
+msgid "Find Order Bump"
+msgstr "尋找訂單加購"
+
+#: includes/Model/Bumps/BumpAbstract.php:1089
+msgid "No order bumps were found."
+msgstr "未找到訂單加購。"
+
+#: includes/Model/Bumps/BumpAbstract.php:1090
+msgid "Not found in trash"
+msgstr "垃圾桶中未找到"
+
+#: includes/Model/ABTests/OrderBumpsABTest.php:31
+#: includes/Features/ABTesting/ABTestTypeRegistry.php:124
+msgid "Test different variations of order bumps to see which performs better."
+msgstr "測試不同的訂單加購變體，看看哪個表現較佳。"
+
 # %1$s: Plugin name, %2$s: Link opening tag, %3$s: Version number, %4$s: Link closing tag
 #: includes/Managers/Helpers/EDD_SL_Plugin_Updater.php:281
 msgid "There is a new version of %1$s available. %2$sView version %3$s details%4$s."
@@ -2076,62 +2133,6 @@ msgstr "您沒有安裝外掛更新的權限"
 #: client/ts/admin/Components/GooglePlacesKeyStatus.tsx:61
 msgid "Error"
 msgstr "錯誤"
-
-#: includes/Model/Bumps/BumpAbstract.php:1034
-#: includes/Model/Bumps/BumpAbstract.php:1044
-#: includes/Model/ABTests/OrderBumpsABTest.php:30
-#: includes/Features/ABTesting/ABTestTypeRegistry.php:123
-#: includes/Admin/Pages/OrderBumpsAdminFree.php:17
-#: includes/Admin/Pages/OrderBumpsAdminFree.php:71
-#: includes/Admin/Pages/Premium/OrderBumps.php:50
-#: client/ts/admin/Components/Forms/OrderBumpSettingsForm.tsx:45
-#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:408
-msgid "Order Bumps"
-msgstr "訂單加購"
-
-#: includes/Model/Bumps/BumpAbstract.php:1035
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:193
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:1614
-msgid "Order Bump"
-msgstr "訂單加購"
-
-#: includes/Model/Bumps/BumpAbstract.php:1036
-msgid "Add New"
-msgstr "新增"
-
-#: includes/Model/Bumps/BumpAbstract.php:1037
-msgid "Add New Order Bump"
-msgstr "新增訂單加購"
-
-#: includes/Model/Bumps/BumpAbstract.php:1038
-msgid "Edit Order Bump"
-msgstr "編輯訂單加購"
-
-#: includes/Model/Bumps/BumpAbstract.php:1039
-#: client/ts/admin/Components/Metaboxes/OrderBumpsSetupModal.tsx:61
-msgid "New Order Bump"
-msgstr "新訂單加購"
-
-#: includes/Model/Bumps/BumpAbstract.php:1040
-msgid "View Order Bump"
-msgstr "查看訂單加購"
-
-#: includes/Model/Bumps/BumpAbstract.php:1041
-msgid "Find Order Bump"
-msgstr "尋找訂單加購"
-
-#: includes/Model/Bumps/BumpAbstract.php:1042
-msgid "No order bumps were found."
-msgstr "未找到訂單加購。"
-
-#: includes/Model/Bumps/BumpAbstract.php:1043
-msgid "Not found in trash"
-msgstr "垃圾桶中未找到"
-
-#: includes/Model/ABTests/OrderBumpsABTest.php:31
-#: includes/Features/ABTesting/ABTestTypeRegistry.php:124
-msgid "Test different variations of order bumps to see which performs better."
-msgstr "測試不同的訂單加購變體，看看哪個表現較佳。"
 
 #: includes/Features/OneClick/OrderStatusManager.php:52
 msgid "Pending Offer <span class=\"count\">(%s)</span>"
@@ -3023,8 +3024,8 @@ msgid "Step 1: Try CheckoutWC Premium Free For 7 Days"
 msgstr "步驟 1：免費試用 CheckoutWC Premium 7 天"
 
 #: includes/Admin/Pages/General.php:150
-msgid "Enter your license key. An active license is required for all functionality."
-msgstr "輸入您的授權金鑰。所有功能皆需有效授權。"
+msgid "Enter your license key and activate it for this site to turn on premium features."
+msgstr "輸入您的授權金鑰並為此網站啟用它，即可開啟進階功能。"
 
 #: includes/Admin/Pages/General.php:150
 msgid "Supercharge your WooCommerce store."
@@ -3596,23 +3597,67 @@ msgstr "權限不足。"
 msgid "Notice dismissed."
 msgstr "通知已關閉。"
 
-# %1$s: URL to pricing page, %2$s: "purchase a new license" link text, %3$s: Support email URL, %4$s: "please contact support" link text
-#: includes/Admin/Notices/InvalidLicenseKeyNotice.php:15
-msgid "Your license key appears to have expired. Please <a href=\"%1$s\" target=\"_blank\">%2$s</a> to restore functionality. If you believe this is in error, <a href=\"%3$s\">%4$s</a>."
-msgstr "您的授權金鑰似乎已過期。請<a href=\"%1$s\" target=\"_blank\">%2$s</a>以恢復功能。如果您認為這是錯誤，請<a href=\"%3$s\">%4$s</a>。"
+# %1$d: Number of days, %2$s: Pricing URL, %3$s: "renew it here" link text
+#: includes/Admin/Notices/LicenseUnverifiedNotice.php:25
+msgid "Premium features are off because we haven\\'t been able to check your license with checkoutwc.com for %1$d days. Make sure your server can connect to checkoutwc.com. If your license has expired, <a href=\"%2$s\" target=\"_blank\">%3$s</a>."
+msgstr "由於我們已無法與 checkoutwc.com 驗證您的授權達 %1$d 天，進階功能已關閉。請確認您的伺服器可連線至 checkoutwc.com。若您的授權已過期，<a href=\"%2$s\" target=\"_blank\">%3$s</a>。"
 
-#: includes/Admin/Notices/InvalidLicenseKeyNotice.php:17
-msgid "purchase a new license"
-msgstr "購買新授權"
+#: includes/Admin/Notices/LicenseUnverifiedNotice.php:28
+msgid "renew it here"
+msgstr "在此續訂"
 
-#: includes/Admin/Notices/InvalidLicenseKeyNotice.php:19
-msgid "please contact support"
-msgstr "請聯絡客服"
+#: includes/Admin/Notices/LicenseUnverifiedNotice.php:33
+msgid "CheckoutWC can\\'t verify your license"
+msgstr "CheckoutWC 無法驗證您的授權"
 
-# %1$s: URL to activation page, %2$s: "Start Here" link text
+# %1$s: Date premium features turn off, %2$s: Support email URL, %3$s: "Contact support" link text
+#: includes/Admin/Notices/LicenseServerUnreachableNotice.php:28
+msgid "We couldn\\'t check your license with checkoutwc.com. Premium features will turn off on %1$s unless the connection is restored. <a href=\"%2$s\">%3$s</a> if this keeps happening."
+msgstr "我們無法與 checkoutwc.com 驗證您的授權。除非連線恢復，否則進階功能將於 %1$s 關閉。若此情況持續發生，請 <a href=\"%2$s\">%3$s</a>。"
+
+#: includes/Admin/Notices/LicenseServerUnreachableNotice.php:31
+#: includes/Admin/Notices/LicenseServerUnreachableNotice.php:38
+msgid "Contact support"
+msgstr "聯絡支援"
+
+# %1$s: Support email URL, %2$s: "Contact support" link text
+#: includes/Admin/Notices/LicenseServerUnreachableNotice.php:36
+msgid "We couldn\\'t check your license with checkoutwc.com. Make sure your server can connect to checkoutwc.com. <a href=\"%1$s\">%2$s</a> if this keeps happening."
+msgstr "我們無法與 checkoutwc.com 驗證您的授權。請確認您的伺服器可連線至 checkoutwc.com。若此情況持續發生，請 <a href=\"%1$s\">%2$s</a>。"
+
+#: includes/Admin/Notices/LicenseServerUnreachableNotice.php:45
+msgid "CheckoutWC can\\'t reach the license server"
+msgstr "CheckoutWC 無法連線至授權伺服器"
+
+#: includes/Admin/Notices/InvalidLicenseKeyNotice.php:13
+msgid "CheckoutWC license expired"
+msgstr "CheckoutWC 授權已過期"
+
+# %1$s: URL to pricing page, %2$s: "Renew your license" link text, %3$s: Support email URL, %4$s: "contact support" link text
+#: includes/Admin/Notices/InvalidLicenseKeyNotice.php:16
+msgid "Premium features are off because your license has expired. <a href=\"%1$s\" target=\"_blank\">%2$s</a> to turn them back on. If you think this is a mistake, <a href=\"%3$s\">%4$s</a>."
+msgstr "由於您的授權已過期，進階功能已關閉。請 <a href=\"%1$s\" target=\"_blank\">%2$s</a> 以重新啟用。如果您認為這是錯誤，請 <a href=\"%3$s\">%4$s</a>。"
+
+#: includes/Admin/Notices/InvalidLicenseKeyNotice.php:18
+msgid "Renew your license"
+msgstr "續訂您的授權"
+
+#: includes/Admin/Notices/InvalidLicenseKeyNotice.php:20
+msgid "contact support"
+msgstr "聯絡支援"
+
+# %1$s: URL to activation page, %2$s: "Activate your license" link text, %3$s: Pricing URL, %4$s: "buy a license" link text
 #: includes/Admin/Notices/InactiveLicenseNotice.php:11
-msgid "Your license key is not active for this site. Please visit <a href=\"%1$s\">%2$s</a> to activate your license and restore functionality."
-msgstr "您的授權金鑰尚未啟用於此網站。請造訪<a href=\"%1$s\">%2$s</a>以啟用您的授權並恢復功能。"
+msgid "Premium features are off because your license isn\\'t activated on this site. <a href=\"%1$s\">%2$s</a> or <a href=\"%3$s\" target=\"_blank\">%4$s</a> for this site."
+msgstr "由於您的授權尚未在此網站上啟用，進階功能已關閉。請 <a href=\"%1$s\">%2$s</a> 或 <a href=\"%3$s\" target=\"_blank\">%4$s</a> 為此網站啟用。"
+
+#: includes/Admin/Notices/InactiveLicenseNotice.php:13
+msgid "Activate your license"
+msgstr "啟用您的授權"
+
+#: includes/Admin/Notices/InactiveLicenseNotice.php:20
+msgid "CheckoutWC license not activated"
+msgstr "CheckoutWC 授權未啟用"
 
 #: includes/Admin/Notices/BFNotice.php:13
 msgid "Black Friday Sale - 40% Off"
@@ -4462,22 +4507,6 @@ msgstr "A/B 測試應結束的日期。此日期之後，將顯示原始變體�
 msgid "Traffic split percentages must total 100%. Please adjust your percentages."
 msgstr "流量分配百分比必須總計 100%。請調整您的百分比。"
 
-#: client/ts/frontend/Components/TermsAndConditions.ts:29
-msgid "Terms and Conditions"
-msgstr "條款與細則"
-
-#: client/ts/frontend/Components/TermsAndConditions.ts:35
-msgid "Privacy Policy"
-msgstr "隱私權政策"
-
-#: client/ts/frontend/Components/SideCartComponent.tsx:39
-msgid "Close Cart"
-msgstr "關閉購物車"
-
-#: client/ts/frontend/Components/FreeShippingProgressBar.tsx:245
-msgid "Unlocked"
-msgstr "已解鎖"
-
 #: client/ts/frontend/Actions/CompleteOrderAction.ts:196
 msgid "Could not connect to server. Please refresh and try again or contact site administrator."
 msgstr "无法连接服务器。请刷新并重试，或联系网站管理员。"
@@ -4501,6 +4530,22 @@ msgstr "服务器在处理您的请求时超时。请刷新并重试，或联系
 #: client/ts/frontend/Actions/CompleteOrderAction.ts:206
 msgid "Request was aborted. Please contact site administrator."
 msgstr "请求已中止。请联系网站管理员。"
+
+#: client/ts/frontend/Components/TermsAndConditions.ts:29
+msgid "Terms and Conditions"
+msgstr "條款與細則"
+
+#: client/ts/frontend/Components/TermsAndConditions.ts:35
+msgid "Privacy Policy"
+msgstr "隱私權政策"
+
+#: client/ts/frontend/Components/SideCartComponent.tsx:39
+msgid "Close Cart"
+msgstr "關閉購物車"
+
+#: client/ts/frontend/Components/FreeShippingProgressBar.tsx:245
+msgid "Unlocked"
+msgstr "已解鎖"
 
 # %d is the number of icons in the collection
 #: client/ts/admin/Components/trustBadges.ts:85
@@ -4935,6 +4980,403 @@ msgstr "載入中..."
 #: client/ts/admin/Components/acr/carts.tsx:239
 msgid "Tracked Carts"
 msgstr "追蹤的購物車"
+
+#: client/ts/admin/Components/Metaboxes/ProductsAndVariationsCompleter.tsx:30
+msgid "Private"
+msgstr "私人"
+
+#: client/ts/admin/Components/Metaboxes/ProductsAndVariationsCompleter.tsx:32
+msgid "Pending"
+msgstr "待處理"
+
+#: client/ts/admin/Components/Metaboxes/ProductsAndVariationsCompleter.tsx:33
+msgid "Scheduled"
+msgstr "已排程"
+
+#: client/ts/admin/Components/Metaboxes/ProductsAndVariationsCompleter.tsx:44
+#: client/ts/admin/Components/Forms/CheckoutSettingsForm.tsx:237
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:850
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:863
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:873
+#: client/ts/admin/Components/CheckoutEditor/panels/CheckoutSettingsPanel.tsx:110
+msgid "Hidden"
+msgstr "隱藏"
+
+#: client/ts/admin/Components/Metaboxes/ProductsAndVariationsCompleter.tsx:46
+msgid "Search only"
+msgstr "僅搜尋"
+
+#: client/ts/admin/Components/Metaboxes/ProductsAndVariationsCompleter.tsx:80
+msgid "All products with titles that include {{query /}}"
+msgstr "所有標題包含 {{query /}} 的產品"
+
+#: client/ts/admin/Components/Metaboxes/ProductsAndVariationsCompleter.tsx:130
+msgid "Variation"
+msgstr "變體"
+
+#: client/ts/admin/Components/Metaboxes/ProductTagCompleter.tsx:44
+msgid "All product tags that include {{query /}}"
+msgstr "所有標籤包含 {{query /}} 的產品"
+
+#: client/ts/admin/Components/Metaboxes/ProductAttributeTermsCompleter.tsx:99
+msgid "All attribute terms that include {{query /}}"
+msgstr "所有包含 {{query /}} 的屬性詞彙"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsSetupModal.tsx:62
+msgid "Let\\'s configure a few things to get you started quickly."
+msgstr "Let's configure a few things to get you started quickly."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsSetupModal.tsx:66
+msgid "Give your new Order Bump a name. This is just for admins - it won\\'t be displayed to customers."
+msgstr "给您的新订单起个名字。这仅供管理员使用，不会显示给客户。"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsSetupModal.tsx:78
+msgid "Which product should be added to the cart when this Order Bump is accepted?"
+msgstr "接受订单跳转时，应将哪种产品添加到购物车？"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsSetupModal.tsx:80
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:33
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:92
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:130
+#: client/ts/admin/Components/Metaboxes/OrderBumpsGeneralPanel.tsx:44
+msgid "Search for product"
+msgstr "搜索产品"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsSetupModal.tsx:91
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferDiscountPanel.tsx:19
+msgid "Discount Type"
+msgstr "折扣类型"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsSetupModal.tsx:94
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferDiscountPanel.tsx:23
+msgid "Percent Off"
+msgstr "折扣百分比"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsSetupModal.tsx:95
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferDiscountPanel.tsx:24
+msgid "Amount Off"
+msgstr "关闭金额"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsSetupModal.tsx:105
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferDiscountPanel.tsx:34
+msgid "Discount"
+msgstr "折扣"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsSetupModal.tsx:106
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferDiscountPanel.tsx:35
+msgid "The amount or percentage applied as a discount to the Offer Product. Leave blank or enter 0 to charge full price."
+msgstr "适用于优惠产品的折扣金额或百分比。留空或输入 0 表示收取全价。"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsSetupModal.tsx:117
+msgid "Continue"
+msgstr "继续"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsSetupModal.tsx:122
+msgid "Continue to review your order bump, optionally add display conditions, and publish."
+msgstr "继续查看订单凹凸，选择添加显示条件，然后发布。"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:19
+msgid "You must select an offer product."
+msgstr "您必須選擇一個優惠產品。"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:26
+msgid "Offer"
+msgstr "優惠"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:44
+msgid "Auto Add Order Bump to Cart"
+msgstr "自動將加購商品加入購物車"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:45
+msgid "If conditions are satisfied, automatically add this order bump to the cart. Useful for free gifts or other offers that don\\'t require customer action."
+msgstr "如果條件滿足，則自動將此加購商品加入購物車。適用於免費贈品或其他不需要客戶操作的優惠。"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:56
+msgid "Auto Match Variations Between Search and Offer Product"
+msgstr "自動匹配搜尋與優惠產品之間的變體"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:61
+msgid "Add offer product to the cart with the same variable configuration as the product below."
+msgstr "將優惠產品以與下方產品相同的變數配置加入購物車。"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:65
+msgid "Only applies when Auto Match Cart Product and Offer Product are variable products with matching variation attributes (Size, Color, etc)"
+msgstr "僅當自動匹配購物車產品和優惠產品為具有匹配變體屬性（尺寸、顏色等）的變量產品時適用"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:69
+msgid "Leave unchecked to have customers to select variation options in a modal window."
+msgstr "未勾選時，客戶需在彈出視窗中選擇變體選項。"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:73
+msgid "If offer product is not variable, this option is ignored."
+msgstr "如果優惠產品不是變量產品，則忽略此選項。"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:90
+msgid "Auto Match Variations Cart Product"
+msgstr "自動匹配購物車產品變體"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:98
+msgid "The product in the cart to match the Order Bump variations to."
+msgstr "購物車中用於匹配加購商品變體的產品。"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:113
+msgid "Match Quantity of Offer Product to Display Condition Product"
+msgstr "將優惠產品數量匹配至顯示條件產品"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:114
+msgid "If customer has two of the display condition product in the cart, two of the offer product will be added to the cart."
+msgstr "如果客戶購物車中有兩個顯示條件產品，則會加入兩個優惠產品至購物車。"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:128
+msgid "Match Quantity Cart Product"
+msgstr "匹配購物車產品數量"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:136
+msgid "The product in the cart to match the Order Bump quantity to."
+msgstr "購物車中用於匹配加購商品數量的產品。"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:151
+msgid "Quantity of Offer Product To Add"
+msgstr "要加入的優惠產品數量"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:152
+msgid "The quantity to add to the cart when offer is accepted."
+msgstr "接受優惠時要加入購物車的數量。"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:161
+msgid "Allow Customer To Change Quantity In Cart"
+msgstr "允許客戶更改購物車中的數量"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:162
+msgid "Allow customer to change the quantity of this order bump in the cart."
+msgstr "允許客戶更改購物車中此加購商品的數量。"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:22
+msgid "Offer Language"
+msgstr "優惠語言"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:29
+msgid "Place Order Modal Heading"
+msgstr "下單彈窗標題"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:30
+msgid "Default if blank: Your order is almost complete..."
+msgstr "若為空白，預設為：您的訂單即將完成..."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:30
+msgid "Wait %s! Here\\'s an exclusive offer to compliment your order!"
+msgstr "請稍候 %s！這裡有一個專屬優惠，獻給您的訂單！"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:39
+msgid "Place Order Modal Subheading"
+msgstr "下單彈窗副標題"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:40
+msgid "Default if blank: Add this offer to your order and save!"
+msgstr "若為空白，預設為：將此優惠加入您的訂單並節省費用！"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:52
+msgid "Offer Acceptance Checkbox Label"
+msgstr "優惠接受勾選框標籤"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:52
+msgid "Offer Acceptance Button Label"
+msgstr "優惠接受按鈕標籤"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:53
+msgid "Example: Yes! Please add this offer to my order"
+msgstr "範例：是的！請將此優惠加入我的訂單"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:63
+msgid "Offer Description"
+msgstr "優惠描述"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:64
+msgid "Example: Limited time offer! Get an EXCLUSIVE discount right now! Click the checkbox above to add this product to your order now."
+msgstr "範例：限時優惠！立即獲得獨家折扣！勾選上方方框，立即將此產品加入您的訂單。"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:74
+msgid "Modal Offer Rejection Link Text"
+msgstr "彈出視窗優惠拒絕連結文字"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:78
+msgid "Displays in modal version of Order Bump, such as Place Order bumps or when the Offer Product is a variable product (as opposed to a specific variation)."
+msgstr "顯示於訂單加購的彈窗版本，例如下單加購或當優惠商品為可變商品（而非特定變體）時。"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:83
+msgid "Default if blank: No thanks, just complete my order"
+msgstr "若為空白，預設為：不，謝謝，直接完成我的訂單"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:85
+msgid "Default if blank: No thanks"
+msgstr "若為空白，預設為：不，謝謝"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferDiscountPanel.tsx:15
+msgid "Offer Discount"
+msgstr "优惠折扣"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferDiscountPanel.tsx:20
+msgid "Amount Off: Remove fixed amount from the product price. Percent Off: Discount product by specified percentage."
+msgstr "取消金额：从产品价格中去除固定金额。百分比折扣：按指定百分比对产品进行折扣。"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferDiscountPanel.tsx:46
+msgid "Item Removal Behavior"
+msgstr "物品移除行为"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferDiscountPanel.tsx:47
+msgid "What happens when the display for product is removed from the cart. Default: Order Bump remains in the cart but bump specific discounts are removed."
+msgstr "从购物车中移除产品显示时会发生什么情况。默认：订单凹凸保留在购物车中，但凹凸特定折扣会被移除。"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferDiscountPanel.tsx:50
+msgid "Leave In Cart With Normal Price"
+msgstr "以正常价格留在购物车中"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferDiscountPanel.tsx:51
+msgid "Remove Order Bump From Cart"
+msgstr "从购物车中删除订单跳转"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsGeneralPanel.tsx:13
+msgid "You must set an upsell replacement product."
+msgstr "您必須設定加購替換產品。"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsGeneralPanel.tsx:20
+msgid "Offer Type"
+msgstr "優惠類型"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsGeneralPanel.tsx:24
+msgid "Use Order Bump As Upsell"
+msgstr "將訂單加購用作加購"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsGeneralPanel.tsx:28
+msgid "Replace a cart item with offer product when this Order Bump is taken."
+msgstr "當此訂單加購被採用時，用優惠產品替換購物車中的商品。"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsGeneralPanel.tsx:42
+msgid "Which product does this upsell replace in the cart?"
+msgstr "此加購會替換購物車中的哪個產品？"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsGeneralPanel.tsx:50
+msgid "This product must be in the cart for this order bump to be shown."
+msgstr "購物車中必須有此產品，該訂單加購才會顯示。"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:44
+msgid "Blocks are only used by full screen offers. Enable Full Screen Landing Page in the Display Location panel, then add the Order Bump Offer Form block where the offer form should go."
+msgstr "區塊僅供全螢幕優惠使用。請先在顯示位置面板中啟用全螢幕登陸頁面，然後在優惠表單應放置的位置新增「加購優惠表單」區塊。"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:45
+msgid "Blocks are only used by full screen offers, available on Place Order Click and Post Purchase One-Click bumps. This bump uses the built-in layout."
+msgstr "區塊僅供全螢幕優惠使用，可用於下單點擊與購買後一鍵加購。此加購會使用內建版面配置。"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:61
+msgid "Post Purchase One-Click bumps require a compatible payment gateway. We recommend using Place Order bumps when using non-compatible gateways."
+msgstr "購後一鍵加購需要相容的付款閘道。使用不相容閘道時，我們建議使用下單加購。"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:67
+msgid "Learn more about supported gateways"
+msgstr "了解更多支援的閘道"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:74
+msgid "Read our Order Bumps documentation"
+msgstr "閱讀我們的訂單加購說明文件"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:104
+msgid "This bump will not appear anywhere because the side cart is disabled."
+msgstr "由於側邊購物車已停用，此加購不會出現在任何位置。"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:105
+msgid "This bump will not appear anywhere because order bumps are disabled in the side cart."
+msgstr "由於側邊購物車中已停用加購，此加購不會出現在任何位置。"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:108
+msgid "This bump will appear on checkout but not in the side cart because the side cart is disabled."
+msgstr "由於側邊購物車已停用，此加購會顯示在結帳頁面，但不會出現在側邊購物車中。"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:109
+msgid "This bump will appear on checkout but not in the side cart because order bumps are disabled in the side cart."
+msgstr "由於側邊購物車中已停用加購，此加購會顯示在結帳頁面，但不會出現在側邊購物車中。"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:120
+msgid "Open side cart settings"
+msgstr "開啟側邊購物車設定"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:141
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:148
+msgid "Display Location"
+msgstr "顯示位置"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:157
+msgid "Checkout Slot"
+msgstr "結帳區塊"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:187
+msgid "Displays in a popup when Place Order is clicked, before the order is submitted"
+msgstr "在點擊「下訂單」後、訂單提交前，以彈出視窗顯示。"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:190
+msgid "Displays in a popup on the Thank You page."
+msgstr "在感謝頁面以彈出視窗顯示。"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:194
+msgid "Full Screen Landing Page"
+msgstr "全螢幕登陸頁面"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:195
+msgid "Design the offer with blocks instead of the built-in layout. Add the Order Bump Offer Form block where the offer form should go."
+msgstr "改用區塊而非內建版面配置來設計優惠。請在優惠表單應放置的位置新增「加購優惠表單」區塊。"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayConditions.tsx:26
+msgid "Show Bump When These Conditions Are True:"
+msgstr "當以下條件成立時顯示加購："
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayConditions.tsx:29
+msgid "This bump will be shown when the correct upsell product is in the cart and the Offer Product is not in the cart. To further limit when this bump is shown, add a rule below."
+msgstr "當正確的加購產品在購物車中且優惠產品不在購物車中時，將顯示此加購。若要進一步限制此加購的顯示，請在下方新增規則。"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayConditions.tsx:31
+msgid "This bump will always be shown when the Offer Product is not in the cart. To limit when this bump is shown, add a rule below."
+msgstr "當優惠產品不在購物車中時，將始終顯示此加購。若要限制此加購的顯示，請在下方新增規則。"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsActionsPanel.tsx:15
+msgid "Actions"
+msgstr "操作"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsActionsPanel.tsx:21
+msgid "Remove These Products From The Cart"
+msgstr "從購物車移除此等產品"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsActionsPanel.tsx:23
+msgid "If any of these products are in the cart, remove them when this bump is added to the cart."
+msgstr "若購物車中有任何這些產品，當此加購加入購物車時將移除它們。"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsActionsPanel.tsx:24
+msgid "Search for products"
+msgstr "搜尋產品"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsActionsPanel.tsx:35
+msgid "Apply Free Shipping"
+msgstr "套用免運費"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsActionsPanel.tsx:36
+msgid "When this bump is added to the cart, apply free shipping to the cart."
+msgstr "當此加購加入購物車時，對購物車套用免運費。"
+
+#: client/ts/admin/Components/Metaboxes/CategoryCompleter.tsx:46
+msgid "All categories with titles that include {{query /}}"
+msgstr "所有標題包含 {{query /}} 的分類"
+
+#: client/ts/admin/Components/Fields/WPMediaUploadButton.tsx:69
+msgid "Select or Upload a Logo"
+msgstr "選擇或上傳標誌"
+
+#: client/ts/admin/Components/Fields/RangeControl.tsx:97
+#: client/ts/admin/Components/Fields/ColorControl.tsx:137
+msgid "Reset"
+msgstr "重設"
+
+#: client/ts/admin/Components/Fields/ColorControl.tsx:173
+#: client/ts/admin/Components/CheckoutEditor/BumpEditorModal.tsx:101
+msgid "Done"
+msgstr "完成"
 
 #: client/ts/admin/Components/Forms/WooCommercePagesGlobalOptionsSettingsForm.tsx:49
 #: client/ts/admin/Components/Forms/CheckoutSettingsForm.tsx:570
@@ -5777,15 +6219,6 @@ msgstr "電話欄位"
 msgid "Determines whether the WooCommerce native phone field is enabled."
 msgstr "決定是否啟用 WooCommerce 原生電話欄位。"
 
-#: client/ts/admin/Components/Forms/CheckoutSettingsForm.tsx:237
-#: client/ts/admin/Components/Metaboxes/ProductsAndVariationsCompleter.tsx:44
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:850
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:863
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:873
-#: client/ts/admin/Components/CheckoutEditor/panels/CheckoutSettingsPanel.tsx:110
-msgid "Hidden"
-msgstr "隱藏"
-
 #: client/ts/admin/Components/Forms/CheckoutSettingsForm.tsx:241
 #: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:851
 #: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:864
@@ -6534,394 +6967,6 @@ msgstr "勾選任何應排除於放棄購物車電子郵件之外的使用者角
 #: client/ts/admin/Components/Forms/ACRSettingsForm.tsx:172
 msgid "Are you sure you want to delete all tracked carts?"
 msgstr "您確定要刪除所有追蹤的購物車嗎？"
-
-#: client/ts/admin/Components/Metaboxes/ProductsAndVariationsCompleter.tsx:30
-msgid "Private"
-msgstr "私人"
-
-#: client/ts/admin/Components/Metaboxes/ProductsAndVariationsCompleter.tsx:32
-msgid "Pending"
-msgstr "待處理"
-
-#: client/ts/admin/Components/Metaboxes/ProductsAndVariationsCompleter.tsx:33
-msgid "Scheduled"
-msgstr "已排程"
-
-#: client/ts/admin/Components/Metaboxes/ProductsAndVariationsCompleter.tsx:46
-msgid "Search only"
-msgstr "僅搜尋"
-
-#: client/ts/admin/Components/Metaboxes/ProductsAndVariationsCompleter.tsx:80
-msgid "All products with titles that include {{query /}}"
-msgstr "所有標題包含 {{query /}} 的產品"
-
-#: client/ts/admin/Components/Metaboxes/ProductsAndVariationsCompleter.tsx:130
-msgid "Variation"
-msgstr "變體"
-
-#: client/ts/admin/Components/Metaboxes/ProductTagCompleter.tsx:44
-msgid "All product tags that include {{query /}}"
-msgstr "所有標籤包含 {{query /}} 的產品"
-
-#: client/ts/admin/Components/Metaboxes/ProductAttributeTermsCompleter.tsx:99
-msgid "All attribute terms that include {{query /}}"
-msgstr "所有包含 {{query /}} 的屬性詞彙"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsSetupModal.tsx:62
-msgid "Let\\'s configure a few things to get you started quickly."
-msgstr "Let's configure a few things to get you started quickly."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsSetupModal.tsx:66
-msgid "Give your new Order Bump a name. This is just for admins - it won\\'t be displayed to customers."
-msgstr "给您的新订单起个名字。这仅供管理员使用，不会显示给客户。"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsSetupModal.tsx:78
-msgid "Which product should be added to the cart when this Order Bump is accepted?"
-msgstr "接受订单跳转时，应将哪种产品添加到购物车？"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsSetupModal.tsx:80
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:33
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:92
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:130
-#: client/ts/admin/Components/Metaboxes/OrderBumpsGeneralPanel.tsx:44
-msgid "Search for product"
-msgstr "搜索产品"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsSetupModal.tsx:91
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferDiscountPanel.tsx:19
-msgid "Discount Type"
-msgstr "折扣类型"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsSetupModal.tsx:94
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferDiscountPanel.tsx:23
-msgid "Percent Off"
-msgstr "折扣百分比"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsSetupModal.tsx:95
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferDiscountPanel.tsx:24
-msgid "Amount Off"
-msgstr "关闭金额"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsSetupModal.tsx:105
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferDiscountPanel.tsx:34
-msgid "Discount"
-msgstr "折扣"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsSetupModal.tsx:106
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferDiscountPanel.tsx:35
-msgid "The amount or percentage applied as a discount to the Offer Product. Leave blank or enter 0 to charge full price."
-msgstr "适用于优惠产品的折扣金额或百分比。留空或输入 0 表示收取全价。"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsSetupModal.tsx:117
-msgid "Continue"
-msgstr "继续"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsSetupModal.tsx:122
-msgid "Continue to review your order bump, optionally add display conditions, and publish."
-msgstr "继续查看订单凹凸，选择添加显示条件，然后发布。"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:19
-msgid "You must select an offer product."
-msgstr "您必須選擇一個優惠產品。"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:26
-msgid "Offer"
-msgstr "優惠"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:44
-msgid "Auto Add Order Bump to Cart"
-msgstr "自動將加購商品加入購物車"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:45
-msgid "If conditions are satisfied, automatically add this order bump to the cart. Useful for free gifts or other offers that don\\'t require customer action."
-msgstr "如果條件滿足，則自動將此加購商品加入購物車。適用於免費贈品或其他不需要客戶操作的優惠。"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:56
-msgid "Auto Match Variations Between Search and Offer Product"
-msgstr "自動匹配搜尋與優惠產品之間的變體"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:61
-msgid "Add offer product to the cart with the same variable configuration as the product below."
-msgstr "將優惠產品以與下方產品相同的變數配置加入購物車。"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:65
-msgid "Only applies when Auto Match Cart Product and Offer Product are variable products with matching variation attributes (Size, Color, etc)"
-msgstr "僅當自動匹配購物車產品和優惠產品為具有匹配變體屬性（尺寸、顏色等）的變量產品時適用"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:69
-msgid "Leave unchecked to have customers to select variation options in a modal window."
-msgstr "未勾選時，客戶需在彈出視窗中選擇變體選項。"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:73
-msgid "If offer product is not variable, this option is ignored."
-msgstr "如果優惠產品不是變量產品，則忽略此選項。"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:90
-msgid "Auto Match Variations Cart Product"
-msgstr "自動匹配購物車產品變體"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:98
-msgid "The product in the cart to match the Order Bump variations to."
-msgstr "購物車中用於匹配加購商品變體的產品。"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:113
-msgid "Match Quantity of Offer Product to Display Condition Product"
-msgstr "將優惠產品數量匹配至顯示條件產品"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:114
-msgid "If customer has two of the display condition product in the cart, two of the offer product will be added to the cart."
-msgstr "如果客戶購物車中有兩個顯示條件產品，則會加入兩個優惠產品至購物車。"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:128
-msgid "Match Quantity Cart Product"
-msgstr "匹配購物車產品數量"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:136
-msgid "The product in the cart to match the Order Bump quantity to."
-msgstr "購物車中用於匹配加購商品數量的產品。"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:151
-msgid "Quantity of Offer Product To Add"
-msgstr "要加入的優惠產品數量"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:152
-msgid "The quantity to add to the cart when offer is accepted."
-msgstr "接受優惠時要加入購物車的數量。"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:161
-msgid "Allow Customer To Change Quantity In Cart"
-msgstr "允許客戶更改購物車中的數量"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:162
-msgid "Allow customer to change the quantity of this order bump in the cart."
-msgstr "允許客戶更改購物車中此加購商品的數量。"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:22
-msgid "Offer Language"
-msgstr "優惠語言"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:29
-msgid "Place Order Modal Heading"
-msgstr "下單彈窗標題"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:30
-msgid "Default if blank: Your order is almost complete..."
-msgstr "若為空白，預設為：您的訂單即將完成..."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:30
-msgid "Wait %s! Here\\'s an exclusive offer to compliment your order!"
-msgstr "請稍候 %s！這裡有一個專屬優惠，獻給您的訂單！"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:39
-msgid "Place Order Modal Subheading"
-msgstr "下單彈窗副標題"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:40
-msgid "Default if blank: Add this offer to your order and save!"
-msgstr "若為空白，預設為：將此優惠加入您的訂單並節省費用！"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:52
-msgid "Offer Acceptance Checkbox Label"
-msgstr "優惠接受勾選框標籤"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:52
-msgid "Offer Acceptance Button Label"
-msgstr "優惠接受按鈕標籤"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:53
-msgid "Example: Yes! Please add this offer to my order"
-msgstr "範例：是的！請將此優惠加入我的訂單"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:63
-msgid "Offer Description"
-msgstr "優惠描述"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:64
-msgid "Example: Limited time offer! Get an EXCLUSIVE discount right now! Click the checkbox above to add this product to your order now."
-msgstr "範例：限時優惠！立即獲得獨家折扣！勾選上方方框，立即將此產品加入您的訂單。"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:74
-msgid "Modal Offer Rejection Link Text"
-msgstr "彈出視窗優惠拒絕連結文字"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:78
-msgid "Displays in modal version of Order Bump, such as Place Order bumps or when the Offer Product is a variable product (as opposed to a specific variation)."
-msgstr "顯示於訂單加購的彈窗版本，例如下單加購或當優惠商品為可變商品（而非特定變體）時。"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:83
-msgid "Default if blank: No thanks, just complete my order"
-msgstr "若為空白，預設為：不，謝謝，直接完成我的訂單"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:85
-msgid "Default if blank: No thanks"
-msgstr "若為空白，預設為：不，謝謝"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferDiscountPanel.tsx:15
-msgid "Offer Discount"
-msgstr "优惠折扣"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferDiscountPanel.tsx:20
-msgid "Amount Off: Remove fixed amount from the product price. Percent Off: Discount product by specified percentage."
-msgstr "取消金额：从产品价格中去除固定金额。百分比折扣：按指定百分比对产品进行折扣。"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferDiscountPanel.tsx:46
-msgid "Item Removal Behavior"
-msgstr "物品移除行为"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferDiscountPanel.tsx:47
-msgid "What happens when the display for product is removed from the cart. Default: Order Bump remains in the cart but bump specific discounts are removed."
-msgstr "从购物车中移除产品显示时会发生什么情况。默认：订单凹凸保留在购物车中，但凹凸特定折扣会被移除。"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferDiscountPanel.tsx:50
-msgid "Leave In Cart With Normal Price"
-msgstr "以正常价格留在购物车中"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferDiscountPanel.tsx:51
-msgid "Remove Order Bump From Cart"
-msgstr "从购物车中删除订单跳转"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsGeneralPanel.tsx:13
-msgid "You must set an upsell replacement product."
-msgstr "您必須設定加購替換產品。"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsGeneralPanel.tsx:20
-msgid "Offer Type"
-msgstr "優惠類型"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsGeneralPanel.tsx:24
-msgid "Use Order Bump As Upsell"
-msgstr "將訂單加購用作加購"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsGeneralPanel.tsx:28
-msgid "Replace a cart item with offer product when this Order Bump is taken."
-msgstr "當此訂單加購被採用時，用優惠產品替換購物車中的商品。"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsGeneralPanel.tsx:42
-msgid "Which product does this upsell replace in the cart?"
-msgstr "此加購會替換購物車中的哪個產品？"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsGeneralPanel.tsx:50
-msgid "This product must be in the cart for this order bump to be shown."
-msgstr "購物車中必須有此產品，該訂單加購才會顯示。"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:44
-msgid "Blocks are only used by full screen offers. Enable Full Screen Landing Page in the Display Location panel, then add the Order Bump Offer Form block where the offer form should go."
-msgstr "區塊僅供全螢幕優惠使用。請先在顯示位置面板中啟用全螢幕登陸頁面，然後在優惠表單應放置的位置新增「加購優惠表單」區塊。"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:45
-msgid "Blocks are only used by full screen offers, available on Place Order Click and Post Purchase One-Click bumps. This bump uses the built-in layout."
-msgstr "區塊僅供全螢幕優惠使用，可用於下單點擊與購買後一鍵加購。此加購會使用內建版面配置。"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:61
-msgid "Post Purchase One-Click bumps require a compatible payment gateway. We recommend using Place Order bumps when using non-compatible gateways."
-msgstr "購後一鍵加購需要相容的付款閘道。使用不相容閘道時，我們建議使用下單加購。"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:67
-msgid "Learn more about supported gateways"
-msgstr "了解更多支援的閘道"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:74
-msgid "Read our Order Bumps documentation"
-msgstr "閱讀我們的訂單加購說明文件"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:104
-msgid "This bump will not appear anywhere because the side cart is disabled."
-msgstr "由於側邊購物車已停用，此加購不會出現在任何位置。"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:105
-msgid "This bump will not appear anywhere because order bumps are disabled in the side cart."
-msgstr "由於側邊購物車中已停用加購，此加購不會出現在任何位置。"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:108
-msgid "This bump will appear on checkout but not in the side cart because the side cart is disabled."
-msgstr "由於側邊購物車已停用，此加購會顯示在結帳頁面，但不會出現在側邊購物車中。"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:109
-msgid "This bump will appear on checkout but not in the side cart because order bumps are disabled in the side cart."
-msgstr "由於側邊購物車中已停用加購，此加購會顯示在結帳頁面，但不會出現在側邊購物車中。"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:120
-msgid "Open side cart settings"
-msgstr "開啟側邊購物車設定"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:141
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:148
-msgid "Display Location"
-msgstr "顯示位置"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:157
-msgid "Checkout Slot"
-msgstr "結帳區塊"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:187
-msgid "Displays in a popup when Place Order is clicked, before the order is submitted"
-msgstr "在點擊「下訂單」後、訂單提交前，以彈出視窗顯示。"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:190
-msgid "Displays in a popup on the Thank You page."
-msgstr "在感謝頁面以彈出視窗顯示。"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:194
-msgid "Full Screen Landing Page"
-msgstr "全螢幕登陸頁面"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:195
-msgid "Design the offer with blocks instead of the built-in layout. Add the Order Bump Offer Form block where the offer form should go."
-msgstr "改用區塊而非內建版面配置來設計優惠。請在優惠表單應放置的位置新增「加購優惠表單」區塊。"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayConditions.tsx:26
-msgid "Show Bump When These Conditions Are True:"
-msgstr "當以下條件成立時顯示加購："
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayConditions.tsx:29
-msgid "This bump will be shown when the correct upsell product is in the cart and the Offer Product is not in the cart. To further limit when this bump is shown, add a rule below."
-msgstr "當正確的加購產品在購物車中且優惠產品不在購物車中時，將顯示此加購。若要進一步限制此加購的顯示，請在下方新增規則。"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayConditions.tsx:31
-msgid "This bump will always be shown when the Offer Product is not in the cart. To limit when this bump is shown, add a rule below."
-msgstr "當優惠產品不在購物車中時，將始終顯示此加購。若要限制此加購的顯示，請在下方新增規則。"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsActionsPanel.tsx:15
-msgid "Actions"
-msgstr "操作"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsActionsPanel.tsx:21
-msgid "Remove These Products From The Cart"
-msgstr "從購物車移除此等產品"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsActionsPanel.tsx:23
-msgid "If any of these products are in the cart, remove them when this bump is added to the cart."
-msgstr "若購物車中有任何這些產品，當此加購加入購物車時將移除它們。"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsActionsPanel.tsx:24
-msgid "Search for products"
-msgstr "搜尋產品"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsActionsPanel.tsx:35
-msgid "Apply Free Shipping"
-msgstr "套用免運費"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsActionsPanel.tsx:36
-msgid "When this bump is added to the cart, apply free shipping to the cart."
-msgstr "當此加購加入購物車時，對購物車套用免運費。"
-
-#: client/ts/admin/Components/Metaboxes/CategoryCompleter.tsx:46
-msgid "All categories with titles that include {{query /}}"
-msgstr "所有標題包含 {{query /}} 的分類"
-
-#: client/ts/admin/Components/Fields/WPMediaUploadButton.tsx:69
-msgid "Select or Upload a Logo"
-msgstr "選擇或上傳標誌"
-
-#: client/ts/admin/Components/Fields/RangeControl.tsx:97
-#: client/ts/admin/Components/Fields/ColorControl.tsx:137
-msgid "Reset"
-msgstr "重設"
-
-#: client/ts/admin/Components/Fields/ColorControl.tsx:173
-#: client/ts/admin/Components/CheckoutEditor/BumpEditorModal.tsx:101
-msgid "Done"
-msgstr "完成"
 
 #: client/ts/admin/Components/CheckoutEditor/ScrollableRegion.tsx:74
 msgid "Scroll down for more items"
@@ -8493,7 +8538,7 @@ msgstr "刪除規則"
 
 # %d: shipping package number
 #: functions/functions.php:386
-#: functions/functions.php:3455
+#: functions/functions.php:3464
 msgctxt "shipping packages"
 msgid "Shipping"
 msgid_plural "Shipping %d"

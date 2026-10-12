@@ -8,7 +8,7 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "POT-Creation-Date: 2025-07-25 09:22-0400\n"
-"PO-Revision-Date: 2026-09-24T21:25:15+00:00\n"
+"PO-Revision-Date: 2026-10-12T15:20:31+00:00\n"
 "Language: sl-SI\n"
 "Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100>=3 && n%100<=4 ? 2 : 3);\n"
 "X-Generator: Poedit 3.6\n"
@@ -164,8 +164,8 @@ msgid "Postcode / ZIP"
 msgstr "Poštna št."
 
 #: includes/AddressFieldsAugmenter.php:458
-#: functions/functions.php:4215
-#: functions/functions.php:4216
+#: functions/functions.php:4224
+#: functions/functions.php:4225
 msgid "Email address"
 msgstr "E-poštni naslov"
 
@@ -302,7 +302,7 @@ msgid "Log in."
 msgstr "Prijavite se."
 
 #: functions/template-functions.php:489
-#: includes/Managers/AssetManager.php:705
+#: includes/Managers/AssetManager.php:709
 msgid "An account is already registered with your email address. <a href=\"#\" class=\"showlogin\">Please log in.</a>"
 msgstr "Račun je že registriran z vašim e-poštnim naslovom. <a href=\"#\" class=\"showlogin\">Prosimo, prijavite se.</a>"
 
@@ -355,7 +355,7 @@ msgstr "Naslov naročnika"
 #: functions/template-functions.php:768
 #: functions/template-functions.php:806
 #: functions/template-functions.php:1981
-#: includes/Managers/AssetManager.php:701
+#: includes/Managers/AssetManager.php:705
 msgid "Shipping address"
 msgstr "Naslov za dostavo"
 
@@ -368,7 +368,7 @@ msgstr "Vaša košarica"
 #: functions/template-functions.php:1047
 #: functions/template-functions.php:2013
 #: functions/template-functions.php:2287
-#: functions/functions.php:3469
+#: functions/functions.php:3478
 msgid "Shipping"
 msgstr "Dostava"
 
@@ -451,7 +451,7 @@ msgid "N/A"
 msgstr "Ni na voljo"
 
 #: functions/template-functions.php:2043
-#: includes/Managers/AssetManager.php:851
+#: includes/Managers/AssetManager.php:855
 msgid "Continue shopping"
 msgstr "Nadaljuj z nakupovanjem"
 
@@ -467,18 +467,18 @@ msgid "Email"
 msgstr "E-pošta"
 
 #: functions/template-functions.php:2101
-#: functions/functions.php:4133
-#: functions/functions.php:4134
+#: functions/functions.php:4142
+#: functions/functions.php:4143
 msgid "Password"
 msgstr "Geslo"
 
 #: functions/template-functions.php:2117
-#: functions/functions.php:4173
+#: functions/functions.php:4182
 msgid "Login"
 msgstr "Prijava"
 
 #: functions/template-functions.php:2120
-#: functions/functions.php:4166
+#: functions/functions.php:4175
 msgid "Lost your password?"
 msgstr "Ste pozabili geslo?"
 
@@ -486,16 +486,16 @@ msgstr "Ste pozabili geslo?"
 msgid "Your Cart is Empty"
 msgstr "Vaša košarica je prazna"
 
-#: functions/premium-init.php:340
+#: functions/premium-init.php:342
 msgid "CheckoutWC Templates Deactivated"
 msgstr "Predloge CheckoutWC so onemogočene"
 
 # %1$s: "Settings" text, %2$s: "Start Here" text, %3$s: "Activate CheckoutWC Templates" text
-#: functions/premium-init.php:343
+#: functions/premium-init.php:345
 msgid "Your license is valid and activated for this site but CheckoutWC is disabled for normal customers. To fix this, go to %1$s > %2$s and toggle \"%3$s\"."
 msgstr "Vaša licenca je veljavna in aktivirana za to stran, vendar je CheckoutWC onemogočen za običajne stranke. Za odpravo pojdite na %1$s > %2$s in preklopite \"%3$s\"."
 
-#: functions/premium-init.php:344
+#: functions/premium-init.php:346
 #: includes/Admin/AdminPluginsPageManager.php:40
 #: includes/Admin/Pages/OrderBumpsAdminFree.php:25
 #: includes/Admin/Pages/LocalPickupAdminFree.php:27
@@ -507,66 +507,71 @@ msgstr "Vaša licenca je veljavna in aktivirana za to stran, vendar je CheckoutW
 msgid "Settings"
 msgstr "Nastavitve"
 
-#: functions/premium-init.php:345
+#: functions/premium-init.php:347
+#: functions/premium-init.php:360
 #: includes/Admin/Pages/General.php:25
-#: includes/Admin/Notices/InactiveLicenseNotice.php:13
 msgid "Start Here"
 msgstr "Začni tukaj"
 
-#: functions/premium-init.php:346
+#: functions/premium-init.php:348
 #: includes/Admin/Pages/General.php:195
 msgid "Activate CheckoutWC Templates"
 msgstr "Aktiviraj predloge CheckoutWC"
 
-#: functions/premium-init.php:353
-msgid "Invalid CheckoutWC License"
-msgstr "Neveljavna licenca CheckoutWC"
+#: functions/premium-init.php:355
+msgid "CheckoutWC license invalid"
+msgstr "Licenca CheckoutWC ni veljavna"
 
-# %1$s: Pricing URL, %2$s: "purchase a license" link text
-#: functions/premium-init.php:356
-msgid "Your license key is missing or invalid. Please verify that your license key is valid or <a target=\"_blank\" href=\"%1$s\">%2$s</a> to restore full functionality."
-msgstr "Vaš licenčni ključ manjka ali ni veljaven. Prosimo, preverite, ali je vaš licenčni ključ veljaven ali <a target=\"_blank\" href=\"%1$s\">%2$s</a> za obnovitev polne funkcionalnosti."
-
+# %1$s: URL to license settings page, %2$s: "Start Here" link text, %3$s: Pricing URL, %4$s: "buy a license" link text
 #: functions/premium-init.php:358
-msgid "purchase a license"
-msgstr "kupi licenco"
+msgid "Premium features are off because your license key is missing or invalid. Check your key on <a href=\"%1$s\">%2$s</a> or <a target=\"_blank\" href=\"%3$s\">%4$s</a>."
+msgstr "Napredne funkcije so izklopljene, ker vaš licenčni ključ manjka ali ni veljaven. Preverite svoj ključ na <a href=\"%1$s\">%2$s</a> ali <a target=\"_blank\" href=\"%3$s\">%4$s</a>."
 
-#: functions/premium-init.php:374
+#: functions/premium-init.php:362
+#: includes/Admin/Notices/InactiveLicenseNotice.php:15
+msgid "buy a license"
+msgstr "kupite licenco"
+
+#: functions/premium-init.php:382
 msgid "New Feature: Cloudflare Turnstile Bot Protection"
 msgstr "Nova funkcija: Cloudflare Turnstile zaščita pred boti"
 
 # 1: Cloudflare Turnstile name wrapped in strong tags, 2: Setup link
-#: functions/premium-init.php:377
+#: functions/premium-init.php:385
 msgid "CheckoutWC now supports %1$s - a privacy-first, CAPTCHA-free way to protect your checkout from bots and spam orders. %2$s"
 msgstr "CheckoutWC zdaj podpira %1$s - način, ki daje prednost zasebnosti, brez CAPTCHA, za zaščito vašega nakupa pred boti in neželenimi naročili. %2$s"
 
 # The name of the Cloudflare Turnstile service
-#: functions/premium-init.php:381
+#: functions/premium-init.php:389
 #: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:78
 msgid "Cloudflare Turnstile"
 msgstr "Cloudflare Turnstile"
 
-#: functions/premium-init.php:387
+#: functions/premium-init.php:395
 msgid "Setup Cloudflare Turnstile now"
 msgstr "Nastavite Cloudflare Turnstile zdaj"
 
-#: functions/premium-init.php:392
+#: functions/premium-init.php:400
 msgid "Upgrade your plan now to access"
 msgstr "Nadgradite svoj načrt zdaj, da dostopate do"
 
-#: functions/premium-init.php:405
+#: functions/premium-init.php:413
 msgid "Abandoned Cart Recovery Tracking Disabled"
 msgstr "Sledenje obnovitvi zapuščenih košaric onemogočeno"
 
 # %1$s: Gist URL, %2$s: "Learn More" link text
-#: functions/premium-init.php:408
+#: functions/premium-init.php:416
 msgid "You have enabled Abandoned Cart Recovery tracking, but you do not have any emails published. To track carts, you need to publish emails or use this dev filter: <a target=\"_blank\" href=\"%1$s\">%2$s</a>."
 msgstr "Omogočili ste sledenje obnovitvi zapuščenih košaric, vendar nimate objavljenih nobenih e-poštnih sporočil. Za sledenje košaricam morate objaviti e-poštna sporočila ali uporabiti ta razvojni filter: <a target=\"_blank\" href=\"%1$s\">%2$s</a>."
 
-#: functions/premium-init.php:410
+#: functions/premium-init.php:418
 #: includes/Admin/Pages/AbandonedCartRecoveryAdminFree.php:82
 msgid "Learn More"
 msgstr "Izvedi več"
+
+#: functions/premium-init.php:477
+msgid "Admin preview: your CheckoutWC license isn\\'t valid for this site, so premium features are off. Check your license here: WP Admin > CheckoutWC > Start Here."
+msgstr "Predogled za skrbnika: vaša licenca CheckoutWC za to spletno mesto ni veljavna, zato so napredne funkcije izklopljene. Licenco preverite tukaj: WP Admin > CheckoutWC > Začnite tukaj."
 
 #: functions/init.php:396
 #: functions/init.php:397
@@ -685,7 +690,7 @@ msgid "No shipping methods available"
 msgstr "Načini dostave niso na voljo"
 
 #: functions/functions.php:826
-#: includes/Model/Bumps/BumpAbstract.php:835
+#: includes/Model/Bumps/BumpAbstract.php:882
 msgid "Free!"
 msgstr "Brezplačno!"
 
@@ -757,22 +762,22 @@ msgstr "Košarica"
 msgid "CheckoutWC: Error matching %1$d to customer %2$d"
 msgstr "CheckoutWC: Napaka pri ujemanju %1$d s stranko %2$d"
 
-#: functions/functions.php:2162
+#: functions/functions.php:2171
 msgid "Or"
 msgstr "Or"
 
-#: functions/functions.php:2247
+#: functions/functions.php:2256
 msgid "You can only have 1 %s in your cart."
 msgstr "V košarici lahko imate samo 1 %s."
 
-#: functions/functions.php:2397
+#: functions/functions.php:2406
 #: client/ts/frontend/Components/CartItemQuantityControl.tsx:55
 msgid "Decrement"
 msgstr "Zmanjšanje"
 
-#: functions/functions.php:2406
-#: includes/Managers/AssetManager.php:731
-#: includes/Managers/AssetManager.php:852
+#: functions/functions.php:2415
+#: includes/Managers/AssetManager.php:735
+#: includes/Managers/AssetManager.php:856
 #: includes/Features/LocalPickup.php:510
 #: includes/Features/AbandonedCartRecovery.php:128
 #: includes/Features/ABTesting.php:150
@@ -782,97 +787,97 @@ msgstr "Zmanjšanje"
 msgid "Edit"
 msgstr "Uredi"
 
-#: functions/functions.php:2409
+#: functions/functions.php:2418
 #: client/ts/frontend/Components/CartItemQuantityControl.tsx:70
 msgid "Increment"
 msgstr "Povečanje"
 
-#: functions/functions.php:3123
+#: functions/functions.php:3132
 msgid "Unsubscribe"
 msgstr "Izpiši se"
 
-#: functions/functions.php:3495
+#: functions/functions.php:3504
 #: includes/Features/AbandonedCartRecovery.php:756
 #: client/ts/admin/Components/acr/carts.tsx:74
 msgid "Subtotal"
 msgstr "Vmesni seštevek"
 
-#: functions/functions.php:3499
+#: functions/functions.php:3508
 #: includes/Admin/Views/html-refund-offer.php:25
 msgid "Total"
 msgstr "Skupaj"
 
-#: functions/functions.php:3552
+#: functions/functions.php:3561
 msgid "There are no shipping options available. Please ensure that your address has been entered correctly, or contact us if you need any help."
 msgstr "Ni na voljo nobenih možnosti dostave. Preverite, ali ste pravilno vnesli naslov, ali pa nas kontaktirajte, če potrebujete pomoč."
 
-#: functions/functions.php:3906
+#: functions/functions.php:3915
 #: includes/Admin/Pages/AbandonedCartRecoveryAdminFree.php:73
 msgid "SendWP - Transactional Email"
 msgstr "SendWP - Transakcijski e-poštni naslov"
 
-#: functions/functions.php:3911
+#: functions/functions.php:3920
 #: includes/Admin/Pages/AbandonedCartRecoveryAdminFree.php:77
 msgid "SendWP makes getting emails delivered as simple as a few clicks. So you can relax know those important emails are being delivered on time."
 msgstr "SendWP omogoča enostavno dostavo e-pošte z nekaj kliki. Tako se lahko sprostite, saj veste, da so pomembna sporočila dostavljena pravočasno."
 
-#: functions/functions.php:3914
+#: functions/functions.php:3923
 #: includes/Admin/Pages/AbandonedCartRecoveryAdminFree.php:79
 msgid "Try SendWP now and <strong>get your first month for just $1.</strong>"
 msgstr "Preizkusite SendWP zdaj in <strong>prvi mesec dobite za samo 1 $.</strong>"
 
-#: functions/functions.php:3924
+#: functions/functions.php:3933
 #: includes/Admin/Pages/AbandonedCartRecoveryAdminFree.php:87
 msgid "Note: SendWP is optional. You can use any transactional email service you prefer."
 msgstr "Opomba: SendWP je neobvezen. Uporabite lahko katero koli storitev za transakcijsko e-pošto, ki vam ustreza."
 
-#: functions/functions.php:3933
+#: functions/functions.php:3942
 #: includes/Admin/Pages/AbandonedCartRecoveryAdminFree.php:94
 msgid "Connect to SendWP"
 msgstr "Poveži se s SendWP"
 
-#: functions/functions.php:4081
+#: functions/functions.php:4090
 msgid "Welcome back"
 msgstr "Dobrodošel nazaj"
 
-#: functions/functions.php:4095
+#: functions/functions.php:4104
 msgid "It looks like you already have an account. Please enter your login details below."
 msgstr "Videti je, da že imate račun. Prosimo, vnesite svoje podatke za prijavo spodaj."
 
-#: functions/functions.php:4109
+#: functions/functions.php:4118
 msgid "If you have shopped with us before, please enter your login details below."
 msgstr "Če ste pri nas že nakupovali, spodaj vnesite svoje podatke za prijavo."
 
-#: functions/functions.php:4119
-#: functions/functions.php:4120
+#: functions/functions.php:4128
+#: functions/functions.php:4129
 msgid "Username or email address"
 msgstr "Uporabniško ime ali e-poštni naslov"
 
-#: functions/functions.php:4154
+#: functions/functions.php:4163
 msgid "Remember me"
 msgstr "Zapomni si me"
 
-#: functions/functions.php:4185
+#: functions/functions.php:4194
 msgid "Or continue as guest"
 msgstr "Ali nadaljujte kot gost"
 
-#: functions/functions.php:4205
+#: functions/functions.php:4214
 msgid "Lost your password? Please enter your username or email address. You will receive a link to create a new password via email."
 msgstr "Ste pozabili geslo? Vnesite svoje uporabniško ime ali e-poštni naslov. Prejeli boste povezavo za ustvarjanje novega gesla po e-pošti."
 
-#: functions/functions.php:4228
+#: functions/functions.php:4237
 msgid "Reset password"
 msgstr "Ponastavi geslo"
 
-#: functions/functions.php:4243
+#: functions/functions.php:4252
 #: includes/API/OrderBumpPreviewAPI.php:57
 #: includes/API/OrderBumpOfferFormPreviewAPI.php:46
 #: includes/API/GetVariationFormAPI.php:33
 msgid "Product not found"
 msgstr "Izdelek ni najden"
 
-#: functions/functions.php:4259
-#: functions/functions.php:4417
+#: functions/functions.php:4268
+#: functions/functions.php:4426
 #: includes/API/PostPurchaseBumpProductFormAPI.php:24
 msgid "No thanks"
 msgstr "Ne, hvala"
@@ -951,102 +956,98 @@ msgstr "Lokalni prevzem"
 msgid "Allow customers to pick up orders themselves. This version does not require shipping zones."
 msgstr "Dovolite strankam, da same prevzamejo naročila. Ta različica ne zahteva poštnih con."
 
-#: includes/Managers/UpdatesManager.php:416
+#: includes/Managers/UpdatesManager.php:436
 msgid "CheckoutWC License Key"
 msgstr "Licenčni ključ CheckoutWC"
 
-#: includes/Managers/UpdatesManager.php:421
+#: includes/Managers/UpdatesManager.php:441
 msgid "Your license key is set with the constant <code>CFW_LICENSE_KEY</code>."
 msgstr "Vaša licenčna ključ je nastavljen s konstanto <code>CFW_LICENSE_KEY</code>."
 
-#: includes/Managers/UpdatesManager.php:428
+#: includes/Managers/UpdatesManager.php:448
 msgid "License Holder"
 msgstr "Imetnik licence"
 
-#: includes/Managers/UpdatesManager.php:441
+#: includes/Managers/UpdatesManager.php:461
 msgid "Plan"
 msgstr "Načrt"
 
-#: includes/Managers/UpdatesManager.php:449
+#: includes/Managers/UpdatesManager.php:469
 msgid "Activation Limit"
 msgstr "Omejitev aktivacije"
 
-#: includes/Managers/UpdatesManager.php:457
+#: includes/Managers/UpdatesManager.php:477
 #: includes/Admin/Pages/Premium/ABTestingAdmin.php:178
 #: includes/Admin/Pages/Premium/ABTestingAdmin.php:819
 #: client/ts/admin/Components/acr/carts.tsx:80
 msgid "Status"
 msgstr "Status"
 
-#: includes/Managers/UpdatesManager.php:464
+#: includes/Managers/UpdatesManager.php:484
 msgid "Refresh License Info"
 msgstr "Osveži informacije o licenci"
 
-#: includes/Managers/UpdatesManager.php:512
+#: includes/Managers/UpdatesManager.php:532
 msgid "Please enter your license key."
 msgstr "Prosimo, vnesite svoj licenčni ključ."
 
-#: includes/Managers/UpdatesManager.php:515
-#: includes/Managers/UpdatesManager.php:523
+#: includes/Managers/UpdatesManager.php:535
+#: includes/Managers/UpdatesManager.php:543
 msgid "Activate Site"
 msgstr "Aktiviraj spletno mesto"
 
-#: includes/Managers/UpdatesManager.php:518
+#: includes/Managers/UpdatesManager.php:538
 msgid "Deactivate Site"
 msgstr "Deaktiviraj spletno mesto"
 
 # Debug error message logged when license check reaches unexpected state
-#: includes/Managers/UpdatesManager.php:704
+#: includes/Managers/UpdatesManager.php:724
 msgid "License Check Error: You should not be able to get here. I am kind of freaked out."
 msgstr "Napaka pri preverjanju licence: Tukaj ne bi smeli priti. Malo sem zaskrbljen."
 
 # %1$d: failure count, %2$d: max failures, %3$s: time since last failure
-#: includes/Managers/UpdatesManager.php:963
+#: includes/Managers/UpdatesManager.php:983
 msgid "Unable to verify CheckoutWC license (%1$d/%2$d attempts failed). Using cached license data. Last attempt: %3$s ago."
 msgstr "Ni mogoče preveriti licence CheckoutWC (%1$d/%2$d neuspelih poskusov). Uporaba predpomnjenih podatkov licence. Zadnji poskus: pred %3$s."
 
-#: includes/Managers/UpdatesManager.php:986
+#: includes/Managers/UpdatesManager.php:1006
 msgid "%s license activation was not successful. Please check your key status below for more information."
 msgstr "%s aktivacija licence ni bila uspešna. Za več informacij preverite status vaše ključne kode spodaj."
 
-#: includes/Managers/UpdatesManager.php:1004
+#: includes/Managers/UpdatesManager.php:1024
 msgid "%s license successfully activated."
 msgstr "%s licenca je bila uspešno aktivirana."
 
-#: includes/Managers/UpdatesManager.php:1022
+#: includes/Managers/UpdatesManager.php:1042
 msgid "%s license deactivation failed. Please try again, or contact support."
 msgstr "%s deaktivacija licence ni uspela. Poskusite znova ali kontaktirajte podporo."
 
-#: includes/Managers/UpdatesManager.php:1040
+#: includes/Managers/UpdatesManager.php:1060
 msgid "%s license deactivated successfully."
 msgstr "%s licenca je bila uspešno deaktivirana."
 
-#: includes/Managers/UpdatesManager.php:1058
+#: includes/Managers/UpdatesManager.php:1078
 msgid "%s license settings saved successfully."
 msgstr "%s nastavitve licence so bile uspešno shranjene."
 
-#: includes/Managers/UpdatesManager.php:1076
+#: includes/Managers/UpdatesManager.php:1096
 msgid "%1$s license activation failed: %2$s"
 msgstr "%1$s aktivacija licence ni uspela: %2$s"
 
-#: includes/Managers/UpdatesManager.php:1094
+#: includes/Managers/UpdatesManager.php:1114
 msgid "%s license activation failed: Unable to connect to license server. Please check your internet connection or try again later."
 msgstr "%s aktivacija licence ni uspela: Ni mogoče vzpostaviti povezave s strežnikom za licence. Preverite svojo internetno povezavo ali poskusite kasneje."
 
-#: includes/Managers/UpdatesManager.php:1112
+#: includes/Managers/UpdatesManager.php:1132
 msgid "%s: License deactivated locally. The license server could not be reached, but the license has been deactivated on this site."
 msgstr "%s: Licenca je bila lokalno deaktivirana. Strežnika za licence ni bilo mogoče doseči, vendar je bila licenca deaktivirana na tej strani."
 
-#: includes/Managers/UpdatesManager.php:1261
-msgid "Unable to verify your CheckoutWC license — the license server could not be reached. Your license and checkout are unaffected; only plugin updates are paused until the connection is restored."
-msgstr "Ni bilo mogoče preveriti vaše licence CheckoutWC — do strežnika za licence ni bilo mogoče dostopati. Vaša licenca in postopek odjave nista prizadeta; ustavljene so le posodobitve vtičnika, dokler povezava ni obnovljena."
-
 # %1$d: failure count, %2$d: max failures, %3$s: time since last failure
-#: includes/Managers/UpdatesManager.php:1308
+#: includes/Managers/UpdatesManager.php:1402
 msgid "Unable to verify license online (%1$d/%2$d attempts failed). Using cached license data. Last attempt: %3$s ago."
 msgstr "Ni mogoče preveriti licence prek spleta (%1$d/%2$d neuspelih poskusov). Uporaba predpomnjenih podatkov licence. Zadnji poskus: pred %3$s."
 
-#: includes/Managers/UpdatesManager.php:1314
+#: includes/Managers/UpdatesManager.php:1408
 msgid "License verified successfully."
 msgstr "Licenca je bila uspešno preverjena."
 
@@ -1076,8 +1077,8 @@ msgid "After Shipping Methods"
 msgstr "Za načini dostave"
 
 #: includes/Managers/SlotManager.php:108
-#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:158
 #: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:164
+#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:158
 msgid "After Payment Methods"
 msgstr "Po načinih plačila"
 
@@ -1231,69 +1232,69 @@ msgstr "Promocijska koda"
 msgid "Enter Promo Code"
 msgstr "Vnesite promocijsko kodo"
 
-#: includes/Managers/AssetManager.php:690
+#: includes/Managers/AssetManager.php:694
 msgid "Please enter a valid phone number."
 msgstr "Vnesite veljavno telefonsko številko."
 
-#: includes/Managers/AssetManager.php:699
+#: includes/Managers/AssetManager.php:703
 msgid "Please enter your first and last name."
 msgstr "Vnesite svoje ime in priimek."
 
-#: includes/Managers/AssetManager.php:700
+#: includes/Managers/AssetManager.php:704
 msgid "Please enter a name, not an email address."
 msgstr "Prosimo, vnesite ime, ne e-poštni naslov."
 
-#: includes/Managers/AssetManager.php:702
-#: includes/Managers/AssetManager.php:843
+#: includes/Managers/AssetManager.php:706
+#: includes/Managers/AssetManager.php:847
 msgid "Please enter a new quantity:"
 msgstr "Vnesite novo količino:"
 
-#: includes/Managers/AssetManager.php:703
+#: includes/Managers/AssetManager.php:707
 msgid "3-digit security code usually found on the back of your card. American Express cards have a 4-digit code located on the front."
 msgstr "3-mestna varnostna koda je običajno na zadnji strani kartice. Kartice American Express imajo na sprednji strani 4-mestno kodo."
 
-#: includes/Managers/AssetManager.php:704
-#: includes/Managers/AssetManager.php:844
+#: includes/Managers/AssetManager.php:708
+#: includes/Managers/AssetManager.php:848
 msgid "Are you sure you want to remove this item from your cart?"
 msgstr "Ali ste prepričani, da želite ta izdelek odstraniti iz košarice?"
 
 # %s: Field name
 # %s: field label
-#: includes/Managers/AssetManager.php:707
+#: includes/Managers/AssetManager.php:711
 #: includes/Features/CustomFields.php:238
 msgid "%s is a required field."
 msgstr "%s je obvezno polje."
 
-#: includes/Managers/AssetManager.php:708
+#: includes/Managers/AssetManager.php:712
 msgid "There was a problem checking out. Please try again. If the problem persists, please get in touch with us so we can assist."
 msgstr "Prišlo je do težave pri zaključku nakupa. Prosimo, poskusite znova. Če težava vztraja, nas kontaktirajte, da vam lahko pomagamo."
 
-#: includes/Managers/AssetManager.php:709
+#: includes/Managers/AssetManager.php:713
 msgid "Please enter a valid postcode / ZIP."
 msgstr "Vnesite veljavno poštno številko."
 
-#: includes/Managers/AssetManager.php:710
+#: includes/Managers/AssetManager.php:714
 #: includes/Features/LocalPickup.php:636
 msgid "Pickup"
 msgstr "Prevzem"
 
-#: includes/Managers/AssetManager.php:711
+#: includes/Managers/AssetManager.php:715
 msgid "Continue to pickup"
 msgstr "Nadaljujte s prevzemom"
 
-#: includes/Managers/AssetManager.php:712
-#: includes/Managers/AssetManager.php:846
+#: includes/Managers/AssetManager.php:716
+#: includes/Managers/AssetManager.php:850
 msgid "Update"
 msgstr "Posodobi"
 
-#: includes/Managers/AssetManager.php:713
-#: includes/Managers/AssetManager.php:847
+#: includes/Managers/AssetManager.php:717
+#: includes/Managers/AssetManager.php:851
 #: includes/API/GetVariationFormAPI.php:150
 msgid "Add to cart"
 msgstr "Dodaj v košarico"
 
-#: includes/Managers/AssetManager.php:714
-#: includes/Managers/AssetManager.php:848
+#: includes/Managers/AssetManager.php:718
+#: includes/Managers/AssetManager.php:852
 #: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2383
 #: client/ts/admin/Components/CheckoutEditor/slots/UnsavedChangesDialog.tsx:51
 #: client/ts/admin/Components/CheckoutEditor/slots/TrustBadgeEditor.tsx:309
@@ -1305,36 +1306,36 @@ msgstr "Dodaj v košarico"
 msgid "Cancel"
 msgstr "Prekliči"
 
-#: includes/Managers/AssetManager.php:722
+#: includes/Managers/AssetManager.php:726
 msgid "Start with post/zip code or street"
 msgstr "Začnite s poštno/poštno številko ali ulico"
 
-#: includes/Managers/AssetManager.php:730
+#: includes/Managers/AssetManager.php:734
 msgid "Shipping method"
 msgstr "Način dostave"
 
-#: includes/Managers/AssetManager.php:744
+#: includes/Managers/AssetManager.php:748
 msgid "Error processing checkout. Please try again."
 msgstr "Napaka pri obdelavi nakupa. Prosimo, poskusite znova."
 
-#: includes/Managers/AssetManager.php:770
+#: includes/Managers/AssetManager.php:774
 msgid "You may also like&hellip;"
 msgstr "Morda vam bo všeč&hellip;"
 
-#: includes/Managers/AssetManager.php:845
+#: includes/Managers/AssetManager.php:849
 #: client/ts/frontend/Components/SideCartFloatingButton.tsx:26
 msgid "View cart"
 msgstr "Ogled košarice"
 
-#: includes/Managers/AssetManager.php:849
+#: includes/Managers/AssetManager.php:853
 msgid "Remove %s from cart"
 msgstr "Odstrani %s iz košarice"
 
-#: includes/Managers/AssetManager.php:850
+#: includes/Managers/AssetManager.php:854
 msgid "Proceed to checkout"
 msgstr "Nadaljuj na blagajno"
 
-#: includes/Managers/AssetManager.php:853
+#: includes/Managers/AssetManager.php:857
 msgid "View Product"
 msgstr "Ogled izdelka"
 
@@ -1452,16 +1453,16 @@ msgstr "CheckoutWC:"
 msgid "Settings marked with asterisks (**) may be overridden based on your Side Cart settings. (CheckoutWC > Side Cart)"
 msgstr "Nastavitve označene z zvezdicami (**) se lahko preglasijo glede na vaše nastavitve stranske košarice. (CheckoutWC > Stranska košarica)"
 
-#: includes/Features/OrderBumps.php:610
+#: includes/Features/OrderBumps.php:647
 msgid "All orders"
 msgstr "Vsa naročila"
 
-#: includes/Features/OrderBumps.php:613
+#: includes/Features/OrderBumps.php:650
 msgid "Contains Any Order Bump"
 msgstr "Vsebuje katerikoli Order Bump"
 
 # %s: Order bump title
-#: includes/Features/OrderBumps.php:619
+#: includes/Features/OrderBumps.php:656
 msgid "Has Bump: %s"
 msgstr "Ima Bump: %s"
 
@@ -1770,8 +1771,8 @@ msgstr "Vtičnik je <strong>preveč zapleten za konfiguracijo.</strong>"
 #: includes/Admin/Pages/LocalPickupAdminFree.php:184
 #: includes/Admin/Pages/LocalPickupAdminFree.php:221
 #: includes/Admin/Pages/Premium/LocalPickupAdmin.php:225
-#: client/ts/admin/Components/Forms/AdvancedSettingsForm.tsx:104
 #: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:176
+#: client/ts/admin/Components/Forms/AdvancedSettingsForm.tsx:104
 #: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:938
 msgid "Other"
 msgstr "Drugo"
@@ -2058,6 +2059,62 @@ msgstr "Obrazec za ponudbo dodatka k naročilu"
 msgid "The form to accept or reject the bump offer."
 msgstr "Obrazec za sprejem ali zavrnitev ponudbe dodatka."
 
+#: includes/Model/Bumps/BumpAbstract.php:1081
+#: includes/Model/Bumps/BumpAbstract.php:1091
+#: includes/Model/ABTests/OrderBumpsABTest.php:30
+#: includes/Features/ABTesting/ABTestTypeRegistry.php:123
+#: includes/Admin/Pages/OrderBumpsAdminFree.php:17
+#: includes/Admin/Pages/OrderBumpsAdminFree.php:71
+#: includes/Admin/Pages/Premium/OrderBumps.php:50
+#: client/ts/admin/Components/Forms/OrderBumpSettingsForm.tsx:45
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:408
+msgid "Order Bumps"
+msgstr "Naročni dodatki"
+
+#: includes/Model/Bumps/BumpAbstract.php:1082
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:193
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:1614
+msgid "Order Bump"
+msgstr "Naročni dodatek"
+
+#: includes/Model/Bumps/BumpAbstract.php:1083
+msgid "Add New"
+msgstr "Dodaj novo"
+
+#: includes/Model/Bumps/BumpAbstract.php:1084
+msgid "Add New Order Bump"
+msgstr "Dodaj nov dodatek k naročilu"
+
+#: includes/Model/Bumps/BumpAbstract.php:1085
+msgid "Edit Order Bump"
+msgstr "Uredi dodatek k naročilu"
+
+#: includes/Model/Bumps/BumpAbstract.php:1086
+#: client/ts/admin/Components/Metaboxes/OrderBumpsSetupModal.tsx:61
+msgid "New Order Bump"
+msgstr "Nov dodatek k naročilu"
+
+#: includes/Model/Bumps/BumpAbstract.php:1087
+msgid "View Order Bump"
+msgstr "Ogled naročnega dodatka"
+
+#: includes/Model/Bumps/BumpAbstract.php:1088
+msgid "Find Order Bump"
+msgstr "Poišči naročni dodatek"
+
+#: includes/Model/Bumps/BumpAbstract.php:1089
+msgid "No order bumps were found."
+msgstr "Nobenih dodatkov k naročilu ni bilo najdenih."
+
+#: includes/Model/Bumps/BumpAbstract.php:1090
+msgid "Not found in trash"
+msgstr "Ni najdeno v košu"
+
+#: includes/Model/ABTests/OrderBumpsABTest.php:31
+#: includes/Features/ABTesting/ABTestTypeRegistry.php:124
+msgid "Test different variations of order bumps to see which performs better."
+msgstr "Preizkusite različne različice dodatkov k naročilu, da vidite, katera deluje bolje."
+
 # %1$s: Plugin name, %2$s: Link opening tag, %3$s: Version number, %4$s: Link closing tag
 #: includes/Managers/Helpers/EDD_SL_Plugin_Updater.php:281
 msgid "There is a new version of %1$s available. %2$sView version %3$s details%4$s."
@@ -2076,62 +2133,6 @@ msgstr "Nimate dovoljenja za namestitev posodobitev vtičnikov"
 #: client/ts/admin/Components/GooglePlacesKeyStatus.tsx:61
 msgid "Error"
 msgstr "Napaka"
-
-#: includes/Model/Bumps/BumpAbstract.php:1034
-#: includes/Model/Bumps/BumpAbstract.php:1044
-#: includes/Model/ABTests/OrderBumpsABTest.php:30
-#: includes/Features/ABTesting/ABTestTypeRegistry.php:123
-#: includes/Admin/Pages/OrderBumpsAdminFree.php:17
-#: includes/Admin/Pages/OrderBumpsAdminFree.php:71
-#: includes/Admin/Pages/Premium/OrderBumps.php:50
-#: client/ts/admin/Components/Forms/OrderBumpSettingsForm.tsx:45
-#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:408
-msgid "Order Bumps"
-msgstr "Naročni dodatki"
-
-#: includes/Model/Bumps/BumpAbstract.php:1035
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:193
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:1614
-msgid "Order Bump"
-msgstr "Naročni dodatek"
-
-#: includes/Model/Bumps/BumpAbstract.php:1036
-msgid "Add New"
-msgstr "Dodaj novo"
-
-#: includes/Model/Bumps/BumpAbstract.php:1037
-msgid "Add New Order Bump"
-msgstr "Dodaj nov dodatek k naročilu"
-
-#: includes/Model/Bumps/BumpAbstract.php:1038
-msgid "Edit Order Bump"
-msgstr "Uredi dodatek k naročilu"
-
-#: includes/Model/Bumps/BumpAbstract.php:1039
-#: client/ts/admin/Components/Metaboxes/OrderBumpsSetupModal.tsx:61
-msgid "New Order Bump"
-msgstr "Nov dodatek k naročilu"
-
-#: includes/Model/Bumps/BumpAbstract.php:1040
-msgid "View Order Bump"
-msgstr "Ogled naročnega dodatka"
-
-#: includes/Model/Bumps/BumpAbstract.php:1041
-msgid "Find Order Bump"
-msgstr "Poišči naročni dodatek"
-
-#: includes/Model/Bumps/BumpAbstract.php:1042
-msgid "No order bumps were found."
-msgstr "Nobenih dodatkov k naročilu ni bilo najdenih."
-
-#: includes/Model/Bumps/BumpAbstract.php:1043
-msgid "Not found in trash"
-msgstr "Ni najdeno v košu"
-
-#: includes/Model/ABTests/OrderBumpsABTest.php:31
-#: includes/Features/ABTesting/ABTestTypeRegistry.php:124
-msgid "Test different variations of order bumps to see which performs better."
-msgstr "Preizkusite različne različice dodatkov k naročilu, da vidite, katera deluje bolje."
 
 #: includes/Features/OneClick/OrderStatusManager.php:52
 msgid "Pending Offer <span class=\"count\">(%s)</span>"
@@ -3026,8 +3027,8 @@ msgid "Step 1: Try CheckoutWC Premium Free For 7 Days"
 msgstr "Korak 1: Preizkusite CheckoutWC Premium brezplačno 7 dni"
 
 #: includes/Admin/Pages/General.php:150
-msgid "Enter your license key. An active license is required for all functionality."
-msgstr "Vnesite svojo licenčno kodo. Aktivna licenca je potrebna za vse funkcionalnosti."
+msgid "Enter your license key and activate it for this site to turn on premium features."
+msgstr "Vnesite svoj licenčni ključ in ga aktivirajte za to spletno mesto, da vklopite napredne funkcije."
 
 #: includes/Admin/Pages/General.php:150
 msgid "Supercharge your WooCommerce store."
@@ -3599,23 +3600,67 @@ msgstr "Nedovoljena dovoljenja."
 msgid "Notice dismissed."
 msgstr "Obvestilo je bilo zavrnjeno."
 
-# %1$s: URL to pricing page, %2$s: "purchase a new license" link text, %3$s: Support email URL, %4$s: "please contact support" link text
-#: includes/Admin/Notices/InvalidLicenseKeyNotice.php:15
-msgid "Your license key appears to have expired. Please <a href=\"%1$s\" target=\"_blank\">%2$s</a> to restore functionality. If you believe this is in error, <a href=\"%3$s\">%4$s</a>."
-msgstr "Vaš licenčni ključ je potekel. Prosimo, <a href=\"%1$s\" target=\"_blank\">%2$s</a>, da obnovite funkcionalnost. Če menite, da gre za napako, <a href=\"%3$s\">%4$s</a>."
+# %1$d: Number of days, %2$s: Pricing URL, %3$s: "renew it here" link text
+#: includes/Admin/Notices/LicenseUnverifiedNotice.php:25
+msgid "Premium features are off because we haven\\'t been able to check your license with checkoutwc.com for %1$d days. Make sure your server can connect to checkoutwc.com. If your license has expired, <a href=\"%2$s\" target=\"_blank\">%3$s</a>."
+msgstr "Napredne funkcije so izklopljene, ker vaše licence s checkoutwc.com nismo mogli preveriti že %1$d dni. Prepričajte se, da se vaš strežnik lahko poveže s checkoutwc.com. Če je vaša licenca potekla, <a href=\"%2$s\" target=\"_blank\">%3$s</a>."
 
-#: includes/Admin/Notices/InvalidLicenseKeyNotice.php:17
-msgid "purchase a new license"
-msgstr "kupi novo licenco"
+#: includes/Admin/Notices/LicenseUnverifiedNotice.php:28
+msgid "renew it here"
+msgstr "podaljšajte jo tukaj"
 
-#: includes/Admin/Notices/InvalidLicenseKeyNotice.php:19
-msgid "please contact support"
-msgstr "prosimo, kontaktirajte podporo"
+#: includes/Admin/Notices/LicenseUnverifiedNotice.php:33
+msgid "CheckoutWC can\\'t verify your license"
+msgstr "CheckoutWC ne more preveriti vaše licence"
 
-# %1$s: URL to activation page, %2$s: "Start Here" link text
+# %1$s: Date premium features turn off, %2$s: Support email URL, %3$s: "Contact support" link text
+#: includes/Admin/Notices/LicenseServerUnreachableNotice.php:28
+msgid "We couldn\\'t check your license with checkoutwc.com. Premium features will turn off on %1$s unless the connection is restored. <a href=\"%2$s\">%3$s</a> if this keeps happening."
+msgstr "Vaše licence s checkoutwc.com nismo mogli preveriti. Napredne funkcije se bodo izklopile dne %1$s, razen če se povezava obnovi. <a href=\"%2$s\">%3$s</a>, če se to še naprej dogaja."
+
+#: includes/Admin/Notices/LicenseServerUnreachableNotice.php:31
+#: includes/Admin/Notices/LicenseServerUnreachableNotice.php:38
+msgid "Contact support"
+msgstr "Kontaktirajte podporo"
+
+# %1$s: Support email URL, %2$s: "Contact support" link text
+#: includes/Admin/Notices/LicenseServerUnreachableNotice.php:36
+msgid "We couldn\\'t check your license with checkoutwc.com. Make sure your server can connect to checkoutwc.com. <a href=\"%1$s\">%2$s</a> if this keeps happening."
+msgstr "Vaše licence s checkoutwc.com nismo mogli preveriti. Prepričajte se, da se vaš strežnik lahko poveže s checkoutwc.com. <a href=\"%1$s\">%2$s</a>, če se to še naprej dogaja."
+
+#: includes/Admin/Notices/LicenseServerUnreachableNotice.php:45
+msgid "CheckoutWC can\\'t reach the license server"
+msgstr "CheckoutWC ne more vzpostaviti povezave s strežnikom za licenco"
+
+#: includes/Admin/Notices/InvalidLicenseKeyNotice.php:13
+msgid "CheckoutWC license expired"
+msgstr "Licenca CheckoutWC je potekla"
+
+# %1$s: URL to pricing page, %2$s: "Renew your license" link text, %3$s: Support email URL, %4$s: "contact support" link text
+#: includes/Admin/Notices/InvalidLicenseKeyNotice.php:16
+msgid "Premium features are off because your license has expired. <a href=\"%1$s\" target=\"_blank\">%2$s</a> to turn them back on. If you think this is a mistake, <a href=\"%3$s\">%4$s</a>."
+msgstr "Napredne funkcije so izklopljene, ker je vaša licenca potekla. <a href=\"%1$s\" target=\"_blank\">%2$s</a>, da jih znova vklopite. Če menite, da gre za napako, <a href=\"%3$s\">%4$s</a>."
+
+#: includes/Admin/Notices/InvalidLicenseKeyNotice.php:18
+msgid "Renew your license"
+msgstr "Podaljšajte svojo licenco"
+
+#: includes/Admin/Notices/InvalidLicenseKeyNotice.php:20
+msgid "contact support"
+msgstr "kontaktirajte podporo"
+
+# %1$s: URL to activation page, %2$s: "Activate your license" link text, %3$s: Pricing URL, %4$s: "buy a license" link text
 #: includes/Admin/Notices/InactiveLicenseNotice.php:11
-msgid "Your license key is not active for this site. Please visit <a href=\"%1$s\">%2$s</a> to activate your license and restore functionality."
-msgstr "Vaš licenčni ključ ni aktiven za to spletno mesto. Prosimo, obiščite <a href=\"%1$s\">%2$s</a>, da aktivirate svojo licenco in obnovite funkcionalnost."
+msgid "Premium features are off because your license isn\\'t activated on this site. <a href=\"%1$s\">%2$s</a> or <a href=\"%3$s\" target=\"_blank\">%4$s</a> for this site."
+msgstr "Napredne funkcije so izklopljene, ker vaša licenca na tem spletnem mestu ni aktivirana. <a href=\"%1$s\">%2$s</a> ali <a href=\"%3$s\" target=\"_blank\">%4$s</a> za to spletno mesto."
+
+#: includes/Admin/Notices/InactiveLicenseNotice.php:13
+msgid "Activate your license"
+msgstr "Aktivirajte svojo licenco"
+
+#: includes/Admin/Notices/InactiveLicenseNotice.php:20
+msgid "CheckoutWC license not activated"
+msgstr "Licenca CheckoutWC ni aktivirana"
 
 #: includes/Admin/Notices/BFNotice.php:13
 msgid "Black Friday Sale - 40% Off"
@@ -4468,22 +4513,6 @@ msgstr "Datum, ko naj se A/B test konča. Po tem datumu bo prikazana izvirna raz
 msgid "Traffic split percentages must total 100%. Please adjust your percentages."
 msgstr "Odstotki razdelitve prometa morajo skupaj znašati 100%. Prosimo, prilagodite odstotke."
 
-#: client/ts/frontend/Components/TermsAndConditions.ts:29
-msgid "Terms and Conditions"
-msgstr "Pogoji in določila"
-
-#: client/ts/frontend/Components/TermsAndConditions.ts:35
-msgid "Privacy Policy"
-msgstr "Pravilnik o zasebnosti"
-
-#: client/ts/frontend/Components/SideCartComponent.tsx:39
-msgid "Close Cart"
-msgstr "Zapri košarico"
-
-#: client/ts/frontend/Components/FreeShippingProgressBar.tsx:245
-msgid "Unlocked"
-msgstr "Odklenjeno"
-
 #: client/ts/frontend/Actions/CompleteOrderAction.ts:196
 msgid "Could not connect to server. Please refresh and try again or contact site administrator."
 msgstr "Povezava s strežnikom ni uspela. Prosimo, osvežite in poskusite znova ali kontaktirajte skrbnika strani."
@@ -4507,6 +4536,22 @@ msgstr "Strežnik je prekoračil čas med obdelavo vaše zahteve. Prosimo, osve�
 #: client/ts/frontend/Actions/CompleteOrderAction.ts:206
 msgid "Request was aborted. Please contact site administrator."
 msgstr "Zahteva je bila prekinjena. Prosimo, kontaktirajte skrbnika strani."
+
+#: client/ts/frontend/Components/TermsAndConditions.ts:29
+msgid "Terms and Conditions"
+msgstr "Pogoji in določila"
+
+#: client/ts/frontend/Components/TermsAndConditions.ts:35
+msgid "Privacy Policy"
+msgstr "Pravilnik o zasebnosti"
+
+#: client/ts/frontend/Components/SideCartComponent.tsx:39
+msgid "Close Cart"
+msgstr "Zapri košarico"
+
+#: client/ts/frontend/Components/FreeShippingProgressBar.tsx:245
+msgid "Unlocked"
+msgstr "Odklenjeno"
 
 # %d is the number of icons in the collection
 #: client/ts/admin/Components/trustBadges.ts:85
@@ -4944,6 +4989,403 @@ msgstr "Nalaganje..."
 #: client/ts/admin/Components/acr/carts.tsx:239
 msgid "Tracked Carts"
 msgstr "Spremljane košarice"
+
+#: client/ts/admin/Components/Metaboxes/ProductsAndVariationsCompleter.tsx:30
+msgid "Private"
+msgstr "Zasebno"
+
+#: client/ts/admin/Components/Metaboxes/ProductsAndVariationsCompleter.tsx:32
+msgid "Pending"
+msgstr "V čakanju"
+
+#: client/ts/admin/Components/Metaboxes/ProductsAndVariationsCompleter.tsx:33
+msgid "Scheduled"
+msgstr "Načrtovano"
+
+#: client/ts/admin/Components/Metaboxes/ProductsAndVariationsCompleter.tsx:44
+#: client/ts/admin/Components/Forms/CheckoutSettingsForm.tsx:237
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:850
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:863
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:873
+#: client/ts/admin/Components/CheckoutEditor/panels/CheckoutSettingsPanel.tsx:110
+msgid "Hidden"
+msgstr "Skrito"
+
+#: client/ts/admin/Components/Metaboxes/ProductsAndVariationsCompleter.tsx:46
+msgid "Search only"
+msgstr "Samo iskanje"
+
+#: client/ts/admin/Components/Metaboxes/ProductsAndVariationsCompleter.tsx:80
+msgid "All products with titles that include {{query /}}"
+msgstr "Vsi izdelki z naslovi, ki vključujejo {{query /}}"
+
+#: client/ts/admin/Components/Metaboxes/ProductsAndVariationsCompleter.tsx:130
+msgid "Variation"
+msgstr "Variacija"
+
+#: client/ts/admin/Components/Metaboxes/ProductTagCompleter.tsx:44
+msgid "All product tags that include {{query /}}"
+msgstr "Vse oznake izdelkov, ki vključujejo {{query /}}"
+
+#: client/ts/admin/Components/Metaboxes/ProductAttributeTermsCompleter.tsx:99
+msgid "All attribute terms that include {{query /}}"
+msgstr "Vsi atributni izrazi, ki vključujejo {{query /}}"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsSetupModal.tsx:62
+msgid "Let\\'s configure a few things to get you started quickly."
+msgstr "Nastavimo nekaj stvari, da boste hitro začeli."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsSetupModal.tsx:66
+msgid "Give your new Order Bump a name. This is just for admins - it won\\'t be displayed to customers."
+msgstr "Poimenujte svoj novi Order Bump. To je samo za skrbnike - strankam ne bo prikazano."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsSetupModal.tsx:78
+msgid "Which product should be added to the cart when this Order Bump is accepted?"
+msgstr "Kateri izdelek naj se doda v košarico, ko je ta Order Bump sprejet?"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsSetupModal.tsx:80
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:33
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:92
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:130
+#: client/ts/admin/Components/Metaboxes/OrderBumpsGeneralPanel.tsx:44
+msgid "Search for product"
+msgstr "Išči izdelek"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsSetupModal.tsx:91
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferDiscountPanel.tsx:19
+msgid "Discount Type"
+msgstr "Vrsta popusta"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsSetupModal.tsx:94
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferDiscountPanel.tsx:23
+msgid "Percent Off"
+msgstr "Odstotek popusta"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsSetupModal.tsx:95
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferDiscountPanel.tsx:24
+msgid "Amount Off"
+msgstr "Znesek popusta"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsSetupModal.tsx:105
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferDiscountPanel.tsx:34
+msgid "Discount"
+msgstr "Popust"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsSetupModal.tsx:106
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferDiscountPanel.tsx:35
+msgid "The amount or percentage applied as a discount to the Offer Product. Leave blank or enter 0 to charge full price."
+msgstr "Znesek ali odstotek, ki se uporabi kot popust na ponudbeni izdelek. Pustite prazno ali vnesite 0 za polno ceno."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsSetupModal.tsx:117
+msgid "Continue"
+msgstr "Nadaljuj"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsSetupModal.tsx:122
+msgid "Continue to review your order bump, optionally add display conditions, and publish."
+msgstr "Nadaljujte z pregledom vašega order bumpa, po želji dodajte pogoje prikaza in objavite."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:19
+msgid "You must select an offer product."
+msgstr "Izbrati morate ponudbeni izdelek."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:26
+msgid "Offer"
+msgstr "Ponudba"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:44
+msgid "Auto Add Order Bump to Cart"
+msgstr "Samodejno dodaj naročilo v košarico"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:45
+msgid "If conditions are satisfied, automatically add this order bump to the cart. Useful for free gifts or other offers that don\\'t require customer action."
+msgstr "Če so pogoji izpolnjeni, samodejno dodajte to naročilo v košarico. Uporabno za brezplačna darila ali druge ponudbe, ki ne zahtevajo ukrepanja stranke."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:56
+msgid "Auto Match Variations Between Search and Offer Product"
+msgstr "Samodejno usklajuj različice med iskanjem in ponudbenim izdelkom"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:61
+msgid "Add offer product to the cart with the same variable configuration as the product below."
+msgstr "Dodajte ponudbeni izdelek v košarico z enako konfiguracijo spremenljivk kot spodnji izdelek."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:65
+msgid "Only applies when Auto Match Cart Product and Offer Product are variable products with matching variation attributes (Size, Color, etc)"
+msgstr "Velja samo, če sta samodejno usklajeni izdelek v košarici in ponudbeni izdelek spremenljiva izdelka z ujemajočimi se atributi različic (Velikost, Barva itd.)"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:69
+msgid "Leave unchecked to have customers to select variation options in a modal window."
+msgstr "Pustite neoznačeno, da lahko kupci izberejo možnosti različic v modalnem oknu."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:73
+msgid "If offer product is not variable, this option is ignored."
+msgstr "Če ponudbeni izdelek ni spremenljiv, se ta možnost prezre."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:90
+msgid "Auto Match Variations Cart Product"
+msgstr "Samodejno usklajuj različice izdelka v košarici"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:98
+msgid "The product in the cart to match the Order Bump variations to."
+msgstr "Izdelek v košarici, s katerim je treba uskladiti različice naročila."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:113
+msgid "Match Quantity of Offer Product to Display Condition Product"
+msgstr "Uskladi količino ponudbenega izdelka s prikazanim pogojnim izdelkom"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:114
+msgid "If customer has two of the display condition product in the cart, two of the offer product will be added to the cart."
+msgstr "Če ima kupec v košarici dva prikazana pogojna izdelka, bosta v košarico dodana dva ponudbena izdelka."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:128
+msgid "Match Quantity Cart Product"
+msgstr "Uskladi količino izdelka v košarici"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:136
+msgid "The product in the cart to match the Order Bump quantity to."
+msgstr "Izdelek v košarici, s katerim je treba uskladiti količino naročila."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:151
+msgid "Quantity of Offer Product To Add"
+msgstr "Količina ponudbenega izdelka za dodajanje"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:152
+msgid "The quantity to add to the cart when offer is accepted."
+msgstr "Količina, ki se doda v košarico, ko je ponudba sprejeta."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:161
+msgid "Allow Customer To Change Quantity In Cart"
+msgstr "Dovoli kupcu spreminjanje količine v košarici"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:162
+msgid "Allow customer to change the quantity of this order bump in the cart."
+msgstr "Dovoli kupcu spreminjanje količine tega naročila v košarici."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:22
+msgid "Offer Language"
+msgstr "Jezik ponudbe"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:29
+msgid "Place Order Modal Heading"
+msgstr "Naslov modala za oddajo naročila"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:30
+msgid "Default if blank: Your order is almost complete..."
+msgstr "Privzeto, če je prazno: Vaše naročilo je skoraj končano..."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:30
+msgid "Wait %s! Here\\'s an exclusive offer to compliment your order!"
+msgstr "Počakaj %s! Tukaj je ekskluzivna ponudba za dopolnitev tvoje naročilo!"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:39
+msgid "Place Order Modal Subheading"
+msgstr "Podnaslov modala za oddajo naročila"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:40
+msgid "Default if blank: Add this offer to your order and save!"
+msgstr "Privzeto, če je prazno: Dodajte to ponudbo k svojemu naročilu in prihranite!"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:52
+msgid "Offer Acceptance Checkbox Label"
+msgstr "Oznaka potrditvenega polja za sprejem ponudbe"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:52
+msgid "Offer Acceptance Button Label"
+msgstr "Oznaka gumba za sprejem ponudbe"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:53
+msgid "Example: Yes! Please add this offer to my order"
+msgstr "Primer: Da! Prosim, dodajte to ponudbo k mojemu naročilu"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:63
+msgid "Offer Description"
+msgstr "Opis ponudbe"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:64
+msgid "Example: Limited time offer! Get an EXCLUSIVE discount right now! Click the checkbox above to add this product to your order now."
+msgstr "Primer: Omejena časovna ponudba! Pridobite EKSKLUZIVNI popust zdaj! Kliknite zgornje potrditveno polje, da ta izdelek dodate k svojemu naročilu zdaj."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:74
+msgid "Modal Offer Rejection Link Text"
+msgstr "Besedilo povezave za zavrnitev ponudbe v modalu"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:78
+msgid "Displays in modal version of Order Bump, such as Place Order bumps or when the Offer Product is a variable product (as opposed to a specific variation)."
+msgstr "Prikaže se v modalni različici Order Bump, kot so Place Order bumps ali ko je ponudbeni izdelek spremenljiv izdelek (namesto določene različice)."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:83
+msgid "Default if blank: No thanks, just complete my order"
+msgstr "Privzeto, če je prazno: Ne hvala, samo dokončajte moje naročilo"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:85
+msgid "Default if blank: No thanks"
+msgstr "Privzeto, če je prazno: Ne hvala"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferDiscountPanel.tsx:15
+msgid "Offer Discount"
+msgstr "Ponudba popusta"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferDiscountPanel.tsx:20
+msgid "Amount Off: Remove fixed amount from the product price. Percent Off: Discount product by specified percentage."
+msgstr "Znesek popusta: Odstrani fiksni znesek iz cene izdelka. Odstotek popusta: Izdelek zniža za določen odstotek."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferDiscountPanel.tsx:46
+msgid "Item Removal Behavior"
+msgstr "Obnašanje ob odstranitvi izdelka"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferDiscountPanel.tsx:47
+msgid "What happens when the display for product is removed from the cart. Default: Order Bump remains in the cart but bump specific discounts are removed."
+msgstr "Kaj se zgodi, ko je prikaz izdelka odstranjen iz košarice. Privzeto: Order Bump ostane v košarici, vendar so odstranjeni popusti, specifični za bump."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferDiscountPanel.tsx:50
+msgid "Leave In Cart With Normal Price"
+msgstr "Pusti v košarici po normalni ceni"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferDiscountPanel.tsx:51
+msgid "Remove Order Bump From Cart"
+msgstr "Odstrani Order Bump iz košarice"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsGeneralPanel.tsx:13
+msgid "You must set an upsell replacement product."
+msgstr "Morate nastaviti nadomestni izdelek za upsell."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsGeneralPanel.tsx:20
+msgid "Offer Type"
+msgstr "Vrsta ponudbe"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsGeneralPanel.tsx:24
+msgid "Use Order Bump As Upsell"
+msgstr "Uporabi Order Bump kot Upsell"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsGeneralPanel.tsx:28
+msgid "Replace a cart item with offer product when this Order Bump is taken."
+msgstr "Zamenjajte izdelek v košarici s ponudbenim izdelkom, ko je ta Order Bump izbran."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsGeneralPanel.tsx:42
+msgid "Which product does this upsell replace in the cart?"
+msgstr "Kateri izdelek ta upsell nadomešča v košarici?"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsGeneralPanel.tsx:50
+msgid "This product must be in the cart for this order bump to be shown."
+msgstr "Ta izdelek mora biti v košarici, da se ta order bump prikaže."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:44
+msgid "Blocks are only used by full screen offers. Enable Full Screen Landing Page in the Display Location panel, then add the Order Bump Offer Form block where the offer form should go."
+msgstr "Bloki se uporabljajo samo za ponudbe na celotnem zaslonu. V podoknu Lokacija prikaza omogočite Ciljno stran na celotnem zaslonu, nato pa dodajte blok Obrazec ponudbe za dodatni nakup na mestu, kjer naj bo obrazec ponudbe."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:45
+msgid "Blocks are only used by full screen offers, available on Place Order Click and Post Purchase One-Click bumps. This bump uses the built-in layout."
+msgstr "Bloki se uporabljajo samo za ponudbe na celotnem zaslonu, ki so na voljo pri kliku na Naroči in enoklikovnih dodatkih po nakupu. Ta dodatek uporablja vgrajeno postavitev."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:61
+msgid "Post Purchase One-Click bumps require a compatible payment gateway. We recommend using Place Order bumps when using non-compatible gateways."
+msgstr "Post Purchase One-Click bumps zahtevajo združljiv plačilni prehod. Priporočamo uporabo Place Order bumps pri uporabi nezdružljivih prehodov."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:67
+msgid "Learn more about supported gateways"
+msgstr "Izvedite več o podprtih prehodih"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:74
+msgid "Read our Order Bumps documentation"
+msgstr "Preberite našo dokumentacijo o Order Bumps"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:104
+msgid "This bump will not appear anywhere because the side cart is disabled."
+msgstr "Ta dodatek se ne bo prikazal nikjer, ker je stranski voziček onemogočen."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:105
+msgid "This bump will not appear anywhere because order bumps are disabled in the side cart."
+msgstr "Ta dodatek se ne bo prikazal nikjer, ker so dodatni nakupi v stranskem vozičku onemogočeni."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:108
+msgid "This bump will appear on checkout but not in the side cart because the side cart is disabled."
+msgstr "Ta dodatek se bo prikazal pri zaključku nakupa, vendar ne v stranskem vozičku, ker je stranski voziček onemogočen."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:109
+msgid "This bump will appear on checkout but not in the side cart because order bumps are disabled in the side cart."
+msgstr "Ta dodatek se bo prikazal pri zaključku nakupa, vendar ne v stranskem vozičku, ker so dodatni nakupi v stranskem vozičku onemogočeni."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:120
+msgid "Open side cart settings"
+msgstr "Odpri nastavitve stranskega vozička"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:141
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:148
+msgid "Display Location"
+msgstr "Lokacija prikaza"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:157
+msgid "Checkout Slot"
+msgstr "Mesto zaključka nakupa"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:187
+msgid "Displays in a popup when Place Order is clicked, before the order is submitted"
+msgstr "Prikazuje se v pojavnem oknu, ko kliknete Oddaj naročilo, preden je naročilo poslano"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:190
+msgid "Displays in a popup on the Thank You page."
+msgstr "Prikazuje se v pojavnem oknu na strani Zahvaljujemo se vam."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:194
+msgid "Full Screen Landing Page"
+msgstr "Ciljna stran na celotnem zaslonu"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:195
+msgid "Design the offer with blocks instead of the built-in layout. Add the Order Bump Offer Form block where the offer form should go."
+msgstr "Ponudbo oblikujte z bloki namesto z vgrajeno postavitvijo. Dodajte blok Obrazec ponudbe za dodatni nakup na mestu, kjer naj bo obrazec ponudbe."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayConditions.tsx:26
+msgid "Show Bump When These Conditions Are True:"
+msgstr "Prikaži Bump, ko so ti pogoji izpolnjeni:"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayConditions.tsx:29
+msgid "This bump will be shown when the correct upsell product is in the cart and the Offer Product is not in the cart. To further limit when this bump is shown, add a rule below."
+msgstr "Ta bump bo prikazan, ko je pravilen upsell izdelek v košarici in ponudbeni izdelek ni v košarici. Za nadaljnjo omejitev prikaza tega bumpa dodajte spodaj pravilo."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayConditions.tsx:31
+msgid "This bump will always be shown when the Offer Product is not in the cart. To limit when this bump is shown, add a rule below."
+msgstr "Ta bump bo vedno prikazan, ko ponudbeni izdelek ni v košarici. Za omejitev prikaza tega bumpa dodajte spodaj pravilo."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsActionsPanel.tsx:15
+msgid "Actions"
+msgstr "Dejanja"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsActionsPanel.tsx:21
+msgid "Remove These Products From The Cart"
+msgstr "Odstrani te izdelke iz košarice"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsActionsPanel.tsx:23
+msgid "If any of these products are in the cart, remove them when this bump is added to the cart."
+msgstr "Če so kateri od teh izdelkov v košarici, jih odstranite, ko je ta bump dodan v košarico."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsActionsPanel.tsx:24
+msgid "Search for products"
+msgstr "Išči izdelke"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsActionsPanel.tsx:35
+msgid "Apply Free Shipping"
+msgstr "Uporabi brezplačno dostavo"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsActionsPanel.tsx:36
+msgid "When this bump is added to the cart, apply free shipping to the cart."
+msgstr "Ko je ta bump dodan v košarico, se na košarico uporabi brezplačna dostava."
+
+#: client/ts/admin/Components/Metaboxes/CategoryCompleter.tsx:46
+msgid "All categories with titles that include {{query /}}"
+msgstr "Vse kategorije z naslovi, ki vključujejo {{query /}}"
+
+#: client/ts/admin/Components/Fields/WPMediaUploadButton.tsx:69
+msgid "Select or Upload a Logo"
+msgstr "Izberi ali naloži logotip"
+
+#: client/ts/admin/Components/Fields/RangeControl.tsx:97
+#: client/ts/admin/Components/Fields/ColorControl.tsx:137
+msgid "Reset"
+msgstr "Ponastavi"
+
+#: client/ts/admin/Components/Fields/ColorControl.tsx:173
+#: client/ts/admin/Components/CheckoutEditor/BumpEditorModal.tsx:101
+msgid "Done"
+msgstr "Končano"
 
 #: client/ts/admin/Components/Forms/WooCommercePagesGlobalOptionsSettingsForm.tsx:49
 #: client/ts/admin/Components/Forms/CheckoutSettingsForm.tsx:570
@@ -5786,15 +6228,6 @@ msgstr "Polje za telefon"
 msgid "Determines whether the WooCommerce native phone field is enabled."
 msgstr "Določa, ali je vgrajeno WooCommerce polje za telefon omogočeno."
 
-#: client/ts/admin/Components/Forms/CheckoutSettingsForm.tsx:237
-#: client/ts/admin/Components/Metaboxes/ProductsAndVariationsCompleter.tsx:44
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:850
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:863
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:873
-#: client/ts/admin/Components/CheckoutEditor/panels/CheckoutSettingsPanel.tsx:110
-msgid "Hidden"
-msgstr "Skrito"
-
 #: client/ts/admin/Components/Forms/CheckoutSettingsForm.tsx:241
 #: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:851
 #: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:864
@@ -6543,394 +6976,6 @@ msgstr "Označite katero koli uporabniško vlogo, ki naj bo izključena iz e-po�
 #: client/ts/admin/Components/Forms/ACRSettingsForm.tsx:172
 msgid "Are you sure you want to delete all tracked carts?"
 msgstr "Ali ste prepričani, da želite izbrisati vse sledene košarice?"
-
-#: client/ts/admin/Components/Metaboxes/ProductsAndVariationsCompleter.tsx:30
-msgid "Private"
-msgstr "Zasebno"
-
-#: client/ts/admin/Components/Metaboxes/ProductsAndVariationsCompleter.tsx:32
-msgid "Pending"
-msgstr "V čakanju"
-
-#: client/ts/admin/Components/Metaboxes/ProductsAndVariationsCompleter.tsx:33
-msgid "Scheduled"
-msgstr "Načrtovano"
-
-#: client/ts/admin/Components/Metaboxes/ProductsAndVariationsCompleter.tsx:46
-msgid "Search only"
-msgstr "Samo iskanje"
-
-#: client/ts/admin/Components/Metaboxes/ProductsAndVariationsCompleter.tsx:80
-msgid "All products with titles that include {{query /}}"
-msgstr "Vsi izdelki z naslovi, ki vključujejo {{query /}}"
-
-#: client/ts/admin/Components/Metaboxes/ProductsAndVariationsCompleter.tsx:130
-msgid "Variation"
-msgstr "Variacija"
-
-#: client/ts/admin/Components/Metaboxes/ProductTagCompleter.tsx:44
-msgid "All product tags that include {{query /}}"
-msgstr "Vse oznake izdelkov, ki vključujejo {{query /}}"
-
-#: client/ts/admin/Components/Metaboxes/ProductAttributeTermsCompleter.tsx:99
-msgid "All attribute terms that include {{query /}}"
-msgstr "Vsi atributni izrazi, ki vključujejo {{query /}}"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsSetupModal.tsx:62
-msgid "Let\\'s configure a few things to get you started quickly."
-msgstr "Nastavimo nekaj stvari, da boste hitro začeli."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsSetupModal.tsx:66
-msgid "Give your new Order Bump a name. This is just for admins - it won\\'t be displayed to customers."
-msgstr "Poimenujte svoj novi Order Bump. To je samo za skrbnike - strankam ne bo prikazano."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsSetupModal.tsx:78
-msgid "Which product should be added to the cart when this Order Bump is accepted?"
-msgstr "Kateri izdelek naj se doda v košarico, ko je ta Order Bump sprejet?"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsSetupModal.tsx:80
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:33
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:92
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:130
-#: client/ts/admin/Components/Metaboxes/OrderBumpsGeneralPanel.tsx:44
-msgid "Search for product"
-msgstr "Išči izdelek"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsSetupModal.tsx:91
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferDiscountPanel.tsx:19
-msgid "Discount Type"
-msgstr "Vrsta popusta"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsSetupModal.tsx:94
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferDiscountPanel.tsx:23
-msgid "Percent Off"
-msgstr "Odstotek popusta"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsSetupModal.tsx:95
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferDiscountPanel.tsx:24
-msgid "Amount Off"
-msgstr "Znesek popusta"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsSetupModal.tsx:105
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferDiscountPanel.tsx:34
-msgid "Discount"
-msgstr "Popust"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsSetupModal.tsx:106
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferDiscountPanel.tsx:35
-msgid "The amount or percentage applied as a discount to the Offer Product. Leave blank or enter 0 to charge full price."
-msgstr "Znesek ali odstotek, ki se uporabi kot popust na ponudbeni izdelek. Pustite prazno ali vnesite 0 za polno ceno."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsSetupModal.tsx:117
-msgid "Continue"
-msgstr "Nadaljuj"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsSetupModal.tsx:122
-msgid "Continue to review your order bump, optionally add display conditions, and publish."
-msgstr "Nadaljujte z pregledom vašega order bumpa, po želji dodajte pogoje prikaza in objavite."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:19
-msgid "You must select an offer product."
-msgstr "Izbrati morate ponudbeni izdelek."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:26
-msgid "Offer"
-msgstr "Ponudba"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:44
-msgid "Auto Add Order Bump to Cart"
-msgstr "Samodejno dodaj naročilo v košarico"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:45
-msgid "If conditions are satisfied, automatically add this order bump to the cart. Useful for free gifts or other offers that don\\'t require customer action."
-msgstr "Če so pogoji izpolnjeni, samodejno dodajte to naročilo v košarico. Uporabno za brezplačna darila ali druge ponudbe, ki ne zahtevajo ukrepanja stranke."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:56
-msgid "Auto Match Variations Between Search and Offer Product"
-msgstr "Samodejno usklajuj različice med iskanjem in ponudbenim izdelkom"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:61
-msgid "Add offer product to the cart with the same variable configuration as the product below."
-msgstr "Dodajte ponudbeni izdelek v košarico z enako konfiguracijo spremenljivk kot spodnji izdelek."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:65
-msgid "Only applies when Auto Match Cart Product and Offer Product are variable products with matching variation attributes (Size, Color, etc)"
-msgstr "Velja samo, če sta samodejno usklajeni izdelek v košarici in ponudbeni izdelek spremenljiva izdelka z ujemajočimi se atributi različic (Velikost, Barva itd.)"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:69
-msgid "Leave unchecked to have customers to select variation options in a modal window."
-msgstr "Pustite neoznačeno, da lahko kupci izberejo možnosti različic v modalnem oknu."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:73
-msgid "If offer product is not variable, this option is ignored."
-msgstr "Če ponudbeni izdelek ni spremenljiv, se ta možnost prezre."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:90
-msgid "Auto Match Variations Cart Product"
-msgstr "Samodejno usklajuj različice izdelka v košarici"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:98
-msgid "The product in the cart to match the Order Bump variations to."
-msgstr "Izdelek v košarici, s katerim je treba uskladiti različice naročila."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:113
-msgid "Match Quantity of Offer Product to Display Condition Product"
-msgstr "Uskladi količino ponudbenega izdelka s prikazanim pogojnim izdelkom"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:114
-msgid "If customer has two of the display condition product in the cart, two of the offer product will be added to the cart."
-msgstr "Če ima kupec v košarici dva prikazana pogojna izdelka, bosta v košarico dodana dva ponudbena izdelka."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:128
-msgid "Match Quantity Cart Product"
-msgstr "Uskladi količino izdelka v košarici"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:136
-msgid "The product in the cart to match the Order Bump quantity to."
-msgstr "Izdelek v košarici, s katerim je treba uskladiti količino naročila."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:151
-msgid "Quantity of Offer Product To Add"
-msgstr "Količina ponudbenega izdelka za dodajanje"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:152
-msgid "The quantity to add to the cart when offer is accepted."
-msgstr "Količina, ki se doda v košarico, ko je ponudba sprejeta."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:161
-msgid "Allow Customer To Change Quantity In Cart"
-msgstr "Dovoli kupcu spreminjanje količine v košarici"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:162
-msgid "Allow customer to change the quantity of this order bump in the cart."
-msgstr "Dovoli kupcu spreminjanje količine tega naročila v košarici."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:22
-msgid "Offer Language"
-msgstr "Jezik ponudbe"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:29
-msgid "Place Order Modal Heading"
-msgstr "Naslov modala za oddajo naročila"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:30
-msgid "Default if blank: Your order is almost complete..."
-msgstr "Privzeto, če je prazno: Vaše naročilo je skoraj končano..."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:30
-msgid "Wait %s! Here\\'s an exclusive offer to compliment your order!"
-msgstr "Počakaj %s! Tukaj je ekskluzivna ponudba za dopolnitev tvoje naročilo!"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:39
-msgid "Place Order Modal Subheading"
-msgstr "Podnaslov modala za oddajo naročila"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:40
-msgid "Default if blank: Add this offer to your order and save!"
-msgstr "Privzeto, če je prazno: Dodajte to ponudbo k svojemu naročilu in prihranite!"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:52
-msgid "Offer Acceptance Checkbox Label"
-msgstr "Oznaka potrditvenega polja za sprejem ponudbe"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:52
-msgid "Offer Acceptance Button Label"
-msgstr "Oznaka gumba za sprejem ponudbe"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:53
-msgid "Example: Yes! Please add this offer to my order"
-msgstr "Primer: Da! Prosim, dodajte to ponudbo k mojemu naročilu"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:63
-msgid "Offer Description"
-msgstr "Opis ponudbe"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:64
-msgid "Example: Limited time offer! Get an EXCLUSIVE discount right now! Click the checkbox above to add this product to your order now."
-msgstr "Primer: Omejena časovna ponudba! Pridobite EKSKLUZIVNI popust zdaj! Kliknite zgornje potrditveno polje, da ta izdelek dodate k svojemu naročilu zdaj."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:74
-msgid "Modal Offer Rejection Link Text"
-msgstr "Besedilo povezave za zavrnitev ponudbe v modalu"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:78
-msgid "Displays in modal version of Order Bump, such as Place Order bumps or when the Offer Product is a variable product (as opposed to a specific variation)."
-msgstr "Prikaže se v modalni različici Order Bump, kot so Place Order bumps ali ko je ponudbeni izdelek spremenljiv izdelek (namesto določene različice)."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:83
-msgid "Default if blank: No thanks, just complete my order"
-msgstr "Privzeto, če je prazno: Ne hvala, samo dokončajte moje naročilo"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:85
-msgid "Default if blank: No thanks"
-msgstr "Privzeto, če je prazno: Ne hvala"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferDiscountPanel.tsx:15
-msgid "Offer Discount"
-msgstr "Ponudba popusta"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferDiscountPanel.tsx:20
-msgid "Amount Off: Remove fixed amount from the product price. Percent Off: Discount product by specified percentage."
-msgstr "Znesek popusta: Odstrani fiksni znesek iz cene izdelka. Odstotek popusta: Izdelek zniža za določen odstotek."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferDiscountPanel.tsx:46
-msgid "Item Removal Behavior"
-msgstr "Obnašanje ob odstranitvi izdelka"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferDiscountPanel.tsx:47
-msgid "What happens when the display for product is removed from the cart. Default: Order Bump remains in the cart but bump specific discounts are removed."
-msgstr "Kaj se zgodi, ko je prikaz izdelka odstranjen iz košarice. Privzeto: Order Bump ostane v košarici, vendar so odstranjeni popusti, specifični za bump."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferDiscountPanel.tsx:50
-msgid "Leave In Cart With Normal Price"
-msgstr "Pusti v košarici po normalni ceni"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferDiscountPanel.tsx:51
-msgid "Remove Order Bump From Cart"
-msgstr "Odstrani Order Bump iz košarice"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsGeneralPanel.tsx:13
-msgid "You must set an upsell replacement product."
-msgstr "Morate nastaviti nadomestni izdelek za upsell."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsGeneralPanel.tsx:20
-msgid "Offer Type"
-msgstr "Vrsta ponudbe"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsGeneralPanel.tsx:24
-msgid "Use Order Bump As Upsell"
-msgstr "Uporabi Order Bump kot Upsell"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsGeneralPanel.tsx:28
-msgid "Replace a cart item with offer product when this Order Bump is taken."
-msgstr "Zamenjajte izdelek v košarici s ponudbenim izdelkom, ko je ta Order Bump izbran."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsGeneralPanel.tsx:42
-msgid "Which product does this upsell replace in the cart?"
-msgstr "Kateri izdelek ta upsell nadomešča v košarici?"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsGeneralPanel.tsx:50
-msgid "This product must be in the cart for this order bump to be shown."
-msgstr "Ta izdelek mora biti v košarici, da se ta order bump prikaže."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:44
-msgid "Blocks are only used by full screen offers. Enable Full Screen Landing Page in the Display Location panel, then add the Order Bump Offer Form block where the offer form should go."
-msgstr "Bloki se uporabljajo samo za ponudbe na celotnem zaslonu. V podoknu Lokacija prikaza omogočite Ciljno stran na celotnem zaslonu, nato pa dodajte blok Obrazec ponudbe za dodatni nakup na mestu, kjer naj bo obrazec ponudbe."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:45
-msgid "Blocks are only used by full screen offers, available on Place Order Click and Post Purchase One-Click bumps. This bump uses the built-in layout."
-msgstr "Bloki se uporabljajo samo za ponudbe na celotnem zaslonu, ki so na voljo pri kliku na Naroči in enoklikovnih dodatkih po nakupu. Ta dodatek uporablja vgrajeno postavitev."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:61
-msgid "Post Purchase One-Click bumps require a compatible payment gateway. We recommend using Place Order bumps when using non-compatible gateways."
-msgstr "Post Purchase One-Click bumps zahtevajo združljiv plačilni prehod. Priporočamo uporabo Place Order bumps pri uporabi nezdružljivih prehodov."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:67
-msgid "Learn more about supported gateways"
-msgstr "Izvedite več o podprtih prehodih"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:74
-msgid "Read our Order Bumps documentation"
-msgstr "Preberite našo dokumentacijo o Order Bumps"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:104
-msgid "This bump will not appear anywhere because the side cart is disabled."
-msgstr "Ta dodatek se ne bo prikazal nikjer, ker je stranski voziček onemogočen."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:105
-msgid "This bump will not appear anywhere because order bumps are disabled in the side cart."
-msgstr "Ta dodatek se ne bo prikazal nikjer, ker so dodatni nakupi v stranskem vozičku onemogočeni."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:108
-msgid "This bump will appear on checkout but not in the side cart because the side cart is disabled."
-msgstr "Ta dodatek se bo prikazal pri zaključku nakupa, vendar ne v stranskem vozičku, ker je stranski voziček onemogočen."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:109
-msgid "This bump will appear on checkout but not in the side cart because order bumps are disabled in the side cart."
-msgstr "Ta dodatek se bo prikazal pri zaključku nakupa, vendar ne v stranskem vozičku, ker so dodatni nakupi v stranskem vozičku onemogočeni."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:120
-msgid "Open side cart settings"
-msgstr "Odpri nastavitve stranskega vozička"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:141
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:148
-msgid "Display Location"
-msgstr "Lokacija prikaza"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:157
-msgid "Checkout Slot"
-msgstr "Mesto zaključka nakupa"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:187
-msgid "Displays in a popup when Place Order is clicked, before the order is submitted"
-msgstr "Prikazuje se v pojavnem oknu, ko kliknete Oddaj naročilo, preden je naročilo poslano"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:190
-msgid "Displays in a popup on the Thank You page."
-msgstr "Prikazuje se v pojavnem oknu na strani Zahvaljujemo se vam."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:194
-msgid "Full Screen Landing Page"
-msgstr "Ciljna stran na celotnem zaslonu"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:195
-msgid "Design the offer with blocks instead of the built-in layout. Add the Order Bump Offer Form block where the offer form should go."
-msgstr "Ponudbo oblikujte z bloki namesto z vgrajeno postavitvijo. Dodajte blok Obrazec ponudbe za dodatni nakup na mestu, kjer naj bo obrazec ponudbe."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayConditions.tsx:26
-msgid "Show Bump When These Conditions Are True:"
-msgstr "Prikaži Bump, ko so ti pogoji izpolnjeni:"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayConditions.tsx:29
-msgid "This bump will be shown when the correct upsell product is in the cart and the Offer Product is not in the cart. To further limit when this bump is shown, add a rule below."
-msgstr "Ta bump bo prikazan, ko je pravilen upsell izdelek v košarici in ponudbeni izdelek ni v košarici. Za nadaljnjo omejitev prikaza tega bumpa dodajte spodaj pravilo."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayConditions.tsx:31
-msgid "This bump will always be shown when the Offer Product is not in the cart. To limit when this bump is shown, add a rule below."
-msgstr "Ta bump bo vedno prikazan, ko ponudbeni izdelek ni v košarici. Za omejitev prikaza tega bumpa dodajte spodaj pravilo."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsActionsPanel.tsx:15
-msgid "Actions"
-msgstr "Dejanja"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsActionsPanel.tsx:21
-msgid "Remove These Products From The Cart"
-msgstr "Odstrani te izdelke iz košarice"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsActionsPanel.tsx:23
-msgid "If any of these products are in the cart, remove them when this bump is added to the cart."
-msgstr "Če so kateri od teh izdelkov v košarici, jih odstranite, ko je ta bump dodan v košarico."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsActionsPanel.tsx:24
-msgid "Search for products"
-msgstr "Išči izdelke"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsActionsPanel.tsx:35
-msgid "Apply Free Shipping"
-msgstr "Uporabi brezplačno dostavo"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsActionsPanel.tsx:36
-msgid "When this bump is added to the cart, apply free shipping to the cart."
-msgstr "Ko je ta bump dodan v košarico, se na košarico uporabi brezplačna dostava."
-
-#: client/ts/admin/Components/Metaboxes/CategoryCompleter.tsx:46
-msgid "All categories with titles that include {{query /}}"
-msgstr "Vse kategorije z naslovi, ki vključujejo {{query /}}"
-
-#: client/ts/admin/Components/Fields/WPMediaUploadButton.tsx:69
-msgid "Select or Upload a Logo"
-msgstr "Izberi ali naloži logotip"
-
-#: client/ts/admin/Components/Fields/RangeControl.tsx:97
-#: client/ts/admin/Components/Fields/ColorControl.tsx:137
-msgid "Reset"
-msgstr "Ponastavi"
-
-#: client/ts/admin/Components/Fields/ColorControl.tsx:173
-#: client/ts/admin/Components/CheckoutEditor/BumpEditorModal.tsx:101
-msgid "Done"
-msgstr "Končano"
 
 #: client/ts/admin/Components/CheckoutEditor/ScrollableRegion.tsx:74
 msgid "Scroll down for more items"
@@ -8508,7 +8553,7 @@ msgstr "Izbriši pravilo"
 
 # %d: shipping package number
 #: functions/functions.php:386
-#: functions/functions.php:3455
+#: functions/functions.php:3464
 msgctxt "shipping packages"
 msgid "Shipping"
 msgid_plural "Shipping %d"

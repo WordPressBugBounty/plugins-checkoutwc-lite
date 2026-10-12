@@ -159,6 +159,24 @@ class CustomFieldManager extends SingletonAbstract {
 	}
 
 	/**
+	 * Determines whether the merchant can save a field of this type in the editor.
+	 *
+	 * Uses the admin plan level, so a license that isn't activated yet can still configure fields that won't render until it is.
+	 *
+	 * @since 11.4.1
+	 *
+	 * @param string $type One of CustomField::SUPPORTED_TYPES.
+	 * @return bool
+	 */
+	public static function type_is_editable( string $type ): bool {
+		if ( in_array( $type, CustomField::FREE_TYPES, true ) ) {
+			return true;
+		}
+
+		return PlanManager::has_admin_plan_or_higher( CustomField::PLAN_LOCKED_TYPES_MIN_PLAN );
+	}
+
+	/**
 	 * Persists field definitions and bumps the revision.
 	 *
 	 * @since 11.4.0

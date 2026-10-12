@@ -39,7 +39,7 @@ class BFNotice extends NoticeAbstract {
 	}
 
 	protected function should_add(): bool {
-		if ( PlanManager::has_premium_plan_or_higher() ) {
+		if ( PlanManager::has_admin_plan_or_higher() ) {
 			return false;
 		}
 

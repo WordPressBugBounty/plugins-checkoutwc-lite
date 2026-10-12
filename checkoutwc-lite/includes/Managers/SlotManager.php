@@ -1049,7 +1049,7 @@ class SlotManager extends SingletonAbstract {
 	 * and its slot locks should only apply where the merchant can manage the tests.
 	 */
 	private function ab_testing_available(): bool {
-		return PlanManager::has_premium_plan_or_higher( 'pro' );
+		return PlanManager::has_admin_plan_or_higher( 'pro' );
 	}
 
 	/**

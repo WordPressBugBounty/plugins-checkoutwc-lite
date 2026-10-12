@@ -146,8 +146,8 @@ class General extends PageAbstract {
 		<div class="space-y-8 mt-4">
 			<?php
 			cfw_admin_page_section(
-				PlanManager::has_premium_plan_or_higher() ? __( 'Step 1: Activate Your License', 'checkout-wc' ) : __( 'Step 1: Try CheckoutWC Premium Free For 7 Days', 'checkout-wc' ),
-				PlanManager::has_premium_plan_or_higher() ? __( 'Enter your license key. An active license is required for all functionality.', 'checkout-wc' ) : __( 'Supercharge your WooCommerce store.', 'checkout-wc' ),
+				PlanManager::has_admin_plan_or_higher() ? __( 'Step 1: Activate Your License', 'checkout-wc' ) : __( 'Step 1: Try CheckoutWC Premium Free For 7 Days', 'checkout-wc' ),
+				PlanManager::has_admin_plan_or_higher() ? __( 'Enter your license key and activate it for this site to turn on premium features.', 'checkout-wc' ) : __( 'Supercharge your WooCommerce store.', 'checkout-wc' ),
 				defined( 'CFW_PREMIUM_PLAN_IDS' ) ? $this->get_licensing_settings() : $this->trial_offer()
 			);
 

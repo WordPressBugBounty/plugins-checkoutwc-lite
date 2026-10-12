@@ -133,7 +133,7 @@ class CheckoutEditor extends PageAbstract {
 		}
 
 		$settings_manager = SettingsManager::instance();
-		$saved_slug       = cfw_get_active_template()->get_slug();
+		$saved_slug       = cfw_get_active_template( true )->get_slug();
 
 		// Optional: edit a specific template in the editor without changing the saved option (template only updates on Save).
 		$requested_slug = isset( $_GET['cfw_editor_template'] ) ? sanitize_text_field( wp_unslash( $_GET['cfw_editor_template'] ) ) : ''; // phpcs:ignore WordPress.Security.NonceVerification.Recommended
@@ -355,7 +355,7 @@ class CheckoutEditor extends PageAbstract {
 		// Templates data for the editor (for switching templates from the Design tab).
 		$templates        = Template::get_all_available();
 		$editor_templates = [];
-		$has_premium_plan = PlanManager::has_premium_plan_or_higher();
+		$has_premium_plan = PlanManager::has_admin_plan_or_higher();
 
 		foreach ( $templates as $template ) {
 			$slug = $template->get_slug();
@@ -450,7 +450,7 @@ class CheckoutEditor extends PageAbstract {
 	 * @return array{available: bool, edit_url_template: string, new_url: string, can_create: bool, allowed_count: int, used_count: int}
 	 */
 	public static function get_bump_editor_data(): array {
-		$available = class_exists( OrderBumps::class ) && PlanManager::has_premium_plan_or_higher( 'plus' );
+		$available = class_exists( OrderBumps::class ) && PlanManager::has_admin_plan_or_higher( 'plus' );
 
 		return [
 			'available'         => $available,

@@ -387,7 +387,7 @@ add_action(
 	}
 );
 
-if ( ! PlanManager::has_premium_plan_or_higher() ) {
+if ( ! PlanManager::has_admin_plan_or_higher() ) {
 	add_action(
 		'admin_menu',
 		function() {
@@ -1211,7 +1211,7 @@ add_action(
 						// processing registration form
 						|| isset( $_POST['register'] ) // phpcs:ignore WordPress.Security.NonceVerification.Missing
 						|| ( did_action( 'wp' ) && ! cfw_is_checkout() ) // not on checkout when we can know we should be on checkout
-) {
+					) {
 						return false;
 					}
 
@@ -1229,7 +1229,7 @@ add_action(
 						// processing registration form
 						|| isset( $_POST['register'] ) // phpcs:ignore WordPress.Security.NonceVerification.Missing
 						|| ( did_action( 'wp' ) && ! cfw_is_checkout() ) // not on checkout when we can know we should be on checkout
-) {
+					) {
 						return false;
 					}
 

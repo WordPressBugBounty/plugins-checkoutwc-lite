@@ -213,7 +213,7 @@ class Advanced extends PageAbstract {
 			wp_die( esc_html__( 'Error decoding JSON file.', 'checkout-wc' ) );
 		}
 
-		$active_template_slug = cfw_get_active_template()->get_slug();
+		$active_template_slug = cfw_get_active_template( true )->get_slug();
 
 		// Pre 9.x logo handler
 		if ( ! empty( $decoded['_cfw_logo_attachment_id'] && false !== $decoded['_cfw_logo_attachment_url'] ) && ! isset( $decoded[ '_cfw_logo_attachment_id_' . $active_template_slug ] ) ) {

@@ -406,7 +406,7 @@ abstract class PageAbstract {
 	public function get_plan_data(): array {
 		$data = [
 			'plan_id'    => UpdatesManager::instance()->get_license_price_id(),
-			'plan_level' => PlanManager::get_user_plan_level(),
+			'plan_level' => PlanManager::get_admin_plan_level(),
 			'labels'     => [],
 		];
 

@@ -3,8 +3,8 @@ Contributors: kestrelwp, clifgriffin
 Donate link: https://www.checkoutwc.com
 Tags: woocommerce checkout, checkout field editor, express checkout, one page checkout, cart abandonment
 Requires at least: 5.2
-Tested up to: 7.1.2
-Stable tag: 11.4.0
+Tested up to: 7.1.3
+Stable tag: 11.4.1
 Requires PHP: 7.4
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
@@ -236,6 +236,17 @@ Use your payment gateway's test mode to process test transactions without chargi
 == Changelog ==
 
 Free version updates are non-sequential due to the unified development branch we use with the premium versions.
+
+= Version 11.4.1 =
+
+- Fix - WooCommerce PayPal Payments: Place Order no longer spins forever when paying by card after the checkout updates
+- Fix - Payment Plugins for PayPal: the PayPal and Pay Later express buttons now line up instead of the second one sitting offset
+- Fix - Payment Plugins for Braintree: retrying checkout after a declined card now resets the payment form as the gateway expects
+- Fix - Integrations: the Simple Cloudflare Turnstile conflict notice now only shows on plans that include Turnstile
+- Fix - Removed the extra gap below the coupon field on mobile, which made a full-height Apply button taller than the field
+- Fix - Checkboxes and radio buttons now stay visibly ticked when a site's own focus styles override CheckoutWC's
+- Fix - A terms and conditions error now shows with the other checkout errors when the terms checkbox isn't in its usual place, instead of Place Order appearing to do nothing
+- Fix - Germanized and German Market legal consent checkboxes no longer come back ticked for returning customers
 
 = Version 11.4.0 =
 

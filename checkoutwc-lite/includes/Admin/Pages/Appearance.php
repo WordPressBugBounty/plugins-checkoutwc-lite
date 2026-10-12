@@ -67,7 +67,7 @@ class Appearance extends PageAbstract {
 	public function templates_tab() {
 		$settings        = SettingsManager::instance();
 		$templates       = Template::get_all_available();
-		$active_template = cfw_get_active_template()->get_slug();
+		$active_template = cfw_get_active_template( true )->get_slug();
 
 		// Move active template to the top
 		if ( isset( $templates[ $active_template ] ) ) {
@@ -81,7 +81,7 @@ class Appearance extends PageAbstract {
 					$screenshot = $template->get_template_uri() . '/screenshot.png';
 
 					$active      = $active_template === $template->get_slug();
-					$locked      = ! $active && ! PlanManager::has_premium_plan_or_higher();
+					$locked      = ! $active && ! PlanManager::has_admin_plan_or_higher();
 					$preview_url = wc_get_checkout_url();
 					$products    = wc_get_products(
 						[
@@ -193,7 +193,7 @@ class Appearance extends PageAbstract {
 	 * @return array
 	 */
 	public static function get_theme_color_settings( $template_slug = null ): array {
-		$active_template = null !== $template_slug ? new Template( $template_slug ) : cfw_get_active_template();
+		$active_template = null !== $template_slug ? new Template( $template_slug ) : cfw_get_active_template( true );
 		$color_settings  = [];
 
 		// Body
@@ -306,7 +306,7 @@ class Appearance extends PageAbstract {
 	 * @return array
 	 */
 	public static function get_theme_color_settings_defaults( $template_slug = null ): array {
-		$template       = null !== $template_slug ? new Template( $template_slug ) : cfw_get_active_template();
+		$template       = null !== $template_slug ? new Template( $template_slug ) : cfw_get_active_template( true );
 		$color_settings = self::get_theme_color_settings( $template_slug );
 		$defaults       = [];
 
@@ -326,7 +326,7 @@ class Appearance extends PageAbstract {
 
 		// The logo ID is cast because an unset logo reads as false, which the save formatter turns
 		// into the string 'no' - see CheckoutEditor::maybe_set_script_data().
-		$template_slug      = cfw_get_active_template()->get_slug();
+		$template_slug      = cfw_get_active_template( true )->get_slug();
 		$logo_attachment_id = (int) SettingsManager::instance()->get_setting( 'logo_attachment_id', [ $template_slug ] );
 		$settings           = [
 			SettingsManager::instance()->add_suffix( 'logo_attachment_id', [ $template_slug ] ) => $logo_attachment_id > 0 ? (string) $logo_attachment_id : '',
@@ -353,10 +353,10 @@ class Appearance extends PageAbstract {
 				'settings' => $settings,
 				'params'   => [
 					'font_options'            => $this->get_font_settings(),
-					'template_path'           => cfw_get_active_template()->get_slug(),
+					'template_path'           => cfw_get_active_template( true )->get_slug(),
 					'color_settings'          => self::get_theme_color_settings(),
 					'color_settings_defaults' => self::get_theme_color_settings_defaults(),
-					'logo_preview_url'        => wp_get_attachment_url( SettingsManager::instance()->get_setting( 'logo_attachment_id', [ cfw_get_active_template()->get_slug() ] ) ),
+					'logo_preview_url'        => wp_get_attachment_url( SettingsManager::instance()->get_setting( 'logo_attachment_id', [ cfw_get_active_template( true )->get_slug() ] ) ),
 				],
 				'plan'     => $this->get_plan_data(),
 			]

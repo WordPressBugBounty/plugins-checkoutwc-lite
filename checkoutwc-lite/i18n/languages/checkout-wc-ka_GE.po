@@ -8,7 +8,7 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "POT-Creation-Date: 2025-07-25 09:22-0400\n"
-"PO-Revision-Date: 2026-09-24T21:25:15+00:00\n"
+"PO-Revision-Date: 2026-10-12T15:20:31+00:00\n"
 "Language: ka-GE\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 3.6\n"
@@ -164,8 +164,8 @@ msgid "Postcode / ZIP"
 msgstr "საფოსტო კოდი / ინდექსი"
 
 #: includes/AddressFieldsAugmenter.php:458
-#: functions/functions.php:4215
-#: functions/functions.php:4216
+#: functions/functions.php:4224
+#: functions/functions.php:4225
 msgid "Email address"
 msgstr "ელ.ფოსტის მისამართი"
 
@@ -302,7 +302,7 @@ msgid "Log in."
 msgstr "Შესვლა."
 
 #: functions/template-functions.php:489
-#: includes/Managers/AssetManager.php:705
+#: includes/Managers/AssetManager.php:709
 msgid "An account is already registered with your email address. <a href=\"#\" class=\"showlogin\">Please log in.</a>"
 msgstr "თქვენი ელ.ფოსტის მისამართით უკვე დარეგისტრირებულია ანგარიში. <a href=\"#\" class=\"showlogin\">გთხოვთ, გაიარეთ ავტორიზაცია.</a>"
 
@@ -355,7 +355,7 @@ msgstr "გადამხდელის მისამართი"
 #: functions/template-functions.php:768
 #: functions/template-functions.php:806
 #: functions/template-functions.php:1981
-#: includes/Managers/AssetManager.php:701
+#: includes/Managers/AssetManager.php:705
 msgid "Shipping address"
 msgstr "მიწოდების მისამართი"
 
@@ -368,7 +368,7 @@ msgstr "თქვენი კალათა"
 #: functions/template-functions.php:1047
 #: functions/template-functions.php:2013
 #: functions/template-functions.php:2287
-#: functions/functions.php:3469
+#: functions/functions.php:3478
 msgid "Shipping"
 msgstr "მიწოდება"
 
@@ -451,7 +451,7 @@ msgid "N/A"
 msgstr "არ არის ხელმისაწვდომი"
 
 #: functions/template-functions.php:2043
-#: includes/Managers/AssetManager.php:851
+#: includes/Managers/AssetManager.php:855
 msgid "Continue shopping"
 msgstr "შესყიდვების გაგრძელება"
 
@@ -467,18 +467,18 @@ msgid "Email"
 msgstr "ელ.ფოსტა"
 
 #: functions/template-functions.php:2101
-#: functions/functions.php:4133
-#: functions/functions.php:4134
+#: functions/functions.php:4142
+#: functions/functions.php:4143
 msgid "Password"
 msgstr "პაროლი"
 
 #: functions/template-functions.php:2117
-#: functions/functions.php:4173
+#: functions/functions.php:4182
 msgid "Login"
 msgstr "შესვლა"
 
 #: functions/template-functions.php:2120
-#: functions/functions.php:4166
+#: functions/functions.php:4175
 msgid "Lost your password?"
 msgstr "დაგავიწყდათ პაროლი?"
 
@@ -486,16 +486,16 @@ msgstr "დაგავიწყდათ პაროლი?"
 msgid "Your Cart is Empty"
 msgstr "Თქვენი კალათა ცარიელია"
 
-#: functions/premium-init.php:340
+#: functions/premium-init.php:342
 msgid "CheckoutWC Templates Deactivated"
 msgstr "CheckoutWC შაბლონები გათიშულია"
 
 # %1$s: "Settings" text, %2$s: "Start Here" text, %3$s: "Activate CheckoutWC Templates" text
-#: functions/premium-init.php:343
+#: functions/premium-init.php:345
 msgid "Your license is valid and activated for this site but CheckoutWC is disabled for normal customers. To fix this, go to %1$s > %2$s and toggle \"%3$s\"."
 msgstr "თქვენი ლიცენზია ვალიდურია და გააქტიურებულია ამ საიტზე, მაგრამ CheckoutWC გათიშულია ჩვეულებრივი მომხმარებლებისთვის. გამოსასწორებლად გადადით %1$s > %2$s და ჩართეთ \"%3$s\"."
 
-#: functions/premium-init.php:344
+#: functions/premium-init.php:346
 #: includes/Admin/AdminPluginsPageManager.php:40
 #: includes/Admin/Pages/OrderBumpsAdminFree.php:25
 #: includes/Admin/Pages/LocalPickupAdminFree.php:27
@@ -507,66 +507,71 @@ msgstr "თქვენი ლიცენზია ვალიდურია 
 msgid "Settings"
 msgstr "პარამეტრები"
 
-#: functions/premium-init.php:345
+#: functions/premium-init.php:347
+#: functions/premium-init.php:360
 #: includes/Admin/Pages/General.php:25
-#: includes/Admin/Notices/InactiveLicenseNotice.php:13
 msgid "Start Here"
 msgstr "დაიწყეთ აქ"
 
-#: functions/premium-init.php:346
+#: functions/premium-init.php:348
 #: includes/Admin/Pages/General.php:195
 msgid "Activate CheckoutWC Templates"
 msgstr "გააქტიურეთ CheckoutWC შაბლონები"
 
-#: functions/premium-init.php:353
-msgid "Invalid CheckoutWC License"
-msgstr "არასწორი CheckoutWC ლიცენზია"
+#: functions/premium-init.php:355
+msgid "CheckoutWC license invalid"
+msgstr "CheckoutWC-ის ლიცენზია არასწორია"
 
-# %1$s: Pricing URL, %2$s: "purchase a license" link text
-#: functions/premium-init.php:356
-msgid "Your license key is missing or invalid. Please verify that your license key is valid or <a target=\"_blank\" href=\"%1$s\">%2$s</a> to restore full functionality."
-msgstr "თქვენი ლიცენზიის გასაღები არ არის ან არასწორია. გთხოვთ, გადაამოწმოთ თქვენი ლიცენზიის გასაღების ვალიდურობა ან <a target=\"_blank\" href=\"%1$s\">%2$s</a> სრული ფუნქციონალობის აღსადგენად."
-
+# %1$s: URL to license settings page, %2$s: "Start Here" link text, %3$s: Pricing URL, %4$s: "buy a license" link text
 #: functions/premium-init.php:358
-msgid "purchase a license"
+msgid "Premium features are off because your license key is missing or invalid. Check your key on <a href=\"%1$s\">%2$s</a> or <a target=\"_blank\" href=\"%3$s\">%4$s</a>."
+msgstr "პრემიუმ ფუნქციები გამორთულია, რადგან თქვენი ლიცენზიის გასაღები არ არის მითითებული ან არასწორია. შეამოწმეთ თქვენი გასაღები <a href=\"%1$s\">%2$s</a>-ზე ან <a target=\"_blank\" href=\"%3$s\">%4$s</a>-ზე."
+
+#: functions/premium-init.php:362
+#: includes/Admin/Notices/InactiveLicenseNotice.php:15
+msgid "buy a license"
 msgstr "ლიცენზიის შეძენა"
 
-#: functions/premium-init.php:374
+#: functions/premium-init.php:382
 msgid "New Feature: Cloudflare Turnstile Bot Protection"
 msgstr "ახალი ფუნქცია: Cloudflare Turnstile ბოტების დაცვა"
 
 # 1: Cloudflare Turnstile name wrapped in strong tags, 2: Setup link
-#: functions/premium-init.php:377
+#: functions/premium-init.php:385
 msgid "CheckoutWC now supports %1$s - a privacy-first, CAPTCHA-free way to protect your checkout from bots and spam orders. %2$s"
 msgstr "CheckoutWC ახლა მხარს უჭერს %1$s - კონფიდენციალურობაზე ორიენტირებულ, CAPTCHA-უმცირეს გზას თქვენი ჩეკაუთის დაცვაში ბოტებისა და სპამისგან. %2$s"
 
 # The name of the Cloudflare Turnstile service
-#: functions/premium-init.php:381
+#: functions/premium-init.php:389
 #: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:78
 msgid "Cloudflare Turnstile"
 msgstr "Cloudflare Turnstile"
 
-#: functions/premium-init.php:387
+#: functions/premium-init.php:395
 msgid "Setup Cloudflare Turnstile now"
 msgstr "დააყენეთ Cloudflare Turnstile ახლა"
 
-#: functions/premium-init.php:392
+#: functions/premium-init.php:400
 msgid "Upgrade your plan now to access"
 msgstr "ახლავე გააუმჯობესეთ თქვენი გეგმა წვდომისთვის"
 
-#: functions/premium-init.php:405
+#: functions/premium-init.php:413
 msgid "Abandoned Cart Recovery Tracking Disabled"
 msgstr "დატოვებული კალათის აღდგენის თვალთვალის გათიშვა"
 
 # %1$s: Gist URL, %2$s: "Learn More" link text
-#: functions/premium-init.php:408
+#: functions/premium-init.php:416
 msgid "You have enabled Abandoned Cart Recovery tracking, but you do not have any emails published. To track carts, you need to publish emails or use this dev filter: <a target=\"_blank\" href=\"%1$s\">%2$s</a>."
 msgstr "თქვენ ჩართეთ დატოვებული კალათის აღდგენის თვალთვალი, მაგრამ არ გაქვთ გამოქვეყნებული ელ.ფოსტები. კალათების თვალთვალისთვის საჭიროა ელ.ფოსტების გამოქვეყნება ან გამოიყენოთ ეს dev ფილტრი: <a target=\"_blank\" href=\"%1$s\">%2$s</a>."
 
-#: functions/premium-init.php:410
+#: functions/premium-init.php:418
 #: includes/Admin/Pages/AbandonedCartRecoveryAdminFree.php:82
 msgid "Learn More"
 msgstr "მეტი ინფორმაცია"
+
+#: functions/premium-init.php:477
+msgid "Admin preview: your CheckoutWC license isn\\'t valid for this site, so premium features are off. Check your license here: WP Admin > CheckoutWC > Start Here."
+msgstr "ადმინის წინასწარი ნახვა: თქვენი CheckoutWC ლიცენზია არ არის მოქმედი ამ საიტისთვის, ამიტომ პრემიუმ ფუნქციები გამორთულია. შეამოწმეთ თქვენი ლიცენზია აქ: WP Admin > CheckoutWC > Start Here."
 
 #: functions/init.php:396
 #: functions/init.php:397
@@ -685,7 +690,7 @@ msgid "No shipping methods available"
 msgstr "მიწოდების მეთოდები არ არის ხელმისაწვდომი"
 
 #: functions/functions.php:826
-#: includes/Model/Bumps/BumpAbstract.php:835
+#: includes/Model/Bumps/BumpAbstract.php:882
 msgid "Free!"
 msgstr "უფასო!"
 
@@ -757,22 +762,22 @@ msgstr "კალათა"
 msgid "CheckoutWC: Error matching %1$d to customer %2$d"
 msgstr "CheckoutWC: შეცდომა %1$d-ის შესაბამისობაში მომხმარებელთან %2$d"
 
-#: functions/functions.php:2162
+#: functions/functions.php:2171
 msgid "Or"
 msgstr "ან"
 
-#: functions/functions.php:2247
+#: functions/functions.php:2256
 msgid "You can only have 1 %s in your cart."
 msgstr "თქვენ შეგიძლიათ კალათაში მხოლოდ 1 %s გქონდეთ."
 
-#: functions/functions.php:2397
+#: functions/functions.php:2406
 #: client/ts/frontend/Components/CartItemQuantityControl.tsx:55
 msgid "Decrement"
 msgstr "შემცირება"
 
-#: functions/functions.php:2406
-#: includes/Managers/AssetManager.php:731
-#: includes/Managers/AssetManager.php:852
+#: functions/functions.php:2415
+#: includes/Managers/AssetManager.php:735
+#: includes/Managers/AssetManager.php:856
 #: includes/Features/LocalPickup.php:510
 #: includes/Features/AbandonedCartRecovery.php:128
 #: includes/Features/ABTesting.php:150
@@ -782,97 +787,97 @@ msgstr "შემცირება"
 msgid "Edit"
 msgstr "ჩასწორება"
 
-#: functions/functions.php:2409
+#: functions/functions.php:2418
 #: client/ts/frontend/Components/CartItemQuantityControl.tsx:70
 msgid "Increment"
 msgstr "გაზრდა"
 
-#: functions/functions.php:3123
+#: functions/functions.php:3132
 msgid "Unsubscribe"
 msgstr "გამოწერის გაუქმება"
 
-#: functions/functions.php:3495
+#: functions/functions.php:3504
 #: includes/Features/AbandonedCartRecovery.php:756
 #: client/ts/admin/Components/acr/carts.tsx:74
 msgid "Subtotal"
 msgstr "სუბტოტალი"
 
-#: functions/functions.php:3499
+#: functions/functions.php:3508
 #: includes/Admin/Views/html-refund-offer.php:25
 msgid "Total"
 msgstr "სულ"
 
-#: functions/functions.php:3552
+#: functions/functions.php:3561
 msgid "There are no shipping options available. Please ensure that your address has been entered correctly, or contact us if you need any help."
 msgstr "გადაზიდვის ვარიანტები არ არის ხელმისაწვდომი. გთხოვთ, დარწმუნდეთ, რომ თქვენი მისამართი სწორად არის შეყვანილი, ან დაგვიკავშირდით დახმარებისთვის."
 
-#: functions/functions.php:3906
+#: functions/functions.php:3915
 #: includes/Admin/Pages/AbandonedCartRecoveryAdminFree.php:73
 msgid "SendWP - Transactional Email"
 msgstr "SendWP - ტრანზაქციული ელ.ფოსტა"
 
-#: functions/functions.php:3911
+#: functions/functions.php:3920
 #: includes/Admin/Pages/AbandonedCartRecoveryAdminFree.php:77
 msgid "SendWP makes getting emails delivered as simple as a few clicks. So you can relax know those important emails are being delivered on time."
 msgstr "SendWP ელ.ფოსტების მიწოდებას მარტივს ხდის რამდენიმე დაწკაპუნებით. ასე რომ, შეგიძლიათ მშვიდად იყოთ, რომ მნიშვნელოვანი ელ.ფოსტები დროულად მიეწოდება."
 
-#: functions/functions.php:3914
+#: functions/functions.php:3923
 #: includes/Admin/Pages/AbandonedCartRecoveryAdminFree.php:79
 msgid "Try SendWP now and <strong>get your first month for just $1.</strong>"
 msgstr "სცადეთ SendWP ახლა და <strong>მიიღეთ თქვენი პირველი თვე მხოლოდ $1-ად.</strong>"
 
-#: functions/functions.php:3924
+#: functions/functions.php:3933
 #: includes/Admin/Pages/AbandonedCartRecoveryAdminFree.php:87
 msgid "Note: SendWP is optional. You can use any transactional email service you prefer."
 msgstr "შენიშვნა: SendWP არის არჩევითი. შეგიძლიათ გამოიყენოთ ნებისმიერი ტრანზაქციული ელ.ფოსტის სერვისი, რომელიც გსურთ."
 
-#: functions/functions.php:3933
+#: functions/functions.php:3942
 #: includes/Admin/Pages/AbandonedCartRecoveryAdminFree.php:94
 msgid "Connect to SendWP"
 msgstr "დაკავშირება SendWP-სთან"
 
-#: functions/functions.php:4081
+#: functions/functions.php:4090
 msgid "Welcome back"
 msgstr "Კეთილი იყოს თქვენი დაბრუნება"
 
-#: functions/functions.php:4095
+#: functions/functions.php:4104
 msgid "It looks like you already have an account. Please enter your login details below."
 msgstr "როგორც ჩანს, თქვენ უკვე გაქვთ ანგარიში. გთხოვთ, შეიყვანოთ თქვენი შესვლის დეტალები ქვემოთ."
 
-#: functions/functions.php:4109
+#: functions/functions.php:4118
 msgid "If you have shopped with us before, please enter your login details below."
 msgstr "თუ ადრე იყიდეთ ჩვენთან, გთხოვთ შეიყვანოთ თქვენი შესვლის დეტალები ქვემოთ."
 
-#: functions/functions.php:4119
-#: functions/functions.php:4120
+#: functions/functions.php:4128
+#: functions/functions.php:4129
 msgid "Username or email address"
 msgstr "მომხმარებლის სახელი ან ელ.ფოსტის მისამართი"
 
-#: functions/functions.php:4154
+#: functions/functions.php:4163
 msgid "Remember me"
 msgstr "დამიმახსოვრე"
 
-#: functions/functions.php:4185
+#: functions/functions.php:4194
 msgid "Or continue as guest"
 msgstr "ან გააგრძელეთ სტუმრად"
 
-#: functions/functions.php:4205
+#: functions/functions.php:4214
 msgid "Lost your password? Please enter your username or email address. You will receive a link to create a new password via email."
 msgstr "დაგავიწყდათ პაროლი? გთხოვთ, შეიყვანეთ თქვენი მომხმარებლის სახელი ან ელ.ფოსტა. მიიღებთ ბმულს ახალი პაროლის შესაქმნელად ელ.ფოსტით."
 
-#: functions/functions.php:4228
+#: functions/functions.php:4237
 msgid "Reset password"
 msgstr "პაროლის აღდგენა"
 
-#: functions/functions.php:4243
+#: functions/functions.php:4252
 #: includes/API/OrderBumpPreviewAPI.php:57
 #: includes/API/OrderBumpOfferFormPreviewAPI.php:46
 #: includes/API/GetVariationFormAPI.php:33
 msgid "Product not found"
 msgstr "პროდუქტი ვერ მოიძებნა"
 
-#: functions/functions.php:4259
-#: functions/functions.php:4417
+#: functions/functions.php:4268
+#: functions/functions.php:4426
 #: includes/API/PostPurchaseBumpProductFormAPI.php:24
 msgid "No thanks"
 msgstr "არა, მადლობა"
@@ -951,102 +956,98 @@ msgstr "ადგილობრივი მიღება"
 msgid "Allow customers to pick up orders themselves. This version does not require shipping zones."
 msgstr "მომხმარებლებს შეუძლიათ თავად აიღონ შეკვეთები. ამ ვერსიას არ სჭირდება გადაზიდვის ზონები."
 
-#: includes/Managers/UpdatesManager.php:416
+#: includes/Managers/UpdatesManager.php:436
 msgid "CheckoutWC License Key"
 msgstr "CheckoutWC ლიცენზიის გასაღები"
 
-#: includes/Managers/UpdatesManager.php:421
+#: includes/Managers/UpdatesManager.php:441
 msgid "Your license key is set with the constant <code>CFW_LICENSE_KEY</code>."
 msgstr "თქვენი ლიცენზიის გასაღები არის განსაზღვრული კონსტანტით <code>CFW_LICENSE_KEY</code>."
 
-#: includes/Managers/UpdatesManager.php:428
+#: includes/Managers/UpdatesManager.php:448
 msgid "License Holder"
 msgstr "ლიცენზიის მფლობელი"
 
-#: includes/Managers/UpdatesManager.php:441
+#: includes/Managers/UpdatesManager.php:461
 msgid "Plan"
 msgstr "გეგმა"
 
-#: includes/Managers/UpdatesManager.php:449
+#: includes/Managers/UpdatesManager.php:469
 msgid "Activation Limit"
 msgstr "აქტივაციის ლიმიტი"
 
-#: includes/Managers/UpdatesManager.php:457
+#: includes/Managers/UpdatesManager.php:477
 #: includes/Admin/Pages/Premium/ABTestingAdmin.php:178
 #: includes/Admin/Pages/Premium/ABTestingAdmin.php:819
 #: client/ts/admin/Components/acr/carts.tsx:80
 msgid "Status"
 msgstr "სტატუსი"
 
-#: includes/Managers/UpdatesManager.php:464
+#: includes/Managers/UpdatesManager.php:484
 msgid "Refresh License Info"
 msgstr "ლიცენზიის ინფორმაციის განახლება"
 
-#: includes/Managers/UpdatesManager.php:512
+#: includes/Managers/UpdatesManager.php:532
 msgid "Please enter your license key."
 msgstr "გთხოვთ, შეიყვანეთ თქვენი ლიცენზიის გასაღები."
 
-#: includes/Managers/UpdatesManager.php:515
-#: includes/Managers/UpdatesManager.php:523
+#: includes/Managers/UpdatesManager.php:535
+#: includes/Managers/UpdatesManager.php:543
 msgid "Activate Site"
 msgstr "საიტის გააქტიურება"
 
-#: includes/Managers/UpdatesManager.php:518
+#: includes/Managers/UpdatesManager.php:538
 msgid "Deactivate Site"
 msgstr "საიტის დეაქტივაცია"
 
 # Debug error message logged when license check reaches unexpected state
-#: includes/Managers/UpdatesManager.php:704
+#: includes/Managers/UpdatesManager.php:724
 msgid "License Check Error: You should not be able to get here. I am kind of freaked out."
 msgstr "ლიცენზიის შემოწმების შეცდომა: აქ არ უნდა მოხვედრილიყავით. ცოტა შეშინებული ვარ."
 
 # %1$d: failure count, %2$d: max failures, %3$s: time since last failure
-#: includes/Managers/UpdatesManager.php:963
+#: includes/Managers/UpdatesManager.php:983
 msgid "Unable to verify CheckoutWC license (%1$d/%2$d attempts failed). Using cached license data. Last attempt: %3$s ago."
 msgstr "CheckoutWC ლიცენზიის ვერ დადასტურება (%1$d/%2$d მცდელობა წარუმატებელი). გამოყენებულია ქეშირებული ლიცენზიის მონაცემები. ბოლო მცდელობა: %3$s წინ."
 
-#: includes/Managers/UpdatesManager.php:986
+#: includes/Managers/UpdatesManager.php:1006
 msgid "%s license activation was not successful. Please check your key status below for more information."
 msgstr "%s ლიცენზიის активация არ იყო წარმატებული. გთხოვთ, შეამოწმოთ თქვენი გასაღების სტატუსი ქვემოთ დამატებითი ინფორმაციისთვის."
 
-#: includes/Managers/UpdatesManager.php:1004
+#: includes/Managers/UpdatesManager.php:1024
 msgid "%s license successfully activated."
 msgstr "%s ლიცენზია წარმატებით გააქტიურებულია."
 
-#: includes/Managers/UpdatesManager.php:1022
+#: includes/Managers/UpdatesManager.php:1042
 msgid "%s license deactivation failed. Please try again, or contact support."
 msgstr "%s ლიცენზიის დეაქტივაცია წარუმატებელი იყო. გთხოვთ, სცადეთ თავიდან ან დაუკავშირდით მხარდაჭერას."
 
-#: includes/Managers/UpdatesManager.php:1040
+#: includes/Managers/UpdatesManager.php:1060
 msgid "%s license deactivated successfully."
 msgstr "%s ლიცენზია წარმატებით დეაქტივირებულია."
 
-#: includes/Managers/UpdatesManager.php:1058
+#: includes/Managers/UpdatesManager.php:1078
 msgid "%s license settings saved successfully."
 msgstr "%s ლიცენზიის პარამეტრები წარმატებით შენახულია."
 
-#: includes/Managers/UpdatesManager.php:1076
+#: includes/Managers/UpdatesManager.php:1096
 msgid "%1$s license activation failed: %2$s"
 msgstr "%1$s ლიცენზიის активация წარუმატებელი იყო: %2$s"
 
-#: includes/Managers/UpdatesManager.php:1094
+#: includes/Managers/UpdatesManager.php:1114
 msgid "%s license activation failed: Unable to connect to license server. Please check your internet connection or try again later."
 msgstr "%s ლიცენზიის активация წარუმატებელი იყო: ვერ მოხერხდა კავშირის დამყარება ლიცენზიის სერვერთან. გთხოვთ, შეამოწმოთ თქვენი ინტერნეტის კავშირი ან სცადეთ მოგვიანებით."
 
-#: includes/Managers/UpdatesManager.php:1112
+#: includes/Managers/UpdatesManager.php:1132
 msgid "%s: License deactivated locally. The license server could not be reached, but the license has been deactivated on this site."
 msgstr "%s: ლიცენზია ადგილობრივად დეაქტივირებულია. ლიცენზიის სერვერს ვერ მიაღწიეს, მაგრამ ლიცენზია ამ საიტზე დეაქტივირებულია."
 
-#: includes/Managers/UpdatesManager.php:1261
-msgid "Unable to verify your CheckoutWC license — the license server could not be reached. Your license and checkout are unaffected; only plugin updates are paused until the connection is restored."
-msgstr "არ არის შესაძლებელი თქვენი CheckoutWC ლიცენზიის დადასტურება — ლიცენზიის სერვერთან დაკავშირება ვერ მოხერხდა. თქვენი ლიცენზია და გადახდა არ შეცვლილა; მხოლოდ პლაგინის განახლებები შეჩერებულია, სანამ კავშირი არ აღდგება."
-
 # %1$d: failure count, %2$d: max failures, %3$s: time since last failure
-#: includes/Managers/UpdatesManager.php:1308
+#: includes/Managers/UpdatesManager.php:1402
 msgid "Unable to verify license online (%1$d/%2$d attempts failed). Using cached license data. Last attempt: %3$s ago."
 msgstr "ლიცენზიის ონლაინ ვერ დადასტურება (%1$d/%2$d მცდელობა წარუმატებელი). გამოყენებულია ქეშირებული ლიცენზიის მონაცემები. ბოლო მცდელობა: %3$s წინ."
 
-#: includes/Managers/UpdatesManager.php:1314
+#: includes/Managers/UpdatesManager.php:1408
 msgid "License verified successfully."
 msgstr "ლიცენზია წარმატებით დადასტურებულია."
 
@@ -1076,8 +1077,8 @@ msgid "After Shipping Methods"
 msgstr "მიწოდების მეთოდების შემდეგ"
 
 #: includes/Managers/SlotManager.php:108
-#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:158
 #: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:164
+#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:158
 msgid "After Payment Methods"
 msgstr "გადახდის მეთოდების შემდეგ"
 
@@ -1231,69 +1232,69 @@ msgstr "Პრომო კოდი"
 msgid "Enter Promo Code"
 msgstr "შეიყვანეთ პრომო კოდი"
 
-#: includes/Managers/AssetManager.php:690
+#: includes/Managers/AssetManager.php:694
 msgid "Please enter a valid phone number."
 msgstr "გთხოვთ, შეიყვანოთ სწორი ტელეფონის ნომერი."
 
-#: includes/Managers/AssetManager.php:699
+#: includes/Managers/AssetManager.php:703
 msgid "Please enter your first and last name."
 msgstr "გთხოვთ შეიყვანოთ თქვენი სახელი და გვარი."
 
-#: includes/Managers/AssetManager.php:700
+#: includes/Managers/AssetManager.php:704
 msgid "Please enter a name, not an email address."
 msgstr "გთხოვთ, შეიყვანოთ სახელი, არა ელფოსტის მისამართი."
 
-#: includes/Managers/AssetManager.php:702
-#: includes/Managers/AssetManager.php:843
+#: includes/Managers/AssetManager.php:706
+#: includes/Managers/AssetManager.php:847
 msgid "Please enter a new quantity:"
 msgstr "გთხოვთ შეიყვანოთ ახალი რაოდენობა:"
 
-#: includes/Managers/AssetManager.php:703
+#: includes/Managers/AssetManager.php:707
 msgid "3-digit security code usually found on the back of your card. American Express cards have a 4-digit code located on the front."
 msgstr "3-ნიშნის უსაფრთხოების კოდი, რომელიც ჩვეულებრივ გვხვდება თქვენი ბარათის უკანა მხარეს. American Express ბარათებს აქვთ 4 ციფრიანი კოდი, რომელიც მდებარეობს წინა მხარეს."
 
-#: includes/Managers/AssetManager.php:704
-#: includes/Managers/AssetManager.php:844
+#: includes/Managers/AssetManager.php:708
+#: includes/Managers/AssetManager.php:848
 msgid "Are you sure you want to remove this item from your cart?"
 msgstr "დარწმუნებული ხართ, რომ გსურთ ამ ელემენტის ამოღება თქვენი კალათიდან?"
 
 # %s: Field name
 # %s: field label
-#: includes/Managers/AssetManager.php:707
+#: includes/Managers/AssetManager.php:711
 #: includes/Features/CustomFields.php:238
 msgid "%s is a required field."
 msgstr "%s სავალდებულო ველია."
 
-#: includes/Managers/AssetManager.php:708
+#: includes/Managers/AssetManager.php:712
 msgid "There was a problem checking out. Please try again. If the problem persists, please get in touch with us so we can assist."
 msgstr "გადახდისას პრობლემა წარმოიშვა. გთხოვთ, სცადეთ თავიდან. თუ პრობლემა გაგრძელდება, გთხოვთ დაგვიკავშირდეთ, რათა დაგეხმაროთ."
 
-#: includes/Managers/AssetManager.php:709
+#: includes/Managers/AssetManager.php:713
 msgid "Please enter a valid postcode / ZIP."
 msgstr "გთხოვთ შეიტანოთ სწორი საფოსტო კოდი / ინდექსი."
 
-#: includes/Managers/AssetManager.php:710
+#: includes/Managers/AssetManager.php:714
 #: includes/Features/LocalPickup.php:636
 msgid "Pickup"
 msgstr "Აღება"
 
-#: includes/Managers/AssetManager.php:711
+#: includes/Managers/AssetManager.php:715
 msgid "Continue to pickup"
 msgstr "განაგრძეთ აყვანა"
 
-#: includes/Managers/AssetManager.php:712
-#: includes/Managers/AssetManager.php:846
+#: includes/Managers/AssetManager.php:716
+#: includes/Managers/AssetManager.php:850
 msgid "Update"
 msgstr "განახლება"
 
-#: includes/Managers/AssetManager.php:713
-#: includes/Managers/AssetManager.php:847
+#: includes/Managers/AssetManager.php:717
+#: includes/Managers/AssetManager.php:851
 #: includes/API/GetVariationFormAPI.php:150
 msgid "Add to cart"
 msgstr "კალათაში დამატება"
 
-#: includes/Managers/AssetManager.php:714
-#: includes/Managers/AssetManager.php:848
+#: includes/Managers/AssetManager.php:718
+#: includes/Managers/AssetManager.php:852
 #: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2383
 #: client/ts/admin/Components/CheckoutEditor/slots/UnsavedChangesDialog.tsx:51
 #: client/ts/admin/Components/CheckoutEditor/slots/TrustBadgeEditor.tsx:309
@@ -1305,36 +1306,36 @@ msgstr "კალათაში დამატება"
 msgid "Cancel"
 msgstr "გაუქმება"
 
-#: includes/Managers/AssetManager.php:722
+#: includes/Managers/AssetManager.php:726
 msgid "Start with post/zip code or street"
 msgstr "დაიწყეთ საფოსტო კოდით ან ქუჩით"
 
-#: includes/Managers/AssetManager.php:730
+#: includes/Managers/AssetManager.php:734
 msgid "Shipping method"
 msgstr "მიწოდების მეთოდი"
 
-#: includes/Managers/AssetManager.php:744
+#: includes/Managers/AssetManager.php:748
 msgid "Error processing checkout. Please try again."
 msgstr "გადახდის პროცესში შეცდომა. გთხოვთ, სცადეთ თავიდან."
 
-#: includes/Managers/AssetManager.php:770
+#: includes/Managers/AssetManager.php:774
 msgid "You may also like&hellip;"
 msgstr "თქვენ შეიძლება მოგეწონოთ&hellip;"
 
-#: includes/Managers/AssetManager.php:845
+#: includes/Managers/AssetManager.php:849
 #: client/ts/frontend/Components/SideCartFloatingButton.tsx:26
 msgid "View cart"
 msgstr "კალათის ნახვა"
 
-#: includes/Managers/AssetManager.php:849
+#: includes/Managers/AssetManager.php:853
 msgid "Remove %s from cart"
 msgstr "ამოიღეთ %s კალათიდან"
 
-#: includes/Managers/AssetManager.php:850
+#: includes/Managers/AssetManager.php:854
 msgid "Proceed to checkout"
 msgstr "ყიდვა"
 
-#: includes/Managers/AssetManager.php:853
+#: includes/Managers/AssetManager.php:857
 msgid "View Product"
 msgstr "პროდუქტის ნახვა"
 
@@ -1452,16 +1453,16 @@ msgstr "CheckoutWC:"
 msgid "Settings marked with asterisks (**) may be overridden based on your Side Cart settings. (CheckoutWC > Side Cart)"
 msgstr "ვინიშნები ველები ვარსკვლავებით (**) შეიძლება შეიცვალოს თქვენი Side Cart პარამეტრების მიხედვით. (CheckoutWC > Side Cart)"
 
-#: includes/Features/OrderBumps.php:610
+#: includes/Features/OrderBumps.php:647
 msgid "All orders"
 msgstr "ყველა შეკვეთა"
 
-#: includes/Features/OrderBumps.php:613
+#: includes/Features/OrderBumps.php:650
 msgid "Contains Any Order Bump"
 msgstr "შეიცავს ნებისმიერ შეკვეთის ბამპს"
 
 # %s: Order bump title
-#: includes/Features/OrderBumps.php:619
+#: includes/Features/OrderBumps.php:656
 msgid "Has Bump: %s"
 msgstr "აქვს ბამპი: %s"
 
@@ -1770,8 +1771,8 @@ msgstr "პლაგინი <strong>ძალიან რთულია კ�
 #: includes/Admin/Pages/LocalPickupAdminFree.php:184
 #: includes/Admin/Pages/LocalPickupAdminFree.php:221
 #: includes/Admin/Pages/Premium/LocalPickupAdmin.php:225
-#: client/ts/admin/Components/Forms/AdvancedSettingsForm.tsx:104
 #: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:176
+#: client/ts/admin/Components/Forms/AdvancedSettingsForm.tsx:104
 #: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:938
 msgid "Other"
 msgstr "სხვა"
@@ -2058,6 +2059,62 @@ msgstr "შეკვეთის დამატებითი შეთავ�
 msgid "The form to accept or reject the bump offer."
 msgstr "ფორმა შეთავაზების მიღებისა ან უარყოფისთვის."
 
+#: includes/Model/Bumps/BumpAbstract.php:1081
+#: includes/Model/Bumps/BumpAbstract.php:1091
+#: includes/Model/ABTests/OrderBumpsABTest.php:30
+#: includes/Features/ABTesting/ABTestTypeRegistry.php:123
+#: includes/Admin/Pages/OrderBumpsAdminFree.php:17
+#: includes/Admin/Pages/OrderBumpsAdminFree.php:71
+#: includes/Admin/Pages/Premium/OrderBumps.php:50
+#: client/ts/admin/Components/Forms/OrderBumpSettingsForm.tsx:45
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:408
+msgid "Order Bumps"
+msgstr "შეკვეთის ბამპები"
+
+#: includes/Model/Bumps/BumpAbstract.php:1082
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:193
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:1614
+msgid "Order Bump"
+msgstr "შეკვეთის ბამპი"
+
+#: includes/Model/Bumps/BumpAbstract.php:1083
+msgid "Add New"
+msgstr "ახლის დამატება"
+
+#: includes/Model/Bumps/BumpAbstract.php:1084
+msgid "Add New Order Bump"
+msgstr "ახალი შეკვეთის დამატების დამატება"
+
+#: includes/Model/Bumps/BumpAbstract.php:1085
+msgid "Edit Order Bump"
+msgstr "შეკვეთის დამატების რედაქტირება"
+
+#: includes/Model/Bumps/BumpAbstract.php:1086
+#: client/ts/admin/Components/Metaboxes/OrderBumpsSetupModal.tsx:61
+msgid "New Order Bump"
+msgstr "ახალი შეკვეთის დამატება"
+
+#: includes/Model/Bumps/BumpAbstract.php:1087
+msgid "View Order Bump"
+msgstr "შეკვეთის ბამპის ნახვა"
+
+#: includes/Model/Bumps/BumpAbstract.php:1088
+msgid "Find Order Bump"
+msgstr "შეკვეთის ბამპის ძებნა"
+
+#: includes/Model/Bumps/BumpAbstract.php:1089
+msgid "No order bumps were found."
+msgstr "შეკვეთის დამატებები არ მოიძებნა."
+
+#: includes/Model/Bumps/BumpAbstract.php:1090
+msgid "Not found in trash"
+msgstr "არ მოიძებნა ნაგავში"
+
+#: includes/Model/ABTests/OrderBumpsABTest.php:31
+#: includes/Features/ABTesting/ABTestTypeRegistry.php:124
+msgid "Test different variations of order bumps to see which performs better."
+msgstr "ტესტირება შეკვეთის ბმპის სხვადასხვა ვარიანტების, რომ ნახოთ რომელი უკეთ მუშაობს."
+
 # %1$s: Plugin name, %2$s: Link opening tag, %3$s: Version number, %4$s: Link closing tag
 #: includes/Managers/Helpers/EDD_SL_Plugin_Updater.php:281
 msgid "There is a new version of %1$s available. %2$sView version %3$s details%4$s."
@@ -2076,62 +2133,6 @@ msgstr "თქვენ არ გაქვთ უფლება დააი�
 #: client/ts/admin/Components/GooglePlacesKeyStatus.tsx:61
 msgid "Error"
 msgstr "შეცდომა"
-
-#: includes/Model/Bumps/BumpAbstract.php:1034
-#: includes/Model/Bumps/BumpAbstract.php:1044
-#: includes/Model/ABTests/OrderBumpsABTest.php:30
-#: includes/Features/ABTesting/ABTestTypeRegistry.php:123
-#: includes/Admin/Pages/OrderBumpsAdminFree.php:17
-#: includes/Admin/Pages/OrderBumpsAdminFree.php:71
-#: includes/Admin/Pages/Premium/OrderBumps.php:50
-#: client/ts/admin/Components/Forms/OrderBumpSettingsForm.tsx:45
-#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:408
-msgid "Order Bumps"
-msgstr "შეკვეთის ბამპები"
-
-#: includes/Model/Bumps/BumpAbstract.php:1035
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:193
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:1614
-msgid "Order Bump"
-msgstr "შეკვეთის ბამპი"
-
-#: includes/Model/Bumps/BumpAbstract.php:1036
-msgid "Add New"
-msgstr "ახლის დამატება"
-
-#: includes/Model/Bumps/BumpAbstract.php:1037
-msgid "Add New Order Bump"
-msgstr "ახალი შეკვეთის დამატების დამატება"
-
-#: includes/Model/Bumps/BumpAbstract.php:1038
-msgid "Edit Order Bump"
-msgstr "შეკვეთის დამატების რედაქტირება"
-
-#: includes/Model/Bumps/BumpAbstract.php:1039
-#: client/ts/admin/Components/Metaboxes/OrderBumpsSetupModal.tsx:61
-msgid "New Order Bump"
-msgstr "ახალი შეკვეთის დამატება"
-
-#: includes/Model/Bumps/BumpAbstract.php:1040
-msgid "View Order Bump"
-msgstr "შეკვეთის ბამპის ნახვა"
-
-#: includes/Model/Bumps/BumpAbstract.php:1041
-msgid "Find Order Bump"
-msgstr "შეკვეთის ბამპის ძებნა"
-
-#: includes/Model/Bumps/BumpAbstract.php:1042
-msgid "No order bumps were found."
-msgstr "შეკვეთის დამატებები არ მოიძებნა."
-
-#: includes/Model/Bumps/BumpAbstract.php:1043
-msgid "Not found in trash"
-msgstr "არ მოიძებნა ნაგავში"
-
-#: includes/Model/ABTests/OrderBumpsABTest.php:31
-#: includes/Features/ABTesting/ABTestTypeRegistry.php:124
-msgid "Test different variations of order bumps to see which performs better."
-msgstr "ტესტირება შეკვეთის ბმპის სხვადასხვა ვარიანტების, რომ ნახოთ რომელი უკეთ მუშაობს."
 
 #: includes/Features/OneClick/OrderStatusManager.php:52
 msgid "Pending Offer <span class=\"count\">(%s)</span>"
@@ -3024,8 +3025,8 @@ msgid "Step 1: Try CheckoutWC Premium Free For 7 Days"
 msgstr "ნაბიჯი 1: სცადეთ CheckoutWC Premium უფასოდ 7 დღის განმავლობაში"
 
 #: includes/Admin/Pages/General.php:150
-msgid "Enter your license key. An active license is required for all functionality."
-msgstr "შეიყვანეთ თქვენი ლიცენზიის გასაღები. აქტიური ლიცენზია აუცილებელია ყველა ფუნქციონალობისთვის."
+msgid "Enter your license key and activate it for this site to turn on premium features."
+msgstr "შეიყვანეთ თქვენი ლიცენზიის გასაღები და გააქტიურეთ ის ამ საიტისთვის, რათა ჩართოთ პრემიუმ ფუნქციები."
 
 #: includes/Admin/Pages/General.php:150
 msgid "Supercharge your WooCommerce store."
@@ -3597,23 +3598,67 @@ msgstr "საკმარისი უფლებები არ არის
 msgid "Notice dismissed."
 msgstr "შეტყობინება გაუქმებულია."
 
-# %1$s: URL to pricing page, %2$s: "purchase a new license" link text, %3$s: Support email URL, %4$s: "please contact support" link text
-#: includes/Admin/Notices/InvalidLicenseKeyNotice.php:15
-msgid "Your license key appears to have expired. Please <a href=\"%1$s\" target=\"_blank\">%2$s</a> to restore functionality. If you believe this is in error, <a href=\"%3$s\">%4$s</a>."
-msgstr "თქვენი ლიცენზიის გასაღები, როგორც ჩანს, ვადაგასულია. გთხოვთ <a href=\"%1$s\" target=\"_blank\">%2$s</a> ფუნქციონალობის აღსადგენად. თუ მიიჩნევთ, რომ ეს შეცდომაა, <a href=\"%3$s\">%4$s</a>."
+# %1$d: Number of days, %2$s: Pricing URL, %3$s: "renew it here" link text
+#: includes/Admin/Notices/LicenseUnverifiedNotice.php:25
+msgid "Premium features are off because we haven\\'t been able to check your license with checkoutwc.com for %1$d days. Make sure your server can connect to checkoutwc.com. If your license has expired, <a href=\"%2$s\" target=\"_blank\">%3$s</a>."
+msgstr "პრემიუმ ფუნქციები გამორთულია, რადგან ვერ მოვახერხეთ თქვენი ლიცენზიის შემოწმება checkoutwc.com-ზე %1$d დღის განმავლობაში. დარწმუნდით, რომ თქვენს სერვერს შეუძლია checkoutwc.com-თან დაკავშირება. თუ თქვენი ლიცენზია ვადაგასულია, <a href=\"%2$s\" target=\"_blank\">%3$s</a>."
 
-#: includes/Admin/Notices/InvalidLicenseKeyNotice.php:17
-msgid "purchase a new license"
-msgstr "ახალი ლიცენზიის შეძენა"
+#: includes/Admin/Notices/LicenseUnverifiedNotice.php:28
+msgid "renew it here"
+msgstr "განაახლეთ აქ"
 
-#: includes/Admin/Notices/InvalidLicenseKeyNotice.php:19
-msgid "please contact support"
-msgstr "გთხოვთ, დაუკავშირდით მხარდაჭერას"
+#: includes/Admin/Notices/LicenseUnverifiedNotice.php:33
+msgid "CheckoutWC can\\'t verify your license"
+msgstr "CheckoutWC ვერ ამოწმებს თქვენს ლიცენზიას"
 
-# %1$s: URL to activation page, %2$s: "Start Here" link text
+# %1$s: Date premium features turn off, %2$s: Support email URL, %3$s: "Contact support" link text
+#: includes/Admin/Notices/LicenseServerUnreachableNotice.php:28
+msgid "We couldn\\'t check your license with checkoutwc.com. Premium features will turn off on %1$s unless the connection is restored. <a href=\"%2$s\">%3$s</a> if this keeps happening."
+msgstr "ჩვენ ვერ შევამოწმეთ თქვენი ლიცენზია checkoutwc.com-ზე. პრემიუმ ფუნქციები გამოირთვება %1$s-ზე, თუ კავშირი არ აღდგება. <a href=\"%2$s\">%3$s</a>, თუ ეს კვლავაც განმეორდება."
+
+#: includes/Admin/Notices/LicenseServerUnreachableNotice.php:31
+#: includes/Admin/Notices/LicenseServerUnreachableNotice.php:38
+msgid "Contact support"
+msgstr "დაუკავშირდით მხარდაჭერას"
+
+# %1$s: Support email URL, %2$s: "Contact support" link text
+#: includes/Admin/Notices/LicenseServerUnreachableNotice.php:36
+msgid "We couldn\\'t check your license with checkoutwc.com. Make sure your server can connect to checkoutwc.com. <a href=\"%1$s\">%2$s</a> if this keeps happening."
+msgstr "ჩვენ ვერ შევამოწმეთ თქვენი ლიცენზია checkoutwc.com-ზე. დარწმუნდით, რომ თქვენს სერვერს შეუძლია checkoutwc.com-თან დაკავშირება. <a href=\"%1$s\">%2$s</a>, თუ ეს კვლავაც განმეორდება."
+
+#: includes/Admin/Notices/LicenseServerUnreachableNotice.php:45
+msgid "CheckoutWC can\\'t reach the license server"
+msgstr "CheckoutWC ვერ უკავშირდება ლიცენზიის სერვერს"
+
+#: includes/Admin/Notices/InvalidLicenseKeyNotice.php:13
+msgid "CheckoutWC license expired"
+msgstr "CheckoutWC-ის ლიცენზიას ვადა გაუვიდა"
+
+# %1$s: URL to pricing page, %2$s: "Renew your license" link text, %3$s: Support email URL, %4$s: "contact support" link text
+#: includes/Admin/Notices/InvalidLicenseKeyNotice.php:16
+msgid "Premium features are off because your license has expired. <a href=\"%1$s\" target=\"_blank\">%2$s</a> to turn them back on. If you think this is a mistake, <a href=\"%3$s\">%4$s</a>."
+msgstr "პრემიუმ ფუნქციები გამორთულია, რადგან თქვენს ლიცენზიას ვადა გაუვიდა. <a href=\"%1$s\" target=\"_blank\">%2$s</a> მათ ხელახლა ჩასართავად. თუ ფიქრობთ, რომ ეს შეცდომაა, <a href=\"%3$s\">%4$s</a>."
+
+#: includes/Admin/Notices/InvalidLicenseKeyNotice.php:18
+msgid "Renew your license"
+msgstr "განაახლეთ თქვენი ლიცენზია"
+
+#: includes/Admin/Notices/InvalidLicenseKeyNotice.php:20
+msgid "contact support"
+msgstr "დაუკავშირდით მხარდაჭერას"
+
+# %1$s: URL to activation page, %2$s: "Activate your license" link text, %3$s: Pricing URL, %4$s: "buy a license" link text
 #: includes/Admin/Notices/InactiveLicenseNotice.php:11
-msgid "Your license key is not active for this site. Please visit <a href=\"%1$s\">%2$s</a> to activate your license and restore functionality."
-msgstr "თქვენი ლიცენზიის გასაღები ამ საიტზე არ არის აქტიური. გთხოვთ, ეწვიეთ <a href=\"%1$s\">%2$s</a> თქვენი ლიცენზიის გასააქტიურებლად და ფუნქციონალობის აღსადგენად."
+msgid "Premium features are off because your license isn\\'t activated on this site. <a href=\"%1$s\">%2$s</a> or <a href=\"%3$s\" target=\"_blank\">%4$s</a> for this site."
+msgstr "პრემიუმ ფუნქციები გამორთულია, რადგან თქვენი ლიცენზია ამ საიტზე არ არის გააქტიურებული. <a href=\"%1$s\">%2$s</a> ან <a href=\"%3$s\" target=\"_blank\">%4$s</a> ამ საიტისთვის."
+
+#: includes/Admin/Notices/InactiveLicenseNotice.php:13
+msgid "Activate your license"
+msgstr "გააქტიურეთ თქვენი ლიცენზია"
+
+#: includes/Admin/Notices/InactiveLicenseNotice.php:20
+msgid "CheckoutWC license not activated"
+msgstr "CheckoutWC-ის ლიცენზია არ არის გააქტიურებული"
 
 #: includes/Admin/Notices/BFNotice.php:13
 msgid "Black Friday Sale - 40% Off"
@@ -4464,22 +4509,6 @@ msgstr "თარიღი, როდის უნდა დასრულდ�
 msgid "Traffic split percentages must total 100%. Please adjust your percentages."
 msgstr "ტრაფიკის განაწილების პროცენტებმა უნდა შეადგინოს 100%. გთხოვთ, დაარეგულიროთ პროცენტები."
 
-#: client/ts/frontend/Components/TermsAndConditions.ts:29
-msgid "Terms and Conditions"
-msgstr "წესები და პირობები"
-
-#: client/ts/frontend/Components/TermsAndConditions.ts:35
-msgid "Privacy Policy"
-msgstr "კონფიდენციალურობის პოლიტიკა"
-
-#: client/ts/frontend/Components/SideCartComponent.tsx:39
-msgid "Close Cart"
-msgstr "კალათის დახურვა"
-
-#: client/ts/frontend/Components/FreeShippingProgressBar.tsx:245
-msgid "Unlocked"
-msgstr "გახსნილია"
-
 #: client/ts/frontend/Actions/CompleteOrderAction.ts:196
 msgid "Could not connect to server. Please refresh and try again or contact site administrator."
 msgstr "სერვერთან დაკავშირება ვერ მოხერხდა. გთხოვთ, განაახლეთ გვერდი და სცადეთ ისევ ან დაუკავშირდით საიტის ადმინისტრატორს."
@@ -4503,6 +4532,22 @@ msgstr "სერვერმა დრო ამოიწურა თქვე
 #: client/ts/frontend/Actions/CompleteOrderAction.ts:206
 msgid "Request was aborted. Please contact site administrator."
 msgstr "მოთხოვნა შეწყვეტილია. გთხოვთ, დაუკავშირდით საიტის ადმინისტრატორს."
+
+#: client/ts/frontend/Components/TermsAndConditions.ts:29
+msgid "Terms and Conditions"
+msgstr "წესები და პირობები"
+
+#: client/ts/frontend/Components/TermsAndConditions.ts:35
+msgid "Privacy Policy"
+msgstr "კონფიდენციალურობის პოლიტიკა"
+
+#: client/ts/frontend/Components/SideCartComponent.tsx:39
+msgid "Close Cart"
+msgstr "კალათის დახურვა"
+
+#: client/ts/frontend/Components/FreeShippingProgressBar.tsx:245
+msgid "Unlocked"
+msgstr "გახსნილია"
 
 # %d is the number of icons in the collection
 #: client/ts/admin/Components/trustBadges.ts:85
@@ -4938,6 +4983,403 @@ msgstr "იტვირთება..."
 #: client/ts/admin/Components/acr/carts.tsx:239
 msgid "Tracked Carts"
 msgstr "ტრეკირებული კალათები"
+
+#: client/ts/admin/Components/Metaboxes/ProductsAndVariationsCompleter.tsx:30
+msgid "Private"
+msgstr "კონფიდენციალური"
+
+#: client/ts/admin/Components/Metaboxes/ProductsAndVariationsCompleter.tsx:32
+msgid "Pending"
+msgstr "მოლოდინში"
+
+#: client/ts/admin/Components/Metaboxes/ProductsAndVariationsCompleter.tsx:33
+msgid "Scheduled"
+msgstr "დაგეგმილია"
+
+#: client/ts/admin/Components/Metaboxes/ProductsAndVariationsCompleter.tsx:44
+#: client/ts/admin/Components/Forms/CheckoutSettingsForm.tsx:237
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:850
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:863
+#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:873
+#: client/ts/admin/Components/CheckoutEditor/panels/CheckoutSettingsPanel.tsx:110
+msgid "Hidden"
+msgstr "დამალული"
+
+#: client/ts/admin/Components/Metaboxes/ProductsAndVariationsCompleter.tsx:46
+msgid "Search only"
+msgstr "მხოლოდ ძიება"
+
+#: client/ts/admin/Components/Metaboxes/ProductsAndVariationsCompleter.tsx:80
+msgid "All products with titles that include {{query /}}"
+msgstr "ყველა პროდუქტი სათაურებით, რომლებიც შეიცავს {{query /}}"
+
+#: client/ts/admin/Components/Metaboxes/ProductsAndVariationsCompleter.tsx:130
+msgid "Variation"
+msgstr "ვარიაცია"
+
+#: client/ts/admin/Components/Metaboxes/ProductTagCompleter.tsx:44
+msgid "All product tags that include {{query /}}"
+msgstr "ყველა პროდუქტის ტეგი, რომელიც შეიცავს {{query /}}"
+
+#: client/ts/admin/Components/Metaboxes/ProductAttributeTermsCompleter.tsx:99
+msgid "All attribute terms that include {{query /}}"
+msgstr "ყველა ატრიბუტის ტერმინი, რომელიც შეიცავს {{query /}}"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsSetupModal.tsx:62
+msgid "Let\\'s configure a few things to get you started quickly."
+msgstr "მოდით, დავაყენოთ რამდენიმე რამ, რათა სწრაფად დაიწყოთ."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsSetupModal.tsx:66
+msgid "Give your new Order Bump a name. This is just for admins - it won\\'t be displayed to customers."
+msgstr "მიანიჭეთ თქვენს ახალ Order Bump-ს სახელი. ეს მხოლოდ ადმინისტრატორებისთვისაა - მომხმარებლებს არ გამოჩნდება."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsSetupModal.tsx:78
+msgid "Which product should be added to the cart when this Order Bump is accepted?"
+msgstr "რომელი პროდუქტი უნდა დაემატოს კალათას, როდესაც ეს Order Bump მიიღება?"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsSetupModal.tsx:80
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:33
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:92
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:130
+#: client/ts/admin/Components/Metaboxes/OrderBumpsGeneralPanel.tsx:44
+msgid "Search for product"
+msgstr "პროდუქტის ძებნა"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsSetupModal.tsx:91
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferDiscountPanel.tsx:19
+msgid "Discount Type"
+msgstr "დასაკლებ ფასის ტიპი"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsSetupModal.tsx:94
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferDiscountPanel.tsx:23
+msgid "Percent Off"
+msgstr "პროცენტული ფასდაკლება"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsSetupModal.tsx:95
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferDiscountPanel.tsx:24
+msgid "Amount Off"
+msgstr "ფასდაკლების თანხა"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsSetupModal.tsx:105
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferDiscountPanel.tsx:34
+msgid "Discount"
+msgstr "ფასდაკლება"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsSetupModal.tsx:106
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferDiscountPanel.tsx:35
+msgid "The amount or percentage applied as a discount to the Offer Product. Leave blank or enter 0 to charge full price."
+msgstr "თანხა ან პროცენტული მაჩვენებელი, რომელიც გამოიყენება შეთავაზებული პროდუქტზე ფასდაკლების სახით. დატოვეთ ცარიელი ან ჩაწერეთ 0 სრული ფასის გადასახდელად."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsSetupModal.tsx:117
+msgid "Continue"
+msgstr "გაგრძელება"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsSetupModal.tsx:122
+msgid "Continue to review your order bump, optionally add display conditions, and publish."
+msgstr "გაგრძელეთ თქვენი order bump-ის გადახედვა, სურვილისამებრ დაამატეთ ჩვენების პირობები და გამოაქვეყნეთ."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:19
+msgid "You must select an offer product."
+msgstr "უნდა აირჩიოთ შეთავაზების პროდუქტი."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:26
+msgid "Offer"
+msgstr "შეთავაზება"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:44
+msgid "Auto Add Order Bump to Cart"
+msgstr "შეკვეთის ბამპის ავტომატური დამატება კალათაში"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:45
+msgid "If conditions are satisfied, automatically add this order bump to the cart. Useful for free gifts or other offers that don\\'t require customer action."
+msgstr "თუ პირობები დაკმაყოფილებულია, ეს შეკვეთის ბამპი ავტომატურად დაემატება კალათას. სასარგებლოა უფასო საჩუქრებისთვის ან სხვა შეთავაზებებისთვის, რომლებიც არ საჭიროებს მომხმარებლის მოქმედებას."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:56
+msgid "Auto Match Variations Between Search and Offer Product"
+msgstr "ავტომატურად შეესაბამება ვარიაციებს ძებნასა და შეთავაზებულ პროდუქტს შორის"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:61
+msgid "Add offer product to the cart with the same variable configuration as the product below."
+msgstr "შეთავაზებული პროდუქტი კალათაში დაამატეთ იმავე ვარიაბელური კონფიგურაციით, რაც ქვემოთ მოცემულ პროდუქტს."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:65
+msgid "Only applies when Auto Match Cart Product and Offer Product are variable products with matching variation attributes (Size, Color, etc)"
+msgstr "ამას იყენებს მხოლოდ მაშინ, როდესაც ავტომატური შესაბამისობა კალათის პროდუქტისა და შეთავაზების პროდუქტის არის ცვლადი პროდუქტები, რომლებიც ემთხვევა ვარიაციის ატრიბუტებს (ზომა, ფერი და ა.შ.)"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:69
+msgid "Leave unchecked to have customers to select variation options in a modal window."
+msgstr "დაუწკაპეთ, რომ მომხმარებლებმა შეარჩიონ ვარიაციის ვარიანტები მოდალურ ფანჯარაში."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:73
+msgid "If offer product is not variable, this option is ignored."
+msgstr "თუ შეთავაზების პროდუქტი არ არის ცვლადი, ეს პარამეტრი იგნორირდება."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:90
+msgid "Auto Match Variations Cart Product"
+msgstr "ავტომატური შესაბამისობა კალათის პროდუქტის ვარიაციებთან"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:98
+msgid "The product in the cart to match the Order Bump variations to."
+msgstr "პროდუქტი კალათაში, რომლისთვისაც უნდა მოხდეს შეკვეთის ბამპის ვარიაციების შესაბამისობა."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:113
+msgid "Match Quantity of Offer Product to Display Condition Product"
+msgstr "შეთავაზების პროდუქტის რაოდენობის შესაბამისობა ჩვენების პირობების პროდუქტთან"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:114
+msgid "If customer has two of the display condition product in the cart, two of the offer product will be added to the cart."
+msgstr "თუ მომხმარებელს კალათაში აქვს ორი ჩვენების პირობების პროდუქტი, კალათაში დაემატება ორი შეთავაზების პროდუქტი."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:128
+msgid "Match Quantity Cart Product"
+msgstr "კალათის პროდუქტის რაოდენობის შესაბამისობა"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:136
+msgid "The product in the cart to match the Order Bump quantity to."
+msgstr "პროდუქტი კალათაში, რომლისთვისაც უნდა მოხდეს შეკვეთის ბამპის რაოდენობის შესაბამისობა."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:151
+msgid "Quantity of Offer Product To Add"
+msgstr "შეთავაზების პროდუქტის დამატების რაოდენობა"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:152
+msgid "The quantity to add to the cart when offer is accepted."
+msgstr "რაოდენობა, რომელიც დაემატება კალათას შეთავაზების მიღებისას."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:161
+msgid "Allow Customer To Change Quantity In Cart"
+msgstr "მომხმარებლის უფლებამოსილება შეცვალოს რაოდენობა კალათაში"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:162
+msgid "Allow customer to change the quantity of this order bump in the cart."
+msgstr "მომხმარებელს შეუძლია შეცვალოს ამ შეკვეთის ბამპის რაოდენობა კალათაში."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:22
+msgid "Offer Language"
+msgstr "შეთავაზების ენა"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:29
+msgid "Place Order Modal Heading"
+msgstr "შეკვეთის განთავსების მოდალის სათაური"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:30
+msgid "Default if blank: Your order is almost complete..."
+msgstr "ნაგულისხმევი, თუ ცარიელია: თქვენი შეკვეთა თითქმის დასრულებულია..."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:30
+msgid "Wait %s! Here\\'s an exclusive offer to compliment your order!"
+msgstr "დაელოდეთ %s! აქ არის ექსკლუზიური შეთავაზება თქვენი შეკვეთისთვის!"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:39
+msgid "Place Order Modal Subheading"
+msgstr "შეკვეთის განთავსების მოდალის ქვესათაური"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:40
+msgid "Default if blank: Add this offer to your order and save!"
+msgstr "ნაგულისხმევი, თუ ცარიელია: დაამატეთ ეს შეთავაზება თქვენს შეკვეთას და დაზოგეთ!"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:52
+msgid "Offer Acceptance Checkbox Label"
+msgstr "შეთავაზების მიღების ჩეკბოქსის წარწერა"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:52
+msgid "Offer Acceptance Button Label"
+msgstr "შეთავაზების მიღების ღილაკის წარწერა"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:53
+msgid "Example: Yes! Please add this offer to my order"
+msgstr "მაგალითი: დიახ! გთხოვთ დაამატოთ ეს შეთავაზება ჩემს შეკვეთას"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:63
+msgid "Offer Description"
+msgstr "შეთავაზების აღწერა"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:64
+msgid "Example: Limited time offer! Get an EXCLUSIVE discount right now! Click the checkbox above to add this product to your order now."
+msgstr "მაგალითი: შეზღუდული დროის შეთავაზება! მიიღეთ ექსკლუზიური ფასდაკლება ახლავე! დააჭირეთ ზემოთ ჩეკბოქსს, რომ დაამატოთ ეს პროდუქტი თქვენს შეკვეთას."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:74
+msgid "Modal Offer Rejection Link Text"
+msgstr "მოდალური შეთავაზების უარყოფის ბმულის ტექსტი"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:78
+msgid "Displays in modal version of Order Bump, such as Place Order bumps or when the Offer Product is a variable product (as opposed to a specific variation)."
+msgstr "გამოდის შეკვეთის ბამბის მოდალურ ვერსიაში, როგორიცაა შეკვეთის განთავსების ბამბები ან როდესაც შეთავაზებული პროდუქტი არის ცვლადი პროდუქტი (სპეციფიკური ვარიანტის ნაცვლად)."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:83
+msgid "Default if blank: No thanks, just complete my order"
+msgstr "ნაგულისხმევი, თუ ცარიელია: არა, მადლობა, უბრალოდ დავასრულო ჩემი შეკვეთა"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:85
+msgid "Default if blank: No thanks"
+msgstr "ნაგულისხმევი, თუ ცარიელია: არა, მადლობა"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferDiscountPanel.tsx:15
+msgid "Offer Discount"
+msgstr "შეთავაზების ფასდაკლება"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferDiscountPanel.tsx:20
+msgid "Amount Off: Remove fixed amount from the product price. Percent Off: Discount product by specified percentage."
+msgstr "ფასდაკლების რაოდენობა: ამოიღეთ ფიქსირებული თანხა პროდუქტის ფასიდან. პროცენტული ფასდაკლება: ფასდაკლებით პროდუქტი მითითებული პროცენტით."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferDiscountPanel.tsx:46
+msgid "Item Removal Behavior"
+msgstr "პროდუქტის ამოღების ქცევა"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferDiscountPanel.tsx:47
+msgid "What happens when the display for product is removed from the cart. Default: Order Bump remains in the cart but bump specific discounts are removed."
+msgstr "რა ხდება, როდესაც პროდუქტის ჩვენება ამოღებულია კალათიდან. ნაგულისხმევი: შეკვეთის ბმპი რჩება კალათაში, მაგრამ ბმპისთვის სპეციფიკური ფასდაკლებები იკარგება."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferDiscountPanel.tsx:50
+msgid "Leave In Cart With Normal Price"
+msgstr "დატოვეთ კალათაში ნორმალური ფასით"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferDiscountPanel.tsx:51
+msgid "Remove Order Bump From Cart"
+msgstr "შეკვეთის ბმპის ამოღება კალათიდან"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsGeneralPanel.tsx:13
+msgid "You must set an upsell replacement product."
+msgstr "უნდა დააყენოთ აპსელის ჩანაცვლების პროდუქტი."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsGeneralPanel.tsx:20
+msgid "Offer Type"
+msgstr "შეთავაზების ტიპი"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsGeneralPanel.tsx:24
+msgid "Use Order Bump As Upsell"
+msgstr "გამოიყენეთ შეკვეთის ბამპი აპსელად"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsGeneralPanel.tsx:28
+msgid "Replace a cart item with offer product when this Order Bump is taken."
+msgstr "შეიცვალეთ კალათის ნივთი შეთავაზების პროდუქტით, როდესაც ეს შეკვეთის ბამპი მიიღება."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsGeneralPanel.tsx:42
+msgid "Which product does this upsell replace in the cart?"
+msgstr "რომელი პროდუქტი იცვლის ეს აპსელი კალათაში?"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsGeneralPanel.tsx:50
+msgid "This product must be in the cart for this order bump to be shown."
+msgstr "ეს პროდუქტი უნდა იყოს კალათაში, რომ ეს შეკვეთის ბამპი გამოჩნდეს."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:44
+msgid "Blocks are only used by full screen offers. Enable Full Screen Landing Page in the Display Location panel, then add the Order Bump Offer Form block where the offer form should go."
+msgstr "ბლოკები გამოიყენება მხოლოდ სრულეკრანიან შეთავაზებებზე. ჩართეთ Full Screen Landing Page Display Location პანელში, შემდეგ დაამატეთ Order Bump Offer Form ბლოკი იქ, სადაც შეთავაზების ფორმა უნდა განთავსდეს."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:45
+msgid "Blocks are only used by full screen offers, available on Place Order Click and Post Purchase One-Click bumps. This bump uses the built-in layout."
+msgstr "ბლოკები გამოიყენება მხოლოდ სრულეკრანიან შეთავაზებებზე, რომლებიც ხელმისაწვდომია Place Order Click და Post Purchase One-Click bumps-ში. ეს bump იყენებს ჩაშენებულ განლაგებას."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:61
+msgid "Post Purchase One-Click bumps require a compatible payment gateway. We recommend using Place Order bumps when using non-compatible gateways."
+msgstr "შეკვეთის შემდგომი ერთ-კლიკიანი ბამბები საჭიროებს თავსებადი გადახდის გეითვეის. არათავსებად გეითვეების გამოყენებისას გირჩევთ გამოიყენოთ შეკვეთის განთავსების ბამბები."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:67
+msgid "Learn more about supported gateways"
+msgstr "გაიგეთ მეტი მხარდაჭერილი გეითვეების შესახებ"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:74
+msgid "Read our Order Bumps documentation"
+msgstr "წაიკითხეთ ჩვენი შეკვეთის ბამპების დოკუმენტაცია"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:104
+msgid "This bump will not appear anywhere because the side cart is disabled."
+msgstr "ეს bump არსად გამოჩნდება, რადგან გვერდითი კალათა გამორთულია."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:105
+msgid "This bump will not appear anywhere because order bumps are disabled in the side cart."
+msgstr "ეს bump არსად გამოჩნდება, რადგან გვერდით კალათაში order bumps გამორთულია."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:108
+msgid "This bump will appear on checkout but not in the side cart because the side cart is disabled."
+msgstr "ეს bump გამოჩნდება checkout-ზე, მაგრამ არა გვერდით კალათაში, რადგან გვერდითი კალათა გამორთულია."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:109
+msgid "This bump will appear on checkout but not in the side cart because order bumps are disabled in the side cart."
+msgstr "ეს bump გამოჩნდება checkout-ზე, მაგრამ არა გვერდით კალათაში, რადგან გვერდით კალათაში order bumps გამორთულია."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:120
+msgid "Open side cart settings"
+msgstr "გახსენით გვერდითი კალათის პარამეტრები"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:141
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:148
+msgid "Display Location"
+msgstr "გამოსახვის ადგილი"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:157
+msgid "Checkout Slot"
+msgstr "ჩექაუთ სლოტი"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:187
+msgid "Displays in a popup when Place Order is clicked, before the order is submitted"
+msgstr "გამოდის პოპაპში, როდესაც დააჭირეთ შეკვეთის განთავსებას, სანამ შეკვეთა გაიგზავნება"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:190
+msgid "Displays in a popup on the Thank You page."
+msgstr "გამოდის პოპაპში მადლობის გვერდზე."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:194
+msgid "Full Screen Landing Page"
+msgstr "სრულეკრანიანი სადესანტო გვერდი"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:195
+msgid "Design the offer with blocks instead of the built-in layout. Add the Order Bump Offer Form block where the offer form should go."
+msgstr "შექმენით შეთავაზება ბლოკებით ჩაშენებული განლაგების ნაცვლად. დაამატეთ Order Bump Offer Form ბლოკი იქ, სადაც შეთავაზების ფორმა უნდა განთავსდეს."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayConditions.tsx:26
+msgid "Show Bump When These Conditions Are True:"
+msgstr "აჩვენე ბამპი, როდესაც ეს პირობები შესრულებულია:"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayConditions.tsx:29
+msgid "This bump will be shown when the correct upsell product is in the cart and the Offer Product is not in the cart. To further limit when this bump is shown, add a rule below."
+msgstr "ეს ბამპი გამოჩნდება, როდესაც კალათაშია სწორი აპსელის პროდუქტი და შეთავაზების პროდუქტი კალათაში არ არის. დამატებითი შეზღუდვისთვის დაამატეთ ქვემოთ წესი."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayConditions.tsx:31
+msgid "This bump will always be shown when the Offer Product is not in the cart. To limit when this bump is shown, add a rule below."
+msgstr "ეს ბამპი ყოველთვის გამოჩნდება, როდესაც შეთავაზების პროდუქტი კალათაში არ არის. შეზღუდვისთვის დაამატეთ ქვემოთ წესი."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsActionsPanel.tsx:15
+msgid "Actions"
+msgstr "მოქმედებები"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsActionsPanel.tsx:21
+msgid "Remove These Products From The Cart"
+msgstr "ამ პროდუქტების წაშლა კალათიდან"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsActionsPanel.tsx:23
+msgid "If any of these products are in the cart, remove them when this bump is added to the cart."
+msgstr "თუ რომელიმე ამ პროდუქტებიდან კალათაშია, წაშალეთ ისინი, როდესაც ეს ბამპი კალათაში დაემატება."
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsActionsPanel.tsx:24
+msgid "Search for products"
+msgstr "პროდუქტების ძებნა"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsActionsPanel.tsx:35
+msgid "Apply Free Shipping"
+msgstr "უფასო მიტანის გამოყენება"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsActionsPanel.tsx:36
+msgid "When this bump is added to the cart, apply free shipping to the cart."
+msgstr "როდესაც ეს ბამპი კალათაში დაემატება, კალათაზე გამოიყენეთ უფასო მიტანა."
+
+#: client/ts/admin/Components/Metaboxes/CategoryCompleter.tsx:46
+msgid "All categories with titles that include {{query /}}"
+msgstr "ყველა კატეგორია სათაურებით, რომლებიც შეიცავს {{query /}}"
+
+#: client/ts/admin/Components/Fields/WPMediaUploadButton.tsx:69
+msgid "Select or Upload a Logo"
+msgstr "ლოგოს არჩევა ან ატვირთვა"
+
+#: client/ts/admin/Components/Fields/RangeControl.tsx:97
+#: client/ts/admin/Components/Fields/ColorControl.tsx:137
+msgid "Reset"
+msgstr "გადატვირთვა"
+
+#: client/ts/admin/Components/Fields/ColorControl.tsx:173
+#: client/ts/admin/Components/CheckoutEditor/BumpEditorModal.tsx:101
+msgid "Done"
+msgstr "დასრულებულია"
 
 #: client/ts/admin/Components/Forms/WooCommercePagesGlobalOptionsSettingsForm.tsx:49
 #: client/ts/admin/Components/Forms/CheckoutSettingsForm.tsx:570
@@ -5780,15 +6222,6 @@ msgstr "ტელეფონის ველი"
 msgid "Determines whether the WooCommerce native phone field is enabled."
 msgstr "მიუთითებს, არის თუ არა ჩართული WooCommerce-ის ნატიური ტელეფონის ველი."
 
-#: client/ts/admin/Components/Forms/CheckoutSettingsForm.tsx:237
-#: client/ts/admin/Components/Metaboxes/ProductsAndVariationsCompleter.tsx:44
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:850
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:863
-#: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:873
-#: client/ts/admin/Components/CheckoutEditor/panels/CheckoutSettingsPanel.tsx:110
-msgid "Hidden"
-msgstr "დამალული"
-
 #: client/ts/admin/Components/Forms/CheckoutSettingsForm.tsx:241
 #: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:851
 #: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:864
@@ -6537,394 +6970,6 @@ msgstr "მონიშნეთ ნებისმიერი მომხმ�
 #: client/ts/admin/Components/Forms/ACRSettingsForm.tsx:172
 msgid "Are you sure you want to delete all tracked carts?"
 msgstr "დარწმუნებული ხართ, რომ გსურთ წაშალოთ ყველა მონიტორინგი კალათა?"
-
-#: client/ts/admin/Components/Metaboxes/ProductsAndVariationsCompleter.tsx:30
-msgid "Private"
-msgstr "კონფიდენციალური"
-
-#: client/ts/admin/Components/Metaboxes/ProductsAndVariationsCompleter.tsx:32
-msgid "Pending"
-msgstr "მოლოდინში"
-
-#: client/ts/admin/Components/Metaboxes/ProductsAndVariationsCompleter.tsx:33
-msgid "Scheduled"
-msgstr "დაგეგმილია"
-
-#: client/ts/admin/Components/Metaboxes/ProductsAndVariationsCompleter.tsx:46
-msgid "Search only"
-msgstr "მხოლოდ ძიება"
-
-#: client/ts/admin/Components/Metaboxes/ProductsAndVariationsCompleter.tsx:80
-msgid "All products with titles that include {{query /}}"
-msgstr "ყველა პროდუქტი სათაურებით, რომლებიც შეიცავს {{query /}}"
-
-#: client/ts/admin/Components/Metaboxes/ProductsAndVariationsCompleter.tsx:130
-msgid "Variation"
-msgstr "ვარიაცია"
-
-#: client/ts/admin/Components/Metaboxes/ProductTagCompleter.tsx:44
-msgid "All product tags that include {{query /}}"
-msgstr "ყველა პროდუქტის ტეგი, რომელიც შეიცავს {{query /}}"
-
-#: client/ts/admin/Components/Metaboxes/ProductAttributeTermsCompleter.tsx:99
-msgid "All attribute terms that include {{query /}}"
-msgstr "ყველა ატრიბუტის ტერმინი, რომელიც შეიცავს {{query /}}"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsSetupModal.tsx:62
-msgid "Let\\'s configure a few things to get you started quickly."
-msgstr "მოდით, დავაყენოთ რამდენიმე რამ, რათა სწრაფად დაიწყოთ."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsSetupModal.tsx:66
-msgid "Give your new Order Bump a name. This is just for admins - it won\\'t be displayed to customers."
-msgstr "მიანიჭეთ თქვენს ახალ Order Bump-ს სახელი. ეს მხოლოდ ადმინისტრატორებისთვისაა - მომხმარებლებს არ გამოჩნდება."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsSetupModal.tsx:78
-msgid "Which product should be added to the cart when this Order Bump is accepted?"
-msgstr "რომელი პროდუქტი უნდა დაემატოს კალათას, როდესაც ეს Order Bump მიიღება?"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsSetupModal.tsx:80
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:33
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:92
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:130
-#: client/ts/admin/Components/Metaboxes/OrderBumpsGeneralPanel.tsx:44
-msgid "Search for product"
-msgstr "პროდუქტის ძებნა"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsSetupModal.tsx:91
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferDiscountPanel.tsx:19
-msgid "Discount Type"
-msgstr "დასაკლებ ფასის ტიპი"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsSetupModal.tsx:94
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferDiscountPanel.tsx:23
-msgid "Percent Off"
-msgstr "პროცენტული ფასდაკლება"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsSetupModal.tsx:95
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferDiscountPanel.tsx:24
-msgid "Amount Off"
-msgstr "ფასდაკლების თანხა"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsSetupModal.tsx:105
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferDiscountPanel.tsx:34
-msgid "Discount"
-msgstr "ფასდაკლება"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsSetupModal.tsx:106
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferDiscountPanel.tsx:35
-msgid "The amount or percentage applied as a discount to the Offer Product. Leave blank or enter 0 to charge full price."
-msgstr "თანხა ან პროცენტული მაჩვენებელი, რომელიც გამოიყენება შეთავაზებული პროდუქტზე ფასდაკლების სახით. დატოვეთ ცარიელი ან ჩაწერეთ 0 სრული ფასის გადასახდელად."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsSetupModal.tsx:117
-msgid "Continue"
-msgstr "გაგრძელება"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsSetupModal.tsx:122
-msgid "Continue to review your order bump, optionally add display conditions, and publish."
-msgstr "გაგრძელეთ თქვენი order bump-ის გადახედვა, სურვილისამებრ დაამატეთ ჩვენების პირობები და გამოაქვეყნეთ."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:19
-msgid "You must select an offer product."
-msgstr "უნდა აირჩიოთ შეთავაზების პროდუქტი."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:26
-msgid "Offer"
-msgstr "შეთავაზება"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:44
-msgid "Auto Add Order Bump to Cart"
-msgstr "შეკვეთის ბამპის ავტომატური დამატება კალათაში"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:45
-msgid "If conditions are satisfied, automatically add this order bump to the cart. Useful for free gifts or other offers that don\\'t require customer action."
-msgstr "თუ პირობები დაკმაყოფილებულია, ეს შეკვეთის ბამპი ავტომატურად დაემატება კალათას. სასარგებლოა უფასო საჩუქრებისთვის ან სხვა შეთავაზებებისთვის, რომლებიც არ საჭიროებს მომხმარებლის მოქმედებას."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:56
-msgid "Auto Match Variations Between Search and Offer Product"
-msgstr "ავტომატურად შეესაბამება ვარიაციებს ძებნასა და შეთავაზებულ პროდუქტს შორის"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:61
-msgid "Add offer product to the cart with the same variable configuration as the product below."
-msgstr "შეთავაზებული პროდუქტი კალათაში დაამატეთ იმავე ვარიაბელური კონფიგურაციით, რაც ქვემოთ მოცემულ პროდუქტს."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:65
-msgid "Only applies when Auto Match Cart Product and Offer Product are variable products with matching variation attributes (Size, Color, etc)"
-msgstr "ამას იყენებს მხოლოდ მაშინ, როდესაც ავტომატური შესაბამისობა კალათის პროდუქტისა და შეთავაზების პროდუქტის არის ცვლადი პროდუქტები, რომლებიც ემთხვევა ვარიაციის ატრიბუტებს (ზომა, ფერი და ა.შ.)"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:69
-msgid "Leave unchecked to have customers to select variation options in a modal window."
-msgstr "დაუწკაპეთ, რომ მომხმარებლებმა შეარჩიონ ვარიაციის ვარიანტები მოდალურ ფანჯარაში."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:73
-msgid "If offer product is not variable, this option is ignored."
-msgstr "თუ შეთავაზების პროდუქტი არ არის ცვლადი, ეს პარამეტრი იგნორირდება."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:90
-msgid "Auto Match Variations Cart Product"
-msgstr "ავტომატური შესაბამისობა კალათის პროდუქტის ვარიაციებთან"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:98
-msgid "The product in the cart to match the Order Bump variations to."
-msgstr "პროდუქტი კალათაში, რომლისთვისაც უნდა მოხდეს შეკვეთის ბამპის ვარიაციების შესაბამისობა."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:113
-msgid "Match Quantity of Offer Product to Display Condition Product"
-msgstr "შეთავაზების პროდუქტის რაოდენობის შესაბამისობა ჩვენების პირობების პროდუქტთან"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:114
-msgid "If customer has two of the display condition product in the cart, two of the offer product will be added to the cart."
-msgstr "თუ მომხმარებელს კალათაში აქვს ორი ჩვენების პირობების პროდუქტი, კალათაში დაემატება ორი შეთავაზების პროდუქტი."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:128
-msgid "Match Quantity Cart Product"
-msgstr "კალათის პროდუქტის რაოდენობის შესაბამისობა"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:136
-msgid "The product in the cart to match the Order Bump quantity to."
-msgstr "პროდუქტი კალათაში, რომლისთვისაც უნდა მოხდეს შეკვეთის ბამპის რაოდენობის შესაბამისობა."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:151
-msgid "Quantity of Offer Product To Add"
-msgstr "შეთავაზების პროდუქტის დამატების რაოდენობა"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:152
-msgid "The quantity to add to the cart when offer is accepted."
-msgstr "რაოდენობა, რომელიც დაემატება კალათას შეთავაზების მიღებისას."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:161
-msgid "Allow Customer To Change Quantity In Cart"
-msgstr "მომხმარებლის უფლებამოსილება შეცვალოს რაოდენობა კალათაში"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:162
-msgid "Allow customer to change the quantity of this order bump in the cart."
-msgstr "მომხმარებელს შეუძლია შეცვალოს ამ შეკვეთის ბამპის რაოდენობა კალათაში."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:22
-msgid "Offer Language"
-msgstr "შეთავაზების ენა"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:29
-msgid "Place Order Modal Heading"
-msgstr "შეკვეთის განთავსების მოდალის სათაური"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:30
-msgid "Default if blank: Your order is almost complete..."
-msgstr "ნაგულისხმევი, თუ ცარიელია: თქვენი შეკვეთა თითქმის დასრულებულია..."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:30
-msgid "Wait %s! Here\\'s an exclusive offer to compliment your order!"
-msgstr "დაელოდეთ %s! აქ არის ექსკლუზიური შეთავაზება თქვენი შეკვეთისთვის!"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:39
-msgid "Place Order Modal Subheading"
-msgstr "შეკვეთის განთავსების მოდალის ქვესათაური"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:40
-msgid "Default if blank: Add this offer to your order and save!"
-msgstr "ნაგულისხმევი, თუ ცარიელია: დაამატეთ ეს შეთავაზება თქვენს შეკვეთას და დაზოგეთ!"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:52
-msgid "Offer Acceptance Checkbox Label"
-msgstr "შეთავაზების მიღების ჩეკბოქსის წარწერა"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:52
-msgid "Offer Acceptance Button Label"
-msgstr "შეთავაზების მიღების ღილაკის წარწერა"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:53
-msgid "Example: Yes! Please add this offer to my order"
-msgstr "მაგალითი: დიახ! გთხოვთ დაამატოთ ეს შეთავაზება ჩემს შეკვეთას"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:63
-msgid "Offer Description"
-msgstr "შეთავაზების აღწერა"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:64
-msgid "Example: Limited time offer! Get an EXCLUSIVE discount right now! Click the checkbox above to add this product to your order now."
-msgstr "მაგალითი: შეზღუდული დროის შეთავაზება! მიიღეთ ექსკლუზიური ფასდაკლება ახლავე! დააჭირეთ ზემოთ ჩეკბოქსს, რომ დაამატოთ ეს პროდუქტი თქვენს შეკვეთას."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:74
-msgid "Modal Offer Rejection Link Text"
-msgstr "მოდალური შეთავაზების უარყოფის ბმულის ტექსტი"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:78
-msgid "Displays in modal version of Order Bump, such as Place Order bumps or when the Offer Product is a variable product (as opposed to a specific variation)."
-msgstr "გამოდის შეკვეთის ბამბის მოდალურ ვერსიაში, როგორიცაა შეკვეთის განთავსების ბამბები ან როდესაც შეთავაზებული პროდუქტი არის ცვლადი პროდუქტი (სპეციფიკური ვარიანტის ნაცვლად)."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:83
-msgid "Default if blank: No thanks, just complete my order"
-msgstr "ნაგულისხმევი, თუ ცარიელია: არა, მადლობა, უბრალოდ დავასრულო ჩემი შეკვეთა"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:85
-msgid "Default if blank: No thanks"
-msgstr "ნაგულისხმევი, თუ ცარიელია: არა, მადლობა"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferDiscountPanel.tsx:15
-msgid "Offer Discount"
-msgstr "შეთავაზების ფასდაკლება"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferDiscountPanel.tsx:20
-msgid "Amount Off: Remove fixed amount from the product price. Percent Off: Discount product by specified percentage."
-msgstr "ფასდაკლების რაოდენობა: ამოიღეთ ფიქსირებული თანხა პროდუქტის ფასიდან. პროცენტული ფასდაკლება: ფასდაკლებით პროდუქტი მითითებული პროცენტით."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferDiscountPanel.tsx:46
-msgid "Item Removal Behavior"
-msgstr "პროდუქტის ამოღების ქცევა"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferDiscountPanel.tsx:47
-msgid "What happens when the display for product is removed from the cart. Default: Order Bump remains in the cart but bump specific discounts are removed."
-msgstr "რა ხდება, როდესაც პროდუქტის ჩვენება ამოღებულია კალათიდან. ნაგულისხმევი: შეკვეთის ბმპი რჩება კალათაში, მაგრამ ბმპისთვის სპეციფიკური ფასდაკლებები იკარგება."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferDiscountPanel.tsx:50
-msgid "Leave In Cart With Normal Price"
-msgstr "დატოვეთ კალათაში ნორმალური ფასით"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferDiscountPanel.tsx:51
-msgid "Remove Order Bump From Cart"
-msgstr "შეკვეთის ბმპის ამოღება კალათიდან"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsGeneralPanel.tsx:13
-msgid "You must set an upsell replacement product."
-msgstr "უნდა დააყენოთ აპსელის ჩანაცვლების პროდუქტი."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsGeneralPanel.tsx:20
-msgid "Offer Type"
-msgstr "შეთავაზების ტიპი"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsGeneralPanel.tsx:24
-msgid "Use Order Bump As Upsell"
-msgstr "გამოიყენეთ შეკვეთის ბამპი აპსელად"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsGeneralPanel.tsx:28
-msgid "Replace a cart item with offer product when this Order Bump is taken."
-msgstr "შეიცვალეთ კალათის ნივთი შეთავაზების პროდუქტით, როდესაც ეს შეკვეთის ბამპი მიიღება."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsGeneralPanel.tsx:42
-msgid "Which product does this upsell replace in the cart?"
-msgstr "რომელი პროდუქტი იცვლის ეს აპსელი კალათაში?"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsGeneralPanel.tsx:50
-msgid "This product must be in the cart for this order bump to be shown."
-msgstr "ეს პროდუქტი უნდა იყოს კალათაში, რომ ეს შეკვეთის ბამპი გამოჩნდეს."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:44
-msgid "Blocks are only used by full screen offers. Enable Full Screen Landing Page in the Display Location panel, then add the Order Bump Offer Form block where the offer form should go."
-msgstr "ბლოკები გამოიყენება მხოლოდ სრულეკრანიან შეთავაზებებზე. ჩართეთ Full Screen Landing Page Display Location პანელში, შემდეგ დაამატეთ Order Bump Offer Form ბლოკი იქ, სადაც შეთავაზების ფორმა უნდა განთავსდეს."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:45
-msgid "Blocks are only used by full screen offers, available on Place Order Click and Post Purchase One-Click bumps. This bump uses the built-in layout."
-msgstr "ბლოკები გამოიყენება მხოლოდ სრულეკრანიან შეთავაზებებზე, რომლებიც ხელმისაწვდომია Place Order Click და Post Purchase One-Click bumps-ში. ეს bump იყენებს ჩაშენებულ განლაგებას."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:61
-msgid "Post Purchase One-Click bumps require a compatible payment gateway. We recommend using Place Order bumps when using non-compatible gateways."
-msgstr "შეკვეთის შემდგომი ერთ-კლიკიანი ბამბები საჭიროებს თავსებადი გადახდის გეითვეის. არათავსებად გეითვეების გამოყენებისას გირჩევთ გამოიყენოთ შეკვეთის განთავსების ბამბები."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:67
-msgid "Learn more about supported gateways"
-msgstr "გაიგეთ მეტი მხარდაჭერილი გეითვეების შესახებ"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:74
-msgid "Read our Order Bumps documentation"
-msgstr "წაიკითხეთ ჩვენი შეკვეთის ბამპების დოკუმენტაცია"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:104
-msgid "This bump will not appear anywhere because the side cart is disabled."
-msgstr "ეს bump არსად გამოჩნდება, რადგან გვერდითი კალათა გამორთულია."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:105
-msgid "This bump will not appear anywhere because order bumps are disabled in the side cart."
-msgstr "ეს bump არსად გამოჩნდება, რადგან გვერდით კალათაში order bumps გამორთულია."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:108
-msgid "This bump will appear on checkout but not in the side cart because the side cart is disabled."
-msgstr "ეს bump გამოჩნდება checkout-ზე, მაგრამ არა გვერდით კალათაში, რადგან გვერდითი კალათა გამორთულია."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:109
-msgid "This bump will appear on checkout but not in the side cart because order bumps are disabled in the side cart."
-msgstr "ეს bump გამოჩნდება checkout-ზე, მაგრამ არა გვერდით კალათაში, რადგან გვერდით კალათაში order bumps გამორთულია."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:120
-msgid "Open side cart settings"
-msgstr "გახსენით გვერდითი კალათის პარამეტრები"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:141
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:148
-msgid "Display Location"
-msgstr "გამოსახვის ადგილი"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:157
-msgid "Checkout Slot"
-msgstr "ჩექაუთ სლოტი"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:187
-msgid "Displays in a popup when Place Order is clicked, before the order is submitted"
-msgstr "გამოდის პოპაპში, როდესაც დააჭირეთ შეკვეთის განთავსებას, სანამ შეკვეთა გაიგზავნება"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:190
-msgid "Displays in a popup on the Thank You page."
-msgstr "გამოდის პოპაპში მადლობის გვერდზე."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:194
-msgid "Full Screen Landing Page"
-msgstr "სრულეკრანიანი სადესანტო გვერდი"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:195
-msgid "Design the offer with blocks instead of the built-in layout. Add the Order Bump Offer Form block where the offer form should go."
-msgstr "შექმენით შეთავაზება ბლოკებით ჩაშენებული განლაგების ნაცვლად. დაამატეთ Order Bump Offer Form ბლოკი იქ, სადაც შეთავაზების ფორმა უნდა განთავსდეს."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayConditions.tsx:26
-msgid "Show Bump When These Conditions Are True:"
-msgstr "აჩვენე ბამპი, როდესაც ეს პირობები შესრულებულია:"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayConditions.tsx:29
-msgid "This bump will be shown when the correct upsell product is in the cart and the Offer Product is not in the cart. To further limit when this bump is shown, add a rule below."
-msgstr "ეს ბამპი გამოჩნდება, როდესაც კალათაშია სწორი აპსელის პროდუქტი და შეთავაზების პროდუქტი კალათაში არ არის. დამატებითი შეზღუდვისთვის დაამატეთ ქვემოთ წესი."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayConditions.tsx:31
-msgid "This bump will always be shown when the Offer Product is not in the cart. To limit when this bump is shown, add a rule below."
-msgstr "ეს ბამპი ყოველთვის გამოჩნდება, როდესაც შეთავაზების პროდუქტი კალათაში არ არის. შეზღუდვისთვის დაამატეთ ქვემოთ წესი."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsActionsPanel.tsx:15
-msgid "Actions"
-msgstr "მოქმედებები"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsActionsPanel.tsx:21
-msgid "Remove These Products From The Cart"
-msgstr "ამ პროდუქტების წაშლა კალათიდან"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsActionsPanel.tsx:23
-msgid "If any of these products are in the cart, remove them when this bump is added to the cart."
-msgstr "თუ რომელიმე ამ პროდუქტებიდან კალათაშია, წაშალეთ ისინი, როდესაც ეს ბამპი კალათაში დაემატება."
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsActionsPanel.tsx:24
-msgid "Search for products"
-msgstr "პროდუქტების ძებნა"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsActionsPanel.tsx:35
-msgid "Apply Free Shipping"
-msgstr "უფასო მიტანის გამოყენება"
-
-#: client/ts/admin/Components/Metaboxes/OrderBumpsActionsPanel.tsx:36
-msgid "When this bump is added to the cart, apply free shipping to the cart."
-msgstr "როდესაც ეს ბამპი კალათაში დაემატება, კალათაზე გამოიყენეთ უფასო მიტანა."
-
-#: client/ts/admin/Components/Metaboxes/CategoryCompleter.tsx:46
-msgid "All categories with titles that include {{query /}}"
-msgstr "ყველა კატეგორია სათაურებით, რომლებიც შეიცავს {{query /}}"
-
-#: client/ts/admin/Components/Fields/WPMediaUploadButton.tsx:69
-msgid "Select or Upload a Logo"
-msgstr "ლოგოს არჩევა ან ატვირთვა"
-
-#: client/ts/admin/Components/Fields/RangeControl.tsx:97
-#: client/ts/admin/Components/Fields/ColorControl.tsx:137
-msgid "Reset"
-msgstr "გადატვირთვა"
-
-#: client/ts/admin/Components/Fields/ColorControl.tsx:173
-#: client/ts/admin/Components/CheckoutEditor/BumpEditorModal.tsx:101
-msgid "Done"
-msgstr "დასრულებულია"
 
 #: client/ts/admin/Components/CheckoutEditor/ScrollableRegion.tsx:74
 msgid "Scroll down for more items"
@@ -8498,7 +8543,7 @@ msgstr "წაშალე წესი"
 
 # %d: shipping package number
 #: functions/functions.php:386
-#: functions/functions.php:3455
+#: functions/functions.php:3464
 msgctxt "shipping packages"
 msgid "Shipping"
 msgid_plural "Shipping %d"

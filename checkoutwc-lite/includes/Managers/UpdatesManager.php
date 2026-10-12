@@ -1,6 +1,7 @@
 <?php
 namespace Objectiv\Plugins\Checkout\Managers;
 
+use Objectiv\Plugins\Checkout\Admin\Notices\LicenseServerUnreachableNotice;
 use Objectiv\Plugins\Checkout\Managers\Helpers\EDD_SL_Plugin_Updater;
 use Objectiv\Plugins\Checkout\SingletonAbstract;
 
@@ -87,6 +88,26 @@ class UpdatesManager extends SingletonAbstract {
 	 * @var int
 	 */
 	const CACHE_EXPIRATION = 1209600; // 14 days
+
+	/**
+	 * How long premium features keep working without a successful license check (30 days)
+	 *
+	 * @since 11.4.1
+	 *
+	 * @var int
+	 */
+	const LICENSE_VERIFICATION_GRACE_PERIOD = 2592000; // 30 days
+
+	/**
+	 * How old the last successful license check must be before an admin visit re-checks it (2 days)
+	 *
+	 * Covers sites where WP-Cron never runs, so the daily check can't keep the license verified.
+	 *
+	 * @since 11.4.1
+	 *
+	 * @var int
+	 */
+	private const STALE_LICENSE_CHECK_AGE = 172800; // 2 days
 
 	/**
 	 * Maximum age of the last recorded failure before the persistent warning auto-expires (2 days)
@@ -216,6 +237,8 @@ class UpdatesManager extends SingletonAbstract {
 		// Delayed license status update
 		add_action( $this->prefix . '_edd_sl_delayed_license_status_update', [ $this, 'delayed_license_update' ] );
 
+		add_action( 'admin_init', [ $this, 'maybe_check_stale_license' ] );
+
 		add_action(
 			'plugins_loaded',
 			function () {
@@ -228,9 +251,6 @@ class UpdatesManager extends SingletonAbstract {
 		);
 
 		add_action( 'wp_ajax_cfw_license_save', [ $this, 'ajax_save_license' ] );
-
-		// Show persistent warning notice if license checks are failing
-		add_action( 'admin_notices', [ $this, 'show_persistent_license_warning' ] );
 	}
 
 	public function run_on_plugin_activation() {
@@ -1144,7 +1164,7 @@ class UpdatesManager extends SingletonAbstract {
 		$current_key_status = $this->get_field_value( 'key_status' );
 		$new_status         = $this->get_license_status();
 
-		// If doing cron and the key is currently valid and the new status is invalid, add 3 day delay to updating to prevent immediate deactivation
+		// If doing cron and the key is currently valid and the new status is invalid, add 7 day delay to updating to prevent immediate deactivation
 		if ( defined( 'DOING_CRON' ) && 'valid' === $current_key_status && ( in_array( $new_status, $this->bad_key_statuses, true ) || false === $new_status ) ) {
 			$this->cancel_delayed_license_update();
 			$this->schedule_delayed_license_check();
@@ -1210,7 +1230,75 @@ class UpdatesManager extends SingletonAbstract {
 			$valid = false;
 		}
 
+		if ( $this->is_license_verification_overdue() ) {
+			$valid = false;
+		}
+
 		return $valid;
+	}
+
+	/**
+	 * Gets when premium features turn off unless the license is checked successfully again.
+	 *
+	 * @since 11.4.1
+	 *
+	 * @return int Unix timestamp, or 0 when no successful check has been recorded yet.
+	 */
+	public function get_license_verification_deadline(): int {
+		$last_checked = (int) get_option( 'cfw_license_cache_time', 0 );
+
+		return $last_checked > 0 ? $last_checked + self::LICENSE_VERIFICATION_GRACE_PERIOD : 0;
+	}
+
+	/**
+	 * Determines whether the license has gone too long without a successful check.
+	 *
+	 * A site with no recorded check yet isn't overdue, so updating doesn't switch off sites that haven't checked since the cache was added.
+	 *
+	 * @since 11.4.1
+	 *
+	 * @return bool
+	 */
+	public function is_license_verification_overdue(): bool {
+		$deadline = $this->get_license_verification_deadline();
+
+		return $deadline > 0 && time() > $deadline;
+	}
+
+	/**
+	 * Re-checks the license on an admin visit when the daily check hasn't succeeded recently.
+	 *
+	 * Only applies a status the license server actually returned, so an unreachable server never changes the license.
+	 *
+	 * @since 11.4.1
+	 *
+	 * @return void
+	 */
+	public function maybe_check_stale_license() {
+		// admin_init also runs for admin-ajax requests; a slow license server must not stall those.
+		if ( wp_doing_ajax() ) {
+			return;
+		}
+
+		if ( ! current_user_can( 'manage_options' ) || empty( $this->get_field_value( 'license_key' ) ) ) {
+			return;
+		}
+
+		if ( time() - (int) get_option( 'cfw_license_cache_time', 0 ) < self::STALE_LICENSE_CHECK_AGE ) {
+			return;
+		}
+
+		if ( get_transient( 'cfw_stale_license_check' ) ) {
+			return;
+		}
+
+		set_transient( 'cfw_stale_license_check', 1, DAY_IN_SECONDS );
+
+		$license_data = $this->get_license_data();
+
+		if ( isset( $license_data->license ) ) {
+			$this->set_field_value( 'key_status', $license_data->license );
+		}
 	}
 
 	/**
@@ -1231,12 +1319,25 @@ class UpdatesManager extends SingletonAbstract {
 	 * Show persistent license warning in admin
 	 * This displays on all admin pages when there are license check failures
 	 *
+	 * @deprecated 11.4.1 LicenseServerUnreachableNotice shows this warning now.
+	 *
 	 * @return void
 	 */
 	public function show_persistent_license_warning() {
-		// Only show in admin dashboard
-		if ( ! is_admin() ) {
-			return;
+		_deprecated_function( __METHOD__, 'CheckoutWC 11.4.1', LicenseServerUnreachableNotice::class );
+	}
+
+	/**
+	 * Determines whether license checks have been failing long enough to warn the merchant.
+	 *
+	 * @since 11.4.1
+	 *
+	 * @return bool
+	 */
+	public function is_license_server_unreachable(): bool {
+		// An expired or invalid key already has premium features off, with its own notice.
+		if ( 'valid' !== $this->get_field_value( 'key_status' ) ) {
+			return false;
 		}
 
 		$failure_count = (int) get_option( 'cfw_license_check_failures', 0 );
@@ -1245,24 +1346,17 @@ class UpdatesManager extends SingletonAbstract {
 		// Only warn once failures are sustained — a single transient timeout is not actionable and
 		// never affects the license, so it should not raise an admin notice.
 		if ( $failure_count < self::MAX_CONSECUTIVE_FAILURES || $last_failure <= 0 ) {
-			return;
+			return false;
 		}
 
 		// Auto-expire: if the last failure is stale, the issue has resolved or the cron has stopped.
 		// Stop showing the warning regardless of whether the counter was formally reset.
 		if ( ( time() - $last_failure ) > self::PERSISTENT_WARNING_MAX_AGE ) {
-			return;
+			return false;
 		}
-		?>
-		<div class="notice notice-warning is-dismissible cfw-license-notice">
-			<p>
-				<strong><?php echo esc_html( $this->name ); ?>:</strong>
-				<?php
-				esc_html_e( 'Unable to verify your CheckoutWC license — the license server could not be reached. Your license and checkout are unaffected; only plugin updates are paused until the connection is restored.', 'checkout-wc' );
-				?>
-			</p>
-		</div>
-		<?php
+
+		// Once the deadline passes, LicenseUnverifiedNotice takes over.
+		return ! $this->is_license_verification_overdue();
 	}
 
 	public function ajax_save_license() {

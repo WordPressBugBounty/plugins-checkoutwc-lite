@@ -37,7 +37,8 @@ class CustomField {
 	 * Field types every plan may use, including the lite build.
 	 *
 	 * Every other supported type requires the plan named by PLAN_LOCKED_TYPES_MIN_PLAN.
-	 * CustomFieldManager::type_is_available() is the one place that decides; nothing should
+	 * CustomFieldManager::type_is_available() decides whether a type renders on the storefront, and
+	 * CustomFieldManager::type_is_editable() whether the editor can save it; nothing else should
 	 * compare against this constant directly.
 	 *
 	 * @var string[]

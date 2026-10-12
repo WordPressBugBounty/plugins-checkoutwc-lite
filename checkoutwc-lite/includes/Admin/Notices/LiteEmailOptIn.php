@@ -38,7 +38,7 @@ class LiteEmailOptIn extends NoticeAbstract {
 		global $pagenow;
 
 		// Don't add if user has a premium plan
-		if ( PlanManager::has_premium_plan_or_higher() ) {
+		if ( PlanManager::has_admin_plan_or_higher() ) {
 			return false;
 		}
 
