@@ -1626,22 +1626,80 @@ function cfw_form_attributes( $id = false, bool $row = true, bool $action = true
 }
 
 /**
+ * Whether the thank you page should show the payment failed version for an order
+ *
+ * @since 11.4.2
+ *
+ * @param WC_Order $order the order object
+ * @return bool
+ */
+function cfw_thank_you_is_failed( WC_Order $order ): bool {
+	if ( ! $order->has_status( 'failed' ) ) {
+		return false;
+	}
+
+	/**
+	 * Filters whether a failed order's thank you page hides the sections that imply the order went through
+	 *
+	 * @since 11.4.2
+	 *
+	 * @param bool $hide Whether to hide the thank you heading, status steps, map, order updates, downloads and pickup instructions. Default true.
+	 * @param WC_Order $order The order object
+	 */
+	return (bool) apply_filters( 'cfw_thank_you_hide_sections_for_failed_order', true, $order );
+}
+
+/**
  * Render title with order number, checkbox graphic, and thank you statement.
+ *
+ * Failed orders get a payment failed heading, the failure notice and a link to try again instead.
  *
  * @param WC_Order $order the order object
  */
 function cfw_thank_you_title( WC_Order $order ) {
 	if ( $order->has_status( 'failed' ) ) :
+		if ( cfw_thank_you_is_failed( $order ) ) :
+			?>
+			<div class="title">
+				<h5>
+					<?php
+					printf(
+						/* translators: %s is the order number */
+						esc_html__( 'Order %s', 'checkout-wc' ),
+						esc_html( $order->get_order_number() )
+					);
+					?>
+				</h5>
+				<h4><?php esc_html_e( 'Payment failed', 'checkout-wc' ); ?></h4>
+			</div>
+			<?php
+		endif;
 		?>
 		<div class="cfw-mb">
 			<?php
-			wc_add_notice( __( 'Unfortunately your order cannot be processed as the originating bank/merchant has declined your transaction. Please attempt your purchase again.', 'woocommerce' ), 'error' );
+			/**
+			 * Filters the failed order notice. Core WooCommerce applies the same filter on its thank you page.
+			 *
+			 * @param string $text The notice text
+			 * @param WC_Order $order The order object
+			 */
+			wc_add_notice( apply_filters( 'woocommerce_thankyou_order_failed_text', __( 'Unfortunately your order cannot be processed as the originating bank/merchant has declined your transaction. Please attempt your purchase again.', 'woocommerce' ), $order ), 'error' );
 
 			cfw_wc_print_notices_with_wrap();
 			?>
-			<a href="<?php echo esc_url( $order->get_checkout_payment_url() ); ?>" class="cfw-secondary-btn"><?php esc_html_e( 'Pay', 'woocommerce' ); ?></a>
+			<div class="cfw-failed-order-actions">
+				<a href="<?php echo esc_url( $order->get_checkout_payment_url() ); ?>" class="cfw-primary-btn"><?php esc_html_e( 'Try payment again', 'checkout-wc' ); ?></a>
+				<?php if ( is_user_logged_in() ) : ?>
+					<a href="<?php echo esc_url( wc_get_page_permalink( 'myaccount' ) ); ?>" class="cfw-secondary-btn"><?php esc_html_e( 'My account', 'woocommerce' ); ?></a>
+				<?php endif; ?>
+			</div>
 		</div>
-	<?php endif; ?>
+		<?php
+		if ( cfw_thank_you_is_failed( $order ) ) {
+			return;
+		}
+	endif;
+	?>
 	<div class="title">
 		<?php
 		/**
@@ -1697,7 +1755,11 @@ function cfw_thank_you_title( WC_Order $order ) {
 /**
  * Thank you page section close
  */
-function cfw_thank_you_section_end() {
+function cfw_thank_you_section_end( $order = null ) {
+	if ( $order instanceof WC_Order && cfw_thank_you_is_failed( $order ) ) {
+		return;
+	}
+
 	?>
 	</section>
 	<?php
@@ -1712,6 +1774,10 @@ function cfw_thank_you_section_end() {
  * @param array $order_statuses the order statuses
  */
 function cfw_thank_you_order_status_row( WC_Order $order, array $order_statuses ) {
+	if ( cfw_thank_you_is_failed( $order ) ) {
+		return;
+	}
+
 	?>
 	<div class="inner status-row">
 		<?php if ( $order->needs_shipping_address() && function_exists( 'wc_order_status_manager' ) ) : ?>
@@ -1800,6 +1866,10 @@ function cfw_thank_you_order_status_row( WC_Order $order, array $order_statuses 
  * @param WC_Order $order the order object
  */
 function cfw_thank_you_map( WC_Order $order ) {
+	if ( cfw_thank_you_is_failed( $order ) ) {
+		return;
+	}
+
 	if ( $order->needs_shipping_address() ) :
 		?>
 		<?php if ( PlanManager::can_access_feature( 'enable_map_embed' ) ) : ?>
@@ -2211,7 +2281,11 @@ function cfw_order_pay_cart_summary_content( WC_Order $order ) {
 	}
 }
 
-function cfw_thank_you_section_start_order_status() {
+function cfw_thank_you_section_start_order_status( $order = null ) {
+	if ( $order instanceof WC_Order && cfw_thank_you_is_failed( $order ) ) {
+		return;
+	}
+
 	cfw_thank_you_section_start( 'cfw-order-status' );
 }
 
@@ -2219,13 +2293,13 @@ function cfw_thank_you_section_start_order_status() {
  * @param WC_Order $order the WooCommerce order
  */
 function cfw_thank_you_order_updates_wrapped( WC_Order $order ) {
-	if ( $order->needs_shipping_address() ) {
+	if ( $order->needs_shipping_address() && ! cfw_thank_you_is_failed( $order ) ) {
 		cfw_thank_you_section_auto_wrap( 'cfw_thank_you_order_updates', 'cfw-order-updates', [ $order ] );
 	}
 }
 
 function cfw_thank_you_downloads_wrapped( $order, $order_statues, $show_downloads, $downloads ) {
-	if ( $show_downloads ) {
+	if ( $show_downloads && ! cfw_thank_you_is_failed( $order ) ) {
 		cfw_thank_you_section_auto_wrap( 'cfw_thank_you_downloads', 'woocommerce-order-downloads', [ $order, $order_statues, $show_downloads, $downloads ] );
 	}
 }

@@ -5169,6 +5169,25 @@ Filters thank you page heading icon
 
 Source: `template-functions.php`
 
+## `cfw_thank_you_hide_sections_for_failed_order`
+
+Filters whether a failed order's thank you page hides the sections that imply the order went through
+
+**Parameters**
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| `$hide` | `bool` | Whether to hide the thank you heading, status steps, map, order updates, downloads and pickup instructions. Default true. |
+| `$order` | `\WC_Order` | The order object |
+
+**Changelog**
+
+| Version | Description |
+| ------- | ----------- |
+| `11.4.2` | Introduced. |
+
+Source: `template-functions.php`
+
 ## `cfw_thank_you_page_map_address`
 
 Filter thank you page map address
@@ -5689,3 +5708,16 @@ Filters additional classes for the cart icon shortcode
 | `8.2.18` | Introduced. |
 
 Source: `Features/SideCart.php`
+
+## `woocommerce_thankyou_order_failed_text`
+
+Filters the failed order notice. Core WooCommerce applies the same filter on its thank you page.
+
+**Parameters**
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| `$text` | `string` | The notice text |
+| `$order` | `\WC_Order` | The order object |
+
+Source: `template-functions.php`

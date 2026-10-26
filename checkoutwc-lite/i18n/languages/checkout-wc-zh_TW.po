@@ -8,7 +8,7 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "POT-Creation-Date: 2025-07-25 09:22-0400\n"
-"PO-Revision-Date: 2026-10-12T15:20:31+00:00\n"
+"PO-Revision-Date: 2026-10-26T17:15:41+00:00\n"
 "Language: zh-TW\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Poedit 3.6\n"
@@ -28,7 +28,7 @@ msgstr ""
 #: includes/Compatibility/Plugins/CartFlows.php:62
 #: includes/Admin/Pages/PickupLocationsAdminFree.php:218
 #: includes/Admin/Pages/PageAbstract.php:106
-#: includes/Admin/Pages/General.php:341
+#: includes/Admin/Pages/General.php:353
 #: includes/Admin/Pages/Premium/PickupLocations.php:317
 #: includes/Admin/Pages/Premium/OrderBumps.php:456
 #: includes/Admin/Pages/Premium/LocalPickupAdmin.php:165
@@ -272,7 +272,7 @@ msgid "Hide order summary"
 msgstr "隱藏訂單摘要"
 
 #: functions/template-functions.php:166
-#: includes/Admin/Pages/WooCommercePages.php:29
+#: includes/Admin/Pages/WooCommercePages.php:30
 #: client/ts/admin/Components/Forms/AdvancedScriptsSettingsForm.tsx:108
 msgid "Checkout"
 msgstr "結帳"
@@ -283,8 +283,8 @@ msgstr "快速結賬"
 
 #: functions/template-functions.php:340
 #: functions/template-functions.php:354
-#: functions/template-functions.php:1932
-#: functions/template-functions.php:2265
+#: functions/template-functions.php:2002
+#: functions/template-functions.php:2339
 msgid "Information"
 msgstr "資訊"
 
@@ -339,7 +339,7 @@ msgstr "登出。"
 
 #: functions/template-functions.php:745
 #: functions/template-functions.php:783
-#: functions/template-functions.php:1969
+#: functions/template-functions.php:2039
 msgid "Billing and Shipping address"
 msgstr "帳單和送貨地址"
 
@@ -347,14 +347,14 @@ msgstr "帳單和送貨地址"
 #: functions/template-functions.php:795
 #: functions/template-functions.php:1201
 #: functions/template-functions.php:1215
-#: functions/template-functions.php:1997
+#: functions/template-functions.php:2067
 #: includes/Compatibility/Gateways/PayPalForWooCommerce.php:192
 msgid "Billing address"
 msgstr "帳單地址"
 
 #: functions/template-functions.php:768
 #: functions/template-functions.php:806
-#: functions/template-functions.php:1981
+#: functions/template-functions.php:2051
 #: includes/Managers/AssetManager.php:705
 msgid "Shipping address"
 msgstr "運送地址"
@@ -366,15 +366,15 @@ msgid "Your Cart"
 msgstr "您的購物車"
 
 #: functions/template-functions.php:1047
-#: functions/template-functions.php:2013
-#: functions/template-functions.php:2287
+#: functions/template-functions.php:2083
+#: functions/template-functions.php:2361
 #: functions/functions.php:3478
 msgid "Shipping"
 msgstr "運送方式"
 
 #: functions/template-functions.php:1065
-#: functions/template-functions.php:1953
-#: functions/template-functions.php:2308
+#: functions/template-functions.php:2023
+#: functions/template-functions.php:2382
 #: functions/functions.php:1025
 #: functions/functions.php:1040
 #: client/ts/frontend/Components/ReviewPane/OrderReviewStepReviewPane.tsx:47
@@ -382,7 +382,7 @@ msgid "Payment"
 msgstr "付款"
 
 #: functions/template-functions.php:1065
-#: functions/template-functions.php:2308
+#: functions/template-functions.php:2382
 #: includes/Features/OrderReviewStep.php:74
 #: includes/Admin/Pages/TrustBadgesAdminFree.php:88
 #: client/ts/admin/Components/TrustBadgeFields.tsx:20
@@ -398,104 +398,113 @@ msgstr "免費"
 msgid "Select the address that matches your card or payment method."
 msgstr "選擇與您的卡或付款方式匹配的地址。"
 
-#: functions/template-functions.php:1638
-msgid "Unfortunately your order cannot be processed as the originating bank/merchant has declined your transaction. Please attempt your purchase again."
-msgstr "很抱歉，您的訂單無法處理，因為發卡銀行/商家已拒絕您的交易。請再次嘗試購買。"
-
-#: functions/template-functions.php:1642
-msgid "Pay"
-msgstr "付款"
-
 # %s is the order number
-#: functions/template-functions.php:1660
+#: functions/template-functions.php:1668
+#: functions/template-functions.php:1718
 msgid "Order %s"
 msgstr "訂單 %s"
 
+#: functions/template-functions.php:1673
+msgid "Payment failed"
+msgstr "付款失敗"
+
+#: functions/template-functions.php:1686
+msgid "Unfortunately your order cannot be processed as the originating bank/merchant has declined your transaction. Please attempt your purchase again."
+msgstr "很抱歉，您的訂單無法處理，因為發卡銀行/商家已拒絕您的交易。請再次嘗試購買。"
+
+#: functions/template-functions.php:1691
+msgid "Try payment again"
+msgstr "再次嘗試付款"
+
+#: functions/template-functions.php:1693
+msgid "My account"
+msgstr "我的帳戶"
+
 # %s is the billing first name
-#: functions/template-functions.php:1679
+#: functions/template-functions.php:1737
 msgid "Thank you %s!"
 msgstr "謝謝%s！"
 
-#: functions/template-functions.php:1790
+#: functions/template-functions.php:1856
 msgid "Order status"
 msgstr "訂單狀態"
 
-#: functions/template-functions.php:1833
+#: functions/template-functions.php:1903
 msgid "Order updates"
 msgstr "訂單備註已更新"
 
-#: functions/template-functions.php:1844
+#: functions/template-functions.php:1914
 msgid "You’ll get shipping and delivery updates by email."
 msgstr "您將通過電子郵件獲得運輸和交貨的最新信息。"
 
-#: functions/template-functions.php:1862
+#: functions/template-functions.php:1932
 msgid "Downloads"
 msgstr "下載"
 
-#: functions/template-functions.php:1902
+#: functions/template-functions.php:1972
 msgid "&infin;"
 msgstr "&infin;"
 
-#: functions/template-functions.php:1908
+#: functions/template-functions.php:1978
 msgid "Never"
 msgstr "從不"
 
-#: functions/template-functions.php:1947
+#: functions/template-functions.php:2017
 msgid "Contact information"
 msgstr "聯繫信息"
 
-#: functions/template-functions.php:1974
-#: functions/template-functions.php:1986
-#: functions/template-functions.php:2003
+#: functions/template-functions.php:2044
+#: functions/template-functions.php:2056
+#: functions/template-functions.php:2073
 msgid "N/A"
 msgstr "不適用"
 
-#: functions/template-functions.php:2043
+#: functions/template-functions.php:2113
 #: includes/Managers/AssetManager.php:855
 msgid "Continue shopping"
 msgstr "繼續購物"
 
-#: functions/template-functions.php:2073
+#: functions/template-functions.php:2143
 #: includes/Loaders/LoaderAbstract.php:111
 msgid "Pay for order"
 msgstr "支付訂單"
 
-#: functions/template-functions.php:2091
+#: functions/template-functions.php:2161
 #: includes/Features/AbandonedCartRecovery.php:124
 #: client/ts/admin/Components/acr/carts.tsx:64
 msgid "Email"
 msgstr "電子郵件"
 
-#: functions/template-functions.php:2101
+#: functions/template-functions.php:2171
 #: functions/functions.php:4142
 #: functions/functions.php:4143
 msgid "Password"
 msgstr "密碼"
 
-#: functions/template-functions.php:2117
+#: functions/template-functions.php:2187
 #: functions/functions.php:4182
 msgid "Login"
 msgstr "登入"
 
-#: functions/template-functions.php:2120
+#: functions/template-functions.php:2190
 #: functions/functions.php:4175
 msgid "Lost your password?"
 msgstr "忘記密碼？"
 
-#: functions/template-functions.php:2405
+#: functions/template-functions.php:2479
 msgid "Your Cart is Empty"
 msgstr "您的購物車是空的"
 
-#: functions/premium-init.php:342
+#: functions/premium-init.php:346
 msgid "CheckoutWC Templates Deactivated"
 msgstr "CheckoutWC 模板已停用"
 
 # %1$s: "Settings" text, %2$s: "Start Here" text, %3$s: "Activate CheckoutWC Templates" text
-#: functions/premium-init.php:345
+#: functions/premium-init.php:349
 msgid "Your license is valid and activated for this site but CheckoutWC is disabled for normal customers. To fix this, go to %1$s > %2$s and toggle \"%3$s\"."
 msgstr "您的授權在此網站有效且已啟用，但 CheckoutWC 對一般客戶已被禁用。要解決此問題，請前往 %1$s > %2$s 並切換「%3$s」。"
 
-#: functions/premium-init.php:346
+#: functions/premium-init.php:350
 #: includes/Admin/AdminPluginsPageManager.php:40
 #: includes/Admin/Pages/OrderBumpsAdminFree.php:25
 #: includes/Admin/Pages/LocalPickupAdminFree.php:27
@@ -507,69 +516,69 @@ msgstr "您的授權在此網站有效且已啟用，但 CheckoutWC 對一般客
 msgid "Settings"
 msgstr "設定"
 
-#: functions/premium-init.php:347
-#: functions/premium-init.php:360
-#: includes/Admin/Pages/General.php:25
+#: functions/premium-init.php:351
+#: functions/premium-init.php:364
+#: includes/Admin/Pages/General.php:24
 msgid "Start Here"
 msgstr "從這裡開始"
 
-#: functions/premium-init.php:348
-#: includes/Admin/Pages/General.php:195
+#: functions/premium-init.php:352
+#: includes/Admin/Pages/General.php:207
 msgid "Activate CheckoutWC Templates"
 msgstr "啟用 CheckoutWC 模板"
 
-#: functions/premium-init.php:355
+#: functions/premium-init.php:359
 msgid "CheckoutWC license invalid"
 msgstr "CheckoutWC 授權無效"
 
 # %1$s: URL to license settings page, %2$s: "Start Here" link text, %3$s: Pricing URL, %4$s: "buy a license" link text
-#: functions/premium-init.php:358
+#: functions/premium-init.php:362
 msgid "Premium features are off because your license key is missing or invalid. Check your key on <a href=\"%1$s\">%2$s</a> or <a target=\"_blank\" href=\"%3$s\">%4$s</a>."
 msgstr "由於您的授權金鑰遺失或無效，進階功能已關閉。請在 <a href=\"%1$s\">%2$s</a> 或 <a target=\"_blank\" href=\"%3$s\">%4$s</a> 檢查您的金鑰。"
 
-#: functions/premium-init.php:362
+#: functions/premium-init.php:366
 #: includes/Admin/Notices/InactiveLicenseNotice.php:15
 msgid "buy a license"
 msgstr "購買授權"
 
-#: functions/premium-init.php:382
+#: functions/premium-init.php:386
 msgid "New Feature: Cloudflare Turnstile Bot Protection"
 msgstr "新功能：Cloudflare Turnstile 機器人防護"
 
 # 1: Cloudflare Turnstile name wrapped in strong tags, 2: Setup link
-#: functions/premium-init.php:385
+#: functions/premium-init.php:389
 msgid "CheckoutWC now supports %1$s - a privacy-first, CAPTCHA-free way to protect your checkout from bots and spam orders. %2$s"
 msgstr "CheckoutWC 現在支援 %1$s — 一種以隱私為先、無 CAPTCHA 的方式，保護您的結帳頁面免受機器人和垃圾訂單的侵擾。%2$s"
 
 # The name of the Cloudflare Turnstile service
-#: functions/premium-init.php:389
+#: functions/premium-init.php:393
 #: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:78
 msgid "Cloudflare Turnstile"
 msgstr "Cloudflare Turnstile"
 
-#: functions/premium-init.php:395
+#: functions/premium-init.php:399
 msgid "Setup Cloudflare Turnstile now"
 msgstr "立即設定 Cloudflare Turnstile"
 
-#: functions/premium-init.php:400
+#: functions/premium-init.php:404
 msgid "Upgrade your plan now to access"
 msgstr "立即升級您的方案以訪問"
 
-#: functions/premium-init.php:413
+#: functions/premium-init.php:417
 msgid "Abandoned Cart Recovery Tracking Disabled"
 msgstr "放棄購物車回復追蹤已停用"
 
 # %1$s: Gist URL, %2$s: "Learn More" link text
-#: functions/premium-init.php:416
+#: functions/premium-init.php:420
 msgid "You have enabled Abandoned Cart Recovery tracking, but you do not have any emails published. To track carts, you need to publish emails or use this dev filter: <a target=\"_blank\" href=\"%1$s\">%2$s</a>."
 msgstr "您已啟用放棄購物車回復追蹤，但尚未發布任何電子郵件。要追蹤購物車，您需要發布電子郵件或使用此開發過濾器：<a target=\"_blank\" href=\"%1$s\">%2$s</a>。"
 
-#: functions/premium-init.php:418
+#: functions/premium-init.php:422
 #: includes/Admin/Pages/AbandonedCartRecoveryAdminFree.php:82
 msgid "Learn More"
 msgstr "了解更多"
 
-#: functions/premium-init.php:477
+#: functions/premium-init.php:481
 msgid "Admin preview: your CheckoutWC license isn\\'t valid for this site, so premium features are off. Check your license here: WP Admin > CheckoutWC > Start Here."
 msgstr "管理員預覽：您的 CheckoutWC 授權不適用於此網站，因此進階功能已關閉。請在此處檢查您的授權：WP 管理後台 > CheckoutWC > 開始使用。"
 
@@ -666,7 +675,7 @@ msgid "Ship to"
 msgstr "運送至"
 
 #: functions/functions.php:232
-#: includes/Features/LocalPickup.php:768
+#: includes/Features/LocalPickup.php:775
 #: includes/Admin/Pages/PickupLocationsAdminFree.php:93
 #: includes/Admin/Pages/Premium/PickupLocations.php:101
 msgid "Address"
@@ -677,7 +686,7 @@ msgid "Sorry, it seems that there are no available payment methods for your loca
 msgstr "抱歉，似乎您所在地區沒有可用的付款方式。如需協助或想安排其他付款方式，請與我們聯絡。"
 
 #: functions/functions.php:787
-#: includes/Features/LocalPickup.php:1095
+#: includes/Features/LocalPickup.php:1119
 msgid "Shipping costs are calculated during checkout."
 msgstr "運費將在結帳時計算。"
 
@@ -690,7 +699,7 @@ msgid "No shipping methods available"
 msgstr "沒有可用的送貨方式"
 
 #: functions/functions.php:826
-#: includes/Model/Bumps/BumpAbstract.php:882
+#: includes/Model/Bumps/BumpAbstract.php:895
 msgid "Free!"
 msgstr "免費！"
 
@@ -778,7 +787,7 @@ msgstr "遞減"
 #: functions/functions.php:2415
 #: includes/Managers/AssetManager.php:735
 #: includes/Managers/AssetManager.php:856
-#: includes/Features/LocalPickup.php:510
+#: includes/Features/LocalPickup.php:513
 #: includes/Features/AbandonedCartRecovery.php:128
 #: includes/Features/ABTesting.php:150
 #: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:633
@@ -903,22 +912,6 @@ msgstr "CheckoutWC：您無法啟用未註冊的 AB 測試。"
 msgid "Accent Color"
 msgstr "強調色"
 
-#: lib/sendwp-sdk/sendwp-init.php:27
-msgid "Security failed to check sendwp_install_nonce"
-msgstr "安全性檢查 sendwp_install_nonce 失敗"
-
-#: lib/sendwp-sdk/sendwp-init.php:28
-msgid "Ask an administrator for install_plugins capability"
-msgstr "請向管理員索取 install_plugins 權限"
-
-#: lib/sendwp-sdk/sendwp-init.php:29
-msgid "SendWP is already connected."
-msgstr "SendWP 已連接。"
-
-#: lib/sendwp-sdk/remote-install.php:84
-msgid "Something went wrong. SendWP was not installed correctly."
-msgstr "出錯了。SendWP 未正確安裝。"
-
 #: includes/Stats/StatCollection.php:193
 msgid "Once Weekly"
 msgstr "每週一次"
@@ -956,98 +949,98 @@ msgstr "本地取貨"
 msgid "Allow customers to pick up orders themselves. This version does not require shipping zones."
 msgstr "允許客戶自行取貨。此版本不需要運送區域。"
 
-#: includes/Managers/UpdatesManager.php:436
+#: includes/Managers/UpdatesManager.php:451
 msgid "CheckoutWC License Key"
 msgstr "CheckoutWC 授權金鑰"
 
-#: includes/Managers/UpdatesManager.php:441
+#: includes/Managers/UpdatesManager.php:456
 msgid "Your license key is set with the constant <code>CFW_LICENSE_KEY</code>."
 msgstr "您的授權金鑰已設定為常數 <code>CFW_LICENSE_KEY</code>。"
 
-#: includes/Managers/UpdatesManager.php:448
+#: includes/Managers/UpdatesManager.php:463
 msgid "License Holder"
 msgstr "许可证持有人"
 
-#: includes/Managers/UpdatesManager.php:461
+#: includes/Managers/UpdatesManager.php:476
 msgid "Plan"
 msgstr "计划"
 
-#: includes/Managers/UpdatesManager.php:469
+#: includes/Managers/UpdatesManager.php:484
 msgid "Activation Limit"
 msgstr "激活限制"
 
-#: includes/Managers/UpdatesManager.php:477
+#: includes/Managers/UpdatesManager.php:492
 #: includes/Admin/Pages/Premium/ABTestingAdmin.php:178
 #: includes/Admin/Pages/Premium/ABTestingAdmin.php:819
 #: client/ts/admin/Components/acr/carts.tsx:80
 msgid "Status"
 msgstr "狀態"
 
-#: includes/Managers/UpdatesManager.php:484
+#: includes/Managers/UpdatesManager.php:499
 msgid "Refresh License Info"
 msgstr "刷新许可证信息"
 
-#: includes/Managers/UpdatesManager.php:532
+#: includes/Managers/UpdatesManager.php:551
 msgid "Please enter your license key."
 msgstr "請輸入您的授權金鑰。"
 
-#: includes/Managers/UpdatesManager.php:535
-#: includes/Managers/UpdatesManager.php:543
+#: includes/Managers/UpdatesManager.php:554
+#: includes/Managers/UpdatesManager.php:562
 msgid "Activate Site"
 msgstr "啟用網站"
 
-#: includes/Managers/UpdatesManager.php:538
+#: includes/Managers/UpdatesManager.php:557
 msgid "Deactivate Site"
 msgstr "停用網站"
 
 # Debug error message logged when license check reaches unexpected state
-#: includes/Managers/UpdatesManager.php:724
+#: includes/Managers/UpdatesManager.php:743
 msgid "License Check Error: You should not be able to get here. I am kind of freaked out."
 msgstr "授權檢查錯誤：您不應該到達這裡。我有點慌了。"
 
 # %1$d: failure count, %2$d: max failures, %3$s: time since last failure
-#: includes/Managers/UpdatesManager.php:983
+#: includes/Managers/UpdatesManager.php:1002
 msgid "Unable to verify CheckoutWC license (%1$d/%2$d attempts failed). Using cached license data. Last attempt: %3$s ago."
 msgstr "無法驗證 CheckoutWC 授權 (%1$d/%2$d 次嘗試失敗)。使用快取的授權資料。最後嘗試時間：%3$s 之前。"
 
-#: includes/Managers/UpdatesManager.php:1006
+#: includes/Managers/UpdatesManager.php:1025
 msgid "%s license activation was not successful. Please check your key status below for more information."
 msgstr "%s 授權啟用未成功。請查看下方您的金鑰狀態以獲取更多資訊。"
 
-#: includes/Managers/UpdatesManager.php:1024
+#: includes/Managers/UpdatesManager.php:1043
 msgid "%s license successfully activated."
 msgstr "%s 授權已成功啟用。"
 
-#: includes/Managers/UpdatesManager.php:1042
+#: includes/Managers/UpdatesManager.php:1061
 msgid "%s license deactivation failed. Please try again, or contact support."
 msgstr "%s 授權停用失敗。請再試一次，或聯絡客服支援。"
 
-#: includes/Managers/UpdatesManager.php:1060
+#: includes/Managers/UpdatesManager.php:1079
 msgid "%s license deactivated successfully."
 msgstr "%s 授權已成功停用。"
 
-#: includes/Managers/UpdatesManager.php:1078
+#: includes/Managers/UpdatesManager.php:1097
 msgid "%s license settings saved successfully."
 msgstr "%s 授權設定已成功儲存。"
 
-#: includes/Managers/UpdatesManager.php:1096
+#: includes/Managers/UpdatesManager.php:1115
 msgid "%1$s license activation failed: %2$s"
 msgstr "%1$s 授權啟用失敗：%2$s"
 
-#: includes/Managers/UpdatesManager.php:1114
+#: includes/Managers/UpdatesManager.php:1133
 msgid "%s license activation failed: Unable to connect to license server. Please check your internet connection or try again later."
 msgstr "%s 授權啟用失敗：無法連接授權伺服器。請檢查您的網路連線或稍後再試。"
 
-#: includes/Managers/UpdatesManager.php:1132
+#: includes/Managers/UpdatesManager.php:1151
 msgid "%s: License deactivated locally. The license server could not be reached, but the license has been deactivated on this site."
 msgstr "%s：授權已在本地停用。無法連接授權伺服器，但授權已在此網站停用。"
 
 # %1$d: failure count, %2$d: max failures, %3$s: time since last failure
-#: includes/Managers/UpdatesManager.php:1402
+#: includes/Managers/UpdatesManager.php:1421
 msgid "Unable to verify license online (%1$d/%2$d attempts failed). Using cached license data. Last attempt: %3$s ago."
 msgstr "無法在線驗證授權 (%1$d/%2$d 次嘗試失敗)。使用快取的授權資料。最後嘗試時間：%3$s 之前。"
 
-#: includes/Managers/UpdatesManager.php:1408
+#: includes/Managers/UpdatesManager.php:1427
 msgid "License verified successfully."
 msgstr "授權驗證成功。"
 
@@ -1274,7 +1267,7 @@ msgid "Please enter a valid postcode / ZIP."
 msgstr "請輸入有效的郵遞區號."
 
 #: includes/Managers/AssetManager.php:714
-#: includes/Features/LocalPickup.php:636
+#: includes/Features/LocalPickup.php:639
 msgid "Pickup"
 msgstr "捡起"
 
@@ -1443,142 +1436,142 @@ msgstr "免費禮物"
 msgid "Reward"
 msgstr "獎勵"
 
-#: includes/Features/SideCart.php:1709
+#: includes/Features/SideCart.php:1710
 #: includes/Admin/WooCommerceAdminScreenAugmenter.php:24
 #: includes/Admin/WooCommerceAdminScreenAugmenter.php:45
 msgid "CheckoutWC:"
 msgstr "CheckoutWC："
 
-#: includes/Features/SideCart.php:1710
+#: includes/Features/SideCart.php:1711
 msgid "Settings marked with asterisks (**) may be overridden based on your Side Cart settings. (CheckoutWC > Side Cart)"
 msgstr "標有星號 (**) 的設定可能會根據您的側邊購物車設定被覆蓋。（CheckoutWC > 側邊購物車）"
 
-#: includes/Features/OrderBumps.php:647
+#: includes/Features/OrderBumps.php:655
 msgid "All orders"
 msgstr "所有訂單"
 
-#: includes/Features/OrderBumps.php:650
+#: includes/Features/OrderBumps.php:658
 msgid "Contains Any Order Bump"
 msgstr "包含任意加購商品"
 
 # %s: Order bump title
-#: includes/Features/OrderBumps.php:656
+#: includes/Features/OrderBumps.php:664
 msgid "Has Bump: %s"
 msgstr "有加購商品：%s"
 
-#: includes/Features/LocalPickup.php:127
-#: includes/Features/LocalPickup.php:131
+#: includes/Features/LocalPickup.php:130
+#: includes/Features/LocalPickup.php:134
 msgid "Delivery method"
 msgstr "運輸方式"
 
-#: includes/Features/LocalPickup.php:181
+#: includes/Features/LocalPickup.php:184
 msgid "Pick up"
 msgstr "撿起"
 
-#: includes/Features/LocalPickup.php:200
+#: includes/Features/LocalPickup.php:203
 msgid "Ship"
 msgstr "发送"
 
-#: includes/Features/LocalPickup.php:308
+#: includes/Features/LocalPickup.php:311
 msgid "Pickup locations"
 msgstr "取貨地點"
 
-#: includes/Features/LocalPickup.php:505
-#: includes/Features/LocalPickup.php:507
+#: includes/Features/LocalPickup.php:508
+#: includes/Features/LocalPickup.php:510
 #: includes/Admin/Pages/PickupLocationsAdminFree.php:21
 #: includes/Admin/Pages/Premium/PickupLocations.php:23
 msgid "Pickup Locations"
 msgstr "取貨地點"
 
-#: includes/Features/LocalPickup.php:506
-#: includes/Features/LocalPickup.php:694
-#: includes/Features/LocalPickup.php:782
-#: includes/Features/LocalPickup.php:830
-#: includes/Features/LocalPickup.php:1158
-#: includes/Features/LocalPickup.php:1183
+#: includes/Features/LocalPickup.php:509
+#: includes/Features/LocalPickup.php:697
+#: includes/Features/LocalPickup.php:789
+#: includes/Features/LocalPickup.php:837
+#: includes/Features/LocalPickup.php:1182
+#: includes/Features/LocalPickup.php:1207
 msgid "Pickup Location"
 msgstr "取件地點"
 
-#: includes/Features/LocalPickup.php:508
+#: includes/Features/LocalPickup.php:511
 msgid "Add Pickup Location"
 msgstr "新增取貨地點"
 
-#: includes/Features/LocalPickup.php:509
+#: includes/Features/LocalPickup.php:512
 msgid "Add New Pickup Location"
 msgstr "新增取貨地點"
 
-#: includes/Features/LocalPickup.php:511
+#: includes/Features/LocalPickup.php:514
 msgid "Edit Pickup Location"
 msgstr "編輯取貨地點"
 
-#: includes/Features/LocalPickup.php:512
+#: includes/Features/LocalPickup.php:515
 msgid "New Pickup Location"
 msgstr "新取貨地點"
 
-#: includes/Features/LocalPickup.php:513
+#: includes/Features/LocalPickup.php:516
 msgid "View Pickup Locations"
 msgstr "查看取貨地點"
 
-#: includes/Features/LocalPickup.php:514
+#: includes/Features/LocalPickup.php:517
 msgid "View Pickup Location"
 msgstr "查看取貨地點"
 
-#: includes/Features/LocalPickup.php:515
+#: includes/Features/LocalPickup.php:518
 msgid "Search Pickup Locations"
 msgstr "搜尋取貨地點"
 
-#: includes/Features/LocalPickup.php:516
+#: includes/Features/LocalPickup.php:519
 msgid "No Pickup Location found"
 msgstr "找不到取貨地點"
 
-#: includes/Features/LocalPickup.php:517
+#: includes/Features/LocalPickup.php:520
 msgid "No Pickup Locations found in trash"
 msgstr "垃圾桶中找不到取貨地點"
 
-#: includes/Features/LocalPickup.php:518
+#: includes/Features/LocalPickup.php:521
 msgid "Attributes"
 msgstr "屬性"
 
-#: includes/Features/LocalPickup.php:523
+#: includes/Features/LocalPickup.php:526
 msgid "This is where you can add new Pickup Locations."
 msgstr "這裡是您可以新增取貨地點的地方。"
 
-#: includes/Features/LocalPickup.php:601
+#: includes/Features/LocalPickup.php:604
 #: client/ts/frontend/Components/ReviewPane/PaymentMethodReviewPane.tsx:37
 #: client/ts/frontend/Components/ReviewPane/OrderReviewStepReviewPane.tsx:37
 msgid "Method"
 msgstr "方法"
 
-#: includes/Features/LocalPickup.php:754
+#: includes/Features/LocalPickup.php:761
 msgid "Pickup instructions"
 msgstr "取貨說明"
 
-#: includes/Features/LocalPickup.php:950
+#: includes/Features/LocalPickup.php:957
 msgid "Usually ready in 1 hour."
 msgstr "通常在 1 小時內準備好。"
 
-#: includes/Features/LocalPickup.php:951
+#: includes/Features/LocalPickup.php:958
 msgid "Usually ready in 2 hours."
 msgstr "通常在 2 小時內準備好。"
 
-#: includes/Features/LocalPickup.php:952
+#: includes/Features/LocalPickup.php:959
 msgid "Usually ready in 4 hours."
 msgstr "通常在 4 小時內準備好。"
 
-#: includes/Features/LocalPickup.php:953
+#: includes/Features/LocalPickup.php:960
 msgid "Usually ready in 24 hours."
 msgstr "通常在 24 小時內準備好。"
 
-#: includes/Features/LocalPickup.php:954
+#: includes/Features/LocalPickup.php:961
 msgid "Usually ready in 2-4 days."
 msgstr "通常在 2-4 天內準備好。"
 
-#: includes/Features/LocalPickup.php:955
+#: includes/Features/LocalPickup.php:962
 msgid "Usually ready in 5+ days."
 msgstr "通常在 5+ 天內準備好。"
 
-#: includes/Features/LocalPickup.php:1167
-#: includes/Features/LocalPickup.php:1194
+#: includes/Features/LocalPickup.php:1191
+#: includes/Features/LocalPickup.php:1218
 msgid "Pickup Instructions:"
 msgstr "取貨說明："
 
@@ -1789,152 +1782,6 @@ msgstr "選擇任一選項..."
 msgid "You're missing out on important updates because your license key is missing, invalid, or expired."
 msgstr "您錯過了重要更新，因為您的授權金鑰遺失、無效或已過期。"
 
-#: includes/Action/ValidatePostcodeAction.php:33
-msgid "Please enter a valid %s."
-msgstr "請輸入有效的 %s。"
-
-#: includes/Action/ValidateEmailDomainAction.php:44
-msgid "Email address contains invalid domain name."
-msgstr "電子郵件地址包含無效域名。"
-
-#: includes/Action/UpdateCheckoutAction.php:71
-msgid "Sorry, your session has expired."
-msgstr "抱歉，您的會話已過期。"
-
-#: includes/Action/UpdateCheckoutAction.php:71
-msgid "Return to shop"
-msgstr "返回商店"
-
-#: includes/Action/SmartyStreetsAddressValidationAction.php:85
-msgid "Use Recommended"
-msgstr "使用推薦"
-
-#: includes/Action/SmartyStreetsAddressValidationAction.php:86
-msgid "Use Your Address"
-msgstr "使用您的地址"
-
-#: includes/Action/SmartyStreetsAddressValidationAction.php:103
-msgid "Reenter Address"
-msgstr "重新輸入地址"
-
-#: includes/Action/SmartyStreetsAddressValidationAction.php:104
-msgid "Use Existing Address"
-msgstr "使用現有地址"
-
-#: includes/Action/SmartyStreetsAddressValidationAction.php:168
-msgid "Use recommended address instead?"
-msgstr "改用推薦地址？"
-
-#: includes/Action/SmartyStreetsAddressValidationAction.php:171
-msgid "We\\'re unable to verify your address, but found a close match."
-msgstr "我們無法驗證您的地址，但找到了一個相近的匹配。"
-
-#: includes/Action/SmartyStreetsAddressValidationAction.php:175
-#: includes/Action/SmartyStreetsAddressValidationAction.php:248
-#: includes/Action/SmartyStreetsAddressValidationAction.php:305
-#: includes/Action/SmartyStreetsAddressValidationAction.php:358
-#: includes/Action/SmartyStreetsAddressValidationAction.php:409
-msgid "We are unable to verify your address."
-msgstr "我們無法驗證您的地址。"
-
-#: includes/Action/SmartyStreetsAddressValidationAction.php:179
-msgid "Please confirm you would like to use this address or try again."
-msgstr "請確認您要使用此地址或重試。"
-
-#: includes/Action/SmartyStreetsAddressValidationAction.php:186
-msgid "You Entered"
-msgstr "你登錄了"
-
-#: includes/Action/SmartyStreetsAddressValidationAction.php:198
-msgid "Recommended"
-msgstr "推薦"
-
-#: includes/Action/RemoveCouponAction.php:26
-msgid "Sorry there was a problem removing this coupon."
-msgstr "抱歉，移除此優惠券時發生問題。"
-
-#: includes/Action/RemoveCouponAction.php:29
-msgid "Coupon has been removed."
-msgstr "優惠券已被移除。"
-
-#: includes/Action/ProcessOfferPaymentAction.php:61
-#: includes/Features/OneClick/OfferRefundManager.php:159
-msgid "Security verification failed."
-msgstr "安全驗證失敗。"
-
-#: includes/Action/ProcessOfferPaymentAction.php:84
-msgid "Invalid order key."
-msgstr "訂單金鑰無效。"
-
-#: includes/Action/ProcessOfferPaymentAction.php:96
-msgid "This order cannot accept offers."
-msgstr "此訂單無法接受優惠。"
-
-#: includes/Action/ProcessOfferPaymentAction.php:108
-msgid "No payment method found."
-msgstr "找不到付款方式。"
-
-#: includes/Action/ProcessOfferPaymentAction.php:120
-msgid "Payment gateway does not support one-click upsells."
-msgstr "付款閘道不支援一鍵加購。"
-
-#: includes/Action/ProcessOfferPaymentAction.php:132
-#: includes/Features/OneClick/OfferRefundManager.php:215
-msgid "Failed to load payment gateway."
-msgstr "載入付款閘道失敗。"
-
-#: includes/Action/ProcessOfferPaymentAction.php:144
-msgid "Invalid product."
-msgstr "產品無效。"
-
-#: includes/Action/ProcessOfferPaymentAction.php:156
-msgid "Invalid bump offer."
-msgstr "加購優惠無效。"
-
-#: includes/Action/ProcessOfferPaymentAction.php:253
-msgid "Payment failed. Please try again."
-msgstr "付款失敗。請再試一次。"
-
-#: includes/Action/ProcessOfferPaymentAction.php:276
-msgid "Payment successful but failed to update order."
-msgstr "付款成功但更新訂單失敗。"
-
-#: includes/Action/ProcessOfferPaymentAction.php:308
-msgid "Offer accepted successfully."
-msgstr "優惠接受成功。"
-
-#: includes/Action/LostPasswordAction.php:59
-msgid "A password reset email has been sent to the email address on file for your account, but may take several minutes to show up in your inbox. Please wait at least 10 minutes before attempting another reset."
-msgstr "密碼重設郵件已發送至您帳戶的電子郵件地址，但可能需要幾分鐘才會出現在您的收件匣。請至少等待10分鐘後再嘗試重設。"
-
-#: includes/Action/LogInAction.php:24
-msgid "There was an error logging in. Please check your credentials and try again."
-msgstr "登錄時出錯。請檢查您的憑據，然後重試。"
-
-#: includes/Action/DeclineOfferAction.php:39
-msgid "Invalid security token."
-msgstr "安全令牌無效。"
-
-#: includes/Action/DeclineOfferAction.php:48
-msgid "Invalid order information."
-msgstr "訂單資訊無效。"
-
-#: includes/Action/DeclineOfferAction.php:54
-msgid "Order verification failed."
-msgstr "訂單驗證失敗。"
-
-#: includes/Action/DeclineOfferAction.php:63
-msgid "Redirecting..."
-msgstr "正在重新導向..."
-
-#: includes/Action/DeclineOfferAction.php:76
-msgid "Session expired. Redirecting..."
-msgstr "會話已過期。正在重新導向..."
-
-#: includes/Action/DeclineOfferAction.php:102
-msgid "Offer declined."
-msgstr "優惠已拒絕。"
-
 #: includes/API/UserRolesAPI.php:44
 msgid "Guest (Not Logged In)"
 msgstr "訪客（未登入）"
@@ -2034,6 +1881,168 @@ msgstr "已回收收入"
 msgid "Recovery Rate"
 msgstr "回收率"
 
+#: includes/Action/ValidatePostcodeAction.php:33
+msgid "Please enter a valid %s."
+msgstr "請輸入有效的 %s。"
+
+#: includes/Action/ValidateEmailDomainAction.php:44
+msgid "Email address contains invalid domain name."
+msgstr "電子郵件地址包含無效域名。"
+
+#: includes/Action/UpdateCheckoutAction.php:80
+msgid "Sorry, your session has expired."
+msgstr "抱歉，您的會話已過期。"
+
+#: includes/Action/UpdateCheckoutAction.php:80
+msgid "Return to shop"
+msgstr "返回商店"
+
+#: includes/Action/SmartyStreetsAddressValidationAction.php:85
+msgid "Use Recommended"
+msgstr "使用推薦"
+
+#: includes/Action/SmartyStreetsAddressValidationAction.php:86
+msgid "Use Your Address"
+msgstr "使用您的地址"
+
+#: includes/Action/SmartyStreetsAddressValidationAction.php:103
+msgid "Reenter Address"
+msgstr "重新輸入地址"
+
+#: includes/Action/SmartyStreetsAddressValidationAction.php:104
+msgid "Use Existing Address"
+msgstr "使用現有地址"
+
+#: includes/Action/SmartyStreetsAddressValidationAction.php:168
+msgid "Use recommended address instead?"
+msgstr "改用推薦地址？"
+
+#: includes/Action/SmartyStreetsAddressValidationAction.php:171
+msgid "We\\'re unable to verify your address, but found a close match."
+msgstr "我們無法驗證您的地址，但找到了一個相近的匹配。"
+
+#: includes/Action/SmartyStreetsAddressValidationAction.php:175
+#: includes/Action/SmartyStreetsAddressValidationAction.php:248
+#: includes/Action/SmartyStreetsAddressValidationAction.php:305
+#: includes/Action/SmartyStreetsAddressValidationAction.php:358
+#: includes/Action/SmartyStreetsAddressValidationAction.php:409
+msgid "We are unable to verify your address."
+msgstr "我們無法驗證您的地址。"
+
+#: includes/Action/SmartyStreetsAddressValidationAction.php:179
+msgid "Please confirm you would like to use this address or try again."
+msgstr "請確認您要使用此地址或重試。"
+
+#: includes/Action/SmartyStreetsAddressValidationAction.php:186
+msgid "You Entered"
+msgstr "你登錄了"
+
+#: includes/Action/SmartyStreetsAddressValidationAction.php:198
+msgid "Recommended"
+msgstr "推薦"
+
+#: includes/Action/RemoveCouponAction.php:26
+msgid "Sorry there was a problem removing this coupon."
+msgstr "抱歉，移除此優惠券時發生問題。"
+
+#: includes/Action/RemoveCouponAction.php:29
+msgid "Coupon has been removed."
+msgstr "優惠券已被移除。"
+
+#: includes/Action/ProcessOfferPaymentAction.php:61
+#: includes/Features/OneClick/OfferRefundManager.php:159
+msgid "Security verification failed."
+msgstr "安全驗證失敗。"
+
+#: includes/Action/ProcessOfferPaymentAction.php:84
+msgid "Invalid order key."
+msgstr "訂單金鑰無效。"
+
+#: includes/Action/ProcessOfferPaymentAction.php:95
+msgid "This order cannot accept offers."
+msgstr "此訂單無法接受優惠。"
+
+#: includes/Action/ProcessOfferPaymentAction.php:107
+msgid "No payment method found."
+msgstr "找不到付款方式。"
+
+#: includes/Action/ProcessOfferPaymentAction.php:119
+msgid "Payment gateway does not support one-click upsells."
+msgstr "付款閘道不支援一鍵加購。"
+
+#: includes/Action/ProcessOfferPaymentAction.php:131
+#: includes/Features/OneClick/OfferRefundManager.php:215
+msgid "Failed to load payment gateway."
+msgstr "載入付款閘道失敗。"
+
+#: includes/Action/ProcessOfferPaymentAction.php:143
+msgid "Invalid product."
+msgstr "產品無效。"
+
+#: includes/Action/ProcessOfferPaymentAction.php:155
+msgid "Invalid bump offer."
+msgstr "加購優惠無效。"
+
+#: includes/Action/ProcessOfferPaymentAction.php:252
+msgid "Payment failed. Please try again."
+msgstr "付款失敗。請再試一次。"
+
+#: includes/Action/ProcessOfferPaymentAction.php:275
+msgid "Payment successful but failed to update order."
+msgstr "付款成功但更新訂單失敗。"
+
+#: includes/Action/ProcessOfferPaymentAction.php:307
+msgid "Offer accepted successfully."
+msgstr "優惠接受成功。"
+
+#: includes/Action/LostPasswordAction.php:59
+msgid "A password reset email has been sent to the email address on file for your account, but may take several minutes to show up in your inbox. Please wait at least 10 minutes before attempting another reset."
+msgstr "密碼重設郵件已發送至您帳戶的電子郵件地址，但可能需要幾分鐘才會出現在您的收件匣。請至少等待10分鐘後再嘗試重設。"
+
+#: includes/Action/LogInAction.php:24
+msgid "There was an error logging in. Please check your credentials and try again."
+msgstr "登錄時出錯。請檢查您的憑據，然後重試。"
+
+#: includes/Action/DeclineOfferAction.php:39
+msgid "Invalid security token."
+msgstr "安全令牌無效。"
+
+#: includes/Action/DeclineOfferAction.php:48
+msgid "Invalid order information."
+msgstr "訂單資訊無效。"
+
+#: includes/Action/DeclineOfferAction.php:54
+msgid "Order verification failed."
+msgstr "訂單驗證失敗。"
+
+#: includes/Action/DeclineOfferAction.php:63
+msgid "Redirecting..."
+msgstr "正在重新導向..."
+
+#: includes/Action/DeclineOfferAction.php:76
+msgid "Session expired. Redirecting..."
+msgstr "會話已過期。正在重新導向..."
+
+#: includes/Action/DeclineOfferAction.php:102
+msgid "Offer declined."
+msgstr "優惠已拒絕。"
+
+#: lib/sendwp-sdk/sendwp-init.php:27
+msgid "Security failed to check sendwp_install_nonce"
+msgstr "安全性檢查 sendwp_install_nonce 失敗"
+
+#: lib/sendwp-sdk/sendwp-init.php:28
+msgid "Ask an administrator for install_plugins capability"
+msgstr "請向管理員索取 install_plugins 權限"
+
+#: lib/sendwp-sdk/sendwp-init.php:29
+msgid "SendWP is already connected."
+msgstr "SendWP 已連接。"
+
+#: lib/sendwp-sdk/remote-install.php:84
+msgid "Something went wrong. SendWP was not installed correctly."
+msgstr "出錯了。SendWP 未正確安裝。"
+
 #. block title
 #: block.json
 msgid "Order Bump Steps"
@@ -2059,62 +2068,6 @@ msgstr "訂單加購報價表單"
 msgid "The form to accept or reject the bump offer."
 msgstr "接受或拒絕加購報價的表單。"
 
-#: includes/Model/Bumps/BumpAbstract.php:1081
-#: includes/Model/Bumps/BumpAbstract.php:1091
-#: includes/Model/ABTests/OrderBumpsABTest.php:30
-#: includes/Features/ABTesting/ABTestTypeRegistry.php:123
-#: includes/Admin/Pages/OrderBumpsAdminFree.php:17
-#: includes/Admin/Pages/OrderBumpsAdminFree.php:71
-#: includes/Admin/Pages/Premium/OrderBumps.php:50
-#: client/ts/admin/Components/Forms/OrderBumpSettingsForm.tsx:45
-#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:408
-msgid "Order Bumps"
-msgstr "訂單加購"
-
-#: includes/Model/Bumps/BumpAbstract.php:1082
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:193
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:1614
-msgid "Order Bump"
-msgstr "訂單加購"
-
-#: includes/Model/Bumps/BumpAbstract.php:1083
-msgid "Add New"
-msgstr "新增"
-
-#: includes/Model/Bumps/BumpAbstract.php:1084
-msgid "Add New Order Bump"
-msgstr "新增訂單加購"
-
-#: includes/Model/Bumps/BumpAbstract.php:1085
-msgid "Edit Order Bump"
-msgstr "編輯訂單加購"
-
-#: includes/Model/Bumps/BumpAbstract.php:1086
-#: client/ts/admin/Components/Metaboxes/OrderBumpsSetupModal.tsx:61
-msgid "New Order Bump"
-msgstr "新訂單加購"
-
-#: includes/Model/Bumps/BumpAbstract.php:1087
-msgid "View Order Bump"
-msgstr "查看訂單加購"
-
-#: includes/Model/Bumps/BumpAbstract.php:1088
-msgid "Find Order Bump"
-msgstr "尋找訂單加購"
-
-#: includes/Model/Bumps/BumpAbstract.php:1089
-msgid "No order bumps were found."
-msgstr "未找到訂單加購。"
-
-#: includes/Model/Bumps/BumpAbstract.php:1090
-msgid "Not found in trash"
-msgstr "垃圾桶中未找到"
-
-#: includes/Model/ABTests/OrderBumpsABTest.php:31
-#: includes/Features/ABTesting/ABTestTypeRegistry.php:124
-msgid "Test different variations of order bumps to see which performs better."
-msgstr "測試不同的訂單加購變體，看看哪個表現較佳。"
-
 # %1$s: Plugin name, %2$s: Link opening tag, %3$s: Version number, %4$s: Link closing tag
 #: includes/Managers/Helpers/EDD_SL_Plugin_Updater.php:281
 msgid "There is a new version of %1$s available. %2$sView version %3$s details%4$s."
@@ -2133,6 +2086,62 @@ msgstr "您沒有安裝外掛更新的權限"
 #: client/ts/admin/Components/GooglePlacesKeyStatus.tsx:61
 msgid "Error"
 msgstr "錯誤"
+
+#: includes/Model/Bumps/BumpAbstract.php:1094
+#: includes/Model/Bumps/BumpAbstract.php:1104
+#: includes/Model/ABTests/OrderBumpsABTest.php:30
+#: includes/Features/ABTesting/ABTestTypeRegistry.php:123
+#: includes/Admin/Pages/OrderBumpsAdminFree.php:17
+#: includes/Admin/Pages/OrderBumpsAdminFree.php:71
+#: includes/Admin/Pages/Premium/OrderBumps.php:50
+#: client/ts/admin/Components/Forms/OrderBumpSettingsForm.tsx:45
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:408
+msgid "Order Bumps"
+msgstr "訂單加購"
+
+#: includes/Model/Bumps/BumpAbstract.php:1095
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:193
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:1614
+msgid "Order Bump"
+msgstr "訂單加購"
+
+#: includes/Model/Bumps/BumpAbstract.php:1096
+msgid "Add New"
+msgstr "新增"
+
+#: includes/Model/Bumps/BumpAbstract.php:1097
+msgid "Add New Order Bump"
+msgstr "新增訂單加購"
+
+#: includes/Model/Bumps/BumpAbstract.php:1098
+msgid "Edit Order Bump"
+msgstr "編輯訂單加購"
+
+#: includes/Model/Bumps/BumpAbstract.php:1099
+#: client/ts/admin/Components/Metaboxes/OrderBumpsSetupModal.tsx:61
+msgid "New Order Bump"
+msgstr "新訂單加購"
+
+#: includes/Model/Bumps/BumpAbstract.php:1100
+msgid "View Order Bump"
+msgstr "查看訂單加購"
+
+#: includes/Model/Bumps/BumpAbstract.php:1101
+msgid "Find Order Bump"
+msgstr "尋找訂單加購"
+
+#: includes/Model/Bumps/BumpAbstract.php:1102
+msgid "No order bumps were found."
+msgstr "未找到訂單加購。"
+
+#: includes/Model/Bumps/BumpAbstract.php:1103
+msgid "Not found in trash"
+msgstr "垃圾桶中未找到"
+
+#: includes/Model/ABTests/OrderBumpsABTest.php:31
+#: includes/Features/ABTesting/ABTestTypeRegistry.php:124
+msgid "Test different variations of order bumps to see which performs better."
+msgstr "測試不同的訂單加購變體，看看哪個表現較佳。"
 
 #: includes/Features/OneClick/OrderStatusManager.php:52
 msgid "Pending Offer <span class=\"count\">(%s)</span>"
@@ -2254,6 +2263,14 @@ msgstr "啟用 Astra 支援（測試版）"
 msgid "If enabled with Advanced > Template Loader > Distraction Free Portal, Astra\\'s header and footer are displayed and Astra styles and scripts load on checkout. If disabled with Distraction Free Portal, Astra styles and scripts are excluded for a minimal layout. With WordPress Theme loader, the full theme loads regardless of this setting."
 msgstr "如果在進階 > 模板加載器 > 無干擾入口中啟用，Astra 的頁首和頁尾將顯示，且 Astra 的樣式和腳本會在結帳時加載。如果在無干擾入口中禁用，則會排除 Astra 的樣式和腳本，以達到簡約佈局。使用 WordPress 主題加載器時，無論此設定如何，完整主題都會加載。"
 
+#: includes/Compatibility/Gateways/PayPalForWooCommerce.php:38
+msgid "Please update to the latest version of PayPal for WooCommerce to get full support."
+msgstr "請更新至最新版本的 PayPal for WooCommerce 以獲得完整支援。"
+
+#: includes/Compatibility/Gateways/PayPalForWooCommerce.php:363
+msgid "Logged in with PayPal. Please continue your order below."
+msgstr "使用貝寶登錄。請在下面繼續訂購。"
+
 #: includes/Compatibility/Plugins/WooCommerceGiftCards.php:64
 #: includes/Compatibility/Plugins/WooCommerceGiftCards.php:72
 msgid "Enter your code&hellip;"
@@ -2374,14 +2391,6 @@ msgstr "啟用 Beaver Themer 支援"
 msgid "Allow Beaver Themer to replace header and footer."
 msgstr "允許 Beaver Themer 取代頁首和頁尾。"
 
-#: includes/Compatibility/Gateways/PayPalForWooCommerce.php:38
-msgid "Please update to the latest version of PayPal for WooCommerce to get full support."
-msgstr "請更新至最新版本的 PayPal for WooCommerce 以獲得完整支援。"
-
-#: includes/Compatibility/Gateways/PayPalForWooCommerce.php:363
-msgid "Logged in with PayPal. Please continue your order below."
-msgstr "使用貝寶登錄。請在下面繼續訂購。"
-
 #: includes/Admin/Views/html-refund-offer.php:22
 msgid "Product"
 msgstr "產品"
@@ -2410,17 +2419,171 @@ msgstr "注意："
 msgid "Refunding an offer will process the refund with the payment gateway and create a WooCommerce refund record."
 msgstr "退款優惠將透過付款閘道處理退款，並建立 WooCommerce 退款記錄。"
 
-#: includes/Admin/Pages/WooCommercePages.php:21
+#: includes/Admin/Notices/WelcomeNotice.php:12
+msgid "Welcome to CheckoutWC"
+msgstr "歡迎使用 CheckoutWC"
+
+#: includes/Admin/Notices/WelcomeNotice.php:20
+msgid "Thank you for installing CheckoutWC! We automatically activated your license. You are all set!"
+msgstr "感謝您安裝 CheckoutWC！我們已自動啟用您的授權。您已準備就緒！"
+
+#: includes/Admin/Notices/WelcomeNotice.php:26
+msgid "Thank you for installing CheckoutWC! To get started, enter your <strong>License Key</strong> below, save, and click <strong>Activate Site</strong>."
+msgstr "感謝您安裝 CheckoutWC！開始使用，請在下方輸入您的<strong>授權金鑰</strong>，儲存後點擊<strong>啟用網站</strong>。"
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:20
+msgid "your email"
+msgstr "您的電子郵件"
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:88
+msgid "privacy policy"
+msgstr "隱私政策"
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:93
+msgid "By joining, %1$s will be added to our mailing list. Read our %2$s."
+msgstr "加入後，%1$s 將被加入我們的郵件列表。請閱讀我們的 %2$s。"
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:99
+msgid "Join Newsletter & Save 25%"
+msgstr "訂閱電子報並享受 25% 折扣"
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:102
+msgid "Join Newsletter"
+msgstr "訂閱電子報"
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:113
+msgid "Sign up to our newsletter and get proven conversion tips and checkout optimization strategies from the CheckoutWC team."
+msgstr "訂閱我們的電子報，獲取 CheckoutWC 團隊提供的有效轉換技巧和結帳優化策略。"
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:116
+msgid "Boost Your Conversions with Proven Strategies."
+msgstr "用有效策略提升您的轉換率。"
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:123
+msgid "We're so glad that you've chosen CheckoutWC to handle your checkouts. Unlock more sales with premium features like order bumps, abandoned cart recovery, and much more."
+msgstr "我們很高興您選擇 CheckoutWC 來處理您的結帳。使用高級功能如訂單加購、遺棄購物車回收等，解鎖更多銷售機會。"
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:126
+msgid "Unlock more sales with CheckoutWC Premium"
+msgstr "使用 CheckoutWC Premium 解鎖更多銷售"
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:144
+msgid "Sorry, there was an error joining our newsletter. Please refresh the page and try again."
+msgstr "抱歉，訂閱電子報時發生錯誤。請重新整理頁面並再試一次。"
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:243
+msgid "Please wait..."
+msgstr "請稍候..."
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:320
+msgid "Sorry, your account has insufficient permissions to join our newsletter."
+msgstr "抱歉，您的帳號權限不足，無法訂閱電子報。"
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:354
+msgid "You have already joined our newsletter!"
+msgstr "您已經訂閱過我們的電子報！"
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:396
+msgid "Thank you for joining our newsletter!"
+msgstr "感謝您訂閱我們的電子報！"
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:410
+msgid "Security check failed."
+msgstr "安全檢查失敗。"
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:414
+msgid "Insufficient permissions."
+msgstr "權限不足。"
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:422
+msgid "Notice dismissed."
+msgstr "通知已關閉。"
+
+# %1$d: Number of days, %2$s: Pricing URL, %3$s: "renew it here" link text
+#: includes/Admin/Notices/LicenseUnverifiedNotice.php:25
+msgid "Premium features are off because we haven\\'t been able to check your license with checkoutwc.com for %1$d days. Make sure your server can connect to checkoutwc.com. If your license has expired, <a href=\"%2$s\" target=\"_blank\">%3$s</a>."
+msgstr "由於我們已無法與 checkoutwc.com 驗證您的授權達 %1$d 天，進階功能已關閉。請確認您的伺服器可連線至 checkoutwc.com。若您的授權已過期，<a href=\"%2$s\" target=\"_blank\">%3$s</a>。"
+
+#: includes/Admin/Notices/LicenseUnverifiedNotice.php:28
+msgid "renew it here"
+msgstr "在此續訂"
+
+#: includes/Admin/Notices/LicenseUnverifiedNotice.php:33
+msgid "CheckoutWC can\\'t verify your license"
+msgstr "CheckoutWC 無法驗證您的授權"
+
+# %1$s: Date premium features turn off, %2$s: Support email URL, %3$s: "Contact support" link text
+#: includes/Admin/Notices/LicenseServerUnreachableNotice.php:28
+msgid "We couldn\\'t check your license with checkoutwc.com. Premium features will turn off on %1$s unless the connection is restored. <a href=\"%2$s\">%3$s</a> if this keeps happening."
+msgstr "我們無法與 checkoutwc.com 驗證您的授權。除非連線恢復，否則進階功能將於 %1$s 關閉。若此情況持續發生，請 <a href=\"%2$s\">%3$s</a>。"
+
+#: includes/Admin/Notices/LicenseServerUnreachableNotice.php:31
+#: includes/Admin/Notices/LicenseServerUnreachableNotice.php:38
+msgid "Contact support"
+msgstr "聯絡支援"
+
+# %1$s: Support email URL, %2$s: "Contact support" link text
+#: includes/Admin/Notices/LicenseServerUnreachableNotice.php:36
+msgid "We couldn\\'t check your license with checkoutwc.com. Make sure your server can connect to checkoutwc.com. <a href=\"%1$s\">%2$s</a> if this keeps happening."
+msgstr "我們無法與 checkoutwc.com 驗證您的授權。請確認您的伺服器可連線至 checkoutwc.com。若此情況持續發生，請 <a href=\"%1$s\">%2$s</a>。"
+
+#: includes/Admin/Notices/LicenseServerUnreachableNotice.php:45
+msgid "CheckoutWC can\\'t reach the license server"
+msgstr "CheckoutWC 無法連線至授權伺服器"
+
+#: includes/Admin/Notices/InvalidLicenseKeyNotice.php:13
+msgid "CheckoutWC license expired"
+msgstr "CheckoutWC 授權已過期"
+
+# %1$s: URL to pricing page, %2$s: "Renew your license" link text, %3$s: Support email URL, %4$s: "contact support" link text
+#: includes/Admin/Notices/InvalidLicenseKeyNotice.php:16
+msgid "Premium features are off because your license has expired. <a href=\"%1$s\" target=\"_blank\">%2$s</a> to turn them back on. If you think this is a mistake, <a href=\"%3$s\">%4$s</a>."
+msgstr "由於您的授權已過期，進階功能已關閉。請 <a href=\"%1$s\" target=\"_blank\">%2$s</a> 以重新啟用。如果您認為這是錯誤，請 <a href=\"%3$s\">%4$s</a>。"
+
+#: includes/Admin/Notices/InvalidLicenseKeyNotice.php:18
+msgid "Renew your license"
+msgstr "續訂您的授權"
+
+#: includes/Admin/Notices/InvalidLicenseKeyNotice.php:20
+msgid "contact support"
+msgstr "聯絡支援"
+
+# %1$s: URL to activation page, %2$s: "Activate your license" link text, %3$s: Pricing URL, %4$s: "buy a license" link text
+#: includes/Admin/Notices/InactiveLicenseNotice.php:11
+msgid "Premium features are off because your license isn\\'t activated on this site. <a href=\"%1$s\">%2$s</a> or <a href=\"%3$s\" target=\"_blank\">%4$s</a> for this site."
+msgstr "由於您的授權尚未在此網站上啟用，進階功能已關閉。請 <a href=\"%1$s\">%2$s</a> 或 <a href=\"%3$s\" target=\"_blank\">%4$s</a> 為此網站啟用。"
+
+#: includes/Admin/Notices/InactiveLicenseNotice.php:13
+msgid "Activate your license"
+msgstr "啟用您的授權"
+
+#: includes/Admin/Notices/InactiveLicenseNotice.php:20
+msgid "CheckoutWC license not activated"
+msgstr "CheckoutWC 授權未啟用"
+
+#: includes/Admin/Notices/BFNotice.php:13
+msgid "Black Friday Sale - 40% Off"
+msgstr "黑色星期五促銷 - 享受 40% 折扣"
+
+#: includes/Admin/Notices/BFNotice.php:14
+msgid "You're missing out on revenue growth tools like Order Bumps, Upsells, Abandoned Cart Recovery and more! Save 40% on CheckoutWC pro plans for Black Friday, ends December 4th"
+msgstr "您正在錯過像訂單加購、追加銷售、遺棄購物車回收等營收成長工具！黑色星期五期間，CheckoutWC 專業版方案享有 40% 折扣，優惠至 12 月 4 日結束"
+
+#: includes/Admin/Notices/BFNotice.php:27
+msgid "Get CheckoutWC Pro Now!"
+msgstr "立即獲取 CheckoutWC 專業版！"
+
+#: includes/Admin/Pages/WooCommercePages.php:22
 msgid "Pages"
 msgstr "頁面"
 
-#: includes/Admin/Pages/WooCommercePages.php:30
+#: includes/Admin/Pages/WooCommercePages.php:31
 #: client/ts/admin/Components/Forms/ThankYouSettingsForm.tsx:53
 #: client/ts/admin/Components/Forms/AdvancedScriptsSettingsForm.tsx:144
 msgid "Thank You"
 msgstr "謝謝您"
 
-#: includes/Admin/Pages/WooCommercePages.php:31
+#: includes/Admin/Pages/WooCommercePages.php:32
 msgid "Global Options"
 msgstr "全球选项"
 
@@ -2573,7 +2736,7 @@ msgid "Our Knowledge Base is packed with tips, tricks, and common troubleshootin
 msgstr "我們的知識庫充滿了技巧、竅門和常見故障排除步驟。"
 
 #: includes/Admin/Pages/Support.php:27
-#: includes/Admin/Pages/General.php:69
+#: includes/Admin/Pages/General.php:68
 msgid "Read Our Documentation"
 msgstr "閱讀我們的文件"
 
@@ -2960,141 +3123,149 @@ msgstr "提交"
 msgid "Integrations"
 msgstr "整合"
 
+#: includes/Admin/Pages/General.php:39
 #: includes/Admin/Pages/General.php:40
-#: includes/Admin/Pages/General.php:41
 #: includes/Admin/Pages/CheckoutEditor.php:21
 #: client/ts/admin/Components/CheckoutEditor/EditorHeader.tsx:92
 msgid "Checkout Editor"
 msgstr "結帳編輯器"
 
-#: includes/Admin/Pages/General.php:62
+#: includes/Admin/Pages/General.php:61
 msgid "Welcome to the new standard for WooCommerce stores."
 msgstr "歡迎使用 WooCommerce 商店的新標準。"
 
-#: includes/Admin/Pages/General.php:65
+#: includes/Admin/Pages/General.php:64
 msgid "We hate complex configurations too. Get up and running with CheckoutWC in 5 minutes or less. ⚡️"
 msgstr "我們也討厭複雜的設定。使用 CheckoutWC，5 分鐘內即可啟動並運行。⚡️"
 
-#: includes/Admin/Pages/General.php:84
+#: includes/Admin/Pages/General.php:83
 msgid "Welcome to CheckoutWC 10.0"
 msgstr "歡迎使用 CheckoutWC 10.0"
 
-#: includes/Admin/Pages/General.php:87
+#: includes/Admin/Pages/General.php:86
 msgid "CheckoutWC 10.0 is a major update with new features and optimizations to make your WooCommerce store run better."
 msgstr "CheckoutWC 10.0 是一次重大更新，帶來新功能和優化，讓您的 WooCommerce 商店運行更順暢。"
 
-#: includes/Admin/Pages/General.php:93
+#: includes/Admin/Pages/General.php:92
 msgid "Just Say When"
 msgstr "隨時告訴我們"
 
-#: includes/Admin/Pages/General.php:96
+#: includes/Admin/Pages/General.php:95
 msgid "Our new rules engine puts you in charge. Want to show an Order Bump only to first time customers who use a specific coupon code? You can do that. Want to show specific trust badges based on what is in the cart? You can do that too!"
 msgstr "我們新的規則引擎讓您掌控一切。想只對首次使用特定優惠券代碼的顧客顯示訂單加購嗎？您可以做到。想根據購物車內容顯示特定的信任徽章？這也可以！"
 
-#: includes/Admin/Pages/General.php:110
+#: includes/Admin/Pages/General.php:109
 msgid "Get Started Faster"
 msgstr "更快開始"
 
-#: includes/Admin/Pages/General.php:113
+#: includes/Admin/Pages/General.php:112
 msgid "Creating Order Bumps has lots of options. Our new Quick Start will help you get started faster."
 msgstr "建立訂單加購有很多選項。我們新的快速開始將幫助您更快上手。"
 
-#: includes/Admin/Pages/General.php:117
+#: includes/Admin/Pages/General.php:116
 msgid "Configure Order Bumps"
 msgstr "設定訂單加購"
 
-#: includes/Admin/Pages/General.php:126
+#: includes/Admin/Pages/General.php:125
 msgid "And a lot more"
 msgstr "還有更多"
 
-#: includes/Admin/Pages/General.php:129
+#: includes/Admin/Pages/General.php:128
 msgid "To view the full list of changes, checkout our change log."
 msgstr "要查看完整的變更清單，請查看我們的變更日誌。"
 
-#: includes/Admin/Pages/General.php:133
+#: includes/Admin/Pages/General.php:132
 msgid "Read Our Change Log"
 msgstr "閱讀我們的變更日誌"
 
-#: includes/Admin/Pages/General.php:149
-msgid "Step 1: Activate Your License"
-msgstr "步驟 1：啟用您的授權"
-
-#: includes/Admin/Pages/General.php:149
-msgid "Step 1: Try CheckoutWC Premium Free For 7 Days"
-msgstr "步驟 1：免費試用 CheckoutWC Premium 7 天"
-
 #: includes/Admin/Pages/General.php:150
-msgid "Enter your license key and activate it for this site to turn on premium features."
-msgstr "輸入您的授權金鑰並為此網站啟用它，即可開啟進階功能。"
+msgid "Step 1: Upgrade to CheckoutWC Premium"
+msgstr "步驟 1：升級至 CheckoutWC Premium"
 
-#: includes/Admin/Pages/General.php:150
+#: includes/Admin/Pages/General.php:151
 msgid "Supercharge your WooCommerce store."
 msgstr "為您的 WooCommerce 商店加速。"
 
-#: includes/Admin/Pages/General.php:155
+#: includes/Admin/Pages/General.php:153
+msgid "Step 1: Renew Your License"
+msgstr "步驟 1：續訂您的授權"
+
+#: includes/Admin/Pages/General.php:154
+msgid "Your license has expired. Renew it to keep premium features working."
+msgstr "您的授權已過期。請續訂以維持進階功能正常運作。"
+
+#: includes/Admin/Pages/General.php:156
+msgid "Step 1: Activate Your License"
+msgstr "步驟 1：啟用您的授權"
+
+#: includes/Admin/Pages/General.php:157
+msgid "Enter your license key and activate it for this site to turn on premium features."
+msgstr "輸入您的授權金鑰並為此網站啟用它，即可開啟進階功能。"
+
+#: includes/Admin/Pages/General.php:167
 msgid "Step 2: Customize Checkout"
 msgstr "步驟 2：自訂結帳"
 
-#: includes/Admin/Pages/General.php:156
+#: includes/Admin/Pages/General.php:168
 msgid "Use the Checkout Editor to customize your checkout layout, fields, and content."
 msgstr "使用結帳編輯器自訂您的結帳版面、欄位和內容。"
 
-#: includes/Admin/Pages/General.php:161
+#: includes/Admin/Pages/General.php:173
 msgid "Step 3: Go Live"
 msgstr "步驟 3：上線"
 
-#: includes/Admin/Pages/General.php:162
+#: includes/Admin/Pages/General.php:174
 msgid "Enable templates for all visitors."
 msgstr "為所有訪客啟用範本。"
 
-#: includes/Admin/Pages/General.php:190
+#: includes/Admin/Pages/General.php:202
 msgid "Requires a valid and active license key."
 msgstr "需要有效且啟用中的授權金鑰。"
 
-#: includes/Admin/Pages/General.php:196
+#: includes/Admin/Pages/General.php:208
 msgid "CheckoutWC Templates are always activated for admin users."
 msgstr "CheckoutWC 範本始終對管理員使用者啟用。"
 
-#: includes/Admin/Pages/General.php:201
+#: includes/Admin/Pages/General.php:213
 msgid "This step can also be completed directly from the Checkout Editor!"
 msgstr "此步驟也可以直接從結帳編輯器完成！"
 
-#: includes/Admin/Pages/General.php:221
+#: includes/Admin/Pages/General.php:233
 msgid "Upgrade to CheckoutWC Premium - Save 20% on your first year"
 msgstr ""
 
-#: includes/Admin/Pages/General.php:223
-#: includes/Admin/Pages/General.php:250
-#: includes/Admin/Pages/General.php:265
-#: includes/Admin/Pages/General.php:310
+#: includes/Admin/Pages/General.php:235
+#: includes/Admin/Pages/General.php:262
+#: includes/Admin/Pages/General.php:277
+#: includes/Admin/Pages/General.php:322
 msgid "Opens in new tab"
 msgstr "在新分頁開啟"
 
-#: includes/Admin/Pages/General.php:236
+#: includes/Admin/Pages/General.php:248
 msgid "Customize Your Checkout"
 msgstr "自訂您的結帳"
 
-#: includes/Admin/Pages/General.php:248
+#: includes/Admin/Pages/General.php:260
 msgid "Choose a Template"
 msgstr "選擇範本"
 
-#: includes/Admin/Pages/General.php:263
+#: includes/Admin/Pages/General.php:275
 msgid "Customize Logo and Colors"
 msgstr "自訂標誌和顏色"
 
-#: includes/Admin/Pages/General.php:308
+#: includes/Admin/Pages/General.php:320
 msgid "Preview Your Checkout Page"
 msgstr "預覽您的結帳頁面"
 
-#: includes/Admin/Pages/General.php:354
+#: includes/Admin/Pages/General.php:366
 msgid "Unbypass CheckoutWC Template"
 msgstr "取消繞過 CheckoutWC 範本"
 
-#: includes/Admin/Pages/General.php:354
+#: includes/Admin/Pages/General.php:366
 msgid "Bypass CheckoutWC Template"
 msgstr "繞過 CheckoutWC 範本"
 
-#: includes/Admin/Pages/General.php:358
+#: includes/Admin/Pages/General.php:370
 msgid "CheckoutWC template and functionality will be temporarily bypassed (just for you!). This is helpful for testing and debugging. You can click Unbypass CheckoutWC Template once you are done."
 msgstr "CheckoutWC 範本和功能將暫時被繞過（僅限您！）。這對測試和除錯很有幫助。完成後，您可以點擊取消繞過 CheckoutWC 範本。"
 
@@ -3270,74 +3441,74 @@ msgstr "次要文字滑鼠懸停"
 msgid "Theme Specific Colors"
 msgstr "主題專用顏色"
 
-#: includes/Admin/Pages/Advanced.php:20
-#: includes/Admin/Pages/Advanced.php:28
+#: includes/Admin/Pages/Advanced.php:37
+#: includes/Admin/Pages/Advanced.php:45
 msgid "Advanced"
 msgstr "進階"
 
-#: includes/Admin/Pages/Advanced.php:29
+#: includes/Admin/Pages/Advanced.php:46
 msgid "Scripts"
 msgstr "腳本"
 
-#: includes/Admin/Pages/Advanced.php:30
+#: includes/Admin/Pages/Advanced.php:47
 msgid "Tools"
 msgstr "工具"
 
-#: includes/Admin/Pages/Advanced.php:64
-#: includes/Admin/Pages/Advanced.php:84
+#: includes/Admin/Pages/Advanced.php:81
+#: includes/Admin/Pages/Advanced.php:101
 msgid "Export Settings"
 msgstr "匯出設定"
 
-#: includes/Admin/Pages/Advanced.php:65
+#: includes/Admin/Pages/Advanced.php:82
 msgid "Download a JSON file containing the current plugin settings."
 msgstr "下載包含目前外掛設定的 JSON 檔案。"
 
-#: includes/Admin/Pages/Advanced.php:69
-#: includes/Admin/Pages/Advanced.php:97
+#: includes/Admin/Pages/Advanced.php:86
+#: includes/Admin/Pages/Advanced.php:114
 msgid "Import Settings"
 msgstr "匯入設定"
 
-#: includes/Admin/Pages/Advanced.php:70
+#: includes/Admin/Pages/Advanced.php:87
 msgid "Replace your current settings with a previous settings export."
 msgstr "用先前匯出的設定取代您目前的設定。"
 
-#: includes/Admin/Pages/Advanced.php:87
+#: includes/Admin/Pages/Advanced.php:104
 msgid "Download a backup file of your settings."
 msgstr "下載您的設定備份檔案。"
 
-#: includes/Admin/Pages/Advanced.php:101
+#: includes/Admin/Pages/Advanced.php:118
 msgid "Upload File and Import Settings"
 msgstr "上傳檔案並匯入設定"
 
-#: includes/Admin/Pages/Advanced.php:174
+#: includes/Admin/Pages/Advanced.php:196
 msgid "CheckoutWC Settings Import Failed"
 msgstr "CheckoutWC 設定匯入失敗"
 
-#: includes/Admin/Pages/Advanced.php:175
+#: includes/Admin/Pages/Advanced.php:197
 msgid "Unable to import settings. Did you select a JSON file to upload?"
 msgstr "無法匯入設定。您是否選擇了要上傳的 JSON 檔案？"
 
-#: includes/Admin/Pages/Advanced.php:187
+#: includes/Admin/Pages/Advanced.php:209
 msgid "Error. Uploaded file appears empty."
 msgstr "錯誤。上傳的檔案似乎是空的。"
 
-#: includes/Admin/Pages/Advanced.php:198
+#: includes/Admin/Pages/Advanced.php:220
 msgid "Wrong file extension. Uploaded settings must be a JSON file."
 msgstr "檔案副檔名錯誤。上傳的設定必須是 JSON 檔案。"
 
-#: includes/Admin/Pages/Advanced.php:206
+#: includes/Admin/Pages/Advanced.php:228
 msgid "Error moving uploaded file - check your permissions."
 msgstr "移動上傳檔案時出錯 - 請檢查您的權限。"
 
-#: includes/Admin/Pages/Advanced.php:213
+#: includes/Admin/Pages/Advanced.php:235
 msgid "Error decoding JSON file."
 msgstr "解碼 JSON 檔案時出錯。"
 
-#: includes/Admin/Pages/Advanced.php:255
+#: includes/Admin/Pages/Advanced.php:277
 msgid "CheckoutWC Settings Import Successful"
 msgstr "CheckoutWC 設定匯入成功"
 
-#: includes/Admin/Pages/Advanced.php:256
+#: includes/Admin/Pages/Advanced.php:278
 msgid "Successfully imported settings."
 msgstr "成功匯入設定。"
 
@@ -3517,160 +3688,6 @@ msgstr "啟用 A/B 測試"
 msgid "Allow A/B tests to be created and applied on the checkout page."
 msgstr "允許在結帳頁面建立並套用 A/B 測試。"
 
-#: includes/Admin/Notices/WelcomeNotice.php:12
-msgid "Welcome to CheckoutWC"
-msgstr "歡迎使用 CheckoutWC"
-
-#: includes/Admin/Notices/WelcomeNotice.php:20
-msgid "Thank you for installing CheckoutWC! We automatically activated your license. You are all set!"
-msgstr "感謝您安裝 CheckoutWC！我們已自動啟用您的授權。您已準備就緒！"
-
-#: includes/Admin/Notices/WelcomeNotice.php:26
-msgid "Thank you for installing CheckoutWC! To get started, enter your <strong>License Key</strong> below, save, and click <strong>Activate Site</strong>."
-msgstr "感謝您安裝 CheckoutWC！開始使用，請在下方輸入您的<strong>授權金鑰</strong>，儲存後點擊<strong>啟用網站</strong>。"
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:20
-msgid "your email"
-msgstr "您的電子郵件"
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:88
-msgid "privacy policy"
-msgstr "隱私政策"
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:93
-msgid "By joining, %1$s will be added to our mailing list. Read our %2$s."
-msgstr "加入後，%1$s 將被加入我們的郵件列表。請閱讀我們的 %2$s。"
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:99
-msgid "Join Newsletter & Save 25%"
-msgstr "訂閱電子報並享受 25% 折扣"
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:102
-msgid "Join Newsletter"
-msgstr "訂閱電子報"
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:113
-msgid "Sign up to our newsletter and get proven conversion tips and checkout optimization strategies from the CheckoutWC team."
-msgstr "訂閱我們的電子報，獲取 CheckoutWC 團隊提供的有效轉換技巧和結帳優化策略。"
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:116
-msgid "Boost Your Conversions with Proven Strategies."
-msgstr "用有效策略提升您的轉換率。"
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:123
-msgid "We're so glad that you've chosen CheckoutWC to handle your checkouts. Unlock more sales with premium features like order bumps, abandoned cart recovery, and much more."
-msgstr "我們很高興您選擇 CheckoutWC 來處理您的結帳。使用高級功能如訂單加購、遺棄購物車回收等，解鎖更多銷售機會。"
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:126
-msgid "Unlock more sales with CheckoutWC Premium"
-msgstr "使用 CheckoutWC Premium 解鎖更多銷售"
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:144
-msgid "Sorry, there was an error joining our newsletter. Please refresh the page and try again."
-msgstr "抱歉，訂閱電子報時發生錯誤。請重新整理頁面並再試一次。"
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:243
-msgid "Please wait..."
-msgstr "請稍候..."
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:320
-msgid "Sorry, your account has insufficient permissions to join our newsletter."
-msgstr "抱歉，您的帳號權限不足，無法訂閱電子報。"
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:354
-msgid "You have already joined our newsletter!"
-msgstr "您已經訂閱過我們的電子報！"
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:396
-msgid "Thank you for joining our newsletter!"
-msgstr "感謝您訂閱我們的電子報！"
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:410
-msgid "Security check failed."
-msgstr "安全檢查失敗。"
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:414
-msgid "Insufficient permissions."
-msgstr "權限不足。"
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:422
-msgid "Notice dismissed."
-msgstr "通知已關閉。"
-
-# %1$d: Number of days, %2$s: Pricing URL, %3$s: "renew it here" link text
-#: includes/Admin/Notices/LicenseUnverifiedNotice.php:25
-msgid "Premium features are off because we haven\\'t been able to check your license with checkoutwc.com for %1$d days. Make sure your server can connect to checkoutwc.com. If your license has expired, <a href=\"%2$s\" target=\"_blank\">%3$s</a>."
-msgstr "由於我們已無法與 checkoutwc.com 驗證您的授權達 %1$d 天，進階功能已關閉。請確認您的伺服器可連線至 checkoutwc.com。若您的授權已過期，<a href=\"%2$s\" target=\"_blank\">%3$s</a>。"
-
-#: includes/Admin/Notices/LicenseUnverifiedNotice.php:28
-msgid "renew it here"
-msgstr "在此續訂"
-
-#: includes/Admin/Notices/LicenseUnverifiedNotice.php:33
-msgid "CheckoutWC can\\'t verify your license"
-msgstr "CheckoutWC 無法驗證您的授權"
-
-# %1$s: Date premium features turn off, %2$s: Support email URL, %3$s: "Contact support" link text
-#: includes/Admin/Notices/LicenseServerUnreachableNotice.php:28
-msgid "We couldn\\'t check your license with checkoutwc.com. Premium features will turn off on %1$s unless the connection is restored. <a href=\"%2$s\">%3$s</a> if this keeps happening."
-msgstr "我們無法與 checkoutwc.com 驗證您的授權。除非連線恢復，否則進階功能將於 %1$s 關閉。若此情況持續發生，請 <a href=\"%2$s\">%3$s</a>。"
-
-#: includes/Admin/Notices/LicenseServerUnreachableNotice.php:31
-#: includes/Admin/Notices/LicenseServerUnreachableNotice.php:38
-msgid "Contact support"
-msgstr "聯絡支援"
-
-# %1$s: Support email URL, %2$s: "Contact support" link text
-#: includes/Admin/Notices/LicenseServerUnreachableNotice.php:36
-msgid "We couldn\\'t check your license with checkoutwc.com. Make sure your server can connect to checkoutwc.com. <a href=\"%1$s\">%2$s</a> if this keeps happening."
-msgstr "我們無法與 checkoutwc.com 驗證您的授權。請確認您的伺服器可連線至 checkoutwc.com。若此情況持續發生，請 <a href=\"%1$s\">%2$s</a>。"
-
-#: includes/Admin/Notices/LicenseServerUnreachableNotice.php:45
-msgid "CheckoutWC can\\'t reach the license server"
-msgstr "CheckoutWC 無法連線至授權伺服器"
-
-#: includes/Admin/Notices/InvalidLicenseKeyNotice.php:13
-msgid "CheckoutWC license expired"
-msgstr "CheckoutWC 授權已過期"
-
-# %1$s: URL to pricing page, %2$s: "Renew your license" link text, %3$s: Support email URL, %4$s: "contact support" link text
-#: includes/Admin/Notices/InvalidLicenseKeyNotice.php:16
-msgid "Premium features are off because your license has expired. <a href=\"%1$s\" target=\"_blank\">%2$s</a> to turn them back on. If you think this is a mistake, <a href=\"%3$s\">%4$s</a>."
-msgstr "由於您的授權已過期，進階功能已關閉。請 <a href=\"%1$s\" target=\"_blank\">%2$s</a> 以重新啟用。如果您認為這是錯誤，請 <a href=\"%3$s\">%4$s</a>。"
-
-#: includes/Admin/Notices/InvalidLicenseKeyNotice.php:18
-msgid "Renew your license"
-msgstr "續訂您的授權"
-
-#: includes/Admin/Notices/InvalidLicenseKeyNotice.php:20
-msgid "contact support"
-msgstr "聯絡支援"
-
-# %1$s: URL to activation page, %2$s: "Activate your license" link text, %3$s: Pricing URL, %4$s: "buy a license" link text
-#: includes/Admin/Notices/InactiveLicenseNotice.php:11
-msgid "Premium features are off because your license isn\\'t activated on this site. <a href=\"%1$s\">%2$s</a> or <a href=\"%3$s\" target=\"_blank\">%4$s</a> for this site."
-msgstr "由於您的授權尚未在此網站上啟用，進階功能已關閉。請 <a href=\"%1$s\">%2$s</a> 或 <a href=\"%3$s\" target=\"_blank\">%4$s</a> 為此網站啟用。"
-
-#: includes/Admin/Notices/InactiveLicenseNotice.php:13
-msgid "Activate your license"
-msgstr "啟用您的授權"
-
-#: includes/Admin/Notices/InactiveLicenseNotice.php:20
-msgid "CheckoutWC license not activated"
-msgstr "CheckoutWC 授權未啟用"
-
-#: includes/Admin/Notices/BFNotice.php:13
-msgid "Black Friday Sale - 40% Off"
-msgstr "黑色星期五促銷 - 享受 40% 折扣"
-
-#: includes/Admin/Notices/BFNotice.php:14
-msgid "You're missing out on revenue growth tools like Order Bumps, Upsells, Abandoned Cart Recovery and more! Save 40% on CheckoutWC pro plans for Black Friday, ends December 4th"
-msgstr "您正在錯過像訂單加購、追加銷售、遺棄購物車回收等營收成長工具！黑色星期五期間，CheckoutWC 專業版方案享有 40% 折扣，優惠至 12 月 4 日結束"
-
-#: includes/Admin/Notices/BFNotice.php:27
-msgid "Get CheckoutWC Pro Now!"
-msgstr "立即獲取 CheckoutWC 專業版！"
-
 #: client/ts/functions/cfwFormatDate.ts:38
 msgid "Sunday"
 msgstr "星期日"
@@ -3828,34 +3845,6 @@ msgstr "是"
 msgid "pm"
 msgstr "下午"
 
-#: client/ts/blocks/OrderBumpSteps.tsx:55
-msgid "Order Bump Steps Stettings"
-msgstr "訂單加購步驟設定"
-
-#: client/ts/blocks/OrderBumpSteps.tsx:58
-msgid "Step 1 Title"
-msgstr "步驟1標題"
-
-#: client/ts/blocks/OrderBumpSteps.tsx:59
-msgid "The title of Step 1. Example: Order Submitted"
-msgstr "步驟1的標題。例如：訂單已提交"
-
-#: client/ts/blocks/OrderBumpSteps.tsx:64
-msgid "Step 2 Title"
-msgstr "步驟2標題"
-
-#: client/ts/blocks/OrderBumpSteps.tsx:65
-msgid "The title of Step 2. Example: Special Offer"
-msgstr "步驟2的標題。例如：特別優惠"
-
-#: client/ts/blocks/OrderBumpSteps.tsx:70
-msgid "Step 3 Title"
-msgstr "步驟3標題"
-
-#: client/ts/blocks/OrderBumpSteps.tsx:71
-msgid "The title of Step 3. Example: Order Received"
-msgstr "步驟3的標題。例如：訂單已接收"
-
 #: client/ts/admin/order-bumps-editor.tsx:59
 msgid "Order Bump Preview"
 msgstr "訂單加購預覽"
@@ -3893,6 +3882,34 @@ msgstr "您確定要清除所有追蹤的購物車並重設所有回收統計資
 #: client/ts/admin/Components/CheckoutEditor/EditorApp.tsx:269
 msgid "Are you sure you want to discard all unsaved changes?"
 msgstr "您確定要放棄所有未儲存的變更嗎？"
+
+#: client/ts/blocks/OrderBumpSteps.tsx:55
+msgid "Order Bump Steps Stettings"
+msgstr "訂單加購步驟設定"
+
+#: client/ts/blocks/OrderBumpSteps.tsx:58
+msgid "Step 1 Title"
+msgstr "步驟1標題"
+
+#: client/ts/blocks/OrderBumpSteps.tsx:59
+msgid "The title of Step 1. Example: Order Submitted"
+msgstr "步驟1的標題。例如：訂單已提交"
+
+#: client/ts/blocks/OrderBumpSteps.tsx:64
+msgid "Step 2 Title"
+msgstr "步驟2標題"
+
+#: client/ts/blocks/OrderBumpSteps.tsx:65
+msgid "The title of Step 2. Example: Special Offer"
+msgstr "步驟2的標題。例如：特別優惠"
+
+#: client/ts/blocks/OrderBumpSteps.tsx:70
+msgid "Step 3 Title"
+msgstr "步驟3標題"
+
+#: client/ts/blocks/OrderBumpSteps.tsx:71
+msgid "The title of Step 3. Example: Order Received"
+msgstr "步驟3的標題。例如：訂單已接收"
 
 #: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:60
 #: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:245
@@ -4507,30 +4524,6 @@ msgstr "A/B 測試應結束的日期。此日期之後，將顯示原始變體�
 msgid "Traffic split percentages must total 100%. Please adjust your percentages."
 msgstr "流量分配百分比必須總計 100%。請調整您的百分比。"
 
-#: client/ts/frontend/Actions/CompleteOrderAction.ts:196
-msgid "Could not connect to server. Please refresh and try again or contact site administrator."
-msgstr "无法连接服务器。请刷新并重试，或联系网站管理员。"
-
-#: client/ts/frontend/Actions/CompleteOrderAction.ts:198
-msgid "Requested resource could not be found. Please contact site administrator. (404)"
-msgstr "找不到请求的资源。请联系网站管理员。(404)"
-
-#: client/ts/frontend/Actions/CompleteOrderAction.ts:200
-msgid "An internal server error occurred. Please contact site administrator. (500)"
-msgstr "服务器出现内部错误。请联系网站管理员。(500)"
-
-#: client/ts/frontend/Actions/CompleteOrderAction.ts:202
-msgid "Server response could not be parsed. Please contact site administrator."
-msgstr "无法解析服务器响应。请联系网站管理员。"
-
-#: client/ts/frontend/Actions/CompleteOrderAction.ts:204
-msgid "The server timed out while processing your request. Please refresh and try again or contact site administrator."
-msgstr "服务器在处理您的请求时超时。请刷新并重试，或联系网站管理员。"
-
-#: client/ts/frontend/Actions/CompleteOrderAction.ts:206
-msgid "Request was aborted. Please contact site administrator."
-msgstr "请求已中止。请联系网站管理员。"
-
 #: client/ts/frontend/Components/TermsAndConditions.ts:29
 msgid "Terms and Conditions"
 msgstr "條款與細則"
@@ -4546,6 +4539,30 @@ msgstr "關閉購物車"
 #: client/ts/frontend/Components/FreeShippingProgressBar.tsx:245
 msgid "Unlocked"
 msgstr "已解鎖"
+
+#: client/ts/frontend/Actions/CompleteOrderAction.ts:196
+msgid "We could not confirm whether your order went through. Please check for any charges in your payment method and review your order history before placing the order again."
+msgstr "我們無法確認您的訂單是否已成功送出。請先檢查您的付款方式是否有任何扣款，並查看您的訂單記錄，再重新下單。"
+
+#: client/ts/frontend/Actions/CompleteOrderAction.ts:198
+msgid "Requested resource could not be found. Please contact site administrator. (404)"
+msgstr "找不到请求的资源。请联系网站管理员。(404)"
+
+#: client/ts/frontend/Actions/CompleteOrderAction.ts:200
+msgid "An internal server error occurred. Please contact site administrator. (500)"
+msgstr "服务器出现内部错误。请联系网站管理员。(500)"
+
+#: client/ts/frontend/Actions/CompleteOrderAction.ts:202
+msgid "Server response could not be parsed. Please contact site administrator."
+msgstr "无法解析服务器响应。请联系网站管理员。"
+
+#: client/ts/frontend/Actions/CompleteOrderAction.ts:204
+msgid "The server timed out while processing your request. Please check for any charges in your payment method and review your order history before placing the order again."
+msgstr "伺服器在處理您的請求時逾時。請先檢查您的付款方式是否有任何扣款，並查看您的訂單記錄，再重新下單。"
+
+#: client/ts/frontend/Actions/CompleteOrderAction.ts:206
+msgid "Request was aborted. Please contact site administrator."
+msgstr "请求已中止。请联系网站管理员。"
 
 # %d is the number of icons in the collection
 #: client/ts/admin/Components/trustBadges.ts:85
@@ -5363,20 +5380,6 @@ msgstr "當此加購加入購物車時，對購物車套用免運費。"
 #: client/ts/admin/Components/Metaboxes/CategoryCompleter.tsx:46
 msgid "All categories with titles that include {{query /}}"
 msgstr "所有標題包含 {{query /}} 的分類"
-
-#: client/ts/admin/Components/Fields/WPMediaUploadButton.tsx:69
-msgid "Select or Upload a Logo"
-msgstr "選擇或上傳標誌"
-
-#: client/ts/admin/Components/Fields/RangeControl.tsx:97
-#: client/ts/admin/Components/Fields/ColorControl.tsx:137
-msgid "Reset"
-msgstr "重設"
-
-#: client/ts/admin/Components/Fields/ColorControl.tsx:173
-#: client/ts/admin/Components/CheckoutEditor/BumpEditorModal.tsx:101
-msgid "Done"
-msgstr "完成"
 
 #: client/ts/admin/Components/Forms/WooCommercePagesGlobalOptionsSettingsForm.tsx:49
 #: client/ts/admin/Components/Forms/CheckoutSettingsForm.tsx:570
@@ -7131,9 +7134,23 @@ msgstr "關閉"
 msgid "This order bump has unsaved changes. Close anyway?"
 msgstr "此加購項目有尚未儲存的變更。仍要關閉嗎？"
 
+#: client/ts/admin/Components/CheckoutEditor/BumpEditorModal.tsx:101
+#: client/ts/admin/Components/Fields/ColorControl.tsx:173
+msgid "Done"
+msgstr "完成"
+
 #: client/ts/admin/Components/CheckoutEditor/BumpEditorModal.tsx:108
 msgid "Loading order bump editor…"
 msgstr "正在載入加購編輯器…"
+
+#: client/ts/admin/Components/Fields/WPMediaUploadButton.tsx:69
+msgid "Select or Upload a Logo"
+msgstr "選擇或上傳標誌"
+
+#: client/ts/admin/Components/Fields/RangeControl.tsx:97
+#: client/ts/admin/Components/Fields/ColorControl.tsx:137
+msgid "Reset"
+msgstr "重設"
 
 # %s: item type e.g. "order bump"
 #: client/ts/admin/Components/CheckoutEditor/slots/UnsavedChangesDialog.tsx:37
@@ -8542,7 +8559,7 @@ msgstr "刪除規則"
 msgctxt "shipping packages"
 msgid "Shipping"
 msgid_plural "Shipping %d"
-msgstr[0] ""
+msgstr[0] "運送"
 
 #: includes/Features/OneClick/OrderStatusManager.php:47
 #: includes/Features/OneClick/OrderStatusManager.php:64

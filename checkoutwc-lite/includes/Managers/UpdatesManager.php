@@ -225,8 +225,8 @@ class UpdatesManager extends SingletonAbstract {
 			'key_mismatch'        => 'An unknown error has occurred: key_mismatch',
 		];
 
-		// Instantiate EDD_SL_Plugin_Updater
-		add_action( 'admin_init', [ $this, 'updater_init' ], 0 ); // run first
+		// Instantiate EDD_SL_Plugin_Updater. On init, not admin_init, so WP-Cron's plugin update check sees it.
+		add_action( 'init', [ $this, 'maybe_register_updater' ], 0 ); // run first
 
 		// Form Handler
 		add_action( SettingsManager::instance()->prefix . '_settings_saved', [ $this, 'save_settings' ] );
@@ -400,6 +400,21 @@ class UpdatesManager extends SingletonAbstract {
 	}
 
 	/**
+	 * Sets up the updater in the contexts that check for plugin updates: admin, WP-Cron and WP-CLI.
+	 *
+	 * WP-Cron never fires admin_init, and `wp cron event run` doesn't define DOING_CRON.
+	 *
+	 * @since 11.4.2
+	 *
+	 * @return void
+	 */
+	public function maybe_register_updater() {
+		if ( is_admin() || wp_doing_cron() || ( defined( 'WP_CLI' ) && WP_CLI ) ) {
+			$this->updater_init();
+		}
+	}
+
+	/**
 	 * Sets up the EDD_SL_Plugin_Updater object.
 	 *
 	 * @return void
@@ -509,6 +524,10 @@ class UpdatesManager extends SingletonAbstract {
 			10 => 'Agency',
 			12 => 'Pro',
 			13 => 'Basic',
+			15 => '1 Site',
+			16 => '3 Sites',
+			17 => '10 Sites',
+			18 => '1 Site - Lifetime',
 		];
 
 		$plan = $plans[ $price_id ] ?? 'None';

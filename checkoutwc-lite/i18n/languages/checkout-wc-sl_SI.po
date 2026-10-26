@@ -8,7 +8,7 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "POT-Creation-Date: 2025-07-25 09:22-0400\n"
-"PO-Revision-Date: 2026-10-12T15:20:31+00:00\n"
+"PO-Revision-Date: 2026-10-26T17:15:41+00:00\n"
 "Language: sl-SI\n"
 "Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100>=3 && n%100<=4 ? 2 : 3);\n"
 "X-Generator: Poedit 3.6\n"
@@ -28,7 +28,7 @@ msgstr ""
 #: includes/Compatibility/Plugins/CartFlows.php:62
 #: includes/Admin/Pages/PickupLocationsAdminFree.php:218
 #: includes/Admin/Pages/PageAbstract.php:106
-#: includes/Admin/Pages/General.php:341
+#: includes/Admin/Pages/General.php:353
 #: includes/Admin/Pages/Premium/PickupLocations.php:317
 #: includes/Admin/Pages/Premium/OrderBumps.php:456
 #: includes/Admin/Pages/Premium/LocalPickupAdmin.php:165
@@ -272,7 +272,7 @@ msgid "Hide order summary"
 msgstr "Skrij povzetek naročila"
 
 #: functions/template-functions.php:166
-#: includes/Admin/Pages/WooCommercePages.php:29
+#: includes/Admin/Pages/WooCommercePages.php:30
 #: client/ts/admin/Components/Forms/AdvancedScriptsSettingsForm.tsx:108
 msgid "Checkout"
 msgstr "Plačilo"
@@ -283,8 +283,8 @@ msgstr "Hitra blagajna"
 
 #: functions/template-functions.php:340
 #: functions/template-functions.php:354
-#: functions/template-functions.php:1932
-#: functions/template-functions.php:2265
+#: functions/template-functions.php:2002
+#: functions/template-functions.php:2339
 msgid "Information"
 msgstr "Informacija"
 
@@ -339,7 +339,7 @@ msgstr "Odjava."
 
 #: functions/template-functions.php:745
 #: functions/template-functions.php:783
-#: functions/template-functions.php:1969
+#: functions/template-functions.php:2039
 msgid "Billing and Shipping address"
 msgstr "Naslov za obračun in pošiljanje"
 
@@ -347,14 +347,14 @@ msgstr "Naslov za obračun in pošiljanje"
 #: functions/template-functions.php:795
 #: functions/template-functions.php:1201
 #: functions/template-functions.php:1215
-#: functions/template-functions.php:1997
+#: functions/template-functions.php:2067
 #: includes/Compatibility/Gateways/PayPalForWooCommerce.php:192
 msgid "Billing address"
 msgstr "Naslov naročnika"
 
 #: functions/template-functions.php:768
 #: functions/template-functions.php:806
-#: functions/template-functions.php:1981
+#: functions/template-functions.php:2051
 #: includes/Managers/AssetManager.php:705
 msgid "Shipping address"
 msgstr "Naslov za dostavo"
@@ -366,15 +366,15 @@ msgid "Your Cart"
 msgstr "Vaša košarica"
 
 #: functions/template-functions.php:1047
-#: functions/template-functions.php:2013
-#: functions/template-functions.php:2287
+#: functions/template-functions.php:2083
+#: functions/template-functions.php:2361
 #: functions/functions.php:3478
 msgid "Shipping"
 msgstr "Dostava"
 
 #: functions/template-functions.php:1065
-#: functions/template-functions.php:1953
-#: functions/template-functions.php:2308
+#: functions/template-functions.php:2023
+#: functions/template-functions.php:2382
 #: functions/functions.php:1025
 #: functions/functions.php:1040
 #: client/ts/frontend/Components/ReviewPane/OrderReviewStepReviewPane.tsx:47
@@ -382,7 +382,7 @@ msgid "Payment"
 msgstr "Plačilo"
 
 #: functions/template-functions.php:1065
-#: functions/template-functions.php:2308
+#: functions/template-functions.php:2382
 #: includes/Features/OrderReviewStep.php:74
 #: includes/Admin/Pages/TrustBadgesAdminFree.php:88
 #: client/ts/admin/Components/TrustBadgeFields.tsx:20
@@ -398,104 +398,113 @@ msgstr "Brezplačno"
 msgid "Select the address that matches your card or payment method."
 msgstr "Izberite naslov, ki se ujema z vašo kartico ali plačilnim sredstvom."
 
-#: functions/template-functions.php:1638
-msgid "Unfortunately your order cannot be processed as the originating bank/merchant has declined your transaction. Please attempt your purchase again."
-msgstr "Žal vašega naročila ni mogoče obdelati, saj je banka/izdajatelj kartice zavrnil vašo transakcijo. Prosimo, poskusite nakup znova."
-
-#: functions/template-functions.php:1642
-msgid "Pay"
-msgstr "Plačaj"
-
 # %s is the order number
-#: functions/template-functions.php:1660
+#: functions/template-functions.php:1668
+#: functions/template-functions.php:1718
 msgid "Order %s"
 msgstr "Naročilo %s"
 
+#: functions/template-functions.php:1673
+msgid "Payment failed"
+msgstr "Plačilo ni uspelo"
+
+#: functions/template-functions.php:1686
+msgid "Unfortunately your order cannot be processed as the originating bank/merchant has declined your transaction. Please attempt your purchase again."
+msgstr "Žal vašega naročila ni mogoče obdelati, saj je banka/izdajatelj kartice zavrnil vašo transakcijo. Prosimo, poskusite nakup znova."
+
+#: functions/template-functions.php:1691
+msgid "Try payment again"
+msgstr "Poskusite znova s plačilom"
+
+#: functions/template-functions.php:1693
+msgid "My account"
+msgstr "Moj račun"
+
 # %s is the billing first name
-#: functions/template-functions.php:1679
+#: functions/template-functions.php:1737
 msgid "Thank you %s!"
 msgstr "Hvala %s!"
 
-#: functions/template-functions.php:1790
+#: functions/template-functions.php:1856
 msgid "Order status"
 msgstr "Zaključek naročila"
 
-#: functions/template-functions.php:1833
+#: functions/template-functions.php:1903
 msgid "Order updates"
 msgstr "Posodobitve naročila"
 
-#: functions/template-functions.php:1844
+#: functions/template-functions.php:1914
 msgid "You’ll get shipping and delivery updates by email."
 msgstr "Posodobitve dostave in dostave boste prejeli po e-pošti."
 
-#: functions/template-functions.php:1862
+#: functions/template-functions.php:1932
 msgid "Downloads"
 msgstr "Prenosi"
 
-#: functions/template-functions.php:1902
+#: functions/template-functions.php:1972
 msgid "&infin;"
 msgstr "&infin;"
 
-#: functions/template-functions.php:1908
+#: functions/template-functions.php:1978
 msgid "Never"
 msgstr "Nikoli"
 
-#: functions/template-functions.php:1947
+#: functions/template-functions.php:2017
 msgid "Contact information"
 msgstr "Kontaktni podatki"
 
-#: functions/template-functions.php:1974
-#: functions/template-functions.php:1986
-#: functions/template-functions.php:2003
+#: functions/template-functions.php:2044
+#: functions/template-functions.php:2056
+#: functions/template-functions.php:2073
 msgid "N/A"
 msgstr "Ni na voljo"
 
-#: functions/template-functions.php:2043
+#: functions/template-functions.php:2113
 #: includes/Managers/AssetManager.php:855
 msgid "Continue shopping"
 msgstr "Nadaljuj z nakupovanjem"
 
-#: functions/template-functions.php:2073
+#: functions/template-functions.php:2143
 #: includes/Loaders/LoaderAbstract.php:111
 msgid "Pay for order"
 msgstr "Plačaj naročilo"
 
-#: functions/template-functions.php:2091
+#: functions/template-functions.php:2161
 #: includes/Features/AbandonedCartRecovery.php:124
 #: client/ts/admin/Components/acr/carts.tsx:64
 msgid "Email"
 msgstr "E-pošta"
 
-#: functions/template-functions.php:2101
+#: functions/template-functions.php:2171
 #: functions/functions.php:4142
 #: functions/functions.php:4143
 msgid "Password"
 msgstr "Geslo"
 
-#: functions/template-functions.php:2117
+#: functions/template-functions.php:2187
 #: functions/functions.php:4182
 msgid "Login"
 msgstr "Prijava"
 
-#: functions/template-functions.php:2120
+#: functions/template-functions.php:2190
 #: functions/functions.php:4175
 msgid "Lost your password?"
 msgstr "Ste pozabili geslo?"
 
-#: functions/template-functions.php:2405
+#: functions/template-functions.php:2479
 msgid "Your Cart is Empty"
 msgstr "Vaša košarica je prazna"
 
-#: functions/premium-init.php:342
+#: functions/premium-init.php:346
 msgid "CheckoutWC Templates Deactivated"
 msgstr "Predloge CheckoutWC so onemogočene"
 
 # %1$s: "Settings" text, %2$s: "Start Here" text, %3$s: "Activate CheckoutWC Templates" text
-#: functions/premium-init.php:345
+#: functions/premium-init.php:349
 msgid "Your license is valid and activated for this site but CheckoutWC is disabled for normal customers. To fix this, go to %1$s > %2$s and toggle \"%3$s\"."
 msgstr "Vaša licenca je veljavna in aktivirana za to stran, vendar je CheckoutWC onemogočen za običajne stranke. Za odpravo pojdite na %1$s > %2$s in preklopite \"%3$s\"."
 
-#: functions/premium-init.php:346
+#: functions/premium-init.php:350
 #: includes/Admin/AdminPluginsPageManager.php:40
 #: includes/Admin/Pages/OrderBumpsAdminFree.php:25
 #: includes/Admin/Pages/LocalPickupAdminFree.php:27
@@ -507,69 +516,69 @@ msgstr "Vaša licenca je veljavna in aktivirana za to stran, vendar je CheckoutW
 msgid "Settings"
 msgstr "Nastavitve"
 
-#: functions/premium-init.php:347
-#: functions/premium-init.php:360
-#: includes/Admin/Pages/General.php:25
+#: functions/premium-init.php:351
+#: functions/premium-init.php:364
+#: includes/Admin/Pages/General.php:24
 msgid "Start Here"
 msgstr "Začni tukaj"
 
-#: functions/premium-init.php:348
-#: includes/Admin/Pages/General.php:195
+#: functions/premium-init.php:352
+#: includes/Admin/Pages/General.php:207
 msgid "Activate CheckoutWC Templates"
 msgstr "Aktiviraj predloge CheckoutWC"
 
-#: functions/premium-init.php:355
+#: functions/premium-init.php:359
 msgid "CheckoutWC license invalid"
 msgstr "Licenca CheckoutWC ni veljavna"
 
 # %1$s: URL to license settings page, %2$s: "Start Here" link text, %3$s: Pricing URL, %4$s: "buy a license" link text
-#: functions/premium-init.php:358
+#: functions/premium-init.php:362
 msgid "Premium features are off because your license key is missing or invalid. Check your key on <a href=\"%1$s\">%2$s</a> or <a target=\"_blank\" href=\"%3$s\">%4$s</a>."
 msgstr "Napredne funkcije so izklopljene, ker vaš licenčni ključ manjka ali ni veljaven. Preverite svoj ključ na <a href=\"%1$s\">%2$s</a> ali <a target=\"_blank\" href=\"%3$s\">%4$s</a>."
 
-#: functions/premium-init.php:362
+#: functions/premium-init.php:366
 #: includes/Admin/Notices/InactiveLicenseNotice.php:15
 msgid "buy a license"
 msgstr "kupite licenco"
 
-#: functions/premium-init.php:382
+#: functions/premium-init.php:386
 msgid "New Feature: Cloudflare Turnstile Bot Protection"
 msgstr "Nova funkcija: Cloudflare Turnstile zaščita pred boti"
 
 # 1: Cloudflare Turnstile name wrapped in strong tags, 2: Setup link
-#: functions/premium-init.php:385
+#: functions/premium-init.php:389
 msgid "CheckoutWC now supports %1$s - a privacy-first, CAPTCHA-free way to protect your checkout from bots and spam orders. %2$s"
 msgstr "CheckoutWC zdaj podpira %1$s - način, ki daje prednost zasebnosti, brez CAPTCHA, za zaščito vašega nakupa pred boti in neželenimi naročili. %2$s"
 
 # The name of the Cloudflare Turnstile service
-#: functions/premium-init.php:389
+#: functions/premium-init.php:393
 #: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:78
 msgid "Cloudflare Turnstile"
 msgstr "Cloudflare Turnstile"
 
-#: functions/premium-init.php:395
+#: functions/premium-init.php:399
 msgid "Setup Cloudflare Turnstile now"
 msgstr "Nastavite Cloudflare Turnstile zdaj"
 
-#: functions/premium-init.php:400
+#: functions/premium-init.php:404
 msgid "Upgrade your plan now to access"
 msgstr "Nadgradite svoj načrt zdaj, da dostopate do"
 
-#: functions/premium-init.php:413
+#: functions/premium-init.php:417
 msgid "Abandoned Cart Recovery Tracking Disabled"
 msgstr "Sledenje obnovitvi zapuščenih košaric onemogočeno"
 
 # %1$s: Gist URL, %2$s: "Learn More" link text
-#: functions/premium-init.php:416
+#: functions/premium-init.php:420
 msgid "You have enabled Abandoned Cart Recovery tracking, but you do not have any emails published. To track carts, you need to publish emails or use this dev filter: <a target=\"_blank\" href=\"%1$s\">%2$s</a>."
 msgstr "Omogočili ste sledenje obnovitvi zapuščenih košaric, vendar nimate objavljenih nobenih e-poštnih sporočil. Za sledenje košaricam morate objaviti e-poštna sporočila ali uporabiti ta razvojni filter: <a target=\"_blank\" href=\"%1$s\">%2$s</a>."
 
-#: functions/premium-init.php:418
+#: functions/premium-init.php:422
 #: includes/Admin/Pages/AbandonedCartRecoveryAdminFree.php:82
 msgid "Learn More"
 msgstr "Izvedi več"
 
-#: functions/premium-init.php:477
+#: functions/premium-init.php:481
 msgid "Admin preview: your CheckoutWC license isn\\'t valid for this site, so premium features are off. Check your license here: WP Admin > CheckoutWC > Start Here."
 msgstr "Predogled za skrbnika: vaša licenca CheckoutWC za to spletno mesto ni veljavna, zato so napredne funkcije izklopljene. Licenco preverite tukaj: WP Admin > CheckoutWC > Začnite tukaj."
 
@@ -666,7 +675,7 @@ msgid "Ship to"
 msgstr "Naslov dostave"
 
 #: functions/functions.php:232
-#: includes/Features/LocalPickup.php:768
+#: includes/Features/LocalPickup.php:775
 #: includes/Admin/Pages/PickupLocationsAdminFree.php:93
 #: includes/Admin/Pages/Premium/PickupLocations.php:101
 msgid "Address"
@@ -677,7 +686,7 @@ msgid "Sorry, it seems that there are no available payment methods for your loca
 msgstr "Oprostite, zdi se, da za vašo lokacijo ni na voljo nobenih načinov plačila. Prosimo, kontaktirajte nas, če potrebujete pomoč ali želite urediti drugačne možnosti."
 
 #: functions/functions.php:787
-#: includes/Features/LocalPickup.php:1095
+#: includes/Features/LocalPickup.php:1119
 msgid "Shipping costs are calculated during checkout."
 msgstr "Stroški pošiljanja se izračunajo med zaključkom nakupa."
 
@@ -690,7 +699,7 @@ msgid "No shipping methods available"
 msgstr "Načini dostave niso na voljo"
 
 #: functions/functions.php:826
-#: includes/Model/Bumps/BumpAbstract.php:882
+#: includes/Model/Bumps/BumpAbstract.php:895
 msgid "Free!"
 msgstr "Brezplačno!"
 
@@ -778,7 +787,7 @@ msgstr "Zmanjšanje"
 #: functions/functions.php:2415
 #: includes/Managers/AssetManager.php:735
 #: includes/Managers/AssetManager.php:856
-#: includes/Features/LocalPickup.php:510
+#: includes/Features/LocalPickup.php:513
 #: includes/Features/AbandonedCartRecovery.php:128
 #: includes/Features/ABTesting.php:150
 #: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:633
@@ -903,22 +912,6 @@ msgstr "CheckoutWC: Ne morete aktivirati AB testa, ki ni registriran."
 msgid "Accent Color"
 msgstr "Barva poudarka"
 
-#: lib/sendwp-sdk/sendwp-init.php:27
-msgid "Security failed to check sendwp_install_nonce"
-msgstr "Varnostni pregled sendwp_install_nonce ni uspel"
-
-#: lib/sendwp-sdk/sendwp-init.php:28
-msgid "Ask an administrator for install_plugins capability"
-msgstr "Za namestitev vtičnikov prosite skrbnika za dovoljenje install_plugins"
-
-#: lib/sendwp-sdk/sendwp-init.php:29
-msgid "SendWP is already connected."
-msgstr "SendWP je že povezan."
-
-#: lib/sendwp-sdk/remote-install.php:84
-msgid "Something went wrong. SendWP was not installed correctly."
-msgstr "Nekaj je šlo narobe. SendWP ni bil pravilno nameščen."
-
 #: includes/Stats/StatCollection.php:193
 msgid "Once Weekly"
 msgstr "Enkrat tedensko"
@@ -956,98 +949,98 @@ msgstr "Lokalni prevzem"
 msgid "Allow customers to pick up orders themselves. This version does not require shipping zones."
 msgstr "Dovolite strankam, da same prevzamejo naročila. Ta različica ne zahteva poštnih con."
 
-#: includes/Managers/UpdatesManager.php:436
+#: includes/Managers/UpdatesManager.php:451
 msgid "CheckoutWC License Key"
 msgstr "Licenčni ključ CheckoutWC"
 
-#: includes/Managers/UpdatesManager.php:441
+#: includes/Managers/UpdatesManager.php:456
 msgid "Your license key is set with the constant <code>CFW_LICENSE_KEY</code>."
 msgstr "Vaša licenčna ključ je nastavljen s konstanto <code>CFW_LICENSE_KEY</code>."
 
-#: includes/Managers/UpdatesManager.php:448
+#: includes/Managers/UpdatesManager.php:463
 msgid "License Holder"
 msgstr "Imetnik licence"
 
-#: includes/Managers/UpdatesManager.php:461
+#: includes/Managers/UpdatesManager.php:476
 msgid "Plan"
 msgstr "Načrt"
 
-#: includes/Managers/UpdatesManager.php:469
+#: includes/Managers/UpdatesManager.php:484
 msgid "Activation Limit"
 msgstr "Omejitev aktivacije"
 
-#: includes/Managers/UpdatesManager.php:477
+#: includes/Managers/UpdatesManager.php:492
 #: includes/Admin/Pages/Premium/ABTestingAdmin.php:178
 #: includes/Admin/Pages/Premium/ABTestingAdmin.php:819
 #: client/ts/admin/Components/acr/carts.tsx:80
 msgid "Status"
 msgstr "Status"
 
-#: includes/Managers/UpdatesManager.php:484
+#: includes/Managers/UpdatesManager.php:499
 msgid "Refresh License Info"
 msgstr "Osveži informacije o licenci"
 
-#: includes/Managers/UpdatesManager.php:532
+#: includes/Managers/UpdatesManager.php:551
 msgid "Please enter your license key."
 msgstr "Prosimo, vnesite svoj licenčni ključ."
 
-#: includes/Managers/UpdatesManager.php:535
-#: includes/Managers/UpdatesManager.php:543
+#: includes/Managers/UpdatesManager.php:554
+#: includes/Managers/UpdatesManager.php:562
 msgid "Activate Site"
 msgstr "Aktiviraj spletno mesto"
 
-#: includes/Managers/UpdatesManager.php:538
+#: includes/Managers/UpdatesManager.php:557
 msgid "Deactivate Site"
 msgstr "Deaktiviraj spletno mesto"
 
 # Debug error message logged when license check reaches unexpected state
-#: includes/Managers/UpdatesManager.php:724
+#: includes/Managers/UpdatesManager.php:743
 msgid "License Check Error: You should not be able to get here. I am kind of freaked out."
 msgstr "Napaka pri preverjanju licence: Tukaj ne bi smeli priti. Malo sem zaskrbljen."
 
 # %1$d: failure count, %2$d: max failures, %3$s: time since last failure
-#: includes/Managers/UpdatesManager.php:983
+#: includes/Managers/UpdatesManager.php:1002
 msgid "Unable to verify CheckoutWC license (%1$d/%2$d attempts failed). Using cached license data. Last attempt: %3$s ago."
 msgstr "Ni mogoče preveriti licence CheckoutWC (%1$d/%2$d neuspelih poskusov). Uporaba predpomnjenih podatkov licence. Zadnji poskus: pred %3$s."
 
-#: includes/Managers/UpdatesManager.php:1006
+#: includes/Managers/UpdatesManager.php:1025
 msgid "%s license activation was not successful. Please check your key status below for more information."
 msgstr "%s aktivacija licence ni bila uspešna. Za več informacij preverite status vaše ključne kode spodaj."
 
-#: includes/Managers/UpdatesManager.php:1024
+#: includes/Managers/UpdatesManager.php:1043
 msgid "%s license successfully activated."
 msgstr "%s licenca je bila uspešno aktivirana."
 
-#: includes/Managers/UpdatesManager.php:1042
+#: includes/Managers/UpdatesManager.php:1061
 msgid "%s license deactivation failed. Please try again, or contact support."
 msgstr "%s deaktivacija licence ni uspela. Poskusite znova ali kontaktirajte podporo."
 
-#: includes/Managers/UpdatesManager.php:1060
+#: includes/Managers/UpdatesManager.php:1079
 msgid "%s license deactivated successfully."
 msgstr "%s licenca je bila uspešno deaktivirana."
 
-#: includes/Managers/UpdatesManager.php:1078
+#: includes/Managers/UpdatesManager.php:1097
 msgid "%s license settings saved successfully."
 msgstr "%s nastavitve licence so bile uspešno shranjene."
 
-#: includes/Managers/UpdatesManager.php:1096
+#: includes/Managers/UpdatesManager.php:1115
 msgid "%1$s license activation failed: %2$s"
 msgstr "%1$s aktivacija licence ni uspela: %2$s"
 
-#: includes/Managers/UpdatesManager.php:1114
+#: includes/Managers/UpdatesManager.php:1133
 msgid "%s license activation failed: Unable to connect to license server. Please check your internet connection or try again later."
 msgstr "%s aktivacija licence ni uspela: Ni mogoče vzpostaviti povezave s strežnikom za licence. Preverite svojo internetno povezavo ali poskusite kasneje."
 
-#: includes/Managers/UpdatesManager.php:1132
+#: includes/Managers/UpdatesManager.php:1151
 msgid "%s: License deactivated locally. The license server could not be reached, but the license has been deactivated on this site."
 msgstr "%s: Licenca je bila lokalno deaktivirana. Strežnika za licence ni bilo mogoče doseči, vendar je bila licenca deaktivirana na tej strani."
 
 # %1$d: failure count, %2$d: max failures, %3$s: time since last failure
-#: includes/Managers/UpdatesManager.php:1402
+#: includes/Managers/UpdatesManager.php:1421
 msgid "Unable to verify license online (%1$d/%2$d attempts failed). Using cached license data. Last attempt: %3$s ago."
 msgstr "Ni mogoče preveriti licence prek spleta (%1$d/%2$d neuspelih poskusov). Uporaba predpomnjenih podatkov licence. Zadnji poskus: pred %3$s."
 
-#: includes/Managers/UpdatesManager.php:1408
+#: includes/Managers/UpdatesManager.php:1427
 msgid "License verified successfully."
 msgstr "Licenca je bila uspešno preverjena."
 
@@ -1274,7 +1267,7 @@ msgid "Please enter a valid postcode / ZIP."
 msgstr "Vnesite veljavno poštno številko."
 
 #: includes/Managers/AssetManager.php:714
-#: includes/Features/LocalPickup.php:636
+#: includes/Features/LocalPickup.php:639
 msgid "Pickup"
 msgstr "Prevzem"
 
@@ -1443,142 +1436,142 @@ msgstr "Brezplačno darilo"
 msgid "Reward"
 msgstr "Nagrada"
 
-#: includes/Features/SideCart.php:1709
+#: includes/Features/SideCart.php:1710
 #: includes/Admin/WooCommerceAdminScreenAugmenter.php:24
 #: includes/Admin/WooCommerceAdminScreenAugmenter.php:45
 msgid "CheckoutWC:"
 msgstr "CheckoutWC:"
 
-#: includes/Features/SideCart.php:1710
+#: includes/Features/SideCart.php:1711
 msgid "Settings marked with asterisks (**) may be overridden based on your Side Cart settings. (CheckoutWC > Side Cart)"
 msgstr "Nastavitve označene z zvezdicami (**) se lahko preglasijo glede na vaše nastavitve stranske košarice. (CheckoutWC > Stranska košarica)"
 
-#: includes/Features/OrderBumps.php:647
+#: includes/Features/OrderBumps.php:655
 msgid "All orders"
 msgstr "Vsa naročila"
 
-#: includes/Features/OrderBumps.php:650
+#: includes/Features/OrderBumps.php:658
 msgid "Contains Any Order Bump"
 msgstr "Vsebuje katerikoli Order Bump"
 
 # %s: Order bump title
-#: includes/Features/OrderBumps.php:656
+#: includes/Features/OrderBumps.php:664
 msgid "Has Bump: %s"
 msgstr "Ima Bump: %s"
 
-#: includes/Features/LocalPickup.php:127
-#: includes/Features/LocalPickup.php:131
+#: includes/Features/LocalPickup.php:130
+#: includes/Features/LocalPickup.php:134
 msgid "Delivery method"
 msgstr "Izbrati morate način dostave"
 
-#: includes/Features/LocalPickup.php:181
+#: includes/Features/LocalPickup.php:184
 msgid "Pick up"
 msgstr "Prevzem"
 
-#: includes/Features/LocalPickup.php:200
+#: includes/Features/LocalPickup.php:203
 msgid "Ship"
 msgstr "Odpremiti"
 
-#: includes/Features/LocalPickup.php:308
+#: includes/Features/LocalPickup.php:311
 msgid "Pickup locations"
 msgstr "Lokacije prevzema"
 
-#: includes/Features/LocalPickup.php:505
-#: includes/Features/LocalPickup.php:507
+#: includes/Features/LocalPickup.php:508
+#: includes/Features/LocalPickup.php:510
 #: includes/Admin/Pages/PickupLocationsAdminFree.php:21
 #: includes/Admin/Pages/Premium/PickupLocations.php:23
 msgid "Pickup Locations"
 msgstr "Lokacije prevzema"
 
-#: includes/Features/LocalPickup.php:506
-#: includes/Features/LocalPickup.php:694
-#: includes/Features/LocalPickup.php:782
-#: includes/Features/LocalPickup.php:830
-#: includes/Features/LocalPickup.php:1158
-#: includes/Features/LocalPickup.php:1183
+#: includes/Features/LocalPickup.php:509
+#: includes/Features/LocalPickup.php:697
+#: includes/Features/LocalPickup.php:789
+#: includes/Features/LocalPickup.php:837
+#: includes/Features/LocalPickup.php:1182
+#: includes/Features/LocalPickup.php:1207
 msgid "Pickup Location"
 msgstr "Lokacija prevzema"
 
-#: includes/Features/LocalPickup.php:508
+#: includes/Features/LocalPickup.php:511
 msgid "Add Pickup Location"
 msgstr "Dodaj lokacijo prevzema"
 
-#: includes/Features/LocalPickup.php:509
+#: includes/Features/LocalPickup.php:512
 msgid "Add New Pickup Location"
 msgstr "Dodaj novo lokacijo prevzema"
 
-#: includes/Features/LocalPickup.php:511
+#: includes/Features/LocalPickup.php:514
 msgid "Edit Pickup Location"
 msgstr "Uredi lokacijo prevzema"
 
-#: includes/Features/LocalPickup.php:512
+#: includes/Features/LocalPickup.php:515
 msgid "New Pickup Location"
 msgstr "Nova lokacija prevzema"
 
-#: includes/Features/LocalPickup.php:513
+#: includes/Features/LocalPickup.php:516
 msgid "View Pickup Locations"
 msgstr "Ogled lokacij prevzema"
 
-#: includes/Features/LocalPickup.php:514
+#: includes/Features/LocalPickup.php:517
 msgid "View Pickup Location"
 msgstr "Ogled lokacije prevzema"
 
-#: includes/Features/LocalPickup.php:515
+#: includes/Features/LocalPickup.php:518
 msgid "Search Pickup Locations"
 msgstr "Iskanje lokacij prevzema"
 
-#: includes/Features/LocalPickup.php:516
+#: includes/Features/LocalPickup.php:519
 msgid "No Pickup Location found"
 msgstr "Lokacija prevzema ni bila najdena"
 
-#: includes/Features/LocalPickup.php:517
+#: includes/Features/LocalPickup.php:520
 msgid "No Pickup Locations found in trash"
 msgstr "V košu ni bilo najdenih lokacij prevzema"
 
-#: includes/Features/LocalPickup.php:518
+#: includes/Features/LocalPickup.php:521
 msgid "Attributes"
 msgstr "Atributi"
 
-#: includes/Features/LocalPickup.php:523
+#: includes/Features/LocalPickup.php:526
 msgid "This is where you can add new Pickup Locations."
 msgstr "Tukaj lahko dodate nove lokacije za prevzem."
 
-#: includes/Features/LocalPickup.php:601
+#: includes/Features/LocalPickup.php:604
 #: client/ts/frontend/Components/ReviewPane/PaymentMethodReviewPane.tsx:37
 #: client/ts/frontend/Components/ReviewPane/OrderReviewStepReviewPane.tsx:37
 msgid "Method"
 msgstr "Metoda"
 
-#: includes/Features/LocalPickup.php:754
+#: includes/Features/LocalPickup.php:761
 msgid "Pickup instructions"
 msgstr "Navodila za prevzem"
 
-#: includes/Features/LocalPickup.php:950
+#: includes/Features/LocalPickup.php:957
 msgid "Usually ready in 1 hour."
 msgstr "Običajno je pripravljen v 1 uri."
 
-#: includes/Features/LocalPickup.php:951
+#: includes/Features/LocalPickup.php:958
 msgid "Usually ready in 2 hours."
 msgstr "Običajno je pripravljen v 2 urah."
 
-#: includes/Features/LocalPickup.php:952
+#: includes/Features/LocalPickup.php:959
 msgid "Usually ready in 4 hours."
 msgstr "Običajno je pripravljen v 4 urah."
 
-#: includes/Features/LocalPickup.php:953
+#: includes/Features/LocalPickup.php:960
 msgid "Usually ready in 24 hours."
 msgstr "Običajno je pripravljen v 24 urah."
 
-#: includes/Features/LocalPickup.php:954
+#: includes/Features/LocalPickup.php:961
 msgid "Usually ready in 2-4 days."
 msgstr "Običajno je pripravljen v 2-4 dneh."
 
-#: includes/Features/LocalPickup.php:955
+#: includes/Features/LocalPickup.php:962
 msgid "Usually ready in 5+ days."
 msgstr "Običajno je pripravljen v več kot 5 dneh."
 
-#: includes/Features/LocalPickup.php:1167
-#: includes/Features/LocalPickup.php:1194
+#: includes/Features/LocalPickup.php:1191
+#: includes/Features/LocalPickup.php:1218
 msgid "Pickup Instructions:"
 msgstr "Navodila za prevzem:"
 
@@ -1789,152 +1782,6 @@ msgstr "Izberite katero koli možnost..."
 msgid "You're missing out on important updates because your license key is missing, invalid, or expired."
 msgstr "Manjkajo vam pomembne posodobitve, ker vaš licenčni ključ manjka, ni veljaven ali je potekel."
 
-#: includes/Action/ValidatePostcodeAction.php:33
-msgid "Please enter a valid %s."
-msgstr "Vnesite veljavno %s."
-
-#: includes/Action/ValidateEmailDomainAction.php:44
-msgid "Email address contains invalid domain name."
-msgstr "E-poštni naslov vsebuje neveljavno ime domene."
-
-#: includes/Action/UpdateCheckoutAction.php:71
-msgid "Sorry, your session has expired."
-msgstr "Oprostite, vaša seja je potekla."
-
-#: includes/Action/UpdateCheckoutAction.php:71
-msgid "Return to shop"
-msgstr "Vrni se v trgovino"
-
-#: includes/Action/SmartyStreetsAddressValidationAction.php:85
-msgid "Use Recommended"
-msgstr "Uporaba Priporočena"
-
-#: includes/Action/SmartyStreetsAddressValidationAction.php:86
-msgid "Use Your Address"
-msgstr "Uporabite svoj naslov"
-
-#: includes/Action/SmartyStreetsAddressValidationAction.php:103
-msgid "Reenter Address"
-msgstr "Ponovno vnesite naslov"
-
-#: includes/Action/SmartyStreetsAddressValidationAction.php:104
-msgid "Use Existing Address"
-msgstr "Uporaba obstoječega naslova"
-
-#: includes/Action/SmartyStreetsAddressValidationAction.php:168
-msgid "Use recommended address instead?"
-msgstr "Namesto tega uporabite priporočeni naslov?"
-
-#: includes/Action/SmartyStreetsAddressValidationAction.php:171
-msgid "We\\'re unable to verify your address, but found a close match."
-msgstr "Ne moremo preveriti vašega naslova, vendar smo našli podoben."
-
-#: includes/Action/SmartyStreetsAddressValidationAction.php:175
-#: includes/Action/SmartyStreetsAddressValidationAction.php:248
-#: includes/Action/SmartyStreetsAddressValidationAction.php:305
-#: includes/Action/SmartyStreetsAddressValidationAction.php:358
-#: includes/Action/SmartyStreetsAddressValidationAction.php:409
-msgid "We are unable to verify your address."
-msgstr "Vašega naslova ne moremo preveriti."
-
-#: includes/Action/SmartyStreetsAddressValidationAction.php:179
-msgid "Please confirm you would like to use this address or try again."
-msgstr "Potrdite, da želite uporabiti ta naslov, ali poskusite znova."
-
-#: includes/Action/SmartyStreetsAddressValidationAction.php:186
-msgid "You Entered"
-msgstr "Vstopili ste"
-
-#: includes/Action/SmartyStreetsAddressValidationAction.php:198
-msgid "Recommended"
-msgstr "Priporočeno"
-
-#: includes/Action/RemoveCouponAction.php:26
-msgid "Sorry there was a problem removing this coupon."
-msgstr "Oprostite, pri odstranjevanju tega kupona je prišlo do težave."
-
-#: includes/Action/RemoveCouponAction.php:29
-msgid "Coupon has been removed."
-msgstr "Kupon je bil odstranjen."
-
-#: includes/Action/ProcessOfferPaymentAction.php:61
-#: includes/Features/OneClick/OfferRefundManager.php:159
-msgid "Security verification failed."
-msgstr "Preverjanje varnosti ni uspelo."
-
-#: includes/Action/ProcessOfferPaymentAction.php:84
-msgid "Invalid order key."
-msgstr "Neveljaven ključ naročila."
-
-#: includes/Action/ProcessOfferPaymentAction.php:96
-msgid "This order cannot accept offers."
-msgstr "To naročilo ne more sprejeti ponudb."
-
-#: includes/Action/ProcessOfferPaymentAction.php:108
-msgid "No payment method found."
-msgstr "Ni najdenega načina plačila."
-
-#: includes/Action/ProcessOfferPaymentAction.php:120
-msgid "Payment gateway does not support one-click upsells."
-msgstr "Plačilni prehod ne podpira enkratnih nadgradenj."
-
-#: includes/Action/ProcessOfferPaymentAction.php:132
-#: includes/Features/OneClick/OfferRefundManager.php:215
-msgid "Failed to load payment gateway."
-msgstr "Nalaganje plačilnega prehoda ni uspelo."
-
-#: includes/Action/ProcessOfferPaymentAction.php:144
-msgid "Invalid product."
-msgstr "Neveljaven izdelek."
-
-#: includes/Action/ProcessOfferPaymentAction.php:156
-msgid "Invalid bump offer."
-msgstr "Neveljavna ponudba dodatka."
-
-#: includes/Action/ProcessOfferPaymentAction.php:253
-msgid "Payment failed. Please try again."
-msgstr "Plačilo ni uspelo. Poskusite znova."
-
-#: includes/Action/ProcessOfferPaymentAction.php:276
-msgid "Payment successful but failed to update order."
-msgstr "Plačilo je bilo uspešno, vendar posodobitev naročila ni uspela."
-
-#: includes/Action/ProcessOfferPaymentAction.php:308
-msgid "Offer accepted successfully."
-msgstr "Ponudba je bila uspešno sprejeta."
-
-#: includes/Action/LostPasswordAction.php:59
-msgid "A password reset email has been sent to the email address on file for your account, but may take several minutes to show up in your inbox. Please wait at least 10 minutes before attempting another reset."
-msgstr "E-pošta za ponastavitev gesla je bila poslana na e-poštni naslov, povezan z vašim računom, vendar lahko traja nekaj minut, da se prikaže v vašem nabiralniku. Prosimo, počakajte vsaj 10 minut, preden poskusite ponovno ponastavitev."
-
-#: includes/Action/LogInAction.php:24
-msgid "There was an error logging in. Please check your credentials and try again."
-msgstr "Pri prijavi je prišlo do napake. Preverite svoje poverilnice in poskusite znova."
-
-#: includes/Action/DeclineOfferAction.php:39
-msgid "Invalid security token."
-msgstr "Neveljaven varnostni žeton."
-
-#: includes/Action/DeclineOfferAction.php:48
-msgid "Invalid order information."
-msgstr "Neveljavne informacije o naročilu."
-
-#: includes/Action/DeclineOfferAction.php:54
-msgid "Order verification failed."
-msgstr "Preverjanje naročila ni uspelo."
-
-#: includes/Action/DeclineOfferAction.php:63
-msgid "Redirecting..."
-msgstr "Preusmerjanje..."
-
-#: includes/Action/DeclineOfferAction.php:76
-msgid "Session expired. Redirecting..."
-msgstr "Seja je potekla. Preusmerjanje..."
-
-#: includes/Action/DeclineOfferAction.php:102
-msgid "Offer declined."
-msgstr "Ponudba zavrnjena."
-
 #: includes/API/UserRolesAPI.php:44
 msgid "Guest (Not Logged In)"
 msgstr "Gost (ni prijavljen)"
@@ -2034,6 +1881,168 @@ msgstr "Obnovljeni prihodki"
 msgid "Recovery Rate"
 msgstr "Stopnja okrevanja"
 
+#: includes/Action/ValidatePostcodeAction.php:33
+msgid "Please enter a valid %s."
+msgstr "Vnesite veljavno %s."
+
+#: includes/Action/ValidateEmailDomainAction.php:44
+msgid "Email address contains invalid domain name."
+msgstr "E-poštni naslov vsebuje neveljavno ime domene."
+
+#: includes/Action/UpdateCheckoutAction.php:80
+msgid "Sorry, your session has expired."
+msgstr "Oprostite, vaša seja je potekla."
+
+#: includes/Action/UpdateCheckoutAction.php:80
+msgid "Return to shop"
+msgstr "Vrni se v trgovino"
+
+#: includes/Action/SmartyStreetsAddressValidationAction.php:85
+msgid "Use Recommended"
+msgstr "Uporaba Priporočena"
+
+#: includes/Action/SmartyStreetsAddressValidationAction.php:86
+msgid "Use Your Address"
+msgstr "Uporabite svoj naslov"
+
+#: includes/Action/SmartyStreetsAddressValidationAction.php:103
+msgid "Reenter Address"
+msgstr "Ponovno vnesite naslov"
+
+#: includes/Action/SmartyStreetsAddressValidationAction.php:104
+msgid "Use Existing Address"
+msgstr "Uporaba obstoječega naslova"
+
+#: includes/Action/SmartyStreetsAddressValidationAction.php:168
+msgid "Use recommended address instead?"
+msgstr "Namesto tega uporabite priporočeni naslov?"
+
+#: includes/Action/SmartyStreetsAddressValidationAction.php:171
+msgid "We\\'re unable to verify your address, but found a close match."
+msgstr "Ne moremo preveriti vašega naslova, vendar smo našli podoben."
+
+#: includes/Action/SmartyStreetsAddressValidationAction.php:175
+#: includes/Action/SmartyStreetsAddressValidationAction.php:248
+#: includes/Action/SmartyStreetsAddressValidationAction.php:305
+#: includes/Action/SmartyStreetsAddressValidationAction.php:358
+#: includes/Action/SmartyStreetsAddressValidationAction.php:409
+msgid "We are unable to verify your address."
+msgstr "Vašega naslova ne moremo preveriti."
+
+#: includes/Action/SmartyStreetsAddressValidationAction.php:179
+msgid "Please confirm you would like to use this address or try again."
+msgstr "Potrdite, da želite uporabiti ta naslov, ali poskusite znova."
+
+#: includes/Action/SmartyStreetsAddressValidationAction.php:186
+msgid "You Entered"
+msgstr "Vstopili ste"
+
+#: includes/Action/SmartyStreetsAddressValidationAction.php:198
+msgid "Recommended"
+msgstr "Priporočeno"
+
+#: includes/Action/RemoveCouponAction.php:26
+msgid "Sorry there was a problem removing this coupon."
+msgstr "Oprostite, pri odstranjevanju tega kupona je prišlo do težave."
+
+#: includes/Action/RemoveCouponAction.php:29
+msgid "Coupon has been removed."
+msgstr "Kupon je bil odstranjen."
+
+#: includes/Action/ProcessOfferPaymentAction.php:61
+#: includes/Features/OneClick/OfferRefundManager.php:159
+msgid "Security verification failed."
+msgstr "Preverjanje varnosti ni uspelo."
+
+#: includes/Action/ProcessOfferPaymentAction.php:84
+msgid "Invalid order key."
+msgstr "Neveljaven ključ naročila."
+
+#: includes/Action/ProcessOfferPaymentAction.php:95
+msgid "This order cannot accept offers."
+msgstr "To naročilo ne more sprejeti ponudb."
+
+#: includes/Action/ProcessOfferPaymentAction.php:107
+msgid "No payment method found."
+msgstr "Ni najdenega načina plačila."
+
+#: includes/Action/ProcessOfferPaymentAction.php:119
+msgid "Payment gateway does not support one-click upsells."
+msgstr "Plačilni prehod ne podpira enkratnih nadgradenj."
+
+#: includes/Action/ProcessOfferPaymentAction.php:131
+#: includes/Features/OneClick/OfferRefundManager.php:215
+msgid "Failed to load payment gateway."
+msgstr "Nalaganje plačilnega prehoda ni uspelo."
+
+#: includes/Action/ProcessOfferPaymentAction.php:143
+msgid "Invalid product."
+msgstr "Neveljaven izdelek."
+
+#: includes/Action/ProcessOfferPaymentAction.php:155
+msgid "Invalid bump offer."
+msgstr "Neveljavna ponudba dodatka."
+
+#: includes/Action/ProcessOfferPaymentAction.php:252
+msgid "Payment failed. Please try again."
+msgstr "Plačilo ni uspelo. Poskusite znova."
+
+#: includes/Action/ProcessOfferPaymentAction.php:275
+msgid "Payment successful but failed to update order."
+msgstr "Plačilo je bilo uspešno, vendar posodobitev naročila ni uspela."
+
+#: includes/Action/ProcessOfferPaymentAction.php:307
+msgid "Offer accepted successfully."
+msgstr "Ponudba je bila uspešno sprejeta."
+
+#: includes/Action/LostPasswordAction.php:59
+msgid "A password reset email has been sent to the email address on file for your account, but may take several minutes to show up in your inbox. Please wait at least 10 minutes before attempting another reset."
+msgstr "E-pošta za ponastavitev gesla je bila poslana na e-poštni naslov, povezan z vašim računom, vendar lahko traja nekaj minut, da se prikaže v vašem nabiralniku. Prosimo, počakajte vsaj 10 minut, preden poskusite ponovno ponastavitev."
+
+#: includes/Action/LogInAction.php:24
+msgid "There was an error logging in. Please check your credentials and try again."
+msgstr "Pri prijavi je prišlo do napake. Preverite svoje poverilnice in poskusite znova."
+
+#: includes/Action/DeclineOfferAction.php:39
+msgid "Invalid security token."
+msgstr "Neveljaven varnostni žeton."
+
+#: includes/Action/DeclineOfferAction.php:48
+msgid "Invalid order information."
+msgstr "Neveljavne informacije o naročilu."
+
+#: includes/Action/DeclineOfferAction.php:54
+msgid "Order verification failed."
+msgstr "Preverjanje naročila ni uspelo."
+
+#: includes/Action/DeclineOfferAction.php:63
+msgid "Redirecting..."
+msgstr "Preusmerjanje..."
+
+#: includes/Action/DeclineOfferAction.php:76
+msgid "Session expired. Redirecting..."
+msgstr "Seja je potekla. Preusmerjanje..."
+
+#: includes/Action/DeclineOfferAction.php:102
+msgid "Offer declined."
+msgstr "Ponudba zavrnjena."
+
+#: lib/sendwp-sdk/sendwp-init.php:27
+msgid "Security failed to check sendwp_install_nonce"
+msgstr "Varnostni pregled sendwp_install_nonce ni uspel"
+
+#: lib/sendwp-sdk/sendwp-init.php:28
+msgid "Ask an administrator for install_plugins capability"
+msgstr "Za namestitev vtičnikov prosite skrbnika za dovoljenje install_plugins"
+
+#: lib/sendwp-sdk/sendwp-init.php:29
+msgid "SendWP is already connected."
+msgstr "SendWP je že povezan."
+
+#: lib/sendwp-sdk/remote-install.php:84
+msgid "Something went wrong. SendWP was not installed correctly."
+msgstr "Nekaj je šlo narobe. SendWP ni bil pravilno nameščen."
+
 #. block title
 #: block.json
 msgid "Order Bump Steps"
@@ -2059,62 +2068,6 @@ msgstr "Obrazec za ponudbo dodatka k naročilu"
 msgid "The form to accept or reject the bump offer."
 msgstr "Obrazec za sprejem ali zavrnitev ponudbe dodatka."
 
-#: includes/Model/Bumps/BumpAbstract.php:1081
-#: includes/Model/Bumps/BumpAbstract.php:1091
-#: includes/Model/ABTests/OrderBumpsABTest.php:30
-#: includes/Features/ABTesting/ABTestTypeRegistry.php:123
-#: includes/Admin/Pages/OrderBumpsAdminFree.php:17
-#: includes/Admin/Pages/OrderBumpsAdminFree.php:71
-#: includes/Admin/Pages/Premium/OrderBumps.php:50
-#: client/ts/admin/Components/Forms/OrderBumpSettingsForm.tsx:45
-#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:408
-msgid "Order Bumps"
-msgstr "Naročni dodatki"
-
-#: includes/Model/Bumps/BumpAbstract.php:1082
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:193
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:1614
-msgid "Order Bump"
-msgstr "Naročni dodatek"
-
-#: includes/Model/Bumps/BumpAbstract.php:1083
-msgid "Add New"
-msgstr "Dodaj novo"
-
-#: includes/Model/Bumps/BumpAbstract.php:1084
-msgid "Add New Order Bump"
-msgstr "Dodaj nov dodatek k naročilu"
-
-#: includes/Model/Bumps/BumpAbstract.php:1085
-msgid "Edit Order Bump"
-msgstr "Uredi dodatek k naročilu"
-
-#: includes/Model/Bumps/BumpAbstract.php:1086
-#: client/ts/admin/Components/Metaboxes/OrderBumpsSetupModal.tsx:61
-msgid "New Order Bump"
-msgstr "Nov dodatek k naročilu"
-
-#: includes/Model/Bumps/BumpAbstract.php:1087
-msgid "View Order Bump"
-msgstr "Ogled naročnega dodatka"
-
-#: includes/Model/Bumps/BumpAbstract.php:1088
-msgid "Find Order Bump"
-msgstr "Poišči naročni dodatek"
-
-#: includes/Model/Bumps/BumpAbstract.php:1089
-msgid "No order bumps were found."
-msgstr "Nobenih dodatkov k naročilu ni bilo najdenih."
-
-#: includes/Model/Bumps/BumpAbstract.php:1090
-msgid "Not found in trash"
-msgstr "Ni najdeno v košu"
-
-#: includes/Model/ABTests/OrderBumpsABTest.php:31
-#: includes/Features/ABTesting/ABTestTypeRegistry.php:124
-msgid "Test different variations of order bumps to see which performs better."
-msgstr "Preizkusite različne različice dodatkov k naročilu, da vidite, katera deluje bolje."
-
 # %1$s: Plugin name, %2$s: Link opening tag, %3$s: Version number, %4$s: Link closing tag
 #: includes/Managers/Helpers/EDD_SL_Plugin_Updater.php:281
 msgid "There is a new version of %1$s available. %2$sView version %3$s details%4$s."
@@ -2133,6 +2086,62 @@ msgstr "Nimate dovoljenja za namestitev posodobitev vtičnikov"
 #: client/ts/admin/Components/GooglePlacesKeyStatus.tsx:61
 msgid "Error"
 msgstr "Napaka"
+
+#: includes/Model/Bumps/BumpAbstract.php:1094
+#: includes/Model/Bumps/BumpAbstract.php:1104
+#: includes/Model/ABTests/OrderBumpsABTest.php:30
+#: includes/Features/ABTesting/ABTestTypeRegistry.php:123
+#: includes/Admin/Pages/OrderBumpsAdminFree.php:17
+#: includes/Admin/Pages/OrderBumpsAdminFree.php:71
+#: includes/Admin/Pages/Premium/OrderBumps.php:50
+#: client/ts/admin/Components/Forms/OrderBumpSettingsForm.tsx:45
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:408
+msgid "Order Bumps"
+msgstr "Naročni dodatki"
+
+#: includes/Model/Bumps/BumpAbstract.php:1095
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:193
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:1614
+msgid "Order Bump"
+msgstr "Naročni dodatek"
+
+#: includes/Model/Bumps/BumpAbstract.php:1096
+msgid "Add New"
+msgstr "Dodaj novo"
+
+#: includes/Model/Bumps/BumpAbstract.php:1097
+msgid "Add New Order Bump"
+msgstr "Dodaj nov dodatek k naročilu"
+
+#: includes/Model/Bumps/BumpAbstract.php:1098
+msgid "Edit Order Bump"
+msgstr "Uredi dodatek k naročilu"
+
+#: includes/Model/Bumps/BumpAbstract.php:1099
+#: client/ts/admin/Components/Metaboxes/OrderBumpsSetupModal.tsx:61
+msgid "New Order Bump"
+msgstr "Nov dodatek k naročilu"
+
+#: includes/Model/Bumps/BumpAbstract.php:1100
+msgid "View Order Bump"
+msgstr "Ogled naročnega dodatka"
+
+#: includes/Model/Bumps/BumpAbstract.php:1101
+msgid "Find Order Bump"
+msgstr "Poišči naročni dodatek"
+
+#: includes/Model/Bumps/BumpAbstract.php:1102
+msgid "No order bumps were found."
+msgstr "Nobenih dodatkov k naročilu ni bilo najdenih."
+
+#: includes/Model/Bumps/BumpAbstract.php:1103
+msgid "Not found in trash"
+msgstr "Ni najdeno v košu"
+
+#: includes/Model/ABTests/OrderBumpsABTest.php:31
+#: includes/Features/ABTesting/ABTestTypeRegistry.php:124
+msgid "Test different variations of order bumps to see which performs better."
+msgstr "Preizkusite različne različice dodatkov k naročilu, da vidite, katera deluje bolje."
 
 #: includes/Features/OneClick/OrderStatusManager.php:52
 msgid "Pending Offer <span class=\"count\">(%s)</span>"
@@ -2257,6 +2266,14 @@ msgstr "Omogoči podporo Astra (Beta)"
 msgid "If enabled with Advanced > Template Loader > Distraction Free Portal, Astra\\'s header and footer are displayed and Astra styles and scripts load on checkout. If disabled with Distraction Free Portal, Astra styles and scripts are excluded for a minimal layout. With WordPress Theme loader, the full theme loads regardless of this setting."
 msgstr "Če je omogočeno z Napredno > Naložilec predlog > Portal brez motenj, se prikažeta Astra glava in noga ter se na blagajni naložijo Astra slogi in skripte. Če je onemogočeno z Portalom brez motenj, so Astra slogi in skripte izključeni za minimalno postavitev. Z nalagalnikom teme WordPress se celotna tema naloži ne glede na to nastavitev."
 
+#: includes/Compatibility/Gateways/PayPalForWooCommerce.php:38
+msgid "Please update to the latest version of PayPal for WooCommerce to get full support."
+msgstr "Prosimo, posodobite na najnovejšo različico PayPal za WooCommerce za popolno podporo."
+
+#: includes/Compatibility/Gateways/PayPalForWooCommerce.php:363
+msgid "Logged in with PayPal. Please continue your order below."
+msgstr "Prijavljen s storitvijo PayPal. Nadaljujte z naročilom spodaj."
+
 #: includes/Compatibility/Plugins/WooCommerceGiftCards.php:64
 #: includes/Compatibility/Plugins/WooCommerceGiftCards.php:72
 msgid "Enter your code&hellip;"
@@ -2377,14 +2394,6 @@ msgstr "Omogoči podporo Beaver Themer"
 msgid "Allow Beaver Themer to replace header and footer."
 msgstr "Dovoli Beaver Themer, da zamenja glavo in nogo."
 
-#: includes/Compatibility/Gateways/PayPalForWooCommerce.php:38
-msgid "Please update to the latest version of PayPal for WooCommerce to get full support."
-msgstr "Prosimo, posodobite na najnovejšo različico PayPal za WooCommerce za popolno podporo."
-
-#: includes/Compatibility/Gateways/PayPalForWooCommerce.php:363
-msgid "Logged in with PayPal. Please continue your order below."
-msgstr "Prijavljen s storitvijo PayPal. Nadaljujte z naročilom spodaj."
-
 #: includes/Admin/Views/html-refund-offer.php:22
 msgid "Product"
 msgstr "Izdelek"
@@ -2413,17 +2422,171 @@ msgstr "Opomba:"
 msgid "Refunding an offer will process the refund with the payment gateway and create a WooCommerce refund record."
 msgstr "Povračilo ponudbe bo izvedlo povračilo prek plačilnega prehoda in ustvarilo zapis o povračilu v WooCommerce."
 
-#: includes/Admin/Pages/WooCommercePages.php:21
+#: includes/Admin/Notices/WelcomeNotice.php:12
+msgid "Welcome to CheckoutWC"
+msgstr "Dobrodošli v CheckoutWC"
+
+#: includes/Admin/Notices/WelcomeNotice.php:20
+msgid "Thank you for installing CheckoutWC! We automatically activated your license. You are all set!"
+msgstr "Hvala, ker ste namestili CheckoutWC! Vaša licenca je bila samodejno aktivirana. Vse je pripravljeno!"
+
+#: includes/Admin/Notices/WelcomeNotice.php:26
+msgid "Thank you for installing CheckoutWC! To get started, enter your <strong>License Key</strong> below, save, and click <strong>Activate Site</strong>."
+msgstr "Hvala, ker ste namestili CheckoutWC! Za začetek vnesite svojo <strong>licenčni ključ</strong> spodaj, shranite in kliknite <strong>Aktiviraj spletno mesto</strong>."
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:20
+msgid "your email"
+msgstr "vaš e-poštni naslov"
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:88
+msgid "privacy policy"
+msgstr "politika zasebnosti"
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:93
+msgid "By joining, %1$s will be added to our mailing list. Read our %2$s."
+msgstr "Z vpisom bo %1$s dodan na naš seznam prejemnikov. Preberite našo %2$s."
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:99
+msgid "Join Newsletter & Save 25%"
+msgstr "Pridružite se novicam in prihranite 25%"
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:102
+msgid "Join Newsletter"
+msgstr "Pridružite se novicam"
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:113
+msgid "Sign up to our newsletter and get proven conversion tips and checkout optimization strategies from the CheckoutWC team."
+msgstr "Prijavite se na naše novice in prejmite preverjene nasvete za konverzijo ter strategije optimizacije blagajne od ekipe CheckoutWC."
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:116
+msgid "Boost Your Conversions with Proven Strategies."
+msgstr "Povečajte svoje konverzije s preverjenimi strategijami."
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:123
+msgid "We're so glad that you've chosen CheckoutWC to handle your checkouts. Unlock more sales with premium features like order bumps, abandoned cart recovery, and much more."
+msgstr "Veseli smo, da ste izbrali CheckoutWC za upravljanje vaših blagajn. Odklenite več prodaje z vrhunskimi funkcijami, kot so dodatki k naročilu, obnova zapuščenih košaric in še več."
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:126
+msgid "Unlock more sales with CheckoutWC Premium"
+msgstr "Odklenite več prodaje z CheckoutWC Premium"
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:144
+msgid "Sorry, there was an error joining our newsletter. Please refresh the page and try again."
+msgstr "Oprostite, pri prijavi na naše novice je prišlo do napake. Osvežite stran in poskusite znova."
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:243
+msgid "Please wait..."
+msgstr "Prosimo, počakajte..."
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:320
+msgid "Sorry, your account has insufficient permissions to join our newsletter."
+msgstr "Oprostite, vaš račun nima zadostnih dovoljenj za prijavo na naše novice."
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:354
+msgid "You have already joined our newsletter!"
+msgstr "Že ste prijavljeni na naše novice!"
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:396
+msgid "Thank you for joining our newsletter!"
+msgstr "Hvala, ker ste se prijavili na naše novice!"
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:410
+msgid "Security check failed."
+msgstr "Varnostni pregled ni uspel."
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:414
+msgid "Insufficient permissions."
+msgstr "Nedovoljena dovoljenja."
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:422
+msgid "Notice dismissed."
+msgstr "Obvestilo je bilo zavrnjeno."
+
+# %1$d: Number of days, %2$s: Pricing URL, %3$s: "renew it here" link text
+#: includes/Admin/Notices/LicenseUnverifiedNotice.php:25
+msgid "Premium features are off because we haven\\'t been able to check your license with checkoutwc.com for %1$d days. Make sure your server can connect to checkoutwc.com. If your license has expired, <a href=\"%2$s\" target=\"_blank\">%3$s</a>."
+msgstr "Napredne funkcije so izklopljene, ker vaše licence s checkoutwc.com nismo mogli preveriti že %1$d dni. Prepričajte se, da se vaš strežnik lahko poveže s checkoutwc.com. Če je vaša licenca potekla, <a href=\"%2$s\" target=\"_blank\">%3$s</a>."
+
+#: includes/Admin/Notices/LicenseUnverifiedNotice.php:28
+msgid "renew it here"
+msgstr "podaljšajte jo tukaj"
+
+#: includes/Admin/Notices/LicenseUnverifiedNotice.php:33
+msgid "CheckoutWC can\\'t verify your license"
+msgstr "CheckoutWC ne more preveriti vaše licence"
+
+# %1$s: Date premium features turn off, %2$s: Support email URL, %3$s: "Contact support" link text
+#: includes/Admin/Notices/LicenseServerUnreachableNotice.php:28
+msgid "We couldn\\'t check your license with checkoutwc.com. Premium features will turn off on %1$s unless the connection is restored. <a href=\"%2$s\">%3$s</a> if this keeps happening."
+msgstr "Vaše licence s checkoutwc.com nismo mogli preveriti. Napredne funkcije se bodo izklopile dne %1$s, razen če se povezava obnovi. <a href=\"%2$s\">%3$s</a>, če se to še naprej dogaja."
+
+#: includes/Admin/Notices/LicenseServerUnreachableNotice.php:31
+#: includes/Admin/Notices/LicenseServerUnreachableNotice.php:38
+msgid "Contact support"
+msgstr "Kontaktirajte podporo"
+
+# %1$s: Support email URL, %2$s: "Contact support" link text
+#: includes/Admin/Notices/LicenseServerUnreachableNotice.php:36
+msgid "We couldn\\'t check your license with checkoutwc.com. Make sure your server can connect to checkoutwc.com. <a href=\"%1$s\">%2$s</a> if this keeps happening."
+msgstr "Vaše licence s checkoutwc.com nismo mogli preveriti. Prepričajte se, da se vaš strežnik lahko poveže s checkoutwc.com. <a href=\"%1$s\">%2$s</a>, če se to še naprej dogaja."
+
+#: includes/Admin/Notices/LicenseServerUnreachableNotice.php:45
+msgid "CheckoutWC can\\'t reach the license server"
+msgstr "CheckoutWC ne more vzpostaviti povezave s strežnikom za licenco"
+
+#: includes/Admin/Notices/InvalidLicenseKeyNotice.php:13
+msgid "CheckoutWC license expired"
+msgstr "Licenca CheckoutWC je potekla"
+
+# %1$s: URL to pricing page, %2$s: "Renew your license" link text, %3$s: Support email URL, %4$s: "contact support" link text
+#: includes/Admin/Notices/InvalidLicenseKeyNotice.php:16
+msgid "Premium features are off because your license has expired. <a href=\"%1$s\" target=\"_blank\">%2$s</a> to turn them back on. If you think this is a mistake, <a href=\"%3$s\">%4$s</a>."
+msgstr "Napredne funkcije so izklopljene, ker je vaša licenca potekla. <a href=\"%1$s\" target=\"_blank\">%2$s</a>, da jih znova vklopite. Če menite, da gre za napako, <a href=\"%3$s\">%4$s</a>."
+
+#: includes/Admin/Notices/InvalidLicenseKeyNotice.php:18
+msgid "Renew your license"
+msgstr "Podaljšajte svojo licenco"
+
+#: includes/Admin/Notices/InvalidLicenseKeyNotice.php:20
+msgid "contact support"
+msgstr "kontaktirajte podporo"
+
+# %1$s: URL to activation page, %2$s: "Activate your license" link text, %3$s: Pricing URL, %4$s: "buy a license" link text
+#: includes/Admin/Notices/InactiveLicenseNotice.php:11
+msgid "Premium features are off because your license isn\\'t activated on this site. <a href=\"%1$s\">%2$s</a> or <a href=\"%3$s\" target=\"_blank\">%4$s</a> for this site."
+msgstr "Napredne funkcije so izklopljene, ker vaša licenca na tem spletnem mestu ni aktivirana. <a href=\"%1$s\">%2$s</a> ali <a href=\"%3$s\" target=\"_blank\">%4$s</a> za to spletno mesto."
+
+#: includes/Admin/Notices/InactiveLicenseNotice.php:13
+msgid "Activate your license"
+msgstr "Aktivirajte svojo licenco"
+
+#: includes/Admin/Notices/InactiveLicenseNotice.php:20
+msgid "CheckoutWC license not activated"
+msgstr "Licenca CheckoutWC ni aktivirana"
+
+#: includes/Admin/Notices/BFNotice.php:13
+msgid "Black Friday Sale - 40% Off"
+msgstr "Črni petek razprodaja - 40 % popusta"
+
+#: includes/Admin/Notices/BFNotice.php:14
+msgid "You're missing out on revenue growth tools like Order Bumps, Upsells, Abandoned Cart Recovery and more! Save 40% on CheckoutWC pro plans for Black Friday, ends December 4th"
+msgstr "Izgubljate orodja za rast prihodkov, kot so Order Bumps, Upsells, Obnova zapuščenih košaric in še več! Prihranite 40 % na profesionalnih načrtih CheckoutWC za Črni petek, akcija traja do 4. decembra"
+
+#: includes/Admin/Notices/BFNotice.php:27
+msgid "Get CheckoutWC Pro Now!"
+msgstr "Pridobite CheckoutWC Pro zdaj!"
+
+#: includes/Admin/Pages/WooCommercePages.php:22
 msgid "Pages"
 msgstr "Strani"
 
-#: includes/Admin/Pages/WooCommercePages.php:30
+#: includes/Admin/Pages/WooCommercePages.php:31
 #: client/ts/admin/Components/Forms/ThankYouSettingsForm.tsx:53
 #: client/ts/admin/Components/Forms/AdvancedScriptsSettingsForm.tsx:144
 msgid "Thank You"
 msgstr "Hvala"
 
-#: includes/Admin/Pages/WooCommercePages.php:31
+#: includes/Admin/Pages/WooCommercePages.php:32
 msgid "Global Options"
 msgstr "Globalne možnosti"
 
@@ -2576,7 +2739,7 @@ msgid "Our Knowledge Base is packed with tips, tricks, and common troubleshootin
 msgstr "Naša baza znanja je polna nasvetov, trikov in pogostih korakov za odpravljanje težav."
 
 #: includes/Admin/Pages/Support.php:27
-#: includes/Admin/Pages/General.php:69
+#: includes/Admin/Pages/General.php:68
 msgid "Read Our Documentation"
 msgstr "Preberite našo dokumentacijo"
 
@@ -2963,141 +3126,149 @@ msgstr "Pošlji"
 msgid "Integrations"
 msgstr "Integracije"
 
+#: includes/Admin/Pages/General.php:39
 #: includes/Admin/Pages/General.php:40
-#: includes/Admin/Pages/General.php:41
 #: includes/Admin/Pages/CheckoutEditor.php:21
 #: client/ts/admin/Components/CheckoutEditor/EditorHeader.tsx:92
 msgid "Checkout Editor"
 msgstr "Urejevalnik blagajne"
 
-#: includes/Admin/Pages/General.php:62
+#: includes/Admin/Pages/General.php:61
 msgid "Welcome to the new standard for WooCommerce stores."
 msgstr "Dobrodošli v novem standardu za WooCommerce trgovine."
 
-#: includes/Admin/Pages/General.php:65
+#: includes/Admin/Pages/General.php:64
 msgid "We hate complex configurations too. Get up and running with CheckoutWC in 5 minutes or less. ⚡️"
 msgstr "Tudi mi sovražimo zapletene nastavitve. Zaženite CheckoutWC v 5 minutah ali manj. ⚡️"
 
-#: includes/Admin/Pages/General.php:84
+#: includes/Admin/Pages/General.php:83
 msgid "Welcome to CheckoutWC 10.0"
 msgstr "Dobrodošli v CheckoutWC 10.0"
 
-#: includes/Admin/Pages/General.php:87
+#: includes/Admin/Pages/General.php:86
 msgid "CheckoutWC 10.0 is a major update with new features and optimizations to make your WooCommerce store run better."
 msgstr "CheckoutWC 10.0 je velika posodobitev z novimi funkcijami in optimizacijami, ki bodo vašo WooCommerce trgovino naredile boljšo."
 
-#: includes/Admin/Pages/General.php:93
+#: includes/Admin/Pages/General.php:92
 msgid "Just Say When"
 msgstr "Samo povej kdaj"
 
-#: includes/Admin/Pages/General.php:96
+#: includes/Admin/Pages/General.php:95
 msgid "Our new rules engine puts you in charge. Want to show an Order Bump only to first time customers who use a specific coupon code? You can do that. Want to show specific trust badges based on what is in the cart? You can do that too!"
 msgstr "Naš nov sistem pravil vam daje nadzor. Želite prikazati Order Bump samo prvim strankam, ki uporabijo določen kupon? To lahko storite. Želite prikazati določene značke zaupanja glede na vsebino košarice? Tudi to lahko storite!"
 
-#: includes/Admin/Pages/General.php:110
+#: includes/Admin/Pages/General.php:109
 msgid "Get Started Faster"
 msgstr "Začnite hitreje"
 
-#: includes/Admin/Pages/General.php:113
+#: includes/Admin/Pages/General.php:112
 msgid "Creating Order Bumps has lots of options. Our new Quick Start will help you get started faster."
 msgstr "Ustvarjanje Order Bumpov ima veliko možnosti. Naš novi Hitri začetek vam bo pomagal začeti hitreje."
 
-#: includes/Admin/Pages/General.php:117
+#: includes/Admin/Pages/General.php:116
 msgid "Configure Order Bumps"
 msgstr "Konfigurirajte Order Bumpe"
 
-#: includes/Admin/Pages/General.php:126
+#: includes/Admin/Pages/General.php:125
 msgid "And a lot more"
 msgstr "In še veliko več"
 
-#: includes/Admin/Pages/General.php:129
+#: includes/Admin/Pages/General.php:128
 msgid "To view the full list of changes, checkout our change log."
 msgstr "Za ogled celotnega seznama sprememb si oglejte naš dnevnik sprememb."
 
-#: includes/Admin/Pages/General.php:133
+#: includes/Admin/Pages/General.php:132
 msgid "Read Our Change Log"
 msgstr "Preberite naš dnevnik sprememb"
 
-#: includes/Admin/Pages/General.php:149
-msgid "Step 1: Activate Your License"
-msgstr "Korak 1: Aktivirajte svojo licenco"
-
-#: includes/Admin/Pages/General.php:149
-msgid "Step 1: Try CheckoutWC Premium Free For 7 Days"
-msgstr "Korak 1: Preizkusite CheckoutWC Premium brezplačno 7 dni"
-
 #: includes/Admin/Pages/General.php:150
-msgid "Enter your license key and activate it for this site to turn on premium features."
-msgstr "Vnesite svoj licenčni ključ in ga aktivirajte za to spletno mesto, da vklopite napredne funkcije."
+msgid "Step 1: Upgrade to CheckoutWC Premium"
+msgstr "Korak 1: Nadgradite na CheckoutWC Premium"
 
-#: includes/Admin/Pages/General.php:150
+#: includes/Admin/Pages/General.php:151
 msgid "Supercharge your WooCommerce store."
 msgstr "Pospešite svojo WooCommerce trgovino."
 
-#: includes/Admin/Pages/General.php:155
+#: includes/Admin/Pages/General.php:153
+msgid "Step 1: Renew Your License"
+msgstr "Korak 1: Obnovite svojo licenco"
+
+#: includes/Admin/Pages/General.php:154
+msgid "Your license has expired. Renew it to keep premium features working."
+msgstr "Vaša licenca je potekla. Obnovite jo, da bodo premium funkcije še naprej delovale."
+
+#: includes/Admin/Pages/General.php:156
+msgid "Step 1: Activate Your License"
+msgstr "Korak 1: Aktivirajte svojo licenco"
+
+#: includes/Admin/Pages/General.php:157
+msgid "Enter your license key and activate it for this site to turn on premium features."
+msgstr "Vnesite svoj licenčni ključ in ga aktivirajte za to spletno mesto, da vklopite napredne funkcije."
+
+#: includes/Admin/Pages/General.php:167
 msgid "Step 2: Customize Checkout"
 msgstr "Korak 2: Prilagodite blagajno"
 
-#: includes/Admin/Pages/General.php:156
+#: includes/Admin/Pages/General.php:168
 msgid "Use the Checkout Editor to customize your checkout layout, fields, and content."
 msgstr "Uporabite urejevalnik blagajne za prilagoditev postavitve blagajne, polj in vsebine."
 
-#: includes/Admin/Pages/General.php:161
+#: includes/Admin/Pages/General.php:173
 msgid "Step 3: Go Live"
 msgstr "Korak 3: Zaženi v živo"
 
-#: includes/Admin/Pages/General.php:162
+#: includes/Admin/Pages/General.php:174
 msgid "Enable templates for all visitors."
 msgstr "Omogočite predloge za vse obiskovalce."
 
-#: includes/Admin/Pages/General.php:190
+#: includes/Admin/Pages/General.php:202
 msgid "Requires a valid and active license key."
 msgstr "Zahteva veljavno in aktivno licenčno kodo."
 
-#: includes/Admin/Pages/General.php:196
+#: includes/Admin/Pages/General.php:208
 msgid "CheckoutWC Templates are always activated for admin users."
 msgstr "CheckoutWC predloge so vedno aktivirane za skrbniške uporabnike."
 
-#: includes/Admin/Pages/General.php:201
+#: includes/Admin/Pages/General.php:213
 msgid "This step can also be completed directly from the Checkout Editor!"
 msgstr "Ta korak lahko opravite tudi neposredno iz urejevalnika blagajne!"
 
-#: includes/Admin/Pages/General.php:221
+#: includes/Admin/Pages/General.php:233
 msgid "Upgrade to CheckoutWC Premium - Save 20% on your first year"
 msgstr ""
 
-#: includes/Admin/Pages/General.php:223
-#: includes/Admin/Pages/General.php:250
-#: includes/Admin/Pages/General.php:265
-#: includes/Admin/Pages/General.php:310
+#: includes/Admin/Pages/General.php:235
+#: includes/Admin/Pages/General.php:262
+#: includes/Admin/Pages/General.php:277
+#: includes/Admin/Pages/General.php:322
 msgid "Opens in new tab"
 msgstr "Odpre se v novem zavihku"
 
-#: includes/Admin/Pages/General.php:236
+#: includes/Admin/Pages/General.php:248
 msgid "Customize Your Checkout"
 msgstr "Prilagodite svojo blagajno"
 
-#: includes/Admin/Pages/General.php:248
+#: includes/Admin/Pages/General.php:260
 msgid "Choose a Template"
 msgstr "Izberite predlogo"
 
-#: includes/Admin/Pages/General.php:263
+#: includes/Admin/Pages/General.php:275
 msgid "Customize Logo and Colors"
 msgstr "Prilagodite logotip in barve"
 
-#: includes/Admin/Pages/General.php:308
+#: includes/Admin/Pages/General.php:320
 msgid "Preview Your Checkout Page"
 msgstr "Predogled strani blagajne"
 
-#: includes/Admin/Pages/General.php:354
+#: includes/Admin/Pages/General.php:366
 msgid "Unbypass CheckoutWC Template"
 msgstr "Odstrani zaobidenje predloge CheckoutWC"
 
-#: includes/Admin/Pages/General.php:354
+#: includes/Admin/Pages/General.php:366
 msgid "Bypass CheckoutWC Template"
 msgstr "Zaobidi predlogo CheckoutWC"
 
-#: includes/Admin/Pages/General.php:358
+#: includes/Admin/Pages/General.php:370
 msgid "CheckoutWC template and functionality will be temporarily bypassed (just for you!). This is helpful for testing and debugging. You can click Unbypass CheckoutWC Template once you are done."
 msgstr "Predloga in funkcionalnost CheckoutWC bosta začasno zaobideni (samo za vas!). To je koristno za testiranje in odpravljanje napak. Ko končate, lahko kliknete Odstrani zaobidenje predloge CheckoutWC."
 
@@ -3273,74 +3444,74 @@ msgstr "Sekundarno besedilo ob premiku miške"
 msgid "Theme Specific Colors"
 msgstr "Barve teme"
 
-#: includes/Admin/Pages/Advanced.php:20
-#: includes/Admin/Pages/Advanced.php:28
+#: includes/Admin/Pages/Advanced.php:37
+#: includes/Admin/Pages/Advanced.php:45
 msgid "Advanced"
 msgstr "Napredno"
 
-#: includes/Admin/Pages/Advanced.php:29
+#: includes/Admin/Pages/Advanced.php:46
 msgid "Scripts"
 msgstr "Skripti"
 
-#: includes/Admin/Pages/Advanced.php:30
+#: includes/Admin/Pages/Advanced.php:47
 msgid "Tools"
 msgstr "Orodja"
 
-#: includes/Admin/Pages/Advanced.php:64
-#: includes/Admin/Pages/Advanced.php:84
+#: includes/Admin/Pages/Advanced.php:81
+#: includes/Admin/Pages/Advanced.php:101
 msgid "Export Settings"
 msgstr "Izvozi nastavitve"
 
-#: includes/Admin/Pages/Advanced.php:65
+#: includes/Admin/Pages/Advanced.php:82
 msgid "Download a JSON file containing the current plugin settings."
 msgstr "Prenesite JSON datoteko z trenutnimi nastavitvami vtičnika."
 
-#: includes/Admin/Pages/Advanced.php:69
-#: includes/Admin/Pages/Advanced.php:97
+#: includes/Admin/Pages/Advanced.php:86
+#: includes/Admin/Pages/Advanced.php:114
 msgid "Import Settings"
 msgstr "Uvozi nastavitve"
 
-#: includes/Admin/Pages/Advanced.php:70
+#: includes/Admin/Pages/Advanced.php:87
 msgid "Replace your current settings with a previous settings export."
 msgstr "Zamenjajte trenutne nastavitve s prejšnjim izvozom nastavitev."
 
-#: includes/Admin/Pages/Advanced.php:87
+#: includes/Admin/Pages/Advanced.php:104
 msgid "Download a backup file of your settings."
 msgstr "Prenesite varnostno kopijo vaših nastavitev."
 
-#: includes/Admin/Pages/Advanced.php:101
+#: includes/Admin/Pages/Advanced.php:118
 msgid "Upload File and Import Settings"
 msgstr "Naloži datoteko in uvozi nastavitve"
 
-#: includes/Admin/Pages/Advanced.php:174
+#: includes/Admin/Pages/Advanced.php:196
 msgid "CheckoutWC Settings Import Failed"
 msgstr "Uvoz nastavitev CheckoutWC ni uspel"
 
-#: includes/Admin/Pages/Advanced.php:175
+#: includes/Admin/Pages/Advanced.php:197
 msgid "Unable to import settings. Did you select a JSON file to upload?"
 msgstr "Ni bilo mogoče uvoziti nastavitev. Ste izbrali JSON datoteko za nalaganje?"
 
-#: includes/Admin/Pages/Advanced.php:187
+#: includes/Admin/Pages/Advanced.php:209
 msgid "Error. Uploaded file appears empty."
 msgstr "Napaka. Naložena datoteka je prazna."
 
-#: includes/Admin/Pages/Advanced.php:198
+#: includes/Admin/Pages/Advanced.php:220
 msgid "Wrong file extension. Uploaded settings must be a JSON file."
 msgstr "Napačna končnica datoteke. Naložene nastavitve morajo biti JSON datoteka."
 
-#: includes/Admin/Pages/Advanced.php:206
+#: includes/Admin/Pages/Advanced.php:228
 msgid "Error moving uploaded file - check your permissions."
 msgstr "Napaka pri premikanju naložene datoteke - preverite svoje dovoljenja."
 
-#: includes/Admin/Pages/Advanced.php:213
+#: includes/Admin/Pages/Advanced.php:235
 msgid "Error decoding JSON file."
 msgstr "Napaka pri dekodiranju JSON datoteke."
 
-#: includes/Admin/Pages/Advanced.php:255
+#: includes/Admin/Pages/Advanced.php:277
 msgid "CheckoutWC Settings Import Successful"
 msgstr "Uvoz nastavitev CheckoutWC uspešen"
 
-#: includes/Admin/Pages/Advanced.php:256
+#: includes/Admin/Pages/Advanced.php:278
 msgid "Successfully imported settings."
 msgstr "Nastavitve so bile uspešno uvožene."
 
@@ -3520,160 +3691,6 @@ msgstr "Omogoči A/B testiranje"
 msgid "Allow A/B tests to be created and applied on the checkout page."
 msgstr "Dovoli ustvarjanje in uporabo A/B testov na strani za plačilo."
 
-#: includes/Admin/Notices/WelcomeNotice.php:12
-msgid "Welcome to CheckoutWC"
-msgstr "Dobrodošli v CheckoutWC"
-
-#: includes/Admin/Notices/WelcomeNotice.php:20
-msgid "Thank you for installing CheckoutWC! We automatically activated your license. You are all set!"
-msgstr "Hvala, ker ste namestili CheckoutWC! Vaša licenca je bila samodejno aktivirana. Vse je pripravljeno!"
-
-#: includes/Admin/Notices/WelcomeNotice.php:26
-msgid "Thank you for installing CheckoutWC! To get started, enter your <strong>License Key</strong> below, save, and click <strong>Activate Site</strong>."
-msgstr "Hvala, ker ste namestili CheckoutWC! Za začetek vnesite svojo <strong>licenčni ključ</strong> spodaj, shranite in kliknite <strong>Aktiviraj spletno mesto</strong>."
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:20
-msgid "your email"
-msgstr "vaš e-poštni naslov"
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:88
-msgid "privacy policy"
-msgstr "politika zasebnosti"
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:93
-msgid "By joining, %1$s will be added to our mailing list. Read our %2$s."
-msgstr "Z vpisom bo %1$s dodan na naš seznam prejemnikov. Preberite našo %2$s."
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:99
-msgid "Join Newsletter & Save 25%"
-msgstr "Pridružite se novicam in prihranite 25%"
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:102
-msgid "Join Newsletter"
-msgstr "Pridružite se novicam"
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:113
-msgid "Sign up to our newsletter and get proven conversion tips and checkout optimization strategies from the CheckoutWC team."
-msgstr "Prijavite se na naše novice in prejmite preverjene nasvete za konverzijo ter strategije optimizacije blagajne od ekipe CheckoutWC."
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:116
-msgid "Boost Your Conversions with Proven Strategies."
-msgstr "Povečajte svoje konverzije s preverjenimi strategijami."
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:123
-msgid "We're so glad that you've chosen CheckoutWC to handle your checkouts. Unlock more sales with premium features like order bumps, abandoned cart recovery, and much more."
-msgstr "Veseli smo, da ste izbrali CheckoutWC za upravljanje vaših blagajn. Odklenite več prodaje z vrhunskimi funkcijami, kot so dodatki k naročilu, obnova zapuščenih košaric in še več."
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:126
-msgid "Unlock more sales with CheckoutWC Premium"
-msgstr "Odklenite več prodaje z CheckoutWC Premium"
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:144
-msgid "Sorry, there was an error joining our newsletter. Please refresh the page and try again."
-msgstr "Oprostite, pri prijavi na naše novice je prišlo do napake. Osvežite stran in poskusite znova."
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:243
-msgid "Please wait..."
-msgstr "Prosimo, počakajte..."
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:320
-msgid "Sorry, your account has insufficient permissions to join our newsletter."
-msgstr "Oprostite, vaš račun nima zadostnih dovoljenj za prijavo na naše novice."
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:354
-msgid "You have already joined our newsletter!"
-msgstr "Že ste prijavljeni na naše novice!"
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:396
-msgid "Thank you for joining our newsletter!"
-msgstr "Hvala, ker ste se prijavili na naše novice!"
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:410
-msgid "Security check failed."
-msgstr "Varnostni pregled ni uspel."
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:414
-msgid "Insufficient permissions."
-msgstr "Nedovoljena dovoljenja."
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:422
-msgid "Notice dismissed."
-msgstr "Obvestilo je bilo zavrnjeno."
-
-# %1$d: Number of days, %2$s: Pricing URL, %3$s: "renew it here" link text
-#: includes/Admin/Notices/LicenseUnverifiedNotice.php:25
-msgid "Premium features are off because we haven\\'t been able to check your license with checkoutwc.com for %1$d days. Make sure your server can connect to checkoutwc.com. If your license has expired, <a href=\"%2$s\" target=\"_blank\">%3$s</a>."
-msgstr "Napredne funkcije so izklopljene, ker vaše licence s checkoutwc.com nismo mogli preveriti že %1$d dni. Prepričajte se, da se vaš strežnik lahko poveže s checkoutwc.com. Če je vaša licenca potekla, <a href=\"%2$s\" target=\"_blank\">%3$s</a>."
-
-#: includes/Admin/Notices/LicenseUnverifiedNotice.php:28
-msgid "renew it here"
-msgstr "podaljšajte jo tukaj"
-
-#: includes/Admin/Notices/LicenseUnverifiedNotice.php:33
-msgid "CheckoutWC can\\'t verify your license"
-msgstr "CheckoutWC ne more preveriti vaše licence"
-
-# %1$s: Date premium features turn off, %2$s: Support email URL, %3$s: "Contact support" link text
-#: includes/Admin/Notices/LicenseServerUnreachableNotice.php:28
-msgid "We couldn\\'t check your license with checkoutwc.com. Premium features will turn off on %1$s unless the connection is restored. <a href=\"%2$s\">%3$s</a> if this keeps happening."
-msgstr "Vaše licence s checkoutwc.com nismo mogli preveriti. Napredne funkcije se bodo izklopile dne %1$s, razen če se povezava obnovi. <a href=\"%2$s\">%3$s</a>, če se to še naprej dogaja."
-
-#: includes/Admin/Notices/LicenseServerUnreachableNotice.php:31
-#: includes/Admin/Notices/LicenseServerUnreachableNotice.php:38
-msgid "Contact support"
-msgstr "Kontaktirajte podporo"
-
-# %1$s: Support email URL, %2$s: "Contact support" link text
-#: includes/Admin/Notices/LicenseServerUnreachableNotice.php:36
-msgid "We couldn\\'t check your license with checkoutwc.com. Make sure your server can connect to checkoutwc.com. <a href=\"%1$s\">%2$s</a> if this keeps happening."
-msgstr "Vaše licence s checkoutwc.com nismo mogli preveriti. Prepričajte se, da se vaš strežnik lahko poveže s checkoutwc.com. <a href=\"%1$s\">%2$s</a>, če se to še naprej dogaja."
-
-#: includes/Admin/Notices/LicenseServerUnreachableNotice.php:45
-msgid "CheckoutWC can\\'t reach the license server"
-msgstr "CheckoutWC ne more vzpostaviti povezave s strežnikom za licenco"
-
-#: includes/Admin/Notices/InvalidLicenseKeyNotice.php:13
-msgid "CheckoutWC license expired"
-msgstr "Licenca CheckoutWC je potekla"
-
-# %1$s: URL to pricing page, %2$s: "Renew your license" link text, %3$s: Support email URL, %4$s: "contact support" link text
-#: includes/Admin/Notices/InvalidLicenseKeyNotice.php:16
-msgid "Premium features are off because your license has expired. <a href=\"%1$s\" target=\"_blank\">%2$s</a> to turn them back on. If you think this is a mistake, <a href=\"%3$s\">%4$s</a>."
-msgstr "Napredne funkcije so izklopljene, ker je vaša licenca potekla. <a href=\"%1$s\" target=\"_blank\">%2$s</a>, da jih znova vklopite. Če menite, da gre za napako, <a href=\"%3$s\">%4$s</a>."
-
-#: includes/Admin/Notices/InvalidLicenseKeyNotice.php:18
-msgid "Renew your license"
-msgstr "Podaljšajte svojo licenco"
-
-#: includes/Admin/Notices/InvalidLicenseKeyNotice.php:20
-msgid "contact support"
-msgstr "kontaktirajte podporo"
-
-# %1$s: URL to activation page, %2$s: "Activate your license" link text, %3$s: Pricing URL, %4$s: "buy a license" link text
-#: includes/Admin/Notices/InactiveLicenseNotice.php:11
-msgid "Premium features are off because your license isn\\'t activated on this site. <a href=\"%1$s\">%2$s</a> or <a href=\"%3$s\" target=\"_blank\">%4$s</a> for this site."
-msgstr "Napredne funkcije so izklopljene, ker vaša licenca na tem spletnem mestu ni aktivirana. <a href=\"%1$s\">%2$s</a> ali <a href=\"%3$s\" target=\"_blank\">%4$s</a> za to spletno mesto."
-
-#: includes/Admin/Notices/InactiveLicenseNotice.php:13
-msgid "Activate your license"
-msgstr "Aktivirajte svojo licenco"
-
-#: includes/Admin/Notices/InactiveLicenseNotice.php:20
-msgid "CheckoutWC license not activated"
-msgstr "Licenca CheckoutWC ni aktivirana"
-
-#: includes/Admin/Notices/BFNotice.php:13
-msgid "Black Friday Sale - 40% Off"
-msgstr "Črni petek razprodaja - 40 % popusta"
-
-#: includes/Admin/Notices/BFNotice.php:14
-msgid "You're missing out on revenue growth tools like Order Bumps, Upsells, Abandoned Cart Recovery and more! Save 40% on CheckoutWC pro plans for Black Friday, ends December 4th"
-msgstr "Izgubljate orodja za rast prihodkov, kot so Order Bumps, Upsells, Obnova zapuščenih košaric in še več! Prihranite 40 % na profesionalnih načrtih CheckoutWC za Črni petek, akcija traja do 4. decembra"
-
-#: includes/Admin/Notices/BFNotice.php:27
-msgid "Get CheckoutWC Pro Now!"
-msgstr "Pridobite CheckoutWC Pro zdaj!"
-
 #: client/ts/functions/cfwFormatDate.ts:38
 msgid "Sunday"
 msgstr "Nedelja"
@@ -3831,34 +3848,6 @@ msgstr "dop."
 msgid "pm"
 msgstr "pop."
 
-#: client/ts/blocks/OrderBumpSteps.tsx:55
-msgid "Order Bump Steps Stettings"
-msgstr "Nastavitve korakov dodatka k naročilu"
-
-#: client/ts/blocks/OrderBumpSteps.tsx:58
-msgid "Step 1 Title"
-msgstr "Naslov koraka 1"
-
-#: client/ts/blocks/OrderBumpSteps.tsx:59
-msgid "The title of Step 1. Example: Order Submitted"
-msgstr "Naslov koraka 1. Primer: Naročilo oddano"
-
-#: client/ts/blocks/OrderBumpSteps.tsx:64
-msgid "Step 2 Title"
-msgstr "Naslov koraka 2"
-
-#: client/ts/blocks/OrderBumpSteps.tsx:65
-msgid "The title of Step 2. Example: Special Offer"
-msgstr "Naslov koraka 2. Primer: Posebna ponudba"
-
-#: client/ts/blocks/OrderBumpSteps.tsx:70
-msgid "Step 3 Title"
-msgstr "Naslov koraka 3"
-
-#: client/ts/blocks/OrderBumpSteps.tsx:71
-msgid "The title of Step 3. Example: Order Received"
-msgstr "Naslov koraka 3. Primer: Naročilo prejeto"
-
 #: client/ts/admin/order-bumps-editor.tsx:59
 msgid "Order Bump Preview"
 msgstr "Predogled dodatka k naročilu"
@@ -3896,6 +3885,34 @@ msgstr "Ali ste prepričani, da želite počistiti vse sledene vozičke in ponas
 #: client/ts/admin/Components/CheckoutEditor/EditorApp.tsx:269
 msgid "Are you sure you want to discard all unsaved changes?"
 msgstr "Ali ste prepričani, da želite zavreči vse neshranjene spremembe?"
+
+#: client/ts/blocks/OrderBumpSteps.tsx:55
+msgid "Order Bump Steps Stettings"
+msgstr "Nastavitve korakov dodatka k naročilu"
+
+#: client/ts/blocks/OrderBumpSteps.tsx:58
+msgid "Step 1 Title"
+msgstr "Naslov koraka 1"
+
+#: client/ts/blocks/OrderBumpSteps.tsx:59
+msgid "The title of Step 1. Example: Order Submitted"
+msgstr "Naslov koraka 1. Primer: Naročilo oddano"
+
+#: client/ts/blocks/OrderBumpSteps.tsx:64
+msgid "Step 2 Title"
+msgstr "Naslov koraka 2"
+
+#: client/ts/blocks/OrderBumpSteps.tsx:65
+msgid "The title of Step 2. Example: Special Offer"
+msgstr "Naslov koraka 2. Primer: Posebna ponudba"
+
+#: client/ts/blocks/OrderBumpSteps.tsx:70
+msgid "Step 3 Title"
+msgstr "Naslov koraka 3"
+
+#: client/ts/blocks/OrderBumpSteps.tsx:71
+msgid "The title of Step 3. Example: Order Received"
+msgstr "Naslov koraka 3. Primer: Naročilo prejeto"
 
 #: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:60
 #: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:245
@@ -4513,30 +4530,6 @@ msgstr "Datum, ko naj se A/B test konča. Po tem datumu bo prikazana izvirna raz
 msgid "Traffic split percentages must total 100%. Please adjust your percentages."
 msgstr "Odstotki razdelitve prometa morajo skupaj znašati 100%. Prosimo, prilagodite odstotke."
 
-#: client/ts/frontend/Actions/CompleteOrderAction.ts:196
-msgid "Could not connect to server. Please refresh and try again or contact site administrator."
-msgstr "Povezava s strežnikom ni uspela. Prosimo, osvežite in poskusite znova ali kontaktirajte skrbnika strani."
-
-#: client/ts/frontend/Actions/CompleteOrderAction.ts:198
-msgid "Requested resource could not be found. Please contact site administrator. (404)"
-msgstr "Zahtevan vir ni bil najden. Prosimo, kontaktirajte skrbnika strani. (404)"
-
-#: client/ts/frontend/Actions/CompleteOrderAction.ts:200
-msgid "An internal server error occurred. Please contact site administrator. (500)"
-msgstr "Prišlo je do notranje napake strežnika. Prosimo, kontaktirajte skrbnika strani. (500)"
-
-#: client/ts/frontend/Actions/CompleteOrderAction.ts:202
-msgid "Server response could not be parsed. Please contact site administrator."
-msgstr "Odgovora strežnika ni bilo mogoče razčleniti. Prosimo, kontaktirajte skrbnika strani."
-
-#: client/ts/frontend/Actions/CompleteOrderAction.ts:204
-msgid "The server timed out while processing your request. Please refresh and try again or contact site administrator."
-msgstr "Strežnik je prekoračil čas med obdelavo vaše zahteve. Prosimo, osvežite in poskusite znova ali kontaktirajte skrbnika strani."
-
-#: client/ts/frontend/Actions/CompleteOrderAction.ts:206
-msgid "Request was aborted. Please contact site administrator."
-msgstr "Zahteva je bila prekinjena. Prosimo, kontaktirajte skrbnika strani."
-
 #: client/ts/frontend/Components/TermsAndConditions.ts:29
 msgid "Terms and Conditions"
 msgstr "Pogoji in določila"
@@ -4552,6 +4545,30 @@ msgstr "Zapri košarico"
 #: client/ts/frontend/Components/FreeShippingProgressBar.tsx:245
 msgid "Unlocked"
 msgstr "Odklenjeno"
+
+#: client/ts/frontend/Actions/CompleteOrderAction.ts:196
+msgid "We could not confirm whether your order went through. Please check for any charges in your payment method and review your order history before placing the order again."
+msgstr "Nismo mogli potrditi, ali je bilo vaše naročilo uspešno oddano. Preden naročilo oddate znova, preverite morebitne bremenitve na svojem plačilnem sredstvu in preglejte zgodovino naročil."
+
+#: client/ts/frontend/Actions/CompleteOrderAction.ts:198
+msgid "Requested resource could not be found. Please contact site administrator. (404)"
+msgstr "Zahtevan vir ni bil najden. Prosimo, kontaktirajte skrbnika strani. (404)"
+
+#: client/ts/frontend/Actions/CompleteOrderAction.ts:200
+msgid "An internal server error occurred. Please contact site administrator. (500)"
+msgstr "Prišlo je do notranje napake strežnika. Prosimo, kontaktirajte skrbnika strani. (500)"
+
+#: client/ts/frontend/Actions/CompleteOrderAction.ts:202
+msgid "Server response could not be parsed. Please contact site administrator."
+msgstr "Odgovora strežnika ni bilo mogoče razčleniti. Prosimo, kontaktirajte skrbnika strani."
+
+#: client/ts/frontend/Actions/CompleteOrderAction.ts:204
+msgid "The server timed out while processing your request. Please check for any charges in your payment method and review your order history before placing the order again."
+msgstr "Strežnik je med obdelavo vaše zahteve potekel. Preden naročilo oddate znova, preverite morebitne bremenitve na svojem plačilnem sredstvu in preglejte zgodovino naročil."
+
+#: client/ts/frontend/Actions/CompleteOrderAction.ts:206
+msgid "Request was aborted. Please contact site administrator."
+msgstr "Zahteva je bila prekinjena. Prosimo, kontaktirajte skrbnika strani."
 
 # %d is the number of icons in the collection
 #: client/ts/admin/Components/trustBadges.ts:85
@@ -5372,20 +5389,6 @@ msgstr "Ko je ta bump dodan v košarico, se na košarico uporabi brezplačna dos
 #: client/ts/admin/Components/Metaboxes/CategoryCompleter.tsx:46
 msgid "All categories with titles that include {{query /}}"
 msgstr "Vse kategorije z naslovi, ki vključujejo {{query /}}"
-
-#: client/ts/admin/Components/Fields/WPMediaUploadButton.tsx:69
-msgid "Select or Upload a Logo"
-msgstr "Izberi ali naloži logotip"
-
-#: client/ts/admin/Components/Fields/RangeControl.tsx:97
-#: client/ts/admin/Components/Fields/ColorControl.tsx:137
-msgid "Reset"
-msgstr "Ponastavi"
-
-#: client/ts/admin/Components/Fields/ColorControl.tsx:173
-#: client/ts/admin/Components/CheckoutEditor/BumpEditorModal.tsx:101
-msgid "Done"
-msgstr "Končano"
 
 #: client/ts/admin/Components/Forms/WooCommercePagesGlobalOptionsSettingsForm.tsx:49
 #: client/ts/admin/Components/Forms/CheckoutSettingsForm.tsx:570
@@ -7140,9 +7143,23 @@ msgstr "Opusti"
 msgid "This order bump has unsaved changes. Close anyway?"
 msgstr "Ta order bump ima neshranjene spremembe. Vseeno zapreti?"
 
+#: client/ts/admin/Components/CheckoutEditor/BumpEditorModal.tsx:101
+#: client/ts/admin/Components/Fields/ColorControl.tsx:173
+msgid "Done"
+msgstr "Končano"
+
 #: client/ts/admin/Components/CheckoutEditor/BumpEditorModal.tsx:108
 msgid "Loading order bump editor…"
 msgstr "Nalaganje urejevalnika order bumpa…"
+
+#: client/ts/admin/Components/Fields/WPMediaUploadButton.tsx:69
+msgid "Select or Upload a Logo"
+msgstr "Izberi ali naloži logotip"
+
+#: client/ts/admin/Components/Fields/RangeControl.tsx:97
+#: client/ts/admin/Components/Fields/ColorControl.tsx:137
+msgid "Reset"
+msgstr "Ponastavi"
 
 # %s: item type e.g. "order bump"
 #: client/ts/admin/Components/CheckoutEditor/slots/UnsavedChangesDialog.tsx:37

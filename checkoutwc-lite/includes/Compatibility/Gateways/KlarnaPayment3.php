@@ -8,7 +8,7 @@ use Objectiv\Plugins\Checkout\Model\GatewaySupport;
 
 class KlarnaPayment3 extends CompatibilityAbstract {
 	public function is_available(): bool {
-		return class_exists( '\\WC_Klarna_Payments' ) && version_compare( WC_KLARNA_PAYMENTS_VERSION, '3.0.0', '>' );
+		return class_exists( '\\WC_Klarna_Payments' ) && version_compare( WC_KLARNA_PAYMENTS_VERSION, '3.0.0', '>=' );
 	}
 
 	public function pre_init() {

@@ -16,6 +16,23 @@ use WP_Error;
 class Advanced extends PageAbstract {
 	use TabbedAdminPageTrait;
 
+	/**
+	 * Options the settings export leaves out: the main settings arrays, which the export covers
+	 * option by option, and the license key and credentials, which must not end up in a shared file.
+	 *
+	 * @since 11.4.2
+	 *
+	 * @var string[]
+	 */
+	private const EXPORT_EXCLUDED_OPTIONS = [
+		'_cfw__settings',
+		'_cfwlite__settings',
+		'_cfw_licensing__license_key',
+		'_cfw_turnstile_secret_key',
+		'_cfw_smartystreets_auth_token',
+		'_cfw_fetchify_access_token',
+	];
+
 	public function __construct() {
 		parent::__construct( __( 'Advanced', 'checkout-wc' ), 'cfw_manage_advanced', 'cfw_manage_advanced' );
 	}
@@ -126,7 +143,12 @@ class Advanced extends PageAbstract {
 		$settings = [];
 
 		// Get all WP options that start with cfw_.
-		$values = $wpdb->get_results( "SELECT option_name, option_value FROM $wpdb->options WHERE option_name LIKE '\_cfw_%' AND option_name <> '_cfw__settings' AND option_name <> '_cfwlite__settings'" );
+		$placeholders = implode( ', ', array_fill( 0, count( self::EXPORT_EXCLUDED_OPTIONS ), '%s' ) );
+		$query        = $wpdb->prepare(
+			"SELECT option_name, option_value FROM $wpdb->options WHERE option_name LIKE %s AND option_name NOT IN ( $placeholders )", // phpcs:ignore WordPress.DB.PreparedSQL.InterpolatedNotPrepared, WordPress.DB.PreparedSQLPlaceholders.UnfinishedPrepare
+			array_merge( [ $wpdb->esc_like( '_cfw' ) . '_%' ], self::EXPORT_EXCLUDED_OPTIONS )
+		);
+		$values       = $wpdb->get_results( $query ); // phpcs:ignore WordPress.DB.PreparedSQL.NotPrepared
 
 		foreach ( $values as $value ) {
 			$settings[ $value->option_name ] = $value->option_value;

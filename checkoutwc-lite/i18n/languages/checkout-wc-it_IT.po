@@ -8,7 +8,7 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "POT-Creation-Date: 2025-07-25 09:22-0400\n"
-"PO-Revision-Date: 2026-10-12T15:20:32+00:00\n"
+"PO-Revision-Date: 2026-10-26T17:15:42+00:00\n"
 "Language: it-IT\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 3.6\n"
@@ -26,7 +26,7 @@ msgstr ""
 #: includes/Compatibility/Plugins/CartFlows.php:62
 #: includes/Admin/Pages/PickupLocationsAdminFree.php:218
 #: includes/Admin/Pages/PageAbstract.php:106
-#: includes/Admin/Pages/General.php:341
+#: includes/Admin/Pages/General.php:353
 #: includes/Admin/Pages/Premium/PickupLocations.php:317
 #: includes/Admin/Pages/Premium/OrderBumps.php:456
 #: includes/Admin/Pages/Premium/LocalPickupAdmin.php:165
@@ -270,7 +270,7 @@ msgid "Hide order summary"
 msgstr "Nascondi il riepilogo dell'ordine"
 
 #: functions/template-functions.php:166
-#: includes/Admin/Pages/WooCommercePages.php:29
+#: includes/Admin/Pages/WooCommercePages.php:30
 #: client/ts/admin/Components/Forms/AdvancedScriptsSettingsForm.tsx:108
 msgid "Checkout"
 msgstr "Checkout"
@@ -281,8 +281,8 @@ msgstr "Cassa veloce"
 
 #: functions/template-functions.php:340
 #: functions/template-functions.php:354
-#: functions/template-functions.php:1932
-#: functions/template-functions.php:2265
+#: functions/template-functions.php:2002
+#: functions/template-functions.php:2339
 msgid "Information"
 msgstr "Informazioni"
 
@@ -337,7 +337,7 @@ msgstr "Esci."
 
 #: functions/template-functions.php:745
 #: functions/template-functions.php:783
-#: functions/template-functions.php:1969
+#: functions/template-functions.php:2039
 msgid "Billing and Shipping address"
 msgstr "Indirizzo di fatturazione e spedizione"
 
@@ -345,14 +345,14 @@ msgstr "Indirizzo di fatturazione e spedizione"
 #: functions/template-functions.php:795
 #: functions/template-functions.php:1201
 #: functions/template-functions.php:1215
-#: functions/template-functions.php:1997
+#: functions/template-functions.php:2067
 #: includes/Compatibility/Gateways/PayPalForWooCommerce.php:192
 msgid "Billing address"
 msgstr "Indirizzo di fatturazione"
 
 #: functions/template-functions.php:768
 #: functions/template-functions.php:806
-#: functions/template-functions.php:1981
+#: functions/template-functions.php:2051
 #: includes/Managers/AssetManager.php:705
 msgid "Shipping address"
 msgstr "Indirizzo di consegna"
@@ -364,15 +364,15 @@ msgid "Your Cart"
 msgstr "Il tuo carrello"
 
 #: functions/template-functions.php:1047
-#: functions/template-functions.php:2013
-#: functions/template-functions.php:2287
+#: functions/template-functions.php:2083
+#: functions/template-functions.php:2361
 #: functions/functions.php:3478
 msgid "Shipping"
 msgstr "Spedizione"
 
 #: functions/template-functions.php:1065
-#: functions/template-functions.php:1953
-#: functions/template-functions.php:2308
+#: functions/template-functions.php:2023
+#: functions/template-functions.php:2382
 #: functions/functions.php:1025
 #: functions/functions.php:1040
 #: client/ts/frontend/Components/ReviewPane/OrderReviewStepReviewPane.tsx:47
@@ -380,7 +380,7 @@ msgid "Payment"
 msgstr "Pagamento"
 
 #: functions/template-functions.php:1065
-#: functions/template-functions.php:2308
+#: functions/template-functions.php:2382
 #: includes/Features/OrderReviewStep.php:74
 #: includes/Admin/Pages/TrustBadgesAdminFree.php:88
 #: client/ts/admin/Components/TrustBadgeFields.tsx:20
@@ -396,104 +396,113 @@ msgstr "Gratuito"
 msgid "Select the address that matches your card or payment method."
 msgstr "Selezionare l'indirizzo che corrisponde alla carta o al metodo di pagamento."
 
-#: functions/template-functions.php:1638
-msgid "Unfortunately your order cannot be processed as the originating bank/merchant has declined your transaction. Please attempt your purchase again."
-msgstr "Sfortunatamente il tuo ordine non può essere elaborato poiché la banca/il commerciante di origine ha rifiutato la tua transazione. Per favore riprova ad effettuare l'acquisto."
-
-#: functions/template-functions.php:1642
-msgid "Pay"
-msgstr "Paga"
-
 # %s is the order number
-#: functions/template-functions.php:1660
+#: functions/template-functions.php:1668
+#: functions/template-functions.php:1718
 msgid "Order %s"
 msgstr "Ordine %s"
 
+#: functions/template-functions.php:1673
+msgid "Payment failed"
+msgstr "Pagamento non riuscito"
+
+#: functions/template-functions.php:1686
+msgid "Unfortunately your order cannot be processed as the originating bank/merchant has declined your transaction. Please attempt your purchase again."
+msgstr "Sfortunatamente il tuo ordine non può essere elaborato poiché la banca/il commerciante di origine ha rifiutato la tua transazione. Per favore riprova ad effettuare l'acquisto."
+
+#: functions/template-functions.php:1691
+msgid "Try payment again"
+msgstr "Riprova il pagamento"
+
+#: functions/template-functions.php:1693
+msgid "My account"
+msgstr "Il mio account"
+
 # %s is the billing first name
-#: functions/template-functions.php:1679
+#: functions/template-functions.php:1737
 msgid "Thank you %s!"
 msgstr "Grazie %s!"
 
-#: functions/template-functions.php:1790
+#: functions/template-functions.php:1856
 msgid "Order status"
 msgstr "Stato dell'ordine"
 
-#: functions/template-functions.php:1833
+#: functions/template-functions.php:1903
 msgid "Order updates"
 msgstr "Aggiornamenti sull’ordine"
 
-#: functions/template-functions.php:1844
+#: functions/template-functions.php:1914
 msgid "You’ll get shipping and delivery updates by email."
 msgstr "Riceverai via e-mail gli aggiornamenti per la spedizione e la consegna."
 
-#: functions/template-functions.php:1862
+#: functions/template-functions.php:1932
 msgid "Downloads"
 msgstr "Download"
 
-#: functions/template-functions.php:1902
+#: functions/template-functions.php:1972
 msgid "&infin;"
 msgstr "&infin;"
 
-#: functions/template-functions.php:1908
+#: functions/template-functions.php:1978
 msgid "Never"
 msgstr "Mai"
 
-#: functions/template-functions.php:1947
+#: functions/template-functions.php:2017
 msgid "Contact information"
 msgstr "I tuoi recapiti"
 
-#: functions/template-functions.php:1974
-#: functions/template-functions.php:1986
-#: functions/template-functions.php:2003
+#: functions/template-functions.php:2044
+#: functions/template-functions.php:2056
+#: functions/template-functions.php:2073
 msgid "N/A"
 msgstr "N/D"
 
-#: functions/template-functions.php:2043
+#: functions/template-functions.php:2113
 #: includes/Managers/AssetManager.php:855
 msgid "Continue shopping"
 msgstr "Continua lo shopping"
 
-#: functions/template-functions.php:2073
+#: functions/template-functions.php:2143
 #: includes/Loaders/LoaderAbstract.php:111
 msgid "Pay for order"
 msgstr "Paga l'ordine"
 
-#: functions/template-functions.php:2091
+#: functions/template-functions.php:2161
 #: includes/Features/AbandonedCartRecovery.php:124
 #: client/ts/admin/Components/acr/carts.tsx:64
 msgid "Email"
 msgstr "Email"
 
-#: functions/template-functions.php:2101
+#: functions/template-functions.php:2171
 #: functions/functions.php:4142
 #: functions/functions.php:4143
 msgid "Password"
 msgstr "Password"
 
-#: functions/template-functions.php:2117
+#: functions/template-functions.php:2187
 #: functions/functions.php:4182
 msgid "Login"
 msgstr "Accedi"
 
-#: functions/template-functions.php:2120
+#: functions/template-functions.php:2190
 #: functions/functions.php:4175
 msgid "Lost your password?"
 msgstr "Hai perso la password?"
 
-#: functions/template-functions.php:2405
+#: functions/template-functions.php:2479
 msgid "Your Cart is Empty"
 msgstr "Il tuo carrello è vuoto"
 
-#: functions/premium-init.php:342
+#: functions/premium-init.php:346
 msgid "CheckoutWC Templates Deactivated"
 msgstr "Template di CheckoutWC Disattivati"
 
 # %1$s: "Settings" text, %2$s: "Start Here" text, %3$s: "Activate CheckoutWC Templates" text
-#: functions/premium-init.php:345
+#: functions/premium-init.php:349
 msgid "Your license is valid and activated for this site but CheckoutWC is disabled for normal customers. To fix this, go to %1$s > %2$s and toggle \"%3$s\"."
 msgstr "La tua licenza è valida e attivata per questo sito ma CheckoutWC è disabilitato per i clienti normali. Per risolvere, vai su %1$s > %2$s e attiva \"%3$s\"."
 
-#: functions/premium-init.php:346
+#: functions/premium-init.php:350
 #: includes/Admin/AdminPluginsPageManager.php:40
 #: includes/Admin/Pages/OrderBumpsAdminFree.php:25
 #: includes/Admin/Pages/LocalPickupAdminFree.php:27
@@ -505,69 +514,69 @@ msgstr "La tua licenza è valida e attivata per questo sito ma CheckoutWC è dis
 msgid "Settings"
 msgstr "Impostazioni"
 
-#: functions/premium-init.php:347
-#: functions/premium-init.php:360
-#: includes/Admin/Pages/General.php:25
+#: functions/premium-init.php:351
+#: functions/premium-init.php:364
+#: includes/Admin/Pages/General.php:24
 msgid "Start Here"
 msgstr "Inizia Qui"
 
-#: functions/premium-init.php:348
-#: includes/Admin/Pages/General.php:195
+#: functions/premium-init.php:352
+#: includes/Admin/Pages/General.php:207
 msgid "Activate CheckoutWC Templates"
 msgstr "Attiva i Template di CheckoutWC"
 
-#: functions/premium-init.php:355
+#: functions/premium-init.php:359
 msgid "CheckoutWC license invalid"
 msgstr "Licenza CheckoutWC non valida"
 
 # %1$s: URL to license settings page, %2$s: "Start Here" link text, %3$s: Pricing URL, %4$s: "buy a license" link text
-#: functions/premium-init.php:358
+#: functions/premium-init.php:362
 msgid "Premium features are off because your license key is missing or invalid. Check your key on <a href=\"%1$s\">%2$s</a> or <a target=\"_blank\" href=\"%3$s\">%4$s</a>."
 msgstr "Le funzionalità premium sono disattivate perché la chiave di licenza manca o non è valida. Controlla la tua chiave su <a href=\"%1$s\">%2$s</a> oppure su <a target=\"_blank\" href=\"%3$s\">%4$s</a>."
 
-#: functions/premium-init.php:362
+#: functions/premium-init.php:366
 #: includes/Admin/Notices/InactiveLicenseNotice.php:15
 msgid "buy a license"
 msgstr "acquista una licenza"
 
-#: functions/premium-init.php:382
+#: functions/premium-init.php:386
 msgid "New Feature: Cloudflare Turnstile Bot Protection"
 msgstr "Nuova funzionalità: Protezione bot Cloudflare Turnstile"
 
 # 1: Cloudflare Turnstile name wrapped in strong tags, 2: Setup link
-#: functions/premium-init.php:385
+#: functions/premium-init.php:389
 msgid "CheckoutWC now supports %1$s - a privacy-first, CAPTCHA-free way to protect your checkout from bots and spam orders. %2$s"
 msgstr "CheckoutWC ora supporta %1$s - un modo incentrato sulla privacy e senza CAPTCHA per proteggere il tuo checkout da bot e ordini spam. %2$s"
 
 # The name of the Cloudflare Turnstile service
-#: functions/premium-init.php:389
+#: functions/premium-init.php:393
 #: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:78
 msgid "Cloudflare Turnstile"
 msgstr "Cloudflare Turnstile"
 
-#: functions/premium-init.php:395
+#: functions/premium-init.php:399
 msgid "Setup Cloudflare Turnstile now"
 msgstr "Configura Cloudflare Turnstile ora"
 
-#: functions/premium-init.php:400
+#: functions/premium-init.php:404
 msgid "Upgrade your plan now to access"
 msgstr "Aggiorna il tuo piano ora per accedere"
 
-#: functions/premium-init.php:413
+#: functions/premium-init.php:417
 msgid "Abandoned Cart Recovery Tracking Disabled"
 msgstr "Tracciamento Recupero Carrelli Abbandonati Disabilitato"
 
 # %1$s: Gist URL, %2$s: "Learn More" link text
-#: functions/premium-init.php:416
+#: functions/premium-init.php:420
 msgid "You have enabled Abandoned Cart Recovery tracking, but you do not have any emails published. To track carts, you need to publish emails or use this dev filter: <a target=\"_blank\" href=\"%1$s\">%2$s</a>."
 msgstr "Hai abilitato il tracciamento del Recupero Carrelli Abbandonati, ma non hai email pubblicate. Per tracciare i carrelli, devi pubblicare email o usare questo filtro di sviluppo: <a target=\"_blank\" href=\"%1$s\">%2$s</a>."
 
-#: functions/premium-init.php:418
+#: functions/premium-init.php:422
 #: includes/Admin/Pages/AbandonedCartRecoveryAdminFree.php:82
 msgid "Learn More"
 msgstr "Scopri di più"
 
-#: functions/premium-init.php:477
+#: functions/premium-init.php:481
 msgid "Admin preview: your CheckoutWC license isn\\'t valid for this site, so premium features are off. Check your license here: WP Admin > CheckoutWC > Start Here."
 msgstr "Anteprima amministratore: la tua licenza CheckoutWC non è valida per questo sito, quindi le funzionalità premium sono disattivate. Controlla la tua licenza qui: WP Admin > CheckoutWC > Start Here."
 
@@ -664,7 +673,7 @@ msgid "Ship to"
 msgstr "Spedire a"
 
 #: functions/functions.php:232
-#: includes/Features/LocalPickup.php:768
+#: includes/Features/LocalPickup.php:775
 #: includes/Admin/Pages/PickupLocationsAdminFree.php:93
 #: includes/Admin/Pages/Premium/PickupLocations.php:101
 msgid "Address"
@@ -675,7 +684,7 @@ msgid "Sorry, it seems that there are no available payment methods for your loca
 msgstr "Spiacenti, sembra che non ci siano metodi di pagamento disponibili per la tua posizione. Contattaci se hai bisogno di assistenza o desideri fare accordi alternativi."
 
 #: functions/functions.php:787
-#: includes/Features/LocalPickup.php:1095
+#: includes/Features/LocalPickup.php:1119
 msgid "Shipping costs are calculated during checkout."
 msgstr "I costi di spedizione vengono calcolati durante il checkout."
 
@@ -688,7 +697,7 @@ msgid "No shipping methods available"
 msgstr "Nessun metodo di spedizione disponibile"
 
 #: functions/functions.php:826
-#: includes/Model/Bumps/BumpAbstract.php:882
+#: includes/Model/Bumps/BumpAbstract.php:895
 msgid "Free!"
 msgstr "Gratis!"
 
@@ -776,7 +785,7 @@ msgstr "Decremento"
 #: functions/functions.php:2415
 #: includes/Managers/AssetManager.php:735
 #: includes/Managers/AssetManager.php:856
-#: includes/Features/LocalPickup.php:510
+#: includes/Features/LocalPickup.php:513
 #: includes/Features/AbandonedCartRecovery.php:128
 #: includes/Features/ABTesting.php:150
 #: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:633
@@ -901,22 +910,6 @@ msgstr "CheckoutWC: Non puoi attivare un test AB non registrato."
 msgid "Accent Color"
 msgstr "Colore Accento"
 
-#: lib/sendwp-sdk/sendwp-init.php:27
-msgid "Security failed to check sendwp_install_nonce"
-msgstr "Controllo di sicurezza fallito per sendwp_install_nonce"
-
-#: lib/sendwp-sdk/sendwp-init.php:28
-msgid "Ask an administrator for install_plugins capability"
-msgstr "Chiedi a un amministratore la capacità install_plugins"
-
-#: lib/sendwp-sdk/sendwp-init.php:29
-msgid "SendWP is already connected."
-msgstr "SendWP è già connesso."
-
-#: lib/sendwp-sdk/remote-install.php:84
-msgid "Something went wrong. SendWP was not installed correctly."
-msgstr "Qualcosa è andato storto. SendWP non è stato installato correttamente."
-
 #: includes/Stats/StatCollection.php:193
 msgid "Once Weekly"
 msgstr "Una volta a settimana"
@@ -954,98 +947,98 @@ msgstr "Ritiro locale"
 msgid "Allow customers to pick up orders themselves. This version does not require shipping zones."
 msgstr "Consenti ai clienti di ritirare gli ordini personalmente. Questa versione non richiede zone di spedizione."
 
-#: includes/Managers/UpdatesManager.php:436
+#: includes/Managers/UpdatesManager.php:451
 msgid "CheckoutWC License Key"
 msgstr "Chiave di licenza CheckoutWC"
 
-#: includes/Managers/UpdatesManager.php:441
+#: includes/Managers/UpdatesManager.php:456
 msgid "Your license key is set with the constant <code>CFW_LICENSE_KEY</code>."
 msgstr "La tua chiave di licenza è impostata con la costante <code>CFW_LICENSE_KEY</code>."
 
-#: includes/Managers/UpdatesManager.php:448
+#: includes/Managers/UpdatesManager.php:463
 msgid "License Holder"
 msgstr "Titolare della licenza"
 
-#: includes/Managers/UpdatesManager.php:461
+#: includes/Managers/UpdatesManager.php:476
 msgid "Plan"
 msgstr "Piano"
 
-#: includes/Managers/UpdatesManager.php:469
+#: includes/Managers/UpdatesManager.php:484
 msgid "Activation Limit"
 msgstr "Limite di attivazione"
 
-#: includes/Managers/UpdatesManager.php:477
+#: includes/Managers/UpdatesManager.php:492
 #: includes/Admin/Pages/Premium/ABTestingAdmin.php:178
 #: includes/Admin/Pages/Premium/ABTestingAdmin.php:819
 #: client/ts/admin/Components/acr/carts.tsx:80
 msgid "Status"
 msgstr "Stato"
 
-#: includes/Managers/UpdatesManager.php:484
+#: includes/Managers/UpdatesManager.php:499
 msgid "Refresh License Info"
 msgstr "Aggiorna le informazioni sulla licenza"
 
-#: includes/Managers/UpdatesManager.php:532
+#: includes/Managers/UpdatesManager.php:551
 msgid "Please enter your license key."
 msgstr "Inserisci la tua chiave di licenza."
 
-#: includes/Managers/UpdatesManager.php:535
-#: includes/Managers/UpdatesManager.php:543
+#: includes/Managers/UpdatesManager.php:554
+#: includes/Managers/UpdatesManager.php:562
 msgid "Activate Site"
 msgstr "Attiva sito"
 
-#: includes/Managers/UpdatesManager.php:538
+#: includes/Managers/UpdatesManager.php:557
 msgid "Deactivate Site"
 msgstr "Disattiva sito"
 
 # Debug error message logged when license check reaches unexpected state
-#: includes/Managers/UpdatesManager.php:724
+#: includes/Managers/UpdatesManager.php:743
 msgid "License Check Error: You should not be able to get here. I am kind of freaked out."
 msgstr "Errore di verifica licenza: Non dovresti poter arrivare qui. Sono un po' preoccupato."
 
 # %1$d: failure count, %2$d: max failures, %3$s: time since last failure
-#: includes/Managers/UpdatesManager.php:983
+#: includes/Managers/UpdatesManager.php:1002
 msgid "Unable to verify CheckoutWC license (%1$d/%2$d attempts failed). Using cached license data. Last attempt: %3$s ago."
 msgstr "Impossibile verificare la licenza CheckoutWC (%1$d/%2$d tentativi falliti). Utilizzo dei dati della licenza memorizzati nella cache. Ultimo tentativo: %3$s fa."
 
-#: includes/Managers/UpdatesManager.php:1006
+#: includes/Managers/UpdatesManager.php:1025
 msgid "%s license activation was not successful. Please check your key status below for more information."
 msgstr "L'attivazione della licenza %s non è riuscita. Controlla lo stato della tua chiave qui sotto per maggiori informazioni."
 
-#: includes/Managers/UpdatesManager.php:1024
+#: includes/Managers/UpdatesManager.php:1043
 msgid "%s license successfully activated."
 msgstr "Licenza %s attivata con successo."
 
-#: includes/Managers/UpdatesManager.php:1042
+#: includes/Managers/UpdatesManager.php:1061
 msgid "%s license deactivation failed. Please try again, or contact support."
 msgstr "La disattivazione della licenza %s non è riuscita. Riprova o contatta il supporto."
 
-#: includes/Managers/UpdatesManager.php:1060
+#: includes/Managers/UpdatesManager.php:1079
 msgid "%s license deactivated successfully."
 msgstr "Licenza %s disattivata con successo."
 
-#: includes/Managers/UpdatesManager.php:1078
+#: includes/Managers/UpdatesManager.php:1097
 msgid "%s license settings saved successfully."
 msgstr "Impostazioni della licenza %s salvate con successo."
 
-#: includes/Managers/UpdatesManager.php:1096
+#: includes/Managers/UpdatesManager.php:1115
 msgid "%1$s license activation failed: %2$s"
 msgstr "Attivazione della licenza %1$s fallita: %2$s"
 
-#: includes/Managers/UpdatesManager.php:1114
+#: includes/Managers/UpdatesManager.php:1133
 msgid "%s license activation failed: Unable to connect to license server. Please check your internet connection or try again later."
 msgstr "Attivazione della licenza %s fallita: impossibile connettersi al server della licenza. Controlla la tua connessione internet o riprova più tardi."
 
-#: includes/Managers/UpdatesManager.php:1132
+#: includes/Managers/UpdatesManager.php:1151
 msgid "%s: License deactivated locally. The license server could not be reached, but the license has been deactivated on this site."
 msgstr "%s: Licenza disattivata localmente. Non è stato possibile raggiungere il server della licenza, ma la licenza è stata disattivata su questo sito."
 
 # %1$d: failure count, %2$d: max failures, %3$s: time since last failure
-#: includes/Managers/UpdatesManager.php:1402
+#: includes/Managers/UpdatesManager.php:1421
 msgid "Unable to verify license online (%1$d/%2$d attempts failed). Using cached license data. Last attempt: %3$s ago."
 msgstr "Impossibile verificare la licenza online (%1$d/%2$d tentativi falliti). Utilizzo dei dati della licenza memorizzati nella cache. Ultimo tentativo: %3$s fa."
 
-#: includes/Managers/UpdatesManager.php:1408
+#: includes/Managers/UpdatesManager.php:1427
 msgid "License verified successfully."
 msgstr "Licenza verificata con successo."
 
@@ -1272,7 +1265,7 @@ msgid "Please enter a valid postcode / ZIP."
 msgstr "Inserire un C.A.P. valido."
 
 #: includes/Managers/AssetManager.php:714
-#: includes/Features/LocalPickup.php:636
+#: includes/Features/LocalPickup.php:639
 msgid "Pickup"
 msgstr "Ritiro"
 
@@ -1441,142 +1434,142 @@ msgstr "Regalo gratuito"
 msgid "Reward"
 msgstr "Premio"
 
-#: includes/Features/SideCart.php:1709
+#: includes/Features/SideCart.php:1710
 #: includes/Admin/WooCommerceAdminScreenAugmenter.php:24
 #: includes/Admin/WooCommerceAdminScreenAugmenter.php:45
 msgid "CheckoutWC:"
 msgstr "CheckoutWC:"
 
-#: includes/Features/SideCart.php:1710
+#: includes/Features/SideCart.php:1711
 msgid "Settings marked with asterisks (**) may be overridden based on your Side Cart settings. (CheckoutWC > Side Cart)"
 msgstr "Le impostazioni contrassegnate con asterischi (**) possono essere sovrascritte in base alle impostazioni del tuo Side Cart. (CheckoutWC > Side Cart)"
 
-#: includes/Features/OrderBumps.php:647
+#: includes/Features/OrderBumps.php:655
 msgid "All orders"
 msgstr "Tutti gli ordini"
 
-#: includes/Features/OrderBumps.php:650
+#: includes/Features/OrderBumps.php:658
 msgid "Contains Any Order Bump"
 msgstr "Contiene qualsiasi Order Bump"
 
 # %s: Order bump title
-#: includes/Features/OrderBumps.php:656
+#: includes/Features/OrderBumps.php:664
 msgid "Has Bump: %s"
 msgstr "Ha Bump: %s"
 
-#: includes/Features/LocalPickup.php:127
-#: includes/Features/LocalPickup.php:131
+#: includes/Features/LocalPickup.php:130
+#: includes/Features/LocalPickup.php:134
 msgid "Delivery method"
 msgstr "Metodo di consegna"
 
-#: includes/Features/LocalPickup.php:181
+#: includes/Features/LocalPickup.php:184
 msgid "Pick up"
 msgstr "Ritiro"
 
-#: includes/Features/LocalPickup.php:200
+#: includes/Features/LocalPickup.php:203
 msgid "Ship"
 msgstr "Spedizione"
 
-#: includes/Features/LocalPickup.php:308
+#: includes/Features/LocalPickup.php:311
 msgid "Pickup locations"
 msgstr "Luoghi di ritiro"
 
-#: includes/Features/LocalPickup.php:505
-#: includes/Features/LocalPickup.php:507
+#: includes/Features/LocalPickup.php:508
+#: includes/Features/LocalPickup.php:510
 #: includes/Admin/Pages/PickupLocationsAdminFree.php:21
 #: includes/Admin/Pages/Premium/PickupLocations.php:23
 msgid "Pickup Locations"
 msgstr "Punti di ritiro"
 
-#: includes/Features/LocalPickup.php:506
-#: includes/Features/LocalPickup.php:694
-#: includes/Features/LocalPickup.php:782
-#: includes/Features/LocalPickup.php:830
-#: includes/Features/LocalPickup.php:1158
-#: includes/Features/LocalPickup.php:1183
+#: includes/Features/LocalPickup.php:509
+#: includes/Features/LocalPickup.php:697
+#: includes/Features/LocalPickup.php:789
+#: includes/Features/LocalPickup.php:837
+#: includes/Features/LocalPickup.php:1182
+#: includes/Features/LocalPickup.php:1207
 msgid "Pickup Location"
 msgstr "Sede Ritiro"
 
-#: includes/Features/LocalPickup.php:508
+#: includes/Features/LocalPickup.php:511
 msgid "Add Pickup Location"
 msgstr "Aggiungi punto di ritiro"
 
-#: includes/Features/LocalPickup.php:509
+#: includes/Features/LocalPickup.php:512
 msgid "Add New Pickup Location"
 msgstr "Aggiungi nuovo punto di ritiro"
 
-#: includes/Features/LocalPickup.php:511
+#: includes/Features/LocalPickup.php:514
 msgid "Edit Pickup Location"
 msgstr "Modifica punto di ritiro"
 
-#: includes/Features/LocalPickup.php:512
+#: includes/Features/LocalPickup.php:515
 msgid "New Pickup Location"
 msgstr "Nuovo punto di ritiro"
 
-#: includes/Features/LocalPickup.php:513
+#: includes/Features/LocalPickup.php:516
 msgid "View Pickup Locations"
 msgstr "Visualizza punti di ritiro"
 
-#: includes/Features/LocalPickup.php:514
+#: includes/Features/LocalPickup.php:517
 msgid "View Pickup Location"
 msgstr "Visualizza punto di ritiro"
 
-#: includes/Features/LocalPickup.php:515
+#: includes/Features/LocalPickup.php:518
 msgid "Search Pickup Locations"
 msgstr "Cerca punti di ritiro"
 
-#: includes/Features/LocalPickup.php:516
+#: includes/Features/LocalPickup.php:519
 msgid "No Pickup Location found"
 msgstr "Nessun punto di ritiro trovato"
 
-#: includes/Features/LocalPickup.php:517
+#: includes/Features/LocalPickup.php:520
 msgid "No Pickup Locations found in trash"
 msgstr "Nessun punto di ritiro trovato nel cestino"
 
-#: includes/Features/LocalPickup.php:518
+#: includes/Features/LocalPickup.php:521
 msgid "Attributes"
 msgstr "Attributi"
 
-#: includes/Features/LocalPickup.php:523
+#: includes/Features/LocalPickup.php:526
 msgid "This is where you can add new Pickup Locations."
 msgstr "Qui puoi aggiungere nuove sedi di ritiro."
 
-#: includes/Features/LocalPickup.php:601
+#: includes/Features/LocalPickup.php:604
 #: client/ts/frontend/Components/ReviewPane/PaymentMethodReviewPane.tsx:37
 #: client/ts/frontend/Components/ReviewPane/OrderReviewStepReviewPane.tsx:37
 msgid "Method"
 msgstr "Metodo"
 
-#: includes/Features/LocalPickup.php:754
+#: includes/Features/LocalPickup.php:761
 msgid "Pickup instructions"
 msgstr "Istruzioni per il ritiro"
 
-#: includes/Features/LocalPickup.php:950
+#: includes/Features/LocalPickup.php:957
 msgid "Usually ready in 1 hour."
 msgstr "Di solito è pronto in 1 ora."
 
-#: includes/Features/LocalPickup.php:951
+#: includes/Features/LocalPickup.php:958
 msgid "Usually ready in 2 hours."
 msgstr "Di solito è pronto in 2 ore."
 
-#: includes/Features/LocalPickup.php:952
+#: includes/Features/LocalPickup.php:959
 msgid "Usually ready in 4 hours."
 msgstr "Di solito è pronto in 4 ore."
 
-#: includes/Features/LocalPickup.php:953
+#: includes/Features/LocalPickup.php:960
 msgid "Usually ready in 24 hours."
 msgstr "Solitamente è pronto in 24 ore."
 
-#: includes/Features/LocalPickup.php:954
+#: includes/Features/LocalPickup.php:961
 msgid "Usually ready in 2-4 days."
 msgstr "Di solito è pronto in 2-4 giorni."
 
-#: includes/Features/LocalPickup.php:955
+#: includes/Features/LocalPickup.php:962
 msgid "Usually ready in 5+ days."
 msgstr "Di solito è pronto in più di 5 giorni."
 
-#: includes/Features/LocalPickup.php:1167
-#: includes/Features/LocalPickup.php:1194
+#: includes/Features/LocalPickup.php:1191
+#: includes/Features/LocalPickup.php:1218
 msgid "Pickup Instructions:"
 msgstr "Istruzioni per il ritiro:"
 
@@ -1787,152 +1780,6 @@ msgstr "Seleziona una qualsiasi opzione..."
 msgid "You're missing out on important updates because your license key is missing, invalid, or expired."
 msgstr "Stai perdendo aggiornamenti importanti perché la tua chiave di licenza manca, è invalida o scaduta."
 
-#: includes/Action/ValidatePostcodeAction.php:33
-msgid "Please enter a valid %s."
-msgstr "Per favore, inserisci un valido %s."
-
-#: includes/Action/ValidateEmailDomainAction.php:44
-msgid "Email address contains invalid domain name."
-msgstr "L'indirizzo e-mail contiene un nome di dominio non valido."
-
-#: includes/Action/UpdateCheckoutAction.php:71
-msgid "Sorry, your session has expired."
-msgstr "Spiacenti, la tua sessione è scaduta."
-
-#: includes/Action/UpdateCheckoutAction.php:71
-msgid "Return to shop"
-msgstr "Torna al negozio"
-
-#: includes/Action/SmartyStreetsAddressValidationAction.php:85
-msgid "Use Recommended"
-msgstr "Uso consigliato"
-
-#: includes/Action/SmartyStreetsAddressValidationAction.php:86
-msgid "Use Your Address"
-msgstr "Utilizzate il vostro indirizzo"
-
-#: includes/Action/SmartyStreetsAddressValidationAction.php:103
-msgid "Reenter Address"
-msgstr "Reinserire l'indirizzo"
-
-#: includes/Action/SmartyStreetsAddressValidationAction.php:104
-msgid "Use Existing Address"
-msgstr "Utilizzare l'indirizzo esistente"
-
-#: includes/Action/SmartyStreetsAddressValidationAction.php:168
-msgid "Use recommended address instead?"
-msgstr "Utilizzare invece l'indirizzo consigliato?"
-
-#: includes/Action/SmartyStreetsAddressValidationAction.php:171
-msgid "We\\'re unable to verify your address, but found a close match."
-msgstr "Non siamo in grado di verificare il tuo indirizzo, ma abbiamo trovato una corrispondenza simile."
-
-#: includes/Action/SmartyStreetsAddressValidationAction.php:175
-#: includes/Action/SmartyStreetsAddressValidationAction.php:248
-#: includes/Action/SmartyStreetsAddressValidationAction.php:305
-#: includes/Action/SmartyStreetsAddressValidationAction.php:358
-#: includes/Action/SmartyStreetsAddressValidationAction.php:409
-msgid "We are unable to verify your address."
-msgstr "Non siamo in grado di verificare il vostro indirizzo."
-
-#: includes/Action/SmartyStreetsAddressValidationAction.php:179
-msgid "Please confirm you would like to use this address or try again."
-msgstr "Confermare di voler utilizzare questo indirizzo o riprovare."
-
-#: includes/Action/SmartyStreetsAddressValidationAction.php:186
-msgid "You Entered"
-msgstr "Sei entrato"
-
-#: includes/Action/SmartyStreetsAddressValidationAction.php:198
-msgid "Recommended"
-msgstr "Raccomandato"
-
-#: includes/Action/RemoveCouponAction.php:26
-msgid "Sorry there was a problem removing this coupon."
-msgstr "Spiacenti, si è verificato un problema durante la rimozione di questo coupon."
-
-#: includes/Action/RemoveCouponAction.php:29
-msgid "Coupon has been removed."
-msgstr "Il coupon è stato rimosso."
-
-#: includes/Action/ProcessOfferPaymentAction.php:61
-#: includes/Features/OneClick/OfferRefundManager.php:159
-msgid "Security verification failed."
-msgstr "Verifica di sicurezza fallita."
-
-#: includes/Action/ProcessOfferPaymentAction.php:84
-msgid "Invalid order key."
-msgstr "Chiave ordine non valida."
-
-#: includes/Action/ProcessOfferPaymentAction.php:96
-msgid "This order cannot accept offers."
-msgstr "Questo ordine non può accettare offerte."
-
-#: includes/Action/ProcessOfferPaymentAction.php:108
-msgid "No payment method found."
-msgstr "Nessun metodo di pagamento trovato."
-
-#: includes/Action/ProcessOfferPaymentAction.php:120
-msgid "Payment gateway does not support one-click upsells."
-msgstr "Il gateway di pagamento non supporta gli upsell con un clic."
-
-#: includes/Action/ProcessOfferPaymentAction.php:132
-#: includes/Features/OneClick/OfferRefundManager.php:215
-msgid "Failed to load payment gateway."
-msgstr "Caricamento del gateway di pagamento fallito."
-
-#: includes/Action/ProcessOfferPaymentAction.php:144
-msgid "Invalid product."
-msgstr "Prodotto non valido."
-
-#: includes/Action/ProcessOfferPaymentAction.php:156
-msgid "Invalid bump offer."
-msgstr "Offerta bump non valida."
-
-#: includes/Action/ProcessOfferPaymentAction.php:253
-msgid "Payment failed. Please try again."
-msgstr "Pagamento fallito. Per favore riprova."
-
-#: includes/Action/ProcessOfferPaymentAction.php:276
-msgid "Payment successful but failed to update order."
-msgstr "Pagamento riuscito ma aggiornamento ordine fallito."
-
-#: includes/Action/ProcessOfferPaymentAction.php:308
-msgid "Offer accepted successfully."
-msgstr "Offerta accettata con successo."
-
-#: includes/Action/LostPasswordAction.php:59
-msgid "A password reset email has been sent to the email address on file for your account, but may take several minutes to show up in your inbox. Please wait at least 10 minutes before attempting another reset."
-msgstr "Una email per il reset della password è stata inviata all'indirizzo email registrato per il tuo account, ma potrebbe impiegare alcuni minuti per arrivare nella tua casella di posta. Attendi almeno 10 minuti prima di tentare un altro reset."
-
-#: includes/Action/LogInAction.php:24
-msgid "There was an error logging in. Please check your credentials and try again."
-msgstr "C'è stato un errore di registrazione. Controlla le tue credenziali e riprova."
-
-#: includes/Action/DeclineOfferAction.php:39
-msgid "Invalid security token."
-msgstr "Token di sicurezza non valido."
-
-#: includes/Action/DeclineOfferAction.php:48
-msgid "Invalid order information."
-msgstr "Informazioni ordine non valide."
-
-#: includes/Action/DeclineOfferAction.php:54
-msgid "Order verification failed."
-msgstr "Verifica ordine fallita."
-
-#: includes/Action/DeclineOfferAction.php:63
-msgid "Redirecting..."
-msgstr "Reindirizzamento in corso..."
-
-#: includes/Action/DeclineOfferAction.php:76
-msgid "Session expired. Redirecting..."
-msgstr "Sessione scaduta. Reindirizzamento in corso..."
-
-#: includes/Action/DeclineOfferAction.php:102
-msgid "Offer declined."
-msgstr "Offerta rifiutata."
-
 #: includes/API/UserRolesAPI.php:44
 msgid "Guest (Not Logged In)"
 msgstr "Ospite (Non connesso)"
@@ -2032,6 +1879,168 @@ msgstr "Entrate Recuperate"
 msgid "Recovery Rate"
 msgstr "Tasso di Recupero"
 
+#: includes/Action/ValidatePostcodeAction.php:33
+msgid "Please enter a valid %s."
+msgstr "Per favore, inserisci un valido %s."
+
+#: includes/Action/ValidateEmailDomainAction.php:44
+msgid "Email address contains invalid domain name."
+msgstr "L'indirizzo e-mail contiene un nome di dominio non valido."
+
+#: includes/Action/UpdateCheckoutAction.php:80
+msgid "Sorry, your session has expired."
+msgstr "Spiacenti, la tua sessione è scaduta."
+
+#: includes/Action/UpdateCheckoutAction.php:80
+msgid "Return to shop"
+msgstr "Torna al negozio"
+
+#: includes/Action/SmartyStreetsAddressValidationAction.php:85
+msgid "Use Recommended"
+msgstr "Uso consigliato"
+
+#: includes/Action/SmartyStreetsAddressValidationAction.php:86
+msgid "Use Your Address"
+msgstr "Utilizzate il vostro indirizzo"
+
+#: includes/Action/SmartyStreetsAddressValidationAction.php:103
+msgid "Reenter Address"
+msgstr "Reinserire l'indirizzo"
+
+#: includes/Action/SmartyStreetsAddressValidationAction.php:104
+msgid "Use Existing Address"
+msgstr "Utilizzare l'indirizzo esistente"
+
+#: includes/Action/SmartyStreetsAddressValidationAction.php:168
+msgid "Use recommended address instead?"
+msgstr "Utilizzare invece l'indirizzo consigliato?"
+
+#: includes/Action/SmartyStreetsAddressValidationAction.php:171
+msgid "We\\'re unable to verify your address, but found a close match."
+msgstr "Non siamo in grado di verificare il tuo indirizzo, ma abbiamo trovato una corrispondenza simile."
+
+#: includes/Action/SmartyStreetsAddressValidationAction.php:175
+#: includes/Action/SmartyStreetsAddressValidationAction.php:248
+#: includes/Action/SmartyStreetsAddressValidationAction.php:305
+#: includes/Action/SmartyStreetsAddressValidationAction.php:358
+#: includes/Action/SmartyStreetsAddressValidationAction.php:409
+msgid "We are unable to verify your address."
+msgstr "Non siamo in grado di verificare il vostro indirizzo."
+
+#: includes/Action/SmartyStreetsAddressValidationAction.php:179
+msgid "Please confirm you would like to use this address or try again."
+msgstr "Confermare di voler utilizzare questo indirizzo o riprovare."
+
+#: includes/Action/SmartyStreetsAddressValidationAction.php:186
+msgid "You Entered"
+msgstr "Sei entrato"
+
+#: includes/Action/SmartyStreetsAddressValidationAction.php:198
+msgid "Recommended"
+msgstr "Raccomandato"
+
+#: includes/Action/RemoveCouponAction.php:26
+msgid "Sorry there was a problem removing this coupon."
+msgstr "Spiacenti, si è verificato un problema durante la rimozione di questo coupon."
+
+#: includes/Action/RemoveCouponAction.php:29
+msgid "Coupon has been removed."
+msgstr "Il coupon è stato rimosso."
+
+#: includes/Action/ProcessOfferPaymentAction.php:61
+#: includes/Features/OneClick/OfferRefundManager.php:159
+msgid "Security verification failed."
+msgstr "Verifica di sicurezza fallita."
+
+#: includes/Action/ProcessOfferPaymentAction.php:84
+msgid "Invalid order key."
+msgstr "Chiave ordine non valida."
+
+#: includes/Action/ProcessOfferPaymentAction.php:95
+msgid "This order cannot accept offers."
+msgstr "Questo ordine non può accettare offerte."
+
+#: includes/Action/ProcessOfferPaymentAction.php:107
+msgid "No payment method found."
+msgstr "Nessun metodo di pagamento trovato."
+
+#: includes/Action/ProcessOfferPaymentAction.php:119
+msgid "Payment gateway does not support one-click upsells."
+msgstr "Il gateway di pagamento non supporta gli upsell con un clic."
+
+#: includes/Action/ProcessOfferPaymentAction.php:131
+#: includes/Features/OneClick/OfferRefundManager.php:215
+msgid "Failed to load payment gateway."
+msgstr "Caricamento del gateway di pagamento fallito."
+
+#: includes/Action/ProcessOfferPaymentAction.php:143
+msgid "Invalid product."
+msgstr "Prodotto non valido."
+
+#: includes/Action/ProcessOfferPaymentAction.php:155
+msgid "Invalid bump offer."
+msgstr "Offerta bump non valida."
+
+#: includes/Action/ProcessOfferPaymentAction.php:252
+msgid "Payment failed. Please try again."
+msgstr "Pagamento fallito. Per favore riprova."
+
+#: includes/Action/ProcessOfferPaymentAction.php:275
+msgid "Payment successful but failed to update order."
+msgstr "Pagamento riuscito ma aggiornamento ordine fallito."
+
+#: includes/Action/ProcessOfferPaymentAction.php:307
+msgid "Offer accepted successfully."
+msgstr "Offerta accettata con successo."
+
+#: includes/Action/LostPasswordAction.php:59
+msgid "A password reset email has been sent to the email address on file for your account, but may take several minutes to show up in your inbox. Please wait at least 10 minutes before attempting another reset."
+msgstr "Una email per il reset della password è stata inviata all'indirizzo email registrato per il tuo account, ma potrebbe impiegare alcuni minuti per arrivare nella tua casella di posta. Attendi almeno 10 minuti prima di tentare un altro reset."
+
+#: includes/Action/LogInAction.php:24
+msgid "There was an error logging in. Please check your credentials and try again."
+msgstr "C'è stato un errore di registrazione. Controlla le tue credenziali e riprova."
+
+#: includes/Action/DeclineOfferAction.php:39
+msgid "Invalid security token."
+msgstr "Token di sicurezza non valido."
+
+#: includes/Action/DeclineOfferAction.php:48
+msgid "Invalid order information."
+msgstr "Informazioni ordine non valide."
+
+#: includes/Action/DeclineOfferAction.php:54
+msgid "Order verification failed."
+msgstr "Verifica ordine fallita."
+
+#: includes/Action/DeclineOfferAction.php:63
+msgid "Redirecting..."
+msgstr "Reindirizzamento in corso..."
+
+#: includes/Action/DeclineOfferAction.php:76
+msgid "Session expired. Redirecting..."
+msgstr "Sessione scaduta. Reindirizzamento in corso..."
+
+#: includes/Action/DeclineOfferAction.php:102
+msgid "Offer declined."
+msgstr "Offerta rifiutata."
+
+#: lib/sendwp-sdk/sendwp-init.php:27
+msgid "Security failed to check sendwp_install_nonce"
+msgstr "Controllo di sicurezza fallito per sendwp_install_nonce"
+
+#: lib/sendwp-sdk/sendwp-init.php:28
+msgid "Ask an administrator for install_plugins capability"
+msgstr "Chiedi a un amministratore la capacità install_plugins"
+
+#: lib/sendwp-sdk/sendwp-init.php:29
+msgid "SendWP is already connected."
+msgstr "SendWP è già connesso."
+
+#: lib/sendwp-sdk/remote-install.php:84
+msgid "Something went wrong. SendWP was not installed correctly."
+msgstr "Qualcosa è andato storto. SendWP non è stato installato correttamente."
+
 #. block title
 #: block.json
 msgid "Order Bump Steps"
@@ -2057,62 +2066,6 @@ msgstr "Modulo Offerta Order Bump"
 msgid "The form to accept or reject the bump offer."
 msgstr "Il modulo per accettare o rifiutare l'offerta bump."
 
-#: includes/Model/Bumps/BumpAbstract.php:1081
-#: includes/Model/Bumps/BumpAbstract.php:1091
-#: includes/Model/ABTests/OrderBumpsABTest.php:30
-#: includes/Features/ABTesting/ABTestTypeRegistry.php:123
-#: includes/Admin/Pages/OrderBumpsAdminFree.php:17
-#: includes/Admin/Pages/OrderBumpsAdminFree.php:71
-#: includes/Admin/Pages/Premium/OrderBumps.php:50
-#: client/ts/admin/Components/Forms/OrderBumpSettingsForm.tsx:45
-#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:408
-msgid "Order Bumps"
-msgstr "Order Bumps"
-
-#: includes/Model/Bumps/BumpAbstract.php:1082
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:193
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:1614
-msgid "Order Bump"
-msgstr "Order Bump"
-
-#: includes/Model/Bumps/BumpAbstract.php:1083
-msgid "Add New"
-msgstr "Aggiungi Nuovo"
-
-#: includes/Model/Bumps/BumpAbstract.php:1084
-msgid "Add New Order Bump"
-msgstr "Aggiungi Nuovo Order Bump"
-
-#: includes/Model/Bumps/BumpAbstract.php:1085
-msgid "Edit Order Bump"
-msgstr "Modifica Order Bump"
-
-#: includes/Model/Bumps/BumpAbstract.php:1086
-#: client/ts/admin/Components/Metaboxes/OrderBumpsSetupModal.tsx:61
-msgid "New Order Bump"
-msgstr "Nuovo Order Bump"
-
-#: includes/Model/Bumps/BumpAbstract.php:1087
-msgid "View Order Bump"
-msgstr "Visualizza Order Bump"
-
-#: includes/Model/Bumps/BumpAbstract.php:1088
-msgid "Find Order Bump"
-msgstr "Trova Order Bump"
-
-#: includes/Model/Bumps/BumpAbstract.php:1089
-msgid "No order bumps were found."
-msgstr "Nessun order bump trovato."
-
-#: includes/Model/Bumps/BumpAbstract.php:1090
-msgid "Not found in trash"
-msgstr "Non trovato nel cestino"
-
-#: includes/Model/ABTests/OrderBumpsABTest.php:31
-#: includes/Features/ABTesting/ABTestTypeRegistry.php:124
-msgid "Test different variations of order bumps to see which performs better."
-msgstr "Testa diverse varianti di order bump per vedere quale funziona meglio."
-
 # %1$s: Plugin name, %2$s: Link opening tag, %3$s: Version number, %4$s: Link closing tag
 #: includes/Managers/Helpers/EDD_SL_Plugin_Updater.php:281
 msgid "There is a new version of %1$s available. %2$sView version %3$s details%4$s."
@@ -2131,6 +2084,62 @@ msgstr "Non hai il permesso di installare aggiornamenti dei plugin"
 #: client/ts/admin/Components/GooglePlacesKeyStatus.tsx:61
 msgid "Error"
 msgstr "Errore"
+
+#: includes/Model/Bumps/BumpAbstract.php:1094
+#: includes/Model/Bumps/BumpAbstract.php:1104
+#: includes/Model/ABTests/OrderBumpsABTest.php:30
+#: includes/Features/ABTesting/ABTestTypeRegistry.php:123
+#: includes/Admin/Pages/OrderBumpsAdminFree.php:17
+#: includes/Admin/Pages/OrderBumpsAdminFree.php:71
+#: includes/Admin/Pages/Premium/OrderBumps.php:50
+#: client/ts/admin/Components/Forms/OrderBumpSettingsForm.tsx:45
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:408
+msgid "Order Bumps"
+msgstr "Order Bumps"
+
+#: includes/Model/Bumps/BumpAbstract.php:1095
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:193
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:1614
+msgid "Order Bump"
+msgstr "Order Bump"
+
+#: includes/Model/Bumps/BumpAbstract.php:1096
+msgid "Add New"
+msgstr "Aggiungi Nuovo"
+
+#: includes/Model/Bumps/BumpAbstract.php:1097
+msgid "Add New Order Bump"
+msgstr "Aggiungi Nuovo Order Bump"
+
+#: includes/Model/Bumps/BumpAbstract.php:1098
+msgid "Edit Order Bump"
+msgstr "Modifica Order Bump"
+
+#: includes/Model/Bumps/BumpAbstract.php:1099
+#: client/ts/admin/Components/Metaboxes/OrderBumpsSetupModal.tsx:61
+msgid "New Order Bump"
+msgstr "Nuovo Order Bump"
+
+#: includes/Model/Bumps/BumpAbstract.php:1100
+msgid "View Order Bump"
+msgstr "Visualizza Order Bump"
+
+#: includes/Model/Bumps/BumpAbstract.php:1101
+msgid "Find Order Bump"
+msgstr "Trova Order Bump"
+
+#: includes/Model/Bumps/BumpAbstract.php:1102
+msgid "No order bumps were found."
+msgstr "Nessun order bump trovato."
+
+#: includes/Model/Bumps/BumpAbstract.php:1103
+msgid "Not found in trash"
+msgstr "Non trovato nel cestino"
+
+#: includes/Model/ABTests/OrderBumpsABTest.php:31
+#: includes/Features/ABTesting/ABTestTypeRegistry.php:124
+msgid "Test different variations of order bumps to see which performs better."
+msgstr "Testa diverse varianti di order bump per vedere quale funziona meglio."
 
 #: includes/Features/OneClick/OrderStatusManager.php:52
 msgid "Pending Offer <span class=\"count\">(%s)</span>"
@@ -2253,6 +2262,14 @@ msgstr "Abilita Supporto Astra (Beta)"
 msgid "If enabled with Advanced > Template Loader > Distraction Free Portal, Astra\\'s header and footer are displayed and Astra styles and scripts load on checkout. If disabled with Distraction Free Portal, Astra styles and scripts are excluded for a minimal layout. With WordPress Theme loader, the full theme loads regardless of this setting."
 msgstr "Se abilitato con Avanzate > Caricatore Modelli > Portale senza distrazioni, l'intestazione e il piè di pagina di Astra vengono visualizzati e gli stili e gli script di Astra vengono caricati al checkout. Se disabilitato con Portale senza distrazioni, gli stili e gli script di Astra sono esclusi per un layout minimale. Con il caricatore del tema WordPress, il tema completo viene caricato indipendentemente da questa impostazione."
 
+#: includes/Compatibility/Gateways/PayPalForWooCommerce.php:38
+msgid "Please update to the latest version of PayPal for WooCommerce to get full support."
+msgstr "Aggiorna all'ultima versione di PayPal per WooCommerce per ottenere il supporto completo."
+
+#: includes/Compatibility/Gateways/PayPalForWooCommerce.php:363
+msgid "Logged in with PayPal. Please continue your order below."
+msgstr "Sei connesso con PayPal. Puoi continuare il tuo ordine qui sotto."
+
 #: includes/Compatibility/Plugins/WooCommerceGiftCards.php:64
 #: includes/Compatibility/Plugins/WooCommerceGiftCards.php:72
 msgid "Enter your code&hellip;"
@@ -2373,14 +2390,6 @@ msgstr "Abilita il supporto Beaver Themer"
 msgid "Allow Beaver Themer to replace header and footer."
 msgstr "Consenti a Beaver Themer di sostituire intestazione e piè di pagina."
 
-#: includes/Compatibility/Gateways/PayPalForWooCommerce.php:38
-msgid "Please update to the latest version of PayPal for WooCommerce to get full support."
-msgstr "Aggiorna all'ultima versione di PayPal per WooCommerce per ottenere il supporto completo."
-
-#: includes/Compatibility/Gateways/PayPalForWooCommerce.php:363
-msgid "Logged in with PayPal. Please continue your order below."
-msgstr "Sei connesso con PayPal. Puoi continuare il tuo ordine qui sotto."
-
 #: includes/Admin/Views/html-refund-offer.php:22
 msgid "Product"
 msgstr "Prodotto"
@@ -2409,17 +2418,171 @@ msgstr "Nota:"
 msgid "Refunding an offer will process the refund with the payment gateway and create a WooCommerce refund record."
 msgstr "Rimborsare un'offerta elaborerà il rimborso con il gateway di pagamento e creerà un record di rimborso WooCommerce."
 
-#: includes/Admin/Pages/WooCommercePages.php:21
+#: includes/Admin/Notices/WelcomeNotice.php:12
+msgid "Welcome to CheckoutWC"
+msgstr "Benvenuto in CheckoutWC"
+
+#: includes/Admin/Notices/WelcomeNotice.php:20
+msgid "Thank you for installing CheckoutWC! We automatically activated your license. You are all set!"
+msgstr "Grazie per aver installato CheckoutWC! Abbiamo attivato automaticamente la tua licenza. Sei a posto!"
+
+#: includes/Admin/Notices/WelcomeNotice.php:26
+msgid "Thank you for installing CheckoutWC! To get started, enter your <strong>License Key</strong> below, save, and click <strong>Activate Site</strong>."
+msgstr "Grazie per aver installato CheckoutWC! Per iniziare, inserisci la tua <strong>Chiave di licenza</strong> qui sotto, salva e clicca su <strong>Attiva sito</strong>."
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:20
+msgid "your email"
+msgstr "la tua email"
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:88
+msgid "privacy policy"
+msgstr "politica sulla privacy"
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:93
+msgid "By joining, %1$s will be added to our mailing list. Read our %2$s."
+msgstr "Iscrivendoti, %1$s sarà aggiunto alla nostra mailing list. Leggi la nostra %2$s."
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:99
+msgid "Join Newsletter & Save 25%"
+msgstr "Iscriviti alla newsletter e risparmia il 25%"
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:102
+msgid "Join Newsletter"
+msgstr "Iscriviti alla newsletter"
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:113
+msgid "Sign up to our newsletter and get proven conversion tips and checkout optimization strategies from the CheckoutWC team."
+msgstr "Iscriviti alla nostra newsletter e ricevi consigli comprovati per aumentare le conversioni e strategie di ottimizzazione del checkout dal team di CheckoutWC."
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:116
+msgid "Boost Your Conversions with Proven Strategies."
+msgstr "Aumenta le tue conversioni con strategie comprovate."
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:123
+msgid "We're so glad that you've chosen CheckoutWC to handle your checkouts. Unlock more sales with premium features like order bumps, abandoned cart recovery, and much more."
+msgstr "Siamo felici che tu abbia scelto CheckoutWC per gestire i tuoi checkout. Sblocca più vendite con funzionalità premium come order bumps, recupero carrelli abbandonati e molto altro."
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:126
+msgid "Unlock more sales with CheckoutWC Premium"
+msgstr "Sblocca più vendite con CheckoutWC Premium"
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:144
+msgid "Sorry, there was an error joining our newsletter. Please refresh the page and try again."
+msgstr "Spiacenti, si è verificato un errore durante l'iscrizione alla nostra newsletter. Ricarica la pagina e riprova."
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:243
+msgid "Please wait..."
+msgstr "Attendere prego..."
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:320
+msgid "Sorry, your account has insufficient permissions to join our newsletter."
+msgstr "Spiacenti, il tuo account non ha i permessi sufficienti per iscriversi alla nostra newsletter."
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:354
+msgid "You have already joined our newsletter!"
+msgstr "Sei già iscritto alla nostra newsletter!"
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:396
+msgid "Thank you for joining our newsletter!"
+msgstr "Grazie per esserti iscritto alla nostra newsletter!"
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:410
+msgid "Security check failed."
+msgstr "Controllo di sicurezza fallito."
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:414
+msgid "Insufficient permissions."
+msgstr "Permessi insufficienti."
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:422
+msgid "Notice dismissed."
+msgstr "Avviso ignorato."
+
+# %1$d: Number of days, %2$s: Pricing URL, %3$s: "renew it here" link text
+#: includes/Admin/Notices/LicenseUnverifiedNotice.php:25
+msgid "Premium features are off because we haven\\'t been able to check your license with checkoutwc.com for %1$d days. Make sure your server can connect to checkoutwc.com. If your license has expired, <a href=\"%2$s\" target=\"_blank\">%3$s</a>."
+msgstr "Le funzionalità premium sono disattivate perché non siamo riusciti a verificare la tua licenza con checkoutwc.com per %1$d giorni. Assicurati che il tuo server possa connettersi a checkoutwc.com. Se la tua licenza è scaduta, <a href=\"%2$s\" target=\"_blank\">%3$s</a>."
+
+#: includes/Admin/Notices/LicenseUnverifiedNotice.php:28
+msgid "renew it here"
+msgstr "rinnovala qui"
+
+#: includes/Admin/Notices/LicenseUnverifiedNotice.php:33
+msgid "CheckoutWC can\\'t verify your license"
+msgstr "CheckoutWC non riesce a verificare la tua licenza"
+
+# %1$s: Date premium features turn off, %2$s: Support email URL, %3$s: "Contact support" link text
+#: includes/Admin/Notices/LicenseServerUnreachableNotice.php:28
+msgid "We couldn\\'t check your license with checkoutwc.com. Premium features will turn off on %1$s unless the connection is restored. <a href=\"%2$s\">%3$s</a> if this keeps happening."
+msgstr "Non siamo riusciti a verificare la tua licenza con checkoutwc.com. Le funzionalità premium si disattiveranno il %1$s a meno che la connessione non venga ripristinata. <a href=\"%2$s\">%3$s</a> se continua a succedere."
+
+#: includes/Admin/Notices/LicenseServerUnreachableNotice.php:31
+#: includes/Admin/Notices/LicenseServerUnreachableNotice.php:38
+msgid "Contact support"
+msgstr "Contatta l'assistenza"
+
+# %1$s: Support email URL, %2$s: "Contact support" link text
+#: includes/Admin/Notices/LicenseServerUnreachableNotice.php:36
+msgid "We couldn\\'t check your license with checkoutwc.com. Make sure your server can connect to checkoutwc.com. <a href=\"%1$s\">%2$s</a> if this keeps happening."
+msgstr "Non siamo riusciti a verificare la tua licenza con checkoutwc.com. Assicurati che il tuo server possa connettersi a checkoutwc.com. <a href=\"%1$s\">%2$s</a> se continua a succedere."
+
+#: includes/Admin/Notices/LicenseServerUnreachableNotice.php:45
+msgid "CheckoutWC can\\'t reach the license server"
+msgstr "CheckoutWC non riesce a raggiungere il server di licenza"
+
+#: includes/Admin/Notices/InvalidLicenseKeyNotice.php:13
+msgid "CheckoutWC license expired"
+msgstr "Licenza CheckoutWC scaduta"
+
+# %1$s: URL to pricing page, %2$s: "Renew your license" link text, %3$s: Support email URL, %4$s: "contact support" link text
+#: includes/Admin/Notices/InvalidLicenseKeyNotice.php:16
+msgid "Premium features are off because your license has expired. <a href=\"%1$s\" target=\"_blank\">%2$s</a> to turn them back on. If you think this is a mistake, <a href=\"%3$s\">%4$s</a>."
+msgstr "Le funzionalità premium sono disattivate perché la tua licenza è scaduta. <a href=\"%1$s\" target=\"_blank\">%2$s</a> per riattivarle. Se pensi che si tratti di un errore, <a href=\"%3$s\">%4$s</a>."
+
+#: includes/Admin/Notices/InvalidLicenseKeyNotice.php:18
+msgid "Renew your license"
+msgstr "Rinnova la tua licenza"
+
+#: includes/Admin/Notices/InvalidLicenseKeyNotice.php:20
+msgid "contact support"
+msgstr "contatta l'assistenza"
+
+# %1$s: URL to activation page, %2$s: "Activate your license" link text, %3$s: Pricing URL, %4$s: "buy a license" link text
+#: includes/Admin/Notices/InactiveLicenseNotice.php:11
+msgid "Premium features are off because your license isn\\'t activated on this site. <a href=\"%1$s\">%2$s</a> or <a href=\"%3$s\" target=\"_blank\">%4$s</a> for this site."
+msgstr "Le funzionalità premium sono disattivate perché la tua licenza non è attivata su questo sito. <a href=\"%1$s\">%2$s</a> oppure <a href=\"%3$s\" target=\"_blank\">%4$s</a> per questo sito."
+
+#: includes/Admin/Notices/InactiveLicenseNotice.php:13
+msgid "Activate your license"
+msgstr "Attiva la tua licenza"
+
+#: includes/Admin/Notices/InactiveLicenseNotice.php:20
+msgid "CheckoutWC license not activated"
+msgstr "Licenza CheckoutWC non attivata"
+
+#: includes/Admin/Notices/BFNotice.php:13
+msgid "Black Friday Sale - 40% Off"
+msgstr "Offerta Black Friday - 40% di sconto"
+
+#: includes/Admin/Notices/BFNotice.php:14
+msgid "You're missing out on revenue growth tools like Order Bumps, Upsells, Abandoned Cart Recovery and more! Save 40% on CheckoutWC pro plans for Black Friday, ends December 4th"
+msgstr "Stai perdendo strumenti per la crescita dei ricavi come Order Bumps, Upsell, Recupero carrelli abbandonati e altro! Risparmia il 40% sui piani pro di CheckoutWC per il Black Friday, termina il 4 dicembre."
+
+#: includes/Admin/Notices/BFNotice.php:27
+msgid "Get CheckoutWC Pro Now!"
+msgstr "Ottieni subito CheckoutWC Pro!"
+
+#: includes/Admin/Pages/WooCommercePages.php:22
 msgid "Pages"
 msgstr "Pagine"
 
-#: includes/Admin/Pages/WooCommercePages.php:30
+#: includes/Admin/Pages/WooCommercePages.php:31
 #: client/ts/admin/Components/Forms/ThankYouSettingsForm.tsx:53
 #: client/ts/admin/Components/Forms/AdvancedScriptsSettingsForm.tsx:144
 msgid "Thank You"
 msgstr "Grazie"
 
-#: includes/Admin/Pages/WooCommercePages.php:31
+#: includes/Admin/Pages/WooCommercePages.php:32
 msgid "Global Options"
 msgstr "Opzioni globali"
 
@@ -2572,7 +2735,7 @@ msgid "Our Knowledge Base is packed with tips, tricks, and common troubleshootin
 msgstr "La nostra Knowledge Base è piena di suggerimenti, trucchi e passaggi comuni per la risoluzione dei problemi."
 
 #: includes/Admin/Pages/Support.php:27
-#: includes/Admin/Pages/General.php:69
+#: includes/Admin/Pages/General.php:68
 msgid "Read Our Documentation"
 msgstr "Leggi la nostra documentazione"
 
@@ -2959,141 +3122,149 @@ msgstr "Invia"
 msgid "Integrations"
 msgstr "Integrazioni"
 
+#: includes/Admin/Pages/General.php:39
 #: includes/Admin/Pages/General.php:40
-#: includes/Admin/Pages/General.php:41
 #: includes/Admin/Pages/CheckoutEditor.php:21
 #: client/ts/admin/Components/CheckoutEditor/EditorHeader.tsx:92
 msgid "Checkout Editor"
 msgstr "Editor di Checkout"
 
-#: includes/Admin/Pages/General.php:62
+#: includes/Admin/Pages/General.php:61
 msgid "Welcome to the new standard for WooCommerce stores."
 msgstr "Benvenuto nel nuovo standard per i negozi WooCommerce."
 
-#: includes/Admin/Pages/General.php:65
+#: includes/Admin/Pages/General.php:64
 msgid "We hate complex configurations too. Get up and running with CheckoutWC in 5 minutes or less. ⚡️"
 msgstr "Anche noi odiamo le configurazioni complesse. Inizia a usare CheckoutWC in 5 minuti o meno. ⚡️"
 
-#: includes/Admin/Pages/General.php:84
+#: includes/Admin/Pages/General.php:83
 msgid "Welcome to CheckoutWC 10.0"
 msgstr "Benvenuto in CheckoutWC 10.0"
 
-#: includes/Admin/Pages/General.php:87
+#: includes/Admin/Pages/General.php:86
 msgid "CheckoutWC 10.0 is a major update with new features and optimizations to make your WooCommerce store run better."
 msgstr "CheckoutWC 10.0 è un aggiornamento importante con nuove funzionalità e ottimizzazioni per far funzionare meglio il tuo negozio WooCommerce."
 
-#: includes/Admin/Pages/General.php:93
+#: includes/Admin/Pages/General.php:92
 msgid "Just Say When"
 msgstr "Basta dire quando"
 
-#: includes/Admin/Pages/General.php:96
+#: includes/Admin/Pages/General.php:95
 msgid "Our new rules engine puts you in charge. Want to show an Order Bump only to first time customers who use a specific coupon code? You can do that. Want to show specific trust badges based on what is in the cart? You can do that too!"
 msgstr "Il nostro nuovo motore di regole ti mette al comando. Vuoi mostrare un Order Bump solo ai clienti alla prima esperienza che usano un codice coupon specifico? Puoi farlo. Vuoi mostrare specifici badge di fiducia in base a ciò che c’è nel carrello? Puoi farlo anche!"
 
-#: includes/Admin/Pages/General.php:110
+#: includes/Admin/Pages/General.php:109
 msgid "Get Started Faster"
 msgstr "Inizia più velocemente"
 
-#: includes/Admin/Pages/General.php:113
+#: includes/Admin/Pages/General.php:112
 msgid "Creating Order Bumps has lots of options. Our new Quick Start will help you get started faster."
 msgstr "Creare Order Bump ha molte opzioni. Il nostro nuovo Quick Start ti aiuterà a iniziare più velocemente."
 
-#: includes/Admin/Pages/General.php:117
+#: includes/Admin/Pages/General.php:116
 msgid "Configure Order Bumps"
 msgstr "Configura Order Bump"
 
-#: includes/Admin/Pages/General.php:126
+#: includes/Admin/Pages/General.php:125
 msgid "And a lot more"
 msgstr "E molto altro"
 
-#: includes/Admin/Pages/General.php:129
+#: includes/Admin/Pages/General.php:128
 msgid "To view the full list of changes, checkout our change log."
 msgstr "Per vedere l’elenco completo delle modifiche, consulta il nostro change log."
 
-#: includes/Admin/Pages/General.php:133
+#: includes/Admin/Pages/General.php:132
 msgid "Read Our Change Log"
 msgstr "Leggi il nostro Change Log"
 
-#: includes/Admin/Pages/General.php:149
-msgid "Step 1: Activate Your License"
-msgstr "Passo 1: Attiva la tua licenza"
-
-#: includes/Admin/Pages/General.php:149
-msgid "Step 1: Try CheckoutWC Premium Free For 7 Days"
-msgstr "Passo 1: Prova CheckoutWC Premium gratis per 7 giorni"
-
 #: includes/Admin/Pages/General.php:150
-msgid "Enter your license key and activate it for this site to turn on premium features."
-msgstr "Inserisci la tua chiave di licenza e attivala per questo sito per abilitare le funzionalità premium."
+msgid "Step 1: Upgrade to CheckoutWC Premium"
+msgstr "Passaggio 1: passa a CheckoutWC Premium"
 
-#: includes/Admin/Pages/General.php:150
+#: includes/Admin/Pages/General.php:151
 msgid "Supercharge your WooCommerce store."
 msgstr "Potenzia il tuo negozio WooCommerce."
 
-#: includes/Admin/Pages/General.php:155
+#: includes/Admin/Pages/General.php:153
+msgid "Step 1: Renew Your License"
+msgstr "Passaggio 1: rinnova la tua licenza"
+
+#: includes/Admin/Pages/General.php:154
+msgid "Your license has expired. Renew it to keep premium features working."
+msgstr "La tua licenza è scaduta. Rinnovala per mantenere attive le funzionalità premium."
+
+#: includes/Admin/Pages/General.php:156
+msgid "Step 1: Activate Your License"
+msgstr "Passo 1: Attiva la tua licenza"
+
+#: includes/Admin/Pages/General.php:157
+msgid "Enter your license key and activate it for this site to turn on premium features."
+msgstr "Inserisci la tua chiave di licenza e attivala per questo sito per abilitare le funzionalità premium."
+
+#: includes/Admin/Pages/General.php:167
 msgid "Step 2: Customize Checkout"
 msgstr "Passo 2: Personalizza il Checkout"
 
-#: includes/Admin/Pages/General.php:156
+#: includes/Admin/Pages/General.php:168
 msgid "Use the Checkout Editor to customize your checkout layout, fields, and content."
 msgstr "Usa l'Editor di Checkout per personalizzare il layout, i campi e il contenuto del checkout."
 
-#: includes/Admin/Pages/General.php:161
+#: includes/Admin/Pages/General.php:173
 msgid "Step 3: Go Live"
 msgstr "Passo 3: Vai Live"
 
-#: includes/Admin/Pages/General.php:162
+#: includes/Admin/Pages/General.php:174
 msgid "Enable templates for all visitors."
 msgstr "Abilita i modelli per tutti i visitatori."
 
-#: includes/Admin/Pages/General.php:190
+#: includes/Admin/Pages/General.php:202
 msgid "Requires a valid and active license key."
 msgstr "Richiede una chiave di licenza valida e attiva."
 
-#: includes/Admin/Pages/General.php:196
+#: includes/Admin/Pages/General.php:208
 msgid "CheckoutWC Templates are always activated for admin users."
 msgstr "I modelli di CheckoutWC sono sempre attivati per gli utenti admin."
 
-#: includes/Admin/Pages/General.php:201
+#: includes/Admin/Pages/General.php:213
 msgid "This step can also be completed directly from the Checkout Editor!"
 msgstr "Questo passaggio può essere completato anche direttamente dall'Editor di Checkout!"
 
-#: includes/Admin/Pages/General.php:221
+#: includes/Admin/Pages/General.php:233
 msgid "Upgrade to CheckoutWC Premium - Save 20% on your first year"
 msgstr ""
 
-#: includes/Admin/Pages/General.php:223
-#: includes/Admin/Pages/General.php:250
-#: includes/Admin/Pages/General.php:265
-#: includes/Admin/Pages/General.php:310
+#: includes/Admin/Pages/General.php:235
+#: includes/Admin/Pages/General.php:262
+#: includes/Admin/Pages/General.php:277
+#: includes/Admin/Pages/General.php:322
 msgid "Opens in new tab"
 msgstr "Si apre in una nuova scheda"
 
-#: includes/Admin/Pages/General.php:236
+#: includes/Admin/Pages/General.php:248
 msgid "Customize Your Checkout"
 msgstr "Personalizza il tuo Checkout"
 
-#: includes/Admin/Pages/General.php:248
+#: includes/Admin/Pages/General.php:260
 msgid "Choose a Template"
 msgstr "Scegli un modello"
 
-#: includes/Admin/Pages/General.php:263
+#: includes/Admin/Pages/General.php:275
 msgid "Customize Logo and Colors"
 msgstr "Personalizza logo e colori"
 
-#: includes/Admin/Pages/General.php:308
+#: includes/Admin/Pages/General.php:320
 msgid "Preview Your Checkout Page"
 msgstr "Anteprima della pagina di checkout"
 
-#: includes/Admin/Pages/General.php:354
+#: includes/Admin/Pages/General.php:366
 msgid "Unbypass CheckoutWC Template"
 msgstr "Rimuovi bypass modello CheckoutWC"
 
-#: includes/Admin/Pages/General.php:354
+#: includes/Admin/Pages/General.php:366
 msgid "Bypass CheckoutWC Template"
 msgstr "Bypass modello CheckoutWC"
 
-#: includes/Admin/Pages/General.php:358
+#: includes/Admin/Pages/General.php:370
 msgid "CheckoutWC template and functionality will be temporarily bypassed (just for you!). This is helpful for testing and debugging. You can click Unbypass CheckoutWC Template once you are done."
 msgstr "Il modello e le funzionalità di CheckoutWC saranno temporaneamente bypassati (solo per te!). Questo è utile per testare e fare debug. Puoi cliccare su Rimuovi bypass modello CheckoutWC quando hai finito."
 
@@ -3269,74 +3440,74 @@ msgstr "Testo secondario al passaggio"
 msgid "Theme Specific Colors"
 msgstr "Colori specifici del tema"
 
-#: includes/Admin/Pages/Advanced.php:20
-#: includes/Admin/Pages/Advanced.php:28
+#: includes/Admin/Pages/Advanced.php:37
+#: includes/Admin/Pages/Advanced.php:45
 msgid "Advanced"
 msgstr "Avanzato"
 
-#: includes/Admin/Pages/Advanced.php:29
+#: includes/Admin/Pages/Advanced.php:46
 msgid "Scripts"
 msgstr "Script"
 
-#: includes/Admin/Pages/Advanced.php:30
+#: includes/Admin/Pages/Advanced.php:47
 msgid "Tools"
 msgstr "Strumenti"
 
-#: includes/Admin/Pages/Advanced.php:64
-#: includes/Admin/Pages/Advanced.php:84
+#: includes/Admin/Pages/Advanced.php:81
+#: includes/Admin/Pages/Advanced.php:101
 msgid "Export Settings"
 msgstr "Esporta impostazioni"
 
-#: includes/Admin/Pages/Advanced.php:65
+#: includes/Admin/Pages/Advanced.php:82
 msgid "Download a JSON file containing the current plugin settings."
 msgstr "Scarica un file JSON contenente le impostazioni correnti del plugin."
 
-#: includes/Admin/Pages/Advanced.php:69
-#: includes/Admin/Pages/Advanced.php:97
+#: includes/Admin/Pages/Advanced.php:86
+#: includes/Admin/Pages/Advanced.php:114
 msgid "Import Settings"
 msgstr "Importa impostazioni"
 
-#: includes/Admin/Pages/Advanced.php:70
+#: includes/Admin/Pages/Advanced.php:87
 msgid "Replace your current settings with a previous settings export."
 msgstr "Sostituisci le tue impostazioni correnti con un'esportazione di impostazioni precedente."
 
-#: includes/Admin/Pages/Advanced.php:87
+#: includes/Admin/Pages/Advanced.php:104
 msgid "Download a backup file of your settings."
 msgstr "Scarica un file di backup delle tue impostazioni."
 
-#: includes/Admin/Pages/Advanced.php:101
+#: includes/Admin/Pages/Advanced.php:118
 msgid "Upload File and Import Settings"
 msgstr "Carica file e importa impostazioni"
 
-#: includes/Admin/Pages/Advanced.php:174
+#: includes/Admin/Pages/Advanced.php:196
 msgid "CheckoutWC Settings Import Failed"
 msgstr "Importazione impostazioni CheckoutWC fallita"
 
-#: includes/Admin/Pages/Advanced.php:175
+#: includes/Admin/Pages/Advanced.php:197
 msgid "Unable to import settings. Did you select a JSON file to upload?"
 msgstr "Impossibile importare le impostazioni. Hai selezionato un file JSON da caricare?"
 
-#: includes/Admin/Pages/Advanced.php:187
+#: includes/Admin/Pages/Advanced.php:209
 msgid "Error. Uploaded file appears empty."
 msgstr "Errore. Il file caricato sembra vuoto."
 
-#: includes/Admin/Pages/Advanced.php:198
+#: includes/Admin/Pages/Advanced.php:220
 msgid "Wrong file extension. Uploaded settings must be a JSON file."
 msgstr "Estensione file errata. Le impostazioni caricate devono essere un file JSON."
 
-#: includes/Admin/Pages/Advanced.php:206
+#: includes/Admin/Pages/Advanced.php:228
 msgid "Error moving uploaded file - check your permissions."
 msgstr "Errore durante lo spostamento del file caricato - controlla i tuoi permessi."
 
-#: includes/Admin/Pages/Advanced.php:213
+#: includes/Admin/Pages/Advanced.php:235
 msgid "Error decoding JSON file."
 msgstr "Errore nella decodifica del file JSON."
 
-#: includes/Admin/Pages/Advanced.php:255
+#: includes/Admin/Pages/Advanced.php:277
 msgid "CheckoutWC Settings Import Successful"
 msgstr "Importazione delle impostazioni di CheckoutWC riuscita"
 
-#: includes/Admin/Pages/Advanced.php:256
+#: includes/Admin/Pages/Advanced.php:278
 msgid "Successfully imported settings."
 msgstr "Impostazioni importate con successo."
 
@@ -3516,160 +3687,6 @@ msgstr "Abilita A/B Testing"
 msgid "Allow A/B tests to be created and applied on the checkout page."
 msgstr "Consenti la creazione e l'applicazione di test A/B nella pagina di checkout."
 
-#: includes/Admin/Notices/WelcomeNotice.php:12
-msgid "Welcome to CheckoutWC"
-msgstr "Benvenuto in CheckoutWC"
-
-#: includes/Admin/Notices/WelcomeNotice.php:20
-msgid "Thank you for installing CheckoutWC! We automatically activated your license. You are all set!"
-msgstr "Grazie per aver installato CheckoutWC! Abbiamo attivato automaticamente la tua licenza. Sei a posto!"
-
-#: includes/Admin/Notices/WelcomeNotice.php:26
-msgid "Thank you for installing CheckoutWC! To get started, enter your <strong>License Key</strong> below, save, and click <strong>Activate Site</strong>."
-msgstr "Grazie per aver installato CheckoutWC! Per iniziare, inserisci la tua <strong>Chiave di licenza</strong> qui sotto, salva e clicca su <strong>Attiva sito</strong>."
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:20
-msgid "your email"
-msgstr "la tua email"
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:88
-msgid "privacy policy"
-msgstr "politica sulla privacy"
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:93
-msgid "By joining, %1$s will be added to our mailing list. Read our %2$s."
-msgstr "Iscrivendoti, %1$s sarà aggiunto alla nostra mailing list. Leggi la nostra %2$s."
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:99
-msgid "Join Newsletter & Save 25%"
-msgstr "Iscriviti alla newsletter e risparmia il 25%"
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:102
-msgid "Join Newsletter"
-msgstr "Iscriviti alla newsletter"
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:113
-msgid "Sign up to our newsletter and get proven conversion tips and checkout optimization strategies from the CheckoutWC team."
-msgstr "Iscriviti alla nostra newsletter e ricevi consigli comprovati per aumentare le conversioni e strategie di ottimizzazione del checkout dal team di CheckoutWC."
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:116
-msgid "Boost Your Conversions with Proven Strategies."
-msgstr "Aumenta le tue conversioni con strategie comprovate."
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:123
-msgid "We're so glad that you've chosen CheckoutWC to handle your checkouts. Unlock more sales with premium features like order bumps, abandoned cart recovery, and much more."
-msgstr "Siamo felici che tu abbia scelto CheckoutWC per gestire i tuoi checkout. Sblocca più vendite con funzionalità premium come order bumps, recupero carrelli abbandonati e molto altro."
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:126
-msgid "Unlock more sales with CheckoutWC Premium"
-msgstr "Sblocca più vendite con CheckoutWC Premium"
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:144
-msgid "Sorry, there was an error joining our newsletter. Please refresh the page and try again."
-msgstr "Spiacenti, si è verificato un errore durante l'iscrizione alla nostra newsletter. Ricarica la pagina e riprova."
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:243
-msgid "Please wait..."
-msgstr "Attendere prego..."
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:320
-msgid "Sorry, your account has insufficient permissions to join our newsletter."
-msgstr "Spiacenti, il tuo account non ha i permessi sufficienti per iscriversi alla nostra newsletter."
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:354
-msgid "You have already joined our newsletter!"
-msgstr "Sei già iscritto alla nostra newsletter!"
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:396
-msgid "Thank you for joining our newsletter!"
-msgstr "Grazie per esserti iscritto alla nostra newsletter!"
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:410
-msgid "Security check failed."
-msgstr "Controllo di sicurezza fallito."
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:414
-msgid "Insufficient permissions."
-msgstr "Permessi insufficienti."
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:422
-msgid "Notice dismissed."
-msgstr "Avviso ignorato."
-
-# %1$d: Number of days, %2$s: Pricing URL, %3$s: "renew it here" link text
-#: includes/Admin/Notices/LicenseUnverifiedNotice.php:25
-msgid "Premium features are off because we haven\\'t been able to check your license with checkoutwc.com for %1$d days. Make sure your server can connect to checkoutwc.com. If your license has expired, <a href=\"%2$s\" target=\"_blank\">%3$s</a>."
-msgstr "Le funzionalità premium sono disattivate perché non siamo riusciti a verificare la tua licenza con checkoutwc.com per %1$d giorni. Assicurati che il tuo server possa connettersi a checkoutwc.com. Se la tua licenza è scaduta, <a href=\"%2$s\" target=\"_blank\">%3$s</a>."
-
-#: includes/Admin/Notices/LicenseUnverifiedNotice.php:28
-msgid "renew it here"
-msgstr "rinnovala qui"
-
-#: includes/Admin/Notices/LicenseUnverifiedNotice.php:33
-msgid "CheckoutWC can\\'t verify your license"
-msgstr "CheckoutWC non riesce a verificare la tua licenza"
-
-# %1$s: Date premium features turn off, %2$s: Support email URL, %3$s: "Contact support" link text
-#: includes/Admin/Notices/LicenseServerUnreachableNotice.php:28
-msgid "We couldn\\'t check your license with checkoutwc.com. Premium features will turn off on %1$s unless the connection is restored. <a href=\"%2$s\">%3$s</a> if this keeps happening."
-msgstr "Non siamo riusciti a verificare la tua licenza con checkoutwc.com. Le funzionalità premium si disattiveranno il %1$s a meno che la connessione non venga ripristinata. <a href=\"%2$s\">%3$s</a> se continua a succedere."
-
-#: includes/Admin/Notices/LicenseServerUnreachableNotice.php:31
-#: includes/Admin/Notices/LicenseServerUnreachableNotice.php:38
-msgid "Contact support"
-msgstr "Contatta l'assistenza"
-
-# %1$s: Support email URL, %2$s: "Contact support" link text
-#: includes/Admin/Notices/LicenseServerUnreachableNotice.php:36
-msgid "We couldn\\'t check your license with checkoutwc.com. Make sure your server can connect to checkoutwc.com. <a href=\"%1$s\">%2$s</a> if this keeps happening."
-msgstr "Non siamo riusciti a verificare la tua licenza con checkoutwc.com. Assicurati che il tuo server possa connettersi a checkoutwc.com. <a href=\"%1$s\">%2$s</a> se continua a succedere."
-
-#: includes/Admin/Notices/LicenseServerUnreachableNotice.php:45
-msgid "CheckoutWC can\\'t reach the license server"
-msgstr "CheckoutWC non riesce a raggiungere il server di licenza"
-
-#: includes/Admin/Notices/InvalidLicenseKeyNotice.php:13
-msgid "CheckoutWC license expired"
-msgstr "Licenza CheckoutWC scaduta"
-
-# %1$s: URL to pricing page, %2$s: "Renew your license" link text, %3$s: Support email URL, %4$s: "contact support" link text
-#: includes/Admin/Notices/InvalidLicenseKeyNotice.php:16
-msgid "Premium features are off because your license has expired. <a href=\"%1$s\" target=\"_blank\">%2$s</a> to turn them back on. If you think this is a mistake, <a href=\"%3$s\">%4$s</a>."
-msgstr "Le funzionalità premium sono disattivate perché la tua licenza è scaduta. <a href=\"%1$s\" target=\"_blank\">%2$s</a> per riattivarle. Se pensi che si tratti di un errore, <a href=\"%3$s\">%4$s</a>."
-
-#: includes/Admin/Notices/InvalidLicenseKeyNotice.php:18
-msgid "Renew your license"
-msgstr "Rinnova la tua licenza"
-
-#: includes/Admin/Notices/InvalidLicenseKeyNotice.php:20
-msgid "contact support"
-msgstr "contatta l'assistenza"
-
-# %1$s: URL to activation page, %2$s: "Activate your license" link text, %3$s: Pricing URL, %4$s: "buy a license" link text
-#: includes/Admin/Notices/InactiveLicenseNotice.php:11
-msgid "Premium features are off because your license isn\\'t activated on this site. <a href=\"%1$s\">%2$s</a> or <a href=\"%3$s\" target=\"_blank\">%4$s</a> for this site."
-msgstr "Le funzionalità premium sono disattivate perché la tua licenza non è attivata su questo sito. <a href=\"%1$s\">%2$s</a> oppure <a href=\"%3$s\" target=\"_blank\">%4$s</a> per questo sito."
-
-#: includes/Admin/Notices/InactiveLicenseNotice.php:13
-msgid "Activate your license"
-msgstr "Attiva la tua licenza"
-
-#: includes/Admin/Notices/InactiveLicenseNotice.php:20
-msgid "CheckoutWC license not activated"
-msgstr "Licenza CheckoutWC non attivata"
-
-#: includes/Admin/Notices/BFNotice.php:13
-msgid "Black Friday Sale - 40% Off"
-msgstr "Offerta Black Friday - 40% di sconto"
-
-#: includes/Admin/Notices/BFNotice.php:14
-msgid "You're missing out on revenue growth tools like Order Bumps, Upsells, Abandoned Cart Recovery and more! Save 40% on CheckoutWC pro plans for Black Friday, ends December 4th"
-msgstr "Stai perdendo strumenti per la crescita dei ricavi come Order Bumps, Upsell, Recupero carrelli abbandonati e altro! Risparmia il 40% sui piani pro di CheckoutWC per il Black Friday, termina il 4 dicembre."
-
-#: includes/Admin/Notices/BFNotice.php:27
-msgid "Get CheckoutWC Pro Now!"
-msgstr "Ottieni subito CheckoutWC Pro!"
-
 #: client/ts/functions/cfwFormatDate.ts:38
 msgid "Sunday"
 msgstr "Domenica"
@@ -3827,34 +3844,6 @@ msgstr "sono"
 msgid "pm"
 msgstr "pm"
 
-#: client/ts/blocks/OrderBumpSteps.tsx:55
-msgid "Order Bump Steps Stettings"
-msgstr "Impostazioni Passaggi Order Bump"
-
-#: client/ts/blocks/OrderBumpSteps.tsx:58
-msgid "Step 1 Title"
-msgstr "Titolo Passaggio 1"
-
-#: client/ts/blocks/OrderBumpSteps.tsx:59
-msgid "The title of Step 1. Example: Order Submitted"
-msgstr "Il titolo del Passaggio 1. Esempio: Ordine Inviato"
-
-#: client/ts/blocks/OrderBumpSteps.tsx:64
-msgid "Step 2 Title"
-msgstr "Titolo Passaggio 2"
-
-#: client/ts/blocks/OrderBumpSteps.tsx:65
-msgid "The title of Step 2. Example: Special Offer"
-msgstr "Il titolo del Passaggio 2. Esempio: Offerta Speciale"
-
-#: client/ts/blocks/OrderBumpSteps.tsx:70
-msgid "Step 3 Title"
-msgstr "Titolo Passaggio 3"
-
-#: client/ts/blocks/OrderBumpSteps.tsx:71
-msgid "The title of Step 3. Example: Order Received"
-msgstr "Il titolo del Passaggio 3. Esempio: Ordine Ricevuto"
-
 #: client/ts/admin/order-bumps-editor.tsx:59
 msgid "Order Bump Preview"
 msgstr "Anteprima Order Bump"
@@ -3892,6 +3881,34 @@ msgstr "Sei sicuro di voler cancellare tutti i carrelli tracciati e resettare tu
 #: client/ts/admin/Components/CheckoutEditor/EditorApp.tsx:269
 msgid "Are you sure you want to discard all unsaved changes?"
 msgstr "Sei sicuro di voler scartare tutte le modifiche non salvate?"
+
+#: client/ts/blocks/OrderBumpSteps.tsx:55
+msgid "Order Bump Steps Stettings"
+msgstr "Impostazioni Passaggi Order Bump"
+
+#: client/ts/blocks/OrderBumpSteps.tsx:58
+msgid "Step 1 Title"
+msgstr "Titolo Passaggio 1"
+
+#: client/ts/blocks/OrderBumpSteps.tsx:59
+msgid "The title of Step 1. Example: Order Submitted"
+msgstr "Il titolo del Passaggio 1. Esempio: Ordine Inviato"
+
+#: client/ts/blocks/OrderBumpSteps.tsx:64
+msgid "Step 2 Title"
+msgstr "Titolo Passaggio 2"
+
+#: client/ts/blocks/OrderBumpSteps.tsx:65
+msgid "The title of Step 2. Example: Special Offer"
+msgstr "Il titolo del Passaggio 2. Esempio: Offerta Speciale"
+
+#: client/ts/blocks/OrderBumpSteps.tsx:70
+msgid "Step 3 Title"
+msgstr "Titolo Passaggio 3"
+
+#: client/ts/blocks/OrderBumpSteps.tsx:71
+msgid "The title of Step 3. Example: Order Received"
+msgstr "Il titolo del Passaggio 3. Esempio: Ordine Ricevuto"
 
 #: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:60
 #: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:245
@@ -4507,30 +4524,6 @@ msgstr "La data in cui il test A/B dovrebbe terminare. Dopo questa data, verrà 
 msgid "Traffic split percentages must total 100%. Please adjust your percentages."
 msgstr "Le percentuali di suddivisione del traffico devono totalizzare il 100%. Si prega di regolare le percentuali."
 
-#: client/ts/frontend/Actions/CompleteOrderAction.ts:196
-msgid "Could not connect to server. Please refresh and try again or contact site administrator."
-msgstr "Impossibile connettersi al server. Aggiornare e riprovare o contattare l'amministratore del sito."
-
-#: client/ts/frontend/Actions/CompleteOrderAction.ts:198
-msgid "Requested resource could not be found. Please contact site administrator. (404)"
-msgstr "La risorsa richiesta non è stata trovata. Contattare l'amministratore del sito. (404)"
-
-#: client/ts/frontend/Actions/CompleteOrderAction.ts:200
-msgid "An internal server error occurred. Please contact site administrator. (500)"
-msgstr "Si è verificato un errore interno al server. Contattare l'amministratore del sito. (500)"
-
-#: client/ts/frontend/Actions/CompleteOrderAction.ts:202
-msgid "Server response could not be parsed. Please contact site administrator."
-msgstr "Non è stato possibile analizzare la risposta del server. Contattare l'amministratore del sito."
-
-#: client/ts/frontend/Actions/CompleteOrderAction.ts:204
-msgid "The server timed out while processing your request. Please refresh and try again or contact site administrator."
-msgstr "Il server si è bloccato durante l'elaborazione della richiesta. Aggiornare e riprovare o contattare l'amministratore del sito."
-
-#: client/ts/frontend/Actions/CompleteOrderAction.ts:206
-msgid "Request was aborted. Please contact site administrator."
-msgstr "La richiesta è stata interrotta. Contattare l'amministratore del sito."
-
 #: client/ts/frontend/Components/TermsAndConditions.ts:29
 msgid "Terms and Conditions"
 msgstr "Termini e condizioni"
@@ -4546,6 +4539,30 @@ msgstr "Chiudi carrello"
 #: client/ts/frontend/Components/FreeShippingProgressBar.tsx:245
 msgid "Unlocked"
 msgstr "Sbloccato"
+
+#: client/ts/frontend/Actions/CompleteOrderAction.ts:196
+msgid "We could not confirm whether your order went through. Please check for any charges in your payment method and review your order history before placing the order again."
+msgstr "Non siamo riusciti a confermare se il tuo ordine sia andato a buon fine. Controlla eventuali addebiti nel tuo metodo di pagamento e rivedi la cronologia degli ordini prima di effettuare nuovamente l'ordine."
+
+#: client/ts/frontend/Actions/CompleteOrderAction.ts:198
+msgid "Requested resource could not be found. Please contact site administrator. (404)"
+msgstr "La risorsa richiesta non è stata trovata. Contattare l'amministratore del sito. (404)"
+
+#: client/ts/frontend/Actions/CompleteOrderAction.ts:200
+msgid "An internal server error occurred. Please contact site administrator. (500)"
+msgstr "Si è verificato un errore interno al server. Contattare l'amministratore del sito. (500)"
+
+#: client/ts/frontend/Actions/CompleteOrderAction.ts:202
+msgid "Server response could not be parsed. Please contact site administrator."
+msgstr "Non è stato possibile analizzare la risposta del server. Contattare l'amministratore del sito."
+
+#: client/ts/frontend/Actions/CompleteOrderAction.ts:204
+msgid "The server timed out while processing your request. Please check for any charges in your payment method and review your order history before placing the order again."
+msgstr "Il server è andato in timeout durante l'elaborazione della tua richiesta. Controlla eventuali addebiti nel tuo metodo di pagamento e rivedi la cronologia degli ordini prima di effettuare nuovamente l'ordine."
+
+#: client/ts/frontend/Actions/CompleteOrderAction.ts:206
+msgid "Request was aborted. Please contact site administrator."
+msgstr "La richiesta è stata interrotta. Contattare l'amministratore del sito."
 
 # %d is the number of icons in the collection
 #: client/ts/admin/Components/trustBadges.ts:85
@@ -5364,20 +5381,6 @@ msgstr "Quando questo bump viene aggiunto al carrello, applica la spedizione gra
 #: client/ts/admin/Components/Metaboxes/CategoryCompleter.tsx:46
 msgid "All categories with titles that include {{query /}}"
 msgstr "Tutte le categorie con titoli che includono {{query /}}"
-
-#: client/ts/admin/Components/Fields/WPMediaUploadButton.tsx:69
-msgid "Select or Upload a Logo"
-msgstr "Seleziona o carica un logo"
-
-#: client/ts/admin/Components/Fields/RangeControl.tsx:97
-#: client/ts/admin/Components/Fields/ColorControl.tsx:137
-msgid "Reset"
-msgstr "Ripristina"
-
-#: client/ts/admin/Components/Fields/ColorControl.tsx:173
-#: client/ts/admin/Components/CheckoutEditor/BumpEditorModal.tsx:101
-msgid "Done"
-msgstr "Fatto"
 
 #: client/ts/admin/Components/Forms/WooCommercePagesGlobalOptionsSettingsForm.tsx:49
 #: client/ts/admin/Components/Forms/CheckoutSettingsForm.tsx:570
@@ -7132,9 +7135,23 @@ msgstr "Chiudi"
 msgid "This order bump has unsaved changes. Close anyway?"
 msgstr "Questo order bump ha modifiche non salvate. Chiudere comunque?"
 
+#: client/ts/admin/Components/CheckoutEditor/BumpEditorModal.tsx:101
+#: client/ts/admin/Components/Fields/ColorControl.tsx:173
+msgid "Done"
+msgstr "Fatto"
+
 #: client/ts/admin/Components/CheckoutEditor/BumpEditorModal.tsx:108
 msgid "Loading order bump editor…"
 msgstr "Caricamento dell'editor order bump…"
+
+#: client/ts/admin/Components/Fields/WPMediaUploadButton.tsx:69
+msgid "Select or Upload a Logo"
+msgstr "Seleziona o carica un logo"
+
+#: client/ts/admin/Components/Fields/RangeControl.tsx:97
+#: client/ts/admin/Components/Fields/ColorControl.tsx:137
+msgid "Reset"
+msgstr "Ripristina"
 
 # %s: item type e.g. "order bump"
 #: client/ts/admin/Components/CheckoutEditor/slots/UnsavedChangesDialog.tsx:37

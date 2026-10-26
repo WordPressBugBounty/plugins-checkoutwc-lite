@@ -8,7 +8,7 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "POT-Creation-Date: 2025-07-25 09:22-0400\n"
-"PO-Revision-Date: 2026-10-12T15:20:32+00:00\n"
+"PO-Revision-Date: 2026-10-26T17:15:41+00:00\n"
 "Language: he-IL\n"
 "Plural-Forms: nplurals=4; plural=(n==1 ? 0 : n==2 ? 1 : n>10 && n%10==0 ? 2 : 3);\n"
 "X-Generator: Poedit 3.6\n"
@@ -28,7 +28,7 @@ msgstr ""
 #: includes/Compatibility/Plugins/CartFlows.php:62
 #: includes/Admin/Pages/PickupLocationsAdminFree.php:218
 #: includes/Admin/Pages/PageAbstract.php:106
-#: includes/Admin/Pages/General.php:341
+#: includes/Admin/Pages/General.php:353
 #: includes/Admin/Pages/Premium/PickupLocations.php:317
 #: includes/Admin/Pages/Premium/OrderBumps.php:456
 #: includes/Admin/Pages/Premium/LocalPickupAdmin.php:165
@@ -272,7 +272,7 @@ msgid "Hide order summary"
 msgstr "הסתר סיכום הזמנות"
 
 #: functions/template-functions.php:166
-#: includes/Admin/Pages/WooCommercePages.php:29
+#: includes/Admin/Pages/WooCommercePages.php:30
 #: client/ts/admin/Components/Forms/AdvancedScriptsSettingsForm.tsx:108
 msgid "Checkout"
 msgstr "תשלום"
@@ -283,8 +283,8 @@ msgstr "קופה מהירה"
 
 #: functions/template-functions.php:340
 #: functions/template-functions.php:354
-#: functions/template-functions.php:1932
-#: functions/template-functions.php:2265
+#: functions/template-functions.php:2002
+#: functions/template-functions.php:2339
 msgid "Information"
 msgstr "מידע"
 
@@ -339,7 +339,7 @@ msgstr "התנתק."
 
 #: functions/template-functions.php:745
 #: functions/template-functions.php:783
-#: functions/template-functions.php:1969
+#: functions/template-functions.php:2039
 msgid "Billing and Shipping address"
 msgstr "כתובת לחיוב ומשלוח"
 
@@ -347,14 +347,14 @@ msgstr "כתובת לחיוב ומשלוח"
 #: functions/template-functions.php:795
 #: functions/template-functions.php:1201
 #: functions/template-functions.php:1215
-#: functions/template-functions.php:1997
+#: functions/template-functions.php:2067
 #: includes/Compatibility/Gateways/PayPalForWooCommerce.php:192
 msgid "Billing address"
 msgstr "כתובת חיוב"
 
 #: functions/template-functions.php:768
 #: functions/template-functions.php:806
-#: functions/template-functions.php:1981
+#: functions/template-functions.php:2051
 #: includes/Managers/AssetManager.php:705
 msgid "Shipping address"
 msgstr "כתובת למשלוח"
@@ -366,15 +366,15 @@ msgid "Your Cart"
 msgstr "סל  קניות"
 
 #: functions/template-functions.php:1047
-#: functions/template-functions.php:2013
-#: functions/template-functions.php:2287
+#: functions/template-functions.php:2083
+#: functions/template-functions.php:2361
 #: functions/functions.php:3478
 msgid "Shipping"
 msgstr "משלוח"
 
 #: functions/template-functions.php:1065
-#: functions/template-functions.php:1953
-#: functions/template-functions.php:2308
+#: functions/template-functions.php:2023
+#: functions/template-functions.php:2382
 #: functions/functions.php:1025
 #: functions/functions.php:1040
 #: client/ts/frontend/Components/ReviewPane/OrderReviewStepReviewPane.tsx:47
@@ -382,7 +382,7 @@ msgid "Payment"
 msgstr "תשלום"
 
 #: functions/template-functions.php:1065
-#: functions/template-functions.php:2308
+#: functions/template-functions.php:2382
 #: includes/Features/OrderReviewStep.php:74
 #: includes/Admin/Pages/TrustBadgesAdminFree.php:88
 #: client/ts/admin/Components/TrustBadgeFields.tsx:20
@@ -398,104 +398,113 @@ msgstr "חינם"
 msgid "Select the address that matches your card or payment method."
 msgstr "בחר את הכתובת התואמת  לכרטיס או לשיטת התשלום שלך."
 
-#: functions/template-functions.php:1638
-msgid "Unfortunately your order cannot be processed as the originating bank/merchant has declined your transaction. Please attempt your purchase again."
-msgstr "לצערנו ההזמנה שלך לא יכולה להתבצע מאחר שהבנק/הסוחר המקורי דחה את העסקה שלך. אנא נסה לבצע את הרכישה שוב."
-
-#: functions/template-functions.php:1642
-msgid "Pay"
-msgstr "שלם"
-
 # %s is the order number
-#: functions/template-functions.php:1660
+#: functions/template-functions.php:1668
+#: functions/template-functions.php:1718
 msgid "Order %s"
 msgstr "הזמנה %s"
 
+#: functions/template-functions.php:1673
+msgid "Payment failed"
+msgstr "התשלום נכשל"
+
+#: functions/template-functions.php:1686
+msgid "Unfortunately your order cannot be processed as the originating bank/merchant has declined your transaction. Please attempt your purchase again."
+msgstr "לצערנו ההזמנה שלך לא יכולה להתבצע מאחר שהבנק/הסוחר המקורי דחה את העסקה שלך. אנא נסה לבצע את הרכישה שוב."
+
+#: functions/template-functions.php:1691
+msgid "Try payment again"
+msgstr "נסה שוב לבצע את התשלום"
+
+#: functions/template-functions.php:1693
+msgid "My account"
+msgstr "החשבון שלי"
+
 # %s is the billing first name
-#: functions/template-functions.php:1679
+#: functions/template-functions.php:1737
 msgid "Thank you %s!"
 msgstr "תודה %s!"
 
-#: functions/template-functions.php:1790
+#: functions/template-functions.php:1856
 msgid "Order status"
 msgstr "סטטוס ההזמנה"
 
-#: functions/template-functions.php:1833
+#: functions/template-functions.php:1903
 msgid "Order updates"
 msgstr "עדכוני הזמנה"
 
-#: functions/template-functions.php:1844
+#: functions/template-functions.php:1914
 msgid "You’ll get shipping and delivery updates by email."
 msgstr "תקבל עדכוני משלוח ומשלוח באמצעות הדוא\"ל."
 
-#: functions/template-functions.php:1862
+#: functions/template-functions.php:1932
 msgid "Downloads"
 msgstr "הורדות"
 
-#: functions/template-functions.php:1902
+#: functions/template-functions.php:1972
 msgid "&infin;"
 msgstr "&infin;"
 
-#: functions/template-functions.php:1908
+#: functions/template-functions.php:1978
 msgid "Never"
 msgstr "לעולם לא"
 
-#: functions/template-functions.php:1947
+#: functions/template-functions.php:2017
 msgid "Contact information"
 msgstr "פרטי התקשרות"
 
-#: functions/template-functions.php:1974
-#: functions/template-functions.php:1986
-#: functions/template-functions.php:2003
+#: functions/template-functions.php:2044
+#: functions/template-functions.php:2056
+#: functions/template-functions.php:2073
 msgid "N/A"
 msgstr "לא זמין"
 
-#: functions/template-functions.php:2043
+#: functions/template-functions.php:2113
 #: includes/Managers/AssetManager.php:855
 msgid "Continue shopping"
 msgstr "המשך בקניות"
 
-#: functions/template-functions.php:2073
+#: functions/template-functions.php:2143
 #: includes/Loaders/LoaderAbstract.php:111
 msgid "Pay for order"
 msgstr "שלם עבור ההזמנה"
 
-#: functions/template-functions.php:2091
+#: functions/template-functions.php:2161
 #: includes/Features/AbandonedCartRecovery.php:124
 #: client/ts/admin/Components/acr/carts.tsx:64
 msgid "Email"
 msgstr "אימייל"
 
-#: functions/template-functions.php:2101
+#: functions/template-functions.php:2171
 #: functions/functions.php:4142
 #: functions/functions.php:4143
 msgid "Password"
 msgstr "סיסמה"
 
-#: functions/template-functions.php:2117
+#: functions/template-functions.php:2187
 #: functions/functions.php:4182
 msgid "Login"
 msgstr "התחבר"
 
-#: functions/template-functions.php:2120
+#: functions/template-functions.php:2190
 #: functions/functions.php:4175
 msgid "Lost your password?"
 msgstr "שכחת את הסיסמה?"
 
-#: functions/template-functions.php:2405
+#: functions/template-functions.php:2479
 msgid "Your Cart is Empty"
 msgstr "העגלה שלך ריקה"
 
-#: functions/premium-init.php:342
+#: functions/premium-init.php:346
 msgid "CheckoutWC Templates Deactivated"
 msgstr "תבניות CheckoutWC מושבתות"
 
 # %1$s: "Settings" text, %2$s: "Start Here" text, %3$s: "Activate CheckoutWC Templates" text
-#: functions/premium-init.php:345
+#: functions/premium-init.php:349
 msgid "Your license is valid and activated for this site but CheckoutWC is disabled for normal customers. To fix this, go to %1$s > %2$s and toggle \"%3$s\"."
 msgstr "הרישיון שלך תקף ומופעל לאתר זה אך CheckoutWC מושבת ללקוחות רגילים. כדי לתקן זאת, עבור אל %1$s > %2$s והפעל את \"%3$s\"."
 
-#: functions/premium-init.php:346
+#: functions/premium-init.php:350
 #: includes/Admin/AdminPluginsPageManager.php:40
 #: includes/Admin/Pages/OrderBumpsAdminFree.php:25
 #: includes/Admin/Pages/LocalPickupAdminFree.php:27
@@ -507,69 +516,69 @@ msgstr "הרישיון שלך תקף ומופעל לאתר זה אך CheckoutWC 
 msgid "Settings"
 msgstr "הגדרות"
 
-#: functions/premium-init.php:347
-#: functions/premium-init.php:360
-#: includes/Admin/Pages/General.php:25
+#: functions/premium-init.php:351
+#: functions/premium-init.php:364
+#: includes/Admin/Pages/General.php:24
 msgid "Start Here"
 msgstr "התחל כאן"
 
-#: functions/premium-init.php:348
-#: includes/Admin/Pages/General.php:195
+#: functions/premium-init.php:352
+#: includes/Admin/Pages/General.php:207
 msgid "Activate CheckoutWC Templates"
 msgstr "הפעל תבניות CheckoutWC"
 
-#: functions/premium-init.php:355
+#: functions/premium-init.php:359
 msgid "CheckoutWC license invalid"
 msgstr "רישיון CheckoutWC אינו תקף"
 
 # %1$s: URL to license settings page, %2$s: "Start Here" link text, %3$s: Pricing URL, %4$s: "buy a license" link text
-#: functions/premium-init.php:358
+#: functions/premium-init.php:362
 msgid "Premium features are off because your license key is missing or invalid. Check your key on <a href=\"%1$s\">%2$s</a> or <a target=\"_blank\" href=\"%3$s\">%4$s</a>."
 msgstr "התכונות המתקדמות כבויות כי מפתח הרישיון שלך חסר או אינו תקף. בדוק את המפתח שלך ב-<a href=\"%1$s\">%2$s</a> או ב-<a target=\"_blank\" href=\"%3$s\">%4$s</a>."
 
-#: functions/premium-init.php:362
+#: functions/premium-init.php:366
 #: includes/Admin/Notices/InactiveLicenseNotice.php:15
 msgid "buy a license"
 msgstr "קנו רישיון"
 
-#: functions/premium-init.php:382
+#: functions/premium-init.php:386
 msgid "New Feature: Cloudflare Turnstile Bot Protection"
 msgstr "תכונה חדשה: הגנת בוטים Cloudflare Turnstile"
 
 # 1: Cloudflare Turnstile name wrapped in strong tags, 2: Setup link
-#: functions/premium-init.php:385
+#: functions/premium-init.php:389
 msgid "CheckoutWC now supports %1$s - a privacy-first, CAPTCHA-free way to protect your checkout from bots and spam orders. %2$s"
 msgstr "CheckoutWC תומך כעת ב-%1$s - דרך פרטית, ללא CAPTCHA, להגן על תהליך התשלום שלך מפני בוטים והזמנות ספאם. %2$s"
 
 # The name of the Cloudflare Turnstile service
-#: functions/premium-init.php:389
+#: functions/premium-init.php:393
 #: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:78
 msgid "Cloudflare Turnstile"
 msgstr "Cloudflare Turnstile"
 
-#: functions/premium-init.php:395
+#: functions/premium-init.php:399
 msgid "Setup Cloudflare Turnstile now"
 msgstr "הגדר את Cloudflare Turnstile עכשיו"
 
-#: functions/premium-init.php:400
+#: functions/premium-init.php:404
 msgid "Upgrade your plan now to access"
 msgstr "שדרג את התוכנית שלך עכשיו כדי לגשת"
 
-#: functions/premium-init.php:413
+#: functions/premium-init.php:417
 msgid "Abandoned Cart Recovery Tracking Disabled"
 msgstr "מעקב שחזור עגלת קניות נטושה מושבת"
 
 # %1$s: Gist URL, %2$s: "Learn More" link text
-#: functions/premium-init.php:416
+#: functions/premium-init.php:420
 msgid "You have enabled Abandoned Cart Recovery tracking, but you do not have any emails published. To track carts, you need to publish emails or use this dev filter: <a target=\"_blank\" href=\"%1$s\">%2$s</a>."
 msgstr "הפעלת מעקב שחזור עגלת קניות נטושה, אך אין לך מיילים שפורסמו. כדי לעקוב אחרי עגלות, עליך לפרסם מיילים או להשתמש בפילטר הפיתוח הזה: <a target=\"_blank\" href=\"%1$s\">%2$s</a>."
 
-#: functions/premium-init.php:418
+#: functions/premium-init.php:422
 #: includes/Admin/Pages/AbandonedCartRecoveryAdminFree.php:82
 msgid "Learn More"
 msgstr "למידע נוסף"
 
-#: functions/premium-init.php:477
+#: functions/premium-init.php:481
 msgid "Admin preview: your CheckoutWC license isn\\'t valid for this site, so premium features are off. Check your license here: WP Admin > CheckoutWC > Start Here."
 msgstr "תצוגה מקדימה למנהל: רישיון CheckoutWC שלך אינו תקף לאתר זה, ולכן התכונות המתקדמות כבויות. בדוק את הרישיון שלך כאן: WP Admin > CheckoutWC > Start Here."
 
@@ -666,7 +675,7 @@ msgid "Ship to"
 msgstr "שלח אל"
 
 #: functions/functions.php:232
-#: includes/Features/LocalPickup.php:768
+#: includes/Features/LocalPickup.php:775
 #: includes/Admin/Pages/PickupLocationsAdminFree.php:93
 #: includes/Admin/Pages/Premium/PickupLocations.php:101
 msgid "Address"
@@ -677,7 +686,7 @@ msgid "Sorry, it seems that there are no available payment methods for your loca
 msgstr "מצטערים, נראה שאין שיטות תשלום זמינות למיקומך. אנא צור קשר אם אתה זקוק לעזרה או מעוניין לסדר סידורים חלופיים."
 
 #: functions/functions.php:787
-#: includes/Features/LocalPickup.php:1095
+#: includes/Features/LocalPickup.php:1119
 msgid "Shipping costs are calculated during checkout."
 msgstr "עלויות המשלוח מחושבות במהלך התשלום."
 
@@ -690,7 +699,7 @@ msgid "No shipping methods available"
 msgstr "אין שיטות משלוח זמינות"
 
 #: functions/functions.php:826
-#: includes/Model/Bumps/BumpAbstract.php:882
+#: includes/Model/Bumps/BumpAbstract.php:895
 msgid "Free!"
 msgstr "חינם!"
 
@@ -778,7 +787,7 @@ msgstr "ירידה"
 #: functions/functions.php:2415
 #: includes/Managers/AssetManager.php:735
 #: includes/Managers/AssetManager.php:856
-#: includes/Features/LocalPickup.php:510
+#: includes/Features/LocalPickup.php:513
 #: includes/Features/AbandonedCartRecovery.php:128
 #: includes/Features/ABTesting.php:150
 #: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:633
@@ -903,22 +912,6 @@ msgstr "CheckoutWC: אינך יכול להפעיל מבחן AB שאינו רשו
 msgid "Accent Color"
 msgstr "צבע הדגשה"
 
-#: lib/sendwp-sdk/sendwp-init.php:27
-msgid "Security failed to check sendwp_install_nonce"
-msgstr "הבדיקה של sendwp_install_nonce נכשלה באבטחה"
-
-#: lib/sendwp-sdk/sendwp-init.php:28
-msgid "Ask an administrator for install_plugins capability"
-msgstr "בקש ממנהל מערכת הרשאת install_plugins"
-
-#: lib/sendwp-sdk/sendwp-init.php:29
-msgid "SendWP is already connected."
-msgstr "SendWP כבר מחובר."
-
-#: lib/sendwp-sdk/remote-install.php:84
-msgid "Something went wrong. SendWP was not installed correctly."
-msgstr "משהו השתבש. SendWP לא הותקן כראוי."
-
 #: includes/Stats/StatCollection.php:193
 msgid "Once Weekly"
 msgstr "פעם בשבוע"
@@ -956,98 +949,98 @@ msgstr "איסוף מקומי"
 msgid "Allow customers to pick up orders themselves. This version does not require shipping zones."
 msgstr "אפשר ללקוחות לאסוף את ההזמנות בעצמם. גרסה זו אינה דורשת אזורי משלוח."
 
-#: includes/Managers/UpdatesManager.php:436
+#: includes/Managers/UpdatesManager.php:451
 msgid "CheckoutWC License Key"
 msgstr "מפתח רישיון CheckoutWC"
 
-#: includes/Managers/UpdatesManager.php:441
+#: includes/Managers/UpdatesManager.php:456
 msgid "Your license key is set with the constant <code>CFW_LICENSE_KEY</code>."
 msgstr "מפתח הרישיון שלך מוגדר עם הקבוע <code>CFW_LICENSE_KEY</code>."
 
-#: includes/Managers/UpdatesManager.php:448
+#: includes/Managers/UpdatesManager.php:463
 msgid "License Holder"
 msgstr "בעל הרישיון"
 
-#: includes/Managers/UpdatesManager.php:461
+#: includes/Managers/UpdatesManager.php:476
 msgid "Plan"
 msgstr "תוכנית"
 
-#: includes/Managers/UpdatesManager.php:469
+#: includes/Managers/UpdatesManager.php:484
 msgid "Activation Limit"
 msgstr "מגבלת הפעלה"
 
-#: includes/Managers/UpdatesManager.php:477
+#: includes/Managers/UpdatesManager.php:492
 #: includes/Admin/Pages/Premium/ABTestingAdmin.php:178
 #: includes/Admin/Pages/Premium/ABTestingAdmin.php:819
 #: client/ts/admin/Components/acr/carts.tsx:80
 msgid "Status"
 msgstr "סטטוס"
 
-#: includes/Managers/UpdatesManager.php:484
+#: includes/Managers/UpdatesManager.php:499
 msgid "Refresh License Info"
 msgstr "רענן פרטי הרישיון"
 
-#: includes/Managers/UpdatesManager.php:532
+#: includes/Managers/UpdatesManager.php:551
 msgid "Please enter your license key."
 msgstr "אנא הזן את מפתח הרישיון שלך."
 
-#: includes/Managers/UpdatesManager.php:535
-#: includes/Managers/UpdatesManager.php:543
+#: includes/Managers/UpdatesManager.php:554
+#: includes/Managers/UpdatesManager.php:562
 msgid "Activate Site"
 msgstr "הפעל אתר"
 
-#: includes/Managers/UpdatesManager.php:538
+#: includes/Managers/UpdatesManager.php:557
 msgid "Deactivate Site"
 msgstr "השבת אתר"
 
 # Debug error message logged when license check reaches unexpected state
-#: includes/Managers/UpdatesManager.php:724
+#: includes/Managers/UpdatesManager.php:743
 msgid "License Check Error: You should not be able to get here. I am kind of freaked out."
 msgstr "שגיאת בדיקת רישיון: לא היית אמור להגיע לכאן. אני די מבולבל."
 
 # %1$d: failure count, %2$d: max failures, %3$s: time since last failure
-#: includes/Managers/UpdatesManager.php:983
+#: includes/Managers/UpdatesManager.php:1002
 msgid "Unable to verify CheckoutWC license (%1$d/%2$d attempts failed). Using cached license data. Last attempt: %3$s ago."
 msgstr "לא ניתן לאמת את רישיון CheckoutWC (%1$d/%2$d ניסיונות נכשלו). משתמשים בנתוני רישיון שמורים במטמון. ניסיון אחרון: לפני %3$s."
 
-#: includes/Managers/UpdatesManager.php:1006
+#: includes/Managers/UpdatesManager.php:1025
 msgid "%s license activation was not successful. Please check your key status below for more information."
 msgstr "הפעלת הרישיון של %s לא הצליחה. אנא בדוק את מצב המפתח שלך למטה למידע נוסף."
 
-#: includes/Managers/UpdatesManager.php:1024
+#: includes/Managers/UpdatesManager.php:1043
 msgid "%s license successfully activated."
 msgstr "הרישיון של %s הופעל בהצלחה."
 
-#: includes/Managers/UpdatesManager.php:1042
+#: includes/Managers/UpdatesManager.php:1061
 msgid "%s license deactivation failed. Please try again, or contact support."
 msgstr "כיבוי הרישיון של %s נכשל. אנא נסה שוב, או פנה לתמיכה."
 
-#: includes/Managers/UpdatesManager.php:1060
+#: includes/Managers/UpdatesManager.php:1079
 msgid "%s license deactivated successfully."
 msgstr "הרישיון של %s כובה בהצלחה."
 
-#: includes/Managers/UpdatesManager.php:1078
+#: includes/Managers/UpdatesManager.php:1097
 msgid "%s license settings saved successfully."
 msgstr "הגדרות הרישיון של %s נשמרו בהצלחה."
 
-#: includes/Managers/UpdatesManager.php:1096
+#: includes/Managers/UpdatesManager.php:1115
 msgid "%1$s license activation failed: %2$s"
 msgstr "הפעלת הרישיון של %1$s נכשלה: %2$s"
 
-#: includes/Managers/UpdatesManager.php:1114
+#: includes/Managers/UpdatesManager.php:1133
 msgid "%s license activation failed: Unable to connect to license server. Please check your internet connection or try again later."
 msgstr "הפעלת הרישיון של %s נכשלה: לא ניתן להתחבר לשרת הרישיון. אנא בדוק את חיבור האינטרנט שלך או נסה שוב מאוחר יותר."
 
-#: includes/Managers/UpdatesManager.php:1132
+#: includes/Managers/UpdatesManager.php:1151
 msgid "%s: License deactivated locally. The license server could not be reached, but the license has been deactivated on this site."
 msgstr "%s: הרישיון כובה מקומית. לא ניתן היה להגיע לשרת הרישיון, אך הרישיון כובה באתר זה."
 
 # %1$d: failure count, %2$d: max failures, %3$s: time since last failure
-#: includes/Managers/UpdatesManager.php:1402
+#: includes/Managers/UpdatesManager.php:1421
 msgid "Unable to verify license online (%1$d/%2$d attempts failed). Using cached license data. Last attempt: %3$s ago."
 msgstr "לא ניתן לאמת את הרישיון אונליין (%1$d/%2$d ניסיונות נכשלו). משתמשים בנתוני רישיון שמורים במטמון. ניסיון אחרון: לפני %3$s."
 
-#: includes/Managers/UpdatesManager.php:1408
+#: includes/Managers/UpdatesManager.php:1427
 msgid "License verified successfully."
 msgstr "הרישיון אומת בהצלחה."
 
@@ -1274,7 +1267,7 @@ msgid "Please enter a valid postcode / ZIP."
 msgstr "אנא הזיני מיקוד חוקי."
 
 #: includes/Managers/AssetManager.php:714
-#: includes/Features/LocalPickup.php:636
+#: includes/Features/LocalPickup.php:639
 msgid "Pickup"
 msgstr "איסוף"
 
@@ -1443,142 +1436,142 @@ msgstr "מתנה חינמית"
 msgid "Reward"
 msgstr "תגמול"
 
-#: includes/Features/SideCart.php:1709
+#: includes/Features/SideCart.php:1710
 #: includes/Admin/WooCommerceAdminScreenAugmenter.php:24
 #: includes/Admin/WooCommerceAdminScreenAugmenter.php:45
 msgid "CheckoutWC:"
 msgstr "CheckoutWC:"
 
-#: includes/Features/SideCart.php:1710
+#: includes/Features/SideCart.php:1711
 msgid "Settings marked with asterisks (**) may be overridden based on your Side Cart settings. (CheckoutWC > Side Cart)"
 msgstr "הגדרות המסומנות בכוכביות (**) עשויות להיות מוחלפות בהתאם להגדרות העגלה הצדדית שלך. (CheckoutWC > עגלה צדדית)"
 
-#: includes/Features/OrderBumps.php:647
+#: includes/Features/OrderBumps.php:655
 msgid "All orders"
 msgstr "כל ההזמנות"
 
-#: includes/Features/OrderBumps.php:650
+#: includes/Features/OrderBumps.php:658
 msgid "Contains Any Order Bump"
 msgstr "מכיל כל תוספת הזמנה"
 
 # %s: Order bump title
-#: includes/Features/OrderBumps.php:656
+#: includes/Features/OrderBumps.php:664
 msgid "Has Bump: %s"
 msgstr "יש תוספת: %s"
 
-#: includes/Features/LocalPickup.php:127
-#: includes/Features/LocalPickup.php:131
+#: includes/Features/LocalPickup.php:130
+#: includes/Features/LocalPickup.php:134
 msgid "Delivery method"
 msgstr "שיטת אספקה"
 
-#: includes/Features/LocalPickup.php:181
+#: includes/Features/LocalPickup.php:184
 msgid "Pick up"
 msgstr "איסוף"
 
-#: includes/Features/LocalPickup.php:200
+#: includes/Features/LocalPickup.php:203
 msgid "Ship"
 msgstr "לִשְׁלוֹחַ"
 
-#: includes/Features/LocalPickup.php:308
+#: includes/Features/LocalPickup.php:311
 msgid "Pickup locations"
 msgstr "נק' איסוף מקומי"
 
-#: includes/Features/LocalPickup.php:505
-#: includes/Features/LocalPickup.php:507
+#: includes/Features/LocalPickup.php:508
+#: includes/Features/LocalPickup.php:510
 #: includes/Admin/Pages/PickupLocationsAdminFree.php:21
 #: includes/Admin/Pages/Premium/PickupLocations.php:23
 msgid "Pickup Locations"
 msgstr "מיקומי איסוף"
 
-#: includes/Features/LocalPickup.php:506
-#: includes/Features/LocalPickup.php:694
-#: includes/Features/LocalPickup.php:782
-#: includes/Features/LocalPickup.php:830
-#: includes/Features/LocalPickup.php:1158
-#: includes/Features/LocalPickup.php:1183
+#: includes/Features/LocalPickup.php:509
+#: includes/Features/LocalPickup.php:697
+#: includes/Features/LocalPickup.php:789
+#: includes/Features/LocalPickup.php:837
+#: includes/Features/LocalPickup.php:1182
+#: includes/Features/LocalPickup.php:1207
 msgid "Pickup Location"
 msgstr "מיקום האיסוף"
 
-#: includes/Features/LocalPickup.php:508
+#: includes/Features/LocalPickup.php:511
 msgid "Add Pickup Location"
 msgstr "הוסף מיקום איסוף"
 
-#: includes/Features/LocalPickup.php:509
+#: includes/Features/LocalPickup.php:512
 msgid "Add New Pickup Location"
 msgstr "הוסף מיקום איסוף חדש"
 
-#: includes/Features/LocalPickup.php:511
+#: includes/Features/LocalPickup.php:514
 msgid "Edit Pickup Location"
 msgstr "ערוך מיקום איסוף"
 
-#: includes/Features/LocalPickup.php:512
+#: includes/Features/LocalPickup.php:515
 msgid "New Pickup Location"
 msgstr "מיקום איסוף חדש"
 
-#: includes/Features/LocalPickup.php:513
+#: includes/Features/LocalPickup.php:516
 msgid "View Pickup Locations"
 msgstr "הצג מיקומי איסוף"
 
-#: includes/Features/LocalPickup.php:514
+#: includes/Features/LocalPickup.php:517
 msgid "View Pickup Location"
 msgstr "הצג מיקום איסוף"
 
-#: includes/Features/LocalPickup.php:515
+#: includes/Features/LocalPickup.php:518
 msgid "Search Pickup Locations"
 msgstr "חפש מיקומי איסוף"
 
-#: includes/Features/LocalPickup.php:516
+#: includes/Features/LocalPickup.php:519
 msgid "No Pickup Location found"
 msgstr "לא נמצא מיקום איסוף"
 
-#: includes/Features/LocalPickup.php:517
+#: includes/Features/LocalPickup.php:520
 msgid "No Pickup Locations found in trash"
 msgstr "לא נמצאו מיקומי איסוף בפח"
 
-#: includes/Features/LocalPickup.php:518
+#: includes/Features/LocalPickup.php:521
 msgid "Attributes"
 msgstr "מאפיינים"
 
-#: includes/Features/LocalPickup.php:523
+#: includes/Features/LocalPickup.php:526
 msgid "This is where you can add new Pickup Locations."
 msgstr "כאן תוכל להוסיף מיקומי איסוף חדשים."
 
-#: includes/Features/LocalPickup.php:601
+#: includes/Features/LocalPickup.php:604
 #: client/ts/frontend/Components/ReviewPane/PaymentMethodReviewPane.tsx:37
 #: client/ts/frontend/Components/ReviewPane/OrderReviewStepReviewPane.tsx:37
 msgid "Method"
 msgstr "שיטה"
 
-#: includes/Features/LocalPickup.php:754
+#: includes/Features/LocalPickup.php:761
 msgid "Pickup instructions"
 msgstr "הוראות איסוף"
 
-#: includes/Features/LocalPickup.php:950
+#: includes/Features/LocalPickup.php:957
 msgid "Usually ready in 1 hour."
 msgstr "בדרך כלל מוכן תוך שעה."
 
-#: includes/Features/LocalPickup.php:951
+#: includes/Features/LocalPickup.php:958
 msgid "Usually ready in 2 hours."
 msgstr "בדרך כלל מוכן תוך שעתיים."
 
-#: includes/Features/LocalPickup.php:952
+#: includes/Features/LocalPickup.php:959
 msgid "Usually ready in 4 hours."
 msgstr "בדרך כלל מוכן תוך 4 שעות."
 
-#: includes/Features/LocalPickup.php:953
+#: includes/Features/LocalPickup.php:960
 msgid "Usually ready in 24 hours."
 msgstr "בדרך כלל מוכן תוך 24 שעות."
 
-#: includes/Features/LocalPickup.php:954
+#: includes/Features/LocalPickup.php:961
 msgid "Usually ready in 2-4 days."
 msgstr "בדרך כלל מוכן תוך 2-4 ימים."
 
-#: includes/Features/LocalPickup.php:955
+#: includes/Features/LocalPickup.php:962
 msgid "Usually ready in 5+ days."
 msgstr "בדרך כלל מוכן תוך 5+ ימים."
 
-#: includes/Features/LocalPickup.php:1167
-#: includes/Features/LocalPickup.php:1194
+#: includes/Features/LocalPickup.php:1191
+#: includes/Features/LocalPickup.php:1218
 msgid "Pickup Instructions:"
 msgstr "הוראות לאיסוף:"
 
@@ -1789,152 +1782,6 @@ msgstr "בחר אפשרות כלשהי..."
 msgid "You're missing out on important updates because your license key is missing, invalid, or expired."
 msgstr "אתה מפסיד עדכונים חשובים כי מפתח הרישיון שלך חסר, לא חוקי או פג תוקף."
 
-#: includes/Action/ValidatePostcodeAction.php:33
-msgid "Please enter a valid %s."
-msgstr "אנא הזן %s חוקי."
-
-#: includes/Action/ValidateEmailDomainAction.php:44
-msgid "Email address contains invalid domain name."
-msgstr "כתובת האימייל מכילה שם דומיין לא חוקי."
-
-#: includes/Action/UpdateCheckoutAction.php:71
-msgid "Sorry, your session has expired."
-msgstr "מצטערים, הפגישה שלך פגה."
-
-#: includes/Action/UpdateCheckoutAction.php:71
-msgid "Return to shop"
-msgstr "חזור לחנות"
-
-#: includes/Action/SmartyStreetsAddressValidationAction.php:85
-msgid "Use Recommended"
-msgstr "שימוש מומלץ"
-
-#: includes/Action/SmartyStreetsAddressValidationAction.php:86
-msgid "Use Your Address"
-msgstr "השתמש בכתובת שלך"
-
-#: includes/Action/SmartyStreetsAddressValidationAction.php:103
-msgid "Reenter Address"
-msgstr "הזן מחדש כתובת"
-
-#: includes/Action/SmartyStreetsAddressValidationAction.php:104
-msgid "Use Existing Address"
-msgstr "השתמש בכתובת קיימת"
-
-#: includes/Action/SmartyStreetsAddressValidationAction.php:168
-msgid "Use recommended address instead?"
-msgstr "האם להשתמש בכתובת המומלצת במקום זאת?"
-
-#: includes/Action/SmartyStreetsAddressValidationAction.php:171
-msgid "We\\'re unable to verify your address, but found a close match."
-msgstr "לא הצלחנו לאמת את הכתובת שלך, אך נמצא התאמה קרובה."
-
-#: includes/Action/SmartyStreetsAddressValidationAction.php:175
-#: includes/Action/SmartyStreetsAddressValidationAction.php:248
-#: includes/Action/SmartyStreetsAddressValidationAction.php:305
-#: includes/Action/SmartyStreetsAddressValidationAction.php:358
-#: includes/Action/SmartyStreetsAddressValidationAction.php:409
-msgid "We are unable to verify your address."
-msgstr "אין באפשרותנו לאמת את הכתובת שלך."
-
-#: includes/Action/SmartyStreetsAddressValidationAction.php:179
-msgid "Please confirm you would like to use this address or try again."
-msgstr "אנא אשר שברצונך להשתמש בכתובת זו או נסה שוב."
-
-#: includes/Action/SmartyStreetsAddressValidationAction.php:186
-msgid "You Entered"
-msgstr "נכנסת"
-
-#: includes/Action/SmartyStreetsAddressValidationAction.php:198
-msgid "Recommended"
-msgstr "מומלץ"
-
-#: includes/Action/RemoveCouponAction.php:26
-msgid "Sorry there was a problem removing this coupon."
-msgstr "מצטערים, הייתה בעיה בהסרת הקופון הזה."
-
-#: includes/Action/RemoveCouponAction.php:29
-msgid "Coupon has been removed."
-msgstr "הקופון הוסר."
-
-#: includes/Action/ProcessOfferPaymentAction.php:61
-#: includes/Features/OneClick/OfferRefundManager.php:159
-msgid "Security verification failed."
-msgstr "אימות אבטחה נכשל."
-
-#: includes/Action/ProcessOfferPaymentAction.php:84
-msgid "Invalid order key."
-msgstr "מפתח הזמנה לא חוקי."
-
-#: includes/Action/ProcessOfferPaymentAction.php:96
-msgid "This order cannot accept offers."
-msgstr "הזמנה זו אינה יכולה לקבל הצעות."
-
-#: includes/Action/ProcessOfferPaymentAction.php:108
-msgid "No payment method found."
-msgstr "לא נמצא אמצעי תשלום."
-
-#: includes/Action/ProcessOfferPaymentAction.php:120
-msgid "Payment gateway does not support one-click upsells."
-msgstr "שער התשלום אינו תומך במכירות נוספות בלחיצה אחת."
-
-#: includes/Action/ProcessOfferPaymentAction.php:132
-#: includes/Features/OneClick/OfferRefundManager.php:215
-msgid "Failed to load payment gateway."
-msgstr "טעינת שער התשלום נכשלה."
-
-#: includes/Action/ProcessOfferPaymentAction.php:144
-msgid "Invalid product."
-msgstr "מוצר לא חוקי."
-
-#: includes/Action/ProcessOfferPaymentAction.php:156
-msgid "Invalid bump offer."
-msgstr "הצעת תוספת לא חוקית."
-
-#: includes/Action/ProcessOfferPaymentAction.php:253
-msgid "Payment failed. Please try again."
-msgstr "התשלום נכשל. אנא נסה שוב."
-
-#: includes/Action/ProcessOfferPaymentAction.php:276
-msgid "Payment successful but failed to update order."
-msgstr "התשלום הצליח אך העדכון של ההזמנה נכשל."
-
-#: includes/Action/ProcessOfferPaymentAction.php:308
-msgid "Offer accepted successfully."
-msgstr "ההצעה התקבלה בהצלחה."
-
-#: includes/Action/LostPasswordAction.php:59
-msgid "A password reset email has been sent to the email address on file for your account, but may take several minutes to show up in your inbox. Please wait at least 10 minutes before attempting another reset."
-msgstr "אימייל לאיפוס סיסמה נשלח לכתובת האימייל הרשומה בחשבונך, אך ייתכן שייקח מספר דקות להופיע בתיבת הדואר הנכנס שלך. אנא המתן לפחות 10 דקות לפני ניסיון איפוס נוסף."
-
-#: includes/Action/LogInAction.php:24
-msgid "There was an error logging in. Please check your credentials and try again."
-msgstr "אירעה שגיאה בכניסה. בדוק את אישוריך ונסה שוב."
-
-#: includes/Action/DeclineOfferAction.php:39
-msgid "Invalid security token."
-msgstr "אסימון אבטחה לא חוקי."
-
-#: includes/Action/DeclineOfferAction.php:48
-msgid "Invalid order information."
-msgstr "מידע הזמנה לא חוקי."
-
-#: includes/Action/DeclineOfferAction.php:54
-msgid "Order verification failed."
-msgstr "אימות ההזמנה נכשל."
-
-#: includes/Action/DeclineOfferAction.php:63
-msgid "Redirecting..."
-msgstr "מועבר מחדש..."
-
-#: includes/Action/DeclineOfferAction.php:76
-msgid "Session expired. Redirecting..."
-msgstr "הפגישה פגה. מועבר מחדש..."
-
-#: includes/Action/DeclineOfferAction.php:102
-msgid "Offer declined."
-msgstr "ההצעה נדחתה."
-
 #: includes/API/UserRolesAPI.php:44
 msgid "Guest (Not Logged In)"
 msgstr "אורח (לא מחובר)"
@@ -2034,6 +1881,168 @@ msgstr "הכנסות ששוחזרו"
 msgid "Recovery Rate"
 msgstr "שיעור השחזור"
 
+#: includes/Action/ValidatePostcodeAction.php:33
+msgid "Please enter a valid %s."
+msgstr "אנא הזן %s חוקי."
+
+#: includes/Action/ValidateEmailDomainAction.php:44
+msgid "Email address contains invalid domain name."
+msgstr "כתובת האימייל מכילה שם דומיין לא חוקי."
+
+#: includes/Action/UpdateCheckoutAction.php:80
+msgid "Sorry, your session has expired."
+msgstr "מצטערים, הפגישה שלך פגה."
+
+#: includes/Action/UpdateCheckoutAction.php:80
+msgid "Return to shop"
+msgstr "חזור לחנות"
+
+#: includes/Action/SmartyStreetsAddressValidationAction.php:85
+msgid "Use Recommended"
+msgstr "שימוש מומלץ"
+
+#: includes/Action/SmartyStreetsAddressValidationAction.php:86
+msgid "Use Your Address"
+msgstr "השתמש בכתובת שלך"
+
+#: includes/Action/SmartyStreetsAddressValidationAction.php:103
+msgid "Reenter Address"
+msgstr "הזן מחדש כתובת"
+
+#: includes/Action/SmartyStreetsAddressValidationAction.php:104
+msgid "Use Existing Address"
+msgstr "השתמש בכתובת קיימת"
+
+#: includes/Action/SmartyStreetsAddressValidationAction.php:168
+msgid "Use recommended address instead?"
+msgstr "האם להשתמש בכתובת המומלצת במקום זאת?"
+
+#: includes/Action/SmartyStreetsAddressValidationAction.php:171
+msgid "We\\'re unable to verify your address, but found a close match."
+msgstr "לא הצלחנו לאמת את הכתובת שלך, אך נמצא התאמה קרובה."
+
+#: includes/Action/SmartyStreetsAddressValidationAction.php:175
+#: includes/Action/SmartyStreetsAddressValidationAction.php:248
+#: includes/Action/SmartyStreetsAddressValidationAction.php:305
+#: includes/Action/SmartyStreetsAddressValidationAction.php:358
+#: includes/Action/SmartyStreetsAddressValidationAction.php:409
+msgid "We are unable to verify your address."
+msgstr "אין באפשרותנו לאמת את הכתובת שלך."
+
+#: includes/Action/SmartyStreetsAddressValidationAction.php:179
+msgid "Please confirm you would like to use this address or try again."
+msgstr "אנא אשר שברצונך להשתמש בכתובת זו או נסה שוב."
+
+#: includes/Action/SmartyStreetsAddressValidationAction.php:186
+msgid "You Entered"
+msgstr "נכנסת"
+
+#: includes/Action/SmartyStreetsAddressValidationAction.php:198
+msgid "Recommended"
+msgstr "מומלץ"
+
+#: includes/Action/RemoveCouponAction.php:26
+msgid "Sorry there was a problem removing this coupon."
+msgstr "מצטערים, הייתה בעיה בהסרת הקופון הזה."
+
+#: includes/Action/RemoveCouponAction.php:29
+msgid "Coupon has been removed."
+msgstr "הקופון הוסר."
+
+#: includes/Action/ProcessOfferPaymentAction.php:61
+#: includes/Features/OneClick/OfferRefundManager.php:159
+msgid "Security verification failed."
+msgstr "אימות אבטחה נכשל."
+
+#: includes/Action/ProcessOfferPaymentAction.php:84
+msgid "Invalid order key."
+msgstr "מפתח הזמנה לא חוקי."
+
+#: includes/Action/ProcessOfferPaymentAction.php:95
+msgid "This order cannot accept offers."
+msgstr "הזמנה זו אינה יכולה לקבל הצעות."
+
+#: includes/Action/ProcessOfferPaymentAction.php:107
+msgid "No payment method found."
+msgstr "לא נמצא אמצעי תשלום."
+
+#: includes/Action/ProcessOfferPaymentAction.php:119
+msgid "Payment gateway does not support one-click upsells."
+msgstr "שער התשלום אינו תומך במכירות נוספות בלחיצה אחת."
+
+#: includes/Action/ProcessOfferPaymentAction.php:131
+#: includes/Features/OneClick/OfferRefundManager.php:215
+msgid "Failed to load payment gateway."
+msgstr "טעינת שער התשלום נכשלה."
+
+#: includes/Action/ProcessOfferPaymentAction.php:143
+msgid "Invalid product."
+msgstr "מוצר לא חוקי."
+
+#: includes/Action/ProcessOfferPaymentAction.php:155
+msgid "Invalid bump offer."
+msgstr "הצעת תוספת לא חוקית."
+
+#: includes/Action/ProcessOfferPaymentAction.php:252
+msgid "Payment failed. Please try again."
+msgstr "התשלום נכשל. אנא נסה שוב."
+
+#: includes/Action/ProcessOfferPaymentAction.php:275
+msgid "Payment successful but failed to update order."
+msgstr "התשלום הצליח אך העדכון של ההזמנה נכשל."
+
+#: includes/Action/ProcessOfferPaymentAction.php:307
+msgid "Offer accepted successfully."
+msgstr "ההצעה התקבלה בהצלחה."
+
+#: includes/Action/LostPasswordAction.php:59
+msgid "A password reset email has been sent to the email address on file for your account, but may take several minutes to show up in your inbox. Please wait at least 10 minutes before attempting another reset."
+msgstr "אימייל לאיפוס סיסמה נשלח לכתובת האימייל הרשומה בחשבונך, אך ייתכן שייקח מספר דקות להופיע בתיבת הדואר הנכנס שלך. אנא המתן לפחות 10 דקות לפני ניסיון איפוס נוסף."
+
+#: includes/Action/LogInAction.php:24
+msgid "There was an error logging in. Please check your credentials and try again."
+msgstr "אירעה שגיאה בכניסה. בדוק את אישוריך ונסה שוב."
+
+#: includes/Action/DeclineOfferAction.php:39
+msgid "Invalid security token."
+msgstr "אסימון אבטחה לא חוקי."
+
+#: includes/Action/DeclineOfferAction.php:48
+msgid "Invalid order information."
+msgstr "מידע הזמנה לא חוקי."
+
+#: includes/Action/DeclineOfferAction.php:54
+msgid "Order verification failed."
+msgstr "אימות ההזמנה נכשל."
+
+#: includes/Action/DeclineOfferAction.php:63
+msgid "Redirecting..."
+msgstr "מועבר מחדש..."
+
+#: includes/Action/DeclineOfferAction.php:76
+msgid "Session expired. Redirecting..."
+msgstr "הפגישה פגה. מועבר מחדש..."
+
+#: includes/Action/DeclineOfferAction.php:102
+msgid "Offer declined."
+msgstr "ההצעה נדחתה."
+
+#: lib/sendwp-sdk/sendwp-init.php:27
+msgid "Security failed to check sendwp_install_nonce"
+msgstr "הבדיקה של sendwp_install_nonce נכשלה באבטחה"
+
+#: lib/sendwp-sdk/sendwp-init.php:28
+msgid "Ask an administrator for install_plugins capability"
+msgstr "בקש ממנהל מערכת הרשאת install_plugins"
+
+#: lib/sendwp-sdk/sendwp-init.php:29
+msgid "SendWP is already connected."
+msgstr "SendWP כבר מחובר."
+
+#: lib/sendwp-sdk/remote-install.php:84
+msgid "Something went wrong. SendWP was not installed correctly."
+msgstr "משהו השתבש. SendWP לא הותקן כראוי."
+
 #. block title
 #: block.json
 msgid "Order Bump Steps"
@@ -2059,62 +2068,6 @@ msgstr "טופס הצעת תוספת להזמנה"
 msgid "The form to accept or reject the bump offer."
 msgstr "הטופס לקבלה או דחייה של הצעת התוספת."
 
-#: includes/Model/Bumps/BumpAbstract.php:1081
-#: includes/Model/Bumps/BumpAbstract.php:1091
-#: includes/Model/ABTests/OrderBumpsABTest.php:30
-#: includes/Features/ABTesting/ABTestTypeRegistry.php:123
-#: includes/Admin/Pages/OrderBumpsAdminFree.php:17
-#: includes/Admin/Pages/OrderBumpsAdminFree.php:71
-#: includes/Admin/Pages/Premium/OrderBumps.php:50
-#: client/ts/admin/Components/Forms/OrderBumpSettingsForm.tsx:45
-#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:408
-msgid "Order Bumps"
-msgstr "הצעות הזמנה"
-
-#: includes/Model/Bumps/BumpAbstract.php:1082
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:193
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:1614
-msgid "Order Bump"
-msgstr "הצעת הזמנה"
-
-#: includes/Model/Bumps/BumpAbstract.php:1083
-msgid "Add New"
-msgstr "הוסף חדש"
-
-#: includes/Model/Bumps/BumpAbstract.php:1084
-msgid "Add New Order Bump"
-msgstr "הוסף הצעת תוספת להזמנה חדשה"
-
-#: includes/Model/Bumps/BumpAbstract.php:1085
-msgid "Edit Order Bump"
-msgstr "ערוך הצעת תוספת להזמנה"
-
-#: includes/Model/Bumps/BumpAbstract.php:1086
-#: client/ts/admin/Components/Metaboxes/OrderBumpsSetupModal.tsx:61
-msgid "New Order Bump"
-msgstr "הצעת תוספת להזמנה חדשה"
-
-#: includes/Model/Bumps/BumpAbstract.php:1087
-msgid "View Order Bump"
-msgstr "הצג הצעת הזמנה"
-
-#: includes/Model/Bumps/BumpAbstract.php:1088
-msgid "Find Order Bump"
-msgstr "מצא הצעת הזמנה"
-
-#: includes/Model/Bumps/BumpAbstract.php:1089
-msgid "No order bumps were found."
-msgstr "לא נמצאו הצעות תוספת להזמנה."
-
-#: includes/Model/Bumps/BumpAbstract.php:1090
-msgid "Not found in trash"
-msgstr "לא נמצא בפח האשפה"
-
-#: includes/Model/ABTests/OrderBumpsABTest.php:31
-#: includes/Features/ABTesting/ABTestTypeRegistry.php:124
-msgid "Test different variations of order bumps to see which performs better."
-msgstr "בדוק וריאציות שונות של תוספות הזמנה כדי לראות איזו מהן מתפקדת טוב יותר."
-
 # %1$s: Plugin name, %2$s: Link opening tag, %3$s: Version number, %4$s: Link closing tag
 #: includes/Managers/Helpers/EDD_SL_Plugin_Updater.php:281
 msgid "There is a new version of %1$s available. %2$sView version %3$s details%4$s."
@@ -2133,6 +2086,62 @@ msgstr "אין לך הרשאה להתקין עדכוני תוספים"
 #: client/ts/admin/Components/GooglePlacesKeyStatus.tsx:61
 msgid "Error"
 msgstr "שגיאה"
+
+#: includes/Model/Bumps/BumpAbstract.php:1094
+#: includes/Model/Bumps/BumpAbstract.php:1104
+#: includes/Model/ABTests/OrderBumpsABTest.php:30
+#: includes/Features/ABTesting/ABTestTypeRegistry.php:123
+#: includes/Admin/Pages/OrderBumpsAdminFree.php:17
+#: includes/Admin/Pages/OrderBumpsAdminFree.php:71
+#: includes/Admin/Pages/Premium/OrderBumps.php:50
+#: client/ts/admin/Components/Forms/OrderBumpSettingsForm.tsx:45
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:408
+msgid "Order Bumps"
+msgstr "הצעות הזמנה"
+
+#: includes/Model/Bumps/BumpAbstract.php:1095
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:193
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:1614
+msgid "Order Bump"
+msgstr "הצעת הזמנה"
+
+#: includes/Model/Bumps/BumpAbstract.php:1096
+msgid "Add New"
+msgstr "הוסף חדש"
+
+#: includes/Model/Bumps/BumpAbstract.php:1097
+msgid "Add New Order Bump"
+msgstr "הוסף הצעת תוספת להזמנה חדשה"
+
+#: includes/Model/Bumps/BumpAbstract.php:1098
+msgid "Edit Order Bump"
+msgstr "ערוך הצעת תוספת להזמנה"
+
+#: includes/Model/Bumps/BumpAbstract.php:1099
+#: client/ts/admin/Components/Metaboxes/OrderBumpsSetupModal.tsx:61
+msgid "New Order Bump"
+msgstr "הצעת תוספת להזמנה חדשה"
+
+#: includes/Model/Bumps/BumpAbstract.php:1100
+msgid "View Order Bump"
+msgstr "הצג הצעת הזמנה"
+
+#: includes/Model/Bumps/BumpAbstract.php:1101
+msgid "Find Order Bump"
+msgstr "מצא הצעת הזמנה"
+
+#: includes/Model/Bumps/BumpAbstract.php:1102
+msgid "No order bumps were found."
+msgstr "לא נמצאו הצעות תוספת להזמנה."
+
+#: includes/Model/Bumps/BumpAbstract.php:1103
+msgid "Not found in trash"
+msgstr "לא נמצא בפח האשפה"
+
+#: includes/Model/ABTests/OrderBumpsABTest.php:31
+#: includes/Features/ABTesting/ABTestTypeRegistry.php:124
+msgid "Test different variations of order bumps to see which performs better."
+msgstr "בדוק וריאציות שונות של תוספות הזמנה כדי לראות איזו מהן מתפקדת טוב יותר."
 
 #: includes/Features/OneClick/OrderStatusManager.php:52
 msgid "Pending Offer <span class=\"count\">(%s)</span>"
@@ -2257,6 +2266,14 @@ msgstr "הפעל תמיכה באסטרה (בטא)"
 msgid "If enabled with Advanced > Template Loader > Distraction Free Portal, Astra\\'s header and footer are displayed and Astra styles and scripts load on checkout. If disabled with Distraction Free Portal, Astra styles and scripts are excluded for a minimal layout. With WordPress Theme loader, the full theme loads regardless of this setting."
 msgstr "אם מופעל תחת מתקדם > טוען תבניות > פורטל ללא הסחות דעת, כותרת עליונה ותחתונה של Astra מוצגות וסטיילים וסקריפטים של Astra נטענים בעת התשלום. אם מושבת תחת פורטל ללא הסחות דעת, סטיילים וסקריפטים של Astra לא ייטענו למראה מינימלי. עם טוען נושא WordPress, הנושא המלא ייטען ללא קשר להגדרה זו."
 
+#: includes/Compatibility/Gateways/PayPalForWooCommerce.php:38
+msgid "Please update to the latest version of PayPal for WooCommerce to get full support."
+msgstr "אנא עדכן לגרסה האחרונה של PayPal עבור WooCommerce לקבלת תמיכה מלאה."
+
+#: includes/Compatibility/Gateways/PayPalForWooCommerce.php:363
+msgid "Logged in with PayPal. Please continue your order below."
+msgstr "התחבר באמצעות PayPal. אנא המשך בהזמנה שלך למטה."
+
 #: includes/Compatibility/Plugins/WooCommerceGiftCards.php:64
 #: includes/Compatibility/Plugins/WooCommerceGiftCards.php:72
 msgid "Enter your code&hellip;"
@@ -2377,14 +2394,6 @@ msgstr "אפשר תמיכה ב-Beaver Themer"
 msgid "Allow Beaver Themer to replace header and footer."
 msgstr "אפשר ל-Beaver Themer להחליף כותרת עליונה ותחתונה."
 
-#: includes/Compatibility/Gateways/PayPalForWooCommerce.php:38
-msgid "Please update to the latest version of PayPal for WooCommerce to get full support."
-msgstr "אנא עדכן לגרסה האחרונה של PayPal עבור WooCommerce לקבלת תמיכה מלאה."
-
-#: includes/Compatibility/Gateways/PayPalForWooCommerce.php:363
-msgid "Logged in with PayPal. Please continue your order below."
-msgstr "התחבר באמצעות PayPal. אנא המשך בהזמנה שלך למטה."
-
 #: includes/Admin/Views/html-refund-offer.php:22
 msgid "Product"
 msgstr "מוצר"
@@ -2413,17 +2422,171 @@ msgstr "הערה:"
 msgid "Refunding an offer will process the refund with the payment gateway and create a WooCommerce refund record."
 msgstr "החזרת הצעה תעבד את ההחזר דרך שער התשלום ותיצור רשומת החזר ב-WooCommerce."
 
-#: includes/Admin/Pages/WooCommercePages.php:21
+#: includes/Admin/Notices/WelcomeNotice.php:12
+msgid "Welcome to CheckoutWC"
+msgstr "ברוכים הבאים ל-CheckoutWC"
+
+#: includes/Admin/Notices/WelcomeNotice.php:20
+msgid "Thank you for installing CheckoutWC! We automatically activated your license. You are all set!"
+msgstr "תודה שהתקנת את CheckoutWC! הפעלנו אוטומטית את הרישיון שלך. הכל מוכן!"
+
+#: includes/Admin/Notices/WelcomeNotice.php:26
+msgid "Thank you for installing CheckoutWC! To get started, enter your <strong>License Key</strong> below, save, and click <strong>Activate Site</strong>."
+msgstr "תודה שהתקנת את CheckoutWC! כדי להתחיל, הזן את <strong>מפתח הרישיון</strong> שלך למטה, שמור ולחץ על <strong>הפעל אתר</strong>."
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:20
+msgid "your email"
+msgstr "האימייל שלך"
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:88
+msgid "privacy policy"
+msgstr "מדיניות פרטיות"
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:93
+msgid "By joining, %1$s will be added to our mailing list. Read our %2$s."
+msgstr "על ידי הצטרפות, %1$s יתווסף לרשימת התפוצה שלנו. קרא את %2$s שלנו."
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:99
+msgid "Join Newsletter & Save 25%"
+msgstr "הצטרף לניוזלטר וחסוך 25%"
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:102
+msgid "Join Newsletter"
+msgstr "הצטרף לניוזלטר"
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:113
+msgid "Sign up to our newsletter and get proven conversion tips and checkout optimization strategies from the CheckoutWC team."
+msgstr "הירשם לניוזלטר שלנו וקבל טיפים מוכחים להמרה ואסטרטגיות אופטימיזציה לתשלום מצוות CheckoutWC."
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:116
+msgid "Boost Your Conversions with Proven Strategies."
+msgstr "שפר את ההמרות שלך עם אסטרטגיות מוכחות."
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:123
+msgid "We're so glad that you've chosen CheckoutWC to handle your checkouts. Unlock more sales with premium features like order bumps, abandoned cart recovery, and much more."
+msgstr "אנחנו שמחים שבחרת ב-CheckoutWC לטפל בתשלומים שלך. שחרר יותר מכירות עם תכונות פרימיום כמו בומפס להזמנה, שחזור עגלת קניות נטושה ועוד."
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:126
+msgid "Unlock more sales with CheckoutWC Premium"
+msgstr "שחרר יותר מכירות עם CheckoutWC פרימיום"
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:144
+msgid "Sorry, there was an error joining our newsletter. Please refresh the page and try again."
+msgstr "מצטערים, הייתה שגיאה בהצטרפות לניוזלטר שלנו. אנא רענן את הדף ונסה שוב."
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:243
+msgid "Please wait..."
+msgstr "אנא המתן..."
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:320
+msgid "Sorry, your account has insufficient permissions to join our newsletter."
+msgstr "מצטערים, אין לך הרשאות מספיקות להצטרף לניוזלטר שלנו."
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:354
+msgid "You have already joined our newsletter!"
+msgstr "כבר הצטרפת לניוזלטר שלנו!"
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:396
+msgid "Thank you for joining our newsletter!"
+msgstr "תודה שהצטרפת לניוזלטר שלנו!"
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:410
+msgid "Security check failed."
+msgstr "בדיקת אבטחה נכשלה."
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:414
+msgid "Insufficient permissions."
+msgstr "הרשאות לא מספיקות."
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:422
+msgid "Notice dismissed."
+msgstr "ההודעה בוטלה."
+
+# %1$d: Number of days, %2$s: Pricing URL, %3$s: "renew it here" link text
+#: includes/Admin/Notices/LicenseUnverifiedNotice.php:25
+msgid "Premium features are off because we haven\\'t been able to check your license with checkoutwc.com for %1$d days. Make sure your server can connect to checkoutwc.com. If your license has expired, <a href=\"%2$s\" target=\"_blank\">%3$s</a>."
+msgstr "התכונות המתקדמות כבויות כי לא הצלחנו לבדוק את הרישיון שלך מול checkoutwc.com במשך %1$d ימים. ודא שהשרת שלך יכול להתחבר ל-checkoutwc.com. אם הרישיון שלך פג, <a href=\"%2$s\" target=\"_blank\">%3$s</a>."
+
+#: includes/Admin/Notices/LicenseUnverifiedNotice.php:28
+msgid "renew it here"
+msgstr "חדשו אותו כאן"
+
+#: includes/Admin/Notices/LicenseUnverifiedNotice.php:33
+msgid "CheckoutWC can\\'t verify your license"
+msgstr "CheckoutWC לא יכול לאמת את הרישיון שלך"
+
+# %1$s: Date premium features turn off, %2$s: Support email URL, %3$s: "Contact support" link text
+#: includes/Admin/Notices/LicenseServerUnreachableNotice.php:28
+msgid "We couldn\\'t check your license with checkoutwc.com. Premium features will turn off on %1$s unless the connection is restored. <a href=\"%2$s\">%3$s</a> if this keeps happening."
+msgstr "לא הצלחנו לבדוק את הרישיון שלך מול checkoutwc.com. התכונות המתקדמות יכבו ב-%1$s אלא אם החיבור ישוחזר. <a href=\"%2$s\">%3$s</a> אם זה ממשיך לקרות."
+
+#: includes/Admin/Notices/LicenseServerUnreachableNotice.php:31
+#: includes/Admin/Notices/LicenseServerUnreachableNotice.php:38
+msgid "Contact support"
+msgstr "פנו לתמיכה"
+
+# %1$s: Support email URL, %2$s: "Contact support" link text
+#: includes/Admin/Notices/LicenseServerUnreachableNotice.php:36
+msgid "We couldn\\'t check your license with checkoutwc.com. Make sure your server can connect to checkoutwc.com. <a href=\"%1$s\">%2$s</a> if this keeps happening."
+msgstr "לא הצלחנו לבדוק את הרישיון שלך מול checkoutwc.com. ודא שהשרת שלך יכול להתחבר ל-checkoutwc.com. <a href=\"%1$s\">%2$s</a> אם זה ממשיך לקרות."
+
+#: includes/Admin/Notices/LicenseServerUnreachableNotice.php:45
+msgid "CheckoutWC can\\'t reach the license server"
+msgstr "CheckoutWC לא יכול להגיע לשרת הרישוי"
+
+#: includes/Admin/Notices/InvalidLicenseKeyNotice.php:13
+msgid "CheckoutWC license expired"
+msgstr "רישיון CheckoutWC פג"
+
+# %1$s: URL to pricing page, %2$s: "Renew your license" link text, %3$s: Support email URL, %4$s: "contact support" link text
+#: includes/Admin/Notices/InvalidLicenseKeyNotice.php:16
+msgid "Premium features are off because your license has expired. <a href=\"%1$s\" target=\"_blank\">%2$s</a> to turn them back on. If you think this is a mistake, <a href=\"%3$s\">%4$s</a>."
+msgstr "התכונות המתקדמות כבויות כי הרישיון שלך פג. <a href=\"%1$s\" target=\"_blank\">%2$s</a> כדי להפעיל אותן מחדש. אם לדעתך זו טעות, <a href=\"%3$s\">%4$s</a>."
+
+#: includes/Admin/Notices/InvalidLicenseKeyNotice.php:18
+msgid "Renew your license"
+msgstr "חדשו את הרישיון שלך"
+
+#: includes/Admin/Notices/InvalidLicenseKeyNotice.php:20
+msgid "contact support"
+msgstr "פנו לתמיכה"
+
+# %1$s: URL to activation page, %2$s: "Activate your license" link text, %3$s: Pricing URL, %4$s: "buy a license" link text
+#: includes/Admin/Notices/InactiveLicenseNotice.php:11
+msgid "Premium features are off because your license isn\\'t activated on this site. <a href=\"%1$s\">%2$s</a> or <a href=\"%3$s\" target=\"_blank\">%4$s</a> for this site."
+msgstr "התכונות המתקדמות כבויות כי הרישיון שלך לא הופעל באתר זה. <a href=\"%1$s\">%2$s</a> או <a href=\"%3$s\" target=\"_blank\">%4$s</a> עבור אתר זה."
+
+#: includes/Admin/Notices/InactiveLicenseNotice.php:13
+msgid "Activate your license"
+msgstr "הפעילו את הרישיון שלך"
+
+#: includes/Admin/Notices/InactiveLicenseNotice.php:20
+msgid "CheckoutWC license not activated"
+msgstr "רישיון CheckoutWC לא הופעל"
+
+#: includes/Admin/Notices/BFNotice.php:13
+msgid "Black Friday Sale - 40% Off"
+msgstr "מבצע שישי שחור - 40% הנחה"
+
+#: includes/Admin/Notices/BFNotice.php:14
+msgid "You're missing out on revenue growth tools like Order Bumps, Upsells, Abandoned Cart Recovery and more! Save 40% on CheckoutWC pro plans for Black Friday, ends December 4th"
+msgstr "אתה מפסיד כלים לצמיחת הכנסות כמו Order Bumps, Upsells, שחזור עגלת קניות נטושה ועוד! חסוך 40% על תוכניות CheckoutWC Pro ליום שישי השחור, מסתיים ב-4 בדצמבר"
+
+#: includes/Admin/Notices/BFNotice.php:27
+msgid "Get CheckoutWC Pro Now!"
+msgstr "קבל את CheckoutWC Pro עכשיו!"
+
+#: includes/Admin/Pages/WooCommercePages.php:22
 msgid "Pages"
 msgstr "דפים"
 
-#: includes/Admin/Pages/WooCommercePages.php:30
+#: includes/Admin/Pages/WooCommercePages.php:31
 #: client/ts/admin/Components/Forms/ThankYouSettingsForm.tsx:53
 #: client/ts/admin/Components/Forms/AdvancedScriptsSettingsForm.tsx:144
 msgid "Thank You"
 msgstr "תודה"
 
-#: includes/Admin/Pages/WooCommercePages.php:31
+#: includes/Admin/Pages/WooCommercePages.php:32
 msgid "Global Options"
 msgstr "אפשרויות גלובליות"
 
@@ -2576,7 +2739,7 @@ msgid "Our Knowledge Base is packed with tips, tricks, and common troubleshootin
 msgstr "מאגר הידע שלנו מלא בטיפים, טריקים ושלבי פתרון בעיות נפוצים."
 
 #: includes/Admin/Pages/Support.php:27
-#: includes/Admin/Pages/General.php:69
+#: includes/Admin/Pages/General.php:68
 msgid "Read Our Documentation"
 msgstr "קרא את התיעוד שלנו"
 
@@ -2963,141 +3126,149 @@ msgstr "שלח"
 msgid "Integrations"
 msgstr "אינטגרציות"
 
+#: includes/Admin/Pages/General.php:39
 #: includes/Admin/Pages/General.php:40
-#: includes/Admin/Pages/General.php:41
 #: includes/Admin/Pages/CheckoutEditor.php:21
 #: client/ts/admin/Components/CheckoutEditor/EditorHeader.tsx:92
 msgid "Checkout Editor"
 msgstr "עורך התשלום"
 
-#: includes/Admin/Pages/General.php:62
+#: includes/Admin/Pages/General.php:61
 msgid "Welcome to the new standard for WooCommerce stores."
 msgstr "ברוכים הבאים לסטנדרט החדש לחנויות WooCommerce."
 
-#: includes/Admin/Pages/General.php:65
+#: includes/Admin/Pages/General.php:64
 msgid "We hate complex configurations too. Get up and running with CheckoutWC in 5 minutes or less. ⚡️"
 msgstr "גם אנחנו שונאים הגדרות מורכבות. התחילו לעבוד עם CheckoutWC תוך 5 דקות או פחות. ⚡️"
 
-#: includes/Admin/Pages/General.php:84
+#: includes/Admin/Pages/General.php:83
 msgid "Welcome to CheckoutWC 10.0"
 msgstr "ברוכים הבאים ל-CheckoutWC 10.0"
 
-#: includes/Admin/Pages/General.php:87
+#: includes/Admin/Pages/General.php:86
 msgid "CheckoutWC 10.0 is a major update with new features and optimizations to make your WooCommerce store run better."
 msgstr "CheckoutWC 10.0 הוא עדכון משמעותי עם תכונות ואופטימיזציות חדשות כדי לגרום לחנות WooCommerce שלכם לפעול טוב יותר."
 
-#: includes/Admin/Pages/General.php:93
+#: includes/Admin/Pages/General.php:92
 msgid "Just Say When"
 msgstr "פשוט תגיד מתי"
 
-#: includes/Admin/Pages/General.php:96
+#: includes/Admin/Pages/General.php:95
 msgid "Our new rules engine puts you in charge. Want to show an Order Bump only to first time customers who use a specific coupon code? You can do that. Want to show specific trust badges based on what is in the cart? You can do that too!"
 msgstr "מנוע הכללים החדש שלנו נותן לכם שליטה. רוצים להציג Order Bump רק ללקוחות בפעם הראשונה שמשתמשים בקוד קופון מסוים? אפשר לעשות את זה. רוצים להציג תגי אמון ספציפיים בהתאם לתוכן העגלה? גם את זה אפשר לעשות!"
 
-#: includes/Admin/Pages/General.php:110
+#: includes/Admin/Pages/General.php:109
 msgid "Get Started Faster"
 msgstr "התחילו מהר יותר"
 
-#: includes/Admin/Pages/General.php:113
+#: includes/Admin/Pages/General.php:112
 msgid "Creating Order Bumps has lots of options. Our new Quick Start will help you get started faster."
 msgstr "יצירת Order Bumps כוללת הרבה אפשרויות. ההתחלה המהירה החדשה שלנו תעזור לכם להתחיל מהר יותר."
 
-#: includes/Admin/Pages/General.php:117
+#: includes/Admin/Pages/General.php:116
 msgid "Configure Order Bumps"
 msgstr "הגדרו Order Bumps"
 
-#: includes/Admin/Pages/General.php:126
+#: includes/Admin/Pages/General.php:125
 msgid "And a lot more"
 msgstr "ועוד הרבה יותר"
 
-#: includes/Admin/Pages/General.php:129
+#: includes/Admin/Pages/General.php:128
 msgid "To view the full list of changes, checkout our change log."
 msgstr "כדי לצפות ברשימה המלאה של השינויים, בדקו את יומן השינויים שלנו."
 
-#: includes/Admin/Pages/General.php:133
+#: includes/Admin/Pages/General.php:132
 msgid "Read Our Change Log"
 msgstr "קראו את יומן השינויים שלנו"
 
-#: includes/Admin/Pages/General.php:149
-msgid "Step 1: Activate Your License"
-msgstr "שלב 1: הפעל את הרישיון שלך"
-
-#: includes/Admin/Pages/General.php:149
-msgid "Step 1: Try CheckoutWC Premium Free For 7 Days"
-msgstr "שלב 1: נסה את CheckoutWC Premium בחינם למשך 7 ימים"
-
 #: includes/Admin/Pages/General.php:150
-msgid "Enter your license key and activate it for this site to turn on premium features."
-msgstr "הזן את מפתח הרישיון שלך והפעל אותו עבור אתר זה כדי להפעיל את התכונות המתקדמות."
+msgid "Step 1: Upgrade to CheckoutWC Premium"
+msgstr "שלב 1: שדרוג ל-CheckoutWC Premium"
 
-#: includes/Admin/Pages/General.php:150
+#: includes/Admin/Pages/General.php:151
 msgid "Supercharge your WooCommerce store."
 msgstr "העצם את חנות WooCommerce שלך."
 
-#: includes/Admin/Pages/General.php:155
+#: includes/Admin/Pages/General.php:153
+msgid "Step 1: Renew Your License"
+msgstr "שלב 1: חידוש הרישיון שלך"
+
+#: includes/Admin/Pages/General.php:154
+msgid "Your license has expired. Renew it to keep premium features working."
+msgstr "הרישיון שלך פג תוקף. חידושו כדי לשמור על פעילותן של התכונות המתקדמות."
+
+#: includes/Admin/Pages/General.php:156
+msgid "Step 1: Activate Your License"
+msgstr "שלב 1: הפעל את הרישיון שלך"
+
+#: includes/Admin/Pages/General.php:157
+msgid "Enter your license key and activate it for this site to turn on premium features."
+msgstr "הזן את מפתח הרישיון שלך והפעל אותו עבור אתר זה כדי להפעיל את התכונות המתקדמות."
+
+#: includes/Admin/Pages/General.php:167
 msgid "Step 2: Customize Checkout"
 msgstr "שלב 2: התאמת התשלום"
 
-#: includes/Admin/Pages/General.php:156
+#: includes/Admin/Pages/General.php:168
 msgid "Use the Checkout Editor to customize your checkout layout, fields, and content."
 msgstr "השתמש בעורך התשלום כדי להתאים את פריסת התשלום, השדות והתוכן שלך."
 
-#: includes/Admin/Pages/General.php:161
+#: includes/Admin/Pages/General.php:173
 msgid "Step 3: Go Live"
 msgstr "שלב 3: הפעלה בשידור חי"
 
-#: includes/Admin/Pages/General.php:162
+#: includes/Admin/Pages/General.php:174
 msgid "Enable templates for all visitors."
 msgstr "אפשר תבניות לכל המבקרים."
 
-#: includes/Admin/Pages/General.php:190
+#: includes/Admin/Pages/General.php:202
 msgid "Requires a valid and active license key."
 msgstr "נדרש מפתח רישיון תקף ופעיל."
 
-#: includes/Admin/Pages/General.php:196
+#: includes/Admin/Pages/General.php:208
 msgid "CheckoutWC Templates are always activated for admin users."
 msgstr "תבניות CheckoutWC תמיד מופעלות למשתמשי מנהל."
 
-#: includes/Admin/Pages/General.php:201
+#: includes/Admin/Pages/General.php:213
 msgid "This step can also be completed directly from the Checkout Editor!"
 msgstr "שלב זה ניתן גם להשלים ישירות מעורך התשלום!"
 
-#: includes/Admin/Pages/General.php:221
+#: includes/Admin/Pages/General.php:233
 msgid "Upgrade to CheckoutWC Premium - Save 20% on your first year"
 msgstr ""
 
-#: includes/Admin/Pages/General.php:223
-#: includes/Admin/Pages/General.php:250
-#: includes/Admin/Pages/General.php:265
-#: includes/Admin/Pages/General.php:310
+#: includes/Admin/Pages/General.php:235
+#: includes/Admin/Pages/General.php:262
+#: includes/Admin/Pages/General.php:277
+#: includes/Admin/Pages/General.php:322
 msgid "Opens in new tab"
 msgstr "נפתח בכרטיסייה חדשה"
 
-#: includes/Admin/Pages/General.php:236
+#: includes/Admin/Pages/General.php:248
 msgid "Customize Your Checkout"
 msgstr "התאם את התשלום שלך"
 
-#: includes/Admin/Pages/General.php:248
+#: includes/Admin/Pages/General.php:260
 msgid "Choose a Template"
 msgstr "בחר תבנית"
 
-#: includes/Admin/Pages/General.php:263
+#: includes/Admin/Pages/General.php:275
 msgid "Customize Logo and Colors"
 msgstr "התאם לוגו וצבעים"
 
-#: includes/Admin/Pages/General.php:308
+#: includes/Admin/Pages/General.php:320
 msgid "Preview Your Checkout Page"
 msgstr "תצוגה מקדימה של דף הקופה שלך"
 
-#: includes/Admin/Pages/General.php:354
+#: includes/Admin/Pages/General.php:366
 msgid "Unbypass CheckoutWC Template"
 msgstr "בטל עקיפת תבנית CheckoutWC"
 
-#: includes/Admin/Pages/General.php:354
+#: includes/Admin/Pages/General.php:366
 msgid "Bypass CheckoutWC Template"
 msgstr "עקוף תבנית CheckoutWC"
 
-#: includes/Admin/Pages/General.php:358
+#: includes/Admin/Pages/General.php:370
 msgid "CheckoutWC template and functionality will be temporarily bypassed (just for you!). This is helpful for testing and debugging. You can click Unbypass CheckoutWC Template once you are done."
 msgstr "תבנית ופונקציונליות CheckoutWC יעברו עקיפה זמנית (רק עבורך!). זה מועיל לבדיקות ופתרון בעיות. ניתן ללחוץ על בטל עקיפת תבנית CheckoutWC כשסיימת."
 
@@ -3273,74 +3444,74 @@ msgstr "טקסט משני בהובר"
 msgid "Theme Specific Colors"
 msgstr "צבעים ספציפיים לנושא"
 
-#: includes/Admin/Pages/Advanced.php:20
-#: includes/Admin/Pages/Advanced.php:28
+#: includes/Admin/Pages/Advanced.php:37
+#: includes/Admin/Pages/Advanced.php:45
 msgid "Advanced"
 msgstr "מתקדם"
 
-#: includes/Admin/Pages/Advanced.php:29
+#: includes/Admin/Pages/Advanced.php:46
 msgid "Scripts"
 msgstr "סקריפטים"
 
-#: includes/Admin/Pages/Advanced.php:30
+#: includes/Admin/Pages/Advanced.php:47
 msgid "Tools"
 msgstr "כלים"
 
-#: includes/Admin/Pages/Advanced.php:64
-#: includes/Admin/Pages/Advanced.php:84
+#: includes/Admin/Pages/Advanced.php:81
+#: includes/Admin/Pages/Advanced.php:101
 msgid "Export Settings"
 msgstr "ייצוא הגדרות"
 
-#: includes/Admin/Pages/Advanced.php:65
+#: includes/Admin/Pages/Advanced.php:82
 msgid "Download a JSON file containing the current plugin settings."
 msgstr "הורד קובץ JSON המכיל את הגדרות התוסף הנוכחיות."
 
-#: includes/Admin/Pages/Advanced.php:69
-#: includes/Admin/Pages/Advanced.php:97
+#: includes/Admin/Pages/Advanced.php:86
+#: includes/Admin/Pages/Advanced.php:114
 msgid "Import Settings"
 msgstr "ייבוא הגדרות"
 
-#: includes/Admin/Pages/Advanced.php:70
+#: includes/Admin/Pages/Advanced.php:87
 msgid "Replace your current settings with a previous settings export."
 msgstr "החלף את ההגדרות הנוכחיות שלך בייצוא הגדרות קודם."
 
-#: includes/Admin/Pages/Advanced.php:87
+#: includes/Admin/Pages/Advanced.php:104
 msgid "Download a backup file of your settings."
 msgstr "הורד קובץ גיבוי של ההגדרות שלך."
 
-#: includes/Admin/Pages/Advanced.php:101
+#: includes/Admin/Pages/Advanced.php:118
 msgid "Upload File and Import Settings"
 msgstr "העלה קובץ וייבא הגדרות"
 
-#: includes/Admin/Pages/Advanced.php:174
+#: includes/Admin/Pages/Advanced.php:196
 msgid "CheckoutWC Settings Import Failed"
 msgstr "ייבוא הגדרות CheckoutWC נכשל"
 
-#: includes/Admin/Pages/Advanced.php:175
+#: includes/Admin/Pages/Advanced.php:197
 msgid "Unable to import settings. Did you select a JSON file to upload?"
 msgstr "לא ניתן לייבא הגדרות. האם בחרת קובץ JSON להעלאה?"
 
-#: includes/Admin/Pages/Advanced.php:187
+#: includes/Admin/Pages/Advanced.php:209
 msgid "Error. Uploaded file appears empty."
 msgstr "שגיאה. הקובץ שהועלה נראה ריק."
 
-#: includes/Admin/Pages/Advanced.php:198
+#: includes/Admin/Pages/Advanced.php:220
 msgid "Wrong file extension. Uploaded settings must be a JSON file."
 msgstr "סיומת קובץ שגויה. הגדרות שהועלו חייבות להיות קובץ JSON."
 
-#: includes/Admin/Pages/Advanced.php:206
+#: includes/Admin/Pages/Advanced.php:228
 msgid "Error moving uploaded file - check your permissions."
 msgstr "שגיאה בהעברת הקובץ שהועלה - בדוק את ההרשאות שלך."
 
-#: includes/Admin/Pages/Advanced.php:213
+#: includes/Admin/Pages/Advanced.php:235
 msgid "Error decoding JSON file."
 msgstr "שגיאה בפענוח קובץ JSON."
 
-#: includes/Admin/Pages/Advanced.php:255
+#: includes/Admin/Pages/Advanced.php:277
 msgid "CheckoutWC Settings Import Successful"
 msgstr "ייבוא הגדרות CheckoutWC הצליח"
 
-#: includes/Admin/Pages/Advanced.php:256
+#: includes/Admin/Pages/Advanced.php:278
 msgid "Successfully imported settings."
 msgstr "הגדרות יובאו בהצלחה."
 
@@ -3520,160 +3691,6 @@ msgstr "אפשר בדיקת A/B"
 msgid "Allow A/B tests to be created and applied on the checkout page."
 msgstr "אפשר יצירה ויישום של בדיקות A/B בדף התשלום."
 
-#: includes/Admin/Notices/WelcomeNotice.php:12
-msgid "Welcome to CheckoutWC"
-msgstr "ברוכים הבאים ל-CheckoutWC"
-
-#: includes/Admin/Notices/WelcomeNotice.php:20
-msgid "Thank you for installing CheckoutWC! We automatically activated your license. You are all set!"
-msgstr "תודה שהתקנת את CheckoutWC! הפעלנו אוטומטית את הרישיון שלך. הכל מוכן!"
-
-#: includes/Admin/Notices/WelcomeNotice.php:26
-msgid "Thank you for installing CheckoutWC! To get started, enter your <strong>License Key</strong> below, save, and click <strong>Activate Site</strong>."
-msgstr "תודה שהתקנת את CheckoutWC! כדי להתחיל, הזן את <strong>מפתח הרישיון</strong> שלך למטה, שמור ולחץ על <strong>הפעל אתר</strong>."
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:20
-msgid "your email"
-msgstr "האימייל שלך"
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:88
-msgid "privacy policy"
-msgstr "מדיניות פרטיות"
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:93
-msgid "By joining, %1$s will be added to our mailing list. Read our %2$s."
-msgstr "על ידי הצטרפות, %1$s יתווסף לרשימת התפוצה שלנו. קרא את %2$s שלנו."
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:99
-msgid "Join Newsletter & Save 25%"
-msgstr "הצטרף לניוזלטר וחסוך 25%"
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:102
-msgid "Join Newsletter"
-msgstr "הצטרף לניוזלטר"
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:113
-msgid "Sign up to our newsletter and get proven conversion tips and checkout optimization strategies from the CheckoutWC team."
-msgstr "הירשם לניוזלטר שלנו וקבל טיפים מוכחים להמרה ואסטרטגיות אופטימיזציה לתשלום מצוות CheckoutWC."
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:116
-msgid "Boost Your Conversions with Proven Strategies."
-msgstr "שפר את ההמרות שלך עם אסטרטגיות מוכחות."
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:123
-msgid "We're so glad that you've chosen CheckoutWC to handle your checkouts. Unlock more sales with premium features like order bumps, abandoned cart recovery, and much more."
-msgstr "אנחנו שמחים שבחרת ב-CheckoutWC לטפל בתשלומים שלך. שחרר יותר מכירות עם תכונות פרימיום כמו בומפס להזמנה, שחזור עגלת קניות נטושה ועוד."
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:126
-msgid "Unlock more sales with CheckoutWC Premium"
-msgstr "שחרר יותר מכירות עם CheckoutWC פרימיום"
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:144
-msgid "Sorry, there was an error joining our newsletter. Please refresh the page and try again."
-msgstr "מצטערים, הייתה שגיאה בהצטרפות לניוזלטר שלנו. אנא רענן את הדף ונסה שוב."
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:243
-msgid "Please wait..."
-msgstr "אנא המתן..."
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:320
-msgid "Sorry, your account has insufficient permissions to join our newsletter."
-msgstr "מצטערים, אין לך הרשאות מספיקות להצטרף לניוזלטר שלנו."
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:354
-msgid "You have already joined our newsletter!"
-msgstr "כבר הצטרפת לניוזלטר שלנו!"
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:396
-msgid "Thank you for joining our newsletter!"
-msgstr "תודה שהצטרפת לניוזלטר שלנו!"
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:410
-msgid "Security check failed."
-msgstr "בדיקת אבטחה נכשלה."
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:414
-msgid "Insufficient permissions."
-msgstr "הרשאות לא מספיקות."
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:422
-msgid "Notice dismissed."
-msgstr "ההודעה בוטלה."
-
-# %1$d: Number of days, %2$s: Pricing URL, %3$s: "renew it here" link text
-#: includes/Admin/Notices/LicenseUnverifiedNotice.php:25
-msgid "Premium features are off because we haven\\'t been able to check your license with checkoutwc.com for %1$d days. Make sure your server can connect to checkoutwc.com. If your license has expired, <a href=\"%2$s\" target=\"_blank\">%3$s</a>."
-msgstr "התכונות המתקדמות כבויות כי לא הצלחנו לבדוק את הרישיון שלך מול checkoutwc.com במשך %1$d ימים. ודא שהשרת שלך יכול להתחבר ל-checkoutwc.com. אם הרישיון שלך פג, <a href=\"%2$s\" target=\"_blank\">%3$s</a>."
-
-#: includes/Admin/Notices/LicenseUnverifiedNotice.php:28
-msgid "renew it here"
-msgstr "חדשו אותו כאן"
-
-#: includes/Admin/Notices/LicenseUnverifiedNotice.php:33
-msgid "CheckoutWC can\\'t verify your license"
-msgstr "CheckoutWC לא יכול לאמת את הרישיון שלך"
-
-# %1$s: Date premium features turn off, %2$s: Support email URL, %3$s: "Contact support" link text
-#: includes/Admin/Notices/LicenseServerUnreachableNotice.php:28
-msgid "We couldn\\'t check your license with checkoutwc.com. Premium features will turn off on %1$s unless the connection is restored. <a href=\"%2$s\">%3$s</a> if this keeps happening."
-msgstr "לא הצלחנו לבדוק את הרישיון שלך מול checkoutwc.com. התכונות המתקדמות יכבו ב-%1$s אלא אם החיבור ישוחזר. <a href=\"%2$s\">%3$s</a> אם זה ממשיך לקרות."
-
-#: includes/Admin/Notices/LicenseServerUnreachableNotice.php:31
-#: includes/Admin/Notices/LicenseServerUnreachableNotice.php:38
-msgid "Contact support"
-msgstr "פנו לתמיכה"
-
-# %1$s: Support email URL, %2$s: "Contact support" link text
-#: includes/Admin/Notices/LicenseServerUnreachableNotice.php:36
-msgid "We couldn\\'t check your license with checkoutwc.com. Make sure your server can connect to checkoutwc.com. <a href=\"%1$s\">%2$s</a> if this keeps happening."
-msgstr "לא הצלחנו לבדוק את הרישיון שלך מול checkoutwc.com. ודא שהשרת שלך יכול להתחבר ל-checkoutwc.com. <a href=\"%1$s\">%2$s</a> אם זה ממשיך לקרות."
-
-#: includes/Admin/Notices/LicenseServerUnreachableNotice.php:45
-msgid "CheckoutWC can\\'t reach the license server"
-msgstr "CheckoutWC לא יכול להגיע לשרת הרישוי"
-
-#: includes/Admin/Notices/InvalidLicenseKeyNotice.php:13
-msgid "CheckoutWC license expired"
-msgstr "רישיון CheckoutWC פג"
-
-# %1$s: URL to pricing page, %2$s: "Renew your license" link text, %3$s: Support email URL, %4$s: "contact support" link text
-#: includes/Admin/Notices/InvalidLicenseKeyNotice.php:16
-msgid "Premium features are off because your license has expired. <a href=\"%1$s\" target=\"_blank\">%2$s</a> to turn them back on. If you think this is a mistake, <a href=\"%3$s\">%4$s</a>."
-msgstr "התכונות המתקדמות כבויות כי הרישיון שלך פג. <a href=\"%1$s\" target=\"_blank\">%2$s</a> כדי להפעיל אותן מחדש. אם לדעתך זו טעות, <a href=\"%3$s\">%4$s</a>."
-
-#: includes/Admin/Notices/InvalidLicenseKeyNotice.php:18
-msgid "Renew your license"
-msgstr "חדשו את הרישיון שלך"
-
-#: includes/Admin/Notices/InvalidLicenseKeyNotice.php:20
-msgid "contact support"
-msgstr "פנו לתמיכה"
-
-# %1$s: URL to activation page, %2$s: "Activate your license" link text, %3$s: Pricing URL, %4$s: "buy a license" link text
-#: includes/Admin/Notices/InactiveLicenseNotice.php:11
-msgid "Premium features are off because your license isn\\'t activated on this site. <a href=\"%1$s\">%2$s</a> or <a href=\"%3$s\" target=\"_blank\">%4$s</a> for this site."
-msgstr "התכונות המתקדמות כבויות כי הרישיון שלך לא הופעל באתר זה. <a href=\"%1$s\">%2$s</a> או <a href=\"%3$s\" target=\"_blank\">%4$s</a> עבור אתר זה."
-
-#: includes/Admin/Notices/InactiveLicenseNotice.php:13
-msgid "Activate your license"
-msgstr "הפעילו את הרישיון שלך"
-
-#: includes/Admin/Notices/InactiveLicenseNotice.php:20
-msgid "CheckoutWC license not activated"
-msgstr "רישיון CheckoutWC לא הופעל"
-
-#: includes/Admin/Notices/BFNotice.php:13
-msgid "Black Friday Sale - 40% Off"
-msgstr "מבצע שישי שחור - 40% הנחה"
-
-#: includes/Admin/Notices/BFNotice.php:14
-msgid "You're missing out on revenue growth tools like Order Bumps, Upsells, Abandoned Cart Recovery and more! Save 40% on CheckoutWC pro plans for Black Friday, ends December 4th"
-msgstr "אתה מפסיד כלים לצמיחת הכנסות כמו Order Bumps, Upsells, שחזור עגלת קניות נטושה ועוד! חסוך 40% על תוכניות CheckoutWC Pro ליום שישי השחור, מסתיים ב-4 בדצמבר"
-
-#: includes/Admin/Notices/BFNotice.php:27
-msgid "Get CheckoutWC Pro Now!"
-msgstr "קבל את CheckoutWC Pro עכשיו!"
-
 #: client/ts/functions/cfwFormatDate.ts:38
 msgid "Sunday"
 msgstr "יום ראשון"
@@ -3831,34 +3848,6 @@ msgstr "אמ"
 msgid "pm"
 msgstr "אחר הצהריים"
 
-#: client/ts/blocks/OrderBumpSteps.tsx:55
-msgid "Order Bump Steps Stettings"
-msgstr "הגדרות שלבי הצעת תוספת להזמנה"
-
-#: client/ts/blocks/OrderBumpSteps.tsx:58
-msgid "Step 1 Title"
-msgstr "כותרת שלב 1"
-
-#: client/ts/blocks/OrderBumpSteps.tsx:59
-msgid "The title of Step 1. Example: Order Submitted"
-msgstr "כותרת שלב 1. לדוגמה: הזמנה נשלחה"
-
-#: client/ts/blocks/OrderBumpSteps.tsx:64
-msgid "Step 2 Title"
-msgstr "כותרת שלב 2"
-
-#: client/ts/blocks/OrderBumpSteps.tsx:65
-msgid "The title of Step 2. Example: Special Offer"
-msgstr "כותרת שלב 2. לדוגמה: הצעה מיוחדת"
-
-#: client/ts/blocks/OrderBumpSteps.tsx:70
-msgid "Step 3 Title"
-msgstr "כותרת שלב 3"
-
-#: client/ts/blocks/OrderBumpSteps.tsx:71
-msgid "The title of Step 3. Example: Order Received"
-msgstr "כותרת שלב 3. לדוגמה: הזמנה התקבלה"
-
 #: client/ts/admin/order-bumps-editor.tsx:59
 msgid "Order Bump Preview"
 msgstr "תצוגה מקדימה של הצעת תוספת להזמנה"
@@ -3896,6 +3885,34 @@ msgstr "האם אתה בטוח שברצונך לנקות את כל העגלות 
 #: client/ts/admin/Components/CheckoutEditor/EditorApp.tsx:269
 msgid "Are you sure you want to discard all unsaved changes?"
 msgstr "האם אתה בטוח שברצונך לבטל את כל השינויים שלא נשמרו?"
+
+#: client/ts/blocks/OrderBumpSteps.tsx:55
+msgid "Order Bump Steps Stettings"
+msgstr "הגדרות שלבי הצעת תוספת להזמנה"
+
+#: client/ts/blocks/OrderBumpSteps.tsx:58
+msgid "Step 1 Title"
+msgstr "כותרת שלב 1"
+
+#: client/ts/blocks/OrderBumpSteps.tsx:59
+msgid "The title of Step 1. Example: Order Submitted"
+msgstr "כותרת שלב 1. לדוגמה: הזמנה נשלחה"
+
+#: client/ts/blocks/OrderBumpSteps.tsx:64
+msgid "Step 2 Title"
+msgstr "כותרת שלב 2"
+
+#: client/ts/blocks/OrderBumpSteps.tsx:65
+msgid "The title of Step 2. Example: Special Offer"
+msgstr "כותרת שלב 2. לדוגמה: הצעה מיוחדת"
+
+#: client/ts/blocks/OrderBumpSteps.tsx:70
+msgid "Step 3 Title"
+msgstr "כותרת שלב 3"
+
+#: client/ts/blocks/OrderBumpSteps.tsx:71
+msgid "The title of Step 3. Example: Order Received"
+msgstr "כותרת שלב 3. לדוגמה: הזמנה התקבלה"
 
 #: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:60
 #: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:245
@@ -4513,30 +4530,6 @@ msgstr "התאריך שבו בדיקת ה-A/B אמורה להסתיים. לאח�
 msgid "Traffic split percentages must total 100%. Please adjust your percentages."
 msgstr "אחוזי חלוקת התנועה חייבים להיות 100%. אנא התאם את האחוזים שלך."
 
-#: client/ts/frontend/Actions/CompleteOrderAction.ts:196
-msgid "Could not connect to server. Please refresh and try again or contact site administrator."
-msgstr "לא ניתן להתחבר לשרת. אנא רענן את הדף ונסה שוב או פנה למנהל האתר."
-
-#: client/ts/frontend/Actions/CompleteOrderAction.ts:198
-msgid "Requested resource could not be found. Please contact site administrator. (404)"
-msgstr "לא ניתן למצוא את המשאב המבוקש. אנא פנה למנהל האתר. (404)"
-
-#: client/ts/frontend/Actions/CompleteOrderAction.ts:200
-msgid "An internal server error occurred. Please contact site administrator. (500)"
-msgstr "אירעה שגיאה פנימית בשרת. אנא פנה למנהל האתר. (500)"
-
-#: client/ts/frontend/Actions/CompleteOrderAction.ts:202
-msgid "Server response could not be parsed. Please contact site administrator."
-msgstr "לא ניתן לנתח את תגובת השרת. אנא פנה למנהל האתר."
-
-#: client/ts/frontend/Actions/CompleteOrderAction.ts:204
-msgid "The server timed out while processing your request. Please refresh and try again or contact site administrator."
-msgstr "השרת פקע בזמן עיבוד בקשתך. אנא רענן את הדף ונסה שוב או פנה למנהל האתר."
-
-#: client/ts/frontend/Actions/CompleteOrderAction.ts:206
-msgid "Request was aborted. Please contact site administrator."
-msgstr "הבקשה בוטלה. אנא פנה למנהל האתר."
-
 #: client/ts/frontend/Components/TermsAndConditions.ts:29
 msgid "Terms and Conditions"
 msgstr "תנאים והגבלות"
@@ -4552,6 +4545,30 @@ msgstr "סגור עגלה"
 #: client/ts/frontend/Components/FreeShippingProgressBar.tsx:245
 msgid "Unlocked"
 msgstr "שוחרר"
+
+#: client/ts/frontend/Actions/CompleteOrderAction.ts:196
+msgid "We could not confirm whether your order went through. Please check for any charges in your payment method and review your order history before placing the order again."
+msgstr "לא הצלחנו לאשר אם ההזמנה שלך עברה. אנא בדוק אם חויבת באמצעי התשלום שלך ועיין בהיסטוריית ההזמנות שלך לפני ביצוע ההזמנה שוב."
+
+#: client/ts/frontend/Actions/CompleteOrderAction.ts:198
+msgid "Requested resource could not be found. Please contact site administrator. (404)"
+msgstr "לא ניתן למצוא את המשאב המבוקש. אנא פנה למנהל האתר. (404)"
+
+#: client/ts/frontend/Actions/CompleteOrderAction.ts:200
+msgid "An internal server error occurred. Please contact site administrator. (500)"
+msgstr "אירעה שגיאה פנימית בשרת. אנא פנה למנהל האתר. (500)"
+
+#: client/ts/frontend/Actions/CompleteOrderAction.ts:202
+msgid "Server response could not be parsed. Please contact site administrator."
+msgstr "לא ניתן לנתח את תגובת השרת. אנא פנה למנהל האתר."
+
+#: client/ts/frontend/Actions/CompleteOrderAction.ts:204
+msgid "The server timed out while processing your request. Please check for any charges in your payment method and review your order history before placing the order again."
+msgstr "פסק הזמן של השרת פג בעת עיבוד הבקשה שלך. אנא בדוק אם חויבת באמצעי התשלום שלך ועיין בהיסטוריית ההזמנות שלך לפני ביצוע ההזמנה שוב."
+
+#: client/ts/frontend/Actions/CompleteOrderAction.ts:206
+msgid "Request was aborted. Please contact site administrator."
+msgstr "הבקשה בוטלה. אנא פנה למנהל האתר."
 
 # %d is the number of icons in the collection
 #: client/ts/admin/Components/trustBadges.ts:85
@@ -5372,20 +5389,6 @@ msgstr "כאשר bump זה נוסף לעגלה, החל משלוח חינם על 
 #: client/ts/admin/Components/Metaboxes/CategoryCompleter.tsx:46
 msgid "All categories with titles that include {{query /}}"
 msgstr "כל הקטגוריות עם כותרות הכוללות {{query /}}"
-
-#: client/ts/admin/Components/Fields/WPMediaUploadButton.tsx:69
-msgid "Select or Upload a Logo"
-msgstr "בחר או העלה לוגו"
-
-#: client/ts/admin/Components/Fields/RangeControl.tsx:97
-#: client/ts/admin/Components/Fields/ColorControl.tsx:137
-msgid "Reset"
-msgstr "איפוס"
-
-#: client/ts/admin/Components/Fields/ColorControl.tsx:173
-#: client/ts/admin/Components/CheckoutEditor/BumpEditorModal.tsx:101
-msgid "Done"
-msgstr "סיום"
 
 #: client/ts/admin/Components/Forms/WooCommercePagesGlobalOptionsSettingsForm.tsx:49
 #: client/ts/admin/Components/Forms/CheckoutSettingsForm.tsx:570
@@ -7140,9 +7143,23 @@ msgstr "סגור"
 msgid "This order bump has unsaved changes. Close anyway?"
 msgstr "לתוספת הזמנה זו יש שינויים שלא נשמרו. לסגור בכל זאת?"
 
+#: client/ts/admin/Components/CheckoutEditor/BumpEditorModal.tsx:101
+#: client/ts/admin/Components/Fields/ColorControl.tsx:173
+msgid "Done"
+msgstr "סיום"
+
 #: client/ts/admin/Components/CheckoutEditor/BumpEditorModal.tsx:108
 msgid "Loading order bump editor…"
 msgstr "טוען את עורך תוספת ההזמנה…"
+
+#: client/ts/admin/Components/Fields/WPMediaUploadButton.tsx:69
+msgid "Select or Upload a Logo"
+msgstr "בחר או העלה לוגו"
+
+#: client/ts/admin/Components/Fields/RangeControl.tsx:97
+#: client/ts/admin/Components/Fields/ColorControl.tsx:137
+msgid "Reset"
+msgstr "איפוס"
 
 # %s: item type e.g. "order bump"
 #: client/ts/admin/Components/CheckoutEditor/slots/UnsavedChangesDialog.tsx:37

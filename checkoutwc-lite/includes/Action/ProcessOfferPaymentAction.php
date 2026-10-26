@@ -88,8 +88,7 @@ class ProcessOfferPaymentAction extends CFWAction {
 		}
 
 		// Check order status - prevent processing on invalid statuses
-		$restricted_statuses = [ 'refunded', 'cancelled', 'failed' ];
-		if ( in_array( $order->get_status(), $restricted_statuses, true ) ) {
+		if ( in_array( $order->get_status(), OrderBumps::OFFER_BLOCKED_STATUSES, true ) ) {
 			$this->out(
 				[
 					'success' => false,

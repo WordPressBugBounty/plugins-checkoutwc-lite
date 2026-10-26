@@ -4,6 +4,7 @@ namespace Objectiv\Plugins\Checkout\Action;
 
 use Exception;
 use Objectiv\Plugins\Checkout\Managers\AssetManager;
+use WC_Session_Handler;
 
 class UpdateCheckoutAction extends CFWAction {
 	public function __construct() {
@@ -35,7 +36,7 @@ class UpdateCheckoutAction extends CFWAction {
 	}
 
 	/**
-	 * @throws Exception If the nonce is invalid.
+	 * @throws Exception If the checkout cannot be updated.
 	 */
 	public function action() {
 		/**
@@ -45,14 +46,20 @@ class UpdateCheckoutAction extends CFWAction {
 		 * @since 10.0.2
 		 * @return bool
 		 */
-		if ( apply_filters( 'cfw_validate_update_order_review_nonce', true ) ) {
-			check_ajax_referer( 'update-order-review', 'security' );
+		$valid_nonce = ! apply_filters( 'cfw_validate_update_order_review_nonce', true ) || check_ajax_referer( 'update-order-review', 'security', false );
+
+		// A cookie-backed session must retain the retry flag to prevent a reload loop.
+		if ( ! $valid_nonce && ( ! ( WC()->session instanceof WC_Session_Handler ) || WC()->session->has_session() ) && ! WC()->session->get( 'reload_checkout_for_nonce' ) ) {
+			WC()->session->set( 'reload_checkout_for_nonce', true );
+			$this->out( [ 'redirect' => false, 'reload' => true ] );
 		}
+
+		unset( WC()->session->reload_checkout_for_nonce );
 
 		\WC_Checkout::instance();
 		wc_maybe_define_constant( 'WOOCOMMERCE_CHECKOUT', true );
 
-		if ( WC()->cart->is_empty() && ! is_customize_preview() && cfw_apply_filters( 'woocommerce_checkout_update_order_review_expired', true ) ) {
+		if ( ! $valid_nonce || ( WC()->cart->is_empty() && ! is_customize_preview() && cfw_apply_filters( 'woocommerce_checkout_update_order_review_expired', true ) ) ) {
 			/**
 			 * Filters which element to update with session expired notice
 			 *
@@ -64,8 +71,10 @@ class UpdateCheckoutAction extends CFWAction {
 
 			$this->out(
 				[
-					'redirect'  => false,
-					'fragments' => cfw_apply_filters(
+					'redirect'       => false,
+					'applied_coupon' => '',
+					'notices'        => [],
+					'fragments'      => cfw_apply_filters(
 						'woocommerce_update_order_review_fragments',
 						[
 							$target_selector => '<div class="woocommerce-error">' . __( 'Sorry, your session has expired.', 'woocommerce' ) . ' <a href="' . esc_url( wc_get_page_permalink( 'shop' ) ) . '" class="wc-backward">' . __( 'Return to shop', 'woocommerce' ) . '</a></div>',

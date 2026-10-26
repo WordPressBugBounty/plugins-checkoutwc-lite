@@ -8,7 +8,7 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "POT-Creation-Date: 2025-07-25 09:22-0400\n"
-"PO-Revision-Date: 2026-10-12T15:20:31+00:00\n"
+"PO-Revision-Date: 2026-10-26T17:15:41+00:00\n"
 "Language: hi-IN\n"
 "Plural-Forms: nplurals=2; plural=(n==0 || n==1);\n"
 "X-Generator: Poedit 3.6\n"
@@ -26,7 +26,7 @@ msgstr ""
 #: includes/Compatibility/Plugins/CartFlows.php:62
 #: includes/Admin/Pages/PickupLocationsAdminFree.php:218
 #: includes/Admin/Pages/PageAbstract.php:106
-#: includes/Admin/Pages/General.php:341
+#: includes/Admin/Pages/General.php:353
 #: includes/Admin/Pages/Premium/PickupLocations.php:317
 #: includes/Admin/Pages/Premium/OrderBumps.php:456
 #: includes/Admin/Pages/Premium/LocalPickupAdmin.php:165
@@ -270,7 +270,7 @@ msgid "Hide order summary"
 msgstr "ऑर्डर सारांश छिपाएं"
 
 #: functions/template-functions.php:166
-#: includes/Admin/Pages/WooCommercePages.php:29
+#: includes/Admin/Pages/WooCommercePages.php:30
 #: client/ts/admin/Components/Forms/AdvancedScriptsSettingsForm.tsx:108
 msgid "Checkout"
 msgstr "चेकआउट"
@@ -281,8 +281,8 @@ msgstr "स्पष्ट नियंत्रण"
 
 #: functions/template-functions.php:340
 #: functions/template-functions.php:354
-#: functions/template-functions.php:1932
-#: functions/template-functions.php:2265
+#: functions/template-functions.php:2002
+#: functions/template-functions.php:2339
 msgid "Information"
 msgstr "जानकारी"
 
@@ -337,7 +337,7 @@ msgstr "लोग आउट।"
 
 #: functions/template-functions.php:745
 #: functions/template-functions.php:783
-#: functions/template-functions.php:1969
+#: functions/template-functions.php:2039
 msgid "Billing and Shipping address"
 msgstr "बिलिंग और शिपिंग पता"
 
@@ -345,14 +345,14 @@ msgstr "बिलिंग और शिपिंग पता"
 #: functions/template-functions.php:795
 #: functions/template-functions.php:1201
 #: functions/template-functions.php:1215
-#: functions/template-functions.php:1997
+#: functions/template-functions.php:2067
 #: includes/Compatibility/Gateways/PayPalForWooCommerce.php:192
 msgid "Billing address"
 msgstr "बिल भेजने का पता"
 
 #: functions/template-functions.php:768
 #: functions/template-functions.php:806
-#: functions/template-functions.php:1981
+#: functions/template-functions.php:2051
 #: includes/Managers/AssetManager.php:705
 msgid "Shipping address"
 msgstr "शिपिंग पता"
@@ -364,15 +364,15 @@ msgid "Your Cart"
 msgstr "अपनी गाड़ी"
 
 #: functions/template-functions.php:1047
-#: functions/template-functions.php:2013
-#: functions/template-functions.php:2287
+#: functions/template-functions.php:2083
+#: functions/template-functions.php:2361
 #: functions/functions.php:3478
 msgid "Shipping"
 msgstr "यातायात"
 
 #: functions/template-functions.php:1065
-#: functions/template-functions.php:1953
-#: functions/template-functions.php:2308
+#: functions/template-functions.php:2023
+#: functions/template-functions.php:2382
 #: functions/functions.php:1025
 #: functions/functions.php:1040
 #: client/ts/frontend/Components/ReviewPane/OrderReviewStepReviewPane.tsx:47
@@ -380,7 +380,7 @@ msgid "Payment"
 msgstr "भुगतान"
 
 #: functions/template-functions.php:1065
-#: functions/template-functions.php:2308
+#: functions/template-functions.php:2382
 #: includes/Features/OrderReviewStep.php:74
 #: includes/Admin/Pages/TrustBadgesAdminFree.php:88
 #: client/ts/admin/Components/TrustBadgeFields.tsx:20
@@ -396,104 +396,113 @@ msgstr "मुफ़्त"
 msgid "Select the address that matches your card or payment method."
 msgstr "उस पते का चयन करें जो आपके कार्ड या भुगतान विधि से मेल खाता है।"
 
-#: functions/template-functions.php:1638
-msgid "Unfortunately your order cannot be processed as the originating bank/merchant has declined your transaction. Please attempt your purchase again."
-msgstr "दुर्भाग्यवश आपका ऑर्डर संसाधित नहीं किया जा सकता क्योंकि मूल बैंक/व्यापारी ने आपका लेन-देन अस्वीकार कर दिया है। कृपया अपनी खरीदारी फिर से प्रयास करें।"
-
-#: functions/template-functions.php:1642
-msgid "Pay"
-msgstr "भुगतान करें"
-
 # %s is the order number
-#: functions/template-functions.php:1660
+#: functions/template-functions.php:1668
+#: functions/template-functions.php:1718
 msgid "Order %s"
 msgstr "आदेश %s"
 
+#: functions/template-functions.php:1673
+msgid "Payment failed"
+msgstr "भुगतान विफल"
+
+#: functions/template-functions.php:1686
+msgid "Unfortunately your order cannot be processed as the originating bank/merchant has declined your transaction. Please attempt your purchase again."
+msgstr "दुर्भाग्यवश आपका ऑर्डर संसाधित नहीं किया जा सकता क्योंकि मूल बैंक/व्यापारी ने आपका लेन-देन अस्वीकार कर दिया है। कृपया अपनी खरीदारी फिर से प्रयास करें।"
+
+#: functions/template-functions.php:1691
+msgid "Try payment again"
+msgstr "फिर से भुगतान करने का प्रयास करें"
+
+#: functions/template-functions.php:1693
+msgid "My account"
+msgstr "मेरा खाता"
+
 # %s is the billing first name
-#: functions/template-functions.php:1679
+#: functions/template-functions.php:1737
 msgid "Thank you %s!"
 msgstr "धन्यवाद %s!"
 
-#: functions/template-functions.php:1790
+#: functions/template-functions.php:1856
 msgid "Order status"
 msgstr "आदेश की स्थिति"
 
-#: functions/template-functions.php:1833
+#: functions/template-functions.php:1903
 msgid "Order updates"
 msgstr "ऑर्डर अपडेट"
 
-#: functions/template-functions.php:1844
+#: functions/template-functions.php:1914
 msgid "You’ll get shipping and delivery updates by email."
 msgstr "आपको ईमेल द्वारा शिपिंग और वितरण अपडेट मिलेंगे।"
 
-#: functions/template-functions.php:1862
+#: functions/template-functions.php:1932
 msgid "Downloads"
 msgstr "डाउनलोड"
 
-#: functions/template-functions.php:1902
+#: functions/template-functions.php:1972
 msgid "&infin;"
 msgstr "&infin;"
 
-#: functions/template-functions.php:1908
+#: functions/template-functions.php:1978
 msgid "Never"
 msgstr "कभी नहीं"
 
-#: functions/template-functions.php:1947
+#: functions/template-functions.php:2017
 msgid "Contact information"
 msgstr "संपर्क जानकारी"
 
-#: functions/template-functions.php:1974
-#: functions/template-functions.php:1986
-#: functions/template-functions.php:2003
+#: functions/template-functions.php:2044
+#: functions/template-functions.php:2056
+#: functions/template-functions.php:2073
 msgid "N/A"
 msgstr "लागू नहीं"
 
-#: functions/template-functions.php:2043
+#: functions/template-functions.php:2113
 #: includes/Managers/AssetManager.php:855
 msgid "Continue shopping"
 msgstr "खरीदारी जारी रखें"
 
-#: functions/template-functions.php:2073
+#: functions/template-functions.php:2143
 #: includes/Loaders/LoaderAbstract.php:111
 msgid "Pay for order"
 msgstr "ऑर्डर के लिए भुगतान करें"
 
-#: functions/template-functions.php:2091
+#: functions/template-functions.php:2161
 #: includes/Features/AbandonedCartRecovery.php:124
 #: client/ts/admin/Components/acr/carts.tsx:64
 msgid "Email"
 msgstr "ईमेल"
 
-#: functions/template-functions.php:2101
+#: functions/template-functions.php:2171
 #: functions/functions.php:4142
 #: functions/functions.php:4143
 msgid "Password"
 msgstr "पासवर्ड"
 
-#: functions/template-functions.php:2117
+#: functions/template-functions.php:2187
 #: functions/functions.php:4182
 msgid "Login"
 msgstr "लॉग इन"
 
-#: functions/template-functions.php:2120
+#: functions/template-functions.php:2190
 #: functions/functions.php:4175
 msgid "Lost your password?"
 msgstr "पासवर्ड खो गया?"
 
-#: functions/template-functions.php:2405
+#: functions/template-functions.php:2479
 msgid "Your Cart is Empty"
 msgstr "आपकी गाड़ी खाली है"
 
-#: functions/premium-init.php:342
+#: functions/premium-init.php:346
 msgid "CheckoutWC Templates Deactivated"
 msgstr "CheckoutWC टेम्पलेट्स निष्क्रिय"
 
 # %1$s: "Settings" text, %2$s: "Start Here" text, %3$s: "Activate CheckoutWC Templates" text
-#: functions/premium-init.php:345
+#: functions/premium-init.php:349
 msgid "Your license is valid and activated for this site but CheckoutWC is disabled for normal customers. To fix this, go to %1$s > %2$s and toggle \"%3$s\"."
 msgstr "आपका लाइसेंस इस साइट के लिए मान्य और सक्रिय है लेकिन सामान्य ग्राहकों के लिए CheckoutWC अक्षम है। इसे ठीक करने के लिए, %1$s > %2$s पर जाएं और \"%3$s\" को टॉगल करें।"
 
-#: functions/premium-init.php:346
+#: functions/premium-init.php:350
 #: includes/Admin/AdminPluginsPageManager.php:40
 #: includes/Admin/Pages/OrderBumpsAdminFree.php:25
 #: includes/Admin/Pages/LocalPickupAdminFree.php:27
@@ -505,69 +514,69 @@ msgstr "आपका लाइसेंस इस साइट के लिए 
 msgid "Settings"
 msgstr "सेटिंग्स"
 
-#: functions/premium-init.php:347
-#: functions/premium-init.php:360
-#: includes/Admin/Pages/General.php:25
+#: functions/premium-init.php:351
+#: functions/premium-init.php:364
+#: includes/Admin/Pages/General.php:24
 msgid "Start Here"
 msgstr "यहाँ से शुरू करें"
 
-#: functions/premium-init.php:348
-#: includes/Admin/Pages/General.php:195
+#: functions/premium-init.php:352
+#: includes/Admin/Pages/General.php:207
 msgid "Activate CheckoutWC Templates"
 msgstr "CheckoutWC टेम्पलेट्स सक्रिय करें"
 
-#: functions/premium-init.php:355
+#: functions/premium-init.php:359
 msgid "CheckoutWC license invalid"
 msgstr "CheckoutWC लाइसेंस अमान्य है"
 
 # %1$s: URL to license settings page, %2$s: "Start Here" link text, %3$s: Pricing URL, %4$s: "buy a license" link text
-#: functions/premium-init.php:358
+#: functions/premium-init.php:362
 msgid "Premium features are off because your license key is missing or invalid. Check your key on <a href=\"%1$s\">%2$s</a> or <a target=\"_blank\" href=\"%3$s\">%4$s</a>."
 msgstr "प्रीमियम सुविधाएँ बंद हैं क्योंकि आपकी लाइसेंस कुंजी गायब है या अमान्य है। अपनी कुंजी <a href=\"%1$s\">%2$s</a> पर या <a target=\"_blank\" href=\"%3$s\">%4$s</a> पर जाँचें।"
 
-#: functions/premium-init.php:362
+#: functions/premium-init.php:366
 #: includes/Admin/Notices/InactiveLicenseNotice.php:15
 msgid "buy a license"
 msgstr "लाइसेंस खरीदें"
 
-#: functions/premium-init.php:382
+#: functions/premium-init.php:386
 msgid "New Feature: Cloudflare Turnstile Bot Protection"
 msgstr "नई सुविधा: Cloudflare Turnstile बॉट सुरक्षा"
 
 # 1: Cloudflare Turnstile name wrapped in strong tags, 2: Setup link
-#: functions/premium-init.php:385
+#: functions/premium-init.php:389
 msgid "CheckoutWC now supports %1$s - a privacy-first, CAPTCHA-free way to protect your checkout from bots and spam orders. %2$s"
 msgstr "CheckoutWC अब %1$s का समर्थन करता है - एक गोपनीयता-प्रथम, CAPTCHA-रहित तरीका जो आपके चेकआउट को बॉट्स और स्पैम ऑर्डर से बचाता है। %2$s"
 
 # The name of the Cloudflare Turnstile service
-#: functions/premium-init.php:389
+#: functions/premium-init.php:393
 #: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:78
 msgid "Cloudflare Turnstile"
 msgstr "Cloudflare Turnstile"
 
-#: functions/premium-init.php:395
+#: functions/premium-init.php:399
 msgid "Setup Cloudflare Turnstile now"
 msgstr "अब Cloudflare Turnstile सेटअप करें"
 
-#: functions/premium-init.php:400
+#: functions/premium-init.php:404
 msgid "Upgrade your plan now to access"
 msgstr "अपना प्लान अभी अपग्रेड करें ताकि आप एक्सेस कर सकें"
 
-#: functions/premium-init.php:413
+#: functions/premium-init.php:417
 msgid "Abandoned Cart Recovery Tracking Disabled"
 msgstr "परित्यक्त कार्ट रिकवरी ट्रैकिंग अक्षम"
 
 # %1$s: Gist URL, %2$s: "Learn More" link text
-#: functions/premium-init.php:416
+#: functions/premium-init.php:420
 msgid "You have enabled Abandoned Cart Recovery tracking, but you do not have any emails published. To track carts, you need to publish emails or use this dev filter: <a target=\"_blank\" href=\"%1$s\">%2$s</a>."
 msgstr "आपने परित्यक्त कार्ट रिकवरी ट्रैकिंग सक्षम की है, लेकिन आपके पास कोई ईमेल प्रकाशित नहीं हैं। कार्ट ट्रैक करने के लिए, आपको ईमेल प्रकाशित करने होंगे या इस डेवलपर फ़िल्टर का उपयोग करें: <a target=\"_blank\" href=\"%1$s\">%2$s</a>।"
 
-#: functions/premium-init.php:418
+#: functions/premium-init.php:422
 #: includes/Admin/Pages/AbandonedCartRecoveryAdminFree.php:82
 msgid "Learn More"
 msgstr "और जानें"
 
-#: functions/premium-init.php:477
+#: functions/premium-init.php:481
 msgid "Admin preview: your CheckoutWC license isn\\'t valid for this site, so premium features are off. Check your license here: WP Admin > CheckoutWC > Start Here."
 msgstr "एडमिन प्रीव्यू: आपका CheckoutWC लाइसेंस इस साइट के लिए मान्य नहीं है, इसलिए प्रीमियम सुविधाएँ बंद हैं। अपना लाइसेंस यहाँ जाँचें: WP Admin > CheckoutWC > Start Here."
 
@@ -664,7 +673,7 @@ msgid "Ship to"
 msgstr "यहां भेजें"
 
 #: functions/functions.php:232
-#: includes/Features/LocalPickup.php:768
+#: includes/Features/LocalPickup.php:775
 #: includes/Admin/Pages/PickupLocationsAdminFree.php:93
 #: includes/Admin/Pages/Premium/PickupLocations.php:101
 msgid "Address"
@@ -675,7 +684,7 @@ msgid "Sorry, it seems that there are no available payment methods for your loca
 msgstr "क्षमा करें, ऐसा लगता है कि आपके स्थान के लिए कोई उपलब्ध भुगतान विधि नहीं है। कृपया सहायता के लिए हमसे संपर्क करें या वैकल्पिक व्यवस्था करना चाहें।"
 
 #: functions/functions.php:787
-#: includes/Features/LocalPickup.php:1095
+#: includes/Features/LocalPickup.php:1119
 msgid "Shipping costs are calculated during checkout."
 msgstr "शिपिंग लागत चेकआउट के दौरान गणना की जाती है।"
 
@@ -688,7 +697,7 @@ msgid "No shipping methods available"
 msgstr "कोई शिपिंग तरीके उपलब्ध नहीं हैं"
 
 #: functions/functions.php:826
-#: includes/Model/Bumps/BumpAbstract.php:882
+#: includes/Model/Bumps/BumpAbstract.php:895
 msgid "Free!"
 msgstr "मुफ़्त!"
 
@@ -776,7 +785,7 @@ msgstr "घटती"
 #: functions/functions.php:2415
 #: includes/Managers/AssetManager.php:735
 #: includes/Managers/AssetManager.php:856
-#: includes/Features/LocalPickup.php:510
+#: includes/Features/LocalPickup.php:513
 #: includes/Features/AbandonedCartRecovery.php:128
 #: includes/Features/ABTesting.php:150
 #: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:633
@@ -901,22 +910,6 @@ msgstr "CheckoutWC: आप एक ऐसा AB परीक्षण सक्�
 msgid "Accent Color"
 msgstr "एक्सेंट रंग"
 
-#: lib/sendwp-sdk/sendwp-init.php:27
-msgid "Security failed to check sendwp_install_nonce"
-msgstr "sendwp_install_nonce की सुरक्षा जांच विफल रही"
-
-#: lib/sendwp-sdk/sendwp-init.php:28
-msgid "Ask an administrator for install_plugins capability"
-msgstr "इंस्टॉल_प्लगइन्स क्षमता के लिए व्यवस्थापक से पूछें"
-
-#: lib/sendwp-sdk/sendwp-init.php:29
-msgid "SendWP is already connected."
-msgstr "SendWP पहले से ही कनेक्टेड है।"
-
-#: lib/sendwp-sdk/remote-install.php:84
-msgid "Something went wrong. SendWP was not installed correctly."
-msgstr "कुछ गलत हो गया। SendWP सही ढंग से इंस्टॉल नहीं हुआ।"
-
 #: includes/Stats/StatCollection.php:193
 msgid "Once Weekly"
 msgstr "साप्ताहिक एक बार"
@@ -954,98 +947,98 @@ msgstr "स्थानीय पिकअप"
 msgid "Allow customers to pick up orders themselves. This version does not require shipping zones."
 msgstr "ग्राहकों को स्वयं ऑर्डर लेने की अनुमति दें। इस संस्करण के लिए शिपिंग ज़ोन की आवश्यकता नहीं है।"
 
-#: includes/Managers/UpdatesManager.php:436
+#: includes/Managers/UpdatesManager.php:451
 msgid "CheckoutWC License Key"
 msgstr "CheckoutWC लाइसेंस कुंजी"
 
-#: includes/Managers/UpdatesManager.php:441
+#: includes/Managers/UpdatesManager.php:456
 msgid "Your license key is set with the constant <code>CFW_LICENSE_KEY</code>."
 msgstr "आपकी लाइसेंस कुंजी स्थिरांक <code>CFW_LICENSE_KEY</code> के साथ सेट है।"
 
-#: includes/Managers/UpdatesManager.php:448
+#: includes/Managers/UpdatesManager.php:463
 msgid "License Holder"
 msgstr "लाइसेंस धारक"
 
-#: includes/Managers/UpdatesManager.php:461
+#: includes/Managers/UpdatesManager.php:476
 msgid "Plan"
 msgstr "योजना"
 
-#: includes/Managers/UpdatesManager.php:469
+#: includes/Managers/UpdatesManager.php:484
 msgid "Activation Limit"
 msgstr "सक्रियण सीमा"
 
-#: includes/Managers/UpdatesManager.php:477
+#: includes/Managers/UpdatesManager.php:492
 #: includes/Admin/Pages/Premium/ABTestingAdmin.php:178
 #: includes/Admin/Pages/Premium/ABTestingAdmin.php:819
 #: client/ts/admin/Components/acr/carts.tsx:80
 msgid "Status"
 msgstr "स्थिति"
 
-#: includes/Managers/UpdatesManager.php:484
+#: includes/Managers/UpdatesManager.php:499
 msgid "Refresh License Info"
 msgstr "लाइसेंस जानकारी ताज़ा करें"
 
-#: includes/Managers/UpdatesManager.php:532
+#: includes/Managers/UpdatesManager.php:551
 msgid "Please enter your license key."
 msgstr "कृपया अपनी लाइसेंस कुंजी दर्ज करें।"
 
-#: includes/Managers/UpdatesManager.php:535
-#: includes/Managers/UpdatesManager.php:543
+#: includes/Managers/UpdatesManager.php:554
+#: includes/Managers/UpdatesManager.php:562
 msgid "Activate Site"
 msgstr "साइट सक्रिय करें"
 
-#: includes/Managers/UpdatesManager.php:538
+#: includes/Managers/UpdatesManager.php:557
 msgid "Deactivate Site"
 msgstr "साइट निष्क्रिय करें"
 
 # Debug error message logged when license check reaches unexpected state
-#: includes/Managers/UpdatesManager.php:724
+#: includes/Managers/UpdatesManager.php:743
 msgid "License Check Error: You should not be able to get here. I am kind of freaked out."
 msgstr "लाइसेंस जांच त्रुटि: आपको यहाँ नहीं आना चाहिए। मैं थोड़ा घबरा गया हूँ।"
 
 # %1$d: failure count, %2$d: max failures, %3$s: time since last failure
-#: includes/Managers/UpdatesManager.php:983
+#: includes/Managers/UpdatesManager.php:1002
 msgid "Unable to verify CheckoutWC license (%1$d/%2$d attempts failed). Using cached license data. Last attempt: %3$s ago."
 msgstr "CheckoutWC लाइसेंस सत्यापित करने में असमर्थ (%1$d/%2$d प्रयास विफल)। कैश्ड लाइसेंस डेटा का उपयोग किया जा रहा है। अंतिम प्रयास: %3$s पहले।"
 
-#: includes/Managers/UpdatesManager.php:1006
+#: includes/Managers/UpdatesManager.php:1025
 msgid "%s license activation was not successful. Please check your key status below for more information."
 msgstr "%s लाइसेंस सक्रियण सफल नहीं हुआ। कृपया अधिक जानकारी के लिए नीचे अपनी कुंजी स्थिति जांचें।"
 
-#: includes/Managers/UpdatesManager.php:1024
+#: includes/Managers/UpdatesManager.php:1043
 msgid "%s license successfully activated."
 msgstr "%s लाइसेंस सफलतापूर्वक सक्रिय किया गया।"
 
-#: includes/Managers/UpdatesManager.php:1042
+#: includes/Managers/UpdatesManager.php:1061
 msgid "%s license deactivation failed. Please try again, or contact support."
 msgstr "%s लाइसेंस निष्क्रियकरण विफल। कृपया पुनः प्रयास करें, या सहायता से संपर्क करें।"
 
-#: includes/Managers/UpdatesManager.php:1060
+#: includes/Managers/UpdatesManager.php:1079
 msgid "%s license deactivated successfully."
 msgstr "%s लाइसेंस सफलतापूर्वक निष्क्रिय किया गया।"
 
-#: includes/Managers/UpdatesManager.php:1078
+#: includes/Managers/UpdatesManager.php:1097
 msgid "%s license settings saved successfully."
 msgstr "%s लाइसेंस सेटिंग्स सफलतापूर्वक सहेजी गईं।"
 
-#: includes/Managers/UpdatesManager.php:1096
+#: includes/Managers/UpdatesManager.php:1115
 msgid "%1$s license activation failed: %2$s"
 msgstr "%1$s लाइसेंस सक्रियण विफल: %2$s"
 
-#: includes/Managers/UpdatesManager.php:1114
+#: includes/Managers/UpdatesManager.php:1133
 msgid "%s license activation failed: Unable to connect to license server. Please check your internet connection or try again later."
 msgstr "%s लाइसेंस सक्रियण विफल: लाइसेंस सर्वर से कनेक्ट नहीं हो सका। कृपया अपना इंटरनेट कनेक्शन जांचें या बाद में पुनः प्रयास करें।"
 
-#: includes/Managers/UpdatesManager.php:1132
+#: includes/Managers/UpdatesManager.php:1151
 msgid "%s: License deactivated locally. The license server could not be reached, but the license has been deactivated on this site."
 msgstr "%s: लाइसेंस स्थानीय रूप से निष्क्रिय किया गया। लाइसेंस सर्वर तक पहुंच नहीं हो सकी, लेकिन इस साइट पर लाइसेंस निष्क्रिय कर दिया गया है।"
 
 # %1$d: failure count, %2$d: max failures, %3$s: time since last failure
-#: includes/Managers/UpdatesManager.php:1402
+#: includes/Managers/UpdatesManager.php:1421
 msgid "Unable to verify license online (%1$d/%2$d attempts failed). Using cached license data. Last attempt: %3$s ago."
 msgstr "ऑनलाइन लाइसेंस सत्यापित करने में असमर्थ (%1$d/%2$d प्रयास विफल)। कैश्ड लाइसेंस डेटा का उपयोग किया जा रहा है। अंतिम प्रयास: %3$s पहले।"
 
-#: includes/Managers/UpdatesManager.php:1408
+#: includes/Managers/UpdatesManager.php:1427
 msgid "License verified successfully."
 msgstr "लाइसेंस सफलतापूर्वक सत्यापित किया गया।"
 
@@ -1272,7 +1265,7 @@ msgid "Please enter a valid postcode / ZIP."
 msgstr "कृपया एक मान्य पोस्टकोड / ज़िप दर्ज करें।"
 
 #: includes/Managers/AssetManager.php:714
-#: includes/Features/LocalPickup.php:636
+#: includes/Features/LocalPickup.php:639
 msgid "Pickup"
 msgstr "उठाना"
 
@@ -1441,142 +1434,142 @@ msgstr "मुफ्त उपहार"
 msgid "Reward"
 msgstr "इनाम"
 
-#: includes/Features/SideCart.php:1709
+#: includes/Features/SideCart.php:1710
 #: includes/Admin/WooCommerceAdminScreenAugmenter.php:24
 #: includes/Admin/WooCommerceAdminScreenAugmenter.php:45
 msgid "CheckoutWC:"
 msgstr "CheckoutWC:"
 
-#: includes/Features/SideCart.php:1710
+#: includes/Features/SideCart.php:1711
 msgid "Settings marked with asterisks (**) may be overridden based on your Side Cart settings. (CheckoutWC > Side Cart)"
 msgstr "सितारों (**) से चिह्नित सेटिंग्स आपके साइड कार्ट सेटिंग्स के आधार पर अधिलेखित की जा सकती हैं। (CheckoutWC > Side Cart)"
 
-#: includes/Features/OrderBumps.php:647
+#: includes/Features/OrderBumps.php:655
 msgid "All orders"
 msgstr "सभी आदेश"
 
-#: includes/Features/OrderBumps.php:650
+#: includes/Features/OrderBumps.php:658
 msgid "Contains Any Order Bump"
 msgstr "किसी भी ऑर्डर बम्प को शामिल करता है"
 
 # %s: Order bump title
-#: includes/Features/OrderBumps.php:656
+#: includes/Features/OrderBumps.php:664
 msgid "Has Bump: %s"
 msgstr "बम्प है: %s"
 
-#: includes/Features/LocalPickup.php:127
-#: includes/Features/LocalPickup.php:131
+#: includes/Features/LocalPickup.php:130
+#: includes/Features/LocalPickup.php:134
 msgid "Delivery method"
 msgstr "डिलिवरी विधि"
 
-#: includes/Features/LocalPickup.php:181
+#: includes/Features/LocalPickup.php:184
 msgid "Pick up"
 msgstr "उठाना"
 
-#: includes/Features/LocalPickup.php:200
+#: includes/Features/LocalPickup.php:203
 msgid "Ship"
 msgstr "जहाज़ पर भेजना"
 
-#: includes/Features/LocalPickup.php:308
+#: includes/Features/LocalPickup.php:311
 msgid "Pickup locations"
 msgstr "पिकअप स्थान"
 
-#: includes/Features/LocalPickup.php:505
-#: includes/Features/LocalPickup.php:507
+#: includes/Features/LocalPickup.php:508
+#: includes/Features/LocalPickup.php:510
 #: includes/Admin/Pages/PickupLocationsAdminFree.php:21
 #: includes/Admin/Pages/Premium/PickupLocations.php:23
 msgid "Pickup Locations"
 msgstr "पिकअप स्थान"
 
-#: includes/Features/LocalPickup.php:506
-#: includes/Features/LocalPickup.php:694
-#: includes/Features/LocalPickup.php:782
-#: includes/Features/LocalPickup.php:830
-#: includes/Features/LocalPickup.php:1158
-#: includes/Features/LocalPickup.php:1183
+#: includes/Features/LocalPickup.php:509
+#: includes/Features/LocalPickup.php:697
+#: includes/Features/LocalPickup.php:789
+#: includes/Features/LocalPickup.php:837
+#: includes/Features/LocalPickup.php:1182
+#: includes/Features/LocalPickup.php:1207
 msgid "Pickup Location"
 msgstr "लेने की जगह"
 
-#: includes/Features/LocalPickup.php:508
+#: includes/Features/LocalPickup.php:511
 msgid "Add Pickup Location"
 msgstr "पिकअप स्थान जोड़ें"
 
-#: includes/Features/LocalPickup.php:509
+#: includes/Features/LocalPickup.php:512
 msgid "Add New Pickup Location"
 msgstr "नया पिकअप स्थान जोड़ें"
 
-#: includes/Features/LocalPickup.php:511
+#: includes/Features/LocalPickup.php:514
 msgid "Edit Pickup Location"
 msgstr "पिकअप स्थान संपादित करें"
 
-#: includes/Features/LocalPickup.php:512
+#: includes/Features/LocalPickup.php:515
 msgid "New Pickup Location"
 msgstr "नया पिकअप स्थान"
 
-#: includes/Features/LocalPickup.php:513
+#: includes/Features/LocalPickup.php:516
 msgid "View Pickup Locations"
 msgstr "पिकअप स्थान देखें"
 
-#: includes/Features/LocalPickup.php:514
+#: includes/Features/LocalPickup.php:517
 msgid "View Pickup Location"
 msgstr "पिकअप स्थान देखें"
 
-#: includes/Features/LocalPickup.php:515
+#: includes/Features/LocalPickup.php:518
 msgid "Search Pickup Locations"
 msgstr "पिकअप स्थान खोजें"
 
-#: includes/Features/LocalPickup.php:516
+#: includes/Features/LocalPickup.php:519
 msgid "No Pickup Location found"
 msgstr "कोई पिकअप स्थान नहीं मिला"
 
-#: includes/Features/LocalPickup.php:517
+#: includes/Features/LocalPickup.php:520
 msgid "No Pickup Locations found in trash"
 msgstr "ट्रैश में कोई पिकअप स्थान नहीं मिला"
 
-#: includes/Features/LocalPickup.php:518
+#: includes/Features/LocalPickup.php:521
 msgid "Attributes"
 msgstr "विशेषताएँ"
 
-#: includes/Features/LocalPickup.php:523
+#: includes/Features/LocalPickup.php:526
 msgid "This is where you can add new Pickup Locations."
 msgstr "यहाँ आप नए पिकअप स्थान जोड़ सकते हैं।"
 
-#: includes/Features/LocalPickup.php:601
+#: includes/Features/LocalPickup.php:604
 #: client/ts/frontend/Components/ReviewPane/PaymentMethodReviewPane.tsx:37
 #: client/ts/frontend/Components/ReviewPane/OrderReviewStepReviewPane.tsx:37
 msgid "Method"
 msgstr "तरीका"
 
-#: includes/Features/LocalPickup.php:754
+#: includes/Features/LocalPickup.php:761
 msgid "Pickup instructions"
 msgstr "पिकअप निर्देश"
 
-#: includes/Features/LocalPickup.php:950
+#: includes/Features/LocalPickup.php:957
 msgid "Usually ready in 1 hour."
 msgstr "आमतौर पर 1 घंटे में तैयार हो जाता है।"
 
-#: includes/Features/LocalPickup.php:951
+#: includes/Features/LocalPickup.php:958
 msgid "Usually ready in 2 hours."
 msgstr "आमतौर पर 2 घंटे में तैयार हो जाता है।"
 
-#: includes/Features/LocalPickup.php:952
+#: includes/Features/LocalPickup.php:959
 msgid "Usually ready in 4 hours."
 msgstr "आमतौर पर 4 घंटे में तैयार हो जाता है।"
 
-#: includes/Features/LocalPickup.php:953
+#: includes/Features/LocalPickup.php:960
 msgid "Usually ready in 24 hours."
 msgstr "आमतौर पर 24 घंटे में तैयार हो जाता है।"
 
-#: includes/Features/LocalPickup.php:954
+#: includes/Features/LocalPickup.php:961
 msgid "Usually ready in 2-4 days."
 msgstr "आमतौर पर 2-4 दिनों में तैयार हो जाता है।"
 
-#: includes/Features/LocalPickup.php:955
+#: includes/Features/LocalPickup.php:962
 msgid "Usually ready in 5+ days."
 msgstr "आमतौर पर 5+ दिनों में तैयार हो जाता है।"
 
-#: includes/Features/LocalPickup.php:1167
-#: includes/Features/LocalPickup.php:1194
+#: includes/Features/LocalPickup.php:1191
+#: includes/Features/LocalPickup.php:1218
 msgid "Pickup Instructions:"
 msgstr "पिकअप निर्देश:"
 
@@ -1787,152 +1780,6 @@ msgstr "कोई एक विकल्प चुनें..."
 msgid "You're missing out on important updates because your license key is missing, invalid, or expired."
 msgstr "आप महत्वपूर्ण अपडेट से वंचित हैं क्योंकि आपका लाइसेंस कुंजी गायब, अमान्य, या समाप्त हो चुका है।"
 
-#: includes/Action/ValidatePostcodeAction.php:33
-msgid "Please enter a valid %s."
-msgstr "कृपया एक मान्य %s दर्ज करें।"
-
-#: includes/Action/ValidateEmailDomainAction.php:44
-msgid "Email address contains invalid domain name."
-msgstr "ईमेल पते में अमान्य डोमेन नाम है।"
-
-#: includes/Action/UpdateCheckoutAction.php:71
-msgid "Sorry, your session has expired."
-msgstr "क्षमा करें, आपका सत्र समाप्त हो गया है।"
-
-#: includes/Action/UpdateCheckoutAction.php:71
-msgid "Return to shop"
-msgstr "दुकान पर वापस जाएं"
-
-#: includes/Action/SmartyStreetsAddressValidationAction.php:85
-msgid "Use Recommended"
-msgstr "अनुशंसित का प्रयोग करें"
-
-#: includes/Action/SmartyStreetsAddressValidationAction.php:86
-msgid "Use Your Address"
-msgstr "अपने पते का प्रयोग करें"
-
-#: includes/Action/SmartyStreetsAddressValidationAction.php:103
-msgid "Reenter Address"
-msgstr "पता पुनः दर्ज करें"
-
-#: includes/Action/SmartyStreetsAddressValidationAction.php:104
-msgid "Use Existing Address"
-msgstr "मौजूदा पते का प्रयोग करें"
-
-#: includes/Action/SmartyStreetsAddressValidationAction.php:168
-msgid "Use recommended address instead?"
-msgstr "इसके बजाय अनुशंसित पते का उपयोग करें?"
-
-#: includes/Action/SmartyStreetsAddressValidationAction.php:171
-msgid "We\\'re unable to verify your address, but found a close match."
-msgstr "हम आपका पता सत्यापित करने में असमर्थ हैं, लेकिन एक निकटतम मेल मिला है।"
-
-#: includes/Action/SmartyStreetsAddressValidationAction.php:175
-#: includes/Action/SmartyStreetsAddressValidationAction.php:248
-#: includes/Action/SmartyStreetsAddressValidationAction.php:305
-#: includes/Action/SmartyStreetsAddressValidationAction.php:358
-#: includes/Action/SmartyStreetsAddressValidationAction.php:409
-msgid "We are unable to verify your address."
-msgstr "हम आपका पता सत्यापित करने में असमर्थ हैं।"
-
-#: includes/Action/SmartyStreetsAddressValidationAction.php:179
-msgid "Please confirm you would like to use this address or try again."
-msgstr "कृपया पुष्टि करें कि आप इस पते का उपयोग करना चाहते हैं या फिर से प्रयास करें।"
-
-#: includes/Action/SmartyStreetsAddressValidationAction.php:186
-msgid "You Entered"
-msgstr "आपने दर्ज किया"
-
-#: includes/Action/SmartyStreetsAddressValidationAction.php:198
-msgid "Recommended"
-msgstr "अनुशंसित"
-
-#: includes/Action/RemoveCouponAction.php:26
-msgid "Sorry there was a problem removing this coupon."
-msgstr "क्षमा करें, इस कूपन को हटाने में समस्या हुई।"
-
-#: includes/Action/RemoveCouponAction.php:29
-msgid "Coupon has been removed."
-msgstr "कूपन हटा दिया गया है।"
-
-#: includes/Action/ProcessOfferPaymentAction.php:61
-#: includes/Features/OneClick/OfferRefundManager.php:159
-msgid "Security verification failed."
-msgstr "सुरक्षा सत्यापन विफल।"
-
-#: includes/Action/ProcessOfferPaymentAction.php:84
-msgid "Invalid order key."
-msgstr "अमान्य ऑर्डर कुंजी।"
-
-#: includes/Action/ProcessOfferPaymentAction.php:96
-msgid "This order cannot accept offers."
-msgstr "यह ऑर्डर ऑफ़र स्वीकार नहीं कर सकता।"
-
-#: includes/Action/ProcessOfferPaymentAction.php:108
-msgid "No payment method found."
-msgstr "कोई भुगतान विधि नहीं मिली।"
-
-#: includes/Action/ProcessOfferPaymentAction.php:120
-msgid "Payment gateway does not support one-click upsells."
-msgstr "भुगतान गेटवे वन-क्लिक अपसेल का समर्थन नहीं करता।"
-
-#: includes/Action/ProcessOfferPaymentAction.php:132
-#: includes/Features/OneClick/OfferRefundManager.php:215
-msgid "Failed to load payment gateway."
-msgstr "भुगतान गेटवे लोड करने में विफल।"
-
-#: includes/Action/ProcessOfferPaymentAction.php:144
-msgid "Invalid product."
-msgstr "अमान्य उत्पाद।"
-
-#: includes/Action/ProcessOfferPaymentAction.php:156
-msgid "Invalid bump offer."
-msgstr "अमान्य बम्प ऑफ़र।"
-
-#: includes/Action/ProcessOfferPaymentAction.php:253
-msgid "Payment failed. Please try again."
-msgstr "भुगतान विफल। कृपया पुनः प्रयास करें।"
-
-#: includes/Action/ProcessOfferPaymentAction.php:276
-msgid "Payment successful but failed to update order."
-msgstr "भुगतान सफल लेकिन ऑर्डर अपडेट करने में विफल।"
-
-#: includes/Action/ProcessOfferPaymentAction.php:308
-msgid "Offer accepted successfully."
-msgstr "ऑफ़र सफलतापूर्वक स्वीकार किया गया।"
-
-#: includes/Action/LostPasswordAction.php:59
-msgid "A password reset email has been sent to the email address on file for your account, but may take several minutes to show up in your inbox. Please wait at least 10 minutes before attempting another reset."
-msgstr "आपके खाते के लिए फ़ाइल पर ईमेल पते पर पासवर्ड रीसेट ईमेल भेजा गया है, लेकिन यह आपके इनबॉक्स में दिखने में कुछ मिनट लग सकते हैं। कृपया एक और रीसेट प्रयास करने से पहले कम से कम 10 मिनट प्रतीक्षा करें।"
-
-#: includes/Action/LogInAction.php:24
-msgid "There was an error logging in. Please check your credentials and try again."
-msgstr "लॉग इन करने में एक त्रुटि हुई। कृपया अपनी साख जांचें और पुनः प्रयास करें।"
-
-#: includes/Action/DeclineOfferAction.php:39
-msgid "Invalid security token."
-msgstr "अमान्य सुरक्षा टोकन।"
-
-#: includes/Action/DeclineOfferAction.php:48
-msgid "Invalid order information."
-msgstr "अमान्य ऑर्डर जानकारी।"
-
-#: includes/Action/DeclineOfferAction.php:54
-msgid "Order verification failed."
-msgstr "ऑर्डर सत्यापन विफल।"
-
-#: includes/Action/DeclineOfferAction.php:63
-msgid "Redirecting..."
-msgstr "पुनर्निर्देशित किया जा रहा है..."
-
-#: includes/Action/DeclineOfferAction.php:76
-msgid "Session expired. Redirecting..."
-msgstr "सत्र समाप्त हो गया। पुनर्निर्देशित किया जा रहा है..."
-
-#: includes/Action/DeclineOfferAction.php:102
-msgid "Offer declined."
-msgstr "ऑफ़र अस्वीकार किया गया।"
-
 #: includes/API/UserRolesAPI.php:44
 msgid "Guest (Not Logged In)"
 msgstr "अतिथि (लॉग इन नहीं)"
@@ -2032,6 +1879,168 @@ msgstr "पुनर्प्राप्त राजस्व"
 msgid "Recovery Rate"
 msgstr "पुनर्प्राप्ति दर"
 
+#: includes/Action/ValidatePostcodeAction.php:33
+msgid "Please enter a valid %s."
+msgstr "कृपया एक मान्य %s दर्ज करें।"
+
+#: includes/Action/ValidateEmailDomainAction.php:44
+msgid "Email address contains invalid domain name."
+msgstr "ईमेल पते में अमान्य डोमेन नाम है।"
+
+#: includes/Action/UpdateCheckoutAction.php:80
+msgid "Sorry, your session has expired."
+msgstr "क्षमा करें, आपका सत्र समाप्त हो गया है।"
+
+#: includes/Action/UpdateCheckoutAction.php:80
+msgid "Return to shop"
+msgstr "दुकान पर वापस जाएं"
+
+#: includes/Action/SmartyStreetsAddressValidationAction.php:85
+msgid "Use Recommended"
+msgstr "अनुशंसित का प्रयोग करें"
+
+#: includes/Action/SmartyStreetsAddressValidationAction.php:86
+msgid "Use Your Address"
+msgstr "अपने पते का प्रयोग करें"
+
+#: includes/Action/SmartyStreetsAddressValidationAction.php:103
+msgid "Reenter Address"
+msgstr "पता पुनः दर्ज करें"
+
+#: includes/Action/SmartyStreetsAddressValidationAction.php:104
+msgid "Use Existing Address"
+msgstr "मौजूदा पते का प्रयोग करें"
+
+#: includes/Action/SmartyStreetsAddressValidationAction.php:168
+msgid "Use recommended address instead?"
+msgstr "इसके बजाय अनुशंसित पते का उपयोग करें?"
+
+#: includes/Action/SmartyStreetsAddressValidationAction.php:171
+msgid "We\\'re unable to verify your address, but found a close match."
+msgstr "हम आपका पता सत्यापित करने में असमर्थ हैं, लेकिन एक निकटतम मेल मिला है।"
+
+#: includes/Action/SmartyStreetsAddressValidationAction.php:175
+#: includes/Action/SmartyStreetsAddressValidationAction.php:248
+#: includes/Action/SmartyStreetsAddressValidationAction.php:305
+#: includes/Action/SmartyStreetsAddressValidationAction.php:358
+#: includes/Action/SmartyStreetsAddressValidationAction.php:409
+msgid "We are unable to verify your address."
+msgstr "हम आपका पता सत्यापित करने में असमर्थ हैं।"
+
+#: includes/Action/SmartyStreetsAddressValidationAction.php:179
+msgid "Please confirm you would like to use this address or try again."
+msgstr "कृपया पुष्टि करें कि आप इस पते का उपयोग करना चाहते हैं या फिर से प्रयास करें।"
+
+#: includes/Action/SmartyStreetsAddressValidationAction.php:186
+msgid "You Entered"
+msgstr "आपने दर्ज किया"
+
+#: includes/Action/SmartyStreetsAddressValidationAction.php:198
+msgid "Recommended"
+msgstr "अनुशंसित"
+
+#: includes/Action/RemoveCouponAction.php:26
+msgid "Sorry there was a problem removing this coupon."
+msgstr "क्षमा करें, इस कूपन को हटाने में समस्या हुई।"
+
+#: includes/Action/RemoveCouponAction.php:29
+msgid "Coupon has been removed."
+msgstr "कूपन हटा दिया गया है।"
+
+#: includes/Action/ProcessOfferPaymentAction.php:61
+#: includes/Features/OneClick/OfferRefundManager.php:159
+msgid "Security verification failed."
+msgstr "सुरक्षा सत्यापन विफल।"
+
+#: includes/Action/ProcessOfferPaymentAction.php:84
+msgid "Invalid order key."
+msgstr "अमान्य ऑर्डर कुंजी।"
+
+#: includes/Action/ProcessOfferPaymentAction.php:95
+msgid "This order cannot accept offers."
+msgstr "यह ऑर्डर ऑफ़र स्वीकार नहीं कर सकता।"
+
+#: includes/Action/ProcessOfferPaymentAction.php:107
+msgid "No payment method found."
+msgstr "कोई भुगतान विधि नहीं मिली।"
+
+#: includes/Action/ProcessOfferPaymentAction.php:119
+msgid "Payment gateway does not support one-click upsells."
+msgstr "भुगतान गेटवे वन-क्लिक अपसेल का समर्थन नहीं करता।"
+
+#: includes/Action/ProcessOfferPaymentAction.php:131
+#: includes/Features/OneClick/OfferRefundManager.php:215
+msgid "Failed to load payment gateway."
+msgstr "भुगतान गेटवे लोड करने में विफल।"
+
+#: includes/Action/ProcessOfferPaymentAction.php:143
+msgid "Invalid product."
+msgstr "अमान्य उत्पाद।"
+
+#: includes/Action/ProcessOfferPaymentAction.php:155
+msgid "Invalid bump offer."
+msgstr "अमान्य बम्प ऑफ़र।"
+
+#: includes/Action/ProcessOfferPaymentAction.php:252
+msgid "Payment failed. Please try again."
+msgstr "भुगतान विफल। कृपया पुनः प्रयास करें।"
+
+#: includes/Action/ProcessOfferPaymentAction.php:275
+msgid "Payment successful but failed to update order."
+msgstr "भुगतान सफल लेकिन ऑर्डर अपडेट करने में विफल।"
+
+#: includes/Action/ProcessOfferPaymentAction.php:307
+msgid "Offer accepted successfully."
+msgstr "ऑफ़र सफलतापूर्वक स्वीकार किया गया।"
+
+#: includes/Action/LostPasswordAction.php:59
+msgid "A password reset email has been sent to the email address on file for your account, but may take several minutes to show up in your inbox. Please wait at least 10 minutes before attempting another reset."
+msgstr "आपके खाते के लिए फ़ाइल पर ईमेल पते पर पासवर्ड रीसेट ईमेल भेजा गया है, लेकिन यह आपके इनबॉक्स में दिखने में कुछ मिनट लग सकते हैं। कृपया एक और रीसेट प्रयास करने से पहले कम से कम 10 मिनट प्रतीक्षा करें।"
+
+#: includes/Action/LogInAction.php:24
+msgid "There was an error logging in. Please check your credentials and try again."
+msgstr "लॉग इन करने में एक त्रुटि हुई। कृपया अपनी साख जांचें और पुनः प्रयास करें।"
+
+#: includes/Action/DeclineOfferAction.php:39
+msgid "Invalid security token."
+msgstr "अमान्य सुरक्षा टोकन।"
+
+#: includes/Action/DeclineOfferAction.php:48
+msgid "Invalid order information."
+msgstr "अमान्य ऑर्डर जानकारी।"
+
+#: includes/Action/DeclineOfferAction.php:54
+msgid "Order verification failed."
+msgstr "ऑर्डर सत्यापन विफल।"
+
+#: includes/Action/DeclineOfferAction.php:63
+msgid "Redirecting..."
+msgstr "पुनर्निर्देशित किया जा रहा है..."
+
+#: includes/Action/DeclineOfferAction.php:76
+msgid "Session expired. Redirecting..."
+msgstr "सत्र समाप्त हो गया। पुनर्निर्देशित किया जा रहा है..."
+
+#: includes/Action/DeclineOfferAction.php:102
+msgid "Offer declined."
+msgstr "ऑफ़र अस्वीकार किया गया।"
+
+#: lib/sendwp-sdk/sendwp-init.php:27
+msgid "Security failed to check sendwp_install_nonce"
+msgstr "sendwp_install_nonce की सुरक्षा जांच विफल रही"
+
+#: lib/sendwp-sdk/sendwp-init.php:28
+msgid "Ask an administrator for install_plugins capability"
+msgstr "इंस्टॉल_प्लगइन्स क्षमता के लिए व्यवस्थापक से पूछें"
+
+#: lib/sendwp-sdk/sendwp-init.php:29
+msgid "SendWP is already connected."
+msgstr "SendWP पहले से ही कनेक्टेड है।"
+
+#: lib/sendwp-sdk/remote-install.php:84
+msgid "Something went wrong. SendWP was not installed correctly."
+msgstr "कुछ गलत हो गया। SendWP सही ढंग से इंस्टॉल नहीं हुआ।"
+
 #. block title
 #: block.json
 msgid "Order Bump Steps"
@@ -2057,62 +2066,6 @@ msgstr "ऑर्डर बम्प ऑफर फॉर्म"
 msgid "The form to accept or reject the bump offer."
 msgstr "बम्प ऑफर को स्वीकार या अस्वीकार करने का फॉर्म।"
 
-#: includes/Model/Bumps/BumpAbstract.php:1081
-#: includes/Model/Bumps/BumpAbstract.php:1091
-#: includes/Model/ABTests/OrderBumpsABTest.php:30
-#: includes/Features/ABTesting/ABTestTypeRegistry.php:123
-#: includes/Admin/Pages/OrderBumpsAdminFree.php:17
-#: includes/Admin/Pages/OrderBumpsAdminFree.php:71
-#: includes/Admin/Pages/Premium/OrderBumps.php:50
-#: client/ts/admin/Components/Forms/OrderBumpSettingsForm.tsx:45
-#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:408
-msgid "Order Bumps"
-msgstr "ऑर्डर बम्प्स"
-
-#: includes/Model/Bumps/BumpAbstract.php:1082
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:193
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:1614
-msgid "Order Bump"
-msgstr "ऑर्डर बम्प"
-
-#: includes/Model/Bumps/BumpAbstract.php:1083
-msgid "Add New"
-msgstr "नया जोड़ें"
-
-#: includes/Model/Bumps/BumpAbstract.php:1084
-msgid "Add New Order Bump"
-msgstr "नया ऑर्डर बम्प जोड़ें"
-
-#: includes/Model/Bumps/BumpAbstract.php:1085
-msgid "Edit Order Bump"
-msgstr "ऑर्डर बम्प संपादित करें"
-
-#: includes/Model/Bumps/BumpAbstract.php:1086
-#: client/ts/admin/Components/Metaboxes/OrderBumpsSetupModal.tsx:61
-msgid "New Order Bump"
-msgstr "नया ऑर्डर बम्प"
-
-#: includes/Model/Bumps/BumpAbstract.php:1087
-msgid "View Order Bump"
-msgstr "ऑर्डर बम्प देखें"
-
-#: includes/Model/Bumps/BumpAbstract.php:1088
-msgid "Find Order Bump"
-msgstr "ऑर्डर बम्प खोजें"
-
-#: includes/Model/Bumps/BumpAbstract.php:1089
-msgid "No order bumps were found."
-msgstr "कोई ऑर्डर बम्प नहीं मिला।"
-
-#: includes/Model/Bumps/BumpAbstract.php:1090
-msgid "Not found in trash"
-msgstr "कूड़ेदान में नहीं मिला"
-
-#: includes/Model/ABTests/OrderBumpsABTest.php:31
-#: includes/Features/ABTesting/ABTestTypeRegistry.php:124
-msgid "Test different variations of order bumps to see which performs better."
-msgstr "देखें कि कौन सा ऑर्डर बम्प्स के विभिन्न संस्करण बेहतर प्रदर्शन करते हैं।"
-
 # %1$s: Plugin name, %2$s: Link opening tag, %3$s: Version number, %4$s: Link closing tag
 #: includes/Managers/Helpers/EDD_SL_Plugin_Updater.php:281
 msgid "There is a new version of %1$s available. %2$sView version %3$s details%4$s."
@@ -2131,6 +2084,62 @@ msgstr "आपके पास प्लगइन अपडेट इंस्�
 #: client/ts/admin/Components/GooglePlacesKeyStatus.tsx:61
 msgid "Error"
 msgstr "त्रुटि"
+
+#: includes/Model/Bumps/BumpAbstract.php:1094
+#: includes/Model/Bumps/BumpAbstract.php:1104
+#: includes/Model/ABTests/OrderBumpsABTest.php:30
+#: includes/Features/ABTesting/ABTestTypeRegistry.php:123
+#: includes/Admin/Pages/OrderBumpsAdminFree.php:17
+#: includes/Admin/Pages/OrderBumpsAdminFree.php:71
+#: includes/Admin/Pages/Premium/OrderBumps.php:50
+#: client/ts/admin/Components/Forms/OrderBumpSettingsForm.tsx:45
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:408
+msgid "Order Bumps"
+msgstr "ऑर्डर बम्प्स"
+
+#: includes/Model/Bumps/BumpAbstract.php:1095
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:193
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:1614
+msgid "Order Bump"
+msgstr "ऑर्डर बम्प"
+
+#: includes/Model/Bumps/BumpAbstract.php:1096
+msgid "Add New"
+msgstr "नया जोड़ें"
+
+#: includes/Model/Bumps/BumpAbstract.php:1097
+msgid "Add New Order Bump"
+msgstr "नया ऑर्डर बम्प जोड़ें"
+
+#: includes/Model/Bumps/BumpAbstract.php:1098
+msgid "Edit Order Bump"
+msgstr "ऑर्डर बम्प संपादित करें"
+
+#: includes/Model/Bumps/BumpAbstract.php:1099
+#: client/ts/admin/Components/Metaboxes/OrderBumpsSetupModal.tsx:61
+msgid "New Order Bump"
+msgstr "नया ऑर्डर बम्प"
+
+#: includes/Model/Bumps/BumpAbstract.php:1100
+msgid "View Order Bump"
+msgstr "ऑर्डर बम्प देखें"
+
+#: includes/Model/Bumps/BumpAbstract.php:1101
+msgid "Find Order Bump"
+msgstr "ऑर्डर बम्प खोजें"
+
+#: includes/Model/Bumps/BumpAbstract.php:1102
+msgid "No order bumps were found."
+msgstr "कोई ऑर्डर बम्प नहीं मिला।"
+
+#: includes/Model/Bumps/BumpAbstract.php:1103
+msgid "Not found in trash"
+msgstr "कूड़ेदान में नहीं मिला"
+
+#: includes/Model/ABTests/OrderBumpsABTest.php:31
+#: includes/Features/ABTesting/ABTestTypeRegistry.php:124
+msgid "Test different variations of order bumps to see which performs better."
+msgstr "देखें कि कौन सा ऑर्डर बम्प्स के विभिन्न संस्करण बेहतर प्रदर्शन करते हैं।"
 
 #: includes/Features/OneClick/OrderStatusManager.php:52
 msgid "Pending Offer <span class=\"count\">(%s)</span>"
@@ -2253,6 +2262,14 @@ msgstr "Astra समर्थन सक्षम करें (बीटा)"
 msgid "If enabled with Advanced > Template Loader > Distraction Free Portal, Astra\\'s header and footer are displayed and Astra styles and scripts load on checkout. If disabled with Distraction Free Portal, Astra styles and scripts are excluded for a minimal layout. With WordPress Theme loader, the full theme loads regardless of this setting."
 msgstr "यदि Advanced > Template Loader > Distraction Free Portal के साथ सक्षम किया गया है, तो Astra का हेडर और फुटर प्रदर्शित होता है और Astra शैलियाँ और स्क्रिप्ट चेकआउट पर लोड होती हैं। यदि Distraction Free Portal के साथ अक्षम किया गया है, तो Astra शैलियाँ और स्क्रिप्ट न्यूनतम लेआउट के लिए बाहर रखी जाती हैं। WordPress Theme loader के साथ, इस सेटिंग की परवाह किए बिना पूरा थीम लोड होता है।"
 
+#: includes/Compatibility/Gateways/PayPalForWooCommerce.php:38
+msgid "Please update to the latest version of PayPal for WooCommerce to get full support."
+msgstr "पूर्ण समर्थन प्राप्त करने के लिए कृपया WooCommerce के लिए PayPal का नवीनतम संस्करण अपडेट करें।"
+
+#: includes/Compatibility/Gateways/PayPalForWooCommerce.php:363
+msgid "Logged in with PayPal. Please continue your order below."
+msgstr "पेपैल के साथ में लॉग इन किया । कृपया नीचे अपना ऑर्डर जारी रखें ।"
+
 #: includes/Compatibility/Plugins/WooCommerceGiftCards.php:64
 #: includes/Compatibility/Plugins/WooCommerceGiftCards.php:72
 msgid "Enter your code&hellip;"
@@ -2373,14 +2390,6 @@ msgstr "Beaver Themer समर्थन सक्षम करें"
 msgid "Allow Beaver Themer to replace header and footer."
 msgstr "Beaver Themer को हेडर और फुटर बदलने की अनुमति दें।"
 
-#: includes/Compatibility/Gateways/PayPalForWooCommerce.php:38
-msgid "Please update to the latest version of PayPal for WooCommerce to get full support."
-msgstr "पूर्ण समर्थन प्राप्त करने के लिए कृपया WooCommerce के लिए PayPal का नवीनतम संस्करण अपडेट करें।"
-
-#: includes/Compatibility/Gateways/PayPalForWooCommerce.php:363
-msgid "Logged in with PayPal. Please continue your order below."
-msgstr "पेपैल के साथ में लॉग इन किया । कृपया नीचे अपना ऑर्डर जारी रखें ।"
-
 #: includes/Admin/Views/html-refund-offer.php:22
 msgid "Product"
 msgstr "उत्पाद"
@@ -2409,17 +2418,171 @@ msgstr "नोट:"
 msgid "Refunding an offer will process the refund with the payment gateway and create a WooCommerce refund record."
 msgstr "ऑफ़र रिफंड करने से भुगतान गेटवे के साथ रिफंड प्रक्रिया होगी और WooCommerce रिफंड रिकॉर्ड बनेगा।"
 
-#: includes/Admin/Pages/WooCommercePages.php:21
+#: includes/Admin/Notices/WelcomeNotice.php:12
+msgid "Welcome to CheckoutWC"
+msgstr "CheckoutWC में आपका स्वागत है"
+
+#: includes/Admin/Notices/WelcomeNotice.php:20
+msgid "Thank you for installing CheckoutWC! We automatically activated your license. You are all set!"
+msgstr "CheckoutWC स्थापित करने के लिए धन्यवाद! हमने स्वचालित रूप से आपका लाइसेंस सक्रिय कर दिया है। आप पूरी तरह तैयार हैं!"
+
+#: includes/Admin/Notices/WelcomeNotice.php:26
+msgid "Thank you for installing CheckoutWC! To get started, enter your <strong>License Key</strong> below, save, and click <strong>Activate Site</strong>."
+msgstr "CheckoutWC स्थापित करने के लिए धन्यवाद! शुरू करने के लिए, नीचे अपना <strong>लाइसेंस कुंजी</strong> दर्ज करें, सहेजें, और <strong>साइट सक्रिय करें</strong> पर क्लिक करें।"
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:20
+msgid "your email"
+msgstr "आपका ईमेल"
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:88
+msgid "privacy policy"
+msgstr "गोपनीयता नीति"
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:93
+msgid "By joining, %1$s will be added to our mailing list. Read our %2$s."
+msgstr "जुड़ने पर, %1$s हमारी मेलिंग सूची में जोड़ा जाएगा। हमारी %2$s पढ़ें।"
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:99
+msgid "Join Newsletter & Save 25%"
+msgstr "न्यूज़लेटर जॉइन करें और 25% बचाएं"
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:102
+msgid "Join Newsletter"
+msgstr "न्यूज़लेटर जॉइन करें"
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:113
+msgid "Sign up to our newsletter and get proven conversion tips and checkout optimization strategies from the CheckoutWC team."
+msgstr "हमारे न्यूज़लेटर के लिए साइन अप करें और CheckoutWC टीम से सिद्ध रूपांतरण सुझाव और चेकआउट अनुकूलन रणनीतियाँ प्राप्त करें।"
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:116
+msgid "Boost Your Conversions with Proven Strategies."
+msgstr "सिद्ध रणनीतियों के साथ अपने रूपांतरण बढ़ाएं।"
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:123
+msgid "We're so glad that you've chosen CheckoutWC to handle your checkouts. Unlock more sales with premium features like order bumps, abandoned cart recovery, and much more."
+msgstr "हमें खुशी है कि आपने अपने चेकआउट के लिए CheckoutWC चुना है। ऑर्डर बम्प्स, परित्यक्त कार्ट रिकवरी और बहुत कुछ जैसे प्रीमियम फीचर्स के साथ अधिक बिक्री अनलॉक करें।"
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:126
+msgid "Unlock more sales with CheckoutWC Premium"
+msgstr "CheckoutWC प्रीमियम के साथ अधिक बिक्री अनलॉक करें"
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:144
+msgid "Sorry, there was an error joining our newsletter. Please refresh the page and try again."
+msgstr "क्षमा करें, हमारे न्यूज़लेटर में जुड़ने में त्रुटि हुई। कृपया पृष्ठ को रिफ्रेश करें और पुनः प्रयास करें।"
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:243
+msgid "Please wait..."
+msgstr "कृपया प्रतीक्षा करें..."
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:320
+msgid "Sorry, your account has insufficient permissions to join our newsletter."
+msgstr "क्षमा करें, आपके खाते के पास हमारे न्यूज़लेटर में जुड़ने के लिए पर्याप्त अनुमति नहीं है।"
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:354
+msgid "You have already joined our newsletter!"
+msgstr "आप पहले ही हमारे न्यूज़लेटर में जुड़ चुके हैं!"
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:396
+msgid "Thank you for joining our newsletter!"
+msgstr "हमारे न्यूज़लेटर में जुड़ने के लिए धन्यवाद!"
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:410
+msgid "Security check failed."
+msgstr "सुरक्षा जांच विफल।"
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:414
+msgid "Insufficient permissions."
+msgstr "पर्याप्त अनुमति नहीं।"
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:422
+msgid "Notice dismissed."
+msgstr "सूचना खारिज कर दी गई।"
+
+# %1$d: Number of days, %2$s: Pricing URL, %3$s: "renew it here" link text
+#: includes/Admin/Notices/LicenseUnverifiedNotice.php:25
+msgid "Premium features are off because we haven\\'t been able to check your license with checkoutwc.com for %1$d days. Make sure your server can connect to checkoutwc.com. If your license has expired, <a href=\"%2$s\" target=\"_blank\">%3$s</a>."
+msgstr "प्रीमियम सुविधाएँ बंद हैं क्योंकि हम %1$d दिनों से checkoutwc.com के साथ आपके लाइसेंस की जाँच नहीं कर पाए हैं। सुनिश्चित करें कि आपका सर्वर checkoutwc.com से जुड़ सकता है। यदि आपका लाइसेंस समाप्त हो गया है, तो <a href=\"%2$s\" target=\"_blank\">%3$s</a>।"
+
+#: includes/Admin/Notices/LicenseUnverifiedNotice.php:28
+msgid "renew it here"
+msgstr "इसे यहाँ नवीनीकृत करें"
+
+#: includes/Admin/Notices/LicenseUnverifiedNotice.php:33
+msgid "CheckoutWC can\\'t verify your license"
+msgstr "CheckoutWC आपके लाइसेंस की पुष्टि नहीं कर सकता"
+
+# %1$s: Date premium features turn off, %2$s: Support email URL, %3$s: "Contact support" link text
+#: includes/Admin/Notices/LicenseServerUnreachableNotice.php:28
+msgid "We couldn\\'t check your license with checkoutwc.com. Premium features will turn off on %1$s unless the connection is restored. <a href=\"%2$s\">%3$s</a> if this keeps happening."
+msgstr "हम checkoutwc.com के साथ आपका लाइसेंस जाँच नहीं पाए। कनेक्शन बहाल नहीं होने पर प्रीमियम सुविधाएँ %1$s पर बंद हो जाएँगी। यदि यह बार-बार होता है, तो <a href=\"%2$s\">%3$s</a>।"
+
+#: includes/Admin/Notices/LicenseServerUnreachableNotice.php:31
+#: includes/Admin/Notices/LicenseServerUnreachableNotice.php:38
+msgid "Contact support"
+msgstr "सहायता से संपर्क करें"
+
+# %1$s: Support email URL, %2$s: "Contact support" link text
+#: includes/Admin/Notices/LicenseServerUnreachableNotice.php:36
+msgid "We couldn\\'t check your license with checkoutwc.com. Make sure your server can connect to checkoutwc.com. <a href=\"%1$s\">%2$s</a> if this keeps happening."
+msgstr "हम checkoutwc.com के साथ आपका लाइसेंस जाँच नहीं पाए। सुनिश्चित करें कि आपका सर्वर checkoutwc.com से जुड़ सकता है। यदि यह बार-बार होता है, तो <a href=\"%1$s\">%2$s</a>।"
+
+#: includes/Admin/Notices/LicenseServerUnreachableNotice.php:45
+msgid "CheckoutWC can\\'t reach the license server"
+msgstr "CheckoutWC लाइसेंस सर्वर तक नहीं पहुँच सकता"
+
+#: includes/Admin/Notices/InvalidLicenseKeyNotice.php:13
+msgid "CheckoutWC license expired"
+msgstr "CheckoutWC लाइसेंस समाप्त हो गया है"
+
+# %1$s: URL to pricing page, %2$s: "Renew your license" link text, %3$s: Support email URL, %4$s: "contact support" link text
+#: includes/Admin/Notices/InvalidLicenseKeyNotice.php:16
+msgid "Premium features are off because your license has expired. <a href=\"%1$s\" target=\"_blank\">%2$s</a> to turn them back on. If you think this is a mistake, <a href=\"%3$s\">%4$s</a>."
+msgstr "प्रीमियम सुविधाएँ बंद हैं क्योंकि आपका लाइसेंस समाप्त हो गया है। उन्हें फिर से चालू करने के लिए <a href=\"%1$s\" target=\"_blank\">%2$s</a>। यदि आपको लगता है कि यह एक गलती है, तो <a href=\"%3$s\">%4$s</a>।"
+
+#: includes/Admin/Notices/InvalidLicenseKeyNotice.php:18
+msgid "Renew your license"
+msgstr "अपना लाइसेंस नवीनीकृत करें"
+
+#: includes/Admin/Notices/InvalidLicenseKeyNotice.php:20
+msgid "contact support"
+msgstr "सहायता से संपर्क करें"
+
+# %1$s: URL to activation page, %2$s: "Activate your license" link text, %3$s: Pricing URL, %4$s: "buy a license" link text
+#: includes/Admin/Notices/InactiveLicenseNotice.php:11
+msgid "Premium features are off because your license isn\\'t activated on this site. <a href=\"%1$s\">%2$s</a> or <a href=\"%3$s\" target=\"_blank\">%4$s</a> for this site."
+msgstr "प्रीमियम सुविधाएँ बंद हैं क्योंकि आपका लाइसेंस इस साइट पर सक्रिय नहीं है। इस साइट के लिए <a href=\"%1$s\">%2$s</a> या <a href=\"%3$s\" target=\"_blank\">%4$s</a>।"
+
+#: includes/Admin/Notices/InactiveLicenseNotice.php:13
+msgid "Activate your license"
+msgstr "अपना लाइसेंस सक्रिय करें"
+
+#: includes/Admin/Notices/InactiveLicenseNotice.php:20
+msgid "CheckoutWC license not activated"
+msgstr "CheckoutWC लाइसेंस सक्रिय नहीं है"
+
+#: includes/Admin/Notices/BFNotice.php:13
+msgid "Black Friday Sale - 40% Off"
+msgstr "ब्लैक फ्राइडे सेल - 40% छूट"
+
+#: includes/Admin/Notices/BFNotice.php:14
+msgid "You're missing out on revenue growth tools like Order Bumps, Upsells, Abandoned Cart Recovery and more! Save 40% on CheckoutWC pro plans for Black Friday, ends December 4th"
+msgstr "आप ऑर्डर बम्प्स, अपसेल्स, परित्यक्त कार्ट रिकवरी और अधिक जैसे राजस्व वृद्धि उपकरणों से वंचित हैं! ब्लैक फ्राइडे के लिए CheckoutWC प्रो योजनाओं पर 40% बचाएं, समाप्ति 4 दिसंबर।"
+
+#: includes/Admin/Notices/BFNotice.php:27
+msgid "Get CheckoutWC Pro Now!"
+msgstr "CheckoutWC Pro अभी प्राप्त करें!"
+
+#: includes/Admin/Pages/WooCommercePages.php:22
 msgid "Pages"
 msgstr "पृष्ठ"
 
-#: includes/Admin/Pages/WooCommercePages.php:30
+#: includes/Admin/Pages/WooCommercePages.php:31
 #: client/ts/admin/Components/Forms/ThankYouSettingsForm.tsx:53
 #: client/ts/admin/Components/Forms/AdvancedScriptsSettingsForm.tsx:144
 msgid "Thank You"
 msgstr "धन्यवाद"
 
-#: includes/Admin/Pages/WooCommercePages.php:31
+#: includes/Admin/Pages/WooCommercePages.php:32
 msgid "Global Options"
 msgstr "वैश्विक विकल्प"
 
@@ -2572,7 +2735,7 @@ msgid "Our Knowledge Base is packed with tips, tricks, and common troubleshootin
 msgstr "हमारा नॉलेज बेस टिप्स, ट्रिक्स, और सामान्य समस्या निवारण चरणों से भरा हुआ है।"
 
 #: includes/Admin/Pages/Support.php:27
-#: includes/Admin/Pages/General.php:69
+#: includes/Admin/Pages/General.php:68
 msgid "Read Our Documentation"
 msgstr "हमारा दस्तावेज़ पढ़ें"
 
@@ -2959,141 +3122,149 @@ msgstr "सबमिट करें"
 msgid "Integrations"
 msgstr "इंटीग्रेशन"
 
+#: includes/Admin/Pages/General.php:39
 #: includes/Admin/Pages/General.php:40
-#: includes/Admin/Pages/General.php:41
 #: includes/Admin/Pages/CheckoutEditor.php:21
 #: client/ts/admin/Components/CheckoutEditor/EditorHeader.tsx:92
 msgid "Checkout Editor"
 msgstr "चेकआउट संपादक"
 
-#: includes/Admin/Pages/General.php:62
+#: includes/Admin/Pages/General.php:61
 msgid "Welcome to the new standard for WooCommerce stores."
 msgstr "WooCommerce स्टोर्स के लिए नए मानक में आपका स्वागत है।"
 
-#: includes/Admin/Pages/General.php:65
+#: includes/Admin/Pages/General.php:64
 msgid "We hate complex configurations too. Get up and running with CheckoutWC in 5 minutes or less. ⚡️"
 msgstr "हमें भी जटिल कॉन्फ़िगरेशन पसंद नहीं हैं। CheckoutWC के साथ 5 मिनट या उससे कम समय में शुरू करें। ⚡️"
 
-#: includes/Admin/Pages/General.php:84
+#: includes/Admin/Pages/General.php:83
 msgid "Welcome to CheckoutWC 10.0"
 msgstr "CheckoutWC 10.0 में आपका स्वागत है"
 
-#: includes/Admin/Pages/General.php:87
+#: includes/Admin/Pages/General.php:86
 msgid "CheckoutWC 10.0 is a major update with new features and optimizations to make your WooCommerce store run better."
 msgstr "CheckoutWC 10.0 एक बड़ा अपडेट है जिसमें नई विशेषताएं और अनुकूलन शामिल हैं ताकि आपका WooCommerce स्टोर बेहतर चले।"
 
-#: includes/Admin/Pages/General.php:93
+#: includes/Admin/Pages/General.php:92
 msgid "Just Say When"
 msgstr "बस कहें जब"
 
-#: includes/Admin/Pages/General.php:96
+#: includes/Admin/Pages/General.php:95
 msgid "Our new rules engine puts you in charge. Want to show an Order Bump only to first time customers who use a specific coupon code? You can do that. Want to show specific trust badges based on what is in the cart? You can do that too!"
 msgstr "हमारा नया नियम इंजन आपको नियंत्रण में रखता है। क्या आप एक विशिष्ट कूपन कोड का उपयोग करने वाले पहले बार के ग्राहकों को ही Order Bump दिखाना चाहते हैं? आप ऐसा कर सकते हैं। क्या आप कार्ट में जो है उसके आधार पर विशिष्ट ट्रस्ट बैज दिखाना चाहते हैं? आप वह भी कर सकते हैं!"
 
-#: includes/Admin/Pages/General.php:110
+#: includes/Admin/Pages/General.php:109
 msgid "Get Started Faster"
 msgstr "जल्दी शुरू करें"
 
-#: includes/Admin/Pages/General.php:113
+#: includes/Admin/Pages/General.php:112
 msgid "Creating Order Bumps has lots of options. Our new Quick Start will help you get started faster."
 msgstr "Order Bumps बनाने के कई विकल्प हैं। हमारा नया Quick Start आपको तेजी से शुरू करने में मदद करेगा।"
 
-#: includes/Admin/Pages/General.php:117
+#: includes/Admin/Pages/General.php:116
 msgid "Configure Order Bumps"
 msgstr "Order Bumps कॉन्फ़िगर करें"
 
-#: includes/Admin/Pages/General.php:126
+#: includes/Admin/Pages/General.php:125
 msgid "And a lot more"
 msgstr "और भी बहुत कुछ"
 
-#: includes/Admin/Pages/General.php:129
+#: includes/Admin/Pages/General.php:128
 msgid "To view the full list of changes, checkout our change log."
 msgstr "परिवर्तनों की पूरी सूची देखने के लिए, हमारे चेंज लॉग को देखें।"
 
-#: includes/Admin/Pages/General.php:133
+#: includes/Admin/Pages/General.php:132
 msgid "Read Our Change Log"
 msgstr "हमारा चेंज लॉग पढ़ें"
 
-#: includes/Admin/Pages/General.php:149
-msgid "Step 1: Activate Your License"
-msgstr "चरण 1: अपनी लाइसेंस सक्रिय करें"
-
-#: includes/Admin/Pages/General.php:149
-msgid "Step 1: Try CheckoutWC Premium Free For 7 Days"
-msgstr "चरण 1: CheckoutWC प्रीमियम को 7 दिनों के लिए मुफ्त आज़माएं"
-
 #: includes/Admin/Pages/General.php:150
-msgid "Enter your license key and activate it for this site to turn on premium features."
-msgstr "प्रीमियम सुविधाएँ चालू करने के लिए अपनी लाइसेंस कुंजी दर्ज करें और इसे इस साइट के लिए सक्रिय करें।"
+msgid "Step 1: Upgrade to CheckoutWC Premium"
+msgstr "चरण 1: CheckoutWC Premium में अपग्रेड करें"
 
-#: includes/Admin/Pages/General.php:150
+#: includes/Admin/Pages/General.php:151
 msgid "Supercharge your WooCommerce store."
 msgstr "अपने WooCommerce स्टोर को सुपरचार्ज करें।"
 
-#: includes/Admin/Pages/General.php:155
+#: includes/Admin/Pages/General.php:153
+msgid "Step 1: Renew Your License"
+msgstr "चरण 1: अपना लाइसेंस नवीनीकृत करें"
+
+#: includes/Admin/Pages/General.php:154
+msgid "Your license has expired. Renew it to keep premium features working."
+msgstr "आपका लाइसेंस समाप्त हो गया है। प्रीमियम सुविधाओं को काम करते रहने के लिए इसे नवीनीकृत करें।"
+
+#: includes/Admin/Pages/General.php:156
+msgid "Step 1: Activate Your License"
+msgstr "चरण 1: अपनी लाइसेंस सक्रिय करें"
+
+#: includes/Admin/Pages/General.php:157
+msgid "Enter your license key and activate it for this site to turn on premium features."
+msgstr "प्रीमियम सुविधाएँ चालू करने के लिए अपनी लाइसेंस कुंजी दर्ज करें और इसे इस साइट के लिए सक्रिय करें।"
+
+#: includes/Admin/Pages/General.php:167
 msgid "Step 2: Customize Checkout"
 msgstr "चरण 2: चेकआउट अनुकूलित करें"
 
-#: includes/Admin/Pages/General.php:156
+#: includes/Admin/Pages/General.php:168
 msgid "Use the Checkout Editor to customize your checkout layout, fields, and content."
 msgstr "अपने चेकआउट लेआउट, फ़ील्ड और सामग्री को अनुकूलित करने के लिए चेकआउट संपादक का उपयोग करें।"
 
-#: includes/Admin/Pages/General.php:161
+#: includes/Admin/Pages/General.php:173
 msgid "Step 3: Go Live"
 msgstr "चरण 3: लाइव जाएं"
 
-#: includes/Admin/Pages/General.php:162
+#: includes/Admin/Pages/General.php:174
 msgid "Enable templates for all visitors."
 msgstr "सभी विज़िटर्स के लिए टेम्पलेट सक्षम करें।"
 
-#: includes/Admin/Pages/General.php:190
+#: includes/Admin/Pages/General.php:202
 msgid "Requires a valid and active license key."
 msgstr "एक वैध और सक्रिय लाइसेंस कुंजी आवश्यक है।"
 
-#: includes/Admin/Pages/General.php:196
+#: includes/Admin/Pages/General.php:208
 msgid "CheckoutWC Templates are always activated for admin users."
 msgstr "CheckoutWC टेम्पलेट हमेशा एडमिन उपयोगकर्ताओं के लिए सक्रिय होते हैं।"
 
-#: includes/Admin/Pages/General.php:201
+#: includes/Admin/Pages/General.php:213
 msgid "This step can also be completed directly from the Checkout Editor!"
 msgstr "यह चरण सीधे चेकआउट संपादक से भी पूरा किया जा सकता है!"
 
-#: includes/Admin/Pages/General.php:221
+#: includes/Admin/Pages/General.php:233
 msgid "Upgrade to CheckoutWC Premium - Save 20% on your first year"
 msgstr ""
 
-#: includes/Admin/Pages/General.php:223
-#: includes/Admin/Pages/General.php:250
-#: includes/Admin/Pages/General.php:265
-#: includes/Admin/Pages/General.php:310
+#: includes/Admin/Pages/General.php:235
+#: includes/Admin/Pages/General.php:262
+#: includes/Admin/Pages/General.php:277
+#: includes/Admin/Pages/General.php:322
 msgid "Opens in new tab"
 msgstr "नई टैब में खुलता है"
 
-#: includes/Admin/Pages/General.php:236
+#: includes/Admin/Pages/General.php:248
 msgid "Customize Your Checkout"
 msgstr "अपने चेकआउट को अनुकूलित करें"
 
-#: includes/Admin/Pages/General.php:248
+#: includes/Admin/Pages/General.php:260
 msgid "Choose a Template"
 msgstr "एक टेम्पलेट चुनें"
 
-#: includes/Admin/Pages/General.php:263
+#: includes/Admin/Pages/General.php:275
 msgid "Customize Logo and Colors"
 msgstr "लोगो और रंग अनुकूलित करें"
 
-#: includes/Admin/Pages/General.php:308
+#: includes/Admin/Pages/General.php:320
 msgid "Preview Your Checkout Page"
 msgstr "अपने चेकआउट पेज का पूर्वावलोकन करें"
 
-#: includes/Admin/Pages/General.php:354
+#: includes/Admin/Pages/General.php:366
 msgid "Unbypass CheckoutWC Template"
 msgstr "CheckoutWC टेम्पलेट को अनबायपास करें"
 
-#: includes/Admin/Pages/General.php:354
+#: includes/Admin/Pages/General.php:366
 msgid "Bypass CheckoutWC Template"
 msgstr "CheckoutWC टेम्पलेट को बायपास करें"
 
-#: includes/Admin/Pages/General.php:358
+#: includes/Admin/Pages/General.php:370
 msgid "CheckoutWC template and functionality will be temporarily bypassed (just for you!). This is helpful for testing and debugging. You can click Unbypass CheckoutWC Template once you are done."
 msgstr "CheckoutWC टेम्पलेट और कार्यक्षमता अस्थायी रूप से बायपास की जाएगी (सिर्फ आपके लिए!)। यह परीक्षण और डिबगिंग के लिए सहायक है। जब आप समाप्त कर लें तो आप Unbypass CheckoutWC Template पर क्लिक कर सकते हैं।"
 
@@ -3269,74 +3440,74 @@ msgstr "माध्यमिक पाठ होवर"
 msgid "Theme Specific Colors"
 msgstr "थीम विशिष्ट रंग"
 
-#: includes/Admin/Pages/Advanced.php:20
-#: includes/Admin/Pages/Advanced.php:28
+#: includes/Admin/Pages/Advanced.php:37
+#: includes/Admin/Pages/Advanced.php:45
 msgid "Advanced"
 msgstr "उन्नत"
 
-#: includes/Admin/Pages/Advanced.php:29
+#: includes/Admin/Pages/Advanced.php:46
 msgid "Scripts"
 msgstr "स्क्रिप्ट"
 
-#: includes/Admin/Pages/Advanced.php:30
+#: includes/Admin/Pages/Advanced.php:47
 msgid "Tools"
 msgstr "उपकरण"
 
-#: includes/Admin/Pages/Advanced.php:64
-#: includes/Admin/Pages/Advanced.php:84
+#: includes/Admin/Pages/Advanced.php:81
+#: includes/Admin/Pages/Advanced.php:101
 msgid "Export Settings"
 msgstr "निर्यात सेटिंग्स"
 
-#: includes/Admin/Pages/Advanced.php:65
+#: includes/Admin/Pages/Advanced.php:82
 msgid "Download a JSON file containing the current plugin settings."
 msgstr "वर्तमान प्लगइन सेटिंग्स वाली JSON फ़ाइल डाउनलोड करें।"
 
-#: includes/Admin/Pages/Advanced.php:69
-#: includes/Admin/Pages/Advanced.php:97
+#: includes/Admin/Pages/Advanced.php:86
+#: includes/Admin/Pages/Advanced.php:114
 msgid "Import Settings"
 msgstr "आयात सेटिंग्स"
 
-#: includes/Admin/Pages/Advanced.php:70
+#: includes/Admin/Pages/Advanced.php:87
 msgid "Replace your current settings with a previous settings export."
 msgstr "अपने वर्तमान सेटिंग्स को पिछले सेटिंग्स निर्यात से बदलें।"
 
-#: includes/Admin/Pages/Advanced.php:87
+#: includes/Admin/Pages/Advanced.php:104
 msgid "Download a backup file of your settings."
 msgstr "अपनी सेटिंग्स की एक बैकअप फ़ाइल डाउनलोड करें।"
 
-#: includes/Admin/Pages/Advanced.php:101
+#: includes/Admin/Pages/Advanced.php:118
 msgid "Upload File and Import Settings"
 msgstr "फ़ाइल अपलोड करें और सेटिंग्स आयात करें"
 
-#: includes/Admin/Pages/Advanced.php:174
+#: includes/Admin/Pages/Advanced.php:196
 msgid "CheckoutWC Settings Import Failed"
 msgstr "CheckoutWC सेटिंग्स आयात विफल"
 
-#: includes/Admin/Pages/Advanced.php:175
+#: includes/Admin/Pages/Advanced.php:197
 msgid "Unable to import settings. Did you select a JSON file to upload?"
 msgstr "सेटिंग्स आयात करने में असमर्थ। क्या आपने अपलोड करने के लिए JSON फ़ाइल चुनी है?"
 
-#: includes/Admin/Pages/Advanced.php:187
+#: includes/Admin/Pages/Advanced.php:209
 msgid "Error. Uploaded file appears empty."
 msgstr "त्रुटि। अपलोड की गई फ़ाइल खाली प्रतीत होती है।"
 
-#: includes/Admin/Pages/Advanced.php:198
+#: includes/Admin/Pages/Advanced.php:220
 msgid "Wrong file extension. Uploaded settings must be a JSON file."
 msgstr "गलत फ़ाइल एक्सटेंशन। अपलोड की गई सेटिंग्स JSON फ़ाइल होनी चाहिए।"
 
-#: includes/Admin/Pages/Advanced.php:206
+#: includes/Admin/Pages/Advanced.php:228
 msgid "Error moving uploaded file - check your permissions."
 msgstr "अपलोड की गई फ़ाइल को स्थानांतरित करने में त्रुटि - अपनी अनुमतियाँ जांचें।"
 
-#: includes/Admin/Pages/Advanced.php:213
+#: includes/Admin/Pages/Advanced.php:235
 msgid "Error decoding JSON file."
 msgstr "JSON फ़ाइल डिकोड करने में त्रुटि।"
 
-#: includes/Admin/Pages/Advanced.php:255
+#: includes/Admin/Pages/Advanced.php:277
 msgid "CheckoutWC Settings Import Successful"
 msgstr "CheckoutWC सेटिंग्स आयात सफल"
 
-#: includes/Admin/Pages/Advanced.php:256
+#: includes/Admin/Pages/Advanced.php:278
 msgid "Successfully imported settings."
 msgstr "सेटिंग्स सफलतापूर्वक आयात की गईं।"
 
@@ -3516,160 +3687,6 @@ msgstr "A/B परीक्षण सक्षम करें"
 msgid "Allow A/B tests to be created and applied on the checkout page."
 msgstr "चेकआउट पेज पर A/B परीक्षण बनाने और लागू करने की अनुमति दें।"
 
-#: includes/Admin/Notices/WelcomeNotice.php:12
-msgid "Welcome to CheckoutWC"
-msgstr "CheckoutWC में आपका स्वागत है"
-
-#: includes/Admin/Notices/WelcomeNotice.php:20
-msgid "Thank you for installing CheckoutWC! We automatically activated your license. You are all set!"
-msgstr "CheckoutWC स्थापित करने के लिए धन्यवाद! हमने स्वचालित रूप से आपका लाइसेंस सक्रिय कर दिया है। आप पूरी तरह तैयार हैं!"
-
-#: includes/Admin/Notices/WelcomeNotice.php:26
-msgid "Thank you for installing CheckoutWC! To get started, enter your <strong>License Key</strong> below, save, and click <strong>Activate Site</strong>."
-msgstr "CheckoutWC स्थापित करने के लिए धन्यवाद! शुरू करने के लिए, नीचे अपना <strong>लाइसेंस कुंजी</strong> दर्ज करें, सहेजें, और <strong>साइट सक्रिय करें</strong> पर क्लिक करें।"
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:20
-msgid "your email"
-msgstr "आपका ईमेल"
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:88
-msgid "privacy policy"
-msgstr "गोपनीयता नीति"
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:93
-msgid "By joining, %1$s will be added to our mailing list. Read our %2$s."
-msgstr "जुड़ने पर, %1$s हमारी मेलिंग सूची में जोड़ा जाएगा। हमारी %2$s पढ़ें।"
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:99
-msgid "Join Newsletter & Save 25%"
-msgstr "न्यूज़लेटर जॉइन करें और 25% बचाएं"
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:102
-msgid "Join Newsletter"
-msgstr "न्यूज़लेटर जॉइन करें"
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:113
-msgid "Sign up to our newsletter and get proven conversion tips and checkout optimization strategies from the CheckoutWC team."
-msgstr "हमारे न्यूज़लेटर के लिए साइन अप करें और CheckoutWC टीम से सिद्ध रूपांतरण सुझाव और चेकआउट अनुकूलन रणनीतियाँ प्राप्त करें।"
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:116
-msgid "Boost Your Conversions with Proven Strategies."
-msgstr "सिद्ध रणनीतियों के साथ अपने रूपांतरण बढ़ाएं।"
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:123
-msgid "We're so glad that you've chosen CheckoutWC to handle your checkouts. Unlock more sales with premium features like order bumps, abandoned cart recovery, and much more."
-msgstr "हमें खुशी है कि आपने अपने चेकआउट के लिए CheckoutWC चुना है। ऑर्डर बम्प्स, परित्यक्त कार्ट रिकवरी और बहुत कुछ जैसे प्रीमियम फीचर्स के साथ अधिक बिक्री अनलॉक करें।"
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:126
-msgid "Unlock more sales with CheckoutWC Premium"
-msgstr "CheckoutWC प्रीमियम के साथ अधिक बिक्री अनलॉक करें"
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:144
-msgid "Sorry, there was an error joining our newsletter. Please refresh the page and try again."
-msgstr "क्षमा करें, हमारे न्यूज़लेटर में जुड़ने में त्रुटि हुई। कृपया पृष्ठ को रिफ्रेश करें और पुनः प्रयास करें।"
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:243
-msgid "Please wait..."
-msgstr "कृपया प्रतीक्षा करें..."
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:320
-msgid "Sorry, your account has insufficient permissions to join our newsletter."
-msgstr "क्षमा करें, आपके खाते के पास हमारे न्यूज़लेटर में जुड़ने के लिए पर्याप्त अनुमति नहीं है।"
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:354
-msgid "You have already joined our newsletter!"
-msgstr "आप पहले ही हमारे न्यूज़लेटर में जुड़ चुके हैं!"
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:396
-msgid "Thank you for joining our newsletter!"
-msgstr "हमारे न्यूज़लेटर में जुड़ने के लिए धन्यवाद!"
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:410
-msgid "Security check failed."
-msgstr "सुरक्षा जांच विफल।"
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:414
-msgid "Insufficient permissions."
-msgstr "पर्याप्त अनुमति नहीं।"
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:422
-msgid "Notice dismissed."
-msgstr "सूचना खारिज कर दी गई।"
-
-# %1$d: Number of days, %2$s: Pricing URL, %3$s: "renew it here" link text
-#: includes/Admin/Notices/LicenseUnverifiedNotice.php:25
-msgid "Premium features are off because we haven\\'t been able to check your license with checkoutwc.com for %1$d days. Make sure your server can connect to checkoutwc.com. If your license has expired, <a href=\"%2$s\" target=\"_blank\">%3$s</a>."
-msgstr "प्रीमियम सुविधाएँ बंद हैं क्योंकि हम %1$d दिनों से checkoutwc.com के साथ आपके लाइसेंस की जाँच नहीं कर पाए हैं। सुनिश्चित करें कि आपका सर्वर checkoutwc.com से जुड़ सकता है। यदि आपका लाइसेंस समाप्त हो गया है, तो <a href=\"%2$s\" target=\"_blank\">%3$s</a>।"
-
-#: includes/Admin/Notices/LicenseUnverifiedNotice.php:28
-msgid "renew it here"
-msgstr "इसे यहाँ नवीनीकृत करें"
-
-#: includes/Admin/Notices/LicenseUnverifiedNotice.php:33
-msgid "CheckoutWC can\\'t verify your license"
-msgstr "CheckoutWC आपके लाइसेंस की पुष्टि नहीं कर सकता"
-
-# %1$s: Date premium features turn off, %2$s: Support email URL, %3$s: "Contact support" link text
-#: includes/Admin/Notices/LicenseServerUnreachableNotice.php:28
-msgid "We couldn\\'t check your license with checkoutwc.com. Premium features will turn off on %1$s unless the connection is restored. <a href=\"%2$s\">%3$s</a> if this keeps happening."
-msgstr "हम checkoutwc.com के साथ आपका लाइसेंस जाँच नहीं पाए। कनेक्शन बहाल नहीं होने पर प्रीमियम सुविधाएँ %1$s पर बंद हो जाएँगी। यदि यह बार-बार होता है, तो <a href=\"%2$s\">%3$s</a>।"
-
-#: includes/Admin/Notices/LicenseServerUnreachableNotice.php:31
-#: includes/Admin/Notices/LicenseServerUnreachableNotice.php:38
-msgid "Contact support"
-msgstr "सहायता से संपर्क करें"
-
-# %1$s: Support email URL, %2$s: "Contact support" link text
-#: includes/Admin/Notices/LicenseServerUnreachableNotice.php:36
-msgid "We couldn\\'t check your license with checkoutwc.com. Make sure your server can connect to checkoutwc.com. <a href=\"%1$s\">%2$s</a> if this keeps happening."
-msgstr "हम checkoutwc.com के साथ आपका लाइसेंस जाँच नहीं पाए। सुनिश्चित करें कि आपका सर्वर checkoutwc.com से जुड़ सकता है। यदि यह बार-बार होता है, तो <a href=\"%1$s\">%2$s</a>।"
-
-#: includes/Admin/Notices/LicenseServerUnreachableNotice.php:45
-msgid "CheckoutWC can\\'t reach the license server"
-msgstr "CheckoutWC लाइसेंस सर्वर तक नहीं पहुँच सकता"
-
-#: includes/Admin/Notices/InvalidLicenseKeyNotice.php:13
-msgid "CheckoutWC license expired"
-msgstr "CheckoutWC लाइसेंस समाप्त हो गया है"
-
-# %1$s: URL to pricing page, %2$s: "Renew your license" link text, %3$s: Support email URL, %4$s: "contact support" link text
-#: includes/Admin/Notices/InvalidLicenseKeyNotice.php:16
-msgid "Premium features are off because your license has expired. <a href=\"%1$s\" target=\"_blank\">%2$s</a> to turn them back on. If you think this is a mistake, <a href=\"%3$s\">%4$s</a>."
-msgstr "प्रीमियम सुविधाएँ बंद हैं क्योंकि आपका लाइसेंस समाप्त हो गया है। उन्हें फिर से चालू करने के लिए <a href=\"%1$s\" target=\"_blank\">%2$s</a>। यदि आपको लगता है कि यह एक गलती है, तो <a href=\"%3$s\">%4$s</a>।"
-
-#: includes/Admin/Notices/InvalidLicenseKeyNotice.php:18
-msgid "Renew your license"
-msgstr "अपना लाइसेंस नवीनीकृत करें"
-
-#: includes/Admin/Notices/InvalidLicenseKeyNotice.php:20
-msgid "contact support"
-msgstr "सहायता से संपर्क करें"
-
-# %1$s: URL to activation page, %2$s: "Activate your license" link text, %3$s: Pricing URL, %4$s: "buy a license" link text
-#: includes/Admin/Notices/InactiveLicenseNotice.php:11
-msgid "Premium features are off because your license isn\\'t activated on this site. <a href=\"%1$s\">%2$s</a> or <a href=\"%3$s\" target=\"_blank\">%4$s</a> for this site."
-msgstr "प्रीमियम सुविधाएँ बंद हैं क्योंकि आपका लाइसेंस इस साइट पर सक्रिय नहीं है। इस साइट के लिए <a href=\"%1$s\">%2$s</a> या <a href=\"%3$s\" target=\"_blank\">%4$s</a>।"
-
-#: includes/Admin/Notices/InactiveLicenseNotice.php:13
-msgid "Activate your license"
-msgstr "अपना लाइसेंस सक्रिय करें"
-
-#: includes/Admin/Notices/InactiveLicenseNotice.php:20
-msgid "CheckoutWC license not activated"
-msgstr "CheckoutWC लाइसेंस सक्रिय नहीं है"
-
-#: includes/Admin/Notices/BFNotice.php:13
-msgid "Black Friday Sale - 40% Off"
-msgstr "ब्लैक फ्राइडे सेल - 40% छूट"
-
-#: includes/Admin/Notices/BFNotice.php:14
-msgid "You're missing out on revenue growth tools like Order Bumps, Upsells, Abandoned Cart Recovery and more! Save 40% on CheckoutWC pro plans for Black Friday, ends December 4th"
-msgstr "आप ऑर्डर बम्प्स, अपसेल्स, परित्यक्त कार्ट रिकवरी और अधिक जैसे राजस्व वृद्धि उपकरणों से वंचित हैं! ब्लैक फ्राइडे के लिए CheckoutWC प्रो योजनाओं पर 40% बचाएं, समाप्ति 4 दिसंबर।"
-
-#: includes/Admin/Notices/BFNotice.php:27
-msgid "Get CheckoutWC Pro Now!"
-msgstr "CheckoutWC Pro अभी प्राप्त करें!"
-
 #: client/ts/functions/cfwFormatDate.ts:38
 msgid "Sunday"
 msgstr "रविवार"
@@ -3827,34 +3844,6 @@ msgstr "पूर्वाह्न"
 msgid "pm"
 msgstr "अपराह्न"
 
-#: client/ts/blocks/OrderBumpSteps.tsx:55
-msgid "Order Bump Steps Stettings"
-msgstr "ऑर्डर बम्प चरण सेटिंग्स"
-
-#: client/ts/blocks/OrderBumpSteps.tsx:58
-msgid "Step 1 Title"
-msgstr "चरण 1 शीर्षक"
-
-#: client/ts/blocks/OrderBumpSteps.tsx:59
-msgid "The title of Step 1. Example: Order Submitted"
-msgstr "चरण 1 का शीर्षक। उदाहरण: ऑर्डर सबमिट किया गया"
-
-#: client/ts/blocks/OrderBumpSteps.tsx:64
-msgid "Step 2 Title"
-msgstr "चरण 2 शीर्षक"
-
-#: client/ts/blocks/OrderBumpSteps.tsx:65
-msgid "The title of Step 2. Example: Special Offer"
-msgstr "चरण 2 का शीर्षक। उदाहरण: विशेष ऑफर"
-
-#: client/ts/blocks/OrderBumpSteps.tsx:70
-msgid "Step 3 Title"
-msgstr "चरण 3 शीर्षक"
-
-#: client/ts/blocks/OrderBumpSteps.tsx:71
-msgid "The title of Step 3. Example: Order Received"
-msgstr "चरण 3 का शीर्षक। उदाहरण: ऑर्डर प्राप्त हुआ"
-
 #: client/ts/admin/order-bumps-editor.tsx:59
 msgid "Order Bump Preview"
 msgstr "ऑर्डर बम्प पूर्वावलोकन"
@@ -3892,6 +3881,34 @@ msgstr "क्या आप वाकई सभी ट्रैक किए ग
 #: client/ts/admin/Components/CheckoutEditor/EditorApp.tsx:269
 msgid "Are you sure you want to discard all unsaved changes?"
 msgstr "क्या आप वाकई सभी असंरक्षित परिवर्तनों को छोड़ना चाहते हैं?"
+
+#: client/ts/blocks/OrderBumpSteps.tsx:55
+msgid "Order Bump Steps Stettings"
+msgstr "ऑर्डर बम्प चरण सेटिंग्स"
+
+#: client/ts/blocks/OrderBumpSteps.tsx:58
+msgid "Step 1 Title"
+msgstr "चरण 1 शीर्षक"
+
+#: client/ts/blocks/OrderBumpSteps.tsx:59
+msgid "The title of Step 1. Example: Order Submitted"
+msgstr "चरण 1 का शीर्षक। उदाहरण: ऑर्डर सबमिट किया गया"
+
+#: client/ts/blocks/OrderBumpSteps.tsx:64
+msgid "Step 2 Title"
+msgstr "चरण 2 शीर्षक"
+
+#: client/ts/blocks/OrderBumpSteps.tsx:65
+msgid "The title of Step 2. Example: Special Offer"
+msgstr "चरण 2 का शीर्षक। उदाहरण: विशेष ऑफर"
+
+#: client/ts/blocks/OrderBumpSteps.tsx:70
+msgid "Step 3 Title"
+msgstr "चरण 3 शीर्षक"
+
+#: client/ts/blocks/OrderBumpSteps.tsx:71
+msgid "The title of Step 3. Example: Order Received"
+msgstr "चरण 3 का शीर्षक। उदाहरण: ऑर्डर प्राप्त हुआ"
 
 #: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:60
 #: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:245
@@ -4507,30 +4524,6 @@ msgstr "A/B परीक्षण समाप्त होने की ति�
 msgid "Traffic split percentages must total 100%. Please adjust your percentages."
 msgstr "ट्रैफिक स्प्लिट प्रतिशत कुल मिलाकर 100% होना चाहिए। कृपया अपने प्रतिशत समायोजित करें।"
 
-#: client/ts/frontend/Actions/CompleteOrderAction.ts:196
-msgid "Could not connect to server. Please refresh and try again or contact site administrator."
-msgstr "सर्वर से कनेक्ट नहीं हो सका। कृपया पृष्ठ को रिफ्रेश करें और पुनः प्रयास करें या साइट व्यवस्थापक से संपर्क करें।"
-
-#: client/ts/frontend/Actions/CompleteOrderAction.ts:198
-msgid "Requested resource could not be found. Please contact site administrator. (404)"
-msgstr "अनुरोधित संसाधन नहीं मिला। कृपया साइट व्यवस्थापक से संपर्क करें। (404)"
-
-#: client/ts/frontend/Actions/CompleteOrderAction.ts:200
-msgid "An internal server error occurred. Please contact site administrator. (500)"
-msgstr "एक आंतरिक सर्वर त्रुटि हुई। कृपया साइट व्यवस्थापक से संपर्क करें। (500)"
-
-#: client/ts/frontend/Actions/CompleteOrderAction.ts:202
-msgid "Server response could not be parsed. Please contact site administrator."
-msgstr "सर्वर प्रतिक्रिया पार्स नहीं की जा सकी। कृपया साइट व्यवस्थापक से संपर्क करें।"
-
-#: client/ts/frontend/Actions/CompleteOrderAction.ts:204
-msgid "The server timed out while processing your request. Please refresh and try again or contact site administrator."
-msgstr "सर्वर ने आपकी अनुरोध को संसाधित करते समय समय समाप्त कर दिया। कृपया पृष्ठ को रिफ्रेश करें और पुनः प्रयास करें या साइट व्यवस्थापक से संपर्क करें।"
-
-#: client/ts/frontend/Actions/CompleteOrderAction.ts:206
-msgid "Request was aborted. Please contact site administrator."
-msgstr "अनुरोध रद्द कर दिया गया। कृपया साइट व्यवस्थापक से संपर्क करें।"
-
 #: client/ts/frontend/Components/TermsAndConditions.ts:29
 msgid "Terms and Conditions"
 msgstr "नियम और शर्तें"
@@ -4546,6 +4539,30 @@ msgstr "कार्ट बंद करें"
 #: client/ts/frontend/Components/FreeShippingProgressBar.tsx:245
 msgid "Unlocked"
 msgstr "अनलॉक किया गया"
+
+#: client/ts/frontend/Actions/CompleteOrderAction.ts:196
+msgid "We could not confirm whether your order went through. Please check for any charges in your payment method and review your order history before placing the order again."
+msgstr "हम यह पुष्टि नहीं कर सके कि आपका ऑर्डर सफल हुआ या नहीं। कृपया भुगतान विधि में किसी भी शुल्क की जाँच करें और ऑर्डर फिर से देने से पहले अपना ऑर्डर इतिहास देखें।"
+
+#: client/ts/frontend/Actions/CompleteOrderAction.ts:198
+msgid "Requested resource could not be found. Please contact site administrator. (404)"
+msgstr "अनुरोधित संसाधन नहीं मिला। कृपया साइट व्यवस्थापक से संपर्क करें। (404)"
+
+#: client/ts/frontend/Actions/CompleteOrderAction.ts:200
+msgid "An internal server error occurred. Please contact site administrator. (500)"
+msgstr "एक आंतरिक सर्वर त्रुटि हुई। कृपया साइट व्यवस्थापक से संपर्क करें। (500)"
+
+#: client/ts/frontend/Actions/CompleteOrderAction.ts:202
+msgid "Server response could not be parsed. Please contact site administrator."
+msgstr "सर्वर प्रतिक्रिया पार्स नहीं की जा सकी। कृपया साइट व्यवस्थापक से संपर्क करें।"
+
+#: client/ts/frontend/Actions/CompleteOrderAction.ts:204
+msgid "The server timed out while processing your request. Please check for any charges in your payment method and review your order history before placing the order again."
+msgstr "आपके अनुरोध को संसाधित करते समय सर्वर का समय समाप्त हो गया। कृपया भुगतान विधि में किसी भी शुल्क की जाँच करें और ऑर्डर फिर से देने से पहले अपना ऑर्डर इतिहास देखें।"
+
+#: client/ts/frontend/Actions/CompleteOrderAction.ts:206
+msgid "Request was aborted. Please contact site administrator."
+msgstr "अनुरोध रद्द कर दिया गया। कृपया साइट व्यवस्थापक से संपर्क करें।"
 
 # %d is the number of icons in the collection
 #: client/ts/admin/Components/trustBadges.ts:85
@@ -5364,20 +5381,6 @@ msgstr "जब यह बम्प कार्ट में जोड़ा ज
 #: client/ts/admin/Components/Metaboxes/CategoryCompleter.tsx:46
 msgid "All categories with titles that include {{query /}}"
 msgstr "सभी श्रेणियाँ जिनके शीर्षक में {{query /}} शामिल है"
-
-#: client/ts/admin/Components/Fields/WPMediaUploadButton.tsx:69
-msgid "Select or Upload a Logo"
-msgstr "लोगो चुनें या अपलोड करें"
-
-#: client/ts/admin/Components/Fields/RangeControl.tsx:97
-#: client/ts/admin/Components/Fields/ColorControl.tsx:137
-msgid "Reset"
-msgstr "रीसेट"
-
-#: client/ts/admin/Components/Fields/ColorControl.tsx:173
-#: client/ts/admin/Components/CheckoutEditor/BumpEditorModal.tsx:101
-msgid "Done"
-msgstr "हो गया"
 
 #: client/ts/admin/Components/Forms/WooCommercePagesGlobalOptionsSettingsForm.tsx:49
 #: client/ts/admin/Components/Forms/CheckoutSettingsForm.tsx:570
@@ -7132,9 +7135,23 @@ msgstr "बंद करें"
 msgid "This order bump has unsaved changes. Close anyway?"
 msgstr "इस ऑर्डर बंप में बिना सहेजे गए परिवर्तन हैं। फिर भी बंद करें?"
 
+#: client/ts/admin/Components/CheckoutEditor/BumpEditorModal.tsx:101
+#: client/ts/admin/Components/Fields/ColorControl.tsx:173
+msgid "Done"
+msgstr "हो गया"
+
 #: client/ts/admin/Components/CheckoutEditor/BumpEditorModal.tsx:108
 msgid "Loading order bump editor…"
 msgstr "ऑर्डर बंप संपादक लोड किया जा रहा है…"
+
+#: client/ts/admin/Components/Fields/WPMediaUploadButton.tsx:69
+msgid "Select or Upload a Logo"
+msgstr "लोगो चुनें या अपलोड करें"
+
+#: client/ts/admin/Components/Fields/RangeControl.tsx:97
+#: client/ts/admin/Components/Fields/ColorControl.tsx:137
+msgid "Reset"
+msgstr "रीसेट"
 
 # %s: item type e.g. "order bump"
 #: client/ts/admin/Components/CheckoutEditor/slots/UnsavedChangesDialog.tsx:37

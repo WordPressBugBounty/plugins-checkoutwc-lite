@@ -11215,6 +11215,39 @@
             "args": 2
         },
         {
+            "name": "cfw_thank_you_hide_sections_for_failed_order",
+            "file": "template-functions.php",
+            "type": "filter",
+            "doc": {
+                "description": "Filters whether a failed order's thank you page hides the sections that imply the order went through",
+                "long_description": "",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "11.4.2"
+                    },
+                    {
+                        "name": "param",
+                        "content": "Whether to hide the thank you heading, status steps, map, order updates, downloads and pickup instructions. Default true.",
+                        "types": [
+                            "bool"
+                        ],
+                        "variable": "$hide"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The order object",
+                        "types": [
+                            "\\WC_Order"
+                        ],
+                        "variable": "$order"
+                    }
+                ],
+                "long_description_html": ""
+            },
+            "args": 2
+        },
+        {
             "name": "cfw_thank_you_shipment_tracking_header",
             "file": "functions.php",
             "type": "filter",
@@ -11603,6 +11636,35 @@
                 "long_description_html": ""
             },
             "args": 1
+        },
+        {
+            "name": "woocommerce_thankyou_order_failed_text",
+            "file": "template-functions.php",
+            "type": "filter",
+            "doc": {
+                "description": "Filters the failed order notice. Core WooCommerce applies the same filter on its thank you page.",
+                "long_description": "",
+                "tags": [
+                    {
+                        "name": "param",
+                        "content": "The notice text",
+                        "types": [
+                            "string"
+                        ],
+                        "variable": "$text"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The order object",
+                        "types": [
+                            "\\WC_Order"
+                        ],
+                        "variable": "$order"
+                    }
+                ],
+                "long_description_html": ""
+            },
+            "args": 2
         },
         {
             "name": "cfw_groove_cart_summary_classes",

@@ -7,7 +7,7 @@
  * Author URI: https://kestrelwp.com/
  * Text Domain: checkout-wc
  * Domain Path: /i18n/languages
- * Version: 11.4.1
+ * Version: 11.4.2
  * Requires Plugins: woocommerce
  * Requires at least: 5.2
  * Requires PHP: 7.4
@@ -49,7 +49,7 @@ if ( defined( 'CFW_VERSION' ) ) {
 
 define( 'CFW_NAME', 'Checkout for WooCommerce' );
 define( 'CFW_UPDATE_URL', 'https://www.checkoutwc.com' );
-define( 'CFW_VERSION', '11.4.1' );
+define( 'CFW_VERSION', '11.4.2' );
 define( 'CFW_PATH', __DIR__ );
 define( 'CFW_URL', plugins_url( '/', __FILE__ ) );
 define( 'CFW_MAIN_FILE', __FILE__ );
@@ -217,7 +217,7 @@ if (
 					printf(
 						/* translators: %s - WordPress version. */
 						esc_html__( 'CheckoutWC Lite requires WooCommerce %s or later.', 'checkout-wc' ),
-						'5.6'
+						'8.2'
 					);
 					?>
 				</p>

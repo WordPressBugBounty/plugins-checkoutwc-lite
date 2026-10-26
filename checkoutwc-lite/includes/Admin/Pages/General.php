@@ -3,7 +3,6 @@
 namespace Objectiv\Plugins\Checkout\Admin\Pages;
 
 use Objectiv\Plugins\Checkout\Admin\Pages\Traits\TabbedAdminPageTrait;
-use Objectiv\Plugins\Checkout\Managers\PlanManager;
 use Objectiv\Plugins\Checkout\Managers\SettingsManager;
 use Objectiv\Plugins\Checkout\Managers\UpdatesManager;
 use WP_Admin_Bar;
@@ -145,10 +144,23 @@ class General extends PageAbstract {
 		?>
 		<div class="space-y-8 mt-4">
 			<?php
+			$is_premium_build = defined( 'CFW_PREMIUM_PLAN_IDS' );
+
+			if ( ! $is_premium_build ) {
+				$step_one_title       = __( 'Step 1: Upgrade to CheckoutWC Premium', 'checkout-wc' );
+				$step_one_description = __( 'Supercharge your WooCommerce store.', 'checkout-wc' );
+			} elseif ( in_array( UpdatesManager::instance()->get_field_value( 'key_status' ), [ 'expired', 'invalid', 'disabled' ], true ) ) {
+				$step_one_title       = __( 'Step 1: Renew Your License', 'checkout-wc' );
+				$step_one_description = __( 'Your license has expired. Renew it to keep premium features working.', 'checkout-wc' );
+			} else {
+				$step_one_title       = __( 'Step 1: Activate Your License', 'checkout-wc' );
+				$step_one_description = __( 'Enter your license key and activate it for this site to turn on premium features.', 'checkout-wc' );
+			}
+
 			cfw_admin_page_section(
-				PlanManager::has_admin_plan_or_higher() ? __( 'Step 1: Activate Your License', 'checkout-wc' ) : __( 'Step 1: Try CheckoutWC Premium Free For 7 Days', 'checkout-wc' ),
-				PlanManager::has_admin_plan_or_higher() ? __( 'Enter your license key and activate it for this site to turn on premium features.', 'checkout-wc' ) : __( 'Supercharge your WooCommerce store.', 'checkout-wc' ),
-				defined( 'CFW_PREMIUM_PLAN_IDS' ) ? $this->get_licensing_settings() : $this->trial_offer()
+				$step_one_title,
+				$step_one_description,
+				$is_premium_build ? $this->get_licensing_settings() : $this->trial_offer()
 			);
 
 			cfw_admin_page_section(

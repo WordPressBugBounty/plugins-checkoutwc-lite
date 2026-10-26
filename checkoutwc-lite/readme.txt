@@ -4,7 +4,7 @@ Donate link: https://www.checkoutwc.com
 Tags: woocommerce checkout, checkout field editor, express checkout, one page checkout, cart abandonment
 Requires at least: 5.2
 Tested up to: 7.1.3
-Stable tag: 11.4.1
+Stable tag: 11.4.2
 Requires PHP: 7.4
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
@@ -236,6 +236,16 @@ Use your payment gateway's test mode to process test transactions without chargi
 == Changelog ==
 
 Free version updates are non-sequential due to the unified development branch we use with the premium versions.
+
+= Version 11.4.2 =
+
+- Fix - The notice shown when WooCommerce is inactive now names the correct minimum version, 8.2
+- Fix - Checkout: Lost-connection and timeout errors now tell shoppers to check for a charge and their order history before ordering again
+- Fix - Checkout: Place Order works again after pressing the browser's Back button from a payment redirect on sites where the checkout page is cached by the browser
+- Fix - Klarna Payments: version 3.0.0 exactly now loads the Klarna compatibility instead of falling back to none
+- Fix - Pages: the phone field setting now shows Optional, matching checkout, when it has never been saved
+- Fix - Checkout: a page left open until its session expires now reloads once and recovers, instead of showing an error until the shopper refreshes
+- Tweak - Replace the free trial heading on the Start Here page with Upgrade and Renew wording
 
 = Version 11.4.1 =
 

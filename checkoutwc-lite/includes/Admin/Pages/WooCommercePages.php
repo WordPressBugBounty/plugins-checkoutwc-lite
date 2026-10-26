@@ -7,6 +7,7 @@ use Objectiv\Plugins\Checkout\Admin\Pages\Traits\TabbedAdminPageTrait;
 use Objectiv\Plugins\Checkout\Managers\PlanManager;
 use Objectiv\Plugins\Checkout\Managers\SettingsManager;
 use Objectiv\Plugins\Checkout\Managers\UpdatesManager;
+use Objectiv\Plugins\Checkout\WooFieldVisibility;
 
 /**
  * @link checkoutwc.com
@@ -140,7 +141,7 @@ class WooCommercePages extends PageAbstract {
 					'cart_item_link_target_new_window'     => SettingsManager::instance()->get_setting( 'cart_item_link_target_new_window' ) === 'yes',
 					'cart_item_data_display'               => SettingsManager::instance()->get_setting( 'cart_item_data_display' ),
 					'store_policies'                       => array_values( $store_policies ),
-					'wp_option/woocommerce_checkout_phone_field' => get_option( 'woocommerce_checkout_phone_field', 'required' ),
+					'wp_option/woocommerce_checkout_phone_field' => WooFieldVisibility::get( WooFieldVisibility::PHONE ),
 				],
 				'woocommerce_settings' => [
 					'countries'                => $countries,

@@ -8,7 +8,7 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "POT-Creation-Date: 2025-07-25 09:22-0400\n"
-"PO-Revision-Date: 2026-10-12T15:20:31+00:00\n"
+"PO-Revision-Date: 2026-10-26T17:15:41+00:00\n"
 "Language: ka-GE\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 3.6\n"
@@ -28,7 +28,7 @@ msgstr ""
 #: includes/Compatibility/Plugins/CartFlows.php:62
 #: includes/Admin/Pages/PickupLocationsAdminFree.php:218
 #: includes/Admin/Pages/PageAbstract.php:106
-#: includes/Admin/Pages/General.php:341
+#: includes/Admin/Pages/General.php:353
 #: includes/Admin/Pages/Premium/PickupLocations.php:317
 #: includes/Admin/Pages/Premium/OrderBumps.php:456
 #: includes/Admin/Pages/Premium/LocalPickupAdmin.php:165
@@ -272,7 +272,7 @@ msgid "Hide order summary"
 msgstr "დამალეთ შეკვეთის მოკლე შინაარსი"
 
 #: functions/template-functions.php:166
-#: includes/Admin/Pages/WooCommercePages.php:29
+#: includes/Admin/Pages/WooCommercePages.php:30
 #: client/ts/admin/Components/Forms/AdvancedScriptsSettingsForm.tsx:108
 msgid "Checkout"
 msgstr "გადახდა"
@@ -283,8 +283,8 @@ msgstr "ექსპრეს გადახდა"
 
 #: functions/template-functions.php:340
 #: functions/template-functions.php:354
-#: functions/template-functions.php:1932
-#: functions/template-functions.php:2265
+#: functions/template-functions.php:2002
+#: functions/template-functions.php:2339
 msgid "Information"
 msgstr "ინფორმაცია"
 
@@ -339,7 +339,7 @@ msgstr "გასვლა."
 
 #: functions/template-functions.php:745
 #: functions/template-functions.php:783
-#: functions/template-functions.php:1969
+#: functions/template-functions.php:2039
 msgid "Billing and Shipping address"
 msgstr "ბილინგის და მიწოდების მისამართი"
 
@@ -347,14 +347,14 @@ msgstr "ბილინგის და მიწოდების მისა
 #: functions/template-functions.php:795
 #: functions/template-functions.php:1201
 #: functions/template-functions.php:1215
-#: functions/template-functions.php:1997
+#: functions/template-functions.php:2067
 #: includes/Compatibility/Gateways/PayPalForWooCommerce.php:192
 msgid "Billing address"
 msgstr "გადამხდელის მისამართი"
 
 #: functions/template-functions.php:768
 #: functions/template-functions.php:806
-#: functions/template-functions.php:1981
+#: functions/template-functions.php:2051
 #: includes/Managers/AssetManager.php:705
 msgid "Shipping address"
 msgstr "მიწოდების მისამართი"
@@ -366,15 +366,15 @@ msgid "Your Cart"
 msgstr "თქვენი კალათა"
 
 #: functions/template-functions.php:1047
-#: functions/template-functions.php:2013
-#: functions/template-functions.php:2287
+#: functions/template-functions.php:2083
+#: functions/template-functions.php:2361
 #: functions/functions.php:3478
 msgid "Shipping"
 msgstr "მიწოდება"
 
 #: functions/template-functions.php:1065
-#: functions/template-functions.php:1953
-#: functions/template-functions.php:2308
+#: functions/template-functions.php:2023
+#: functions/template-functions.php:2382
 #: functions/functions.php:1025
 #: functions/functions.php:1040
 #: client/ts/frontend/Components/ReviewPane/OrderReviewStepReviewPane.tsx:47
@@ -382,7 +382,7 @@ msgid "Payment"
 msgstr "გადახდა"
 
 #: functions/template-functions.php:1065
-#: functions/template-functions.php:2308
+#: functions/template-functions.php:2382
 #: includes/Features/OrderReviewStep.php:74
 #: includes/Admin/Pages/TrustBadgesAdminFree.php:88
 #: client/ts/admin/Components/TrustBadgeFields.tsx:20
@@ -398,104 +398,113 @@ msgstr "უფასო"
 msgid "Select the address that matches your card or payment method."
 msgstr "შეარჩიეთ მისამართი, რომელიც შეესაბამება თქვენს ბარათს ან გადახდის მეთოდს."
 
-#: functions/template-functions.php:1638
-msgid "Unfortunately your order cannot be processed as the originating bank/merchant has declined your transaction. Please attempt your purchase again."
-msgstr "სამწუხაროდ, თქვენი შეკვეთა ვერ დამუშავდება, რადგან გამომგზავნი ბანკი/მერჩანტი უარყოფს თქვენს ტრანზაქციას. გთხოვთ, სცადეთ თქვენი შეძენა კვლავ."
-
-#: functions/template-functions.php:1642
-msgid "Pay"
-msgstr "გადახდა"
-
 # %s is the order number
-#: functions/template-functions.php:1660
+#: functions/template-functions.php:1668
+#: functions/template-functions.php:1718
 msgid "Order %s"
 msgstr "შეუკვეთეთ %s"
 
+#: functions/template-functions.php:1673
+msgid "Payment failed"
+msgstr "გადახდა ვერ შესრულდა"
+
+#: functions/template-functions.php:1686
+msgid "Unfortunately your order cannot be processed as the originating bank/merchant has declined your transaction. Please attempt your purchase again."
+msgstr "სამწუხაროდ, თქვენი შეკვეთა ვერ დამუშავდება, რადგან გამომგზავნი ბანკი/მერჩანტი უარყოფს თქვენს ტრანზაქციას. გთხოვთ, სცადეთ თქვენი შეძენა კვლავ."
+
+#: functions/template-functions.php:1691
+msgid "Try payment again"
+msgstr "სცადეთ გადახდა თავიდან"
+
+#: functions/template-functions.php:1693
+msgid "My account"
+msgstr "ჩემი ანგარიში"
+
 # %s is the billing first name
-#: functions/template-functions.php:1679
+#: functions/template-functions.php:1737
 msgid "Thank you %s!"
 msgstr "გმადლობთ %s!"
 
-#: functions/template-functions.php:1790
+#: functions/template-functions.php:1856
 msgid "Order status"
 msgstr "შეკვეთის სტატუსი"
 
-#: functions/template-functions.php:1833
+#: functions/template-functions.php:1903
 msgid "Order updates"
 msgstr "შეკვეთა განახლებულია"
 
-#: functions/template-functions.php:1844
+#: functions/template-functions.php:1914
 msgid "You’ll get shipping and delivery updates by email."
 msgstr "თქვენ მიიღებთ გადაზიდვასა და ადგილზე მიტანის განახლებას ელ.ფოსტით."
 
-#: functions/template-functions.php:1862
+#: functions/template-functions.php:1932
 msgid "Downloads"
 msgstr "ჩამოტვირთვები"
 
-#: functions/template-functions.php:1902
+#: functions/template-functions.php:1972
 msgid "&infin;"
 msgstr "&infin;"
 
-#: functions/template-functions.php:1908
+#: functions/template-functions.php:1978
 msgid "Never"
 msgstr "არასდროს"
 
-#: functions/template-functions.php:1947
+#: functions/template-functions.php:2017
 msgid "Contact information"
 msgstr "საკონტაქტო ინფორმაცია"
 
-#: functions/template-functions.php:1974
-#: functions/template-functions.php:1986
-#: functions/template-functions.php:2003
+#: functions/template-functions.php:2044
+#: functions/template-functions.php:2056
+#: functions/template-functions.php:2073
 msgid "N/A"
 msgstr "არ არის ხელმისაწვდომი"
 
-#: functions/template-functions.php:2043
+#: functions/template-functions.php:2113
 #: includes/Managers/AssetManager.php:855
 msgid "Continue shopping"
 msgstr "შესყიდვების გაგრძელება"
 
-#: functions/template-functions.php:2073
+#: functions/template-functions.php:2143
 #: includes/Loaders/LoaderAbstract.php:111
 msgid "Pay for order"
 msgstr "გადაიხადეთ შეკვეთისთვის"
 
-#: functions/template-functions.php:2091
+#: functions/template-functions.php:2161
 #: includes/Features/AbandonedCartRecovery.php:124
 #: client/ts/admin/Components/acr/carts.tsx:64
 msgid "Email"
 msgstr "ელ.ფოსტა"
 
-#: functions/template-functions.php:2101
+#: functions/template-functions.php:2171
 #: functions/functions.php:4142
 #: functions/functions.php:4143
 msgid "Password"
 msgstr "პაროლი"
 
-#: functions/template-functions.php:2117
+#: functions/template-functions.php:2187
 #: functions/functions.php:4182
 msgid "Login"
 msgstr "შესვლა"
 
-#: functions/template-functions.php:2120
+#: functions/template-functions.php:2190
 #: functions/functions.php:4175
 msgid "Lost your password?"
 msgstr "დაგავიწყდათ პაროლი?"
 
-#: functions/template-functions.php:2405
+#: functions/template-functions.php:2479
 msgid "Your Cart is Empty"
 msgstr "Თქვენი კალათა ცარიელია"
 
-#: functions/premium-init.php:342
+#: functions/premium-init.php:346
 msgid "CheckoutWC Templates Deactivated"
 msgstr "CheckoutWC შაბლონები გათიშულია"
 
 # %1$s: "Settings" text, %2$s: "Start Here" text, %3$s: "Activate CheckoutWC Templates" text
-#: functions/premium-init.php:345
+#: functions/premium-init.php:349
 msgid "Your license is valid and activated for this site but CheckoutWC is disabled for normal customers. To fix this, go to %1$s > %2$s and toggle \"%3$s\"."
 msgstr "თქვენი ლიცენზია ვალიდურია და გააქტიურებულია ამ საიტზე, მაგრამ CheckoutWC გათიშულია ჩვეულებრივი მომხმარებლებისთვის. გამოსასწორებლად გადადით %1$s > %2$s და ჩართეთ \"%3$s\"."
 
-#: functions/premium-init.php:346
+#: functions/premium-init.php:350
 #: includes/Admin/AdminPluginsPageManager.php:40
 #: includes/Admin/Pages/OrderBumpsAdminFree.php:25
 #: includes/Admin/Pages/LocalPickupAdminFree.php:27
@@ -507,69 +516,69 @@ msgstr "თქვენი ლიცენზია ვალიდურია 
 msgid "Settings"
 msgstr "პარამეტრები"
 
-#: functions/premium-init.php:347
-#: functions/premium-init.php:360
-#: includes/Admin/Pages/General.php:25
+#: functions/premium-init.php:351
+#: functions/premium-init.php:364
+#: includes/Admin/Pages/General.php:24
 msgid "Start Here"
 msgstr "დაიწყეთ აქ"
 
-#: functions/premium-init.php:348
-#: includes/Admin/Pages/General.php:195
+#: functions/premium-init.php:352
+#: includes/Admin/Pages/General.php:207
 msgid "Activate CheckoutWC Templates"
 msgstr "გააქტიურეთ CheckoutWC შაბლონები"
 
-#: functions/premium-init.php:355
+#: functions/premium-init.php:359
 msgid "CheckoutWC license invalid"
 msgstr "CheckoutWC-ის ლიცენზია არასწორია"
 
 # %1$s: URL to license settings page, %2$s: "Start Here" link text, %3$s: Pricing URL, %4$s: "buy a license" link text
-#: functions/premium-init.php:358
+#: functions/premium-init.php:362
 msgid "Premium features are off because your license key is missing or invalid. Check your key on <a href=\"%1$s\">%2$s</a> or <a target=\"_blank\" href=\"%3$s\">%4$s</a>."
 msgstr "პრემიუმ ფუნქციები გამორთულია, რადგან თქვენი ლიცენზიის გასაღები არ არის მითითებული ან არასწორია. შეამოწმეთ თქვენი გასაღები <a href=\"%1$s\">%2$s</a>-ზე ან <a target=\"_blank\" href=\"%3$s\">%4$s</a>-ზე."
 
-#: functions/premium-init.php:362
+#: functions/premium-init.php:366
 #: includes/Admin/Notices/InactiveLicenseNotice.php:15
 msgid "buy a license"
 msgstr "ლიცენზიის შეძენა"
 
-#: functions/premium-init.php:382
+#: functions/premium-init.php:386
 msgid "New Feature: Cloudflare Turnstile Bot Protection"
 msgstr "ახალი ფუნქცია: Cloudflare Turnstile ბოტების დაცვა"
 
 # 1: Cloudflare Turnstile name wrapped in strong tags, 2: Setup link
-#: functions/premium-init.php:385
+#: functions/premium-init.php:389
 msgid "CheckoutWC now supports %1$s - a privacy-first, CAPTCHA-free way to protect your checkout from bots and spam orders. %2$s"
 msgstr "CheckoutWC ახლა მხარს უჭერს %1$s - კონფიდენციალურობაზე ორიენტირებულ, CAPTCHA-უმცირეს გზას თქვენი ჩეკაუთის დაცვაში ბოტებისა და სპამისგან. %2$s"
 
 # The name of the Cloudflare Turnstile service
-#: functions/premium-init.php:389
+#: functions/premium-init.php:393
 #: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:78
 msgid "Cloudflare Turnstile"
 msgstr "Cloudflare Turnstile"
 
-#: functions/premium-init.php:395
+#: functions/premium-init.php:399
 msgid "Setup Cloudflare Turnstile now"
 msgstr "დააყენეთ Cloudflare Turnstile ახლა"
 
-#: functions/premium-init.php:400
+#: functions/premium-init.php:404
 msgid "Upgrade your plan now to access"
 msgstr "ახლავე გააუმჯობესეთ თქვენი გეგმა წვდომისთვის"
 
-#: functions/premium-init.php:413
+#: functions/premium-init.php:417
 msgid "Abandoned Cart Recovery Tracking Disabled"
 msgstr "დატოვებული კალათის აღდგენის თვალთვალის გათიშვა"
 
 # %1$s: Gist URL, %2$s: "Learn More" link text
-#: functions/premium-init.php:416
+#: functions/premium-init.php:420
 msgid "You have enabled Abandoned Cart Recovery tracking, but you do not have any emails published. To track carts, you need to publish emails or use this dev filter: <a target=\"_blank\" href=\"%1$s\">%2$s</a>."
 msgstr "თქვენ ჩართეთ დატოვებული კალათის აღდგენის თვალთვალი, მაგრამ არ გაქვთ გამოქვეყნებული ელ.ფოსტები. კალათების თვალთვალისთვის საჭიროა ელ.ფოსტების გამოქვეყნება ან გამოიყენოთ ეს dev ფილტრი: <a target=\"_blank\" href=\"%1$s\">%2$s</a>."
 
-#: functions/premium-init.php:418
+#: functions/premium-init.php:422
 #: includes/Admin/Pages/AbandonedCartRecoveryAdminFree.php:82
 msgid "Learn More"
 msgstr "მეტი ინფორმაცია"
 
-#: functions/premium-init.php:477
+#: functions/premium-init.php:481
 msgid "Admin preview: your CheckoutWC license isn\\'t valid for this site, so premium features are off. Check your license here: WP Admin > CheckoutWC > Start Here."
 msgstr "ადმინის წინასწარი ნახვა: თქვენი CheckoutWC ლიცენზია არ არის მოქმედი ამ საიტისთვის, ამიტომ პრემიუმ ფუნქციები გამორთულია. შეამოწმეთ თქვენი ლიცენზია აქ: WP Admin > CheckoutWC > Start Here."
 
@@ -666,7 +675,7 @@ msgid "Ship to"
 msgstr "გზავნიან"
 
 #: functions/functions.php:232
-#: includes/Features/LocalPickup.php:768
+#: includes/Features/LocalPickup.php:775
 #: includes/Admin/Pages/PickupLocationsAdminFree.php:93
 #: includes/Admin/Pages/Premium/PickupLocations.php:101
 msgid "Address"
@@ -677,7 +686,7 @@ msgid "Sorry, it seems that there are no available payment methods for your loca
 msgstr "უკაცრავად, თქვენი ადგილმდებარეობისთვის ხელმისაწვდომი გადახდის მეთოდები არ არის. გთხოვთ, დაგვიკავშირდეთ დახმარებისთვის ან ალტერნატიული შეთანხმებისთვის."
 
 #: functions/functions.php:787
-#: includes/Features/LocalPickup.php:1095
+#: includes/Features/LocalPickup.php:1119
 msgid "Shipping costs are calculated during checkout."
 msgstr "მიტანის ღირებულება გამოითვლება გადახდის დროს."
 
@@ -690,7 +699,7 @@ msgid "No shipping methods available"
 msgstr "მიწოდების მეთოდები არ არის ხელმისაწვდომი"
 
 #: functions/functions.php:826
-#: includes/Model/Bumps/BumpAbstract.php:882
+#: includes/Model/Bumps/BumpAbstract.php:895
 msgid "Free!"
 msgstr "უფასო!"
 
@@ -778,7 +787,7 @@ msgstr "შემცირება"
 #: functions/functions.php:2415
 #: includes/Managers/AssetManager.php:735
 #: includes/Managers/AssetManager.php:856
-#: includes/Features/LocalPickup.php:510
+#: includes/Features/LocalPickup.php:513
 #: includes/Features/AbandonedCartRecovery.php:128
 #: includes/Features/ABTesting.php:150
 #: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:633
@@ -903,22 +912,6 @@ msgstr "CheckoutWC: არ შეგიძლიათ გააქტიურ�
 msgid "Accent Color"
 msgstr "აქცენტის ფერი"
 
-#: lib/sendwp-sdk/sendwp-init.php:27
-msgid "Security failed to check sendwp_install_nonce"
-msgstr "უსაფრთხოების შემოწმება sendwp_install_nonce ვერ შესრულდა"
-
-#: lib/sendwp-sdk/sendwp-init.php:28
-msgid "Ask an administrator for install_plugins capability"
-msgstr "მოითხოვეთ ადმინისტრატორისგან install_plugins შესაძლებლობა"
-
-#: lib/sendwp-sdk/sendwp-init.php:29
-msgid "SendWP is already connected."
-msgstr "SendWP უკვე დაკავშირებულია."
-
-#: lib/sendwp-sdk/remote-install.php:84
-msgid "Something went wrong. SendWP was not installed correctly."
-msgstr "რაღაც შეცდომა მოხდა. SendWP არ დაინსტალირდა სწორად."
-
 #: includes/Stats/StatCollection.php:193
 msgid "Once Weekly"
 msgstr "კვირაში ერთხელ"
@@ -956,98 +949,98 @@ msgstr "ადგილობრივი მიღება"
 msgid "Allow customers to pick up orders themselves. This version does not require shipping zones."
 msgstr "მომხმარებლებს შეუძლიათ თავად აიღონ შეკვეთები. ამ ვერსიას არ სჭირდება გადაზიდვის ზონები."
 
-#: includes/Managers/UpdatesManager.php:436
+#: includes/Managers/UpdatesManager.php:451
 msgid "CheckoutWC License Key"
 msgstr "CheckoutWC ლიცენზიის გასაღები"
 
-#: includes/Managers/UpdatesManager.php:441
+#: includes/Managers/UpdatesManager.php:456
 msgid "Your license key is set with the constant <code>CFW_LICENSE_KEY</code>."
 msgstr "თქვენი ლიცენზიის გასაღები არის განსაზღვრული კონსტანტით <code>CFW_LICENSE_KEY</code>."
 
-#: includes/Managers/UpdatesManager.php:448
+#: includes/Managers/UpdatesManager.php:463
 msgid "License Holder"
 msgstr "ლიცენზიის მფლობელი"
 
-#: includes/Managers/UpdatesManager.php:461
+#: includes/Managers/UpdatesManager.php:476
 msgid "Plan"
 msgstr "გეგმა"
 
-#: includes/Managers/UpdatesManager.php:469
+#: includes/Managers/UpdatesManager.php:484
 msgid "Activation Limit"
 msgstr "აქტივაციის ლიმიტი"
 
-#: includes/Managers/UpdatesManager.php:477
+#: includes/Managers/UpdatesManager.php:492
 #: includes/Admin/Pages/Premium/ABTestingAdmin.php:178
 #: includes/Admin/Pages/Premium/ABTestingAdmin.php:819
 #: client/ts/admin/Components/acr/carts.tsx:80
 msgid "Status"
 msgstr "სტატუსი"
 
-#: includes/Managers/UpdatesManager.php:484
+#: includes/Managers/UpdatesManager.php:499
 msgid "Refresh License Info"
 msgstr "ლიცენზიის ინფორმაციის განახლება"
 
-#: includes/Managers/UpdatesManager.php:532
+#: includes/Managers/UpdatesManager.php:551
 msgid "Please enter your license key."
 msgstr "გთხოვთ, შეიყვანეთ თქვენი ლიცენზიის გასაღები."
 
-#: includes/Managers/UpdatesManager.php:535
-#: includes/Managers/UpdatesManager.php:543
+#: includes/Managers/UpdatesManager.php:554
+#: includes/Managers/UpdatesManager.php:562
 msgid "Activate Site"
 msgstr "საიტის გააქტიურება"
 
-#: includes/Managers/UpdatesManager.php:538
+#: includes/Managers/UpdatesManager.php:557
 msgid "Deactivate Site"
 msgstr "საიტის დეაქტივაცია"
 
 # Debug error message logged when license check reaches unexpected state
-#: includes/Managers/UpdatesManager.php:724
+#: includes/Managers/UpdatesManager.php:743
 msgid "License Check Error: You should not be able to get here. I am kind of freaked out."
 msgstr "ლიცენზიის შემოწმების შეცდომა: აქ არ უნდა მოხვედრილიყავით. ცოტა შეშინებული ვარ."
 
 # %1$d: failure count, %2$d: max failures, %3$s: time since last failure
-#: includes/Managers/UpdatesManager.php:983
+#: includes/Managers/UpdatesManager.php:1002
 msgid "Unable to verify CheckoutWC license (%1$d/%2$d attempts failed). Using cached license data. Last attempt: %3$s ago."
 msgstr "CheckoutWC ლიცენზიის ვერ დადასტურება (%1$d/%2$d მცდელობა წარუმატებელი). გამოყენებულია ქეშირებული ლიცენზიის მონაცემები. ბოლო მცდელობა: %3$s წინ."
 
-#: includes/Managers/UpdatesManager.php:1006
+#: includes/Managers/UpdatesManager.php:1025
 msgid "%s license activation was not successful. Please check your key status below for more information."
 msgstr "%s ლიცენზიის активация არ იყო წარმატებული. გთხოვთ, შეამოწმოთ თქვენი გასაღების სტატუსი ქვემოთ დამატებითი ინფორმაციისთვის."
 
-#: includes/Managers/UpdatesManager.php:1024
+#: includes/Managers/UpdatesManager.php:1043
 msgid "%s license successfully activated."
 msgstr "%s ლიცენზია წარმატებით გააქტიურებულია."
 
-#: includes/Managers/UpdatesManager.php:1042
+#: includes/Managers/UpdatesManager.php:1061
 msgid "%s license deactivation failed. Please try again, or contact support."
 msgstr "%s ლიცენზიის დეაქტივაცია წარუმატებელი იყო. გთხოვთ, სცადეთ თავიდან ან დაუკავშირდით მხარდაჭერას."
 
-#: includes/Managers/UpdatesManager.php:1060
+#: includes/Managers/UpdatesManager.php:1079
 msgid "%s license deactivated successfully."
 msgstr "%s ლიცენზია წარმატებით დეაქტივირებულია."
 
-#: includes/Managers/UpdatesManager.php:1078
+#: includes/Managers/UpdatesManager.php:1097
 msgid "%s license settings saved successfully."
 msgstr "%s ლიცენზიის პარამეტრები წარმატებით შენახულია."
 
-#: includes/Managers/UpdatesManager.php:1096
+#: includes/Managers/UpdatesManager.php:1115
 msgid "%1$s license activation failed: %2$s"
 msgstr "%1$s ლიცენზიის активация წარუმატებელი იყო: %2$s"
 
-#: includes/Managers/UpdatesManager.php:1114
+#: includes/Managers/UpdatesManager.php:1133
 msgid "%s license activation failed: Unable to connect to license server. Please check your internet connection or try again later."
 msgstr "%s ლიცენზიის активация წარუმატებელი იყო: ვერ მოხერხდა კავშირის დამყარება ლიცენზიის სერვერთან. გთხოვთ, შეამოწმოთ თქვენი ინტერნეტის კავშირი ან სცადეთ მოგვიანებით."
 
-#: includes/Managers/UpdatesManager.php:1132
+#: includes/Managers/UpdatesManager.php:1151
 msgid "%s: License deactivated locally. The license server could not be reached, but the license has been deactivated on this site."
 msgstr "%s: ლიცენზია ადგილობრივად დეაქტივირებულია. ლიცენზიის სერვერს ვერ მიაღწიეს, მაგრამ ლიცენზია ამ საიტზე დეაქტივირებულია."
 
 # %1$d: failure count, %2$d: max failures, %3$s: time since last failure
-#: includes/Managers/UpdatesManager.php:1402
+#: includes/Managers/UpdatesManager.php:1421
 msgid "Unable to verify license online (%1$d/%2$d attempts failed). Using cached license data. Last attempt: %3$s ago."
 msgstr "ლიცენზიის ონლაინ ვერ დადასტურება (%1$d/%2$d მცდელობა წარუმატებელი). გამოყენებულია ქეშირებული ლიცენზიის მონაცემები. ბოლო მცდელობა: %3$s წინ."
 
-#: includes/Managers/UpdatesManager.php:1408
+#: includes/Managers/UpdatesManager.php:1427
 msgid "License verified successfully."
 msgstr "ლიცენზია წარმატებით დადასტურებულია."
 
@@ -1274,7 +1267,7 @@ msgid "Please enter a valid postcode / ZIP."
 msgstr "გთხოვთ შეიტანოთ სწორი საფოსტო კოდი / ინდექსი."
 
 #: includes/Managers/AssetManager.php:714
-#: includes/Features/LocalPickup.php:636
+#: includes/Features/LocalPickup.php:639
 msgid "Pickup"
 msgstr "Აღება"
 
@@ -1443,142 +1436,142 @@ msgstr "უფასო საჩუქარი"
 msgid "Reward"
 msgstr "საჩუქარი"
 
-#: includes/Features/SideCart.php:1709
+#: includes/Features/SideCart.php:1710
 #: includes/Admin/WooCommerceAdminScreenAugmenter.php:24
 #: includes/Admin/WooCommerceAdminScreenAugmenter.php:45
 msgid "CheckoutWC:"
 msgstr "CheckoutWC:"
 
-#: includes/Features/SideCart.php:1710
+#: includes/Features/SideCart.php:1711
 msgid "Settings marked with asterisks (**) may be overridden based on your Side Cart settings. (CheckoutWC > Side Cart)"
 msgstr "ვინიშნები ველები ვარსკვლავებით (**) შეიძლება შეიცვალოს თქვენი Side Cart პარამეტრების მიხედვით. (CheckoutWC > Side Cart)"
 
-#: includes/Features/OrderBumps.php:647
+#: includes/Features/OrderBumps.php:655
 msgid "All orders"
 msgstr "ყველა შეკვეთა"
 
-#: includes/Features/OrderBumps.php:650
+#: includes/Features/OrderBumps.php:658
 msgid "Contains Any Order Bump"
 msgstr "შეიცავს ნებისმიერ შეკვეთის ბამპს"
 
 # %s: Order bump title
-#: includes/Features/OrderBumps.php:656
+#: includes/Features/OrderBumps.php:664
 msgid "Has Bump: %s"
 msgstr "აქვს ბამპი: %s"
 
-#: includes/Features/LocalPickup.php:127
-#: includes/Features/LocalPickup.php:131
+#: includes/Features/LocalPickup.php:130
+#: includes/Features/LocalPickup.php:134
 msgid "Delivery method"
 msgstr "Მიწოდების მეთოდი"
 
-#: includes/Features/LocalPickup.php:181
+#: includes/Features/LocalPickup.php:184
 msgid "Pick up"
 msgstr "Აღება"
 
-#: includes/Features/LocalPickup.php:200
+#: includes/Features/LocalPickup.php:203
 msgid "Ship"
 msgstr "ხომალდი"
 
-#: includes/Features/LocalPickup.php:308
+#: includes/Features/LocalPickup.php:311
 msgid "Pickup locations"
 msgstr "პიკაპის ადგილები"
 
-#: includes/Features/LocalPickup.php:505
-#: includes/Features/LocalPickup.php:507
+#: includes/Features/LocalPickup.php:508
+#: includes/Features/LocalPickup.php:510
 #: includes/Admin/Pages/PickupLocationsAdminFree.php:21
 #: includes/Admin/Pages/Premium/PickupLocations.php:23
 msgid "Pickup Locations"
 msgstr "მიღების ადგილები"
 
-#: includes/Features/LocalPickup.php:506
-#: includes/Features/LocalPickup.php:694
-#: includes/Features/LocalPickup.php:782
-#: includes/Features/LocalPickup.php:830
-#: includes/Features/LocalPickup.php:1158
-#: includes/Features/LocalPickup.php:1183
+#: includes/Features/LocalPickup.php:509
+#: includes/Features/LocalPickup.php:697
+#: includes/Features/LocalPickup.php:789
+#: includes/Features/LocalPickup.php:837
+#: includes/Features/LocalPickup.php:1182
+#: includes/Features/LocalPickup.php:1207
 msgid "Pickup Location"
 msgstr "Ლოკაციის არჩევა"
 
-#: includes/Features/LocalPickup.php:508
+#: includes/Features/LocalPickup.php:511
 msgid "Add Pickup Location"
 msgstr "მიღების ადგილის დამატება"
 
-#: includes/Features/LocalPickup.php:509
+#: includes/Features/LocalPickup.php:512
 msgid "Add New Pickup Location"
 msgstr "ახალი მიღების ადგილის დამატება"
 
-#: includes/Features/LocalPickup.php:511
+#: includes/Features/LocalPickup.php:514
 msgid "Edit Pickup Location"
 msgstr "მიღების ადგილის რედაქტირება"
 
-#: includes/Features/LocalPickup.php:512
+#: includes/Features/LocalPickup.php:515
 msgid "New Pickup Location"
 msgstr "ახალი მიღების ადგილი"
 
-#: includes/Features/LocalPickup.php:513
+#: includes/Features/LocalPickup.php:516
 msgid "View Pickup Locations"
 msgstr "მიღების ადგილების ნახვა"
 
-#: includes/Features/LocalPickup.php:514
+#: includes/Features/LocalPickup.php:517
 msgid "View Pickup Location"
 msgstr "მიღების ადგილის ნახვა"
 
-#: includes/Features/LocalPickup.php:515
+#: includes/Features/LocalPickup.php:518
 msgid "Search Pickup Locations"
 msgstr "მიღების ადგილების ძებნა"
 
-#: includes/Features/LocalPickup.php:516
+#: includes/Features/LocalPickup.php:519
 msgid "No Pickup Location found"
 msgstr "მიღების ადგილი არ მოიძებნა"
 
-#: includes/Features/LocalPickup.php:517
+#: includes/Features/LocalPickup.php:520
 msgid "No Pickup Locations found in trash"
 msgstr "მიღების ადგილები არ მოიძებნა ნაგავში"
 
-#: includes/Features/LocalPickup.php:518
+#: includes/Features/LocalPickup.php:521
 msgid "Attributes"
 msgstr "ატრიბუტები"
 
-#: includes/Features/LocalPickup.php:523
+#: includes/Features/LocalPickup.php:526
 msgid "This is where you can add new Pickup Locations."
 msgstr "აქ შეგიძლიათ დაამატოთ ახალი აღების ადგილები."
 
-#: includes/Features/LocalPickup.php:601
+#: includes/Features/LocalPickup.php:604
 #: client/ts/frontend/Components/ReviewPane/PaymentMethodReviewPane.tsx:37
 #: client/ts/frontend/Components/ReviewPane/OrderReviewStepReviewPane.tsx:37
 msgid "Method"
 msgstr "მეთოდი"
 
-#: includes/Features/LocalPickup.php:754
+#: includes/Features/LocalPickup.php:761
 msgid "Pickup instructions"
 msgstr "პიკაპის ინსტრუქციები"
 
-#: includes/Features/LocalPickup.php:950
+#: includes/Features/LocalPickup.php:957
 msgid "Usually ready in 1 hour."
 msgstr "ჩვეულებრივ მზადდება 1 საათში."
 
-#: includes/Features/LocalPickup.php:951
+#: includes/Features/LocalPickup.php:958
 msgid "Usually ready in 2 hours."
 msgstr "ჩვეულებრივ მზადდება 2 საათში."
 
-#: includes/Features/LocalPickup.php:952
+#: includes/Features/LocalPickup.php:959
 msgid "Usually ready in 4 hours."
 msgstr "ჩვეულებრივ მზადდება 4 საათში."
 
-#: includes/Features/LocalPickup.php:953
+#: includes/Features/LocalPickup.php:960
 msgid "Usually ready in 24 hours."
 msgstr "ჩვეულებრივ მზადდება 24 საათში."
 
-#: includes/Features/LocalPickup.php:954
+#: includes/Features/LocalPickup.php:961
 msgid "Usually ready in 2-4 days."
 msgstr "ჩვეულებრივ მზადდება 2-4 დღეში."
 
-#: includes/Features/LocalPickup.php:955
+#: includes/Features/LocalPickup.php:962
 msgid "Usually ready in 5+ days."
 msgstr "ჩვეულებრივ მზადდება 5+ დღეში."
 
-#: includes/Features/LocalPickup.php:1167
-#: includes/Features/LocalPickup.php:1194
+#: includes/Features/LocalPickup.php:1191
+#: includes/Features/LocalPickup.php:1218
 msgid "Pickup Instructions:"
 msgstr "მიღების ინსტრუქციები:"
 
@@ -1789,152 +1782,6 @@ msgstr "აირჩიეთ ნებისმიერი ერთი ვა
 msgid "You're missing out on important updates because your license key is missing, invalid, or expired."
 msgstr "თქვენ გამოტოვებთ მნიშვნელოვან განახლებებს, რადგან თქვენი ლიცენზიის გასაღები არ არსებობს, არასწორია ან ვადაგასულია."
 
-#: includes/Action/ValidatePostcodeAction.php:33
-msgid "Please enter a valid %s."
-msgstr "გთხოვთ, შეიყვანოთ სწორი %s."
-
-#: includes/Action/ValidateEmailDomainAction.php:44
-msgid "Email address contains invalid domain name."
-msgstr "ელფოსტის მისამართი შეიცავს დომენის არასწორ სახელს."
-
-#: includes/Action/UpdateCheckoutAction.php:71
-msgid "Sorry, your session has expired."
-msgstr "უკაცრავად, თქვენი სესია ამოიწურა."
-
-#: includes/Action/UpdateCheckoutAction.php:71
-msgid "Return to shop"
-msgstr "შოპში დაბრუნება"
-
-#: includes/Action/SmartyStreetsAddressValidationAction.php:85
-msgid "Use Recommended"
-msgstr "გამოიყენეთ რეკომენდებული"
-
-#: includes/Action/SmartyStreetsAddressValidationAction.php:86
-msgid "Use Your Address"
-msgstr "გამოიყენეთ თქვენი მისამართი"
-
-#: includes/Action/SmartyStreetsAddressValidationAction.php:103
-msgid "Reenter Address"
-msgstr "ხელახლა შეიყვანეთ მისამართი"
-
-#: includes/Action/SmartyStreetsAddressValidationAction.php:104
-msgid "Use Existing Address"
-msgstr "გამოიყენეთ არსებული მისამართი"
-
-#: includes/Action/SmartyStreetsAddressValidationAction.php:168
-msgid "Use recommended address instead?"
-msgstr "გამოიყენეთ რეკომენდებული მისამართი?"
-
-#: includes/Action/SmartyStreetsAddressValidationAction.php:171
-msgid "We\\'re unable to verify your address, but found a close match."
-msgstr "ჩვენ ვერ ვამოწმებთ თქვენს მისამართს, მაგრამ მივიღეთ ახლოს მყოფი შესაბამისობა."
-
-#: includes/Action/SmartyStreetsAddressValidationAction.php:175
-#: includes/Action/SmartyStreetsAddressValidationAction.php:248
-#: includes/Action/SmartyStreetsAddressValidationAction.php:305
-#: includes/Action/SmartyStreetsAddressValidationAction.php:358
-#: includes/Action/SmartyStreetsAddressValidationAction.php:409
-msgid "We are unable to verify your address."
-msgstr "თქვენი მისამართის დადასტურება შეუძლებელია."
-
-#: includes/Action/SmartyStreetsAddressValidationAction.php:179
-msgid "Please confirm you would like to use this address or try again."
-msgstr "გთხოვთ, დაადასტუროთ, რომ გსურთ ამ მისამართის გამოყენება ან სცადეთ ხელახლა."
-
-#: includes/Action/SmartyStreetsAddressValidationAction.php:186
-msgid "You Entered"
-msgstr "შენ შედი"
-
-#: includes/Action/SmartyStreetsAddressValidationAction.php:198
-msgid "Recommended"
-msgstr "რეკომენდებულია"
-
-#: includes/Action/RemoveCouponAction.php:26
-msgid "Sorry there was a problem removing this coupon."
-msgstr "უკაცრავად, კუპონის წაშლისას პრობლემა წარმოიშვა."
-
-#: includes/Action/RemoveCouponAction.php:29
-msgid "Coupon has been removed."
-msgstr "კუპონი წაშლილია."
-
-#: includes/Action/ProcessOfferPaymentAction.php:61
-#: includes/Features/OneClick/OfferRefundManager.php:159
-msgid "Security verification failed."
-msgstr "უსაფრთხოების გადამოწმება ვერ შესრულდა."
-
-#: includes/Action/ProcessOfferPaymentAction.php:84
-msgid "Invalid order key."
-msgstr "არასწორი შეკვეთის გასაღები."
-
-#: includes/Action/ProcessOfferPaymentAction.php:96
-msgid "This order cannot accept offers."
-msgstr "ამ შეკვეთას არ შეუძლია შეთავაზებების მიღება."
-
-#: includes/Action/ProcessOfferPaymentAction.php:108
-msgid "No payment method found."
-msgstr "გადახდის მეთოდი არ მოიძებნა."
-
-#: includes/Action/ProcessOfferPaymentAction.php:120
-msgid "Payment gateway does not support one-click upsells."
-msgstr "გადახდის სერვისი არ მხარს უჭერს ერთ-კლიკიანი დამატებებს."
-
-#: includes/Action/ProcessOfferPaymentAction.php:132
-#: includes/Features/OneClick/OfferRefundManager.php:215
-msgid "Failed to load payment gateway."
-msgstr "გადახდის სერვისის ჩატვირთვა ვერ მოხერხდა."
-
-#: includes/Action/ProcessOfferPaymentAction.php:144
-msgid "Invalid product."
-msgstr "არასწორი პროდუქტი."
-
-#: includes/Action/ProcessOfferPaymentAction.php:156
-msgid "Invalid bump offer."
-msgstr "არასწორი ბმპის შეთავაზება."
-
-#: includes/Action/ProcessOfferPaymentAction.php:253
-msgid "Payment failed. Please try again."
-msgstr "გადახდა ვერ შესრულდა. გთხოვთ, სცადეთ ისევ."
-
-#: includes/Action/ProcessOfferPaymentAction.php:276
-msgid "Payment successful but failed to update order."
-msgstr "გადახდა წარმატებული იყო, მაგრამ შეკვეთის განახლება ვერ მოხერხდა."
-
-#: includes/Action/ProcessOfferPaymentAction.php:308
-msgid "Offer accepted successfully."
-msgstr "შეთავაზება წარმატებით მიღებულია."
-
-#: includes/Action/LostPasswordAction.php:59
-msgid "A password reset email has been sent to the email address on file for your account, but may take several minutes to show up in your inbox. Please wait at least 10 minutes before attempting another reset."
-msgstr "პაროლის აღდგენის ელ.ფოსტა გაგზავნილია თქვენს ანგარიშზე მითითებულ ელ.ფოსტაზე, მაგრამ შეიძლება რამდენიმე წუთი დასჭირდეს მის მიღებამდე. გთხოვთ, დაელოდოთ მინიმუმ 10 წუთი, სანამ კიდევ ერთხელ სცდებით აღდგენას."
-
-#: includes/Action/LogInAction.php:24
-msgid "There was an error logging in. Please check your credentials and try again."
-msgstr "შესვლისას მოხდა შეცდომა. გთხოვთ, შეამოწმოთ თქვენი რწმუნებათა სიგელები და სცადოთ ხელახლა."
-
-#: includes/Action/DeclineOfferAction.php:39
-msgid "Invalid security token."
-msgstr "არასწორი უსაფრთხოების ტოკენი."
-
-#: includes/Action/DeclineOfferAction.php:48
-msgid "Invalid order information."
-msgstr "არასწორი შეკვეთის ინფორმაცია."
-
-#: includes/Action/DeclineOfferAction.php:54
-msgid "Order verification failed."
-msgstr "შეკვეთის გადამოწმება ვერ შესრულდა."
-
-#: includes/Action/DeclineOfferAction.php:63
-msgid "Redirecting..."
-msgstr "გადამისამართება..."
-
-#: includes/Action/DeclineOfferAction.php:76
-msgid "Session expired. Redirecting..."
-msgstr "სესია ამოიწურა. გადამისამართება..."
-
-#: includes/Action/DeclineOfferAction.php:102
-msgid "Offer declined."
-msgstr "შეთავაზება უარყოფილია."
-
 #: includes/API/UserRolesAPI.php:44
 msgid "Guest (Not Logged In)"
 msgstr "სტუმარი (არ არის შესული)"
@@ -2034,6 +1881,168 @@ msgstr "აღდგენილი შემოსავალი"
 msgid "Recovery Rate"
 msgstr "აღდგენის მაჩვენებელი"
 
+#: includes/Action/ValidatePostcodeAction.php:33
+msgid "Please enter a valid %s."
+msgstr "გთხოვთ, შეიყვანოთ სწორი %s."
+
+#: includes/Action/ValidateEmailDomainAction.php:44
+msgid "Email address contains invalid domain name."
+msgstr "ელფოსტის მისამართი შეიცავს დომენის არასწორ სახელს."
+
+#: includes/Action/UpdateCheckoutAction.php:80
+msgid "Sorry, your session has expired."
+msgstr "უკაცრავად, თქვენი სესია ამოიწურა."
+
+#: includes/Action/UpdateCheckoutAction.php:80
+msgid "Return to shop"
+msgstr "შოპში დაბრუნება"
+
+#: includes/Action/SmartyStreetsAddressValidationAction.php:85
+msgid "Use Recommended"
+msgstr "გამოიყენეთ რეკომენდებული"
+
+#: includes/Action/SmartyStreetsAddressValidationAction.php:86
+msgid "Use Your Address"
+msgstr "გამოიყენეთ თქვენი მისამართი"
+
+#: includes/Action/SmartyStreetsAddressValidationAction.php:103
+msgid "Reenter Address"
+msgstr "ხელახლა შეიყვანეთ მისამართი"
+
+#: includes/Action/SmartyStreetsAddressValidationAction.php:104
+msgid "Use Existing Address"
+msgstr "გამოიყენეთ არსებული მისამართი"
+
+#: includes/Action/SmartyStreetsAddressValidationAction.php:168
+msgid "Use recommended address instead?"
+msgstr "გამოიყენეთ რეკომენდებული მისამართი?"
+
+#: includes/Action/SmartyStreetsAddressValidationAction.php:171
+msgid "We\\'re unable to verify your address, but found a close match."
+msgstr "ჩვენ ვერ ვამოწმებთ თქვენს მისამართს, მაგრამ მივიღეთ ახლოს მყოფი შესაბამისობა."
+
+#: includes/Action/SmartyStreetsAddressValidationAction.php:175
+#: includes/Action/SmartyStreetsAddressValidationAction.php:248
+#: includes/Action/SmartyStreetsAddressValidationAction.php:305
+#: includes/Action/SmartyStreetsAddressValidationAction.php:358
+#: includes/Action/SmartyStreetsAddressValidationAction.php:409
+msgid "We are unable to verify your address."
+msgstr "თქვენი მისამართის დადასტურება შეუძლებელია."
+
+#: includes/Action/SmartyStreetsAddressValidationAction.php:179
+msgid "Please confirm you would like to use this address or try again."
+msgstr "გთხოვთ, დაადასტუროთ, რომ გსურთ ამ მისამართის გამოყენება ან სცადეთ ხელახლა."
+
+#: includes/Action/SmartyStreetsAddressValidationAction.php:186
+msgid "You Entered"
+msgstr "შენ შედი"
+
+#: includes/Action/SmartyStreetsAddressValidationAction.php:198
+msgid "Recommended"
+msgstr "რეკომენდებულია"
+
+#: includes/Action/RemoveCouponAction.php:26
+msgid "Sorry there was a problem removing this coupon."
+msgstr "უკაცრავად, კუპონის წაშლისას პრობლემა წარმოიშვა."
+
+#: includes/Action/RemoveCouponAction.php:29
+msgid "Coupon has been removed."
+msgstr "კუპონი წაშლილია."
+
+#: includes/Action/ProcessOfferPaymentAction.php:61
+#: includes/Features/OneClick/OfferRefundManager.php:159
+msgid "Security verification failed."
+msgstr "უსაფრთხოების გადამოწმება ვერ შესრულდა."
+
+#: includes/Action/ProcessOfferPaymentAction.php:84
+msgid "Invalid order key."
+msgstr "არასწორი შეკვეთის გასაღები."
+
+#: includes/Action/ProcessOfferPaymentAction.php:95
+msgid "This order cannot accept offers."
+msgstr "ამ შეკვეთას არ შეუძლია შეთავაზებების მიღება."
+
+#: includes/Action/ProcessOfferPaymentAction.php:107
+msgid "No payment method found."
+msgstr "გადახდის მეთოდი არ მოიძებნა."
+
+#: includes/Action/ProcessOfferPaymentAction.php:119
+msgid "Payment gateway does not support one-click upsells."
+msgstr "გადახდის სერვისი არ მხარს უჭერს ერთ-კლიკიანი დამატებებს."
+
+#: includes/Action/ProcessOfferPaymentAction.php:131
+#: includes/Features/OneClick/OfferRefundManager.php:215
+msgid "Failed to load payment gateway."
+msgstr "გადახდის სერვისის ჩატვირთვა ვერ მოხერხდა."
+
+#: includes/Action/ProcessOfferPaymentAction.php:143
+msgid "Invalid product."
+msgstr "არასწორი პროდუქტი."
+
+#: includes/Action/ProcessOfferPaymentAction.php:155
+msgid "Invalid bump offer."
+msgstr "არასწორი ბმპის შეთავაზება."
+
+#: includes/Action/ProcessOfferPaymentAction.php:252
+msgid "Payment failed. Please try again."
+msgstr "გადახდა ვერ შესრულდა. გთხოვთ, სცადეთ ისევ."
+
+#: includes/Action/ProcessOfferPaymentAction.php:275
+msgid "Payment successful but failed to update order."
+msgstr "გადახდა წარმატებული იყო, მაგრამ შეკვეთის განახლება ვერ მოხერხდა."
+
+#: includes/Action/ProcessOfferPaymentAction.php:307
+msgid "Offer accepted successfully."
+msgstr "შეთავაზება წარმატებით მიღებულია."
+
+#: includes/Action/LostPasswordAction.php:59
+msgid "A password reset email has been sent to the email address on file for your account, but may take several minutes to show up in your inbox. Please wait at least 10 minutes before attempting another reset."
+msgstr "პაროლის აღდგენის ელ.ფოსტა გაგზავნილია თქვენს ანგარიშზე მითითებულ ელ.ფოსტაზე, მაგრამ შეიძლება რამდენიმე წუთი დასჭირდეს მის მიღებამდე. გთხოვთ, დაელოდოთ მინიმუმ 10 წუთი, სანამ კიდევ ერთხელ სცდებით აღდგენას."
+
+#: includes/Action/LogInAction.php:24
+msgid "There was an error logging in. Please check your credentials and try again."
+msgstr "შესვლისას მოხდა შეცდომა. გთხოვთ, შეამოწმოთ თქვენი რწმუნებათა სიგელები და სცადოთ ხელახლა."
+
+#: includes/Action/DeclineOfferAction.php:39
+msgid "Invalid security token."
+msgstr "არასწორი უსაფრთხოების ტოკენი."
+
+#: includes/Action/DeclineOfferAction.php:48
+msgid "Invalid order information."
+msgstr "არასწორი შეკვეთის ინფორმაცია."
+
+#: includes/Action/DeclineOfferAction.php:54
+msgid "Order verification failed."
+msgstr "შეკვეთის გადამოწმება ვერ შესრულდა."
+
+#: includes/Action/DeclineOfferAction.php:63
+msgid "Redirecting..."
+msgstr "გადამისამართება..."
+
+#: includes/Action/DeclineOfferAction.php:76
+msgid "Session expired. Redirecting..."
+msgstr "სესია ამოიწურა. გადამისამართება..."
+
+#: includes/Action/DeclineOfferAction.php:102
+msgid "Offer declined."
+msgstr "შეთავაზება უარყოფილია."
+
+#: lib/sendwp-sdk/sendwp-init.php:27
+msgid "Security failed to check sendwp_install_nonce"
+msgstr "უსაფრთხოების შემოწმება sendwp_install_nonce ვერ შესრულდა"
+
+#: lib/sendwp-sdk/sendwp-init.php:28
+msgid "Ask an administrator for install_plugins capability"
+msgstr "მოითხოვეთ ადმინისტრატორისგან install_plugins შესაძლებლობა"
+
+#: lib/sendwp-sdk/sendwp-init.php:29
+msgid "SendWP is already connected."
+msgstr "SendWP უკვე დაკავშირებულია."
+
+#: lib/sendwp-sdk/remote-install.php:84
+msgid "Something went wrong. SendWP was not installed correctly."
+msgstr "რაღაც შეცდომა მოხდა. SendWP არ დაინსტალირდა სწორად."
+
 #. block title
 #: block.json
 msgid "Order Bump Steps"
@@ -2059,62 +2068,6 @@ msgstr "შეკვეთის დამატებითი შეთავ�
 msgid "The form to accept or reject the bump offer."
 msgstr "ფორმა შეთავაზების მიღებისა ან უარყოფისთვის."
 
-#: includes/Model/Bumps/BumpAbstract.php:1081
-#: includes/Model/Bumps/BumpAbstract.php:1091
-#: includes/Model/ABTests/OrderBumpsABTest.php:30
-#: includes/Features/ABTesting/ABTestTypeRegistry.php:123
-#: includes/Admin/Pages/OrderBumpsAdminFree.php:17
-#: includes/Admin/Pages/OrderBumpsAdminFree.php:71
-#: includes/Admin/Pages/Premium/OrderBumps.php:50
-#: client/ts/admin/Components/Forms/OrderBumpSettingsForm.tsx:45
-#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:408
-msgid "Order Bumps"
-msgstr "შეკვეთის ბამპები"
-
-#: includes/Model/Bumps/BumpAbstract.php:1082
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:193
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:1614
-msgid "Order Bump"
-msgstr "შეკვეთის ბამპი"
-
-#: includes/Model/Bumps/BumpAbstract.php:1083
-msgid "Add New"
-msgstr "ახლის დამატება"
-
-#: includes/Model/Bumps/BumpAbstract.php:1084
-msgid "Add New Order Bump"
-msgstr "ახალი შეკვეთის დამატების დამატება"
-
-#: includes/Model/Bumps/BumpAbstract.php:1085
-msgid "Edit Order Bump"
-msgstr "შეკვეთის დამატების რედაქტირება"
-
-#: includes/Model/Bumps/BumpAbstract.php:1086
-#: client/ts/admin/Components/Metaboxes/OrderBumpsSetupModal.tsx:61
-msgid "New Order Bump"
-msgstr "ახალი შეკვეთის დამატება"
-
-#: includes/Model/Bumps/BumpAbstract.php:1087
-msgid "View Order Bump"
-msgstr "შეკვეთის ბამპის ნახვა"
-
-#: includes/Model/Bumps/BumpAbstract.php:1088
-msgid "Find Order Bump"
-msgstr "შეკვეთის ბამპის ძებნა"
-
-#: includes/Model/Bumps/BumpAbstract.php:1089
-msgid "No order bumps were found."
-msgstr "შეკვეთის დამატებები არ მოიძებნა."
-
-#: includes/Model/Bumps/BumpAbstract.php:1090
-msgid "Not found in trash"
-msgstr "არ მოიძებნა ნაგავში"
-
-#: includes/Model/ABTests/OrderBumpsABTest.php:31
-#: includes/Features/ABTesting/ABTestTypeRegistry.php:124
-msgid "Test different variations of order bumps to see which performs better."
-msgstr "ტესტირება შეკვეთის ბმპის სხვადასხვა ვარიანტების, რომ ნახოთ რომელი უკეთ მუშაობს."
-
 # %1$s: Plugin name, %2$s: Link opening tag, %3$s: Version number, %4$s: Link closing tag
 #: includes/Managers/Helpers/EDD_SL_Plugin_Updater.php:281
 msgid "There is a new version of %1$s available. %2$sView version %3$s details%4$s."
@@ -2133,6 +2086,62 @@ msgstr "თქვენ არ გაქვთ უფლება დააი�
 #: client/ts/admin/Components/GooglePlacesKeyStatus.tsx:61
 msgid "Error"
 msgstr "შეცდომა"
+
+#: includes/Model/Bumps/BumpAbstract.php:1094
+#: includes/Model/Bumps/BumpAbstract.php:1104
+#: includes/Model/ABTests/OrderBumpsABTest.php:30
+#: includes/Features/ABTesting/ABTestTypeRegistry.php:123
+#: includes/Admin/Pages/OrderBumpsAdminFree.php:17
+#: includes/Admin/Pages/OrderBumpsAdminFree.php:71
+#: includes/Admin/Pages/Premium/OrderBumps.php:50
+#: client/ts/admin/Components/Forms/OrderBumpSettingsForm.tsx:45
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:408
+msgid "Order Bumps"
+msgstr "შეკვეთის ბამპები"
+
+#: includes/Model/Bumps/BumpAbstract.php:1095
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:193
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:1614
+msgid "Order Bump"
+msgstr "შეკვეთის ბამპი"
+
+#: includes/Model/Bumps/BumpAbstract.php:1096
+msgid "Add New"
+msgstr "ახლის დამატება"
+
+#: includes/Model/Bumps/BumpAbstract.php:1097
+msgid "Add New Order Bump"
+msgstr "ახალი შეკვეთის დამატების დამატება"
+
+#: includes/Model/Bumps/BumpAbstract.php:1098
+msgid "Edit Order Bump"
+msgstr "შეკვეთის დამატების რედაქტირება"
+
+#: includes/Model/Bumps/BumpAbstract.php:1099
+#: client/ts/admin/Components/Metaboxes/OrderBumpsSetupModal.tsx:61
+msgid "New Order Bump"
+msgstr "ახალი შეკვეთის დამატება"
+
+#: includes/Model/Bumps/BumpAbstract.php:1100
+msgid "View Order Bump"
+msgstr "შეკვეთის ბამპის ნახვა"
+
+#: includes/Model/Bumps/BumpAbstract.php:1101
+msgid "Find Order Bump"
+msgstr "შეკვეთის ბამპის ძებნა"
+
+#: includes/Model/Bumps/BumpAbstract.php:1102
+msgid "No order bumps were found."
+msgstr "შეკვეთის დამატებები არ მოიძებნა."
+
+#: includes/Model/Bumps/BumpAbstract.php:1103
+msgid "Not found in trash"
+msgstr "არ მოიძებნა ნაგავში"
+
+#: includes/Model/ABTests/OrderBumpsABTest.php:31
+#: includes/Features/ABTesting/ABTestTypeRegistry.php:124
+msgid "Test different variations of order bumps to see which performs better."
+msgstr "ტესტირება შეკვეთის ბმპის სხვადასხვა ვარიანტების, რომ ნახოთ რომელი უკეთ მუშაობს."
 
 #: includes/Features/OneClick/OrderStatusManager.php:52
 msgid "Pending Offer <span class=\"count\">(%s)</span>"
@@ -2255,6 +2264,14 @@ msgstr "Astra მხარდაჭერის ჩართვა (ბეტა
 msgid "If enabled with Advanced > Template Loader > Distraction Free Portal, Astra\\'s header and footer are displayed and Astra styles and scripts load on checkout. If disabled with Distraction Free Portal, Astra styles and scripts are excluded for a minimal layout. With WordPress Theme loader, the full theme loads regardless of this setting."
 msgstr "თუ ჩართულია Advanced > Template Loader > Distraction Free Portal-ში, Astra-ს ჰედერი და ფუტერი გამოჩნდება და Astra-ს სტილები და სკრიპტები ჩაიტვირთება გადახდის გვერდზე. თუ გამორთულია Distraction Free Portal-ში, Astra-ს სტილები და სკრიპტები გამორიცხულია მინიმალური განლაგებისთვის. WordPress თემის ლოდერის შემთხვევაში, სრული თემა ჩაიტვირთება ამ პარამეტრის მიუხედავად."
 
+#: includes/Compatibility/Gateways/PayPalForWooCommerce.php:38
+msgid "Please update to the latest version of PayPal for WooCommerce to get full support."
+msgstr "გთხოვთ განაახლოთ PayPal-ის WooCommerce-ის უახლეს ვერსიაზე სრული მხარდაჭერის მისაღებად."
+
+#: includes/Compatibility/Gateways/PayPalForWooCommerce.php:363
+msgid "Logged in with PayPal. Please continue your order below."
+msgstr "შესული ხართ PayPal-ით. გთხოვთ გააგრძელოთ შეკვეთა ქვემოთ."
+
 #: includes/Compatibility/Plugins/WooCommerceGiftCards.php:64
 #: includes/Compatibility/Plugins/WooCommerceGiftCards.php:72
 msgid "Enter your code&hellip;"
@@ -2375,14 +2392,6 @@ msgstr "ჩართეთ Beaver Themer მხარდაჭერა"
 msgid "Allow Beaver Themer to replace header and footer."
 msgstr "დაუშვით Beaver Themer შეცვალოს ჰედერი და ფუტერი."
 
-#: includes/Compatibility/Gateways/PayPalForWooCommerce.php:38
-msgid "Please update to the latest version of PayPal for WooCommerce to get full support."
-msgstr "გთხოვთ განაახლოთ PayPal-ის WooCommerce-ის უახლეს ვერსიაზე სრული მხარდაჭერის მისაღებად."
-
-#: includes/Compatibility/Gateways/PayPalForWooCommerce.php:363
-msgid "Logged in with PayPal. Please continue your order below."
-msgstr "შესული ხართ PayPal-ით. გთხოვთ გააგრძელოთ შეკვეთა ქვემოთ."
-
 #: includes/Admin/Views/html-refund-offer.php:22
 msgid "Product"
 msgstr "პროდუქტი"
@@ -2411,17 +2420,171 @@ msgstr "შენიშვნა:"
 msgid "Refunding an offer will process the refund with the payment gateway and create a WooCommerce refund record."
 msgstr "შეთავაზების დაბრუნება გამოიწვევს დაბრუნების პროცესს გადახდის სერვისთან და შექმნის WooCommerce-ის დაბრუნების ჩანაწერს."
 
-#: includes/Admin/Pages/WooCommercePages.php:21
+#: includes/Admin/Notices/WelcomeNotice.php:12
+msgid "Welcome to CheckoutWC"
+msgstr "მოგესალმებით CheckoutWC-ში"
+
+#: includes/Admin/Notices/WelcomeNotice.php:20
+msgid "Thank you for installing CheckoutWC! We automatically activated your license. You are all set!"
+msgstr "გმადლობთ CheckoutWC-ის ინსტალაციისთვის! ჩვენ ავტომატურად გავააქტიურეთ თქვენი ლიცენზია. ყველაფერი მზად არის!"
+
+#: includes/Admin/Notices/WelcomeNotice.php:26
+msgid "Thank you for installing CheckoutWC! To get started, enter your <strong>License Key</strong> below, save, and click <strong>Activate Site</strong>."
+msgstr "გმადლობთ CheckoutWC-ის ინსტალაციისთვის! დასაწყებად, შეიყვანეთ თქვენი <strong>ლიცენზიის გასაღები</strong> ქვემოთ, შეინახეთ და დააჭირეთ <strong>საიტის გააქტიურებას</strong>."
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:20
+msgid "your email"
+msgstr "თქვენი ელ.ფოსტა"
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:88
+msgid "privacy policy"
+msgstr "კონფიდენციალურობის პოლიტიკა"
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:93
+msgid "By joining, %1$s will be added to our mailing list. Read our %2$s."
+msgstr "ჩართვისას, %1$s დაემატება ჩვენს მარკეტინგულ სიაში. წაიკითხეთ ჩვენი %2$s."
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:99
+msgid "Join Newsletter & Save 25%"
+msgstr "გამოწერეთ სიახლეების გამოწერა და დაზოგეთ 25%"
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:102
+msgid "Join Newsletter"
+msgstr "გამოწერა სიახლეების გამოწერაზე"
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:113
+msgid "Sign up to our newsletter and get proven conversion tips and checkout optimization strategies from the CheckoutWC team."
+msgstr "გამოწერეთ ჩვენი სიახლეების გამოწერა და მიიღეთ დამტკიცებული კონვერტაციის რჩევები და გადახდის ოპტიმიზაციის სტრატეგიები CheckoutWC გუნდისგან."
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:116
+msgid "Boost Your Conversions with Proven Strategies."
+msgstr "გააძლიერეთ თქვენი კონვერტაციები დამტკიცებული სტრატეგიებით."
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:123
+msgid "We're so glad that you've chosen CheckoutWC to handle your checkouts. Unlock more sales with premium features like order bumps, abandoned cart recovery, and much more."
+msgstr "ჩვენ ძალიან მოხარული ვართ, რომ აირჩიეთ CheckoutWC თქვენი გადახდების მართვისთვის. გააღეთ მეტი გაყიდვები პრემიუმ ფუნქციებით, როგორიცაა შეკვეთის ბმპები, მიტოვებული კალათის აღდგენა და სხვა მრავალი."
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:126
+msgid "Unlock more sales with CheckoutWC Premium"
+msgstr "გააღეთ მეტი გაყიდვები CheckoutWC პრემიუმით"
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:144
+msgid "Sorry, there was an error joining our newsletter. Please refresh the page and try again."
+msgstr "ბოდიში, მოხდა შეცდომა ჩვენი სიახლეების გამოწერაში. გთხოვთ, განაახლეთ გვერდი და სცადეთ თავიდან."
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:243
+msgid "Please wait..."
+msgstr "გთხოვთ, დაელოდეთ..."
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:320
+msgid "Sorry, your account has insufficient permissions to join our newsletter."
+msgstr "ბოდიში, თქვენს ანგარიშს არ აქვს საკმარისი უფლებები ჩვენი სიახლეების გამოწერაში ჩართვისთვის."
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:354
+msgid "You have already joined our newsletter!"
+msgstr "თქვენ უკვე გამოწერილი ხართ ჩვენი სიახლეების გამოწერაზე!"
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:396
+msgid "Thank you for joining our newsletter!"
+msgstr "გმადლობთ ჩვენი სიახლეების გამოწერაში ჩართვისთვის!"
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:410
+msgid "Security check failed."
+msgstr "უსაფრთხოების შემოწმება წარუმატებელი იყო."
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:414
+msgid "Insufficient permissions."
+msgstr "საკმარისი უფლებები არ არის."
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:422
+msgid "Notice dismissed."
+msgstr "შეტყობინება გაუქმებულია."
+
+# %1$d: Number of days, %2$s: Pricing URL, %3$s: "renew it here" link text
+#: includes/Admin/Notices/LicenseUnverifiedNotice.php:25
+msgid "Premium features are off because we haven\\'t been able to check your license with checkoutwc.com for %1$d days. Make sure your server can connect to checkoutwc.com. If your license has expired, <a href=\"%2$s\" target=\"_blank\">%3$s</a>."
+msgstr "პრემიუმ ფუნქციები გამორთულია, რადგან ვერ მოვახერხეთ თქვენი ლიცენზიის შემოწმება checkoutwc.com-ზე %1$d დღის განმავლობაში. დარწმუნდით, რომ თქვენს სერვერს შეუძლია checkoutwc.com-თან დაკავშირება. თუ თქვენი ლიცენზია ვადაგასულია, <a href=\"%2$s\" target=\"_blank\">%3$s</a>."
+
+#: includes/Admin/Notices/LicenseUnverifiedNotice.php:28
+msgid "renew it here"
+msgstr "განაახლეთ აქ"
+
+#: includes/Admin/Notices/LicenseUnverifiedNotice.php:33
+msgid "CheckoutWC can\\'t verify your license"
+msgstr "CheckoutWC ვერ ამოწმებს თქვენს ლიცენზიას"
+
+# %1$s: Date premium features turn off, %2$s: Support email URL, %3$s: "Contact support" link text
+#: includes/Admin/Notices/LicenseServerUnreachableNotice.php:28
+msgid "We couldn\\'t check your license with checkoutwc.com. Premium features will turn off on %1$s unless the connection is restored. <a href=\"%2$s\">%3$s</a> if this keeps happening."
+msgstr "ჩვენ ვერ შევამოწმეთ თქვენი ლიცენზია checkoutwc.com-ზე. პრემიუმ ფუნქციები გამოირთვება %1$s-ზე, თუ კავშირი არ აღდგება. <a href=\"%2$s\">%3$s</a>, თუ ეს კვლავაც განმეორდება."
+
+#: includes/Admin/Notices/LicenseServerUnreachableNotice.php:31
+#: includes/Admin/Notices/LicenseServerUnreachableNotice.php:38
+msgid "Contact support"
+msgstr "დაუკავშირდით მხარდაჭერას"
+
+# %1$s: Support email URL, %2$s: "Contact support" link text
+#: includes/Admin/Notices/LicenseServerUnreachableNotice.php:36
+msgid "We couldn\\'t check your license with checkoutwc.com. Make sure your server can connect to checkoutwc.com. <a href=\"%1$s\">%2$s</a> if this keeps happening."
+msgstr "ჩვენ ვერ შევამოწმეთ თქვენი ლიცენზია checkoutwc.com-ზე. დარწმუნდით, რომ თქვენს სერვერს შეუძლია checkoutwc.com-თან დაკავშირება. <a href=\"%1$s\">%2$s</a>, თუ ეს კვლავაც განმეორდება."
+
+#: includes/Admin/Notices/LicenseServerUnreachableNotice.php:45
+msgid "CheckoutWC can\\'t reach the license server"
+msgstr "CheckoutWC ვერ უკავშირდება ლიცენზიის სერვერს"
+
+#: includes/Admin/Notices/InvalidLicenseKeyNotice.php:13
+msgid "CheckoutWC license expired"
+msgstr "CheckoutWC-ის ლიცენზიას ვადა გაუვიდა"
+
+# %1$s: URL to pricing page, %2$s: "Renew your license" link text, %3$s: Support email URL, %4$s: "contact support" link text
+#: includes/Admin/Notices/InvalidLicenseKeyNotice.php:16
+msgid "Premium features are off because your license has expired. <a href=\"%1$s\" target=\"_blank\">%2$s</a> to turn them back on. If you think this is a mistake, <a href=\"%3$s\">%4$s</a>."
+msgstr "პრემიუმ ფუნქციები გამორთულია, რადგან თქვენს ლიცენზიას ვადა გაუვიდა. <a href=\"%1$s\" target=\"_blank\">%2$s</a> მათ ხელახლა ჩასართავად. თუ ფიქრობთ, რომ ეს შეცდომაა, <a href=\"%3$s\">%4$s</a>."
+
+#: includes/Admin/Notices/InvalidLicenseKeyNotice.php:18
+msgid "Renew your license"
+msgstr "განაახლეთ თქვენი ლიცენზია"
+
+#: includes/Admin/Notices/InvalidLicenseKeyNotice.php:20
+msgid "contact support"
+msgstr "დაუკავშირდით მხარდაჭერას"
+
+# %1$s: URL to activation page, %2$s: "Activate your license" link text, %3$s: Pricing URL, %4$s: "buy a license" link text
+#: includes/Admin/Notices/InactiveLicenseNotice.php:11
+msgid "Premium features are off because your license isn\\'t activated on this site. <a href=\"%1$s\">%2$s</a> or <a href=\"%3$s\" target=\"_blank\">%4$s</a> for this site."
+msgstr "პრემიუმ ფუნქციები გამორთულია, რადგან თქვენი ლიცენზია ამ საიტზე არ არის გააქტიურებული. <a href=\"%1$s\">%2$s</a> ან <a href=\"%3$s\" target=\"_blank\">%4$s</a> ამ საიტისთვის."
+
+#: includes/Admin/Notices/InactiveLicenseNotice.php:13
+msgid "Activate your license"
+msgstr "გააქტიურეთ თქვენი ლიცენზია"
+
+#: includes/Admin/Notices/InactiveLicenseNotice.php:20
+msgid "CheckoutWC license not activated"
+msgstr "CheckoutWC-ის ლიცენზია არ არის გააქტიურებული"
+
+#: includes/Admin/Notices/BFNotice.php:13
+msgid "Black Friday Sale - 40% Off"
+msgstr "შავი პარასკევის აქცია - 40% ფასდაკლება"
+
+#: includes/Admin/Notices/BFNotice.php:14
+msgid "You're missing out on revenue growth tools like Order Bumps, Upsells, Abandoned Cart Recovery and more! Save 40% on CheckoutWC pro plans for Black Friday, ends December 4th"
+msgstr "თქვენ გამოტოვებთ შემოსავლის ზრდის ინსტრუმენტებს, როგორიცაა შეკვეთის დამატებები, დამატებითი შეთავაზებები, მიტოვებული კალათის აღდგენა და სხვა! დაზოგეთ 40% CheckoutWC Pro გეგმებზე შავი პარასკევის დროს, მოქმედებს 4 დეკემბრამდე"
+
+#: includes/Admin/Notices/BFNotice.php:27
+msgid "Get CheckoutWC Pro Now!"
+msgstr "მიიღეთ CheckoutWC Pro ახლა!"
+
+#: includes/Admin/Pages/WooCommercePages.php:22
 msgid "Pages"
 msgstr "გვერდები"
 
-#: includes/Admin/Pages/WooCommercePages.php:30
+#: includes/Admin/Pages/WooCommercePages.php:31
 #: client/ts/admin/Components/Forms/ThankYouSettingsForm.tsx:53
 #: client/ts/admin/Components/Forms/AdvancedScriptsSettingsForm.tsx:144
 msgid "Thank You"
 msgstr "გმადლობთ"
 
-#: includes/Admin/Pages/WooCommercePages.php:31
+#: includes/Admin/Pages/WooCommercePages.php:32
 msgid "Global Options"
 msgstr "გლობალური პარამეტრები"
 
@@ -2574,7 +2737,7 @@ msgid "Our Knowledge Base is packed with tips, tricks, and common troubleshootin
 msgstr "ჩვენი ცოდნის ბაზა სავსეა რჩევებით, ხრიკებით და საერთო პრობლემების გადაჭრის ნაბიჯებით."
 
 #: includes/Admin/Pages/Support.php:27
-#: includes/Admin/Pages/General.php:69
+#: includes/Admin/Pages/General.php:68
 msgid "Read Our Documentation"
 msgstr "წაიკითხეთ ჩვენი დოკუმენტაცია"
 
@@ -2961,141 +3124,149 @@ msgstr "გაგზავნა"
 msgid "Integrations"
 msgstr "ინტეგრაციები"
 
+#: includes/Admin/Pages/General.php:39
 #: includes/Admin/Pages/General.php:40
-#: includes/Admin/Pages/General.php:41
 #: includes/Admin/Pages/CheckoutEditor.php:21
 #: client/ts/admin/Components/CheckoutEditor/EditorHeader.tsx:92
 msgid "Checkout Editor"
 msgstr "გადახდის რედაქტორი"
 
-#: includes/Admin/Pages/General.php:62
+#: includes/Admin/Pages/General.php:61
 msgid "Welcome to the new standard for WooCommerce stores."
 msgstr "მოგესალმებით WooCommerce მაღაზიების ახალ სტანდარტში."
 
-#: includes/Admin/Pages/General.php:65
+#: includes/Admin/Pages/General.php:64
 msgid "We hate complex configurations too. Get up and running with CheckoutWC in 5 minutes or less. ⚡️"
 msgstr "ჩვენც არ გვიყვარს რთული კონფიგურაციები. დაიწყეთ მუშაობა CheckoutWC-ით 5 წუთში ან ნაკლებ დროში. ⚡️"
 
-#: includes/Admin/Pages/General.php:84
+#: includes/Admin/Pages/General.php:83
 msgid "Welcome to CheckoutWC 10.0"
 msgstr "მოგესალმებით CheckoutWC 10.0-ში"
 
-#: includes/Admin/Pages/General.php:87
+#: includes/Admin/Pages/General.php:86
 msgid "CheckoutWC 10.0 is a major update with new features and optimizations to make your WooCommerce store run better."
 msgstr "CheckoutWC 10.0 არის მნიშვნელოვანი განახლება ახალი ფუნქციებით და ოპტიმიზაციებით, რათა თქვენი WooCommerce მაღაზია უკეთ მუშაობდეს."
 
-#: includes/Admin/Pages/General.php:93
+#: includes/Admin/Pages/General.php:92
 msgid "Just Say When"
 msgstr "უბრალოდ უთხარი როდის"
 
-#: includes/Admin/Pages/General.php:96
+#: includes/Admin/Pages/General.php:95
 msgid "Our new rules engine puts you in charge. Want to show an Order Bump only to first time customers who use a specific coupon code? You can do that. Want to show specific trust badges based on what is in the cart? You can do that too!"
 msgstr "ჩვენი ახალი წესების ძრავა გაძლევთ კონტროლს. გსურთ Order Bump-ის ჩვენება მხოლოდ პირველჯერ მომხმარებლებისთვის, რომლებიც იყენებენ კონკრეტულ კუპონის კოდს? შეგიძლიათ ეს გააკეთოთ. გსურთ კონკრეტული ნდობის ნიშნების ჩვენება კალათის მიხედვით? ესეც შეგიძლიათ!"
 
-#: includes/Admin/Pages/General.php:110
+#: includes/Admin/Pages/General.php:109
 msgid "Get Started Faster"
 msgstr "დაწყება უფრო სწრაფად"
 
-#: includes/Admin/Pages/General.php:113
+#: includes/Admin/Pages/General.php:112
 msgid "Creating Order Bumps has lots of options. Our new Quick Start will help you get started faster."
 msgstr "Order Bump-ების შექმნას ბევრი ვარიანტი აქვს. ჩვენი ახალი სწრაფი დაწყება დაგეხმარებათ უფრო სწრაფად დაიწყოთ."
 
-#: includes/Admin/Pages/General.php:117
+#: includes/Admin/Pages/General.php:116
 msgid "Configure Order Bumps"
 msgstr "Order Bump-ების კონფიგურაცია"
 
-#: includes/Admin/Pages/General.php:126
+#: includes/Admin/Pages/General.php:125
 msgid "And a lot more"
 msgstr "და კიდევ ბევრი სხვა"
 
-#: includes/Admin/Pages/General.php:129
+#: includes/Admin/Pages/General.php:128
 msgid "To view the full list of changes, checkout our change log."
 msgstr "სრული ცვლილებების სიის სანახავად, გადახედეთ ჩვენს ცვლილებების ჟურნალს."
 
-#: includes/Admin/Pages/General.php:133
+#: includes/Admin/Pages/General.php:132
 msgid "Read Our Change Log"
 msgstr "წაიკითხეთ ჩვენი ცვლილებების ჟურნალი"
 
-#: includes/Admin/Pages/General.php:149
-msgid "Step 1: Activate Your License"
-msgstr "ნაბიჯი 1: გააქტიურეთ თქვენი ლიცენზია"
-
-#: includes/Admin/Pages/General.php:149
-msgid "Step 1: Try CheckoutWC Premium Free For 7 Days"
-msgstr "ნაბიჯი 1: სცადეთ CheckoutWC Premium უფასოდ 7 დღის განმავლობაში"
-
 #: includes/Admin/Pages/General.php:150
-msgid "Enter your license key and activate it for this site to turn on premium features."
-msgstr "შეიყვანეთ თქვენი ლიცენზიის გასაღები და გააქტიურეთ ის ამ საიტისთვის, რათა ჩართოთ პრემიუმ ფუნქციები."
+msgid "Step 1: Upgrade to CheckoutWC Premium"
+msgstr "ნაბიჯი 1: განაახლეთ CheckoutWC Premium-ზე"
 
-#: includes/Admin/Pages/General.php:150
+#: includes/Admin/Pages/General.php:151
 msgid "Supercharge your WooCommerce store."
 msgstr "გააძლიერეთ თქვენი WooCommerce მაღაზია."
 
-#: includes/Admin/Pages/General.php:155
+#: includes/Admin/Pages/General.php:153
+msgid "Step 1: Renew Your License"
+msgstr "ნაბიჯი 1: განაახლეთ თქვენი ლიცენზია"
+
+#: includes/Admin/Pages/General.php:154
+msgid "Your license has expired. Renew it to keep premium features working."
+msgstr "თქვენი ლიცენზია ვადაგასულია. განაახლეთ იგი, რათა პრემიუმ ფუნქციებმა მუშაობა გააგრძელოს."
+
+#: includes/Admin/Pages/General.php:156
+msgid "Step 1: Activate Your License"
+msgstr "ნაბიჯი 1: გააქტიურეთ თქვენი ლიცენზია"
+
+#: includes/Admin/Pages/General.php:157
+msgid "Enter your license key and activate it for this site to turn on premium features."
+msgstr "შეიყვანეთ თქვენი ლიცენზიის გასაღები და გააქტიურეთ ის ამ საიტისთვის, რათა ჩართოთ პრემიუმ ფუნქციები."
+
+#: includes/Admin/Pages/General.php:167
 msgid "Step 2: Customize Checkout"
 msgstr "ნაბიჯი 2: გადახდის მორგება"
 
-#: includes/Admin/Pages/General.php:156
+#: includes/Admin/Pages/General.php:168
 msgid "Use the Checkout Editor to customize your checkout layout, fields, and content."
 msgstr "გამოიყენეთ გადახდის რედაქტორი თქვენი გადახდის განლაგების, ველების და შინაარსის მორგებისთვის."
 
-#: includes/Admin/Pages/General.php:161
+#: includes/Admin/Pages/General.php:173
 msgid "Step 3: Go Live"
 msgstr "ნაბიჯი 3: პირდაპირი რეჟიმი"
 
-#: includes/Admin/Pages/General.php:162
+#: includes/Admin/Pages/General.php:174
 msgid "Enable templates for all visitors."
 msgstr "შეამჩნევთ შაბლონებს ყველა ვიზიტორისთვის."
 
-#: includes/Admin/Pages/General.php:190
+#: includes/Admin/Pages/General.php:202
 msgid "Requires a valid and active license key."
 msgstr "საჭიროა ვალიდური და აქტიური ლიცენზიის გასაღები."
 
-#: includes/Admin/Pages/General.php:196
+#: includes/Admin/Pages/General.php:208
 msgid "CheckoutWC Templates are always activated for admin users."
 msgstr "CheckoutWC შაბლონები ყოველთვის გააქტიურებულია ადმინისტრატორებისთვის."
 
-#: includes/Admin/Pages/General.php:201
+#: includes/Admin/Pages/General.php:213
 msgid "This step can also be completed directly from the Checkout Editor!"
 msgstr "ეს ნაბიჯი ასევე შეიძლება შესრულდეს პირდაპირ გადახდის რედაქტორიდან!"
 
-#: includes/Admin/Pages/General.php:221
+#: includes/Admin/Pages/General.php:233
 msgid "Upgrade to CheckoutWC Premium - Save 20% on your first year"
 msgstr ""
 
-#: includes/Admin/Pages/General.php:223
-#: includes/Admin/Pages/General.php:250
-#: includes/Admin/Pages/General.php:265
-#: includes/Admin/Pages/General.php:310
+#: includes/Admin/Pages/General.php:235
+#: includes/Admin/Pages/General.php:262
+#: includes/Admin/Pages/General.php:277
+#: includes/Admin/Pages/General.php:322
 msgid "Opens in new tab"
 msgstr "ახალ ჩანართში იხსნება"
 
-#: includes/Admin/Pages/General.php:236
+#: includes/Admin/Pages/General.php:248
 msgid "Customize Your Checkout"
 msgstr "მორგეთ თქვენი გადახდა"
 
-#: includes/Admin/Pages/General.php:248
+#: includes/Admin/Pages/General.php:260
 msgid "Choose a Template"
 msgstr "აირჩიეთ შაბლონი"
 
-#: includes/Admin/Pages/General.php:263
+#: includes/Admin/Pages/General.php:275
 msgid "Customize Logo and Colors"
 msgstr "მორგეთ ლოგო და ფერები"
 
-#: includes/Admin/Pages/General.php:308
+#: includes/Admin/Pages/General.php:320
 msgid "Preview Your Checkout Page"
 msgstr "გადახდის გვერდის წინასწარი ნახვა"
 
-#: includes/Admin/Pages/General.php:354
+#: includes/Admin/Pages/General.php:366
 msgid "Unbypass CheckoutWC Template"
 msgstr "გაუქმეთ CheckoutWC შაბლონის გვერდის ავლა"
 
-#: includes/Admin/Pages/General.php:354
+#: includes/Admin/Pages/General.php:366
 msgid "Bypass CheckoutWC Template"
 msgstr "გაიარეთ CheckoutWC შაბლონის გვერდის ავლა"
 
-#: includes/Admin/Pages/General.php:358
+#: includes/Admin/Pages/General.php:370
 msgid "CheckoutWC template and functionality will be temporarily bypassed (just for you!). This is helpful for testing and debugging. You can click Unbypass CheckoutWC Template once you are done."
 msgstr "CheckoutWC შაბლონი და ფუნქციონალობა დროებით გვერდს ავლის (მხოლოდ თქვენთვის!). ეს სასარგებლოა ტესტირებისა და შეცდომების გამოსასწორებლად. დასრულების შემდეგ შეგიძლიათ დააჭიროთ გაუქმებას."
 
@@ -3271,74 +3442,74 @@ msgstr "სექუნდარული ტექსტი ჰოვერი"
 msgid "Theme Specific Colors"
 msgstr "თემის სპეციფიკური ფერები"
 
-#: includes/Admin/Pages/Advanced.php:20
-#: includes/Admin/Pages/Advanced.php:28
+#: includes/Admin/Pages/Advanced.php:37
+#: includes/Admin/Pages/Advanced.php:45
 msgid "Advanced"
 msgstr "განვითარებული"
 
-#: includes/Admin/Pages/Advanced.php:29
+#: includes/Admin/Pages/Advanced.php:46
 msgid "Scripts"
 msgstr "სკრიპტები"
 
-#: includes/Admin/Pages/Advanced.php:30
+#: includes/Admin/Pages/Advanced.php:47
 msgid "Tools"
 msgstr "ინსტრუმენტები"
 
-#: includes/Admin/Pages/Advanced.php:64
-#: includes/Admin/Pages/Advanced.php:84
+#: includes/Admin/Pages/Advanced.php:81
+#: includes/Admin/Pages/Advanced.php:101
 msgid "Export Settings"
 msgstr "ექსპორტის პარამეტრები"
 
-#: includes/Admin/Pages/Advanced.php:65
+#: includes/Admin/Pages/Advanced.php:82
 msgid "Download a JSON file containing the current plugin settings."
 msgstr "ჩამოტვირთეთ JSON ფაილი, რომელიც შეიცავს მიმდინარე პლაგინის პარამეტრებს."
 
-#: includes/Admin/Pages/Advanced.php:69
-#: includes/Admin/Pages/Advanced.php:97
+#: includes/Admin/Pages/Advanced.php:86
+#: includes/Admin/Pages/Advanced.php:114
 msgid "Import Settings"
 msgstr "იმპორტის პარამეტრები"
 
-#: includes/Admin/Pages/Advanced.php:70
+#: includes/Admin/Pages/Advanced.php:87
 msgid "Replace your current settings with a previous settings export."
 msgstr "გაანახლეთ თქვენი მიმდინარე პარამეტრები წინა პარამეტრების ექსპორტით."
 
-#: includes/Admin/Pages/Advanced.php:87
+#: includes/Admin/Pages/Advanced.php:104
 msgid "Download a backup file of your settings."
 msgstr "ჩამოტვირთეთ თქვენი პარამეტრების სარეზერვო ფაილი."
 
-#: includes/Admin/Pages/Advanced.php:101
+#: includes/Admin/Pages/Advanced.php:118
 msgid "Upload File and Import Settings"
 msgstr "ატვირთეთ ფაილი და იმპორტის პარამეტრები"
 
-#: includes/Admin/Pages/Advanced.php:174
+#: includes/Admin/Pages/Advanced.php:196
 msgid "CheckoutWC Settings Import Failed"
 msgstr "CheckoutWC პარამეტრების იმპორტი ვერ მოხერხდა"
 
-#: includes/Admin/Pages/Advanced.php:175
+#: includes/Admin/Pages/Advanced.php:197
 msgid "Unable to import settings. Did you select a JSON file to upload?"
 msgstr "პარამეტრების იმპორტი შეუძლებელია. აირჩიეთ JSON ფაილი ატვირთვისთვის?"
 
-#: includes/Admin/Pages/Advanced.php:187
+#: includes/Admin/Pages/Advanced.php:209
 msgid "Error. Uploaded file appears empty."
 msgstr "შეცდომა. ატვირთული ფაილი ცარიელია."
 
-#: includes/Admin/Pages/Advanced.php:198
+#: includes/Admin/Pages/Advanced.php:220
 msgid "Wrong file extension. Uploaded settings must be a JSON file."
 msgstr "არასწორი ფაილის გაფართოება. ატვირთული პარამეტრები უნდა იყოს JSON ფაილი."
 
-#: includes/Admin/Pages/Advanced.php:206
+#: includes/Admin/Pages/Advanced.php:228
 msgid "Error moving uploaded file - check your permissions."
 msgstr "შეცდომა ატვირთული ფაილის გადატანისას - შეამოწმეთ თქვენი უფლებები."
 
-#: includes/Admin/Pages/Advanced.php:213
+#: includes/Admin/Pages/Advanced.php:235
 msgid "Error decoding JSON file."
 msgstr "შეცდომა JSON ფაილის დეკოდირებაში."
 
-#: includes/Admin/Pages/Advanced.php:255
+#: includes/Admin/Pages/Advanced.php:277
 msgid "CheckoutWC Settings Import Successful"
 msgstr "CheckoutWC პარამეტრების იმპორტი წარმატებით დასრულდა"
 
-#: includes/Admin/Pages/Advanced.php:256
+#: includes/Admin/Pages/Advanced.php:278
 msgid "Successfully imported settings."
 msgstr "პარამეტრები წარმატებით იმპორტირდა."
 
@@ -3518,160 +3689,6 @@ msgstr "ჩართეთ A/B ტესტირება"
 msgid "Allow A/B tests to be created and applied on the checkout page."
 msgstr "შეიძლება შექმნას და გამოყენებულ იქნას A/B ტესტები გადახდის გვერდზე."
 
-#: includes/Admin/Notices/WelcomeNotice.php:12
-msgid "Welcome to CheckoutWC"
-msgstr "მოგესალმებით CheckoutWC-ში"
-
-#: includes/Admin/Notices/WelcomeNotice.php:20
-msgid "Thank you for installing CheckoutWC! We automatically activated your license. You are all set!"
-msgstr "გმადლობთ CheckoutWC-ის ინსტალაციისთვის! ჩვენ ავტომატურად გავააქტიურეთ თქვენი ლიცენზია. ყველაფერი მზად არის!"
-
-#: includes/Admin/Notices/WelcomeNotice.php:26
-msgid "Thank you for installing CheckoutWC! To get started, enter your <strong>License Key</strong> below, save, and click <strong>Activate Site</strong>."
-msgstr "გმადლობთ CheckoutWC-ის ინსტალაციისთვის! დასაწყებად, შეიყვანეთ თქვენი <strong>ლიცენზიის გასაღები</strong> ქვემოთ, შეინახეთ და დააჭირეთ <strong>საიტის გააქტიურებას</strong>."
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:20
-msgid "your email"
-msgstr "თქვენი ელ.ფოსტა"
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:88
-msgid "privacy policy"
-msgstr "კონფიდენციალურობის პოლიტიკა"
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:93
-msgid "By joining, %1$s will be added to our mailing list. Read our %2$s."
-msgstr "ჩართვისას, %1$s დაემატება ჩვენს მარკეტინგულ სიაში. წაიკითხეთ ჩვენი %2$s."
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:99
-msgid "Join Newsletter & Save 25%"
-msgstr "გამოწერეთ სიახლეების გამოწერა და დაზოგეთ 25%"
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:102
-msgid "Join Newsletter"
-msgstr "გამოწერა სიახლეების გამოწერაზე"
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:113
-msgid "Sign up to our newsletter and get proven conversion tips and checkout optimization strategies from the CheckoutWC team."
-msgstr "გამოწერეთ ჩვენი სიახლეების გამოწერა და მიიღეთ დამტკიცებული კონვერტაციის რჩევები და გადახდის ოპტიმიზაციის სტრატეგიები CheckoutWC გუნდისგან."
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:116
-msgid "Boost Your Conversions with Proven Strategies."
-msgstr "გააძლიერეთ თქვენი კონვერტაციები დამტკიცებული სტრატეგიებით."
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:123
-msgid "We're so glad that you've chosen CheckoutWC to handle your checkouts. Unlock more sales with premium features like order bumps, abandoned cart recovery, and much more."
-msgstr "ჩვენ ძალიან მოხარული ვართ, რომ აირჩიეთ CheckoutWC თქვენი გადახდების მართვისთვის. გააღეთ მეტი გაყიდვები პრემიუმ ფუნქციებით, როგორიცაა შეკვეთის ბმპები, მიტოვებული კალათის აღდგენა და სხვა მრავალი."
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:126
-msgid "Unlock more sales with CheckoutWC Premium"
-msgstr "გააღეთ მეტი გაყიდვები CheckoutWC პრემიუმით"
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:144
-msgid "Sorry, there was an error joining our newsletter. Please refresh the page and try again."
-msgstr "ბოდიში, მოხდა შეცდომა ჩვენი სიახლეების გამოწერაში. გთხოვთ, განაახლეთ გვერდი და სცადეთ თავიდან."
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:243
-msgid "Please wait..."
-msgstr "გთხოვთ, დაელოდეთ..."
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:320
-msgid "Sorry, your account has insufficient permissions to join our newsletter."
-msgstr "ბოდიში, თქვენს ანგარიშს არ აქვს საკმარისი უფლებები ჩვენი სიახლეების გამოწერაში ჩართვისთვის."
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:354
-msgid "You have already joined our newsletter!"
-msgstr "თქვენ უკვე გამოწერილი ხართ ჩვენი სიახლეების გამოწერაზე!"
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:396
-msgid "Thank you for joining our newsletter!"
-msgstr "გმადლობთ ჩვენი სიახლეების გამოწერაში ჩართვისთვის!"
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:410
-msgid "Security check failed."
-msgstr "უსაფრთხოების შემოწმება წარუმატებელი იყო."
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:414
-msgid "Insufficient permissions."
-msgstr "საკმარისი უფლებები არ არის."
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:422
-msgid "Notice dismissed."
-msgstr "შეტყობინება გაუქმებულია."
-
-# %1$d: Number of days, %2$s: Pricing URL, %3$s: "renew it here" link text
-#: includes/Admin/Notices/LicenseUnverifiedNotice.php:25
-msgid "Premium features are off because we haven\\'t been able to check your license with checkoutwc.com for %1$d days. Make sure your server can connect to checkoutwc.com. If your license has expired, <a href=\"%2$s\" target=\"_blank\">%3$s</a>."
-msgstr "პრემიუმ ფუნქციები გამორთულია, რადგან ვერ მოვახერხეთ თქვენი ლიცენზიის შემოწმება checkoutwc.com-ზე %1$d დღის განმავლობაში. დარწმუნდით, რომ თქვენს სერვერს შეუძლია checkoutwc.com-თან დაკავშირება. თუ თქვენი ლიცენზია ვადაგასულია, <a href=\"%2$s\" target=\"_blank\">%3$s</a>."
-
-#: includes/Admin/Notices/LicenseUnverifiedNotice.php:28
-msgid "renew it here"
-msgstr "განაახლეთ აქ"
-
-#: includes/Admin/Notices/LicenseUnverifiedNotice.php:33
-msgid "CheckoutWC can\\'t verify your license"
-msgstr "CheckoutWC ვერ ამოწმებს თქვენს ლიცენზიას"
-
-# %1$s: Date premium features turn off, %2$s: Support email URL, %3$s: "Contact support" link text
-#: includes/Admin/Notices/LicenseServerUnreachableNotice.php:28
-msgid "We couldn\\'t check your license with checkoutwc.com. Premium features will turn off on %1$s unless the connection is restored. <a href=\"%2$s\">%3$s</a> if this keeps happening."
-msgstr "ჩვენ ვერ შევამოწმეთ თქვენი ლიცენზია checkoutwc.com-ზე. პრემიუმ ფუნქციები გამოირთვება %1$s-ზე, თუ კავშირი არ აღდგება. <a href=\"%2$s\">%3$s</a>, თუ ეს კვლავაც განმეორდება."
-
-#: includes/Admin/Notices/LicenseServerUnreachableNotice.php:31
-#: includes/Admin/Notices/LicenseServerUnreachableNotice.php:38
-msgid "Contact support"
-msgstr "დაუკავშირდით მხარდაჭერას"
-
-# %1$s: Support email URL, %2$s: "Contact support" link text
-#: includes/Admin/Notices/LicenseServerUnreachableNotice.php:36
-msgid "We couldn\\'t check your license with checkoutwc.com. Make sure your server can connect to checkoutwc.com. <a href=\"%1$s\">%2$s</a> if this keeps happening."
-msgstr "ჩვენ ვერ შევამოწმეთ თქვენი ლიცენზია checkoutwc.com-ზე. დარწმუნდით, რომ თქვენს სერვერს შეუძლია checkoutwc.com-თან დაკავშირება. <a href=\"%1$s\">%2$s</a>, თუ ეს კვლავაც განმეორდება."
-
-#: includes/Admin/Notices/LicenseServerUnreachableNotice.php:45
-msgid "CheckoutWC can\\'t reach the license server"
-msgstr "CheckoutWC ვერ უკავშირდება ლიცენზიის სერვერს"
-
-#: includes/Admin/Notices/InvalidLicenseKeyNotice.php:13
-msgid "CheckoutWC license expired"
-msgstr "CheckoutWC-ის ლიცენზიას ვადა გაუვიდა"
-
-# %1$s: URL to pricing page, %2$s: "Renew your license" link text, %3$s: Support email URL, %4$s: "contact support" link text
-#: includes/Admin/Notices/InvalidLicenseKeyNotice.php:16
-msgid "Premium features are off because your license has expired. <a href=\"%1$s\" target=\"_blank\">%2$s</a> to turn them back on. If you think this is a mistake, <a href=\"%3$s\">%4$s</a>."
-msgstr "პრემიუმ ფუნქციები გამორთულია, რადგან თქვენს ლიცენზიას ვადა გაუვიდა. <a href=\"%1$s\" target=\"_blank\">%2$s</a> მათ ხელახლა ჩასართავად. თუ ფიქრობთ, რომ ეს შეცდომაა, <a href=\"%3$s\">%4$s</a>."
-
-#: includes/Admin/Notices/InvalidLicenseKeyNotice.php:18
-msgid "Renew your license"
-msgstr "განაახლეთ თქვენი ლიცენზია"
-
-#: includes/Admin/Notices/InvalidLicenseKeyNotice.php:20
-msgid "contact support"
-msgstr "დაუკავშირდით მხარდაჭერას"
-
-# %1$s: URL to activation page, %2$s: "Activate your license" link text, %3$s: Pricing URL, %4$s: "buy a license" link text
-#: includes/Admin/Notices/InactiveLicenseNotice.php:11
-msgid "Premium features are off because your license isn\\'t activated on this site. <a href=\"%1$s\">%2$s</a> or <a href=\"%3$s\" target=\"_blank\">%4$s</a> for this site."
-msgstr "პრემიუმ ფუნქციები გამორთულია, რადგან თქვენი ლიცენზია ამ საიტზე არ არის გააქტიურებული. <a href=\"%1$s\">%2$s</a> ან <a href=\"%3$s\" target=\"_blank\">%4$s</a> ამ საიტისთვის."
-
-#: includes/Admin/Notices/InactiveLicenseNotice.php:13
-msgid "Activate your license"
-msgstr "გააქტიურეთ თქვენი ლიცენზია"
-
-#: includes/Admin/Notices/InactiveLicenseNotice.php:20
-msgid "CheckoutWC license not activated"
-msgstr "CheckoutWC-ის ლიცენზია არ არის გააქტიურებული"
-
-#: includes/Admin/Notices/BFNotice.php:13
-msgid "Black Friday Sale - 40% Off"
-msgstr "შავი პარასკევის აქცია - 40% ფასდაკლება"
-
-#: includes/Admin/Notices/BFNotice.php:14
-msgid "You're missing out on revenue growth tools like Order Bumps, Upsells, Abandoned Cart Recovery and more! Save 40% on CheckoutWC pro plans for Black Friday, ends December 4th"
-msgstr "თქვენ გამოტოვებთ შემოსავლის ზრდის ინსტრუმენტებს, როგორიცაა შეკვეთის დამატებები, დამატებითი შეთავაზებები, მიტოვებული კალათის აღდგენა და სხვა! დაზოგეთ 40% CheckoutWC Pro გეგმებზე შავი პარასკევის დროს, მოქმედებს 4 დეკემბრამდე"
-
-#: includes/Admin/Notices/BFNotice.php:27
-msgid "Get CheckoutWC Pro Now!"
-msgstr "მიიღეთ CheckoutWC Pro ახლა!"
-
 #: client/ts/functions/cfwFormatDate.ts:38
 msgid "Sunday"
 msgstr "კვირა"
@@ -3829,34 +3846,6 @@ msgstr "AM"
 msgid "pm"
 msgstr "PM"
 
-#: client/ts/blocks/OrderBumpSteps.tsx:55
-msgid "Order Bump Steps Stettings"
-msgstr "შეკვეთის დამატებითი ნაბიჯების პარამეტრები"
-
-#: client/ts/blocks/OrderBumpSteps.tsx:58
-msgid "Step 1 Title"
-msgstr "ნაბიჯი 1-ის სათაური"
-
-#: client/ts/blocks/OrderBumpSteps.tsx:59
-msgid "The title of Step 1. Example: Order Submitted"
-msgstr "ნაბიჯი 1-ის სათაური. მაგალითი: შეკვეთა გაგზავნილია"
-
-#: client/ts/blocks/OrderBumpSteps.tsx:64
-msgid "Step 2 Title"
-msgstr "ნაბიჯი 2-ის სათაური"
-
-#: client/ts/blocks/OrderBumpSteps.tsx:65
-msgid "The title of Step 2. Example: Special Offer"
-msgstr "ნაბიჯი 2-ის სათაური. მაგალითი: სპეციალური შეთავაზება"
-
-#: client/ts/blocks/OrderBumpSteps.tsx:70
-msgid "Step 3 Title"
-msgstr "ნაბიჯი 3-ის სათაური"
-
-#: client/ts/blocks/OrderBumpSteps.tsx:71
-msgid "The title of Step 3. Example: Order Received"
-msgstr "ნაბიჯი 3-ის სათაური. მაგალითი: შეკვეთა მიღებულია"
-
 #: client/ts/admin/order-bumps-editor.tsx:59
 msgid "Order Bump Preview"
 msgstr "შეკვეთის დამატებითი წინასწარი ნახვა"
@@ -3894,6 +3883,34 @@ msgstr "დარწმუნებული ხართ, რომ გსუ�
 #: client/ts/admin/Components/CheckoutEditor/EditorApp.tsx:269
 msgid "Are you sure you want to discard all unsaved changes?"
 msgstr "დარწმუნებული ხართ, რომ გსურთ ყველა შეუნახავი ცვლილების უარყოფა?"
+
+#: client/ts/blocks/OrderBumpSteps.tsx:55
+msgid "Order Bump Steps Stettings"
+msgstr "შეკვეთის დამატებითი ნაბიჯების პარამეტრები"
+
+#: client/ts/blocks/OrderBumpSteps.tsx:58
+msgid "Step 1 Title"
+msgstr "ნაბიჯი 1-ის სათაური"
+
+#: client/ts/blocks/OrderBumpSteps.tsx:59
+msgid "The title of Step 1. Example: Order Submitted"
+msgstr "ნაბიჯი 1-ის სათაური. მაგალითი: შეკვეთა გაგზავნილია"
+
+#: client/ts/blocks/OrderBumpSteps.tsx:64
+msgid "Step 2 Title"
+msgstr "ნაბიჯი 2-ის სათაური"
+
+#: client/ts/blocks/OrderBumpSteps.tsx:65
+msgid "The title of Step 2. Example: Special Offer"
+msgstr "ნაბიჯი 2-ის სათაური. მაგალითი: სპეციალური შეთავაზება"
+
+#: client/ts/blocks/OrderBumpSteps.tsx:70
+msgid "Step 3 Title"
+msgstr "ნაბიჯი 3-ის სათაური"
+
+#: client/ts/blocks/OrderBumpSteps.tsx:71
+msgid "The title of Step 3. Example: Order Received"
+msgstr "ნაბიჯი 3-ის სათაური. მაგალითი: შეკვეთა მიღებულია"
 
 #: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:60
 #: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:245
@@ -4509,30 +4526,6 @@ msgstr "თარიღი, როდის უნდა დასრულდ�
 msgid "Traffic split percentages must total 100%. Please adjust your percentages."
 msgstr "ტრაფიკის განაწილების პროცენტებმა უნდა შეადგინოს 100%. გთხოვთ, დაარეგულიროთ პროცენტები."
 
-#: client/ts/frontend/Actions/CompleteOrderAction.ts:196
-msgid "Could not connect to server. Please refresh and try again or contact site administrator."
-msgstr "სერვერთან დაკავშირება ვერ მოხერხდა. გთხოვთ, განაახლეთ გვერდი და სცადეთ ისევ ან დაუკავშირდით საიტის ადმინისტრატორს."
-
-#: client/ts/frontend/Actions/CompleteOrderAction.ts:198
-msgid "Requested resource could not be found. Please contact site administrator. (404)"
-msgstr "მოთხოვნილი რესურსი ვერ მოიძებნა. გთხოვთ, დაუკავშირდით საიტის ადმინისტრატორს. (404)"
-
-#: client/ts/frontend/Actions/CompleteOrderAction.ts:200
-msgid "An internal server error occurred. Please contact site administrator. (500)"
-msgstr "შიდა სერვერის შეცდომა მოხდა. გთხოვთ, დაუკავშირდით საიტის ადმინისტრატორს. (500)"
-
-#: client/ts/frontend/Actions/CompleteOrderAction.ts:202
-msgid "Server response could not be parsed. Please contact site administrator."
-msgstr "სერვერის პასუხი ვერ გაიგო. გთხოვთ, დაუკავშირდით საიტის ადმინისტრატორს."
-
-#: client/ts/frontend/Actions/CompleteOrderAction.ts:204
-msgid "The server timed out while processing your request. Please refresh and try again or contact site administrator."
-msgstr "სერვერმა დრო ამოიწურა თქვენი მოთხოვნის დამუშავებისას. გთხოვთ, განაახლეთ გვერდი და სცადეთ ისევ ან დაუკავშირდით საიტის ადმინისტრატორს."
-
-#: client/ts/frontend/Actions/CompleteOrderAction.ts:206
-msgid "Request was aborted. Please contact site administrator."
-msgstr "მოთხოვნა შეწყვეტილია. გთხოვთ, დაუკავშირდით საიტის ადმინისტრატორს."
-
 #: client/ts/frontend/Components/TermsAndConditions.ts:29
 msgid "Terms and Conditions"
 msgstr "წესები და პირობები"
@@ -4548,6 +4541,30 @@ msgstr "კალათის დახურვა"
 #: client/ts/frontend/Components/FreeShippingProgressBar.tsx:245
 msgid "Unlocked"
 msgstr "გახსნილია"
+
+#: client/ts/frontend/Actions/CompleteOrderAction.ts:196
+msgid "We could not confirm whether your order went through. Please check for any charges in your payment method and review your order history before placing the order again."
+msgstr "ჩვენ ვერ დავადასტურეთ, გაიარა თუ არა თქვენი შეკვეთა. გთხოვთ, შეამოწმოთ, ხომ არ არის თანხა ჩამოჭრილი თქვენს გადახდის მეთოდზე და გადახედოთ თქვენი შეკვეთების ისტორიას, სანამ შეკვეთას თავიდან გააკეთებთ."
+
+#: client/ts/frontend/Actions/CompleteOrderAction.ts:198
+msgid "Requested resource could not be found. Please contact site administrator. (404)"
+msgstr "მოთხოვნილი რესურსი ვერ მოიძებნა. გთხოვთ, დაუკავშირდით საიტის ადმინისტრატორს. (404)"
+
+#: client/ts/frontend/Actions/CompleteOrderAction.ts:200
+msgid "An internal server error occurred. Please contact site administrator. (500)"
+msgstr "შიდა სერვერის შეცდომა მოხდა. გთხოვთ, დაუკავშირდით საიტის ადმინისტრატორს. (500)"
+
+#: client/ts/frontend/Actions/CompleteOrderAction.ts:202
+msgid "Server response could not be parsed. Please contact site administrator."
+msgstr "სერვერის პასუხი ვერ გაიგო. გთხოვთ, დაუკავშირდით საიტის ადმინისტრატორს."
+
+#: client/ts/frontend/Actions/CompleteOrderAction.ts:204
+msgid "The server timed out while processing your request. Please check for any charges in your payment method and review your order history before placing the order again."
+msgstr "სერვერის დრო ამოიწურა თქვენი მოთხოვნის დამუშავებისას. გთხოვთ, შეამოწმოთ, ხომ არ არის თანხა ჩამოჭრილი თქვენს გადახდის მეთოდზე და გადახედოთ თქვენი შეკვეთების ისტორიას, სანამ შეკვეთას თავიდან გააკეთებთ."
+
+#: client/ts/frontend/Actions/CompleteOrderAction.ts:206
+msgid "Request was aborted. Please contact site administrator."
+msgstr "მოთხოვნა შეწყვეტილია. გთხოვთ, დაუკავშირდით საიტის ადმინისტრატორს."
 
 # %d is the number of icons in the collection
 #: client/ts/admin/Components/trustBadges.ts:85
@@ -5366,20 +5383,6 @@ msgstr "როდესაც ეს ბამპი კალათაში �
 #: client/ts/admin/Components/Metaboxes/CategoryCompleter.tsx:46
 msgid "All categories with titles that include {{query /}}"
 msgstr "ყველა კატეგორია სათაურებით, რომლებიც შეიცავს {{query /}}"
-
-#: client/ts/admin/Components/Fields/WPMediaUploadButton.tsx:69
-msgid "Select or Upload a Logo"
-msgstr "ლოგოს არჩევა ან ატვირთვა"
-
-#: client/ts/admin/Components/Fields/RangeControl.tsx:97
-#: client/ts/admin/Components/Fields/ColorControl.tsx:137
-msgid "Reset"
-msgstr "გადატვირთვა"
-
-#: client/ts/admin/Components/Fields/ColorControl.tsx:173
-#: client/ts/admin/Components/CheckoutEditor/BumpEditorModal.tsx:101
-msgid "Done"
-msgstr "დასრულებულია"
 
 #: client/ts/admin/Components/Forms/WooCommercePagesGlobalOptionsSettingsForm.tsx:49
 #: client/ts/admin/Components/Forms/CheckoutSettingsForm.tsx:570
@@ -7134,9 +7137,23 @@ msgstr "დახურვა"
 msgid "This order bump has unsaved changes. Close anyway?"
 msgstr "ამ order bump-ს შენახული ცვლილებები აქვს. მაინც დახუროთ?"
 
+#: client/ts/admin/Components/CheckoutEditor/BumpEditorModal.tsx:101
+#: client/ts/admin/Components/Fields/ColorControl.tsx:173
+msgid "Done"
+msgstr "დასრულებულია"
+
 #: client/ts/admin/Components/CheckoutEditor/BumpEditorModal.tsx:108
 msgid "Loading order bump editor…"
 msgstr "Order bump-ის რედაქტორის ჩატვირთვა…"
+
+#: client/ts/admin/Components/Fields/WPMediaUploadButton.tsx:69
+msgid "Select or Upload a Logo"
+msgstr "ლოგოს არჩევა ან ატვირთვა"
+
+#: client/ts/admin/Components/Fields/RangeControl.tsx:97
+#: client/ts/admin/Components/Fields/ColorControl.tsx:137
+msgid "Reset"
+msgstr "გადატვირთვა"
 
 # %s: item type e.g. "order bump"
 #: client/ts/admin/Components/CheckoutEditor/slots/UnsavedChangesDialog.tsx:37
