@@ -291,10 +291,12 @@ function cfw_wc_print_notices_with_wrap() {
  */
 function cfw_payment_request_buttons() {
 	if ( SettingsManager::instance()->get_setting( 'disable_express_checkout' ) === 'yes' ) {
+		cfw_debug_log( 'CheckoutWC Express Checkout: not rendered, express checkout is disabled in CheckoutWC settings' );
 		return;
 	}
 
 	if ( ! has_action( 'cfw_payment_request_buttons' ) ) {
+		cfw_debug_log( 'CheckoutWC Express Checkout: not rendered, no gateway hooked into cfw_payment_request_buttons' );
 		return;
 	}
 
@@ -303,8 +305,25 @@ function cfw_payment_request_buttons() {
 	// stray "Or" above the first step. CustomFieldService re-applies this on every refresh, for a
 	// required field whose display conditions only start matching mid-checkout.
 	if ( CustomFieldManager::instance()->express_checkout_is_suppressed() ) {
+		cfw_debug_log( 'CheckoutWC Express Checkout: not rendered, a required custom field applies that express gateways cannot collect' );
 		return;
 	}
+
+	$callbacks = [];
+
+	foreach ( $GLOBALS['wp_filter']['cfw_payment_request_buttons']->callbacks as $hooked ) {
+		foreach ( $hooked as $hook ) {
+			$callback = $hook['function'];
+
+			if ( is_array( $callback ) ) {
+				$callbacks[] = ( is_object( $callback[0] ) ? get_class( $callback[0] ) : $callback[0] ) . '::' . $callback[1];
+			} else {
+				$callbacks[] = is_string( $callback ) ? $callback : 'closure';
+			}
+		}
+	}
+
+	cfw_debug_log( 'CheckoutWC Express Checkout: rendered with ' . implode( ', ', $callbacks ) . '. SSL active: ' . ( is_ssl() ? 'yes' : 'no' ) );
 
 	?>
 	<div id="cfw-payment-request-buttons" style="position: absolute; opacity: 0; pointer-events: none;">

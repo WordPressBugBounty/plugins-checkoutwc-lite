@@ -123,7 +123,7 @@ abstract class CompatibilityAbstract extends SingletonAbstract {
 	 */
 	public function adjust_button_height( $settings ): array {
 		if ( ! empty( $settings['button_height'] ) ) {
-			$settings['button_height'] = '42';
+			$settings['button_height'] = '48';
 		}
 
 		return $settings;

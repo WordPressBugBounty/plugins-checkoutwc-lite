@@ -602,6 +602,51 @@
             "args": 0
         },
         {
+            "name": "cfw_dashboard_card_action",
+            "file": "Admin/DashboardCardEvent.php",
+            "type": "action",
+            "doc": {
+                "description": "Fires when a Dashboard card is shown or used. For telemetry.",
+                "long_description": "Internal: only CheckoutWC's own telemetry should listen. Its name and arguments may change without notice.",
+                "tags": [
+                    {
+                        "name": "internal",
+                        "content": ""
+                    },
+                    {
+                        "name": "since",
+                        "content": "11.5.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "<code>starter_bump</code>, <code>turnstile</code> or <code>address_autocomplete</code>",
+                        "types": [
+                            "string"
+                        ],
+                        "variable": "$card"
+                    },
+                    {
+                        "name": "param",
+                        "content": "<code>shown</code>, <code>create</code>, <code>choose_product</code>, <code>setup</code> or <code>dismiss</code>",
+                        "types": [
+                            "string"
+                        ],
+                        "variable": "$action"
+                    },
+                    {
+                        "name": "param",
+                        "content": "<code>dashboard</code> or <code>order_bumps</code>",
+                        "types": [
+                            "string"
+                        ],
+                        "variable": "$location"
+                    }
+                ],
+                "long_description_html": "<p>Internal: only CheckoutWC's own telemetry should listen. Its name and arguments may change without notice.</p>"
+            },
+            "args": 3
+        },
+        {
             "name": "cfw_delivery_method_changed",
             "file": "Features/LocalPickup.php",
             "type": "action",
@@ -7812,6 +7857,31 @@
             "args": 1
         },
         {
+            "name": "cfw_starter_bump_product_id",
+            "file": "Features/StarterBump.php",
+            "type": "filter",
+            "doc": {
+                "description": "Filters the product suggested for the merchant's first order bump.",
+                "long_description": "Return 0 to suggest no product.",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "11.5.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "the suggested product ID, or 0 for none",
+                        "types": [
+                            "int"
+                        ],
+                        "variable": "$product_id"
+                    }
+                ],
+                "long_description_html": "<p>Return 0 to suggest no product.</p>"
+            },
+            "args": 1
+        },
+        {
             "name": "cfw_stripe_force_checkout_express_checkout",
             "file": "Compatibility/Gateways/Stripe.php",
             "type": "filter",
@@ -10841,7 +10911,7 @@
             "type": "filter",
             "doc": {
                 "description": "Filters shipping total address required text",
-                "long_description": "",
+                "long_description": "Applies on checkout and in the side cart; the default text depends on which one is showing.",
                 "tags": [
                     {
                         "name": "param",
@@ -10854,9 +10924,14 @@
                     {
                         "name": "since",
                         "content": "2.0.0"
+                    },
+                    {
+                        "name": "since",
+                        "content": "11.5.0",
+                        "description": "Applies on the checkout page again, not only in the side cart."
                     }
                 ],
-                "long_description_html": ""
+                "long_description_html": "<p>Applies on checkout and in the side cart; the default text depends on which one is showing.</p>"
             },
             "args": 1
         },

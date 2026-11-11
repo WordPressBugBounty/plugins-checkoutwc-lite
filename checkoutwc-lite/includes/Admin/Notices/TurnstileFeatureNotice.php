@@ -34,6 +34,11 @@ class TurnstileFeatureNotice extends NoticeAbstract {
 			return false;
 		}
 
+		// The Dashboard has its own Turnstile card. Leaving the transient lets the notice show on the next CheckoutWC page.
+		if ( 'cfw-settings' === $current_page ) {
+			return false;
+		}
+
 		delete_transient( 'cfw_turnstile_feature_notice' );
 
 		return true;

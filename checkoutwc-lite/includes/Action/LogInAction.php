@@ -15,9 +15,10 @@ class LogInAction extends CFWAction {
 	}
 
 	public function action() {
+		// The password goes to wp_signon() as typed, like wp-login.php: sanitizing would alter characters such as %41 or surrounding spaces.
 		$info                  = [];
 		$info['user_login']    = trim( sanitize_text_field( wp_unslash( $_POST['email'] ?? '' ) ) ); // phpcs:ignore WordPress.Security.NonceVerification.Missing
-		$info['user_password'] = sanitize_text_field( wp_unslash( $_POST['password'] ?? '' ) ); // phpcs:ignore WordPress.Security.NonceVerification.Missing
+		$info['user_password'] = wp_unslash( $_POST['password'] ?? '' ); // phpcs:ignore WordPress.Security.NonceVerification.Missing, WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
 		$info['remember']      = true;
 
 		$user        = wp_signon( $info, is_ssl() );

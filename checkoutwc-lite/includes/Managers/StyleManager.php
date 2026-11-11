@@ -225,13 +225,21 @@ class StyleManager {
 		return $output;
 	}
 
-	public static function get_custom_css(): string {
+	/**
+	 * Gets the custom CSS for the active template.
+	 *
+	 * @since 11.5.0 Added the `$include_page_background` parameter.
+	 *
+	 * @param bool $include_page_background Whether to paint the html element with the checkout background. Only for pages CheckoutWC renders.
+	 * @return string
+	 */
+	public static function get_custom_css( bool $include_page_background = true ): string {
 		$settings_manager  = SettingsManager::instance();
 		$active_template   = cfw_get_active_template();
 		$custom_css        = $settings_manager->get_setting( 'custom_css', [ $active_template->get_slug() ] );
 		$show_mobile_logos = $settings_manager->get_setting( 'show_logos_mobile' );
 
-		$output = 'html { background: var(--cfw-body-background-color) !important; }' . PHP_EOL;
+		$output = $include_page_background ? 'html { background: var(--cfw-body-background-color) !important; }' . PHP_EOL : '';
 
 		if ( 'yes' === $show_mobile_logos ) {
 			$output .= '@media(max-width: 900px) { form #cfw-billing-methods .payment_method_icons { display: flex !important; } }';
@@ -244,7 +252,16 @@ class StyleManager {
 		return $output;
 	}
 
-	public static function add_styles( $handle = 'cfw_front' ) {
-		wp_add_inline_style( $handle, self::get_css_custom_property_overrides() . self::get_custom_css() );
+	/**
+	 * Adds the CSS custom properties and custom CSS as inline styles.
+	 *
+	 * @since 11.5.0 Added the `$include_page_background` parameter.
+	 *
+	 * @param string $handle The style handle to attach the inline styles to.
+	 * @param bool   $include_page_background Whether to paint the html element with the checkout background. Only for pages CheckoutWC renders.
+	 * @return void
+	 */
+	public static function add_styles( $handle = 'cfw_front', bool $include_page_background = true ) {
+		wp_add_inline_style( $handle, self::get_css_custom_property_overrides() . self::get_custom_css( $include_page_background ) );
 	}
 }

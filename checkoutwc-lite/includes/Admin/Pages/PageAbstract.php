@@ -2,6 +2,7 @@
 
 namespace Objectiv\Plugins\Checkout\Admin\Pages;
 
+use Objectiv\Plugins\Checkout\Admin\UpgradeUrl;
 use Objectiv\Plugins\Checkout\Managers\PlanManager;
 use Objectiv\Plugins\Checkout\Managers\SettingsManager;
 use Objectiv\Plugins\Checkout\Managers\UpdatesManager;
@@ -76,7 +77,7 @@ abstract class PageAbstract {
 	 */
 	public function output_with_wrap() {
 		cfw_do_action( 'cfw_admin_output_page', $this->get_slug() );
-		$hide_settings_button = ( isset( $_GET['subpage'] ) && 'templates' === $_GET['subpage'] ) || ( isset( $_GET['page'] ) && 'cfw-settings-appearance' === $_GET['page'] && empty( $_GET['subpage'] ) ) || ( isset( $_GET['page'] ) && 'cfw-settings-support' === $_GET['page'] ); // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+		$hide_settings_button = ( isset( $_GET['subpage'] ) && 'templates' === $_GET['subpage'] ) || ( isset( $_GET['page'] ) && 'cfw-settings-appearance' === $_GET['page'] && empty( $_GET['subpage'] ) ) || ( isset( $_GET['page'] ) && in_array( $_GET['page'], [ 'cfw-settings', 'cfw-settings-support', 'cfw-settings-plan' ], true ) ); // phpcs:ignore WordPress.Security.NonceVerification.Recommended
 		?>
 		<div class="cfw-admin-notices-container">
 			<div class="wp-header-end"></div>
@@ -93,27 +94,27 @@ abstract class PageAbstract {
 				 */
 				do_action( 'cfw_before_admin_page_header', $this );
 				?>
-				<div class="min-h-[64px] bg-white flex items-center pl-8 justify-between">
-					<div class="flex items-center">
-						<span>
+				<div class="min-h-[64px] bg-white flex items-center pl-4 sm:pl-8 justify-between">
+					<div class="flex items-center min-w-0">
+						<span class="flex-shrink-0">
 							<?php echo file_get_contents( CFW_PATH . '/assets/images/cfw.svg' ); // phpcs:ignore ?>
 						</span>
-						<nav class="flex" aria-label="Breadcrumb">
-							<ol role="list" class="flex items-center space-x-2">
-								<li class="m-0">
+						<nav class="flex min-w-0" aria-label="Breadcrumb">
+							<ol role="list" class="flex items-center min-w-0 space-x-2">
+								<li class="m-0 max-sm:hidden">
 									<div class="flex items-center">
 										<span class="ml-2 text-sm font-medium text-gray-800">
 											<?php _e( 'CheckoutWC', 'checkout-wc' ); ?>
 										</span>
 									</div>
 								</li>
-								<li class="m-0">
+								<li class="m-0 min-w-0">
 									<div class="flex items-center">
 										<!-- Heroicon name: solid/chevron-right -->
-										<svg class="flex-shrink-0 h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+										<svg class="flex-shrink-0 h-5 w-5 text-gray-400 max-sm:hidden" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
 											<path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
 										</svg>
-										<span class="ml-2 text-sm font-medium text-gray-500" aria-current="page">
+										<span class="ml-2 truncate text-sm font-medium text-gray-500" aria-current="page">
 											<?php echo esc_html( wp_strip_all_tags( $this->title ) ); ?>
 										</span>
 									</div>
@@ -122,8 +123,8 @@ abstract class PageAbstract {
 						</nav>
 					</div>
 
-					<div class="flex items-center space-x-4 mr-10">
-						<div id="cfw_unsaved_changes_notice" class="hidden flex items-center text-sm text-orange-600">
+					<div class="flex flex-shrink-0 items-center space-x-4 ml-4 mr-4 sm:mr-10">
+						<div id="cfw_unsaved_changes_notice" class="hidden flex items-center text-sm text-orange-600 max-sm:!hidden">
 							<svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
 								<path fill-rule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clip-rule="evenodd"></path>
 							</svg>
@@ -132,7 +133,7 @@ abstract class PageAbstract {
 								<?php _e( 'Discard?', 'checkout-wc' ); ?>
 							</a>
 						</div>
-						<button type="button" id="cfw_admin_header_save_button" class="cfw-save-inactive cfw-shake-animation <?php echo $hide_settings_button ? 'invisible' : ''; ?> inline-flex items-center px-3.5 py-2 border border-transparent text-sm leading-4 font-medium rounded-full shadow-sm text-white bg-blue-600 hover:bg-blue-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+						<button type="button" id="cfw_admin_header_save_button" class="cfw-save-inactive cfw-shake-animation <?php echo $hide_settings_button ? 'hidden' : ''; ?> whitespace-nowrap inline-flex items-center px-3.5 py-2 border border-transparent text-sm leading-4 font-medium rounded-full shadow-sm text-white bg-blue-600 hover:bg-blue-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
 							<?php _e( 'Save Changes', 'checkout-wc' ); ?>
 						</button>
 					</div>
@@ -169,20 +170,14 @@ abstract class PageAbstract {
 		<div class="fixed backdrop-blur-[2px] bg-white/40 inset-0 flex flex-col items-center justify-center z-50">
 			<div class="space-y-4">
 				<p class="flex justify-center">
-					<a href="https://www.checkoutwc.com/lite-upgrade/?utm_campaign=liteplugin&utm_medium=admin-page-<?php echo esc_attr( $this->get_slug() ); ?>&utm_source=WordPress&utm_content=Unlock+with+Premium" class="bg-blue-600 hover:bg-blue-700 text-white hover:text-white font-bold py-4 px-6 rounded">
+					<a href="<?php echo esc_url( UpgradeUrl::get( 'admin-page-' . $this->get_slug() ) ); ?>" class="bg-blue-600 hover:bg-blue-700 text-white hover:text-white font-bold py-4 px-6 rounded">
 						Unlock with Premium
 					</a>
 				</p>
 
 				<div class="text-center italic">
 					<?php
-					echo wp_kses_post(
-						sprintf(
-							/* translators: %s: Required plan name(s) */
-							__( 'A %s plan is required to access this feature.', 'checkout-wc' ),
-							PlanManager::get_english_list_of_required_plans_html( $required_plan )
-						)
-					);
+					echo wp_kses_post( PlanManager::get_required_plan_message_html( $required_plan ) );
 					?>
 				</div>
 			</div>
@@ -321,7 +316,7 @@ abstract class PageAbstract {
 	}
 
 	/**
-	 * @param string $required_plans The required plans.
+	 * @param string $required_plans Locked-feature message from PlanManager::get_required_plan_message_html().
 	 * @return string
 	 */
 	public function get_old_style_upgrade_required_notice( string $required_plans ): string {
@@ -334,13 +329,7 @@ abstract class PageAbstract {
 				</h3>
 
 				<?php
-				echo wp_kses_post(
-				sprintf(
-					/* translators: %s: Required plan name(s) */
-					__( 'A %s plan is required to access this feature.', 'checkout-wc' ),
-					$required_plans
-				)
-				);
+				echo wp_kses_post( $required_plans );
 				?>
 				<p class="text-base">
 					<?php
@@ -405,13 +394,15 @@ abstract class PageAbstract {
 
 	public function get_plan_data(): array {
 		$data = [
-			'plan_id'    => UpdatesManager::instance()->get_license_price_id(),
-			'plan_level' => PlanManager::get_admin_plan_level(),
-			'labels'     => [],
+			'plan_id'      => UpdatesManager::instance()->get_license_price_id(),
+			'plan_level'   => PlanManager::get_admin_plan_level(),
+			'labels'       => [],
+			// getUpgradeUrl() reads this: the browser can't tell the paid build from Lite.
+			'utm_campaign' => UpgradeUrl::get_campaign(),
 		];
 
 		foreach ( PlanManager::PLAN_HIERARCHY as $plan => $level ) {
-			$data['labels']['required_list'][ $level ] = PlanManager::get_english_list_of_required_plans_html( $plan );
+			$data['labels']['required_list'][ $level ] = PlanManager::get_required_plan_message_html( $plan );
 		}
 
 		return $data;

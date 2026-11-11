@@ -315,7 +315,7 @@ return array(
     'CheckoutWC\\Symfony\\Polyfill\\Php73\\Php73' => $vendorDir . '/symfony/polyfill-php73/Php73.php',
     'CheckoutWC\\Symfony\\Polyfill\\Php80\\Php80' => $vendorDir . '/symfony/polyfill-php80/Php80.php',
     'CheckoutWC\\Symfony\\Polyfill\\Php80\\PhpToken' => $vendorDir . '/symfony/polyfill-php80/PhpToken.php',
-    'Composer\\InstalledVersions' => $vendorDir . '/composer/InstalledVersions.php',
+    'CheckoutWC\\Composer\\InstalledVersions' => $vendorDir . '/composer/InstalledVersions.php',
     'JsonException' => $vendorDir . '/symfony/polyfill-php73/Resources/stubs/JsonException.php',
     'PhpToken' => $vendorDir . '/symfony/polyfill-php80/Resources/stubs/PhpToken.php',
     'Stringable' => $vendorDir . '/symfony/polyfill-php80/Resources/stubs/Stringable.php',

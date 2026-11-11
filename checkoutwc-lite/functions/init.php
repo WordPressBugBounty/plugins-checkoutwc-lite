@@ -38,11 +38,13 @@ use Objectiv\Plugins\Checkout\Admin\Pages\Integrations;
 use Objectiv\Plugins\Checkout\Admin\Pages\LocalPickupAdminFree;
 use Objectiv\Plugins\Checkout\Admin\Pages\OrderBumpsAdminFree;
 use Objectiv\Plugins\Checkout\Admin\Pages\PageController;
+use Objectiv\Plugins\Checkout\Admin\Pages\Plan;
 use Objectiv\Plugins\Checkout\Admin\Pages\SideCartAdminFree;
 use Objectiv\Plugins\Checkout\Admin\Pages\Support;
 use Objectiv\Plugins\Checkout\Admin\Pages\TrustBadgesAdminFree;
 use Objectiv\Plugins\Checkout\Admin\Pages\WooCommercePages;
 use Objectiv\Plugins\Checkout\Admin\ShippingPhoneController;
+use Objectiv\Plugins\Checkout\Admin\UpgradeUrl;
 use Objectiv\Plugins\Checkout\Admin\WelcomeScreenActivationRedirector;
 use Objectiv\Plugins\Checkout\Admin\WooCommerceAdminScreenAugmenter;
 use Objectiv\Plugins\Checkout\API\PreviewCartAPI;
@@ -348,7 +350,7 @@ add_action(
 add_action(
 	'init',
 	function() {
-		// Handles Parent Menu and General Menu - instantiate here to avoid translation loading issues
+		// Handles the parent menu and the Dashboard - instantiate here to avoid translation loading issues
 		$appearance_admin_page = new Appearance();
 		$general_admin_page    = new General( $appearance_admin_page );
 
@@ -369,6 +371,7 @@ add_action(
 			'integrations'            => ( new Integrations() )->set_priority( 105 ),
 			'advanced'                => ( new Advanced() )->set_priority( 110 ),
 			'support'                 => ( new Support() )->set_priority( 120 ),
+			'plan'                    => ( new Plan() )->set_priority( 122 ),
 		];
 
 		/**
@@ -387,7 +390,8 @@ add_action(
 	}
 );
 
-if ( ! PlanManager::has_admin_plan_or_higher() ) {
+// Lite links to its own Upgrade page instead.
+if ( defined( 'CFW_PREMIUM_PLAN_IDS' ) && ! PlanManager::has_admin_plan_or_higher() ) {
 	add_action(
 		'admin_menu',
 		function() {
@@ -396,7 +400,7 @@ if ( ! PlanManager::has_admin_plan_or_higher() ) {
 				esc_html__( 'Upgrade to Premium', 'checkout-wc' ),
 				esc_html__( 'Upgrade to Premium', 'checkout-wc' ),
 				'manage_options',
-				esc_url( 'https://www.checkoutwc.com/lite-upgrade/?utm_campaign=liteplugin&utm_medium=admin-menu&utm_source=WordPress&utm_content=Upgrade+to+Pro' )
+				esc_url( UpgradeUrl::get( 'admin-menu' ) )
 			);
 		},
 		125
@@ -1063,7 +1067,7 @@ add_action(
 		$admin_message = '';
 
 		if ( $templates_disabled ) {
-			$admin_message = __( 'Admin Preview Mode: CheckoutWC templates are disabled for normal users. To fix this, please activate templates here: WP Admin > CheckoutWC > Start Here', 'checkout-wc' );
+			$admin_message = __( 'Admin preview: CheckoutWC is off for customers. Turn it on in WP Admin > CheckoutWC > Dashboard.', 'checkout-wc' );
 		}
 
 		/**

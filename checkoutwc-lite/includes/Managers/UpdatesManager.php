@@ -528,6 +528,7 @@ class UpdatesManager extends SingletonAbstract {
 			16 => '3 Sites',
 			17 => '10 Sites',
 			18 => '1 Site - Lifetime',
+			19 => '25 Sites',
 		];
 
 		$plan = $plans[ $price_id ] ?? 'None';

@@ -23,6 +23,42 @@ class WooCommerceSubscriptions extends CompatibilityAbstract {
 		add_filter( 'woocommerce_checkout_registration_required', [ $this, 'override_registration_required' ], 10, 1 );
 	}
 
+	/**
+	 * Runs on wp_loaded, before WooCommerce handles an add to cart.
+	 *
+	 * @since 11.5.0
+	 *
+	 * @return void
+	 */
+	public function run_on_wp_loaded() {
+		$this->maybe_copy_switch_fields_to_query();
+	}
+
+	/**
+	 * Keep a subscription switch when the product form is added to cart over AJAX.
+	 *
+	 * Subscriptions posts the switch details as hidden form fields, but some of its checks (such as the
+	 * subscription limit) only read them from the URL. Our AJAX add to cart posts the form to
+	 * ?wc-ajax=cfw_add_to_cart, so copy them over before WooCommerce handles the add to cart.
+	 *
+	 * @since 11.5.0
+	 *
+	 * @return void
+	 */
+	public function maybe_copy_switch_fields_to_query() {
+		// phpcs:disable WordPress.Security.NonceVerification -- Subscriptions verifies _wcsnonce itself.
+		if ( 'cfw_add_to_cart' !== sanitize_text_field( wp_unslash( $_GET['wc-ajax'] ?? '' ) ) || empty( $_POST['switch-subscription'] ) ) {
+			return;
+		}
+
+		foreach ( [ 'switch-subscription', 'item', '_wcsnonce' ] as $key ) {
+			if ( isset( $_POST[ $key ] ) && ! isset( $_GET[ $key ] ) ) {
+				$_GET[ $key ] = wc_clean( wp_unslash( $_POST[ $key ] ) );
+			}
+		}
+		// phpcs:enable
+	}
+
 	public function maybe_hide_shipping_tab( $show_shipping_tab ) {
 		if ( ! $show_shipping_tab ) {
 			return $show_shipping_tab;

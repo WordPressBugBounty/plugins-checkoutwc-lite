@@ -2,6 +2,7 @@
 
 namespace Objectiv\Plugins\Checkout\API;
 
+use Objectiv\Plugins\Checkout\CodeSettings;
 use Objectiv\Plugins\Checkout\Managers\SettingsManager;
 use WP_Error;
 use WP_REST_Server;
@@ -154,6 +155,15 @@ class SettingsAPI {
 
 		$value = $this->convert_nested_array_objects_to_arrays( $body->value );
 
+		if ( $this->is_code_setting_not_allowed( $key, $keys ) ) {
+			return rest_ensure_response(
+				[
+					'success'                  => false,
+					'requires_unfiltered_html' => true,
+				]
+			);
+		}
+
 		if ( stripos( $key, 'wp_option/' ) === 0 ) {
 			$option_name = str_replace( 'wp_option/', '', $key );
 			update_option( $option_name, $value );
@@ -198,6 +208,16 @@ class SettingsAPI {
 			$name  = $setting->name;
 			$value = $this->convert_nested_array_objects_to_arrays( $setting->value );
 			$keys  = isset( $setting->keys ) ? $this->recursive_sanitize_text_field( $setting->keys ) : [];
+
+			if ( $this->is_code_setting_not_allowed( $name, $keys ) ) {
+				$response_data[] = [
+					'name'                     => $name,
+					'success'                  => false,
+					'requires_unfiltered_html' => true,
+					'error'                    => "Setting $name requires the unfiltered_html capability.",
+				];
+				continue;
+			}
 
 			if ( stripos( $name, 'wp_option/' ) === 0 ) {
 				$option_name = str_replace( 'wp_option/', '', $name );
@@ -272,6 +292,27 @@ class SettingsAPI {
 		return true;
 	}
 
+
+	/**
+	 * Determines whether a save targets a script or PHP snippet setting the current user may not change.
+	 *
+	 * @since 11.5.0
+	 *
+	 * @param string $name setting name, or wp_option/ followed by an option name
+	 * @param array  $keys setting suffix keys
+	 * @return bool
+	 */
+	private function is_code_setting_not_allowed( string $name, array $keys ): bool {
+		if ( stripos( $name, 'wp_option/' ) === 0 ) {
+			$option_name = str_replace( 'wp_option/', '', $name );
+		} else {
+			$manager     = SettingsManager::instance();
+			$option_name = $manager->add_suffix( $name, $keys );
+			$option_name = 0 === strpos( $option_name, $manager->prefix ) ? $option_name : $manager->prefix . $option_name;
+		}
+
+		return CodeSettings::is_code_option( $option_name ) && ! CodeSettings::current_user_can_edit_code();
+	}
 
 	public function can_access_settings_api(): bool {
 		return current_user_can( 'cfw_manage_options' );

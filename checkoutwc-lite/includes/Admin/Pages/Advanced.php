@@ -4,6 +4,7 @@ namespace Objectiv\Plugins\Checkout\Admin\Pages;
 
 use Objectiv\Plugins\Checkout\Admin\TabNavigation;
 use Objectiv\Plugins\Checkout\Admin\Pages\Traits\TabbedAdminPageTrait;
+use Objectiv\Plugins\Checkout\CodeSettings;
 use Objectiv\Plugins\Checkout\Managers\NoticesManager;
 use Objectiv\Plugins\Checkout\Managers\SettingsManager;
 use WP_Error;
@@ -17,8 +18,8 @@ class Advanced extends PageAbstract {
 	use TabbedAdminPageTrait;
 
 	/**
-	 * Options the settings export leaves out: the main settings arrays, which the export covers
-	 * option by option, and the license key and credentials, which must not end up in a shared file.
+	 * Options the settings export and import leave out: the main settings arrays, which the export covers
+	 * option by option, credentials, which must not end up in a shared file, and internal state that is not a setting.
 	 *
 	 * @since 11.4.2
 	 *
@@ -27,10 +28,51 @@ class Advanced extends PageAbstract {
 	private const EXPORT_EXCLUDED_OPTIONS = [
 		'_cfw__settings',
 		'_cfwlite__settings',
-		'_cfw_licensing__license_key',
 		'_cfw_turnstile_secret_key',
 		'_cfw_smartystreets_auth_token',
 		'_cfw_fetchify_access_token',
+		'_cfw_premium_install_checked',
+		'_cfw_updated_lite_to_pro',
+		'_cfw_checkout_slots_migrated',
+		'_cfw_checkout_custom_fields_revision',
+		'_cfw_tracking_notice',
+		'_cfw_tracking_last_send',
+	];
+
+	/**
+	 * Prefix of the license options (key, status, activation state), which the export and import leave out.
+	 *
+	 * @since 11.5.0
+	 *
+	 * @var string
+	 */
+	private const LICENSING_OPTION_PREFIX = '_cfw_licensing_';
+
+	/**
+	 * Pattern an import file entry's name must match before any other check.
+	 *
+	 * The options table matches names case- and accent-insensitively, so anything outside lowercase ASCII could resolve to an excluded option.
+	 * Hyphens are allowed for per-template settings of theme templates.
+	 *
+	 * @since 11.5.0
+	 *
+	 * @var string
+	 */
+	private const IMPORTABLE_OPTION_PATTERN = '/^_cfw_[a-z0-9_-]+$/D';
+
+	/**
+	 * Image types a settings import may download as a logo.
+	 *
+	 * @since 11.5.0
+	 *
+	 * @var array<string, string>
+	 */
+	private const LOGO_MIME_TYPES = [
+		'jpg|jpeg|jpe' => 'image/jpeg',
+		'png'          => 'image/png',
+		'gif'          => 'image/gif',
+		'webp'         => 'image/webp',
+		'avif'         => 'image/avif',
 	];
 
 	public function __construct() {
@@ -151,6 +193,10 @@ class Advanced extends PageAbstract {
 		$values       = $wpdb->get_results( $query ); // phpcs:ignore WordPress.DB.PreparedSQL.NotPrepared
 
 		foreach ( $values as $value ) {
+			if ( self::is_excluded_option( $value->option_name ) ) {
+				continue;
+			}
+
 			$settings[ $value->option_name ] = $value->option_value;
 		}
 
@@ -231,14 +277,30 @@ class Advanced extends PageAbstract {
 		$contents = file_get_contents( $dest_path ); // phpcs:ignore WordPress.WP.AlternativeFunctions.file_get_contents_file_get_contents
 		$decoded  = json_decode( $contents, JSON_OBJECT_AS_ARRAY );
 
-		if ( ! $decoded ) {
+		if ( ! $decoded || ! is_array( $decoded ) ) {
 			wp_die( esc_html__( 'Error decoding JSON file.', 'checkout-wc' ) );
 		}
 
+		$this->import_settings( $decoded );
+
+		wp_delete_file( $dest_path );
+	}
+
+	/**
+	 * Applies the settings from a decoded import file and reports the result.
+	 *
+	 * Only CheckoutWC options the export can produce are written; anything else in the file is ignored.
+	 *
+	 * @since 11.5.0
+	 *
+	 * @param array<mixed> $decoded option name => value from the import file
+	 * @return void
+	 */
+	private function import_settings( array $decoded ): void {
 		$active_template_slug = cfw_get_active_template( true )->get_slug();
 
 		// Pre 9.x logo handler
-		if ( ! empty( $decoded['_cfw_logo_attachment_id'] && false !== $decoded['_cfw_logo_attachment_url'] ) && ! isset( $decoded[ '_cfw_logo_attachment_id_' . $active_template_slug ] ) ) {
+		if ( ! empty( $decoded['_cfw_logo_attachment_id'] ) && ! empty( $decoded['_cfw_logo_attachment_url'] ) && ! isset( $decoded[ '_cfw_logo_attachment_id_' . $active_template_slug ] ) ) {
 			$image_upload = $this->upload_logo( $decoded['_cfw_logo_attachment_url'] );
 
 			if ( $image_upload ) {
@@ -266,21 +328,134 @@ class Advanced extends PageAbstract {
 			}
 		}
 
+		$ignored      = 0;
+		$skipped_code = [];
+
 		foreach ( $decoded as $key => $value ) {
-			update_option( $key, maybe_unserialize( $value ) );
+			if ( ! self::is_importable_option( $key ) ) {
+				++$ignored;
+				continue;
+			}
+
+			if ( CodeSettings::is_code_option( $key ) && ! CodeSettings::current_user_can_edit_code() ) {
+				$skipped_code[] = $key;
+				continue;
+			}
+
+			update_option( $key, self::decode_imported_value( $value ) );
 		}
 
-		wp_delete_file( $dest_path );
+		$message = __( 'Successfully imported settings.', 'checkout-wc' );
+
+		if ( $ignored > 0 ) {
+			$message .= ' ' . sprintf(
+				/* translators: %d: number of entries in the file that were not imported */
+				_n( '%d entry was ignored because it is not a CheckoutWC setting.', '%d entries were ignored because they are not CheckoutWC settings.', $ignored, 'checkout-wc' ),
+				$ignored
+			);
+		}
 
 		NoticesManager::instance()->add(
 			'cfw_import_settings_success',
 			__( 'CheckoutWC Settings Import Successful', 'checkout-wc' ),
-			__( 'Successfully imported settings.', 'checkout-wc' ),
+			$message,
 			[
 				'type'        => 'success',
 				'dismissible' => false,
 			]
 		);
+
+		if ( ! empty( $skipped_code ) ) {
+			NoticesManager::instance()->add(
+				'cfw_import_settings_code_skipped',
+				__( 'Some settings were not imported', 'checkout-wc' ),
+				sprintf(
+					/* translators: %s: comma-separated list of setting names */
+					__( 'Scripts and PHP snippets need the unfiltered_html permission, which your account does not have. Not imported: %s', 'checkout-wc' ),
+					implode( ', ', $skipped_code )
+				),
+				[
+					'type'        => 'warning',
+					'dismissible' => false,
+				]
+			);
+		}
+	}
+
+	/**
+	 * Determines whether an import file entry is a CheckoutWC option the export can produce.
+	 *
+	 * @since 11.5.0
+	 *
+	 * @param int|string $key
+	 * @return bool
+	 */
+	private static function is_importable_option( $key ): bool {
+		return is_string( $key ) && 1 === preg_match( self::IMPORTABLE_OPTION_PATTERN, $key ) && ! self::is_excluded_option( $key );
+	}
+
+	/**
+	 * Determines whether an option is one the settings export and import leave out.
+	 *
+	 * Compares the way the options table does: WordPress trims option names and MySQL matches them case-insensitively.
+	 *
+	 * @since 11.5.0
+	 *
+	 * @param string $option_name
+	 * @return bool
+	 */
+	private static function is_excluded_option( string $option_name ): bool {
+		$option_name = strtolower( trim( $option_name ) );
+
+		return 0 === strpos( $option_name, self::LICENSING_OPTION_PREFIX ) || in_array( $option_name, self::EXPORT_EXCLUDED_OPTIONS, true );
+	}
+
+	/**
+	 * Decodes a serialized value from an import file without creating objects.
+	 *
+	 * The export writes array settings as serialized strings. A value that would decode to an object is kept as the raw string.
+	 *
+	 * @since 11.5.0
+	 *
+	 * @param mixed $value
+	 * @return mixed
+	 */
+	private static function decode_imported_value( $value ) {
+		if ( ! is_string( $value ) || ! is_serialized( $value ) ) {
+			return $value;
+		}
+
+		$decoded = @unserialize( trim( $value ), [ 'allowed_classes' => false ] ); // phpcs:ignore WordPress.PHP.NoSilencedErrors.Discouraged, WordPress.PHP.DiscouragedPHPFunctions.serialize_unserialize
+
+		if ( false === $decoded && 'b:0;' !== trim( $value ) ) {
+			return $value;
+		}
+
+		return self::contains_object( $decoded ) ? $value : $decoded;
+	}
+
+	/**
+	 * Determines whether a decoded value is or holds an object.
+	 *
+	 * @since 11.5.0
+	 *
+	 * @param mixed $value
+	 * @return bool
+	 */
+	private static function contains_object( $value ): bool {
+		if ( is_object( $value ) ) {
+			return true;
+		}
+
+		if ( is_array( $value ) ) {
+			foreach ( $value as $item ) {
+				if ( self::contains_object( $item ) ) {
+					return true;
+				}
+			}
+		}
+
+		return false;
 	}
 
 	/**
@@ -292,10 +467,22 @@ class Advanced extends PageAbstract {
 	 * @since  3.8.0
 	 */
 	public function upload_logo( $file_url ) {
-		$filename = basename( $file_url );
+		$file_url = is_string( $file_url ) ? trim( $file_url ) : '';
+		$scheme   = strtolower( (string) wp_parse_url( $file_url, PHP_URL_SCHEME ) );
 
-		add_filter( 'https_ssl_verify', '__return_false' );
-		$logo = wp_remote_get( $file_url );
+		if ( ! in_array( $scheme, [ 'http', 'https' ], true ) || ! wp_http_validate_url( $file_url ) ) {
+			cfw_debug_log( 'Skipped logo during settings import: URL not allowed.' );
+			return false;
+		}
+
+		$filename = sanitize_file_name( basename( (string) wp_parse_url( $file_url, PHP_URL_PATH ) ) );
+
+		if ( ! wp_check_filetype( $filename, self::LOGO_MIME_TYPES )['type'] ) {
+			cfw_debug_log( 'Skipped logo during settings import: not an image file.' );
+			return false;
+		}
+
+		$logo = wp_safe_remote_get( $file_url );
 
 		if ( is_wp_error( $logo ) ) {
 			wc_get_logger()->error( 'Error fetching logo during settings import: ' . $logo->get_error_message(), [ 'source' => 'checkout-wc' ] );
@@ -305,10 +492,17 @@ class Advanced extends PageAbstract {
 		$upload_file = wp_upload_bits( $filename, null, wp_remote_retrieve_body( $logo ) );
 
 		if ( ! $upload_file['error'] ) {
-			$wp_file_type = wp_check_filetype( $filename, null );
+			$wp_file_type = wp_check_filetype_and_ext( $upload_file['file'], $filename, self::LOGO_MIME_TYPES );
+			$real_mime    = wp_get_image_mime( $upload_file['file'] );
+
+			if ( ! $wp_file_type['type'] || ! in_array( $real_mime, self::LOGO_MIME_TYPES, true ) ) {
+				wp_delete_file( $upload_file['file'] );
+				cfw_debug_log( 'Skipped logo during settings import: downloaded file is not an image.' );
+				return false;
+			}
 
 			$attachment = [
-				'post_mime_type' => $wp_file_type['type'],
+				'post_mime_type' => $real_mime,
 				'post_parent'    => 0,
 				'post_title'     => preg_replace( '/\.[^.]+$/', '', $filename ),
 				'post_content'   => '',
@@ -365,6 +559,10 @@ class Advanced extends PageAbstract {
 						'footer_scripts_thank_you' => cfw_get_setting( 'footer_scripts_thank_you', null, '' ),
 						'header_scripts_order_pay' => cfw_get_setting( 'header_scripts_order_pay', null, '' ),
 						'footer_scripts_order_pay' => cfw_get_setting( 'footer_scripts_order_pay', null, '' ),
+					],
+					// Nested, because wp_localize_script() turns a top-level false into ''.
+					'params'   => [
+						'can_edit_code' => CodeSettings::current_user_can_edit_code(),
 					],
 					'plan'     => $this->get_plan_data(),
 				]

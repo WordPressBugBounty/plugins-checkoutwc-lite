@@ -14,8 +14,11 @@ class AmazonPayLegacy extends CompatibilityAbstract {
 	 */
 	protected $gateway;
 
-	protected $legacy = false;
-
+	/**
+	 * Whether Amazon Pay runs the legacy API.
+	 *
+	 * @return bool
+	 */
 	public function is_available(): bool {
 		if ( ! function_exists( 'wc_apa' ) ) {
 			return false;
@@ -25,13 +28,7 @@ class AmazonPayLegacy extends CompatibilityAbstract {
 			return false;
 		}
 
-		$api_version = get_option( 'amazon_api_version' );
-
-		if ( 'V2' !== $api_version ) {
-			$this->legacy = true;
-		}
-
-		return $this->legacy;
+		return 'legacy' === AmazonPay::get_api_version();
 	}
 
 	protected function get_gateway() {
@@ -164,7 +161,16 @@ class AmazonPayLegacy extends CompatibilityAbstract {
 		add_action( 'cfw_checkout_after_payment_methods', [ $this, 'payment_widget' ], 20 );
 	}
 
+	/**
+	 * Outputs Amazon Pay's legacy address widget.
+	 *
+	 * @return void
+	 */
 	public function address_widget() {
+		if ( ! method_exists( $this->get_gateway(), 'address_widget' ) ) {
+			return;
+		}
+
 		ob_start();
 
 		$this->get_gateway()->address_widget();

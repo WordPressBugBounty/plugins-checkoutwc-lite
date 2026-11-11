@@ -56,7 +56,7 @@ class BraintreeForWooCommerce extends CompatibilityAbstract {
 			return $options;
 		}
 
-		$options['height'] = 42;
+		$options['height'] = 48;
 
 		return $options;
 	}

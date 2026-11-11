@@ -143,6 +143,9 @@ class Template {
 		$default_path = trailingslashit( $this->get_basepath() ) . 'defaults.php';
 
 		if ( file_exists( $default_path ) ) {
+			// The template's defaults.php replaces these with its own $defaults.
+			$defaults = $this->get_standard_default_settings();
+
 			require $default_path;
 
 			return $defaults;

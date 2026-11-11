@@ -68,7 +68,7 @@ class StripeWooCommerce extends CompatibilityAbstract {
 		$payment_gateways = WC()->payment_gateways()->get_available_payment_gateways();
 
 		foreach ( $payment_gateways as $payment_gateway ) {
-			if ( ! in_array( $payment_gateway->id, [ 'stripe_applepay', 'stripe_payment_request', 'stripe_googlepay', 'stripe_amazonpay' ], true ) ) {
+			if ( ! in_array( $payment_gateway->id, [ 'stripe_applepay', 'stripe_payment_request', 'stripe_googlepay', 'stripe_amazonpay', 'stripe_link_checkout' ], true ) ) {
 				continue;
 			}
 

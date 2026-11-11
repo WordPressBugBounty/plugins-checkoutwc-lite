@@ -61,7 +61,7 @@ class PaymentPluginsPayPal extends CompatibilityAbstract {
 		}
 
 		foreach ( $data['buttons'] as $index => $button ) {
-			$data['buttons'][ $index ]['height'] = '42';
+			$data['buttons'][ $index ]['height'] = '48';
 		}
 
 		return $data;

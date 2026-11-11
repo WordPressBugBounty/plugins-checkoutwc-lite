@@ -85,6 +85,7 @@ class DatabaseUpdatesManager extends SingletonAbstract {
 			'11.0.3'  => [ $this, 'update_1103' ],
 			'11.3.0'  => [ $this, 'update_1130' ],
 			'11.4.0'  => [ $this, 'update_1140' ],
+			'11.5.0'  => [ $this, 'update_1150' ],
 			// TODO: For future updates, bifurcate pro and lite versions?
 		];
 	}
@@ -1284,6 +1285,23 @@ class DatabaseUpdatesManager extends SingletonAbstract {
 	 */
 	public function update_1140() {
 		SettingsManager::instance()->add_setting( 'allow_express_without_required_custom_fields', 'yes' );
+	}
+
+	/**
+	 * Cancels duplicate abandoned cart checks left by concurrent scheduling.
+	 *
+	 * Runs whether or not abandoned cart recovery is on, as duplicates from when it was on are still pending.
+	 *
+	 * @since 11.5.0
+	 *
+	 * @return void
+	 */
+	public function update_1150() {
+		if ( ! class_exists( '\\Objectiv\\Plugins\\Checkout\\Features\\AbandonedCartRecovery' ) ) {
+			return;
+		}
+
+		AbandonedCartRecovery::remove_duplicate_cart_checks();
 	}
 
 	private function regenerate_order_bump_thumbnail( int $attachment_id ) {

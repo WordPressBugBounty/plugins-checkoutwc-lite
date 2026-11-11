@@ -230,6 +230,11 @@ class UpdateCheckoutAction extends CFWAction {
 
 		unset( WC()->session->refresh_totals, WC()->session->reload_checkout );
 
+		// A delivery/pickup switch can leave the chosen rate outside the filtered rates; fix it before payment gateways check it.
+		if ( cfw_ensure_valid_chosen_shipping_methods( WC()->shipping()->get_packages() ) ) {
+			WC()->cart->calculate_totals();
+		}
+
 		/**
 		 * Filters payment methods during update_checkout refresh
 		 *

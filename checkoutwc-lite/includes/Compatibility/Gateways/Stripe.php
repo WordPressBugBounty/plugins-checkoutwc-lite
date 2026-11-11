@@ -66,6 +66,11 @@ class Stripe extends CompatibilityAbstract {
 	public function run() {
 		// Check if express checkout should be shown
 		if ( ! $this->should_show_express_checkout() ) {
+			// run() repeats on every checkout update, so log on the page load only.
+			if ( ! wp_doing_ajax() ) {
+				cfw_debug_log( "CheckoutWC Express Checkout: Stripe express checkout is not enabled on the checkout page, skipping. Check the 'checkout' location in WooCommerce > Settings > Payments > Stripe > Express checkouts." );
+			}
+
 			return;
 		}
 
@@ -135,6 +140,13 @@ class Stripe extends CompatibilityAbstract {
 	private function should_show_express_checkout(): bool {
 		$stripe_settings = WC_Stripe_Helper::get_stripe_settings();
 
+		// Stripe 10.1.0 renamed the setting and reads only the new key, with the product and cart pages when it's unset.
+		if ( version_compare( WC_STRIPE_VERSION, '10.1.0', '>=' ) ) {
+			$locations = $stripe_settings['express_checkout_button_locations'] ?? [ 'product', 'cart' ];
+
+			return ( is_array( $locations ) && in_array( 'checkout', $locations, true ) ) || $this->is_forced_on_checkout();
+		}
+
 		// Check the legacy payment_request_button_locations setting
 		$prb_locations = $stripe_settings['payment_request_button_locations'] ?? [];
 
@@ -146,15 +158,7 @@ class Stripe extends CompatibilityAbstract {
 			return true;
 		}
 
-		/**
-		 * Filter to force enable express checkout on checkout page
-		 *
-		 * Useful when Stripe settings are misconfigured or empty
-		 *
-		 * @since 10.3.10
-		 * @param bool $force_enable Whether to force enable express checkout
-		 */
-		if ( apply_filters( 'cfw_stripe_force_checkout_express_checkout', false ) ) {
+		if ( $this->is_forced_on_checkout() ) {
 			return true;
 		}
 
@@ -182,6 +186,24 @@ class Stripe extends CompatibilityAbstract {
 		// ECE class exists and is enabled (or we can't check flags) with empty locations
 		// Apply fallback to show on checkout (matching Stripe's intended defaults)
 		return true;
+	}
+
+	/**
+	 * Whether express checkout is forced on the checkout page whatever Stripe's settings say.
+	 *
+	 * @since 11.5.0
+	 * @return bool
+	 */
+	private function is_forced_on_checkout(): bool {
+		/**
+		 * Filter to force enable express checkout on checkout page
+		 *
+		 * Useful when Stripe settings are misconfigured or empty
+		 *
+		 * @since 10.3.10
+		 * @param bool $force_enable Whether to force enable express checkout
+		 */
+		return (bool) apply_filters( 'cfw_stripe_force_checkout_express_checkout', false );
 	}
 
 }

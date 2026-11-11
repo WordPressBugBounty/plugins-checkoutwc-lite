@@ -4,6 +4,7 @@ namespace Objectiv\Plugins\Checkout\Admin\Pages;
 
 use Objectiv\Plugins\Checkout\Admin\TabNavigation;
 use Objectiv\Plugins\Checkout\Admin\Pages\Traits\TabbedAdminPageTrait;
+use Objectiv\Plugins\Checkout\Admin\UpgradeUrl;
 use Objectiv\Plugins\Checkout\Managers\PlanManager;
 use Objectiv\Plugins\Checkout\Model\Template;
 use Objectiv\Plugins\Checkout\Managers\SettingsManager;
@@ -129,7 +130,7 @@ class Appearance extends PageAbstract {
 
 							<?php if ( $locked ) : ?>
 								<div class="flex items-center">
-									<a href="https://www.checkoutwc.com/lite-upgrade/?utm_campaign=liteplugin&utm_medium=appearance-templates&utm_source=WordPress&utm_content=Upgrade+to+Premium+to+Unlock" target="_blank" class="button button-primary">
+									<a href="<?php echo esc_url( UpgradeUrl::get( 'appearance-templates' ) ); ?>" target="_blank" class="button button-primary">
 										<?php echo esc_html( __( 'Upgrade to Premium to Unlock', 'checkout-wc' ) ); ?>
 									</a>
 								</div>

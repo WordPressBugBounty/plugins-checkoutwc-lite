@@ -4440,6 +4440,8 @@ Source: `Managers/AssetManager.php`
 
 Filters shipping total address required text
 
+Applies on checkout and in the side cart; the default text depends on which one is showing.
+
 **Parameters**
 
 | Name | Type | Description |
@@ -4451,6 +4453,7 @@ Filters shipping total address required text
 | Version | Description |
 | ------- | ----------- |
 | `2.0.0` | Introduced. |
+| `11.5.0` | Introduced. |
 
 Source: `functions.php`
 
@@ -5022,6 +5025,26 @@ Filters whether to override Stripe payment request button heights
 | `4.3.3` | Introduced. |
 
 Source: `Compatibility/Gateways/Square.php`
+
+## `cfw_starter_bump_product_id`
+
+Filters the product suggested for the merchant's first order bump.
+
+Return 0 to suggest no product.
+
+**Parameters**
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| `$product_id` | `int` | the suggested product ID, or 0 for none |
+
+**Changelog**
+
+| Version | Description |
+| ------- | ----------- |
+| `11.5.0` | Introduced. |
+
+Source: `Features/StarterBump.php`
 
 ## `cfw_stripe_force_checkout_express_checkout`
 

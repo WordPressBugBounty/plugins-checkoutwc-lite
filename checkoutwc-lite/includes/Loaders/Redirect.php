@@ -189,8 +189,8 @@ class Redirect extends LoaderAbstract {
 			$classes[] = 'checkout';
 		}
 
-		// Stop initial animations
-		// This gets removed on DOMContentLoaded
+		// Hides every checkout step except the first and stops animations until the page has loaded.
+		// Removed on the window load event in checkout.tsx, order-pay.tsx and thank-you.tsx.
 		$classes[] = 'cfw-preload';
 
 		// cfw-grid

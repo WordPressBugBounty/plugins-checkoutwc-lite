@@ -14,8 +14,11 @@ class AmazonPay extends CompatibilityAbstract {
 	 */
 	protected $gateway;
 
-	protected $legacy = false;
-
+	/**
+	 * Whether Amazon Pay runs the V2 API.
+	 *
+	 * @return bool
+	 */
 	public function is_available(): bool {
 		if ( ! function_exists( 'wc_apa' ) ) {
 			return false;
@@ -25,13 +28,39 @@ class AmazonPay extends CompatibilityAbstract {
 			return false;
 		}
 
-		$api_version = get_option( 'amazon_api_version' );
+		return 'V2' === self::get_api_version();
+	}
 
-		if ( 'V2' !== $api_version ) {
-			$this->legacy = true;
+	/**
+	 * Gets the Amazon Pay API version the Amazon Pay plugin runs.
+	 *
+	 * Read from the gateway Amazon Pay built, since fresh V2 installs never set the amazon_api_version option.
+	 *
+	 * @internal
+	 *
+	 * @since 11.5.0
+	 *
+	 * @return string 'V2', 'legacy', or an empty string for an unknown gateway
+	 */
+	public static function get_api_version(): string {
+		$gateway = wc_apa()->get_gateway();
+
+		if ( $gateway instanceof \WC_Gateway_Amazon_Payments_Advanced_Legacy ) {
+			return 'legacy';
 		}
 
-		return ! $this->legacy;
+		if ( $gateway instanceof \WC_Gateway_Amazon_Payments_Advanced ) {
+			return 'V2';
+		}
+
+		if ( is_object( $gateway ) ) {
+			return '';
+		}
+
+		// The gateway isn't built yet: use the rule Amazon Pay picks it by.
+		$is_v2 = 'V2' === get_option( 'amazon_api_version' ) || version_compare( (string) get_option( 'woocommerce_amazon_payments_new_install' ), '2.0.0', '>=' );
+
+		return $is_v2 ? 'V2' : 'legacy';
 	}
 
 	protected function get_gateway() {

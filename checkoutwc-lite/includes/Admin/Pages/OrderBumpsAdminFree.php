@@ -41,10 +41,6 @@ class OrderBumpsAdminFree extends PageAbstract {
 	}
 
 	public function output() {
-		if ( ! empty( $notice ) ) {
-			echo wp_kses( $notice, cfw_get_allowed_html() );
-		}
-
 		if ( isset( $_GET['post_type'] ) ) { // phpcs:ignore WordPress.Security.NonceVerification.Recommended
 			return;
 		}

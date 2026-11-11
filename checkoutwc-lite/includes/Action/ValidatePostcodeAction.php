@@ -25,7 +25,8 @@ class ValidatePostcodeAction extends CFWAction {
 		$postcode = wc_clean( wp_unslash( $_POST['postcode'] ) ); // phpcs:ignore WordPress.Security.NonceVerification.Missing
 		$country  = wc_clean( wp_unslash( $_POST['country'] ) ); // phpcs:ignore WordPress.Security.NonceVerification.Missing
 
-		$valid = \WC_Validation::is_postcode( trim( $postcode ), $country );
+		// Format first, as WooCommerce does at checkout, so e.g. a US ZIP+4 without a hyphen passes.
+		$valid = \WC_Validation::is_postcode( wc_format_postcode( $postcode, $country ), $country );
 
 		$this->out(
 			[

@@ -2,6 +2,7 @@
 
 namespace Objectiv\Plugins\Checkout\Managers;
 
+use Objectiv\Plugins\Checkout\CodeSettings;
 use Objectiv\Plugins\Checkout\SingletonAbstract;
 
 abstract class SettingsManagerAbstract extends SingletonAbstract {
@@ -127,6 +128,11 @@ abstract class SettingsManagerAbstract extends SingletonAbstract {
 	 * @return void
 	 **/
 	public function save_settings() {
+		// Same capability the settings REST API requires.
+		if ( ! current_user_can( 'cfw_manage_options' ) ) {
+			return;
+		}
+
 		if ( ! isset( $_REQUEST[ "{$this->prefix}_setting" ] ) ) {
 			return;
 		}
@@ -149,6 +155,14 @@ abstract class SettingsManagerAbstract extends SingletonAbstract {
 
 			// Strip Magic Slashes
 			$new_settings = stripslashes_deep( $new_settings );
+
+			if ( is_array( $new_settings ) && ! CodeSettings::current_user_can_edit_code() ) {
+				foreach ( $new_settings as $setting_name => $setting_value ) {
+					if ( CodeSettings::is_code_option( $this->maybe_add_prefix( (string) $setting_name ) ) ) {
+						unset( $new_settings[ $setting_name ] );
+					}
+				}
+			}
 
 			foreach ( $new_settings as $setting_name => $setting_value ) {
 				foreach ( $setting_value as $value ) {

@@ -449,6 +449,8 @@ class AssetManager {
 	 * @throws Exception If the event object cannot be created.
 	 */
 	protected function get_checkout_event_object(): array {
+		global $wp; // Read by is_checkout below to exclude the order pay and order received pages.
+
 		$max_after_checkout_bumps = SettingsManager::instance()->get_setting( 'max_after_checkout_bumps' );
 
 		// Store policies data massage
@@ -768,6 +770,8 @@ class AssetManager {
 	 * @throws Exception The exception.
 	 */
 	protected function get_side_cart_event_object(): array {
+		global $wp; // Read by is_checkout below to exclude the order pay and order received pages.
+
 		$suggested_products_heading = SettingsManager::instance()->get_setting( 'side_cart_suggested_products_heading' );
 
 		if ( empty( $suggested_products_heading ) ) {
@@ -843,19 +847,7 @@ class AssetManager {
 						'enable_order_bumps'               => SettingsManager::instance()->get_setting( 'enable_order_bumps' ) === 'yes',
 						'enable_order_bumps_on_side_cart'  => SettingsManager::instance()->get_setting( 'enable_order_bumps_on_side_cart' ) === 'yes',
 					],
-					'messages'        => [
-						'quantity_prompt_message'   => __( 'Please enter a new quantity:', 'checkout-wc' ),
-						'delete_confirm_message'    => __( 'Are you sure you want to remove this item from your cart?', 'checkout-wc' ),
-						'view_cart'                 => __( 'View cart', 'woocommerce' ),
-						'update_cart_item_variation_button' => __( 'Update', 'woocommerce' ),
-						'ok_button_label'           => __( 'Add to cart', 'woocommerce' ),
-						'cancel_button_label'       => __( 'Cancel', 'woocommerce' ),
-						'remove_item_label'         => __( 'Remove %s from cart', 'checkout-wc' ),
-						'proceed_to_checkout_label' => __( 'Proceed to checkout', 'woocommerce' ),
-						'continue_shopping_label'   => __( 'Continue shopping', 'woocommerce' ),
-						'edit_cart_variation_label' => __( 'Edit', 'woocommerce' ),
-						'view_product_label'        => __( 'View Product', 'checkout-wc' ),
-					],
+					'messages'        => self::get_side_cart_messages(),
 					'checkout_params' => [
 						'ajax_url'            => WC()->ajax_url(),
 						'wc_ajax_url'         => \WC_AJAX::get_endpoint( '%%endpoint%%' ),
@@ -872,6 +864,31 @@ class AssetManager {
 				]
 			)
 		);
+	}
+
+	/**
+	 * Gets the side cart's translated messages.
+	 *
+	 * @since 11.5.0
+	 *
+	 * @return array<string, string>
+	 */
+	protected static function get_side_cart_messages(): array {
+		return [
+			'quantity_prompt_message'           => __( 'Please enter a new quantity:', 'checkout-wc' ),
+			'delete_confirm_message'            => __( 'Are you sure you want to remove this item from your cart?', 'checkout-wc' ),
+			'view_cart'                         => __( 'View cart', 'woocommerce' ),
+			'update_cart_item_variation_button' => __( 'Update', 'woocommerce' ),
+			'ok_button_label'                   => __( 'Add to cart', 'woocommerce' ),
+			'cancel_button_label'               => __( 'Cancel', 'woocommerce' ),
+			/* translators: %s: Product name */
+			'remove_item_label'                 => __( 'Remove %s from cart', 'checkout-wc' ),
+			'proceed_to_checkout_label'         => __( 'Proceed to checkout', 'woocommerce' ),
+			'continue_shopping_label'           => __( 'Continue shopping', 'woocommerce' ),
+			'edit_cart_variation_label'         => __( 'Edit', 'woocommerce' ),
+			'view_product_label'                => __( 'View Product', 'checkout-wc' ),
+			'update_side_cart_error'            => __( 'We could not update your cart. Please try again.', 'checkout-wc' ),
+		];
 	}
 
 	/**

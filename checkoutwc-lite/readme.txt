@@ -3,8 +3,8 @@ Contributors: kestrelwp, clifgriffin
 Donate link: https://www.checkoutwc.com
 Tags: woocommerce checkout, checkout field editor, express checkout, one page checkout, cart abandonment
 Requires at least: 5.2
-Tested up to: 7.1.3
-Stable tag: 11.4.2
+Tested up to: 7.1.4
+Stable tag: 11.5.0
 Requires PHP: 7.4
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
@@ -236,6 +236,37 @@ Use your payment gateway's test mode to process test transactions without chargi
 == Changelog ==
 
 Free version updates are non-sequential due to the unified development branch we use with the premium versions.
+
+= Version 11.5.0 =
+
+- Feature - New Upgrade page in CheckoutWC Lite
+- Tweak - Script settings now require the unfiltered_html capability
+- Tweak - Enable Debug Log now records why express checkout buttons are shown or hidden, and ?cfw-debug logs it in the browser console
+- Tweak - Express checkout: buttons are now 48px tall
+- Tweak - Express checkout: buttons from payment plugins CheckoutWC has no specific support for now match the height of the other express buttons
+- Tweak - Start Here and Support are now one Dashboard page
+- Tweak - Upgrade links in the plugin now use consistent tracking parameters
+- Tweak - Locked-feature prompts no longer name old plan tiers
+- Tweak - Admin labels no longer name old plan tiers
+- Fix - CheckoutWC settings pages no longer scroll sideways on phones, and the header Save Changes button stays on screen
+- Fix - Checkout headings now use the text colors set in the Checkout Editor instead of always being dark gray
+- Fix - Popups from other plugins that use the browser's modal dialog now show on the checkout page instead of being hidden and leaving the page unclickable
+- Fix - The cfw_shipping_total_address_required_text filter now changes the "Enter your address" shipping message on the checkout page again
+- Fix - Settings import now only applies CheckoutWC settings
+- Fix - Settings screens now check permissions before saving
+- Fix - PHP warning when a CheckoutWC admin notice, such as the settings import notice, is shown without an image
+- Fix - Express checkout: buttons now line up in an even grid of equal-size buttons, whichever payment gateways add them, and the Link button is no longer cut off
+- Fix - Checkout: Continue no longer gets stuck when the postcode or email check can't reach the server
+- Fix - Checkout login: passwords containing characters such as % followed by two letters or numbers are now accepted
+- Fix - ActiveCampaign for WooCommerce 3.0: the marketing opt-in checkbox shows at checkout again instead of being hidden and submitted with its default value
+- Fix - Checkout: US ZIP+4 codes typed without a hyphen (e.g. 481671234) are now accepted
+- Fix - Amazon Pay: shoppers returning from an Amazon login no longer hit a fatal error on stores using Amazon Pay V2
+- Fix - Checkout: Place Order now waits for a cart update that's still running, so a slow update can no longer put the purchased items back in the cart
+- Fix - Upgrading from CheckoutWC Lite: abandoned cart recovery, A/B tests and pickup locations now work straight away after installing the paid plugin
+- Fix - Fatal error "Cannot redeclare class CheckoutWC\Composer\InstalledVersions" on sites where another plugin checks for Composer's InstalledVersions class
+- Dev - New cfw_js_parsley_messages JavaScript filter to add checkout field error messages for languages Parsley.js doesn't include, such as Icelandic or Vietnamese
+- Localization - Catalan checkout field errors now show in Catalan
+- Accessibility - Pressing Enter on checkout buttons such as coupon Apply now activates them
 
 = Version 11.4.2 =
 

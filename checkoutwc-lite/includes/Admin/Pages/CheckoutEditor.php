@@ -17,6 +17,15 @@ use function WordpressEnqueueChunksPlugin\get as cfwChunkedScriptsConfigGet;
 
 class CheckoutEditor extends PageAbstract {
 
+	/**
+	 * Option set once the Checkout Editor has been opened, which ticks the Dashboard's "Customize checkout" step.
+	 *
+	 * @since 11.5.0
+	 *
+	 * @var string
+	 */
+	public const OPENED_OPTION = 'cfw_checkout_editor_opened';
+
 	public function __construct() {
 		parent::__construct( __( 'Checkout Editor', 'checkout-wc' ), 'cfw_manage_pages', 'checkout-editor' );
 	}
@@ -88,6 +97,10 @@ class CheckoutEditor extends PageAbstract {
 
 	public function output_with_wrap() {
 		cfw_do_action( 'cfw_admin_output_page', $this->get_slug() );
+
+		if ( 'yes' !== get_option( self::OPENED_OPTION ) ) {
+			update_option( self::OPENED_OPTION, 'yes', false );
+		}
 		?>
 		<div id="cfw-checkout-editor"></div>
 		<?php
@@ -249,7 +262,7 @@ class CheckoutEditor extends PageAbstract {
 		$editor_settings[ $settings_manager->add_suffix( 'footer_text', [ $template_slug ] ) ] = $settings_manager->get_setting( 'footer_text', [ $template_slug ] );
 		$editor_settings['footer_text_editor_mode'] = $settings_manager->get_setting( 'footer_text_editor_mode' );
 
-		// Go Live (activation toggle, same setting as CheckoutWC > Start Here).
+		// Go Live (activation toggle, same setting as CheckoutWC > Dashboard).
 		$editor_settings['enable'] = $settings_manager->get_setting( 'enable' ) === 'yes';
 
 		// Express Checkout (same as CheckoutWC > Express Checkout page).
@@ -416,6 +429,8 @@ class CheckoutEditor extends PageAbstract {
 					'custom_html_blocks' => $slot_manager->get_custom_html_blocks(),
 					'custom_fields'      => CustomFieldManager::instance()->get_definitions(),
 					'available_items'  => $slot_manager->get_available_items(),
+					// Whether "Checkout and Side Cart" bumps also show in the side cart, for the locked bump's tooltip.
+					'side_cart_shows_bumps' => 'yes' === SettingsManager::instance()->get_setting( 'enable_side_cart' ) && 'yes' === SettingsManager::instance()->get_setting( 'enable_order_bumps_on_side_cart' ),
 				],
 				'preview_url'          => $preview_url,
 				'has_products'         => $has_products,

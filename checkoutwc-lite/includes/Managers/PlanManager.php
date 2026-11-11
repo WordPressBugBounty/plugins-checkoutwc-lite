@@ -2,6 +2,8 @@
 
 namespace Objectiv\Plugins\Checkout\Managers;
 
+use Objectiv\Plugins\Checkout\Admin\UpgradeUrl;
+
 /**
  * Determine whether the user has the right plan for a feature
  *
@@ -70,7 +72,39 @@ class PlanManager {
 	}
 
 	/**
+	 * Returns the locked-feature message for a feature that needs the given plan, or an empty string if the license already unlocks it.
+	 *
+	 * The message never names a plan: checkoutwc.com sells one plan with every feature, so plan levels are only used for gating.
+	 *
+	 * @since 11.5.0
+	 *
+	 * @param string $minimum_plan
+	 *
+	 * @return string
+	 */
+	public static function get_required_plan_message_html( string $minimum_plan = 'basic' ): string {
+		$minimum_level   = self::PLAN_HIERARCHY[ $minimum_plan ] ?? 0;
+		$user_plan_level = self::get_admin_plan_level();
+
+		if ( ! $minimum_level || $user_plan_level >= $minimum_level ) {
+			return '';
+		}
+
+		if ( 0 === $user_plan_level ) {
+			return __( 'Available with a CheckoutWC license.', 'checkout-wc' );
+		}
+
+		return sprintf(
+			/* translators: %s: CheckoutWC account page URL */
+			__( 'Available when you <a href="%s" target="_blank">upgrade your plan</a>.', 'checkout-wc' ),
+			esc_url( UpgradeUrl::get( 'locked-feature', UpgradeUrl::ACCOUNT_URL ) )
+		);
+	}
+
+	/**
 	 * Get English list of required plans
+	 *
+	 * @deprecated 11.5.0 Use get_required_plan_message_html(), which doesn't name plans.
 	 *
 	 * @param string $minimum_plan The minimum plan required.
 	 *

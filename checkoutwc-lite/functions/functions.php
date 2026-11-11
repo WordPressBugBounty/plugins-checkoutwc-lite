@@ -328,10 +328,54 @@ function cfw_get_posted_address_fields( string $fieldset = 'billing' ) : array {
 	return $address;
 }
 
+/**
+ * Makes each package's chosen shipping rate one of its available (filtered) rates, falling back to the first.
+ *
+ * Callers should recalculate cart totals when this returns true.
+ *
+ * @since 11.5.0
+ *
+ * @param array $packages shipping packages
+ * @return bool whether any chosen rate changed
+ */
+function cfw_ensure_valid_chosen_shipping_methods( array $packages ) : bool {
+	$chosen_methods = (array) WC()->session->get( 'chosen_shipping_methods' );
+	$changed        = false;
+
+	foreach ( $packages as $i => $package ) {
+		/** Documented in cfw_get_cart_shipping_data() */
+		$available_methods = apply_filters( 'cfw_available_shipping_methods', $package['rates'] ?? [], $package, $i ); // phpcs:ignore WooCommerce.Commenting.CommentHooks.MissingSinceComment
+		$chosen_method     = $chosen_methods[ $i ] ?? '';
+
+		foreach ( $available_methods as $available_method ) {
+			if ( $available_method->id === $chosen_method ) {
+				continue 2;
+			}
+		}
+
+		$first_method = reset( $available_methods );
+
+		if ( is_object( $first_method ) && method_exists( $first_method, 'get_id' ) ) {
+			$chosen_methods[ $i ] = $first_method->get_id();
+			$changed              = true;
+		}
+	}
+
+	if ( $changed ) {
+		WC()->session->set( 'chosen_shipping_methods', $chosen_methods );
+	}
+
+	return $changed;
+}
+
 function cfw_get_cart_shipping_data() : array {
 	$packages       = WC()->shipping()->get_packages();
 	$shipping_data  = [];
 	$package_number = 0;
+
+	if ( cfw_ensure_valid_chosen_shipping_methods( $packages ) ) {
+		WC()->cart->calculate_totals();
+	}
 
 	foreach ( $packages as $i => $package ) {
 		$product_names = [];
@@ -354,29 +398,8 @@ function cfw_get_cart_shipping_data() : array {
 		 * @param int $i The package index
 		 * @param array $rates The shipping rates
 		 */
-		$available_methods   = apply_filters( 'cfw_available_shipping_methods', $package['rates'], $package, $i );
-		$chosen_method       = WC()->session->chosen_shipping_methods[ $i ] ?? '';
-		$chosen_method_found = false;
-
-		foreach ( $available_methods as $available_method ) {
-			if ( $available_method->id === $chosen_method ) {
-				$chosen_method_found = true;
-				break;
-			}
-		}
-
-		if ( ! $chosen_method_found ) {
-			reset( $available_methods );
-			$first_method = current( $available_methods );
-
-			if ( is_object( $first_method ) && method_exists( $first_method, 'get_id' ) ) {
-				$chosen_method            = $first_method->get_id();
-				$new_chosen_methods       = WC()->session->get( 'chosen_shipping_methods' );
-				$new_chosen_methods[ $i ] = $chosen_method;
-				WC()->session->set( 'chosen_shipping_methods', $new_chosen_methods );
-				WC()->cart->calculate_totals();
-			}
-		}
+		$available_methods = apply_filters( 'cfw_available_shipping_methods', $package['rates'], $package, $i );
+		$chosen_method     = WC()->session->chosen_shipping_methods[ $i ] ?? '';
 
 		$package_details = implode( ', ', $product_names );
 		$package_name    = cfw_apply_filters(
@@ -777,14 +800,19 @@ function cfw_get_shipping_total() : string {
 
 	// When address is required but not provided, show appropriate message regardless of method availability
 	if ( $missing_address || ( ! $all_packages_have_available_shipping_methods && ! $has_calculated_shipping ) ) {
+		$address_required_text = is_checkout() ? __( 'Enter your address to view shipping options.', 'woocommerce' ) : esc_html__( 'Shipping costs are calculated during checkout.', 'woocommerce' );
+
 		/**
 		 * Filters shipping total address required text
+		 *
+		 * Applies on checkout and in the side cart; the default text depends on which one is showing.
 		 *
 		 * @param string $address_required_text Shipping total address required text
 		 *
 		 * @since 2.0.0
+		 * @since 11.5.0 Applies on the checkout page again, not only in the side cart.
 		 */
-		return sprintf( $small_format, ! is_checkout() ? apply_filters( 'cfw_shipping_total_address_required_text', esc_html__( 'Shipping costs are calculated during checkout.', 'woocommerce' ) ) : __( 'Enter your address to view shipping options.', 'woocommerce' ) );
+		return sprintf( $small_format, apply_filters( 'cfw_shipping_total_address_required_text', $address_required_text ) );
 	}
 
 	if ( ! $all_packages_have_available_shipping_methods ) {
@@ -1861,21 +1889,75 @@ function cfw_maybe_match_new_order_to_user_account( $order_id ) {
 	$user = $order->get_user();
 
 	if ( ! $user ) {
-		$user_data = get_user_by( 'email', $order->get_billing_email() );
+		$user_id = cfw_get_user_id_for_guest_order_email( (string) $order->get_billing_email() );
 
-		if ( ! empty( $user_data->ID ) ) {
+		if ( $user_id ) {
 			try {
-				$order->set_customer_id( $user_data->ID );
+				$order->set_customer_id( $user_id );
 				$order->save();
-				wc_get_logger()->info( "CheckoutWC: Matched guest order {$order_id} to existing user {$user_data->ID}", [ 'source' => 'checkout-wc' ] );
+				wc_get_logger()->info( "CheckoutWC: Matched guest order {$order_id} to existing user {$user_id}", [ 'source' => 'checkout-wc' ] );
 			} catch ( WC_Data_Exception $e ) {
 				/* translators: 1: order ID, 2: customer ID - Error message logged when order matching to customer fails */
-				wc_get_logger()->error( sprintf( __( 'CheckoutWC: Error matching %1$d to customer %2$d', 'checkout-wc' ), $order_id, $user_data->ID ), [ 'source' => 'checkout-wc' ] );
+				wc_get_logger()->error( sprintf( __( 'CheckoutWC: Error matching %1$d to customer %2$d', 'checkout-wc' ), $order_id, $user_id ), [ 'source' => 'checkout-wc' ] );
 			}
 		} else {
 			wc_get_logger()->info( "CheckoutWC: No existing user found for guest order {$order_id} with email {$order->get_billing_email()}", [ 'source' => 'checkout-wc' ] );
 		}
 	}
+}
+
+/**
+ * Match a checkout order to an existing account before core saves it.
+ *
+ * Covers orders WooCommerce resumes after a failed payment: they fire woocommerce_resume_order rather than woocommerce_new_order, and core resets the customer to the logged-out shopper (0) first.
+ *
+ * @param WC_Order|mixed $order the order being created or resumed
+ * @param array|mixed $data the posted checkout data
+ */
+function cfw_maybe_match_resumed_order_to_user_account( $order, $data = [] ) {
+	if ( ! $order instanceof WC_Order || $order->get_customer_id() ) {
+		return;
+	}
+
+	$email = (string) $order->get_billing_email();
+
+	if ( '' === $email && is_array( $data ) && isset( $data['billing_email'] ) ) {
+		$email = (string) $data['billing_email'];
+	}
+
+	$user_id  = cfw_get_user_id_for_guest_order_email( $email );
+	$order_id = $order->get_id();
+
+	if ( ! $user_id ) {
+		wc_get_logger()->info( "CheckoutWC: No existing user found for checkout order {$order_id}", [ 'source' => 'checkout-wc' ] );
+
+		return;
+	}
+
+	try {
+		// Core saves the order right after this hook.
+		$order->set_customer_id( $user_id );
+		wc_get_logger()->info( "CheckoutWC: Matched checkout order {$order_id} to existing user {$user_id}", [ 'source' => 'checkout-wc' ] );
+	} catch ( WC_Data_Exception $e ) {
+		/* translators: 1: order ID, 2: customer ID - Error message logged when order matching to customer fails */
+		wc_get_logger()->error( sprintf( __( 'CheckoutWC: Error matching %1$d to customer %2$d', 'checkout-wc' ), $order_id, $user_id ), [ 'source' => 'checkout-wc' ] );
+	}
+}
+
+/**
+ * Gets the ID of the account a guest order's email belongs to.
+ *
+ * @param string $email the billing email
+ * @return int the user ID, or 0 when no account uses the email
+ */
+function cfw_get_user_id_for_guest_order_email( string $email ) : int {
+	if ( ! is_email( $email ) ) {
+		return 0;
+	}
+
+	$user = get_user_by( 'email', $email );
+
+	return $user ? (int) $user->ID : 0;
 }
 
 /**
@@ -4298,7 +4380,7 @@ function cfw_get_order_bump_variable_product_form( WC_Product_Variable $variable
 		<form class="cfw-product-form-modal variations_form variable cfw-modal-order-bump-form container"
 				action="<?php echo esc_url( cfw_apply_filters( 'woocommerce_add_to_cart_form_action', $variable_product->get_permalink() ) ); ?>"
 				method="post" enctype='multipart/form-data'
-				data-product_id="<?php echo esc_html( absint( $variable_product->get_id() ) ); ?>"
+				data-product_id="<?php echo absint( $variable_product->get_id() ); ?>"
 				data-product_variations="<?php echo $variations_attr; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>">
 			<input type="hidden" name="cfw_ob_id"
 					value="<?php echo esc_attr( sanitize_key( $bump->get_id() ?? 0 ) ); // phpcs:ignore WordPress.Security.NonceVerification.Recommended ?>">

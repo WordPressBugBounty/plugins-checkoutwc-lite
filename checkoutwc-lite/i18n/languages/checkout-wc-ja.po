@@ -8,7 +8,7 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "POT-Creation-Date: 2025-07-25 09:22-0400\n"
-"PO-Revision-Date: 2026-10-26T17:15:41+00:00\n"
+"PO-Revision-Date: 2026-11-10T20:06:19+00:00\n"
 "Language: ja\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Poedit 3.6\n"
@@ -25,14 +25,15 @@ msgstr ""
 
 #. Name of the plugin
 #: checkout-for-woocommerce.php
+#: functions/premium-init.php:363
 #: includes/Compatibility/Plugins/CartFlows.php:62
 #: includes/Admin/Pages/PickupLocationsAdminFree.php:218
-#: includes/Admin/Pages/PageAbstract.php:106
-#: includes/Admin/Pages/General.php:353
+#: includes/Admin/Pages/PageAbstract.php:107
+#: includes/Admin/Pages/General.php:1012
 #: includes/Admin/Pages/Premium/PickupLocations.php:317
-#: includes/Admin/Pages/Premium/OrderBumps.php:456
+#: includes/Admin/Pages/Premium/OrderBumps.php:457
 #: includes/Admin/Pages/Premium/LocalPickupAdmin.php:165
-#: includes/Admin/Pages/Premium/AbandonedCartRecovery.php:243
+#: includes/Admin/Pages/Premium/AbandonedCartRecovery.php:239
 #: includes/Admin/Pages/Premium/ABTestingAdmin.php:641
 msgid "CheckoutWC"
 msgstr "CheckoutWC"
@@ -164,8 +165,8 @@ msgid "Postcode / ZIP"
 msgstr "郵便番号"
 
 #: includes/AddressFieldsAugmenter.php:458
-#: functions/functions.php:4224
-#: functions/functions.php:4225
+#: functions/functions.php:4306
+#: functions/functions.php:4307
 msgid "Email address"
 msgstr "メールアドレス"
 
@@ -273,402 +274,383 @@ msgstr "注文の概要を隠す"
 
 #: functions/template-functions.php:166
 #: includes/Admin/Pages/WooCommercePages.php:30
-#: client/ts/admin/Components/Forms/AdvancedScriptsSettingsForm.tsx:108
+#: client/ts/admin/Components/Forms/AdvancedScriptsSettingsForm.tsx:126
 msgid "Checkout"
 msgstr "チェックアウト"
 
-#: functions/template-functions.php:311
+#: functions/template-functions.php:330
 msgid "Express checkout"
 msgstr "エクスプレスチェックアウト"
 
-#: functions/template-functions.php:340
-#: functions/template-functions.php:354
-#: functions/template-functions.php:2002
-#: functions/template-functions.php:2339
+#: functions/template-functions.php:359
+#: functions/template-functions.php:373
+#: functions/template-functions.php:2021
+#: functions/template-functions.php:2358
 msgid "Information"
 msgstr "インフォメーション"
 
-#: functions/template-functions.php:376
-#: functions/template-functions.php:390
+#: functions/template-functions.php:395
+#: functions/template-functions.php:409
 msgid "Order review"
 msgstr "注文レビュー"
 
-#: functions/template-functions.php:458
+#: functions/template-functions.php:477
 msgid "Already have an account with us?"
 msgstr "既に私たちと口座をお持ちですか？"
 
-#: functions/template-functions.php:471
+#: functions/template-functions.php:490
 msgid "Log in."
 msgstr "ログインして."
 
-#: functions/template-functions.php:489
-#: includes/Managers/AssetManager.php:709
+#: functions/template-functions.php:508
+#: includes/Managers/AssetManager.php:711
 msgid "An account is already registered with your email address. <a href=\"#\" class=\"showlogin\">Please log in.</a>"
 msgstr "このメールアドレスですでにアカウントが登録されています。<a href=\"#\" class=\"showlogin\">ログインしてください。</a>"
 
-#: functions/template-functions.php:542
+#: functions/template-functions.php:561
 msgid "Account username"
 msgstr "アカウントユーザー名"
 
-#: functions/template-functions.php:544
+#: functions/template-functions.php:563
 msgid "Username"
 msgstr "ユーザー名"
 
-#: functions/template-functions.php:557
-#: functions/template-functions.php:559
+#: functions/template-functions.php:576
+#: functions/template-functions.php:578
 msgid "Create account password"
 msgstr "アカウントパスワードを作成"
 
 # %s: site name
-#: functions/template-functions.php:603
+#: functions/template-functions.php:622
 msgid "Create %s shopping account."
 msgstr "ショッピング アカウント %s を作成します。"
 
-#: functions/template-functions.php:619
+#: functions/template-functions.php:638
 msgid "If you do not have an account, we will create one for you."
 msgstr "あなたがアカウントを持っていない場合は、我々はあなたのために1つを作成します。"
 
 # %1 is the customer's name, %2 is their email address
-#: functions/template-functions.php:663
+#: functions/template-functions.php:682
 msgid "Welcome back, %1$s (%2$s)."
 msgstr "ようこそ、%1$s（%2$s）。"
 
-#: functions/template-functions.php:690
+#: functions/template-functions.php:709
 msgid "Log out."
 msgstr "ログアウト."
 
-#: functions/template-functions.php:745
-#: functions/template-functions.php:783
-#: functions/template-functions.php:2039
+#: functions/template-functions.php:764
+#: functions/template-functions.php:802
+#: functions/template-functions.php:2058
 msgid "Billing and Shipping address"
 msgstr "請求先および配送先住所"
 
-#: functions/template-functions.php:757
-#: functions/template-functions.php:795
-#: functions/template-functions.php:1201
-#: functions/template-functions.php:1215
-#: functions/template-functions.php:2067
+#: functions/template-functions.php:776
+#: functions/template-functions.php:814
+#: functions/template-functions.php:1220
+#: functions/template-functions.php:1234
+#: functions/template-functions.php:2086
 #: includes/Compatibility/Gateways/PayPalForWooCommerce.php:192
 msgid "Billing address"
 msgstr "お客様情報"
 
-#: functions/template-functions.php:768
-#: functions/template-functions.php:806
-#: functions/template-functions.php:2051
-#: includes/Managers/AssetManager.php:705
+#: functions/template-functions.php:787
+#: functions/template-functions.php:825
+#: functions/template-functions.php:2070
+#: includes/Managers/AssetManager.php:707
 msgid "Shipping address"
 msgstr "お届け先住所"
 
-#: functions/template-functions.php:944
+#: functions/template-functions.php:963
 #: templates/glass/functions.php:37
 #: templates/futurist/functions.php:16
 msgid "Your Cart"
 msgstr "カート"
 
-#: functions/template-functions.php:1047
-#: functions/template-functions.php:2083
-#: functions/template-functions.php:2361
-#: functions/functions.php:3478
+#: functions/template-functions.php:1066
+#: functions/template-functions.php:2102
+#: functions/template-functions.php:2380
+#: functions/functions.php:3560
 msgid "Shipping"
 msgstr "送料"
 
-#: functions/template-functions.php:1065
-#: functions/template-functions.php:2023
-#: functions/template-functions.php:2382
-#: functions/functions.php:1025
-#: functions/functions.php:1040
+#: functions/template-functions.php:1084
+#: functions/template-functions.php:2042
+#: functions/template-functions.php:2401
+#: functions/functions.php:1053
+#: functions/functions.php:1068
 #: client/ts/frontend/Components/ReviewPane/OrderReviewStepReviewPane.tsx:47
 msgid "Payment"
 msgstr "支払い"
 
-#: functions/template-functions.php:1065
-#: functions/template-functions.php:2382
+#: functions/template-functions.php:1084
+#: functions/template-functions.php:2401
 #: includes/Features/OrderReviewStep.php:74
 #: includes/Admin/Pages/TrustBadgesAdminFree.php:88
 #: client/ts/admin/Components/TrustBadgeFields.tsx:20
 msgid "Review"
 msgstr "レビュー"
 
-#: functions/template-functions.php:1084
-#: includes/Features/SideCart.php:1207
+#: functions/template-functions.php:1103
+#: includes/Features/SideCart.php:1227
 msgid "Free"
 msgstr "無料"
 
-#: functions/template-functions.php:1238
+#: functions/template-functions.php:1257
 msgid "Select the address that matches your card or payment method."
 msgstr "ご利用のカードまたはお支払い方法に合った住所を選択してください。"
 
 # %s is the order number
-#: functions/template-functions.php:1668
-#: functions/template-functions.php:1718
+#: functions/template-functions.php:1687
+#: functions/template-functions.php:1737
 msgid "Order %s"
 msgstr "注文%s"
 
-#: functions/template-functions.php:1673
+#: functions/template-functions.php:1692
 msgid "Payment failed"
 msgstr "支払いに失敗しました"
 
-#: functions/template-functions.php:1686
+#: functions/template-functions.php:1705
 msgid "Unfortunately your order cannot be processed as the originating bank/merchant has declined your transaction. Please attempt your purchase again."
 msgstr "申し訳ありませんが、ご注文は処理できませんでした。発行元の銀行または加盟店が取引を拒否しました。もう一度購入をお試しください。"
 
-#: functions/template-functions.php:1691
+#: functions/template-functions.php:1710
 msgid "Try payment again"
 msgstr "もう一度支払いを試す"
 
-#: functions/template-functions.php:1693
+#: functions/template-functions.php:1712
 msgid "My account"
 msgstr "マイアカウント"
 
 # %s is the billing first name
-#: functions/template-functions.php:1737
+#: functions/template-functions.php:1756
 msgid "Thank you %s!"
 msgstr "ありがとう、%s!"
 
-#: functions/template-functions.php:1856
+#: functions/template-functions.php:1875
 msgid "Order status"
 msgstr "注文ステータス"
 
-#: functions/template-functions.php:1903
+#: functions/template-functions.php:1922
 msgid "Order updates"
 msgstr "注文ステータスの更新"
 
-#: functions/template-functions.php:1914
+#: functions/template-functions.php:1933
 msgid "You’ll get shipping and delivery updates by email."
 msgstr "メールで配送と配送の最新情報を入手できます。"
 
-#: functions/template-functions.php:1932
+#: functions/template-functions.php:1951
 msgid "Downloads"
 msgstr "ダウンロード"
 
-#: functions/template-functions.php:1972
+#: functions/template-functions.php:1991
 msgid "&infin;"
 msgstr "&infin;"
 
-#: functions/template-functions.php:1978
+#: functions/template-functions.php:1997
 msgid "Never"
 msgstr "なし"
 
-#: functions/template-functions.php:2017
+#: functions/template-functions.php:2036
 msgid "Contact information"
 msgstr "連絡先情報"
 
-#: functions/template-functions.php:2044
-#: functions/template-functions.php:2056
-#: functions/template-functions.php:2073
+#: functions/template-functions.php:2063
+#: functions/template-functions.php:2075
+#: functions/template-functions.php:2092
 msgid "N/A"
 msgstr "該当なし"
 
-#: functions/template-functions.php:2113
-#: includes/Managers/AssetManager.php:855
+#: functions/template-functions.php:2132
+#: includes/Managers/AssetManager.php:887
 msgid "Continue shopping"
 msgstr "買い物を続ける"
 
-#: functions/template-functions.php:2143
+#: functions/template-functions.php:2162
 #: includes/Loaders/LoaderAbstract.php:111
 msgid "Pay for order"
 msgstr "注文の支払い"
 
-#: functions/template-functions.php:2161
-#: includes/Features/AbandonedCartRecovery.php:124
+#: functions/template-functions.php:2180
+#: includes/Features/AbandonedCartRecovery.php:172
 #: client/ts/admin/Components/acr/carts.tsx:64
 msgid "Email"
 msgstr "メール"
 
-#: functions/template-functions.php:2171
-#: functions/functions.php:4142
-#: functions/functions.php:4143
+#: functions/template-functions.php:2190
+#: functions/functions.php:4224
+#: functions/functions.php:4225
 msgid "Password"
 msgstr "パスワード"
 
-#: functions/template-functions.php:2187
-#: functions/functions.php:4182
+#: functions/template-functions.php:2206
+#: functions/functions.php:4264
 msgid "Login"
 msgstr "ログイン"
 
-#: functions/template-functions.php:2190
-#: functions/functions.php:4175
+#: functions/template-functions.php:2209
+#: functions/functions.php:4257
 msgid "Lost your password?"
 msgstr "パスワードをお忘れですか？"
 
-#: functions/template-functions.php:2479
+#: functions/template-functions.php:2498
 msgid "Your Cart is Empty"
 msgstr "カートは空です"
 
-#: functions/premium-init.php:346
+#: functions/premium-init.php:359
 msgid "CheckoutWC Templates Deactivated"
 msgstr "CheckoutWCテンプレートが無効化されました"
 
-# %1$s: "Settings" text, %2$s: "Start Here" text, %3$s: "Activate CheckoutWC Templates" text
-#: functions/premium-init.php:349
-msgid "Your license is valid and activated for this site but CheckoutWC is disabled for normal customers. To fix this, go to %1$s > %2$s and toggle \"%3$s\"."
-msgstr "このサイトのライセンスは有効でアクティブですが、通常の顧客向けにCheckoutWCは無効になっています。修正するには、%1$s > %2$s に移動し、「%3$s」を切り替えてください。"
+# %1$s: "CheckoutWC" text, %2$s: "Dashboard" text, %3$s: "Activate CheckoutWC Templates" text
+#: functions/premium-init.php:362
+msgid "Your license is valid and activated for this site, but CheckoutWC is off for customers. To turn it on, go to %1$s > %2$s and turn on \"%3$s\"."
+msgstr "このサイトではライセンスは有効でアクティベートされていますが、顧客向けにはCheckoutWCがオフになっています。オンにするには、%1$s > %2$s に移動し、\"%3$s\"をオンにしてください。"
 
-#: functions/premium-init.php:350
-#: includes/Admin/AdminPluginsPageManager.php:40
-#: includes/Admin/Pages/OrderBumpsAdminFree.php:25
-#: includes/Admin/Pages/LocalPickupAdminFree.php:27
-#: includes/Admin/Pages/AbandonedCartRecoveryAdminFree.php:27
-#: includes/Admin/Pages/Premium/OrderBumps.php:62
-#: includes/Admin/Pages/Premium/LocalPickupAdmin.php:28
-#: includes/Admin/Pages/Premium/AbandonedCartRecovery.php:34
-#: includes/Admin/Pages/Premium/ABTestingAdmin.php:56
-msgid "Settings"
-msgstr "設定"
-
-#: functions/premium-init.php:351
 #: functions/premium-init.php:364
-#: includes/Admin/Pages/General.php:24
-msgid "Start Here"
-msgstr "ここから開始"
+#: includes/Admin/Pages/General.php:48
+msgid "Dashboard"
+msgstr "ダッシュボード"
 
-#: functions/premium-init.php:352
-#: includes/Admin/Pages/General.php:207
+#: functions/premium-init.php:365
+#: includes/Admin/Pages/General.php:855
 msgid "Activate CheckoutWC Templates"
 msgstr "CheckoutWCテンプレートを有効化"
 
-#: functions/premium-init.php:359
+#: functions/premium-init.php:373
 msgid "CheckoutWC license invalid"
 msgstr "CheckoutWCのライセンスが無効です"
 
-# %1$s: URL to license settings page, %2$s: "Start Here" link text, %3$s: Pricing URL, %4$s: "buy a license" link text
-#: functions/premium-init.php:362
-msgid "Premium features are off because your license key is missing or invalid. Check your key on <a href=\"%1$s\">%2$s</a> or <a target=\"_blank\" href=\"%3$s\">%4$s</a>."
-msgstr "ライセンスキーがないか無効なため、プレミアム機能はオフになっています。<a href=\"%1$s\">%2$s</a> または <a target=\"_blank\" href=\"%3$s\">%4$s</a> でキーを確認してください。"
-
-#: functions/premium-init.php:366
-#: includes/Admin/Notices/InactiveLicenseNotice.php:15
-msgid "buy a license"
-msgstr "ライセンスを購入する"
-
-#: functions/premium-init.php:386
+#: functions/premium-init.php:393
 msgid "New Feature: Cloudflare Turnstile Bot Protection"
 msgstr "新機能：Cloudflare Turnstileボット保護"
 
 # 1: Cloudflare Turnstile name wrapped in strong tags, 2: Setup link
-#: functions/premium-init.php:389
+#: functions/premium-init.php:396
 msgid "CheckoutWC now supports %1$s - a privacy-first, CAPTCHA-free way to protect your checkout from bots and spam orders. %2$s"
 msgstr "CheckoutWCは現在 %1$s をサポートしています - プライバシー重視でCAPTCHA不要の方法で、チェックアウトをボットやスパム注文から保護します。 %2$s"
 
 # The name of the Cloudflare Turnstile service
-#: functions/premium-init.php:393
-#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:78
+#: functions/premium-init.php:400
+#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:99
 msgid "Cloudflare Turnstile"
 msgstr "Cloudflare Turnstile"
 
-#: functions/premium-init.php:399
+#: functions/premium-init.php:406
 msgid "Setup Cloudflare Turnstile now"
 msgstr "今すぐCloudflare Turnstileを設定する"
 
-#: functions/premium-init.php:404
+#: functions/premium-init.php:411
 msgid "Upgrade your plan now to access"
 msgstr "今すぐプランをアップグレードしてアクセス"
 
-#: functions/premium-init.php:417
+#: functions/premium-init.php:424
 msgid "Abandoned Cart Recovery Tracking Disabled"
 msgstr "放棄されたカート回復トラッキングが無効です"
 
 # %1$s: Gist URL, %2$s: "Learn More" link text
-#: functions/premium-init.php:420
+#: functions/premium-init.php:427
 msgid "You have enabled Abandoned Cart Recovery tracking, but you do not have any emails published. To track carts, you need to publish emails or use this dev filter: <a target=\"_blank\" href=\"%1$s\">%2$s</a>."
 msgstr "放棄されたカート回復トラッキングを有効にしましたが、公開されているメールがありません。カートを追跡するには、メールを公開するか、この開発用フィルターを使用してください：<a target=\"_blank\" href=\"%1$s\">%2$s</a>。"
 
-#: functions/premium-init.php:422
+#: functions/premium-init.php:429
 #: includes/Admin/Pages/AbandonedCartRecoveryAdminFree.php:82
 msgid "Learn More"
 msgstr "詳細はこちら"
 
-#: functions/premium-init.php:481
-msgid "Admin preview: your CheckoutWC license isn\\'t valid for this site, so premium features are off. Check your license here: WP Admin > CheckoutWC > Start Here."
-msgstr "管理画面プレビュー: このサイトではCheckoutWCのライセンスが有効ではないため、プレミアム機能はオフになっています。こちらでライセンスを確認してください: WP Admin > CheckoutWC > Start Here。"
+#: functions/premium-init.php:484
+msgid "Admin preview: CheckoutWC is off for customers. Check your license and turn CheckoutWC on in WP Admin > CheckoutWC > Dashboard."
+msgstr "管理画面プレビュー: CheckoutWCは顧客向けにオフになっています。ライセンスを確認し、WP管理画面 > CheckoutWC > ダッシュボードでCheckoutWCをオンにしてください。"
 
-#: functions/init.php:396
-#: functions/init.php:397
+#: functions/premium-init.php:488
+msgid "Admin preview: your CheckoutWC license isn\\'t valid for this site, so premium features are off. Check your license in WP Admin > CheckoutWC > Dashboard."
+msgstr "管理画面プレビュー: このサイトではCheckoutWCライセンスが有効ではないため、プレミアム機能はオフになっています。WP管理画面 > CheckoutWC > ダッシュボードでライセンスを確認してください。"
+
+#: functions/init.php:400
+#: functions/init.php:401
 msgid "Upgrade to Premium"
 msgstr "プレミアムにアップグレード"
 
-#: functions/init.php:759
+#: functions/init.php:763
 msgid "CheckoutWC: Footer"
 msgstr "CheckoutWC: フッター"
 
-#: functions/init.php:803
-#: functions/init.php:808
+#: functions/init.php:807
+#: functions/init.php:812
 msgid "Configure Avada to Work With CheckoutWC"
 msgstr "AvadaをCheckoutWCと連携させる設定"
 
 # %1$s: Guide URL, %2$s: Guide link text
-#: functions/init.php:806
+#: functions/init.php:810
 msgid "CheckoutWC and Avada work great together, but you will need to adjust a couple of theme settings. Please see our guide here: <a target=\"_blank\" href=\"%1$s\">%2$s</a>"
 msgstr "CheckoutWCとAvadaは相性が良いですが、いくつかのテーマ設定を調整する必要があります。ガイドはこちらをご覧ください：<a target=\"_blank\" href=\"%1$s\">%2$s</a>"
 
-#: functions/init.php:815
+#: functions/init.php:819
 msgid "Incompatible Plugin: Please Deactivate The Bluehost Plugin"
 msgstr "互換性のないプラグイン：Bluehostプラグインを無効化してください"
 
 # %1$s: Help URL, %2$s: Help link text
-#: functions/init.php:818
+#: functions/init.php:822
 msgid "CheckoutWC and Bluehost work great together, but you must deactivate The Bluehost Plugin to prevent problems. More info here: <a target=\"_blank\" href=\"%1$s\">%2$s</a>"
 msgstr "CheckoutWCとBluehostは相性が良いですが、問題を防ぐためにBluehostプラグインを無効化する必要があります。詳細はこちら：<a target=\"_blank\" href=\"%1$s\">%2$s</a>"
 
-#: functions/init.php:820
+#: functions/init.php:824
 msgid "How To Fix Problems With The Bluehost Plugin"
 msgstr "Bluehostプラグインの問題を修正する方法"
 
-#: functions/init.php:830
+#: functions/init.php:834
 msgid "Configure Divi to Work With CheckoutWC"
 msgstr "CheckoutWCで動作するようにDiviを設定する"
 
 # %1$s: Guide URL, %2$s: Guide link text
-#: functions/init.php:833
+#: functions/init.php:837
 msgid "CheckoutWC and Divi work great together, but you will need to adjust a couple of settings. Please see our guide here: <a target=\"_blank\" href=\"%1$s\">%2$s</a>"
 msgstr "CheckoutWCとDiviは非常に相性が良いですが、いくつかの設定を調整する必要があります。こちらのガイドをご覧ください: <a target=\"_blank\" href=\"%1$s\">%2$s</a>"
 
-#: functions/init.php:835
+#: functions/init.php:839
 msgid "How To Fix Styling Issues With Divi Theme"
 msgstr "Diviテーマのスタイリング問題を修正する方法"
 
-#: functions/init.php:842
+#: functions/init.php:846
 msgid "Configure Porto to Work With CheckoutWC"
 msgstr "CheckoutWCで動作するようにPortoを設定する"
 
 # %1$s: Guide URL, %2$s: Guide link text
-#: functions/init.php:845
+#: functions/init.php:849
 msgid "CheckoutWC and Porto work great together, but you will need to adjust a couple of settings. Please see our guide here: <a target=\"_blank\" href=\"%1$s\">%2$s</a>"
 msgstr "CheckoutWCとPortoは非常に相性が良いですが、いくつかの設定を調整する必要があります。こちらのガイドをご覧ください: <a target=\"_blank\" href=\"%1$s\">%2$s</a>"
 
-#: functions/init.php:847
+#: functions/init.php:851
 msgid "Fix Problems With Porto Theme"
 msgstr "Portoテーマの問題を修正する"
 
-#: functions/init.php:854
+#: functions/init.php:858
 msgid "Configure Astra Pro to Work With CheckoutWC"
 msgstr "CheckoutWCで動作するようにAstra Proを設定する"
 
 # %1$s: Info URL, %2$s: Info link text
-#: functions/init.php:857
+#: functions/init.php:861
 msgid "CheckoutWC and Astra Pro work great together, but there is one setting you should check. More info here: <a target=\"_blank\" href=\"%1$s\">%2$s</a>"
 msgstr "CheckoutWCとAstra Proは非常に相性が良いですが、確認すべき設定が1つあります。詳細はこちら: <a target=\"_blank\" href=\"%1$s\">%2$s</a>"
 
-#: functions/init.php:859
+#: functions/init.php:863
 msgid "Fix Layout Issues with Astra Pro"
 msgstr "Astra Proのレイアウト問題を修正する"
 
-#: functions/init.php:866
+#: functions/init.php:870
 msgid "Configure Woostify to Work With CheckoutWC"
 msgstr "CheckoutWCで動作するようにWoostifyを設定する"
 
 # %1$s: Info URL, %2$s: Info link text
-#: functions/init.php:869
+#: functions/init.php:873
 msgid "CheckoutWC and Woostify work great together, but there is one setting you should check. More info here: <a target=\"_blank\" href=\"%1$s\">%2$s</a>"
 msgstr "CheckoutWCとWoostifyは非常に相性が良いですが、確認すべき設定が1つあります。詳細はこちら: <a target=\"_blank\" href=\"%1$s\">%2$s</a>"
 
-#: functions/init.php:871
+#: functions/init.php:875
 msgid "Fix AJAX Add To Cart with Woostify and CheckoutWC Side Cart"
 msgstr "WoostifyとCheckoutWCサイドカートでのAJAXカート追加を修正する"
 
-#: functions/init.php:1066
-msgid "Admin Preview Mode: CheckoutWC templates are disabled for normal users. To fix this, please activate templates here: WP Admin > CheckoutWC > Start Here"
-msgstr "管理者プレビューモード: 通常ユーザー向けのCheckoutWCテンプレートは無効になっています。これを修正するには、こちらでテンプレートを有効にしてください: WP管理 > CheckoutWC > スタートはこちら"
+#: functions/init.php:1070
+msgid "Admin preview: CheckoutWC is off for customers. Turn it on in WP Admin > CheckoutWC > Dashboard."
+msgstr "管理画面プレビュー: CheckoutWCは顧客向けにオフになっています。WP管理画面 > CheckoutWC > ダッシュボードでオンにしてください。"
 
 #: functions/functions.php:230
 msgid "Ship to"
@@ -681,212 +663,214 @@ msgstr "お届け先"
 msgid "Address"
 msgstr "住所"
 
-#: functions/functions.php:625
+#: functions/functions.php:648
 msgid "Sorry, it seems that there are no available payment methods for your location. Please contact us if you require assistance or wish to make alternate arrangements."
 msgstr "申し訳ありませんが、お客様の地域で利用可能な支払い方法がないようです。サポートが必要な場合や別の手配をご希望の場合はお問い合わせください。"
 
-#: functions/functions.php:787
+#: functions/functions.php:803
+msgid "Enter your address to view shipping options."
+msgstr "配送オプションを表示するには、住所を入力してください。"
+
+#: functions/functions.php:803
 #: includes/Features/LocalPickup.php:1119
 msgid "Shipping costs are calculated during checkout."
 msgstr "送料はチェックアウト時に計算されます。"
 
-#: functions/functions.php:787
-msgid "Enter your address to view shipping options."
-msgstr "配送オプションを表示するには、住所を入力してください。"
-
-#: functions/functions.php:798
+#: functions/functions.php:826
 msgid "No shipping methods available"
 msgstr "発送方法はありません。"
 
-#: functions/functions.php:826
+#: functions/functions.php:854
 #: includes/Model/Bumps/BumpAbstract.php:895
 msgid "Free!"
 msgstr "無料！"
 
-#: functions/functions.php:962
-#: includes/Features/AbandonedCartRecovery.php:701
+#: functions/functions.php:990
+#: includes/Features/AbandonedCartRecovery.php:777
 msgid "Complete Order"
 msgstr "完全な注文"
 
-#: functions/functions.php:1066
+#: functions/functions.php:1094
 msgid "All transactions are secure and encrypted."
 msgstr "すべての取引は安全で暗号化されています。"
 
-#: functions/functions.php:1089
+#: functions/functions.php:1117
 msgid "Your order is free. No payment is required."
 msgstr "あなたの注文は無料です。支払いは必要ありません。"
 
-#: functions/functions.php:1133
+#: functions/functions.php:1161
 msgid "Same as shipping address"
 msgstr "配送先住所と同じ"
 
-#: functions/functions.php:1142
+#: functions/functions.php:1170
 msgid "Use a different billing address"
 msgstr "異なる請求先住所を使用します"
 
 # %1$s: Old order status, %2$s: New order status
-#: functions/functions.php:1274
+#: functions/functions.php:1302
 msgid "Order status changed from %1$s to %2$s."
 msgstr "注文状況が %1$s から %2$s に変更されました。"
 
-#: functions/functions.php:1299
+#: functions/functions.php:1327
 msgid "Tracking Number:"
 msgstr "追跡番号："
 
-#: functions/functions.php:1386
+#: functions/functions.php:1414
 msgid "Return to cart"
 msgstr "戻る"
 
-#: functions/functions.php:1423
+#: functions/functions.php:1451
 msgid "Continue to shipping"
 msgstr "出荷を続ける"
 
-#: functions/functions.php:1449
+#: functions/functions.php:1477
 msgid "Continue to payment"
 msgstr "支払いに進む"
 
-#: functions/functions.php:1449
-#: functions/functions.php:1489
+#: functions/functions.php:1477
+#: functions/functions.php:1517
 msgid "Review order"
 msgstr "注文の確認"
 
-#: functions/functions.php:1513
+#: functions/functions.php:1541
 msgid "Return to information"
 msgstr "情報に戻る"
 
-#: functions/functions.php:1533
+#: functions/functions.php:1561
 msgid "Return to shipping"
 msgstr "出荷に戻る"
 
-#: functions/functions.php:1553
+#: functions/functions.php:1581
 msgid "Return to payment"
 msgstr "支払いに戻る"
 
-#: functions/functions.php:1600
-#: includes/Features/SideCart.php:288
+#: functions/functions.php:1628
+#: includes/Features/SideCart.php:289
 msgid "Cart"
 msgstr "カート"
 
-#: functions/functions.php:1873
+#: functions/functions.php:1901
+#: functions/functions.php:1943
 msgid "CheckoutWC: Error matching %1$d to customer %2$d"
 msgstr "CheckoutWC: 顧客 %2$d に %1$d を照合する際のエラー"
 
-#: functions/functions.php:2171
+#: functions/functions.php:2253
 msgid "Or"
 msgstr "または"
 
-#: functions/functions.php:2256
+#: functions/functions.php:2338
 msgid "You can only have 1 %s in your cart."
 msgstr "カートには %s を1つだけ入れることができます。"
 
-#: functions/functions.php:2406
+#: functions/functions.php:2488
 #: client/ts/frontend/Components/CartItemQuantityControl.tsx:55
 msgid "Decrement"
 msgstr "デクリメント"
 
-#: functions/functions.php:2415
-#: includes/Managers/AssetManager.php:735
-#: includes/Managers/AssetManager.php:856
+#: functions/functions.php:2497
+#: includes/Managers/AssetManager.php:737
+#: includes/Managers/AssetManager.php:888
 #: includes/Features/LocalPickup.php:513
-#: includes/Features/AbandonedCartRecovery.php:128
+#: includes/Features/AbandonedCartRecovery.php:176
 #: includes/Features/ABTesting.php:150
 #: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:633
 #: client/ts/frontend/Components/CartItemQuantityControl.tsx:63
-#: client/ts/admin/Components/CheckoutEditor/slots/AssignedItem.tsx:336
+#: client/ts/admin/Components/CheckoutEditor/slots/AssignedItem.tsx:342
 msgid "Edit"
 msgstr "編集"
 
-#: functions/functions.php:2418
+#: functions/functions.php:2500
 #: client/ts/frontend/Components/CartItemQuantityControl.tsx:70
 msgid "Increment"
 msgstr "インクリメント"
 
-#: functions/functions.php:3132
+#: functions/functions.php:3214
 msgid "Unsubscribe"
 msgstr "退会"
 
-#: functions/functions.php:3504
-#: includes/Features/AbandonedCartRecovery.php:756
+#: functions/functions.php:3586
+#: includes/Features/AbandonedCartRecovery.php:832
 #: client/ts/admin/Components/acr/carts.tsx:74
 msgid "Subtotal"
 msgstr "小計"
 
-#: functions/functions.php:3508
+#: functions/functions.php:3590
 #: includes/Admin/Views/html-refund-offer.php:25
 msgid "Total"
 msgstr "合計"
 
-#: functions/functions.php:3561
+#: functions/functions.php:3643
 msgid "There are no shipping options available. Please ensure that your address has been entered correctly, or contact us if you need any help."
 msgstr "利用可能な配送オプションがありません。住所が正しく入力されているかご確認いただくか、ご不明な点があればお問い合わせください。"
 
-#: functions/functions.php:3915
+#: functions/functions.php:3997
 #: includes/Admin/Pages/AbandonedCartRecoveryAdminFree.php:73
 msgid "SendWP - Transactional Email"
 msgstr "SendWP - トランザクションメール"
 
-#: functions/functions.php:3920
+#: functions/functions.php:4002
 #: includes/Admin/Pages/AbandonedCartRecoveryAdminFree.php:77
 msgid "SendWP makes getting emails delivered as simple as a few clicks. So you can relax know those important emails are being delivered on time."
 msgstr "SendWPはメール配信を数クリックで簡単にします。重要なメールが時間通りに届くので安心できます。"
 
-#: functions/functions.php:3923
+#: functions/functions.php:4005
 #: includes/Admin/Pages/AbandonedCartRecoveryAdminFree.php:79
 msgid "Try SendWP now and <strong>get your first month for just $1.</strong>"
 msgstr "今すぐSendWPを試して、<strong>最初の1ヶ月をわずか1ドルでご利用ください。</strong>"
 
-#: functions/functions.php:3933
+#: functions/functions.php:4015
 #: includes/Admin/Pages/AbandonedCartRecoveryAdminFree.php:87
 msgid "Note: SendWP is optional. You can use any transactional email service you prefer."
 msgstr "注意: SendWPは任意です。お好きなトランザクションメールサービスをご利用いただけます。"
 
-#: functions/functions.php:3942
+#: functions/functions.php:4024
 #: includes/Admin/Pages/AbandonedCartRecoveryAdminFree.php:94
 msgid "Connect to SendWP"
 msgstr "SendWPに接続"
 
-#: functions/functions.php:4090
+#: functions/functions.php:4172
+#: includes/Admin/Pages/General.php:214
 msgid "Welcome back"
 msgstr "ようこそ"
 
-#: functions/functions.php:4104
+#: functions/functions.php:4186
 msgid "It looks like you already have an account. Please enter your login details below."
 msgstr "すでにアカウントをお持ちのようです。以下にログイン情報を入力してください。"
 
-#: functions/functions.php:4118
+#: functions/functions.php:4200
 msgid "If you have shopped with us before, please enter your login details below."
 msgstr "以前に当店でお買い物をされたことがある方は、以下にログイン情報を入力してください。"
 
-#: functions/functions.php:4128
-#: functions/functions.php:4129
+#: functions/functions.php:4210
+#: functions/functions.php:4211
 msgid "Username or email address"
 msgstr "ユーザー名またはメールアドレス"
 
-#: functions/functions.php:4163
+#: functions/functions.php:4245
 msgid "Remember me"
 msgstr "ログイン状態を保持する"
 
-#: functions/functions.php:4194
+#: functions/functions.php:4276
 msgid "Or continue as guest"
 msgstr "またはゲストとして継続"
 
-#: functions/functions.php:4214
+#: functions/functions.php:4296
 msgid "Lost your password? Please enter your username or email address. You will receive a link to create a new password via email."
 msgstr "パスワードをお忘れですか？ユーザー名またはメールアドレスを入力してください。メールで新しいパスワード作成用のリンクが送信されます。"
 
-#: functions/functions.php:4237
+#: functions/functions.php:4319
 msgid "Reset password"
 msgstr "パスワードをリセットする"
 
-#: functions/functions.php:4252
+#: functions/functions.php:4334
 #: includes/API/OrderBumpPreviewAPI.php:57
 #: includes/API/OrderBumpOfferFormPreviewAPI.php:46
 #: includes/API/GetVariationFormAPI.php:33
 msgid "Product not found"
 msgstr "商品が見つかりません"
 
-#: functions/functions.php:4268
-#: functions/functions.php:4426
+#: functions/functions.php:4350
+#: functions/functions.php:4508
 #: includes/API/PostPurchaseBumpProductFormAPI.php:24
 msgid "No thanks"
 msgstr "いいえ、結構です"
@@ -911,6 +895,22 @@ msgstr "CheckoutWC: 登録されていないABテストは有効化できませ�
 #: templates/glass/functions.php:80
 msgid "Accent Color"
 msgstr "アクセントカラー"
+
+#: lib/sendwp-sdk/sendwp-init.php:27
+msgid "Security failed to check sendwp_install_nonce"
+msgstr "sendwp_install_nonceのセキュリティチェックに失敗しました"
+
+#: lib/sendwp-sdk/sendwp-init.php:28
+msgid "Ask an administrator for install_plugins capability"
+msgstr "インストールプラグインの権限については管理者にお問い合わせください"
+
+#: lib/sendwp-sdk/sendwp-init.php:29
+msgid "SendWP is already connected."
+msgstr "SendWPはすでに接続されています。"
+
+#: lib/sendwp-sdk/remote-install.php:84
+msgid "Something went wrong. SendWP was not installed correctly."
+msgstr "問題が発生しました。SendWPは正しくインストールされませんでした。"
 
 #: includes/Stats/StatCollection.php:193
 msgid "Once Weekly"
@@ -980,67 +980,67 @@ msgstr "ステータス"
 msgid "Refresh License Info"
 msgstr "ライセンス情報を更新"
 
-#: includes/Managers/UpdatesManager.php:551
+#: includes/Managers/UpdatesManager.php:552
 msgid "Please enter your license key."
 msgstr "ライセンスキーを入力してください。"
 
-#: includes/Managers/UpdatesManager.php:554
-#: includes/Managers/UpdatesManager.php:562
+#: includes/Managers/UpdatesManager.php:555
+#: includes/Managers/UpdatesManager.php:563
 msgid "Activate Site"
 msgstr "サイトを有効化"
 
-#: includes/Managers/UpdatesManager.php:557
+#: includes/Managers/UpdatesManager.php:558
 msgid "Deactivate Site"
 msgstr "サイトを無効化"
 
 # Debug error message logged when license check reaches unexpected state
-#: includes/Managers/UpdatesManager.php:743
+#: includes/Managers/UpdatesManager.php:744
 msgid "License Check Error: You should not be able to get here. I am kind of freaked out."
 msgstr "ライセンスチェックエラー: ここに来るべきではありません。少し動揺しています。"
 
 # %1$d: failure count, %2$d: max failures, %3$s: time since last failure
-#: includes/Managers/UpdatesManager.php:1002
+#: includes/Managers/UpdatesManager.php:1003
 msgid "Unable to verify CheckoutWC license (%1$d/%2$d attempts failed). Using cached license data. Last attempt: %3$s ago."
 msgstr "CheckoutWCライセンスを確認できません (%1$d/%2$d 回の試行に失敗しました)。キャッシュされたライセンスデータを使用しています。最後の試行: %3$s 前。"
 
-#: includes/Managers/UpdatesManager.php:1025
+#: includes/Managers/UpdatesManager.php:1026
 msgid "%s license activation was not successful. Please check your key status below for more information."
 msgstr "%s ライセンスの有効化に失敗しました。詳細については、以下のキーの状態を確認してください。"
 
-#: includes/Managers/UpdatesManager.php:1043
+#: includes/Managers/UpdatesManager.php:1044
 msgid "%s license successfully activated."
 msgstr "%s ライセンスが正常に有効化されました。"
 
-#: includes/Managers/UpdatesManager.php:1061
+#: includes/Managers/UpdatesManager.php:1062
 msgid "%s license deactivation failed. Please try again, or contact support."
 msgstr "%s ライセンスの無効化に失敗しました。再試行するか、サポートにお問い合わせください。"
 
-#: includes/Managers/UpdatesManager.php:1079
+#: includes/Managers/UpdatesManager.php:1080
 msgid "%s license deactivated successfully."
 msgstr "%s ライセンスが正常に無効化されました。"
 
-#: includes/Managers/UpdatesManager.php:1097
+#: includes/Managers/UpdatesManager.php:1098
 msgid "%s license settings saved successfully."
 msgstr "%s ライセンス設定が正常に保存されました。"
 
-#: includes/Managers/UpdatesManager.php:1115
+#: includes/Managers/UpdatesManager.php:1116
 msgid "%1$s license activation failed: %2$s"
 msgstr "%1$s ライセンスの有効化に失敗しました: %2$s"
 
-#: includes/Managers/UpdatesManager.php:1133
+#: includes/Managers/UpdatesManager.php:1134
 msgid "%s license activation failed: Unable to connect to license server. Please check your internet connection or try again later."
 msgstr "%s ライセンスの有効化に失敗しました: ライセンスサーバーに接続できません。インターネット接続を確認するか、後でもう一度お試しください。"
 
-#: includes/Managers/UpdatesManager.php:1151
+#: includes/Managers/UpdatesManager.php:1152
 msgid "%s: License deactivated locally. The license server could not be reached, but the license has been deactivated on this site."
 msgstr "%s: ライセンスはローカルで無効化されました。ライセンスサーバーには接続できませんでしたが、このサイト上でライセンスは無効化されています。"
 
 # %1$d: failure count, %2$d: max failures, %3$s: time since last failure
-#: includes/Managers/UpdatesManager.php:1421
+#: includes/Managers/UpdatesManager.php:1422
 msgid "Unable to verify license online (%1$d/%2$d attempts failed). Using cached license data. Last attempt: %3$s ago."
 msgstr "オンラインでライセンスを確認できません (%1$d/%2$d 回の試行に失敗しました)。キャッシュされたライセンスデータを使用しています。最後の試行: %3$s 前。"
 
-#: includes/Managers/UpdatesManager.php:1427
+#: includes/Managers/UpdatesManager.php:1428
 msgid "License verified successfully."
 msgstr "ライセンスが正常に確認されました。"
 
@@ -1071,7 +1071,7 @@ msgstr "配送方法の後"
 
 #: includes/Managers/SlotManager.php:108
 #: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:164
-#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:158
+#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:179
 msgid "After Payment Methods"
 msgstr "支払い方法の後"
 
@@ -1137,22 +1137,31 @@ msgid "After Cart Summary Items (Checkout and Side Cart)"
 msgstr "カート合計アイテムの後（チェックアウトとサイドカート）"
 
 #: includes/Managers/SlotManager.php:182
-#: includes/Admin/Pages/Premium/OrderBumps.php:1239
+#: includes/Admin/Pages/Premium/OrderBumps.php:1383
 #: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:178
 msgid "After Cart Summary Items (Side Cart Only)"
 msgstr "カート合計アイテムの後（サイドカートのみ）"
 
 #: includes/Managers/SlotManager.php:183
-#: includes/Admin/Pages/Premium/OrderBumps.php:1240
+#: includes/Admin/Pages/Premium/OrderBumps.php:1384
 #: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:179
 msgid "Place Order Click (Checkout)"
 msgstr "注文確定クリック（チェックアウト）"
 
 #: includes/Managers/SlotManager.php:184
-#: includes/Admin/Pages/Premium/OrderBumps.php:1241
+#: includes/Admin/Pages/Premium/OrderBumps.php:1385
 #: client/ts/admin/Components/Metaboxes/OrderBumpsDisplayLocation.tsx:180
 msgid "Post Purchase One-Click (Thank You)"
 msgstr "購入後ワンクリック（サンキュー）"
+
+#: includes/Managers/PlanManager.php:94
+msgid "Available with a CheckoutWC license."
+msgstr "CheckoutWCライセンスで利用できます。"
+
+# %s: CheckoutWC account page URL
+#: includes/Managers/PlanManager.php:99
+msgid "Available when you <a href=\"%s\" target=\"_blank\">upgrade your plan</a>."
+msgstr "プランを<a href=\"%s\" target=\"_blank\">アップグレード</a>すると利用できます。"
 
 #: includes/Managers/BadgeIconRegistry.php:66
 msgid "Payment methods"
@@ -1191,7 +1200,7 @@ msgid "90-day money back guarantee"
 msgstr "90日間返金保証"
 
 #: includes/Managers/BadgeIconRegistry.php:104
-#: includes/Features/SideCart.php:1583
+#: includes/Features/SideCart.php:1673
 #: client/ts/admin/Components/FreeShippingTierRow.tsx:113
 msgid "Free shipping"
 msgstr "送料無料"
@@ -1225,112 +1234,117 @@ msgstr "プロモコード"
 msgid "Enter Promo Code"
 msgstr "プロモコードを入力してください"
 
-#: includes/Managers/AssetManager.php:694
+#: includes/Managers/AssetManager.php:696
 msgid "Please enter a valid phone number."
 msgstr "有効な電話番号を入力してください。"
 
-#: includes/Managers/AssetManager.php:703
+#: includes/Managers/AssetManager.php:705
 msgid "Please enter your first and last name."
 msgstr "姓と名を入力してください。"
 
-#: includes/Managers/AssetManager.php:704
+#: includes/Managers/AssetManager.php:706
 msgid "Please enter a name, not an email address."
 msgstr "メールアドレスではなく、名前を入力してください。"
 
-#: includes/Managers/AssetManager.php:706
-#: includes/Managers/AssetManager.php:847
+#: includes/Managers/AssetManager.php:708
+#: includes/Managers/AssetManager.php:878
 msgid "Please enter a new quantity:"
 msgstr "新しい数量を入力してください："
 
-#: includes/Managers/AssetManager.php:707
+#: includes/Managers/AssetManager.php:709
 msgid "3-digit security code usually found on the back of your card. American Express cards have a 4-digit code located on the front."
 msgstr "通常、カードの裏面に記載されている3桁のセキュリティコード。アメリカン・エキスプレス・カードには4桁のコードが前面に記載されています。"
 
-#: includes/Managers/AssetManager.php:708
-#: includes/Managers/AssetManager.php:848
+#: includes/Managers/AssetManager.php:710
+#: includes/Managers/AssetManager.php:879
 msgid "Are you sure you want to remove this item from your cart?"
 msgstr "カートからこのアイテムを削除してもよろしいですか？"
 
 # %s: Field name
 # %s: field label
-#: includes/Managers/AssetManager.php:711
+#: includes/Managers/AssetManager.php:713
 #: includes/Features/CustomFields.php:238
 msgid "%s is a required field."
 msgstr "%s は必須項目です。"
 
-#: includes/Managers/AssetManager.php:712
+#: includes/Managers/AssetManager.php:714
 msgid "There was a problem checking out. Please try again. If the problem persists, please get in touch with us so we can assist."
 msgstr "チェックアウト中に問題が発生しました。もう一度お試しください。問題が続く場合は、サポートまでご連絡ください。"
 
-#: includes/Managers/AssetManager.php:713
+#: includes/Managers/AssetManager.php:715
 msgid "Please enter a valid postcode / ZIP."
 msgstr "有効な郵便番号を入力してください。"
 
-#: includes/Managers/AssetManager.php:714
+#: includes/Managers/AssetManager.php:716
 #: includes/Features/LocalPickup.php:639
 msgid "Pickup"
 msgstr "ピックアップ"
 
-#: includes/Managers/AssetManager.php:715
+#: includes/Managers/AssetManager.php:717
 msgid "Continue to pickup"
 msgstr "引き続きピックアップ"
 
-#: includes/Managers/AssetManager.php:716
-#: includes/Managers/AssetManager.php:850
+#: includes/Managers/AssetManager.php:718
+#: includes/Managers/AssetManager.php:881
 msgid "Update"
 msgstr "更新"
 
-#: includes/Managers/AssetManager.php:717
-#: includes/Managers/AssetManager.php:851
-#: includes/API/GetVariationFormAPI.php:150
+#: includes/Managers/AssetManager.php:719
+#: includes/Managers/AssetManager.php:882
+#: includes/API/GetVariationFormAPI.php:151
 msgid "Add to cart"
 msgstr "カートに追加"
 
-#: includes/Managers/AssetManager.php:718
-#: includes/Managers/AssetManager.php:852
+#: includes/Managers/AssetManager.php:720
+#: includes/Managers/AssetManager.php:883
 #: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:2383
 #: client/ts/admin/Components/CheckoutEditor/slots/UnsavedChangesDialog.tsx:51
 #: client/ts/admin/Components/CheckoutEditor/slots/TrustBadgeEditor.tsx:309
-#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:696
-#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:754
-#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:699
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:738
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:796
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:713
 #: client/ts/admin/Components/CheckoutEditor/slots/CustomHtmlEditor.tsx:76
 #: client/ts/admin/Components/CheckoutEditor/slots/CustomFieldEditor.tsx:607
 msgid "Cancel"
 msgstr "キャンセル"
 
-#: includes/Managers/AssetManager.php:726
+#: includes/Managers/AssetManager.php:728
 msgid "Start with post/zip code or street"
 msgstr "郵便番号、郵便番号、または郵便番号から始めてください。"
 
-#: includes/Managers/AssetManager.php:734
+#: includes/Managers/AssetManager.php:736
 msgid "Shipping method"
 msgstr "発送方法"
 
-#: includes/Managers/AssetManager.php:748
+#: includes/Managers/AssetManager.php:750
 msgid "Error processing checkout. Please try again."
 msgstr "チェックアウト処理中にエラーが発生しました。もう一度お試しください。"
 
-#: includes/Managers/AssetManager.php:774
+#: includes/Managers/AssetManager.php:778
 msgid "You may also like&hellip;"
 msgstr "こちらもおすすめ&hellip;"
 
-#: includes/Managers/AssetManager.php:849
+#: includes/Managers/AssetManager.php:880
 #: client/ts/frontend/Components/SideCartFloatingButton.tsx:26
 msgid "View cart"
 msgstr "カートを見る"
 
-#: includes/Managers/AssetManager.php:853
+# %s: Product name
+#: includes/Managers/AssetManager.php:885
 msgid "Remove %s from cart"
 msgstr "カートから%sを削除"
 
-#: includes/Managers/AssetManager.php:854
+#: includes/Managers/AssetManager.php:886
 msgid "Proceed to checkout"
 msgstr "お支払いへ進む"
 
-#: includes/Managers/AssetManager.php:857
+#: includes/Managers/AssetManager.php:889
 msgid "View Product"
 msgstr "商品を見る"
+
+#: includes/Managers/AssetManager.php:890
+msgid "We could not update your cart. Please try again."
+msgstr "カートを更新できませんでした。もう一度お試しください。"
 
 #: includes/Loaders/LoaderAbstract.php:134
 #: includes/Loaders/LoaderAbstract.php:244
@@ -1387,62 +1401,82 @@ msgstr "認証に失敗しました。もう一度お試しください。"
 msgid "We have detected that Simple Cloudflare Turnstile is active. To enable CheckoutWC Turnstile functionality, please deactivate Simple Cloudflare Turnstile."
 msgstr "Simple Cloudflare Turnstileが有効になっていることを検出しました。CheckoutWCのTurnstile機能を有効にするには、Simple Cloudflare Turnstileを無効にしてください。"
 
+#: includes/Features/StarterBump.php:96
+msgid "%s: add-on at checkout"
+msgstr "%s: チェックアウト時の追加商品"
+
+#: includes/Features/StarterBump.php:97
+msgid "Add-on at checkout"
+msgstr "チェックアウト時の追加商品"
+
+#: includes/Features/StarterBump.php:120
+msgid "Add %s to your order"
+msgstr "ご注文に%sを追加"
+
+#: includes/Features/StarterBump.php:121
+msgid "A popular pick with other customers"
+msgstr "他のお客様に人気の選択肢"
+
+#: includes/Features/StarterBump.php:122
+msgid "Add it now and we\\'ll include it with this order."
+msgstr "今すぐ追加すると、この注文に含めます。"
+
 # %s is a comma-separated list of product names
-#: includes/Features/SideCart.php:795
+#: includes/Features/SideCart.php:815
 msgid "These rewards-bar gift products can\\'t be auto-added because they are not simple products — please choose a simple product instead: %s"
 msgstr "これらのリワードバーのギフト商品はシンプル商品ではないため自動追加できません — 代わりにシンプル商品を選択してください: %s"
 
 # %s is the gift product name
-#: includes/Features/SideCart.php:1273
+#: includes/Features/SideCart.php:1293
 msgid "Auto-managed free gift: %s — created by the Side Cart rewards bar, do not edit"
 msgstr "自動管理された無料ギフト: %s — サイドカートのリワードバーによって作成されました。編集しないでください"
 
-#: includes/Features/SideCart.php:1508
-#: includes/Features/SideCart.php:1565
+#: includes/Features/SideCart.php:1591
+#: includes/Features/SideCart.php:1655
 #: client/ts/admin/Components/FreeShippingTierRow.tsx:87
 msgid "Congrats! You get free standard shipping."
 msgstr "おめでとうございます。標準で送料が無料になります。"
 
-#: includes/Features/SideCart.php:1522
+#: includes/Features/SideCart.php:1607
 msgid "You\\'re %s away from free shipping!"
 msgstr "あと%sで送料無料です！"
 
-#: includes/Features/SideCart.php:1566
+#: includes/Features/SideCart.php:1656
 #: client/ts/admin/Components/FreeShippingTierRow.tsx:88
 #: client/ts/admin/Components/FreeShippingTierRow.tsx:89
 msgid "Reward unlocked!"
 msgstr "リワードが解除されました！"
 
-#: includes/Features/SideCart.php:1574
+#: includes/Features/SideCart.php:1664
 #: client/ts/admin/Components/FreeShippingTierRow.tsx:94
 msgid "You're %s away from free shipping!"
 msgstr "送料無料まであと%sですね。"
 
-#: includes/Features/SideCart.php:1576
+#: includes/Features/SideCart.php:1666
 #: client/ts/admin/Components/FreeShippingTierRow.tsx:96
 #: client/ts/admin/Components/FreeShippingTierRow.tsx:98
 msgid "You're %s away from your next reward!"
 msgstr "次のリワードまであと %s です！"
 
-#: includes/Features/SideCart.php:1584
+#: includes/Features/SideCart.php:1674
 #: client/ts/frontend/Components/CheckoutCartTableRow.tsx:48
 #: client/ts/frontend/Components/CartTableRow.tsx:48
 #: client/ts/admin/Components/FreeShippingTierRow.tsx:114
 msgid "Free gift"
 msgstr "無料ギフト"
 
-#: includes/Features/SideCart.php:1585
+#: includes/Features/SideCart.php:1675
 #: client/ts/admin/Components/FreeShippingTierRow.tsx:170
 msgid "Reward"
 msgstr "リワード"
 
-#: includes/Features/SideCart.php:1710
+#: includes/Features/SideCart.php:1821
 #: includes/Admin/WooCommerceAdminScreenAugmenter.php:24
 #: includes/Admin/WooCommerceAdminScreenAugmenter.php:45
 msgid "CheckoutWC:"
 msgstr "CheckoutWC:"
 
-#: includes/Features/SideCart.php:1711
+#: includes/Features/SideCart.php:1822
 msgid "Settings marked with asterisks (**) may be overridden based on your Side Cart settings. (CheckoutWC > Side Cart)"
 msgstr "アスタリスク（**）付きの設定は、サイドカートの設定により上書きされる場合があります。（CheckoutWC > サイドカート）"
 
@@ -1604,85 +1638,85 @@ msgstr "%1$sは%2$s文字以下でなければなりません。"
 msgid "Checkout is not available whilst your cart is empty."
 msgstr "カートが空のため、チェックアウトは利用できません。"
 
-#: includes/Features/AbandonedCartRecovery.php:102
+#: includes/Features/AbandonedCartRecovery.php:150
 msgid "You have been unsubscribed from our cart reminder emails."
 msgstr "カートリマインダーメールの配信が停止されています。"
 
-#: includes/Features/AbandonedCartRecovery.php:123
-#: includes/Features/AbandonedCartRecovery.php:125
+#: includes/Features/AbandonedCartRecovery.php:171
+#: includes/Features/AbandonedCartRecovery.php:173
 #: includes/Admin/Pages/AbandonedCartRecoveryAdminFree.php:27
 #: includes/Admin/Pages/Premium/AbandonedCartRecovery.php:36
 msgid "Emails"
 msgstr "メール"
 
-#: includes/Features/AbandonedCartRecovery.php:126
+#: includes/Features/AbandonedCartRecovery.php:174
 msgid "Add Email"
 msgstr "メールを追加"
 
-#: includes/Features/AbandonedCartRecovery.php:127
+#: includes/Features/AbandonedCartRecovery.php:175
 msgid "Add New Email"
 msgstr "新しいメールを追加"
 
-#: includes/Features/AbandonedCartRecovery.php:129
+#: includes/Features/AbandonedCartRecovery.php:177
 msgid "Edit Email"
 msgstr "メールを編集"
 
-#: includes/Features/AbandonedCartRecovery.php:130
+#: includes/Features/AbandonedCartRecovery.php:178
 msgid "New Email"
 msgstr "新しいメール"
 
-#: includes/Features/AbandonedCartRecovery.php:131
+#: includes/Features/AbandonedCartRecovery.php:179
 msgid "View Emails"
 msgstr "メールを見る"
 
-#: includes/Features/AbandonedCartRecovery.php:132
+#: includes/Features/AbandonedCartRecovery.php:180
 msgid "View Email"
 msgstr "メールを見る"
 
-#: includes/Features/AbandonedCartRecovery.php:133
+#: includes/Features/AbandonedCartRecovery.php:181
 msgid "Search Emails"
 msgstr "メールを検索"
 
-#: includes/Features/AbandonedCartRecovery.php:134
+#: includes/Features/AbandonedCartRecovery.php:182
 msgid "No Email found"
 msgstr "メールが見つかりません"
 
-#: includes/Features/AbandonedCartRecovery.php:135
+#: includes/Features/AbandonedCartRecovery.php:183
 msgid "No Emails found in trash"
 msgstr "ゴミ箱にメールはありません"
 
-#: includes/Features/AbandonedCartRecovery.php:140
+#: includes/Features/AbandonedCartRecovery.php:188
 msgid "This is where you can add new Abandoned Cart Recovery Emails."
 msgstr "ここで新しい放棄カート回復メールを追加できます。"
 
-#: includes/Features/AbandonedCartRecovery.php:744
+#: includes/Features/AbandonedCartRecovery.php:820
 msgid "Item"
 msgstr "アイテム"
 
-#: includes/Features/AbandonedCartRecovery.php:747
+#: includes/Features/AbandonedCartRecovery.php:823
 #: includes/Admin/Views/html-refund-offer.php:23
 #: client/ts/admin/Components/acr/carts.tsx:60
 msgid "Name"
 msgstr "名前"
 
-#: includes/Features/AbandonedCartRecovery.php:750
+#: includes/Features/AbandonedCartRecovery.php:826
 msgid "Quantity"
 msgstr "数量"
 
-#: includes/Features/AbandonedCartRecovery.php:753
+#: includes/Features/AbandonedCartRecovery.php:829
 msgid "Price"
 msgstr "価格"
 
-#: includes/Features/AbandonedCartRecovery.php:873
-#: includes/Features/AbandonedCartRecovery.php:937
+#: includes/Features/AbandonedCartRecovery.php:949
+#: includes/Features/AbandonedCartRecovery.php:1013
 msgid "This order was abandoned and subsequently recovered."
 msgstr "この注文は放棄され、その後、回収されました。"
 
-#: includes/Features/AbandonedCartRecovery.php:1071
+#: includes/Features/AbandonedCartRecovery.php:1147
 msgid "CheckoutWC ACR only"
 msgstr "CheckoutWC ACRのみ"
 
-#: includes/Features/AbandonedCartRecovery.php:1072
+#: includes/Features/AbandonedCartRecovery.php:1148
 msgid "Check this box if the coupon can only be used by customers with an abandoned cart."
 msgstr "クーポンが放棄されたカートを持つ顧客のみ使用できる場合は、このボックスをチェックしてください。"
 
@@ -1692,7 +1726,7 @@ msgid "A/B Tests"
 msgstr "A/Bテスト"
 
 #: includes/Features/ABTesting.php:146
-#: includes/Admin/Pages/Premium/OrderBumps.php:137
+#: includes/Admin/Pages/Premium/OrderBumps.php:138
 msgid "A/B Test"
 msgstr "A/Bテスト"
 
@@ -1778,110 +1812,27 @@ msgstr "CheckoutWCを無効化する理由を教えてください。プラグ�
 msgid "Select Any One Option..."
 msgstr "いずれかのオプションを選択してください..."
 
-#: includes/Admin/AdminPluginsPageManager.php:65
+#: includes/Admin/AdminPluginsPageManager.php:54
+#: includes/Admin/Pages/OrderBumpsAdminFree.php:25
+#: includes/Admin/Pages/LocalPickupAdminFree.php:27
+#: includes/Admin/Pages/AbandonedCartRecoveryAdminFree.php:27
+#: includes/Admin/Pages/Premium/OrderBumps.php:62
+#: includes/Admin/Pages/Premium/LocalPickupAdmin.php:28
+#: includes/Admin/Pages/Premium/AbandonedCartRecovery.php:34
+#: includes/Admin/Pages/Premium/ABTestingAdmin.php:56
+msgid "Settings"
+msgstr "設定"
+
+#: includes/Admin/AdminPluginsPageManager.php:88
 msgid "You're missing out on important updates because your license key is missing, invalid, or expired."
 msgstr "ライセンスキーが欠落、無効、または期限切れのため、重要な更新を見逃しています。"
 
-#: includes/API/UserRolesAPI.php:44
-msgid "Guest (Not Logged In)"
-msgstr "ゲスト（未ログイン）"
+#: includes/Admin/AdminPluginsPageManager.php:91
+#: includes/Admin/Pages/General.php:880
+msgid "Manage your license"
+msgstr "ライセンスを管理"
 
-#: includes/API/SlotsAPI.php:204
-msgid "No slot assignments were received, so the existing ones were left in place."
-msgstr "スロットの割り当ては受信されなかったため、既存の割り当てがそのまま残されました。"
-
-#: includes/API/ProductsAndVariationsSearchAPI.php:75
-msgid "The date the last order for this product was placed, in the site's timezone."
-msgstr "この商品の最終注文が行われた日付（サイトのタイムゾーン）。"
-
-#: includes/API/ProductsAndVariationsSearchAPI.php:92
-msgid "Limit result set to products that are low or out of stock. (Deprecated)"
-msgstr "在庫が少ない、または在庫切れの商品に結果セットを制限する。(非推奨)"
-
-#: includes/API/ProductsAndVariationsSearchAPI.php:98
-msgid "Search by similar product name or sku."
-msgstr "類似商品名または sku で検索します。"
-
-# %s: customer first name
-#: includes/API/PostPurchaseBumpProductFormAPI.php:44
-#: includes/API/OrderBumpPreviewAPI.php:107
-msgid "Wait %s! Here's an exclusive offer to compliment your order!"
-msgstr "お待ちください %s！ご注文にぴったりの限定オファーです！"
-
-#: includes/API/PostPurchaseBumpProductFormAPI.php:50
-#: includes/API/OrderBumpPreviewAPI.php:112
-#: includes/API/AfterCheckoutBumpProductFormAPI.php:45
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:40
-msgid "Add this offer to your order and save!"
-msgstr "このキャンペーンをご注文に追加して、お得にお買い求めください！"
-
-#: includes/API/PostPurchaseBumpProductFormAPI.php:60
-#: includes/API/OrderBumpPreviewAPI.php:123
-#: includes/API/AfterCheckoutBumpProductFormAPI.php:55
-#: client/ts/blocks/OrderBumpSteps.tsx:20
-msgid "Order Submitted"
-msgstr "注文の提出"
-
-#: includes/API/PostPurchaseBumpProductFormAPI.php:66
-#: includes/API/OrderBumpPreviewAPI.php:129
-#: includes/API/AfterCheckoutBumpProductFormAPI.php:61
-#: client/ts/blocks/OrderBumpSteps.tsx:24
-msgid "Special Offer"
-msgstr "スペシャル・オファー"
-
-#: includes/API/PostPurchaseBumpProductFormAPI.php:72
-#: includes/API/OrderBumpPreviewAPI.php:135
-#: includes/API/AfterCheckoutBumpProductFormAPI.php:67
-#: client/ts/blocks/OrderBumpSteps.tsx:28
-msgid "Order Received"
-msgstr "ご注文完了"
-
-#: includes/API/OrderBumpsSearchAPI.php:72
-#: includes/API/OrderBumpsSearchAPI.php:110
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:229
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:527
-#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:586
-msgid "No Title #%d"
-msgstr "タイトルなし #%d"
-
-#: includes/API/OrderBumpPreviewAPI.php:51
-msgid "Invalid display location"
-msgstr "無効な表示場所"
-
-#: includes/API/OrderBumpPreviewAPI.php:105
-#: includes/API/AfterCheckoutBumpProductFormAPI.php:41
-msgid "Your order is almost complete..."
-msgstr "ご注文はもうすぐ完了です..."
-
-#: includes/API/AfterCheckoutBumpProductFormAPI.php:24
-msgid "No thanks, just complete my order"
-msgstr "結構です、注文を完了してください"
-
-#: includes/API/AbandonedCartRecoveryReportAPI.php:99
-msgid "Recoverable Orders"
-msgstr "回復可能な注文"
-
-#: includes/API/AbandonedCartRecoveryReportAPI.php:103
-msgid "Recovered Orders"
-msgstr "回復済みの注文"
-
-#: includes/API/AbandonedCartRecoveryReportAPI.php:107
-msgid "Lost Orders"
-msgstr "失われた注文"
-
-#: includes/API/AbandonedCartRecoveryReportAPI.php:111
-msgid "Recoverable Revenue"
-msgstr "回収可能な収益"
-
-#: includes/API/AbandonedCartRecoveryReportAPI.php:115
-msgid "Recovered Revenue"
-msgstr "回収済み収益"
-
-#: includes/API/AbandonedCartRecoveryReportAPI.php:119
-msgid "Recovery Rate"
-msgstr "回収率"
-
-#: includes/Action/ValidatePostcodeAction.php:33
+#: includes/Action/ValidatePostcodeAction.php:34
 msgid "Please enter a valid %s."
 msgstr "有効な%sを入力してください。"
 
@@ -1999,7 +1950,7 @@ msgstr "オファーが正常に受け入れられました。"
 msgid "A password reset email has been sent to the email address on file for your account, but may take several minutes to show up in your inbox. Please wait at least 10 minutes before attempting another reset."
 msgstr "パスワードリセットのメールがアカウントに登録されているメールアドレスに送信されましたが、受信トレイに表示されるまで数分かかる場合があります。再度リセットを試みる前に少なくとも10分お待ちください。"
 
-#: includes/Action/LogInAction.php:24
+#: includes/Action/LogInAction.php:25
 msgid "There was an error logging in. Please check your credentials and try again."
 msgstr "ログインにエラーが発生しました。資格情報をご確認の上、再度お試しください。"
 
@@ -2027,21 +1978,112 @@ msgstr "セッションが期限切れです。リダイレクト中..."
 msgid "Offer declined."
 msgstr "オファーが拒否されました。"
 
-#: lib/sendwp-sdk/sendwp-init.php:27
-msgid "Security failed to check sendwp_install_nonce"
-msgstr "sendwp_install_nonceのセキュリティチェックに失敗しました"
+#: includes/API/UserRolesAPI.php:44
+msgid "Guest (Not Logged In)"
+msgstr "ゲスト（未ログイン）"
 
-#: lib/sendwp-sdk/sendwp-init.php:28
-msgid "Ask an administrator for install_plugins capability"
-msgstr "インストールプラグインの権限については管理者にお問い合わせください"
+#: includes/API/StarterBumpAPI.php:76
+msgid "The order bump could not be created."
+msgstr "注文バンプを作成できませんでした。"
 
-#: lib/sendwp-sdk/sendwp-init.php:29
-msgid "SendWP is already connected."
-msgstr "SendWPはすでに接続されています。"
+#: includes/API/SlotsAPI.php:204
+msgid "No slot assignments were received, so the existing ones were left in place."
+msgstr "スロットの割り当ては受信されなかったため、既存の割り当てがそのまま残されました。"
 
-#: lib/sendwp-sdk/remote-install.php:84
-msgid "Something went wrong. SendWP was not installed correctly."
-msgstr "問題が発生しました。SendWPは正しくインストールされませんでした。"
+#: includes/API/ProductsAndVariationsSearchAPI.php:75
+msgid "The date the last order for this product was placed, in the site's timezone."
+msgstr "この商品の最終注文が行われた日付（サイトのタイムゾーン）。"
+
+#: includes/API/ProductsAndVariationsSearchAPI.php:92
+msgid "Limit result set to products that are low or out of stock. (Deprecated)"
+msgstr "在庫が少ない、または在庫切れの商品に結果セットを制限する。(非推奨)"
+
+#: includes/API/ProductsAndVariationsSearchAPI.php:98
+msgid "Search by similar product name or sku."
+msgstr "類似商品名または sku で検索します。"
+
+# %s: customer first name
+#: includes/API/PostPurchaseBumpProductFormAPI.php:44
+#: includes/API/OrderBumpPreviewAPI.php:108
+msgid "Wait %s! Here's an exclusive offer to complement your order!"
+msgstr "%sまでお待ちください！ご注文を補完する限定オファーです！"
+
+#: includes/API/PostPurchaseBumpProductFormAPI.php:50
+#: includes/API/OrderBumpPreviewAPI.php:113
+#: includes/API/AfterCheckoutBumpProductFormAPI.php:45
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:44
+msgid "Add this offer to your order and save!"
+msgstr "このキャンペーンをご注文に追加して、お得にお買い求めください！"
+
+#: includes/API/PostPurchaseBumpProductFormAPI.php:60
+#: includes/API/OrderBumpPreviewAPI.php:124
+#: includes/API/AfterCheckoutBumpProductFormAPI.php:55
+#: client/ts/blocks/OrderBumpSteps.tsx:20
+msgid "Order Submitted"
+msgstr "注文の提出"
+
+#: includes/API/PostPurchaseBumpProductFormAPI.php:66
+#: includes/API/OrderBumpPreviewAPI.php:130
+#: includes/API/AfterCheckoutBumpProductFormAPI.php:61
+#: client/ts/blocks/OrderBumpSteps.tsx:24
+msgid "Special Offer"
+msgstr "スペシャル・オファー"
+
+#: includes/API/PostPurchaseBumpProductFormAPI.php:72
+#: includes/API/OrderBumpPreviewAPI.php:136
+#: includes/API/AfterCheckoutBumpProductFormAPI.php:67
+#: client/ts/blocks/OrderBumpSteps.tsx:28
+msgid "Order Received"
+msgstr "ご注文完了"
+
+#: includes/API/OrderBumpsSearchAPI.php:72
+#: includes/API/OrderBumpsSearchAPI.php:110
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:229
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:527
+#: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:586
+msgid "No Title #%d"
+msgstr "タイトルなし #%d"
+
+#: includes/API/OrderBumpPreviewAPI.php:51
+msgid "Invalid display location"
+msgstr "無効な表示場所"
+
+#: includes/API/OrderBumpPreviewAPI.php:105
+#: includes/API/AfterCheckoutBumpProductFormAPI.php:41
+msgid "Your order is almost complete..."
+msgstr "ご注文はもうすぐ完了です..."
+
+#: includes/API/DashboardCardAPI.php:76
+msgid "Unknown card action."
+msgstr "不明なカード操作です。"
+
+#: includes/API/AfterCheckoutBumpProductFormAPI.php:24
+msgid "No thanks, just complete my order"
+msgstr "結構です、注文を完了してください"
+
+#: includes/API/AbandonedCartRecoveryReportAPI.php:99
+msgid "Recoverable Orders"
+msgstr "回復可能な注文"
+
+#: includes/API/AbandonedCartRecoveryReportAPI.php:103
+msgid "Recovered Orders"
+msgstr "回復済みの注文"
+
+#: includes/API/AbandonedCartRecoveryReportAPI.php:107
+msgid "Lost Orders"
+msgstr "失われた注文"
+
+#: includes/API/AbandonedCartRecoveryReportAPI.php:111
+msgid "Recoverable Revenue"
+msgstr "回収可能な収益"
+
+#: includes/API/AbandonedCartRecoveryReportAPI.php:115
+msgid "Recovered Revenue"
+msgstr "回収済み収益"
+
+#: includes/API/AbandonedCartRecoveryReportAPI.php:119
+msgid "Recovery Rate"
+msgstr "回収率"
 
 #. block title
 #: block.json
@@ -2068,34 +2110,15 @@ msgstr "注文バンプオファーフォーム"
 msgid "The form to accept or reject the bump offer."
 msgstr "バンプオファーを承諾または拒否するためのフォーム。"
 
-# %1$s: Plugin name, %2$s: Link opening tag, %3$s: Version number, %4$s: Link closing tag
-#: includes/Managers/Helpers/EDD_SL_Plugin_Updater.php:281
-msgid "There is a new version of %1$s available. %2$sView version %3$s details%4$s."
-msgstr "%1$s の新しいバージョンがあります。%2$sバージョン %3$s の詳細を見る%4$s。"
-
-# %1$s: Plugin name, %2$s: Link opening tag, %3$s: Version number, %4$s: Link closing tag, %5$s: Update link opening tag, %6$s: Update link closing tag
-#: includes/Managers/Helpers/EDD_SL_Plugin_Updater.php:290
-msgid "There is a new version of %1$s available. %2$sView version %3$s details%4$s or %5$supdate now%6$s."
-msgstr "%1$s の新しいバージョンがあります。%2$sバージョン %3$s の詳細を見る%4$s または %5$s今すぐ更新%6$s。"
-
-#: includes/Managers/Helpers/EDD_SL_Plugin_Updater.php:534
-msgid "You do not have permission to install plugin updates"
-msgstr "プラグインの更新をインストールする権限がありません"
-
-#: includes/Managers/Helpers/EDD_SL_Plugin_Updater.php:534
-#: client/ts/admin/Components/GooglePlacesKeyStatus.tsx:61
-msgid "Error"
-msgstr "エラー"
-
 #: includes/Model/Bumps/BumpAbstract.php:1094
 #: includes/Model/Bumps/BumpAbstract.php:1104
 #: includes/Model/ABTests/OrderBumpsABTest.php:30
 #: includes/Features/ABTesting/ABTestTypeRegistry.php:123
 #: includes/Admin/Pages/OrderBumpsAdminFree.php:17
-#: includes/Admin/Pages/OrderBumpsAdminFree.php:71
+#: includes/Admin/Pages/OrderBumpsAdminFree.php:67
 #: includes/Admin/Pages/Premium/OrderBumps.php:50
 #: client/ts/admin/Components/Forms/OrderBumpSettingsForm.tsx:45
-#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:408
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:418
 msgid "Order Bumps"
 msgstr "注文バンプ"
 
@@ -2143,112 +2166,24 @@ msgstr "ゴミ箱に見つかりません"
 msgid "Test different variations of order bumps to see which performs better."
 msgstr "注文バンプの異なるバリエーションをテストして、どれがより効果的か確認してください。"
 
-#: includes/Features/OneClick/OrderStatusManager.php:52
-msgid "Pending Offer <span class=\"count\">(%s)</span>"
-msgid_plural "Pending Offer <span class=\"count\">(%s)</span>"
-msgstr[0] "保留中のオファー <span class=\"count\">(%s)</span>"
+# %1$s: Plugin name, %2$s: Link opening tag, %3$s: Version number, %4$s: Link closing tag
+#: includes/Managers/Helpers/EDD_SL_Plugin_Updater.php:281
+msgid "There is a new version of %1$s available. %2$sView version %3$s details%4$s."
+msgstr "%1$s の新しいバージョンがあります。%2$sバージョン %3$s の詳細を見る%4$s。"
 
-#: includes/Features/OneClick/OrderStatusManager.php:138
-msgid "Post-purchase offer session expired."
-msgstr "購入後オファーのセッションが期限切れです。"
+# %1$s: Plugin name, %2$s: Link opening tag, %3$s: Version number, %4$s: Link closing tag, %5$s: Update link opening tag, %6$s: Update link closing tag
+#: includes/Managers/Helpers/EDD_SL_Plugin_Updater.php:290
+msgid "There is a new version of %1$s available. %2$sView version %3$s details%4$s or %5$supdate now%6$s."
+msgstr "%1$s の新しいバージョンがあります。%2$sバージョン %3$s の詳細を見る%4$s または %5$s今すぐ更新%6$s。"
 
-#: includes/Features/OneClick/OrderStatusManager.php:180
-msgid "Post-purchase offers completed."
-msgstr "購入後オファーが完了しました。"
+#: includes/Managers/Helpers/EDD_SL_Plugin_Updater.php:534
+msgid "You do not have permission to install plugin updates"
+msgstr "プラグインの更新をインストールする権限がありません"
 
-#: includes/Features/OneClick/OfferRefundManager.php:102
-msgid "CheckoutWC: Refund Post Purchase One-Click Order Bumps"
-msgstr "CheckoutWC: 購入後ワンクリック注文バンプの返金"
-
-#: includes/Features/OneClick/OfferRefundManager.php:165
-msgid "You do not have permission to perform this action."
-msgstr "この操作を実行する権限がありません。"
-
-#: includes/Features/OneClick/OfferRefundManager.php:184
-msgid "Invalid order item."
-msgstr "無効な注文アイテムです。"
-
-#: includes/Features/OneClick/OfferRefundManager.php:190
-msgid "This offer has already been refunded."
-msgstr "このオファーはすでに返金されています。"
-
-#: includes/Features/OneClick/OfferRefundManager.php:197
-msgid "No transaction ID found for this offer."
-msgstr "このオファーの取引IDが見つかりません。"
-
-#: includes/Features/OneClick/OfferRefundManager.php:209
-msgid "Payment gateway does not support one-click upsell refunds."
-msgstr "支払いゲートウェイはワンクリックアップセルの返金をサポートしていません。"
-
-#: includes/Features/OneClick/OfferRefundManager.php:231
-msgid "Gateway refund failed."
-msgstr "ゲートウェイの返金に失敗しました。"
-
-#: includes/Features/OneClick/OfferRefundManager.php:249
-msgid "Order Bump Refund: %s"
-msgstr "注文バンプ返金: %s"
-
-#: includes/Features/OneClick/OfferRefundManager.php:268
-msgid "Order Bump Refunded: %1$s - Amount: %2$s - Transaction ID: %3$s"
-msgstr "注文バンプ返金済み: %1$s - 金額: %2$s - 取引ID: %3$s"
-
-#: includes/Features/OneClick/OfferRefundManager.php:289
-msgid "Offer refunded successfully."
-msgstr "オファーが正常に返金されました。"
-
-#: includes/Features/OneClick/OfferRefundManager.php:336
-msgid "Are you sure you want to refund this offer? This action cannot be undone."
-msgstr "このオファーを返金してもよろしいですか？この操作は元に戻せません。"
-
-#: includes/Features/OneClick/OfferRefundManager.php:337
-msgid "Processing refund..."
-msgstr "返金処理中..."
-
-#: includes/Features/OneClick/OfferRefundManager.php:338
-#: includes/Admin/Views/html-refund-offer.php:79
-msgid "Refunded"
-msgstr "返金済み"
-
-#: includes/Features/OneClick/OfferOrderManager.php:140
-msgid "Order bump payment of %1$s received for %2$s"
-msgstr "%2$s の注文バンプ支払い %1$s を受け取りました"
-
-#: includes/Features/OneClick/OfferOrderManager.php:223
-msgid "Order created from post-purchase offer (accepted after timeout)."
-msgstr "購入後オファー（タイムアウト後に受け入れ）から注文が作成されました。"
-
-#: includes/Features/OneClick/OfferOrderManager.php:224
-msgid "Order created from post-purchase offer."
-msgstr "購入後オファーから注文が作成されました。"
-
-#: includes/Features/OneClick/OfferOrderManager.php:239
-msgid "Child order #%s created from post-purchase offer."
-msgstr "購入後オファーから子注文 #%s が作成されました。"
-
-#: includes/Features/CustomFields/OrderData.php:231
-msgid "Yes"
-msgstr "はい"
-
-#: includes/Features/CustomFields/OrderData.php:231
-msgid "No"
-msgstr "いいえ"
-
-#: includes/Features/CustomFields/OrderData.php:279
-msgid "Checkout Fields"
-msgstr "チェックアウト項目"
-
-#: includes/Features/CustomFields/OrderData.php:280
-msgid "Data collected by CheckoutWC custom fields"
-msgstr "CheckoutWCのカスタムフィールドによって収集されたデータ"
-
-#: includes/Features/CustomFields/OrderData.php:301
-msgid "Not collected - placed with express checkout"
-msgstr "収集されません - エクスプレスチェックアウトで配置されました"
-
-#: includes/Features/CustomFields/OrderData.php:479
-#: includes/Features/CustomFields/OrderData.php:539
-msgid "Additional details"
-msgstr "追加の詳細"
+#: includes/Managers/Helpers/EDD_SL_Plugin_Updater.php:534
+#: client/ts/admin/Components/GooglePlacesKeyStatus.tsx:61
+msgid "Error"
+msgstr "エラー"
 
 # Error message logged when Jupiter theme callback removal fails
 #: includes/Compatibility/Themes/Jupiter.php:49
@@ -2391,6 +2326,113 @@ msgstr "Beaver Themerサポートを有効にする"
 msgid "Allow Beaver Themer to replace header and footer."
 msgstr "Beaver Themerがヘッダーとフッターを置き換えることを許可する。"
 
+#: includes/Features/OneClick/OrderStatusManager.php:52
+msgid "Pending Offer <span class=\"count\">(%s)</span>"
+msgid_plural "Pending Offer <span class=\"count\">(%s)</span>"
+msgstr[0] "保留中のオファー <span class=\"count\">(%s)</span>"
+
+#: includes/Features/OneClick/OrderStatusManager.php:138
+msgid "Post-purchase offer session expired."
+msgstr "購入後オファーのセッションが期限切れです。"
+
+#: includes/Features/OneClick/OrderStatusManager.php:180
+msgid "Post-purchase offers completed."
+msgstr "購入後オファーが完了しました。"
+
+#: includes/Features/OneClick/OfferRefundManager.php:102
+msgid "CheckoutWC: Refund Post Purchase One-Click Order Bumps"
+msgstr "CheckoutWC: 購入後ワンクリック注文バンプの返金"
+
+#: includes/Features/OneClick/OfferRefundManager.php:165
+msgid "You do not have permission to perform this action."
+msgstr "この操作を実行する権限がありません。"
+
+#: includes/Features/OneClick/OfferRefundManager.php:184
+msgid "Invalid order item."
+msgstr "無効な注文アイテムです。"
+
+#: includes/Features/OneClick/OfferRefundManager.php:190
+msgid "This offer has already been refunded."
+msgstr "このオファーはすでに返金されています。"
+
+#: includes/Features/OneClick/OfferRefundManager.php:197
+msgid "No transaction ID found for this offer."
+msgstr "このオファーの取引IDが見つかりません。"
+
+#: includes/Features/OneClick/OfferRefundManager.php:209
+msgid "Payment gateway does not support one-click upsell refunds."
+msgstr "支払いゲートウェイはワンクリックアップセルの返金をサポートしていません。"
+
+#: includes/Features/OneClick/OfferRefundManager.php:231
+msgid "Gateway refund failed."
+msgstr "ゲートウェイの返金に失敗しました。"
+
+#: includes/Features/OneClick/OfferRefundManager.php:249
+msgid "Order Bump Refund: %s"
+msgstr "注文バンプ返金: %s"
+
+#: includes/Features/OneClick/OfferRefundManager.php:268
+msgid "Order Bump Refunded: %1$s - Amount: %2$s - Transaction ID: %3$s"
+msgstr "注文バンプ返金済み: %1$s - 金額: %2$s - 取引ID: %3$s"
+
+#: includes/Features/OneClick/OfferRefundManager.php:289
+msgid "Offer refunded successfully."
+msgstr "オファーが正常に返金されました。"
+
+#: includes/Features/OneClick/OfferRefundManager.php:336
+msgid "Are you sure you want to refund this offer? This action cannot be undone."
+msgstr "このオファーを返金してもよろしいですか？この操作は元に戻せません。"
+
+#: includes/Features/OneClick/OfferRefundManager.php:337
+msgid "Processing refund..."
+msgstr "返金処理中..."
+
+#: includes/Features/OneClick/OfferRefundManager.php:338
+#: includes/Admin/Views/html-refund-offer.php:79
+msgid "Refunded"
+msgstr "返金済み"
+
+#: includes/Features/OneClick/OfferOrderManager.php:140
+msgid "Order bump payment of %1$s received for %2$s"
+msgstr "%2$s の注文バンプ支払い %1$s を受け取りました"
+
+#: includes/Features/OneClick/OfferOrderManager.php:223
+msgid "Order created from post-purchase offer (accepted after timeout)."
+msgstr "購入後オファー（タイムアウト後に受け入れ）から注文が作成されました。"
+
+#: includes/Features/OneClick/OfferOrderManager.php:224
+msgid "Order created from post-purchase offer."
+msgstr "購入後オファーから注文が作成されました。"
+
+#: includes/Features/OneClick/OfferOrderManager.php:239
+msgid "Child order #%s created from post-purchase offer."
+msgstr "購入後オファーから子注文 #%s が作成されました。"
+
+#: includes/Features/CustomFields/OrderData.php:231
+msgid "Yes"
+msgstr "はい"
+
+#: includes/Features/CustomFields/OrderData.php:231
+msgid "No"
+msgstr "いいえ"
+
+#: includes/Features/CustomFields/OrderData.php:279
+msgid "Checkout Fields"
+msgstr "チェックアウト項目"
+
+#: includes/Features/CustomFields/OrderData.php:280
+msgid "Data collected by CheckoutWC custom fields"
+msgstr "CheckoutWCのカスタムフィールドによって収集されたデータ"
+
+#: includes/Features/CustomFields/OrderData.php:301
+msgid "Not collected - placed with express checkout"
+msgstr "収集されません - エクスプレスチェックアウトで配置されました"
+
+#: includes/Features/CustomFields/OrderData.php:479
+#: includes/Features/CustomFields/OrderData.php:539
+msgid "Additional details"
+msgstr "追加の詳細"
+
 #: includes/Admin/Views/html-refund-offer.php:22
 msgid "Product"
 msgstr "商品"
@@ -2419,167 +2461,13 @@ msgstr "注意："
 msgid "Refunding an offer will process the refund with the payment gateway and create a WooCommerce refund record."
 msgstr "オファーを返金すると、支払いゲートウェイで返金処理が行われ、WooCommerceの返金記録が作成されます。"
 
-#: includes/Admin/Notices/WelcomeNotice.php:12
-msgid "Welcome to CheckoutWC"
-msgstr "CheckoutWCへようこそ"
-
-#: includes/Admin/Notices/WelcomeNotice.php:20
-msgid "Thank you for installing CheckoutWC! We automatically activated your license. You are all set!"
-msgstr "CheckoutWCをインストールしていただきありがとうございます！ライセンスは自動的に有効化されました。すべて準備完了です！"
-
-#: includes/Admin/Notices/WelcomeNotice.php:26
-msgid "Thank you for installing CheckoutWC! To get started, enter your <strong>License Key</strong> below, save, and click <strong>Activate Site</strong>."
-msgstr "CheckoutWCをインストールしていただきありがとうございます！開始するには、以下に<strong>ライセンスキー</strong>を入力し、保存してから<strong>サイトを有効化</strong>をクリックしてください。"
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:20
-msgid "your email"
-msgstr "あなたのメール"
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:88
-msgid "privacy policy"
-msgstr "プライバシーポリシー"
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:93
-msgid "By joining, %1$s will be added to our mailing list. Read our %2$s."
-msgstr "参加すると、%1$s が当社のメーリングリストに追加されます。%2$s をお読みください。"
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:99
-msgid "Join Newsletter & Save 25%"
-msgstr "ニュースレターに登録して25％節約"
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:102
-msgid "Join Newsletter"
-msgstr "ニュースレターに登録"
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:113
-msgid "Sign up to our newsletter and get proven conversion tips and checkout optimization strategies from the CheckoutWC team."
-msgstr "ニュースレターに登録して、CheckoutWCチームから実証済みのコンバージョン向上のヒントやチェックアウト最適化の戦略を受け取りましょう。"
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:116
-msgid "Boost Your Conversions with Proven Strategies."
-msgstr "実証済みの戦略でコンバージョンを向上させましょう。"
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:123
-msgid "We're so glad that you've chosen CheckoutWC to handle your checkouts. Unlock more sales with premium features like order bumps, abandoned cart recovery, and much more."
-msgstr "CheckoutWCをチェックアウト処理に選んでいただきありがとうございます。注文バンプ、放棄カート回復などのプレミアム機能でさらに売上を伸ばしましょう。"
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:126
-msgid "Unlock more sales with CheckoutWC Premium"
-msgstr "CheckoutWCプレミアムでさらに売上を伸ばしましょう"
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:144
-msgid "Sorry, there was an error joining our newsletter. Please refresh the page and try again."
-msgstr "申し訳ありませんが、ニュースレターの登録中にエラーが発生しました。ページを更新して再度お試しください。"
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:243
-msgid "Please wait..."
-msgstr "お待ちください..."
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:320
-msgid "Sorry, your account has insufficient permissions to join our newsletter."
-msgstr "申し訳ありませんが、ニュースレターに登録する権限が不足しています。"
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:354
-msgid "You have already joined our newsletter!"
-msgstr "すでにニュースレターに登録済みです！"
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:396
-msgid "Thank you for joining our newsletter!"
-msgstr "ニュースレターにご登録いただきありがとうございます！"
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:410
-msgid "Security check failed."
-msgstr "セキュリティチェックに失敗しました。"
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:414
-msgid "Insufficient permissions."
-msgstr "権限が不足しています。"
-
-#: includes/Admin/Notices/LiteEmailOptIn.php:422
-msgid "Notice dismissed."
-msgstr "通知が閉じられました。"
-
-# %1$d: Number of days, %2$s: Pricing URL, %3$s: "renew it here" link text
-#: includes/Admin/Notices/LicenseUnverifiedNotice.php:25
-msgid "Premium features are off because we haven\\'t been able to check your license with checkoutwc.com for %1$d days. Make sure your server can connect to checkoutwc.com. If your license has expired, <a href=\"%2$s\" target=\"_blank\">%3$s</a>."
-msgstr "checkoutwc.com で %1$d 日間ライセンスを確認できなかったため、プレミアム機能はオフになっています。サーバーが checkoutwc.com に接続できることを確認してください。ライセンスの有効期限が切れている場合は、<a href=\"%2$s\" target=\"_blank\">%3$s</a>。"
-
-#: includes/Admin/Notices/LicenseUnverifiedNotice.php:28
-msgid "renew it here"
-msgstr "こちらで更新する"
-
-#: includes/Admin/Notices/LicenseUnverifiedNotice.php:33
-msgid "CheckoutWC can\\'t verify your license"
-msgstr "CheckoutWCはライセンスを確認できません"
-
-# %1$s: Date premium features turn off, %2$s: Support email URL, %3$s: "Contact support" link text
-#: includes/Admin/Notices/LicenseServerUnreachableNotice.php:28
-msgid "We couldn\\'t check your license with checkoutwc.com. Premium features will turn off on %1$s unless the connection is restored. <a href=\"%2$s\">%3$s</a> if this keeps happening."
-msgstr "checkoutwc.com でライセンスを確認できませんでした。接続が復元されない限り、プレミアム機能は %1$s にオフになります。これが続く場合は、<a href=\"%2$s\">%3$s</a>。"
-
-#: includes/Admin/Notices/LicenseServerUnreachableNotice.php:31
-#: includes/Admin/Notices/LicenseServerUnreachableNotice.php:38
-msgid "Contact support"
-msgstr "サポートに連絡する"
-
-# %1$s: Support email URL, %2$s: "Contact support" link text
-#: includes/Admin/Notices/LicenseServerUnreachableNotice.php:36
-msgid "We couldn\\'t check your license with checkoutwc.com. Make sure your server can connect to checkoutwc.com. <a href=\"%1$s\">%2$s</a> if this keeps happening."
-msgstr "checkoutwc.com でライセンスを確認できませんでした。サーバーが checkoutwc.com に接続できることを確認してください。これが続く場合は、<a href=\"%1$s\">%2$s</a>。"
-
-#: includes/Admin/Notices/LicenseServerUnreachableNotice.php:45
-msgid "CheckoutWC can\\'t reach the license server"
-msgstr "CheckoutWCはライセンスサーバーに接続できません"
-
-#: includes/Admin/Notices/InvalidLicenseKeyNotice.php:13
-msgid "CheckoutWC license expired"
-msgstr "CheckoutWCのライセンスの有効期限が切れています"
-
-# %1$s: URL to pricing page, %2$s: "Renew your license" link text, %3$s: Support email URL, %4$s: "contact support" link text
-#: includes/Admin/Notices/InvalidLicenseKeyNotice.php:16
-msgid "Premium features are off because your license has expired. <a href=\"%1$s\" target=\"_blank\">%2$s</a> to turn them back on. If you think this is a mistake, <a href=\"%3$s\">%4$s</a>."
-msgstr "ライセンスの有効期限が切れているため、プレミアム機能はオフになっています。再び有効にするには、<a href=\"%1$s\" target=\"_blank\">%2$s</a>。これが誤りだと思われる場合は、<a href=\"%3$s\">%4$s</a>。"
-
-#: includes/Admin/Notices/InvalidLicenseKeyNotice.php:18
-msgid "Renew your license"
-msgstr "ライセンスを更新する"
-
-#: includes/Admin/Notices/InvalidLicenseKeyNotice.php:20
-msgid "contact support"
-msgstr "サポートに連絡する"
-
-# %1$s: URL to activation page, %2$s: "Activate your license" link text, %3$s: Pricing URL, %4$s: "buy a license" link text
-#: includes/Admin/Notices/InactiveLicenseNotice.php:11
-msgid "Premium features are off because your license isn\\'t activated on this site. <a href=\"%1$s\">%2$s</a> or <a href=\"%3$s\" target=\"_blank\">%4$s</a> for this site."
-msgstr "このサイトでライセンスが有効化されていないため、プレミアム機能はオフになっています。このサイトについては、<a href=\"%1$s\">%2$s</a> または <a href=\"%3$s\" target=\"_blank\">%4$s</a>。"
-
-#: includes/Admin/Notices/InactiveLicenseNotice.php:13
-msgid "Activate your license"
-msgstr "ライセンスを有効化する"
-
-#: includes/Admin/Notices/InactiveLicenseNotice.php:20
-msgid "CheckoutWC license not activated"
-msgstr "CheckoutWCのライセンスが有効化されていません"
-
-#: includes/Admin/Notices/BFNotice.php:13
-msgid "Black Friday Sale - 40% Off"
-msgstr "ブラックフライデーセール - 40%オフ"
-
-#: includes/Admin/Notices/BFNotice.php:14
-msgid "You're missing out on revenue growth tools like Order Bumps, Upsells, Abandoned Cart Recovery and more! Save 40% on CheckoutWC pro plans for Black Friday, ends December 4th"
-msgstr "注文バンプ、アップセル、放棄されたカートの回復などの収益成長ツールを見逃しています！ブラックフライデー限定でCheckoutWCプロプランが40%オフ、12月4日まで。"
-
-#: includes/Admin/Notices/BFNotice.php:27
-msgid "Get CheckoutWC Pro Now!"
-msgstr "今すぐCheckoutWCプロを入手！"
-
 #: includes/Admin/Pages/WooCommercePages.php:22
 msgid "Pages"
 msgstr "ページ"
 
 #: includes/Admin/Pages/WooCommercePages.php:31
 #: client/ts/admin/Components/Forms/ThankYouSettingsForm.tsx:53
-#: client/ts/admin/Components/Forms/AdvancedScriptsSettingsForm.tsx:144
+#: client/ts/admin/Components/Forms/AdvancedScriptsSettingsForm.tsx:164
 msgid "Thank You"
 msgstr "ありがとうございます"
 
@@ -2591,7 +2479,7 @@ msgstr "グローバルオプション"
 #: includes/Admin/Pages/TrustBadgesAdminFree.php:56
 #: includes/Admin/Pages/Premium/TrustBadges.php:16
 #: client/ts/admin/Components/Forms/TrustBadgeSettingsForm.tsx:150
-#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:510
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:520
 #: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:708
 msgid "Trust Badges"
 msgstr "信頼バッジ"
@@ -2617,7 +2505,7 @@ msgstr "CheckoutWCテンプレートでトラストバッジを有効にしま�
 
 #: includes/Admin/Pages/TrustBadgesAdminFree.php:43
 #: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:181
-#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:640
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:654
 msgid "Heading"
 msgstr "見出し"
 
@@ -2656,8 +2544,8 @@ msgid "Subtitle"
 msgstr "サブタイトル"
 
 #: includes/Admin/Pages/TrustBadgesAdminFree.php:86
-#: includes/Admin/Pages/Appearance.php:32
-#: includes/Admin/Pages/Premium/AbandonedCartRecovery.php:462
+#: includes/Admin/Pages/Appearance.php:33
+#: includes/Admin/Pages/Premium/AbandonedCartRecovery.php:458
 #: client/ts/admin/Components/TrustBadgeFields.tsx:98
 #: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:291
 #: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:300
@@ -2700,9 +2588,9 @@ msgid "WYSIWYG"
 msgstr "WYSIWYG"
 
 #: includes/Admin/Pages/TrustBadgesAdminFree.php:111
-#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:719
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:733
 #: client/ts/admin/Components/CheckoutEditor/slots/CustomHtmlEditor.tsx:37
-#: client/ts/admin/Components/CheckoutEditor/slots/AssignedItem.tsx:87
+#: client/ts/admin/Components/CheckoutEditor/slots/AssignedItem.tsx:90
 msgid "HTML"
 msgstr "HTML"
 
@@ -2723,72 +2611,10 @@ msgstr "表示条件を管理"
 msgid "Add Trust Badge"
 msgstr "信頼バッジを追加"
 
-#: includes/Admin/Pages/Support.php:12
+#: includes/Admin/Pages/Support.php:29
+#: includes/Admin/Pages/General.php:673
 msgid "Support"
 msgstr "サポート"
-
-#: includes/Admin/Pages/Support.php:20
-msgid "Awesome support is in our DNA."
-msgstr "素晴らしいサポートは私たちのDNAに組み込まれています。"
-
-#: includes/Admin/Pages/Support.php:23
-msgid "Our Knowledge Base is packed with tips, tricks, and common troubleshooting steps."
-msgstr "私たちのナレッジベースには、ヒント、コツ、一般的なトラブルシューティング手順が満載です。"
-
-#: includes/Admin/Pages/Support.php:27
-#: includes/Admin/Pages/General.php:68
-msgid "Read Our Documentation"
-msgstr "ドキュメントを読む"
-
-#: includes/Admin/Pages/Support.php:39
-msgid "Some Popular Knowledge Base Articles"
-msgstr "人気のあるナレッジベース記事"
-
-#: includes/Admin/Pages/Support.php:44
-#: includes/Admin/Pages/Support.php:55
-msgid "Getting Started"
-msgstr "はじめに"
-
-#: includes/Admin/Pages/Support.php:45
-#: includes/Admin/Pages/Support.php:56
-msgid "Troubleshooting"
-msgstr "トラブルシューティング"
-
-#: includes/Admin/Pages/Support.php:46
-msgid "Upgrading Your License"
-msgstr "ライセンスのアップグレード"
-
-#: includes/Admin/Pages/Support.php:47
-msgid "How To Enable Billing and Shipping Phone Fields"
-msgstr "請求先および配送先の電話番号欄を有効にする方法"
-
-#: includes/Admin/Pages/Support.php:48
-msgid "How To Enable Cart Editing"
-msgstr "カート編集を有効にする方法"
-
-#: includes/Admin/Pages/Support.php:49
-msgid "How To Register and Configure Your Google API Key"
-msgstr "Google APIキーの登録と設定方法"
-
-#: includes/Admin/Pages/Support.php:50
-msgid "How To Add a Custom Field to Checkout for WooCommerce"
-msgstr "WooCommerceのチェックアウトにカスタムフィールドを追加する方法"
-
-#: includes/Admin/Pages/Support.php:51
-msgid "How to Enable The WooCommerce Notes Field"
-msgstr "WooCommerceのメモ欄を有効にする方法"
-
-#: includes/Admin/Pages/Support.php:57
-msgid "Buy a License"
-msgstr "ライセンスを購入"
-
-#: includes/Admin/Pages/Support.php:62
-msgid "Still Need Help?"
-msgstr "まだ助けが必要ですか？"
-
-#: includes/Admin/Pages/Support.php:65
-msgid "Contact Support"
-msgstr "サポートに連絡"
 
 #: includes/Admin/Pages/SideCartAdminFree.php:16
 #: includes/Admin/Pages/SideCartAdminFree.php:26
@@ -2893,6 +2719,10 @@ msgstr "フローティングサイドカートボタン"
 msgid "Configure the Floating Side Cart Button"
 msgstr "フローティングサイドカートボタンを設定します"
 
+#: includes/Admin/Pages/Plan.php:22
+msgid "Your Plan"
+msgstr "あなたのプラン"
+
 #: includes/Admin/Pages/PickupLocationsAdminFree.php:73
 #: includes/Admin/Pages/Premium/PickupLocations.php:83
 msgid "Pickup Location Details"
@@ -2916,45 +2746,39 @@ msgstr "プレミアム"
 msgid "The changes you made will be lost if you navigate away from this page."
 msgstr "このページから離れると、行った変更は失われます。"
 
-#: includes/Admin/Pages/PageAbstract.php:130
+#: includes/Admin/Pages/PageAbstract.php:131
 msgid "Unsaved changes."
 msgstr "保存されていない変更があります。"
 
-#: includes/Admin/Pages/PageAbstract.php:132
+#: includes/Admin/Pages/PageAbstract.php:133
 msgid "Discard?"
 msgstr "破棄しますか？"
 
-#: includes/Admin/Pages/PageAbstract.php:136
-#: includes/Admin/Pages/PageAbstract.php:157
+#: includes/Admin/Pages/PageAbstract.php:137
+#: includes/Admin/Pages/PageAbstract.php:158
 #: client/ts/admin/Components/CheckoutEditor/EditorHeader.tsx:229
-#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:642
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:684
 msgid "Save Changes"
 msgstr "変更を保存"
 
-# %s: Required plan name(s)
-#: includes/Admin/Pages/PageAbstract.php:182
-#: includes/Admin/Pages/PageAbstract.php:340
-msgid "A %s plan is required to access this feature."
-msgstr "%sプランがこの機能を利用するために必要です。"
-
-#: includes/Admin/Pages/PageAbstract.php:199
+#: includes/Admin/Pages/PageAbstract.php:194
 msgid "Setting Overridden"
 msgstr "設定が上書きされました"
 
-#: includes/Admin/Pages/PageAbstract.php:202
+#: includes/Admin/Pages/PageAbstract.php:197
 msgid "This setting is currently programmatically overridden. To enable it remove your custom code."
 msgstr "この設定は現在プログラムによって上書きされています。有効にするにはカスタムコードを削除してください。"
 
-#: includes/Admin/Pages/PageAbstract.php:333
-#: includes/Admin/Pages/Premium/OrderBumps.php:1073
-#: includes/Admin/Pages/Premium/AbandonedCartRecovery.php:850
+#: includes/Admin/Pages/PageAbstract.php:328
+#: includes/Admin/Pages/Premium/OrderBumps.php:1217
+#: includes/Admin/Pages/Premium/AbandonedCartRecovery.php:846
 msgid "Upgrade Your Plan"
 msgstr "プランをアップグレードする"
 
 # %1$s: Account URL, %2$s: Help URL
-#: includes/Admin/Pages/PageAbstract.php:350
-#: includes/Admin/Pages/Premium/OrderBumps.php:1083
-#: includes/Admin/Pages/Premium/AbandonedCartRecovery.php:869
+#: includes/Admin/Pages/PageAbstract.php:339
+#: includes/Admin/Pages/Premium/OrderBumps.php:1227
+#: includes/Admin/Pages/Premium/AbandonedCartRecovery.php:865
 msgid "You can upgrade your license in <a class=\"text-blue-600 underline\" target=\"_blank\" href=\"%1$s\">Account</a>. For help upgrading your license, <a class=\"text-blue-600 underline\" target=\"_blank\" href=\"%2$s\">click here.</a>"
 msgstr "ライセンスは<a class=\"text-blue-600 underline\" target=\"_blank\" href=\"%1$s\">アカウント</a>でアップグレードできます。ライセンスのアップグレードについてのヘルプは<a class=\"text-blue-600 underline\" target=\"_blank\" href=\"%2$s\">こちらをクリックしてください。</a>"
 
@@ -2963,38 +2787,38 @@ msgstr "ライセンスは<a class=\"text-blue-600 underline\" target=\"_blank\"
 msgid "Manage Bumps"
 msgstr "バンプを管理"
 
-#: includes/Admin/Pages/OrderBumpsAdminFree.php:72
+#: includes/Admin/Pages/OrderBumpsAdminFree.php:68
 #: client/ts/admin/Components/Forms/OrderBumpSettingsForm.tsx:46
 msgid "Configure Order Bump settings."
 msgstr "注文バンプの設定を構成します。"
 
-#: includes/Admin/Pages/OrderBumpsAdminFree.php:79
+#: includes/Admin/Pages/OrderBumpsAdminFree.php:75
 #: client/ts/admin/Components/Forms/SideCartSettingsForm.tsx:354
 #: client/ts/admin/Components/Forms/OrderBumpSettingsForm.tsx:52
 msgid "Enable Order Bumps"
 msgstr "注文バンプを有効にする"
 
-#: includes/Admin/Pages/OrderBumpsAdminFree.php:79
+#: includes/Admin/Pages/OrderBumpsAdminFree.php:75
 #: client/ts/admin/Components/Forms/OrderBumpSettingsForm.tsx:53
 msgid "Allow Order Bumps to be displayed."
 msgstr "注文バンプの表示を許可します。"
 
-#: includes/Admin/Pages/OrderBumpsAdminFree.php:81
+#: includes/Admin/Pages/OrderBumpsAdminFree.php:77
 #: client/ts/admin/Components/Forms/OrderBumpSettingsForm.tsx:64
 msgid "Maximum Order Bumps Per Slot"
 msgstr "スロットごとの最大注文バンプ数"
 
-#: includes/Admin/Pages/OrderBumpsAdminFree.php:82
+#: includes/Admin/Pages/OrderBumpsAdminFree.php:78
 #: client/ts/admin/Components/Forms/OrderBumpSettingsForm.tsx:65
 msgid "The maximum number of order bumps displayed in each checkout slot."
 msgstr "各チェックアウトスロットに表示される注文バンプの最大数。"
 
-#: includes/Admin/Pages/OrderBumpsAdminFree.php:85
+#: includes/Admin/Pages/OrderBumpsAdminFree.php:81
 #: client/ts/admin/Components/Forms/OrderBumpSettingsForm.tsx:70
 msgid "Maximum Place Order Bumps"
 msgstr "最大注文バンプ数"
 
-#: includes/Admin/Pages/OrderBumpsAdminFree.php:86
+#: includes/Admin/Pages/OrderBumpsAdminFree.php:82
 msgid "The maximum number of modal bumps displayed after submitting checkout."
 msgstr "チェックアウト送信後に表示されるモーダルバンプの最大数。"
 
@@ -3123,149 +2947,368 @@ msgstr "送信"
 msgid "Integrations"
 msgstr "統合"
 
-#: includes/Admin/Pages/General.php:39
-#: includes/Admin/Pages/General.php:40
-#: includes/Admin/Pages/CheckoutEditor.php:21
+#: includes/Admin/Pages/General.php:63
+#: includes/Admin/Pages/General.php:64
+#: includes/Admin/Pages/CheckoutEditor.php:30
 #: client/ts/admin/Components/CheckoutEditor/EditorHeader.tsx:92
 msgid "Checkout Editor"
 msgstr "チェックアウトエディター"
 
-#: includes/Admin/Pages/General.php:61
-msgid "Welcome to the new standard for WooCommerce stores."
-msgstr "WooCommerceストアの新しい標準へようこそ。"
+#: includes/Admin/Pages/General.php:161
+msgid "Pick a template"
+msgstr "テンプレートを選択"
 
-#: includes/Admin/Pages/General.php:64
-msgid "We hate complex configurations too. Get up and running with CheckoutWC in 5 minutes or less. ⚡️"
-msgstr "私たちも複雑な設定は嫌いです。CheckoutWCで5分以内に始めましょう。⚡️"
+#: includes/Admin/Pages/General.php:162
+msgid "CheckoutWC Lite uses the Default template."
+msgstr "CheckoutWC Liteはデフォルトテンプレートを使用します。"
 
-#: includes/Admin/Pages/General.php:83
+#: includes/Admin/Pages/General.php:168
+msgid "Your license is active on this site."
+msgstr "このサイトでライセンスが有効です。"
+
+#: includes/Admin/Pages/General.php:169
+msgid "Enter your license key in the Your plan card."
+msgstr "Your planカードにライセンスキーを入力してください。"
+
+#: includes/Admin/Pages/General.php:170
+msgid "Your license has expired. Renew it in the Your plan card."
+msgstr "ライセンスの有効期限が切れています。Your planカードで更新してください。"
+
+#: includes/Admin/Pages/General.php:171
+msgid "Your license isn\\'t activated on this site. Activate it in the Your plan card."
+msgstr "このサイトでライセンスが有効化されていません。Your planカードで有効化してください。"
+
+#: includes/Admin/Pages/General.php:172
+msgid "Your key is missing or invalid. Fix it in the Your plan card."
+msgstr "キーが見つからないか、無効です。Your planカードで修正してください。"
+
+#: includes/Admin/Pages/General.php:176
+msgid "Activate your license"
+msgstr "ライセンスを有効化する"
+
+#: includes/Admin/Pages/General.php:184
+msgid "Customize checkout"
+msgstr "チェックアウトをカスタマイズ"
+
+#: includes/Admin/Pages/General.php:185
+msgid "Use the Checkout Editor for your checkout layout, fields and content."
+msgstr "Checkout Editor を使って、チェックアウトのレイアウト、フィールド、コンテンツを設定します。"
+
+#: includes/Admin/Pages/General.php:191
+#: includes/Admin/Pages/General.php:831
+msgid "Go live"
+msgstr "公開する"
+
+#: includes/Admin/Pages/General.php:192
+msgid "Turn on CheckoutWC templates for every visitor."
+msgstr "すべての訪問者に CheckoutWC テンプレートを有効にします。"
+
+#: includes/Admin/Pages/General.php:216
+#: includes/Admin/Notices/WelcomeNotice.php:12
+msgid "Welcome to CheckoutWC"
+msgstr "CheckoutWCへようこそ"
+
+#: includes/Admin/Pages/General.php:216
+msgid "Welcome to CheckoutWC Lite"
+msgstr "CheckoutWC Lite へようこそ"
+
+#: includes/Admin/Pages/General.php:264
+msgid "Get your checkout live"
+msgstr "チェックアウトを公開しましょう"
+
+#: includes/Admin/Pages/General.php:268
+msgid "%1$d of %2$d done"
+msgstr "%1$d / %2$d 完了"
+
+#: includes/Admin/Pages/General.php:307
+msgid "Your checkout is live"
+msgstr "チェックアウトは公開されています"
+
+#: includes/Admin/Pages/General.php:308
+msgid "Templates are on for every visitor."
+msgstr "すべての訪問者にテンプレートが有効になっています。"
+
+#: includes/Admin/Pages/General.php:310
+#: includes/Admin/Pages/General.php:907
+msgid "Open Checkout Editor"
+msgstr "Checkout Editor を開く"
+
+#: includes/Admin/Pages/General.php:450
+msgid "Turn on Google autocomplete"
+msgstr "Google の自動入力を有効にする"
+
+#: includes/Admin/Pages/General.php:450
+msgid "Set up Google autocomplete"
+msgstr "Google の自動入力を設定する"
+
+#: includes/Admin/Pages/General.php:460
+msgid "Stop bot orders"
+msgstr "ボット注文を停止する"
+
+#: includes/Admin/Pages/General.php:461
+msgid "Cloudflare Turnstile blocks spam and card-testing orders without a CAPTCHA. It\\'s free and takes a few minutes to set up."
+msgstr "Cloudflare Turnstile は、CAPTCHA を使わずにスパムやカードテストの注文をブロックします。無料で、設定には数分しかかかりません。"
+
+#: includes/Admin/Pages/General.php:462
+msgid "Set up Turnstile"
+msgstr "Turnstile を設定する"
+
+#: includes/Admin/Pages/General.php:469
+msgid "Faster address entry"
+msgstr "より速い住所入力"
+
+#: includes/Admin/Pages/General.php:470
+msgid "Address autocomplete suggests addresses from Google as shoppers type, so checkout is quicker and has fewer typos."
+msgstr "住所の自動入力により、購入者が入力する際にGoogleの住所候補が表示されるため、チェックアウトがより দ্রুতになり、入力ミスも減ります。"
+
+#: includes/Admin/Pages/General.php:490
+#: includes/Admin/Pages/Premium/OrderBumps.php:903
+#: client/ts/admin/Components/CheckoutEditor/EditorApp.tsx:400
+msgid "Dismiss"
+msgstr "閉じる"
+
+#: includes/Admin/Pages/General.php:561
+#: includes/Admin/Pages/Premium/AbandonedCartRecovery.php:101
+#: includes/Admin/Pages/Premium/ABTestingAdmin.php:218
+#: includes/Admin/Pages/Premium/ABTestingAdmin.php:826
+#: client/ts/admin/Components/CheckoutEditor/panels/DesignSettingsPanel.tsx:82
+msgid "Active"
+msgstr "アクティブ"
+
+#: includes/Admin/Pages/General.php:562
+msgid "No key"
+msgstr "キーなし"
+
+#: includes/Admin/Pages/General.php:563
+msgid "Expired"
+msgstr "期限切れ"
+
+#: includes/Admin/Pages/General.php:564
+msgid "Not activated"
+msgstr "未アクティベート"
+
+#: includes/Admin/Pages/General.php:565
+msgid "Invalid key"
+msgstr "無効なキー"
+
+#: includes/Admin/Pages/General.php:568
+msgid "No active license"
+msgstr "有効なライセンスがありません"
+
+#: includes/Admin/Pages/General.php:575
+msgid "Your plan"
+msgstr "あなたのプラン"
+
+#: includes/Admin/Pages/General.php:581
+msgid "Premium features are off."
+msgstr "プレミアム機能はオフになっています。"
+
+#: includes/Admin/Pages/General.php:584
+msgid "Manage license"
+msgstr "ライセンスを管理"
+
+#: includes/Admin/Pages/General.php:590
+msgid "Save license"
+msgstr "ライセンスを保存"
+
+#: includes/Admin/Pages/General.php:596
+#: includes/Admin/Notices/InvalidLicenseKeyNotice.php:20
+msgid "Renew your license"
+msgstr "ライセンスを更新する"
+
+#: includes/Admin/Pages/General.php:596
+msgid "Buy a license"
+msgstr "ライセンスを購入"
+
+#: includes/Admin/Pages/General.php:613
+msgid "Four more templates"
+msgstr "テンプレートがあと4つ"
+
+#: includes/Admin/Pages/General.php:614
+msgid "Side cart and order bumps"
+msgstr "サイドカートと注文アップセル"
+
+#: includes/Admin/Pages/General.php:615
+msgid "Cart recovery and A/B tests"
+msgstr "カート回復とA/Bテスト"
+
+#: includes/Admin/Pages/General.php:616
+msgid "Direct email support"
+msgstr "メールによる直接サポート"
+
+#: includes/Admin/Pages/General.php:620
+msgid "Unlock every feature"
+msgstr "すべての機能を有効化"
+
+#: includes/Admin/Pages/General.php:628
+#: includes/Admin/Pages/General.php:892
+msgid "See CheckoutWC plans"
+msgstr "CheckoutWCのプランを見る"
+
+#: includes/Admin/Pages/General.php:632
+msgid "Already bought a plan?"
+msgstr "すでにプランを購入しましたか？"
+
+# %s: checkoutwc.com account URL
+#: includes/Admin/Pages/General.php:639
+msgid "Download CheckoutWC from <a class=\"text-blue-600 underline\" target=\"_blank\" href=\"%s\">your account</a>."
+msgstr "CheckoutWCを <a class=\"text-blue-600 underline\" target=\"_blank\" href=\"%s\">アカウント</a> からダウンロードしてください。"
+
+# %s: Add Plugins screen URL
+#: includes/Admin/Pages/General.php:650
+msgid "Upload it under <a class=\"text-blue-600 underline\" href=\"%s\">Plugins &rsaquo; Add New Plugin &rsaquo; Upload Plugin</a> and activate it. This deactivates CheckoutWC Lite, and your settings carry over."
+msgstr "それを<a class=\"text-blue-600 underline\" href=\"%s\">プラグイン &rsaquo; 新規プラグインを追加 &rsaquo; プラグインをアップロード</a>からアップロードして有効化してください。これにより CheckoutWC Lite は無効化され、設定は引き継がれます。"
+
+#: includes/Admin/Pages/General.php:656
+msgid "Enter your license key on CheckoutWC › Dashboard."
+msgstr "CheckoutWC › ダッシュボードでライセンスキーを入力してください。"
+
+#: includes/Admin/Pages/General.php:676
+#: includes/Admin/Notices/LicenseServerUnreachableNotice.php:31
+#: includes/Admin/Notices/LicenseServerUnreachableNotice.php:38
+msgid "Contact support"
+msgstr "サポートに連絡する"
+
+#: includes/Admin/Pages/General.php:678
+msgid "Get support on our forums at WordPress.org"
+msgstr "WordPress.org のフォーラムでサポートを受ける"
+
+#: includes/Admin/Pages/General.php:682
+msgid "Documentation"
+msgstr "ドキュメント"
+
+#: includes/Admin/Pages/General.php:683
+msgid "Getting Started"
+msgstr "はじめに"
+
+#: includes/Admin/Pages/General.php:684
+msgid "Troubleshooting"
+msgstr "トラブルシューティング"
+
+#: includes/Admin/Pages/General.php:707
 msgid "Welcome to CheckoutWC 10.0"
 msgstr "CheckoutWC 10.0へようこそ"
 
-#: includes/Admin/Pages/General.php:86
+#: includes/Admin/Pages/General.php:710
 msgid "CheckoutWC 10.0 is a major update with new features and optimizations to make your WooCommerce store run better."
 msgstr "CheckoutWC 10.0は、WooCommerceストアのパフォーマンスを向上させる新機能と最適化を含む大幅なアップデートです。"
 
-#: includes/Admin/Pages/General.php:92
+#: includes/Admin/Pages/General.php:716
 msgid "Just Say When"
 msgstr "いつでも言ってください"
 
-#: includes/Admin/Pages/General.php:95
+#: includes/Admin/Pages/General.php:719
 msgid "Our new rules engine puts you in charge. Want to show an Order Bump only to first time customers who use a specific coupon code? You can do that. Want to show specific trust badges based on what is in the cart? You can do that too!"
 msgstr "新しいルールエンジンであなたが主導権を握れます。特定のクーポンコードを使う初回購入者にのみ注文バンプを表示したいですか？それが可能です。カート内の内容に基づいて特定の信頼バッジを表示したいですか？それも可能です！"
 
-#: includes/Admin/Pages/General.php:109
+#: includes/Admin/Pages/General.php:733
 msgid "Get Started Faster"
 msgstr "より速く始めましょう"
 
-#: includes/Admin/Pages/General.php:112
+#: includes/Admin/Pages/General.php:736
 msgid "Creating Order Bumps has lots of options. Our new Quick Start will help you get started faster."
 msgstr "注文バンプの作成には多くのオプションがあります。新しいクイックスタートでより速く始められます。"
 
-#: includes/Admin/Pages/General.php:116
+#: includes/Admin/Pages/General.php:740
 msgid "Configure Order Bumps"
 msgstr "注文バンプを設定する"
 
-#: includes/Admin/Pages/General.php:125
+#: includes/Admin/Pages/General.php:749
 msgid "And a lot more"
 msgstr "そしてもっと多くのことができます"
 
-#: includes/Admin/Pages/General.php:128
+#: includes/Admin/Pages/General.php:752
 msgid "To view the full list of changes, checkout our change log."
 msgstr "変更の全リストを見るには、変更ログをご覧ください。"
 
-#: includes/Admin/Pages/General.php:132
+#: includes/Admin/Pages/General.php:756
 msgid "Read Our Change Log"
 msgstr "変更ログを読む"
 
-#: includes/Admin/Pages/General.php:150
-msgid "Step 1: Upgrade to CheckoutWC Premium"
-msgstr "ステップ1: CheckoutWC Premium にアップグレード"
+#: includes/Admin/Pages/General.php:774
+msgid "Step 1: Unlock every feature with a CheckoutWC plan"
+msgstr "ステップ 1: CheckoutWC プランであらゆる機能を解放する"
 
-#: includes/Admin/Pages/General.php:151
+#: includes/Admin/Pages/General.php:775
 msgid "Supercharge your WooCommerce store."
 msgstr "WooCommerceストアを強化しましょう。"
 
-#: includes/Admin/Pages/General.php:153
+#: includes/Admin/Pages/General.php:777
 msgid "Step 1: Renew Your License"
 msgstr "ステップ1: ライセンスを更新"
 
-#: includes/Admin/Pages/General.php:154
+#: includes/Admin/Pages/General.php:778
 msgid "Your license has expired. Renew it to keep premium features working."
 msgstr "ライセンスの有効期限が切れています。プレミアム機能を引き続きご利用いただくには、更新してください。"
 
-#: includes/Admin/Pages/General.php:156
+#: includes/Admin/Pages/General.php:780
 msgid "Step 1: Activate Your License"
 msgstr "ステップ1：ライセンスを有効化する"
 
-#: includes/Admin/Pages/General.php:157
+#: includes/Admin/Pages/General.php:781
 msgid "Enter your license key and activate it for this site to turn on premium features."
 msgstr "ライセンスキーを入力してこのサイトで有効化すると、プレミアム機能がオンになります。"
 
-#: includes/Admin/Pages/General.php:167
+#: includes/Admin/Pages/General.php:791
 msgid "Step 2: Customize Checkout"
 msgstr "ステップ 2: チェックアウトをカスタマイズ"
 
-#: includes/Admin/Pages/General.php:168
+#: includes/Admin/Pages/General.php:792
 msgid "Use the Checkout Editor to customize your checkout layout, fields, and content."
 msgstr "チェックアウトエディターを使用して、チェックアウトのレイアウト、フィールド、およびコンテンツをカスタマイズします。"
 
-#: includes/Admin/Pages/General.php:173
+#: includes/Admin/Pages/General.php:797
 msgid "Step 3: Go Live"
 msgstr "ステップ 3: ライブにする"
 
-#: includes/Admin/Pages/General.php:174
+#: includes/Admin/Pages/General.php:798
 msgid "Enable templates for all visitors."
 msgstr "すべての訪問者にテンプレートを有効にします。"
 
-#: includes/Admin/Pages/General.php:202
+#: includes/Admin/Pages/General.php:832
+msgid "CheckoutWC templates are always on for administrators."
+msgstr "CheckoutWC のテンプレートは、管理者には常に有効です。"
+
+#: includes/Admin/Pages/General.php:850
 msgid "Requires a valid and active license key."
 msgstr "有効でアクティブなライセンスキーが必要です。"
 
-#: includes/Admin/Pages/General.php:208
+#: includes/Admin/Pages/General.php:856
 msgid "CheckoutWC Templates are always activated for admin users."
 msgstr "CheckoutWCテンプレートは管理者ユーザーには常に有効です。"
 
-#: includes/Admin/Pages/General.php:213
+#: includes/Admin/Pages/General.php:861
 msgid "This step can also be completed directly from the Checkout Editor!"
 msgstr "このステップはチェックアウトエディターから直接完了することもできます！"
 
-#: includes/Admin/Pages/General.php:233
-msgid "Upgrade to CheckoutWC Premium - Save 20% on your first year"
-msgstr ""
-
-#: includes/Admin/Pages/General.php:235
-#: includes/Admin/Pages/General.php:262
-#: includes/Admin/Pages/General.php:277
-#: includes/Admin/Pages/General.php:322
+#: includes/Admin/Pages/General.php:894
+#: includes/Admin/Pages/General.php:921
+#: includes/Admin/Pages/General.php:936
+#: includes/Admin/Pages/General.php:981
 msgid "Opens in new tab"
 msgstr "新しいタブで開く"
 
-#: includes/Admin/Pages/General.php:248
-msgid "Customize Your Checkout"
-msgstr "チェックアウトをカスタマイズ"
-
-#: includes/Admin/Pages/General.php:260
+#: includes/Admin/Pages/General.php:919
 msgid "Choose a Template"
 msgstr "テンプレートを選ぶ"
 
-#: includes/Admin/Pages/General.php:275
+#: includes/Admin/Pages/General.php:934
 msgid "Customize Logo and Colors"
 msgstr "ロゴとカラーをカスタマイズする"
 
-#: includes/Admin/Pages/General.php:320
+#: includes/Admin/Pages/General.php:979
 msgid "Preview Your Checkout Page"
 msgstr "チェックアウトページをプレビュー"
 
-#: includes/Admin/Pages/General.php:366
+#: includes/Admin/Pages/General.php:1025
 msgid "Unbypass CheckoutWC Template"
 msgstr "CheckoutWCテンプレートのバイパス解除"
 
-#: includes/Admin/Pages/General.php:366
+#: includes/Admin/Pages/General.php:1025
 msgid "Bypass CheckoutWC Template"
 msgstr "CheckoutWCテンプレートをバイパスする"
 
-#: includes/Admin/Pages/General.php:370
+#: includes/Admin/Pages/General.php:1029
 msgid "CheckoutWC template and functionality will be temporarily bypassed (just for you!). This is helpful for testing and debugging. You can click Unbypass CheckoutWC Template once you are done."
 msgstr "CheckoutWCテンプレートと機能は一時的にバイパスされます（あなただけのために！）。これはテストやデバッグに役立ちます。終了したら「CheckoutWCテンプレートのバイパス解除」をクリックできます。"
 
@@ -3277,80 +3320,80 @@ msgid "Express Checkout"
 msgstr "エクスプレスチェックアウト"
 
 # 1: Admin page title, 2: Network or site name.
-#: includes/Admin/Pages/CheckoutEditor.php:75
+#: includes/Admin/Pages/CheckoutEditor.php:84
 msgid "%1$s ‹ %2$s — WordPress"
 msgstr "%1$s ‹ %2$s — WordPress"
 
-#: includes/Admin/Pages/CheckoutEditor.php:522
+#: includes/Admin/Pages/CheckoutEditor.php:537
 msgid "Standard rate"
 msgstr "標準料金"
 
-#: includes/Admin/Pages/Appearance.php:24
+#: includes/Admin/Pages/Appearance.php:25
 msgid "Appearance"
 msgstr "外観"
 
-#: includes/Admin/Pages/Appearance.php:33
+#: includes/Admin/Pages/Appearance.php:34
 msgid "Design"
 msgstr "デザイン"
 
-#: includes/Admin/Pages/Appearance.php:123
+#: includes/Admin/Pages/Appearance.php:124
 msgid "Active: "
 msgstr "アクティブ:"
 
-#: includes/Admin/Pages/Appearance.php:133
+#: includes/Admin/Pages/Appearance.php:134
 msgid "Upgrade to Premium to Unlock"
 msgstr "プレミアムにアップグレードしてロック解除"
 
-#: includes/Admin/Pages/Appearance.php:142
+#: includes/Admin/Pages/Appearance.php:143
 msgid "Activate"
 msgstr "有効化"
 
-#: includes/Admin/Pages/Appearance.php:180
+#: includes/Admin/Pages/Appearance.php:181
 msgid "Inter (default)"
 msgstr "Inter（デフォルト）"
 
-#: includes/Admin/Pages/Appearance.php:181
+#: includes/Admin/Pages/Appearance.php:182
 msgid "System Font Stack (fastest)"
 msgstr "システムフォントスタック（最速）"
 
-#: includes/Admin/Pages/Appearance.php:201
+#: includes/Admin/Pages/Appearance.php:202
 #: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:445
 msgid "Body"
 msgstr "本文"
 
-#: includes/Admin/Pages/Appearance.php:205
-#: includes/Admin/Pages/Appearance.php:216
-#: includes/Admin/Pages/Appearance.php:228
-#: includes/Admin/Pages/Appearance.php:240
+#: includes/Admin/Pages/Appearance.php:206
+#: includes/Admin/Pages/Appearance.php:217
+#: includes/Admin/Pages/Appearance.php:229
+#: includes/Admin/Pages/Appearance.php:241
 msgid "Background"
 msgstr "背景"
 
-#: includes/Admin/Pages/Appearance.php:206
-#: includes/Admin/Pages/Appearance.php:219
-#: includes/Admin/Pages/Appearance.php:231
-#: includes/Admin/Pages/Appearance.php:241
-#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:667
-#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:670
+#: includes/Admin/Pages/Appearance.php:207
+#: includes/Admin/Pages/Appearance.php:220
+#: includes/Admin/Pages/Appearance.php:232
+#: includes/Admin/Pages/Appearance.php:242
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:709
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:684
 #: client/ts/admin/Components/CheckoutEditor/slots/CustomFieldEditor.tsx:28
 msgid "Text"
 msgstr "テキスト"
 
-#: includes/Admin/Pages/Appearance.php:207
-#: includes/Admin/Pages/Appearance.php:244
+#: includes/Admin/Pages/Appearance.php:208
+#: includes/Admin/Pages/Appearance.php:245
 msgid "Link"
 msgstr "リンク"
 
-#: includes/Admin/Pages/Appearance.php:211
+#: includes/Admin/Pages/Appearance.php:212
 #: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:449
 msgid "Header"
 msgstr "ヘッダー"
 
-#: includes/Admin/Pages/Appearance.php:223
+#: includes/Admin/Pages/Appearance.php:224
 #: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:450
 msgid "Footer"
 msgstr "フッター"
 
-#: includes/Admin/Pages/Appearance.php:235
+#: includes/Admin/Pages/Appearance.php:236
 #: client/ts/admin/Components/Forms/WooCommercePagesGlobalOptionsSettingsForm.tsx:48
 #: client/ts/admin/Components/Forms/CheckoutSettingsForm.tsx:569
 #: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:448
@@ -3359,158 +3402,173 @@ msgstr "フッター"
 msgid "Cart Summary"
 msgstr "カート概要"
 
-#: includes/Admin/Pages/Appearance.php:246
+#: includes/Admin/Pages/Appearance.php:247
 msgid "Mobile Background"
 msgstr "モバイル背景"
 
-#: includes/Admin/Pages/Appearance.php:248
+#: includes/Admin/Pages/Appearance.php:249
 msgid "Quantity Bubble Background"
 msgstr "数量バブル背景"
 
-#: includes/Admin/Pages/Appearance.php:249
+#: includes/Admin/Pages/Appearance.php:250
 msgid "Quantity Bubble Text"
 msgstr "数量バブルテキスト"
 
-#: includes/Admin/Pages/Appearance.php:253
+#: includes/Admin/Pages/Appearance.php:254
 #: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:447
 msgid "Breadcrumbs"
 msgstr "パンくずリスト"
 
-#: includes/Admin/Pages/Appearance.php:258
+#: includes/Admin/Pages/Appearance.php:259
 msgid "Completed Text"
 msgstr "完了テキスト"
 
-#: includes/Admin/Pages/Appearance.php:259
+#: includes/Admin/Pages/Appearance.php:260
 msgid "Current Text"
 msgstr "現在のテキスト"
 
-#: includes/Admin/Pages/Appearance.php:260
+#: includes/Admin/Pages/Appearance.php:261
 msgid "Next Text"
 msgstr "次のテキスト"
 
-#: includes/Admin/Pages/Appearance.php:261
+#: includes/Admin/Pages/Appearance.php:262
 msgid "Completed Accent"
 msgstr "完了アクセント"
 
-#: includes/Admin/Pages/Appearance.php:262
+#: includes/Admin/Pages/Appearance.php:263
 msgid "Current Accent"
 msgstr "現在のアクセント"
 
-#: includes/Admin/Pages/Appearance.php:263
+#: includes/Admin/Pages/Appearance.php:264
 msgid "Next Accent"
 msgstr "次のアクセント"
 
-#: includes/Admin/Pages/Appearance.php:267
+#: includes/Admin/Pages/Appearance.php:268
 #: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:446
 msgid "Buttons"
 msgstr "ボタン"
 
-#: includes/Admin/Pages/Appearance.php:272
+#: includes/Admin/Pages/Appearance.php:273
 msgid "Primary Background"
 msgstr "プライマリ背景"
 
-#: includes/Admin/Pages/Appearance.php:273
+#: includes/Admin/Pages/Appearance.php:274
 msgid "Primary Text"
 msgstr "プライマリテキスト"
 
-#: includes/Admin/Pages/Appearance.php:274
+#: includes/Admin/Pages/Appearance.php:275
 msgid "Primary Background Hover"
 msgstr "プライマリ背景ホバー"
 
-#: includes/Admin/Pages/Appearance.php:275
+#: includes/Admin/Pages/Appearance.php:276
 msgid "Primary Text Hover"
 msgstr "プライマリテキストホバー"
 
-#: includes/Admin/Pages/Appearance.php:276
+#: includes/Admin/Pages/Appearance.php:277
 msgid "Secondary Background"
 msgstr "セカンダリ背景"
 
-#: includes/Admin/Pages/Appearance.php:277
+#: includes/Admin/Pages/Appearance.php:278
 msgid "Secondary Text"
 msgstr "セカンダリテキスト"
 
-#: includes/Admin/Pages/Appearance.php:278
+#: includes/Admin/Pages/Appearance.php:279
 msgid "Secondary Background Hover"
 msgstr "セカンダリ背景ホバー"
 
-#: includes/Admin/Pages/Appearance.php:279
+#: includes/Admin/Pages/Appearance.php:280
 msgid "Secondary Text Hover"
 msgstr "セカンダリテキストホバー"
 
-#: includes/Admin/Pages/Appearance.php:283
+#: includes/Admin/Pages/Appearance.php:284
 msgid "Theme Specific Colors"
 msgstr "テーマ固有の色"
 
-#: includes/Admin/Pages/Advanced.php:37
-#: includes/Admin/Pages/Advanced.php:45
+#: includes/Admin/Pages/Advanced.php:79
+#: includes/Admin/Pages/Advanced.php:87
 msgid "Advanced"
 msgstr "詳細設定"
 
-#: includes/Admin/Pages/Advanced.php:46
+#: includes/Admin/Pages/Advanced.php:88
 msgid "Scripts"
 msgstr "スクリプト"
 
-#: includes/Admin/Pages/Advanced.php:47
+#: includes/Admin/Pages/Advanced.php:89
 msgid "Tools"
 msgstr "ツール"
 
-#: includes/Admin/Pages/Advanced.php:81
-#: includes/Admin/Pages/Advanced.php:101
+#: includes/Admin/Pages/Advanced.php:123
+#: includes/Admin/Pages/Advanced.php:143
 msgid "Export Settings"
 msgstr "エクスポート設定"
 
-#: includes/Admin/Pages/Advanced.php:82
+#: includes/Admin/Pages/Advanced.php:124
 msgid "Download a JSON file containing the current plugin settings."
 msgstr "現在のプラグイン設定を含むJSONファイルをダウンロードします。"
 
-#: includes/Admin/Pages/Advanced.php:86
-#: includes/Admin/Pages/Advanced.php:114
+#: includes/Admin/Pages/Advanced.php:128
+#: includes/Admin/Pages/Advanced.php:156
 msgid "Import Settings"
 msgstr "設定をインポート"
 
-#: includes/Admin/Pages/Advanced.php:87
+#: includes/Admin/Pages/Advanced.php:129
 msgid "Replace your current settings with a previous settings export."
 msgstr "以前の設定エクスポートで現在の設定を置き換えます。"
 
-#: includes/Admin/Pages/Advanced.php:104
+#: includes/Admin/Pages/Advanced.php:146
 msgid "Download a backup file of your settings."
 msgstr "設定のバックアップファイルをダウンロードします。"
 
-#: includes/Admin/Pages/Advanced.php:118
+#: includes/Admin/Pages/Advanced.php:160
 msgid "Upload File and Import Settings"
 msgstr "ファイルをアップロードして設定をインポート"
 
-#: includes/Admin/Pages/Advanced.php:196
+#: includes/Admin/Pages/Advanced.php:242
 msgid "CheckoutWC Settings Import Failed"
 msgstr "CheckoutWC設定のインポートに失敗しました"
 
-#: includes/Admin/Pages/Advanced.php:197
+#: includes/Admin/Pages/Advanced.php:243
 msgid "Unable to import settings. Did you select a JSON file to upload?"
 msgstr "設定をインポートできません。アップロードするJSONファイルを選択しましたか？"
 
-#: includes/Admin/Pages/Advanced.php:209
+#: includes/Admin/Pages/Advanced.php:255
 msgid "Error. Uploaded file appears empty."
 msgstr "エラー。アップロードされたファイルが空のようです。"
 
-#: includes/Admin/Pages/Advanced.php:220
+#: includes/Admin/Pages/Advanced.php:266
 msgid "Wrong file extension. Uploaded settings must be a JSON file."
 msgstr "ファイル拡張子が間違っています。アップロードする設定はJSONファイルでなければなりません。"
 
-#: includes/Admin/Pages/Advanced.php:228
+#: includes/Admin/Pages/Advanced.php:274
 msgid "Error moving uploaded file - check your permissions."
 msgstr "アップロードされたファイルの移動エラー - 権限を確認してください。"
 
-#: includes/Admin/Pages/Advanced.php:235
+#: includes/Admin/Pages/Advanced.php:281
 msgid "Error decoding JSON file."
 msgstr "JSONファイルのデコードエラー。"
 
-#: includes/Admin/Pages/Advanced.php:277
+#: includes/Admin/Pages/Advanced.php:348
+msgid "Successfully imported settings."
+msgstr "設定が正常にインポートされました。"
+
+# %d: number of entries in the file that were not imported
+#: includes/Admin/Pages/Advanced.php:353
+msgid "%d entry was ignored because it is not a CheckoutWC setting."
+msgid_plural "%d entries were ignored because they are not CheckoutWC settings."
+msgstr[0] "%d 件のエントリは CheckoutWC の設定ではないため無視されました。"
+
+#: includes/Admin/Pages/Advanced.php:360
 msgid "CheckoutWC Settings Import Successful"
 msgstr "CheckoutWC設定のインポートに成功しました"
 
-#: includes/Admin/Pages/Advanced.php:278
-msgid "Successfully imported settings."
-msgstr "設定が正常にインポートされました。"
+#: includes/Admin/Pages/Advanced.php:371
+msgid "Some settings were not imported"
+msgstr "一部の設定はインポートされませんでした"
+
+# %s: comma-separated list of setting names
+#: includes/Admin/Pages/Advanced.php:374
+msgid "Scripts and PHP snippets need the unfiltered_html permission, which your account does not have. Not imported: %s"
+msgstr "スクリプトと PHP スニペットには unfiltered_html 権限が必要ですが、あなたのアカウントにはありません。未インポート: %s"
 
 #: includes/Admin/Pages/AbandonedCartRecoveryAdminFree.php:16
 #: includes/Admin/Pages/Premium/AbandonedCartRecovery.php:24
@@ -3538,17 +3596,17 @@ msgid "Configure Abandoned Cart Recovery settings."
 msgstr "放棄カート回復の設定を構成します。"
 
 #: includes/Admin/Pages/AbandonedCartRecoveryAdminFree.php:56
-#: includes/Admin/Pages/Premium/AbandonedCartRecovery.php:180
+#: includes/Admin/Pages/Premium/AbandonedCartRecovery.php:176
 msgid "Error: WP Cron Configured Incorrectly!"
 msgstr "エラー：WP Cronの設定が正しくありません！"
 
 #: includes/Admin/Pages/AbandonedCartRecoveryAdminFree.php:60
-#: includes/Admin/Pages/Premium/AbandonedCartRecovery.php:185
+#: includes/Admin/Pages/Premium/AbandonedCartRecovery.php:181
 msgid "It looks like WP Cron is enabled which will cause issues with tracking carts and sending emails."
 msgstr "WP Cronが有効になっているようで、カートの追跡やメール送信に問題が発生します。"
 
 #: includes/Admin/Pages/AbandonedCartRecoveryAdminFree.php:62
-#: includes/Admin/Pages/Premium/AbandonedCartRecovery.php:188
+#: includes/Admin/Pages/Premium/AbandonedCartRecovery.php:184
 msgid "To properly configure WP Cron for ACR, please read our guide:"
 msgstr "ACRのためにWP Cronを正しく設定するには、ガイドをお読みください："
 
@@ -3687,6 +3745,231 @@ msgstr "A/Bテストを有効にする"
 #: client/ts/admin/Components/Forms/ABTestingSettingsForm.tsx:50
 msgid "Allow A/B tests to be created and applied on the checkout page."
 msgstr "チェックアウトページでA/Bテストの作成と適用を許可します。"
+
+#: includes/Admin/Notices/WelcomeNotice.php:20
+msgid "Thank you for installing CheckoutWC! We automatically activated your license. You are all set!"
+msgstr "CheckoutWCをインストールしていただきありがとうございます！ライセンスは自動的に有効化されました。すべて準備完了です！"
+
+#: includes/Admin/Notices/WelcomeNotice.php:26
+msgid "Thank you for installing CheckoutWC! To get started, enter your <strong>License Key</strong> below, save, and click <strong>Activate Site</strong>."
+msgstr "CheckoutWCをインストールしていただきありがとうございます！開始するには、以下に<strong>ライセンスキー</strong>を入力し、保存してから<strong>サイトを有効化</strong>をクリックしてください。"
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:20
+msgid "your email"
+msgstr "あなたのメール"
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:88
+msgid "privacy policy"
+msgstr "プライバシーポリシー"
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:93
+msgid "By joining, %1$s will be added to our mailing list. Read our %2$s."
+msgstr "参加すると、%1$s が当社のメーリングリストに追加されます。%2$s をお読みください。"
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:99
+msgid "Join Newsletter & Save 25%"
+msgstr "ニュースレターに登録して25％節約"
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:102
+msgid "Join Newsletter"
+msgstr "ニュースレターに登録"
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:113
+msgid "Sign up to our newsletter and get proven conversion tips and checkout optimization strategies from the CheckoutWC team."
+msgstr "ニュースレターに登録して、CheckoutWCチームから実証済みのコンバージョン向上のヒントやチェックアウト最適化の戦略を受け取りましょう。"
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:116
+msgid "Boost Your Conversions with Proven Strategies."
+msgstr "実証済みの戦略でコンバージョンを向上させましょう。"
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:123
+msgid "We're so glad that you've chosen CheckoutWC to handle your checkouts. Unlock more sales with premium features like order bumps, abandoned cart recovery, and much more."
+msgstr "CheckoutWCをチェックアウト処理に選んでいただきありがとうございます。注文バンプ、放棄カート回復などのプレミアム機能でさらに売上を伸ばしましょう。"
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:126
+msgid "Unlock more sales with CheckoutWC Premium"
+msgstr "CheckoutWCプレミアムでさらに売上を伸ばしましょう"
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:144
+msgid "Sorry, there was an error joining our newsletter. Please refresh the page and try again."
+msgstr "申し訳ありませんが、ニュースレターの登録中にエラーが発生しました。ページを更新して再度お試しください。"
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:243
+msgid "Please wait..."
+msgstr "お待ちください..."
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:320
+msgid "Sorry, your account has insufficient permissions to join our newsletter."
+msgstr "申し訳ありませんが、ニュースレターに登録する権限が不足しています。"
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:354
+msgid "You have already joined our newsletter!"
+msgstr "すでにニュースレターに登録済みです！"
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:396
+msgid "Thank you for joining our newsletter!"
+msgstr "ニュースレターにご登録いただきありがとうございます！"
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:410
+msgid "Security check failed."
+msgstr "セキュリティチェックに失敗しました。"
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:414
+msgid "Insufficient permissions."
+msgstr "権限が不足しています。"
+
+#: includes/Admin/Notices/LiteEmailOptIn.php:422
+msgid "Notice dismissed."
+msgstr "通知が閉じられました。"
+
+# %1$d: Number of days, %2$s: Pricing URL, %3$s: "renew it here" link text
+#: includes/Admin/Notices/LicenseUnverifiedNotice.php:26
+msgid "Premium features are off because we haven\\'t been able to check your license with checkoutwc.com for %1$d days. Make sure your server can connect to checkoutwc.com. If your license has expired, <a href=\"%2$s\" target=\"_blank\">%3$s</a>."
+msgstr "checkoutwc.com で %1$d 日間ライセンスを確認できなかったため、プレミアム機能はオフになっています。サーバーが checkoutwc.com に接続できることを確認してください。ライセンスの有効期限が切れている場合は、<a href=\"%2$s\" target=\"_blank\">%3$s</a>。"
+
+#: includes/Admin/Notices/LicenseUnverifiedNotice.php:29
+msgid "renew it here"
+msgstr "こちらで更新する"
+
+#: includes/Admin/Notices/LicenseUnverifiedNotice.php:34
+msgid "CheckoutWC can\\'t verify your license"
+msgstr "CheckoutWCはライセンスを確認できません"
+
+# %1$s: Date premium features turn off, %2$s: Support email URL, %3$s: "Contact support" link text
+#: includes/Admin/Notices/LicenseServerUnreachableNotice.php:28
+msgid "We couldn\\'t check your license with checkoutwc.com. Premium features will turn off on %1$s unless the connection is restored. <a href=\"%2$s\">%3$s</a> if this keeps happening."
+msgstr "checkoutwc.com でライセンスを確認できませんでした。接続が復元されない限り、プレミアム機能は %1$s にオフになります。これが続く場合は、<a href=\"%2$s\">%3$s</a>。"
+
+# %1$s: Support email URL, %2$s: "Contact support" link text
+#: includes/Admin/Notices/LicenseServerUnreachableNotice.php:36
+msgid "We couldn\\'t check your license with checkoutwc.com. Make sure your server can connect to checkoutwc.com. <a href=\"%1$s\">%2$s</a> if this keeps happening."
+msgstr "checkoutwc.com でライセンスを確認できませんでした。サーバーが checkoutwc.com に接続できることを確認してください。これが続く場合は、<a href=\"%1$s\">%2$s</a>。"
+
+#: includes/Admin/Notices/LicenseServerUnreachableNotice.php:45
+msgid "CheckoutWC can\\'t reach the license server"
+msgstr "CheckoutWCはライセンスサーバーに接続できません"
+
+#: includes/Admin/Notices/InvalidLicenseKeyNotice.php:15
+msgid "CheckoutWC license expired"
+msgstr "CheckoutWCのライセンスの有効期限が切れています"
+
+# %1$s: URL to pricing page, %2$s: "Renew your license" link text, %3$s: Support email URL, %4$s: "contact support" link text
+#: includes/Admin/Notices/InvalidLicenseKeyNotice.php:18
+msgid "Premium features are off because your license has expired. <a href=\"%1$s\" target=\"_blank\">%2$s</a> to turn them back on. If you think this is a mistake, <a href=\"%3$s\">%4$s</a>."
+msgstr "ライセンスの有効期限が切れているため、プレミアム機能はオフになっています。再び有効にするには、<a href=\"%1$s\" target=\"_blank\">%2$s</a>。これが誤りだと思われる場合は、<a href=\"%3$s\">%4$s</a>。"
+
+#: includes/Admin/Notices/InvalidLicenseKeyNotice.php:22
+msgid "contact support"
+msgstr "サポートに連絡する"
+
+# %1$s: URL to the Dashboard's Your plan card, %2$s: "CheckoutWC Dashboard" link text, %3$s: Pricing URL, %4$s: "buy a license" link text
+#: includes/Admin/Notices/InvalidLicenseKeyNotice.php:39
+msgid "Premium features are off because your license key is missing or invalid. Check your key on the <a href=\"%1$s\">%2$s</a> or <a target=\"_blank\" href=\"%3$s\">%4$s</a>."
+msgstr "ライセンスキーが見つからないか無効なため、プレミアム機能はオフになっています。<a href=\"%1$s\">%2$s</a> または <a target=\"_blank\" href=\"%3$s\">%4$s</a> でキーを確認してください。"
+
+#: includes/Admin/Notices/InvalidLicenseKeyNotice.php:41
+msgid "CheckoutWC Dashboard"
+msgstr "CheckoutWC ダッシュボード"
+
+#: includes/Admin/Notices/InvalidLicenseKeyNotice.php:43
+#: includes/Admin/Notices/InactiveLicenseNotice.php:36
+msgid "buy a license"
+msgstr "ライセンスを購入する"
+
+#: includes/Admin/Notices/InactiveLicenseNotice.php:13
+msgid "CheckoutWC license not activated"
+msgstr "CheckoutWCのライセンスが有効化されていません"
+
+# %1$s: URL to the Dashboard's Your plan card, %2$s: "Activate it on the CheckoutWC Dashboard" link text, %3$s: Pricing URL, %4$s: "buy a license" link text
+#: includes/Admin/Notices/InactiveLicenseNotice.php:32
+msgid "Premium features are off because your license isn\\'t activated on this site. <a href=\"%1$s\">%2$s</a> or <a href=\"%3$s\" target=\"_blank\">%4$s</a> for this site."
+msgstr "このサイトでライセンスが有効化されていないため、プレミアム機能はオフになっています。このサイトについては、<a href=\"%1$s\">%2$s</a> または <a href=\"%3$s\" target=\"_blank\">%4$s</a>。"
+
+#: includes/Admin/Notices/InactiveLicenseNotice.php:34
+msgid "Activate it on the CheckoutWC Dashboard"
+msgstr "CheckoutWC ダッシュボードで有効化してください"
+
+#: includes/Admin/Notices/BFUpgradeNotice.php:70
+msgid "This copy isn't connected to a valid licence, so it isn't getting updates, security fixes or support. Every plan now includes every CheckoutWC feature."
+msgstr "このコピーは有効なライセンスに接続されていないため、アップデート、セキュリティ修正、サポートを受けられません。すべてのプランに、現在は CheckoutWC の全機能が含まれています。"
+
+#: includes/Admin/Notices/BFUpgradeNotice.php:72
+#: includes/Admin/Notices/BFUpgradeNotice.php:81
+#: includes/Admin/Notices/BFNotice.php:49
+msgid "Ends November 30th."
+msgstr "11月30日終了。"
+
+#: includes/Admin/Notices/BFUpgradeNotice.php:74
+msgid "Get a genuine CheckoutWC licence"
+msgstr "正規の CheckoutWC ライセンスを入手する"
+
+# %s: discount code.
+#: includes/Admin/Notices/BFUpgradeNotice.php:97
+msgid "Every plan now includes every CheckoutWC feature. Save 40%% when you switch to a new annual plan with code %s. Ends November 30th."
+msgstr "すべてのプランに、現在は CheckoutWC の全機能が含まれています。コード %s で新しい年間プランに切り替えると 40%% オフになります。11月30日終了。"
+
+# %s: discount code.
+#: includes/Admin/Notices/BFUpgradeNotice.php:99
+msgid "Every plan now includes every CheckoutWC feature. Move up to a 25 or 50 site plan at 40%% off with code %s. Ends November 30th."
+msgstr "すべてのプランに、現在は CheckoutWC の全機能が含まれています。コード %s で 25 または 50 サイトプランに 40%% オフでアップグレードできます。11月30日終了。"
+
+# %s: discount code.
+#: includes/Admin/Notices/BFUpgradeNotice.php:101
+msgid "Every plan now includes every CheckoutWC feature. Move up to the 50 site plan at 40%% off with code %s. Ends November 30th."
+msgstr "すべてのプランに、現在は CheckoutWC の全機能が含まれています。コード %s で 50 サイトプランに 40%% オフでアップグレードできます。11月30日終了。"
+
+# %s: discount code.
+#: includes/Admin/Notices/BFUpgradeNotice.php:103
+msgid "Our first-ever Lifetime deal: get every CheckoutWC feature for life on one site, $100 off with code %s. Pay once, with no renewals. Ends November 30th."
+msgstr "初の生涯プラン特別オファー: 1サイトで CheckoutWC の全機能を永久に利用できます。コード %s で $100 オフ。更新不要の一括払いです。11月30日終了。"
+
+#: includes/Admin/Notices/BFUpgradeNotice.php:121
+msgid "See the upgrade offer"
+msgstr "アップグレードオファーを見る"
+
+#: includes/Admin/Notices/BFUpgradeNotice.php:139
+msgid "Black Friday: upgrade your CheckoutWC plan"
+msgstr "ブラックフライデー：CheckoutWCプランをアップグレード"
+
+# %s: discount amount, such as 40%.
+#: includes/Admin/Notices/BFOfferCards.php:44
+msgid "%s off a new annual plan"
+msgstr "%s円オフの新しい年間プラン"
+
+# %s: discount code.
+#: includes/Admin/Notices/BFOfferCards.php:46
+msgid "Every feature, on 1, 3, 10, 25 or 50 sites. Use code %s."
+msgstr "1、3、10、25、または50サイトで、すべての機能をご利用いただけます。コード %s をご使用ください。"
+
+#: includes/Admin/Notices/BFOfferCards.php:47
+msgid "See annual plans"
+msgstr "年間プランを見る"
+
+# %s: discount amount, such as $100.
+#: includes/Admin/Notices/BFOfferCards.php:54
+msgid "%s off Lifetime"
+msgstr "%s円オフの永久版"
+
+# %s: discount code.
+#: includes/Admin/Notices/BFOfferCards.php:56
+msgid "Our first-ever Lifetime deal. Every feature, on one site. Pay once, with no renewals. Use code %s."
+msgstr "当社初の永久版特別プラン。1サイトで、すべての機能をご利用いただけます。更新不要で一度だけお支払いください。コード %s をご使用ください。"
+
+#: includes/Admin/Notices/BFOfferCards.php:57
+msgid "Get Lifetime"
+msgstr "永久版を入手"
+
+#: includes/Admin/Notices/BFOfferCards.php:64
+msgid "First time ever"
+msgstr "史上初"
+
+#: includes/Admin/Notices/BFNotice.php:45
+msgid "Black Friday: 40% off CheckoutWC"
+msgstr ""
+
+#: includes/Admin/Notices/BFNotice.php:46
+msgid "Get order bumps, the side cart, abandoned cart recovery and every other CheckoutWC feature."
+msgstr "注文追加、サイドカート、カゴ落ち回復など、CheckoutWC のあらゆる機能をご利用いただけます。"
 
 #: client/ts/functions/cfwFormatDate.ts:38
 msgid "Sunday"
@@ -3845,44 +4128,6 @@ msgstr "午前"
 msgid "pm"
 msgstr "午後"
 
-#: client/ts/admin/order-bumps-editor.tsx:59
-msgid "Order Bump Preview"
-msgstr "注文バンププレビュー"
-
-#: client/ts/admin/order-bumps-editor.tsx:152
-msgid "Preview only — configure this bump in the order bump settings sidebar on the right. The price shown here is not discounted."
-msgstr "プレビューのみ — このバンプは右側の注文バンプ設定サイドバーで設定してください。ここに表示される価格は割引されていません。"
-
-#: client/ts/admin/admin.ts:116
-#: client/ts/admin/Components/SettingsImporterButton.ts:12
-msgid "Confirm"
-msgstr "確認"
-
-#: client/ts/admin/admin.ts:117
-msgid "Are you sure you want to reset your conversion statistics for this Order Bump? This cannot be undone."
-msgstr "この注文バンプのコンバージョン統計をリセットしてもよろしいですか？この操作は元に戻せません。"
-
-#: client/ts/admin/admin.ts:120
-msgid "Yes, reset!"
-msgstr "はい、リセットします！"
-
-#: client/ts/admin/admin.ts:143
-msgid "Please enter an email address."
-msgstr "メールアドレスを入力してください。"
-
-#: client/ts/admin/admin.ts:158
-msgid "Email sent successfully."
-msgstr "メールが正常に送信されました。"
-
-#: client/ts/admin/admin.ts:167
-msgid "Are you sure you want to clear all tracked carts and reset all recovery statistics? This cannot be undone."
-msgstr "すべての追跡カートをクリアし、すべての回収統計をリセットしてもよろしいですか？この操作は元に戻せません。"
-
-#: client/ts/admin/admin.ts:178
-#: client/ts/admin/Components/CheckoutEditor/EditorApp.tsx:269
-msgid "Are you sure you want to discard all unsaved changes?"
-msgstr "保存されていない変更をすべて破棄してもよろしいですか？"
-
 #: client/ts/blocks/OrderBumpSteps.tsx:55
 msgid "Order Bump Steps Stettings"
 msgstr "注文バンプステップ設定"
@@ -3910,6 +4155,68 @@ msgstr "ステップ3のタイトル"
 #: client/ts/blocks/OrderBumpSteps.tsx:71
 msgid "The title of Step 3. Example: Order Received"
 msgstr "ステップ3のタイトル。例：注文受領済み"
+
+#: client/ts/admin/order-bumps-editor.tsx:59
+msgid "Order Bump Preview"
+msgstr "注文バンププレビュー"
+
+#: client/ts/admin/order-bumps-editor.tsx:152
+msgid "Preview only — configure this bump in the order bump settings sidebar on the right. The price shown here is not discounted."
+msgstr "プレビューのみ — このバンプは右側の注文バンプ設定サイドバーで設定してください。ここに表示される価格は割引されていません。"
+
+#: client/ts/admin/admin.ts:123
+#: client/ts/admin/Components/SettingsImporterButton.ts:12
+msgid "Confirm"
+msgstr "確認"
+
+#: client/ts/admin/admin.ts:124
+msgid "Are you sure you want to reset your conversion statistics for this Order Bump? This cannot be undone."
+msgstr "この注文バンプのコンバージョン統計をリセットしてもよろしいですか？この操作は元に戻せません。"
+
+#: client/ts/admin/admin.ts:127
+msgid "Yes, reset!"
+msgstr "はい、リセットします！"
+
+#: client/ts/admin/admin.ts:150
+msgid "Please enter an email address."
+msgstr "メールアドレスを入力してください。"
+
+#: client/ts/admin/admin.ts:165
+msgid "Email sent successfully."
+msgstr "メールが正常に送信されました。"
+
+#: client/ts/admin/admin.ts:174
+msgid "Are you sure you want to clear all tracked carts and reset all recovery statistics? This cannot be undone."
+msgstr "すべての追跡カートをクリアし、すべての回収統計をリセットしてもよろしいですか？この操作は元に戻せません。"
+
+#: client/ts/admin/admin.ts:185
+#: client/ts/admin/Components/CheckoutEditor/EditorApp.tsx:269
+msgid "Are you sure you want to discard all unsaved changes?"
+msgstr "保存されていない変更をすべて破棄してもよろしいですか？"
+
+#: includes/Compatibility/Plugins/Helpers/WooCommerceProductRecommendationsSideCartLocation.php:12
+msgid "CheckoutWC Side Cart"
+msgstr "CheckoutWC サイドカート"
+
+#: includes/Compatibility/Plugins/Helpers/WooCommerceProductRecommendationsSideCartLocation.php:43
+msgid "CheckoutWC: After Side Cart Items"
+msgstr "CheckoutWC: サイドカートアイテムの後"
+
+#: includes/Compatibility/Plugins/Helpers/WooCommerceProductRecommendationsSideCartLocation.php:49
+msgid "CheckoutWC: Before Side Cart Footer Above Promo Code"
+msgstr "CheckoutWC: プロモコード上のサイドカートフッターの前"
+
+#: includes/Compatibility/Plugins/Helpers/WooCommerceProductRecommendationsSideCartLocation.php:55
+msgid "CheckoutWC: Before Side Cart Totals"
+msgstr "CheckoutWC: サイドカート合計の前"
+
+#: includes/Compatibility/Plugins/Helpers/WooCommerceProductRecommendationsSideCartLocation.php:61
+msgid "CheckoutWC: After Side Cart Totals"
+msgstr "CheckoutWC: サイドカート合計の後"
+
+#: includes/Compatibility/Plugins/Helpers/WooCommerceProductRecommendationsSideCartLocation.php:67
+msgid "CheckoutWC: After Side Cart Buttons"
+msgstr "CheckoutWC: サイドカートボタンの後"
 
 #: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:60
 #: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:245
@@ -3994,28 +4301,28 @@ msgstr "オリジナル"
 #: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:541
 #: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:606
 #: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:1562
-#: includes/Admin/Pages/Premium/OrderBumps.php:130
+#: includes/Admin/Pages/Premium/OrderBumps.php:131
 msgid "Conversion Rate"
 msgstr "コンバージョン率"
 
 #: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:545
 #: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:610
 #: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:1566
-#: includes/Admin/Pages/Premium/OrderBumps.php:131
+#: includes/Admin/Pages/Premium/OrderBumps.php:132
 msgid "Revenue"
 msgstr "収益"
 
 #: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:551
 #: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:619
 #: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:1576
-#: includes/Admin/Pages/Premium/OrderBumps.php:132
+#: includes/Admin/Pages/Premium/OrderBumps.php:133
 msgid "Location"
 msgstr "場所"
 
 #: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:555
 #: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:623
 #: includes/Features/ABTesting/UIProviders/OrderBumpABTestUIProvider.php:1586
-#: includes/Admin/Pages/Premium/OrderBumps.php:133
+#: includes/Admin/Pages/Premium/OrderBumps.php:134
 #: client/ts/admin/Components/Metaboxes/OrderBumpsSetupModal.tsx:77
 #: client/ts/admin/Components/Metaboxes/OrderBumpsOfferPanel.tsx:31
 msgid "Offer Product"
@@ -4247,90 +4554,87 @@ msgstr "トラフィックスプリットの割合は合計で正確に100%で�
 msgid "(Original)"
 msgstr "(元の)"
 
-#: includes/Compatibility/Plugins/Helpers/WooCommerceProductRecommendationsSideCartLocation.php:12
-msgid "CheckoutWC Side Cart"
-msgstr "CheckoutWC サイドカート"
-
-#: includes/Compatibility/Plugins/Helpers/WooCommerceProductRecommendationsSideCartLocation.php:43
-msgid "CheckoutWC: After Side Cart Items"
-msgstr "CheckoutWC: サイドカートアイテムの後"
-
-#: includes/Compatibility/Plugins/Helpers/WooCommerceProductRecommendationsSideCartLocation.php:49
-msgid "CheckoutWC: Before Side Cart Footer Above Promo Code"
-msgstr "CheckoutWC: プロモコード上のサイドカートフッターの前"
-
-#: includes/Compatibility/Plugins/Helpers/WooCommerceProductRecommendationsSideCartLocation.php:55
-msgid "CheckoutWC: Before Side Cart Totals"
-msgstr "CheckoutWC: サイドカート合計の前"
-
-#: includes/Compatibility/Plugins/Helpers/WooCommerceProductRecommendationsSideCartLocation.php:61
-msgid "CheckoutWC: After Side Cart Totals"
-msgstr "CheckoutWC: サイドカート合計の後"
-
-#: includes/Compatibility/Plugins/Helpers/WooCommerceProductRecommendationsSideCartLocation.php:67
-msgid "CheckoutWC: After Side Cart Buttons"
-msgstr "CheckoutWC: サイドカートボタンの後"
-
 #: includes/Admin/Pages/Premium/PickupLocations.php:203
 #: includes/Admin/Pages/Premium/PickupLocations.php:210
 msgid "Order"
 msgstr "注文"
 
-#: includes/Admin/Pages/Premium/OrderBumps.php:129
+#: includes/Admin/Pages/Premium/OrderBumps.php:130
 msgid "ID"
 msgstr "ID"
 
-#: includes/Admin/Pages/Premium/OrderBumps.php:130
+#: includes/Admin/Pages/Premium/OrderBumps.php:131
 msgid "Conversion Rate tracks how often a bump is added to an actual completed purchase. If 20 orders are placed and a bump was displayed on 10 of those orders and the bump was purchased 5 times, the conversion rate is 50%."
 msgstr "コンバージョン率は、バンプが実際の完了した購入にどれだけ追加されたかを追跡します。20件の注文があり、そのうち10件にバンプが表示され、5回バンプが購入された場合、コンバージョン率は50％です。"
 
-#: includes/Admin/Pages/Premium/OrderBumps.php:131
+#: includes/Admin/Pages/Premium/OrderBumps.php:132
 msgid "The additional revenue that an Order Bump has captured. When configured as an upsell, it calculates the relative value between the offer product and the product being replaced. Revenues incurred before version 6.1.4 are estimated."
 msgstr "注文バンプが獲得した追加収益。アップセルとして設定されている場合、オファー商品と置き換えられる商品の相対価値を計算します。バージョン6.1.4以前に発生した収益は推定値です。"
 
-#: includes/Admin/Pages/Premium/OrderBumps.php:240
+#: includes/Admin/Pages/Premium/OrderBumps.php:241
 msgid "View Test"
 msgstr "テストを見る"
 
-#: includes/Admin/Pages/Premium/OrderBumps.php:250
+#: includes/Admin/Pages/Premium/OrderBumps.php:251
 msgid "Add Test"
 msgstr "テストを追加"
 
-#: includes/Admin/Pages/Premium/OrderBumps.php:339
+#: includes/Admin/Pages/Premium/OrderBumps.php:340
 msgid "All <span class=\"count\">(%s)</span>"
 msgid_plural "All <span class=\"count\">(%s)</span>"
 msgstr[0] "すべて <span class=\"count\">(%s)</span>"
 
-#: includes/Admin/Pages/Premium/OrderBumps.php:547
+#: includes/Admin/Pages/Premium/OrderBumps.php:548
 msgid "Reset Order Bump Conversion Stats"
 msgstr "注文バンプのコンバージョン統計をリセット"
 
+# %1$s: Product name, %2$s: Product price
+#: includes/Admin/Pages/Premium/OrderBumps.php:885
+msgid "An order bump offers one extra item at checkout. We picked %1$s (%2$s) because it\\'s already a popular add-on in your store. It\\'s shown at full price, with no discount, and you can change anything before it goes live."
+msgstr "注文追加は、チェックアウト時に追加の商品を1つ提案する機能です。すでにストアで人気の追加商品であるため、%1$s（%2$s）を選びました。割引なしの通常価格で表示され、公開する前なら何でも変更できます。"
+
+#: includes/Admin/Pages/Premium/OrderBumps.php:890
+msgid "An order bump offers one extra item at checkout. Start with a ready-made bump and choose the product yourself. It won\\'t show to shoppers until you publish it."
+msgstr "注文追加は、チェックアウト時に追加の商品を1つ提案する機能です。あらかじめ用意された追加商品から始めて、商品を自分で選択できます。公開するまで、購入者には表示されません。"
+
+#: includes/Admin/Pages/Premium/OrderBumps.php:897
+msgid "Add your first order bump"
+msgstr "最初の注文追加を追加"
+
+#: includes/Admin/Pages/Premium/OrderBumps.php:901
+msgid "Create this bump"
+msgstr "この追加商品を作成"
+
+#: includes/Admin/Pages/Premium/OrderBumps.php:902
+msgid "Choose a different product"
+msgstr "別の商品を選ぶ"
+
 # %1$d: Allowed bump count, %2$d: Used bump count
-#: includes/Admin/Pages/Premium/OrderBumps.php:1076
+#: includes/Admin/Pages/Premium/OrderBumps.php:1220
 msgid "Your CheckoutWC plan allows you to create %1$d Order Bumps. You have used %2$d."
 msgstr "あなたのCheckoutWCプランでは%1$d個の注文バンプを作成できます。%2$d個使用済みです。"
 
-#: includes/Admin/Pages/Premium/OrderBumps.php:1079
+#: includes/Admin/Pages/Premium/OrderBumps.php:1223
 msgid "You cannot create or publish new Order Bumps if you are over the limit."
 msgstr "制限を超えている場合、新しい注文バンプを作成または公開できません。"
 
-#: includes/Admin/Pages/Premium/OrderBumps.php:1222
+#: includes/Admin/Pages/Premium/OrderBumps.php:1366
 msgid "This order bump is part of an A/B test. Changes you make here affect the test results."
 msgstr "この注文バンプは A/B テストの一部です。ここで行う変更はテスト結果に影響します。"
 
 # %s: display location name, e.g. "Place Order Click (Checkout)"
-#: includes/Admin/Pages/Premium/OrderBumps.php:1246
+#: includes/Admin/Pages/Premium/OrderBumps.php:1390
 msgid "%s is not a checkout slot. If you save this, the bump will no longer appear in the checkout editor — manage it from the Order Bumps page instead."
 msgstr "%s はチェックアウトスロットではありません。これを保存すると、このバンプはチェックアウトエディターに表示されなくなります。代わりに Order Bumps ページから管理してください。"
 
 #: includes/Admin/Pages/Premium/AbandonedCartRecovery.php:99
-#: includes/Admin/Pages/Premium/AbandonedCartRecovery.php:389
+#: includes/Admin/Pages/Premium/AbandonedCartRecovery.php:385
 msgid "Subject"
 msgstr "件名"
 
 #: includes/Admin/Pages/Premium/AbandonedCartRecovery.php:100
+#: includes/Admin/Pages/Premium/AbandonedCartRecovery.php:436
 #: includes/Admin/Pages/Premium/AbandonedCartRecovery.php:440
-#: includes/Admin/Pages/Premium/AbandonedCartRecovery.php:444
 msgid "Send After"
 msgstr "送信後"
 
@@ -4339,120 +4643,113 @@ msgid "Send this long after cart has been abandoned."
 msgstr "カートが放棄されてからかなり経ってから送信します。"
 
 #: includes/Admin/Pages/Premium/AbandonedCartRecovery.php:101
-#: includes/Admin/Pages/Premium/ABTestingAdmin.php:218
-#: includes/Admin/Pages/Premium/ABTestingAdmin.php:826
-#: client/ts/admin/Components/CheckoutEditor/panels/DesignSettingsPanel.tsx:82
-msgid "Active"
-msgstr "アクティブ"
-
-#: includes/Admin/Pages/Premium/AbandonedCartRecovery.php:101
 msgid "Active (published) emails, are sent to customers. Inactive (draft / unpublished) emails are not."
 msgstr "アクティブ（公開済み）のメールは顧客に送信されます。非アクティブ（ドラフト/未公開）のメールは送信されません。"
 
-#: includes/Admin/Pages/Premium/AbandonedCartRecovery.php:390
+#: includes/Admin/Pages/Premium/AbandonedCartRecovery.php:386
 msgid "Enter Email Subject"
 msgstr "メール件名を入力"
 
-#: includes/Admin/Pages/Premium/AbandonedCartRecovery.php:404
+#: includes/Admin/Pages/Premium/AbandonedCartRecovery.php:400
 msgid "Preview Text"
 msgstr "プレビューテキスト"
 
-#: includes/Admin/Pages/Premium/AbandonedCartRecovery.php:406
+#: includes/Admin/Pages/Premium/AbandonedCartRecovery.php:402
 msgid "Shows in the email preview in the inbox before the content."
 msgstr "メールの内容の前に受信トレイのプレビューに表示されます。"
 
-#: includes/Admin/Pages/Premium/AbandonedCartRecovery.php:450
+#: includes/Admin/Pages/Premium/AbandonedCartRecovery.php:446
 msgid "Minutes"
 msgstr "分"
 
-#: includes/Admin/Pages/Premium/AbandonedCartRecovery.php:452
+#: includes/Admin/Pages/Premium/AbandonedCartRecovery.php:448
 msgid "Hours"
 msgstr "時間"
 
-#: includes/Admin/Pages/Premium/AbandonedCartRecovery.php:454
+#: includes/Admin/Pages/Premium/AbandonedCartRecovery.php:450
 #: client/ts/admin/Components/Metaboxes/Fields/Rules/fields.ts:434
 #: client/ts/admin/Components/Metaboxes/Fields/Rules/fields.ts:471
 #: client/ts/admin/Components/Metaboxes/Fields/Rules/fields.ts:509
 msgid "Days"
 msgstr "日"
 
-#: includes/Admin/Pages/Premium/AbandonedCartRecovery.php:469
+#: includes/Admin/Pages/Premium/AbandonedCartRecovery.php:465
 msgid "Use WooCommerce Email Template"
 msgstr "WooCommerceメールテンプレートを使用"
 
+#: includes/Admin/Pages/Premium/AbandonedCartRecovery.php:472
 #: includes/Admin/Pages/Premium/AbandonedCartRecovery.php:476
-#: includes/Admin/Pages/Premium/AbandonedCartRecovery.php:480
-#: includes/Admin/Pages/Premium/AbandonedCartRecovery.php:485
+#: includes/Admin/Pages/Premium/AbandonedCartRecovery.php:481
 msgid "Send Preview"
 msgstr "プレビューを送信"
 
-#: includes/Admin/Pages/Premium/AbandonedCartRecovery.php:496
+#: includes/Admin/Pages/Premium/AbandonedCartRecovery.php:492
 msgid "Add Email Title"
 msgstr "メールタイトルを追加"
 
-#: includes/Admin/Pages/Premium/AbandonedCartRecovery.php:542
+#: includes/Admin/Pages/Premium/AbandonedCartRecovery.php:538
 msgid "Site Name"
 msgstr "サイト名"
 
-#: includes/Admin/Pages/Premium/AbandonedCartRecovery.php:543
+#: includes/Admin/Pages/Premium/AbandonedCartRecovery.php:539
 msgid "Abandoned Cart Details Table"
 msgstr "放棄されたカート詳細テーブル"
 
-#: includes/Admin/Pages/Premium/AbandonedCartRecovery.php:544
+#: includes/Admin/Pages/Premium/AbandonedCartRecovery.php:540
 msgid "Checkout URL"
 msgstr "チェックアウトURL"
 
-#: includes/Admin/Pages/Premium/AbandonedCartRecovery.php:545
+#: includes/Admin/Pages/Premium/AbandonedCartRecovery.php:541
 msgid "Checkout Button"
 msgstr "チェックアウトボタン"
 
-#: includes/Admin/Pages/Premium/AbandonedCartRecovery.php:546
+#: includes/Admin/Pages/Premium/AbandonedCartRecovery.php:542
 msgid "Customer Email"
 msgstr "顧客メール"
 
-#: includes/Admin/Pages/Premium/AbandonedCartRecovery.php:547
+#: includes/Admin/Pages/Premium/AbandonedCartRecovery.php:543
 msgid "Customer First Name"
 msgstr "顧客の名"
 
-#: includes/Admin/Pages/Premium/AbandonedCartRecovery.php:548
+#: includes/Admin/Pages/Premium/AbandonedCartRecovery.php:544
 msgid "Customer Last Name"
 msgstr "顧客の姓"
 
-#: includes/Admin/Pages/Premium/AbandonedCartRecovery.php:549
+#: includes/Admin/Pages/Premium/AbandonedCartRecovery.php:545
 msgid "Customer Full Name"
 msgstr "顧客のフルネーム"
 
-#: includes/Admin/Pages/Premium/AbandonedCartRecovery.php:550
+#: includes/Admin/Pages/Premium/AbandonedCartRecovery.php:546
 msgid "Abandoned Date"
 msgstr "放棄日"
 
-#: includes/Admin/Pages/Premium/AbandonedCartRecovery.php:551
+#: includes/Admin/Pages/Premium/AbandonedCartRecovery.php:547
 msgid "Site URL"
 msgstr "サイトURL"
 
-#: includes/Admin/Pages/Premium/AbandonedCartRecovery.php:552
+#: includes/Admin/Pages/Premium/AbandonedCartRecovery.php:548
 msgid "Unsubscribe Link"
 msgstr "配信停止リンク"
 
-#: includes/Admin/Pages/Premium/AbandonedCartRecovery.php:642
+#: includes/Admin/Pages/Premium/AbandonedCartRecovery.php:638
 #: includes/Admin/Pages/Premium/ABTestingAdmin.php:322
 msgid "Permission denied."
 msgstr "権限が拒否されました。"
 
-#: includes/Admin/Pages/Premium/AbandonedCartRecovery.php:646
+#: includes/Admin/Pages/Premium/AbandonedCartRecovery.php:642
 msgid "Email ID is required."
 msgstr "メールIDが必要です。"
 
-#: includes/Admin/Pages/Premium/AbandonedCartRecovery.php:720
+#: includes/Admin/Pages/Premium/AbandonedCartRecovery.php:716
 msgid "Failed to send preview email."
 msgstr "プレビューメールの送信に失敗しました。"
 
 # %1$d: Allowed email count, %2$d: Used email count
-#: includes/Admin/Pages/Premium/AbandonedCartRecovery.php:857
+#: includes/Admin/Pages/Premium/AbandonedCartRecovery.php:853
 msgid "Your CheckoutWC plan allows you to create %1$d Abandoned Cart Emails. You have used %2$d."
 msgstr "あなたのCheckoutWCプランでは%1$d個の放棄カートメールを作成できます。%2$d個使用済みです。"
 
-#: includes/Admin/Pages/Premium/AbandonedCartRecovery.php:865
+#: includes/Admin/Pages/Premium/AbandonedCartRecovery.php:861
 msgid "You cannot create or publish new Abandoned Cart Recovery emails if you are over the limit."
 msgstr "制限を超えている場合、新しい放棄されたカート回復メールを作成または公開することはできません。"
 
@@ -4592,7 +4889,7 @@ msgstr "このトラストバッジを表示するタイミングを決定しま
 #: client/ts/admin/Components/CheckoutEditor/EditorModal.tsx:86
 #: client/ts/admin/Components/CheckoutEditor/EditorHeader.tsx:78
 #: client/ts/admin/Components/CheckoutEditor/BumpEditorModal.tsx:101
-#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:373
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:383
 msgid "Close"
 msgstr "閉じる"
 
@@ -4679,17 +4976,13 @@ msgstr "この画像を使用"
 msgid "Save Settings"
 msgstr "設定を保存"
 
-#: client/ts/admin/Components/LockedFieldWrapper.tsx:51
+#: client/ts/admin/Components/LockedFieldWrapper.tsx:50
 msgid "Upgrade Your License"
 msgstr "ライセンスをアップグレード"
 
-#: client/ts/admin/Components/LockedFieldWrapper.tsx:51
+#: client/ts/admin/Components/LockedFieldWrapper.tsx:50
 msgid "Unlock with Premium"
 msgstr "プレミアムでアンロック"
-
-#: client/ts/admin/Components/LockedFieldWrapper.tsx:60
-msgid "A %s plan is required to access these features."
-msgstr "これらの機能にアクセスするには %s プランが必要です。"
 
 #: client/ts/admin/Components/GooglePlacesKeyStatus.tsx:46
 #: client/ts/admin/Components/GooglePlacesKeyStatus.tsx:53
@@ -4698,7 +4991,7 @@ msgstr "Places API（新規）"
 
 #: client/ts/admin/Components/GooglePlacesKeyStatus.tsx:47
 #: client/ts/admin/Components/GooglePlacesKeyStatus.tsx:54
-#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:225
+#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:247
 msgid "Places API (Legacy)"
 msgstr "Places API（旧）"
 
@@ -5180,51 +5473,56 @@ msgstr "注文確定モーダルの見出し"
 msgid "Default if blank: Your order is almost complete..."
 msgstr "空白の場合のデフォルト: ご注文はもうすぐ完了します..."
 
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:30
-msgid "Wait %s! Here\\'s an exclusive offer to compliment your order!"
-msgstr "お待ちください%s！ご注文にぴったりの限定オファーです！"
+# %s: customer first name
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:32
+msgid "Wait %s! Here\\'s an exclusive offer to complement your order!"
+msgstr "%s さん、お待ちください！ご注文に合わせた限定オファーがあります！"
 
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:39
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:33
+msgid "[first name]"
+msgstr "[first name]"
+
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:43
 msgid "Place Order Modal Subheading"
 msgstr "注文確定モーダルのサブ見出し"
 
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:40
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:44
 msgid "Default if blank: Add this offer to your order and save!"
 msgstr "空白の場合のデフォルト: このオファーを注文に追加して節約しましょう！"
 
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:52
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:56
 msgid "Offer Acceptance Checkbox Label"
 msgstr "オファー承諾チェックボックスのラベル"
 
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:52
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:56
 msgid "Offer Acceptance Button Label"
 msgstr "オファー承諾ボタンのラベル"
 
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:53
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:57
 msgid "Example: Yes! Please add this offer to my order"
 msgstr "例: はい！このオファーを注文に追加してください"
 
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:63
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:67
 msgid "Offer Description"
 msgstr "オファー説明"
 
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:64
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:68
 msgid "Example: Limited time offer! Get an EXCLUSIVE discount right now! Click the checkbox above to add this product to your order now."
 msgstr "例: 期間限定オファー！今すぐ限定割引をゲット！上のチェックボックスをクリックしてこの商品を注文に追加してください。"
 
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:74
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:78
 msgid "Modal Offer Rejection Link Text"
 msgstr "モーダルオファー拒否リンクテキスト"
 
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:78
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:82
 msgid "Displays in modal version of Order Bump, such as Place Order bumps or when the Offer Product is a variable product (as opposed to a specific variation)."
 msgstr "注文バンプのモーダルバージョン（注文確定バンプやオファープロダクトが変数商品である場合など）に表示されます。"
 
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:83
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:87
 msgid "Default if blank: No thanks, just complete my order"
 msgstr "空白の場合のデフォルト: いいえ、注文を完了します"
 
-#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:85
+#: client/ts/admin/Components/Metaboxes/OrderBumpsOfferLanguagePanel.tsx:89
 msgid "Default if blank: No thanks"
 msgstr "空白の場合のデフォルト: いいえ、結構です"
 
@@ -5836,201 +6134,201 @@ msgstr "正規表現を有効にする"
 msgid "Match local shipping method name with regex."
 msgstr "ローカル配送方法名を正規表現で一致させる。"
 
-#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:79
+#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:100
 msgid "Configure Cloudflare Turnstile CAPTCHA protection for your checkout and account pages."
 msgstr "チェックアウトおよびアカウントページのCloudflare Turnstile CAPTCHA保護を設定します。"
 
-#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:85
+#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:106
 msgid "Enable Cloudflare Turnstile"
 msgstr "Cloudflare Turnstileを有効にする"
 
-#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:86
+#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:107
 msgid "Enable Cloudflare Turnstile CAPTCHA protection"
 msgstr "Cloudflare Turnstile CAPTCHA保護を有効にする"
 
-#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:100
+#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:121
 msgid "Site Key"
 msgstr "サイトキー"
 
-#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:101
+#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:122
 msgid "Your Cloudflare Turnstile site key"
 msgstr "あなたのCloudflare Turnstileサイトキー"
 
-#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:107
+#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:128
 msgid "Secret Key"
 msgstr "シークレットキー"
 
-#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:109
+#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:130
 msgid "Your Cloudflare Turnstile secret key"
 msgstr "あなたのCloudflare Turnstileシークレットキー"
 
-#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:115
+#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:136
 msgid "Enable on Checkout"
 msgstr "チェックアウトで有効にする"
 
-#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:116
+#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:137
 msgid "Show Turnstile on the checkout page"
 msgstr "チェックアウトページにTurnstileを表示する"
 
-#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:122
+#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:143
 msgid "Enable on Order Pay"
 msgstr "注文支払いで有効にする"
 
-#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:123
+#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:144
 msgid "Show Turnstile on the order pay page"
 msgstr "注文支払いページにTurnstileを表示する"
 
-#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:129
+#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:150
 msgid "Enable on Login"
 msgstr "ログインで有効にする"
 
-#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:130
+#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:151
 msgid "Show Turnstile on the My Account login form"
 msgstr "マイアカウントのログインフォームにTurnstileを表示する"
 
-#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:136
+#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:157
 msgid "Enable on Registration"
 msgstr "登録で有効にする"
 
-#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:137
+#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:158
 msgid "Show Turnstile on the My Account registration form"
 msgstr "マイアカウントの登録フォームにTurnstileを表示する"
 
-#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:143
+#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:164
 msgid "Position on Checkout"
 msgstr "チェックアウトでの位置"
 
-#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:144
+#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:165
 msgid "Where to display the Turnstile widget on checkout"
 msgstr "チェックアウトでTurnstileウィジェットを表示する場所"
 
-#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:148
+#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:169
 msgid "Before Place Order Button"
 msgstr "注文確定ボタンの前"
 
-#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:149
+#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:170
 msgid "Display just before the place order button"
 msgstr "注文確定ボタンの直前に表示する"
 
-#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:153
+#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:174
 msgid "Before Payment Methods"
 msgstr "支払い方法の前"
 
-#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:154
+#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:175
 msgid "Display before payment method selection"
 msgstr "支払い方法選択の前に表示する"
 
-#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:159
+#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:180
 msgid "Display after payment method selection"
 msgstr "支払い方法選択の後に表示する"
 
-#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:167
+#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:188
 msgid "Theme"
 msgstr "テーマ"
 
-#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:168
+#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:189
 msgid "Visual theme for the Turnstile widget"
 msgstr "Turnstileウィジェットのビジュアルテーマ"
 
-#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:170
+#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:191
 msgid "Light"
 msgstr "ライト"
 
-#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:170
+#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:191
 msgid "Light theme"
 msgstr "ライトテーマ"
 
-#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:171
+#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:192
 msgid "Dark"
 msgstr "ダーク"
 
-#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:171
+#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:192
 msgid "Dark theme"
 msgstr "ダークテーマ"
 
-#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:172
+#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:193
 msgid "Auto"
 msgstr "自動"
 
-#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:172
+#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:193
 msgid "Automatic based on user preference"
 msgstr "ユーザーの好みに基づく自動設定"
 
-#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:179
+#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:200
 #: client/ts/admin/Components/Forms/AppearanceDesignSettingsForm.tsx:79
 #: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:385
 msgid "Size"
 msgstr "サイズ"
 
-#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:180
+#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:201
 msgid "Size of the Turnstile widget"
 msgstr "Turnstileウィジェットのサイズ"
 
-#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:182
+#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:203
 #: client/ts/admin/Components/Forms/AppearanceDesignSettingsForm.tsx:111
 #: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:427
 #: client/ts/admin/Components/CheckoutEditor/panels/DesignSettingsPanel.tsx:131
 msgid "Normal"
 msgstr "標準"
 
-#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:182
+#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:203
 msgid "Standard size widget"
 msgstr "標準サイズのウィジェット"
 
-#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:183
+#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:204
 msgid "Compact"
 msgstr "コンパクト"
 
-#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:183
+#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:204
 msgid "Smaller widget size"
 msgstr "小さいウィジェットサイズ"
 
-#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:190
+#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:211
 msgid "Guest Users Only"
 msgstr "ゲストユーザーのみ"
 
-#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:191
+#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:212
 msgid "Only show Turnstile for guest (non-logged-in) users"
 msgstr "ゲスト（ログインしていない）ユーザーのみにTurnstileを表示する"
 
-#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:201
+#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:223
 msgid "Google API"
 msgstr "Google API"
 
-#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:202
+#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:224
 msgid "Used for the maps embed on the thank you page as well as Google Address Autocomplete."
 msgstr "サンキューページの地図埋め込みおよびGoogle住所自動補完に使用されます。"
 
-#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:207
+#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:229
 msgid "Google API Key"
 msgstr "Google APIキー"
 
-#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:208
+#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:230
 msgid "Used by Address Autocomplete and Thank You Page Maps Embed."
 msgstr "住所自動補完およびサンキューページの地図埋め込みに使用されます。"
 
-#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:214
+#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:236
 msgid "Google Places API Version"
 msgstr "Google Places API バージョン"
 
 # %s is a link to the Google Cloud console, reading "Google Cloud project".
-#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:217
+#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:239
 msgid "Which Places API address autocomplete uses. The same key works for both, but the chosen API must be enabled on your %s. Google closed the legacy API to new projects on 1 March 2025."
 msgstr "Places API のどちらの住所自動入力を使用するかを指定します。どちらでも同じキーを使用できますが、選択した API は %s で有効になっている必要があります。Google は 2025 年 3 月 1 日に従来の API の新規プロジェクト向け提供を終了しました。"
 
-#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:221
+#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:243
 msgid "Google Cloud project"
 msgstr "Google Cloud プロジェクト"
 
-#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:224
+#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:246
 msgid "Places API (New) - recommended"
 msgstr "Places API（新規）- 推奨"
 
-#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:240
+#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:262
 msgid "Themes and Plugins"
 msgstr "テーマとプラグイン"
 
-#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:241
+#: client/ts/admin/Components/Forms/IntegrationSettingsForm.tsx:263
 msgid "Integrations with 3rd party themes and plugins."
 msgstr "サードパーティのテーマおよびプラグインとの統合。"
 
@@ -6654,7 +6952,7 @@ msgid "Example: Show order summary and coupons. If left blank, this default will
 msgstr "例：注文概要とクーポンを表示。空白の場合、以下のデフォルトが使用されます：注文概要を表示"
 
 #: client/ts/admin/Components/Forms/CheckoutSettingsForm.tsx:670
-#: client/ts/admin/Components/Forms/AdvancedScriptsSettingsForm.tsx:180
+#: client/ts/admin/Components/Forms/AdvancedScriptsSettingsForm.tsx:202
 #: client/ts/admin/Components/CheckoutEditor/panels/CheckoutSettingsPanel.tsx:384
 msgid "Order Pay"
 msgstr "注文支払い"
@@ -6706,9 +7004,9 @@ msgstr "テンプレートの既定値"
 #: client/ts/admin/Components/Forms/AppearanceDesignSettingsForm.tsx:91
 #: client/ts/admin/Components/CheckoutEditor/slots/TrustBadgeEditor.tsx:205
 #: client/ts/admin/Components/CheckoutEditor/slots/TrustBadgeEditor.tsx:225
-#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:680
-#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:737
-#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:683
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:722
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:779
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:697
 #: client/ts/admin/Components/CheckoutEditor/slots/CustomFieldEditor.tsx:701
 #: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:395
 msgid "Margin"
@@ -6719,9 +7017,9 @@ msgid "Space around the logo, in CSS margin order."
 msgstr "ロゴの周囲の余白。CSSのmargin順。"
 
 #: client/ts/admin/Components/Forms/AppearanceDesignSettingsForm.tsx:93
-#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:685
-#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:742
-#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:688
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:727
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:784
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:702
 #: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:396
 msgid "e.g., 10px 0 20px 0"
 msgstr "例：10px 0 20px 0"
@@ -6892,70 +7190,74 @@ msgstr "使用状況追跡を有効にする"
 msgid "Allow CheckoutWC to track plugin usage."
 msgstr "CheckoutWCがプラグインの使用状況を追跡することを許可します。"
 
-#: client/ts/admin/Components/Forms/AdvancedScriptsSettingsForm.tsx:52
+#: client/ts/admin/Components/Forms/AdvancedScriptsSettingsForm.tsx:62
+msgid "Scripts and PHP snippets need the unfiltered_html permission, which your account does not have."
+msgstr "スクリプトと PHP スニペットには unfiltered_html 権限が必要ですが、あなたのアカウントにはありません。"
+
+#: client/ts/admin/Components/Forms/AdvancedScriptsSettingsForm.tsx:67
 msgid "Global"
 msgstr "グローバル"
 
-#: client/ts/admin/Components/Forms/AdvancedScriptsSettingsForm.tsx:53
+#: client/ts/admin/Components/Forms/AdvancedScriptsSettingsForm.tsx:68
 msgid "Add custom scripts that run on all enabled CheckoutWC templates. (Checkout, Thank You, Order Pay)"
 msgstr "すべての有効なCheckoutWCテンプレート（チェックアウト、サンクス、注文支払い）で実行されるカスタムスクリプトを追加します。"
 
-#: client/ts/admin/Components/Forms/AdvancedScriptsSettingsForm.tsx:58
-#: client/ts/admin/Components/Forms/AdvancedScriptsSettingsForm.tsx:114
-#: client/ts/admin/Components/Forms/AdvancedScriptsSettingsForm.tsx:150
-#: client/ts/admin/Components/Forms/AdvancedScriptsSettingsForm.tsx:186
+#: client/ts/admin/Components/Forms/AdvancedScriptsSettingsForm.tsx:73
+#: client/ts/admin/Components/Forms/AdvancedScriptsSettingsForm.tsx:132
+#: client/ts/admin/Components/Forms/AdvancedScriptsSettingsForm.tsx:170
+#: client/ts/admin/Components/Forms/AdvancedScriptsSettingsForm.tsx:208
 msgid "Header Scripts"
 msgstr "ヘッダースクリプト"
 
-#: client/ts/admin/Components/Forms/AdvancedScriptsSettingsForm.tsx:61
-#: client/ts/admin/Components/Forms/AdvancedScriptsSettingsForm.tsx:117
-#: client/ts/admin/Components/Forms/AdvancedScriptsSettingsForm.tsx:153
-#: client/ts/admin/Components/Forms/AdvancedScriptsSettingsForm.tsx:189
+#: client/ts/admin/Components/Forms/AdvancedScriptsSettingsForm.tsx:77
+#: client/ts/admin/Components/Forms/AdvancedScriptsSettingsForm.tsx:136
+#: client/ts/admin/Components/Forms/AdvancedScriptsSettingsForm.tsx:174
+#: client/ts/admin/Components/Forms/AdvancedScriptsSettingsForm.tsx:212
 msgid "This code will output immediately before the closing <code>&lt;/head&gt;</code> tag in the document source."
 msgstr "このコードはドキュメントソースの <code>&lt;/head&gt;</code> タグの直前に出力されます。"
 
-#: client/ts/admin/Components/Forms/AdvancedScriptsSettingsForm.tsx:67
-#: client/ts/admin/Components/Forms/AdvancedScriptsSettingsForm.tsx:123
-#: client/ts/admin/Components/Forms/AdvancedScriptsSettingsForm.tsx:159
-#: client/ts/admin/Components/Forms/AdvancedScriptsSettingsForm.tsx:195
+#: client/ts/admin/Components/Forms/AdvancedScriptsSettingsForm.tsx:83
+#: client/ts/admin/Components/Forms/AdvancedScriptsSettingsForm.tsx:142
+#: client/ts/admin/Components/Forms/AdvancedScriptsSettingsForm.tsx:180
+#: client/ts/admin/Components/Forms/AdvancedScriptsSettingsForm.tsx:218
 msgid "Footer Scripts"
 msgstr "フッタースクリプト"
 
-#: client/ts/admin/Components/Forms/AdvancedScriptsSettingsForm.tsx:70
-#: client/ts/admin/Components/Forms/AdvancedScriptsSettingsForm.tsx:126
-#: client/ts/admin/Components/Forms/AdvancedScriptsSettingsForm.tsx:162
-#: client/ts/admin/Components/Forms/AdvancedScriptsSettingsForm.tsx:198
+#: client/ts/admin/Components/Forms/AdvancedScriptsSettingsForm.tsx:87
+#: client/ts/admin/Components/Forms/AdvancedScriptsSettingsForm.tsx:146
+#: client/ts/admin/Components/Forms/AdvancedScriptsSettingsForm.tsx:184
+#: client/ts/admin/Components/Forms/AdvancedScriptsSettingsForm.tsx:222
 msgid "This code will output immediately before the closing <code>&lt;/body&gt;</code> tag in the document source."
 msgstr "このコードはドキュメントソースの <code>&lt;/body&gt;</code> タグの直前に出力されます。"
 
-#: client/ts/admin/Components/Forms/AdvancedScriptsSettingsForm.tsx:77
-#: client/ts/admin/Components/Forms/AdvancedScriptsSettingsForm.tsx:133
-#: client/ts/admin/Components/Forms/AdvancedScriptsSettingsForm.tsx:169
-#: client/ts/admin/Components/Forms/AdvancedScriptsSettingsForm.tsx:205
+#: client/ts/admin/Components/Forms/AdvancedScriptsSettingsForm.tsx:94
+#: client/ts/admin/Components/Forms/AdvancedScriptsSettingsForm.tsx:153
+#: client/ts/admin/Components/Forms/AdvancedScriptsSettingsForm.tsx:191
+#: client/ts/admin/Components/Forms/AdvancedScriptsSettingsForm.tsx:229
 msgid "Header and Footer Scripts are HTML only. For PHP, use PHP Snippets option."
 msgstr "ヘッダーおよびフッタースクリプトはHTMLのみ対応です。PHPの場合はPHPスニペットオプションを使用してください。"
 
-#: client/ts/admin/Components/Forms/AdvancedScriptsSettingsForm.tsx:84
+#: client/ts/admin/Components/Forms/AdvancedScriptsSettingsForm.tsx:101
 msgid "PHP Snippets"
 msgstr "PHPスニペット"
 
-#: client/ts/admin/Components/Forms/AdvancedScriptsSettingsForm.tsx:89
+#: client/ts/admin/Components/Forms/AdvancedScriptsSettingsForm.tsx:107
 msgid "Add PHP snippets to modify your checkout page here. If you have lots of snippets, you may want to consider using <a class=\"text-blue-600 underline\" target=\"_blank\" href=\"%s\">Code Snippets</a>."
 msgstr "ここにチェックアウトページを変更するPHPスニペットを追加します。スニペットが多い場合は<a class=\"text-blue-600 underline\" target=\"_blank\" href=\"%s\">Code Snippets</a>の使用を検討してください。"
 
-#: client/ts/admin/Components/Forms/AdvancedScriptsSettingsForm.tsx:97
+#: client/ts/admin/Components/Forms/AdvancedScriptsSettingsForm.tsx:115
 msgid "Please omit the opening PHP tag."
 msgstr "PHPの開始タグは省略してください。"
 
-#: client/ts/admin/Components/Forms/AdvancedScriptsSettingsForm.tsx:109
+#: client/ts/admin/Components/Forms/AdvancedScriptsSettingsForm.tsx:127
 msgid "Add custom JavaScript and PHP that runs on the checkout page."
 msgstr "チェックアウトページで実行されるカスタムJavaScriptおよびPHPを追加します。"
 
-#: client/ts/admin/Components/Forms/AdvancedScriptsSettingsForm.tsx:145
+#: client/ts/admin/Components/Forms/AdvancedScriptsSettingsForm.tsx:165
 msgid "Add custom JavaScript and PHP that runs on the Order Received / Thank You page."
 msgstr "注文受領／サンクスページで実行されるカスタムJavaScriptおよびPHPを追加します。"
 
-#: client/ts/admin/Components/Forms/AdvancedScriptsSettingsForm.tsx:181
+#: client/ts/admin/Components/Forms/AdvancedScriptsSettingsForm.tsx:203
 msgid "Add custom JavaScript and PHP that runs on the Order Pay page."
 msgstr "注文支払いページで実行されるカスタムJavaScriptおよびPHPを追加します。"
 
@@ -6970,6 +7272,20 @@ msgstr "放棄されたカートメールから除外するユーザー役割に
 #: client/ts/admin/Components/Forms/ACRSettingsForm.tsx:172
 msgid "Are you sure you want to delete all tracked carts?"
 msgstr "すべての追跡カートを削除してもよろしいですか？"
+
+#: client/ts/admin/Components/Fields/WPMediaUploadButton.tsx:69
+msgid "Select or Upload a Logo"
+msgstr "ロゴを選択またはアップロード"
+
+#: client/ts/admin/Components/Fields/RangeControl.tsx:97
+#: client/ts/admin/Components/Fields/ColorControl.tsx:137
+msgid "Reset"
+msgstr "リセット"
+
+#: client/ts/admin/Components/Fields/ColorControl.tsx:173
+#: client/ts/admin/Components/CheckoutEditor/BumpEditorModal.tsx:101
+msgid "Done"
+msgstr "完了"
 
 #: client/ts/admin/Components/CheckoutEditor/ScrollableRegion.tsx:74
 msgid "Scroll down for more items"
@@ -7126,31 +7442,13 @@ msgstr "プレビューから注文 #%s が作成されました。プレビュ�
 msgid "View order"
 msgstr "注文を表示"
 
-#: client/ts/admin/Components/CheckoutEditor/EditorApp.tsx:400
-msgid "Dismiss"
-msgstr "閉じる"
-
 #: client/ts/admin/Components/CheckoutEditor/BumpEditorModal.tsx:35
 msgid "This order bump has unsaved changes. Close anyway?"
 msgstr "このオーダーバンプには未保存の変更があります。このまま閉じますか？"
 
-#: client/ts/admin/Components/CheckoutEditor/BumpEditorModal.tsx:101
-#: client/ts/admin/Components/Fields/ColorControl.tsx:173
-msgid "Done"
-msgstr "完了"
-
 #: client/ts/admin/Components/CheckoutEditor/BumpEditorModal.tsx:108
 msgid "Loading order bump editor…"
 msgstr "オーダーバンプエディターを読み込んでいます…"
-
-#: client/ts/admin/Components/Fields/WPMediaUploadButton.tsx:69
-msgid "Select or Upload a Logo"
-msgstr "ロゴを選択またはアップロード"
-
-#: client/ts/admin/Components/Fields/RangeControl.tsx:97
-#: client/ts/admin/Components/Fields/ColorControl.tsx:137
-msgid "Reset"
-msgstr "リセット"
 
 # %s: item type e.g. "order bump"
 #: client/ts/admin/Components/CheckoutEditor/slots/UnsavedChangesDialog.tsx:37
@@ -7197,8 +7495,8 @@ msgid "What kind of badge would you like to add?"
 msgstr "どのようなバッジを追加しますか？"
 
 #: client/ts/admin/Components/CheckoutEditor/slots/TrustBadgeEditor.tsx:182
-msgid "Plus plan or higher required."
-msgstr "Plusプラン以上が必要です。"
+msgid "Available when you upgrade."
+msgstr "アップグレードすると利用できます。"
 
 #: client/ts/admin/Components/CheckoutEditor/slots/TrustBadgeEditor.tsx:201
 msgid "Badge"
@@ -7237,8 +7535,8 @@ msgid "Save changes"
 msgstr "変更を保存"
 
 #: client/ts/admin/Components/CheckoutEditor/slots/TrustBadgeEditor.tsx:329
-msgid "Badge collections need a Plus plan or higher. This badge is kept but no longer shows on your checkout, and cannot be edited. Upgrade to restore it, or delete it."
-msgstr "バッジコレクションには Plus プラン以上が必要です。このバッジは保持されますが、チェックアウトには表示されなくなり、編集もできません。復元するにはアップグレードするか、削除してください。"
+msgid "Badge collections are locked. This badge is kept but no longer shows on your checkout, and cannot be edited. Upgrade to restore it, or delete it."
+msgstr "バッジコレクションはロックされています。このバッジは保持されますが、チェックアウトには表示されなくなり、編集もできません。復元するにはアップグレードするか、削除してください。"
 
 #: client/ts/admin/Components/CheckoutEditor/slots/TrustBadgeCollectionFields.tsx:113
 msgid "e.g. Accepted payment methods"
@@ -7316,7 +7614,7 @@ msgid "Leave unset to match your checkout text. Payment logos always keep their 
 msgstr "未設定のままにすると、チェックアウトの文言に一致します。決済ロゴは常に各ブランドの色を保持します。"
 
 #: client/ts/admin/Components/CheckoutEditor/slots/SlotsPanel.tsx:187
-#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:727
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:769
 msgid "Edit order bump"
 msgstr "オーダーバンプを編集"
 
@@ -7356,195 +7654,212 @@ msgstr "カスタマーレビューはスロットに割り当てられていま
 
 # %d: number of custom fields.
 #: client/ts/admin/Components/CheckoutEditor/slots/SlotsPanel.tsx:566
-msgid "%d custom field is assigned to a slot but its type needs a Plus plan or higher, so it does not show on your checkout."
-msgid_plural "%d custom fields are assigned to slots but their types need a Plus plan or higher, so they do not show on your checkout."
-msgstr[0] "%d個のカスタムフィールドがスロットに割り当てられていますが、その種類にはPlusプラン以上が必要なため、チェックアウトには表示されません。"
+msgid "%d custom field is assigned to a slot but its type needs an upgrade, so it does not show on your checkout."
+msgid_plural "%d custom fields are assigned to slots but their types need an upgrade, so they do not show on your checkout."
+msgstr[0] "%d 個のカスタムフィールドがスロットに割り当てられていますが、種類のアップグレードが必要なため、チェックアウトには表示されません。"
 
 # %d: number of badge collections.
 #: client/ts/admin/Components/CheckoutEditor/slots/SlotsPanel.tsx:582
-msgid "%d badge collection is assigned to a slot but needs a Plus plan or higher, so it does not show on your checkout."
-msgid_plural "%d badge collections are assigned to slots but need a Plus plan or higher, so they do not show on your checkout."
-msgstr[0] "%d個のバッジコレクションがスロットに割り当てられていますが、Plusプラン以上が必要なため、チェックアウトには表示されません。"
+msgid "%d badge collection is assigned to a slot but needs an upgrade, so it does not show on your checkout."
+msgid_plural "%d badge collections are assigned to slots but need an upgrade, so they do not show on your checkout."
+msgstr[0] "%d 個のバッジコレクションがスロットに割り当てられていますが、アップグレードが必要なため、チェックアウトには表示されません。"
 
-#: client/ts/admin/Components/CheckoutEditor/slots/SlotsPanel.tsx:649
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotsPanel.tsx:650
 msgid "Layout of badges in slots can be"
 msgstr "スロット内のバッジの配置は"
 
-#: client/ts/admin/Components/CheckoutEditor/slots/SlotsPanel.tsx:655
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotsPanel.tsx:656
 msgid "set here"
 msgstr "ここで設定できます"
 
-#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:124
-#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:125
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:127
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:128
 msgid "Not shown for orders that don\\'t need shipping (e.g. digital products or pickup)."
 msgstr "配送が不要な注文（例：デジタル商品や店頭受取）には表示されません。"
 
-#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:136
+# %d: number of order bumps
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:138
+msgid "%d order bump placed here by its display location"
+msgid_plural "%d order bumps placed here by their display location"
+msgstr[0] "%d 件の注文バンプが、表示位置によりここに配置されています"
+
+# 1: number of assigned items, e.g. "1 assigned item", 2: number of locked order bumps, e.g. "1 order bump placed here by its display location"
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:145
+msgid "%1$s, %2$s"
+msgstr "%1$s、%2$s"
+
+# %d: number of items assigned to the slot
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:148
+msgid "%d assigned item"
+msgid_plural "%d assigned items"
+msgstr[0] "%d 件の割り当て済みアイテム"
+
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:160
 msgid "On mobile and tablets, the cart collapses and the order bumps and custom fields in this slot will move to the Above Terms & Conditions slot."
 msgstr "モバイルとタブレットでは、カートが折りたたまれ、このスロット内の注文バンプとカスタムフィールドは「利用規約の上」スロットに移動します。"
 
-#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:138
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:162
 msgid "On mobile and tablets, the cart collapses and order bumps in this slot will move to the Above Terms & Conditions slot."
 msgstr "モバイルおよびタブレットでは、カートが折りたたまれ、このスロットのオーダーバンプは「利用規約の上」スロットに移動します。"
 
-#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:140
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:164
 msgid "On mobile and tablets, the cart collapses and custom fields in this slot will move to the Above Terms & Conditions slot."
 msgstr "モバイルとタブレットでは、カートが折りたたまれ、このスロット内のカスタムフィールドは「利用規約の上」スロットに移動します。"
 
-#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:187
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:211
 msgid "Delete this field permanently? To keep it for later, remove it from the slot instead."
 msgstr "このフィールドを完全に削除しますか？ 後で使う場合は、代わりにスロットから削除してください。"
 
-#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:209
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:233
 msgid "Delete this trust badge permanently? To keep it for later, remove it from the slot instead."
 msgstr "この信頼バッジを完全に削除しますか？ 後で使う場合は、代わりにスロットから削除してください。"
 
-#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:221
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:245
 msgid "This order bump is part of an active A/B test. It cannot be removed while the test is running."
 msgstr "このオーダーバンプはアクティブなA/Bテストの一部です。テスト実行中は削除できません。"
 
-#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:225
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:249
 msgid "Remove this item from the slot?"
 msgstr "このアイテムをスロットから削除しますか？"
 
-#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:311
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:351
 msgid "Assign item to slot"
 msgstr "アイテムをスロットに割り当てる"
 
-#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:486
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:526
 msgid "On mobile and tablets, this slot is inside the \"Show order summary\" section."
 msgstr "モバイルおよびタブレットでは、このスロットは「注文概要を表示」セクション内にあります。"
 
-#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:548
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:589
 msgid "Release to drop here"
 msgstr "ここにドロップするにはリリースしてください"
 
-#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:551
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:593
 msgid "No items assigned."
 msgstr "割り当てられたアイテムはありません。"
 
-#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:558
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:600
 msgid "Add item"
 msgstr "アイテムを追加"
 
-#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:653
-#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:654
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:695
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:668
 msgid "Level"
 msgstr "レベル"
 
-#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:672
-#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:675
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:714
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:689
 msgid "e.g. Why choose us?"
 msgstr "例：なぜ私たちを選ぶのか？"
 
-#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:703
-#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:761
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:745
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:803
 msgid "Save"
 msgstr "保存"
 
-#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:717
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:759
 msgid "Order bump"
 msgstr "オーダーバンプ"
 
-#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:731
+#: client/ts/admin/Components/CheckoutEditor/slots/SlotRow.tsx:773
 msgid "Edits in bump editor save immediately."
 msgstr "バンプエディターでの編集はすぐに保存されます。"
 
-#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:84
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:85
 msgid "Higher plan required"
 msgstr "より上位のプランが必要です"
 
-#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:84
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:93
 #: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:312
 #: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:326
 #: client/ts/admin/Components/CheckoutEditor/panels/DesignSettingsPanel.tsx:86
 msgid "Paid plan required"
 msgstr "有料プランが必要です"
 
-#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:270
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:280
 msgid "+ New order bump"
 msgstr "+ 新しいオーダーバンプ"
 
-#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:271
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:281
 msgid "+ New trust badge"
 msgstr "+ 新しいトラストバッジ"
 
-#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:272
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:282
 msgid "+ New custom field"
 msgstr "+ 新しいカスタムフィールド"
 
-#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:273
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:283
 msgid "+ New heading"
 msgstr "+ 新しい見出し"
 
-#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:274
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:284
 msgid "+ New HTML"
 msgstr "+ 新しいHTML"
 
-#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:300
-#: client/ts/admin/Components/CheckoutEditor/slots/AssignedItem.tsx:78
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:310
+#: client/ts/admin/Components/CheckoutEditor/slots/AssignedItem.tsx:81
 #: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:768
 msgid "Customer Reviews"
 msgstr "カスタマーレビュー"
 
 # %s: name of the slot the item is being added to
-#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:366
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:376
 msgid "Add to %s"
 msgstr "%sに追加"
 
-#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:387
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:397
 msgid "Search items…"
 msgstr "項目を検索…"
 
 # %d: number of order bumps allowed by the current plan
-#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:419
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:429
 msgid "Your plan allows %d published order bumps. Upgrade or unpublish one to create another."
 msgstr "あなたのプランでは公開済みのオーダーバンプを %d 件まで作成できます。追加で作成するには、アップグレードするか、1件を非公開にしてください。"
 
-#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:441
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:451
 msgid "order bump"
 msgstr "オーダーバンプ"
 
-#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:442
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:452
 msgid "A new tab will open where you can create your order bump. When you\\'ve saved it, close that tab and return here — it will be added to your chosen slot automatically."
 msgstr "新しいタブが開き、そこでオーダーバンプを作成できます。保存したらそのタブを閉じてここに戻ってください — 選択したスロットに自動的に追加されます。"
 
-#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:465
-#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:547
-#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:577
-#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:627
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:475
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:557
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:587
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:641
 msgid "(in slot)"
 msgstr "(スロット内)"
 
 # %d: number of order bumps assigned to other slots
-#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:486
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:496
 msgid "Placed in other slots (%d)"
 msgstr "他のスロットに配置済み (%d)"
 
-#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:495
-#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:628
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:505
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:642
 msgid "(in other slot)"
 msgstr "(別のスロット内)"
 
-#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:546
-#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:626
-msgid "Plus required"
-msgstr "Plusが必要です"
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:556
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:640
+msgid "Upgrade required"
+msgstr "アップグレードが必要です"
 
-#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:561
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:571
 msgid "Review Badges"
 msgstr "レビュー バッジ"
 
-#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:587
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:597
 msgid "Custom Fields"
 msgstr "カスタムフィールド"
 
-#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:707
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:721
 #: client/ts/admin/Components/CheckoutEditor/slots/CustomHtmlEditor.tsx:40
 msgid "Add"
 msgstr "追加"
 
-#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:741
+#: client/ts/admin/Components/CheckoutEditor/slots/ItemPicker.tsx:755
 msgid "No items match your search."
 msgstr "検索条件に一致する項目はありません。"
 
@@ -7578,8 +7893,8 @@ msgstr "チェックボックス"
 
 # %s: field type name, e.g. "Dropdown".
 #: client/ts/admin/Components/CheckoutEditor/slots/CustomFieldEditor.tsx:48
-msgid "%s — Plus plan or higher required"
-msgstr "%s — Plusプラン以上が必要です"
+msgid "%s — upgrade required"
+msgstr "%s — アップグレードが必要です"
 
 #: client/ts/admin/Components/CheckoutEditor/slots/CustomFieldEditor.tsx:67
 msgid "No fee"
@@ -7731,8 +8046,8 @@ msgstr "フィールドを削除"
 
 # %s: field type name, e.g. "Dropdown".
 #: client/ts/admin/Components/CheckoutEditor/slots/CustomFieldEditor.tsx:628
-msgid "%s fields need a Plus plan or higher. This field is kept but no longer shows on your checkout, and cannot be edited. Upgrade to restore it, or delete it."
-msgstr "%sフィールドにはPlusプラン以上が必要です。このフィールドは保持されますが、チェックアウトには表示されなくなり、編集もできません。復元するにはアップグレードするか、削除してください。"
+msgid "%s fields are locked. This field is kept but no longer shows on your checkout, and cannot be edited. Upgrade to restore it, or delete it."
+msgstr "%s のフィールドはロックされています。このフィールドは保持されますが、チェックアウトには表示されなくなり、編集できません。復元するにはアップグレードするか、削除してください。"
 
 #: client/ts/admin/Components/CheckoutEditor/slots/CustomFieldEditor.tsx:639
 msgid "Field"
@@ -7762,71 +8077,75 @@ msgstr "文字数制限"
 msgid "No limit"
 msgstr "制限なし"
 
-#: client/ts/admin/Components/CheckoutEditor/slots/AssignedItem.tsx:80
+#: client/ts/admin/Components/CheckoutEditor/slots/AssignedItem.tsx:83
 msgid "(empty heading)"
 msgstr "(空の見出し)"
 
-#: client/ts/admin/Components/CheckoutEditor/slots/AssignedItem.tsx:95
+#: client/ts/admin/Components/CheckoutEditor/slots/AssignedItem.tsx:98
 msgid "(unnamed field)"
 msgstr "(名前なしのフィールド)"
 
-#: client/ts/admin/Components/CheckoutEditor/slots/AssignedItem.tsx:221
-msgid "This field\\'s type needs a Plus plan or higher, so it does not show on your checkout. Upgrade to restore it, or delete the field."
-msgstr "このフィールドの種類には Plus プラン以上が必要なため、チェックアウトには表示されません。表示を復元するにはアップグレードするか、フィールドを削除してください。"
-
-#: client/ts/admin/Components/CheckoutEditor/slots/AssignedItem.tsx:225
-msgid "Badge collections need a Plus plan or higher, so this one does not show on your checkout. Upgrade to restore it, or delete it."
-msgstr "バッジコレクションには Plus プラン以上が必要なため、これもチェックアウトには表示されません。表示を復元するにはアップグレードするか、削除してください。"
+#: client/ts/admin/Components/CheckoutEditor/slots/AssignedItem.tsx:224
+msgid "This field\\'s type is locked, so it does not show on your checkout. Upgrade to restore it, or delete the field."
+msgstr "このフィールドの種類はロックされているため、チェックアウトには表示されません。復元するにはアップグレードするか、フィールドを削除してください。"
 
 #: client/ts/admin/Components/CheckoutEditor/slots/AssignedItem.tsx:228
+msgid "Badge collections are locked, so this one does not show on your checkout. Upgrade to restore it, or delete it."
+msgstr "バッジコレクションはロックされているため、これもチェックアウトには表示されません。復元するにはアップグレードするか、削除してください。"
+
+#: client/ts/admin/Components/CheckoutEditor/slots/AssignedItem.tsx:231
 msgid "This order bump has an A/B test associated with it and cannot be moved or removed. Delete the test to unlock it."
 msgstr "この注文バンプにはA/Bテストが関連付けられており、移動や削除はできません。ロックを解除するにはテストを削除してください。"
 
-#: client/ts/admin/Components/CheckoutEditor/slots/AssignedItem.tsx:231
+#: client/ts/admin/Components/CheckoutEditor/slots/AssignedItem.tsx:235
 msgid "This bump is placed here automatically by its Checkout and Side Cart display location. It also appears in the side cart and isn\\'t counted toward this slot\\'s order bump limit."
 msgstr "このバンプは、チェックアウトとサイドカートの表示場所によって自動的にここに配置されます。また、サイドカートにも表示され、このスロットのオーダーバンプ制限にはカウントされません。"
 
-#: client/ts/admin/Components/CheckoutEditor/slots/AssignedItem.tsx:234
+#: client/ts/admin/Components/CheckoutEditor/slots/AssignedItem.tsx:237
+msgid "This bump is placed here automatically by its Checkout and Side Cart display location and isn\\'t counted toward this slot\\'s order bump limit. It won\\'t appear in the side cart while the side cart or its order bumps are off."
+msgstr "このバンプは、Checkout とサイドカートの表示位置によって自動的にここに配置され、このスロットの注文バンプ上限にはカウントされません。サイドカートまたはその注文バンプがオフの場合、サイドカートには表示されません。"
+
+#: client/ts/admin/Components/CheckoutEditor/slots/AssignedItem.tsx:240
 msgid "The offer product for this bump no longer exists, so the bump will not display. Choose a new offer product."
 msgstr "このバンプのオファー商品はもう存在しないため、バンプは表示されません。新しいオファー商品を選択してください。"
 
-#: client/ts/admin/Components/CheckoutEditor/slots/AssignedItem.tsx:237
+#: client/ts/admin/Components/CheckoutEditor/slots/AssignedItem.tsx:243
 msgid "The offer product for this bump is not published, so the bump appears for you but never for customers."
 msgstr "このバンプのオファー商品は公開されていないため、あなたには表示されますが、顧客には表示されません。"
 
-#: client/ts/admin/Components/CheckoutEditor/slots/AssignedItem.tsx:240
+#: client/ts/admin/Components/CheckoutEditor/slots/AssignedItem.tsx:246
 msgid "The offer product for this bump has no price, so the bump will not display."
 msgstr "このバンプのオファー商品には価格がないため、バンプは表示されません。"
 
-#: client/ts/admin/Components/CheckoutEditor/slots/AssignedItem.tsx:243
+#: client/ts/admin/Components/CheckoutEditor/slots/AssignedItem.tsx:249
 msgid "The offer product for this bump is out of stock, so the bump will not display until it is back in stock."
 msgstr "このバンプのオファー商品は在庫切れのため、再入荷するまでこのバンプは表示されません。"
 
-#: client/ts/admin/Components/CheckoutEditor/slots/AssignedItem.tsx:246
+#: client/ts/admin/Components/CheckoutEditor/slots/AssignedItem.tsx:252
 msgid "The product this bump replaces in the cart no longer exists, so the bump will not display."
 msgstr "このバンプがカート内で置き換える商品は存在しないため、このバンプは表示されません。"
 
-#: client/ts/admin/Components/CheckoutEditor/slots/AssignedItem.tsx:249
+#: client/ts/admin/Components/CheckoutEditor/slots/AssignedItem.tsx:255
 msgid "This bump replaces a product in the cart, so it only appears once that product has been added."
 msgstr "このバンプはカート内の商品を置き換えるため、その商品が追加されたときにのみ表示されます。"
 
-#: client/ts/admin/Components/CheckoutEditor/slots/AssignedItem.tsx:252
+#: client/ts/admin/Components/CheckoutEditor/slots/AssignedItem.tsx:258
 msgid "This item has display conditions. It will only appear to customers who meet the configured criteria and may not be visible on every checkout."
 msgstr "このアイテムには表示条件があります。設定された基準を満たす顧客のみに表示され、すべてのチェックアウトで見えるとは限りません。"
 
-#: client/ts/admin/Components/CheckoutEditor/slots/AssignedItem.tsx:255
+#: client/ts/admin/Components/CheckoutEditor/slots/AssignedItem.tsx:261
 msgid "The offer product for this bump is hidden from the shop catalog, so this bump is the only place customers will see it."
 msgstr "このバンプのオファー商品はショップカタログから非表示になっているため、お客様がそれを確認できるのはこのバンプだけです。"
 
-#: client/ts/admin/Components/CheckoutEditor/slots/AssignedItem.tsx:258
+#: client/ts/admin/Components/CheckoutEditor/slots/AssignedItem.tsx:264
 msgid "The offer product for this bump is already in the preview cart, so it may not be visible in the preview."
 msgstr "このバンプのオファープロダクトはすでにプレビューカートにあるため、プレビューでは表示されない場合があります。"
 
-#: client/ts/admin/Components/CheckoutEditor/slots/AssignedItem.tsx:268
+#: client/ts/admin/Components/CheckoutEditor/slots/AssignedItem.tsx:274
 msgid "Drag to reorder"
 msgstr "ドラッグして並べ替え"
 
-#: client/ts/admin/Components/CheckoutEditor/slots/AssignedItem.tsx:350
+#: client/ts/admin/Components/CheckoutEditor/slots/AssignedItem.tsx:356
 msgid "Remove"
 msgstr "削除"
 
@@ -7958,8 +8277,8 @@ msgstr "支払いゲートウェイはこれを使ってカード所有者の住
 
 #: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:348
 #: client/ts/admin/Components/CheckoutEditor/panels/DesignSettingsPanel.tsx:108
-msgid "A Basic, Plus, Pro, or Agency plan is required to access all templates."
-msgstr "すべてのテンプレートにアクセスするには、Basic、Plus、Pro、またはAgencyプランが必要です。"
+msgid "All templates are available with a CheckoutWC license."
+msgstr "すべてのテンプレートは CheckoutWC ライセンスで利用できます。"
 
 #: client/ts/admin/Components/CheckoutEditor/panels/EditorSettingsPanel.tsx:360
 msgid "One Page Checkout"
@@ -8537,6 +8856,10 @@ msgstr "配送先の国"
 msgid "Billing Country"
 msgstr "請求先の国"
 
+#: client/ts/admin/Components/Metaboxes/Fields/Rules/fields.ts:694
+msgid "User Role"
+msgstr "ユーザー権限"
+
 #: client/ts/admin/Components/Metaboxes/Fields/Rules/RuleSet.tsx:49
 msgid "Add rule"
 msgstr "ルールを追加"
@@ -8554,21 +8877,21 @@ msgid "Delete Rule"
 msgstr "ルールを削除"
 
 # %d: shipping package number
-#: functions/functions.php:386
-#: functions/functions.php:3464
+#: functions/functions.php:409
+#: functions/functions.php:3546
 msgctxt "shipping packages"
 msgid "Shipping"
 msgid_plural "Shipping %d"
 msgstr[0] "配送"
-
-#: includes/Features/OneClick/OrderStatusManager.php:47
-#: includes/Features/OneClick/OrderStatusManager.php:64
-msgctxt "Order status"
-msgid "Pending Offer"
-msgstr "保留中のオファー"
 
 #: includes/Compatibility/Plugins/NLPostcodeChecker.php:82
 #: includes/Compatibility/Plugins/NLPostcodeChecker.php:83
 msgctxt "full string"
 msgid "Suffix"
 msgstr "接尾辞"
+
+#: includes/Features/OneClick/OrderStatusManager.php:47
+#: includes/Features/OneClick/OrderStatusManager.php:64
+msgctxt "Order status"
+msgid "Pending Offer"
+msgstr "保留中のオファー"

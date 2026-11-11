@@ -64,6 +64,11 @@ class WooCommercePayments extends CompatibilityAbstract {
 			$wc_payments_payment_request_button_handler = cfw_get_hook_instance_object( 'woocommerce_checkout_before_customer_details', 'display_express_checkout_buttons', 1 );
 
 			if ( ! $wc_payments_payment_request_button_handler ) {
+				// run() repeats on every checkout update, so log on the page load only.
+				if ( ! wp_doing_ajax() ) {
+					cfw_debug_log( 'CheckoutWC Express Checkout: WooPayments added no express checkout buttons to the checkout, skipping. Check WooPayments > Settings > Express checkouts.' );
+				}
+
 				return;
 			}
 

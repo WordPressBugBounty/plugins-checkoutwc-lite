@@ -104,7 +104,8 @@ class OrderBumpPreviewAPI {
 			if ( 'complete_order' === $display_location ) {
 				$offer_heading = __( 'Your order is almost complete...', 'checkout-wc' );
 			} else {
-				$offer_heading = __( "Wait %s! Here's an exclusive offer to compliment your order!", 'checkout-wc' );
+				/* translators: %s: customer first name */
+				$offer_heading = __( "Wait %s! Here's an exclusive offer to complement your order!", 'checkout-wc' );
 			}
 		}
 

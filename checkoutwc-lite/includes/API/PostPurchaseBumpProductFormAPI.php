@@ -41,7 +41,7 @@ class PostPurchaseBumpProductFormAPI extends ModalOrderBumpProductFormAPI {
 		if ( empty( $cfw_ob_offer_heading ) ) {
 			$cfw_ob_offer_heading = sprintf(
 				/* translators: %s: customer first name */
-				__( "Wait %s! Here's an exclusive offer to compliment your order!", 'checkout-wc' ),
+				__( "Wait %s! Here's an exclusive offer to complement your order!", 'checkout-wc' ),
 				$order->get_billing_first_name()
 			);
 		}

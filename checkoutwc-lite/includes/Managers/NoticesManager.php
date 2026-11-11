@@ -14,6 +14,9 @@ class NoticesManager extends SingletonAbstract {
 	}
 
 	public function add( string $id, string $title, string $message, array $options = [] ) {
+		// The notices library reads the image option without checking it is set.
+		$options += [ 'image' => '' ];
+
 		$this->get_notices_object()->add( $id, $title, $message, $options );
 	}
 

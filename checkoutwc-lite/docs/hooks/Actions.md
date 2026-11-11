@@ -1203,6 +1203,28 @@ Fires when custom header is hooked
 
 Source: `Loaders/Redirect.php`
 
+## `cfw_dashboard_card_action`
+
+Fires when a Dashboard card is shown or used. For telemetry.
+
+Internal: only CheckoutWC's own telemetry should listen. Its name and arguments may change without notice.
+
+**Parameters**
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| `$card` | `string` | <code>starter_bump</code>, <code>turnstile</code> or <code>address_autocomplete</code> |
+| `$action` | `string` | <code>shown</code>, <code>create</code>, <code>choose_product</code>, <code>setup</code> or <code>dismiss</code> |
+| `$location` | `string` | <code>dashboard</code> or <code>order_bumps</code> |
+
+**Changelog**
+
+| Version | Description |
+| ------- | ----------- |
+| `11.5.0` | Introduced. |
+
+Source: `Admin/DashboardCardEvent.php`
+
 ## `cfw_delivery_method_changed`
 
 Fires when delivery method changes
