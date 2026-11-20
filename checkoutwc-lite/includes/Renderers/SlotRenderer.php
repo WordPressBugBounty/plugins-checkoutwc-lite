@@ -30,6 +30,13 @@ class SlotRenderer extends SingletonAbstract {
 	const BILLING_SLOT_ID = 'after_billing_address';
 
 	/**
+	 * The slot after the shipping address on the information step.
+	 *
+	 * @since 11.5.1
+	 */
+	const SHIPPING_ADDRESS_SLOT_ID = 'after_shipping_address';
+
+	/**
 	 * Hook fired after the billing address on the information step, i.e. for
 	 * no-shipping (e.g. digital) carts where billing is collected up front.
 	 */
@@ -83,6 +90,23 @@ class SlotRenderer extends SingletonAbstract {
 					$slot_id,
 					self::INFO_STEP_BILLING_HOOK,
 					10,
+					$has_items,
+					$is_preview,
+					static function (): bool {
+						return WC()->cart && ! WC()->cart->needs_shipping();
+					}
+				);
+				continue;
+			}
+
+			// The template only fires the shipping address hook for carts that need shipping. Other carts
+			// get the billing address hook in the same spot, so render the slot there instead.
+			if ( self::SHIPPING_ADDRESS_SLOT_ID === $slot_id ) {
+				$this->register_slot_output( $slot_id, $hook_config['hook'], $hook_config['priority'], $has_items, $is_preview );
+				$this->register_slot_output(
+					$slot_id,
+					self::INFO_STEP_BILLING_HOOK,
+					20,
 					$has_items,
 					$is_preview,
 					static function (): bool {
@@ -437,6 +461,12 @@ class SlotRenderer extends SingletonAbstract {
 		// already refuses to treat those as active, so skip the markup as well rather than show an
 		// input that does nothing.
 		if ( in_array( $slot_id, CustomFieldManager::UNSUPPORTED_SLOTS, true ) ) {
+			return;
+		}
+
+		// get_active_fields() also drops fields in a slot that doesn't apply to this cart, such as the shipping
+		// address slot on a cart without shipping, so don't show an input that wouldn't be saved.
+		if ( ! SlotManager::instance()->slot_is_active( $slot_id ) ) {
 			return;
 		}
 

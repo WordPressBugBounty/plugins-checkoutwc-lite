@@ -92,6 +92,7 @@ use Objectiv\Plugins\Checkout\Compatibility\Plugins\AeliaCurrencySwitcher;
 use Objectiv\Plugins\Checkout\Compatibility\Plugins\AllProductsForSubscriptions;
 use Objectiv\Plugins\Checkout\Compatibility\Plugins\ApplyOnline;
 use Objectiv\Plugins\Checkout\Compatibility\Plugins\AstraAddon;
+use Objectiv\Plugins\Checkout\Compatibility\Plugins\AutoshipCloud;
 use Objectiv\Plugins\Checkout\Compatibility\Plugins\BeaverThemer;
 use Objectiv\Plugins\Checkout\Compatibility\Plugins\BigBlue;
 use Objectiv\Plugins\Checkout\Compatibility\Plugins\BlocksyCompanion;
@@ -377,9 +378,9 @@ add_action(
 		/**
 		 * Filters the admin pages.
 		 *
-		 * @param array $admin_pages the admin pages
-		 *
 		 * @since 10.1.0
+		 *
+		 * @param array $admin_pages the admin pages
 		 */
 		$admin_pages = apply_filters( 'cfw_admin_pages', $admin_pages );
 
@@ -461,6 +462,7 @@ $compatibility_modules = [
 	PostNL::instance(),
 	PostNL4::instance(),
 	ActiveCampaign::instance(),
+	AutoshipCloud::instance(),
 	UltimateRewardsPoints::instance(),
 	WooCommerceSmartCoupons::instance(),
 	EUVATNumber::instance(),
@@ -1073,10 +1075,10 @@ add_action(
 		/**
 		 * Filter the admin preview message.
 		 *
+		 * @since 10.1.0
+		 *
 		 * @param string $admin_message the admin preview message
 		 * @return string the admin preview message
-		 *
-		 * @since 10.1.0
 		 */
 		$admin_message = apply_filters( 'cfw_admin_preview_message', $admin_message );
 

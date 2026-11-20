@@ -134,6 +134,7 @@ class ComposerStaticInitCheckoutForWooCommerce
         'Objectiv\\Plugins\\Checkout\\Compatibility\\Plugins\\AllProductsForSubscriptions' => __DIR__ . '/../..' . '/includes/Compatibility/Plugins/AllProductsForSubscriptions.php',
         'Objectiv\\Plugins\\Checkout\\Compatibility\\Plugins\\ApplyOnline' => __DIR__ . '/../..' . '/includes/Compatibility/Plugins/ApplyOnline.php',
         'Objectiv\\Plugins\\Checkout\\Compatibility\\Plugins\\AstraAddon' => __DIR__ . '/../..' . '/includes/Compatibility/Plugins/AstraAddon.php',
+        'Objectiv\\Plugins\\Checkout\\Compatibility\\Plugins\\AutoshipCloud' => __DIR__ . '/../..' . '/includes/Compatibility/Plugins/AutoshipCloud.php',
         'Objectiv\\Plugins\\Checkout\\Compatibility\\Plugins\\BeaverThemer' => __DIR__ . '/../..' . '/includes/Compatibility/Plugins/BeaverThemer.php',
         'Objectiv\\Plugins\\Checkout\\Compatibility\\Plugins\\BigBlue' => __DIR__ . '/../..' . '/includes/Compatibility/Plugins/BigBlue.php',
         'Objectiv\\Plugins\\Checkout\\Compatibility\\Plugins\\BlocksyCompanion' => __DIR__ . '/../..' . '/includes/Compatibility/Plugins/BlocksyCompanion.php',

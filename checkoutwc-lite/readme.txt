@@ -3,8 +3,8 @@ Contributors: kestrelwp, clifgriffin
 Donate link: https://www.checkoutwc.com
 Tags: woocommerce checkout, checkout field editor, express checkout, one page checkout, cart abandonment
 Requires at least: 5.2
-Tested up to: 7.1.4
-Stable tag: 11.5.0
+Tested up to: 7.1.5
+Stable tag: 11.5.1
 Requires PHP: 7.4
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
@@ -166,7 +166,7 @@ Yes. CheckoutWC Lite is free on WordPress.org and includes the Shopify-style mul
 
 = Can I add or remove checkout fields? =
 
-Yes. CheckoutWC Lite includes a checkout field editor: add your own text fields to any position on the checkout, mark them required, cap their length, and show them only for the carts and customers you choose. You can also hide the fields WooCommerce controls, such as company, phone, and address line 2. Text area, dropdown, radio button, and checkbox fields, and charging a fee for a field or an option, need a paid plan.
+Yes. CheckoutWC Lite includes a checkout field editor: add your own text fields to any position on the checkout, mark them required, cap their length, and show them only for the carts and customers you choose. You can also hide the fields WooCommerce controls, such as company, phone, and address line 2. Text area, dropdown, radio button, and checkbox fields need a paid plan, and so do fees on their options. A fee on a text field works in Lite.
 
 = Does CheckoutWC support one-page checkout? =
 
@@ -224,6 +224,10 @@ No. CheckoutWC templates are lightweight and optimized for performance. The plug
 
 Use your payment gateway's test mode to process test transactions without charging real money. Test both guest checkout and logged-in checkout, verify coupons apply correctly, confirm shipping methods display properly, and check tax calculations. Always test on a staging site first before going live.
 
+= Where do I get help with CheckoutWC Lite? =
+
+Post in the [CheckoutWC Lite support forum](https://wordpress.org/support/plugin/checkoutwc-lite/) on WordPress.org. For questions about paid plans or your license, contact us at [checkoutwc.com](https://www.checkoutwc.com/).
+
 == Screenshots ==
 
 1. Shopify-style multi-step WooCommerce checkout - the customer information step.
@@ -236,6 +240,12 @@ Use your payment gateway's test mode to process test transactions without chargi
 == Changelog ==
 
 Free version updates are non-sequential due to the unified development branch we use with the premium versions.
+
+= Version 11.5.1 =
+
+- Fix - The Bluehost plugin warning no longer shows on Bluehost 3.9.3 or later, where the conflict is fixed
+- Fix - The checkout page no longer stays blank when a script optimizer delays CheckoutWC until after the page loads
+- Localization - Dutch: fixed the inverted and garbled mobile Show order summary and Hide order summary labels
 
 = Version 11.5.0 =
 

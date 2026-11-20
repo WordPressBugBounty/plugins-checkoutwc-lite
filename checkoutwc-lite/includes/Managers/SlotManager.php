@@ -246,7 +246,8 @@ class SlotManager extends SingletonAbstract {
 		}
 
 		switch ( $slot_id ) {
-			// The hook itself is inside a needs_shipping() branch, so it never fires otherwise.
+			// Its hook only fires when the cart needs shipping. Bumps and badges fall back to the billing
+			// address position on other carts, but custom fields here are shipping questions, so they stay off.
 			case 'after_shipping_address':
 				$active = $cart->needs_shipping();
 				break;

@@ -41,8 +41,10 @@ class BFNotice extends NoticeAbstract {
 	 * @return void
 	 */
 	public function maybe_add( string $id = '', string $title = '', string $message = '', array $options = [] ) {
-		$id      = self::NOTICE_ID;
-		$title   = __( 'Black Friday: 40% off CheckoutWC', 'checkout-wc' );
+		$id = self::NOTICE_ID;
+
+		/* translators: %d: discount percentage */
+		$title   = sprintf( __( 'Black Friday: %d%% off CheckoutWC', 'checkout-wc' ), 40 );
 		$message = '<p>' . esc_html__( 'Get order bumps, the side cart, abandoned cart recovery and every other CheckoutWC feature.', 'checkout-wc' ) . '</p>';
 
 		$message .= BFOfferCards::get_html( 'liteplugin', 'bfnotice' );

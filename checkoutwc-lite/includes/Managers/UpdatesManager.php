@@ -524,6 +524,7 @@ class UpdatesManager extends SingletonAbstract {
 			10 => 'Agency',
 			12 => 'Pro',
 			13 => 'Basic',
+			14 => 'Hosting Plan - Convesio',
 			15 => '1 Site',
 			16 => '3 Sites',
 			17 => '10 Sites',

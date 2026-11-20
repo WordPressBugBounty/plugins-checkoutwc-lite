@@ -1052,33 +1052,45 @@ class RulesProcessor {
 		return true;
 	}
 
+	/**
+	 * Gets the logged-in customer's ID for the order history rules, or 0 for a guest.
+	 *
+	 * The history rules read from the database, not from WC()->customer: at checkout WooCommerce
+	 * loads that object on the session data store, whose get_total_spent() and get_order_count()
+	 * always return 0.
+	 *
+	 * @return int
+	 */
+	protected function get_history_customer_id(): int {
+		return (int) get_current_user_id();
+	}
+
 	protected function evaluateCustomerTotalSpent( $subFields ): bool {
-		$operator = $subFields['operator'] ?? ( $subFields['field_0'] ?? null );
-		$value    = $subFields['value'] ?? ( $subFields['field_1'] ?? null );
+		$operator    = $subFields['operator'] ?? ( $subFields['field_0'] ?? null );
+		$value       = $subFields['value'] ?? ( $subFields['field_1'] ?? null );
+		$customer_id = $this->get_history_customer_id();
 
-		$customer = WC()->customer;
-
-		if ( ! $customer || ! $customer->get_id() ) {
+		if ( ! $customer_id ) {
 			return false;
 		}
 
-		$total_spent = $customer->get_total_spent();
+		$total_spent = (float) wc_get_customer_total_spent( $customer_id );
 
 		return $this->compareValues( $total_spent, $operator, $value );
 	}
 
 	protected function evaluateCustomerAverageOrderValue( $subFields ): bool {
-		$operator  = $subFields['operator'] ?? ( $subFields['field_0'] ?? null );
-		$value     = $subFields['value'] ?? ( $subFields['field_1'] ?? null );
-		$customer  = WC()->customer;
-		$avg_spent = 0;
+		$operator    = $subFields['operator'] ?? ( $subFields['field_0'] ?? null );
+		$value       = $subFields['value'] ?? ( $subFields['field_1'] ?? null );
+		$customer_id = $this->get_history_customer_id();
+		$avg_spent   = 0;
 
-		if ( ! $customer || ! $customer->get_id() ) {
+		if ( ! $customer_id ) {
 			return $this->compareValues( $avg_spent, $operator, $value );
 		}
 
-		$total_spend = $customer->get_total_spent();
-		$order_count = $customer->get_order_count();
+		$total_spend = (float) wc_get_customer_total_spent( $customer_id );
+		$order_count = (int) wc_get_customer_order_count( $customer_id );
 
 		if ( $order_count > 0 && $total_spend > 0 ) {
 			$avg_spent = $total_spend / $order_count;
@@ -1088,11 +1100,12 @@ class RulesProcessor {
 	}
 
 	protected function evaluateCustomerTotalOrders( $subFields ): bool {
-		$operator = $subFields['operator'] ?? ( $subFields['field_0'] ?? null );
-		$value    = $subFields['value'] ?? ( $subFields['field_1'] ?? null );
-		$customer = WC()->customer;
+		$operator    = $subFields['operator'] ?? ( $subFields['field_0'] ?? null );
+		$value       = $subFields['value'] ?? ( $subFields['field_1'] ?? null );
+		$customer_id = $this->get_history_customer_id();
+		$order_count = $customer_id ? (int) wc_get_customer_order_count( $customer_id ) : 0;
 
-		return $this->compareValues( $customer->get_order_count(), $operator, $value );
+		return $this->compareValues( $order_count, $operator, $value );
 	}
 
 	protected function evaluateShippingCountry( $subFields ): bool {

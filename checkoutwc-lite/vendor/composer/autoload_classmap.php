@@ -119,6 +119,7 @@ return array(
     'Objectiv\\Plugins\\Checkout\\Compatibility\\Plugins\\AllProductsForSubscriptions' => $baseDir . '/includes/Compatibility/Plugins/AllProductsForSubscriptions.php',
     'Objectiv\\Plugins\\Checkout\\Compatibility\\Plugins\\ApplyOnline' => $baseDir . '/includes/Compatibility/Plugins/ApplyOnline.php',
     'Objectiv\\Plugins\\Checkout\\Compatibility\\Plugins\\AstraAddon' => $baseDir . '/includes/Compatibility/Plugins/AstraAddon.php',
+    'Objectiv\\Plugins\\Checkout\\Compatibility\\Plugins\\AutoshipCloud' => $baseDir . '/includes/Compatibility/Plugins/AutoshipCloud.php',
     'Objectiv\\Plugins\\Checkout\\Compatibility\\Plugins\\BeaverThemer' => $baseDir . '/includes/Compatibility/Plugins/BeaverThemer.php',
     'Objectiv\\Plugins\\Checkout\\Compatibility\\Plugins\\BigBlue' => $baseDir . '/includes/Compatibility/Plugins/BigBlue.php',
     'Objectiv\\Plugins\\Checkout\\Compatibility\\Plugins\\BlocksyCompanion' => $baseDir . '/includes/Compatibility/Plugins/BlocksyCompanion.php',
